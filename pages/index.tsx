@@ -59,17 +59,17 @@ export default function Home() {
             </div>
 
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover-lift scale-hover">
-              <div className="h-48 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
-                <span className="text-6xl">🌍</span>
+              <div className="h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
+                <span className="text-6xl">🇯🇵</span>
               </div>
               <div className="p-6">
                 <div className="flex items-center mb-3">
-                  <span className="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded-full">海外トレンド</span>
-                  <span className="ml-2 text-xs text-gray-500">準備中</span>
+                  <span className="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full">日本商品</span>
+                  <span className="ml-2 text-xs text-gray-500">2商品比較</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">海外トレンド商品</h3>
-                <p className="text-sm text-gray-600 mb-4">海外で話題の商品を日本で購入</p>
-                <Link href="/overseas-trend" className="text-orange-600 hover:text-orange-800 text-sm font-medium inline-flex items-center transition-colors">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">人気の日本商品</h3>
+                <p className="text-sm text-gray-600 mb-4">外国人に人気の日本食品ランキング</p>
+                <Link href="/articles/japaneseproducts-pupular with foreigners/recomend/250731popular-japanese-foods-2025-dm" className="text-red-600 hover:text-red-800 text-sm font-medium inline-flex items-center transition-colors">
                   詳細を見る
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
