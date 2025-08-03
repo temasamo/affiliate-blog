@@ -42,21 +42,21 @@ export default function Blog() {
       color: 'from-purple-400 to-purple-600'
     },
     {
-      slug: '2025-07-03-kouhanpatsu-ranking',
-      title: '後発毛剤ランキング',
-      description: '効果的な後発毛剤を徹底比較',
-      date: '2025.07.03',
-      category: '健康',
-      emoji: '💇‍♂️',
+      slug: 'japanesetea/recomend/250731kyusu-ranking-dm',
+      title: '急須ランキング',
+      description: '本格的な日本茶を楽しむ急須を比較',
+      date: '2025.07.31',
+      category: '日本茶',
+      emoji: '🍵',
       color: 'from-green-400 to-green-600'
     },
     {
-      slug: '2025-07-02-teihannpatsu-vs-others',
-      title: '定番発毛剤比較',
-      description: '効果・価格・使いやすさを検証',
-      date: '2025.07.02',
-      category: '健康',
-      emoji: '💇‍♂️',
+      slug: 'japaneseproducts-popular-with-foreigners/recomend/250801viral-matcha-sweets-dm',
+      title: '抹茶スイーツランキング',
+      description: '外国人に人気の抹茶スイーツを紹介',
+      date: '2025.08.01',
+      category: '日本商品',
+      emoji: '🍰',
       color: 'from-blue-400 to-blue-600'
     },
     {
