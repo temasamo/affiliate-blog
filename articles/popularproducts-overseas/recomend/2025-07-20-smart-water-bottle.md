@@ -1,10 +1,9 @@
 ---
 title: "【2025年7月最新版】TikTokで話題のスマート水ボトル、日本でも買える！"
 date: "2025-07-20"
-description: "海外で人気爆発中のスマート水ボトルを、日本で入手できる方法も併せて解説。海外の話題背景、レビュー評価、日本での購入ルートを紹介します。"
-categories: ["Overseas Trend"]
-tags: ["海外人気", "スマート水ボトル", "TikTokバズ", "Amazon US"]
-author: Market Supporter
+category: "popularproducts-overseas"
+type: "recomend"
+description: "海外で人気爆発中のスマート水ボトルを、日本で入手できる方法も併せて解説"
 ---
 
 # 【2025年7月最新版】TikTokで話題のスマート水ボトル、日本でも買える！

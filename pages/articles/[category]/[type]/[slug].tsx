@@ -202,6 +202,14 @@ function getRelatedArticles(category: string, type: string) {
         date: '2025.08.01',
         href: '/articles/japaneseproducts-popular-with-foreigners/recomend/250801viral-matcha-sweets-dm'
       }
+    ],
+    'popularproducts-overseas': [
+      {
+        title: 'TikTokで話題のスマート水ボトル',
+        excerpt: '海外で人気爆発中のスマート水ボトル',
+        date: '2025.07.20',
+        href: '/articles/popularproducts-overseas/recomend/2025-07-20-smart-water-bottle'
+      }
     ]
   };
   
