@@ -29,7 +29,7 @@ export default function JapanPopular() {
               おすすめ商品
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Link href="/articles/japaneseproducts-pupular with foreigners/recomend/250731popular-japanese-foods-2025-dm" className="group">
+              <Link href="/articles/japaneseproducts-popular-with-foreigners/recomend/250731popular-japanese-foods-2025-dm" className="group">
                 <div className="bg-gradient-to-br from-red-50 to-pink-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
                     人気の日本食品2025
@@ -43,7 +43,7 @@ export default function JapanPopular() {
                   </div>
                 </div>
               </Link>
-              <Link href="/articles/japaneseproducts-pupular with foreigners/recomend/250801viral-matcha-sweets-dm" className="group">
+              <Link href="/articles/japaneseproducts-popular-with-foreigners/recomend/250801viral-matcha-sweets-dm" className="group">
                 <div className="bg-gradient-to-br from-red-50 to-pink-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
                     バズる抹茶スイーツ
@@ -67,7 +67,7 @@ export default function JapanPopular() {
               日本商品知識
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Link href="/articles/japaneseproducts-pupular with foreigners/knowledge/250731popular-japanese-foods-2025-education" className="group">
+              <Link href="/articles/japaneseproducts-popular-with-foreigners/knowledge/250731popular-japanese-foods-2025-education" className="group">
                 <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
                     日本食品の魅力
@@ -81,7 +81,7 @@ export default function JapanPopular() {
                   </div>
                 </div>
               </Link>
-              <Link href="/articles/japaneseproducts-pupular with foreigners/knowledge/250801viral-matcha-sweets-education" className="group">
+              <Link href="/articles/japaneseproducts-popular-with-foreigners/knowledge/250801viral-matcha-sweets-education" className="group">
                 <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
                     抹茶スイーツの世界

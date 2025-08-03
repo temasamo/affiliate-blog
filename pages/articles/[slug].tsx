@@ -132,7 +132,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths: { params: { slug: string } }[] = [];
 
   // 新しいディレクトリ構造に対応
-  const categories = ['sleep-health', 'japanesetea', 'popularproducts-overseas', 'japaneseproducts-pupular with foreigners'];
+  const categories = ['sleep-health', 'japanesetea', 'popularproducts-overseas', 'japaneseproducts-popular-with-foreigners'];
   
   for (const category of categories) {
     const categoryPath = path.join(articlesDirectory, category);
