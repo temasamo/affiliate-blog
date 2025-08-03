@@ -14,14 +14,14 @@ description: "海外で人気爆発中のスマート水ボトルを、日本で
 
 ## 1. 海外での流行背景
 - TikTok上で「smart water bottle」や「LED water bottle」が人気。視聴数数百万回の投稿もあり、話題の中心に。  
-- House BeautifulやAP Newsでも、機能性とファッション性を兼ね備えたスマート水ボトルが注目されており、ブランド例として LARQ や Hidratespark、S’well、LitFlask が挙げられています。:contentReference[oaicite:2]{index=2}
+- House BeautifulやAP Newsでも、機能性とファッション性を兼ね備えたスマート水ボトルが注目されており、ブランド例として LARQ や Hidratespark、S’well、LitFlask が挙げられています。
 
 ---
 
 ## 2. 海外レビュー・評価
 海外レビューの傾向：
-- **LitFlask 3-in-1** はBluetoothスピーカー、LEDライト、電源バンクを搭載、アウトドアに強いと評価高し。価格は US $84.99。:contentReference[oaicite:3]{index=3}
-- **Owala** ではモノクロカラー（Rose Quartz、Iced Breezeなど）がTikTokで1.4百万「いいね」を獲得し、ミニマル好きに人気拡大中。:contentReference[oaicite:4]{index=4}
+- **LitFlask 3-in-1** はBluetoothスピーカー、LEDライト、電源バンクを搭載、アウトドアに強いと評価高し。価格は US $84.99。
+- **Owala** ではモノクロカラー（Rose Quartz、Iced Breezeなど）がTikTokで1.4百万「いいね」を獲得し、ミニマル好きに人気拡大中。
 
 ---
 
