@@ -109,7 +109,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="bg-green-50 rounded-xl p-6">
+            <div className="bg-green-50 rounded-xl p-6 mb-12">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Googleフォームを利用する場合</h3>
               <p className="text-gray-700 mb-4">
                 お問い合わせフォームをご利用いただけます。
@@ -128,6 +128,36 @@ export default function About() {
               <p className="text-sm text-gray-600 mt-2">
                 ※Googleフォームを作成し、このリンクを差し替えてください。
               </p>
+            </div>
+
+            {/* 新規追加部分 */}
+            <div className="border-t border-gray-200 pt-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">【プライバシーポリシー】</h2>
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                当サイトでは、第三者配信の広告サービス（もしもアフィリエイト、A8.net など）を利用しています。<br />
+                これらの広告配信事業者は、ユーザーの興味に応じた商品やサービスの広告を表示するために Cookie を使用することがあります。<br />
+                Cookie は匿名で収集され、個人を特定するものではありません。
+              </p>
+
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 mt-8">【免責事項】</h2>
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                当サイトに掲載する情報については正確性を保つよう努めておりますが、その内容やリンク先から生じる損害については一切責任を負いかねます。<br />
+                ご利用は自己責任にてお願いいたします。
+              </p>
+
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 mt-8">【運営者情報】</h2>
+              <div className="bg-gray-50 rounded-xl p-6">
+                <dl className="space-y-3">
+                  <div className="flex flex-col sm:flex-row sm:items-center">
+                    <dt className="text-sm font-medium text-gray-600 sm:w-24 sm:flex-shrink-0">運営者</dt>
+                    <dd className="text-sm text-gray-900 sm:ml-6">TEMOMASA</dd>
+                  </div>
+                  <div className="flex flex-col sm:flex-row sm:items-center">
+                    <dt className="text-sm font-medium text-gray-600 sm:w-24 sm:flex-shrink-0">メール</dt>
+                    <dd className="text-sm text-gray-900 sm:ml-6">busintemasamo1@gmail.com</dd>
+                  </div>
+                </dl>
+              </div>
             </div>
           </div>
         </div>
