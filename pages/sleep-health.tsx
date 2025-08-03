@@ -109,12 +109,12 @@ export default function SleepHealth() {
               睡眠知識
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Link href="/articles/sleep-health/knowledge/sleep-quality-guide" className="group">
+              <Link href="/articles/sleep-health/knowledge/2025-07-01-sleep-deprivation-health" className="group">
                 <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
-                    睡眠の質を向上させる方法
+                    睡眠不足と健康への影響
                   </h3>
-                  <p className="text-sm text-gray-600">科学的根拠に基づく快眠テクニック</p>
+                  <p className="text-sm text-gray-600">睡眠不足が体に与える影響について</p>
                   <div className="mt-3 flex items-center text-xs text-green-600">
                     <span>詳細を見る</span>
                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -123,12 +123,12 @@ export default function SleepHealth() {
                   </div>
                 </div>
               </Link>
-              <Link href="/articles/sleep-health/knowledge/pillow-selection-guide" className="group">
+              <Link href="/articles/sleep-health/knowledge/2025-07-02-sleep-and-mental-health" className="group">
                 <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
-                    枕選びの完全ガイド
+                    睡眠とメンタルヘルス
                   </h3>
-                  <p className="text-sm text-gray-600">体型・寝方別の最適な枕選び</p>
+                  <p className="text-sm text-gray-600">睡眠が心の健康に与える影響</p>
                   <div className="mt-3 flex items-center text-xs text-green-600">
                     <span>詳細を見る</span>
                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -137,12 +137,12 @@ export default function SleepHealth() {
                   </div>
                 </div>
               </Link>
-              <Link href="/articles/sleep-health/knowledge/mattress-comparison" className="group">
+              <Link href="/articles/sleep-health/knowledge/2025-07-03-sleep-and-productivity" className="group">
                 <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
-                    マットレスの種類と特徴
+                    睡眠と生産性の関係
                   </h3>
-                  <p className="text-sm text-gray-600">素材・硬さ・価格帯の比較</p>
+                  <p className="text-sm text-gray-600">良質な睡眠が仕事効率に与える影響</p>
                   <div className="mt-3 flex items-center text-xs text-green-600">
                     <span>詳細を見る</span>
                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
