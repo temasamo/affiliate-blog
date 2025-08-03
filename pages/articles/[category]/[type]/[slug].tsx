@@ -173,12 +173,7 @@ function getRelatedArticles(category: string, type: string) {
         date: '2025.07.01',
         href: '/articles/sleep-health/recomend/2025-07-01-makura-ranking'
       },
-      {
-        title: '定番発毛剤比較',
-        excerpt: '効果・価格・使いやすさを検証',
-        date: '2025.07.02',
-        href: '/articles/sleep-health/recomend/2025-07-02-teihannpatsu-vs-others'
-      }
+
     ],
     'japanesetea': [
       {

@@ -1,7 +1,8 @@
 ---
 title: "枕シリーズ総まとめ"
 date: "2025-07-07"
-category: "睡眠・健康"
+category: "sleep-health"
+type: "recomend"
 description: "「枕選びで睡眠の質が変わる」6日間シリーズの総まとめ。あなたに合う枕が必ず見つかる！"
 ---
 

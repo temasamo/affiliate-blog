@@ -1,11 +1,9 @@
 ---
-title: "海外で人気の抹茶スイーツ文化とその魅力 / The Culture and Appeal of Matcha Sweets Abroad"
+title: "海外で人気の抹茶スイーツ文化とその魅力"
 date: "2025-08-01"
-description: "抹茶スイーツが海外で愛される理由を文化的背景から解説。健康効果や見た目の美しさ、世界的な人気拡大の経緯を出典付きで紹介。SNSトレンド事例も掲載。"
-slug: viral-matcha-sweets-education
-categories: ["海外人気の日本由来のもの", "教養型"]
-tags: ["抹茶", "スイーツ", "文化", "訪日外国人", "お土産", "SNSトレンド"]
-author: HealTea
+category: "japaneseproducts-popular-with-foreigners"
+type: "knowledge"
+description: "抹茶スイーツが海外で愛される理由を文化的背景から解説、健康効果や見た目の美しさを紹介"
 ---
 
 ## 導入 / Introduction

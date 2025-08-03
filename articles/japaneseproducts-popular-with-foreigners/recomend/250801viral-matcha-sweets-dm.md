@@ -1,11 +1,9 @@
 ---
-title: "海外でバズった抹茶スイーツと自宅で作れる抹茶キット / Viral Matcha Sweets & DIY Matcha Kit"
+title: "海外でバズった抹茶スイーツと自宅で作れる抹茶キット"
 date: "2025-08-01"
-description: "世界的に人気を集める抹茶スイーツを英日併記で紹介。カフェで楽しむ・お土産として買う・自宅で作る3つの方法を文章で解説し、購入・体験予約リンクを掲載。"
-slug: viral-matcha-sweets-dm
-categories: ["海外人気の日本由来のもの", "DM型"]
-tags: ["抹茶", "スイーツ", "訪日外国人", "お土産", "DIY", "カフェ"]
-author: HealTea
+category: "japaneseproducts-popular-with-foreigners"
+type: "recomend"
+description: "世界的に人気を集める抹茶スイーツ、カフェで楽しむ・お土産として買う・自宅で作る3つの方法を紹介"
 ---
 
 ## 導入 / Introduction

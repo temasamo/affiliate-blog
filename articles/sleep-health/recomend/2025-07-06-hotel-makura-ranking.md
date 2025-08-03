@@ -1,7 +1,8 @@
 ---
 title: "ホテル枕ランキング"
 date: "2025-07-06"
-category: "睡眠・健康"
+category: "sleep-health"
+type: "recomend"
 description: "高級ホテルで使われる枕を徹底比較。自宅でホテルのような贅沢な寝心地を楽しめる枕ランキング"
 ---
 

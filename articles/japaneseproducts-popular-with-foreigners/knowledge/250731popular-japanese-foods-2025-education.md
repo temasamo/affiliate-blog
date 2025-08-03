@@ -1,11 +1,9 @@
 ---
-title: "訪日外国人に人気の日本料理ランキング【2025最新版】 / Most Popular Japanese Foods for Visitors to Japan [2025 Edition]"
+title: "訪日外国人に人気の日本料理ランキング【2025最新版】"
 date: "2025-07-31"
-description: "ユネスコ無形文化遺産にも登録された和食の魅力を、訪日外国人の人気ランキング形式で紹介。寿司、ラーメン、和牛、抹茶スイーツ、天ぷらなどの文化的背景と楽しみ方を、英日併記で解説します。"
-slug: popular-japanese-foods-2025-education
-categories: ["海外人気の日本由来のもの", "教養型"]
-tags: ["日本料理", "訪日外国人", "観光", "グルメ", "ランキング", "文化"]
-author: HealTea
+category: "japaneseproducts-popular-with-foreigners"
+type: "knowledge"
+description: "ユネスコ無形文化遺産にも登録された和食の魅力を、訪日外国人の人気ランキング形式で紹介"
 ---
 
 ## 導入 / Introduction

@@ -1,3 +1,11 @@
+---
+title: "急須の種類と選び方（素材別特徴）"
+date: "2025-07-31"
+category: "japanesetea"
+type: "knowledge"
+description: "急須の種類と選び方、素材別の特徴とお茶の風味への影響"
+---
+
 # 急須の種類と選び方（素材別特徴）
 
 ---

@@ -1,11 +1,9 @@
 ---
-title: "訪日外国人に人気の日本料理ランキング【2025最新版】 / Most Popular Japanese Foods for Visitors to Japan [2025 Edition]"
-date: "2025-08-01"
-description: "訪日外国人や日本在住外国人に向け、日本料理の人気ランキングを英日併記で紹介。本場で味わう・料理体験する・海外で楽しむ3パターンを文章で解説し、おすすめ予約・購入リンクを掲載。"
-slug: popular-japanese-foods-2025-dm
-categories: ["海外人気の日本由来のもの", "DM型"]
-tags: ["日本料理", "訪日外国人", "グルメ", "ランキング", "比較", "予約リンク"]
-author: HealTea
+title: "訪日外国人に人気の日本料理ランキング【2025最新版】"
+date: "2025-07-31"
+category: "japaneseproducts-popular-with-foreigners"
+type: "recomend"
+description: "訪日外国人に人気の日本料理ランキング、本場で味わう・料理体験する・海外で楽しむ3パターンを紹介"
 ---
 
 ## 導入 / Introduction

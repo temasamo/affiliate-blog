@@ -1,3 +1,11 @@
+---
+title: "抹茶の歴史と道具の使い方"
+date: "2025-07-31"
+category: "japanesetea"
+type: "knowledge"
+description: "抹茶の歴史と基本道具の使い方、自宅で本格的な抹茶を楽しむ方法"
+---
+
 # 抹茶の歴史と道具の使い方
 
 ---
