@@ -61,7 +61,7 @@ export default function Article({ content, frontMatter }: ArticleProps) {
         <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 mt-6 sm:mt-8">
           <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">関連記事</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-            <Link href="/articles/2025-07-01-makura-ranking" className="group">
+            <Link href="/articles/sleep-health/recomend/2025-07-01-makura-ranking" className="group">
               <div className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                   枕総合ランキング
@@ -72,7 +72,7 @@ export default function Article({ content, frontMatter }: ArticleProps) {
                 <span className="text-xs text-gray-500">2025.07.01</span>
               </div>
             </Link>
-            <Link href="/articles/2025-07-02-teihannpatsu-vs-others" className="group">
+            <Link href="/articles/sleep-health/recomend/2025-07-02-teihannpatsu-vs-others" className="group">
               <div className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                   定番発毛剤比較
@@ -114,7 +114,7 @@ export default function Article({ content, frontMatter }: ArticleProps) {
             <Link href="/japan-popular" className="group">
               <div className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
                 <div className="text-2xl mb-2">🇯🇵</div>
-                <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">日本人気商品</h3>
+                <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">人気の日本商品</h3>
                 <p className="text-xs sm:text-sm text-gray-600">国内で注目のアイテム</p>
               </div>
             </Link>
@@ -129,15 +129,46 @@ export default function Article({ content, frontMatter }: ArticleProps) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const articlesDirectory = path.join(process.cwd(), 'articles');
-  const filenames = fs.readdirSync(articlesDirectory);
+  const paths: { params: { slug: string } }[] = [];
 
-  const paths = filenames
-    .filter(filename => filename.endsWith('.md'))
-    .map(filename => ({
-      params: {
-        slug: filename.replace(/\.md$/, ''),
-      },
-    }));
+  // 新しいディレクトリ構造に対応
+  const categories = ['sleep-health', 'japanesetea', 'popularproducts-overseas', 'japaneseproducts-pupular with foreigners'];
+  
+  for (const category of categories) {
+    const categoryPath = path.join(articlesDirectory, category);
+    if (fs.existsSync(categoryPath)) {
+      const types = ['recomend', 'knowledge'];
+      for (const type of types) {
+        const typePath = path.join(categoryPath, type);
+        if (fs.existsSync(typePath)) {
+          const files = fs.readdirSync(typePath);
+          files.forEach(file => {
+            if (file.endsWith('.md')) {
+              const slug = file.replace(/\.md$/, '');
+              paths.push({
+                params: {
+                  slug: `${category}/${type}/${slug}`,
+                },
+              });
+            }
+          });
+        }
+      }
+    }
+  }
+
+  // 旧形式のファイルも対応（後方互換性）
+  const files = fs.readdirSync(articlesDirectory);
+  files.forEach(file => {
+    if (file.endsWith('.md')) {
+      const slug = file.replace(/\.md$/, '');
+      paths.push({
+        params: {
+          slug,
+        },
+      });
+    }
+  });
 
   return {
     paths,
@@ -147,27 +178,57 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<ArticleProps> = async ({ params }) => {
   const slug = params?.slug as string;
-  const fullPath = path.join(process.cwd(), 'articles', `${slug}.md`);
   
-  try {
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
-    const { data: frontMatter, content } = matter(fileContents);
+  // 新しいディレクトリ構造に対応
+  if (slug.includes('/')) {
+    const [category, type, filename] = slug.split('/');
+    const fullPath = path.join(process.cwd(), 'articles', category, type, `${filename}.md`);
+    
+    try {
+      const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const { data: frontMatter, content } = matter(fileContents);
 
-    const processedContent = await remark()
-      .use(html)
-      .process(content);
-    const contentHtml = processedContent.toString();
+      const processedContent = await remark()
+        .use(html)
+        .process(content);
+      const contentHtml = processedContent.toString();
 
-    return {
-      props: {
-        content: contentHtml,
-        frontMatter,
-      },
-    };
-  } catch (error) {
-    console.error(`Error reading article ${slug}:`, error);
-    return {
-      notFound: true,
-    };
+      return {
+        props: {
+          content: contentHtml,
+          frontMatter,
+        },
+      };
+    } catch (error) {
+      console.error(`Error reading article ${slug}:`, error);
+      return {
+        notFound: true,
+      };
+    }
+  } else {
+    // 旧形式のファイル対応
+    const fullPath = path.join(process.cwd(), 'articles', `${slug}.md`);
+    
+    try {
+      const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const { data: frontMatter, content } = matter(fileContents);
+
+      const processedContent = await remark()
+        .use(html)
+        .process(content);
+      const contentHtml = processedContent.toString();
+
+      return {
+        props: {
+          content: contentHtml,
+          frontMatter,
+        },
+      };
+    } catch (error) {
+      console.error(`Error reading article ${slug}:`, error);
+      return {
+        notFound: true,
+      };
+    }
   }
 }; 

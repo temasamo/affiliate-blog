@@ -82,17 +82,11 @@ export default function Header({ title = "Market Supporter AI", description = "A
                 海外トレンド
               </Link>
               <Link href="/japan-popular" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
-                日本人気商品
+                人気の日本商品
               </Link>
               <div className="border-l border-gray-300 h-6 mx-4"></div>
               <Link href="/education" className="text-purple-600 hover:text-purple-700 font-bold transition-colors">
                 教育
-              </Link>
-              <Link href="/travel" className="text-emerald-600 hover:text-emerald-700 font-bold transition-colors">
-                家族旅行
-              </Link>
-              <Link href="/luxury" className="text-slate-700 hover:text-slate-800 font-bold transition-colors">
-                富裕層ライフ
               </Link>
             </nav>
 
@@ -144,17 +138,11 @@ export default function Header({ title = "Market Supporter AI", description = "A
                   海外トレンド
                 </Link>
                 <Link href="/japan-popular" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
-                  日本人気商品
+                  人気の日本商品
                 </Link>
                 <div className="border-t border-gray-200 my-2"></div>
                 <Link href="/education" className="text-purple-600 hover:text-purple-700 font-bold transition-colors px-2 py-1 rounded-lg hover:bg-purple-50">
                   教育
-                </Link>
-                <Link href="/travel" className="text-emerald-600 hover:text-emerald-700 font-bold transition-colors px-2 py-1 rounded-lg hover:bg-emerald-50">
-                  家族旅行
-                </Link>
-                <Link href="/luxury" className="text-slate-700 hover:text-slate-800 font-bold transition-colors px-2 py-1 rounded-lg hover:bg-slate-50">
-                  富裕層ライフ
                 </Link>
               </nav>
             </div>

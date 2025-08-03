@@ -1,6 +1,5 @@
 // pages/overseas-trend.tsx
 import React from 'react';
-import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -9,37 +8,24 @@ export default function OverseasTrend() {
     <div className="min-h-screen bg-gray-50">
       <Header 
         title="海外トレンド - Market Supporter AI"
-        description="海外で話題の商品を日本で購入できるように紹介します。"
+        description="海外で話題の商品やトレンド情報を紹介します。"
       />
       
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="bg-white rounded-2xl shadow-md p-8">
-          <div className="text-center mb-8">
-            <div className="text-6xl mb-4">🌍</div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">海外トレンド</h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              海外で話題の商品を日本で購入できるように紹介します。
+          <div className="text-center">
+            <div className="text-6xl mb-6">🚧</div>
+            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">準備中</h1>
+            <p className="text-lg text-gray-600 mb-8">
+              海外トレンドページは現在準備中です。<br />
+              もうしばらくお待ちください。
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-gray-50 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                アメリカ発トレンド（準備中）
-              </h3>
-              <p className="text-sm text-gray-600">アメリカで話題の商品を日本で購入</p>
-            </div>
-            <div className="bg-gray-50 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                ヨーロッパ発トレンド（準備中）
-              </h3>
-              <p className="text-sm text-gray-600">ヨーロッパで人気の商品を紹介</p>
-            </div>
-            <div className="bg-gray-50 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                アジア発トレンド（準備中）
-              </h3>
-              <p className="text-sm text-gray-600">韓国・台湾などアジアのトレンド商品</p>
+            <div className="bg-blue-50 rounded-xl p-6 max-w-md mx-auto">
+              <h2 className="text-lg font-semibold text-gray-900 mb-2">今後の予定</h2>
+              <p className="text-sm text-gray-600">
+                海外で話題の商品やトレンド情報を<br />
+                詳しく紹介する予定です。
+              </p>
             </div>
           </div>
         </div>
