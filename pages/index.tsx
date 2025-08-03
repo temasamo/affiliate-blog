@@ -49,7 +49,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">枕総合ランキング</h3>
                 <p className="text-sm text-gray-600 mb-4">価格・機能・口コミの3軸で徹底比較</p>
-                <Link href="/articles/2025-07-01-makura-ranking" className="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center transition-colors">
+                <Link href="/articles/sleep-health/recomend/2025-07-01-makura-ranking" className="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center transition-colors">
                   詳細を見る
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -59,17 +59,17 @@ export default function Home() {
             </div>
 
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover-lift scale-hover">
-              <div className="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
-                <span className="text-6xl">💇‍♂️</span>
+              <div className="h-48 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                <span className="text-6xl">🌍</span>
               </div>
               <div className="p-6">
                 <div className="flex items-center mb-3">
-                  <span className="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">発毛剤</span>
-                  <span className="ml-2 text-xs text-gray-500">3商品比較</span>
+                  <span className="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded-full">海外トレンド</span>
+                  <span className="ml-2 text-xs text-gray-500">準備中</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">定番発毛剤比較</h3>
-                <p className="text-sm text-gray-600 mb-4">効果・価格・使いやすさを検証</p>
-                <Link href="/articles/2025-07-02-teihannpatsu-vs-others" className="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center transition-colors">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">海外トレンド商品</h3>
+                <p className="text-sm text-gray-600 mb-4">海外で話題の商品を日本で購入</p>
+                <Link href="/overseas-trend" className="text-orange-600 hover:text-orange-800 text-sm font-medium inline-flex items-center transition-colors">
                   詳細を見る
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -89,7 +89,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">日本茶ランキング</h3>
                 <p className="text-sm text-gray-600 mb-4">味・香り・価格で厳選</p>
-                <Link href="/articles/2025-07-03-kouhanpatsu-ranking" className="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center transition-colors">
+                <Link href="/articles/japanesetea/recomend/250731matcha-set-recommend-dm" className="text-purple-600 hover:text-purple-800 text-sm font-medium inline-flex items-center transition-colors">
                   詳細を見る
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -128,7 +128,7 @@ export default function Home() {
             <Link href="/japan-popular" className="group">
               <div className="bg-white rounded-xl shadow-md p-6 hover-lift scale-hover">
                 <div className="text-4xl mb-4">🇯🇵</div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">日本人気商品</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">人気の日本商品</h3>
                 <p className="text-sm text-gray-600">国内で注目のアイテム</p>
               </div>
             </Link>
@@ -142,7 +142,7 @@ export default function Home() {
             <span className="ml-3 bg-red-500 text-white text-xs px-3 py-1 rounded-full font-medium">NEW</span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <Link href="/articles/2025-07-07-makura-series-summary" className="group">
+            <Link href="/articles/sleep-health/recomend/2025-07-07-makura-series-summary" className="group">
               <div className="bg-white rounded-xl shadow-md overflow-hidden hover-lift scale-hover">
                 <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
                   <span className="text-6xl">😴</span>
@@ -158,7 +158,7 @@ export default function Home() {
                 </div>
               </div>
             </Link>
-            <Link href="/articles/2025-07-06-hotel-makura-ranking" className="group">
+            <Link href="/articles/sleep-health/recomend/2025-07-06-hotel-makura-ranking" className="group">
               <div className="bg-white rounded-xl shadow-md overflow-hidden hover-lift scale-hover">
                 <div className="h-48 bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
                   <span className="text-6xl">🏨</span>
@@ -174,7 +174,7 @@ export default function Home() {
                 </div>
               </div>
             </Link>
-            <Link href="/articles/2025-07-05-sobagara-makura-ranking" className="group">
+            <Link href="/articles/sleep-health/recomend/2025-07-05-sobagara-makura-ranking" className="group">
               <div className="bg-white rounded-xl shadow-md overflow-hidden hover-lift scale-hover">
                 <div className="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
                   <span className="text-6xl">🌾</span>
