@@ -14,6 +14,117 @@
     @apply max-w-none;
   }
   
+  /* 楽天アフィリエイトリンクの強制スタイル */
+  .prose a {
+    display: inline-block !important;
+    color: #2563eb !important;
+    text-decoration: underline !important;
+    white-space: normal !important; /* 改行許可 */
+    overflow: visible !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+  
+  .prose a:hover {
+    color: #1d4ed8 !important;
+    text-decoration: underline !important;
+  }
+
+  /* 記事コンテンツ内のリンクを確実に表示・クリック可能にする */
+  .article-content a,
+  .prose .article-content a {
+    display: inline-block !important;
+    color: #2563eb !important;
+    text-decoration: underline !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+
+  .article-content a:hover,
+  .prose .article-content a:hover {
+    color: #1d4ed8 !important;
+    text-decoration: underline !important;
+  }
+
+  /* アフィリエイトリンク専用のスタイル */
+  .prose a[href*="rakuten.co.jp"],
+  .prose a[href*="moshimo.com"],
+  .prose a[href*="valuecommerce.com"],
+  .prose a[href*="amazon.co.jp"],
+  .prose a[href*="a8.net"],
+  .article-content a[href*="rakuten.co.jp"],
+  .article-content a[href*="moshimo.com"],
+  .article-content a[href*="valuecommerce.com"],
+  .article-content a[href*="amazon.co.jp"],
+  .article-content a[href*="a8.net"] {
+    display: inline-block !important;
+    color: #2563eb !important;
+    text-decoration: underline !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+
+  .prose a[href*="rakuten.co.jp"]:hover,
+  .prose a[href*="moshimo.com"]:hover,
+  .prose a[href*="valuecommerce.com"]:hover,
+  .prose a[href*="amazon.co.jp"]:hover,
+  .prose a[href*="a8.net"]:hover,
+  .article-content a[href*="rakuten.co.jp"]:hover,
+  .article-content a[href*="moshimo.com"]:hover,
+  .article-content a[href*="valuecommerce.com"]:hover,
+  .article-content a[href*="amazon.co.jp"]:hover,
+  .article-content a[href*="a8.net"]:hover {
+    color: #1d4ed8 !important;
+    text-decoration: underline !important;
+  }
+
+  /* アフィリエイトリンク専用クラスのスタイル */
+  .affiliate-link a {
+    color: #2563eb !important;
+    text-decoration: underline !important;
+    position: relative !important;
+    z-index: 10 !important;
+    cursor: pointer !important;
+    display: inline-block !important;
+    pointer-events: auto !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    font-weight: 500 !important;
+    padding: 4px 8px !important;
+    border-radius: 4px !important;
+    background-color: transparent !important;
+    transition: all 0.2s ease-in-out !important;
+  }
+
+  .affiliate-link a:hover {
+    color: #1d4ed8 !important;
+    text-decoration: underline !important;
+    background-color: rgba(37, 99, 235, 0.1) !important;
+  }
+
+  .affiliate-link a:focus {
+    outline: 2px solid #2563eb !important;
+    outline-offset: 2px !important;
+  }
+
+  .affiliate-link img {
+    max-width: 100% !important;
+    height: auto !important;
+    border: 2px solid #e5e7eb !important;
+    border-radius: 8px !important;
+    margin: 8px 0 !important;
+  }
+  
   .prose h1 {
     @apply text-3xl font-bold text-gray-900 mb-6;
   }
@@ -70,5 +181,18 @@
 
   .scale-hover:hover {
     @apply transform scale-105;
+  }
+
+  /* アフィリエイト画像スタイル */
+  .article-content img {
+    @apply max-w-full h-auto rounded-lg shadow-md my-4;
+    border: 1px solid #e5e7eb;
+  }
+
+  /* アフィリエイト画像のボーダースタイル */
+  .article-content a[href*="rakuten.co.jp"] img,
+  .article-content a[href*="valuecommerce.com"] img,
+  .article-content a[href*="amazon.co.jp"] img {
+    @apply border-2 border-blue-200 hover:border-blue-400 transition-colors duration-200;
   }
 } 

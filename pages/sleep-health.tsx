@@ -3,8 +3,25 @@ import React from 'react';
 import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { GetStaticProps } from 'next';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 
-export default function SleepHealth() {
+interface Article {
+  slug: string;
+  title: string;
+  description: string;
+  date: string;
+  type: string;
+}
+
+interface SleepHealthProps {
+  recommendArticles: Article[];
+  knowledgeArticles: Article[];
+}
+
+export default function SleepHealth({ recommendArticles, knowledgeArticles }: SleepHealthProps) {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header 
@@ -15,8 +32,26 @@ export default function SleepHealth() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="bg-white rounded-2xl shadow-md p-8">
           <div className="text-center mb-8">
-            <div className="text-6xl mb-4">😴</div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">睡眠・健康</h1>
+            <div className="relative h-48 mb-6 rounded-xl overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/80 to-blue-600/80"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300">
+                <img
+                  src="https://images.unsplash.com/photo-1505693314120-0d443867891c?w=800&h=400&fit=crop"
+                  alt="睡眠・健康"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="text-white text-3xl font-bold mb-2">
+                    睡眠・健康
+                  </div>
+                  <div className="text-white/90 text-lg bg-black/30 px-6 py-2 rounded-full backdrop-blur-sm">
+                    枕・マットレス・快眠グッズ
+                  </div>
+                </div>
+              </div>
+            </div>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               枕・マットレス・快眠グッズなど、睡眠の質を高める情報や商品を紹介します。
             </p>
@@ -24,133 +59,85 @@ export default function SleepHealth() {
 
           {/* Recomend セクション */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-              <span className="text-blue-600 mr-3">📋</span>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
               おすすめ商品
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Link href="/articles/sleep-health/recomend/2025-07-07-makura-series-summary" className="group">
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                    枕シリーズ総まとめ
-                  </h3>
-                  <p className="text-sm text-gray-600">枕選びの決定版！全ランキングを一覧で</p>
-                  <div className="mt-3 flex items-center text-xs text-blue-600">
-                    <span>詳細を見る</span>
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                          {recommendArticles.slice(0, 6).map((article) => (
+              <Link key={article.slug} href={`/articles/sleep-health/recommend/${article.slug}`} className="group block">
+                  <div className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                      {article.title}
+                    </h3>
+                    <p className="text-sm text-gray-600">{article.description}</p>
+                    <div className="mt-3 flex items-center text-xs text-blue-600">
+                      <span>詳細を見る</span>
+                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
                   </div>
-                </div>
-              </Link>
-              <Link href="/articles/sleep-health/recomend/2025-07-06-hotel-makura-ranking" className="group">
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                    ホテル枕ランキング
-                  </h3>
-                  <p className="text-sm text-gray-600">高級ホテルで使われる枕を徹底比較</p>
-                  <div className="mt-3 flex items-center text-xs text-blue-600">
-                    <span>詳細を見る</span>
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                </Link>
+              ))}
+              {/* 過去の記事一覧カード */}
+              {recommendArticles.length > 6 && (
+                <Link href="/articles/sleep-health/recommend" className="group block">
+                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-2 border-dashed border-gray-300">
+                    <h3 className="text-lg font-semibold text-gray-700 mb-2 group-hover:text-gray-900 transition-colors">
+                      過去の記事一覧
+                    </h3>
+                    <p className="text-sm text-gray-600">おすすめ商品の過去記事をすべて見る</p>
+                    <div className="mt-3 flex items-center text-xs text-gray-600">
+                      <span>一覧を見る</span>
+                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
                   </div>
-                </div>
-              </Link>
-              <Link href="/articles/sleep-health/recomend/2025-07-05-sobagara-makura-ranking" className="group">
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                    そば殻枕ランキング
-                  </h3>
-                  <p className="text-sm text-gray-600">自然素材のそば殻枕を徹底検証</p>
-                  <div className="mt-3 flex items-center text-xs text-blue-600">
-                    <span>詳細を見る</span>
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              </Link>
-              <Link href="/articles/sleep-health/recomend/2025-07-04-umou-makura-ranking" className="group">
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                    羽毛枕ランキング
-                  </h3>
-                  <p className="text-sm text-gray-600">軽やかで快適な羽毛枕を比較</p>
-                  <div className="mt-3 flex items-center text-xs text-blue-600">
-                    <span>詳細を見る</span>
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              </Link>
-              <Link href="/articles/sleep-health/recomend/2025-07-01-makura-ranking" className="group">
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                    枕総合ランキング
-                  </h3>
-                  <p className="text-sm text-gray-600">価格・機能・口コミの3軸で徹底比較</p>
-                  <div className="mt-3 flex items-center text-xs text-blue-600">
-                    <span>詳細を見る</span>
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              </Link>
+                </Link>
+              )}
             </div>
           </div>
 
           {/* Knowledge セクション */}
           <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-              <span className="text-green-600 mr-3">📚</span>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
               睡眠知識
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Link href="/articles/sleep-health/knowledge/2025-07-01-sleep-deprivation-health" className="group">
-                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
-                    睡眠不足と健康への影響
-                  </h3>
-                  <p className="text-sm text-gray-600">睡眠不足が体に与える影響について</p>
-                  <div className="mt-3 flex items-center text-xs text-green-600">
-                    <span>詳細を見る</span>
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+              {knowledgeArticles.slice(0, 6).map((article) => (
+                <Link key={article.slug} href={`/articles/sleep-health/knowledge/${article.slug}`} className="group block">
+                  <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
+                      {article.title}
+                    </h3>
+                    <p className="text-sm text-gray-600">{article.description}</p>
+                    <div className="mt-3 flex items-center text-xs text-green-600">
+                      <span>詳細を見る</span>
+                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
                   </div>
-                </div>
-              </Link>
-              <Link href="/articles/sleep-health/knowledge/2025-07-02-sleep-and-mental-health" className="group">
-                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
-                    睡眠とメンタルヘルス
-                  </h3>
-                  <p className="text-sm text-gray-600">睡眠が心の健康に与える影響</p>
-                  <div className="mt-3 flex items-center text-xs text-green-600">
-                    <span>詳細を見る</span>
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                </Link>
+              ))}
+              {/* 過去の記事一覧カード */}
+              {knowledgeArticles.length > 6 && (
+                <Link href="/articles/sleep-health/knowledge" className="group block">
+                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-2 border-dashed border-gray-300">
+                    <h3 className="text-lg font-semibold text-gray-700 mb-2 group-hover:text-gray-900 transition-colors">
+                      過去の記事一覧
+                    </h3>
+                    <p className="text-sm text-gray-600">睡眠知識の過去記事をすべて見る</p>
+                    <div className="mt-3 flex items-center text-xs text-gray-600">
+                      <span>一覧を見る</span>
+                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
                   </div>
-                </div>
-              </Link>
-              <Link href="/articles/sleep-health/knowledge/2025-07-03-sleep-and-productivity" className="group">
-                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
-                    睡眠と生産性の関係
-                  </h3>
-                  <p className="text-sm text-gray-600">良質な睡眠が仕事効率に与える影響</p>
-                  <div className="mt-3 flex items-center text-xs text-green-600">
-                    <span>詳細を見る</span>
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              </Link>
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -160,3 +147,62 @@ export default function SleepHealth() {
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps<SleepHealthProps> = async () => {
+  const articlesDirectory = path.join(process.cwd(), 'articles', 'sleep-health');
+  const recommendArticles: Article[] = [];
+  const knowledgeArticles: Article[] = [];
+
+  // Recommend 記事を取得
+  const recommendPath = path.join(articlesDirectory, 'recommend');
+  if (fs.existsSync(recommendPath)) {
+    const files = fs.readdirSync(recommendPath);
+    files.forEach(file => {
+      if (file.endsWith('.md')) {
+        const filePath = path.join(recommendPath, file);
+        const fileContents = fs.readFileSync(filePath, 'utf8');
+        const { data: frontMatter } = matter(fileContents);
+        
+        recommendArticles.push({
+          slug: file.replace(/\.md$/, ''),
+          title: frontMatter.title || '記事タイトル',
+          description: frontMatter.description || '記事の説明',
+          date: frontMatter.date || '2025.07.01',
+          type: 'recommend'
+        });
+      }
+    });
+  }
+
+  // Knowledge 記事を取得
+  const knowledgePath = path.join(articlesDirectory, 'knowledge');
+  if (fs.existsSync(knowledgePath)) {
+    const files = fs.readdirSync(knowledgePath);
+    files.forEach(file => {
+      if (file.endsWith('.md')) {
+        const filePath = path.join(knowledgePath, file);
+        const fileContents = fs.readFileSync(filePath, 'utf8');
+        const { data: frontMatter } = matter(fileContents);
+        
+        knowledgeArticles.push({
+          slug: file.replace(/\.md$/, ''),
+          title: frontMatter.title || '記事タイトル',
+          description: frontMatter.description || '記事の説明',
+          date: frontMatter.date || '2025.07.01',
+          type: 'knowledge'
+        });
+      }
+    });
+  }
+
+  // 日付順でソート（新しい順）
+  recommendArticles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  knowledgeArticles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  return {
+    props: {
+      recommendArticles,
+      knowledgeArticles,
+    },
+  };
+};
