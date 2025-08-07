@@ -1,15 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  async redirects() {
-    return [
-      {
-        source: '/articles/:category/recommend/:slug',
-        destination: '/articles/:category/recommend/:slug',
-        permanent: true,
-      },
-    ];
-  },
   images: {
     domains: [
       'images.unsplash.com', 
