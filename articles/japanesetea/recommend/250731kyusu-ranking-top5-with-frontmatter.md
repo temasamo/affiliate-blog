@@ -36,19 +36,15 @@ description: "急須の種類と選び方、素材別の特徴とお茶の風味
 - 茶こし一体型でお手入れ簡単
 - 冷茶・温茶どちらも対応
 
+### Where to Buy (JP)
+※日本での取り扱い状況は記事下の「商品お取り扱い状況」をご覧ください
+- **公式サイト**：[https://shop.hariocorp.co.jp/products/chjmn-45t](https://shop.hariocorp.co.jp/products/chjmn-45t)
+
 ### 購入はこちら
 
-**[楽天公式ショップ]** (楽天アフィリエイトリンク)
-<div class="affiliate-link">
-  <a href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616" target="_blank" rel="nofollow noopener noreferrer">
-    <img src="https://image.moshimo.com/af-img/0032/000000000616.gif" width="88" height="31" style="border:none;" alt="楽天アフィリエイト" />
-  </a>
-</div>
-<img src="https://i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" loading="lazy" />
-
-**[Yahoo!公式ショップ]** (Yahooアフィリエイトリンク)
-
-**[Amazon公式ストア]** (Amazonリンク)
+楽天市場で探す  
+Yahoo!ショッピングで探す  
+Amazonで探す
 
 ---
 
@@ -64,10 +60,15 @@ description: "急須の種類と選び方、素材別の特徴とお茶の風味
 - 渋みを抑える陶土素材
 - 金属不使用のセラメッシュ
 
+### Where to Buy (JP)
+※日本での取り扱い状況は記事下の「商品お取り扱い状況」をご覧ください
+- **公式サイト**：[https://www.yamabou-tokoname.com/](https://www.yamabou-tokoname.com/)
+
 ### 購入はこちら
-[楽天市場で探す](楽天アフィリエイトリンク)  
-[Yahoo!ショッピングで探す](Yahooアフィリエイトリンク)  
-[Amazonで探す](Amazonリンク)
+
+楽天市場で探す  
+Yahoo!ショッピングで探す  
+Amazonで探す
 
 ---
 
@@ -83,10 +84,15 @@ description: "急須の種類と選び方、素材別の特徴とお茶の風味
 - 香りをストレートに伝える磁器素材
 - 美しい桜の絵付け
 
+### Where to Buy (JP)
+※日本での取り扱い状況は記事下の「商品お取り扱い状況」をご覧ください
+- **公式サイト**：[https://www.koransha.co.jp/](https://www.koransha.co.jp/)
+
 ### 購入はこちら
-[楽天市場で探す](楽天アフィリエイトリンク)  
-[Yahoo!ショッピングで探す](Yahooアフィリエイトリンク)  
-[Amazonで探す](Amazonリンク)
+
+楽天市場で探す  
+Yahoo!ショッピングで探す  
+Amazonで探す
 
 ---
 
@@ -102,10 +108,15 @@ description: "急須の種類と選び方、素材別の特徴とお茶の風味
 - 内面ホーロー加工
 - 伝統のアラレ模様
 
+### Where to Buy (JP)
+※日本での取り扱い状況は記事下の「商品お取り扱い状況」をご覧ください
+- **公式サイト**：[https://iwachu.co.jp/](https://iwachu.co.jp/)
+
 ### 購入はこちら
-[楽天市場で探す](楽天アフィリエイトリンク)  
-[Yahoo!ショッピングで探す](Yahooアフィリエイトリンク)  
-[Amazonで探す](Amazonリンク)
+
+楽天市場で探す  
+Yahoo!ショッピングで探す  
+Amazonで探す
 
 ---
 
@@ -121,10 +132,44 @@ description: "急須の種類と選び方、素材別の特徴とお茶の風味
 - 丈夫なステンレス製
 - 茶こし一体型
 
+### Where to Buy (JP)
+※日本での取り扱い状況は記事下の「商品お取り扱い状況」をご覧ください
+- **公式サイト**：[https://www.yanagi-design.com/](https://www.yanagi-design.com/)
+
 ### 購入はこちら
-[楽天市場で探す](楽天アフィリエイトリンク)  
-[Yahoo!ショッピングで探す](Yahooアフィリエイトリンク)  
-[Amazonで探す](Amazonリンク)
+
+楽天市場で探す  
+Yahoo!ショッピングで探す  
+Amazonで探す
+
+---
+
+## 商品お取り扱い状況（2025-07-31 時点）
+
+### HARIO 茶茶急須 丸 CHJMN-45T
+- **Amazon**: ◯
+- **楽天市場**: ◯
+- **Yahoo!**: ◯
+
+### 常滑焼 山房製作所 セラメッシュ急須 400ml
+- **Amazon**: ◯
+- **楽天市場**: ◯
+- **Yahoo!**: ◯
+
+### 香蘭社 有田焼 急須 桜絵付け 420ml
+- **Amazon**: ◯
+- **楽天市場**: ◯
+- **Yahoo!**: ◯
+
+### 岩鋳 南部鉄器 急須 アラレ 0.55L
+- **Amazon**: ◯
+- **楽天市場**: ◯
+- **Yahoo!**: ◯
+
+### 柳宗理 ステンレス急須 700ml
+- **Amazon**: ◯
+- **楽天市場**: ◯
+- **Yahoo!**: ◯
 
 ---
 
@@ -135,3 +180,8 @@ description: "急須の種類と選び方、素材別の特徴とお茶の風味
 - 高級感・贈答用 → **香蘭社 有田焼急須**  
 - 保温性重視 → **岩鋳 南部鉄器急須**  
 - 耐久性・デザイン重視 → **柳宗理 ステンレス急須**
+
+---
+
+### 免責 & リンクポリシー
+価格・在庫は変動します。購入前にリンク先で最新情報をご確認ください。
