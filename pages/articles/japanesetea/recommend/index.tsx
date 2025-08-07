@@ -42,7 +42,7 @@ export default function RecomendIndex({ articles }: RecomendIndexProps) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {articles.map((article) => (
-              <Link key={article.slug} href={`/articles/japanesetea/recomend/${article.slug}`} className="group">
+              <Link key={article.slug} href={`/articles/japanesetea/recommend/${article.slug}`} className="group">
                 <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <div className="text-xs text-gray-500 mb-2">{article.date}</div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
@@ -68,7 +68,7 @@ export default function RecomendIndex({ articles }: RecomendIndexProps) {
 }
 
 export const getStaticProps: GetStaticProps<RecomendIndexProps> = async () => {
-  const articlesDirectory = path.join(process.cwd(), 'articles', 'japanesetea', 'recomend');
+  const articlesDirectory = path.join(process.cwd(), 'articles', 'japanesetea', 'recommend');
   const articles: Article[] = [];
 
   if (fs.existsSync(articlesDirectory)) {
