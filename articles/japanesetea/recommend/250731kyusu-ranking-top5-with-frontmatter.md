@@ -40,12 +40,6 @@ description: "急須の種類と選び方、素材別の特徴とお茶の風味
 ※日本での取り扱い状況は記事下の「商品お取り扱い状況」をご覧ください
 - **公式サイト**：[https://shop.hariocorp.co.jp/products/chjmn-45t](https://shop.hariocorp.co.jp/products/chjmn-45t)
 
-### 購入はこちら
-
-楽天市場で探す  
-Yahoo!ショッピングで探す  
-Amazonで探す
-
 ---
 
 ## 🥈 2位：**常滑焼 山房製作所 セラメッシュ急須 400ml**
@@ -63,12 +57,6 @@ Amazonで探す
 ### Where to Buy (JP)
 ※日本での取り扱い状況は記事下の「商品お取り扱い状況」をご覧ください
 - **公式サイト**：[https://www.yamabou-tokoname.com/](https://www.yamabou-tokoname.com/)
-
-### 購入はこちら
-
-楽天市場で探す  
-Yahoo!ショッピングで探す  
-Amazonで探す
 
 ---
 
@@ -88,12 +76,6 @@ Amazonで探す
 ※日本での取り扱い状況は記事下の「商品お取り扱い状況」をご覧ください
 - **公式サイト**：[https://www.koransha.co.jp/](https://www.koransha.co.jp/)
 
-### 購入はこちら
-
-楽天市場で探す  
-Yahoo!ショッピングで探す  
-Amazonで探す
-
 ---
 
 ## 4位：**岩鋳 南部鉄器 急須 アラレ 0.55L**
@@ -112,12 +94,6 @@ Amazonで探す
 ※日本での取り扱い状況は記事下の「商品お取り扱い状況」をご覧ください
 - **公式サイト**：[https://iwachu.co.jp/](https://iwachu.co.jp/)
 
-### 購入はこちら
-
-楽天市場で探す  
-Yahoo!ショッピングで探す  
-Amazonで探す
-
 ---
 
 ## 5位：**柳宗理 ステンレス急須 700ml**
@@ -135,12 +111,6 @@ Amazonで探す
 ### Where to Buy (JP)
 ※日本での取り扱い状況は記事下の「商品お取り扱い状況」をご覧ください
 - **公式サイト**：[https://www.yanagi-design.com/](https://www.yanagi-design.com/)
-
-### 購入はこちら
-
-楽天市場で探す  
-Yahoo!ショッピングで探す  
-Amazonで探す
 
 ---
 
