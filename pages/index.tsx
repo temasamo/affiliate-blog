@@ -156,14 +156,14 @@ export default function Home({ latestArticles }: HomeProps) {
               description="枕・マットレス・睡眠改善情報"
               href="/sleep-health"
               bgImage="https://images.unsplash.com/photo-1505693314120-0d443867891c?w=400&h=300&fit=crop&crop=center"
-              overlayColor="bg-black/60"
+              overlayColor="bg-black/40"
             />
             <CategoryCard
               title="日本茶関連"
               description="緑茶・抹茶・お茶文化の紹介"
               href="/japanese-tea"
               bgImage="/images/macha-kyusu.jpg"
-              overlayColor="bg-black/60"
+              overlayColor="bg-black/40"
             />
             <CategoryCard
               title="海外トレンド"
@@ -171,21 +171,21 @@ export default function Home({ latestArticles }: HomeProps) {
               description="海外で話題の商品を日本で"
               href="/overseas-trend"
               bgImage="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400&h=300&fit=crop&crop=center"
-              overlayColor="bg-black/60"
+              overlayColor="bg-black/40"
             />
             <CategoryCard
               title="人気の日本商品"
               description="国内で注目のアイテム"
               href="/japan-popular"
               bgImage="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400&h=300&fit=crop&crop=center"
-              overlayColor="bg-black/60"
+              overlayColor="bg-black/40"
             />
             <CategoryCard
               title="Global Hot Picks"
               description="海外で急上昇中の商品"
               href="/global-hot-picks"
               bgImage="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop&crop=center"
-              overlayColor="bg-black/60"
+              overlayColor="bg-black/40"
             />
           </div>
         </section>

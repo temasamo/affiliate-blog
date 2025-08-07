@@ -35,7 +35,7 @@ export default function CategoryCard({
         </div>
         
         {/* オーバーレイ */}
-        <div className={`absolute inset-0 ${overlayColor} transition-opacity duration-300 group-hover:opacity-70`}></div>
+        <div className={`absolute inset-0 ${overlayColor} transition-opacity duration-300 group-hover:opacity-50`}></div>
         
         {/* コンテンツ */}
         <div className="relative z-10 p-6 h-full flex flex-col justify-center">
