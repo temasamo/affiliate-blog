@@ -52,6 +52,18 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
         document.head.appendChild(newScript);
       }
     });
+
+    // ValueCommerceのスクリプトを追加
+    if (post === '2025-08-07') {
+      const existingScript = document.querySelector('script[src*="valuecommerce.com"]');
+      if (!existingScript) {
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = '//mlb.valuecommerce.com/mylinkbox.js';
+        script.async = true;
+        document.head.appendChild(script);
+      }
+    }
   }, [content, post]);
 
   return (
@@ -343,11 +355,6 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
     {/* Labubu Yahoo広告 */}
     <div className="bg-white rounded-xl shadow-md p-6 mb-6">
       <div className="text-center">
-        <script 
-          type="text/javascript" 
-          src="//mlb.valuecommerce.com/mylinkbox.js" 
-          async
-        />
         <div data-vc_mylinkbox_id="891949963" />
       </div>
     </div>
