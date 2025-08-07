@@ -25,6 +25,7 @@ tags: ["スマート水ボトル", "LARQ", "Owala", "HidrateSpark", "海外ト�
 - 価格目安：約￥25,000  
 - 特徴：UV-C除菌／保温・保冷／高級感あるデザイン  
 - おすすめ層：衛生面重視・高機能志向の方
+- **公式サイト**：<https://www.larq.com/products/larq-bottle-purevis>
 
 ---
 

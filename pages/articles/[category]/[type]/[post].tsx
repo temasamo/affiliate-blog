@@ -17,69 +17,10 @@ import CategoryImage from '../../../../components/CategoryImage';
 import CategoryCard from '../../../../components/CategoryCard';
 import AffiliateAdCardLark1 from '../../../../components/AffiliateAdCardLark1';
 import GlobalHotPicksAffiliate from '../../../../components/GlobalHotPicksAffiliate';
+import SmartWaterBottleAffiliate from '../../../../components/SmartWaterBottleAffiliate';
 
 
-// LARQ記事専用コンポーネント
-function LARQArticle({ content }: { content: string }) {
-  if (typeof content !== "string") return null;
 
-  // テキスト広告（商品説明直下に挿入）
-  const TEXT_AD_HTML = `
-    <div style="margin: 12px 0; padding: 10px; background: #E6F2FF; border-radius: 8px; text-align: center;">
-      <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fpalmsamerica%2Fayygqlrkr8%2F"
-         target="_blank" rel="nofollow"
-         style="font-weight: bold; color: #0056b3;">
-        LARQ ラーク Bottle PureVis ボトル ピュアビス Monaco Blue 500ml
-      </a>
-    </div>
-  `;
-
-  // 画像広告（記事末尾に挿入）
-  const IMAGE_AD_HTML = `
-    <div style="margin: 20px 0; text-align: center;">
-      <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fpalmsamerica%2Fayygqlrkr8%2F"
-         target="_blank" rel="nofollow">
-        <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/palmsamerica/cabinet/ayygqlrkr8.jpg?_ex=300x300" 
-             alt="LARQ Bottle PureVis" 
-             style="max-width: 100%; height: auto; border-radius: 8px;" />
-      </a>
-    </div>
-  `;
-
-  // 商品説明直下に広告を挿入する関数
-  function insertTextAd(html: string): string {
-    // LARQ Bottle PureVis（500ml）の見出し直後に広告を挿入
-    const targetPattern = /(LARQ Bottle PureVis（500ml）)/g;
-    return html.replace(targetPattern, `$1${TEXT_AD_HTML}`);
-  }
-
-  // 記事末尾に広告を追加
-  function insertImageAd(html: string): string {
-    return html + IMAGE_AD_HTML;
-  }
-
-  // 広告を挿入
-  let htmlContent = insertTextAd(content);
-  htmlContent = insertImageAd(htmlContent);
-
-  return (
-    <div>
-      {/* 記事本文（HTMLをそのまま表示） */}
-      <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 mb-6">
-        <article className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
-          <div 
-            className="article-content"
-            style={{
-              lineHeight: '1.8',
-              fontSize: '1rem'
-            }}
-            dangerouslySetInnerHTML={{ __html: htmlContent }}
-          />
-        </article>
-      </div>
-    </div>
-  );
-}
 
 interface ArticleProps {
   content: string;
@@ -176,23 +117,59 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
         {/* アフィリエイトディスクロージャー */}
         {frontMatter.type !== 'knowledge' && <AffiliateDisclosure />}
 
-        {/* LARQ記事の場合はHTML構造を維持して広告挿入 */}
-        {post === '2025-07-20-smart-water-bottle' ? (
-          <LARQArticle content={content} />
-        ) : (
-          /* 通常記事の表示 */
-          <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8">
-            <article className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
-              <div 
-                dangerouslySetInnerHTML={{ __html: content }} 
-                className="article-content"
-                style={{
-                  lineHeight: '1.8',
-                  fontSize: '1rem'
-                }}
-              />
-            </article>
-          </div>
+        {/* 通常記事の表示 */}
+        <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8">
+          <article className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
+            <div 
+              dangerouslySetInnerHTML={{ __html: content }} 
+              className="article-content"
+              style={{
+                lineHeight: '1.8',
+                fontSize: '1rem'
+              }}
+            />
+          </article>
+        </div>
+
+        {/* スマートウォーターボトル記事の場合の広告表示 */}
+        {post === '2025-07-20-smart-water-bottle' && (
+          <section className="mt-8">
+            <hr className="my-8 border-t-2 border-dashed border-gray-300" />
+            <h3 className="text-lg font-bold mb-4 text-gray-700">
+              🛒 以下、プロモーションリンク（広告）です
+            </h3>
+
+            {/* LARQ Bottle PureVis */}
+            <SmartWaterBottleAffiliate 
+              product={{
+                name: "LARQ ラーク Bottle PureVis ボトル ピュアビスMonaco Blue 500ml",
+                image: "//thumbnail.image.rakuten.co.jp/@0_mall/palmsamerica/cabinet/img_20241120/4/ayygqlrkr8_0.jpg?_ex=300x300",
+                rakutenUrl: "https://item.rakuten.co.jp/palmsamerica/ayygqlrkr8/",
+                officialUrl: "https://www.larq.com/products/larq-bottle-purevis",
+                description: "UV除菌機能付き ウォーターボトル 保冷 保温 セルフクリーニング"
+              }}
+            />
+
+            {/* Owala FreeSip */}
+            <SmartWaterBottleAffiliate 
+              product={{
+                name: "Owala FreeSip Insulated Bottle（24oz相当）",
+                image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&h=300&fit=crop&crop=center",
+                officialUrl: "https://owalalife.com/",
+                description: "保温・保冷／軽量／豊富なカラーバリエーション"
+              }}
+            />
+
+            {/* HidrateSpark Pro */}
+            <SmartWaterBottleAffiliate 
+              product={{
+                name: "HidrateSpark Pro（スマート水分補給ボトル）",
+                image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop&crop=center",
+                officialUrl: "https://hidratespark.com/",
+                description: "Bluetooth連動で水分摂取量をアプリ管理／LED通知機能付き"
+              }}
+            />
+          </section>
         )}
 
         {/* 扇風機記事の場合のみ広告表示 */}
@@ -290,6 +267,20 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
             ))}
           </div>
         </div>
+
+        {/* 免責事項 */}
+        {frontMatter.type !== 'knowledge' && (
+          <div className="bg-yellow-50 border border-yellow-200 rounded-2xl p-6 sm:p-8 mt-6 sm:mt-8">
+            <h2 className="text-lg sm:text-xl font-bold text-yellow-800 mb-4 sm:mb-6">⚠️ 免責事項</h2>
+            <div className="text-sm sm:text-base text-yellow-700 space-y-2">
+              <p>• 本記事の商品情報は執筆時点のものです</p>
+              <p>• 価格や在庫状況は変動する可能性があります</p>
+              <p>• 購入前に各販売店で最新情報をご確認ください</p>
+              <p>• 本記事はアフィリエイトプログラムを通じて収益を得ています</p>
+              <p>• 商品画像は各販売店・メーカーのものを使用しています</p>
+            </div>
+          </div>
+        )}
 
         {/* カテゴリ一覧 */}
         <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 mt-6 sm:mt-8">
