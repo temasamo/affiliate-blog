@@ -89,23 +89,23 @@ export default function Home({ latestArticles }: HomeProps) {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
               <div className="bg-white rounded-xl p-4 shadow-sm">
-                <div className="text-2xl mb-2">📱</div>
-                <h4 className="font-semibold text-gray-900 mb-1">Galaxy Z Fold 7</h4>
-                <p className="text-sm text-gray-600">TikTok 1億再生超</p>
+                <div className="text-2xl mb-2">📷</div>
+                <h4 className="font-semibold text-gray-900 mb-1">DJI 360° Action Cam</h4>
+                <p className="text-sm text-gray-600">TikTok 1,200万再生突破</p>
               </div>
               <div className="bg-white rounded-xl p-4 shadow-sm">
-                <div className="text-2xl mb-2">💨</div>
-                <h4 className="font-semibold text-gray-900 mb-1">JisuLife Fan</h4>
-                <p className="text-sm text-gray-600">NY熱波でバズ</p>
+                <div className="text-2xl mb-2">🍳</div>
+                <h4 className="font-semibold text-gray-900 mb-1">Ninja Crispi エアフライヤー</h4>
+                <p className="text-sm text-gray-600">#CrispiChallenge 800万再生</p>
               </div>
               <div className="bg-white rounded-xl p-4 shadow-sm">
-                <div className="text-2xl mb-2">✨</div>
-                <h4 className="font-semibold text-gray-900 mb-1">Snail Mucin</h4>
-                <p className="text-sm text-gray-600">9.6億再生</p>
+                <div className="text-2xl mb-2">🧸</div>
+                <h4 className="font-semibold text-gray-900 mb-1">POP MART Labubu</h4>
+                <p className="text-sm text-gray-600">9.6億再生（累計）</p>
               </div>
             </div>
             <div className="text-center">
-              <Link href="/articles/global-hot-picks/trend/2025-08-06" className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition-colors">
+              <Link href="/articles/global-hot-picks/trend/2025-08-07" className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition-colors">
                 最新トレンドを見る
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

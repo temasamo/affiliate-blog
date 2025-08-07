@@ -269,6 +269,91 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
   </section>
 )}
 
+{post === '2025-08-07' && (
+  <section className="mt-8">
+    <hr className="my-8 border-t-2 border-dashed border-gray-300" />
+    <h3 className="text-lg font-bold mb-4 text-gray-700">
+      🛒 以下、プロモーションリンク（広告）です
+    </h3>
+
+    {/* DJI 360° Action Cam */}
+    <GlobalHotPicksAffiliate 
+      product={{
+        name: "DJI 360° Action Cam",
+        image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300&h=300&fit=crop&crop=center",
+        amazonUrl: "https://www.amazon.co.jp/dp/B0FGNSPX1P",
+        rakutenUrl: "https://item.rakuten.co.jp/dji/360-action-cam/",
+        officialUrl: "https://www.dji.com"
+      }}
+    />
+    
+    {/* Ninja Crispi エアフライヤー */}
+    <GlobalHotPicksAffiliate 
+      product={{
+        name: "Ninja Crispi ガラス窓エアフライヤー",
+        image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&h=300&fit=crop&crop=center",
+        amazonUrl: "https://www.amazon.co.jp/dp/B0F38FFGYT",
+        rakutenUrl: "https://item.rakuten.co.jp/ninja/crispi-air-fryer/",
+        officialUrl: "https://www.ninjakitchen.com"
+      }}
+    />
+    
+    {/* POP MART Labubu */}
+    <GlobalHotPicksAffiliate 
+      product={{
+        name: "POP MART Labubu Vinyl Toy",
+        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop&crop=center",
+        amazonUrl: "https://www.amazon.co.jp/dp/B00PBX3L7K",
+        rakutenUrl: "https://item.rakuten.co.jp/popmart/labubu/",
+        officialUrl: "https://global.popmart.com"
+      }}
+    />
+    
+    {/* Labubu 楽天広告 */}
+    <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+      <div className="text-center">
+        <a 
+          href="//af.moshimo.com/af/c/click?a_id=5122395&amp;p_id=54&amp;pc_id=54&amp;pl_id=616&amp;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fyinai%2F1000000952%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fyinai%2Fi%2F10000351%2F" 
+          rel="nofollow" 
+          referrerPolicy="no-referrer-when-downgrade"
+          className="inline-block"
+        >
+          <img 
+            src="//thumbnail.image.rakuten.co.jp/@0_mall/yinai/cabinet/free_1752313526029.jpg?_ex=128x128" 
+            alt="Labubu ぬいぐるみ ペンダント" 
+            style={{ border: 'medium' }} 
+            className="mx-auto"
+          />
+          <br />
+          <span className="text-sm text-gray-700 mt-2 block">
+            【正規品保証・当日発送】 THE MONSTERS Exciting Macaron シリーズ ラブブ- ぬいぐるみ ペンダント【アソートボックス】【ピース】 POP MART ポップマート popmart Labubu rabubu ラブブ キャラクター らぶぶ キーホルダー ラブブ本体 かわいい おもちゃ ギフト プレゼント
+          </span>
+        </a>
+        <img 
+          src="//i.moshimo.com/af/i/impression?a_id=5122395&amp;p_id=54&amp;pc_id=54&amp;pl_id=616" 
+          alt="" 
+          loading="lazy" 
+          width="1" 
+          height="1" 
+          style={{ border: '0px' }} 
+        />
+      </div>
+    </div>
+    
+    {/* Labubu Yahoo広告 */}
+    <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+      <div className="text-center">
+        <script 
+          type="text/javascript" 
+          src="//mlb.valuecommerce.com/mylinkbox.js" 
+          async
+        />
+        <div data-vc_mylinkbox_id="891949963" />
+      </div>
+    </div>
+  </section>
+)}
+
         {/* 関連記事 */}
         <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 mt-6 sm:mt-8">
           <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">関連記事</h2>
