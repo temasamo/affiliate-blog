@@ -221,7 +221,12 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
           </div>
         )}
 {post === '2025-08-06' && (
-  <>
+  <section className="mt-8">
+    <hr className="my-8 border-t-2 border-dashed border-gray-300" />
+    <h3 className="text-lg font-bold mb-4 text-gray-700">
+      🛒 以下、プロモーションリンク（広告）です
+    </h3>
+
     {/* Galaxy Z Fold 7 */}
     <GlobalHotPicksAffiliate 
       product={{
@@ -256,7 +261,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
         officialUrl: "https://cosrx.com"
       }}
     />
-  </>
+  </section>
 )}
 
         {/* 関連記事 */}
