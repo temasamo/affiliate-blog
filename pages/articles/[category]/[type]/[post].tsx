@@ -288,127 +288,101 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
       🛒 以下、プロモーションリンク（広告）です
     </h3>
 
-    {/* DJI 360° Action Cam - 広告なしのため写真なし */}
+    {/* Insta360 Ace Pro - 購入はこちら */}
     <div className="bg-white rounded-xl shadow-md p-6 mb-6">
       <div className="text-center">
-        <h4 className="text-lg font-semibold text-gray-900 mb-2">DJI 360° Action Cam</h4>
-        <p className="text-sm text-gray-600 mb-4">現在、日本での取り扱いが限定的です</p>
-        <div className="flex justify-center space-x-3">
+        <h4 className="text-lg font-semibold text-gray-900 mb-4">Insta360 Ace Pro</h4>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
           <a 
-            href="https://www.amazon.co.jp/dp/B0FGNSPX1P" 
+            href="https://search.rakuten.co.jp/search/mall/Insta360+Ace+Pro/" 
             target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-2 bg-orange-600 text-white text-sm font-medium rounded-lg hover:bg-orange-700 transition-colors"
+            rel="nofollow noopener noreferrer"
+            className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
           >
-            Amazon
-            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
+            楽天市場で探す
           </a>
           <a 
-            href="https://www.dji.com" 
+            href="https://shopping.yahoo.co.jp/search?p=Insta360+Ace+Pro" 
             target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+            rel="nofollow noopener noreferrer"
+            className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
           >
-            公式サイト
-            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
+            Yahoo!ショッピングで探す
+          </a>
+          <a 
+            href="https://www.amazon.co.jp/s?k=Insta360+Ace+Pro" 
+            target="_blank" 
+            rel="nofollow noopener noreferrer"
+            className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+          >
+            Amazonで探す
           </a>
         </div>
       </div>
     </div>
     
-    {/* Ninja Crispi エアフライヤー - 広告なしのため写真なし */}
+    {/* Ninja Crispi エアフライヤー - 購入はこちら */}
     <div className="bg-white rounded-xl shadow-md p-6 mb-6">
       <div className="text-center">
-        <h4 className="text-lg font-semibold text-gray-900 mb-2">Ninja Crispi ガラス窓エアフライヤー</h4>
-        <p className="text-sm text-gray-600 mb-4">現在、日本での取り扱いが限定的です</p>
-        <div className="flex justify-center space-x-3">
+        <h4 className="text-lg font-semibold text-gray-900 mb-4">Ninja Crispi ガラス窓エアフライヤー</h4>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
           <a 
-            href="https://www.amazon.co.jp/dp/B0F38FFGYT" 
+            href="https://search.rakuten.co.jp/search/mall/Ninja+Crispi/" 
             target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-2 bg-orange-600 text-white text-sm font-medium rounded-lg hover:bg-orange-700 transition-colors"
+            rel="nofollow noopener noreferrer"
+            className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
           >
-            Amazon
-            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
+            楽天市場で探す
           </a>
           <a 
-            href="https://www.ninjakitchen.com" 
+            href="https://shopping.yahoo.co.jp/search?p=Ninja+Crispi" 
             target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+            rel="nofollow noopener noreferrer"
+            className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
           >
-            公式サイト
-            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
+            Yahoo!ショッピングで探す
+          </a>
+          <a 
+            href="https://www.amazon.co.jp/s?k=Ninja+Crispi" 
+            target="_blank" 
+            rel="nofollow noopener noreferrer"
+            className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+          >
+            Amazonで探す
           </a>
         </div>
       </div>
     </div>
     
-    {/* POP MART Labubu - 広告ありのため写真付き */}
+        {/* POP MART Labubu - 購入はこちら */}
     <div className="bg-white rounded-xl shadow-md p-6 mb-6">
       <div className="text-center">
         <h4 className="text-lg font-semibold text-gray-900 mb-4">POP MART Labubu Vinyl Toy</h4>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* 楽天広告 */}
-          <div className="border border-gray-200 rounded-lg p-4">
-            <div className="text-center mb-3">
-              <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-full font-medium">楽天市場</span>
-            </div>
-            <a 
-              href="//af.moshimo.com/af/c/click?a_id=5122395&amp;p_id=54&amp;pc_id=54&amp;pl_id=616&amp;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fyinai%2F1000000952%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fyinai%2Fi%2F10000351%2F" 
-              rel="nofollow" 
-              referrerPolicy="no-referrer-when-downgrade"
-              className="inline-block"
-            >
-              <img 
-                src="//thumbnail.image.rakuten.co.jp/@0_mall/yinai/cabinet/free_1752313526029.jpg?_ex=128x128" 
-                alt="Labubu ぬいぐるみ ペンダント" 
-                style={{ border: 'medium' }} 
-                className="mx-auto"
-              />
-              <br />
-              <span className="text-sm text-gray-700 mt-2 block">
-                【正規品保証・当日発送】 THE MONSTERS Exciting Macaron シリーズ ラブブ- ぬいぐるみ ペンダント【アソートボックス】【ピース】 POP MART ポップマート popmart Labubu rabubu ラブブ キャラクター らぶぶ キーホルダー ラブブ本体 かわいい おもちゃ ギフト プレゼント
-              </span>
-            </a>
-            <img 
-              src="//i.moshimo.com/af/i/impression?a_id=5122395&amp;p_id=54&amp;pc_id=54&amp;pl_id=616" 
-              alt="" 
-              loading="lazy" 
-              width="1" 
-              height="1" 
-              style={{ border: '0px' }} 
-            />
-          </div>
-          
-          {/* Yahoo広告 */}
-          <div className="border border-gray-200 rounded-lg p-4 h-96 overflow-hidden">
-            <div className="text-center mb-3">
-              <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded-full font-medium">Yahoo!ショッピング</span>
-            </div>
-            <div className="flex justify-center overflow-hidden">
-              <div 
-                data-vc_mylinkbox_id="891949963" 
-                style={{ 
-                  maxWidth: '280px',
-                  maxHeight: '400px',
-                  width: '100%',
-                  transform: 'scale(0.6)',
-                  transformOrigin: 'center',
-                  overflow: 'hidden'
-                }} 
-              />
-            </div>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+          <a 
+            href="https://search.rakuten.co.jp/search/mall/POP+MART+Labubu/" 
+            target="_blank" 
+            rel="nofollow noopener noreferrer"
+            className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+          >
+            楽天市場で探す
+          </a>
+          <a 
+            href="https://shopping.yahoo.co.jp/search?p=POP+MART+Labubu" 
+            target="_blank" 
+            rel="nofollow noopener noreferrer"
+            className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+          >
+            Yahoo!ショッピングで探す
+          </a>
+          <a 
+            href="https://www.amazon.co.jp/s?k=POP+MART+Labubu" 
+            target="_blank" 
+            rel="nofollow noopener noreferrer"
+            className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+          >
+            Amazonで探す
+          </a>
         </div>
       </div>
     </div>
