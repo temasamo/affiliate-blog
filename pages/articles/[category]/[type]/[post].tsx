@@ -217,79 +217,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               </div>
             </div>
 
-            {/* i.Carry 折りたたみDC扇風機 */}
-            <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 mt-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">🛒 商品詳細情報</h3>
-              <div className="bg-gray-50 rounded-lg p-6 text-center">
-                <img
-                  src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&h=300&fit=crop&crop=center"
-                  alt="i.Carry 折りたたみDC扇風機"
-                  className="mx-auto mb-4 rounded-lg"
-                  style={{ maxWidth: '300px' }}
-                />
-                <h4 className="text-lg font-bold mb-4">
-                  i.Carry 折りたたみDC扇風機（17‑FAN6系）
-                </h4>
-                <p className="text-sm text-gray-600 mb-4">
-                  首振り機能／リモコン付き／タイマー機能搭載
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
-                  <a
-                    href="https://www.iccarry.com/"
-                    target="_blank"
-                    rel="nofollow noopener noreferrer"
-                    className="inline-block bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
-                  >
-                    公式サイト
-                  </a>
-                  <a
-                    href="https://www.amazon.co.jp/dp/B0F38FFGYT"
-                    target="_blank"
-                    rel="nofollow noopener noreferrer"
-                    className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
-                  >
-                    Amazon
-                  </a>
-                </div>
-              </div>
-            </div>
 
-            {/* Venty Portable Fan */}
-            <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 mt-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">🛒 商品詳細情報</h3>
-              <div className="bg-gray-50 rounded-lg p-6 text-center">
-                <img
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop&crop=center"
-                  alt="Venty Portable Fan"
-                  className="mx-auto mb-4 rounded-lg"
-                  style={{ maxWidth: '300px' }}
-                />
-                <h4 className="text-lg font-bold mb-4">
-                  Venty Portable Fan（海外モデル）
-                </h4>
-                <p className="text-sm text-gray-600 mb-4">
-                  USB-C充電／高さ調整／大容量バッテリー搭載
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
-                  <a
-                    href="https://ventyfan.com/"
-                    target="_blank"
-                    rel="nofollow noopener noreferrer"
-                    className="inline-block bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
-                  >
-                    公式サイト
-                  </a>
-                  <a
-                    href="https://www.amazon.com/dp/B0F38FFGYT"
-                    target="_blank"
-                    rel="nofollow noopener noreferrer"
-                    className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
-                  >
-                    Amazon
-                  </a>
-                </div>
-              </div>
-            </div>
           </section>
         )}
 {post === '2025-08-06' && (
