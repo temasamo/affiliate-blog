@@ -36,7 +36,7 @@ export default function JapaneseTea({ recommendArticles, knowledgeArticles }: Ja
               <div className="absolute inset-0 bg-gradient-to-br from-green-500/80 to-emerald-600/80"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300">
                 <img
-                  src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=400&fit=crop&crop=center"
+                  src="/images/macha-kyusu.jpg"
                   alt="日本茶"
                   className="w-full h-full object-cover"
                 />
