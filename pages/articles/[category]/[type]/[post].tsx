@@ -395,7 +395,17 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
             <div className="text-center mb-3">
               <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded-full font-medium">Yahoo!ショッピング</span>
             </div>
-            <div data-vc_mylinkbox_id="891949963" />
+            <div className="flex justify-center">
+              <div 
+                data-vc_mylinkbox_id="891949963" 
+                style={{ 
+                  maxWidth: '100%', 
+                  width: 'auto',
+                  transform: 'scale(0.8)',
+                  transformOrigin: 'center'
+                }} 
+              />
+            </div>
           </div>
         </div>
       </div>
