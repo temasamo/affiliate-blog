@@ -391,18 +391,20 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
           </div>
           
           {/* Yahoo広告 */}
-          <div className="border border-gray-200 rounded-lg p-4">
+          <div className="border border-gray-200 rounded-lg p-4 h-96 overflow-hidden">
             <div className="text-center mb-3">
               <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded-full font-medium">Yahoo!ショッピング</span>
             </div>
-            <div className="flex justify-center">
+            <div className="flex justify-center overflow-hidden">
               <div 
                 data-vc_mylinkbox_id="891949963" 
                 style={{ 
-                  maxWidth: '100%', 
-                  width: 'auto',
-                  transform: 'scale(0.8)',
-                  transformOrigin: 'center'
+                  maxWidth: '280px',
+                  maxHeight: '400px',
+                  width: '100%',
+                  transform: 'scale(0.6)',
+                  transformOrigin: 'center',
+                  overflow: 'hidden'
                 }} 
               />
             </div>
