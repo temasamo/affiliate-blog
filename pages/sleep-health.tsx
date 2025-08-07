@@ -79,23 +79,37 @@ export default function SleepHealth({ recommendArticles, knowledgeArticles }: Sl
                   </div>
                 </Link>
               ))}
-              {/* 過去の記事一覧カード */}
-              {recommendArticles.length > 6 && (
-                <Link href="/articles/sleep-health/recommend" className="group block">
-                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-2 border-dashed border-gray-300">
-                    <h3 className="text-lg font-semibold text-gray-700 mb-2 group-hover:text-gray-900 transition-colors">
-                      過去の記事一覧
+              {/* おすすめ商品一覧カード */}
+              <Link href="/articles/sleep-health/recommend" className="group block">
+                <div className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-2 border-indigo-200">
+                  <div className="flex items-center mb-3">
+                    <div className="text-2xl mr-3">🛒</div>
+                    <h3 className="text-lg font-semibold text-indigo-700 group-hover:text-indigo-800 transition-colors">
+                      おすすめ商品一覧
                     </h3>
-                    <p className="text-sm text-gray-600">おすすめ商品の過去記事をすべて見る</p>
-                    <div className="mt-3 flex items-center text-xs text-gray-600">
-                      <span>一覧を見る</span>
-                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
+                  </div>
+                  <div className="space-y-2 mb-4">
+                    <div className="flex items-center text-sm text-indigo-600">
+                      <span className="w-2 h-2 bg-indigo-400 rounded-full mr-2"></span>
+                      <span>枕・マットレス・快眠グッズ</span>
+                    </div>
+                    <div className="flex items-center text-sm text-indigo-600">
+                      <span className="w-2 h-2 bg-indigo-400 rounded-full mr-2"></span>
+                      <span>睡眠の質を向上させる商品</span>
+                    </div>
+                    <div className="flex items-center text-sm text-indigo-600">
+                      <span className="w-2 h-2 bg-indigo-400 rounded-full mr-2"></span>
+                      <span>価格比較・レビュー付き</span>
                     </div>
                   </div>
-                </Link>
-              )}
+                  <div className="flex items-center text-xs text-indigo-600 font-medium">
+                    <span>全{recommendArticles.length}記事を見る</span>
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </Link>
             </div>
           </div>
 
@@ -121,23 +135,37 @@ export default function SleepHealth({ recommendArticles, knowledgeArticles }: Sl
                   </div>
                 </Link>
               ))}
-              {/* 過去の記事一覧カード */}
-              {knowledgeArticles.length > 6 && (
-                <Link href="/articles/sleep-health/knowledge" className="group block">
-                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-2 border-dashed border-gray-300">
-                    <h3 className="text-lg font-semibold text-gray-700 mb-2 group-hover:text-gray-900 transition-colors">
-                      過去の記事一覧
+              {/* 睡眠知識一覧カード */}
+              <Link href="/articles/sleep-health/knowledge" className="group block">
+                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-2 border-green-200">
+                  <div className="flex items-center mb-3">
+                    <div className="text-2xl mr-3">📚</div>
+                    <h3 className="text-lg font-semibold text-green-700 group-hover:text-green-800 transition-colors">
+                      睡眠知識一覧
                     </h3>
-                    <p className="text-sm text-gray-600">睡眠知識の過去記事をすべて見る</p>
-                    <div className="mt-3 flex items-center text-xs text-gray-600">
-                      <span>一覧を見る</span>
-                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
+                  </div>
+                  <div className="space-y-2 mb-4">
+                    <div className="flex items-center text-sm text-green-600">
+                      <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+                      <span>睡眠の質を向上させる知識</span>
+                    </div>
+                    <div className="flex items-center text-sm text-green-600">
+                      <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+                      <span>快眠のための生活習慣</span>
+                    </div>
+                    <div className="flex items-center text-sm text-green-600">
+                      <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+                      <span>睡眠と健康の関係</span>
                     </div>
                   </div>
-                </Link>
-              )}
+                  <div className="flex items-center text-xs text-green-600 font-medium">
+                    <span>全{knowledgeArticles.length}記事を見る</span>
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </Link>
             </div>
           </div>
         </div>

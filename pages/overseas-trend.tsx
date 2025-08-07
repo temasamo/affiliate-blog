@@ -79,23 +79,37 @@ export default function OverseasTrend({ recommendArticles, knowledgeArticles }: 
                   </div>
                 </Link>
               ))}
-              {/* 過去の記事一覧カード */}
-              {recommendArticles.length > 6 && (
-                <Link href="/articles/popularproducts-overseas/recommend" className="group">
-                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-2 border-dashed border-gray-300">
-                    <h3 className="text-lg font-semibold text-gray-700 mb-2 group-hover:text-gray-900 transition-colors">
-                      過去の記事一覧
+              {/* 海外トレンド商品一覧カード */}
+              <Link href="/articles/popularproducts-overseas/recommend" className="group block">
+                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-2 border-blue-200">
+                  <div className="flex items-center mb-3">
+                    <div className="text-2xl mr-3">🌍</div>
+                    <h3 className="text-lg font-semibold text-blue-700 group-hover:text-blue-800 transition-colors">
+                      海外トレンド商品一覧
                     </h3>
-                    <p className="text-sm text-gray-600">おすすめ商品の過去記事をすべて見る</p>
-                    <div className="mt-3 flex items-center text-xs text-gray-600">
-                      <span>一覧を見る</span>
-                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
+                  </div>
+                  <div className="space-y-2 mb-4">
+                    <div className="flex items-center text-sm text-blue-600">
+                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                      <span>TikTok・Amazon USで話題の商品</span>
+                    </div>
+                    <div className="flex items-center text-sm text-blue-600">
+                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                      <span>日本で買える海外商品</span>
+                    </div>
+                    <div className="flex items-center text-sm text-blue-600">
+                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                      <span>トレンド分析・レビュー付き</span>
                     </div>
                   </div>
-                </Link>
-              )}
+                  <div className="flex items-center text-xs text-blue-600 font-medium">
+                    <span>全{recommendArticles.length}記事を見る</span>
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </Link>
             </div>
           </div>
 
