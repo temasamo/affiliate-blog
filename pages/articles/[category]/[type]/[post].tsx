@@ -288,27 +288,43 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
       🛒 以下、プロモーションリンク（広告）です
     </h3>
 
-    {/* DJI 360° Action Cam */}
-    <GlobalHotPicksAffiliate 
-      product={{
-        name: "DJI 360° Action Cam",
-        image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300&h=300&fit=crop&crop=center",
-        amazonUrl: "https://www.amazon.co.jp/dp/B0FGNSPX1P",
-        rakutenUrl: "https://item.rakuten.co.jp/dji/360-action-cam/",
-        officialUrl: "https://www.dji.com"
-      }}
-    />
+    {/* DJI 360° Action Cam - 広告なしのため写真なし */}
+    <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+      <div className="text-center">
+        <h4 className="text-lg font-semibold text-gray-900 mb-2">DJI 360° Action Cam</h4>
+        <p className="text-sm text-gray-600 mb-4">現在、日本での取り扱いが限定的です</p>
+        <a 
+          href="https://www.dji.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          公式サイトで確認
+          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+    </div>
     
-    {/* Ninja Crispi エアフライヤー */}
-    <GlobalHotPicksAffiliate 
-      product={{
-        name: "Ninja Crispi ガラス窓エアフライヤー",
-        image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&h=300&fit=crop&crop=center",
-        amazonUrl: "https://www.amazon.co.jp/dp/B0F38FFGYT",
-        rakutenUrl: "https://item.rakuten.co.jp/ninja/crispi-air-fryer/",
-        officialUrl: "https://www.ninjakitchen.com"
-      }}
-    />
+    {/* Ninja Crispi エアフライヤー - 広告なしのため写真なし */}
+    <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+      <div className="text-center">
+        <h4 className="text-lg font-semibold text-gray-900 mb-2">Ninja Crispi ガラス窓エアフライヤー</h4>
+        <p className="text-sm text-gray-600 mb-4">現在、日本での取り扱いが限定的です</p>
+        <a 
+          href="https://www.ninjakitchen.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          公式サイトで確認
+          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+    </div>
     
     {/* POP MART Labubu */}
     <GlobalHotPicksAffiliate 
