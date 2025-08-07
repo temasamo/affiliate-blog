@@ -13,7 +13,7 @@ export default function CategoryImage({ category, className = "" }: CategoryImag
       case '睡眠・健康':
         return 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=400&h=300&fit=crop&crop=center';
       case '日本茶':
-        return 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&crop=center';
+        return '/images/macha-kyusu.jpg';
       case '海外トレンド':
         return 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop';
       case '日本商品':

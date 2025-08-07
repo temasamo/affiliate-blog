@@ -162,7 +162,7 @@ export default function Home({ latestArticles }: HomeProps) {
               title="日本茶関連"
               description="緑茶・抹茶・お茶文化の紹介"
               href="/japanese-tea"
-              bgImage="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&crop=center"
+              bgImage="/images/macha-kyusu.jpg"
               overlayColor="bg-black/60"
             />
             <CategoryCard
