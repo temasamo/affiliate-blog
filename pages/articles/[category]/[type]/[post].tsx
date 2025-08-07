@@ -197,28 +197,35 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
 
         {/* 扇風機記事の場合のみ広告表示 */}
         {post === '2025-07-24-foldable-wireless-fan-rakuten' && (
-          <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 mt-6">
-            <h3 className="text-lg font-bold text-gray-900 mb-4">🛒 商品詳細情報</h3>
-            <div className="bg-gray-50 rounded-lg p-6 text-center">
-              <img
-                src="https://thumbnail.image.rakuten.co.jp/@0_mall/yoitas/cabinet/imgrc0180681394.jpg?_ex=300x300"
-                alt="Yoitas 折りたたみ扇風機"
-                className="mx-auto mb-4 rounded-lg"
-                style={{ maxWidth: '300px' }}
-              />
-              <h4 className="text-lg font-bold mb-4">
-                【扇風機1位獲得】Yoitas 折りたたみ 扇風機 Design+ F11
-              </h4>
-              <a
-                href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fyoitas%2Ff11-001%2F&m=https%3A%2F%2Fm.rakuten.co.jp%2Fyoitas%2Fi%2F10000088%2F"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded-lg transition-colors"
-              >
-                詳しく見る
-              </a>
+          <section className="mt-8">
+            <hr className="my-8 border-t-2 border-dashed border-gray-300" />
+            <h3 className="text-lg font-bold mb-4 text-gray-700">
+              🛒 以下、プロモーションリンク（広告）です
+            </h3>
+            
+            <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8">
+              <h3 className="text-lg font-bold text-gray-900 mb-4">🛒 商品詳細情報</h3>
+              <div className="bg-gray-50 rounded-lg p-6 text-center">
+                <img
+                  src="https://thumbnail.image.rakuten.co.jp/@0_mall/yoitas/cabinet/imgrc0180681394.jpg?_ex=300x300"
+                  alt="Yoitas 折りたたみ扇風機"
+                  className="mx-auto mb-4 rounded-lg"
+                  style={{ maxWidth: '300px' }}
+                />
+                <h4 className="text-lg font-bold mb-4">
+                  【扇風機1位獲得】Yoitas 折りたたみ 扇風機 Design+ F11
+                </h4>
+                <a
+                  href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fyoitas%2Ff11-001%2F&m=https%3A%2F%2Fm.rakuten.co.jp%2Fyoitas%2Fi%2F10000088%2F"
+                  target="_blank"
+                  rel="nofollow noopener noreferrer"
+                  className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded-lg transition-colors"
+                >
+                  詳しく見る
+                </a>
+              </div>
             </div>
-          </div>
+          </section>
         )}
 {post === '2025-08-06' && (
   <section className="mt-8">
