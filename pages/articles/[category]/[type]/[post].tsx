@@ -104,9 +104,14 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               {frontMatter.date || '2025.07.01'}
             </span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">
             {title}
           </h1>
+          {category === 'popularproducts-overseas' && (
+            <p className="text-sm text-gray-500 mb-4">
+              Deep-Dive Overseas Trend
+            </p>
+          )}
           {frontMatter.description && (
             <p className="text-sm sm:text-base text-gray-600">
               {frontMatter.description}

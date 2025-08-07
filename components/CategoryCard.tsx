@@ -6,6 +6,7 @@ interface CategoryCardProps {
   description: string;
   href: string;
   bgImage: string;
+  subtitle?: string;
   textColor?: string;
   overlayColor?: string;
 }
@@ -15,6 +16,7 @@ export default function CategoryCard({
   description,
   href,
   bgImage,
+  subtitle,
   textColor = 'text-white',
   overlayColor = 'bg-black/40'
 }: CategoryCardProps) {
@@ -37,9 +39,14 @@ export default function CategoryCard({
         
         {/* コンテンツ */}
         <div className="relative z-10 p-6 h-full flex flex-col justify-center">
-          <h3 className={`text-lg font-semibold mb-2 ${textColor} group-hover:text-blue-200 transition-colors drop-shadow-lg`}>
+          <h3 className={`text-lg font-semibold mb-1 ${textColor} group-hover:text-blue-200 transition-colors drop-shadow-lg`}>
             {title}
           </h3>
+          {subtitle && (
+            <p className={`text-xs ${textColor} opacity-90 tracking-wide mb-2 drop-shadow-md`}>
+              {subtitle}
+            </p>
+          )}
           <p className={`text-sm ${textColor} opacity-90 drop-shadow-md`}>
             {description}
           </p>

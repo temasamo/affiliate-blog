@@ -167,6 +167,7 @@ export default function Home({ latestArticles }: HomeProps) {
             />
             <CategoryCard
               title="海外トレンド"
+              subtitle="Deep-Dive Overseas Trend"
               description="海外で話題の商品を日本で"
               href="/overseas-trend"
               bgImage="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400&h=300&fit=crop&crop=center"
