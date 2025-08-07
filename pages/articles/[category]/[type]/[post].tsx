@@ -357,38 +357,46 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
       <div className="text-center">
         <h4 className="text-lg font-semibold text-gray-900 mb-4">POP MART Labubu Vinyl Toy</h4>
         
-        {/* 楽天広告 */}
-        <div className="mb-6">
-          <a 
-            href="//af.moshimo.com/af/c/click?a_id=5122395&amp;p_id=54&amp;pc_id=54&amp;pl_id=616&amp;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fyinai%2F1000000952%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fyinai%2Fi%2F10000351%2F" 
-            rel="nofollow" 
-            referrerPolicy="no-referrer-when-downgrade"
-            className="inline-block"
-          >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* 楽天広告 */}
+          <div className="border border-gray-200 rounded-lg p-4">
+            <div className="text-center mb-3">
+              <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-full font-medium">楽天市場</span>
+            </div>
+            <a 
+              href="//af.moshimo.com/af/c/click?a_id=5122395&amp;p_id=54&amp;pc_id=54&amp;pl_id=616&amp;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fyinai%2F1000000952%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fyinai%2Fi%2F10000351%2F" 
+              rel="nofollow" 
+              referrerPolicy="no-referrer-when-downgrade"
+              className="inline-block"
+            >
+              <img 
+                src="//thumbnail.image.rakuten.co.jp/@0_mall/yinai/cabinet/free_1752313526029.jpg?_ex=128x128" 
+                alt="Labubu ぬいぐるみ ペンダント" 
+                style={{ border: 'medium' }} 
+                className="mx-auto"
+              />
+              <br />
+              <span className="text-sm text-gray-700 mt-2 block">
+                【正規品保証・当日発送】 THE MONSTERS Exciting Macaron シリーズ ラブブ- ぬいぐるみ ペンダント【アソートボックス】【ピース】 POP MART ポップマート popmart Labubu rabubu ラブブ キャラクター らぶぶ キーホルダー ラブブ本体 かわいい おもちゃ ギフト プレゼント
+              </span>
+            </a>
             <img 
-              src="//thumbnail.image.rakuten.co.jp/@0_mall/yinai/cabinet/free_1752313526029.jpg?_ex=128x128" 
-              alt="Labubu ぬいぐるみ ペンダント" 
-              style={{ border: 'medium' }} 
-              className="mx-auto"
+              src="//i.moshimo.com/af/i/impression?a_id=5122395&amp;p_id=54&amp;pc_id=54&amp;pl_id=616" 
+              alt="" 
+              loading="lazy" 
+              width="1" 
+              height="1" 
+              style={{ border: '0px' }} 
             />
-            <br />
-            <span className="text-sm text-gray-700 mt-2 block">
-              【正規品保証・当日発送】 THE MONSTERS Exciting Macaron シリーズ ラブブ- ぬいぐるみ ペンダント【アソートボックス】【ピース】 POP MART ポップマート popmart Labubu rabubu ラブブ キャラクター らぶぶ キーホルダー ラブブ本体 かわいい おもちゃ ギフト プレゼント
-            </span>
-          </a>
-          <img 
-            src="//i.moshimo.com/af/i/impression?a_id=5122395&amp;p_id=54&amp;pc_id=54&amp;pl_id=616" 
-            alt="" 
-            loading="lazy" 
-            width="1" 
-            height="1" 
-            style={{ border: '0px' }} 
-          />
-        </div>
-        
-        {/* Yahoo広告 */}
-        <div>
-          <div data-vc_mylinkbox_id="891949963" />
+          </div>
+          
+          {/* Yahoo広告 */}
+          <div className="border border-gray-200 rounded-lg p-4">
+            <div className="text-center mb-3">
+              <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded-full font-medium">Yahoo!ショッピング</span>
+            </div>
+            <div data-vc_mylinkbox_id="891949963" />
+          </div>
         </div>
       </div>
     </div>
