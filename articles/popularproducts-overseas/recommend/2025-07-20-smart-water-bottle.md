@@ -3,6 +3,7 @@ title: "【2025年7月最新版】海外で話題のスマート水ボトル、�
 date: "2025-07-20"
 description: "海外で人気急上昇中のスマート水ボトルを、日本で買えるおすすめ3モデルとして紹介。LARQは楽天アフィリエイトリンク、OwalaとHidrateSparkは直リンク掲載。"
 category: "popularproducts-overseas"
+type: "recommend"
 tags: ["スマート水ボトル", "LARQ", "Owala", "HidrateSpark", "海外トレンド"]
 ---
 
