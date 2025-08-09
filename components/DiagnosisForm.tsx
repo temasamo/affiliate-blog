@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react';
 import type { Answers } from '@/lib/resultLogic';
-import { logOutbound } from '@/lib/logOutbound';
 import { affiliateLinks } from '@/lib/affiliateLinks';
+import OutboundButton from '@/components/OutboundButton';
 
 type Props = {
   onSubmit?: (answers: Answers) => Promise<void> | void;
@@ -72,13 +72,6 @@ export default function DiagnosisForm({ onSubmit }: Props) {
     }
   };
 
-  const handleAffiliateClick = async (shop: 'rakuten' | 'amazon' | 'yahoo') => {
-    if (rowId) {
-      await logOutbound(shop, rowId);
-    }
-    window.open(affiliateLinks[shop], '_blank', 'noopener,noreferrer');
-  };
-
   const CTAButtons = () => {
     if (!result || !rowId) return null;
 
@@ -97,9 +90,11 @@ export default function DiagnosisForm({ onSubmit }: Props) {
         marginTop: '20px'
       }}>
         {buttons.map(button => (
-          <button
+          <OutboundButton
             key={button.key}
-            onClick={() => handleAffiliateClick(button.key)}
+            partner={button.key}
+            url={affiliateLinks[button.key]}
+            sessionId={rowId}
             style={{
               padding: '12px 20px',
               fontSize: '0.9rem',
@@ -111,19 +106,13 @@ export default function DiagnosisForm({ onSubmit }: Props) {
               cursor: 'pointer',
               transition: 'all 0.3s ease',
               boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
-              minWidth: '140px'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-2px)';
-              e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.3)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
+              minWidth: '140px',
+              textDecoration: 'none',
+              display: 'inline-block'
             }}
           >
             {button.label}
-          </button>
+          </OutboundButton>
         ))}
       </div>
     );

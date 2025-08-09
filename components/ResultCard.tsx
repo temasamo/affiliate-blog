@@ -1,6 +1,6 @@
 // components/ResultCard.tsx
-import { logOutbound } from '@/lib/logOutbound';
 import { affiliateLinks } from '@/lib/affiliateLinks';
+import OutboundButton from '@/components/OutboundButton';
 
 type Props = {
   title: string;
@@ -14,13 +14,6 @@ type Props = {
 };
 
 export default function ResultCard({ title, confidence, sessionId, urls }: Props) {
-  const handleAffiliateClick = async (shop: 'rakuten' | 'amazon' | 'yahoo') => {
-    if (sessionId) {
-      await logOutbound(shop, sessionId);
-    }
-    window.open(affiliateLinks[shop], '_blank', 'noopener,noreferrer');
-  };
-
   return (
     <div style={{
       padding: '16px',
@@ -56,7 +49,10 @@ export default function ResultCard({ title, confidence, sessionId, urls }: Props
         flexWrap: 'wrap'
       }}>
         {urls.rakuten && (
-          <button
+          <OutboundButton
+            partner="rakuten"
+            url={affiliateLinks.rakuten}
+            sessionId={sessionId}
             style={{
               padding: '10px 14px',
               borderRadius: '8px',
@@ -64,40 +60,49 @@ export default function ResultCard({ title, confidence, sessionId, urls }: Props
               background: '#ff5c5c',
               color: '#fff',
               fontWeight: '600',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              textDecoration: 'none',
+              display: 'inline-block'
             }}
-            onClick={() => handleAffiliateClick('rakuten')}
           >
             楽天で詳しく見る
-          </button>
+          </OutboundButton>
         )}
         {urls.amazon && (
-          <button
+          <OutboundButton
+            partner="amazon"
+            url={affiliateLinks.amazon}
+            sessionId={sessionId}
             style={{
               padding: '10px 14px',
               borderRadius: '8px',
               border: '1px solid #ccc',
               background: '#fff',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              textDecoration: 'none',
+              display: 'inline-block'
             }}
-            onClick={() => handleAffiliateClick('amazon')}
           >
             Amazonで詳しく見る
-          </button>
+          </OutboundButton>
         )}
         {urls.yahoo && (
-          <button
+          <OutboundButton
+            partner="yahoo"
+            url={affiliateLinks.yahoo}
+            sessionId={sessionId}
             style={{
               padding: '10px 14px',
               borderRadius: '8px',
               border: '1px solid #ccc',
               background: '#fff',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              textDecoration: 'none',
+              display: 'inline-block'
             }}
-            onClick={() => handleAffiliateClick('yahoo')}
           >
             Yahoo!で詳しく見る
-          </button>
+          </OutboundButton>
         )}
       </div>
     </div>
