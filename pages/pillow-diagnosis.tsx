@@ -4,13 +4,10 @@ import DiagnosisForm from '@/components/DiagnosisForm';
 import type { Answers } from '@/lib/resultLogic';
 
 export default function PillowDiagnosisPage() {
-  // SSRとHydrationズレ防止：sessionIdはクライアント側初回生成
-  const sessionIdRef = useRef<string>('');
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && !sessionIdRef.current) {
-      sessionIdRef.current = crypto.randomUUID();
-    }
+    setIsClient(true);
   }, []);
 
   return (
@@ -65,7 +62,7 @@ export default function PillowDiagnosisPage() {
           border: '1px solid rgba(255, 255, 255, 0.2)',
           marginBottom: '30px'
         }}>
-          <DiagnosisForm />
+          {isClient && <DiagnosisForm />}
         </div>
       </div>
 

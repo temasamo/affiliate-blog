@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { Answers } from '@/lib/resultLogic';
 import { affiliateLinks } from '@/lib/affiliateLinks';
 import OutboundButton from '@/components/OutboundButton';
@@ -30,6 +30,16 @@ export default function DiagnosisForm({ onSubmit }: Props) {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<Result | null>(null);
   const [rowId, setRowId] = useState<string | null>(null);
+  const [sessionId, setSessionId] = useState<string>('');
+  const [isClient, setIsClient] = useState(false);
+
+  // クライアント側でのみsessionIdを生成
+  useEffect(() => {
+    setIsClient(true);
+    if (!sessionId) {
+      setSessionId(crypto.randomUUID());
+    }
+  }, [sessionId]);
 
   const handleChange = (key: keyof Answers) => (e: React.ChangeEvent<HTMLSelectElement>) => {
     setAnswers((prev) => ({ ...prev, [key]: e.target.value as any }));
@@ -49,11 +59,12 @@ export default function DiagnosisForm({ onSubmit }: Props) {
       }
 
       // デフォルトのAPI呼び出し
+      const currentSessionId = sessionId || crypto.randomUUID();
       const response = await fetch('/api/pillow-diagnosis-log', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
-          sessionId: crypto.randomUUID(), 
+          sessionId: currentSessionId, 
           answers 
         }),
       });
