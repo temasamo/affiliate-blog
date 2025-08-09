@@ -13,15 +13,17 @@ export default function CategoryImage({ category, className = "" }: CategoryImag
   const getCategoryImage = (category: string) => {
     switch (category) {
       case '睡眠・健康':
-        return 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=400&h=300&fit=crop&crop=center';
+        return 'https://images.unsplash.com/photo-1505693314120-0d443867891c?w=400&h=300&fit=crop&crop=center';
       case '日本茶':
         return '/images/macha-kyusu.jpg';
       case '海外トレンド':
-        return 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop';
+        return 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400&h=300&fit=crop&crop=center';
       case '日本商品':
-        return 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop';
+        return 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400&h=300&fit=crop&crop=center';
+      case 'Global Hot Picks':
+        return 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop&crop=center';
       default:
-        return 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop';
+        return 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop&crop=center';
     }
   };
 
@@ -35,6 +37,8 @@ export default function CategoryImage({ category, className = "" }: CategoryImag
         return 'from-blue-500/80 to-cyan-600/80';
       case '日本商品':
         return 'from-red-500/80 to-pink-600/80';
+      case 'Global Hot Picks':
+        return 'from-purple-500/80 to-blue-600/80';
       default:
         return 'from-gray-500/80 to-gray-600/80';
     }
@@ -50,6 +54,8 @@ export default function CategoryImage({ category, className = "" }: CategoryImag
         return '/overseas-trend';
       case '日本商品':
         return '/japan-popular';
+      case 'Global Hot Picks':
+        return '/global-hot-picks';
       default:
         return '/';
     }
