@@ -90,22 +90,22 @@ export default function Home({ latestArticles }: HomeProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
               <div className="bg-white rounded-xl p-4 shadow-sm">
                 <div className="text-2xl mb-2">📷</div>
-                <h4 className="font-semibold text-gray-900 mb-1">DJI 360° Action Cam</h4>
-                <p className="text-sm text-gray-600">TikTok 1,200万再生突破</p>
+                <h4 className="font-semibold text-gray-900 mb-1">Insta360 X4</h4>
+                <p className="text-sm text-gray-600">8K 360°アクションカム</p>
               </div>
               <div className="bg-white rounded-xl p-4 shadow-sm">
-                <div className="text-2xl mb-2">🍳</div>
-                <h4 className="font-semibold text-gray-900 mb-1">Ninja Crispi エアフライヤー</h4>
-                <p className="text-sm text-gray-600">#CrispiChallenge 800万再生</p>
+                <div className="text-2xl mb-2">🍨</div>
+                <h4 className="font-semibold text-gray-900 mb-1">Ninja CREAMi XL</h4>
+                <p className="text-sm text-gray-600">おうちジェラートメーカー</p>
               </div>
               <div className="bg-white rounded-xl p-4 shadow-sm">
-                <div className="text-2xl mb-2">🧸</div>
-                <h4 className="font-semibold text-gray-900 mb-1">POP MART Labubu</h4>
-                <p className="text-sm text-gray-600">9.6億再生（累計）</p>
+                <div className="text-2xl mb-2">💄</div>
+                <h4 className="font-semibold text-gray-900 mb-1">LANEIGE Lip Glowy</h4>
+                <p className="text-sm text-gray-600">デイリー保湿リップ</p>
               </div>
             </div>
             <div className="text-center">
-              <Link href="/articles/global-hot-picks/trend/2025-08-07" className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition-colors">
+              <Link href="/articles/global-hot-picks/trend/2025-08-09" className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition-colors">
                 最新トレンドを見る
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -319,39 +319,62 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const articlesDirectory = path.join(process.cwd(), 'articles');
   const allArticles: Article[] = [];
 
-  // 全カテゴリの記事を取得
-  const categories = ['sleep-health', 'japanesetea', 'popularproducts-overseas', '海外トレンド', 'japaneseproducts-popular-with-foreigners'];
+  // 全カテゴリの記事を取得（global-hot-picksも含める）
+  const categories = ['sleep-health', 'japanesetea', 'popularproducts-overseas', '海外トレンド', 'japaneseproducts-popular-with-foreigners', 'global-hot-picks'];
   
   categories.forEach(category => {
     const categoryPath = path.join(articlesDirectory, category);
     if (fs.existsSync(categoryPath)) {
-      const types = ['recommend', 'knowledge'];
-      types.forEach(type => {
-        const typePath = path.join(categoryPath, type);
-        if (fs.existsSync(typePath)) {
-          const files = fs.readdirSync(typePath);
+      // global-hot-picksの場合はtrendディレクトリを確認
+      if (category === 'global-hot-picks') {
+        const trendPath = path.join(categoryPath, 'trend');
+        if (fs.existsSync(trendPath)) {
+          const files = fs.readdirSync(trendPath);
           files.forEach(file => {
-            if (file.endsWith('.md')) {
-              const filePath = path.join(typePath, file);
+            if (file.endsWith('.mdx') || file.endsWith('.md')) {
+              const filePath = path.join(trendPath, file);
               const fileContents = fs.readFileSync(filePath, 'utf8');
               const { data: frontMatter } = matter(fileContents);
               
               allArticles.push({
-                slug: file.replace(/\.md$/, ''),
+                slug: file.replace(/\.(mdx|md)$/, ''),
                 title: frontMatter.title || '記事タイトル',
                 description: frontMatter.description || '記事の説明',
                 date: frontMatter.date || '2025.07.01',
                 category: category,
-                type: type
+                type: 'trend'
               });
             }
           });
         }
-      });
+      } else {
+        // 他のカテゴリはrecommendとknowledgeディレクトリを確認
+        const types = ['recommend', 'knowledge'];
+        types.forEach(type => {
+          const typePath = path.join(categoryPath, type);
+          if (fs.existsSync(typePath)) {
+            const files = fs.readdirSync(typePath);
+            files.forEach(file => {
+              if (file.endsWith('.md')) {
+                const filePath = path.join(typePath, file);
+                const fileContents = fs.readFileSync(filePath, 'utf8');
+                const { data: frontMatter } = matter(fileContents);
+                
+                allArticles.push({
+                  slug: file.replace(/\.md$/, ''),
+                  title: frontMatter.title || '記事タイトル',
+                  description: frontMatter.description || '記事の説明',
+                  date: frontMatter.date || '2025.07.01',
+                  category: category,
+                  type: type
+                });
+              }
+            });
+          }
+        });
+      }
     }
   });
-
-
 
   // 日付順でソート（新しい順）して最新3件を取得
   allArticles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
