@@ -1,4 +1,5 @@
 // components/ResultCard.tsx
+import { useState, useEffect } from 'react';
 import { logOutbound } from '@/lib/logOutbound';
 
 type Props = {
@@ -12,12 +13,24 @@ type Props = {
   };
 };
 
-// 環境変数からURLを読み込み
-const RAKUTEN_URL = process.env.NEXT_PUBLIC_RAKUTEN_URL || "https://www.rakuten.co.jp/";
-const AMAZON_URL = process.env.NEXT_PUBLIC_AMAZON_URL || "https://www.amazon.co.jp/";
-const YAHOO_URL = process.env.NEXT_PUBLIC_YAHOO_URL || "https://shopping.yahoo.co.jp/";
-
 export default function ResultCard({ title, confidence, sessionId, urls }: Props) {
+  const [mounted, setMounted] = useState(false);
+  const [urlsState, setUrlsState] = useState({
+    rakuten: "https://www.rakuten.co.jp/",
+    amazon: "https://www.amazon.co.jp/",
+    yahoo: "https://shopping.yahoo.co.jp/"
+  });
+
+  useEffect(() => {
+    setMounted(true);
+    // 環境変数の読み込み
+    setUrlsState({
+      rakuten: process.env.NEXT_PUBLIC_RAKUTEN_URL || "https://www.rakuten.co.jp/",
+      amazon: process.env.NEXT_PUBLIC_AMAZON_URL || "https://www.amazon.co.jp/",
+      yahoo: process.env.NEXT_PUBLIC_YAHOO_URL || "https://shopping.yahoo.co.jp/"
+    });
+  }, []);
+
   // クリック時ロギング + 遷移
   const handleOutbound = async (
     vendor: 'rakuten' | 'amazon' | 'yahoo',
@@ -35,6 +48,10 @@ export default function ResultCard({ title, confidence, sessionId, urls }: Props
       window.open(url, '_blank', 'noopener,noreferrer');
     }
   };
+
+  if (!mounted) {
+    return <div>読み込み中...</div>;
+  }
 
   return (
     <div style={{
@@ -72,7 +89,7 @@ export default function ResultCard({ title, confidence, sessionId, urls }: Props
       }}>
         {urls.rakuten && (
           <button
-            onClick={() => handleOutbound('rakuten', RAKUTEN_URL, sessionId)}
+            onClick={() => handleOutbound('rakuten', urlsState.rakuten, sessionId)}
             style={{
               padding: '10px 14px',
               borderRadius: '8px',
@@ -90,7 +107,7 @@ export default function ResultCard({ title, confidence, sessionId, urls }: Props
         )}
         {urls.amazon && (
           <button
-            onClick={() => handleOutbound('amazon', AMAZON_URL, sessionId)}
+            onClick={() => handleOutbound('amazon', urlsState.amazon, sessionId)}
             style={{
               padding: '10px 14px',
               borderRadius: '8px',
@@ -106,7 +123,7 @@ export default function ResultCard({ title, confidence, sessionId, urls }: Props
         )}
         {urls.yahoo && (
           <button
-            onClick={() => handleOutbound('yahoo', YAHOO_URL, sessionId)}
+            onClick={() => handleOutbound('yahoo', urlsState.yahoo, sessionId)}
             style={{
               padding: '10px 14px',
               borderRadius: '8px',

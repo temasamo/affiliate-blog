@@ -1,13 +1,12 @@
 // pages/pillow-diagnosis.tsx
-import { useRef, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import DiagnosisForm from '@/components/DiagnosisForm';
-import type { Answers } from '@/lib/resultLogic';
 
 export default function PillowDiagnosisPage() {
-  const [isClient, setIsClient] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
+    setMounted(true);
   }, []);
 
   return (
@@ -62,7 +61,7 @@ export default function PillowDiagnosisPage() {
           border: '1px solid rgba(255, 255, 255, 0.2)',
           marginBottom: '30px'
         }}>
-          {isClient && <DiagnosisForm />}
+          {mounted ? <DiagnosisForm /> : <div>読み込み中...</div>}
         </div>
       </div>
 
