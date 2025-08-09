@@ -1,5 +1,6 @@
 // components/ResultCard.tsx
-import { logOutboundAndOpen } from '@/lib/logOutbound';
+import { logOutbound } from '@/lib/logOutbound';
+import { affiliateLinks } from '@/lib/affiliateLinks';
 
 type Props = {
   title: string;
@@ -13,6 +14,13 @@ type Props = {
 };
 
 export default function ResultCard({ title, confidence, sessionId, urls }: Props) {
+  const handleAffiliateClick = async (shop: 'rakuten' | 'amazon' | 'yahoo') => {
+    if (sessionId) {
+      await logOutbound(shop, sessionId);
+    }
+    window.open(affiliateLinks[shop], '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div style={{
       padding: '16px',
@@ -58,12 +66,7 @@ export default function ResultCard({ title, confidence, sessionId, urls }: Props
               fontWeight: '600',
               cursor: 'pointer'
             }}
-            onClick={() => logOutboundAndOpen({
-              dest: 'rakuten',
-              sessionId,
-              url: urls.rakuten!,
-              utm: { source: 'pillowdiag', medium: 'ref', campaign: 'primary' }
-            })}
+            onClick={() => handleAffiliateClick('rakuten')}
           >
             楽天で詳しく見る
           </button>
@@ -77,12 +80,7 @@ export default function ResultCard({ title, confidence, sessionId, urls }: Props
               background: '#fff',
               cursor: 'pointer'
             }}
-            onClick={() => logOutboundAndOpen({
-              dest: 'amazon',
-              sessionId,
-              url: urls.amazon!,
-              utm: { source: 'pillowdiag', medium: 'ref', campaign: 'primary' }
-            })}
+            onClick={() => handleAffiliateClick('amazon')}
           >
             Amazonで詳しく見る
           </button>
@@ -96,12 +94,7 @@ export default function ResultCard({ title, confidence, sessionId, urls }: Props
               background: '#fff',
               cursor: 'pointer'
             }}
-            onClick={() => logOutboundAndOpen({
-              dest: 'yahoo',
-              sessionId,
-              url: urls.yahoo!,
-              utm: { source: 'pillowdiag', medium: 'ref', campaign: 'primary' }
-            })}
+            onClick={() => handleAffiliateClick('yahoo')}
           >
             Yahoo!で詳しく見る
           </button>
