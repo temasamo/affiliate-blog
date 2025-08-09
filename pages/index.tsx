@@ -8,6 +8,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CategoryImage from '../components/CategoryImage';
 import CategoryCard from '../components/CategoryCard';
+import DiagnosisForm from '../components/DiagnosisForm';
+import OutboundClickTest from '../components/OutboundClickTest';
 
 
 interface Article {
@@ -30,6 +32,20 @@ export default function Home({ latestArticles }: HomeProps) {
       
       {/* メインコンテンツ */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+        <div style={{background:'#ff0',padding:8,fontWeight:'bold'}}>
+          DEBUG: index.tsx は再描画されています
+        </div>
+
+        <section style={{ margin:'24px 0', padding:16, border:'1px solid #eee' }}>
+          <h2>枕診断ログ 送信テスト</h2>
+          <DiagnosisForm />
+        </section>
+
+        <section style={{ margin:'24px 0', padding:16, border:'1px solid #eee' }}>
+          <h2>アウトバウンドクリック テスト</h2>
+          <OutboundClickTest />
+        </section>
+
         {/* ヒーローセクション */}
         <section className="mb-12 sm:mb-16">
           <div className="relative bg-gradient-hero rounded-3xl p-8 sm:p-12 text-center shadow-lg border border-gray-100 overflow-hidden">
@@ -89,23 +105,23 @@ export default function Home({ latestArticles }: HomeProps) {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
               <div className="bg-white rounded-xl p-4 shadow-sm">
-                <div className="text-2xl mb-2">📷</div>
-                <h4 className="font-semibold text-gray-900 mb-1">DJI 360° Action Cam</h4>
-                <p className="text-sm text-gray-600">TikTok 1,200万再生突破</p>
+                <div className="text-2xl mb-2">🔋</div>
+                <h4 className="font-semibold text-gray-900 mb-1">Anker SOLIX C1000</h4>
+                <p className="text-sm text-gray-600">58分でフル充電</p>
               </div>
               <div className="bg-white rounded-xl p-4 shadow-sm">
-                <div className="text-2xl mb-2">🍳</div>
-                <h4 className="font-semibold text-gray-900 mb-1">Ninja Crispi エアフライヤー</h4>
-                <p className="text-sm text-gray-600">#CrispiChallenge 800万再生</p>
+                <div className="text-2xl mb-2">💆‍♂️</div>
+                <h4 className="font-semibold text-gray-900 mb-1">Theragun Relief</h4>
+                <p className="text-sm text-gray-600">軽量マッサージガン</p>
               </div>
               <div className="bg-white rounded-xl p-4 shadow-sm">
-                <div className="text-2xl mb-2">🧸</div>
-                <h4 className="font-semibold text-gray-900 mb-1">POP MART Labubu</h4>
-                <p className="text-sm text-gray-600">9.6億再生（累計）</p>
+                <div className="text-2xl mb-2">💄</div>
+                <h4 className="font-semibold text-gray-900 mb-1">Etude Glow Fixing Tint</h4>
+                <p className="text-sm text-gray-600">水膜のようなツヤ</p>
               </div>
             </div>
             <div className="text-center">
-              <Link href="/articles/global-hot-picks/trend/2025-08-07" className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition-colors">
+              <Link href="/articles/global-hot-picks/trend/2025-08-08" className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition-colors">
                 最新トレンドを見る
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -123,7 +139,7 @@ export default function Home({ latestArticles }: HomeProps) {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {latestArticles.map((article) => (
-              <Link key={article.slug} href={`/articles/${article.category}/${article.type}/${article.slug}`} className="group block">
+              <Link key={article.slug} href={article.category === 'global-hot-picks' ? `/articles/${article.category}/trend/${article.slug}` : `/articles/${article.category}/${article.type}/${article.slug}`} className="group block">
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover-lift scale-hover">
                   <CategoryImage category={getCategoryDisplayName(article.category)} />
                   <div className="p-6">
@@ -188,6 +204,15 @@ export default function Home({ latestArticles }: HomeProps) {
               overlayColor="bg-black/40"
             />
           </div>
+        </section>
+
+        {/* 枕診断テストセクション */}
+        <section className="mb-12 sm:mb-16">
+          <div className="flex items-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">枕診断テスト</h2>
+            <span className="ml-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full font-medium">TEST</span>
+          </div>
+          <DiagnosisForm />
         </section>
 
         {/* おすすめランキングセクション */}
@@ -320,34 +345,56 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const allArticles: Article[] = [];
 
   // 全カテゴリの記事を取得
-  const categories = ['sleep-health', 'japanesetea', 'popularproducts-overseas', '海外トレンド', 'japaneseproducts-popular-with-foreigners'];
+  const categories = ['sleep-health', 'japanesetea', 'popularproducts-overseas', '海外トレンド', 'japaneseproducts-popular-with-foreigners', 'global-hot-picks'];
   
   categories.forEach(category => {
     const categoryPath = path.join(articlesDirectory, category);
     if (fs.existsSync(categoryPath)) {
-      const types = ['recommend', 'knowledge'];
-      types.forEach(type => {
-        const typePath = path.join(categoryPath, type);
-        if (fs.existsSync(typePath)) {
-          const files = fs.readdirSync(typePath);
-          files.forEach(file => {
-            if (file.endsWith('.md')) {
-              const filePath = path.join(typePath, file);
-              const fileContents = fs.readFileSync(filePath, 'utf8');
-              const { data: frontMatter } = matter(fileContents);
-              
-              allArticles.push({
-                slug: file.replace(/\.md$/, ''),
-                title: frontMatter.title || '記事タイトル',
-                description: frontMatter.description || '記事の説明',
-                date: frontMatter.date || '2025.07.01',
-                category: category,
-                type: type
-              });
-            }
-          });
-        }
-      });
+      // global-hot-picksの場合は直接.md/.mdxファイルを処理
+      if (category === 'global-hot-picks') {
+        const files = fs.readdirSync(categoryPath);
+        files.forEach(file => {
+          if (file.endsWith('.md') || file.endsWith('.mdx')) {
+            const filePath = path.join(categoryPath, file);
+            const fileContents = fs.readFileSync(filePath, 'utf8');
+            const { data: frontMatter } = matter(fileContents);
+            
+            allArticles.push({
+              slug: file.replace(/\.mdx?$/, ''),
+              title: frontMatter.title || '記事タイトル',
+              description: frontMatter.description || '記事の説明',
+              date: frontMatter.date || '2025.07.01',
+              category: category,
+              type: 'trend'
+            });
+          }
+        });
+      } else {
+        // その他のカテゴリは従来通り
+        const types = ['recommend', 'knowledge'];
+        types.forEach(type => {
+          const typePath = path.join(categoryPath, type);
+          if (fs.existsSync(typePath)) {
+            const files = fs.readdirSync(typePath);
+            files.forEach(file => {
+              if (file.endsWith('.md')) {
+                const filePath = path.join(typePath, file);
+                const fileContents = fs.readFileSync(filePath, 'utf8');
+                const { data: frontMatter } = matter(fileContents);
+                
+                allArticles.push({
+                  slug: file.replace(/\.md$/, ''),
+                  title: frontMatter.title || '記事タイトル',
+                  description: frontMatter.description || '記事の説明',
+                  date: frontMatter.date || '2025.07.01',
+                  category: category,
+                  type: type
+                });
+              }
+            });
+          }
+        });
+      }
     }
   });
 

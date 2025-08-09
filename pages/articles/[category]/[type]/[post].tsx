@@ -16,6 +16,7 @@ import AffiliateDisclosure from '../../../../components/AffiliateDisclosure';
 import CategoryImage from '../../../../components/CategoryImage';
 import CategoryCard from '../../../../components/CategoryCard';
 import AffiliateAdCardLark1 from '../../../../components/AffiliateAdCardLark1';
+import AffiliateAdCardAlt from '../../../../components/AffiliateAdCardAlt';
 import GlobalHotPicksAffiliate from '../../../../components/GlobalHotPicksAffiliate';
 import SmartWaterBottleAffiliate from '../../../../components/SmartWaterBottleAffiliate';
 
@@ -54,7 +55,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
     });
 
     // ValueCommerceのスクリプトを追加
-    if (post === '2025-08-07') {
+    if (post === '2025-08-07' || post === '2025-08-08') {
       const existingScript = document.querySelector('script[src*="valuecommerce.com"]');
       if (!existingScript) {
         const script = document.createElement('script');
@@ -147,6 +148,20 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
             />
           </article>
         </div>
+
+        {/* 急須ランキング記事専用の広告セクション */}
+        {post === '250731kyusu-ranking-top5-with-frontmatter' && (
+          <section className="mt-8">
+            <hr className="my-8 border-t-2 border-dashed border-gray-300" />
+            <h3 className="text-lg font-bold mb-4 text-gray-700">
+              🛒 以下、プロモーションリンク（広告）です
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <AffiliateAdCardLark1 />
+              <AffiliateAdCardAlt />
+            </div>
+          </section>
+        )}
 
         {/* スマートウォーターボトル記事の場合の広告表示 */}
         {post === '2025-07-20-smart-water-bottle' && (
@@ -389,13 +404,152 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
   </section>
 )}
 
+{post === '2025-08-08' && (
+  <section className="mt-8">
+    <hr className="my-8 border-t-2 border-dashed border-gray-300" />
+    <h3 className="text-lg font-bold mb-4 text-gray-700">
+      🛒 以下、プロモーションリンク（広告）です
+    </h3>
+
+    {/* Anker SOLIX C1000 - 購入はこちら */}
+    <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex-shrink-0">
+          <img
+            src="https://thumbnail.image.rakuten.co.jp/@0_mall/anker/cabinet/a1761_03.jpg?_ex=300x300"
+            alt="Anker SOLIX C1000 ポータブル電源"
+            className="w-48 h-48 object-cover rounded-lg"
+          />
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <h4 className="text-lg font-semibold text-gray-900 mb-4">Anker SOLIX C1000 ポータブル電源</h4>
+          <p className="text-sm text-gray-600 mb-4">58分でフル充電できる急速チャージ対応、1,024Wh/1,000W のLFPポータブル電源</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <a 
+              href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1761521%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fanker%2Fi%2F10001663%2F" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              楽天市場で探す
+            </a>
+            <a 
+              href="https://shopping.yahoo.co.jp/search?p=Anker+SOLIX+C1000" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Yahoo!ショッピングで探す
+            </a>
+            <a 
+              href="https://www.amazon.co.jp/s?k=Anker+SOLIX+C1000" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Amazonで探す
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Theragun Relief - 購入はこちら */}
+    <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex-shrink-0">
+          <img
+            src="https://thumbnail.image.rakuten.co.jp/@0_mall/usbonline/cabinet/pic-2/tb-relief_nv-01_1_b.jpg?_ex=300x300"
+            alt="Theragun Relief パーカッシブガン"
+            className="w-48 h-48 object-cover rounded-lg"
+          />
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <h4 className="text-lg font-semibold text-gray-900 mb-4">Theragun Relief パーカッシブガン</h4>
+          <p className="text-sm text-gray-600 mb-4">肩・首・腰のコリを狙って叩打でほぐす、軽量タイプのマッサージガン</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <a 
+              href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fusbonline%2Ftg000396%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fusbonline%2Fi%2F10001198%2F" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              楽天市場で探す
+            </a>
+            <a 
+              href="https://shopping.yahoo.co.jp/search?p=Theragun+Relief" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Yahoo!ショッピングで探す
+            </a>
+            <a 
+              href="https://www.amazon.co.jp/s?k=Theragun+Relief" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Amazonで探す
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Etude Glow Fixing Tint - 購入はこちら */}
+    <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex-shrink-0">
+          <img
+            src="https://thumbnail.image.rakuten.co.jp/@0_mall/turuya783/cabinet/ws/2025/cos250624/c00234_1.jpg?_ex=300x300"
+            alt="Etude Glow Fixing Tint"
+            className="w-48 h-48 object-cover rounded-lg"
+          />
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <h4 className="text-lg font-semibold text-gray-900 mb-4">Etude Glow Fixing Tint</h4>
+          <p className="text-sm text-gray-600 mb-4">水膜のようなツヤと色持ちを両立したリップティント。軽やかなつけ心地で約6時間キープ</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <a 
+              href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fturuya783%2Fc00234%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fturuya783%2Fi%2F10460655%2F" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              楽天市場で探す
+            </a>
+            <a 
+              href="https://shopping.yahoo.co.jp/search?p=Etude+Glow+Fixing+Tint" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Yahoo!ショッピングで探す
+            </a>
+            <a 
+              href="https://www.amazon.co.jp/s?k=Etude+Glow+Fixing+Tint" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Amazonで探す
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
 
 
         {/* 関連記事 */}
         <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 mt-6 sm:mt-8">
           <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">関連記事</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-            {getRelatedArticles(category, articleType, post).map((article, index) => (
+            {/* 過去記事カード（最新3つ） */}
+            {getRelatedArticles(category, articleType, post).slice(0, 3).map((article, index) => (
               <Link key={index} href={article.href} className="group block">
                 <div className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
                   <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
@@ -408,6 +562,24 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
                 </div>
               </Link>
             ))}
+            
+            {/* 過去の記事一覧カード（4つ目） */}
+            <Link href={getCategoryLink(category)} className="group block">
+              <div className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 bg-gradient-to-br from-gray-50 to-blue-50">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    過去の記事一覧
+                  </h3>
+                  <svg className="w-5 h-5 text-blue-500 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+                <p className="text-xs sm:text-sm text-gray-600 mb-2">
+                  {getCategoryName(category)}の全記事を見る
+                </p>
+                <span className="text-xs text-gray-500">一覧ページへ</span>
+              </div>
+            </Link>
           </div>
         </div>
 
@@ -494,7 +666,7 @@ function getCategoryLink(category: string): string {
     'popularproducts-overseas': '/overseas-trend',
     '海外トレンド': '/overseas-trend',
     'japaneseproducts-popular-with-foreigners': '/japan-popular',
-    'global-hot-picks': '/articles/global-hot-picks'
+    'global-hot-picks': '/global-hot-picks'
   };
   return categoryLinks[category] || '/';
 }
@@ -610,10 +782,22 @@ function getRelatedArticles(category: string, type?: string, currentPost?: strin
     ],
     'global-hot-picks': [
       {
-        title: 'Global Hot Picks',
+        title: 'Global Hot Picks｜2025-08-08',
+        excerpt: '暑さ対策＆おうちリカバリーがキーワードの3アイテム！',
+        date: '2025.08.08',
+        href: '/articles/global-hot-picks/trend/2025-08-08'
+      },
+      {
+        title: 'Global Hot Picks｜2025-08-07',
+        excerpt: '海外で急上昇中のガジェット＆トイを3分でチェック！',
+        date: '2025.08.07',
+        href: '/articles/global-hot-picks/trend/2025-08-07'
+      },
+      {
+        title: 'Global Hot Picks｜2025-08-06',
         excerpt: '海外で急上昇中の商品',
         date: '2025.08.06',
-        href: '/articles/global-hot-picks/2025-08-06'
+        href: '/articles/global-hot-picks/trend/2025-08-06'
       }
     ]
   };

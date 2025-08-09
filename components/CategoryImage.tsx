@@ -8,6 +8,8 @@ interface CategoryImageProps {
 }
 
 export default function CategoryImage({ category, className = "" }: CategoryImageProps) {
+  const router = useRouter();
+
   const getCategoryImage = (category: string) => {
     switch (category) {
       case '睡眠・健康':
@@ -53,6 +55,11 @@ export default function CategoryImage({ category, className = "" }: CategoryImag
     }
   };
 
+  const handleClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    router.push(getCategoryLink(category));
+  };
+
   return (
     <div className={`relative h-48 overflow-hidden ${className}`}>
       {/* 背景画像 */}
@@ -77,10 +84,7 @@ export default function CategoryImage({ category, className = "" }: CategoryImag
           </div>
           <button 
             className="inline-block text-white/90 text-sm font-medium bg-black/30 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-black/50 transition-all duration-300 hover:scale-105"
-            onClick={(e) => {
-              e.stopPropagation();
-              window.location.href = getCategoryLink(category);
-            }}
+            onClick={handleClick}
           >
             {category}
           </button>
