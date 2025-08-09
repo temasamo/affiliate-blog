@@ -1,4 +1,3 @@
-'use client';
 import { useState, useEffect } from 'react';
 import type { Answers } from '@/lib/resultLogic';
 import { logOutbound } from '@/lib/logOutbound';
@@ -43,7 +42,13 @@ export default function DiagnosisForm({ onSubmit }: Props) {
   useEffect(() => {
     setMounted(true);
     if (!sessionId) {
-      setSessionId(crypto.randomUUID());
+      // ブラウザ環境でのみcrypto.randomUUID()を使用
+      if (typeof window !== 'undefined' && window.crypto) {
+        setSessionId(crypto.randomUUID());
+      } else {
+        // フォールバック用のUUID生成
+        setSessionId(`session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`);
+      }
     }
     
     // 環境変数の読み込み
@@ -90,7 +95,9 @@ export default function DiagnosisForm({ onSubmit }: Props) {
       }
 
       // デフォルトのAPI呼び出し
-      const currentSessionId = sessionId || crypto.randomUUID();
+      const currentSessionId = sessionId || (typeof window !== 'undefined' && window.crypto 
+        ? crypto.randomUUID() 
+        : `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`);
       const response = await fetch('/api/pillow-diagnosis-log', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

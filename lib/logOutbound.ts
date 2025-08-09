@@ -7,6 +7,11 @@ export function logOutbound(partner: 'rakuten'|'yahoo'|'amazon', sessionId: stri
     return Promise.resolve();
   }
 
+  // ブラウザ環境でのみ実行
+  if (typeof window === 'undefined') {
+    return Promise.resolve();
+  }
+
   const body = JSON.stringify({ partner, sessionId });
 
   // 送信が失敗してもユーザー遷移は邪魔しない方針
