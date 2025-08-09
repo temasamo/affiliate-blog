@@ -1,8 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import type { Answers } from '@/lib/resultLogic';
-import { affiliateLinks } from '@/lib/affiliateLinks';
-import OutboundButton from '@/components/OutboundButton';
+import { logOutbound } from '@/lib/logOutbound';
 
 type Props = {
   onSubmit?: (answers: Answers) => Promise<void> | void;
@@ -25,6 +24,11 @@ const defaultAnswers: Answers = {
   budget: 'medium',
 };
 
+// 環境変数からURLを読み込み
+const RAKUTEN_URL = process.env.NEXT_PUBLIC_RAKUTEN_URL || "https://www.rakuten.co.jp/";
+const AMAZON_URL = process.env.NEXT_PUBLIC_AMAZON_URL || "https://www.amazon.co.jp/";
+const YAHOO_URL = process.env.NEXT_PUBLIC_YAHOO_URL || "https://shopping.yahoo.co.jp/";
+
 export default function DiagnosisForm({ onSubmit }: Props) {
   const [answers, setAnswers] = useState<Answers>(defaultAnswers);
   const [loading, setLoading] = useState(false);
@@ -43,6 +47,24 @@ export default function DiagnosisForm({ onSubmit }: Props) {
 
   const handleChange = (key: keyof Answers) => (e: React.ChangeEvent<HTMLSelectElement>) => {
     setAnswers((prev) => ({ ...prev, [key]: e.target.value as any }));
+  };
+
+  // クリック時ロギング + 遷移
+  const handleOutbound = async (
+    vendor: 'rakuten' | 'amazon' | 'yahoo',
+    url: string,
+    sessionId?: string
+  ) => {
+    try {
+      if (sessionId) {
+        await logOutbound(vendor, sessionId);
+      }
+    } catch (e) {
+      console.warn('log-outbound failed', e);
+    } finally {
+      // ログに失敗しても遷移は実行
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -87,9 +109,9 @@ export default function DiagnosisForm({ onSubmit }: Props) {
     if (!result || !rowId) return null;
 
     const buttons = [
-      { key: 'rakuten' as const, label: '🛒 楽天で探す', color: 'linear-gradient(135deg, #ff5c5c, #e74c3c)' },
-      { key: 'amazon' as const, label: '🛒 Amazonで探す', color: 'linear-gradient(135deg, #ff9900, #e67e00)' },
-      { key: 'yahoo' as const, label: '🛒 Yahoo!で探す', color: 'linear-gradient(135deg, #720e9e, #5a0b7a)' },
+      { key: 'rakuten' as const, label: '🛒 楽天で探す', color: 'linear-gradient(135deg, #ff5c5c, #e74c3c)', url: RAKUTEN_URL },
+      { key: 'amazon' as const, label: '🛒 Amazonで探す', color: 'linear-gradient(135deg, #ff9900, #e67e00)', url: AMAZON_URL },
+      { key: 'yahoo' as const, label: '🛒 Yahoo!で探す', color: 'linear-gradient(135deg, #720e9e, #5a0b7a)', url: YAHOO_URL },
     ];
 
     return (
@@ -101,11 +123,9 @@ export default function DiagnosisForm({ onSubmit }: Props) {
         marginTop: '20px'
       }}>
         {buttons.map(button => (
-          <OutboundButton
+          <button
             key={button.key}
-            partner={button.key}
-            url={affiliateLinks[button.key]}
-            sessionId={rowId}
+            onClick={() => handleOutbound(button.key, button.url, rowId)}
             style={{
               padding: '12px 20px',
               fontSize: '0.9rem',
@@ -117,13 +137,19 @@ export default function DiagnosisForm({ onSubmit }: Props) {
               cursor: 'pointer',
               transition: 'all 0.3s ease',
               boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
-              minWidth: '140px',
-              textDecoration: 'none',
-              display: 'inline-block'
+              minWidth: '140px'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.3)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
             }}
           >
             {button.label}
-          </OutboundButton>
+          </button>
         ))}
       </div>
     );

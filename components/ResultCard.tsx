@@ -1,6 +1,5 @@
 // components/ResultCard.tsx
-import { affiliateLinks } from '@/lib/affiliateLinks';
-import OutboundButton from '@/components/OutboundButton';
+import { logOutbound } from '@/lib/logOutbound';
 
 type Props = {
   title: string;
@@ -13,7 +12,30 @@ type Props = {
   };
 };
 
+// 環境変数からURLを読み込み
+const RAKUTEN_URL = process.env.NEXT_PUBLIC_RAKUTEN_URL || "https://www.rakuten.co.jp/";
+const AMAZON_URL = process.env.NEXT_PUBLIC_AMAZON_URL || "https://www.amazon.co.jp/";
+const YAHOO_URL = process.env.NEXT_PUBLIC_YAHOO_URL || "https://shopping.yahoo.co.jp/";
+
 export default function ResultCard({ title, confidence, sessionId, urls }: Props) {
+  // クリック時ロギング + 遷移
+  const handleOutbound = async (
+    vendor: 'rakuten' | 'amazon' | 'yahoo',
+    url: string,
+    sessionId?: string
+  ) => {
+    try {
+      if (sessionId) {
+        await logOutbound(vendor, sessionId);
+      }
+    } catch (e) {
+      console.warn('log-outbound failed', e);
+    } finally {
+      // ログに失敗しても遷移は実行
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
     <div style={{
       padding: '16px',
@@ -49,10 +71,8 @@ export default function ResultCard({ title, confidence, sessionId, urls }: Props
         flexWrap: 'wrap'
       }}>
         {urls.rakuten && (
-          <OutboundButton
-            partner="rakuten"
-            url={affiliateLinks.rakuten}
-            sessionId={sessionId}
+          <button
+            onClick={() => handleOutbound('rakuten', RAKUTEN_URL, sessionId)}
             style={{
               padding: '10px 14px',
               borderRadius: '8px',
@@ -66,13 +86,11 @@ export default function ResultCard({ title, confidence, sessionId, urls }: Props
             }}
           >
             楽天で詳しく見る
-          </OutboundButton>
+          </button>
         )}
         {urls.amazon && (
-          <OutboundButton
-            partner="amazon"
-            url={affiliateLinks.amazon}
-            sessionId={sessionId}
+          <button
+            onClick={() => handleOutbound('amazon', AMAZON_URL, sessionId)}
             style={{
               padding: '10px 14px',
               borderRadius: '8px',
@@ -84,13 +102,11 @@ export default function ResultCard({ title, confidence, sessionId, urls }: Props
             }}
           >
             Amazonで詳しく見る
-          </OutboundButton>
+          </button>
         )}
         {urls.yahoo && (
-          <OutboundButton
-            partner="yahoo"
-            url={affiliateLinks.yahoo}
-            sessionId={sessionId}
+          <button
+            onClick={() => handleOutbound('yahoo', YAHOO_URL, sessionId)}
             style={{
               padding: '10px 14px',
               borderRadius: '8px',
@@ -102,7 +118,7 @@ export default function ResultCard({ title, confidence, sessionId, urls }: Props
             }}
           >
             Yahoo!で詳しく見る
-          </OutboundButton>
+          </button>
         )}
       </div>
     </div>
