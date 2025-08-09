@@ -5,7 +5,7 @@ import { logOutbound } from '@/lib/logOutbound';
 import { affiliateLinks } from '@/lib/affiliateLinks';
 
 type Props = {
-  onSubmit: (answers: Answers) => Promise<void> | void;
+  onSubmit?: (answers: Answers) => Promise<void> | void;
 };
 
 type Result = {
@@ -42,7 +42,13 @@ export default function DiagnosisForm({ onSubmit }: Props) {
     setRowId(null);
     
     try {
-      // APIを直接呼び出して結果を取得
+      // もしonSubmitが提供されている場合はそれを使用
+      if (onSubmit) {
+        await onSubmit(answers);
+        return;
+      }
+
+      // デフォルトのAPI呼び出し
       const response = await fetch('/api/pillow-diagnosis-log', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
