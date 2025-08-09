@@ -8,8 +8,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CategoryImage from '../components/CategoryImage';
 import CategoryCard from '../components/CategoryCard';
-import DiagnosisForm from '../components/DiagnosisForm';
-import OutboundClickTest from '../components/OutboundClickTest';
 
 
 interface Article {
@@ -32,24 +30,10 @@ export default function Home({ latestArticles }: HomeProps) {
       
       {/* メインコンテンツ */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-        <div style={{background:'#ff0',padding:8,fontWeight:'bold'}}>
-          DEBUG: index.tsx は再描画されています
-        </div>
-
-        <section style={{ margin:'24px 0', padding:16, border:'1px solid #eee' }}>
-          <h2>枕診断ログ 送信テスト</h2>
-          <DiagnosisForm />
-        </section>
-
-        <section style={{ margin:'24px 0', padding:16, border:'1px solid #eee' }}>
-          <h2>アウトバウンドクリック テスト</h2>
-          <OutboundClickTest />
-        </section>
-
         {/* ヒーローセクション */}
         <section className="mb-12 sm:mb-16">
           <div className="relative bg-gradient-hero rounded-3xl p-8 sm:p-12 text-center shadow-lg border border-gray-100 overflow-hidden">
-                        {/* 背景の80%を覆う透かし画像 */}
+            {/* 背景の80%を覆う透かし画像 */}
             <div className="absolute top-0 right-0 w-4/5 h-full opacity-65">
               <div className="w-full h-full bg-cover bg-center bg-no-repeat" 
                    style={{
@@ -71,20 +55,20 @@ export default function Home({ latestArticles }: HomeProps) {
             
             {/* コンテンツ */}
             <div className="relative z-10">
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              Market Supporter AI
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-              AIが導く、賢い洞察と信頼できるおすすめ
-            </p>
-            <Link 
-              href="/blog" 
-              className="inline-flex items-center px-8 py-3 bg-blue-500 text-white font-semibold rounded-full hover:bg-blue-600 transition-colors shadow-md hover:shadow-lg hover-lift"
-            >
-              最新の記事を見る
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+                Market Supporter AI
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+                AIが導く、賢い洞察と信頼できるおすすめ
+              </p>
+              <Link 
+                href="/blog" 
+                className="inline-flex items-center px-8 py-3 bg-blue-500 text-white font-semibold rounded-full hover:bg-blue-600 transition-colors shadow-md hover:shadow-lg hover-lift"
+              >
+                最新の記事を見る
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </Link>
             </div>
           </div>
@@ -204,15 +188,6 @@ export default function Home({ latestArticles }: HomeProps) {
               overlayColor="bg-black/40"
             />
           </div>
-        </section>
-
-        {/* 枕診断テストセクション */}
-        <section className="mb-12 sm:mb-16">
-          <div className="flex items-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">枕診断テスト</h2>
-            <span className="ml-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full font-medium">TEST</span>
-          </div>
-          <DiagnosisForm />
         </section>
 
         {/* おすすめランキングセクション */}
