@@ -44,4 +44,4 @@ if (require.main === module) {
   main();
 }
 
-export { logPillowDiagnosis }; 
+export { logPillowDiagnosis };

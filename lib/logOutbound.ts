@@ -1,16 +1,15 @@
-export async function logOutbound(
-  channel: 'rakuten'|'yahoo'|'amazon',
-  sessionId: string
-) {
+// lib/logOutbound.ts
+export type Shop = 'rakuten' | 'amazon' | 'yahoo';
+
+export async function logOutbound(shop: Shop, id: string) {
   try {
     await fetch('/api/log-outbound', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ channel, session_id: sessionId }),
-      keepalive: true, // タブ遷移中も送れるように
+      body: JSON.stringify({ id, shop }),
+      keepalive: true, // タブ遷移時でもなるべく送れる
     });
-  } catch (e) {
-    // 失敗してもユーザー遷移は邪魔しない
-    console.warn('logOutbound failed', e);
+  } catch {
+    // 失敗時は無視（離脱優先）
   }
 } 
