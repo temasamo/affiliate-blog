@@ -1,9 +1,12 @@
 // pages/pillow-diagnosis.tsx
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import DiagnosisForm from '@/components/DiagnosisForm';
+import ResultCard from '@/components/ResultCard';
 
 export default function PillowDiagnosisPage() {
   const [mounted, setMounted] = useState(false);
+  const [result, setResult] = useState<any>(null);
+  const sessionId = useMemo(() => (typeof crypto !== "undefined" ? crypto.randomUUID() : ""), []);
 
   useEffect(() => {
     setMounted(true);
@@ -61,7 +64,17 @@ export default function PillowDiagnosisPage() {
           border: '1px solid rgba(255, 255, 255, 0.2)',
           marginBottom: '30px'
         }}>
-          {mounted ? <DiagnosisForm /> : <div>読み込み中...</div>}
+          {mounted ? (
+            <>
+              <DiagnosisForm 
+                sessionId={sessionId} 
+                onResult={(r: any) => setResult({ ...r, sessionId })}
+              />
+              {result && <ResultCard result={result} sessionId={sessionId} />}
+            </>
+          ) : (
+            <div>読み込み中...</div>
+          )}
         </div>
       </div>
 

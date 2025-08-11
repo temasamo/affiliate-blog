@@ -85,6 +85,9 @@ export default function Header({ title = "Market Supporter AI", description = "A
                 人気の日本商品
               </Link>
               <div className="border-l border-gray-300 h-6 mx-4"></div>
+              <Link href="/diagnostic-ai/makura/01-intro" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-700">
+                診断AI
+              </Link>
               <Link href="/education" className="text-purple-600 hover:text-purple-700 font-bold transition-colors">
                 教育
               </Link>
