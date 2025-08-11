@@ -1,40 +1,37 @@
 // pages/api/log-outbound.ts
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { createClient } from '@supabase/supabase-js';
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-);
+import { supabaseAdmin } from '../../lib/supabaseAdmin';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') return res.status(405).json({ error: 'Method Not Allowed' });
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method Not Allowed' });
+  }
 
   try {
-    const { id, shop } = req.body as { id?: string; shop?: 'rakuten' | 'amazon' | 'yahoo' };
-    if (!id || !shop) return res.status(400).json({ error: 'id and shop required' });
+    const { partner, sessionId, ctaId, url, page, referrer, userAgent } = req.body;
 
-    // 既存値を取り出し
-    const { data, error } = await supabase
-      .from('pillow_diagnosis_logs')
-      .select('outbound_clicks')
-      .eq('id', id)
-      .single();
+    // ログを保存
+    const { error } = await supabaseAdmin
+      .from('outbound_clicks')
+      .insert([{
+        session_id: sessionId,
+        partner,
+        cta_id: ctaId,
+        url,
+        page,
+        referrer,
+        user_agent: userAgent,
+        clicked_at: new Date().toISOString()
+      }]);
 
-    if (error) return res.status(500).json({ error: error.message });
+    if (error) {
+      console.error('Log outbound error:', error);
+      return res.status(500).json({ error: 'Failed to log outbound click' });
+    }
 
-    const current = (data?.outbound_clicks ?? {}) as Record<string, number>;
-    const next = { ...current, [shop]: (current[shop] ?? 0) + 1 };
-
-    const { error: upErr } = await supabase
-      .from('pillow_diagnosis_logs')
-      .update({ outbound_clicks: next })
-      .eq('id', id);
-
-    if (upErr) return res.status(500).json({ error: upErr.message });
-
-    return res.status(200).json({ ok: true, outbound_clicks: next });
-  } catch (e: any) {
-    return res.status(500).json({ error: e?.message ?? 'unknown error' });
+    return res.status(200).json({ success: true });
+  } catch (error) {
+    console.error('Log outbound error:', error);
+    return res.status(500).json({ error: 'Internal server error' });
   }
 } 
