@@ -5,7 +5,7 @@ import type { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 
-const ROOT = path.join(process.cwd(), "diagnostic-ai");
+const ROOT = path.join(process.cwd(), "articles", "diagnostic-ai");
 
 type Props = { source: MDXRemoteSerializeResult; frontMatter: any };
 
