@@ -74,7 +74,16 @@ export default function Home({ latestArticles }: HomeProps) {
           </div>
         </section>
 
-
+        {/* 新記事公開リンク */}
+        <div className="bg-gray-100 border border-gray-300 text-gray-700 p-4 mb-6 rounded-lg shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+          <p className="font-semibold mb-1 text-gray-800">新記事公開！</p>
+          <a
+            href="/diagnostic-ai/makura/01-intro"
+            className="text-blue-600 underline font-bold hover:text-blue-800 transition-colors"
+          >
+            枕診断AI登場！枕の知識を徹底解剖する新時代ツール →
+          </a>
+        </div>
 
         {/* Global Hot Picks セクション */}
         <section className="mb-12 sm:mb-16">

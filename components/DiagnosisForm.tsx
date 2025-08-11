@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react';
 import type { Answers } from '@/lib/resultLogic';
 import { logOutbound } from '@/lib/logOutbound';
+import { buildMallLinks } from '@/lib/pillowCandidates';
+import { buildSearchQuery } from "@/lib/pillowQuery";
 
 type Gender = "male" | "female" | "other" | "unspecified";
 
@@ -95,15 +97,19 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
   const handleOutbound = async (
     vendor: 'rakuten' | 'amazon' | 'yahoo',
     url: string,
-    sessionId?: string
+    sessionId?: string,
+    query?: string
   ) => {
     try {
       if (sessionId) {
+        console.log("will send", { vendor, query, url, sessionId });
         await fetch("/api/log-outbound", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             ctaId: "diagnosis-primary",
+            vendor,                 // ← 追加
+            query,
             url,
             page: "pillow-diagnosis",
             sessionId,
@@ -173,10 +179,22 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
   const CTAButtons = () => {
     if (!result || !rowId) return null;
 
+    // 診断結果から検索タグを生成
+    const rawTags = [
+      result.primaryCategory || '枕',
+      result.height || '',
+      result.firmness || ''
+    ].filter(Boolean);
+　　
+    const query = buildSearchQuery(rawTags);      // 例: "枕 サイド高 肩口カーブ 高さ調整"
+    
+     // ★ buildMallLinks は string[] を想定 → 空白で分割して渡す
+    const mallLinks = buildMallLinks(query.split(" "));
+
     const buttons = [
-      { key: 'rakuten' as const, label: '🛒 楽天で探す', color: 'linear-gradient(135deg, #ff5c5c, #e74c3c)', url: urls.rakuten },
-      { key: 'amazon' as const, label: '🛒 Amazonで探す', color: 'linear-gradient(135deg, #ff9900, #e67e00)', url: urls.amazon },
-      { key: 'yahoo' as const, label: '🛒 Yahoo!で探す', color: 'linear-gradient(135deg, #720e9e, #5a0b7a)', url: urls.yahoo },
+      { key: 'rakuten' as const, label: '🛒 楽天で探す', color: 'linear-gradient(135deg, #ff5c5c, #e74c3c)', url: mallLinks.rakuten },
+      { key: 'amazon' as const, label: '🛒 Amazonで探す', color: 'linear-gradient(135deg, #ff9900, #e67e00)', url: mallLinks.amazon },
+      { key: 'yahoo' as const, label: '🛒 Yahoo!で探す', color: 'linear-gradient(135deg, #720e9e, #5a0b7a)', url: mallLinks.yahoo },
     ];
 
     return (
@@ -190,7 +208,7 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
         {buttons.map(button => (
           <button
             key={button.key}
-            onClick={() => handleOutbound(button.key, button.url, rowId)}
+            onClick={() => handleOutbound(button.key, button.url, rowId,query)}
             style={{
               padding: '12px 20px',
               fontSize: '0.9rem',

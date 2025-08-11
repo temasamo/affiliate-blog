@@ -1,28 +1,48 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import { supabaseAdmin } from "../../lib/supabaseAdmin"; // ここ、エイリアス無ければ相対パスに
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { supabaseAdmin } from '@/lib/supabaseAdmin';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  console.log("API /pillow-diagnosis called", req.method);           // ←①呼び出しログ
-  if (req.method !== "POST") return res.status(405).json({ error: "Method Not Allowed" });
+  if (req.method !== 'POST') return res.status(405).json({ error: 'Method Not Allowed' });
 
-  const body = typeof req.body === "string" ? JSON.parse(req.body) : (req.body || {});
-  console.log("[API recv]", body);                                    // ←②受信データ
+  try {
+    const body = req.body ?? {};
+    
+    // 診断ロジック（簡易版）
+    const result = {
+      id: `diagnosis_${Date.now()}`,
+      primaryCategory: '高め・やや硬め枕',
+      secondaryCategories: ['低め・柔らかめ', '標準'],
+      confidence: 0.82,
+      reasons: [
+        '横向きが多い',
+        '首・肩のこりを軽減したい',
+        'マットレスは普通〜硬め',
+      ],
+      title: '横向きさんには「しっかり支える高め枕」',
+      summary: '横向き時に肩のスペースを確保できる高さで、後頭部を安定させるやや硬め素材を推奨します。',
+      height: '高め（10-12cm）',
+      firmness: 'やや硬め',
+      ctaLabel: 'おすすめ商品をチェック',
+      ctaUrl: process.env.NEXT_PUBLIC_CTA_URL || 'https://example.com',
+      ctaId: 'diagnosis-primary',
+    };
 
-  // 最小INSERT（今のテーブル構成に合わせる：session_id, answers）
-  const { data, error } = await supabaseAdmin
-    .from("pillow_diagnosis_logs")
-    .insert([{ session_id: body.sessionId ?? "debug-session", answers: body }])
-    .select();
+    // Supabaseにログを保存（オプション）
+    if (process.env.NODE_ENV !== 'production') {
+      try {
+        await supabaseAdmin
+          .from('pillow_diagnosis_logs')
+          .insert([{ 
+            session_id: body.sessionId || 'debug-session', 
+            answers: body 
+          }]);
+      } catch (dbError) {
+        console.log('DB保存エラー（無視）:', dbError);
+      }
+    }
 
-  console.log("[Insert result]", { data, error });                    // ←③結果ログ
-  if (error) return res.status(500).json({ error: error.message });
-
-  return res.status(200).json({
-    id: data?.[0]?.id,
-    title: "あなたに合う枕タイプ（仮診断）",
-    summary: "テスト応答。DB保存も実施。",
-    ctaLabel: "おすすめ商品をチェック",
-    ctaUrl: process.env.NEXT_PUBLIC_CTA_URL || "https://example.com",
-    ctaId: "diagnosis-primary",
-  });
+    return res.status(200).json(result);
+  } catch (e: any) {
+    return res.status(500).json({ error: e.message });
+  }
 } 

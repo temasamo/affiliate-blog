@@ -65,7 +65,7 @@ export default function PillowDiagnosisPage() {
           border: '1px solid rgba(255, 255, 255, 0.2)',
           marginBottom: '30px'
         }}>
-          <DiagnosisForm onSubmit={async () => {}} />
+          <DiagnosisForm sessionId={sessionIdRef.current} />
         </div>
       </div>
 
