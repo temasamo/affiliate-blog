@@ -1,143 +1,58 @@
-// components/ResultCard.tsx
-import { useState, useEffect } from 'react';
-import { logOutbound } from '@/lib/logOutbound';
+"use client";
+import { useCallback, useState } from "react";
 
-type Props = {
+type Result = {
   title: string;
-  confidence: number; // 0-100
-  sessionId: string;
-  urls: {
-    rakuten?: string;
-    amazon?: string;
-    yahoo?: string;
-  };
+  summary: string;
+  ctaLabel?: string;
+  ctaUrl?: string;
+  ctaId?: string;
+  sessionId?: string;
 };
 
-export default function ResultCard({ title, confidence, sessionId, urls }: Props) {
-  const [mounted, setMounted] = useState(false);
-  const [urlsState, setUrlsState] = useState({
-    rakuten: "https://www.rakuten.co.jp/",
-    amazon: "https://www.amazon.co.jp/",
-    yahoo: "https://shopping.yahoo.co.jp/"
-  });
+export default function ResultCard({ result, sessionId }: { result: Result; sessionId?: string }) {
+  const [sending, setSending] = useState(false);
+  const fallbackUrl = process.env.NEXT_PUBLIC_CTA_URL;
+  const ctaTarget = result.ctaUrl || fallbackUrl;
 
-  useEffect(() => {
-    setMounted(true);
-    // 環境変数の読み込み
-    setUrlsState({
-      rakuten: process.env.NEXT_PUBLIC_RAKUTEN_URL || "https://www.rakuten.co.jp/",
-      amazon: process.env.NEXT_PUBLIC_AMAZON_URL || "https://www.amazon.co.jp/",
-      yahoo: process.env.NEXT_PUBLIC_YAHOO_URL || "https://shopping.yahoo.co.jp/"
-    });
-  }, []);
-
-  // クリック時ロギング + 遷移
-  const handleOutbound = async (
-    vendor: 'rakuten' | 'amazon' | 'yahoo',
-    url: string,
-    sessionId?: string
-  ) => {
+  const onClickCta = useCallback(async () => {
+    if (!ctaTarget) return;
+    setSending(true);
     try {
-      if (sessionId) {
-        await logOutbound(vendor, sessionId);
-      }
-    } catch (e) {
-      console.warn('log-outbound failed', e);
+      await fetch("/api/log-outbound", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ctaId: result.ctaId || "diagnosis-primary",
+          url: ctaTarget,
+          page: "top",
+          sessionId,
+          referrer: typeof window !== "undefined" ? window.location.href : undefined,
+          userAgent: typeof navigator !== "undefined" ? navigator.userAgent : undefined,
+        }),
+        keepalive: true,
+      });
+    } catch {
+      /* ログ失敗は遷移をブロックしない */
     } finally {
-      // ログに失敗しても遷移は実行
-      window.open(url, '_blank', 'noopener,noreferrer');
+      setSending(false);
+      window.open(ctaTarget, "_blank", "noopener,noreferrer");
     }
-  };
-
-  if (!mounted) {
-    return <div>読み込み中...</div>;
-  }
+  }, [ctaTarget, result.ctaId, sessionId]);
 
   return (
-    <div style={{
-      padding: '16px',
-      border: '1px solid #eee',
-      borderRadius: '12px',
-      background: '#fff',
-      marginTop: '16px'
-    }}>
-      <h3 style={{ fontSize: '18px', margin: '0 0 10px' }}>{title}</h3>
+    <div className="grid gap-3 p-4 rounded-2xl border shadow bg-white">
+      <h3 className="text-lg font-bold">{result.title}</h3>
+      <p className="text-sm leading-relaxed">{result.summary}</p>
 
-      <div>
-        推定適合度: <strong>{confidence}%</strong>
-        <div style={{
-          width: '100%',
-          height: '8px',
-          background: '#eee',
-          borderRadius: '999px',
-          overflow: 'hidden',
-          marginTop: '8px'
-        }}>
-          <div style={{
-            height: '100%',
-            background: '#2e7d32',
-            width: `${confidence}%`
-          }} />
-        </div>
-      </div>
-
-      <div style={{
-        display: 'flex',
-        gap: '8px',
-        marginTop: '12px',
-        flexWrap: 'wrap'
-      }}>
-        {urls.rakuten && (
-          <button
-            onClick={() => handleOutbound('rakuten', urlsState.rakuten, sessionId)}
-            style={{
-              padding: '10px 14px',
-              borderRadius: '8px',
-              border: '1px solid #ff5c5c',
-              background: '#ff5c5c',
-              color: '#fff',
-              fontWeight: '600',
-              cursor: 'pointer',
-              textDecoration: 'none',
-              display: 'inline-block'
-            }}
-          >
-            楽天で詳しく見る
-          </button>
-        )}
-        {urls.amazon && (
-          <button
-            onClick={() => handleOutbound('amazon', urlsState.amazon, sessionId)}
-            style={{
-              padding: '10px 14px',
-              borderRadius: '8px',
-              border: '1px solid #ccc',
-              background: '#fff',
-              cursor: 'pointer',
-              textDecoration: 'none',
-              display: 'inline-block'
-            }}
-          >
-            Amazonで詳しく見る
-          </button>
-        )}
-        {urls.yahoo && (
-          <button
-            onClick={() => handleOutbound('yahoo', urlsState.yahoo, sessionId)}
-            style={{
-              padding: '10px 14px',
-              borderRadius: '8px',
-              border: '1px solid #ccc',
-              background: '#fff',
-              cursor: 'pointer',
-              textDecoration: 'none',
-              display: 'inline-block'
-            }}
-          >
-            Yahoo!で詳しく見る
-          </button>
-        )}
-      </div>
+      {/* CTAボタン（URLがあれば必ず表示） */}
+      <button
+        onClick={onClickCta}
+        disabled={sending || !ctaTarget}
+        className="px-4 py-2 rounded-2xl shadow font-semibold border"
+      >
+        {sending ? "記録中..." : result.ctaLabel || "おすすめを見る"}
+      </button>
     </div>
   );
 } 

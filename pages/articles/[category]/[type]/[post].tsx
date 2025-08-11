@@ -305,99 +305,131 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
 
     {/* Insta360 Ace Pro - 購入はこちら */}
     <div className="bg-white rounded-xl shadow-md p-6 mb-6">
-      <div className="text-center">
-        <h4 className="text-lg font-semibold text-gray-900 mb-4">Insta360 Ace Pro</h4>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
-          <a 
-            href="https://search.rakuten.co.jp/search/mall/Insta360+Ace+Pro/" 
-            target="_blank" 
-            rel="nofollow noopener noreferrer"
-            className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
-          >
-            楽天市場で探す
-          </a>
-          <a 
-            href="https://shopping.yahoo.co.jp/search?p=Insta360+Ace+Pro" 
-            target="_blank" 
-            rel="nofollow noopener noreferrer"
-            className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
-          >
-            Yahoo!ショッピングで探す
-          </a>
-          <a 
-            href="https://www.amazon.co.jp/s?k=Insta360+Ace+Pro" 
-            target="_blank" 
-            rel="nofollow noopener noreferrer"
-            className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
-          >
-            Amazonで探す
-          </a>
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex-shrink-0">
+          <img
+            src="https://thumbnail.image.rakuten.co.jp/@0_mall/insta360-shop2/cabinet/12177189/12177192/imgrc0095754257.jpg?_ex=300x300"
+            alt="Insta360 Ace Pro"
+            className="w-48 h-48 object-cover rounded-lg"
+          />
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <h4 className="text-lg font-semibold text-gray-900 mb-4">Insta360 Ace Pro</h4>
+          <p className="text-sm text-gray-600 mb-4">AI搭載アクションカメラ、4K/120fps撮影対応</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {/* 楽天市場: △ なので表示 */}
+            <a 
+              href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Finsta360-shop2%2Finsta360-acepro%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Finsta360-shop2%2Fi%2F10000410%2F" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              楽天市場で探す
+            </a>
+            {/* Yahoo!ショッピング: △ なので表示 */}
+            <a 
+              href="https://shopping.yahoo.co.jp/search?p=Insta360+Ace+Pro" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Yahoo!ショッピングで探す
+            </a>
+            <a 
+              href="https://www.amazon.co.jp/s?k=Insta360+Ace+Pro" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Amazonで探す
+            </a>
+          </div>
         </div>
       </div>
     </div>
     
-    {/* Ninja Crispi エアフライヤー - 購入はこちら */}
+    {/* Alpha Space 商品 - 購入はこちら */}
     <div className="bg-white rounded-xl shadow-md p-6 mb-6">
-      <div className="text-center">
-        <h4 className="text-lg font-semibold text-gray-900 mb-4">Ninja Crispi ガラス窓エアフライヤー</h4>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
-          <a 
-            href="https://search.rakuten.co.jp/search/mall/Ninja+Crispi/" 
-            target="_blank" 
-            rel="nofollow noopener noreferrer"
-            className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
-          >
-            楽天市場で探す
-          </a>
-          <a 
-            href="https://shopping.yahoo.co.jp/search?p=Ninja+Crispi" 
-            target="_blank" 
-            rel="nofollow noopener noreferrer"
-            className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
-          >
-            Yahoo!ショッピングで探す
-          </a>
-          <a 
-            href="https://www.amazon.co.jp/s?k=Ninja+Crispi" 
-            target="_blank" 
-            rel="nofollow noopener noreferrer"
-            className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
-          >
-            Amazonで探す
-          </a>
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex-shrink-0">
+          <img
+            src="https://thumbnail.image.rakuten.co.jp/@0_mall/alphaespace-usa/cabinet/img31/3025055-03.jpg?_ex=300x300"
+            alt="Alpha Space 商品"
+            className="w-48 h-48 object-cover rounded-lg"
+          />
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <h4 className="text-lg font-semibold text-gray-900 mb-4">Alpha Space 商品</h4>
+          <p className="text-sm text-gray-600 mb-4">高品質な生活用品</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <a 
+              href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Falphaespace-usa%2F3025055%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Falphaespace-usa%2Fi%2F10016986%2F" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              楽天市場で探す
+            </a>
+            <a 
+              href="https://shopping.yahoo.co.jp/search?p=Alpha+Space" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Yahoo!ショッピングで探す
+            </a>
+            <a 
+              href="https://www.amazon.co.jp/s?k=Alpha+Space" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Amazonで探す
+            </a>
+          </div>
         </div>
       </div>
     </div>
     
-        {/* POP MART Labubu - 購入はこちら */}
+        {/* Yinai 商品 - 購入はこちら */}
     <div className="bg-white rounded-xl shadow-md p-6 mb-6">
-      <div className="text-center">
-        <h4 className="text-lg font-semibold text-gray-900 mb-4">POP MART Labubu Vinyl Toy</h4>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
-          <a 
-            href="https://search.rakuten.co.jp/search/mall/POP+MART+Labubu/" 
-            target="_blank" 
-            rel="nofollow noopener noreferrer"
-            className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
-          >
-            楽天市場で探す
-          </a>
-          <a 
-            href="https://shopping.yahoo.co.jp/search?p=POP+MART+Labubu" 
-            target="_blank" 
-            rel="nofollow noopener noreferrer"
-            className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
-          >
-            Yahoo!ショッピングで探す
-          </a>
-          <a 
-            href="https://www.amazon.co.jp/s?k=POP+MART+Labubu" 
-            target="_blank" 
-            rel="nofollow noopener noreferrer"
-            className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
-          >
-            Amazonで探す
-          </a>
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex-shrink-0">
+          <img
+            src="https://thumbnail.image.rakuten.co.jp/@0_mall/yinai/cabinet/free_1751347535839.jpg?_ex=300x300"
+            alt="Yinai 商品"
+            className="w-48 h-48 object-cover rounded-lg"
+          />
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <h4 className="text-lg font-semibold text-gray-900 mb-4">Yinai 商品</h4>
+          <p className="text-sm text-gray-600 mb-4">人気の商品</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <a 
+              href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fyinai%2F1000000932%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fyinai%2Fi%2F10000329%2F" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              楽天市場で探す
+            </a>
+            <a 
+              href="https://shopping.yahoo.co.jp/search?p=Yinai" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Yahoo!ショッピングで探す
+            </a>
+            <a 
+              href="https://www.amazon.co.jp/s?k=Yinai" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Amazonで探す
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -424,7 +456,8 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
         <div className="flex-1 text-center md:text-left">
           <h4 className="text-lg font-semibold text-gray-900 mb-4">Anker SOLIX C1000 ポータブル電源</h4>
           <p className="text-sm text-gray-600 mb-4">58分でフル充電できる急速チャージ対応、1,024Wh/1,000W のLFPポータブル電源</p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {/* 楽天市場: △ なので表示 */}
             <a 
               href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1761521%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fanker%2Fi%2F10001663%2F" 
               target="_blank" 
@@ -433,14 +466,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
             >
               楽天市場で探す
             </a>
-            <a 
-              href="https://shopping.yahoo.co.jp/search?p=Anker+SOLIX+C1000" 
-              target="_blank" 
-              rel="nofollow noopener noreferrer"
-              className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
-            >
-              Yahoo!ショッピングで探す
-            </a>
+            {/* Yahoo!ショッピング: × なので非表示 */}
             <a 
               href="https://www.amazon.co.jp/s?k=Anker+SOLIX+C1000" 
               target="_blank" 
@@ -468,6 +494,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
           <h4 className="text-lg font-semibold text-gray-900 mb-4">Theragun Relief パーカッシブガン</h4>
           <p className="text-sm text-gray-600 mb-4">肩・首・腰のコリを狙って叩打でほぐす、軽量タイプのマッサージガン</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {/* 楽天市場: ◯ なので表示 */}
             <a 
               href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fusbonline%2Ftg000396%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fusbonline%2Fi%2F10001198%2F" 
               target="_blank" 
@@ -476,6 +503,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
             >
               楽天市場で探す
             </a>
+            {/* Yahoo!ショッピング: △ なので表示 */}
             <a 
               href="https://shopping.yahoo.co.jp/search?p=Theragun+Relief" 
               target="_blank" 
@@ -484,6 +512,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
             >
               Yahoo!ショッピングで探す
             </a>
+            {/* Amazon: ◯ なので表示 */}
             <a 
               href="https://www.amazon.co.jp/s?k=Theragun+Relief" 
               target="_blank" 
@@ -510,7 +539,8 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
         <div className="flex-1 text-center md:text-left">
           <h4 className="text-lg font-semibold text-gray-900 mb-4">Etude Glow Fixing Tint</h4>
           <p className="text-sm text-gray-600 mb-4">水膜のようなツヤと色持ちを両立したリップティント。軽やかなつけ心地で約6時間キープ</p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {/* 楽天市場: ◯ なので表示 */}
             <a 
               href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fturuya783%2Fc00234%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fturuya783%2Fi%2F10460655%2F" 
               target="_blank" 
@@ -519,6 +549,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
             >
               楽天市場で探す
             </a>
+            {/* Yahoo!ショッピング: ◯ なので表示 */}
             <a 
               href="https://shopping.yahoo.co.jp/search?p=Etude+Glow+Fixing+Tint" 
               target="_blank" 
@@ -527,8 +558,139 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
             >
               Yahoo!ショッピングで探す
             </a>
+            {/* Amazon: △ なので非表示 */}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
+{post === '2025-08-09' && (
+  <section className="mt-8">
+    <hr className="my-8 border-t-2 border-dashed border-gray-300" />
+    <h3 className="text-lg font-bold mb-4 text-gray-700">
+      🛒 以下、プロモーションリンク（広告）です
+    </h3>
+
+    {/* Insta360 X4 - 購入はこちら */}
+    <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex-shrink-0">
+          <img
+            src="https://thumbnail.image.rakuten.co.jp/@0_mall/insta360-shop2/cabinet/biiino/item/main-image/20240416180341_4.jpg?_ex=300x300"
+            alt="Insta360 X4"
+            className="w-48 h-48 object-cover rounded-lg"
+          />
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <h4 className="text-lg font-semibold text-gray-900 mb-4">Insta360 X4</h4>
+          <p className="text-sm text-gray-600 mb-4">8K/30fps撮影対応、AI搭載アクションカメラ</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <a 
-              href="https://www.amazon.co.jp/s?k=Etude+Glow+Fixing+Tint" 
+              href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Finsta360-shop2%2Finsta360-x4%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Finsta360-shop2%2Fi%2F10000445%2F" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              楽天市場で探す
+            </a>
+            <a 
+              href="https://shopping.yahoo.co.jp/search?p=Insta360+X4" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Yahoo!ショッピングで探す
+            </a>
+            <a 
+              href="https://www.amazon.co.jp/s?k=Insta360+X4" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Amazonで探す
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Alpha Space 商品 - 購入はこちら */}
+    <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex-shrink-0">
+          <img
+            src="https://thumbnail.image.rakuten.co.jp/@0_mall/alphaespace-usa/cabinet/img40/3013338-01.jpg?_ex=300x300"
+            alt="Alpha Space 商品"
+            className="w-48 h-48 object-cover rounded-lg"
+          />
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <h4 className="text-lg font-semibold text-gray-900 mb-4">Alpha Space 商品</h4>
+          <p className="text-sm text-gray-600 mb-4">高品質な生活用品</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <a 
+              href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Falphaespace-usa%2F3013338%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Falphaespace-usa%2Fi%2F10022410%2F" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              楽天市場で探す
+            </a>
+            <a 
+              href="https://shopping.yahoo.co.jp/search?p=Alpha+Space" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Yahoo!ショッピングで探す
+            </a>
+            <a 
+              href="https://www.amazon.co.jp/s?k=Alpha+Space" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Amazonで探す
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* LANEIGE Glaze Craze Tinted Lip Serum - 購入はこちら */}
+    <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex-shrink-0">
+          <img
+            src="https://thumbnail.image.rakuten.co.jp/@0_mall/thebeautyclub/cabinet/img_1748574870/img_360971_1.jpg?_ex=300x300"
+            alt="LANEIGE Glaze Craze Tinted Lip Serum Peach Glaze"
+            className="w-48 h-48 object-cover rounded-lg"
+          />
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <h4 className="text-lg font-semibold text-gray-900 mb-4">LANEIGE Glaze Craze Tinted Lip Serum Peach Glaze</h4>
+          <p className="text-sm text-gray-600 mb-4">水膜のようなツヤと色持ちを両立したリップティント</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <a 
+              href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fthebeautyclub%2F360971%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fthebeautyclub%2Fi%2F10506216%2F" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              楽天市場で探す
+            </a>
+            <a 
+              href="https://shopping.yahoo.co.jp/search?p=The+Beauty+Club" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Yahoo!ショッピングで探す
+            </a>
+            <a 
+              href="https://www.amazon.co.jp/s?k=The+Beauty+Club" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -672,6 +834,29 @@ function getCategoryLink(category: string): string {
 }
 
 // 関連記事を取得する関数
+// 商品の在庫状況を管理する関数
+function getProductAvailability(post: string, productName: string) {
+  const availabilityMap: { [key: string]: { [key: string]: { rakuten: string, yahoo: string, amazon: string } } } = {
+    '2025-08-07': {
+      'Insta360 Ace Pro': { rakuten: '△', yahoo: '△', amazon: '◯' },
+      'Alpha Space 商品': { rakuten: '△', yahoo: '△', amazon: '◯' },
+      'Yinai 商品': { rakuten: '△', yahoo: '△', amazon: '◯' }
+    },
+    '2025-08-08': {
+      'Anker SOLIX C1000': { rakuten: '△', yahoo: '×', amazon: '◯' },
+      'Theragun Relief': { rakuten: '◯', yahoo: '△', amazon: '◯' },
+      'Etude Glow Fixing Tint': { rakuten: '◯', yahoo: '◯', amazon: '△' }
+    },
+    '2025-08-09': {
+      'Insta360 X4': { rakuten: '△', yahoo: '△', amazon: '◯' },
+      'Alpha Space 商品': { rakuten: '△', yahoo: '△', amazon: '◯' },
+      'LANEIGE Glaze Craze Tinted Lip Serum Peach Glaze': { rakuten: '◯', yahoo: '◯', amazon: '◯' }
+    }
+  };
+  
+  return availabilityMap[post]?.[productName] || { rakuten: '◯', yahoo: '◯', amazon: '◯' };
+}
+
 function getRelatedArticles(category: string, type?: string, currentPost?: string) {
   const relatedArticles: { [key: string]: any[] } = {
     'sleep-health': [
@@ -879,9 +1064,9 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async ({ params }) =
     fullPath = path.join(process.cwd(), 'articles', category, type, `${post}.md`);
   } else {
     // typeパラメータがない場合、または'trend'の場合（global-hot-picksなど）
-    // まず.mdファイルを試し、なければ.mdxファイルを試す
-    const mdPath = path.join(process.cwd(), 'articles', category, `${post}.md`);
-    const mdxPath = path.join(process.cwd(), 'articles', category, `${post}.mdx`);
+    // trendディレクトリ内のファイルを探す
+    const mdPath = path.join(process.cwd(), 'articles', category, 'trend', `${post}.md`);
+    const mdxPath = path.join(process.cwd(), 'articles', category, 'trend', `${post}.mdx`);
     
     if (fs.existsSync(mdPath)) {
       fullPath = mdPath;
