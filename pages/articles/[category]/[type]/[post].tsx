@@ -704,6 +704,186 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
   </section>
 )}
 
+{post === '2025-08-11' && (
+  <section className="mt-8">
+    <hr className="my-8 border-t-2 border-dashed border-gray-300" />
+    <h3 className="text-lg font-bold mb-4 text-gray-700">
+      🛒 以下、プロモーションリンク（広告）です
+    </h3>
+
+    {/* Oura Ring Gen3 - 購入はこちら */}
+    <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex-shrink-0">
+          <img
+            src="https://ouraring.com/cdn/shop/files/heritage-silver-oura-ring.webp"
+            alt="Oura Ring Gen3"
+            className="w-48 h-48 object-cover rounded-lg"
+          />
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <h4 className="text-lg font-semibold text-gray-900 mb-4">Oura Ring Gen3</h4>
+          <p className="text-sm text-gray-600 mb-4">睡眠・回復を指輪で可視化するウェアラブル健康管理デバイス</p>
+          <div className="grid grid-cols-1 sm:grid-cols-1 gap-3">
+            <a 
+              href="https://www.amazon.co.jp/s?k=Oura+Ring+Gen3" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Amazonで探す
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Theragun PRO Plus - 購入はこちら */}
+    <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex-shrink-0">
+          <img
+            src="https://www.therabody.com/dw/image/v2/BGJJ_PRD/on/demandware.static/-/Sites-therabody-master/default/dwbb6af7a2/images/hi-res/Theragun_PRO_Plus.jpg"
+            alt="Theragun PRO Plus"
+            className="w-48 h-48 object-cover rounded-lg"
+          />
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <h4 className="text-lg font-semibold text-gray-900 mb-4">Theragun PRO Plus</h4>
+          <p className="text-sm text-gray-600 mb-4">LED×温熱×振動×パーカッションを1台に集約したリカバリーガジェット</p>
+          <div className="grid grid-cols-1 sm:grid-cols-1 gap-3">
+            <a 
+              href="https://www.amazon.co.jp/s?k=Theragun+PRO+Plus" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Amazonで探す
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Withings Body Scan - 購入はこちら */}
+    <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex-shrink-0">
+          <img
+            src="https://www.withings.com/media/76/6f7e0d3d7f8b84b0ce69f3c070ef42.jpg"
+            alt="Withings Body Scan"
+            className="w-48 h-48 object-cover rounded-lg"
+          />
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <h4 className="text-lg font-semibold text-gray-900 mb-4">Withings Body Scan</h4>
+          <p className="text-sm text-gray-600 mb-4">心血管＆体組成スキャン体重計、医療グレード体組成計</p>
+          <div className="grid grid-cols-1 sm:grid-cols-1 gap-3">
+            <a 
+              href="https://www.amazon.co.jp/s?k=Withings+Body+Scan" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Amazonで探す
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
+{post === '2025-08-12' && (
+  <section className="mt-8">
+    <hr className="my-8 border-t-2 border-dashed border-gray-300" />
+    <h3 className="text-lg font-bold mb-4 text-gray-700">
+      🛒 以下、プロモーションリンク（広告）です
+    </h3>
+
+    {/* DJI Pocket 3 - 購入はこちら */}
+    <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex-shrink-0">
+          <img
+            src="https://www.dji.com/static/images/product/pocket-3/pocket-3-black-front.png"
+            alt="DJI Pocket 3"
+            className="w-48 h-48 object-cover rounded-lg"
+          />
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <h4 className="text-lg font-semibold text-gray-900 mb-4">DJI Pocket 3</h4>
+          <p className="text-sm text-gray-600 mb-4">ポケットサイズ4Kジンバルカメラ、1インチセンサー搭載</p>
+          <div className="grid grid-cols-1 sm:grid-cols-1 gap-3">
+            <a 
+              href="https://www.amazon.co.jp/s?k=DJI+Pocket+3" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Amazonで探す
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* BALMUDA The Plate Pro - 購入はこちら */}
+    <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex-shrink-0">
+          <img
+            src="https://www.balmuda.com/assets/img/products/theplatepro/main.jpg"
+            alt="BALMUDA The Plate Pro"
+            className="w-48 h-48 object-cover rounded-lg"
+          />
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <h4 className="text-lg font-semibold text-gray-900 mb-4">BALMUDA The Plate Pro</h4>
+          <p className="text-sm text-gray-600 mb-4">高火力グリルプレート、6.6mmクラッドプレートで正確な温度制御</p>
+          <div className="grid grid-cols-1 sm:grid-cols-1 gap-3">
+            <a 
+              href="https://www.amazon.co.jp/s?k=BALMUDA+The+Plate+Pro" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Amazonで探す
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* LEGO Creator Retro Camera - 購入はこちら */}
+    <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex-shrink-0">
+          <img
+            src="https://www.lego.com/cdn/cs/set/assets/blt3f3b5587f8e2b2f8/31147.png"
+            alt="LEGO Creator Retro Camera"
+            className="w-48 h-48 object-cover rounded-lg"
+          />
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <h4 className="text-lg font-semibold text-gray-900 mb-4">LEGO Creator Retro Camera</h4>
+          <p className="text-sm text-gray-600 mb-4">レトロカメラ形状の3in1セット、カメラ・TV・ビデオカメラに変形</p>
+          <div className="grid grid-cols-1 sm:grid-cols-1 gap-3">
+            <a 
+              href="https://www.amazon.co.jp/s?k=LEGO+Creator+Retro+Camera" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Amazonで探す
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
 
 
         {/* 関連記事 */}
