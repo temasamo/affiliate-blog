@@ -966,7 +966,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
       <div className="flex flex-col md:flex-row items-center gap-6">
         <div className="flex-shrink-0">
           <img
-            src="https://creations.mattel.com/cdn/shop/files/tesla-cybertruck-rc_1200x.jpg"
+            src="/images/hot-wheels-rc-tesla-cybertruck.jpg"
             alt="Hot Wheels RC 1:10 Tesla Cybertruck"
             className="w-48 h-48 object-cover rounded-lg"
             style={{ objectFit: 'contain' }}
