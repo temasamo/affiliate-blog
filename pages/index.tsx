@@ -99,22 +99,22 @@ export default function Home({ latestArticles }: HomeProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
               <div className="bg-white rounded-xl p-4 shadow-sm">
                 <div className="text-2xl mb-2">📷</div>
-                <h4 className="font-semibold text-gray-900 mb-1">DJI Pocket 3</h4>
-                <p className="text-sm text-gray-600">ポケットサイズ4Kカメラ</p>
+                <h4 className="font-semibold text-gray-900 mb-1">Fujifilm X100VI</h4>
+                <p className="text-sm text-gray-600">最強スナップシューター</p>
               </div>
               <div className="bg-white rounded-xl p-4 shadow-sm">
-                <div className="text-2xl mb-2">🍳</div>
-                <h4 className="font-semibold text-gray-900 mb-1">BALMUDA Plate Pro</h4>
-                <p className="text-sm text-gray-600">高火力グリルプレート</p>
+                <div className="text-2xl mb-2">🥤</div>
+                <h4 className="font-semibold text-gray-900 mb-1">SodaStream E-TERRA</h4>
+                <p className="text-sm text-gray-600">ワンタッチ電動ソーダメーカー</p>
               </div>
               <div className="bg-white rounded-xl p-4 shadow-sm">
-                <div className="text-2xl mb-2">🧱</div>
-                <h4 className="font-semibold text-gray-900 mb-1">LEGO Retro Camera</h4>
-                <p className="text-sm text-gray-600">3in1変形レゴセット</p>
+                <div className="text-2xl mb-2">🚗</div>
+                <h4 className="font-semibold text-gray-900 mb-1">Hot Wheels RC Tesla</h4>
+                <p className="text-sm text-gray-600">1:10 Cybertruck RCカー</p>
               </div>
             </div>
             <div className="text-center">
-              <Link href="/articles/global-hot-picks/trend/2025-08-12" className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition-colors">
+              <Link href="/articles/global-hot-picks/trend/2025-08-13" className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition-colors">
                 最新トレンドを見る
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
