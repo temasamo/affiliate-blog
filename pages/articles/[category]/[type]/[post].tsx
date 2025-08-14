@@ -55,7 +55,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
     });
 
     // ValueCommerceのスクリプトを追加
-    if (post === '2025-08-07' || post === '2025-08-08') {
+    if (post === '2025-08-07' || post === '2025-08-08' || post === '2025-08-13') {
       const existingScript = document.querySelector('script[src*="valuecommerce.com"]');
       if (!existingScript) {
         const script = document.createElement('script');
@@ -878,6 +878,122 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               Amazonで探す
             </a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
+{post === '2025-08-13' && (
+  <section className="mt-8">
+    <hr className="my-8 border-t-2 border-dashed border-gray-300" />
+    <h3 className="text-lg font-bold mb-4 text-gray-700">
+      🛒 以下、プロモーションリンク（広告）です
+    </h3>
+
+    {/* Fujifilm X100VI - 購入はこちら */}
+    <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex-shrink-0">
+          <img
+            src="//thumbnail.image.rakuten.co.jp/@0_mall/d-rise/cabinet/img046/p000000864326_1.jpg?_ex=300x300"
+            alt="Fujifilm X100VI"
+            className="w-48 h-48 object-cover rounded-lg"
+          />
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <h4 className="text-lg font-semibold text-gray-900 mb-4">Fujifilm X100VI</h4>
+          <p className="text-sm text-gray-600 mb-4">高評価コンパクトデジカメ。クラシックデザインと最新機能を融合したコンデジ。新センサーと高速AFで、海外のフォトグラファーから絶賛。</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a 
+              href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fd-rise%2Fp000000864326%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fd-rise%2Fi%2F23267124%2F" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              楽天市場で探す
+            </a>
+            <a 
+              href="https://www.amazon.co.jp/s?k=Fujifilm+X100VI" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Amazonで探す
+            </a>
+          </div>
+          {/* ValueCommerce スクリプト */}
+          <script type="text/javascript" src="//mlb.valuecommerce.com/mylinkbox.js" async></script>
+          <div data-vc_mylinkbox_id="891968894"></div>
+        </div>
+      </div>
+    </div>
+    
+    {/* SodaStream E-TERRA - 購入はこちら */}
+    <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex-shrink-0">
+          <img
+            src="//thumbnail.image.rakuten.co.jp/@0_mall/sodastream/cabinet/05990764/09824570/imgrc0099503760.jpg?_ex=300x300"
+            alt="SodaStream E-TERRA"
+            className="w-48 h-48 object-cover rounded-lg"
+          />
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <h4 className="text-lg font-semibold text-gray-900 mb-4">SodaStream E-TERRA</h4>
+          <p className="text-sm text-gray-600 mb-4">電動ソーダメーカー。ワンタッチ操作で炭酸水が作れる電動モデル。海外では環境配慮とデザイン性で人気が再燃。</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a 
+              href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fsodastream%2Fe-terrasp09%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsodastream%2Fi%2F10000546%2F" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              楽天市場で探す
+            </a>
+            <a 
+              href="https://www.amazon.co.jp/s?k=SodaStream+E-TERRA" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Amazonで探す
+            </a>
+          </div>
+          {/* ValueCommerce スクリプト */}
+          <script type="text/javascript" src="//mlb.valuecommerce.com/mylinkbox.js" async></script>
+          <div data-vc_mylinkbox_id="891968895"></div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Hot Wheels RC 1:10 Tesla Cybertruck - 購入はこちら */}
+    <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex-shrink-0">
+          <img
+            src="https://creations.mattel.com/cdn/shop/files/tesla-cybertruck-rc_1200x.jpg"
+            alt="Hot Wheels RC 1:10 Tesla Cybertruck"
+            className="w-48 h-48 object-cover rounded-lg"
+            style={{ objectFit: 'contain' }}
+          />
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <h4 className="text-lg font-semibold text-gray-900 mb-4">Hot Wheels RC 1:10 Tesla Cybertruck</h4>
+          <p className="text-sm text-gray-600 mb-4">テスラのCybertruckを1/10スケールで再現した公式RCカー。操縦性もディテールも本格仕様。</p>
+          <div className="grid grid-cols-1 sm:grid-cols-1 gap-3">
+            <a 
+              href="https://www.amazon.co.jp/s?k=Hot+Wheels+RC+Tesla+Cybertruck" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Amazonで探す
+            </a>
+          </div>
+          {/* ValueCommerce スクリプト */}
+          <script type="text/javascript" src="//mlb.valuecommerce.com/mylinkbox.js" async></script>
+          <div data-vc_mylinkbox_id="891968896"></div>
         </div>
       </div>
     </div>

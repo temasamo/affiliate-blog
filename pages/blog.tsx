@@ -8,6 +8,15 @@ import CategoryCard from '../components/CategoryCard';
 export default function Blog() {
   const articles = [
     {
+      slug: 'global-hot-picks/trend/2025-08-13',
+      title: 'Global Hot Picks | 2025-08-13',
+      description: '最新のガジェット・家電・ホビーから注目の3アイテムを速報ピック',
+      date: '2025.08.13',
+      category: '海外トレンド',
+      emoji: '🌍',
+      color: 'from-blue-100 to-blue-200'
+    },
+    {
               slug: 'sleep-health/recommend/2025-08-04-makura-rankingtop5',
       title: '2025年8月最新版 枕総合ランキングTOP10｜前編（1〜5位）',
       description: '公式出店状況に基づいた安全なアフィリエイトリンク付きの枕総合ランキング',
