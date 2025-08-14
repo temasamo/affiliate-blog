@@ -922,9 +922,6 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               Amazonで探す
             </a>
           </div>
-          {/* ValueCommerce スクリプト */}
-          <script type="text/javascript" src="//mlb.valuecommerce.com/mylinkbox.js" async></script>
-          <div data-vc_mylinkbox_id="891968894"></div>
         </div>
       </div>
     </div>
@@ -960,9 +957,6 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               Amazonで探す
             </a>
           </div>
-          {/* ValueCommerce スクリプト */}
-          <script type="text/javascript" src="//mlb.valuecommerce.com/mylinkbox.js" async></script>
-          <div data-vc_mylinkbox_id="891968895"></div>
         </div>
       </div>
     </div>
@@ -981,7 +975,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
         <div className="flex-1 text-center md:text-left">
           <h4 className="text-lg font-semibold text-gray-900 mb-4">Hot Wheels RC 1:10 Tesla Cybertruck</h4>
           <p className="text-sm text-gray-600 mb-4">テスラのCybertruckを1/10スケールで再現した公式RCカー。操縦性もディテールも本格仕様。</p>
-          <div className="grid grid-cols-1 sm:grid-cols-1 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <a 
               href="https://www.amazon.co.jp/s?k=Hot+Wheels+RC+Tesla+Cybertruck" 
               target="_blank" 
@@ -989,6 +983,14 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
             >
               Amazonで探す
+            </a>
+            <a 
+              href="https://shopping.yahoo.co.jp/search?p=Hot+Wheels+RC+Tesla+Cybertruck" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+            >
+              Yahoo!ショッピングで探す
             </a>
           </div>
           {/* ValueCommerce スクリプト */}
