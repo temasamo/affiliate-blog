@@ -24,17 +24,16 @@ export default function TravelTeaser({ posts = [] }: Props) {
         {/* BG Video */}
         {enableVideo && (
           <div aria-hidden className="absolute inset-0">
-            <video
-              className="h-full w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              poster="/media/travel-teaser.jpg"
-            >
-              <source src="/media/travel-teaser.webm" type="video/webm" />
-              <source src="/media/travel-teaser.mp4" type="video/mp4" />
-            </video>
+                               <video
+                     className="h-full w-full object-cover"
+                     autoPlay
+                     muted
+                     loop
+                     playsInline
+                     poster="/media/travel-teaser.jpg"
+                   >
+                     <source src="/media/travel-teaser.mp4" type="video/mp4" />
+                   </video>
 
             {/* 可読性を保つ薄い暗幕＋下部グラデ */}
             <div className="absolute inset-0 bg-black/20" />
