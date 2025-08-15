@@ -1,56 +1,79 @@
-import { useState, useEffect } from 'react';
+"use client";
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import type { Answers } from '@/lib/resultLogic';
 import { logOutbound } from '@/lib/logOutbound';
 
-type Gender = "male" | "female" | "other" | "unspecified";
-
-type FormState = {
-  gender: Gender;
-  age: number | "";
-  sleepPosition: "back" | "side" | "stomach";
-  neckPain: boolean;
-  heightPref: "low" | "medium" | "high";
-  shoulderPain: 'yes' | 'no';
-  snoring: 'yes' | 'no';
-  morningTired: 'often' | 'sometimes' | 'no';
-  mattressHardness: 'soft' | 'medium' | 'hard';
-  adjustable: 'yes' | 'no';
-  budget: 'low' | 'medium' | 'high';
-};
+// 予算の正規化関数
+function toPriceRange(input: string) {
+  const n = (input || "").match(/\d+/g)?.map(Number) ?? [];
+  if (n.length === 0) return {};
+  if (n.length === 1) return { minPrice: n[0] };
+  return { minPrice: Math.min(n[0], n[1]), maxPrice: Math.max(n[0], n[1]) };
+}
 
 type Props = {
-  onSubmit?: (answers: FormState) => Promise<void> | void;
+  onSubmit?: (answers: Answers) => Promise<void> | void;
   onResult?: (result: any) => void;
   sessionId?: string;
 };
 
 type Result = {
-  primaryCategory?: string;
-  secondaryCategories?: string[];
-  confidence?: number;
-  reasons?: string[];
   title?: string;
   summary?: string;
   height?: string;
   firmness?: string;
+  sizeLabel?: string;
+  sizeTag?: string;
+  problems?: string[];
+  approaches?: string[];
+  avoided?: string[];
+  changePoints?: string[];
+  primaryCategory?: string;
+  secondaryCandidates?: Array<{
+    key: string;
+    label: string;
+    tags: string[];
+    score: number;
+  }>;
+  confidence?: number;
+  reasons?: string[];
 };
 
-const defaultFormState: FormState = {
+const defaultFormState: Answers = {
+  // 基本情報
   gender: "unspecified",
-  age: "",
+  age: null,
+  
+  // 睡眠スタイル
   sleepPosition: "back",
   neckPain: false,
+  neckIssue: "none",
   heightPref: "medium",
-  shoulderPain: 'no',
-  snoring: 'no',
-  morningTired: 'no',
-  mattressHardness: 'medium',
-  adjustable: 'no',
-  budget: 'medium',
+  shoulderWidth: "normal",
+  rollOver: "normal",
+  
+  // 健康・快適性
+  snoring: "no",
+  morningTired: "no",
+  hotSweaty: false,
+  
+  // 環境・好み
+  mattressHardness: "medium",
+  adjustable: "no",
+  materialPref: "none",
+  
+  // 購入情報
+  budget: "medium",
+  reason: "first_time",
+  pillowSize: "standard",
+  
+  // 現在の枕情報（ギフト以外の場合）
+  currentPillow: undefined
 };
 
 export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessionId }: Props) {
-  const [form, setForm] = useState<FormState>(defaultFormState);
+  const [form, setForm] = useState<Answers>(defaultFormState);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<Result | null>(null);
   const [rowId, setRowId] = useState<string | null>(null);
@@ -87,7 +110,7 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
     });
   }, [sessionId]);
 
-  const update = <K extends keyof FormState, V extends FormState[K]>(k: K, v: V) =>
+  const update = <K extends keyof Answers, V extends Answers[K]>(k: K, v: V) =>
     setForm((s) => ({ ...s, [k]: v }));
 
   // クリック時ロギング + 遷移
@@ -133,6 +156,9 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
         return;
       }
 
+      // 予算の正規化
+      const priceRange = toPriceRange(form.budgetText ?? "");
+      
       // デフォルトのAPI呼び出し
       const currentSessionId = sessionId || (typeof window !== 'undefined' && window.crypto 
         ? crypto.randomUUID() 
@@ -142,6 +168,7 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
         ...form,
         age: typeof form.age === "string" ? Number(form.age) || null : form.age ?? null,
         sessionId: currentSessionId,
+        priceRange, // 正規化された価格範囲を追加
         referrer: typeof window !== "undefined" ? window.location.href : undefined,
         userAgent: typeof navigator !== "undefined" ? navigator.userAgent : undefined,
       };
@@ -169,55 +196,7 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
     }
   };
 
-  const CTAButtons = () => {
-    if (!result || !rowId) return null;
 
-    const buttons = [
-      { key: 'rakuten' as const, label: '🛒 楽天で探す', color: 'linear-gradient(135deg, #ff5c5c, #e74c3c)', url: urls.rakuten },
-      { key: 'amazon' as const, label: '🛒 Amazonで探す', color: 'linear-gradient(135deg, #ff9900, #e67e00)', url: urls.amazon },
-      { key: 'yahoo' as const, label: '🛒 Yahoo!で探す', color: 'linear-gradient(135deg, #720e9e, #5a0b7a)', url: urls.yahoo },
-    ];
-
-    return (
-      <div style={{
-        display: 'flex',
-        gap: '12px',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        marginTop: '20px'
-      }}>
-        {buttons.map(button => (
-          <button
-            key={button.key}
-            onClick={() => handleOutbound(button.key, button.url, rowId)}
-            style={{
-              padding: '12px 20px',
-              fontSize: '0.9rem',
-              fontWeight: '600',
-              color: 'white',
-              background: button.color,
-              border: 'none',
-              borderRadius: '25px',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease',
-              boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
-              minWidth: '140px'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-2px)';
-              e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.3)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
-            }}
-          >
-            {button.label}
-          </button>
-        ))}
-      </div>
-    );
-  };
 
   return (
     <div style={{ textAlign: 'center' }}>
@@ -332,7 +311,7 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
                     outline: 'none',
                     boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
                   }}
-                  value={form.age}
+                  value={form.age || ''}
                   onChange={(e) => update("age", e.target.value as any)}
                   onFocus={(e) => {
                     e.target.style.borderColor = '#667eea';
@@ -352,6 +331,318 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
                   10〜100の範囲で入力（空欄可）
                 </p>
               </div>
+
+              {/* 購入理由 */}
+              <div style={{
+                animation: 'fadeInUp 0.6s ease-out 0.3s both',
+                opacity: 0,
+                transform: 'translateY(20px)'
+              }}>
+                <label style={{
+                  display: 'block',
+                  marginBottom: '12px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  color: '#333',
+                  textAlign: 'left'
+                }}>
+                  🎯 購入理由
+                </label>
+                <select
+                  style={{
+                    width: '100%',
+                    padding: '15px 20px',
+                    fontSize: '1rem',
+                    border: '2px solid #e1e5e9',
+                    borderRadius: '12px',
+                    background: 'white',
+                    color: '#333',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    outline: 'none',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+                  }}
+                  value={form.reason}
+                  onChange={(e) => update("reason", e.target.value as any)}
+                  onFocus={(e) => {
+                    e.target.style.borderColor = '#667eea';
+                    e.target.style.boxShadow = '0 4px 12px rgba(102, 126, 234, 0.2)';
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = '#e1e5e9';
+                    e.target.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+                  }}
+                >
+                  <option value="first_time">初めて購入</option>
+                  <option value="doesnt_fit">今の枕が合わない</option>
+                  <option value="upgrade">より良い枕に買い替え</option>
+                  <option value="gift">ギフト</option>
+                </select>
+              </div>
+
+              {/* 現在の枕ヒアリング */}
+              {(form.reason === "doesnt_fit" || form.reason === "upgrade") && (
+                <div style={{
+                  animation: 'fadeInUp 0.6s ease-out 0.4s both',
+                  opacity: 0,
+                  transform: 'translateY(20px)'
+                }}>
+                  <fieldset style={{
+                    border: '2px solid #e1e5e9',
+                    borderRadius: '16px',
+                    padding: '20px',
+                    background: 'rgba(102, 126, 234, 0.05)'
+                  }}>
+                    <legend style={{
+                      fontSize: '1rem',
+                      fontWeight: '600',
+                      color: '#333',
+                      padding: '0 8px'
+                    }}>
+                      今お使いの枕（診断精度UPのため任意）
+                    </legend>
+
+                    <div style={{
+                      display: 'grid',
+                      gap: '16px',
+                      gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))'
+                    }}>
+                      <div>
+                        <label style={{
+                          display: 'block',
+                          fontSize: '0.9rem',
+                          marginBottom: '4px',
+                          color: '#333'
+                        }}>
+                          ブランド/商品名
+                        </label>
+                        <input
+                          style={{
+                            width: '100%',
+                            padding: '12px',
+                            fontSize: '0.9rem',
+                            border: '1px solid #e1e5e9',
+                            borderRadius: '8px',
+                            background: 'white'
+                          }}
+                          value={form.currentPillow?.brand ?? ""}
+                          onChange={(e) => update("currentPillow", { ...(form.currentPillow || {}), brand: e.target.value })}
+                        />
+                      </div>
+                      <div>
+                        <label style={{
+                          display: 'block',
+                          fontSize: '0.9rem',
+                          marginBottom: '4px',
+                          color: '#333'
+                        }}>
+                          使用年数
+                        </label>
+                        <select
+                          style={{
+                            width: '100%',
+                            padding: '12px',
+                            fontSize: '0.9rem',
+                            border: '1px solid #e1e5e9',
+                            borderRadius: '8px',
+                            background: 'white'
+                          }}
+                          value={form.currentPillow?.yearsUsed ?? ""}
+                          onChange={(e) => update("currentPillow", { ...(form.currentPillow || {}), yearsUsed: e.target.value })}
+                        >
+                          <option value="">未回答</option>
+                          <option value="~6months">〜半年</option>
+                          <option value="~1year">〜1年</option>
+                          <option value="1-2years">1〜2年</option>
+                          <option value="2-3years">2〜3年</option>
+                          <option value="3+years">3年以上</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label style={{
+                          display: 'block',
+                          fontSize: '0.9rem',
+                          marginBottom: '4px',
+                          color: '#333'
+                        }}>
+                          感じる高さ
+                        </label>
+                        <select
+                          style={{
+                            width: '100%',
+                            padding: '12px',
+                            fontSize: '0.9rem',
+                            border: '1px solid #e1e5e9',
+                            borderRadius: '8px',
+                            background: 'white'
+                          }}
+                          value={form.currentPillow?.height ?? ""}
+                          onChange={(e) => update("currentPillow", { ...(form.currentPillow || {}), height: e.target.value })}
+                        >
+                          <option value="">未回答</option>
+                          <option value="low">低い</option>
+                          <option value="medium">ちょうどよい</option>
+                          <option value="high">高い</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label style={{
+                          display: 'block',
+                          fontSize: '0.9rem',
+                          marginBottom: '4px',
+                          color: '#333'
+                        }}>
+                          感じる硬さ
+                        </label>
+                        <select
+                          style={{
+                            width: '100%',
+                            padding: '12px',
+                            fontSize: '0.9rem',
+                            border: '1px solid #e1e5e9',
+                            borderRadius: '8px',
+                            background: 'white'
+                          }}
+                          value={form.currentPillow?.firmness ?? ""}
+                          onChange={(e) => update("currentPillow", { ...(form.currentPillow || {}), firmness: e.target.value })}
+                        >
+                          <option value="">未回答</option>
+                          <option value="soft">やわらかい</option>
+                          <option value="medium">ふつう</option>
+                          <option value="hard">硬い</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label style={{
+                          display: 'block',
+                          fontSize: '0.9rem',
+                          marginBottom: '4px',
+                          color: '#333'
+                        }}>
+                          サイズ
+                        </label>
+                        <select
+                          style={{
+                            width: '100%',
+                            padding: '12px',
+                            fontSize: '0.9rem',
+                            border: '1px solid #e1e5e9',
+                            borderRadius: '8px',
+                            background: 'white'
+                          }}
+                          value={form.currentPillow?.size ?? ""}
+                          onChange={(e) => update("currentPillow", { ...(form.currentPillow || {}), size: e.target.value })}
+                        >
+                          <option value="">未回答</option>
+                          <option value="small">小さめ（約35×50）</option>
+                          <option value="standard">標準（約43×63）</option>
+                          <option value="large">大きめ（約50×70）</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label style={{
+                          display: 'block',
+                          fontSize: '0.9rem',
+                          marginBottom: '4px',
+                          color: '#333'
+                        }}>
+                          中材/素材
+                        </label>
+                        <select
+                          style={{
+                            width: '100%',
+                            padding: '12px',
+                            fontSize: '0.9rem',
+                            border: '1px solid #e1e5e9',
+                            borderRadius: '8px',
+                            background: 'white'
+                          }}
+                          value={form.currentPillow?.material ?? ""}
+                          onChange={(e) => update("currentPillow", { ...(form.currentPillow || {}), material: e.target.value })}
+                        >
+                          <option value="">未回答</option>
+                          <option value="pipe">パイプ</option>
+                          <option value="beads">ビーズ</option>
+                          <option value="memory">低反発</option>
+                          <option value="latex">高反発/ラテックス</option>
+                          <option value="feather">羽根/フェザー</option>
+                          <option value="fiber">ファイバー</option>
+                          <option value="buckwheat">そば殻</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div style={{ marginTop: '16px' }}>
+                      <label style={{
+                        display: 'block',
+                        fontSize: '0.9rem',
+                        marginBottom: '8px',
+                        color: '#333'
+                      }}>
+                        気になる点（複数可）
+                      </label>
+                      <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+                        gap: '8px'
+                      }}>
+                        {[
+                          ["tooHigh","高すぎる"],["tooLow","低すぎる"],["sink","沈み込みすぎる"],
+                          ["hot","熱がこもる"],["noise","音が気になる"],["smell","匂いが気になる"],
+                          ["hardEdge","縁が当たる"],["stiffNeck","首が痛い/こる"],["others","その他"]
+                        ].map(([key,label]) => (
+                          <label key={key} style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            fontSize: '0.8rem'
+                          }}>
+                            <input
+                              type="checkbox"
+                              checked={!!form.currentPillow?.issues?.[key]}
+                              onChange={(e) => update("currentPillow", {
+                                ...(form.currentPillow || {}),
+                                issues: { ...(form.currentPillow?.issues || {}), [key]: e.target.checked }
+                              })}
+                            />
+                            {label}
+                          </label>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div style={{ marginTop: '16px' }}>
+                      <label style={{
+                        display: 'block',
+                        fontSize: '0.9rem',
+                        marginBottom: '4px',
+                        color: '#333'
+                      }}>
+                        改善したい点（自由記述）
+                      </label>
+                      <textarea
+                        style={{
+                          width: '100%',
+                          padding: '12px',
+                          fontSize: '0.9rem',
+                          border: '1px solid #e1e5e9',
+                          borderRadius: '8px',
+                          background: 'white',
+                          minHeight: '80px',
+                          resize: 'vertical'
+                        }}
+                        value={form.currentPillow?.wish ?? ""}
+                        onChange={(e) => update("currentPillow", { ...(form.currentPillow || {}), wish: e.target.value })}
+                        placeholder="例：首の痛みを改善したい、寝返りをしやすくしたいなど"
+                      />
+                    </div>
+                  </fieldset>
+                </div>
+              )}
 
               {/* 睡眠姿勢 */}
               <div style={{
@@ -400,38 +691,66 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
                 </select>
               </div>
 
-              {/* 首・肩のコリ */}
+              {/* 首・肩の問題 */}
               <div style={{
                 animation: 'fadeInUp 0.6s ease-out 0.4s both',
                 opacity: 0,
-                transform: 'translateY(20px)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px',
-                padding: '15px 20px',
-                background: 'rgba(102, 126, 234, 0.05)',
-                borderRadius: '12px',
-                border: '1px solid rgba(102, 126, 234, 0.1)'
+                transform: 'translateY(20px)'
               }}>
-                <input
-                  id="neckPain"
-                  type="checkbox"
-                  checked={form.neckPain}
-                  onChange={(e) => update("neckPain", e.target.checked)}
-                  style={{
-                    width: '18px',
-                    height: '18px',
-                    cursor: 'pointer'
-                  }}
-                />
-                <label htmlFor="neckPain" style={{
-                  fontSize: '1rem',
+                <label style={{
+                  display: 'block',
+                  marginBottom: '12px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
                   color: '#333',
-                  cursor: 'pointer',
-                  fontWeight: '500'
+                  textAlign: 'left'
                 }}>
-                  💪 首・肩のコリが気になる
+                  💆‍♀️ 首・肩の問題
                 </label>
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '12px'
+                }}>
+                  <label style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    cursor: 'pointer'
+                  }}>
+                    <input
+                      type="checkbox"
+                      checked={form.neckPain}
+                      onChange={(e) => update("neckPain", e.target.checked)}
+                      style={{ cursor: 'pointer' }}
+                    />
+                    <span style={{ fontSize: '1rem', color: '#333' }}>
+                      首や肩の痛み・こりがある
+                    </span>
+                  </label>
+                  
+                  {form.neckPain && (
+                    <select
+                      style={{
+                        width: '100%',
+                        padding: '12px 16px',
+                        fontSize: '0.9rem',
+                        border: '2px solid #e1e5e9',
+                        borderRadius: '8px',
+                        background: 'white',
+                        color: '#333',
+                        cursor: 'pointer',
+                        marginLeft: '24px'
+                      }}
+                      value={form.neckIssue}
+                      onChange={(e) => update("neckIssue", e.target.value as any)}
+                    >
+                      <option value="none">痛みの種類を選択</option>
+                      <option value="stiff">肩こり・首のこり</option>
+                      <option value="cervical">頸椎症・首の痛み</option>
+                    </select>
+                  )}
+                </div>
               </div>
 
               {/* 好みの高さ */}
@@ -450,41 +769,134 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
                 }}>
                   📏 好みの高さ
                 </label>
-                <div style={{
-                  display: 'flex',
-                  gap: '16px',
-                  flexWrap: 'wrap'
-                }}>
-                  {(["low", "medium", "high"] as const).map((h) => (
-                    <label key={h} style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      cursor: 'pointer'
-                    }}>
-                      <input
-                        type="radio"
-                        name="height"
-                        checked={form.heightPref === h}
-                        onChange={() => update("heightPref", h)}
-                        style={{
-                          cursor: 'pointer'
-                        }}
-                      />
-                      <span style={{
-                        fontSize: '1rem',
-                        color: '#333'
-                      }}>
-                        {h === "low" ? "低め" : h === "medium" ? "ふつう" : "高め"}
-                      </span>
-                    </label>
-                  ))}
-                </div>
+                <select
+                  style={{
+                    width: '100%',
+                    padding: '15px 20px',
+                    fontSize: '1rem',
+                    border: '2px solid #e1e5e9',
+                    borderRadius: '12px',
+                    background: 'white',
+                    color: '#333',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    outline: 'none',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+                  }}
+                  value={form.heightPref}
+                  onChange={(e) => update("heightPref", e.target.value as any)}
+                  onFocus={(e) => {
+                    e.target.style.borderColor = '#667eea';
+                    e.target.style.boxShadow = '0 4px 12px rgba(102, 126, 234, 0.2)';
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = '#e1e5e9';
+                    e.target.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+                  }}
+                >
+                  <option value="low">低め</option>
+                  <option value="medium">普通</option>
+                  <option value="high">高め</option>
+                </select>
               </div>
 
-              {/* 既存の質問項目 */}
+              {/* 肩幅 */}
               <div style={{
                 animation: 'fadeInUp 0.6s ease-out 0.6s both',
+                opacity: 0,
+                transform: 'translateY(20px)'
+              }}>
+                <label style={{
+                  display: 'block',
+                  marginBottom: '12px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  color: '#333',
+                  textAlign: 'left'
+                }}>
+                  👤 肩幅（体格）
+                </label>
+                <select
+                  style={{
+                    width: '100%',
+                    padding: '15px 20px',
+                    fontSize: '1rem',
+                    border: '2px solid #e1e5e9',
+                    borderRadius: '12px',
+                    background: 'white',
+                    color: '#333',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    outline: 'none',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+                  }}
+                  value={form.shoulderWidth}
+                  onChange={(e) => update("shoulderWidth", e.target.value as any)}
+                  onFocus={(e) => {
+                    e.target.style.borderColor = '#667eea';
+                    e.target.style.boxShadow = '0 4px 12px rgba(102, 126, 234, 0.2)';
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = '#e1e5e9';
+                    e.target.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+                  }}
+                >
+                  <option value="narrow">狭い</option>
+                  <option value="normal">普通</option>
+                  <option value="wide">広い</option>
+                </select>
+              </div>
+
+              {/* 寝返り頻度 */}
+              <div style={{
+                animation: 'fadeInUp 0.6s ease-out 0.7s both',
+                opacity: 0,
+                transform: 'translateY(20px)'
+              }}>
+                <label style={{
+                  display: 'block',
+                  marginBottom: '12px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  color: '#333',
+                  textAlign: 'left'
+                }}>
+                  🔄 寝返り頻度
+                </label>
+                <select
+                  style={{
+                    width: '100%',
+                    padding: '15px 20px',
+                    fontSize: '1rem',
+                    border: '2px solid #e1e5e9',
+                    borderRadius: '12px',
+                    background: 'white',
+                    color: '#333',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    outline: 'none',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+                  }}
+                  value={form.rollOver}
+                  onChange={(e) => update("rollOver", e.target.value as any)}
+                  onFocus={(e) => {
+                    e.target.style.borderColor = '#667eea';
+                    e.target.style.boxShadow = '0 4px 12px rgba(102, 126, 234, 0.2)';
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = '#e1e5e9';
+                    e.target.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+                  }}
+                >
+                  <option value="few">少ない</option>
+                  <option value="normal">普通</option>
+                  <option value="many">多い</option>
+                </select>
+              </div>
+
+              {/* いびき */}
+              <div style={{
+                animation: 'fadeInUp 0.6s ease-out 0.8s both',
                 opacity: 0,
                 transform: 'translateY(20px)'
               }}>
@@ -528,8 +940,9 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
                 </select>
               </div>
 
+              {/* 起床時の疲れ */}
               <div style={{
-                animation: 'fadeInUp 0.6s ease-out 0.7s both',
+                animation: 'fadeInUp 0.6s ease-out 0.9s both',
                 opacity: 0,
                 transform: 'translateY(20px)'
               }}>
@@ -568,14 +981,62 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
                     e.target.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
                   }}
                 >
-                  <option value="no">感じない</option>
-                  <option value="sometimes">時々</option>
+                  <option value="no">ない</option>
+                  <option value="sometimes">時々ある</option>
                   <option value="often">よくある</option>
                 </select>
               </div>
 
+              {/* 暑がり/汗かき */}
               <div style={{
-                animation: 'fadeInUp 0.6s ease-out 0.8s both',
+                animation: 'fadeInUp 0.6s ease-out 1.0s both',
+                opacity: 0,
+                transform: 'translateY(20px)'
+              }}>
+                <label style={{
+                  display: 'block',
+                  marginBottom: '12px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  color: '#333',
+                  textAlign: 'left'
+                }}>
+                  🌡️ 暑がり/汗かき
+                </label>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  padding: '15px 20px',
+                  background: 'rgba(102, 126, 234, 0.05)',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(102, 126, 234, 0.1)'
+                }}>
+                  <input
+                    id="hotSweaty"
+                    type="checkbox"
+                    checked={form.hotSweaty}
+                    onChange={(e) => update("hotSweaty", e.target.checked)}
+                    style={{
+                      width: '18px',
+                      height: '18px',
+                      cursor: 'pointer'
+                    }}
+                  />
+                  <label htmlFor="hotSweaty" style={{
+                    fontSize: '1rem',
+                    color: '#333',
+                    cursor: 'pointer',
+                    fontWeight: '500'
+                  }}>
+                    暑がりで汗をかきやすい
+                  </label>
+                </div>
+              </div>
+
+              {/* マットレスの硬さ */}
+              <div style={{
+                animation: 'fadeInUp 0.6s ease-out 1.1s both',
                 opacity: 0,
                 transform: 'translateY(20px)'
               }}>
@@ -620,8 +1081,9 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
                 </select>
               </div>
 
+              {/* 調整可能希望 */}
               <div style={{
-                animation: 'fadeInUp 0.6s ease-out 0.9s both',
+                animation: 'fadeInUp 0.6s ease-out 1.2s both',
                 opacity: 0,
                 transform: 'translateY(20px)'
               }}>
@@ -633,7 +1095,7 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
                   color: '#333',
                   textAlign: 'left'
                 }}>
-                  ⚙️ 調整可能枕の希望
+                  ⚙️ 調整可能希望
                 </label>
                 <select
                   style={{
@@ -665,8 +1127,109 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
                 </select>
               </div>
 
+              {/* 素材の好み */}
               <div style={{
-                animation: 'fadeInUp 0.6s ease-out 1.0s both',
+                animation: 'fadeInUp 0.6s ease-out 1.3s both',
+                opacity: 0,
+                transform: 'translateY(20px)'
+              }}>
+                <label style={{
+                  display: 'block',
+                  marginBottom: '12px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  color: '#333',
+                  textAlign: 'left'
+                }}>
+                  🧶 素材の好み
+                </label>
+                <select
+                  style={{
+                    width: '100%',
+                    padding: '15px 20px',
+                    fontSize: '1rem',
+                    border: '2px solid #e1e5e9',
+                    borderRadius: '12px',
+                    background: 'white',
+                    color: '#333',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    outline: 'none',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+                  }}
+                  value={form.materialPref}
+                  onChange={(e) => update("materialPref", e.target.value as any)}
+                  onFocus={(e) => {
+                    e.target.style.borderColor = '#667eea';
+                    e.target.style.boxShadow = '0 4px 12px rgba(102, 126, 234, 0.2)';
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = '#e1e5e9';
+                    e.target.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+                  }}
+                >
+                  <option value="none">こだわらない</option>
+                  <option value="buckwheat">そばがら</option>
+                  <option value="pipe">パイプ</option>
+                  <option value="memory">メモリーフォーム</option>
+                  <option value="latex">ラテックス</option>
+                  <option value="fiber">ファイバー</option>
+                  <option value="feather">羽毛</option>
+                </select>
+              </div>
+
+
+
+              {/* 想定サイズ */}
+              <div style={{
+                animation: 'fadeInUp 0.6s ease-out 1.5s both',
+                opacity: 0,
+                transform: 'translateY(20px)'
+              }}>
+                <label style={{
+                  display: 'block',
+                  marginBottom: '12px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  color: '#333',
+                  textAlign: 'left'
+                }}>
+                  📦 想定サイズ
+                </label>
+                <select
+                  style={{
+                    width: '100%',
+                    padding: '15px 20px',
+                    fontSize: '1rem',
+                    border: '2px solid #e1e5e9',
+                    borderRadius: '12px',
+                    background: 'white',
+                    color: '#333',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    outline: 'none',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+                  }}
+                  value={form.pillowSize}
+                  onChange={(e) => update("pillowSize", e.target.value as any)}
+                  onFocus={(e) => {
+                    e.target.style.borderColor = '#667eea';
+                    e.target.style.boxShadow = '0 4px 12px rgba(102, 126, 234, 0.2)';
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = '#e1e5e9';
+                    e.target.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+                  }}
+                >
+                  <option value="small">小さめ</option>
+                  <option value="standard">標準</option>
+                  <option value="large">大きめ</option>
+                </select>
+              </div>
+
+              {/* 予算 */}
+              <div style={{
+                animation: 'fadeInUp 0.6s ease-out 1.6s both',
                 opacity: 0,
                 transform: 'translateY(20px)'
               }}>
@@ -705,11 +1268,12 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
                     e.target.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
                   }}
                 >
-                  <option value="low">〜5,000円</option>
-                  <option value="medium">5,000〜15,000円</option>
-                  <option value="high">15,000円〜</option>
+                  <option value="low">〜¥5,000</option>
+                  <option value="medium">¥5,000〜¥15,000</option>
+                  <option value="high">¥15,000〜</option>
                 </select>
               </div>
+
 
               <button 
                 type="submit" 
@@ -755,209 +1319,7 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
                 )}
               </button>
             </form>
-          ) : (
-            <div style={{
-              background: 'rgba(255, 255, 255, 0.95)',
-              borderRadius: '20px',
-              padding: '40px',
-              boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
-              backdropFilter: 'blur(10px)',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
-              maxWidth: '600px',
-              margin: '0 auto'
-            }}>
-              {/* Primary Result */}
-              <div style={{
-                textAlign: 'center',
-                marginBottom: '30px'
-              }}>
-                <h2 style={{
-                  margin: '0 0 10px 0',
-                  fontSize: '2rem',
-                  fontWeight: '700',
-                  background: 'linear-gradient(135deg, #667eea, #764ba2)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text'
-                }}>
-                  🎯 あなたへのおすすめ
-                </h2>
-                <div style={{
-                  background: 'linear-gradient(135deg, #667eea, #764ba2)',
-                  color: 'white',
-                  padding: '15px 30px',
-                  borderRadius: '50px',
-                  fontSize: '1.5rem',
-                  fontWeight: '600',
-                  display: 'inline-block',
-                  boxShadow: '0 10px 20px rgba(102, 126, 234, 0.3)'
-                }}>
-                  {result.title || result.primaryCategory}
-                </div>
-              </div>
-
-              {/* Summary */}
-              {result.summary && (
-                <div style={{
-                  background: 'linear-gradient(135deg, #f8f9ff, #f0f2ff)',
-                  padding: '20px',
-                  borderRadius: '15px',
-                  border: '1px solid rgba(102, 126, 234, 0.1)',
-                  marginBottom: '30px',
-                  textAlign: 'left'
-                }}>
-                  <p style={{
-                    margin: '0',
-                    fontSize: '1.1rem',
-                    color: '#333',
-                    lineHeight: '1.6'
-                  }}>
-                    {result.summary}
-                  </p>
-                </div>
-              )}
-
-              {/* Confidence Bar */}
-              {result.confidence && (
-                <div style={{
-                  marginBottom: '30px',
-                  textAlign: 'center'
-                }}>
-                  <p style={{
-                    margin: '0 0 10px 0',
-                    fontSize: '1.1rem',
-                    color: '#666',
-                    fontWeight: '500'
-                  }}>
-                    信頼度: <span style={{ fontWeight: '700', color: '#667eea' }}>{Math.round(result.confidence * 100)}%</span>
-                  </p>
-                  <div style={{
-                    width: '100%',
-                    height: '12px',
-                    background: '#f0f0f0',
-                    borderRadius: '6px',
-                    overflow: 'hidden',
-                    boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.1)'
-                  }}>
-                    <div style={{
-                      height: '100%',
-                      background: 'linear-gradient(90deg, #667eea, #764ba2)',
-                      width: `${result.confidence * 100}%`,
-                      borderRadius: '6px',
-                      transition: 'width 1s ease-in-out'
-                    }} />
-                  </div>
-                </div>
-              )}
-
-              {/* Reasons */}
-              {result.reasons && result.reasons.length > 0 && (
-                <div style={{ marginBottom: '30px' }}>
-                  <h3 style={{
-                    margin: '0 0 15px 0',
-                    fontSize: '1.3rem',
-                    color: '#333',
-                    fontWeight: '600'
-                  }}>
-                    💡 診断理由
-                  </h3>
-                  <ul style={{
-                    listStyle: 'none',
-                    padding: '0',
-                    margin: '0'
-                  }}>
-                    {result.reasons.map((reason, i) => (
-                      <li key={i} style={{
-                        background: 'linear-gradient(135deg, #f8f9ff, #f0f2ff)',
-                        padding: '15px 20px',
-                        marginBottom: '10px',
-                        borderRadius: '12px',
-                        border: '1px solid rgba(102, 126, 234, 0.1)',
-                        fontSize: '1rem',
-                        color: '#555',
-                        position: 'relative'
-                      }}>
-                        <span style={{
-                          position: 'absolute',
-                          left: '15px',
-                          top: '50%',
-                          transform: 'translateY(-50%)',
-                          width: '8px',
-                          height: '8px',
-                          background: '#667eea',
-                          borderRadius: '50%'
-                        }} />
-                        <span style={{ marginLeft: '20px' }}>{reason}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {/* Secondary Categories */}
-              {result.secondaryCategories && result.secondaryCategories.length > 0 && (
-                <div style={{
-                  background: 'linear-gradient(135deg, #f8f9ff, #f0f2ff)',
-                  padding: '20px',
-                  borderRadius: '15px',
-                  border: '1px solid rgba(102, 126, 234, 0.1)',
-                  marginBottom: '30px'
-                }}>
-                  <h3 style={{
-                    margin: '0 0 10px 0',
-                    fontSize: '1.2rem',
-                    color: '#333',
-                    fontWeight: '600'
-                  }}>
-                    🔄 次点候補
-                  </h3>
-                  <p style={{
-                    margin: '0',
-                    fontSize: '1.1rem',
-                    color: '#667eea',
-                    fontWeight: '500'
-                  }}>
-                    {result.secondaryCategories.join(' / ')}
-                  </p>
-                </div>
-              )}
-
-              {/* CTA Buttons */}
-              <CTAButtons />
-
-              {/* Reset Button */}
-              <div style={{ marginTop: '30px', textAlign: 'center' }}>
-                <button
-                  onClick={() => {
-                    setResult(null);
-                    setRowId(null);
-                    setForm(defaultFormState);
-                  }}
-                  style={{
-                    padding: '12px 24px',
-                    fontSize: '1rem',
-                    fontWeight: '500',
-                    color: '#667eea',
-                    background: 'white',
-                    border: '2px solid #667eea',
-                    borderRadius: '25px',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = '#667eea';
-                    e.currentTarget.style.color = 'white';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'white';
-                    e.currentTarget.style.color = '#667eea';
-                  }}
-                >
-                  🔄 再診断する
-                </button>
-              </div>
-            </div>
-          )}
+          ) : null}
         </>
       )}
 
