@@ -19,6 +19,7 @@ import AffiliateAdCardLark1 from '../../../../components/AffiliateAdCardLark1';
 import AffiliateAdCardAlt from '../../../../components/AffiliateAdCardAlt';
 import GlobalHotPicksAffiliate from '../../../../components/GlobalHotPicksAffiliate';
 import SmartWaterBottleAffiliate from '../../../../components/SmartWaterBottleAffiliate';
+import GlobalHotPicksAds from '../../../../components/GlobalHotPicksAds';
 
 
 
@@ -1002,7 +1003,10 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
   </section>
 )}
 
-
+        {/* Global Hot Picks記事の場合のみ広告表示 */}
+        {category === 'global-hot-picks' && (
+          <GlobalHotPicksAds date={frontMatter.date || '2025-08-14'} />
+        )}
 
         {/* 関連記事 */}
         <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 mt-6 sm:mt-8">
