@@ -9,6 +9,7 @@ import Footer from '../components/Footer';
 import CategoryImage from '../components/CategoryImage';
 import CategoryCard from '../components/CategoryCard';
 import TravelTeaser from '../components/TravelTeaser';
+import { getTravelSlugs, getTravelPostBySlug } from '@/lib/mdx';
 
 
 interface Article {
@@ -87,6 +88,11 @@ export default function Home({ latestArticles, travelPosts }: HomeProps) {
           </a>
         </div>
 
+        {/* 旅行の新着記事（環境変数で位置を切り替え可能） */}
+        {process.env.NEXT_PUBLIC_TRAVEL_TEASER_TOP === "true" && (
+          <TravelTeaser posts={travelPosts} />
+        )}
+
         {/* Global Hot Picks セクション */}
         <section className="mb-12 sm:mb-16">
           <div className="flex items-center mb-8">
@@ -125,11 +131,6 @@ export default function Home({ latestArticles, travelPosts }: HomeProps) {
             </div>
           </div>
         </section>
-
-        {/* 旅行の新着記事（環境変数で位置を切り替え可能） */}
-        {process.env.NEXT_PUBLIC_TRAVEL_TEASER_TOP === "true" && (
-          <TravelTeaser posts={travelPosts} />
-        )}
 
         {/* 新着記事セクション */}
         <section className="mb-12 sm:mb-16">
@@ -343,26 +344,12 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   // 旅行の新着を取得
   let travelPosts: any[] = [];
   try {
-    // 旅行カテゴリが存在する場合のみ処理
-    const travelPath = path.join(articlesDirectory, 'travel');
-    if (fs.existsSync(travelPath)) {
-      const files = fs.readdirSync(travelPath);
-      files.forEach(file => {
-        if (file.endsWith('.mdx') || file.endsWith('.md')) {
-          const filePath = path.join(travelPath, file);
-          const fileContents = fs.readFileSync(filePath, 'utf8');
-          const { data: frontMatter } = matter(fileContents);
-          
-          travelPosts.push({
-            slug: file.replace(/\.(mdx|md)$/, ''),
-            title: frontMatter.title || '記事タイトル',
-            description: frontMatter.description || '記事の説明',
-            date: frontMatter.date || '2025.07.01',
-          });
-        }
-      });
-      travelPosts.sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
-    }
+    const slugs = getTravelSlugs();
+    travelPosts = slugs.map((s) => {
+      const { frontMatter, slug } = getTravelPostBySlug(s);
+      return { slug, ...frontMatter };
+    });
+    travelPosts.sort((a: any, b: any) => (a.date < b.date ? 1 : -1));
   } catch (e) {
     // 旅行カテゴリ未作成時でも壊さない
     console.log('Travel category not found:', e);
