@@ -12,24 +12,39 @@ export async function getStaticProps() {
 }
 
 export default function TravelIndex({ posts }: { posts: any[] }) {
+  const enableVideo = process.env.NEXT_PUBLIC_TRAVEL_TEASER_BG_VIDEO === "true";
+  
   return (
     <main className="relative overflow-hidden rounded-3xl border shadow-sm min-h-[60vh]">
-      {/* 背景動画 */}
-      <div aria-hidden className="absolute inset-0">
-                       <video
-                 className="h-full w-full object-cover"
-                 autoPlay
-                 muted
-                 loop
-                 playsInline
-                 poster="/media/travel-teaser.jpg"
-               >
-                 <source src="/media/travel-teaser.mp4" type="video/mp4" />
-               </video>
-        {/* 薄い暗幕＋下グラデで可読性UP */}
-        <div className="absolute inset-0 bg-black/30" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/45 to-transparent" />
-      </div>
+      {/* 背景画像/動画 */}
+      {enableVideo ? (
+        <div aria-hidden className="absolute inset-0">
+          <video
+            className="h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/media/travel-teaser.jpg"
+          >
+            <source src="/media/travel-teaser.mp4" type="video/mp4" />
+          </video>
+          {/* 薄い暗幕＋下グラデで可読性UP */}
+          <div className="absolute inset-0 bg-black/30" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/45 to-transparent" />
+        </div>
+      ) : (
+        <div aria-hidden className="absolute inset-0">
+          <img
+            src="/media/travel-teaser.jpg"
+            alt="Travel background"
+            className="h-full w-full object-cover"
+          />
+          {/* 画像用のオーバーレイ */}
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/60 to-transparent" />
+        </div>
+      )}
 
       {/* コンテンツ層（白文字） */}
       <section className="relative mx-auto max-w-5xl p-6 sm:p-10 text-white">

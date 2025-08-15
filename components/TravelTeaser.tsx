@@ -17,14 +17,14 @@ export default function TravelTeaser({ posts = [] }: Props) {
         <Link href="/travel" className="text-sm underline">もっと見る</Link>
       </div>
 
-      {/* 背景動画を"しっかり見せる"ために高さを増量 */}
-      <div className="relative overflow-hidden rounded-3xl border shadow-sm
-                      min-h-[260px] sm:min-h-[320px] lg:min-h-[380px]">
+                   {/* 背景画像ベースのデザイン */}
+             <div className="relative overflow-hidden rounded-3xl border shadow-sm
+                             min-h-[260px] sm:min-h-[320px] lg:min-h-[380px]">
 
-        {/* BG Video */}
-        {enableVideo && (
-          <div aria-hidden className="absolute inset-0">
-                               <video
+               {/* BG Image/Video */}
+               {enableVideo ? (
+                 <div aria-hidden className="absolute inset-0">
+                   <video
                      className="h-full w-full object-cover"
                      autoPlay
                      muted
@@ -35,12 +35,24 @@ export default function TravelTeaser({ posts = [] }: Props) {
                      <source src="/media/travel-teaser.mp4" type="video/mp4" />
                    </video>
 
-            {/* 可読性を保つ薄い暗幕＋下部グラデ */}
-            <div className="absolute inset-0 bg-black/20" />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28
-                            bg-gradient-to-t from-black/35 to-transparent" />
-          </div>
-        )}
+                   {/* 可読性を保つ薄い暗幕＋下部グラデ */}
+                   <div className="absolute inset-0 bg-black/20" />
+                   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28
+                                   bg-gradient-to-t from-black/35 to-transparent" />
+                 </div>
+               ) : (
+                 <div aria-hidden className="absolute inset-0">
+                   <img
+                     src="/media/travel-teaser.jpg"
+                     alt="Travel background"
+                     className="h-full w-full object-cover"
+                   />
+                   {/* 画像用のオーバーレイ */}
+                   <div className="absolute inset-0 bg-black/30" />
+                   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32
+                                   bg-gradient-to-t from-black/50 to-transparent" />
+                 </div>
+               )}
 
         {/* コンテンツ層 */}
         <div className="relative h-full p-4 sm:p-6 lg:p-8">
