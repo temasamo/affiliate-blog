@@ -8,6 +8,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CategoryImage from '../components/CategoryImage';
 import CategoryCard from '../components/CategoryCard';
+import TravelTeaser from '../components/TravelTeaser';
 
 
 interface Article {
@@ -21,9 +22,10 @@ interface Article {
 
 interface HomeProps {
   latestArticles: Article[];
+  travelPosts: any[];
 }
 
-export default function Home({ latestArticles }: HomeProps) {
+export default function Home({ latestArticles, travelPosts }: HomeProps) {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -124,6 +126,11 @@ export default function Home({ latestArticles }: HomeProps) {
           </div>
         </section>
 
+        {/* 旅行の新着記事（環境変数で位置を切り替え可能） */}
+        {process.env.NEXT_PUBLIC_TRAVEL_TEASER_TOP === "true" && (
+          <TravelTeaser posts={travelPosts} />
+        )}
+
         {/* 新着記事セクション */}
         <section className="mb-12 sm:mb-16">
           <div className="flex items-center mb-8">
@@ -156,7 +163,12 @@ export default function Home({ latestArticles }: HomeProps) {
           </div>
         </section>
 
-                {/* カテゴリセクション */}
+        {/* 旅行の新着記事（環境変数がfalseの場合） */}
+        {process.env.NEXT_PUBLIC_TRAVEL_TEASER_TOP !== "true" && (
+          <TravelTeaser posts={travelPosts} />
+        )}
+
+        {/* カテゴリセクション */}
         <section className="mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">カテゴリ別商品比較</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
@@ -328,6 +340,34 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const articlesDirectory = path.join(process.cwd(), 'articles');
   const allArticles: Article[] = [];
 
+  // 旅行の新着を取得
+  let travelPosts: any[] = [];
+  try {
+    // 旅行カテゴリが存在する場合のみ処理
+    const travelPath = path.join(articlesDirectory, 'travel');
+    if (fs.existsSync(travelPath)) {
+      const files = fs.readdirSync(travelPath);
+      files.forEach(file => {
+        if (file.endsWith('.mdx') || file.endsWith('.md')) {
+          const filePath = path.join(travelPath, file);
+          const fileContents = fs.readFileSync(filePath, 'utf8');
+          const { data: frontMatter } = matter(fileContents);
+          
+          travelPosts.push({
+            slug: file.replace(/\.(mdx|md)$/, ''),
+            title: frontMatter.title || '記事タイトル',
+            description: frontMatter.description || '記事の説明',
+            date: frontMatter.date || '2025.07.01',
+          });
+        }
+      });
+      travelPosts.sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    }
+  } catch (e) {
+    // 旅行カテゴリ未作成時でも壊さない
+    console.log('Travel category not found:', e);
+  }
+
   // 全カテゴリの記事を取得（global-hot-picksも含める）
   const categories = ['sleep-health', 'japanesetea', 'popularproducts-overseas', '海外トレンド', 'japaneseproducts-popular-with-foreigners', 'global-hot-picks'];
   
@@ -392,6 +432,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   return {
     props: {
       latestArticles,
+      travelPosts,
     },
   };
 };
