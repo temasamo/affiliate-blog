@@ -88,10 +88,8 @@ export default function Home({ latestArticles, travelPosts }: HomeProps) {
           </a>
         </div>
 
-        {/* 旅行の新着記事（環境変数で位置を切り替え可能） */}
-        {process.env.NEXT_PUBLIC_TRAVEL_TEASER_TOP === "true" && (
-          <TravelTeaser posts={travelPosts} />
-        )}
+        {/* 旅行の新着記事（Global Hot Picksの上に固定配置） */}
+        <TravelTeaser posts={travelPosts} />
 
         {/* Global Hot Picks セクション */}
         <section className="mb-12 sm:mb-16">
@@ -164,10 +162,7 @@ export default function Home({ latestArticles, travelPosts }: HomeProps) {
           </div>
         </section>
 
-        {/* 旅行の新着記事（環境変数がfalseの場合） */}
-        {process.env.NEXT_PUBLIC_TRAVEL_TEASER_TOP !== "true" && (
-          <TravelTeaser posts={travelPosts} />
-        )}
+
 
         {/* カテゴリセクション */}
         <section className="mb-12 sm:mb-16">
