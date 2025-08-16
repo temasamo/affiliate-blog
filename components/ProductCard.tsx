@@ -1,13 +1,14 @@
-import React, { useCallback, useState } from 'react';
-import type { UnifiedProduct } from '@/lib/malls/types';
+import React from "react";
+import type { UnifiedProduct } from "@/lib/malls/types";
 import { mallKeyToStyle } from "@/lib/ui/mallStyles";
+import { trackOutbound } from "@/lib/analytics/track";
 
 type ProductCardProps = {
   product: UnifiedProduct;
   sessionId?: string;
 };
 
-export default function ProductCard({ product, sessionId }: ProductCardProps) {
+export default function ProductCard({ product }: ProductCardProps) {
   const href = (product?.url || "").replace(/^http:/, "https:");
   if (!href) return null;
 
@@ -15,7 +16,13 @@ export default function ProductCard({ product, sessionId }: ProductCardProps) {
 
   return (
     <article className="flex h-full flex-col rounded-2xl bg-white shadow p-3">
-      <a href={href} target="_blank" rel="noopener noreferrer nofollow" className="block">
+      <a 
+        href={href} 
+        target="_blank" 
+        rel="noopener noreferrer nofollow" 
+        className="block"
+        onClick={() => trackOutbound(product)}
+      >
         <div className="relative w-full h-40">
           <img
             src={(product.image || product.images?.[0] || "").replace(/^http:/, "https:")}
@@ -35,6 +42,7 @@ export default function ProductCard({ product, sessionId }: ProductCardProps) {
         target="_blank"
         rel="noopener noreferrer nofollow"
         className={`mt-auto inline-block text-center rounded-xl text-white font-semibold h-10 leading-10 ${mall.btn}`}
+        onClick={() => trackOutbound(product)}
       >
         {mall.label}
       </a>

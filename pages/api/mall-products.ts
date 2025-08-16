@@ -3,6 +3,7 @@ import { searchRakuten } from "@/lib/malls/rakuten";
 import { searchAmazon, amazonSearchUrlFallback } from "@/lib/malls/amazon";
 import { searchYahoo } from "@/lib/malls/yahoo";
 import { UnifiedProduct } from "@/lib/malls/types";
+import { interleave } from "@/lib/utils/interleave";
 
 function buildKeyword(input: {
   category: string;   // 例: "頸椎サポート" / "横向き強化" etc
@@ -57,91 +58,123 @@ function buildKeyword(input: {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  const {
+    category = "",
+    height = "",
+    firmness = "",
+    material = "",
+    minPrice,
+    maxPrice,
+    hits = "20",
+  } = req.query as Record<string, string>;
+
+  // ❶ キーワードは常に作る＆fallback
+  const built = buildKeyword({ category, height, firmness, material });
+  const keyword = (built && built.trim()) || "枕";
+
+  const minP = minPrice ? Number(minPrice) : undefined;
+  const maxP = maxPrice ? Number(maxPrice) : undefined;
+  const limit = Number(hits);
+
+  // デバッグログ
+  console.log("▶ /api/mall-products", { keyword, minP, maxP });
+
+  let rakuten: UnifiedProduct[] = [];
+  let yahoo: UnifiedProduct[] = [];
+  let amazon: UnifiedProduct[] = [];
+
   try {
-    const {
-      category = "",
-      height = "",
-      firmness = "",
-      material = "",
-      minPrice,
-      maxPrice,
-      hits = "20",
-    } = req.query as Record<string, string>;
-
-    const keyword = buildKeyword({ category, height, firmness, material });
-    const minP = minPrice ? Number(minPrice) : undefined;
-    const maxP = maxPrice ? Number(maxPrice) : undefined;
-    const limit = Number(hits);
-
-    console.log('🔍 検索キーワード:', keyword);
-
-    // 1) 楽天（予算内で検索、0件なら予算外で再検索）
-    let rakuten: UnifiedProduct[] = [];
-    let budgetMatched = true;
-    
-    if (minP || maxP) {
-      // まずは予算内で検索
-      rakuten = await searchRakuten({ keyword, minPrice: minP, maxPrice: maxP, hits: limit });
-      
-      // もし0件なら → 予算条件を外して再検索（フォールバック）
-      if (rakuten.length === 0) {
-        budgetMatched = false;
-        rakuten = await searchRakuten({ keyword, hits: limit });
-      }
-    } else {
-      // 予算指定なしの場合は通常検索
-      rakuten = await searchRakuten({ keyword, hits: limit });
-    }
-
-    // 2) Amazon（失敗時は空配列にして後でフォールバックURLを返す）
-    let amazon: UnifiedProduct[] = [];
+    // ❷ 楽天は try-catch（400でも落とさない）
     try {
-      amazon = await searchAmazon({ keyword, minPrice: minP, maxPrice: maxP, hits: limit });
-    } catch {
-      // PA‑API未承認などで落ちるケースに備える
-      amazon = [];
+      rakuten = await searchRakuten({ keyword, minPrice: minP, maxPrice: maxP, hits: limit });
+    } catch (e: any) {
+      console.warn("Rakuten fail:", e?.message || e);
+      rakuten = [];
     }
 
-    // 3) Yahoo（フラグとキーがある時だけ）
-    let yahoo: UnifiedProduct[] = [];
-    if (process.env.NEXT_PUBLIC_ENABLE_YAHOO === "1" && process.env.YAHOO_APP_ID) {
-      yahoo = await searchYahoo({ keyword, minPrice: minP, maxPrice: maxP, hits: limit });
+    // ❸ Amazonは従来通り or フラグで無効化
+    try {
+      if (process.env.NEXT_PUBLIC_ENABLE_AMAZON === "1") {
+        amazon = await searchAmazon({ keyword, minPrice: minP, maxPrice: maxP, hits: limit });
+      }
+    } catch { amazon = []; }
+
+    // ❹ Yahoo はフラグ＆IDがある時だけ
+    try {
+      if (process.env.NEXT_PUBLIC_ENABLE_YAHOO === "1" && process.env.YAHOO_APP_ID) {
+        yahoo = await searchYahoo({ keyword, minPrice: minP, maxPrice: maxP, hits: limit });
+      }
+    } catch (e:any) {
+      console.warn("Yahoo fail:", e?.message || e);
+      yahoo = [];
     }
 
-    // 4) 結合→重複除去（タイトルと価格でラフ判定）
-    const keyOf = (p: UnifiedProduct) => `${p.store.key}:${p.title}:${p.price ?? "?"}`;
-    const map = new Map<string, UnifiedProduct>();
-    [...rakuten, ...amazon, ...yahoo].forEach(p => map.set(keyOf(p), p));
-    let merged = Array.from(map.values());
+                    // ❺ インタリーブで結合
+                const items = interleave(rakuten, yahoo, 1, 1) as any[];
+                let merged = items;
 
-    // 5) スコアリング（軽め）
+    // ❻ 予算内0件 → 予算外で再検索（フォールバック）
+    let budgetMatched = true;
+    if (merged.length === 0 && (minP != null || maxP != null)) {
+      budgetMatched = false;
+      // 予算条件外で再検索（落ちても無視）
+      try { rakuten = await searchRakuten({ keyword, hits: limit }); } catch {}
+      try {
+        if (process.env.NEXT_PUBLIC_ENABLE_YAHOO === "1" && process.env.YAHOO_APP_ID) {
+          yahoo = await searchYahoo({ keyword, hits: limit });
+        }
+      } catch {}
+      const fallbackItems = interleave(rakuten, yahoo, 1, 1) as any[];
+      merged = fallbackItems;
+    }
+
+    // ❼ スコアリング（簡易）
     const needle = `${height} ${firmness} ${material}`.trim().toLowerCase();
     const scored = merged.map(p => {
       let s = 0;
       const t = `${p.title}`.toLowerCase();
-      if (height && t.includes(height.replace("め",""))) s += 0.3;
-      if (material && t.includes(material.toLowerCase())) s += 0.4;
-      if (firmness && t.includes(firmness.replace("やや",""))) s += 0.2;
+      if (height)   s += t.includes(height.replace("め","")) ? 0.3 : 0;
+      if (material) s += t.includes(material.toLowerCase()) ? 0.4 : 0;
+      if (firmness) s += t.includes(firmness.replace("やや","")) ? 0.2 : 0;
       return { ...p, score: s };
     }).sort((a,b)=> (b.score - a.score) || ((b.price ?? 0) - (a.price ?? 0)));
 
-    // 6) 返却（空ならフォールバックURL）
-    const fallbackUrl = amazon.length === 0 ? amazonSearchUrlFallback(keyword) : null;
+    // ❽ 厳密な価格フィルタ（priceが取れていないものも除外）
+    const inRange = (p: any) =>
+      (typeof p.price === "number") &&
+      (minP == null || p.price >= minP) &&
+      (maxP == null || p.price <= maxP);
 
-    console.log(`✅ 検索結果: ${scored.length}件 (楽天: ${rakuten.length}件, Amazon: ${amazon.length}件, Yahoo: ${yahoo.length}件)`);
+    let itemsStrict = scored.filter(inRange);
 
-    res.status(200).json({
+    // 予算内で 1 件以上あればそれを返す
+    if (itemsStrict.length > 0) {
+      return res.status(200).json({
+        ok: true,
+        keyword,
+        items: itemsStrict as any,
+        meta: {
+          budgetMatched: true,
+          budgetRange: (minP || maxP) ? { min: minP ?? null, max: maxP ?? null } : null,
+          stores: { rakuten: rakuten.length, yahoo: yahoo.length, amazon: amazon.length },
+        },
+      });
+    }
+
+    // 予算内が 0 件 → 予算外から提示（このときだけ budgetMatched:false）
+    return res.status(200).json({
       ok: true,
       keyword,
-      items: scored,
-      fallbackUrl, // これがあれば Amazon ボタンは検索遷移
+      items: scored as any, // フィルタなし版
       meta: {
-        budgetMatched,
+        budgetMatched: false,
         budgetRange: (minP || maxP) ? { min: minP ?? null, max: maxP ?? null } : null,
+        stores: { rakuten: rakuten.length, yahoo: yahoo.length, amazon: amazon.length },
       },
     });
   } catch (e: any) {
-    console.error('❌ 商品検索エラー:', e?.message);
-    res.status(500).json({ ok: false, error: e?.message ?? "unknown" });
+    // ❾ どうしても全滅した時だけ ok:false
+    console.error("❌ mall-products fatal:", e?.message || e);
+    return res.status(200).json({ ok: false, keyword, error: e?.message ?? "unknown" });
   }
 } 

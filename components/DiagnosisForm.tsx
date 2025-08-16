@@ -3,9 +3,10 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import type { Answers } from '@/lib/resultLogic';
 import { logOutbound } from '@/lib/logOutbound';
+import { toPriceRange, BudgetBand } from '@/lib/budget';
 
-// 予算の正規化関数
-function toPriceRange(input: string) {
+// 予算の正規化関数（文字列入力用）
+function parseBudgetText(input: string) {
   const n = (input || "").match(/\d+/g)?.map(Number) ?? [];
   if (n.length === 0) return {};
   if (n.length === 1) return { minPrice: n[0] };
@@ -64,7 +65,7 @@ const defaultFormState: Answers = {
   materialPref: "none",
   
   // 購入情報
-  budget: "medium",
+  budget: "Y5_8",
   reason: "first_time",
   pillowSize: "standard",
   
@@ -157,7 +158,10 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
       }
 
       // 予算の正規化
-      const priceRange = toPriceRange(form.budgetText ?? "");
+      const priceRange = parseBudgetText(form.budgetText ?? "");
+      
+      // 予算バンドの変換
+      const budgetBand: BudgetBand | undefined = form.budget as BudgetBand | undefined;
       
       // デフォルトのAPI呼び出し
       const currentSessionId = sessionId || (typeof window !== 'undefined' && window.crypto 
@@ -169,6 +173,7 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
         age: typeof form.age === "string" ? Number(form.age) || null : form.age ?? null,
         sessionId: currentSessionId,
         priceRange, // 正規化された価格範囲を追加
+        budgetBand, // 予算バンドを追加
         referrer: typeof window !== "undefined" ? window.location.href : undefined,
         userAgent: typeof navigator !== "undefined" ? navigator.userAgent : undefined,
       };
@@ -1268,9 +1273,13 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
                     e.target.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
                   }}
                 >
-                  <option value="low">〜¥5,000</option>
-                  <option value="medium">¥5,000〜¥15,000</option>
-                  <option value="high">¥15,000〜</option>
+                  <option value="UNDER_3000">〜¥3,000</option>
+                  <option value="Y3_5">¥3,000〜¥5,000</option>
+                  <option value="Y5_8">¥5,000〜¥8,000</option>
+                  <option value="Y8_12">¥8,000〜¥12,000</option>
+                  <option value="Y12_15">¥12,000〜¥15,000</option>
+                  <option value="Y15_20">¥15,000〜¥20,000</option>
+                  <option value="OVER_20000">¥20,000〜</option>
                 </select>
               </div>
 

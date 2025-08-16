@@ -1,8 +1,12 @@
 import React from 'react';
 import useSWR from 'swr';
-import ProductCard from './ProductCard';
+import ProductCard from '../ProductCard';
 import FirstPick from './FirstPick';
+import FirstPickGallery from './FirstPickGallery';
+import PrimaryCandidateGrid from './PrimaryCandidateGrid';
+import NextCandidates from './NextCandidates';
 import type { UnifiedProduct } from '@/lib/malls/types';
+import { bandToRange, BudgetBand } from '@/lib/budget';
 
 const fetcher = (url: string) => fetch(url).then(r => r.json());
 
@@ -11,8 +15,7 @@ type ProductListProps = {
   height: string;
   firmness: string;
   material?: string;
-  minPrice?: number;
-  maxPrice?: number;
+  budgetBand?: BudgetBand;
   sessionId?: string;
 };
 
@@ -21,20 +24,39 @@ export default function ProductList({
   height, 
   firmness, 
   material, 
-  minPrice, 
-  maxPrice, 
-  sessionId 
-}: ProductListProps) {
+  budgetBand, 
+  sessionId,
+  onFirstPick
+}: ProductListProps & { onFirstPick?: (product: any) => void }) {
+  const { min, max } = bandToRange(budgetBand);
+  
   const qs = new URLSearchParams({
     category,
     height,
     firmness,
     material: material ?? "",
-    minPrice: minPrice ? String(minPrice) : "",
-    maxPrice: maxPrice ? String(maxPrice) : "",
+    hits: "40",
   });
+  
+  // 予算情報を追加
+  if (min != null) qs.set("minPrice", String(min));
+  if (max != null) qs.set("maxPrice", String(max));
 
   const { data, error, isLoading } = useSWR(`/api/mall-products?${qs}`, fetcher);
+
+  // 第一候補を親コンポーネントに通知 - Hooksは常に最初に呼び出す
+  React.useEffect(() => {
+    if (data?.ok && data?.items?.length > 0 && onFirstPick) {
+      const products = data.items.filter((p: any) => p?.url);
+      if (products.length > 0) {
+        const firstPick = {
+          ...products[0],
+          image: (products[0].image || products[0].images?.[0] || "").replace(/^http:/, "https:"),
+        };
+        onFirstPick(firstPick);
+      }
+    }
+  }, [data, onFirstPick]);
 
   if (isLoading) {
     return (
@@ -58,7 +80,8 @@ export default function ProductList({
     );
   }
 
-  if (error || !data?.ok) {
+  // エラー状態の処理
+  if (error) {
     return (
       <div className="bg-white rounded-xl p-6 border border-slate-200">
         <h3 className="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2">
@@ -66,6 +89,7 @@ export default function ProductList({
         </h3>
         <div className="text-center py-8">
           <p className="text-slate-600 mb-4">商品の読み込みに失敗しました</p>
+          <p className="text-slate-500 text-sm mb-4">{error.message || "通信エラー"}</p>
           <button 
             onClick={() => window.location.reload()}
             className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
@@ -77,21 +101,33 @@ export default function ProductList({
     );
   }
 
-  const products: UnifiedProduct[] = data.items || [];
+  // データが正常に取得できた場合
+  const products: UnifiedProduct[] = data?.items || [];
+  const meta = data?.meta || null;
 
+  // 0件の場合
   if (products.length === 0) {
     return (
-      <div className="bg-white rounded-xl p-6 border border-slate-200">
-        <h3 className="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2">
-          🛒 おすすめ商品
-        </h3>
-        <div className="text-center py-8">
-          <p className="text-slate-600 mb-4">
-            検索キーワード: "{data.keyword}"
-          </p>
-          <p className="text-slate-500">
-            条件に合う商品が見つかりませんでした
-          </p>
+      <div className="rounded-lg bg-amber-50 border border-amber-200 p-4 text-amber-900">
+        <p className="font-medium">ご希望の価格帯では候補が少ないようです。</p>
+        <p className="text-sm mt-1">一致度の高い候補を予算外からもご提案するか、外部検索もご利用ください。</p>
+        <div className="mt-3 flex gap-2">
+          <a 
+            className="px-3 py-1 rounded-md bg-black text-white text-sm" 
+            href="https://search.rakuten.co.jp/search/mall/枕/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            楽天で探す
+          </a>
+          <a 
+            className="px-3 py-1 rounded-md bg-black text-white text-sm" 
+            href="https://shopping.yahoo.co.jp/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            Yahoo!で探す
+          </a>
         </div>
       </div>
     );
@@ -154,47 +190,46 @@ export default function ProductList({
 
   const { first: firstPick, rest: secondaryTop3 } = pickFirstAndSecondary(all);
 
-  // 予算外フォールバックのバナー
-  const meta = data?.meta;
-  const budgetNote =
-    meta && meta.budgetMatched === false
-      ? `ご指定の予算${meta?.budgetRange?.min ? `¥${meta.budgetRange.min.toLocaleString()}` : ""}${meta?.budgetRange?.max ? `〜¥${meta.budgetRange.max.toLocaleString()}` : ""}で条件に合う商品が見つからなかったため、予算外から一致度の高い候補を表示しています。`
-      : null;
+  // 第二候補を3件ずつグループ化
+  function chunk<T>(arr: T[], n: number): T[][] {
+    const out: T[][] = [];
+    for (let i = 0; i < arr.length; i += n) out.push(arr.slice(i, i + n));
+    return out;
+  }
+  const secondaryGroups = chunk(secondaryTop3, 3).map((c, i) => ({
+    title: `候補グループ ${i + 1}`,
+    products: c,
+  }));
 
   return (
     <>
-      {/* 第一候補（1つ） */}
-      <FirstPick product={firstPick} sessionId={sessionId} />
+      {/* 第一候補（2つ） - ProductCard形式 */}
+      <PrimaryCandidateGrid items={products} />
       
       {/* 予算外フォールバックバナー */}
-      {budgetNote && (
+      {data?.meta?.budgetMatched === false && (
         <div className="mb-8 rounded-xl bg-amber-50 text-amber-900 p-3 text-sm">
-          {budgetNote}
+          ご指定の予算{data.meta.budgetRange?.min ? `¥${data.meta.budgetRange.min.toLocaleString()}` : ""}{data.meta.budgetRange?.max ? `〜¥${data.meta.budgetRange.max.toLocaleString()}` : ""}では該当が少なかったため、条件一致度の高い候補を予算外から表示しています。
         </div>
       )}
 
-      {/* 第二候補（下部・3つ） */}
-      {secondaryTop3.length > 0 && (
-        <section className="rounded-2xl bg-white shadow p-5">
-          <h3 className="text-lg font-bold mb-4">🔁 第二候補</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {secondaryTop3.map(product => (
-              <ProductCard 
-                key={product.id} 
-                product={product} 
-                sessionId={sessionId}
-              />
-            ))}
-          </div>
-        </section>
+      {/* 第二候補（3件ずつグループ化） */}
+      {secondaryGroups.length > 0 && (
+        <NextCandidates 
+          groups={secondaryGroups} 
+          initial={1} 
+          extraMax={2} 
+        />
       )}
 
-      {/* 検索キーワード情報 */}
-      <div className="text-center mt-4">
-        <p className="text-sm text-slate-500">
-          検索キーワード: "{data.keyword}" | 合計 {all.length} 件
-        </p>
-      </div>
+      {/* 検索キーワード情報（デバッグ用） */}
+      {false && (
+        <div className="text-center mt-4">
+          <p className="text-sm text-slate-500">
+            検索キーワード: "{data.keyword}" | 合計 {all.length} 件
+          </p>
+        </div>
+      )}
     </>
   );
 } 

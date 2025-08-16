@@ -13,35 +13,41 @@ type RakutenItem = {
   itemCode: string;
 };
 
-export async function searchRakuten(params: {
-  keyword: string;
-  minPrice?: number;
-  maxPrice?: number;
-  hits?: number;
-}): Promise<UnifiedProduct[]> {
+export async function searchRakuten({
+  keyword, minPrice, maxPrice, hits = 24
+}: { keyword: string; minPrice?: number; maxPrice?: number; hits?: number; }) {
+  const appId = process.env.RAKUTEN_APP_ID;
+  if (!appId) throw new Error("RAKUTEN_APP_ID missing");
+
+  // ← 楽天の上限は 30。念のため 1〜30 に丸める
+  const safeHits = Math.min(Math.max(hits ?? 24, 1), 30);
+
   const qs = new URLSearchParams({
-    applicationId: process.env.RAKUTEN_APP_ID!,
-    affiliateId: process.env.RAKUTEN_AFFILIATE_ID!,
-    format: "json",
-    keyword: params.keyword,
-    hits: String(params.hits ?? 20),
-    sort: "-reviewCount", // 初期はレビュー数降順が無難
+    applicationId: appId,
+    keyword: keyword || "枕",
+    hits: String(safeHits),
+    sort: "-reviewCount",
   });
-  if (params.minPrice) qs.set("minPrice", String(params.minPrice));
-  if (params.maxPrice) qs.set("maxPrice", String(params.maxPrice));
+  if (typeof minPrice === "number") qs.set("minPrice", String(minPrice));
+  if (typeof maxPrice === "number") qs.set("maxPrice", String(maxPrice));
 
-  const res = await fetch(`${BASE}?${qs.toString()}`);
-  if (!res.ok) throw new Error(`Rakuten API ${res.status}`);
-  const json = await res.json();
+  const url = `${BASE}?${qs.toString()}`;
+  const r = await fetch(url);
+  const text = await r.text();                // ← 失敗時の本文も取得
+  if (!r.ok) {
+    console.warn("Rakuten API error:", r.status, text); // ← デバッグ用ログ
+    throw new Error(`Rakuten API ${r.status}`);
+  }
+  const j = JSON.parse(text);
 
-  const items: RakutenItem[] = (json?.Items ?? []).map((x: any) => x.Item);
+  const items: RakutenItem[] = (j?.Items ?? []).map((x: any) => x.Item);
   return items.map((it) => {
     // 複数画像を取得
     const images = [
       it.mediumImageUrls?.[0]?.imageUrl,
       it.mediumImageUrls?.[1]?.imageUrl,
       it.smallImageUrls?.[0]?.imageUrl,
-    ].filter(Boolean);
+    ].filter((url): url is string => Boolean(url));
     
     return {
       id: `rakuten:${it.itemCode}`,

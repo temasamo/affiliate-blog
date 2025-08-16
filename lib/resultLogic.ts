@@ -25,7 +25,7 @@ export type Answers = {
   materialPref: "none" | "buckwheat" | "pipe" | "memory" | "latex" | "fiber" | "feather";
   
   // 購入情報
-  budget: "low" | "medium" | "high";
+  budget: "UNDER_3000" | "Y3_5" | "Y5_8" | "Y8_12" | "Y12_15" | "Y15_20" | "OVER_20000";
   budgetText?: string; // 自由入力の予算
   reason: "doesnt_fit" | "upgrade" | "gift" | "first_time";
   pillowSize: "small" | "standard" | "large";

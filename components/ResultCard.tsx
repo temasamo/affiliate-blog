@@ -2,6 +2,9 @@
 import React from 'react';
 import PrimaryHero from './result/PrimaryHero';
 import FirstPick from './result/FirstPick';
+import FirstPickSingle from './result/FirstPickSingle';
+import FirstPickGallery from './result/FirstPickGallery';
+import FirstPickHero from './result/FirstPickHero';
 
 import ReasonList from './result/ReasonList';
 import NextCandidates from './result/NextCandidates';
@@ -11,6 +14,7 @@ import ProductList from './result/ProductList';
 import { PointsSection } from './result/Points';
 import { buildInsights } from '@/lib/insights';
 import type { Product } from '@/lib/resultLogic';
+import type { BudgetBand } from '@/lib/budget';
 
 type Result = {
   title: string;
@@ -35,11 +39,19 @@ type Result = {
   primaryProduct?: Product;
   secondaryProducts?: Product[];
   sessionId?: string;
+  priceRange?: {
+    minPrice?: number;
+    maxPrice?: number;
+  };
+  budgetBand?: BudgetBand;
 };
 
 export default function ResultCard({ result, sessionId, answers }: { result: Result; sessionId?: string; answers?: any }) {
   // インサイトを構築（meta情報は後でProductListから取得）
   const { concerns, proposals } = buildInsights(answers || {}, result);
+  
+  // 第一候補の状態管理
+  const [firstPick, setFirstPick] = React.useState<any>(null);
 
   return (
     <div className="space-y-6">
@@ -48,6 +60,9 @@ export default function ResultCard({ result, sessionId, answers }: { result: Res
         summary={result.summary}
         confidence={result.confidence || 0.8}
       />
+
+      {/* ★ ここで「マッチング度」と「お悩みのポイント」の間にヒーローカード */}
+      <FirstPickHero product={firstPick} />
 
       {/* お悩みのポイント */}
       <PointsSection title="🧩 お悩みのポイント" items={concerns} />
@@ -63,7 +78,9 @@ export default function ResultCard({ result, sessionId, answers }: { result: Res
         category={result.primaryCategory || ''}
         height={result.height || ''}
         firmness={result.firmness || ''}
+        budgetBand={result.budgetBand}
         sessionId={sessionId}
+        onFirstPick={setFirstPick}
       />
 
       {/* 次点候補 */}
@@ -72,7 +89,8 @@ export default function ResultCard({ result, sessionId, answers }: { result: Res
           title: candidate.label,
           products: []
         })) || []} 
-        maxGroups={3} 
+        initial={2}
+        extraMax={2}
       />
 
       {/* 第二候補の画像ストリップ */}
