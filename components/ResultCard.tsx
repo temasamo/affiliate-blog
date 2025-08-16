@@ -1,14 +1,6 @@
 "use client";
 import React from 'react';
-import PrimaryHero from './result/PrimaryHero';
-import FirstPick from './result/FirstPick';
-import FirstPickSingle from './result/FirstPickSingle';
-import FirstPickGallery from './result/FirstPickGallery';
-import FirstPickHero from './result/FirstPickHero';
-
 import ReasonList from './result/ReasonList';
-import NextCandidates from './result/NextCandidates';
-import SecondaryStrip from './result/SecondaryStrip';
 import StoreButtons from './result/StoreButtons';
 import ProductList from './result/ProductList';
 import { PointsSection } from './result/Points';
@@ -52,64 +44,15 @@ export default function ResultCard({ result, sessionId, answers }: { result: Res
   
   // 第一候補の状態管理
   const [firstPick, setFirstPick] = React.useState<any>(null);
+  
+
 
   return (
     <div className="space-y-6">
-      {/* 上部ヒーロー（タイトル/高さ/硬さは出さない） */}
-      <PrimaryHero
-        summary={result.summary}
-        confidence={result.confidence || 0.8}
-      />
 
-      {/* ★ ここで「マッチング度」と「お悩みのポイント」の間にヒーローカード */}
-      <FirstPickHero product={firstPick} />
-
-      {/* お悩みのポイント */}
-      <PointsSection title="🧩 お悩みのポイント" items={concerns} />
-
-      {/* ご提案のポイント */}
-      <PointsSection title="🔧 ご提案のポイント" items={proposals} />
-
-      {/* 診断理由 */}
-      <ReasonList items={result.reasons || []} />
-
-      {/* 実際の商品検索結果（第一候補・第二候補に分割） */}
-      <ProductList
-        category={result.primaryCategory || ''}
-        height={result.height || ''}
-        firmness={result.firmness || ''}
-        budgetBand={result.budgetBand}
-        sessionId={sessionId}
-        onFirstPick={setFirstPick}
-      />
-
-      {/* 次点候補 */}
-      <NextCandidates 
-        groups={result.secondaryCandidates?.map(candidate => ({
-          title: candidate.label,
-          products: []
-        })) || []} 
-        initial={2}
-        extraMax={2}
-      />
-
-      {/* 第二候補の画像ストリップ */}
-      <SecondaryStrip 
-        products={result.secondaryProducts || []} 
-      />
-
-      {/* モールボタン */}
-      <StoreButtons 
-        product={{
-          title: result.title || 'おすすめ枕',
-          category: result.primaryCategory || '枕'
-        }}
-        primaryProduct={result.primaryProduct}
-        sessionId={sessionId} 
-      />
 
       {/* 詳細情報セクション */}
-      <div className="bg-white rounded-xl p-6 border border-slate-200">
+      <div className="bg-white rounded-xl p-6 border border-slate-200 mt-6">
         <h3 className="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2">
           📋 診断詳細
         </h3>
@@ -167,6 +110,37 @@ export default function ResultCard({ result, sessionId, answers }: { result: Res
           </div>
         )}
       </div>
+
+      {/* お悩みのポイント */}
+      <PointsSection title="🧩 お悩みのポイント" items={concerns} />
+
+      {/* ご提案のポイント */}
+      <PointsSection title="🔧 ご提案のポイント" items={proposals} />
+
+      {/* 診断理由 */}
+      <ReasonList items={result.reasons || []} />
+
+      {/* 実際の商品検索結果（第一候補・第二候補に分割） */}
+      <ProductList
+        category={result.primaryCategory || ''}
+        height={result.height || ''}
+        firmness={result.firmness || ''}
+        budgetBand={result.budgetBand}
+        sessionId={sessionId}
+        answers={answers}
+        result={result}
+        onFirstPick={setFirstPick}
+      />
+
+      {/* モールボタン */}
+      <StoreButtons 
+        product={{
+          title: result.title || 'おすすめ枕',
+          category: result.primaryCategory || '枕'
+        }}
+        primaryProduct={result.primaryProduct}
+        sessionId={sessionId} 
+      />
     </div>
   );
 } 

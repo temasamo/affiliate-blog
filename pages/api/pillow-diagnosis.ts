@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { diagnose, type Answers } from '@/lib/resultLogic';
 import { buildSummary, getCategoryLabel } from '@/lib/summary';
+import { finalizeSummary } from '@/lib/textTemplates';
 
 // LLM用のOpenAIクライアント（オプション）
 let openai: any = null;
@@ -105,6 +106,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         console.log('LLM generation failed, using rule-based summary');
       }
     }
+
+    // 診断結果の締めを統一
+    summary = finalizeSummary(summary);
 
     // 予算情報を抽出
     const priceRange = (answers as any).priceRange || {};

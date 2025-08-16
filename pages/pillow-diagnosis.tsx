@@ -1,94 +1,122 @@
-// pages/pillow-diagnosis.tsx
-import { useState, useEffect, useMemo } from 'react';
+'use client';
+
+import { useState, useMemo } from 'react';
 import DiagnosisForm from '@/components/DiagnosisForm';
-import ResultCard from '@/components/ResultCard';
+import ProductList from '@/components/result/ProductList';
+import TopFirstGrid from '@/components/result/TopFirstGrid';
+import { ResultSummaryCard } from '@/components/ResultSummaryCard';
+import { toPercent } from '@/utils/toPercent';
 
 export default function PillowDiagnosisPage() {
-  const [mounted, setMounted] = useState(false);
   const [result, setResult] = useState<any>(null);
+  const [answers, setAnswers] = useState<any>(null);
   const sessionId = useMemo(() => (typeof crypto !== "undefined" ? crypto.randomUUID() : ""), []);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      padding: '0',
-      margin: '0',
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
-    }}>
-      {/* Header */}
-      <div style={{
-        background: 'rgba(255, 255, 255, 0.1)',
-        backdropFilter: 'blur(10px)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
-        padding: '20px 0',
-        textAlign: 'center'
-      }}>
-        <h1 style={{
-          margin: '0',
-          color: 'white',
-          fontSize: '2.5rem',
-          fontWeight: '700',
-          textShadow: '0 2px 4px rgba(0,0,0,0.3)',
-          letterSpacing: '0.05em'
-        }}>
-          🌙 枕診断
-        </h1>
-        <p style={{
-          margin: '8px 0 0 0',
-          color: 'rgba(255, 255, 255, 0.8)',
-          fontSize: '1.1rem',
-          fontWeight: '300'
-        }}>
-          あなたに最適な枕を見つけましょう
-        </p>
-      </div>
+    <>
+      {/* フォーム -> result を更新 */}
+      <DiagnosisForm
+        onResult={(r: any) => { setResult(r); setAnswers(r.answers); }}
+      />
 
-      {/* Main Content */}
-      <div style={{
-        maxWidth: '800px',
-        margin: '0 auto',
-        padding: '40px 20px'
-      }}>
-        {/* Form Container */}
-        <div style={{
-          background: 'rgba(255, 255, 255, 0.95)',
-          borderRadius: '20px',
-          padding: '40px',
-          boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
-          backdropFilter: 'blur(10px)',
-          border: '1px solid rgba(255, 255, 255, 0.2)',
-          marginBottom: '30px'
-        }}>
-          {mounted ? (
-            <>
-              <DiagnosisForm 
-                sessionId={sessionId} 
-                onResult={(r: any) => setResult({ ...r, sessionId })}
-              />
-              {result && <ResultCard result={result} sessionId={sessionId} />}
-            </>
-          ) : (
-            <div>読み込み中...</div>
-          )}
-        </div>
-      </div>
+      {/* ここは既存の診断結果一文（重複させない） */}
+      {result?.summary && <ResultSummaryCard summary={result.summary} />}
 
-      {/* Footer */}
-      <div style={{
-        textAlign: 'center',
-        padding: '30px 20px',
-        color: 'rgba(255, 255, 255, 0.7)',
-        fontSize: '0.9rem'
-      }}>
-        <p style={{ margin: '0' }}>
-          © 2025 枕診断システム - あなたの快適な睡眠をサポート
-        </p>
-      </div>
-    </div>
+      {/* 上2をここに表示 */}
+      {result && (
+        <TopFirstGrid
+          category={result.primaryCategory || ''}
+          height={result.height || ''}
+          firmness={result.firmness || ''}
+          material={result.material || ''}
+          budgetBand={result.budgetBand}
+          sessionId={sessionId}
+          matchPercent={toPercent(result.confidence ?? 76)}
+        />
+      )}
+
+      {/* 小ユーティリティ */}
+      {(() => {
+        const pickFirst = (...vals: any[]) => vals.find(v => Array.isArray(v) ? v.length > 0 : Boolean(v));
+        const painList = pickFirst(answers?.painPoints, answers?.concerns, answers?.issues) || [];
+        const proposalPoints = (() => {
+          const pts: string[] = [];
+          if (result?.primaryCategory === 'cervical-support') pts.push('頸椎の自然なカーブを保ち後頭部を安定させる形状を優先');
+          if (result?.height)   pts.push(`高さは「${result.height}」を基準に微調整`);
+          if (result?.firmness) pts.push(`硬さは「${result.firmness}」を中心に選定`);
+          return pts;
+        })();
+
+        return (
+          <>
+            {/* 3) 診断詳細 */}
+            {result && (
+              <section className="mx-auto max-w-6xl px-4 mt-6">
+                <div className="rounded-2xl bg-white p-6 shadow-sm">
+                  <h3 className="text-lg font-bold mb-4">📝 診断詳細</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div><div className="text-sm text-slate-500">おすすめの枕タイプ</div><div className="font-medium">{result.primaryCategory}</div></div>
+                    <div><div className="text-sm text-slate-500">おすすめの枕サイズ</div><div className="font-medium">{result.sizeLabel ?? '標準（約43×63cm）'}</div></div>
+                    <div><div className="text-sm text-slate-500">推奨高さ</div><div className="font-medium">{result.height}</div></div>
+                    <div><div className="text-sm text-slate-500">推奨硬さ</div><div className="font-medium">{result.firmness}</div></div>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* 4) お悩みのポイント / ご提案のポイント */}
+            {(painList.length > 0 || proposalPoints.length > 0) && (
+              <section className="mx-auto max-w-6xl px-4 mt-6">
+                <div className="rounded-2xl bg-white p-6 shadow-sm">
+                  <h3 className="text-lg font-bold mb-4">🧩 お悩みのポイント / ご提案のポイント</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <div className="text-sm text-slate-500 mb-2">お悩み</div>
+                      <ul className="space-y-2">
+                        {painList.map((t: string, i: number) => <li key={i} className="rounded-md bg-slate-50 px-3 py-2">・{t}</li>)}
+                      </ul>
+                    </div>
+                    <div>
+                      <div className="text-sm text-slate-500 mb-2">ご提案</div>
+                      <ul className="space-y-2">
+                        {proposalPoints.map((t: string, i: number) => <li key={i} className="rounded-md bg-slate-50 px-3 py-2">・{t}</li>)}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* 5) 診断理由 */}
+            {result && (
+              <section className="mx-auto max-w-6xl px-4 mt-6">
+                <div className="rounded-2xl bg-white p-6 shadow-sm">
+                  <h3 className="text-lg font-bold mb-4">💡 診断理由</h3>
+                  <ul className="space-y-2">
+                    {answers?.sleepPos && <li className="rounded-md bg-slate-50 px-3 py-2">・{answers.sleepPos} が多い</li>}
+                    {answers?.mattressFirmness && <li className="rounded-md bg-slate-50 px-3 py-2">・マットレスは {answers.mattressFirmness} 寄り</li>}
+                    <li className="rounded-md bg-slate-50 px-3 py-2">・高さは {result.height}、硬さは {result.firmness} を中心に選定</li>
+                  </ul>
+                </div>
+              </section>
+            )}
+          </>
+        );
+      })()}
+
+      {/* ProductListで商品取得・表示 */}
+      {result && (
+        <ProductList
+          category={result.primaryCategory || ''}
+          height={result.height || ''}
+          firmness={result.firmness || ''}
+          material={result.material || ''}
+          budgetBand={result.budgetBand}
+          sessionId={sessionId}
+          answers={answers}
+          result={result}
+        />
+      )}
+    </>
   );
 } 
