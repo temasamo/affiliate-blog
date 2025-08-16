@@ -34,10 +34,11 @@ type ProductListProps = {
   category: string; height: string; firmness: string;
   material?: string; budgetBand?: BudgetBand; sessionId?: string;
   answers?: any; result?: any; onFirstPick?: (product: any) => void;
+  finalTag?: string; // 追加
 };
 
 export default function ProductList({
-  category, height, firmness, material, budgetBand, sessionId, answers, result, onFirstPick,
+  category, height, firmness, material, budgetBand, sessionId, answers, result, onFirstPick, finalTag,
 }: ProductListProps) {
   const { min, max } = bandToRange(budgetBand);
   const qs = new URLSearchParams();
@@ -50,7 +51,14 @@ export default function ProductList({
   qs.set('hits', '40');
   if (sessionId) qs.set('sid', sessionId);
 
-  const { data, error, isLoading } = useSWR(`/api/mall-products?${qs.toString()}`, fetcher, {
+  // SWRキーに finalTag を含める
+  const key = ['mall',
+    category, height, firmness, material,
+    min != null ? String(min) : '', max != null ? String(max) : '',
+    finalTag || 'none'
+  ].join('|');
+
+  const { data, error, isLoading } = useSWR(key, fetcher, {
     revalidateOnFocus: false, keepPreviousData: true, dedupingInterval: 1500,
   });
 
