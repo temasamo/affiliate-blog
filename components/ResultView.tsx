@@ -14,9 +14,10 @@ type Props = {
   products: any[];
   finalTag?: string;
   onFinalAnswer?: (tag: string) => Promise<void>;
+  onFinalTagChange?: (tag: string) => void;
 };
 
-export default function ResultView({ products, finalTag, onFinalAnswer }: Props) {
+export default function ResultView({ products, finalTag, onFinalAnswer, onFinalTagChange }: Props) {
   const [finalTagState, setFinalTagState] = useState<string>('none');
   const [addendum, setAddendum] = useState<string>('');
 
@@ -37,6 +38,7 @@ export default function ResultView({ products, finalTag, onFinalAnswer }: Props)
     }).then(res => res.json()).catch(()=> ({}));
     setAddendum(r?.addendum ?? '');
     setFinalTagState(tag); // ← これで ProductList の SWRキーが変わるはず
+    onFinalTagChange?.(tag); // 親コンポーネントに通知
   }
 
   // 第一候補（中3）＝ 上2を包含した3枚

@@ -121,7 +121,11 @@ export default function ProductList({
       {addendum && <p className="mb-2 text-xs text-gray-600">{addendum}</p>}
       
       {/* 中3＋第二候補（タブ） */}
-      <ResultView products={products} finalTag={finalTag} />
+      <ResultView 
+        products={products} 
+        finalTag={finalTag} 
+        onFinalTagChange={setFinalTag}
+      />
     </>
   );
 }
