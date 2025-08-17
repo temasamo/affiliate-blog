@@ -186,6 +186,20 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
 
       if (response.ok) {
         const data = await response.json();
+        
+        // 回答とベースタグを保存して最後の一問ページへ遷移
+        if (typeof window !== 'undefined') {
+          sessionStorage.setItem("pillow.answers", JSON.stringify(form));
+          sessionStorage.setItem("pillow.baseTag", data.primaryCategory || 'general');
+          
+          // 予算やモール選択を引き継ぎ（現在は基本的な遷移のみ）
+          const query: any = {};
+          // 予算情報は後で実装予定
+          
+          window.location.href = `/pillow-final?${new URLSearchParams(query).toString()}`;
+          return;
+        }
+        
         setResult(data);
         setRowId(data.id);
         if (onResult) {
