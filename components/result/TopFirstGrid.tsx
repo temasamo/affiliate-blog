@@ -34,6 +34,7 @@ export default function TopFirstGrid(props: {
   category: string; height: string; firmness: string;
   material?: string; budgetBand?: BudgetBand; sessionId?: string;
   matchPercent?: number;
+  finalTag?: string;
 }) {
   const { min, max } = bandToRange(props.budgetBand);
   
@@ -45,6 +46,7 @@ export default function TopFirstGrid(props: {
     min,
     max,
     hits: 40,
+    finalTag: props.finalTag ?? 'none',
     sessionId: props.sessionId,
   });
 

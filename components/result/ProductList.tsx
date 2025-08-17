@@ -122,7 +122,7 @@ export default function ProductList({
   }
 
   return (
-    <>
+    <div key={propsFinalTag}>
       <Debug />
       
       <FinalQuestionBox onDecide={handleDecide} />
@@ -131,9 +131,8 @@ export default function ProductList({
       {/* 中3＋第二候補（タブ） */}
       <ResultView 
         products={products} 
-        finalTag={finalTag} 
         onFinalTagChange={setFinalTag}
       />
-    </>
+    </div>
   );
 }

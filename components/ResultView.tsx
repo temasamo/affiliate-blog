@@ -12,13 +12,12 @@ function chunk3<T>(arr: T[]) {
 
 type Props = {
   products: any[];
-  finalTag?: string;
   onFinalAnswer?: (tag: string) => Promise<void>;
   onFinalTagChange?: (tag: string) => void;
 };
 
-export default function ResultView({ products, finalTag, onFinalAnswer, onFinalTagChange }: Props) {
-  const [finalTagState, setFinalTagState] = useState<string>('none');
+export default function ResultView({ products, onFinalAnswer, onFinalTagChange }: Props) {
+  const [finalTag, setFinalTag] = useState<'none'|string>('none');
   const [addendum, setAddendum] = useState<string>('');
 
   useEffect(() => {
@@ -32,15 +31,14 @@ export default function ResultView({ products, finalTag, onFinalAnswer, onFinalT
   }, []);
 
   async function handleFinalAnswer(tag: string) {
-    console.log('[final_q] decided =', tag);
     const r = await fetch('/api/pillow-assist-answer', {
       method: 'POST',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({ finalTag: tag })
     }).then(res => res.json()).catch(()=> ({}));
+    console.log('[final_q] decided =', tag);
+    setFinalTag(tag);              // ← これが再取得のトリガ
     setAddendum(r?.addendum ?? '');
-    setFinalTagState(tag); // ← これで ProductList の SWRキーが変わるはず
-    onFinalTagChange?.(tag); // 親コンポーネントに通知
   }
 
   // 第一候補（中3）＝ 上2を包含した3枚
