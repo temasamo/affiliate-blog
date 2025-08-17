@@ -59,9 +59,9 @@ export default function TravelTeaser({ posts = [] }: Props) {
           <div className="grid h-full content-start gap-4 sm:grid-cols-2 lg:grid-cols-3">
 
             {posts.slice(0, 3).map((p) => (
-              <Link
-                key={p.slug}
-                href={`/travel/${p.slug}`}
+          <Link
+            key={p.slug}
+            href={`/travel/${p.slug}`}
                 /* ガラス風カード：背景をぼかしつつ半透明に */
                 className="rounded-2xl border
                            border-white/60
@@ -72,16 +72,16 @@ export default function TravelTeaser({ posts = [] }: Props) {
                            hover:bg-white/30 hover:shadow-lg
                            p-4
                            text-white"  // ← 全体の文字色を白に
-              >
+          >
                 <div className="text-xs opacity-90 mb-1 drop-shadow-md">{p.date}</div>
                 <h3 className="font-semibold leading-snug drop-shadow-md">{p.title}</h3>
-                {p.description && (
+            {p.description && (
                   <p className="mt-2 text-sm opacity-90 line-clamp-2 drop-shadow-md">
                     {p.description}
                   </p>
-                )}
-              </Link>
-            ))}
+            )}
+          </Link>
+        ))}
 
           </div>
         </div>

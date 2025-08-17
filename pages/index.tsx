@@ -117,7 +117,7 @@ export default function Home({ latestArticles, travelPosts }: HomeProps) {
                 </svg>
               </Link>
             </div>
-          </div>
+        </div>
         </section>
 
         {/* 旅行の新着記事（Global Hot Picksの上に固定配置） */}
@@ -375,7 +375,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
     travelPosts = slugs.map((s) => {
       const { frontMatter, slug } = getTravelPostBySlug(s);
       return { slug, ...frontMatter };
-    });
+      });
     travelPosts.sort((a: any, b: any) => (a.date < b.date ? 1 : -1));
   } catch (e) {
     // 旅行カテゴリ未作成時でも壊さない

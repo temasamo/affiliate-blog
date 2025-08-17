@@ -23,17 +23,17 @@ export default function Article({ source, frontMatter }: Props) {
           <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
             {frontMatter?.title}
           </h1>
-          {frontMatter?.description && (
+        {frontMatter?.description && (
             <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
               {frontMatter.description}
             </p>
-          )}
+        )}
         </div>
 
         {/* 記事コンテンツ */}
         <div className="bg-white/80 backdrop-blur-sm rounded-3xl border border-white/20 p-8 sm:p-12 shadow-xl shadow-blue-500/10">
           <div className="prose prose-lg max-w-none prose-headings:text-gray-800 prose-p:text-gray-700 prose-a:text-blue-600 prose-strong:text-gray-800 prose-blockquote:border-l-blue-500 prose-blockquote:bg-blue-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg">
-            <MDXRemote {...source} />
+          <MDXRemote {...source} />
           </div>
         </div>
 
