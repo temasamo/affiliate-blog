@@ -1,5 +1,9 @@
 // 診断結果の自然な要約文を生成するシステム
 
+// 末尾の「を目安にご提案します。」が既に付いていれば剥がす
+const stripTail = (s: string) =>
+  s.replace(/(を)?目安にご提案します。?$/, "").trim();
+
 export type SummaryInput = {
   categoryLabel: string;
   sleepPosition: "back" | "side" | "stomach";
@@ -22,10 +26,10 @@ export function buildSummary(rec: SummaryInput): string {
               rec.sleepPosition === "back" ? "仰向け寝" : "うつ伏せ寝";
   
   const matt = rec.mattress === "soft" ? "やわらかめ" :
-               rec.mattress === "hard" ? "硬め" : "ふつう寄り";
+               rec.mattress === "hard" ? "硬め" : "「ふつう」";
 
   // 基本文の構築
-  let summary = `あなたは${pos}が多く、マットレスは${matt}。`;
+  let summary = `あなたは${pos}が多く、マットレスは${matt}寄り。`;
 
   // 肩幅の情報を追加
   if (rec.shoulderWidth === "wide") {
@@ -59,8 +63,8 @@ export function buildSummary(rec: SummaryInput): string {
     }
   }
 
-  // カテゴリと推奨仕様
-  summary += `${rec.categoryLabel}の中でも「高さは${rec.height}、かたさは${rec.firmness}」を目安にお選びください。`;
+  // カテゴリと推奨仕様（末尾は一元管理）
+  summary += `${rec.categoryLabel}の中から、〈高さ：${rec.height}・かたさ：${rec.firmness}〉を目安にご提案します。`;
 
   return summary;
 }

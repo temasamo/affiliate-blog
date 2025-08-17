@@ -95,7 +95,7 @@ export default function PillowDiagnosisPage() {
                   <ul className="space-y-2">
                     {answers?.sleepPos && <li className="rounded-md bg-slate-50 px-3 py-2">・{answers.sleepPos} が多い</li>}
                     {answers?.mattressFirmness && <li className="rounded-md bg-slate-50 px-3 py-2">・マットレスは {answers.mattressFirmness} 寄り</li>}
-                    <li className="rounded-md bg-slate-50 px-3 py-2">・高さは {result.height}、硬さは {result.firmness} を中心に選定</li>
+                    <li className="rounded-md bg-slate-50 px-3 py-2">・高さは「{result.height}」、硬さは「{result.firmness}」を中心に選定</li>
                   </ul>
                 </div>
               </section>
