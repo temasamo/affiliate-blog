@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import useSWR from 'swr';
 import ResultView from '../ResultView';
 import FinalQuestionBox from '../FinalQuestionBox';
@@ -45,6 +45,13 @@ export default function ProductList({
   const { min, max } = bandToRange(budgetBand);
   const [finalTag, setFinalTag] = useState<'none' | string>('none');
   const [addendum, setAddendum] = useState('');
+
+  // propsFinalTagが変更されたら内部状態を更新
+  useEffect(() => {
+    if (propsFinalTag && propsFinalTag !== finalTag) {
+      setFinalTag(propsFinalTag);
+    }
+  }, [propsFinalTag, finalTag]);
 
   function handleDecide(tag: string, add: string) {
     setFinalTag(tag);        // ← これでSWRキーが変わって mall-products を再取得
