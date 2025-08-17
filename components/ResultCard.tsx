@@ -45,6 +45,9 @@ export default function ResultCard({ result, sessionId, answers }: { result: Res
   // 第一候補の状態管理
   const [firstPick, setFirstPick] = React.useState<any>(null);
   
+  // finalTagの状態管理
+  const [finalTag, setFinalTag] = React.useState<'none'|string>('none');
+  
 
 
   return (
@@ -130,6 +133,8 @@ export default function ResultCard({ result, sessionId, answers }: { result: Res
         answers={answers}
         result={result}
         onFirstPick={setFirstPick}
+        finalTag={finalTag}
+        onFinalTagChange={setFinalTag}
       />
 
       {/* モールボタン */}

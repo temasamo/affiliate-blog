@@ -36,39 +36,32 @@ type ProductListProps = {
   category: string; height: string; firmness: string;
   material?: string; budgetBand?: BudgetBand; sessionId?: string;
   answers?: any; result?: any; onFirstPick?: (product: any) => void;
-  finalTag?: string; // 追加
+  finalTag: string; // 必須化
+  onFinalTagChange?: (tag: string) => void;
 };
 
 export default function ProductList({
-  category, height, firmness, material, budgetBand, sessionId, answers, result, onFirstPick, finalTag: propsFinalTag,
+  category, height, firmness, material, budgetBand, sessionId, answers, result, onFirstPick, finalTag, onFinalTagChange,
 }: ProductListProps) {
-  console.log('[productlist] finalTag prop =', propsFinalTag);
+  console.log('[productlist] finalTag prop =', finalTag);
   const { min, max } = bandToRange(budgetBand);
-  const [finalTag, setFinalTag] = useState<'none' | string>('none');
   const [addendum, setAddendum] = useState('');
 
-  // propsFinalTagが変更されたら内部状態を更新
-  useEffect(() => {
-    if (propsFinalTag && propsFinalTag !== finalTag) {
-      setFinalTag(propsFinalTag);
-    }
-  }, [propsFinalTag, finalTag]);
-
   function handleDecide(tag: string, add: string) {
-    setFinalTag(tag);        // ← これでSWRキーが変わって mall-products を再取得
     setAddendum(add);
+    onFinalTagChange?.(tag);
   }
   
   const url = useMemo(() => {
     const u = buildMallUrl({
       category, height, firmness, material,
       min, max, hits: 40,
-      finalTag: propsFinalTag ?? 'none',
+      finalTag,
       sessionId,
     });
     console.log('[mall key]', u);
     return u;
-  }, [category, height, firmness, material, min, max, propsFinalTag, sessionId]);
+  }, [category, height, firmness, material, min, max, finalTag, sessionId]);
 
   const { data, error, isLoading } = useSWR(url, fetcher, {
     revalidateOnFocus: false, keepPreviousData: true, dedupingInterval: 1500,
@@ -122,7 +115,7 @@ export default function ProductList({
   }
 
   return (
-    <div key={propsFinalTag}>
+    <div key={finalTag}>
       <Debug />
       
       <FinalQuestionBox onDecide={handleDecide} />
@@ -131,7 +124,6 @@ export default function ProductList({
       {/* 中3＋第二候補（タブ） */}
       <ResultView 
         products={products} 
-        onFinalTagChange={setFinalTag}
       />
     </div>
   );
