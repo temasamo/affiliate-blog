@@ -12,9 +12,11 @@ function chunk3<T>(arr: T[]) {
 
 type Props = {
   products: any[];
+  finalTag?: string;
+  onFinalAnswer?: (tag: string) => Promise<void>;
 };
 
-export default function ResultView({ products }: Props) {
+export default function ResultView({ products, finalTag, onFinalAnswer }: Props) {
   // 第一候補（中3）＝ 上2を包含した3枚
   const midFirst = useMemo(() => products.slice(0, 3), [products]);
 

@@ -19,7 +19,8 @@ export function buildMallUrl(p: MallParams) {
   if (typeof p.min === 'number' && Number.isFinite(p.min)) qs.set('minPrice', String(p.min));
   if (typeof p.max === 'number' && Number.isFinite(p.max)) qs.set('maxPrice', String(p.max));
   if (typeof p.hits === 'number') qs.set('hits', String(p.hits));
-  if (p.finalTag) qs.set('finalTag', p.finalTag);
+  // 最後に必ず finalTag を付ける（未選択は 'none' で統一）
+  qs.set('finalTag', p.finalTag ?? 'none');
   if (p.sessionId) qs.set('sid', p.sessionId);
   return `/api/mall-products?${qs.toString()}`;
 } 

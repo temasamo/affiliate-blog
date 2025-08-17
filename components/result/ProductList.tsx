@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import useSWR from 'swr';
 import ResultView from '../ResultView';
 import type { UnifiedProduct } from '@/lib/malls/types';
@@ -39,25 +39,33 @@ type ProductListProps = {
 };
 
 export default function ProductList({
-  category, height, firmness, material, budgetBand, sessionId, answers, result, onFirstPick, finalTag,
+  category, height, firmness, material, budgetBand, sessionId, answers, result, onFirstPick, finalTag: propsFinalTag,
 }: ProductListProps) {
   const { min, max } = bandToRange(budgetBand);
+  const [finalTag, setFinalTag] = useState<string>('none');
+
+  async function handleFinalAnswer(tag: string) {
+    const r = await fetch('/api/pillow-assist-answer', { 
+      method:'POST', 
+      headers:{'Content-Type':'application/json'}, 
+      body: JSON.stringify({ finalTag: tag })
+    }).then(res=>res.json());
+    setFinalTag(tag); // ← これがSWRキー更新のトリガ
+    // setAddendum(r?.addendum ?? ''); // 必要に応じて追加
+  }
   
-  const url = buildMallUrl({
-    category,
-    height,
-    firmness,
-    material,
-    min,
-    max,
-    hits: 40,
-    finalTag,
+  const url = useMemo(() => buildMallUrl({
+    category, height, firmness, material,
+    min, max, hits: 40,
+    finalTag: finalTag, // ← 必ず含める
     sessionId,
-  });
+  }), [category, height, firmness, material, min, max, finalTag, sessionId]);
 
   const { data, error, isLoading } = useSWR(url, fetcher, {
     revalidateOnFocus: false, keepPreviousData: true, dedupingInterval: 1500,
   });
+  
+  console.log('[mall key]', url); // 一時ログ：&finalTag=... が見えるはず
 
   const raw: UnifiedProduct[] = data?.items ?? [];
   const products: UnifiedProduct[] = interleaveByStore(raw);
@@ -110,7 +118,7 @@ export default function ProductList({
     <>
       <Debug />
       {/* 中3＋第二候補（タブ） */}
-      <ResultView products={products} />
+      <ResultView products={products} finalTag={finalTag} onFinalAnswer={handleFinalAnswer} />
     </>
   );
 }
