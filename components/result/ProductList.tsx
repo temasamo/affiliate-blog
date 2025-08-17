@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useMemo, useState } from 'react';
 import useSWR from 'swr';
 import ResultView from '../ResultView';
+import FinalQuestionBox from '../FinalQuestionBox';
 import type { UnifiedProduct } from '@/lib/malls/types';
 import { bandToRange, BudgetBand } from '@/lib/budget';
 import { buildMallUrl } from '@/lib/buildMallUrl';
@@ -42,28 +43,12 @@ export default function ProductList({
   category, height, firmness, material, budgetBand, sessionId, answers, result, onFirstPick, finalTag: propsFinalTag,
 }: ProductListProps) {
   const { min, max } = bandToRange(budgetBand);
-  const [finalTag, setFinalTag] = useState<string>('none');
-  const [question, setQuestion] = useState('');
-  const [options, setOptions] = useState<Array<{tag:string;label:string}>>([]);
-  const [addendum, setAddendum] = useState<string>('');
+  const [finalTag, setFinalTag] = useState<'none' | string>('none');
+  const [addendum, setAddendum] = useState('');
 
-  // 結果ビュー表示時に質問を必ず取得
-  useEffect(() => {
-    fetch('/api/pillow-assist-question')
-      .then(r => r.json())
-      .then(j => { setQuestion(j?.question ?? '最後の一問'); setOptions(j?.options ?? []); })
-      .catch(() => {});
-  }, []);
-
-  async function handleFinalAnswer(tag: string) {
-    const r = await fetch('/api/pillow-assist-answer', { 
-      method:'POST', 
-      headers:{'Content-Type':'application/json'}, 
-      body: JSON.stringify({ finalTag: tag })
-    }).then(res=>res.json()).catch(() => ({}));
-    setAddendum(r?.addendum ?? '');
-    setFinalTag(tag); // ← これでSWRキーが変わり再取得
-    // event?.('final_q', { finalTag: tag, sessionId });
+  function handleDecide(tag: string, add: string) {
+    setFinalTag(tag);        // ← これでSWRキーが変わって mall-products を再取得
+    setAddendum(add);
   }
   
   const url = useMemo(() => {
@@ -73,7 +58,7 @@ export default function ProductList({
       finalTag: finalTag, // ← 必ず含める
       sessionId,
     });
-    console.log('[mall key]', u); // 一時ログ：&finalTag=... が見えるはず
+    console.log('[mall key]', u); // Networkと突き合わせ用
     return u;
   }, [category, height, firmness, material, min, max, finalTag, sessionId]);
 
@@ -132,33 +117,11 @@ export default function ProductList({
     <>
       <Debug />
       
-      {/* 結果カードの直上に簡易UI（デザインは後で整える） */}
-      <div className="mb-3 rounded-xl border p-3 bg-white/70">
-        <p className="text-sm font-medium">{question}</p>
-        <div className="mt-2 flex flex-wrap gap-2">
-          {(options.length ? options : [
-            {tag:'heat',label:'ムレ/暑さ'},
-            {tag:'shoulder',label:'肩・首のこり'},
-            {tag:'snore',label:'いびき'},
-            {tag:'none',label:'特になし'}
-          ]).map(o => (
-            <button
-              key={o.tag}
-              onClick={() => handleFinalAnswer(o.tag)}
-              className="px-3 py-1 rounded-lg border"
-            >
-              {o.label}
-            </button>
-          ))}
-          <button onClick={() => handleFinalAnswer('skip')} className="px-3 py-1 rounded-lg border opacity-70">
-            スキップ
-          </button>
-        </div>
-        {addendum && <p className="mt-2 text-xs text-gray-600">{addendum}</p>}
-      </div>
-
+      <FinalQuestionBox onDecide={handleDecide} />
+      {addendum && <p className="mb-2 text-xs text-gray-600">{addendum}</p>}
+      
       {/* 中3＋第二候補（タブ） */}
-      <ResultView products={products} finalTag={finalTag} onFinalAnswer={handleFinalAnswer} />
+      <ResultView products={products} finalTag={finalTag} />
     </>
   );
 }
