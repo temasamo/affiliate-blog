@@ -25,12 +25,14 @@ export default function ResultView({ products, finalTag, onFinalAnswer, onFinalT
     // 結果ビュー表示時に必ず質問APIを叩く（Networkに出ているか確認用）
     fetch('/api/pillow-assist-question')
       .then(r => r.json())
-      .then(j => console.log('[final_q] question', j))
+      .then(j => {
+        console.log('[final_q] GET question', j);
+      })
       .catch(()=>{});
   }, []);
 
   async function handleFinalAnswer(tag: string) {
-    console.log('[final_q] answer=', tag);
+    console.log('[final_q] decided =', tag);
     const r = await fetch('/api/pillow-assist-answer', {
       method: 'POST',
       headers: {'Content-Type':'application/json'},

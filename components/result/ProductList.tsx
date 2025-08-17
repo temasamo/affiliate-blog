@@ -42,6 +42,7 @@ type ProductListProps = {
 export default function ProductList({
   category, height, firmness, material, budgetBand, sessionId, answers, result, onFirstPick, finalTag: propsFinalTag,
 }: ProductListProps) {
+  console.log('[productlist] finalTag prop =', propsFinalTag);
   const { min, max } = bandToRange(budgetBand);
   const [finalTag, setFinalTag] = useState<'none' | string>('none');
   const [addendum, setAddendum] = useState('');

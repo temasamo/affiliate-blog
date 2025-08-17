@@ -23,7 +23,7 @@ export default function FinalQuestionBox({ onDecide }: Props) {
   }, []);
 
   async function answer(tag: string) {
-    console.log('[final_q] POST answer=', tag);
+    console.log('[final_q] decided =', tag);
     const r = await fetch('/api/pillow-assist-answer', {
       method: 'POST',
       headers: {'Content-Type':'application/json'},
