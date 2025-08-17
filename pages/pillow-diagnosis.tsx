@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import DiagnosisForm from '@/components/DiagnosisForm';
 import ProductList from '@/components/result/ProductList';
 import TopFirstGrid from '@/components/result/TopFirstGrid';
@@ -8,9 +9,19 @@ import { ResultSummaryCard } from '@/components/ResultSummaryCard';
 import { toPercent } from '@/utils/toPercent';
 
 export default function PillowDiagnosisPage() {
+  const router = useRouter();
   const [result, setResult] = useState<any>(null);
   const [answers, setAnswers] = useState<any>(null);
   const sessionId = useMemo(() => (typeof crypto !== "undefined" ? crypto.randomUUID() : ""), []);
+
+  // 再発防止の即席ガード：結果表示に必要なクエリが無ければ質問へ逃がす
+  useEffect(() => {
+    const hasFinal = typeof router.query.finalTag === "string" && router.query.finalTag.length > 0;
+    if (!hasFinal && router.isReady) {
+      // 結果表示に必要なクエリが無い場合は質問フォームを表示（リダイレクトしない）
+      // このページは質問フォームと結果表示の両方を兼ねているため
+    }
+  }, [router.query.finalTag, router.isReady]);
 
   return (
     <>

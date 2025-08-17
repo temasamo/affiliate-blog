@@ -21,9 +21,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const payload = {
       session_id: sessionId,
       answers,
-      scores: result.scores,
       primary_category: result.primaryCategory,
-      secondary_categories: result.secondaryCategories,
+      secondary_categories: result.secondaryCandidates?.map(c => c.key) || [],
       confidence: result.confidence,
       reasons: result.reasons,
       outbound_clicks: { rakuten: 0, yahoo: 0, amazon: 0 },
@@ -45,7 +44,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(200).json({
       id: data.id,
       result: {
-        scores: result.scores,
         primaryCategory: data.primary_category,
         secondaryCategories: data.secondary_categories,
         confidence: data.confidence,
