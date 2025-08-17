@@ -2,20 +2,13 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') return res.status(405).end();
-
-  // 互換: 以前の lastAnswer でも受け取れるようにしておく
-  const body = (req.body ?? {}) as { finalTag?: string; lastAnswer?: string };
-  const finalTag = body.finalTag ?? body.lastAnswer ?? '';
-
+  const { finalTag } = (req.body ?? {}) as { finalTag?: string };
   const map: Record<string, string> = {
-    pain_wakeup:
-      '起床時の痛み軽減を優先。首元が安定する形状を中心にご提案します。',
-    wake_midnight:
-      '寝返りしやすい反発と形状で夜間の中断を減らします。',
-    heat:
-      '通気性の高い素材や放熱性の高いカバーを優先しましょう。',
+    heat: '通気性の高い素材やメッシュ構造を優先しましょう。',
+    shoulder: '肩・首の隙間を埋める高反発×やや高めが合いやすいです。',
+    snore: '横向き対応や頭部を安定させる窪み形状を検討。',
+    none: '',
+    skip: '',
   };
-
-  const addendum = map[finalTag] ?? '';
-  return res.status(200).json({ addendum });
+  res.status(200).json({ addendum: map[finalTag ?? 'none'] ?? '' });
 }

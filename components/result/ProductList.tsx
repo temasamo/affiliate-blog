@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import useSWR from 'swr';
 import ResultView from '../ResultView';
 import type { UnifiedProduct } from '@/lib/malls/types';
@@ -43,29 +43,43 @@ export default function ProductList({
 }: ProductListProps) {
   const { min, max } = bandToRange(budgetBand);
   const [finalTag, setFinalTag] = useState<string>('none');
+  const [question, setQuestion] = useState('');
+  const [options, setOptions] = useState<Array<{tag:string;label:string}>>([]);
+  const [addendum, setAddendum] = useState<string>('');
+
+  // 結果ビュー表示時に質問を必ず取得
+  useEffect(() => {
+    fetch('/api/pillow-assist-question')
+      .then(r => r.json())
+      .then(j => { setQuestion(j?.question ?? '最後の一問'); setOptions(j?.options ?? []); })
+      .catch(() => {});
+  }, []);
 
   async function handleFinalAnswer(tag: string) {
     const r = await fetch('/api/pillow-assist-answer', { 
       method:'POST', 
       headers:{'Content-Type':'application/json'}, 
       body: JSON.stringify({ finalTag: tag })
-    }).then(res=>res.json());
-    setFinalTag(tag); // ← これがSWRキー更新のトリガ
-    // setAddendum(r?.addendum ?? ''); // 必要に応じて追加
+    }).then(res=>res.json()).catch(() => ({}));
+    setAddendum(r?.addendum ?? '');
+    setFinalTag(tag); // ← これでSWRキーが変わり再取得
+    // event?.('final_q', { finalTag: tag, sessionId });
   }
   
-  const url = useMemo(() => buildMallUrl({
-    category, height, firmness, material,
-    min, max, hits: 40,
-    finalTag: finalTag, // ← 必ず含める
-    sessionId,
-  }), [category, height, firmness, material, min, max, finalTag, sessionId]);
+  const url = useMemo(() => {
+    const u = buildMallUrl({
+      category, height, firmness, material,
+      min, max, hits: 40,
+      finalTag: finalTag, // ← 必ず含める
+      sessionId,
+    });
+    console.log('[mall key]', u); // 一時ログ：&finalTag=... が見えるはず
+    return u;
+  }, [category, height, firmness, material, min, max, finalTag, sessionId]);
 
   const { data, error, isLoading } = useSWR(url, fetcher, {
     revalidateOnFocus: false, keepPreviousData: true, dedupingInterval: 1500,
   });
-  
-  console.log('[mall key]', url); // 一時ログ：&finalTag=... が見えるはず
 
   const raw: UnifiedProduct[] = data?.items ?? [];
   const products: UnifiedProduct[] = interleaveByStore(raw);
@@ -117,6 +131,32 @@ export default function ProductList({
   return (
     <>
       <Debug />
+      
+      {/* 結果カードの直上に簡易UI（デザインは後で整える） */}
+      <div className="mb-3 rounded-xl border p-3 bg-white/70">
+        <p className="text-sm font-medium">{question}</p>
+        <div className="mt-2 flex flex-wrap gap-2">
+          {(options.length ? options : [
+            {tag:'heat',label:'ムレ/暑さ'},
+            {tag:'shoulder',label:'肩・首のこり'},
+            {tag:'snore',label:'いびき'},
+            {tag:'none',label:'特になし'}
+          ]).map(o => (
+            <button
+              key={o.tag}
+              onClick={() => handleFinalAnswer(o.tag)}
+              className="px-3 py-1 rounded-lg border"
+            >
+              {o.label}
+            </button>
+          ))}
+          <button onClick={() => handleFinalAnswer('skip')} className="px-3 py-1 rounded-lg border opacity-70">
+            スキップ
+          </button>
+        </div>
+        {addendum && <p className="mt-2 text-xs text-gray-600">{addendum}</p>}
+      </div>
+
       {/* 中3＋第二候補（タブ） */}
       <ResultView products={products} finalTag={finalTag} onFinalAnswer={handleFinalAnswer} />
     </>
