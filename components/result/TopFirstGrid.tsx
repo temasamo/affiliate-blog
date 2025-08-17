@@ -5,6 +5,7 @@ import { useMemo } from 'react';
 import { ProductCard } from '@/components/ProductCard';
 import { bandToRange, BudgetBand } from '@/lib/budget';
 import { toPercent } from '@/utils/toPercent';
+import { buildMallUrl } from '@/lib/buildMallUrl';
 
 const fetcher = (url: string) => fetch(url).then(r => r.json());
 
@@ -35,17 +36,19 @@ export default function TopFirstGrid(props: {
   matchPercent?: number;
 }) {
   const { min, max } = bandToRange(props.budgetBand);
-  const qs = new URLSearchParams();
-  if (props.category) qs.set('category', props.category);
-  if (props.height)   qs.set('height', props.height);
-  if (props.firmness) qs.set('firmness', props.firmness);
-  if (props.material) qs.set('material', props.material);
-  if (min != null) qs.set('minPrice', String(min));
-  if (max != null) qs.set('maxPrice', String(max));
-  qs.set('hits', '40');
-  if (props.sessionId) qs.set('sid', props.sessionId);
+  
+  const url = buildMallUrl({
+    category: props.category,
+    height: props.height,
+    firmness: props.firmness,
+    material: props.material,
+    min,
+    max,
+    hits: 40,
+    sessionId: props.sessionId,
+  });
 
-  const { data, isLoading, error } = useSWR(`/api/mall-products?${qs.toString()}`, fetcher, {
+  const { data, isLoading, error } = useSWR(url, fetcher, {
     revalidateOnFocus: false, keepPreviousData: true, dedupingInterval: 1500,
   });
 
@@ -66,7 +69,18 @@ export default function TopFirstGrid(props: {
         </div>
 
         <h4 className="text-center text-lg font-bold mt-6 mb-2">第一候補グループ</h4>
-        {error && <p className="text-center text-sm text-red-600">候補の読み込みに失敗しました。</p>}
+        {error && (
+          <div className="rounded-2xl bg-red-50 border border-red-200 p-4 text-red-900 mb-4">
+            <p className="font-medium">候補の読み込みに失敗しました。</p>
+            <p className="text-sm mt-1">しばらく時間をおいてから再試行してください。</p>
+          </div>
+        )}
+        {!data?.ok && (
+          <div className="rounded-2xl bg-amber-50 border border-amber-200 p-4 text-amber-900 mb-4">
+            <p className="font-medium">0件でした。</p>
+            <p className="text-sm mt-1">条件を少し広げてお試しください。</p>
+          </div>
+        )}
         {isLoading && items.length === 0 && <p className="text-center text-sm text-slate-500">検索中…</p>}
 
         <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">

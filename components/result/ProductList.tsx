@@ -5,6 +5,7 @@ import useSWR from 'swr';
 import ResultView from '../ResultView';
 import type { UnifiedProduct } from '@/lib/malls/types';
 import { bandToRange, BudgetBand } from '@/lib/budget';
+import { buildMallUrl } from '@/lib/buildMallUrl';
 
 const fetcher = (url: string) => fetch(url).then(r => r.json());
 const DEBUG_OVERLAY = false;
@@ -41,24 +42,20 @@ export default function ProductList({
   category, height, firmness, material, budgetBand, sessionId, answers, result, onFirstPick, finalTag,
 }: ProductListProps) {
   const { min, max } = bandToRange(budgetBand);
-  const qs = new URLSearchParams();
-  if (category) qs.set('category', category);
-  if (height)   qs.set('height', height);
-  if (firmness) qs.set('firmness', firmness);
-  if (material) qs.set('material', material);
-  if (min != null) qs.set('minPrice', String(min));
-  if (max != null) qs.set('maxPrice', String(max));
-  qs.set('hits', '40');
-  if (sessionId) qs.set('sid', sessionId);
+  
+  const url = buildMallUrl({
+    category,
+    height,
+    firmness,
+    material,
+    min,
+    max,
+    hits: 40,
+    finalTag,
+    sessionId,
+  });
 
-  // SWRキーに finalTag を含める
-  const key = ['mall',
-    category, height, firmness, material,
-    min != null ? String(min) : '', max != null ? String(max) : '',
-    finalTag || 'none'
-  ].join('|');
-
-  const { data, error, isLoading } = useSWR(key, fetcher, {
+  const { data, error, isLoading } = useSWR(url, fetcher, {
     revalidateOnFocus: false, keepPreviousData: true, dedupingInterval: 1500,
   });
 
@@ -77,7 +74,22 @@ export default function ProductList({
   ) : null;
 
   if (isLoading && !data) return <div className="text-center text-sm text-slate-500 py-6">候補を検索中…</div>;
-  if (error) return <div className="text-center text-sm text-red-600 py-6">商品の読み込みに失敗しました。</div>;
+  if (error) {
+    return (
+      <div className="rounded-2xl bg-red-50 border border-red-200 p-4 text-red-900">
+        <p className="font-medium">商品の読み込みに失敗しました。</p>
+        <p className="text-sm mt-1">しばらく時間をおいてから再試行してください。</p>
+      </div>
+    );
+  }
+  if (!data?.ok) {
+    return (
+      <div className="rounded-2xl bg-amber-50 border border-amber-200 p-4 text-amber-900">
+        <p className="font-medium">0件でした。</p>
+        <p className="text-sm mt-1">条件を少し広げてお試しください。</p>
+      </div>
+    );
+  }
   if (products.length === 0) {
     return (
       <div className="rounded-2xl bg-amber-50 border border-amber-200 p-4 text-amber-900">
