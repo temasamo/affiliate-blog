@@ -30,8 +30,28 @@ tags: ["旅行AI","AI旅行","エアトリ","楽天トラベル","じゃらん",
 ## 4. Market supputer AIの旅行スタイル別おすすめ（ベータ）
 以下は **旅行スタイル別の簡易マッチング**。クリックでおすすめ先が出ます。
 
-import StylePicker from '@/components/StylePicker';
-<StylePicker />
+<div className="my-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-200">
+  <h3 className="text-lg font-semibold text-gray-800 mb-4">旅行スタイル診断</h3>
+  <p className="text-gray-600 mb-4">あなたの旅行スタイルに合わせて最適な予約サイトをおすすめします。</p>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <a href="/travel/airtrip-vs-rakuten-jalan-2025?style=budget" className="block p-4 bg-white rounded-lg hover:bg-blue-50 transition-colors border border-gray-200">
+      <div className="font-medium text-gray-900">💰 予算重視</div>
+      <div className="text-sm text-gray-600">最安値を追求したい方</div>
+    </a>
+    <a href="/travel/airtrip-vs-rakuten-jalan-2025?style=comfort" className="block p-4 bg-white rounded-lg hover:bg-blue-50 transition-colors border border-gray-200">
+      <div className="font-medium text-gray-900">🏨 快適重視</div>
+      <div className="text-sm text-gray-600">サービスやサポートを重視</div>
+    </a>
+    <a href="/travel/airtrip-vs-rakuten-jalan-2025?style=points" className="block p-4 bg-white rounded-lg hover:bg-blue-50 transition-colors border border-gray-200">
+      <div className="font-medium text-gray-900">🎯 ポイント重視</div>
+      <div className="text-sm text-gray-600">ポイント還元を重視</div>
+    </a>
+    <a href="/travel/airtrip-vs-rakuten-jalan-2025?style=package" className="block p-4 bg-white rounded-lg hover:bg-blue-50 transition-colors border border-gray-200">
+      <div className="font-medium text-gray-900">📦 パッケージ重視</div>
+      <div className="text-sm text-gray-600">航空券+宿泊のセット</div>
+    </a>
+  </div>
+</div>
 
 ## 5. スカイスキャナーとの違い
 - **スカイスキャナー**＝メタサーチ。最安値探索が得意（予約は外部サイト、サポートは予約先依存）
