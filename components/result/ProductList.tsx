@@ -55,12 +55,12 @@ export default function ProductList({
     const u = buildMallUrl({
       category, height, firmness, material,
       min, max, hits: 40,
-      finalTag: finalTag, // ← 必ず含める
+      finalTag: propsFinalTag ?? 'none',
       sessionId,
     });
-    console.log('[mall key]', u); // Networkと突き合わせ用
+    console.log('[mall key]', u);
     return u;
-  }, [category, height, firmness, material, min, max, finalTag, sessionId]);
+  }, [category, height, firmness, material, min, max, propsFinalTag, sessionId]);
 
   const { data, error, isLoading } = useSWR(url, fetcher, {
     revalidateOnFocus: false, keepPreviousData: true, dedupingInterval: 1500,

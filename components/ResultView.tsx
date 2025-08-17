@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { ProductCard } from '@/components/ProductCard';
 
 // 3件刻みに分割
@@ -17,6 +17,28 @@ type Props = {
 };
 
 export default function ResultView({ products, finalTag, onFinalAnswer }: Props) {
+  const [finalTagState, setFinalTagState] = useState<string>('none');
+  const [addendum, setAddendum] = useState<string>('');
+
+  useEffect(() => {
+    // 結果ビュー表示時に必ず質問APIを叩く（Networkに出ているか確認用）
+    fetch('/api/pillow-assist-question')
+      .then(r => r.json())
+      .then(j => console.log('[final_q] question', j))
+      .catch(()=>{});
+  }, []);
+
+  async function handleFinalAnswer(tag: string) {
+    console.log('[final_q] answer=', tag);
+    const r = await fetch('/api/pillow-assist-answer', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ finalTag: tag })
+    }).then(res => res.json()).catch(()=> ({}));
+    setAddendum(r?.addendum ?? '');
+    setFinalTagState(tag); // ← これで ProductList の SWRキーが変わるはず
+  }
+
   // 第一候補（中3）＝ 上2を包含した3枚
   const midFirst = useMemo(() => products.slice(0, 3), [products]);
 
@@ -28,6 +50,18 @@ export default function ResultView({ products, finalTag, onFinalAnswer }: Props)
 
   return (
     <div className="mt-8">
+      {/* 最後の一問（仮） */}
+      <div className="mb-3 rounded border p-3">
+        <div className="text-sm mb-2">最後の一問（仮）</div>
+        <div className="flex gap-2 flex-wrap">
+          <button onClick={()=>handleFinalAnswer('heat')} className="px-3 py-1 border rounded">ムレ/暑さ</button>
+          <button onClick={()=>handleFinalAnswer('shoulder')} className="px-3 py-1 border rounded">肩・首</button>
+          <button onClick={()=>handleFinalAnswer('snore')} className="px-3 py-1 border rounded">いびき</button>
+          <button onClick={()=>handleFinalAnswer('none')} className="px-3 py-1 border rounded opacity-70">特になし</button>
+        </div>
+        {addendum && <p className="mt-2 text-xs text-gray-600">{addendum}</p>}
+      </div>
+
       {/* 第一候補グループ（中3） */}
       {midFirst.length > 0 && (
         <section className="mx-auto max-w-6xl px-4">
