@@ -25,11 +25,22 @@ export function buildSummary(rec: SummaryInput): string {
   const pos = rec.sleepPosition === "side" ? "横向き寝" :
               rec.sleepPosition === "back" ? "仰向け寝" : "うつ伏せ寝";
   
+  // マットレス表現：「〜寄り」→「〜のものを使用」に統一
+  const mattressPhraseMap: Record<string, string> = {
+    "やわらかめ": "やわらかめのものを使用",
+    "ふつう": "ふつうのものを使用",
+    "普通": "ふつうのものを使用",     // 念のため
+    "硬め": "硬めのものを使用",
+    "固め": "硬めのものを使用",       // 念のため同義も拾う
+  };
+  
   const matt = rec.mattress === "soft" ? "やわらかめ" :
-               rec.mattress === "hard" ? "硬め" : "「ふつう」";
+               rec.mattress === "hard" ? "硬め" : "ふつう";
+  
+  const mattressPhrase = mattressPhraseMap[matt] ?? `「${matt}」のものを使用`;
 
   // 基本文の構築
-  let summary = `あなたは${pos}が多く、マットレスは${matt}寄り。`;
+  let summary = `あなたは${pos}が多く、マットレスは${mattressPhrase}。`;
 
   // 肩幅の情報を追加
   if (rec.shoulderWidth === "wide") {
