@@ -1,12 +1,15 @@
+// lib/malls/types.ts
+export type StoreKey = 'rakuten' | 'amazon' | 'yahoo';
+
 export type UnifiedProduct = {
   id: string;
   title: string;
   price: number | null;
-  currency: string;            // "JPY"
+  currency: string;        // "JPY" など
   image: string | null;
-  images?: string[];           // 複数画像
-  url: string;                 // 最終遷移URL（必ずアフィリエイト付き）
-  store: { key: "rakuten" | "amazon" | "yahoo"; name: "Rakuten" | "Amazon" | "Yahoo!" };
-  score: number;               // 診断一致度で後で並べ替え
-  tags: string[];              // 形状/素材/高さなど
-}; 
+  images?: string[];       // 複数画像があれば
+  url: string;             // 最終遷移URL（アフィリエイト付き想定）
+  store: { key: StoreKey; name: string }; // name は自由な表示ラベルでOK
+  score: number;
+  tags: string[];
+};
