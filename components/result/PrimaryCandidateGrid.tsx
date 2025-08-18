@@ -1,4 +1,4 @@
-import ProductCard from "@/components/ProductCard";
+import { ProductCard } from "@/components/ProductCard";
 import type { UnifiedProduct } from "@/lib/malls/types";
 
 export default function PrimaryCandidateGrid({ items }: { items: UnifiedProduct[] }) {
