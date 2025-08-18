@@ -40,7 +40,7 @@ export async function searchAmazon(params: {
       currency: "JPY",
       image: it?.Images?.Primary?.Large?.URL ?? null,
       url: it?.DetailPageURL, // これにアソシエイトタグが自動付与される
-      store: { key: "amazon", name: "Amazon" },
+      store: { key: 'amazon' as const, name: 'Amazon' as const },
       score: 0,
       tags: [],
     };

@@ -46,7 +46,8 @@ export async function searchYahoo({
     currency: "JPY",
     image: (it.image?.medium || it.image?.small || "").replace(/^http:/, "https:"),
     url: prefix ? `${prefix}${encodeURIComponent(it.url)}` : it.url,
-    store: { key: "yahoo", name: "Yahoo!" as const },
+   // lib/malls/yahoo.ts
+   store: { key: 'yahoo' as const, name: 'Yahoo!' as const },// name は as const でなくてもOK
     score: 0,
     tags: [],
   }));
