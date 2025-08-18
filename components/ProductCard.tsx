@@ -1,14 +1,23 @@
 'use client';
 
-import React from "react";
-import type { UnifiedProduct } from "@/lib/malls/types";
+import React from 'react';
+import type { UnifiedProduct } from '@/lib/malls/types';
 
-export function ProductCard({ product, priorityBadge=false }: { product: any; priorityBadge?: boolean }) {
-  // 安全な画像取得
+type ProductCardProps = {
+  product: UnifiedProduct | any;
+  /** 古い呼び出し互換用。使わなくてOK */
+  sessionId?: string;
+  priorityBadge?: boolean;
+};
+
+export function ProductCard({
+  product,
+  sessionId,            // 受け取るだけ（未使用でOK）
+  priorityBadge = false,
+}: ProductCardProps) {
   const imgSrc = product.image || product.images?.[0] || '/placeholder.svg';
 
-  // モールボタン表示：Yahoo! も確実に出す
-  const mallKey = product.store?.key; // 'rakuten' | 'yahoo' など
+  const mallKey = product.store?.key;
   const mallLabel =
     product.store?.label ||
     product.store?.name ||
@@ -21,12 +30,7 @@ export function ProductCard({ product, priorityBadge=false }: { product: any; pr
       <a href={href} target="_blank" rel="noopener noreferrer">
         <div className="relative w-full rounded-lg overflow-hidden">
           <div className="h-44 md:h-52 lg:h-56 w-full">
-            <img
-              src={imgSrc}
-              alt={product.title}
-              className="h-full w-full object-cover"
-              loading="lazy"
-            />
+            <img src={imgSrc} alt={product.title} className="h-full w-full object-cover" loading="lazy" />
           </div>
 
           {priorityBadge && (
@@ -35,8 +39,10 @@ export function ProductCard({ product, priorityBadge=false }: { product: any; pr
             </span>
           )}
         </div>
+
         <h4 className="mt-2 line-clamp-2 font-medium">{product.title}</h4>
         {'price' in product && <div className="mt-1 text-sm">{Number(product.price).toLocaleString()}円</div>}
+
         <div className="mt-2">
           <button
             className={`px-3 py-1 rounded-md text-white text-sm ${
@@ -51,4 +57,4 @@ export function ProductCard({ product, priorityBadge=false }: { product: any; pr
       </a>
     </article>
   );
-} 
+}
