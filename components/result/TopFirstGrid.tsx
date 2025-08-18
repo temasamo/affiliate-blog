@@ -33,7 +33,7 @@ function interleaveByStore(items: any[]) {
 export default function TopFirstGrid(props: {
   category: string; height: string; firmness: string;
   material?: string; budgetBand?: BudgetBand; sessionId?: string;
-  matchPercent?: number;
+  matchPercent?: number; answers?: any;
 }) {
   const { min, max } = bandToRange(props.budgetBand);
   

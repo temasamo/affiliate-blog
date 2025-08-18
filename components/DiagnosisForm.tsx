@@ -150,12 +150,13 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
     setResult(null);
     setRowId(null);
     
+    // デバッグログ（送信直前）
+    console.debug('[form] submit payload preview', form);
+    
+    // ✅ まず answers をページへ渡す
+    onSubmit?.(form);
+    
     try {
-      // もしonSubmitが提供されている場合はそれを使用
-      if (onSubmit) {
-        await onSubmit(form);
-        return;
-      }
 
       // 予算の正規化
       const priceRange = parseBudgetText(form.budgetText ?? "");
@@ -730,7 +731,7 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
                       style={{ cursor: 'pointer' }}
                     />
                     <span style={{ fontSize: '1rem', color: '#333' }}>
-                      首や肩の痛み・こりがある
+                      首・肩に痛みや違和感がある
                     </span>
                   </label>
                   
@@ -750,7 +751,7 @@ export default function DiagnosisForm({ onSubmit, onResult, sessionId: propSessi
                       value={form.neckIssue}
                       onChange={(e) => update("neckIssue", e.target.value as any)}
                     >
-                      <option value="none">痛みの種類を選択</option>
+                      <option value="none">痛みや違和感の種類を選択</option>
                       <option value="stiff">肩こり・首のこり</option>
                       <option value="cervical">頸椎症・首の痛み</option>
                     </select>

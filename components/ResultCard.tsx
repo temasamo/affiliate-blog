@@ -4,8 +4,8 @@ import ReasonList from './result/ReasonList';
 import StoreButtons from './result/StoreButtons';
 import ProductList from './result/ProductList';
 import { PointsSection } from './result/Points';
-import { buildInsights } from '@/lib/insights';
-import type { Product } from '@/lib/resultLogic';
+import { buildConcernsFromAnswers, buildReasons } from '@/lib/diagnosisCopy';
+import type { Product, Answers } from '@/lib/resultLogic';
 import type { BudgetBand } from '@/lib/budget';
 
 type Result = {
@@ -28,6 +28,7 @@ type Result = {
   }>;
   confidence?: number;
   reasons?: string[];
+  concerns?: string[];
   primaryProduct?: Product;
   secondaryProducts?: Product[];
   sessionId?: string;
@@ -38,9 +39,20 @@ type Result = {
   budgetBand?: BudgetBand;
 };
 
-export default function ResultCard({ result, sessionId, answers }: { result: Result; sessionId?: string; answers?: any }) {
-  // インサイトを構築（meta情報は後でProductListから取得）
-  const { concerns, proposals } = buildInsights(answers || {}, result);
+export default function ResultCard({ result, sessionId, answers }: { result: Result; sessionId?: string; answers?: Partial<Answers> }) {
+  // デバッグログ（開発中の見える化）
+  console.debug("ResultCard.answers", answers);
+  
+  // answers からの自動生成（サーバー未設定時の保険）
+  const builtFromAnswers = buildConcernsFromAnswers(answers);
+  const displayConcerns = (Array.isArray(result?.concerns) && result.concerns.length > 0) ? result.concerns : builtFromAnswers;
+  const finalConcerns = displayConcerns.length ? displayConcerns : ["なし"];
+  
+  // ご提案のポイント（簡易版）
+  const proposals: string[] = [];
+  if (result?.primaryCategory === 'cervical-support') proposals.push('頸椎の自然なカーブを保ち後頭部を安定させる形状を優先');
+  if (result?.height) proposals.push(`高さは「${result.height}」を基準に微調整`);
+  if (result?.firmness) proposals.push(`硬さは「${result.firmness}」を中心に選定`);
   
   // 第一候補の状態管理
   const [firstPick, setFirstPick] = React.useState<any>(null);
@@ -112,12 +124,12 @@ export default function ResultCard({ result, sessionId, answers }: { result: Res
       </div>
 
       {/* お悩みのポイント */}
-      <PointsSection title="🧩 お悩みのポイント" items={concerns} />
+      <PointsSection title="🧩 お悩みのポイント" items={finalConcerns} />
 
       {/* ご提案のポイント */}
       <PointsSection title="🔧 ご提案のポイント" items={proposals} />
 
-      {/* 診断理由 */}
+      {/* 診断のポイント */}
       <ReasonList items={result.reasons || []} />
 
       {/* 実際の商品検索結果（第一候補・第二候補に分割） */}
