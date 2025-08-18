@@ -1,4 +1,4 @@
-import ProductCard from "@/components/result/ProductCard";
+import { ProductCard } from "@/components/ProductCard";
 
 export default function FirstPick({ product, sessionId }: { product: any | null; sessionId?: string }) {
   if (!product) return null;
