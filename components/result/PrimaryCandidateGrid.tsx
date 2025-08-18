@@ -1,3 +1,4 @@
+fix/productcard-import-2
 import { ProductCard } from "@/components/ProductCard";
 import type { UnifiedProduct } from "@/lib/malls/types";
 
