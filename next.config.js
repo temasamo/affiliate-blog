@@ -2,19 +2,15 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [
-      'images.unsplash.com', 
-      'picsum.photos',
-      'hbb.afl.rakuten.co.jp',
-      'ad.jp.ap.valuecommerce.com',
-      'm.media-amazon.com',
-      'thumbnail.image.rakuten.co.jp',
-      'i.moshimo.com',
-      'a8.net',
-      'www19.a8.net'
+    remotePatterns: [
+      { protocol: 'https', hostname: '**.rakuten.co.jp' },
+      { protocol: 'https', hostname: 'thumbnail.image.rakuten.co.jp' },
+      { protocol: 'https', hostname: 'image.rakuten.co.jp' },
+      { protocol: 'https', hostname: '**.yimg.jp' }, // ← Yahoo 画像
+      { protocol: 'https', hostname: 'images.unsplash.com' },
+      { protocol: 'https', hostname: 'source.unsplash.com' },
     ],
-    unoptimized: true
-  }
-}
+  },
+};
 
-module.exports = nextConfig 
+module.exports = nextConfig; 
