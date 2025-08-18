@@ -1,6 +1,5 @@
-import React, { useCallback, useState } from 'react';
 import type { UnifiedProduct } from '@/lib/malls/types';
-import { mallKeyToStyle } from "@/lib/ui/mallStyles";
+import { mallKeyToStyle } from '@/lib/ui/mallStyles';
 
 type ProductCardProps = {
   product: UnifiedProduct;
@@ -8,7 +7,7 @@ type ProductCardProps = {
 };
 
 export default function ProductCard({ product, sessionId }: ProductCardProps) {
-  const href = (product?.url || "").replace(/^http:/, "https:");
+  const href = (product?.url || '').replace(/^http:/, 'https:');
   if (!href) return null;
 
   const mall = mallKeyToStyle(product?.store?.key);
@@ -18,7 +17,7 @@ export default function ProductCard({ product, sessionId }: ProductCardProps) {
       <a href={href} target="_blank" rel="noopener noreferrer nofollow" className="block">
         <div className="relative w-full h-40">
           <img
-            src={(product.image || product.images?.[0] || "").replace(/^http:/, "https:")}
+            src={(product.image || product.images?.[0] || '').replace(/^http:/, 'https:')}
             alt={product.title}
             className="w-full h-full object-cover rounded-lg"
           />
@@ -27,7 +26,7 @@ export default function ProductCard({ product, sessionId }: ProductCardProps) {
 
       <div className="mt-2 text-sm line-clamp-2">{product.title}</div>
       <div className="mt-1 text-indigo-600 font-semibold">
-        {product.price ? `¥${Number(product.price).toLocaleString()}` : "価格未取得"}
+        {product.price ? `¥${Number(product.price).toLocaleString()}` : '価格未取得'}
       </div>
 
       <a
@@ -40,4 +39,4 @@ export default function ProductCard({ product, sessionId }: ProductCardProps) {
       </a>
     </article>
   );
-} 
+}
