@@ -11,13 +11,14 @@ import { h } from 'hastscript';
 const TRAVEL_DIR = path.join(process.cwd(), 'content', 'travel');
 
 export function getTravelSlugs() {
-  return fs.readdirSync(TRAVEL_DIR).filter(f => f.endsWith('.mdx'));
+  return fs.readdirSync(TRAVEL_DIR)
+    .filter(f => f.endsWith('.mdx'))
+    .map(f => f.replace(/\.mdx$/, ''));
 }
 export function getTravelPostBySlug(slug: string) {
-  const real = slug.replace(/\.mdx$/, '');
-  const file = fs.readFileSync(path.join(TRAVEL_DIR, real + '.mdx'), 'utf8');
+  const file = fs.readFileSync(path.join(TRAVEL_DIR, slug + '.mdx'), 'utf8');
   const { data, content } = matter(file);
-  return { frontMatter: data, content, slug: real };
+  return { frontMatter: data, content, slug };
 }
 export async function serializeMDX(source: string) {
   return serialize(source, {

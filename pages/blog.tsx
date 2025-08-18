@@ -8,6 +8,42 @@ import CategoryCard from '../components/CategoryCard';
 export default function Blog() {
   const articles = [
     {
+      slug: 'diagnostic-ai/makura/01-intro',
+      title: '枕診断AIとは？科学的根拠に基づく枕選びの新時代',
+      description: 'AIが導く枕選びの新時代。科学的根拠に基づいて最適な枕を提案します。',
+      date: '2025.08.16',
+      category: '枕診断AI',
+      emoji: '🤖',
+      color: 'from-blue-100 to-indigo-200'
+    },
+    {
+      slug: 'diagnostic-ai/makura/02-history',
+      title: '枕の歴史探訪：古代から現代までの進化',
+      description: '古代エジプトの石の枕から現代のスマート枕まで。人類の文明とともに進化してきた枕の歴史を詳しく解説します。',
+      date: '2025.08.16',
+      category: '枕診断AI',
+      emoji: '📚',
+      color: 'from-blue-100 to-indigo-200'
+    },
+    {
+      slug: 'diagnostic-ai/makura/03-anatomy',
+      title: '枕と人体の関係：解剖学から見る正しい枕選び',
+      description: '首・肩・背骨・呼吸の仕組みを徹底解説。医学的に正しい枕選びの知識を深掘りします。',
+      date: '2025.08.16',
+      category: '枕診断AI',
+      emoji: '🔬',
+      color: 'from-blue-100 to-indigo-200'
+    },
+    {
+      slug: 'diagnostic-ai/makura/04-trends',
+      title: '最新トレンドと科学：枕の未来を探る',
+      description: 'AIやIoTで進化するスマート枕から、エシカル素材の開発まで。未来の枕トレンドを深掘りします。',
+      date: '2025.08.16',
+      category: '枕診断AI',
+      emoji: '🚀',
+      color: 'from-blue-100 to-indigo-200'
+    },
+    {
       slug: 'global-hot-picks/trend/2025-08-13',
       title: 'Global Hot Picks | 2025-08-13',
       description: '最新のガジェット・家電・ホビーから注目の3アイテムを速報ピック',

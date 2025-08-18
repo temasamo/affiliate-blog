@@ -1363,17 +1363,26 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async ({ params }) =
   
   // typeパラメータがある場合（通常のカテゴリ）
   if (type && type !== 'trend') {
-    fullPath = path.join(process.cwd(), 'articles', category, type, `${post}.md`);
+    const mdPath = path.join(process.cwd(), 'articles', category, type, `${post}.md`);
+    const mdxPath = path.join(process.cwd(), 'articles', category, type, `${post}.mdx`);
+    
+    if (fs.existsSync(mdxPath)) {
+      fullPath = mdxPath;
+    } else if (fs.existsSync(mdPath)) {
+      fullPath = mdPath;
+    } else {
+      return { notFound: true };
+    }
   } else {
     // typeパラメータがない場合、または'trend'の場合（global-hot-picksなど）
     // trendディレクトリ内のファイルを探す
     const mdPath = path.join(process.cwd(), 'articles', category, 'trend', `${post}.md`);
     const mdxPath = path.join(process.cwd(), 'articles', category, 'trend', `${post}.mdx`);
     
-    if (fs.existsSync(mdPath)) {
-      fullPath = mdPath;
-    } else if (fs.existsSync(mdxPath)) {
+    if (fs.existsSync(mdxPath)) {
       fullPath = mdxPath;
+    } else if (fs.existsSync(mdPath)) {
+      fullPath = mdPath;
     } else {
       return { notFound: true };
     }

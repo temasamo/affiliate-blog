@@ -13,28 +13,72 @@ export async function getStaticProps() {
 
 export default function TravelIndex({ posts }: { posts: any[] }) {
   return (
+<<<<<<< HEAD
     <main className="relative overflow-hidden rounded-3xl border shadow-sm min-h-[60vh] bg-white">
       {/* コンテンツ層（黒文字） */}
       <section className="relative mx-auto max-w-5xl p-6 sm:p-10 text-gray-900">
         <h1 className="text-2xl sm:text-3xl font-bold">旅行カテゴリ</h1>
 
         <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+=======
+    <main className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      <div className="mx-auto max-w-5xl p-6 sm:p-10">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+            旅行カテゴリ
+          </h1>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            厳選された旅行情報とお得な予約方法をご紹介
+          </p>
+        </div>
+
+        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+>>>>>>> origin/main
           {posts.map((p) => (
             <li key={p.slug}>
               <Link
                 href={`/travel/${p.slug}`}
+<<<<<<< HEAD
                 className="block rounded-2xl border border-gray-200 bg-white p-4 hover:bg-gray-50 hover:shadow-lg transition text-gray-900"
               >
                 <div className="text-xs text-gray-600">{p.date}</div>
                 <div className="mt-1 font-semibold leading-snug text-gray-900">{p.title}</div>
                 {p.description && (
                   <p className="mt-2 text-sm text-gray-700 line-clamp-2">{p.description}</p>
+=======
+                className="group block rounded-2xl bg-white/80 backdrop-blur-sm border border-white/20 p-6 hover:bg-white hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <div className="text-xs text-blue-600 font-medium">{p.date}</div>
+                  <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full group-hover:scale-150 transition-transform"></div>
+                </div>
+                <div className="font-bold text-gray-900 leading-tight mb-3 group-hover:text-blue-600 transition-colors">
+                  {p.title}
+                </div>
+                {p.description && (
+                  <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed">
+                    {p.description}
+                  </p>
+>>>>>>> origin/main
                 )}
               </Link>
             </li>
           ))}
         </ul>
-      </section>
+
+        {/* トップへ戻るボタン */}
+        <div className="text-center mt-12">
+          <Link 
+            href="/"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-full hover:from-blue-600 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          >
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            トップページへ戻る
+          </Link>
+        </div>
+      </div>
     </main>
   );
 } 
