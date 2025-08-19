@@ -1175,14 +1175,14 @@ function getRelatedArticles(category: string, type?: string, currentPost?: strin
         href: '/articles/sleep-health/recommend/2025-07-01-makura-ranking'
       },
       {
-        title: '定番発泡枕vs他メーカー比較',
-        excerpt: '人気の定番発泡枕を徹底比較',
+        title: '定番枕vs他メーカー比較',
+        excerpt: '人気の定番枕を徹底比較',
         date: '2025.07.02',
         href: '/articles/sleep-health/recommend/2025-07-02-teihannpatsu-vs-others'
       },
       {
-        title: '後半発泡枕ランキング',
-        excerpt: '後半発泡枕の選び方とおすすめ',
+        title: '後半枕ランキング',
+        excerpt: '後半枕の選び方とおすすめ',
         date: '2025.07.03',
         href: '/articles/sleep-health/recommend/2025-07-03-kouhanpatsu-ranking'
       }
@@ -1198,7 +1198,7 @@ function getRelatedArticles(category: string, type?: string, currentPost?: strin
         title: '急須ランキング',
         excerpt: '本格的な日本茶を楽しむ急須選び',
         date: '2025.07.31',
-        href: '/articles/japanesetea/recommend/250731kyusu-ranking-dm'
+        href: '/articles/japanesetea/recommend/250731kyusu-ranking-top5-with-frontmatter'
       },
       {
         title: '日本茶ライフスタイル',
