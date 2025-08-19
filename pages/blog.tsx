@@ -116,7 +116,7 @@ export default function Blog() {
       color: 'from-purple-100 to-purple-200'
     },
     {
-              slug: 'japanesetea/recommend/250731kyusu-ranking-dm',
+              slug: 'japanesetea/recommend/250731kyusu-ranking-top5-with-frontmatter',
       title: '急須ランキング',
       description: '本格的な日本茶を楽しむ急須を比較',
       date: '2025.07.31',
