@@ -1,42 +1,12 @@
-// File: app/diagnostic-ai/makura/page.tsx
-// Framework: Next.js 13/14 (App Router)
-// Styling: Tailwind CSS（無ければクラスを通常CSSに置き換えてください）
-// 目的: A案 = 専用ランディング直置き（Hero/CTA/手順/FAQ/埋め込み/計測）
+// File: pages/diagnostic-ai/makura.tsx
+// Next.js Pages Router 版（Tailwind 前提。未導入ならクラスを通常CSSに置き換えてください）
+// 目的: A案（専用ランディング直置き）— Hero/CTA/How it works/FAQ/埋め込み/計測
 
-import type { Metadata } from "next";
+import { useEffect, useState } from "react";
+import Head from "next/head";
 import Script from "next/script";
 import Image from "next/image";
-import { Suspense, useMemo } from "react";
 
-// =====================
-// SEO / メタデータ
-// =====================
-export const metadata: Metadata = {
-  title: "枕の選び方診断｜3分で最適な枕タイプがわかる | Market Supporter AI",
-  description:
-    "無料の枕診断AI。たった3分の質問で、あなたに合う枕の選び方がわかります。AIが理由付きで丁寧にガイド。楽天・Yahooの商品例も参考にできます。",
-  alternates: { canonical: "https://www.marketsupporter-ai.com/diagnostic-ai/makura" },
-  openGraph: {
-    title: "枕の選び方診断｜3分で最適な枕タイプがわかる",
-    description:
-      "たった3分で最適な枕タイプがわかる無料診断。AIが理由を添えてやさしくガイドします。",
-    type: "website",
-    url: "https://www.marketsupporter-ai.com/diagnostic-ai/makura",
-    images: [
-      {
-        url: "/og/makura-diagnosis.png",
-        width: 1200,
-        height: 630,
-        alt: "枕の選び方診断 | Market Supporter AI",
-      },
-    ],
-  },
-  robots: { index: true, follow: true },
-};
-
-// =====================
-// JSON-LD（FAQ構造化データ）
-// =====================
 const FAQ_JSONLD = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -76,27 +46,37 @@ const FAQ_JSONLD = {
   ],
 };
 
-// =====================
-// 時間帯あいさつ（SSRでもOK）
-// =====================
-function getGreetingByHour(date: Date) {
-  const h = date.getHours();
-  if (h >= 5 && h <= 10) return "おはようございます。今朝の目覚めはいかがでしたか？";
-  if (h >= 11 && h <= 15) return "こんにちは。少し眠気を感じる時間帯かもしれませんね。";
-  if (h >= 16 && h <= 22) return "こんばんは。今日の疲れをリセットする準備はできていますか？";
-  return "遅くまでお疲れさまです。質の良い睡眠が特に大切な時間ですね。";
-}
+export default function MakuraDiagnosisLanding() {
+  const [greeting, setGreeting] = useState("こんにちは。枕診断へようこそ。");
 
-// =====================
-// ページ本体
-// =====================
-export default function Page() {
-  const greeting = getGreetingByHour(new Date());
+  useEffect(() => {
+    const h = new Date().getHours();
+    if (h >= 5 && h <= 10) setGreeting("おはようございます。今朝の目覚めはいかがでしたか？");
+    else if (h >= 11 && h <= 15) setGreeting("こんにちは。少し眠気を感じる時間帯かもしれませんね。");
+    else if (h >= 16 && h <= 22) setGreeting("こんばんは。今日の疲れをリセットする準備はできていますか？");
+    else setGreeting("遅くまでお疲れさまです。質の良い睡眠が特に大切な時間ですね。");
+  }, []);
 
   return (
     <main className="min-h-screen bg-neutral-50 text-neutral-900">
-      {/* JSON-LD（FAQ） */}
-      <Script id="faq-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSONLD) }} />
+      <Head>
+        <title>枕の選び方診断｜3分で最適な枕タイプがわかる | Market Supporter AI</title>
+        <meta
+          name="description"
+          content="無料の枕診断AI。たった3分の質問で、あなたに合う枕の選び方がわかります。AIが理由付きで丁寧にガイド。楽天・Yahooの商品例も参考にできます。"
+        />
+        <link rel="canonical" href="https://www.marketsupporter-ai.com/diagnostic-ai/makura" />
+        <meta property="og:title" content="枕の選び方診断｜3分で最適な枕タイプがわかる" />
+        <meta property="og:description" content="たった3分で最適な枕タイプがわかる無料診断。AIが理由を添えてやさしくガイドします。" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.marketsupporter-ai.com/diagnostic-ai/makura" />
+        <meta property="og:image" content="/og/makura-diagnosis.png" />
+        <script
+          key="faq-jsonld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSONLD) }}
+        />
+      </Head>
 
       {/* Hero */}
       <section className="relative overflow-hidden">
@@ -126,7 +106,6 @@ export default function Page() {
             </ul>
           </div>
           <div className="relative h-[280px] md:h-[360px] rounded-2xl bg-white/60 border shadow-sm">
-            {/* Heroイメージ（差し替え自由） */}
             <Image src="/images/hero-pillow.jpg" alt="枕診断のイメージ" fill className="object-cover rounded-2xl" />
           </div>
         </div>
@@ -137,7 +116,7 @@ export default function Page() {
         <h2 className="text-2xl md:text-3xl font-semibold">診断の流れ</h2>
         <div className="mt-6 grid gap-6 md:grid-cols-3">
           {[
-            { step: "01", title: "簡単な質問に回答", desc: "睡眠姿勢・お悩み・好みなど、最大8問。任意の質問はスキップできます。" },
+            { step: "01", title: "簡単な質問に回答", desc: "睡眠姿勢・お悩み・好みなど、10問程度です。" },
             { step: "02", title: "AIが要点を整理", desc: "あなたの回答から“選び方の基準”を導出。理由もあわせて表示します。" },
             { step: "03", title: "参考商品もチェック", desc: "楽天・Yahooの該当商品例を一緒に表示（アフィリエイトリンクを含む場合があります）。" },
           ].map((card) => (
@@ -174,20 +153,16 @@ export default function Page() {
             window.addEventListener('message', function(e){
               var d = e && e.data; if(!d || !d.type) return;
               if(d.type === 'ms:event'){
-                // gtag (GA4)
                 if(window.gtag){
                   try { window.gtag('event', d.name || 'ms_event', Object.assign({ source: 'ms-widget' }, d.payload || {})); } catch(e){}
                 }
-                // dataLayer (GTM)
-                if(window.dataLayer){
-                  try { window.dataLayer.push({ event: d.name || 'ms_event', payload: d.payload || {}, source: 'ms-widget' }); } catch(e){}
+                if((window as any).dataLayer){
+                  try { (window as any).dataLayer.push({ event: d.name || 'ms_event', payload: d.payload || {}, source: 'ms-widget' }); } catch(e){}
                 }
               }
             });
           })();
         `}</Script>
-
-        {/* 高さ調整は loader.js 側で実装済み（postMessage: ms:resize） */}
       </section>
 
       {/* FAQ */}
@@ -201,7 +176,7 @@ export default function Page() {
             },
             {
               q: "どれくらい時間がかかりますか？",
-              a: "3分ほどで完了します。必須質問は6問、任意の質問はスキップ可能です。",
+              a: "3分ほどで完了します。質問は10問です。",
             },
             {
               q: "メール登録は必要ですか？",
