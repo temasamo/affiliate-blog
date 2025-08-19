@@ -130,8 +130,8 @@ export default async function handler(
 
     // ❺ 楽天×Yahoo を 1:1 でインタリーブ（型を崩さない）
     let merged: UnifiedProduct[] = interleave<UnifiedProduct>(
-      rakuten,
-      yahoo,
+      rakuten as UnifiedProduct[],
+      yahoo as UnifiedProduct[],
       1,
       1
     );
