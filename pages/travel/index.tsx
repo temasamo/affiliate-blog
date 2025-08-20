@@ -12,6 +12,12 @@ export async function getStaticProps() {
 }
 
 export default function TravelIndex({ posts }: { posts: any[] }) {
+  // 最新記事（最新3件）
+  const latestPosts = posts.slice(0, 3);
+  
+  // その他の記事
+  const otherPosts = posts.slice(3);
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       <div className="mx-auto max-w-5xl p-6 sm:p-10">
@@ -24,29 +30,72 @@ export default function TravelIndex({ posts }: { posts: any[] }) {
           </p>
         </div>
 
-        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((p) => (
-            <li key={p.slug}>
-              <Link
-                href={`/travel/${p.slug}`}
-                className="group block rounded-2xl bg-white/80 backdrop-blur-sm border border-white/20 p-6 hover:bg-white hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-1"
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <div className="text-xs text-blue-600 font-medium">{p.date}</div>
-                  <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full group-hover:scale-150 transition-transform"></div>
-                </div>
-                <div className="font-bold text-gray-900 leading-tight mb-3 group-hover:text-blue-600 transition-colors">
-                  {p.title}
-                </div>
-                {p.description && (
-                  <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed">
-                    {p.description}
-                  </p>
-                )}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {/* 新着記事セクション */}
+        {latestPosts.length > 0 && (
+          <section className="mb-12">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+                <span className="inline-flex items-center rounded-full bg-red-100 px-3 py-1 text-sm font-medium text-red-800">
+                  NEW
+                </span>
+                🏝 旅行の新着記事
+              </h2>
+            </div>
+            
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {latestPosts.map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/travel/${p.slug}`}
+                  className="group block rounded-2xl bg-white/90 backdrop-blur-sm border border-white/30 p-6 hover:bg-white hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-1 no-underline"
+                >
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="text-xs text-blue-600 font-medium">{p.date}</div>
+                    <div className="w-2 h-2 bg-gradient-to-r from-red-400 to-pink-400 rounded-full group-hover:scale-150 transition-transform"></div>
+                  </div>
+                  <h3 className="font-bold text-gray-900 leading-tight mb-3 group-hover:text-blue-600 transition-colors no-underline">
+                    {p.title}
+                  </h3>
+                  {p.description && (
+                    <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed">
+                      {p.description}
+                    </p>
+                  )}
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* その他の記事セクション */}
+        {otherPosts.length > 0 && (
+          <section>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">その他の記事</h2>
+            <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {otherPosts.map((p) => (
+                <li key={p.slug}>
+                  <Link
+                    href={`/travel/${p.slug}`}
+                    className="group block rounded-2xl bg-white/80 backdrop-blur-sm border border-white/20 p-6 hover:bg-white hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-1 no-underline"
+                  >
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="text-xs text-blue-600 font-medium">{p.date}</div>
+                      <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full group-hover:scale-150 transition-transform"></div>
+                    </div>
+                    <h3 className="font-bold text-gray-900 leading-tight mb-3 group-hover:text-blue-600 transition-colors no-underline">
+                      {p.title}
+                    </h3>
+                    {p.description && (
+                      <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed">
+                        {p.description}
+                      </p>
+                    )}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {/* トップへ戻るボタン */}
         <div className="text-center mt-12">
