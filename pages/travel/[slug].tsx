@@ -2,6 +2,7 @@ import { MDXRemote } from 'next-mdx-remote';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import AffiliateLink from '@/components/AffiliateLink';
+import AffiliateDisclosure from '@/components/common/AffiliateDisclosure';
 import { getTravelSlugs, getTravelPostBySlug, serializeMDX } from '@/lib/mdx';
 
 const TravelStyleMatcher = dynamic(() => import('@/components/travel/TravelStyleMatcher'), { ssr: false });
@@ -37,12 +38,18 @@ export default function TravelPost({ mdxSource, frontMatter }: any) {
           )}
         </div>
 
+        {/* アフィリエイト開示 */}
+        <AffiliateDisclosure variant="top" />
+
         {/* 記事コンテンツ */}
         <div className="bg-white/80 backdrop-blur-sm rounded-3xl border border-white/20 p-8 sm:p-12 shadow-xl shadow-blue-500/10">
           <div className="prose prose-lg max-w-none">
             <MDXRemote {...mdxSource} components={components} />
           </div>
         </div>
+
+        {/* アフィリエイト開示（下部） */}
+        <AffiliateDisclosure variant="bottom" />
 
         {/* トップへ戻るボタン */}
         <div className="text-center mt-12">
