@@ -39,6 +39,23 @@ const CANDIDATE_DIRS: Array<[string, string, boolean]> = [
 // ".md" / ".mdx" のみ対象
 const VALID_EXT = new Set([".md", ".mdx"]);
 
+const PUBLIC_DIR = path.join(process.cwd(), "public");
+
+function resolveThumbnail(input?: string | null): string | null {
+  if (!input || typeof input !== "string") return null;
+
+  // 1) 外部URLはそのまま許容（Next/Image使う場合は next.config の images.domains に追加）
+  if (/^https?:\/\//i.test(input)) return input;
+
+  // 2) /public 配下の実ファイルのみ有効にする（存在しなければ null）
+  const rel = input.replace(/^\/+/, "");         // 先頭スラッシュを外す
+  const abs = path.join(PUBLIC_DIR, rel);
+  if (fs.existsSync(abs)) {
+    return "/" + rel.replace(/\\/g, "/");        // 正規化して返す
+  }
+  return null;                                   // ← ここが重要：壊れたパスを弾く
+}
+
 function normalizeDate(input?: string): string {
   if (!input || typeof input !== "string") return "";
   // "2025.08.21" / "2025/08/21" なども受け取り、"-" に統一
@@ -138,10 +155,9 @@ export function getAllPosts(): PostMeta[] {
           typeof data?.excerpt === "string" && data.excerpt.trim().length
             ? data.excerpt
             : null,
-        thumbnail:
-          typeof data?.thumbnail === "string" && data.thumbnail.trim().length
-            ? data.thumbnail
-            : null,
+        thumbnail: resolveThumbnail(
+          typeof data?.thumbnail === "string" ? data.thumbnail : null
+        ),
         published,
         href,
       });

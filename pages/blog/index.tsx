@@ -84,15 +84,34 @@ const BlogIndex: NextPage<Props> = ({ posts, categories, pageSize }) => {
   );
 };
 
+const PLACEHOLDER = "/images/placeholder.svg";
+
+function Thumb({ src, alt }: { src: string | null; alt: string }) {
+  if (!src) {
+    return (
+      <div className="flex h-full w-full items-center justify-center text-sm text-gray-400">
+        No Image
+      </div>
+    );
+  }
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className="h-full w-full object-cover"
+      onError={(e) => {
+        // 取得失敗時は即プレースホルダーに差替
+        (e.currentTarget as HTMLImageElement).src = PLACEHOLDER;
+      }}
+    />
+  );
+}
+
 function ArticleCard({ post }: { post: PostMeta }) {
   return (
     <Link href={post.href} className="rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
       <div className="relative aspect-[16/9] w-full overflow-hidden rounded-t-2xl bg-gray-100">
-        {post.thumbnail ? (
-          <img src={post.thumbnail} alt={post.title} className="h-full w-full object-cover" />
-        ) : (
-          <div className="flex h-full w-full items-center justify-center text-sm text-gray-400">No Image</div>
-        )}
+        <Thumb src={post.thumbnail} alt={post.title} />
       </div>
       <div className="p-4">
         <div className="mb-1 text-xs text-gray-500">{post.category ?? "未分類"}・{post.date ? formatDate(post.date) : "日付未設定"}</div>
