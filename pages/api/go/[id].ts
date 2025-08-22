@@ -5,7 +5,7 @@ const map: Record<string, string> = {
   jalan: 'https://px.a8.net/svt/ejp?a8mat=45BUIQ+EJC1IQ+14CS+68EPE',
   'rakuten-travel': 'https://af.moshimo.com/af/c/click?a_id=5140401&p_id=55&pc_id=55&pl_id=636',
   ikkyu: 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133',
-  airtrip: 'https://px.a8.net/svt/ejp?a8mat=45BUIQ+EJC1IQ+14CS+68EPE',
+  airtrip: 'https://px.a8.net/svt/ejp?a8mat=45BUIQ+DB9YR6+2YGS+64JTE',
 
   // 一休：宿ごとのディープリンク（広告OK宿）
   'ikkyu-asaba':
