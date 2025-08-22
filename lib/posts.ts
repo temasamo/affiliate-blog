@@ -6,59 +6,62 @@ export type PostMeta = {
   slug: string;
   title: string;
   date: string;                 // "" or "YYYY-MM-DD"
-  category: string | null;      // ← nullで統一
-  excerpt: string | null;       // ← nullで統一
-  thumbnail: string | null;     // ← nullで統一
+  category: string | null;
+  excerpt: string | null;
+  thumbnail: string | null;
   published: boolean;
-  href: string;          // 一覧カードのリンク先（/blog 以外も可）
+  href: string;                 // クリック先（/blog 以外も可）
 };
 
-// ここに「存在したら読む」ディレクトリを列挙
-// [物理ディレクトリ, 公開ルート, listingが必須か]
-const CANDIDATE_DIRS: Array<[string, string, boolean]> = [
-  // ふつうのブログ記事（listing不要）
-  [path.join(process.cwd(), "content", "blog"), "/blog", false],
-
-  // Travel（Pages Router / App Router の両方をケア）
-  [path.join(process.cwd(), "pages", "travel"), "/travel", true],
-  [path.join(process.cwd(), "app", "travel"), "/travel", true],
-
-  // Global Hot Picks
-  [
-    path.join(process.cwd(), "pages", "articles", "global-hot-picks", "trend"),
-    "/articles/global-hot-picks/trend",
-    true,
-  ],
-  [
-    path.join(process.cwd(), "app", "articles", "global-hot-picks", "trend"),
-    "/articles/global-hot-picks/trend",
-    true,
-  ],
+/** ───────── 収集対象 ───────── **/
+const MDX_DIRS = [
+  [path.join(process.cwd(), "content", "blog"), "/blog"] as const,
 ];
 
-// ".md" / ".mdx" のみ対象
-const VALID_EXT = new Set([".md", ".mdx"]);
+// data配下（dev/prod/共通）からJSONを読む
+const JSON_DIRS = [
+  [path.join(process.cwd(), "data", "development", "travel"), "/travel"],
+  [path.join(process.cwd(), "data", "production", "travel"), "/travel"],
+  [path.join(process.cwd(), "data", "travel"), "/travel"],
+  [
+    path.join(
+      process.cwd(),
+      "data",
+      "development",
+      "articles",
+      "global-hot-picks",
+      "trend"
+    ),
+    "/articles/global-hot-picks/trend",
+  ],
+  [
+    path.join(
+      process.cwd(),
+      "data",
+      "production",
+      "articles",
+      "global-hot-picks",
+      "trend"
+    ),
+    "/articles/global-hot-picks/trend",
+  ],
+  [
+    path.join(
+      process.cwd(),
+      "data",
+      "articles",
+      "global-hot-picks",
+      "trend"
+    ),
+    "/articles/global-hot-picks/trend",
+  ],
+] as const;
 
 const PUBLIC_DIR = path.join(process.cwd(), "public");
-
-function resolveThumbnail(input?: string | null): string | null {
-  if (!input || typeof input !== "string") return null;
-
-  // 1) 外部URLはそのまま許容（Next/Image使う場合は next.config の images.domains に追加）
-  if (/^https?:\/\//i.test(input)) return input;
-
-  // 2) /public 配下の実ファイルのみ有効にする（存在しなければ null）
-  const rel = input.replace(/^\/+/, "");         // 先頭スラッシュを外す
-  const abs = path.join(PUBLIC_DIR, rel);
-  if (fs.existsSync(abs)) {
-    return "/" + rel.replace(/\\/g, "/");        // 正規化して返す
-  }
-  return null;                                   // ← ここが重要：壊れたパスを弾く
-}
+const VALID_MDX = new Set([".md", ".mdx"]);
 
 function normalizeDate(input?: string): string {
   if (!input || typeof input !== "string") return "";
-  // "2025.08.21" / "2025/08/21" なども受け取り、"-" に統一
   const s = input.trim().replace(/[./]/g, "-");
   const t = Date.parse(s);
   if (!Number.isFinite(t)) return "";
@@ -68,85 +71,68 @@ function normalizeDate(input?: string): string {
   const day = `${d.getDate()}`.padStart(2, "0");
   return `${y}-${m}-${day}`;
 }
-
 function safeDateToNumber(d?: string): number {
   const t = d ? Date.parse(d) : NaN;
-  return Number.isFinite(t) ? t : -8640000000000000; // 不正は最小値=末尾
+  return Number.isFinite(t) ? t : -8640000000000000;
 }
 
-function listFilesRecursively(dir: string): string[] {
+function resolveThumbnail(input?: string | null): string | null {
+  if (!input || typeof input !== "string") return null;
+  if (/^https?:\/\//i.test(input)) return input; // 外部URLは通す
+  const rel = input.replace(/^\/+/, "");
+  const abs = path.join(PUBLIC_DIR, rel);
+  return fs.existsSync(abs) ? `/${rel.replace(/\\/g, "/")}` : null;
+}
+
+function listFilesRecursively(dir: string, exts: Set<string>): string[] {
   const out: string[] = [];
   if (!fs.existsSync(dir)) return out;
   for (const name of fs.readdirSync(dir)) {
     const p = path.join(dir, name);
-    const stat = fs.statSync(p);
-    if (stat.isDirectory()) {
-      out.push(...listFilesRecursively(p));
-    } else {
-      const ext = path.extname(p).toLowerCase();
-      if (VALID_EXT.has(ext)) out.push(p);
-    }
+    const st = fs.statSync(p);
+    if (st.isDirectory()) out.push(...listFilesRecursively(p, exts));
+    else if (exts.has(path.extname(p).toLowerCase())) out.push(p);
   }
   return out;
 }
 
 function makeHref(routeBase: string, baseDir: string, absFile: string): string {
-  // baseDir からの相対パスをURLに変換
-  const rel = path
-    .relative(baseDir, absFile)
-    .replace(/\\/g, "/")       // Windows対応
-    .replace(/\.(md|mdx)$/i, "");
-
-  // Next.js の index/page ファイルは親ディレクトリを使う
-  const parts = rel.split("/");
-  const last = parts[parts.length - 1];
-  if (last === "index" || last === "page") {
-    parts.pop();
-  }
-  const urlPath = parts.join("/");
-  const joined = [routeBase, urlPath].filter(Boolean).join("/");
-  return joined.replace(/\/+/g, "/").replace(/\/$/, "") || routeBase;
+  const rel = path.relative(baseDir, absFile).replace(/\\/g, "/");
+  const slug = rel.replace(/\.(md|mdx|json)$/i, "");
+  return `${routeBase}/${slug}`.replace(/\/+/g, "/").replace(/\/$/, "");
 }
 
-export function getAllPosts(): PostMeta[] {
+/** MD/MDX 読み込み */
+function loadFromMdx(): PostMeta[] {
   const posts: PostMeta[] = [];
-
-  for (const [dir, routeBase, requireListing] of CANDIDATE_DIRS) {
+  for (const [dir, routeBase] of MDX_DIRS) {
     if (!fs.existsSync(dir)) continue;
-
-    const files = listFilesRecursively(dir);
-
+    const files = listFilesRecursively(dir, VALID_MDX);
     for (const file of files) {
       const raw = fs.readFileSync(file, "utf8");
       const { data } = matter(raw);
 
-      // draft / published の両流儀に対応
-      const draft = data?.draft === true;
-      const published =
-        typeof data?.published === "boolean" ? data.published : !draft;
+      const filenameSlug = path.basename(file).replace(/\.mdx?$/i, "");
+      const slug =
+        (typeof data?.slug === "string" && data.slug) || filenameSlug;
 
-      // ルート配下（travel/hot-picks）は listing: true の記事だけを載せる
-      if (requireListing && data?.listing !== true) continue;
-      if (!published) continue;
-
-      const date = normalizeDate(String(data?.date || ""));
       const title =
         typeof data?.title === "string" && data.title.trim().length
           ? data.title
-          : path.basename(file).replace(/\.(md|mdx)$/i, "");
+          : slug;
 
-      // slug はURLっぽく見えるID（実URLは href を使う）
-      const slug = title
-        .toLowerCase()
-        .replace(/[^a-zA-Z0-9]+/g, "-")
-        .replace(/^-+|-+$/g, "");
+      const published =
+        data?.published === false || data?.draft === true ? false : true;
 
-      const href = makeHref(routeBase, dir, file);
+      const href =
+        typeof data?.permalink === "string" && data.permalink.trim().length
+          ? data.permalink
+          : makeHref(routeBase, dir, file);
 
       posts.push({
         slug,
         title,
-        date,
+        date: normalizeDate(String(data?.date || "")),
         category:
           typeof data?.category === "string" && data.category.trim().length
             ? data.category
@@ -163,8 +149,91 @@ export function getAllPosts(): PostMeta[] {
       });
     }
   }
+  return posts;
+}
 
-  // 新しい→古い
+/** JSON 読み込み（/data/**） */
+function loadFromJson(): PostMeta[] {
+  const posts: PostMeta[] = [];
+
+  for (const [dir, routeBase] of JSON_DIRS) {
+    if (!fs.existsSync(dir)) continue;
+
+    const files = listFilesRecursively(dir, new Set([".json"]));
+    for (const file of files) {
+      let obj: any = null;
+      try {
+        obj = JSON.parse(fs.readFileSync(file, "utf8"));
+      } catch {
+        continue; // 壊れたJSONは無視
+      }
+
+      // 採用条件：listingが明示的にfalseなら除外。それ以外は採用。
+      const listing =
+        obj?.listing === false ? false : true;
+      const published =
+        obj?.published === false || obj?.draft === true ? false : true;
+      if (!listing || !published) continue;
+
+      const filenameSlug = path.basename(file, ".json");
+      const slug: string =
+        (typeof obj?.slug === "string" && obj.slug) || filenameSlug;
+
+      const title: string =
+        (typeof obj?.title === "string" && obj.title) ||
+        (typeof obj?.metaTitle === "string" && obj.metaTitle) ||
+        slug;
+
+      const date = normalizeDate(
+        obj?.date || obj?.publishedAt || obj?.updatedAt
+      );
+
+      const category: string | null =
+        typeof obj?.category === "string" && obj.category.trim().length
+          ? obj.category
+          : typeof obj?.categoryName === "string" && obj.categoryName.trim().length
+          ? obj.categoryName
+          : typeof obj?.tag === "string" && obj.tag.trim().length
+          ? obj.tag
+          : null;
+
+      const excerpt: string | null =
+        typeof obj?.excerpt === "string" && obj.excerpt.trim().length
+          ? obj.excerpt
+          : typeof obj?.description === "string" && obj.description.trim().length
+          ? obj.description
+          : typeof obj?.summary === "string" && obj.summary.trim().length
+          ? obj.summary
+          : null;
+
+      const thumbnail = resolveThumbnail(
+        obj?.thumbnail || obj?.image || obj?.cover || null
+      );
+
+      const href = `${routeBase}/${slug}`.replace(/\/+/g, "/");
+
+      posts.push({
+        slug,
+        title,
+        date,
+        category,
+        excerpt,
+        thumbnail,
+        published,
+        href,
+      });
+    }
+  }
+
+  return posts;
+}
+
+/** 公開記事を集約して新しい順に */
+export function getAllPosts(): PostMeta[] {
+  const mdx = loadFromMdx();
+  const json = loadFromJson();
+  const posts = [...mdx, ...json].filter((p) => p.published);
+
   posts.sort((a, b) => safeDateToNumber(b.date) - safeDateToNumber(a.date));
   return posts;
 }
@@ -173,4 +242,17 @@ export function getAllCategories(posts: PostMeta[]): string[] {
   const set = new Set<string>();
   posts.forEach((p) => p.category && set.add(p.category));
   return Array.from(set).sort((a, b) => a.localeCompare(b, "ja"));
+}
+
+/** 関連記事（同カテゴリ 最新N件） */
+export function getRelatedPosts(
+  all: PostMeta[],
+  current: { slug?: string; category?: string | null; date?: string },
+  limit = 3
+): PostMeta[] {
+  const same = all.filter(
+    (p) => p.slug !== current.slug && p.category && p.category === current.category
+  );
+  same.sort((a, b) => safeDateToNumber(b.date) - safeDateToNumber(a.date));
+  return same.slice(0, limit);
 } 
