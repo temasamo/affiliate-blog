@@ -5,11 +5,11 @@ import matter from "gray-matter";
 export type PostMeta = {
   slug: string;
   title: string;
-  date: string;          // 正規化済み YYYY-MM-DD
-  category?: string;
-  excerpt?: string;
-  thumbnail?: string;
-  published?: boolean;
+  date: string;                 // "" or "YYYY-MM-DD"
+  category: string | null;      // ← nullで統一
+  excerpt: string | null;       // ← nullで統一
+  thumbnail: string | null;     // ← nullで統一
+  published: boolean;
   href: string;          // 一覧カードのリンク先（/blog 以外も可）
 };
 
@@ -131,11 +131,17 @@ export function getAllPosts(): PostMeta[] {
         title,
         date,
         category:
-          typeof data?.category === "string" ? data.category : undefined,
+          typeof data?.category === "string" && data.category.trim().length
+            ? data.category
+            : null,
         excerpt:
-          typeof data?.excerpt === "string" ? data.excerpt : undefined,
+          typeof data?.excerpt === "string" && data.excerpt.trim().length
+            ? data.excerpt
+            : null,
         thumbnail:
-          typeof data?.thumbnail === "string" ? data.thumbnail : undefined,
+          typeof data?.thumbnail === "string" && data.thumbnail.trim().length
+            ? data.thumbnail
+            : null,
         published,
         href,
       });

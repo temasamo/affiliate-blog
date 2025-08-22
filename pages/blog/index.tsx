@@ -124,7 +124,8 @@ function formatDate(d: string): string {
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const posts = getAllPosts();
   const categories = getAllCategories(posts);
-  return { props: { posts, categories, pageSize: PAGE_SIZE }, revalidate: 60 };
+  const props = { posts, categories, pageSize: PAGE_SIZE };
+  return { props: props /* jsonSafe(props) でも可 */, revalidate: 60 };
 };
 
 export default BlogIndex; 
