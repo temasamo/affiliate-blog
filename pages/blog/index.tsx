@@ -86,7 +86,7 @@ const BlogIndex: NextPage<Props> = ({ posts, categories, pageSize }) => {
 
 function ArticleCard({ post }: { post: PostMeta }) {
   return (
-    <Link href={`/blog/${post.slug}`} className="rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
+    <Link href={post.href} className="rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
       <div className="relative aspect-[16/9] w-full overflow-hidden rounded-t-2xl bg-gray-100">
         {post.thumbnail ? (
           <img src={post.thumbnail} alt={post.title} className="h-full w-full object-cover" />
