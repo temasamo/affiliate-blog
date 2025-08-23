@@ -395,18 +395,22 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
           const files = fs.readdirSync(trendPath);
           files.forEach(file => {
             if (file.endsWith('.mdx') || file.endsWith('.md')) {
-              const filePath = path.join(trendPath, file);
-              const fileContents = fs.readFileSync(filePath, 'utf8');
-              const { data: frontMatter } = matter(fileContents);
-              
-              allArticles.push({
-                slug: file.replace(/\.(mdx|md)$/, ''),
-                title: frontMatter.title || '記事タイトル',
-                description: frontMatter.description || '記事の説明',
-                date: frontMatter.date || '2025.07.01',
-                category: category,
-                type: 'trend'
-              });
+              try {
+                const filePath = path.join(trendPath, file);
+                const fileContents = fs.readFileSync(filePath, 'utf8');
+                const { data: frontMatter } = matter(fileContents);
+                
+                allArticles.push({
+                  slug: file.replace(/\.(mdx|md)$/, ''),
+                  title: frontMatter.title || '記事タイトル',
+                  description: frontMatter.description || '記事の説明',
+                  date: frontMatter.date || '2025.07.01',
+                  category: category,
+                  type: 'trend'
+                });
+              } catch (e) {
+                console.error(`Front matter parse error: ${path.join(trendPath, file)}`, e);
+              }
             }
           });
         }
@@ -419,18 +423,22 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
             const files = fs.readdirSync(typePath);
             files.forEach(file => {
               if (file.endsWith('.md')) {
-                const filePath = path.join(typePath, file);
-                const fileContents = fs.readFileSync(filePath, 'utf8');
-                const { data: frontMatter } = matter(fileContents);
-                
-                allArticles.push({
-                  slug: file.replace(/\.md$/, ''),
-                  title: frontMatter.title || '記事タイトル',
-                  description: frontMatter.description || '記事の説明',
-                  date: frontMatter.date || '2025.07.01',
-                  category: category,
-                  type: type
-                });
+                try {
+                  const filePath = path.join(typePath, file);
+                  const fileContents = fs.readFileSync(filePath, 'utf8');
+                  const { data: frontMatter } = matter(fileContents);
+                  
+                  allArticles.push({
+                    slug: file.replace(/\.md$/, ''),
+                    title: frontMatter.title || '記事タイトル',
+                    description: frontMatter.description || '記事の説明',
+                    date: frontMatter.date || '2025.07.01',
+                    category: category,
+                    type: type
+                  });
+                } catch (e) {
+                  console.error(`Front matter parse error: ${path.join(typePath, file)}`, e);
+                }
               }
             });
           }
