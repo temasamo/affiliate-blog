@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -364,7 +364,7 @@ function getCategoryDisplayName(category: string): string {
   return categoryNames[category] || category;
 }
 
-export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   const articlesDirectory = path.join(process.cwd(), 'articles');
   const allArticles: Article[] = [];
 
