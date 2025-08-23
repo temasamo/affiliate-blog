@@ -67,12 +67,16 @@ export default function Home({ latestArticles, travelPosts }: HomeProps) {
             <Link 
               href="/contents" 
               className="inline-flex items-center px-8 py-3 bg-blue-500 text-white font-semibold rounded-full hover:bg-blue-600 transition-colors shadow-md hover:shadow-lg hover-lift"
+              onClick={() => window.gtag?.('event', 'select_content', {
+                content_type: 'cta',
+                content_id: 'home_hero_contents_button'
+              })}
             >
               コンテンツ一覧を見る
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-              </Link>
+            </Link>
             </div>
           </div>
         </section>

@@ -9,6 +9,7 @@ interface OutboundLinkProps {
   className?: string;
   target?: string;
   rel?: string;
+  contentId?: string; // GA計測用のコンテンツID
 }
 
 export default function OutboundLink({
@@ -18,14 +19,28 @@ export default function OutboundLink({
   children,
   className = '',
   target = '_blank',
-  rel = 'noreferrer'
+  rel = 'noreferrer',
+  contentId
 }: OutboundLinkProps) {
-  const handleClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleClick = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    // Google Analytics計測
+    window.gtag?.('event', 'select_content', {
+      content_type: 'cta',
+      content_id: contentId || `outbound_${partner}`,
+      partner: partner,
+      url: href
+    });
+    
     try {
       await logOutbound(partner, sessionId);
     } catch (error) {
       console.warn('Outbound click logging failed:', error);
     }
+    
+    // リンクを開く
+    window.open(href, target, 'noopener,noreferrer');
   };
 
   return (

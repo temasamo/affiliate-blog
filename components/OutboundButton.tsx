@@ -9,6 +9,7 @@ interface OutboundButtonProps {
   children: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
+  contentId?: string; // GA計測用のコンテンツID
 }
 
 export default function OutboundButton({
@@ -17,13 +18,23 @@ export default function OutboundButton({
   sessionId,
   children,
   className,
-  style
+  style,
+  contentId
 }: OutboundButtonProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleClick = async (e: React.MouseEvent) => {
     e.preventDefault();
-    // 計測を投げる（sendBeaconは同期不要）→ すぐに開く
+    
+    // Google Analytics計測
+    window.gtag?.('event', 'select_content', {
+      content_type: 'cta',
+      content_id: contentId || `outbound_${partner}`,
+      partner: partner,
+      url: url
+    });
+    
+    // 既存の計測を投げる（sendBeaconは同期不要）→ すぐに開く
     logOutbound(partner, sessionId);
     window.open(url, '_blank', 'noopener'); // ここで新規タブ
   };
