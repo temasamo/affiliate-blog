@@ -136,6 +136,23 @@ export default function GlobalHotPicksAds({ date }: GlobalHotPicksAdsProps) {
         return (
           <div className="bg-white rounded-xl shadow-md p-6 text-center">
             <p className="text-gray-600">この日付の広告は準備中です。</p>
+            <div className="mt-4">
+              <a
+                href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+                rel="nofollow"
+                referrerPolicy="no-referrer-when-downgrade"
+              >
+                Amazon.co.jp
+              </a>
+              <img
+                src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+                width="1"
+                height="1"
+                style={{ border: "none" }}
+                loading="lazy"
+                alt=""
+              />
+            </div>
           </div>
         );
     }
