@@ -1,1 +1,11 @@
- 
+<svg width="400" height="225" viewBox="0 0 400 225" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="225" fill="#F3F4F6"/>
+  <path d="M200 112.5C200 103.5 207.5 96 216.5 96C225.5 96 233 103.5 233 112.5C233 121.5 225.5 129 216.5 129C207.5 129 200 121.5 200 112.5Z" fill="#D1D5DB"/>
+  <path d="M167 96H183V112H167V96Z" fill="#D1D5DB"/>
+  <path d="M167 113H183V129H167V113Z" fill="#D1D5DB"/>
+  <path d="M217 96H233V112H217V96Z" fill="#D1D5DB"/>
+  <path d="M217 113H233V129H217V113Z" fill="#D1D5DB"/>
+  <path d="M167 130H183V146H167V130Z" fill="#D1D5DB"/>
+  <path d="M217 130H233V146H217V130Z" fill="#D1D5DB"/>
+  <text x="200" y="180" text-anchor="middle" fill="#9CA3AF" font-family="Arial, sans-serif" font-size="14">No Image</text>
+</svg> 
