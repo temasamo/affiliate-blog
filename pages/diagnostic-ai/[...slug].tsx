@@ -6,7 +6,7 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
 
-const ROOT = path.join(process.cwd(), "articles", "diagnostic-ai");
+const ROOT = path.join(process.cwd(), "content", "blog", "diagnostic-ai");
 
 type Props = { source: MDXRemoteSerializeResult; frontMatter: any };
 
