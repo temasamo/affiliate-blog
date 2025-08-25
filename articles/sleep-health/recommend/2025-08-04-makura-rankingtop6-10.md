@@ -25,25 +25,51 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 - **公式税込価格**：19,800円
 
 **購入リンク**   
-<>
-  <a
-    href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
-    rel="nofollow"
-    referrerPolicy="no-referrer-when-downgrade"
-    attributionsrc=""
-  >
-    Amazon.co.jp
-  </a>
-  <img
-    src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
-    width={1}
-    height={1}
-    style={{ border: 'none' }}
-    loading="lazy"
-  />
-</>
-- [楽天市場で探す](//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=623)  
-- [Yahoo!ショッピングで探す](//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891940434)
+<div className="purchase-links mt-2 space-y-1">
+  {/* Amazonリンクは次のステップでアフィ広告に差し替え */}
+  <div>
+    <strong>Amazon:</strong>{" "}
+    <a
+      href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+      rel="nofollow"
+      referrerPolicy="no-referrer-when-downgrade"
+    >
+      Amazon.co.jp
+    </a>
+    <img
+      src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+      width={1}
+      height={1}
+      style={{ border: "none" }}
+      loading="lazy"
+      alt=""
+    />
+  </div>
+
+  {/* 楽天リンクを元に戻す */}
+  <div>
+    <strong>楽天市場:</strong>{" "}
+    <a
+      href="https://search.rakuten.co.jp/search/mall/モットン+高反発まくら/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      楽天で探す
+    </a>
+  </div>
+
+  {/* Yahooリンクを元に戻す */}
+  <div>
+    <strong>Yahoo!ショッピング:</strong>{" "}
+    <a
+      href="https://shopping.yahoo.co.jp/search?p=モットン+高反発まくら"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Yahooで探す
+    </a>
+  </div>
+</div>
 
 ※Yahoo!ショッピングでは販売がない場合があります。
 
@@ -83,26 +109,52 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 - **公式税込価格**：6,600円
 
 **購入リンク**  
-<>
-  <a
-    href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
-    rel="nofollow"
-    referrerPolicy="no-referrer-when-downgrade"
-    attributionsrc=""
-  >
-    Amazon.co.jp
-  </a>
-  <img
-    src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
-    width={1}
-    height={1}
-    style={{ border: 'none' }}
-    loading="lazy"
-  />
-</>
-- [楽天市場で探す](//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=623)  
-- [Yahoo!ショッピングで探す](//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891940434)
- 
+<div className="purchase-links mt-2 space-y-1">
+  {/* Amazonリンクは次のステップでアフィ広告に差し替え */}
+  <div>
+    <strong>Amazon:</strong>{" "}
+    <a
+      href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+      rel="nofollow"
+      referrerPolicy="no-referrer-when-downgrade"
+    >
+      Amazon.co.jp
+    </a>
+    <img
+      src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+      width={1}
+      height={1}
+      style={{ border: "none" }}
+      loading="lazy"
+      alt=""
+    />
+  </div>
+
+  {/* 楽天リンクを元に戻す */}
+  <div>
+    <strong>楽天市場:</strong>{" "}
+    <a
+      href="https://search.rakuten.co.jp/search/mall/王様の夢枕/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      楽天で探す
+    </a>
+  </div>
+
+  {/* Yahooリンクを元に戻す */}
+  <div>
+    <strong>Yahoo!ショッピング:</strong>{" "}
+    <a
+      href="https://shopping.yahoo.co.jp/search?p=王様の夢枕"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Yahooで探す
+    </a>
+  </div>
+</div>
+
 ※Yahoo!ショッピングでは販売がない場合があります。
 
 | 項目 | 内容 |
@@ -140,25 +192,51 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 - **公式税込価格**：16,280円
 
 **購入リンク**  
-<>
-  <a
-    href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
-    rel="nofollow"
-    referrerPolicy="no-referrer-when-downgrade"
-    attributionsrc=""
-  >
-    Amazon.co.jp
-  </a>
-  <img
-    src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
-    width={1}
-    height={1}
-    style={{ border: 'none' }}
-    loading="lazy"
-  />
-</>
-- [楽天市場で探す](//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=623)  
-- [Yahoo!ショッピングで探す](//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891940434)
+<div className="purchase-links mt-2 space-y-1">
+  {/* Amazonリンクは次のステップでアフィ広告に差し替え */}
+  <div>
+    <strong>Amazon:</strong>{" "}
+    <a
+      href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+      rel="nofollow"
+      referrerPolicy="no-referrer-when-downgrade"
+    >
+      Amazon.co.jp
+    </a>
+    <img
+      src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+      width={1}
+      height={1}
+      style={{ border: "none" }}
+      loading="lazy"
+      alt=""
+    />
+  </div>
+
+  {/* 楽天リンクを元に戻す */}
+  <div>
+    <strong>楽天市場:</strong>{" "}
+    <a
+      href="https://search.rakuten.co.jp/search/mall/トゥルースリーパー+セブンスピロー/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      楽天で探す
+    </a>
+  </div>
+
+  {/* Yahooリンクを元に戻す */}
+  <div>
+    <strong>Yahoo!ショッピング:</strong>{" "}
+    <a
+      href="https://shopping.yahoo.co.jp/search?p=トゥルースリーパー+セブンスピロー"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Yahooで探す
+    </a>
+  </div>
+</div>
 
 
 | 項目 | 内容 |
@@ -196,25 +274,51 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 - **公式税込価格**：12,800円
 
 **購入リンク**  
-<>
-  <a
-    href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
-    rel="nofollow"
-    referrerPolicy="no-referrer-when-downgrade"
-    attributionsrc=""
-  >
-    Amazon.co.jp
-  </a>
-  <img
-    src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
-    width={1}
-    height={1}
-    style={{ border: 'none' }}
-    loading="lazy"
-  />
-</>
-- [楽天市場で探す](//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=623)  
-- [Yahoo!ショッピングで探す](//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891940434)
+<div className="purchase-links mt-2 space-y-1">
+  {/* Amazonリンクは次のステップでアフィ広告に差し替え */}
+  <div>
+    <strong>Amazon:</strong>{" "}
+    <a
+      href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+      rel="nofollow"
+      referrerPolicy="no-referrer-when-downgrade"
+    >
+      Amazon.co.jp
+    </a>
+    <img
+      src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+      width={1}
+      height={1}
+      style={{ border: "none" }}
+      loading="lazy"
+      alt=""
+    />
+  </div>
+
+  {/* 楽天リンクを元に戻す */}
+  <div>
+    <strong>楽天市場:</strong>{" "}
+    <a
+      href="https://search.rakuten.co.jp/search/mall/ブルーブラッド+3D体感ピロー/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      楽天で探す
+    </a>
+  </div>
+
+  {/* Yahooリンクを元に戻す */}
+  <div>
+    <strong>Yahoo!ショッピング:</strong>{" "}
+    <a
+      href="https://shopping.yahoo.co.jp/search?p=ブルーブラッド+3D体感ピロー"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Yahooで探す
+    </a>
+  </div>
+</div>
 
 ※Yahoo!ショッピングでは販売がない場合があります。
 
@@ -253,26 +357,52 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 - **公式税込価格**：33,000円
 
 **購入リンク**  
-<>
-  <a
-    href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
-    rel="nofollow"
-    referrerPolicy="no-referrer-when-downgrade"
-    attributionsrc=""
-  >
-    Amazon.co.jp
-  </a>
-  <img
-    src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
-    width={1}
-    height={1}
-    style={{ border: 'none' }}
-    loading="lazy"
-  />
-</>
-- [楽天市場で探す](//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=623)  
-- [Yahoo!ショッピングで探す](//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891940434)
- 
+<div className="purchase-links mt-2 space-y-1">
+  {/* Amazonリンクは次のステップでアフィ広告に差し替え */}
+  <div>
+    <strong>Amazon:</strong>{" "}
+    <a
+      href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+      rel="nofollow"
+      referrerPolicy="no-referrer-when-downgrade"
+    >
+      Amazon.co.jp
+    </a>
+    <img
+      src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+      width={1}
+      height={1}
+      style={{ border: "none" }}
+      loading="lazy"
+      alt=""
+    />
+  </div>
+
+  {/* 楽天リンクを元に戻す */}
+  <div>
+    <strong>楽天市場:</strong>{" "}
+    <a
+      href="https://search.rakuten.co.jp/search/mall/BRAIN+SLEEP+ピロー/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      楽天で探す
+    </a>
+  </div>
+
+  {/* Yahooリンクを元に戻す */}
+  <div>
+    <strong>Yahoo!ショッピング:</strong>{" "}
+    <a
+      href="https://shopping.yahoo.co.jp/search?p=BRAIN+SLEEP+ピロー"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Yahooで探す
+    </a>
+  </div>
+</div>
+
 ※Yahoo!ショッピングでは販売がない場合があります。
 
 | 項目 | 内容 |

@@ -25,25 +25,51 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 - **公式税込価格**：18,700円
 
 **購入リンク**  
-<>
-  <a
-    href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
-    rel="nofollow"
-    referrerPolicy="no-referrer-when-downgrade"
-    attributionsrc=""
-  >
-    Amazon.co.jp
-  </a>
-  <img
-    src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
-    width={1}
-    height={1}
-    style={{ border: 'none' }}
-    loading="lazy"
-  />
-</>
-- [楽天市場で探す](//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=623)  
-- [Yahoo!ショッピングで探す](//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891940434)
+<div className="purchase-links mt-2 space-y-1">
+  {/* Amazonリンクは次のステップでアフィ広告に差し替え */}
+  <div>
+    <strong>Amazon:</strong>{" "}
+    <a
+      href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+      rel="nofollow"
+      referrerPolicy="no-referrer-when-downgrade"
+    >
+      Amazon.co.jp
+    </a>
+    <img
+      src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+      width={1}
+      height={1}
+      style={{ border: "none" }}
+      loading="lazy"
+      alt=""
+    />
+  </div>
+
+  {/* 楽天リンクを元に戻す */}
+  <div>
+    <strong>楽天市場:</strong>{" "}
+    <a
+      href="https://search.rakuten.co.jp/search/mall/西川+AiR+3D+ピロー/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      楽天で探す
+    </a>
+  </div>
+
+  {/* Yahooリンクを元に戻す */}
+  <div>
+    <strong>Yahoo!ショッピング:</strong>{" "}
+    <a
+      href="https://shopping.yahoo.co.jp/search?p=西川+AiR+3D+ピロー"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Yahooで探す
+    </a>
+  </div>
+</div>
 
 | 項目 | 内容 |
 |------|------|
@@ -81,25 +107,51 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 - **公式税込価格**：3,480円
 
 **購入リンク**  
-<>
-  <a
-    href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
-    rel="nofollow"
-    referrerPolicy="no-referrer-when-downgrade"
-    attributionsrc=""
-  >
-    Amazon.co.jp
-  </a>
-  <img
-    src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
-    width={1}
-    height={1}
-    style={{ border: 'none' }}
-    loading="lazy"
-  />
-</>
-- [楽天市場で探す](//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=623)  
-- [Yahoo!ショッピングで探す](//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891940434)
+<div className="purchase-links mt-2 space-y-1">
+  {/* Amazonリンクは次のステップでアフィ広告に差し替え */}
+  <div>
+    <strong>Amazon:</strong>{" "}
+    <a
+      href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+      rel="nofollow"
+      referrerPolicy="no-referrer-when-downgrade"
+    >
+      Amazon.co.jp
+    </a>
+    <img
+      src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+      width={1}
+      height={1}
+      style={{ border: "none" }}
+      loading="lazy"
+      alt=""
+    />
+  </div>
+
+  {/* 楽天リンクを元に戻す */}
+  <div>
+    <strong>楽天市場:</strong>{" "}
+    <a
+      href="https://search.rakuten.co.jp/search/mall/MyeFoam+低反発枕/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      楽天で探す
+    </a>
+  </div>
+
+  {/* Yahooリンクを元に戻す */}
+  <div>
+    <strong>Yahoo!ショッピング:</strong>{" "}
+    <a
+      href="https://shopping.yahoo.co.jp/search?p=MyeFoam+低反発枕"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Yahooで探す
+    </a>
+  </div>
+</div>
 
 | 項目 | 内容 |
 |------|------|
@@ -137,25 +189,51 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 - **公式税込価格**：17,600円
 
 **購入リンク**  
-<>
-  <a
-    href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
-    rel="nofollow"
-    referrerPolicy="no-referrer-when-downgrade"
-    attributionsrc=""
-  >
-    Amazon.co.jp
-  </a>
-  <img
-    src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
-    width={1}
-    height={1}
-    style={{ border: 'none' }}
-    loading="lazy"
-  />
-</>
-- [楽天市場で探す](//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=623)  
-- [Yahoo!ショッピングで探す](//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891940434)
+<div className="purchase-links mt-2 space-y-1">
+  {/* Amazonリンクは次のステップでアフィ広告に差し替え */}
+  <div>
+    <strong>Amazon:</strong>{" "}
+    <a
+      href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+      rel="nofollow"
+      referrerPolicy="no-referrer-when-downgrade"
+    >
+      Amazon.co.jp
+    </a>
+    <img
+      src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+      width={1}
+      height={1}
+      style={{ border: "none" }}
+      loading="lazy"
+      alt=""
+    />
+  </div>
+
+  {/* 楽天リンクを元に戻す */}
+  <div>
+    <strong>楽天市場:</strong>{" "}
+    <a
+      href="https://search.rakuten.co.jp/search/mall/TEMPUR+オリジナルネックピロー/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      楽天で探す
+    </a>
+  </div>
+
+  {/* Yahooリンクを元に戻す */}
+  <div>
+    <strong>Yahoo!ショッピング:</strong>{" "}
+    <a
+      href="https://shopping.yahoo.co.jp/search?p=TEMPUR+オリジナルネックピロー"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Yahooで探す
+    </a>
+  </div>
+</div>
 
 | 項目 | 内容 |
 |------|------|
@@ -193,25 +271,51 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 - **公式税込価格**：4,980円
 
 **購入リンク**  
-<>
-  <a
-    href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
-    rel="nofollow"
-    referrerPolicy="no-referrer-when-downgrade"
-    attributionsrc=""
-  >
-    Amazon.co.jp
-  </a>
-  <img
-    src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
-    width={1}
-    height={1}
-    style={{ border: 'none' }}
-    loading="lazy"
-  />
-</>
-- [楽天市場（公式）で見る](https://item.rakuten.co.jp/gokumin/)  
-- [Yahoo!ショッピングで探す](//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891940434)
+<div className="purchase-links mt-2 space-y-1">
+  {/* Amazonリンクは次のステップでアフィ広告に差し替え */}
+  <div>
+    <strong>Amazon:</strong>{" "}
+    <a
+      href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+      rel="nofollow"
+      referrerPolicy="no-referrer-when-downgrade"
+    >
+      Amazon.co.jp
+    </a>
+    <img
+      src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+      width={1}
+      height={1}
+      style={{ border: "none" }}
+      loading="lazy"
+      alt=""
+    />
+  </div>
+
+  {/* 楽天リンクを元に戻す */}
+  <div>
+    <strong>楽天市場:</strong>{" "}
+    <a
+      href="https://search.rakuten.co.jp/search/mall/GOKUMIN+プレミアム低反発枕/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      楽天で探す
+    </a>
+  </div>
+
+  {/* Yahooリンクを元に戻す */}
+  <div>
+    <strong>Yahoo!ショッピング:</strong>{" "}
+    <a
+      href="https://shopping.yahoo.co.jp/search?p=GOKUMIN+プレミアム低反発枕"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Yahooで探す
+    </a>
+  </div>
+</div>
 
 | 項目 | 内容 |
 |------|------|
@@ -248,25 +352,51 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 - **公式税込価格**：17,600円
 
 **購入リンク**  
-<>
-  <a
-    href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
-    rel="nofollow"
-    referrerPolicy="no-referrer-when-downgrade"
-    attributionsrc=""
-  >
-    Amazon.co.jp
-  </a>
-  <img
-    src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
-    width={1}
-    height={1}
-    style={{ border: 'none' }}
-    loading="lazy"
-  />
-</>
-- [楽天市場](//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fairweave%2F0007%2F)  
-- [Yahoo!ショッピングで探す](//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891940434)
+<div className="purchase-links mt-2 space-y-1">
+  {/* Amazonリンクは次のステップでアフィ広告に差し替え */}
+  <div>
+    <strong>Amazon:</strong>{" "}
+    <a
+      href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+      rel="nofollow"
+      referrerPolicy="no-referrer-when-downgrade"
+    >
+      Amazon.co.jp
+    </a>
+    <img
+      src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064"
+      width={1}
+      height={1}
+      style={{ border: "none" }}
+      loading="lazy"
+      alt=""
+    />
+  </div>
+
+  {/* 楽天リンクを元に戻す */}
+  <div>
+    <strong>楽天市場:</strong>{" "}
+    <a
+      href="https://search.rakuten.co.jp/search/mall/エアウィーヴ+ピロー+スタンダード/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      楽天で探す
+    </a>
+  </div>
+
+  {/* Yahooリンクを元に戻す */}
+  <div>
+    <strong>Yahoo!ショッピング:</strong>{" "}
+    <a
+      href="https://shopping.yahoo.co.jp/search?p=エアウィーヴ+ピロー+スタンダード"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Yahooで探す
+    </a>
+  </div>
+</div>
 
 | 項目 | 内容 |
 |------|------|
