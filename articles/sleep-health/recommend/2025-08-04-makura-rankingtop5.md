@@ -25,7 +25,17 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 - **公式税込価格**：18,700円
 
 **購入リンク**  
-- [Amazonで探す](https://www.amazon.co.jp/s?k=西川+AiR+3D+ピロー)  
+<a href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4161" 
+   rel="nofollow" 
+   referrerpolicy="no-referrer-when-downgrade" 
+   attributionsrc>
+  Amazonで探す
+</a>
+<img src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4161" 
+     width="1" 
+     height="1" 
+     style="border:none;" 
+     loading="lazy">  
 - [楽天市場で探す](//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=623)  
 - [Yahoo!ショッピングで探す](//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891940434)
 
@@ -65,7 +75,17 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 - **公式税込価格**：3,480円
 
 **購入リンク**  
-- [Amazonで探す](https://www.amazon.co.jp/s?k=MyeFoam+低反発枕)  
+<a href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4161" 
+   rel="nofollow" 
+   referrerpolicy="no-referrer-when-downgrade" 
+   attributionsrc>
+  Amazonで探す
+</a>
+<img src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4161" 
+     width="1" 
+     height="1" 
+     style="border:none;" 
+     loading="lazy">  
 - [楽天市場で探す](//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=623)  
 - [Yahoo!ショッピングで探す](//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891940434)
 
@@ -145,7 +165,17 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 - **公式税込価格**：4,980円
 
 **購入リンク**  
-- [Amazonで探す](https://www.amazon.co.jp/s?k=GOKUMIN+低反発枕)  
+<a href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4161" 
+   rel="nofollow" 
+   referrerpolicy="no-referrer-when-downgrade" 
+   attributionsrc>
+  Amazonで探す
+</a>
+<img src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4161" 
+     width="1" 
+     height="1" 
+     style="border:none;" 
+     loading="lazy">  
 - [楽天市場（公式）で見る](https://item.rakuten.co.jp/gokumin/)  
 - [Yahoo!ショッピングで探す](//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891940434)
 
