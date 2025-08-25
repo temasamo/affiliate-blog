@@ -25,13 +25,13 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 - **公式税込価格**：18,700円
 
 **購入リンク**  
-<a href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4161" 
+<a href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064" 
    rel="nofollow" 
    referrerpolicy="no-referrer-when-downgrade" 
    attributionsrc>
-  Amazonで探す
+  Amazon.co.jp
 </a>
-<img src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4161" 
+<img src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064" 
      width="1" 
      height="1" 
      style="border:none;" 
@@ -75,13 +75,13 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 - **公式税込価格**：3,480円
 
 **購入リンク**  
-<a href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4161" 
+<a href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064" 
    rel="nofollow" 
    referrerpolicy="no-referrer-when-downgrade" 
    attributionsrc>
-  Amazonで探す
+  Amazon.co.jp
 </a>
-<img src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4161" 
+<img src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064" 
      width="1" 
      height="1" 
      style="border:none;" 
@@ -125,7 +125,17 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 - **公式税込価格**：17,600円
 
 **購入リンク**  
-- [Amazon（公式）で見る](https://www.amazon.co.jp/stores/TEMPUR)  
+<a href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064" 
+   rel="nofollow" 
+   referrerpolicy="no-referrer-when-downgrade" 
+   attributionsrc>
+  Amazon.co.jp
+</a>
+<img src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064" 
+     width="1" 
+     height="1" 
+     style="border:none;" 
+     loading="lazy">  
 - [楽天市場で探す](//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=623)  
 - [Yahoo!ショッピングで探す](//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891940434)
 
@@ -165,13 +175,13 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 - **公式税込価格**：4,980円
 
 **購入リンク**  
-<a href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4161" 
+<a href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064" 
    rel="nofollow" 
    referrerpolicy="no-referrer-when-downgrade" 
    attributionsrc>
-  Amazonで探す
+  Amazon.co.jp
 </a>
-<img src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4161" 
+<img src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064" 
      width="1" 
      height="1" 
      style="border:none;" 
@@ -214,7 +224,17 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 - **公式税込価格**：17,600円
 
 **購入リンク**  
-- [Amazon（公式）で見る](https://www.amazon.co.jp/stores/airweave)  
+<a href="//af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064" 
+   rel="nofollow" 
+   referrerpolicy="no-referrer-when-downgrade" 
+   attributionsrc>
+  Amazon.co.jp
+</a>
+<img src="//i.moshimo.com/af/i/impression?a_id=5122703&p_id=170&pc_id=185&pl_id=4064" 
+     width="1" 
+     height="1" 
+     style="border:none;" 
+     loading="lazy">  
 - [楽天市場](//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fairweave%2F0007%2F)  
 - [Yahoo!ショッピングで探す](//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891940434)
 
