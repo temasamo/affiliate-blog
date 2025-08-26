@@ -37,8 +37,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     return;
   }
 
-  res.setHeader("Location", to);
-  res.status(307).end();
+  // 追加：インデックス防止＆キャッシュ抑制
+  res.setHeader("X-Robots-Tag", "noindex, nofollow");
+  res.setHeader("Cache-Control", "no-store");
+
+  res.writeHead(307, { Location: to });
+  res.end();
 }
 
 // （任意）bodyParserを切る・外部解決を明示
