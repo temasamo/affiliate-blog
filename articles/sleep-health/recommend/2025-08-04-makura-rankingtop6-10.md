@@ -26,7 +26,7 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 
 **購入リンク**   
 
-- [Amazon.co.jp](https://af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064)
+- [Amazon.co.jp](/api/go/amazon)
 - [楽天市場で探す](https://search.rakuten.co.jp/search/mall/モットン+高反発まくら/)
 - [Yahoo!ショッピングで探す](https://shopping.yahoo.co.jp/search?p=モットン+高反発まくら)
 
@@ -71,7 +71,7 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 
 **購入リンク**  
 
-- [Amazon.co.jp](https://af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064)
+- [Amazon.co.jp](/api/go/amazon)
 - [楽天市場で探す](https://search.rakuten.co.jp/search/mall/王様の夢枕/)
 - [Yahoo!ショッピングで探す](https://shopping.yahoo.co.jp/search?p=王様の夢枕)
 
@@ -115,7 +115,7 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 
 **購入リンク**  
 
-- [Amazon.co.jp](https://af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064)
+- [Amazon.co.jp](/api/go/amazon)
 - [楽天市場で探す](https://search.rakuten.co.jp/search/mall/トゥルースリーパー+セブンスピロー/)
 - [Yahoo!ショッピングで探す](https://shopping.yahoo.co.jp/search?p=トゥルースリーパー+セブンスピロー)
 
@@ -158,7 +158,7 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 
 **購入リンク**  
 
-- [Amazon.co.jp](https://af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064)
+- [Amazon.co.jp](/api/go/amazon)
 - [楽天市場で探す](https://search.rakuten.co.jp/search/mall/ブルーブラッド+3D体感ピロー/)
 - [Yahoo!ショッピングで探す](https://shopping.yahoo.co.jp/search?p=ブルーブラッド+3D体感ピロー)
 
@@ -202,7 +202,7 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 
 **購入リンク**  
 
-- [Amazon.co.jp](https://af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064)
+- [Amazon.co.jp](/api/go/amazon)
 - [楽天市場で探す](https://search.rakuten.co.jp/search/mall/BRAIN+SLEEP+ピロー/)
 - [Yahoo!ショッピングで探す](https://shopping.yahoo.co.jp/search?p=BRAIN+SLEEP+ピロー)
 

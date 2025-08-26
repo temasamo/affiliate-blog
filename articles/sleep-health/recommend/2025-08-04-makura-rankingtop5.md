@@ -26,7 +26,7 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 
 **購入リンク**  
 
-- [Amazon.co.jp](https://af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064)
+- [Amazon.co.jp](/api/go/amazon)
 - [楽天市場で探す](https://search.rakuten.co.jp/search/mall/西川+AiR+3D+ピロー/)
 - [Yahoo!ショッピングで探す](https://shopping.yahoo.co.jp/search?p=西川+AiR+3D+ピロー)
 
@@ -69,7 +69,7 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 
 **購入リンク**  
 
-- [Amazon.co.jp](https://af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064)
+- [Amazon.co.jp](/api/go/amazon)
 - [楽天市場で探す](https://search.rakuten.co.jp/search/mall/MyeFoam+低反発枕/)
 - [Yahoo!ショッピングで探す](https://shopping.yahoo.co.jp/search?p=MyeFoam+低反発枕)
 
@@ -112,7 +112,7 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 
 **購入リンク**  
 
-- [Amazon.co.jp](https://af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064)
+- [Amazon.co.jp](/api/go/amazon)
 - [楽天市場で探す](https://search.rakuten.co.jp/search/mall/TEMPUR+オリジナルネックピロー/)
 - [Yahoo!ショッピングで探す](https://shopping.yahoo.co.jp/search?p=TEMPUR+オリジナルネックピロー)
 
@@ -155,7 +155,7 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 
 **購入リンク**  
 
-- [Amazon.co.jp](https://af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064)
+- [Amazon.co.jp](/api/go/amazon)
 - [楽天市場で探す](https://search.rakuten.co.jp/search/mall/GOKUMIN+プレミアム低反発枕/)
 - [Yahoo!ショッピングで探す](https://shopping.yahoo.co.jp/search?p=GOKUMIN+プレミアム低反発枕)
 
@@ -197,7 +197,7 @@ description: "公式出店状況に基づいた安全なアフィリエイトリ
 
 **購入リンク**  
 
-- [Amazon.co.jp](https://af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064)
+- [Amazon.co.jp](/api/go/amazon)
 - [楽天市場で探す](https://search.rakuten.co.jp/search/mall/エアウィーヴ+ピロー+スタンダード/)
 - [Yahoo!ショッピングで探す](https://shopping.yahoo.co.jp/search?p=エアウィーヴ+ピロー+スタンダード)
 

@@ -2,6 +2,8 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 // 必要に応じて ID と遷移先を追加
 const LINKS: Record<string, string> = {
+  // --- Amazon汎用（モシモ） ---
+  amazon: "https://af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064",
   "amazon-makura": "https://af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064",
   
   // 既存の ID を残す
