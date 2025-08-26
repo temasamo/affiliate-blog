@@ -1,7 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') return res.status(405).end();
+  if (req.method !== 'POST') {
+    res.status(405).end();
+    return;
+  }
 
   // 互換: 以前の lastAnswer でも受け取れるようにしておく
   const body = (req.body ?? {}) as { finalTag?: string; lastAnswer?: string };
@@ -17,5 +20,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   };
 
   const addendum = map[finalTag] ?? '';
-  return res.status(200).json({ addendum });
+  res.status(200).json({ addendum });
 }

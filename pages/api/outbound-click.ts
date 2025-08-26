@@ -14,10 +14,17 @@ function bump(obj: Record<string, number> | null, dest: string) {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') return res.status(405).end();
+  if (req.method !== 'POST') {
+    res.status(405).end();
+    return;
+  }
+  
   try {
     const { dest, sessionId } = req.body ?? {};
-    if (!dest || !sessionId) return res.status(400).json({ ok: false, error: 'bad_request' });
+    if (!dest || !sessionId) {
+      res.status(400).json({ ok: false, error: 'bad_request' });
+      return;
+    }
 
     // 1) 既存行を取得
     const { data: rows, error: selErr } = await supabase
@@ -27,8 +34,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       .order('created_at', { ascending: false })
       .limit(1);
 
-    if (selErr) return res.status(500).json({ ok: false, error: selErr.message });
-    if (!rows || rows.length === 0) return res.status(404).json({ ok: false, error: 'session_not_found' });
+    if (selErr) {
+      res.status(500).json({ ok: false, error: selErr.message });
+      return;
+    }
+    if (!rows || rows.length === 0) {
+      res.status(404).json({ ok: false, error: 'session_not_found' });
+      return;
+    }
 
     const row = rows[0];
     const nextJson = bump(row.outbound_clicks as any, dest);
@@ -39,10 +52,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       .update({ outbound_clicks: nextJson })
       .eq('id', row.id);
 
-    if (updErr) return res.status(500).json({ ok: false, error: updErr.message });
+    if (updErr) {
+      res.status(500).json({ ok: false, error: updErr.message });
+      return;
+    }
 
-    return res.json({ ok: true });
+    res.json({ ok: true });
   } catch (e: any) {
-    return res.status(500).json({ ok: false, error: e?.message ?? 'unknown' });
+    res.status(500).json({ ok: false, error: e?.message ?? 'unknown' });
   }
 } 

@@ -53,4 +53,4 @@ export const config = {
     bodyParser: false,
     externalResolver: true,
   },
-} as const; 
+}; 
