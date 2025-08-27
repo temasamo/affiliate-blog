@@ -3,7 +3,7 @@ import Link from "next/link";
 type Item = {
   slug: string;
   title: string;
-  category: string | null;
+  category: string;
   date: string | null;
 };
 

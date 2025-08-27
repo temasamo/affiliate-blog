@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { deriveCategory } from "./category";
 
 export type PostMeta = {
   slug: string;
@@ -16,9 +17,8 @@ export type PostMeta = {
 export type SimplePost = {
   slug: string;
   title: string;
-  category: string | null;   // 例: "睡眠・健康", "日本茶", ...
-  date: string | null;       // "2025-08-27"
-  published?: boolean;
+  category: string; // ★常に文字列
+  date: string | null;
 };
 
 /** ───────── 収集対象 ───────── **/
@@ -279,7 +279,7 @@ export async function getLatestPosts(limit = 5): Promise<SimplePost[]> {
     .map((p) => ({
       slug: String(p.slug),
       title: p.title ?? "(無題)",
-      category: p.category ?? null, // ★ undefined を null に
-      date: p.date ?? null,         // ★ 同上
+      category: deriveCategory(p), // ★必ず入る
+      date: p.date ?? null,
     }));
 } 

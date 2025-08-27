@@ -1,0 +1,22 @@
+export const CATEGORY_LABELS: Record<string, string> = {
+  "sleep-health": "睡眠・健康",
+  "japanesetea": "日本茶",
+  "global-hot-picks": "海外トレンド",
+  "popular-japan": "人気の日本商品",
+  "popular-japanese-items": "人気の日本商品",
+  "diagnosis": "診断AI",
+  "diagnosis-ai": "診断AI",
+  "education": "教育",
+  "travel": "旅行",
+};
+
+export function deriveCategory(p: any): string {
+  const fm = p?.category && String(p.category).trim();
+  if (fm) return fm;
+
+  const slug = String(p?.slug || p?.path || "");
+  const hit = Object.keys(CATEGORY_LABELS).find((k) =>
+    slug.startsWith(`${k}/`) || slug.includes(`/${k}/`)
+  );
+  return hit ? CATEGORY_LABELS[hit] : "その他";
+} 

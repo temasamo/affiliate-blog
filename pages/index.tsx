@@ -40,11 +40,13 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
         {/* ヒーローセクション */}
         <section className="mb-12 sm:mb-16">
           <div className="
-            relative bg-gradient-hero rounded-3xl 
-            min-h-[420px] md:min-h-[460px] lg:min-h-[500px]
-            px-6 md:px-10 lg:px-14
-            py-10 md:py-12 lg:py-14
-            text-center shadow-lg border border-gray-100 overflow-hidden
+            relative overflow-hidden rounded-3xl
+            bg-gradient-to-br from-gray-50 to-gray-100
+            h-[42vh] md:h-[40vh] lg:h-[38vh]   /* ★ 高さを固定縮小 */
+            max-h-[520px] min-h-[300px]        /* ★ 保険：上限・下限 */
+            px-6 md:px-8 lg:px-10
+            py-8 md:py-10 lg:py-12
+            text-center shadow-lg border border-gray-100
           ">
                         {/* 背景の80%を覆う透かし画像 */}
             <div className="absolute top-0 right-0 w-4/5 h-full opacity-65">
@@ -68,10 +70,10 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
             
             {/* コンテンツ */}
             <div className="relative z-10">
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
               Market Supporter AI
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+            </h1>
+            <p className="mt-3 md:mt-4 text-base md:text-lg text-gray-600">
               AIが導く、賢い洞察と信頼できるおすすめ
             </p>
             <Link 
