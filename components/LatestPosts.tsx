@@ -3,8 +3,8 @@ import Link from "next/link";
 type Item = {
   slug: string;
   title: string;
-  category?: string;
-  date?: string;
+  category: string | null;
+  date: string | null;
 };
 
 export default function LatestPosts({ items }: { items: Item[] }) {

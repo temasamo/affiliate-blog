@@ -16,8 +16,8 @@ export type PostMeta = {
 export type SimplePost = {
   slug: string;
   title: string;
-  category?: string;   // 例: "睡眠・健康", "日本茶", ...
-  date?: string;       // "2025-08-27"
+  category: string | null;   // 例: "睡眠・健康", "日本茶", ...
+  date: string | null;       // "2025-08-27"
   published?: boolean;
 };
 
@@ -277,10 +277,9 @@ export async function getLatestPosts(limit = 5): Promise<SimplePost[]> {
     })
     .slice(0, limit)
     .map((p) => ({
-      slug: p.slug,
-      title: p.title,
-      category: p.category || undefined,
-      date: p.date || undefined,
-      published: p.published,
+      slug: String(p.slug),
+      title: p.title ?? "(無題)",
+      category: p.category ?? null, // ★ undefined を null に
+      date: p.date ?? null,         // ★ 同上
     }));
 } 
