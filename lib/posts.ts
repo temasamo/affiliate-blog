@@ -13,6 +13,14 @@ export type PostMeta = {
   href: string;                 // クリック先（/blog 以外も可）
 };
 
+export type SimplePost = {
+  slug: string;
+  title: string;
+  category?: string;   // 例: "睡眠・健康", "日本茶", ...
+  date?: string;       // "2025-08-27"
+  published?: boolean;
+};
+
 /** ───────── 収集対象 ───────── **/
 const MDX_DIRS = [
   [path.join(process.cwd(), "content", "blog"), "/blog"] as const,
@@ -255,4 +263,24 @@ export function getRelatedPosts(
   );
   same.sort((a, b) => safeDateToNumber(b.date) - safeDateToNumber(a.date));
   return same.slice(0, limit);
+}
+
+/** 最新記事（公開済みのみ、日付降順） */
+export async function getLatestPosts(limit = 5): Promise<SimplePost[]> {
+  const all = getAllPosts(); // Frontmatter を含む全記事
+  return all
+    .filter((p) => p.published !== false) // unpublished を除外
+    .sort((a, b) => {
+      const da = new Date(a.date || 0).getTime();
+      const db = new Date(b.date || 0).getTime();
+      return db - da;
+    })
+    .slice(0, limit)
+    .map((p) => ({
+      slug: p.slug,
+      title: p.title,
+      category: p.category || undefined,
+      date: p.date || undefined,
+      published: p.published,
+    }));
 } 

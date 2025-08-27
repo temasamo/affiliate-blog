@@ -9,7 +9,10 @@ import Footer from '../components/Footer';
 import CategoryImage from '../components/CategoryImage';
 import CategoryCard from '../components/CategoryCard';
 import TravelTeaser from '../components/TravelTeaser';
+import LatestPosts from '../components/LatestPosts';
 import { getTravelSlugs, getTravelPostBySlug } from '@/lib/mdx';
+import { getLatestPosts } from '@/lib/posts';
+import type { SimplePost } from '@/lib/posts';
 
 
 interface Article {
@@ -24,9 +27,10 @@ interface Article {
 interface HomeProps {
   latestArticles: Article[];
   travelPosts: any[];
+  latest: SimplePost[];
 }
 
-export default function Home({ latestArticles, travelPosts }: HomeProps) {
+export default function Home({ latestArticles, travelPosts, latest }: HomeProps) {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -35,7 +39,13 @@ export default function Home({ latestArticles, travelPosts }: HomeProps) {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         {/* ヒーローセクション */}
         <section className="mb-12 sm:mb-16">
-          <div className="relative bg-gradient-hero rounded-3xl p-8 sm:p-12 text-center shadow-lg border border-gray-100 overflow-hidden">
+          <div className="
+            relative bg-gradient-hero rounded-3xl 
+            min-h-[420px] md:min-h-[460px] lg:min-h-[500px]
+            px-6 md:px-10 lg:px-14
+            py-10 md:py-12 lg:py-14
+            text-center shadow-lg border border-gray-100 overflow-hidden
+          ">
                         {/* 背景の80%を覆う透かし画像 */}
             <div className="absolute top-0 right-0 w-4/5 h-full opacity-65">
               <div className="w-full h-full bg-cover bg-center bg-no-repeat" 
@@ -80,6 +90,11 @@ export default function Home({ latestArticles, travelPosts }: HomeProps) {
             </div>
           </div>
         </section>
+
+        {/* 新着記事（Heroの直下） */}
+        <div className="mx-auto max-w-6xl px-4 md:px-6">
+          <LatestPosts items={latest} />
+        </div>
 
         {/* 枕診断AIシリーズ特集 */}
         <section className="mb-8">
@@ -455,10 +470,14 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   allArticles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   const latestArticles = allArticles.slice(0, 3);
 
+  // 新着記事を取得
+  const latest = await getLatestPosts(5);
+
   return {
     props: {
       latestArticles,
       travelPosts,
+      latest,
     },
   };
 };
