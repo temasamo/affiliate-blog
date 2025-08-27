@@ -279,7 +279,7 @@ export async function getLatestPosts(limit = 5): Promise<SimplePost[]> {
     .map((p) => ({
       slug: String(p.slug),
       title: p.title ?? "(無題)",
-      category: deriveCategory(p), // ★必ず入る
+      category: deriveCategory(p) || "その他",
       date: p.date ?? null,
     }));
 } 

@@ -6,17 +6,17 @@ export const CATEGORY_LABELS: Record<string, string> = {
   "popular-japanese-items": "人気の日本商品",
   "diagnosis": "診断AI",
   "diagnosis-ai": "診断AI",
+  "diagnostic-ai": "診断AI",
   "education": "教育",
   "travel": "旅行",
 };
 
-export function deriveCategory(p: any): string {
+export function deriveCategory(p: any): string | null {
   const fm = p?.category && String(p.category).trim();
   if (fm) return fm;
-
   const slug = String(p?.slug || p?.path || "");
   const hit = Object.keys(CATEGORY_LABELS).find((k) =>
     slug.startsWith(`${k}/`) || slug.includes(`/${k}/`)
   );
-  return hit ? CATEGORY_LABELS[hit] : "その他";
+  return hit ? CATEGORY_LABELS[hit] : null;
 } 

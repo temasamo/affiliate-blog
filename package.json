@@ -14,7 +14,11 @@
 
     "validate-hot-picks": "node scripts/validate-global-hot-picks.js",
 
-    "validate:ghp": "node scripts/validate-ghp.js"
+    "validate:ghp": "node scripts/validate-ghp.js",
+
+    "check:category": "node scripts/check-frontmatter.js",
+
+    "fix:category": "node scripts/check-frontmatter.js --fix"
 
   },
 
@@ -33,10 +37,6 @@
     "amazon-paapi": "^1.0.7",
 
     "dotenv": "^17.2.1",
-
-    "fast-glob": "^3.3.3",
-
-    "gray-matter": "^4.0.3",
 
     "hastscript": "^9.0.1",
 
@@ -91,6 +91,10 @@
     "@types/node-fetch": "^2.6.13",
 
     "autoprefixer": "^10.4.21",
+
+    "fast-glob": "^3.3.3",
+
+    "gray-matter": "^4.0.3",
 
     "postcss": "^8.5.6",
 
