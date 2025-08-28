@@ -103,3 +103,5 @@ affiliate-blog/
 ### 自動化スクリプト
 - `scripts/create-article.js` - 記事カード自動追加スクリプト
 - `WORKFLOW_RULES.md` - ワークフロールール詳細
+
+<!-- Force redeploy to clear Vercel cache - 2025-08-28 -->
