@@ -42,8 +42,8 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
           <div className="
             relative overflow-hidden rounded-3xl
             bg-gradient-to-br from-gray-50 to-gray-100
-            h-[42vh] md:h-[40vh] lg:h-[38vh]   /* ★ 高さを固定縮小 */
-            max-h-[520px] min-h-[300px]        /* ★ 保険：上限・下限 */
+            h-[30vh] md:h-[28vh] lg:h-[25vh]   /* ★ 高さを30%程度に調整 */
+            max-h-[300px] min-h-[200px]        /* ★ 保険：上限・下限 */
             px-6 md:px-8 lg:px-10
             py-8 md:py-10 lg:py-12
             text-center shadow-lg border border-gray-100
@@ -94,12 +94,12 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
         </section>
 
         {/* 新着記事（Heroの直下） */}
-        <div className="mx-auto max-w-6xl px-4 md:px-6">
+        <div className="mx-auto max-w-6xl px-4 md:px-6 mb-16">
           <LatestPosts items={latest} />
         </div>
 
         {/* 枕診断AIシリーズ特集 */}
-        <section className="mb-8">
+        <section className="mb-12">
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
             <div className="flex items-center mb-4">
               <div className="bg-blue-500 text-white p-2 rounded-full mr-3">
@@ -157,23 +157,23 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
               <div className="bg-white rounded-xl p-4 shadow-sm">
-                <div className="text-2xl mb-2">⌚</div>
-                <h4 className="font-semibold text-gray-900 mb-1">Garmin Venu 3</h4>
-                <p className="text-sm text-gray-600">GPSスマートウォッチ</p>
+                <div className="text-2xl mb-2">🥽</div>
+                <h4 className="font-semibold text-gray-900 mb-1">Apple Vision Pro</h4>
+                <p className="text-sm text-gray-600">空間コンピューティング</p>
               </div>
               <div className="bg-white rounded-xl p-4 shadow-sm">
-                <div className="text-2xl mb-2">🦵</div>
-                <h4 className="font-semibold text-gray-900 mb-1">Hyperice Normatec 3</h4>
-                <p className="text-sm text-gray-600">脚用リカバリーブーツ</p>
+                <div className="text-2xl mb-2">🚣</div>
+                <h4 className="font-semibold text-gray-900 mb-1">Hydrow Wave Rower</h4>
+                <p className="text-sm text-gray-600">水上ローイング体験</p>
               </div>
               <div className="bg-white rounded-xl p-4 shadow-sm">
-                <div className="text-2xl mb-2">📷</div>
-                <h4 className="font-semibold text-gray-900 mb-1">Fujifilm X100VI</h4>
-                <p className="text-sm text-gray-600">最強スナップシューター</p>
+                <div className="text-2xl mb-2">🔥</div>
+                <h4 className="font-semibold text-gray-900 mb-1">最新トレンド</h4>
+                <p className="text-sm text-gray-600">海外で話題沸騰中</p>
               </div>
             </div>
             <div className="text-center">
-              <Link href="/articles/global-hot-picks/trend/2025-08-14" className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition-colors">
+              <Link href="/articles/global-hot-picks/trend/2025-08-24" className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition-colors">
                 最新トレンドを見る
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -183,37 +183,7 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
           </div>
         </section>
 
-        {/* 新着記事セクション */}
-        <section className="mb-12 sm:mb-16">
-          <div className="flex items-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">新着記事</h2>
-            <span className="ml-3 bg-red-500 text-white text-xs px-3 py-1 rounded-full font-medium">NEW</span>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {latestArticles.map((article) => (
-              <Link key={article.slug} href={`/articles/${article.category}/${article.type}/${article.slug}`} className="group block">
-                <div className="bg-white rounded-xl shadow-md overflow-hidden hover-lift scale-hover">
-                  <CategoryImage category={getCategoryDisplayName(article.category)} />
-                  <div className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                      {article.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 mb-4">{article.description}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-gray-500">{article.date}</span>
-                      <div className="text-blue-600 text-sm font-medium inline-flex items-center transition-all duration-300 group-hover:translate-x-1">
-                        詳細を見る
-                        <svg className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
+
 
 
 

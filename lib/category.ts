@@ -18,5 +18,14 @@ export function deriveCategory(p: any): string | null {
   const hit = Object.keys(CATEGORY_LABELS).find((k) =>
     slug.startsWith(`${k}/`) || slug.includes(`/${k}/`)
   );
-  return hit ? CATEGORY_LABELS[hit] : null;
+  if (hit) return CATEGORY_LABELS[hit];
+  
+  // blog配下のネストしたディレクトリ構造に対応
+  const pathParts = slug.split("/");
+  if (pathParts[0] === "blog" && pathParts.length > 1) {
+    const nestedHit = Object.keys(CATEGORY_LABELS).find((k) => pathParts[1] === k);
+    if (nestedHit) return CATEGORY_LABELS[nestedHit];
+  }
+  
+  return null;
 } 

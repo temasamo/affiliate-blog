@@ -27,7 +27,15 @@ function deriveCategoryFromPath(filePath) {
   const parts = rel.split("/");
   // 最初のディレクトリ名から推定
   const hitKey = Object.keys(CATEGORY_LABELS).find((k) => parts[0] === k);
-  return hitKey ? CATEGORY_LABELS[hitKey] : null;
+  if (hitKey) return CATEGORY_LABELS[hitKey];
+  
+  // blog配下の場合は2番目のディレクトリをチェック
+  if (parts[0] === "blog" && parts.length > 1) {
+    const nestedKey = Object.keys(CATEGORY_LABELS).find((k) => parts[1] === k);
+    if (nestedKey) return CATEGORY_LABELS[nestedKey];
+  }
+  
+  return null;
 }
 
 (async function main() {

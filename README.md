@@ -79,6 +79,27 @@ affiliate-blog/
 ### 詳細なワークフロー
 詳細は `WORKFLOW_RULES.md` を参照してください。
 
+### 記事デプロイ時のルール
+
+#### 1. 各カテゴリへの格納
+新しい記事を作成する際は、適切なカテゴリディレクトリに格納してください：
+
+- **睡眠・健康**: `articles/sleep-health/`
+- **日本茶関連**: `articles/japanesetea/`
+- **海外トレンド**: `articles/global-hot-picks/`
+- **人気の日本商品**: `articles/japaneseproducts-popular-with-foreigners/`
+- **旅行**: `content/travel/`
+
+#### 2. Global Hot Picksの最新記事表示
+- Global Hot Picksカテゴリの記事は、最新の記事がトップに表示されるよう日付順でソートされます
+- ホームページのGlobal Hot Picksセクションのリンクは、最新記事（最も新しい日付）を指すように更新してください
+- **Global Hot Picksセクションの商品カードも最新記事の内容に合わせて更新してください**
+- 記事のfrontmatterで `category: "global-hot-picks"` を設定してください
+
+#### 3. 新着記事の表示
+- 新着記事セクションは、全カテゴリの最新5件を日付順で表示します
+- 記事のfrontmatterに `date` フィールドを必ず設定してください
+
 ### 自動化スクリプト
 - `scripts/create-article.js` - 記事カード自動追加スクリプト
 - `WORKFLOW_RULES.md` - ワークフロールール詳細

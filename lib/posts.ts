@@ -24,6 +24,8 @@ export type SimplePost = {
 /** ───────── 収集対象 ───────── **/
 const MDX_DIRS = [
   [path.join(process.cwd(), "content", "blog"), "/blog"] as const,
+  [path.join(process.cwd(), "content", "travel"), "/travel"] as const,
+  [path.join(process.cwd(), "articles"), "/articles"] as const,
 ];
 
 // data配下（dev/prod/共通）からJSONを読む
