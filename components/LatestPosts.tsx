@@ -5,6 +5,7 @@ type Item = {
   title: string;
   category: string;
   date: string | null;
+  description?: string | null;
 };
 
 // 記事のパスを生成する関数
@@ -15,8 +16,8 @@ function getArticlePath(slug: string, category: string): string {
   }
   
   // Global Hot Picksの場合
-  if (slug === "2025-08-24" && category === "trend") {
-    return `/articles/global-hot-picks/trend/2025-08-24`;
+  if (category === "global-hot-picks" || category === "海外トレンド") {
+    return `/articles/global-hot-picks/trend/${slug}`;
   }
   
   // その他の記事は一般的なパス
@@ -26,9 +27,9 @@ function getArticlePath(slug: string, category: string): string {
 export default function LatestPosts({ items }: { items: Item[] }) {
   if (!items?.length) return null;
 
-  // 重複を除去（slugでユニークにする）
+  // 重複を除去（slugとcategoryの組み合わせでユニークにする）
   const uniqueItems = items.filter((item, index, self) => 
-    index === self.findIndex(t => t.slug === item.slug)
+    index === self.findIndex(t => t.slug === item.slug && t.category === item.category)
   );
 
   return (
@@ -78,11 +79,19 @@ export default function LatestPosts({ items }: { items: Item[] }) {
               )}
             </div>
             <h3 className="
-              line-clamp-3 text-sm md:text-base font-medium text-gray-900
-              group-hover:text-blue-600 transition-colors
+              line-clamp-2 text-sm md:text-base font-medium text-gray-900
+              group-hover:text-blue-600 transition-colors mb-2
             ">
               {p.title}
             </h3>
+            {p.description && (
+              <p className="
+                line-clamp-2 text-xs md:text-sm text-gray-600
+                leading-relaxed
+              ">
+                {p.description}
+              </p>
+            )}
           </Link>
         ))}
       </div>

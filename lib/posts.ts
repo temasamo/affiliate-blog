@@ -19,6 +19,7 @@ export type SimplePost = {
   title: string;
   category: string; // ★常に文字列
   date: string | null;
+  description?: string | null;
 };
 
 /** ───────── 収集対象 ───────── **/
@@ -244,8 +245,13 @@ export function getAllPosts(): PostMeta[] {
   const json = loadFromJson();
   const posts = [...mdx, ...json].filter((p) => p.published);
 
-  posts.sort((a, b) => safeDateToNumber(b.date) - safeDateToNumber(a.date));
-  return posts;
+  // 重複を除去（slugとcategoryの組み合わせでユニークにする）
+  const uniquePosts = posts.filter((post, index, self) => 
+    index === self.findIndex(p => p.slug === post.slug && p.category === post.category)
+  );
+
+  uniquePosts.sort((a, b) => safeDateToNumber(b.date) - safeDateToNumber(a.date));
+  return uniquePosts;
 }
 
 export function getAllCategories(posts: PostMeta[]): string[] {
@@ -283,5 +289,6 @@ export async function getLatestPosts(limit = 5): Promise<SimplePost[]> {
       title: p.title ?? "(無題)",
       category: deriveCategory(p) || "その他",
       date: p.date ?? null,
+      description: p.excerpt ?? null,
     }));
 } 
