@@ -35,15 +35,22 @@ export default function DiagnosticAIPage({ posts }: DiagnosticAIPageProps) {
 
           {/* 枕診断AIシリーズ */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              枕診断AIシリーズ
-            </h2>
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                枕診断AIシリーズ
+              </h2>
+              <p className="text-lg text-gray-600 mb-6">
+                科学的根拠に基づく枕選びの新時代
+              </p>
+              <Link 
+                href="/diagnostic-ai/makura/01-intro" 
+                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors"
+              >
+                シリーズを読む →
+              </Link>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {posts
-                .filter(post => 
-                  post.category === '診断AI' && 
-                  (post.slug.includes('makura') || post.slug.includes('diagnostic'))
-                )
                 .sort((a, b) => {
                   if (!a.date || !b.date) return 0;
                   return new Date(b.date).getTime() - new Date(a.date).getTime();
@@ -95,8 +102,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   // 診断AI関連の記事をフィルタリング（枕診断AIシリーズのみ）
   const diagnosticPosts = allPosts
     .filter(post => 
-      post.category === '診断AI' && 
-      (post.slug.includes('makura') || post.slug.includes('diagnostic'))
+      post.category === '診断AI'
     )
     .map(post => ({
       slug: post.slug,
