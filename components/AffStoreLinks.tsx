@@ -59,12 +59,11 @@ export default function AffStoreLinks({ items }: AffStoreLinksProps) {
             <a
               href={finalHref}
               target="_blank"
-              rel="nofollow noopener sponsored"
+              rel="nofollow noopener noreferrer"
               aria-label={finalTitle ?? `${label}：${symbol}`}
-              className="underline hover:no-underline"
-              style={{ color: '#2563eb', textDecorationColor: '#2563eb' }}
+              className="text-blue-600 underline hover:opacity-80 transition"
             >
-              <strong>{label}</strong>: {symbol}
+              <strong>{label}</strong>：{symbol}
             </a>
             {finalImg ? (
               <img

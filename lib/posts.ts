@@ -26,6 +26,7 @@ export type SimplePost = {
 const MDX_DIRS = [
   [path.join(process.cwd(), "content", "blog"), "/blog"] as const,
   [path.join(process.cwd(), "content", "travel"), "/travel"] as const,
+  [path.join(process.cwd(), "content", "global-hot-picks"), "/global-hot-picks"] as const,
   [path.join(process.cwd(), "articles"), "/articles"] as const,
 ];
 
