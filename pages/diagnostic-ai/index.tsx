@@ -7,6 +7,7 @@ interface DiagnosticAIPageProps {
   posts: Array<{
     slug: string;
     title: string;
+    category: string;
     date: string | null;
     excerpt?: string | null;
   }>;
@@ -39,7 +40,10 @@ export default function DiagnosticAIPage({ posts }: DiagnosticAIPageProps) {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {posts
-                .filter(post => post.slug.includes('makura'))
+                .filter(post => 
+                  post.category === '診断AI' && 
+                  (post.slug.includes('makura') || post.slug.includes('diagnostic'))
+                )
                 .sort((a, b) => {
                   if (!a.date || !b.date) return 0;
                   return new Date(b.date).getTime() - new Date(a.date).getTime();
@@ -88,16 +92,16 @@ export default function DiagnosticAIPage({ posts }: DiagnosticAIPageProps) {
 export const getServerSideProps: GetServerSideProps = async () => {
   const allPosts = getAllPosts();
   
-  // 診断AI関連の記事をフィルタリング
+  // 診断AI関連の記事をフィルタリング（枕診断AIシリーズのみ）
   const diagnosticPosts = allPosts
     .filter(post => 
-      post.category === '診断AI' || 
-      post.slug.includes('makura') ||
-      post.slug.includes('diagnostic')
+      post.category === '診断AI' && 
+      (post.slug.includes('makura') || post.slug.includes('diagnostic'))
     )
     .map(post => ({
       slug: post.slug,
       title: post.title,
+      category: post.category,
       date: post.date,
       excerpt: post.excerpt,
     }));
