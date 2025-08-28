@@ -20,6 +20,11 @@ function getArticlePath(slug: string, category: string): string {
     return `/articles/global-hot-picks/trend/${slug}`;
   }
   
+  // 診断AI記事の場合
+  if (category === "診断AI" && slug.includes("makura")) {
+    return `/diagnostic-ai/makura/${slug}`;
+  }
+  
   // その他の記事は一般的なパス
   return `/articles/${slug}`;
 }
