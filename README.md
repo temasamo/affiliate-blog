@@ -92,9 +92,19 @@ affiliate-blog/
 
 #### 2. Global Hot Picksの最新記事表示
 - Global Hot Picksカテゴリの記事は、最新の記事がトップに表示されるよう日付順でソートされます
-- ホームページのGlobal Hot Picksセクションのリンクは、最新記事（最も新しい日付）を指すように更新してください
-- **Global Hot Picksセクションの商品カードも最新記事の内容に合わせて更新してください**
+- **新しいGlobal Hot Picks記事を作成したら、ホームページ（pages/index.tsx）のGlobal Hot Picksセクションを必ず更新してください**
+- 更新箇所：
+  1. リンク先を最新記事の日付に変更（例：`/articles/global-hot-picks/trend/2025-08-28`）
+  2. 商品カードの内容を最新記事の商品に合わせて更新
+  3. アイコンと商品名、説明文を最新記事の内容に変更
 - 記事のfrontmatterで `category: "global-hot-picks"` を設定してください
+
+#### 3. Global Hot Picks記事のタイトル形式
+- **統一されたタイトル形式**: `"Global Hot Picks | YYYY-MM-DD"`
+- **例**: `"Global Hot Picks | 2025-08-28"`
+- **slug形式**: `"YYYY-MM-DD"`（例：`"2025-08-28"`）
+- **ファイル名**: `YYYY-MM-DD.mdx`（例：`2025-08-28.mdx`）
+- **注意**: タイトルに商品名や説明を含めず、日付のみで統一してください
 
 #### 3. 新着記事の表示
 - 新着記事セクションは、全カテゴリの最新5件を日付順で表示します

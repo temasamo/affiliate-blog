@@ -152,6 +152,8 @@ function loadFromMdx(): PostMeta[] {
         excerpt:
           typeof data?.excerpt === "string" && data.excerpt.trim().length
             ? data.excerpt
+            : typeof data?.description === "string" && data.description.trim().length
+            ? data.description
             : null,
         thumbnail: resolveThumbnail(
           typeof data?.thumbnail === "string" ? data.thumbnail : null
@@ -277,14 +279,8 @@ export function getRelatedPosts(
 /** 最新記事（公開済みのみ、日付降順） */
 export async function getLatestPosts(limit = 5): Promise<SimplePost[]> {
   const all = getAllPosts(); // Frontmatter を含む全記事
-  return all
+  const filtered = all
     .filter((p) => p.published !== false) // unpublished を除外
-    .sort((a, b) => {
-      const da = new Date(a.date || 0).getTime();
-      const db = new Date(b.date || 0).getTime();
-      return db - da;
-    })
-    .slice(0, limit)
     .map((p) => ({
       slug: String(p.slug),
       title: p.title ?? "(無題)",
@@ -292,4 +288,17 @@ export async function getLatestPosts(limit = 5): Promise<SimplePost[]> {
       date: p.date ?? null,
       description: p.excerpt ?? null,
     }));
+
+  // 重複を除去（slugとcategoryの組み合わせでユニークにする）
+  const uniquePosts = filtered.filter((post, index, self) => 
+    index === self.findIndex(p => p.slug === post.slug && p.category === post.category)
+  );
+
+  return uniquePosts
+    .sort((a, b) => {
+      const da = new Date(a.date || 0).getTime();
+      const db = new Date(b.date || 0).getTime();
+      return db - da;
+    })
+    .slice(0, limit);
 } 

@@ -21,7 +21,7 @@ function getArticlePath(slug: string, category: string): string {
   }
   
   // 診断AI記事の場合
-  if (category === "診断AI" && slug.includes("makura")) {
+  if (category === "診断AI") {
     return `/diagnostic-ai/makura/${slug}`;
   }
   
