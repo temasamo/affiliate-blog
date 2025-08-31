@@ -10,8 +10,13 @@ type Item = {
 
 // 記事のパスを生成する関数
 function getArticlePath(slug: string, category: string): string {
-  // 旅行記事の場合
-  if (category === "旅行ガイド") {
+  // 旅行記事の場合（温泉記事を含む）
+  if (category === "旅行" || category === "旅行ガイド") {
+    // 温泉記事の場合は /travel/onsen/ パスを使用
+    if (slug.includes('onsen') || slug.includes('温泉')) {
+      return `/travel/onsen/${slug}`;
+    }
+    // その他の旅行記事は /travel/ パスを使用
     return `/travel/${slug}`;
   }
   

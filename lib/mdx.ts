@@ -10,16 +10,40 @@ import { h } from 'hastscript';
 
 const TRAVEL_DIR = path.join(process.cwd(), 'content', 'travel');
 
-export function getTravelSlugs() {
-  return fs.readdirSync(TRAVEL_DIR)
-    .filter(f => f.endsWith('.mdx'))
-    .map(f => f.replace(/\.mdx$/, ''));
+// 再帰的にファイルを検索する関数
+function getAllMdxFiles(dir: string, basePath: string = ''): string[] {
+  const files: string[] = [];
+  const items = fs.readdirSync(dir);
+  
+  for (const item of items) {
+    const fullPath = path.join(dir, item);
+    const stat = fs.statSync(fullPath);
+    
+    if (stat.isDirectory()) {
+      // サブディレクトリを再帰的に検索
+      const subFiles = getAllMdxFiles(fullPath, path.join(basePath, item));
+      files.push(...subFiles);
+    } else if (item.endsWith('.mdx')) {
+      // MDXファイルの場合、ベースパスを含めたパスを追加
+      const relativePath = path.join(basePath, item.replace(/\.mdx$/, ''));
+      files.push(relativePath);
+    }
+  }
+  
+  return files;
 }
+
+export function getTravelSlugs() {
+  return getAllMdxFiles(TRAVEL_DIR);
+}
+
 export function getTravelPostBySlug(slug: string) {
-  const file = fs.readFileSync(path.join(TRAVEL_DIR, slug + '.mdx'), 'utf8');
+  const filePath = path.join(TRAVEL_DIR, slug + '.mdx');
+  const file = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(file);
   return { frontMatter: data, content, slug };
 }
+
 export async function serializeMDX(source: string) {
   return serialize(source, {
     mdxOptions: {

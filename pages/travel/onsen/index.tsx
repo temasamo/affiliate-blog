@@ -1,14 +1,18 @@
 import Link from 'next/link';
 import { getTravelSlugs, getTravelPostBySlug } from '@/lib/mdx';
 
+// 温泉記事のみをフィルタリングする関数
+function filterOnsenPosts(posts: any[]): any[] {
+  return posts.filter(post => 
+    post.slug.includes('onsen') || 
+    post.slug.includes('温泉') ||
+    post.category === '旅行'
+  );
+}
+
 // 記事のパスを生成する関数
 function getArticlePath(slug: string): string {
-  // 温泉記事の場合は /travel/onsen/ パスを使用
-  if (slug.includes('onsen') || slug.includes('温泉')) {
-    return `/travel/onsen/${slug}`;
-  }
-  // その他の旅行記事は /travel/ パスを使用
-  return `/travel/${slug}`;
+  return `/travel/onsen/${slug}`;
 }
 
 export async function getStaticProps() {
@@ -17,11 +21,15 @@ export async function getStaticProps() {
     const { frontMatter, slug } = getTravelPostBySlug(s);
     return { slug, ...frontMatter } as any;
   });
-  posts.sort((a: any, b: any) => (a.date < b.date ? 1 : -1));
-  return { props: { posts } };
+  
+  // 温泉記事のみをフィルタリング
+  const onsenPosts = filterOnsenPosts(posts);
+  onsenPosts.sort((a: any, b: any) => (a.date < b.date ? 1 : -1));
+  
+  return { props: { posts: onsenPosts } };
 }
 
-export default function TravelIndex({ posts }: { posts: any[] }) {
+export default function OnsenIndex({ posts }: { posts: any[] }) {
   // 最新記事（最新3件）
   const latestPosts = posts.slice(0, 3);
   
@@ -33,10 +41,10 @@ export default function TravelIndex({ posts }: { posts: any[] }) {
       <div className="mx-auto max-w-5xl p-6 sm:p-10">
         <div className="text-center mb-12">
           <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
-            旅行カテゴリ
+            全国温泉地ガイド
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            厳選された旅行情報とお得な予約方法をご紹介
+            日本全国の温泉地を網羅した温泉情報と宿泊予約
           </p>
         </div>
 
@@ -48,7 +56,7 @@ export default function TravelIndex({ posts }: { posts: any[] }) {
                 <span className="inline-flex items-center rounded-full bg-red-100 px-3 py-1 text-sm font-medium text-red-800">
                   NEW
                 </span>
-                🏝 旅行の新着記事
+                ♨️ 温泉の新着記事
               </h2>
             </div>
             
@@ -80,30 +88,30 @@ export default function TravelIndex({ posts }: { posts: any[] }) {
         {/* その他の記事セクション */}
         {otherPosts.length > 0 && (
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">その他の記事</h2>
-        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">その他の温泉記事</h2>
+            <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {otherPosts.map((p) => (
-            <li key={p.slug}>
-              <Link
-                href={getArticlePath(p.slug)}
+                <li key={p.slug}>
+                  <Link
+                    href={getArticlePath(p.slug)}
                     className="group block rounded-2xl bg-white/80 backdrop-blur-sm border border-white/20 p-6 hover:bg-white hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-1 no-underline"
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <div className="text-xs text-blue-600 font-medium">{p.date}</div>
-                  <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full group-hover:scale-150 transition-transform"></div>
-                </div>
+                  >
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="text-xs text-blue-600 font-medium">{p.date}</div>
+                      <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full group-hover:scale-150 transition-transform"></div>
+                    </div>
                     <h3 className="font-bold text-gray-900 leading-tight mb-3 group-hover:text-blue-600 transition-colors no-underline">
-                  {p.title}
+                      {p.title}
                     </h3>
-                {p.description && (
-                  <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed">
-                    {p.description}
-                  </p>
-                )}
-              </Link>
-            </li>
-          ))}
-        </ul>
+                    {p.description && (
+                      <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed">
+                        {p.description}
+                      </p>
+                    )}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </section>
         )}
 
