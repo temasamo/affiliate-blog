@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- 背景 -->
+  <rect width="800" height="600" fill="#e2e8f0"/>
+  
+  <!-- 人間の手 -->
+  <g fill="#475569" stroke="#334155" stroke-width="2">
+    <!-- 手のひら -->
+    <ellipse cx="300" cy="350" rx="80" ry="60" fill="#64748b"/>
+    <!-- 親指 -->
+    <path d="M 250 320 Q 240 300 250 280 Q 260 260 270 280 Q 280 300 270 320 Z"/>
+    <!-- 人差し指 -->
+    <path d="M 280 300 L 290 250 L 300 240 L 310 250 L 320 300 Z"/>
+    <!-- 中指 -->
+    <path d="M 290 310 L 300 260 L 310 250 L 320 260 L 330 310 Z"/>
+    <!-- 薬指 -->
+    <path d="M 300 320 L 310 270 L 320 260 L 330 270 L 340 320 Z"/>
+    <!-- 小指 -->
+    <path d="M 310 330 L 320 280 L 330 270 L 340 280 L 350 330 Z"/>
+    <!-- 手首 -->
+    <rect x="280" y="380" width="40" height="60" rx="20"/>
+  </g>
+  
+  <!-- ロボットの手 -->
+  <g fill="#475569" stroke="#334155" stroke-width="2">
+    <!-- 手のひら（金属的な形状） -->
+    <rect x="450" y="320" width="100" height="80" rx="10" fill="#64748b"/>
+    <!-- 金属的な指 -->
+    <rect x="460" y="280" width="15" height="50" rx="7" fill="#475569"/>
+    <rect x="480" y="270" width="15" height="60" rx="7" fill="#475569"/>
+    <rect x="500" y="265" width="15" height="65" rx="7" fill="#475569"/>
+    <rect x="520" y="270" width="15" height="60" rx="7" fill="#475569"/>
+    <rect x="540" y="280" width="15" height="50" rx="7" fill="#475569"/>
+    <!-- 手首（機械的な接続部） -->
+    <rect x="470" y="420" width="60" height="40" rx="5" fill="#64748b"/>
+    <!-- 機械的な接続部の詳細 -->
+    <circle cx="480" cy="440" r="8" fill="#334155"/>
+    <circle cx="520" cy="440" r="8" fill="#334155"/>
+    <rect x="475" y="435" width="30" height="10" rx="5" fill="#1e293b"/>
+  </g>
+  
+  <!-- 握手の接続部分 -->
+  <g fill="#94a3b8" opacity="0.7">
+    <path d="M 350 330 Q 380 320 410 330 Q 440 340 450 330"/>
+    <path d="M 350 340 Q 380 330 410 340 Q 440 350 450 340"/>
+    <path d="M 350 350 Q 380 340 410 350 Q 440 360 450 350"/>
+  </g>
+  
+  <!-- 光の効果 -->
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="400" cy="340" r="150" fill="url(#glow)"/>
+  
+  <!-- データフロー効果（AIの象徴） -->
+  <g stroke="#3b82f6" stroke-width="1" opacity="0.4">
+    <path d="M 200 200 L 250 220 L 300 200 L 350 220 L 400 200" fill="none">
+      <animate attributeName="stroke-dasharray" values="0,100;100,0;0,100" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 200 220 L 250 240 L 300 220 L 350 240 L 400 220" fill="none">
+      <animate attributeName="stroke-dasharray" values="100,0;0,100;100,0" dur="3s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- 接続線（AIと人間の協力の象徴） -->
+  <g stroke="#10b981" stroke-width="2" opacity="0.6">
+    <line x1="400" y1="200" x2="400" y2="300" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" values="0;10;0" dur="2s" repeatCount="indefinite"/>
+    </line>
+  </g>
+</svg> 

@@ -1,0 +1,3 @@
+cd /Users/teruhikookuyama/workspace/Affiliate-Project/affiliate-blog
+curl -s -X POST http://127.0.0.1:3000/api/debug-supa | python3 -m json.tool
+
