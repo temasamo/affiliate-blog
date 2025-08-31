@@ -1,7 +1,7 @@
 import { getTravelSlugs } from "./mdx";
 
 /** content/travel 配下の slug を収集（index を親に正規化） */
-export async function getAllTravelSlugs(): Promise<string[]> {
+export function getAllTravelSlugs(): string[] {
   try {
     // 既存のgetTravelSlugsを使用してcontent/travel配下のファイルを取得
     const files = getTravelSlugs();

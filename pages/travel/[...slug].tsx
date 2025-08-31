@@ -4,12 +4,12 @@ import dynamic from 'next/dynamic';
 import AffiliateLink from '@/components/AffiliateLink';
 import AffiliateDisclosure from '@/components/common/AffiliateDisclosure';
 import { getAllTravelSlugs } from '@/lib/travel-slugs';
-import { loadTravelBySlug, serializeMDX } from '@/lib/mdx';
+import { getTravelPostBySlug, serializeMDX } from '@/lib/mdx';
 
 const TravelStyleMatcher = dynamic(() => import('@/components/travel/TravelStyleMatcher'), { ssr: false });
 
 export async function getStaticPaths() {
-  const slugs = await getAllTravelSlugs();
+  const slugs = getAllTravelSlugs();
   return {
     paths: slugs.map((s: string) => ({ params: { slug: s.split("/") } })),
     fallback: false,
@@ -20,7 +20,7 @@ export async function getStaticProps({ params }: any) {
   const slugArray = params.slug as string[];
   const slug = slugArray.join("/");
   try {
-    const { content, frontMatter } = await loadTravelBySlug(slug);
+    const { content, frontMatter } = getTravelPostBySlug(slug);
     
     // 非公開記事の場合は404を返す
     if (frontMatter?.published === false) {
@@ -30,7 +30,7 @@ export async function getStaticProps({ params }: any) {
     const mdxSource = await serializeMDX(content);
     return { props: { mdxSource, frontMatter } };
   } catch (e) {
-    console.error("[loadTravelBySlug failed]", slug, e);
+    console.error("[getTravelPostBySlug failed]", slug, e);
     return { notFound: true };
   }
 }
