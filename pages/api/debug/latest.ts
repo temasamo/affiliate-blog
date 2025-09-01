@@ -1,4 +1,3 @@
-// pages/api/debug/latest.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getLatestPosts, getAllPosts } from '@/lib/posts';
 
@@ -7,18 +6,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const allPosts = getAllPosts();
     const latestPosts = await getLatestPosts(10);
     
-    // 09-beauty-health記事を探す
-    const beautyHealthPost = allPosts.find(p => p.slug === '09-beauty-health');
+    // 最新記事を探す
+    const latestPost = latestPosts[0];
     
     res.status(200).json({
       allPostsCount: allPosts.length,
       latestPostsCount: latestPosts.length,
-      beautyHealthPost: beautyHealthPost ? {
-        slug: beautyHealthPost.slug,
-        title: beautyHealthPost.title,
-        category: beautyHealthPost.category,
-        date: beautyHealthPost.date,
-        published: beautyHealthPost.published
+      latestPost: latestPost ? {
+        slug: latestPost.slug,
+        title: latestPost.title,
+        category: latestPost.category,
+        date: latestPost.date
       } : null,
       allPosts: allPosts.slice(0, 5).map(p => ({
         slug: p.slug,
