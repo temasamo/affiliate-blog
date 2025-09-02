@@ -74,13 +74,13 @@ export const getStaticProps: GetStaticProps<KnowledgeIndexProps> = async () => {
   if (fs.existsSync(articlesDirectory)) {
     const files = fs.readdirSync(articlesDirectory);
     files.forEach(file => {
-      if (file.endsWith('.md')) {
+      if (file.endsWith('.md') || file.endsWith('.mdx')) {
         const filePath = path.join(articlesDirectory, file);
         const fileContents = fs.readFileSync(filePath, 'utf8');
         const { data: frontMatter } = matter(fileContents);
         
         articles.push({
-          slug: file.replace(/\.md$/, ''),
+          slug: file.replace(/\.(md|mdx)$/, ''),
           title: frontMatter.title || '記事タイトル',
           description: frontMatter.description || '記事の説明',
           date: frontMatter.date || '2025.07.01'
