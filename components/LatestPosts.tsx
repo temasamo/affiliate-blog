@@ -25,6 +25,11 @@ function getArticlePath(slug: string, category: string): string {
     return `/diagnostic-ai/makura/${slug}`;
   }
   
+  // 睡眠・健康カテゴリの記事の場合
+  if (category === "睡眠・健康") {
+    return `/articles/sleep-health/knowledge/${slug}`;
+  }
+  
   // その他の記事は一般的なパス
   return `/articles/${slug}`;
 }
