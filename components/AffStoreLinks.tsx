@@ -1,80 +1,66 @@
 import React from "react";
-import { AFF_DEFAULT } from "./aff/aff-config";
 
-type Store = "Amazon" | "Rakuten" | "Yahoo";
-type Status = "ok" | "limited" | "none";
+type Status = "◯" | "△" | "×";
 
-interface AffStoreItem {
-  store: Store;
-  status: Status;
-  href?: string;
-  impressionImg?: string;
-  title?: string;
-}
+type Props = {
+  amazon?: Status;
+  rakuten?: Status;
+  yahoo?: Status;
+  className?: string;
+};
 
-interface AffStoreLinksProps {
-  items: AffStoreItem[];
-}
+const ENTRANCE = {
+  amazon: process.env.NEXT_PUBLIC_AMAZON_ENTRANCE_URL ?? "#",
+  rakuten: process.env.NEXT_PUBLIC_RAKUTEN_ENTRANCE_URL ?? "#",
+  yahoo: process.env.NEXT_PUBLIC_YAHOO_ENTRANCE_URL ?? "#",
+};
 
-export default function AffStoreLinks({ items }: AffStoreLinksProps) {
-  const labelOf = (store: Store) =>
-    store === "Amazon" ? AFF_DEFAULT.Amazon.label :
-    store === "Rakuten" ? AFF_DEFAULT.Rakuten.label :
-    AFF_DEFAULT.Yahoo.label;
+const LABEL = {
+  amazon: "Amazon.co.jp",
+  rakuten: "楽天市場",
+  yahoo: "Yahoo!ショッピング",
+};
 
-  const symbolOf = (status: Status) =>
-    status === "ok" ? "◯" :
-    status === "limited" ? "△" :
-    "×";
+export default function AffStoreLinks({
+  amazon,
+  rakuten,
+  yahoo,
+  className = "",
+}: Props) {
+  const items: Array<{ key: "amazon" | "rakuten" | "yahoo"; status?: Status }> =
+    [
+      { key: "amazon", status: amazon },
+      { key: "rakuten", status: rakuten },
+      { key: "yahoo", status: yahoo },
+    ];
 
   return (
-    <ul className="space-y-2">
-      {items.map(({ store, status, href, impressionImg, title }) => {
-        const label = labelOf(store);
-        const symbol = symbolOf(status);
+    <ul className={`space-y-2 ${className}`}>
+      {items.map(({ key, status }) => {
+        if (!status) return null;
+        const href = ENTRANCE[key];
+        const isUnavailable = status === "×";
+        const content = (
+          <span>
+            {LABEL[key]}：{status}
+          </span>
+        );
 
-        // 既定の入口リンク（href未指定の場合に利用）
-        const def =
-          store === "Amazon" ? AFF_DEFAULT.Amazon :
-          store === "Rakuten" ? AFF_DEFAULT.Rakuten :
-          AFF_DEFAULT.Yahoo;
-        const finalHref = href ?? def.href;
-        const finalImg  = impressionImg ?? def.img;
-        const finalTitle = title ?? def.title;
-
-        // × の場合はリンクにしない
-        if (status === "none") {
-          return (
-            <li key={store}>
-              <span className="text-gray-500">
-                <strong>{label}</strong>: {symbol}
-              </span>
-            </li>
-          );
-        }
-
-        // ◯/△ はリンク化（href未指定でも入口リンクに飛ぶ）
         return (
-          <li key={store}>
-            <a
-              href={finalHref}
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-              aria-label={finalTitle ?? `${label}：${symbol}`}
-              className="text-blue-600 underline hover:opacity-80 transition"
-            >
-              <strong>{label}</strong>：{symbol}
-            </a>
-            {finalImg ? (
-              <img
-                src={finalImg}
-                width={1}
-                height={1}
-                style={{ border: "none" }}
-                loading="lazy"
-                alt=""
-              />
-            ) : null}
+          <li key={key}>
+            {isUnavailable ? (
+              <span className="text-gray-400">{content}</span>
+            ) : (
+              <a
+                href={href}
+                className="text-blue-600 underline hover:opacity-80 transition"
+                rel="nofollow"
+                referrerPolicy="no-referrer-when-downgrade"
+                target="_blank"
+              >
+                {content}
+              </a>
+            )}
           </li>
         );
       })}
