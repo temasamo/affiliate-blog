@@ -27,7 +27,7 @@ function getArticlePath(slug: string, category: string): string {
   
   // 睡眠・健康カテゴリの記事の場合
   if (category === "睡眠・健康") {
-    return `/articles/sleep-health/knowledge/${slug}`;
+    return `/articles/sleep-health/pillow/group2/${slug}`;
   }
   
   // その他の記事は一般的なパス

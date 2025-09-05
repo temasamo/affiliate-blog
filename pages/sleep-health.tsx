@@ -106,6 +106,25 @@ export default function SleepHealth({ recommendArticles, knowledgeArticles }: Sl
                   </svg>
                 </div>
               </Link>
+              {/* グループ2（応用編）へのカード */}
+              <Link
+                href="/articles/sleep-health/pillow/summary/group2"
+                className="block rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 p-6 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="text-xs text-gray-500 mb-2">枕診断シリーズ</div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  グループ2（応用編）｜首の痛み・寝返り・寝姿勢別
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  悩み別の枕選びを網羅。より具体的な症状に対応した記事群。
+                </p>
+                <div className="mt-3 flex items-center text-sm text-blue-600">
+                  <span>まとめページへ</span>
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </Link>
             </div>
           </div>
           {/* Recomend セクション */}
