@@ -1,7 +1,7 @@
 ---
 title: "肩こりに効く枕おすすめ｜原因・対策・選び方の全知識"
 date: "2025-09-02"
-category: "睡眠・健康"
+category: "睡眠・健康 > 枕診断シリーズ > グループ1（基本編）"
 tags: ["枕", "肩こり", "快眠", "選び方", "首こり"]
 description: "肩こりの原因は枕の高さや硬さにあることも。仕組みを理解し、症状別に合う枕の条件と対策を詳しく解説。肩こり改善のためのおすすめ枕の選び方を紹介します。"
 slug: "pillow-for-shoulder-pain"
@@ -82,10 +82,10 @@ published: true
 ---
 
 ## 関連記事（グループ1）
-- [枕の高さの選び方はこちら](/articles/sleep-health/knowledge/pillow-height-how-to-choose)  
-- [枕の素材徹底比較はこちら](/articles/sleep-health/knowledge/pillow-material-comparison)  
-- [枕の硬さで快眠度は変わる？はこちら](/articles/sleep-health/knowledge/pillow-hardness-how-to-choose)  
-- [いびき対策に効く枕はこちら](/articles/sleep-health/knowledge/pillow-for-snoring)  
+- [枕の高さの選び方はこちら](/articles/sleep-health/pillow/group1/pillow-height-how-to-choose)  
+- [枕の素材徹底比較はこちら](/articles/sleep-health/pillow/group1/pillow-material-comparison)  
+- [枕の硬さで快眠度は変わる？はこちら](/articles/sleep-health/pillow/group1/pillow-hardness-how-to-choose)  
+- [いびき対策に効く枕はこちら](/articles/sleep-health/pillow/group1/pillow-for-snoring)  
 
 ---
 
@@ -101,3 +101,25 @@ published: true
 
 高反発・低反発・そばがら・ビーズなど、素材ごとにメリットとデメリットがあるため、自分の体格・寝姿勢・生活習慣に合わせて選びましょう。  
 正しい枕を使うことは、日常的な肩こり対策の大きな一歩となります。
+
+---
+
+## 関連記事
+
+- 枕の高さの選び方  
+  /articles/sleep-health/pillow/group1/pillow-height-how-to-choose
+
+- 枕の硬さの選び方  
+  /articles/sleep-health/pillow/group1/pillow-hardness-how-to-choose
+
+- 枕の素材の比較  
+  /articles/sleep-health/pillow/group1/pillow-material-comparison
+
+- 肩こりに効く枕  
+  /articles/sleep-health/pillow/group1/pillow-for-shoulder-pain
+
+- いびき対策の枕  
+  /articles/sleep-health/pillow/group1/pillow-for-snoring
+
+👉 まとめ記事はこちら  
+/articles/sleep-health/pillow/summary/pillow-summary-group1

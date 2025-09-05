@@ -1,7 +1,7 @@
 ---
 title: "枕の高さの選び方｜快眠のための正しい基準と実践法"
 date: "2025-09-02"
-category: "睡眠・健康"
+category: "睡眠・健康 > 枕診断シリーズ > グループ1（基本編）"
 tags: ["枕", "高さ", "快眠", "選び方", "肩こり", "いびき"]
 description: "枕の高さは睡眠の質を左右する大きな要素です。仰向け・横向きなどの寝姿勢ごとに正しい高さの目安を解説し、高すぎる枕・低すぎる枕が体に与える影響や、最適な高さを見つける実践方法を紹介します。"
 slug: "pillow-height-how-to-choose"
@@ -106,10 +106,10 @@ published: true
 ---
 
 ## 関連記事（グループ1）
-- [枕の素材徹底比較はこちら](/articles/sleep-health/knowledge/pillow-material-comparison)  
-- [枕の硬さで快眠度は変わる？はこちら](/articles/sleep-health/knowledge/pillow-hardness-how-to-choose)  
-- [肩こりに効く枕はこちら](/articles/sleep-health/knowledge/pillow-for-shoulder-pain)  
-- [いびき対策に効く枕はこちら](/articles/sleep-health/knowledge/pillow-for-snoring)  
+- [枕の素材徹底比較はこちら](/articles/sleep-health/pillow/group1/pillow-material-comparison)  
+- [枕の硬さで快眠度は変わる？はこちら](/articles/sleep-health/pillow/group1/pillow-hardness-how-to-choose)  
+- [肩こりに効く枕はこちら](/articles/sleep-health/pillow/group1/pillow-for-shoulder-pain)  
+- [いびき対策に効く枕はこちら](/articles/sleep-health/pillow/group1/pillow-for-snoring)  
 
 ---
 
@@ -125,3 +125,25 @@ published: true
 
 最適な高さを見つけるには、鏡や写真で姿勢を確認し、試し寝を行い、高さ調整可能な枕を選ぶのが有効です。  
 正しい枕を選ぶことが、質の高い睡眠と健康的な生活につながります。
+
+---
+
+## 関連記事
+
+- 枕の高さの選び方  
+  /articles/sleep-health/pillow/group1/pillow-height-how-to-choose
+
+- 枕の硬さの選び方  
+  /articles/sleep-health/pillow/group1/pillow-hardness-how-to-choose
+
+- 枕の素材の比較  
+  /articles/sleep-health/pillow/group1/pillow-material-comparison
+
+- 肩こりに効く枕  
+  /articles/sleep-health/pillow/group1/pillow-for-shoulder-pain
+
+- いびき対策の枕  
+  /articles/sleep-health/pillow/group1/pillow-for-snoring
+
+👉 まとめ記事はこちら  
+/articles/sleep-health/pillow/summary/pillow-summary-group1

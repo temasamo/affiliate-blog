@@ -80,6 +80,39 @@ export default function SleepHealth({ recommendArticles, knowledgeArticles }: Sl
             </div>
           </div>
 
+          {/* 枕選びガイド セクション */}
+          <div className="mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">枕選びガイド</h2>
+            <p className="text-gray-600 mb-6">診断・選び方に特化した記事群。まずはここから。</p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* 親ページ（グループ1まとめ）へのカード 1件のみ */}
+              <Link
+                href="/articles/sleep-health/pillow/group1"
+                className="block rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 p-6 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="text-xs text-gray-500 mb-2">枕診断シリーズ</div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  グループ1（基本編）｜高さ・素材・硬さ・肩こり・いびき
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  枕選びの基礎を5本立てで網羅。迷ったらまずはここから。
+                </p>
+                <div className="mt-3 flex items-center text-sm text-green-600">
+                  <span>まとめページへ</span>
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </Link>
+
+              {/* 将来：グループが増えたら下にカードを追加していく */}
+              {/* 例：
+              <Link href="/articles/sleep-health/pillow/group2" ...>グループ2（〇〇編）</Link>
+              */}
+            </div>
+          </div>
+
           {/* Recomend セクション */}
           <div className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">

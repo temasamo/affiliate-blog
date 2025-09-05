@@ -11,7 +11,41 @@ const nextConfig = {
       { protocol: 'https', hostname: 'source.unsplash.com' },
     ],
   },
-  // Vercel運用では output:'export' は不要。もし存在していたら入れないこと。
+  async redirects() {
+    return [
+      // 💤 枕関連記事（グループ1）
+      {
+        source: "/articles/sleep-health/knowledge/pillow-height-how-to-choose",
+        destination: "/articles/sleep-health/pillow/group1/pillow-height-how-to-choose",
+        permanent: true,
+      },
+      {
+        source: "/articles/sleep-health/knowledge/pillow-material-comparison",
+        destination: "/articles/sleep-health/pillow/group1/pillow-material-comparison",
+        permanent: true,
+      },
+      {
+        source: "/articles/sleep-health/knowledge/pillow-hardness-how-to-choose",
+        destination: "/articles/sleep-health/pillow/group1/pillow-hardness-how-to-choose",
+        permanent: true,
+      },
+      {
+        source: "/articles/sleep-health/knowledge/pillow-for-shoulder-pain",
+        destination: "/articles/sleep-health/pillow/group1/pillow-for-shoulder-pain",
+        permanent: true,
+      },
+      {
+        source: "/articles/sleep-health/knowledge/pillow-for-snoring",
+        destination: "/articles/sleep-health/pillow/group1/pillow-for-snoring",
+        permanent: true,
+      },
+      {
+        source: "/articles/sleep-health/knowledge/pillow-summary",
+        destination: "/articles/sleep-health/pillow/summary/group1",
+        permanent: true,
+      },
+    ];
+  },
 };
 
-module.exports = nextConfig; 
+module.exports = nextConfig;

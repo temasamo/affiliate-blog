@@ -1,7 +1,7 @@
 ---
 title: "枕の素材徹底比較｜羽毛・そばがら・低反発・高反発・ビーズ・ジェルの特徴と選び方"
 date: "2025-09-02"
-category: "睡眠・健康"
+category: "睡眠・健康 > 枕診断シリーズ > グループ1（基本編）"
 tags: ["枕", "素材", "比較", "低反発", "高反発", "そばがら"]
 description: "枕の素材は快眠に大きな影響を与えます。羽毛・そばがら・低反発・高反発・ビーズ・ジェルなどの代表的な素材を比較し、それぞれのメリットとデメリット、どんな人におすすめかを詳しく解説します。"
 slug: "pillow-material-comparison"
@@ -133,10 +133,10 @@ published: true
 ---
 
 ## 関連記事（グループ1）
-- [枕の高さの選び方はこちら](/articles/sleep-health/knowledge/pillow-height-how-to-choose)  
-- [枕の硬さで快眠度は変わる？はこちら](/articles/sleep-health/knowledge/pillow-hardness-how-to-choose)  
-- [肩こりに効く枕はこちら](/articles/sleep-health/knowledge/pillow-for-shoulder-pain)  
-- [いびき対策に効く枕はこちら](/articles/sleep-health/knowledge/pillow-for-snoring)  
+- [枕の高さの選び方はこちら](/articles/sleep-health/pillow/group1/pillow-height-how-to-choose)  
+- [枕の硬さで快眠度は変わる？はこちら](/articles/sleep-health/pillow/group1/pillow-hardness-how-to-choose)  
+- [肩こりに効く枕はこちら](/articles/sleep-health/pillow/group1/pillow-for-shoulder-pain)  
+- [いびき対策に効く枕はこちら](/articles/sleep-health/pillow/group1/pillow-for-snoring)  
 
 ---
 
@@ -152,3 +152,25 @@ published: true
 
 「肩こりがつらい」「夏は暑くて眠れない」などの悩みがある人は、素材を見直すことで驚くほど睡眠が改善することもあります。  
 ぜひ自分に合った素材を見極めて、理想の眠りを手に入れてください。
+
+---
+
+## 関連記事
+
+- 枕の高さの選び方  
+  /articles/sleep-health/pillow/group1/pillow-height-how-to-choose
+
+- 枕の硬さの選び方  
+  /articles/sleep-health/pillow/group1/pillow-hardness-how-to-choose
+
+- 枕の素材の比較  
+  /articles/sleep-health/pillow/group1/pillow-material-comparison
+
+- 肩こりに効く枕  
+  /articles/sleep-health/pillow/group1/pillow-for-shoulder-pain
+
+- いびき対策の枕  
+  /articles/sleep-health/pillow/group1/pillow-for-snoring
+
+👉 まとめ記事はこちら  
+/articles/sleep-health/pillow/summary/pillow-summary-group1

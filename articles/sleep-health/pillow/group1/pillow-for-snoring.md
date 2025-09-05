@@ -1,7 +1,7 @@
 ---
 title: "いびき対策に効く枕｜原因別の選び方と快眠へのアプローチ"
 date: "2025-09-03"
-category: "睡眠・健康"
+category: "睡眠・健康 > 枕診断シリーズ > グループ1（基本編）"
 tags: ["枕", "いびき", "無呼吸", "快眠", "選び方"]
 description: "いびきは気道の狭さや姿勢が原因となることが多く、枕選びによって改善が期待できます。いびきの仕組み、原因別の枕の条件、素材・形状ごとのおすすめポイントを解説します。"
 slug: "pillow-for-snoring"
@@ -82,10 +82,10 @@ U字型や傾斜付きの枕は無呼吸症候群対策としても注目され�
 ---
 
 ## 関連記事（グループ1）
-- [枕の高さの選び方はこちら](/articles/sleep-health/knowledge/pillow-height-how-to-choose)  
-- [枕の素材徹底比較はこちら](/articles/sleep-health/knowledge/pillow-material-comparison)  
-- [枕の硬さで快眠度は変わる？はこちら](/articles/sleep-health/knowledge/pillow-hardness-how-to-choose)  
-- [肩こりに効く枕はこちら](/articles/sleep-health/knowledge/pillow-for-shoulder-pain)  
+- [枕の高さの選び方はこちら](/articles/sleep-health/pillow/group1/pillow-height-how-to-choose)  
+- [枕の素材徹底比較はこちら](/articles/sleep-health/pillow/group1/pillow-material-comparison)  
+- [枕の硬さで快眠度は変わる？はこちら](/articles/sleep-health/pillow/group1/pillow-hardness-how-to-choose)  
+- [肩こりに効く枕はこちら](/articles/sleep-health/pillow/group1/pillow-for-shoulder-pain)  
 
 ---
 
@@ -103,3 +103,25 @@ U字型や傾斜付きの枕は無呼吸症候群対策としても注目され�
 
 いびき対策は日中のパフォーマンスや健康寿命にも直結します。  
 正しい枕を選んで、快適で静かな眠りを手に入れましょう。
+
+---
+
+## 関連記事
+
+- 枕の高さの選び方  
+  /articles/sleep-health/pillow/group1/pillow-height-how-to-choose
+
+- 枕の硬さの選び方  
+  /articles/sleep-health/pillow/group1/pillow-hardness-how-to-choose
+
+- 枕の素材の比較  
+  /articles/sleep-health/pillow/group1/pillow-material-comparison
+
+- 肩こりに効く枕  
+  /articles/sleep-health/pillow/group1/pillow-for-shoulder-pain
+
+- いびき対策の枕  
+  /articles/sleep-health/pillow/group1/pillow-for-snoring
+
+👉 まとめ記事はこちら  
+/articles/sleep-health/pillow/summary/pillow-summary-group1

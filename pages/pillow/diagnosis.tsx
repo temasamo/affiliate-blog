@@ -31,7 +31,7 @@ export default function PillowDiagnosisComingSoon() {
             </Link>
             <nav className="text-sm">
               <Link
-                href="/articles/sleep-health/knowledge/pillow-summary"
+                href="/articles/sleep-health/pillow/summary/group1"
                 className="text-blue-600 hover:underline"
               >
                 枕まとめへ戻る
@@ -78,7 +78,7 @@ export default function PillowDiagnosisComingSoon() {
               <ul className="grid gap-2">
                 <li>
                   <Link
-                    href="/articles/sleep-health/knowledge/pillow-height-how-to-choose"
+                    href="/articles/sleep-health/pillow/group1/pillow-height-how-to-choose"
                     className="text-blue-600 hover:underline"
                   >
                     枕の高さの選び方
@@ -86,7 +86,7 @@ export default function PillowDiagnosisComingSoon() {
                 </li>
                 <li>
                   <Link
-                    href="/articles/sleep-health/knowledge/pillow-hardness-how-to-choose"
+                    href="/articles/sleep-health/pillow/group1/pillow-hardness-how-to-choose"
                     className="text-blue-600 hover:underline"
                   >
                     枕の硬さで快眠度は変わる？
@@ -94,7 +94,7 @@ export default function PillowDiagnosisComingSoon() {
                 </li>
                 <li>
                   <Link
-                    href="/articles/sleep-health/knowledge/pillow-material-comparison"
+                    href="/articles/sleep-health/pillow/group1/pillow-material-comparison"
                     className="text-blue-600 hover:underline"
                   >
                     枕の素材徹底比較
@@ -102,7 +102,7 @@ export default function PillowDiagnosisComingSoon() {
                 </li>
                 <li>
                   <Link
-                    href="/articles/sleep-health/knowledge/pillow-for-shoulder-pain"
+                    href="/articles/sleep-health/pillow/group1/pillow-for-shoulder-pain"
                     className="text-blue-600 hover:underline"
                   >
                     肩こりに効く枕おすすめ
@@ -110,7 +110,7 @@ export default function PillowDiagnosisComingSoon() {
                 </li>
                 <li>
                   <Link
-                    href="/articles/sleep-health/knowledge/pillow-for-snoring"
+                    href="/articles/sleep-health/pillow/group1/pillow-for-snoring"
                     className="text-blue-600 hover:underline"
                   >
                     いびき対策に効く枕
@@ -118,7 +118,7 @@ export default function PillowDiagnosisComingSoon() {
                 </li>
                 <li className="pt-2">
                   <Link
-                    href="/articles/sleep-health/knowledge/pillow-summary"
+                    href="/articles/sleep-health/pillow/summary/group1"
                     className="inline-block text-blue-700 hover:underline font-medium"
                   >
                     枕選び完全ガイド（まとめページ）

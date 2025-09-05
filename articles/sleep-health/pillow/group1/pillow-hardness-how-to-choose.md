@@ -1,7 +1,7 @@
 ---
 title: "枕の硬さで快眠度は変わる？硬い・柔らかいの違いと選び方"
 date: "2025-09-02"
-category: "睡眠・健康"
+category: "睡眠・健康 > 枕診断シリーズ > グループ1（基本編）"
 tags: ["枕", "硬さ", "快眠", "選び方", "硬い枕", "柔らかい枕"]
 description: "枕の硬さは寝心地だけでなく、肩こりや首こり、寝返りのしやすさにも直結します。硬い枕と柔らかい枕の違いを徹底比較し、自分に合う枕の硬さを見つけるための選び方を解説します。"
 slug: "pillow-hardness-how-to-choose"
@@ -67,7 +67,7 @@ published: true
 - ジェル → 中間〜やや硬め  
 
 素材の選び方は「枕の素材徹底比較」記事で詳しく解説しています。  
-👉 [枕の素材徹底比較はこちら](/articles/sleep-health/knowledge/pillow-material-comparison)
+👉 [枕の素材徹底比較はこちら](/articles/sleep-health/pillow/group1/pillow-material-comparison)
 
 ---
 
@@ -90,10 +90,10 @@ published: true
 ---
 
 ## 関連記事（グループ1）
-- [枕の高さの選び方はこちら](/articles/sleep-health/knowledge/pillow-height-how-to-choose)  
-- [枕の素材徹底比較はこちら](/articles/sleep-health/knowledge/pillow-material-comparison)  
-- [肩こりに効く枕はこちら](/articles/sleep-health/knowledge/pillow-for-shoulder-pain)  
-- [いびき対策に効く枕はこちら](/articles/sleep-health/knowledge/pillow-for-snoring)  
+- [枕の高さの選び方はこちら](/articles/sleep-health/pillow/group1/pillow-height-how-to-choose)  
+- [枕の素材徹底比較はこちら](/articles/sleep-health/pillow/group1/pillow-material-comparison)  
+- [肩こりに効く枕はこちら](/articles/sleep-health/pillow/group1/pillow-for-shoulder-pain)  
+- [いびき対策に効く枕はこちら](/articles/sleep-health/pillow/group1/pillow-for-snoring)  
 
 ---
 
@@ -110,3 +110,25 @@ published: true
 - 中間タイプ → バランス型で幅広い人に合いやすい  
 
 自分の体格・寝姿勢・悩みに合わせて硬さを選び、最適な睡眠環境を整えましょう。
+
+---
+
+## 関連記事
+
+- 枕の高さの選び方  
+  /articles/sleep-health/pillow/group1/pillow-height-how-to-choose
+
+- 枕の硬さの選び方  
+  /articles/sleep-health/pillow/group1/pillow-hardness-how-to-choose
+
+- 枕の素材の比較  
+  /articles/sleep-health/pillow/group1/pillow-material-comparison
+
+- 肩こりに効く枕  
+  /articles/sleep-health/pillow/group1/pillow-for-shoulder-pain
+
+- いびき対策の枕  
+  /articles/sleep-health/pillow/group1/pillow-for-snoring
+
+👉 まとめ記事はこちら  
+/articles/sleep-health/pillow/summary/pillow-summary-group1
