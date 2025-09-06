@@ -17,6 +17,12 @@ export default function Group2Index({ articles }: { articles: Article[] }) {
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="bg-white rounded-2xl shadow-md p-8">
           <div className="mb-8">
+            <Link href="/sleep-health" className="inline-flex items-center text-gray-600 hover:text-gray-800 mb-4">
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              睡眠・健康ページに戻る
+            </Link>
             <h1 className="text-3xl font-bold text-gray-900 mb-2">
               枕診断シリーズ｜グループ2（応用編）
             </h1>
@@ -55,24 +61,20 @@ export default function Group2Index({ articles }: { articles: Article[] }) {
 
 export async function getStaticProps() {
   const dir = path.join(process.cwd(), "articles", "sleep-health", "pillow", "group2");
-  const articles: Article[] = [];
-  if (fs.existsSync(dir)) {
-    const files = fs.readdirSync(dir);
-    files
-      .filter((f) => f.endsWith(".md") || f.endsWith(".mdx"))
-      .forEach((file) => {
-        const fp = path.join(dir, file);
-        const raw = fs.readFileSync(fp, "utf8");
-        const { data } = matter(raw);
-        articles.push({
-          slug: file.replace(/\.mdx?$/, ""),
-          title: data.title || "記事タイトル",
-          description: data.description || "",
-          date: data.date || ""
-        });
-      });
-  }
-  // 新しい順
-  articles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const files = fs.readdirSync(dir);
+  const articles = files
+    .filter((file) => file.endsWith(".mdx"))
+    .map((file) => {
+      const slug = file.replace(/\.mdx$/, "");
+      const filePath = path.join(dir, file);
+      const fileContents = fs.readFileSync(filePath, "utf8");
+      const { data: frontMatter } = matter(fileContents);
+      return {
+        slug,
+        title: frontMatter.title || "記事タイトル",
+        description: frontMatter.description || "記事の説明",
+        date: frontMatter.date || "2025.07.01",
+      };
+    });
   return { props: { articles } };
 }
