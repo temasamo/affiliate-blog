@@ -3,10 +3,10 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import AffiliateLink from '@/components/AffiliateLink';
 import AffiliateDisclosure from '@/components/common/AffiliateDisclosure';
+import OnsenBookingLinks from '@/components/OnsenBookingLinks';
+import TravelStyleMatcher from '@/components/TravelStyleMatcher';
 import { getAllTravelSlugs } from '@/lib/travel-slugs';
 import { getTravelPostBySlug, serializeMDX } from '@/lib/mdx';
-
-const TravelStyleMatcher = dynamic(() => import('@/components/travel/TravelStyleMatcher'), { ssr: false });
 
 export async function getStaticPaths() {
   const slugs = getAllTravelSlugs();
@@ -34,7 +34,12 @@ export async function getStaticProps({ params }: any) {
     return { notFound: true };
   }
 }
-const components = { AffiliateLink, TravelStyleMatcher };
+
+const components = { 
+  AffiliateLink, 
+  TravelStyleMatcher,
+  OnsenBookingLinks
+};
 
 export default function TravelPost({ mdxSource, frontMatter }: any) {
   return (
@@ -84,4 +89,4 @@ export default function TravelPost({ mdxSource, frontMatter }: any) {
       </article>
     </main>
   );
-} 
+}
