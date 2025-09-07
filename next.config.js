@@ -12,6 +12,12 @@ const nextConfig = {
     ],
   },
   // Vercel運用では output:'export' は不要。もし存在していたら入れないこと。
+  async redirects() {
+    return [
+      { source: '/travel/onsen/gifu/index', destination: '/travel/onsen/gifu', permanent: true },
+      // 必要に応じて他の旧URLもここに追加
+    ];
+  },
 };
 
-module.exports = nextConfig; 
+module.exports = nextConfig;

@@ -11,7 +11,7 @@ type Item = {
 // 記事のパスを生成する関数
 function getArticlePath(slug: string, category: string): string {
   // 旅行記事の場合
-  if (category === "旅行ガイド") {
+  if (category === "旅行") {
     return `/travel/${slug}`;
   }
   
