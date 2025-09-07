@@ -4,7 +4,6 @@ import dynamic from 'next/dynamic';
 import AffiliateLink from '@/components/AffiliateLink';
 import AffiliateDisclosure from '@/components/common/AffiliateDisclosure';
 import TravelStyleMatcher from '@/components/TravelStyleMatcher';
-import PhotoPending from '@/components/PhotoPending';
 import { BookingLinksGroup, BookingLinksItem } from '@/components/BookingLinks';
 import { getAllTravelSlugs } from '@/lib/travel-slugs';
 import { getTravelPostBySlug, serializeMDX } from '@/lib/mdx';
@@ -40,8 +39,7 @@ const components = {
   AffiliateLink, 
   TravelStyleMatcher,
   BookingLinksGroup,
-  BookingLinksItem,
-  PhotoPending
+  BookingLinksItem
 };
 
 export default function TravelPost({ mdxSource, frontMatter }: any) {
@@ -69,13 +67,6 @@ export default function TravelPost({ mdxSource, frontMatter }: any) {
 
         {/* MDXコンテンツ */}
         <div className="bg-white/80 backdrop-blur-sm rounded-3xl border border-white/20 p-8 sm:p-12 shadow-xl shadow-blue-500/10">
-          {/* 写真準備中バナー */}
-          {frontMatter?.photoPending && (
-            <div className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-amber-900 mb-6">
-              写真は許可が下り次第、掲載します（現在は参考イメージのみ／No image）。
-            </div>
-          )}
-          
           <div className="prose prose-lg max-w-none">
             <MDXRemote {...mdxSource} components={components} />
           </div>
