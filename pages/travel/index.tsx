@@ -12,14 +12,21 @@ export async function getStaticProps() {
 }
 
 export default function TravelIndex({ posts }: { posts: any[] }) {
-  // 温泉地ガイド（空のセクション - 今後追加予定）
-  const onsenGuidePosts: any[] = [];
+  // 温泉地ガイド（category: "旅行" かつ subcategory: "温泉地ガイド"）
+  const onsenGuidePosts = posts
+    .filter(p => p.category === '旅行' && p.subcategory === '温泉地ガイド' && p.published !== false)
+    .sort((a, b) => (a.date > b.date ? -1 : 1))
+    .slice(0, 6);
   
   // 高級温泉旅館ガイド（slugに"luxury"が含まれるもの）
   const luxuryOnsenPosts = posts.filter((p) => p.slug && p.slug.includes('luxury'));
   
-  // その他の記事（luxuryを含まないもの）
-  const otherPosts = posts.filter((p) => p.slug && !p.slug.includes('luxury'));
+  // その他の記事（luxuryを含まず、温泉地ガイドでもないもの）
+  const otherPosts = posts.filter((p) => 
+    p.slug && 
+    !p.slug.includes('luxury') && 
+    !(p.category === '旅行' && p.subcategory === '温泉地ガイド')
+  );
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
