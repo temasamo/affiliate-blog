@@ -4,10 +4,7 @@ import dynamic from 'next/dynamic';
 import AffiliateLink from '@/components/AffiliateLink';
 import AffiliateDisclosure from '@/components/common/AffiliateDisclosure';
 import TravelStyleMatcher from '@/components/TravelStyleMatcher';
-feat/photo-pending
 import PhotoPending from '@/components/PhotoPending';
-=======
-
 import { BookingLinksGroup, BookingLinksItem } from '@/components/BookingLinks';
 import { getAllTravelSlugs } from '@/lib/travel-slugs';
 import { getTravelPostBySlug, serializeMDX } from '@/lib/mdx';
@@ -43,13 +40,11 @@ const components = {
   AffiliateLink, 
   TravelStyleMatcher,
   BookingLinksGroup,
-feat/photo-pending
   BookingLinksItem,
   PhotoPending
-=======
 };
 
-export default function TravelPost({ mdxSource, frontMatter }: any) {
+function TravelPost({ mdxSource, frontMatter }: any) {
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       <article className="mx-auto max-w-4xl p-6 sm:p-10">
@@ -102,3 +97,5 @@ export default function TravelPost({ mdxSource, frontMatter }: any) {
     </main>
   );
 }
+
+export default TravelPost;
