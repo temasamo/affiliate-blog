@@ -3,8 +3,8 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import AffiliateLink from '@/components/AffiliateLink';
 import AffiliateDisclosure from '@/components/common/AffiliateDisclosure';
-import OnsenBookingLinks from '@/components/OnsenBookingLinks';
 import TravelStyleMatcher from '@/components/TravelStyleMatcher';
+import { BookingLinksGroup, BookingLinksItem } from '@/components/BookingLinks';
 import { getAllTravelSlugs } from '@/lib/travel-slugs';
 import { getTravelPostBySlug, serializeMDX } from '@/lib/mdx';
 
@@ -38,7 +38,8 @@ export async function getStaticProps({ params }: any) {
 const components = { 
   AffiliateLink, 
   TravelStyleMatcher,
-  OnsenBookingLinks
+  BookingLinksGroup,
+  BookingLinksItem
 };
 
 export default function TravelPost({ mdxSource, frontMatter }: any) {
@@ -62,28 +63,25 @@ export default function TravelPost({ mdxSource, frontMatter }: any) {
         </div>
 
         {/* アフィリエイト開示 */}
-        <AffiliateDisclosure variant="top" />
+        <AffiliateDisclosure />
 
-        {/* 記事コンテンツ */}
+        {/* MDXコンテンツ */}
         <div className="bg-white/80 backdrop-blur-sm rounded-3xl border border-white/20 p-8 sm:p-12 shadow-xl shadow-blue-500/10">
           <div className="prose prose-lg max-w-none">
             <MDXRemote {...mdxSource} components={components} />
           </div>
         </div>
 
-        {/* アフィリエイト開示（下部） */}
-        <AffiliateDisclosure variant="bottom" />
-
-        {/* トップへ戻るボタン */}
+        {/* フッター部分 */}
         <div className="text-center mt-12">
           <Link 
-            href="/"
+            href="/travel"
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-full hover:from-blue-600 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            トップページへ戻る
+            旅行ページに戻る
           </Link>
         </div>
       </article>

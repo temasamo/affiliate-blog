@@ -43,6 +43,9 @@ description: 日本三名泉「下呂温泉」を短時間で把握できる実�
 
 > リンクは後で貼り込み。ローカル開発中は空欄でもOK。
 
-<BookingLinksGroup>
-  <BookingLinksItem name="下呂温泉の宿" rakuten="" jalan="" ikkyu="" yahoo="" />
-</BookingLinksGroup>
+<OnsenBookingLinks
+  jalan=""
+  rakuten=""
+  ikyu=""
+  yahoo=""
+/>
