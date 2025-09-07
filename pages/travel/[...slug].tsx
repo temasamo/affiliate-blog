@@ -4,7 +4,10 @@ import dynamic from 'next/dynamic';
 import AffiliateLink from '@/components/AffiliateLink';
 import AffiliateDisclosure from '@/components/common/AffiliateDisclosure';
 import TravelStyleMatcher from '@/components/TravelStyleMatcher';
+feat/photo-pending
 import PhotoPending from '@/components/PhotoPending';
+=======
+
 import { BookingLinksGroup, BookingLinksItem } from '@/components/BookingLinks';
 import { getAllTravelSlugs } from '@/lib/travel-slugs';
 import { getTravelPostBySlug, serializeMDX } from '@/lib/mdx';
@@ -40,8 +43,10 @@ const components = {
   AffiliateLink, 
   TravelStyleMatcher,
   BookingLinksGroup,
+feat/photo-pending
   BookingLinksItem,
   PhotoPending
+=======
 };
 
 export default function TravelPost({ mdxSource, frontMatter }: any) {
