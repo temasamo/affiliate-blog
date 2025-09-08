@@ -27,6 +27,20 @@ function getArticlePath(slug: string, category: string): string {
   
   // 睡眠・健康カテゴリの記事の場合
   if (category === "睡眠・健康") {
+    // Group3の記事を判定
+    const group3Slugs = [
+      'hotel-style-pillow',
+      'pillow-for-kids', 
+      'pillow-for-seniors',
+      'pillow-for-broad-shoulders',
+      'pillow-for-deep-sleep'
+    ];
+    
+    if (group3Slugs.includes(slug)) {
+      return `/articles/sleep-health/pillow/group3/${slug}`;
+    }
+    
+    // その他の睡眠・健康記事はgroup2
     return `/articles/sleep-health/pillow/group2/${slug}`;
   }
   
@@ -107,4 +121,4 @@ export default function LatestPosts({ items }: { items: Item[] }) {
       </div>
     </section>
   );
-} 
+}
