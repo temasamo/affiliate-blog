@@ -16,7 +16,7 @@ function getArticlePath(slug: string, category: string): string {
   }
   
   // Global Hot Picksの場合
-  if (category === "global-hot-picks" || category === "海外トレンド" || category === "Global Hot Picks") {
+  if (category === "global-hot-picks" || category === "海外トレンド") {
     return `/articles/global-hot-picks/trend/${slug}`;
   }
   

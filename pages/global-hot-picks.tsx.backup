@@ -29,7 +29,7 @@ function isGlobalHotPicks(filePath: string, data: any) {
   const tags = Array.isArray(data?.tags)
     ? data.tags.map((t: any) => normalize(t).toLowerCase())
     : normalize(data?.tags) ? [normalize(data?.tags).toLowerCase()] : [];
-  const byCategory = cat === GHP || cat === "global hot picks";
+  const byCategory = cat === GHP;
   const byTag = tags.includes(GHP);
   const byPath = filePath.includes(`/articles/${GHP}/`);
   return byCategory || byTag || byPath;
