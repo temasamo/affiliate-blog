@@ -32,7 +32,7 @@ export default function TravelTeaser({ posts = [] }: Props) {
                      playsInline
                      poster="/media/travel-teaser.jpg"
                    >
-                     <source src="/media/travel-teaser.mp4" type="video/mp4" />
+                     <source src="/media/travel-autumn.mp4" type="video/mp4" />
                    </video>
 
                    {/* 可読性を保つ薄い暗幕＋下部グラデ */}
