@@ -8,7 +8,7 @@ description: "海外でバズるRay-Ban Metaスマートグラスと、健康サ
 published: true
 ---
 
-
+import AffStoreLinks from "@/src/components/AffStoreLinks"
 
 # 【2025年9月9日版】Global Hot Picks：Ray-Ban Meta & AG1
 
@@ -21,47 +21,50 @@ published: true
 ## 🕶️ Ray-Ban Meta Smart Glasses
 
 - 公式リンク：[Ray-Ban Meta（Meta公式）](https://www.meta.com/ai-glasses/ray-ban-meta/)
-
+  
 ### Timeline
-- 2021：初代「Ray-Ban Stories」登場  
-- 2023：第2世代「Ray-Ban Meta」発表、AI連携強化  
-- 2025：音声アシスト機能の拡張で世界的に再注目  
+- 2021：初代「Ray-Ban Stories」登場
+- 2023：第2世代「Ray-Ban Meta」発表、AI連携強化
+- 2025：音声アシスト機能の拡張で世界的に再注目
 
 ### Key Facts
-- デザイン：Ray-Banクラシックフレームにスマート機能統合  
-- 機能：音楽再生、通話、写真・動画撮影、SNS共有  
-- 特徴：Meta AI対応で音声コントロール可能  
-- バッテリー：最大4時間、専用ケースで充電可  
+- デザイン：Ray-Banクラシックフレームにスマート機能統合
+- 機能：音楽再生、通話、写真・動画撮影、SNS共有
+- 特徴：Meta AI対応で音声コントロール可能
+- バッテリー：最大4時間、専用ケースで充電可
 
 ---
 
 ## 🥤 AG1 (Athletic Greens)
 
 - 公式リンク：[AG1公式ジャパンサイト](https://jp.drinkag1.com/)
-
+  
 ### Timeline
-- 2010年代：ニュージーランド発のサプリとしてスタート  
-- 2020年代前半：米国フィットネス界・ポッドキャスト界隈で急拡大  
-- 2024〜25：TikTokで「毎朝のグリーンドリンク」としてバズ、日本でも話題化  
+- 2010年代：ニュージーランド発のサプリとしてスタート
+- 2020年代前半：米国フィットネス界・ポッドキャスト界隈で急拡大
+- 2024〜25：TikTokで「毎朝のグリーンドリンク」としてバズ、日本でも話題化
 
 ### Key Facts
-- 成分：75種類以上のビタミン・ミネラル・プロバイオティクス・植物エキス  
-- 特徴：1日1杯で栄養補助、グルテンフリー＆ヴィーガン対応  
-- ターゲット：健康志向層、アスリート、忙しいビジネスパーソン  
-- 飲み方：水やスムージーに混ぜる粉末タイプ  
+- 成分：75種類以上のビタミン・ミネラル・プロバイオティクス・植物エキス
+- 特徴：1日1杯で栄養補助、グルテンフリー＆ヴィーガン対応
+- ターゲット：健康志向層、アスリート、忙しいビジネスパーソン
+- 飲み方：水やスムージーに混ぜる粉末タイプ
 
 ---
 
 ## 商品お取り扱い状況（2025-09-09時点）
 
 〇＝あり／△＝一部・在庫薄／×＝未確認  
-※以下のリンクにはアフィリエイト広告を含みます  
+※以下のリンクにはアフィリエイト広告を含みます
 
 ### Ray-Ban Meta Smart Glasses
-  amazon="△" rakuten="◯" yahoo="△" 
+- Amazon.co.jp：◯  
+- 楽天市場：◯  
+- Yahoo!ショッピング：◯
+<AffStoreLinks amazon="true" rakuten="true" yahoo="true" keyword="Ray-Ban Meta" />
 
 ### AG1 (Athletic Greens)
-　amazon="×" rakuten="×" yahoo="×" 
+<AffStoreLinks amazon="false" rakuten="false" yahoo="false" />
 
 ⚠️ 現在、日本のAmazon・楽天・Yahoo!ショッピングでは本体販売は確認できません。  
 購入は **[AG1公式ジャパンサイト](https://jp.drinkag1.com/)** をご利用ください。  
