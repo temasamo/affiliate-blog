@@ -1,12 +1,13 @@
 ---
 title: "【2025年9月3日版】Global Hot Picks：Ninja CREAMi & Shark FlexStyle"
 date: "2025-09-03"
-slug: "2025-09-03"
+slug: "global-hot-picks-2025-09-03"
 category: "Global Hot Picks"
 tags: ["Ninja CREAMi", "Shark FlexStyle", "海外トレンド", "キッチン家電", "ヘアスタイラー"]
 description: "海外で爆発的人気のNinja CREAMiとShark FlexStyleをピックアップ。日本での購入導線・在庫状況もあわせてチェック。"
 published: true
 ---
+import AffStoreLinks from "@/components/AffStoreLinks"
 # 【2025年9月3日版】Global Hot Picks：Ninja CREAMi & Shark FlexStyle
 
 本日のGlobal Hot Picksは、**海外トレンド × 日本で買える**の2大ヒットを厳選。  
@@ -59,13 +60,13 @@ published: true
 - Amazon.co.jp：◯  
 - 楽天市場：◯  
 - Yahoo!ショッピング：△  
-<AffStoreLinks amazon="true" rakuten="true" yahoo="true" keyword="Ninja CREAMi" />
+<AffStoreLinks amazon="true" rakuten="true" yahoo="true" />
 
 ### Shark FlexStyle
 - Amazon.co.jp：△  
 - 楽天市場：◯  
 - Yahoo!ショッピング：◯  
-<AffStoreLinks amazon="true" rakuten="true" yahoo="true" keyword="Shark FlexStyle" />
+<AffStoreLinks amazon="true" rakuten="true" yahoo="true" />
 
 ---
 
@@ -77,3 +78,35 @@ published: true
 ---
 
 ※以下、プロモーションリンク（広告）です
+
+## 問題の詳細
+
+### **楽天のアフィリンク**
+- 現在：Amazon用のもしもアフィリエイトURLを使用
+- 結果：楽天の検索ページにリダイレクトされるが、楽天のアフィリエイトとして認識されない
+
+### **Yahoo!のアフィリンク**
+- 現在：テスト用のダミー値（`sid=123456&pid=789012`）を使用
+- 結果：ValueCommerceで「広告配信準備中」エラーが表示される
+
+## 修正が必要な環境変数
+
+`.env.local`ファイルを正しいアフィリエイトURLに更新する必要があります：
+
+```bash
+# 現在（間違い）
+NEXT_PUBLIC_RAKUTEN_ENTRANCE_URL=https://af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064
+NEXT_PUBLIC_YAHOO_ENTRANCE_URL=https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=123456&pid=789012
+
+# 正しい設定例
+NEXT_PUBLIC_RAKUTEN_ENTRANCE_URL=https://hb.afl.rakuten.co.jp/hgc/xxxxxxxx/  # 楽天アフィリエイトの実際のURL
+NEXT_PUBLIC_YAHOO_ENTRANCE_URL=https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=実際のSID&pid=実際のPID  # ValueCommerceの実際のアカウント情報
+```
+
+## 現在の状況
+
+✅ **Amazon**: 正常動作（もしもアフィリエイトが正しく設定されている）
+❌ **楽天**: Amazon用URLを使用しているため、楽天のアフィリエイトとして認識されない
+❌ **Yahoo!**: テスト用ダミー値のため、ValueCommerceでエラー表示
+
+正しいアフィリエイトアカウント情報を取得して、環境変数を更新する必要があります。

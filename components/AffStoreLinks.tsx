@@ -1,69 +1,45 @@
+// components/AffStoreLinks.tsx
 import React from "react";
+import { amazonUrl, rakutenUrl, yahooUrl } from "@/utils/aff";
 
-type Status = "◯" | "△" | "×";
+type MaybeBool = boolean | string | undefined;
+const flag = (v: MaybeBool) => v === true || v === "true" || v === "";
 
-type Props = {
-  amazon?: Status;
-  rakuten?: Status;
-  yahoo?: Status;
+export default function AffStoreLinks(props: {
+  amazon?: MaybeBool; 
+  rakuten?: MaybeBool; 
+  yahoo?: MaybeBool;
+  keyword?: string; 
+  asin?: string; 
+  amazonUrlOverride?: string;
   className?: string;
-};
+}) {
+  const { amazon, rakuten, yahoo, keyword, asin, amazonUrlOverride, className } = props;
 
-const ENTRANCE = {
-  amazon: process.env.NEXT_PUBLIC_AMAZON_ENTRANCE_URL ?? "#",
-  rakuten: process.env.NEXT_PUBLIC_RAKUTEN_ENTRANCE_URL ?? "#",
-  yahoo: process.env.NEXT_PUBLIC_YAHOO_ENTRANCE_URL ?? "#",
-};
+  const items: { label: string; href?: string }[] = [];
+  if (flag(amazon)) items.push({ label: "Amazonで探す", href: amazonUrlOverride || amazonUrl({ keyword, asin }) });
+  if (flag(rakuten)) items.push({ label: "楽天市場で探す", href: rakutenUrl({ keyword }) });
+  if (flag(yahoo)) items.push({ label: "Yahoo!で探す", href: yahooUrl({ keyword }) });
 
-const LABEL = {
-  amazon: "Amazon.co.jp",
-  rakuten: "楽天市場",
-  yahoo: "Yahoo!ショッピング",
-};
-
-export default function AffStoreLinks({
-  amazon,
-  rakuten,
-  yahoo,
-  className = "",
-}: Props) {
-  const items: Array<{ key: "amazon" | "rakuten" | "yahoo"; status?: Status }> =
-    [
-      { key: "amazon", status: amazon },
-      { key: "rakuten", status: rakuten },
-      { key: "yahoo", status: yahoo },
-    ];
+  const valid = items.filter(i => !!i.href);
 
   return (
-    <ul className={`space-y-2 ${className}`}>
-      {items.map(({ key, status }) => {
-        if (!status) return null;
-        const href = ENTRANCE[key];
-        const isUnavailable = status === "×";
-        const content = (
-          <span>
-            {LABEL[key]}：{status}
-          </span>
-        );
-
-        return (
-          <li key={key}>
-            {isUnavailable ? (
-              <span className="text-gray-400">{content}</span>
-            ) : (
-              <a
-                href={href}
-                className="text-blue-600 underline hover:opacity-80 transition"
-                rel="nofollow"
-                referrerPolicy="no-referrer-when-downgrade"
-                target="_blank"
-              >
-                {content}
-              </a>
-            )}
-          </li>
-        );
-      })}
-    </ul>
+    <div
+      className={`mt-3 flex flex-wrap gap-2 ${className ?? ""}`}
+      suppressHydrationWarning
+    >
+      {valid.map(it => (
+        <a
+          key={it.label}
+          href={it.href}
+          target="_blank"
+          rel="nofollow sponsored noopener"
+          className="inline-flex items-center rounded-full border px-3 py-1 text-sm hover:shadow-sm"
+        >
+          {it.label} →
+        </a>
+      ))}
+      {/* validが0件のときは何も描画しない（同じラッパーは常に出す） */}
+    </div>
   );
-} 
+}

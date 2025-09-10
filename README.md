@@ -197,3 +197,117 @@ curl -s http://localhost:3000/api/debug/latest | jq .
 - `WORKFLOW_RULES.md` - ワークフロールール詳細
 
 <!-- Force redeploy to clear Vercel cache - 2025-08-28 -->
+---
+
+## 🔥 Global Hot Picks MDXシステム
+
+### 概要
+Global Hot Picks記事は、`next-mdx-remote`を使用した特別なMDXシステムで動作します。これにより、記事内でReactコンポーネント（特にアフィリエイトリンク）を直接使用できます。
+
+### 技術仕様
+
+#### 1. MDX処理パイプライン
+- **通常記事**: `unified` + `remark` でMarkdownをHTMLに変換
+- **Global Hot Picks**: `next-mdx-remote` でMDXをReactコンポーネントとして処理
+
+#### 2. ファイル構成
+```
+articles/global-hot-picks/trend/YYYY-MM-DD.mdx  # 記事ファイル
+components/MdxRendererHotPicks.tsx              # MDX専用レンダラー
+lib/mdx-hotpicks.ts                            # MDX処理ユーティリティ
+components/AffStoreLinks.tsx                   # アフィリエイトリンクコンポーネント
+utils/aff.ts                                   # アフィリエイトURL生成
+```
+
+#### 3. 記事作成ルール
+
+**フロントマター形式**
+```yaml
+---
+title: "【2025年MM月DD日版】Global Hot Picks：商品名1 & 商品名2"
+date: "2025-MM-DD"
+slug: "YYYY-MM-DD"  # ファイル名と同じ形式
+category: "Global Hot Picks"  # 大文字小文字を正確に
+tags: ["商品名1", "商品名2", "海外トレンド", "カテゴリ1", "カテゴリ2"]
+description: "海外で爆発的人気の商品1と商品2をピックアップ。日本での購入導線・在庫状況もあわせてチェック。"
+published: true
+---
+```
+
+**アフィリエイトリンクの使用方法**
+```mdx
+### 商品名
+- Amazon.co.jp：◯  
+- 楽天市場：◯  
+- Yahoo!ショッピング：◯  
+<AffStoreLinks amazon="true" rakuten="true" yahoo="true" keyword="商品名" />
+```
+
+**重要な注意事項**
+- ❌ **import文は不要**: `import AffStoreLinks from "@/components/AffStoreLinks"` は書かない
+- ✅ **keywordパラメータは必須**: アフィリンクを表示するには必ず`keyword`を指定
+- ✅ **フラグの指定**: `amazon="true"` または `amazon` の形式で指定
+
+#### 4. 環境変数設定
+
+**必須環境変数**
+```bash
+# Amazon（もしもアフィリエイト）
+NEXT_PUBLIC_AMAZON_MODE=moshimo
+NEXT_PUBLIC_MOSHIMO_AMAZON_BASE=https://af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064
+NEXT_PUBLIC_AMAZON_TAG=your-amazon-tag-here
+
+# 楽天（実際の楽天アフィリエイトURLに変更必要）
+NEXT_PUBLIC_RAKUTEN_ENTRANCE_URL=https://hb.afl.rakuten.co.jp/hgc/xxxxxxxx/
+
+# Yahoo!（実際のValueCommerceのSID/PIDに変更必要）
+NEXT_PUBLIC_YAHOO_ENTRANCE_URL=https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=実際のSID&pid=実際のPID
+```
+
+#### 5. 開発・デバッグ
+
+**開発サーバー起動**
+```bash
+npm run dev
+```
+
+**記事の動作確認**
+```bash
+# 記事が正常に表示されるか確認
+curl -s "http://localhost:3000/articles/global-hot-picks/trend/YYYY-MM-DD" | head -10
+
+# アフィリンクが正しく生成されているか確認
+curl -s "http://localhost:3000/articles/global-hot-picks/trend/YYYY-MM-DD" | grep -A 3 -B 3 "Amazonで探す"
+```
+
+**よくある問題と対処法**
+
+1. **MDXコンパイルエラー**
+   - 原因: import文が残っている
+   - 対処: 記事ファイルから`import AffStoreLinks`行を削除
+
+2. **アフィリンクが表示されない**
+   - 原因: `keyword`パラメータが未指定
+   - 対処: `<AffStoreLinks ... keyword="商品名" />` を追加
+
+3. **環境変数エラー**
+   - 原因: 環境変数が未設定または間違った値
+   - 対処: `.env.local`の環境変数を確認・修正
+
+4. **モジュール解決エラー**
+   - 原因: ファイルパスの問題
+   - 対処: キャッシュクリア `rm -rf .next && npm run dev`
+
+#### 6. デプロイ時の注意事項
+
+1. **ローカル確認必須**: デプロイ前に必ずローカルで動作確認
+2. **環境変数確認**: 本番環境でもアフィリエイトURLが正しく設定されているか確認
+3. **記事リンク確認**: ホームページとカテゴリページで記事が正しく表示されるか確認
+
+### システムの利点
+
+- ✅ **柔軟なコンポーネント使用**: 記事内でReactコンポーネントを直接使用可能
+- ✅ **統一されたアフィリエイト管理**: すべてのアフィリンクが`utils/aff.ts`で一元管理
+- ✅ **SSR/CSR一貫性**: サーバーとクライアントで同じ出力を保証
+- ✅ **開発効率向上**: 記事作成時にimport文を書く必要がない
+

@@ -1,5 +1,3 @@
-import MdxRendererHotPicks from "@/components/MdxRendererHotPicks";
-import { toHotPicksMdx } from "@/lib/mdx-hotpicks";
 import React, { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { GetStaticProps, GetStaticPaths } from 'next';
@@ -27,8 +25,6 @@ import GlobalHotPicksAds from '../../../../components/GlobalHotPicksAds';
 
 
 interface ArticleProps {
-  mdxSource?: any;
-  isHotPicks?: boolean;
   content: string;
   frontMatter: {
     title?: string;
@@ -42,7 +38,7 @@ interface ArticleProps {
   post: string;
 }
 
-export default function ArticleDetail({ content, frontMatter, category, type, post, mdxSource, isHotPicks }: ArticleProps) {
+export default function ArticleDetail({ content, frontMatter, category, type, post }: ArticleProps) {
   const title = frontMatter.title || '商品比較・ランキング';
   const description = frontMatter.description || `Market Supporter AIが提供する${title}の詳細情報です。`;
   const articleType = type || 'trend'; // typeがない場合はデフォルト値を設定
@@ -143,18 +139,14 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
         {/* 通常記事の表示 */}
         <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8">
           <article className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
-            {isHotPicks && mdxSource ? (
-              <MdxRendererHotPicks mdx={mdxSource} />
-            ) : (
-              <div 
-                dangerouslySetInnerHTML={{ __html: content }} 
-                className="article-content"
-                style={{
-                  lineHeight: '1.8',
-                  fontSize: '1rem'
-                }}
-              />
-            )}
+            <div 
+              dangerouslySetInnerHTML={{ __html: content }} 
+              className="article-content"
+              style={{
+                lineHeight: '1.8',
+                fontSize: '1rem'
+              }}
+            />
           </article>
         </div>
 
@@ -1400,37 +1392,21 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async ({ params }) =
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data: frontMatter, content } = matter(fileContents);
 
-    // Global Hot Picksかどうかを判定
-    const isHotPicks = 
-      (category === 'global-hot-picks' || frontMatter.category === 'Global Hot Picks') &&
-      (type === 'trend' || !type);
-
-    let mdxSource = null;
-    let contentHtml = '';
-
-    if (isHotPicks) {
-      // Global Hot Picksの場合はMDX処理
-      mdxSource = await toHotPicksMdx(content);
-    } else {
-      // 通常の記事の場合は従来の処理
-      const processedContent = await unified()
-        .use(remarkParse)
-        .use(remarkRehype)
-        .use(rehypeRaw)
-        .use(rehypeStringify)
-        .process(content);
-      contentHtml = processedContent.toString();
-    }
+    const processedContent = await unified()
+      .use(remarkParse)
+      .use(remarkRehype)
+      .use(rehypeRaw)
+      .use(rehypeStringify)
+      .process(content);
+    const contentHtml = processedContent.toString();
 
     return {
       props: {
         content: contentHtml,
         frontMatter,
         category,
-        type: type || 'trend',
+        type: type || 'trend', // typeがない場合はデフォルト値を設定
         post: post,
-        mdxSource,
-        isHotPicks,
       },
     };
   } catch (error) {

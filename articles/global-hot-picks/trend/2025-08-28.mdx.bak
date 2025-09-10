@@ -7,6 +7,7 @@ tags: ["Stanley", "Oura Ring", "ウェアラブル", "タンブラー", "海外�
 description: "TikTokで爆発的人気のStanleyタンブラーと、フィンランド発の最新スマートリングOura Ring 4を徹底紹介。海外トレンドを最速チェック！"
 published: true
 ---
+import AffStoreLinks from "@/components/AffStoreLinks"
 # 【2025年8月28日版】Global Hot Picks：Stanleyタンブラー & Oura Ring 4
 
 本日のGlobal Hot Picksは、海外トレンドから日本に上陸した話題の2商品をピックアップ。  
@@ -58,13 +59,13 @@ published: true
 - Amazon.co.jp：◯  
 - 楽天市場：△  
 - Yahoo!ショッピング：◯  
-<AffStoreLinks amazon="true" rakuten="true" yahoo="true" keyword="Stanley Quencher Tumbler" />
+<AffStoreLinks amazon="true" rakuten="true" yahoo="true" />
 
 ### Oura Ring 4
 - Amazon.co.jp：△（並行輸入が中心）  
 - 楽天市場：◯  
 - Yahoo!ショッピング：△  
-<AffStoreLinks amazon="true" rakuten="true" yahoo="true" keyword="Oura Ring 4" />
+<AffStoreLinks amazon="true" rakuten="true" yahoo="true" />
 
 ---
 
