@@ -1,23 +1,27 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-async function logClickSafely(params: {
+async function logClickSafely(_params: {
   mall: string; url: string; ua?: string; ip?: string;
 }) {
+  // 既存のログAPIを呼びたい場合だけここで fetch する。無ければ何もしない。
   try {
-    // 既存のログAPIがある場合だけ"呼ぶ"。無ければ静かに無視。
-    // 例: await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/log-outbound?mall=${encodeURIComponent(params.mall)}&url=${encodeURIComponent(params.url)}`, { method: "POST" });
+    // await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/log-outbound`, { method: "POST", body: JSON.stringify(_params) });
   } catch {}
 }
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+// pages/api は (void | Promise<void>) を返すのが正解
+export default async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
   try {
     const mall = String(req.query.mall || "vc");
-    const raw = String(req.query.url || "");
-    if (!raw) return res.status(400).send("missing url");
+    const raw  = String(req.query.url  || "");
+
+    if (!raw) {
+      res.status(400).send("missing url");
+      return; // ← NextApiResponse を return しない
+    }
 
     const ua = req.headers["user-agent"] as string | undefined;
     const ip = (req.headers["x-forwarded-for"] as string)?.split(",")[0]?.trim();
-
     await logClickSafely({ mall, url: raw, ua, ip });
 
     let redirectTo = raw;
@@ -25,16 +29,22 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (mall === "vc") {
       const sid = process.env.VC_SID;
       const pid = process.env.VC_PID;
-      if (!sid || !pid) return res.status(500).send("VC not configured");
+      if (!sid || !pid) {
+        res.status(500).send("VC not configured");
+        return;
+      }
       const vcUrl = encodeURIComponent(raw);
       redirectTo = `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=${sid}&pid=${pid}&vc_url=${vcUrl}`;
     }
-    // 他モール対応が必要なら分岐を追加
 
     res.setHeader("Cache-Control", "no-store");
-    return res.redirect(302, redirectTo);
+    // res.redirect(...) を return しない。writeHead + end で完了させる。
+    res.writeHead(302, { Location: redirectTo });
+    res.end();
+    return;
   } catch (e) {
     console.error(e);
-    return res.status(500).send("internal error");
+    res.status(500).send("internal error");
+    return;
   }
 }
