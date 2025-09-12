@@ -1,4 +1,5 @@
 import { MDXRemote } from 'next-mdx-remote';
+import AffButton from "@/components/AffButton";
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import AffiliateLink from '@/components/AffiliateLink';
@@ -36,7 +37,7 @@ export async function getStaticProps({ params }: any) {
   }
 }
 
-const components = { 
+const components = { AffButton, 
   AffiliateLink, 
   TravelStyleMatcher,
   BookingLinksGroup,
