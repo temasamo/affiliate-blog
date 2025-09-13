@@ -60,12 +60,6 @@ description: "訪日外国人に人気の日本料理ランキング、本場で
 
 ---
 
-## 購入・予約リンク / Booking & Shopping Links
-- [Klook 料理体験予約](#)  
-- [Viator グルメツアー](#)  
-- [Amazon Global 和牛・抹茶パウダー](#)
-
----
 
 ## まとめ / Conclusion
 **EN**: Whether dining out, learning to cook, or enjoying Japanese food abroad, each approach offers a special way to connect with Japanese culture.  

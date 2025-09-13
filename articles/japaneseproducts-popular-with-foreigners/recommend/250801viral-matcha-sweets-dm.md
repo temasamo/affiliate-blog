@@ -54,12 +54,6 @@ description: "世界的に人気を集める抹茶スイーツ、カフェで楽
 
 ---
 
-## 購入・予約リンク / Booking & Shopping Links
-- [Amazon Global 抹茶パウダー](#)  
-- [DIY Matcha Kit 海外配送可](#)  
-- [Klook 抹茶体験予約](#)
-
----
 
 ## まとめ / Conclusion
 **EN**: Whether in a café, as a gift, or homemade, matcha sweets offer a unique and delightful way to experience Japanese culture.  
