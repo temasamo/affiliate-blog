@@ -11,7 +11,6 @@ import { h } from 'hastscript';
 const TRAVEL_DIR = path.join(process.cwd(), 'content', 'travel');
 
 function getAllMdxFiles(dir: string, basePath = ''): string[] {
-  // .mdx と .md ファイルの両方に対応
   const files: string[] = [];
   const items = fs.readdirSync(dir);
   
@@ -21,7 +20,7 @@ function getAllMdxFiles(dir: string, basePath = ''): string[] {
     
     if (fs.statSync(fullPath).isDirectory()) {
       files.push(...getAllMdxFiles(fullPath, relativePath));
-    } else if (item.endsWith('.mdx') || item.endsWith('.md')) {
+    } else if (item.endsWith('.mdx')) {
       files.push(relativePath.replace(/\.mdx$/, ''));
     }
   }
@@ -34,16 +33,10 @@ export function getTravelSlugs() {
 }
 
 export function getTravelPostBySlug(slug: string) {
-  // .mdx と .md ファイルの両方を試す
-  let filePath = path.join(TRAVEL_DIR, slug + '.mdx');
-  if (!fs.existsSync(filePath)) {
-    filePath = path.join(TRAVEL_DIR, slug + '.md');
-  }
-  const file = fs.readFileSync(filePath, 'utf8');
+  const file = fs.readFileSync(path.join(TRAVEL_DIR, slug + '.mdx'), 'utf8');
   const { data, content } = matter(file);
   return { frontMatter: data, content, slug };
 }
-
 
 export async function serializeMDX(source: string) {
   return serialize(source, {
