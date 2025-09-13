@@ -75,6 +75,9 @@ export default function Header({ title = "Market Supporter AI", description = "A
               <Link href="/sleep-health" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
                 睡眠・健康
               </Link>
+              <Link href="https://www.marketsupporter-ai.com/travel" className="text-gray-600 hover:text-blue-600 font-medium transition-colors" target="_blank" rel="noopener noreferrer">
+                旅行
+              </Link>
               <Link href="/japanese-tea" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
                 日本茶
               </Link>
@@ -134,6 +137,9 @@ export default function Header({ title = "Market Supporter AI", description = "A
                 <Link href="/sleep-health" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
                   睡眠・健康
                 </Link>
+                <Link href="https://www.marketsupporter-ai.com/travel" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50" target="_blank" rel="noopener noreferrer">
+                  旅行
+                </Link>
                 <Link href="/japanese-tea" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
                   日本茶
                 </Link>
@@ -141,7 +147,7 @@ export default function Header({ title = "Market Supporter AI", description = "A
                   海外トレンド
                 </Link>
                 <Link href="/japan-popular" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
-                  人気の日本商品
+                  旅行
                 </Link>
                 <div className="border-t border-gray-200 my-2"></div>
                 <Link href="/education" className="text-purple-600 hover:text-purple-700 font-bold transition-colors px-2 py-1 rounded-lg hover:bg-purple-50">
