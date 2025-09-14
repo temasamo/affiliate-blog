@@ -164,7 +164,7 @@ export const getStaticProps: GetStaticProps<JapanPopularProps> = async () => {
         const { data: frontMatter } = matter(fileContents);
         
         recommendArticles.push({
-          slug: file.replace(/\.md$/, ''),
+          slug: file.replace(/\.(md|mdx)$/, ''),
           title: frontMatter.title || '記事タイトル',
           description: frontMatter.description || '記事の説明',
           date: frontMatter.date || '2025.07.01',
@@ -185,7 +185,7 @@ export const getStaticProps: GetStaticProps<JapanPopularProps> = async () => {
         const { data: frontMatter } = matter(fileContents);
         
         knowledgeArticles.push({
-          slug: file.replace(/\.md$/, ''),
+          slug: file.replace(/\.(md|mdx)$/, ''),
           title: frontMatter.title || '記事タイトル',
           description: frontMatter.description || '記事の説明',
           date: frontMatter.date || '2025.07.01',

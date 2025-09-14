@@ -208,7 +208,7 @@ export async function getStaticProps() {
         const fileContents = fs.readFileSync(filePath, "utf8");
         const { data } = matter(fileContents);
         return {
-          slug: file.replace(/\.md$/, ""),
+          slug: file.replace(/\.(md|mdx)$/, ""),
           title: data.title || "Untitled",
           description: data.description || "",
           date: data.date || "",
