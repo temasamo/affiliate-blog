@@ -44,6 +44,11 @@ function getArticlePath(slug: string, category: string): string {
     return `/articles/sleep-health/pillow/group2/${slug}`;
   }
   
+  // 日本酒カテゴリの記事の場合
+  if (category === "日本酒") {
+    return `/articles/japanesesake/brands/${slug}`;
+  }
+  
   // その他の記事は一般的なパス
   return `/articles/${slug}`;
 }

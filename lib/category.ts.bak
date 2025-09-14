@@ -1,7 +1,6 @@
 export const CATEGORY_LABELS: Record<string, string> = {
   "sleep-health": "睡眠・健康",
   "japanesetea": "日本茶",
-  "japanesesake": "日本酒",
   "global-hot-picks": "海外トレンド",
   "popular-japan": "人気の日本商品",
   "popular-japanese-items": "人気の日本商品",

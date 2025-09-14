@@ -1,19 +1,30 @@
 import Link from "next/link";
 
 export default function AffButton({
-  rawUrl,
+  mall = "vc",
+  brand,          // こっちが推奨（銘柄名や検索語）
+  rawUrl,         // 既存互換（直接URL）
   children,
   className = "",
   ariaLabel,
 }: {
-  rawUrl: string;
+  mall?: string;
+  brand?: string;
+  rawUrl?: string;
   children: React.ReactNode;
   className?: string;
   ariaLabel?: string;
 }) {
-  if (!rawUrl) throw new Error("AffButton: rawUrl is required");
   const out = process.env.NEXT_PUBLIC_OUT_ENDPOINT || "/api/out";
-  const href = `${out}?mall=vc&url=${encodeURIComponent(rawUrl)}`;
+
+  let href: string | null = null;
+  if (brand && brand.trim()) {
+    href = `${out}?mall=${encodeURIComponent(mall)}&brand=${encodeURIComponent(brand.trim())}`;
+  } else if (rawUrl && rawUrl.trim()) {
+    href = `${out}?mall=${encodeURIComponent(mall)}&url=${encodeURIComponent(rawUrl)}`;
+  }
+
+  if (!href) throw new Error("AffButton: either brand or rawUrl is required");
 
   return (
     <Link
@@ -22,6 +33,7 @@ export default function AffButton({
       target="_blank"
       rel="nofollow sponsored noopener"
       aria-label={ariaLabel}
+      prefetch={false}
     >
       {children}
     </Link>

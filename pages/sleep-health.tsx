@@ -100,7 +100,7 @@ export default function SleepHealth({ knowledgeArticles, recommendArticles }: { 
               おすすめ商品
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {recommendArticles.filter(article => ["2025-08-04-makura-rankingtop5", "2025-08-04-makura-rankingtop6-10", "2025-07-07-makura-series-summary", "2025-07-06-hotel-makura-ranking"].includes(article.slug)).map((article) => (
+              {recommendArticles.slice(0, 3).map((article) => (
                 <Link key={article.slug} href={`/articles/sleep-health/recommend/${article.slug}`} className="group block">
                   <div className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                     <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
@@ -202,7 +202,7 @@ export async function getStaticProps() {
   const getArticles = (dir: string) => {
     if (!fs.existsSync(dir)) return [];
     return fs.readdirSync(dir)
-      .filter((file) => file.endsWith(".md"))
+      .filter((file) => file.endsWith(".md") || file.endsWith(".mdx"))
       .map((file) => {
         const filePath = path.join(dir, file);
         const fileContents = fs.readFileSync(filePath, "utf8");

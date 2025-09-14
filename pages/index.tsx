@@ -216,6 +216,13 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
               overlayColor="bg-black/40"
             />
             <CategoryCard
+              title="日本酒"
+              description="銘柄紹介・知識・コンシェルジュAI"
+              href="/japanese-sake"
+              bgImage="https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=400&h=300&fit=crop&crop=center"
+              overlayColor="bg-black/40"
+            />
+            <CategoryCard
               title="人気の日本商品"
               description="国内で注目のアイテム"
               href="/japan-popular"
@@ -349,6 +356,7 @@ function getCategoryDisplayName(category: string): string {
   const categoryNames: { [key: string]: string } = {
     'sleep-health': '睡眠・健康',
     'japanesetea': '日本茶',
+    'japanesesake': '日本酒',
     'popularproducts-overseas': '海外トレンド',
     '海外トレンド': '海外トレンド',
     'japaneseproducts-popular-with-foreigners': '人気の日本商品',
@@ -376,7 +384,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   }
 
   // 全カテゴリの記事を取得（global-hot-picksも含める）
-  const categories = ['sleep-health', 'japanesetea', 'popularproducts-overseas', '海外トレンド', 'japaneseproducts-popular-with-foreigners', 'global-hot-picks'];
+  const categories = ['sleep-health', 'japanesetea', 'japanesesake', 'popularproducts-overseas', '海外トレンド', 'japaneseproducts-popular-with-foreigners', 'global-hot-picks'];
   
   categories.forEach(category => {
     const categoryPath = path.join(articlesDirectory, category);

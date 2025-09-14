@@ -143,7 +143,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
         {/* 通常記事の表示 */}
         <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8">
           <article className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
-            {isHotPicks && mdxSource ? (
+            {(isHotPicks || mdxSource) ? (
               <MdxRendererHotPicks mdx={mdxSource} />
             ) : (
               <div 
@@ -1095,6 +1095,13 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               overlayColor="bg-black/60"
             />
             <CategoryCard
+              title="日本酒"
+              description="銘柄紹介・知識・コンシェルジュAI"
+              href="/japanese-sake"
+              bgImage="https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=400&h=300&fit=crop&crop=center"
+              overlayColor="bg-black/60"
+            />
+            <CategoryCard
               title="人気の日本商品"
               description="国内で注目のアイテム"
               href="/japan-popular"
@@ -1404,12 +1411,16 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async ({ params }) =
     const isHotPicks = 
       (category === 'global-hot-picks' || frontMatter.category === 'Global Hot Picks') &&
       (type === 'trend' || !type);
+    
+    // 日本酒記事とsleep-health記事もMDXとして処理
+    const isJapaneseSake = category === 'japanesesake';
+    const isSleepHealth = category === 'sleep-health';
 
     let mdxSource = null;
     let contentHtml = '';
 
-    if (isHotPicks) {
-      // Global Hot Picksの場合はMDX処理
+    if (isHotPicks || isJapaneseSake || isSleepHealth) {
+      // Global Hot Picksまたは日本酒記事の場合はMDX処理
       mdxSource = await toHotPicksMdx(content);
     } else {
       // 通常の記事の場合は従来の処理
