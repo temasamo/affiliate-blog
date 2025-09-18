@@ -1064,7 +1064,6 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               <p>• 価格や在庫状況は変動する可能性があります</p>
               <p>• 購入前に各販売店で最新情報をご確認ください</p>
               <p>• 本記事はアフィリエイトプログラムを通じて収益を得ています</p>
-              <p>• 商品画像は各販売店・メーカーのものを使用しています</p>
             </div>
           </div>
         )}
@@ -1415,11 +1414,12 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async ({ params }) =
     // 日本酒記事とsleep-health記事もMDXとして処理
     const isJapaneseSake = category === 'japanesesake';
     const isSleepHealth = category === 'sleep-health';
+    const isJapaneseTea = category === 'japanesetea';
 
     let mdxSource = null;
     let contentHtml = '';
 
-    if (isHotPicks || isJapaneseSake || isSleepHealth) {
+    if (isHotPicks || isJapaneseSake || isSleepHealth || isJapaneseTea) {
       // Global Hot Picksまたは日本酒記事の場合はMDX処理
       mdxSource = await toHotPicksMdx(content);
     } else {

@@ -43,6 +43,20 @@ function getArticlePath(slug: string, category: string): string {
     // その他の睡眠・健康記事はgroup2
     return `/articles/sleep-health/pillow/group2/${slug}`;
   }
+
+  // 日本茶カテゴリの記事の場合
+  if (category === "日本茶") {
+    // slugから推測してサブディレクトリを決定
+    if (slug.includes("knowledge")) {
+      return `/articles/japanesetea/knowledge/${slug}`;
+    }
+    // knowledge以外（dm、recommend、ranking、set等を含む）はrecommend
+    if (slug.includes("dm") || slug.includes("recommend") || slug.includes("ranking") || slug.includes("set") || slug === "yamasa-koyamaen") {
+      return `/articles/japanesetea/recommend/${slug}`;
+    }
+    // デフォルトはrecommend（多くの記事が推薦系のため）
+    return `/articles/japanesetea/recommend/${slug}`;
+  }
   
   // 日本酒カテゴリの記事の場合
   if (category === "日本酒") {
