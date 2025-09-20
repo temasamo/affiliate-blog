@@ -78,9 +78,9 @@ export default function GuidesPage({ guides }: GuidesPageProps) {
                           {guide.title}
                         </h3>
                       </div>
-                      {guide.excerpt && (
+                      {(guide.excerpt || guide.description) && (
                         <p className="text-gray-600 text-sm line-clamp-3 mb-3">
-                          {guide.excerpt}
+                          {guide.excerpt || guide.description}
                         </p>
                       )}
                       {guide.date && (

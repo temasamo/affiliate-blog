@@ -101,7 +101,7 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
         {/* 枕診断AIシリーズ特集 */}
         <section className="mb-12">
           <div className="relative bg-gradient-to-r from-blue-200 to-indigo-200 border border-blue-400 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
-                        {/* 背景画像 */}
+            {/* 背景画像 */}
             <div className="absolute inset-0 opacity-10 pointer-events-none">
               <img 
                 src="/images/pillow-back.jpg" 
@@ -111,43 +111,39 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
             </div>
             {/* コンテンツ */}
             <div className="relative z-10">
-              <div className="flex items-center mb-4">
-              <div className="bg-blue-500 text-white p-2 rounded-full mr-3">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
+              <div className="flex items-center mb-6">
+                <div className="bg-blue-500 text-white p-2 rounded-full mr-3">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900">枕診断AIについて</h3>
+                  <p className="text-sm text-gray-600">科学的根拠に基づく枕選びの新時代</p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-900">枕診断AIシリーズ</h3>
-                <p className="text-sm text-gray-600">科学的根拠に基づく枕選びの新時代</p>
+              
+              {/* 2つのボタン */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Link 
+                  href="/guides" 
+                  className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                  ガイド一覧
+                </Link>
+                <Link 
+                  href="/diagnostic-ai" 
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-pink-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  枕診断AI
+                </Link>
               </div>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
-              <Link href="/diagnostic-ai/makura/01-intro" className="block p-3 bg-white/80 backdrop-blur-sm rounded-lg hover:bg-blue-50 hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
-                <div className="text-sm font-medium text-gray-900 mb-1">1. 枕診断AIとは？</div>
-                <div className="text-xs text-gray-600">AIが導く枕選び</div>
-              </Link>
-              <Link href="/diagnostic-ai/makura/02-history" className="block p-3 bg-white/80 backdrop-blur-sm rounded-lg hover:bg-blue-50 hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
-                <div className="text-sm font-medium text-gray-900 mb-1">2. 枕の歴史探訪</div>
-                <div className="text-xs text-gray-600">古代から現代まで</div>
-              </Link>
-              <Link href="/diagnostic-ai/makura/03-anatomy" className="block p-3 bg-white/80 backdrop-blur-sm rounded-lg hover:bg-blue-50 hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
-                <div className="text-sm font-medium text-gray-900 mb-1">3. 枕と人体の関係</div>
-                <div className="text-xs text-gray-600">解剖学から見る</div>
-              </Link>
-              <Link href="/diagnostic-ai/makura/04-trends" className="block p-3 bg-white/80 backdrop-blur-sm rounded-lg hover:bg-blue-50 hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
-                <div className="text-sm font-medium text-gray-900 mb-1">4. 最新トレンドと科学</div>
-                <div className="text-xs text-gray-600">未来の枕事情</div>
-              </Link>
-            </div>
-            <div className="text-center">
-              <Link href="/guides" className="inline-flex items-center px-6 py-2 bg-blue-600 text-white text-sm font-semibold rounded-full hover:bg-blue-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
-                ガイド一覧へ
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            </div>
             </div>
           </div>
         </section>
