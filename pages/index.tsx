@@ -118,7 +118,7 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900">枕診断AIについて</h3>
+                  <h3 className="text-xl font-bold text-gray-900">枕診断AI</h3>
                   <p className="text-sm text-gray-600">科学的根拠に基づく枕選びの新時代</p>
                 </div>
               </div>
@@ -126,22 +126,24 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
               {/* 2つのボタン */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link 
+                  href="https://mm-diagnosis-pillow.vercel.app/pillow" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-pink-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  枕診断AIページへ
+                </Link>
+                <Link 
                   href="/guides" 
                   className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
                 >
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
-                  ガイド一覧
-                </Link>
-                <Link 
-                  href="/diagnostic-ai" 
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-pink-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                >
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                  枕診断AI
+                  枕診断AIと枕について
                 </Link>
               </div>
             </div>
