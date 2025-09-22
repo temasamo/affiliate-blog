@@ -1,5 +1,5 @@
 import MdxRendererHotPicks from "@/components/MdxRendererHotPicks";
-import { toHotPicksMdx } from "@/lib/mdx-hotpicks";
+import { toHotPicksMdx, toSakeMdx } from "@/lib/mdx-hotpicks";
 import React, { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { GetStaticProps, GetStaticPaths } from 'next';
@@ -1421,7 +1421,11 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async ({ params }) =
 
     if (isHotPicks || isJapaneseSake || isSleepHealth || isJapaneseTea) {
       // Global Hot Picksまたは日本酒記事の場合はMDX処理
-      mdxSource = await toHotPicksMdx(content);
+      if (isJapaneseSake) {
+        mdxSource = await toSakeMdx(content);
+      } else {
+        mdxSource = await toHotPicksMdx(content);
+      }
     } else {
       // 通常の記事の場合は従来の処理
       const processedContent = await unified()

@@ -13,3 +13,14 @@ export async function toHotPicksMdx(source: string) {
     },
   });
 }
+
+/** 日本酒記事専用：MDXに変換（フロントマターを除外） */
+export async function toSakeMdx(source: string) {
+  return serialize(source, {
+    parseFrontmatter: true,
+    mdxOptions: {
+      remarkPlugins: [remarkGfm],
+      rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+    },
+  });
+}
