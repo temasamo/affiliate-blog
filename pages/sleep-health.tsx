@@ -33,7 +33,7 @@ export default function SleepHealth({ knowledgeArticles, recommendArticles }: { 
               枕選びガイド
             </h2>
             <p className="text-gray-600 mb-6">診断・選び方に特化した記事群。まずはここから。</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
               {/* グループ1（基本編）へのカード */}
               <Link
                 href="/articles/sleep-health/pillow/summary/group1"
@@ -91,7 +91,25 @@ export default function SleepHealth({ knowledgeArticles, recommendArticles }: { 
                   </svg>
                 </div>
               </Link>
-            </div>
+              {/* グループ4（特殊編）へのカード */}
+              <Link
+                href="/articles/sleep-health/pillow/summary/pillow-summary-group4"
+                className="block rounded-2xl bg-gradient-to-br from-orange-50 to-red-50 p-6 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="text-xs text-gray-500 mb-2">枕診断シリーズ</div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  グループ4（特殊編）｜洗える・冷感・アレルギー対応・オーガニック・スマート
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  特殊な機能や素材に特化した枕選び。特別なニーズに対応した記事群。
+                </p>
+                <div className="mt-3 flex items-center text-sm text-orange-600">
+                  <span>記事一覧を見る</span>
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </Link>            </div>
           </div>
 
           {/* Recomend セクション */}

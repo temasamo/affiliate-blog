@@ -108,9 +108,9 @@ slug: "cool-breathable-pillow"
 ---
 
 ## 購入リンク
-[楽天で探す](https://search.rakuten.co.jp/search/mall/冷感枕)  
-[Yahoo!ショッピングで探す](https://shopping.yahoo.co.jp/search?p=冷感枕)  
-[Amazonで探す](https://www.amazon.co.jp/s?k=冷感枕)  
+<AffButton mall="rakuten" brand="冷感枕">楽天で探す</AffButton>  
+<AffButton mall="yahoo"   brand="冷感枕">Yahoo!ショッピングで探す</AffButton>  
+<AffButton mall="amazon"  brand="冷感枕">Amazonで探す</AffButton>  
 
 
 ---
