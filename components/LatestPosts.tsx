@@ -71,6 +71,16 @@ function getArticlePath(slug: string, category: string): string {
   }
   
   // 日本酒カテゴリの記事の場合
+  
+  // イベントカテゴリの記事の場合
+  if (category === "イベント") {
+    // 季節のイベント（おせちなど）
+    if (slug === "osechi") {
+      return `/articles/events/seasonal/new-year/${slug}`;
+    }
+    // その他のイベント記事は一般的なパス
+    return `/articles/events/${slug}`;
+  }
   if (category === "日本酒") {
     return `/articles/japanesesake/brands/${slug}`;
   }

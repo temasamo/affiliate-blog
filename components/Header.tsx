@@ -83,12 +83,14 @@ export default function Header({ title = "Market Supporter AI", description = "A
               </Link>
               <Link href="/overseas-trend" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
                 海外トレンド
-                </Link>
-              
-                <Link href="/japanese-sake" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
-                  日本酒
-                </Link>
-                <Link href="/japan-popular" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
+              </Link>
+              <Link href="/events" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
+                イベント
+              </Link>
+              <Link href="/japanese-sake" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
+                日本酒
+              </Link>
+              <Link href="/japan-popular" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
                 人気の日本商品
               </Link>
               <div className="border-l border-gray-300 h-6 mx-4"></div>
@@ -150,7 +152,9 @@ export default function Header({ title = "Market Supporter AI", description = "A
                 <Link href="/overseas-trend" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
                   海外トレンド
                 </Link>
-                
+                <Link href="/events" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
+                  イベント
+                </Link>
                 <Link href="/japanese-sake" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
                   日本酒
                 </Link>
@@ -168,4 +172,4 @@ export default function Header({ title = "Market Supporter AI", description = "A
       </header>
     </>
   );
-} 
+}
