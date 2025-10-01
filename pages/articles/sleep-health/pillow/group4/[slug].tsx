@@ -79,6 +79,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { data: frontMatter, content } = matter(src);
   // 非公開は404
   if (frontMatter.published === false) return { notFound: true };
-  const mdxSource = await serialize(content, {});
+  const mdxSource = await serialize(content, { components: { AffButton } });
   return { props: { frontMatter, mdxSource } };
 };
