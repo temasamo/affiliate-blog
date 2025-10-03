@@ -6,12 +6,13 @@ const LINKS: Record<string, string> = {
   amazon: "https://af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064",
   "amazon-makura": "https://af.moshimo.com/af/c/click?a_id=5122703&p_id=170&pc_id=185&pl_id=4064",
   
-  // 既存の ID を残す
-  jalan: 'https://px.a8.net/svt/ejp?a8mat=45BUIQ+EJC1IQ+14CS+68EPE',
-  'rakuten-travel': 'https://af.moshimo.com/af/c/click?a_id=5140401&p_id=55&pc_id=55&pl_id=636',
-  ikkyu: 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133',
-  ikyu: 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133',
-  airtrip: 'https://px.a8.net/svt/ejp?a8mat=45BUIQ+DB9YR6+2YGS+64JTE',
+  // 旅行サイトのトップページ（アフィリエイト）
+  'rakuten-travel': 'https://af.moshimo.com/af/c/click?a_id=5140401&p_id=55&pc_id=55&pl_id=636&url=' + encodeURIComponent('https://travel.rakuten.co.jp/'),
+  jalan: 'https://px.a8.net/svt/ejp?a8mat=45BUIQ+EJC1IQ+14CS+68EPE&a8ejpredirect=' + encodeURIComponent('https://www.jalan.net/'),
+  ikkyu: 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&vc_url=' + encodeURIComponent('https://www.ikkyu.com/'),
+  ikyu: 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&vc_url=' + encodeURIComponent('https://www.ikkyu.com/'),
+  'yahoo-travel': 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=892040663&vc_url=' + encodeURIComponent('https://travel.yahoo.co.jp/'),
+  airtrip: 'https://px.a8.net/svt/ejp?a8mat=45BUIQ+DB9YR6+2YGS+64JTE&a8ejpredirect=' + encodeURIComponent('https://www.airtrip.jp/'),
 
   // 一休：宿ごとのディープリンク（広告OK宿）
   'ikkyu-asaba':
