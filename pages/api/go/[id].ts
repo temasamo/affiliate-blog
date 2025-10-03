@@ -39,7 +39,7 @@ const LINKS: Record<string, string> = {
   // 山形庄内温泉用のリンク
   'yamagata-rakuten': 'https://af.moshimo.com/af/c/click?a_id=5140401&p_id=55&pc_id=55&pl_id=636&url=' + encodeURIComponent('https://travel.rakuten.co.jp/yado/yamagata/shonai.html'),
   'yamagata-jalan': 'https://px.a8.net/svt/ejp?a8mat=45BUIQ+EJC1IQ+14CS+68EPE&a8ejpredirect=' + encodeURIComponent('https://www.jalan.net/060000/LRG_061400/?stayYear=2025&stayMonth=10&stayDay=4&stayCount=1&roomCount=1&adultNum=2&ypFlg=1&kenCd=060000&screenId=UWW1380&roomCrack=200000&lrgCd=061400&distCd=01&rootCd=04'),
-  'yamagata-ikkyu': 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&vc_url=' + encodeURIComponent('https://www.ikkyu.com/tohoku/12025003/?adc=1&adcid=202550369&adgid=12503541209&discsort=1&gclid=CjwKCAjwxfjGBhAUEiwAKWPwDgcvY3AeVD58x5M2KBTKotUCvhVyezHb56tw8fwPOIU_XmcWZsFYqRoCxiIQAvD_BwE&ikCo=google&lc=1&per_page=20&pn=1&ppc=2&rc=1&si=6'),
+  'yamagata-ikkyu': 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&vc_url=' + encodeURIComponent('https://www.ikkyu.com/00000912/?discsort=1&lc=1&mtc=003&ppc=2&rc=1&st=1'),
   'yamagata-yahoo': 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=892040663&vc_url=' + encodeURIComponent('https://travel.yahoo.co.jp/tohoku/12025003/?adc=1&adcid=14528835824&adgid=129729906627&discsort=1&gclid=CjwKCAjwxfjGBhAUEiwAKWPwDk7kw_Msrs0QLX6ejykyd7c9kvzN1db4tcDtt0uPEuUP6P0A8DnTyBoC8RoQAvD_BwE&ikCo=y_google&lc=1&per_page=20&pn=1&ppc=2&rc=1&si=6'),
 
 };
