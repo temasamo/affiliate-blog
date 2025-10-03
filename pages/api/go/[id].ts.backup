@@ -10,7 +10,8 @@ const LINKS: Record<string, string> = {
   jalan: 'https://px.a8.net/svt/ejp?a8mat=45BUIQ+EJC1IQ+14CS+68EPE',
   'rakuten-travel': 'https://af.moshimo.com/af/c/click?a_id=5140401&p_id=55&pc_id=55&pl_id=636',
   ikkyu: 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133',
-  ikyu: 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133',
+  // 👇 これを追加
+  ikyu: process.env.IKYU_URL || 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133',
   airtrip: 'https://px.a8.net/svt/ejp?a8mat=45BUIQ+DB9YR6+2YGS+64JTE',
 
   // 一休：宿ごとのディープリンク（広告OK宿）
@@ -29,18 +30,6 @@ const LINKS: Record<string, string> = {
   'ikkyu-sakurai':
     'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&vc_url=' +
     encodeURIComponent('https://www.ikyu.com/00001013/?lc=1&ppc=2&rc=1&st=1'),
-  // 下呂温泉用のリンク
-  'gero-rakuten-travel': 'https://af.moshimo.com/af/c/click?a_id=5140401&p_id=55&pc_id=55&pl_id=636&url=' + encodeURIComponent('https://travel.rakuten.co.jp/HOTEL/search/keyword?f_keyword=下呂温泉'),
-  'gero-jalan': 'https://px.a8.net/svt/ejp?a8mat=45BUIQ+EJC1IQ+14CS+68EPE&url=' + encodeURIComponent('https://www.jalan.net/uw/uwp2000/uww2001.do?keyword=下呂温泉'),
-  'gero-ikkyu': 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&vc_url=' + encodeURIComponent('https://www.ikkyu.com/search/?keyword=下呂温泉'),
-  'gero-yahoo-travel': 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=892040663&vc_url=' + encodeURIComponent('https://travel.yahoo.co.jp/search/?keyword=下呂温泉'),
-
-  // 山形庄内温泉用のリンク
-  'yamagata-rakuten': 'https://af.moshimo.com/af/c/click?a_id=5140401&p_id=55&pc_id=55&pl_id=636&url=' + encodeURIComponent('https://travel.rakuten.co.jp/HOTEL/search/keyword?f_keyword=山形温泉'),
-  'yamagata-jalan': 'https://px.a8.net/svt/ejp?a8mat=45BUIQ+EJC1IQ+14CS+68EPE&a8ejpredirect=' + encodeURIComponent('https://www.jalan.net/uw/uwp2000/uww2001.do?keyword=山形温泉'),
-  'yamagata-ikkyu': 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&vc_url=' + encodeURIComponent('https://www.ikkyu.com/search/?keyword=山形温泉'),
-  'yamagata-yahoo': 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=892040663&vc_url=' + encodeURIComponent('https://travel.yahoo.co.jp/search/?keyword=山形温泉'),
-
 };
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
