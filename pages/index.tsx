@@ -452,12 +452,16 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
 
   // 新着記事を取得
   const latest = await getLatestPosts(5);
+  
+  // 旅行記事も新着記事に含める
+  const allLatestPosts = [...latest, ...travelPosts];
+  allLatestPosts.sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return {
     props: {
       latestArticles,
       travelPosts,
-      latest,
+      latest: allLatestPosts.slice(0, 5),
     },
   };
 };
