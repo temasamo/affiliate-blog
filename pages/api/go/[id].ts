@@ -16,19 +16,19 @@ const LINKS: Record<string, string> = {
   // 一休：宿ごとのディープリンク（広告OK宿）
   'ikkyu-asaba':
     'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&vc_url=' +
-    encodeURIComponent('https://www.ikyu.com/00002155/?lc=1&ppc=2&rc=1&st=1&top=rooms'),
+    encodeURIComponent('https://www.ikkyu.com/00002155/?lc=1&ppc=2&rc=1&st=1&top=rooms'),
   'ikkyu-kasho':
     'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&vc_url=' +
-    encodeURIComponent('https://www.ikyu.com/00001255/?lc=1&ppc=2&rc=1&st=1'),
+    encodeURIComponent('https://www.ikkyu.com/00001255/?lc=1&ppc=2&rc=1&st=1'),
   'ikkyu-gorakadan':
     'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&vc_url=' +
-    encodeURIComponent('https://www.ikyu.com/00000362/?lc=1&ppc=2&rc=1&st=1'),
+    encodeURIComponent('https://www.ikkyu.com/00000362/?lc=1&ppc=2&rc=1&st=1'),
   'ikkyu-hiiragiya':
     'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&vc_url=' +
-    encodeURIComponent('https://www.ikyu.com/00000291/?lc=1&ppc=2&rc=1&st=1'),
+    encodeURIComponent('https://www.ikkyu.com/00000291/?lc=1&ppc=2&rc=1&st=1'),
   'ikkyu-sakurai':
     'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&vc_url=' +
-    encodeURIComponent('https://www.ikyu.com/00001013/?lc=1&ppc=2&rc=1&st=1'),
+    encodeURIComponent('https://www.ikkyu.com/00001013/?lc=1&ppc=2&rc=1&st=1'),
   // 下呂温泉用のリンク
   'gero-rakuten-travel': 'https://af.moshimo.com/af/c/click?a_id=5140401&p_id=55&pc_id=55&pl_id=636&url=' + encodeURIComponent('https://travel.rakuten.co.jp/HOTEL/search/keyword?f_keyword=下呂温泉'),
   'gero-jalan': 'https://px.a8.net/svt/ejp?a8mat=45BUIQ+EJC1IQ+14CS+68EPE&url=' + encodeURIComponent('https://www.jalan.net/uw/uwp2000/uww2001.do?keyword=下呂温泉'),
@@ -66,4 +66,4 @@ export const config = {
     bodyParser: false,
     externalResolver: true,
   },
-}; 
+};
