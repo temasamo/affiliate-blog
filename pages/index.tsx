@@ -371,11 +371,18 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   let travelPosts: any[] = [];
   try {
     const slugs = getTravelSlugs();
+    console.log('Travel slugs:', slugs);
     travelPosts = slugs.map((s) => {
-      const { frontMatter, slug } = getTravelPostBySlug(s);
-      return { slug, ...frontMatter };
-      });
+      try {
+        const { frontMatter, slug } = getTravelPostBySlug(s);
+        return { slug, ...frontMatter };
+      } catch (error) {
+        console.error(`Error getting travel post for slug ${s}:`, error);
+        return null;
+      }
+    }).filter(Boolean);
     travelPosts.sort((a: any, b: any) => (a.date < b.date ? 1 : -1));
+    console.log('Travel posts:', travelPosts);
   } catch (e) {
     // 旅行カテゴリ未作成時でも壊さない
     console.log('Travel category not found:', e);
