@@ -54,7 +54,7 @@ export default function Group1Summary({ frontMatter, mdxSource }: { frontMatter:
 }
 
 export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), "articles", "sleep-health", "pillow", "summary", "pillow-summary-group1.mdx");
+  const filePath = path.join(process.cwd(), "articles", "sleep-health", "pillow", "summary", "group1.mdx");
   if (!fs.existsSync(filePath)) return { notFound: true };
   const src = fs.readFileSync(filePath, "utf8");
   const { data: frontMatter, content } = matter(src);
