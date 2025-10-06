@@ -22,7 +22,7 @@ function getAllMdxFiles(dir: string, basePath = ''): string[] {
     if (fs.statSync(fullPath).isDirectory()) {
       files.push(...getAllMdxFiles(fullPath, relativePath));
     } else if (item.endsWith('.mdx') || item.endsWith('.md')) {
-      files.push(relativePath.replace(/\.mdx$/, ''));
+      files.push(relativePath.replace(/\.mdx$/, '').replace(/\.md$/, ''));
     }
   }
   

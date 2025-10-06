@@ -12,11 +12,16 @@ export async function getStaticProps() {
 }
 
 export default function TravelIndex({ posts }: { posts: any[] }) {
+  // デバッグ情報を追加
+  console.log('All posts:', posts.map(p => ({ slug: p.slug, category: p.category, subcategory: p.subcategory, published: p.published })));
+  
   // 温泉地ガイド（category: "旅行" かつ subcategory: "温泉地ガイド"）
   const onsenGuidePosts = posts
     .filter(p => p.category === '旅行' && p.subcategory === '温泉地ガイド' && p.published !== false)
     .sort((a, b) => (a.date > b.date ? -1 : 1))
     .slice(0, 6);
+  
+  console.log('Onsen guide posts:', onsenGuidePosts.map(p => ({ slug: p.slug, title: p.title })));
   
   // 高級温泉旅館ガイド（slugに"luxury"が含まれるもの）
   const luxuryOnsenPosts = posts.filter((p) => p.slug && p.slug.includes('luxury'));
@@ -54,7 +59,7 @@ export default function TravelIndex({ posts }: { posts: any[] }) {
               {onsenGuidePosts.map((p) => (
                 <Link
                   key={p.slug}
-                  href={`/travel/${p.slug}`}
+                  href={`/travel/onsen/${p.slug}`}
                   className="group block rounded-2xl bg-white/90 backdrop-blur-sm border border-white/30 p-6 hover:bg-white hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-1 no-underline"
                 >
                   <div className="flex items-center justify-between mb-3">

@@ -12,7 +12,7 @@ type Item = {
 function getArticlePath(slug: string, category: string): string {
   // 旅行記事の場合
   if (category === "旅行") {
-    return `/travel/${slug}`;
+    return `/travel/onsen/${slug}`;
   }
   
   // Global Hot Picksの場合
