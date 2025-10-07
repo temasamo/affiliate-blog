@@ -15,6 +15,11 @@ function getArticlePath(slug: string, category: string): string {
     return `/travel/onsen/${slug}`;
   }
   
+  // 温泉地ガイド記事の場合
+  if (category === "温泉地ガイド") {
+    return `/travel/onsen/${slug}`;
+  }
+  
   // Global Hot Picksの場合
   if (category === "global-hot-picks" || category === "海外トレンド" || category === "Global Hot Picks") {
     return `/articles/global-hot-picks/trend/${slug}`;
@@ -63,7 +68,7 @@ function getArticlePath(slug: string, category: string): string {
       return `/articles/japanesetea/knowledge/${slug}`;
     }
     // knowledge以外（dm、recommend、ranking、set等を含む）はrecommend
-    if (slug.includes("dm") || slug.includes("recommend") || slug.includes("ranking") || slug.includes("set") || slug === "yamasa-koyamaen") {
+    if (slug.includes("dm") || slug.includes("recommend") || slug.includes("ranking") || slug.includes("set") || slug === "yamasa-koyamaen" || slug === "kanbayashi-shunsho") {
       return `/articles/japanesetea/recommend/${slug}`;
     }
     // デフォルトはrecommend（多くの記事が推薦系のため）
