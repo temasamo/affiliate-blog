@@ -1144,7 +1144,8 @@ function getCategoryLink(category: string): string {
     'popularproducts-overseas': '/overseas-trend',
     '海外トレンド': '/overseas-trend',
     'japaneseproducts-popular-with-foreigners': '/japan-popular',
-    'global-hot-picks': '/global-hot-picks'
+    'global-hot-picks': '/global-hot-picks',
+    'japanesesake': '/articles/japanesesake/brands'
   };
   return categoryLinks[category] || '/';
 }
