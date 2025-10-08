@@ -101,23 +101,48 @@ export default function GiftChatUI({ category, target }: GiftChatUIProps) {
     setChat(prev => [...prev, userMessage]);
     
     // 回答を保存
-    setAnswers(prev => ({
-      ...prev,
+    const newAnswers = {
+      ...answers,
       [`question_${currentQuestionIndex}`]: option
-    }));
+    };
+    setAnswers(newAnswers);
     
     // 次の質問へ
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(prev => prev + 1);
     } else {
-      // 最後の質問の場合、提案を生成
+      // 最後の質問の場合、提案を生成（回答を直接渡す）
       setTimeout(() => {
-        generateSuggestions();
+        generateSuggestionsWithAnswers(newAnswers);
       }, 1000);
     }
   };
 
-  // 提案を生成
+  // 提案を生成（回答を直接受け取る）
+  const generateSuggestionsWithAnswers = (answersToUse: Record<string, string>) => {
+    console.log("=== generateSuggestionsWithAnswers 呼び出し ===");
+    console.log("カテゴリ:", category);
+    console.log("回答:", answersToUse);
+    
+    addTypingMessage();
+    
+    setTimeout(() => {
+      // カテゴリ別の提案生成関数を使用
+      const suggestions = generateCategorySuggestions(category, answersToUse);
+      
+      const suggestionMessage: ChatMessage = {
+        id: 'suggestions',
+        from: 'bot',
+        text: `${target}にぴったりのギフトを3つ選びました！`,
+        suggestions: suggestions,
+        timestamp: new Date()
+      };
+      
+      setChat(prev => [...prev, suggestionMessage]);
+    }, 2000);
+  };
+
+  // 提案を生成（従来の方法）
   const generateSuggestions = () => {
     console.log("=== generateSuggestions 呼び出し ===");
     console.log("カテゴリ:", category);
