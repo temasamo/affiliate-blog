@@ -118,6 +118,21 @@ export default function SleepHealth({ knowledgeArticles, recommendArticles }: { 
               おすすめ商品
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* スマート枕記事カード */}
+              <Link href="/articles/sleep-health/pillow/group4/smart-pillow" className="group block">
+                <div className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    最新テクノロジー枕（スマート枕・AI・IoT）
+                  </h3>
+                  <p className="text-sm text-gray-600">いびき検知・睡眠トラッキング・温度調整など、AIやIoT技術を搭載した最新スマート枕の魅力と選び方を徹底解説。</p>
+                  <div className="mt-3 flex items-center text-xs text-blue-600">
+                    <span>詳細を見る</span>
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </Link>
               {recommendArticles.slice(0, 3).map((article) => (
                 <Link key={article.slug} href={`/articles/sleep-health/recommend/${article.slug}`} className="group block">
                   <div className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
