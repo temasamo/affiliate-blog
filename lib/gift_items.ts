@@ -32,6 +32,52 @@ export const giftTeaItems: GiftItem[] = [
   },
 ];
 
+// ヘアケア専用のギフトアイテム定義
+export const giftHaircareItems: GiftItem[] = [
+  {
+    id: "premium_shampoo_set",
+    name: "高級シャンプー・トリートメントセット",
+    description: "プロ仕様の高級シャンプーとトリートメントのセット。髪の質感とツヤを向上させます。",
+    keywords: ["シャンプー", "トリートメント", "ヘアケア", "高級", "プロ仕様"],
+    priceRange: "¥3,000〜¥8,000",
+  },
+  {
+    id: "hair_oil_serum",
+    name: "ヘアオイル・セラムセット",
+    description: "髪のダメージを修復し、美しいツヤを与えるオイルとセラムのセット。",
+    keywords: ["ヘアオイル", "セラム", "ダメージ修復", "ツヤ", "ヘアケア"],
+    priceRange: "¥2,500〜¥6,000",
+  },
+  {
+    id: "hair_mask_treatment",
+    name: "ヘアマスク・集中ケアセット",
+    description: "週1回の集中ケアで髪質を改善するヘアマスクとトリートメントのセット。",
+    keywords: ["ヘアマスク", "集中ケア", "トリートメント", "髪質改善", "ヘアケア"],
+    priceRange: "¥2,000〜¥5,000",
+  },
+  {
+    id: "hair_styling_tools",
+    name: "ヘアスタイリングツールセット",
+    description: "ブロワー、ブラシ、コームなど、美しいスタイリングをサポートするツールセット。",
+    keywords: ["ヘアスタイリング", "ブロワー", "ブラシ", "ツール", "ヘアケア"],
+    priceRange: "¥4,000〜¥12,000",
+  },
+  {
+    id: "scalp_care_set",
+    name: "スカルプケアセット",
+    description: "頭皮の健康をサポートするシャンプーとスカルプマッサージツールのセット。",
+    keywords: ["スカルプケア", "頭皮", "マッサージ", "ヘアケア", "健康"],
+    priceRange: "¥3,500〜¥7,000",
+  },
+  {
+    id: "color_care_set",
+    name: "カラーケアセット",
+    description: "カラーリングした髪の色持ちとツヤを保つ専用シャンプーとトリートメント。",
+    keywords: ["カラーケア", "カラーリング", "色持ち", "ヘアケア", "専用"],
+    priceRange: "¥2,500〜¥6,000",
+  }
+];
+
 // 残り9カテゴリのギフトアイテム定義
 export const giftMiscItems: GiftItem[] = [
   {
@@ -341,12 +387,45 @@ export function generateCategorySuggestions(category: string, answers: Record<st
       return generateTeaSuggestions(answers);
     
     case "美容・スキンケア":
-      // 美容・スキンケア関連のアイテムを提案
-      suggestions.push(
-        { name: "高級スキンケアセット", keywords: ["スキンケア", "美容", "化粧品"], priceRange: "¥4,000〜¥12,000" },
-        { name: "バスソルト・入浴剤セット", keywords: ["バスソルト", "入浴剤", "リラックス"], priceRange: "¥3,000〜¥8,000" },
-        { name: "ヘアケアセット", keywords: ["ヘアケア", "シャンプー", "トリートメント"], priceRange: "¥2,000〜¥6,000" }
-      );
+      // 最後の質問の回答に基づいて提案を決定
+      const lastAnswer = answers[`question_${Object.keys(answers).length - 1}`] || "";
+      
+      if (lastAnswer === "ヘアケア") {
+        // ヘアケア関連のアイテムを3つ提案
+        suggestions.push(
+          giftHaircareItems[0], // 高級シャンプー・トリートメントセット
+          giftHaircareItems[1], // ヘアオイル・セラムセット
+          giftHaircareItems[2]  // ヘアマスク・集中ケアセット
+        );
+      } else if (lastAnswer === "スキンケアセット") {
+        // スキンケア関連のアイテムを提案
+        suggestions.push(
+          { name: "高級スキンケアセット", keywords: ["スキンケア", "美容", "化粧品"], priceRange: "¥4,000〜¥12,000" },
+          { name: "アンチエイジングセット", keywords: ["アンチエイジング", "美容", "スキンケア"], priceRange: "¥5,000〜¥15,000" },
+          { name: "保湿スキンケアセット", keywords: ["保湿", "スキンケア", "美容"], priceRange: "¥3,000〜¥8,000" }
+        );
+      } else if (lastAnswer === "バス・ボディケア") {
+        // バス・ボディケア関連のアイテムを提案
+        suggestions.push(
+          { name: "バスソルト・入浴剤セット", keywords: ["バスソルト", "入浴剤", "リラックス"], priceRange: "¥3,000〜¥8,000" },
+          { name: "ボディケアセット", keywords: ["ボディケア", "ローション", "美容"], priceRange: "¥2,500〜¥6,000" },
+          { name: "アロマバスセット", keywords: ["アロマ", "バス", "リラックス"], priceRange: "¥3,500〜¥7,000" }
+        );
+      } else if (lastAnswer === "化粧品") {
+        // 化粧品関連のアイテムを提案
+        suggestions.push(
+          { name: "高級化粧品セット", keywords: ["化粧品", "メイクアップ", "美容"], priceRange: "¥4,000〜¥12,000" },
+          { name: "リップケアセット", keywords: ["リップ", "化粧品", "美容"], priceRange: "¥2,000〜¥5,000" },
+          { name: "アイメイクセット", keywords: ["アイメイク", "化粧品", "美容"], priceRange: "¥3,000〜¥8,000" }
+        );
+      } else {
+        // デフォルト：バランスの取れた提案
+        suggestions.push(
+          { name: "高級スキンケアセット", keywords: ["スキンケア", "美容", "化粧品"], priceRange: "¥4,000〜¥12,000" },
+          { name: "バスソルト・入浴剤セット", keywords: ["バスソルト", "入浴剤", "リラックス"], priceRange: "¥3,000〜¥8,000" },
+          { name: "ヘアケアセット", keywords: ["ヘアケア", "シャンプー", "トリートメント"], priceRange: "¥2,000〜¥6,000" }
+        );
+      }
       break;
     
     case "健康グッズ":
