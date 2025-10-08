@@ -9,6 +9,8 @@ interface ChatMessage {
   options?: string[];
   suggestions?: GiftItem[];
   timestamp: Date;
+  type?: string;
+  optional?: boolean;
 }
 
 interface GiftChatUIProps {
@@ -21,6 +23,7 @@ export default function GiftChatUI({ category, target }: GiftChatUIProps) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [isTyping, setIsTyping] = useState(false);
+  const [textareaValue, setTextareaValue] = useState("");
   const chatRef = useRef<HTMLDivElement>(null);
 
   // 初期メッセージ
@@ -65,6 +68,8 @@ export default function GiftChatUI({ category, target }: GiftChatUIProps) {
       from: 'bot',
       text: question.question,
       options: question.options,
+      type: question.type,
+      optional: question.optional,
       timestamp: new Date()
     };
     
@@ -116,6 +121,38 @@ export default function GiftChatUI({ category, target }: GiftChatUIProps) {
         generateSuggestionsWithAnswers(newAnswers);
       }, 1000);
     }
+  };
+
+  // textarea送信処理
+  const handleTextareaSubmit = () => {
+    if (!textareaValue.trim()) return;
+    
+    const questions = getQuestionsForCategory();
+    const currentQuestion = questions[currentQuestionIndex];
+    
+    // ユーザーの回答を追加
+    const userMessage: ChatMessage = {
+      id: `user_${currentQuestionIndex}`,
+      from: 'user',
+      text: textareaValue,
+      timestamp: new Date()
+    };
+    
+    setChat(prev => [...prev, userMessage]);
+    
+    // 回答を保存
+    const newAnswers = {
+      ...answers,
+      [`question_${currentQuestionIndex}`]: textareaValue
+    };
+    setAnswers(newAnswers);
+    
+    // 提案を生成
+    setTimeout(() => {
+      generateSuggestionsWithAnswers(newAnswers);
+    }, 1000);
+    
+    setTextareaValue("");
   };
 
   // 提案を生成（回答を直接受け取る）
@@ -211,6 +248,42 @@ export default function GiftChatUI({ category, target }: GiftChatUIProps) {
                         {option}
                       </button>
                     ))}
+                  </div>
+                )}
+                
+                {message.type === "textarea" && (
+                  <div className="mt-3">
+                    <textarea
+                      value={textareaValue}
+                      onChange={(e) => setTextareaValue(e.target.value)}
+                      placeholder={message.optional ? "（任意）ご自由にご記入ください" : "ご記入ください"}
+                      className="w-full h-20 px-3 py-2 border border-gray-300 rounded-lg text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                    <div className="mt-2 flex justify-end gap-2">
+                      {message.optional && (
+                        <button
+                          onClick={() => {
+                            const newAnswers = {
+                              ...answers,
+                              [`question_${currentQuestionIndex}`]: ""
+                            };
+                            setTimeout(() => {
+                              generateSuggestionsWithAnswers(newAnswers);
+                            }, 1000);
+                          }}
+                          className="px-3 py-1 text-xs bg-gray-200 text-gray-600 rounded hover:bg-gray-300 transition-colors"
+                        >
+                          スキップ
+                        </button>
+                      )}
+                      <button
+                        onClick={handleTextareaSubmit}
+                        disabled={!textareaValue.trim()}
+                        className="px-4 py-1 text-xs bg-blue-500 text-white rounded hover:bg-blue-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+                      >
+                        送信
+                      </button>
+                    </div>
                   </div>
                 )}
                 

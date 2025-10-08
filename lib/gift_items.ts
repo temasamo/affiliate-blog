@@ -187,20 +187,48 @@ export const questionFlows = {
   ],
   "美容・スキンケア": [
     {
-      question: "最近、お肌や髪のことで気になることはありますか？",
-      options: ["乾燥が気になる", "エイジングケアに興味がある", "特にない"]
+      question: "最近、お肌や髪について気になっていることはございますか？",
+      options: [
+        "乾燥が気になる",
+        "シミやくすみが気になる", 
+        "ハリやたるみが気になる",
+        "髪のパサつき・ダメージが気になる",
+        "特にないけれど、何か始めてみたい"
+      ]
     },
     {
-      question: "普段のスキンケアで重視していることは？",
-      options: ["保湿", "美白", "アンチエイジング", "特に意識していない"]
+      question: "美容アイテムを選ぶ際に重視されることはどれですか？",
+      options: [
+        "お手入れが簡単なものが良い",
+        "効果を実感しやすいものが良い",
+        "肌に優しい・低刺激なもの",
+        "年齢に合ったケアができるもの",
+        "デザインや機能性が良いもの"
+      ]
     },
     {
-      question: "香りにこだわりはありますか？",
-      options: ["香りにこだわりたい", "無香料が良い", "どちらでも良い"]
+      question: "普段よくお使いの美容アイテムはございますか？",
+      options: [
+        "スキンケア（化粧水・クリームなど）",
+        "美顔器などの美容家電",
+        "ドライヤー・ヘアアイロン",
+        "ボディケア用品（入浴剤・マッサージなど）",
+        "あまり使っていない"
+      ]
     },
     {
-      question: "どんな美容アイテムに興味がありそうですか？",
-      options: ["スキンケアセット", "バス・ボディケア", "ヘアケア", "化粧品"]
+      question: "ご予算や使用頻度について、近いものをお選びくださいませ。",
+      options: [
+        "できれば1万円以内で続けやすいもの",
+        "価格よりも効果を重視したい",
+        "たまに使えれば十分（週1〜2回）",
+        "毎日しっかり使いたい"
+      ]
+    },
+    {
+      question: "上記に当てはまらないお悩みやご希望がございましたら、ご自由にご記入ください。",
+      type: "textarea",
+      optional: true
     }
   ],
   "健康グッズ": [
@@ -391,49 +419,28 @@ export function generateCategorySuggestions(category: string, answers: Record<st
       return generateTeaSuggestions(answers);
     
     case "美容・スキンケア":
-      // 最後の質問の回答に基づいて提案を決定
-      const answerKeys = Object.keys(answers);
-      const lastAnswer = answerKeys.length > 0 ? answers[answerKeys[answerKeys.length - 1]] : "";
-      
-      // デバッグ用ログ（本番では削除）
+      // 全5問の回答を組み合わせた提案ロジック
       console.log("美容・スキンケア回答:", answers);
-      console.log("最後の回答:", lastAnswer);
       
-      if (lastAnswer === "ヘアケア") {
-        // ヘアケア関連のアイテムを3つ提案
+      const concern = answers.question_0 || "";
+      const priority = answers.question_1 || "";
+      const habit = answers.question_2 || "";
+      const budget = answers.question_3 || "";
+      const freeText = answers.question_4 || "";
+      
+      // 自由記述がある場合はGPT推論を実行
+      if (freeText.trim()) {
+        console.log("自由記述:", freeText);
+        // GPT API呼び出し（非同期処理のため、一旦デフォルト提案を返す）
+        // 実際の実装では、GiftChatUI側でGPT APIを呼び出して結果を更新する
         suggestions.push(
-          giftHaircareItems[0], // 高級シャンプー・トリートメントセット
-          giftHaircareItems[1], // ヘアオイル・セラムセット
-          giftHaircareItems[2]  // ヘアマスク・集中ケアセット
-        );
-      } else if (lastAnswer === "スキンケアセット") {
-        // スキンケア関連のアイテムを提案
-        suggestions.push(
+          { name: "カスタム提案（GPT推論中）", keywords: ["カスタム", "GPT", "推論"], priceRange: "¥3,000〜¥15,000" },
           { name: "高級スキンケアセット", keywords: ["スキンケア", "美容", "化粧品"], priceRange: "¥4,000〜¥12,000" },
-          { name: "美顔器・美容機器セット", keywords: ["美顔器", "美容機器", "スキンケア", "エステ"], priceRange: "¥8,000〜¥25,000" },
-          { name: "アンチエイジングセット", keywords: ["アンチエイジング", "美容", "スキンケア"], priceRange: "¥5,000〜¥15,000" }
-        );
-      } else if (lastAnswer === "バス・ボディケア") {
-        // バス・ボディケア関連のアイテムを提案
-        suggestions.push(
-          { name: "バスソルト・入浴剤セット", keywords: ["バスソルト", "入浴剤", "リラックス"], priceRange: "¥3,000〜¥8,000" },
-          { name: "ボディケアセット", keywords: ["ボディケア", "ローション", "美容"], priceRange: "¥2,500〜¥6,000" },
-          { name: "アロマバスセット", keywords: ["アロマ", "バス", "リラックス"], priceRange: "¥3,500〜¥7,000" }
-        );
-      } else if (lastAnswer === "化粧品") {
-        // 化粧品関連のアイテムを提案
-        suggestions.push(
-          { name: "高級化粧品セット", keywords: ["化粧品", "メイクアップ", "美容"], priceRange: "¥4,000〜¥12,000" },
-          { name: "リップケアセット", keywords: ["リップ", "化粧品", "美容"], priceRange: "¥2,000〜¥5,000" },
-          { name: "アイメイクセット", keywords: ["アイメイク", "化粧品", "美容"], priceRange: "¥3,000〜¥8,000" }
+          { name: "美顔器・美容機器", keywords: ["美顔器", "美容機器", "スキンケア", "エステ"], priceRange: "¥8,000〜¥25,000" }
         );
       } else {
-        // デフォルト：バランスの取れた提案
-        suggestions.push(
-          { name: "高級スキンケアセット", keywords: ["スキンケア", "美容", "化粧品"], priceRange: "¥4,000〜¥12,000" },
-          { name: "美顔器・美容機器", keywords: ["美顔器", "美容機器", "スキンケア", "エステ"], priceRange: "¥8,000〜¥25,000" },
-          { name: "ヘアケア・ドライヤーセット", keywords: ["ヘアケア", "ドライヤー", "シャンプー", "トリートメント"], priceRange: "¥4,000〜¥12,000" }
-        );
+        // 通常の組み合わせロジック
+        suggestions = generateBeautySuggestions(concern, priority, habit, budget);
       }
       break;
     
@@ -512,6 +519,90 @@ export function generateCategorySuggestions(category: string, answers: Record<st
     default:
       // デフォルトは雑貨系
       return generateMiscSuggestions(answers);
+  }
+  
+  return suggestions.slice(0, 3);
+}
+
+// 美容・スキンケアの組み合わせ提案ロジック
+export function generateBeautySuggestions(concern: string, priority: string, habit: string, budget: string): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+  
+  // 1. 悩み（concern）に基づく提案
+  if (concern.includes("乾燥")) {
+    suggestions.push(
+      { name: "保湿スキンケアセット", keywords: ["保湿", "スキンケア", "乾燥対策"], priceRange: "¥3,000〜¥8,000" }
+    );
+  } else if (concern.includes("シミ") || concern.includes("くすみ")) {
+    suggestions.push(
+      { name: "美白・エイジングケアセット", keywords: ["美白", "シミ", "くすみ", "エイジング"], priceRange: "¥5,000〜¥15,000" }
+    );
+  } else if (concern.includes("ハリ") || concern.includes("たるみ")) {
+    suggestions.push(
+      { name: "美顔器・リフトアップセット", keywords: ["美顔器", "リフトアップ", "ハリ", "たるみ"], priceRange: "¥8,000〜¥25,000" }
+    );
+  } else if (concern.includes("髪")) {
+    suggestions.push(
+      giftHaircareItems[0], // 高級シャンプー・トリートメントセット
+      giftHaircareItems[1]  // ヘアオイル・セラムセット
+    );
+  }
+  
+  // 2. 重視すること（priority）に基づく提案
+  if (priority.includes("簡単")) {
+    suggestions.push(
+      { name: "オールインワンケアセット", keywords: ["オールインワン", "簡単", "時短"], priceRange: "¥2,000〜¥6,000" }
+    );
+  } else if (priority.includes("効果")) {
+    suggestions.push(
+      { name: "高濃度美容液セット", keywords: ["高濃度", "美容液", "効果", "集中ケア"], priceRange: "¥6,000〜¥18,000" }
+    );
+  } else if (priority.includes("低刺激")) {
+    suggestions.push(
+      { name: "敏感肌用スキンケアセット", keywords: ["敏感肌", "低刺激", "無添加"], priceRange: "¥3,000〜¥8,000" }
+    );
+  }
+  
+  // 3. 使用習慣（habit）に基づく提案
+  if (habit.includes("美顔器")) {
+    suggestions.push(
+      { name: "美顔器・美容機器セット", keywords: ["美顔器", "美容機器", "エステ"], priceRange: "¥8,000〜¥25,000" }
+    );
+  } else if (habit.includes("ドライヤー")) {
+    suggestions.push(
+      giftHaircareItems[3] // ヘアスタイリングツールセット
+    );
+  } else if (habit.includes("ボディケア")) {
+    suggestions.push(
+      { name: "バスソルト・入浴剤セット", keywords: ["バスソルト", "入浴剤", "リラックス"], priceRange: "¥3,000〜¥8,000" }
+    );
+  }
+  
+  // 4. 予算（budget）に基づく調整
+  if (budget.includes("1万円以内")) {
+    // 高価格帯の商品を除外
+    suggestions.splice(suggestions.findIndex(item => item.priceRange.includes("¥15,000") || item.priceRange.includes("¥25,000")), 1);
+  } else if (budget.includes("効果を重視")) {
+    // 高価格帯の商品を優先
+    suggestions.push(
+      { name: "高級美顔器セット", keywords: ["高級", "美顔器", "エステ級"], priceRange: "¥15,000〜¥30,000" }
+    );
+  }
+  
+  // 5. 不足分をデフォルトで補完
+  if (suggestions.length < 3) {
+    const defaultItems = [
+      { name: "高級スキンケアセット", keywords: ["スキンケア", "美容", "化粧品"], priceRange: "¥4,000〜¥12,000" },
+      { name: "ヘアケア・ドライヤーセット", keywords: ["ヘアケア", "ドライヤー", "シャンプー"], priceRange: "¥4,000〜¥12,000" },
+      { name: "バス・ボディケアセット", keywords: ["バス", "ボディケア", "リラックス"], priceRange: "¥3,000〜¥8,000" }
+    ];
+    
+    for (const item of defaultItems) {
+      if (suggestions.length >= 3) break;
+      if (!suggestions.some(s => s.name === item.name)) {
+        suggestions.push(item);
+      }
+    }
   }
   
   return suggestions.slice(0, 3);
