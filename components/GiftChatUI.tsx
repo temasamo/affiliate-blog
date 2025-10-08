@@ -119,6 +119,10 @@ export default function GiftChatUI({ category, target }: GiftChatUIProps) {
 
   // 提案を生成
   const generateSuggestions = () => {
+    console.log("=== generateSuggestions 呼び出し ===");
+    console.log("カテゴリ:", category);
+    console.log("回答:", answers);
+    
     addTypingMessage();
     
     setTimeout(() => {

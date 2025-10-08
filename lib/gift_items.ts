@@ -379,6 +379,10 @@ export const teaQuestions: Question[] = [
 
 // カテゴリ別の提案生成関数
 export function generateCategorySuggestions(category: string, answers: Record<string, string>): GiftItem[] {
+  console.log("=== generateCategorySuggestions 呼び出し ===");
+  console.log("カテゴリ:", category);
+  console.log("回答:", answers);
+  
   const suggestions: GiftItem[] = [];
   
   // カテゴリに応じた適切なアイテムを選択
