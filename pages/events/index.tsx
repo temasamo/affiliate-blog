@@ -47,7 +47,7 @@ export default function EventsPage() {
 
             {/* 誕生日プレゼント */}
             <Link 
-              href="/events/under-construction" 
+              href="/events/birthday" 
               className="group block bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 p-6 hover:-translate-y-1"
             >
               <div className="text-center">
