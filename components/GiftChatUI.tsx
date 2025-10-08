@@ -71,8 +71,6 @@ export default function GiftChatUI({ category, target }: GiftChatUIProps) {
       from: 'bot',
       text: question.question,
       options: question.options,
-      type: question.type,
-      optional: question.optional,
       timestamp: new Date()
     };
     

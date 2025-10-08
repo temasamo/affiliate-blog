@@ -405,8 +405,8 @@ export function generateCategorySuggestions(category: string, answers: Record<st
   console.log("=== generateCategorySuggestions 呼び出し ===");
   console.log("カテゴリ:", category);
   console.log("回答:", answers);
-  
-  const suggestions: GiftItem[] = [];
+
+  let suggestions: GiftItem[] = [];
   
   // カテゴリに応じた適切なアイテムを選択
   switch (category) {
