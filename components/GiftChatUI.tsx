@@ -11,6 +11,7 @@ interface ChatMessage {
   timestamp: Date;
   type?: string;
   optional?: boolean;
+  feedback?: boolean;
 }
 
 interface GiftChatUIProps {
@@ -24,6 +25,8 @@ export default function GiftChatUI({ category, target }: GiftChatUIProps) {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [isTyping, setIsTyping] = useState(false);
   const [textareaValue, setTextareaValue] = useState("");
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [showFreeText, setShowFreeText] = useState(false);
   const chatRef = useRef<HTMLDivElement>(null);
 
   // 初期メッセージ
@@ -127,12 +130,9 @@ export default function GiftChatUI({ category, target }: GiftChatUIProps) {
   const handleTextareaSubmit = () => {
     if (!textareaValue.trim()) return;
     
-    const questions = getQuestionsForCategory();
-    const currentQuestion = questions[currentQuestionIndex];
-    
     // ユーザーの回答を追加
     const userMessage: ChatMessage = {
-      id: `user_${currentQuestionIndex}`,
+      id: 'free_text_response',
       from: 'user',
       text: textareaValue,
       timestamp: new Date()
@@ -140,19 +140,58 @@ export default function GiftChatUI({ category, target }: GiftChatUIProps) {
     
     setChat(prev => [...prev, userMessage]);
     
-    // 回答を保存
-    const newAnswers = {
-      ...answers,
-      [`question_${currentQuestionIndex}`]: textareaValue
-    };
-    setAnswers(newAnswers);
+    // GPT API呼び出し
+    addTypingMessage();
     
-    // 提案を生成
-    setTimeout(() => {
-      generateSuggestionsWithAnswers(newAnswers);
-    }, 1000);
+    setTimeout(async () => {
+      try {
+        const response = await fetch('/api/beauty-gpt-suggestions', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            freeText: textareaValue,
+            concern: answers.question_0 || "",
+            priority: answers.question_1 || "",
+            habit: answers.question_2 || "",
+            budget: answers.question_3 || ""
+          }),
+        });
+        
+        const data = await response.json();
+        
+        const gptSuggestionMessage: ChatMessage = {
+          id: 'gpt_suggestions',
+          from: 'bot',
+          text: 'ご希望に合わせて新しい提案をいたします！',
+          suggestions: data.suggestions,
+          timestamp: new Date()
+        };
+        
+        setChat(prev => [...prev, gptSuggestionMessage]);
+      } catch (error) {
+        console.error('GPT API Error:', error);
+        
+        // エラー時のフォールバック
+        const fallbackMessage: ChatMessage = {
+          id: 'fallback_suggestions',
+          from: 'bot',
+          text: '申し訳ございません。システムエラーが発生しました。通常の提案をいたします。',
+          suggestions: [
+            { name: "高級スキンケアセット", keywords: ["スキンケア", "美容", "化粧品"], priceRange: "¥4,000〜¥12,000" },
+            { name: "美顔器・美容機器", keywords: ["美顔器", "美容機器", "エステ"], priceRange: "¥8,000〜¥25,000" },
+            { name: "ヘアケア・ドライヤーセット", keywords: ["ヘアケア", "ドライヤー", "シャンプー"], priceRange: "¥4,000〜¥12,000" }
+          ],
+          timestamp: new Date()
+        };
+        
+        setChat(prev => [...prev, fallbackMessage]);
+      }
+    }, 2000);
     
     setTextareaValue("");
+    setShowFreeText(false);
   };
 
   // 提案を生成（回答を直接受け取る）
@@ -176,6 +215,19 @@ export default function GiftChatUI({ category, target }: GiftChatUIProps) {
       };
       
       setChat(prev => [...prev, suggestionMessage]);
+      
+      // フィードバック機能を表示
+      setTimeout(() => {
+        const feedbackMessage: ChatMessage = {
+          id: 'feedback',
+          from: 'bot',
+          text: 'この提案はいかがでしょうか？',
+          feedback: true,
+          timestamp: new Date()
+        };
+        setChat(prev => [...prev, feedbackMessage]);
+        setShowFeedback(true);
+      }, 2000);
     }, 2000);
   };
 
@@ -251,31 +303,63 @@ export default function GiftChatUI({ category, target }: GiftChatUIProps) {
                   </div>
                 )}
                 
+                {message.feedback && (
+                  <div className="mt-3 space-y-2">
+                    <button
+                      onClick={() => {
+                        setShowFeedback(false);
+                        const satisfiedMessage: ChatMessage = {
+                          id: 'satisfied',
+                          from: 'user',
+                          text: '気に入りました！',
+                          timestamp: new Date()
+                        };
+                        setChat(prev => [...prev, satisfiedMessage]);
+                      }}
+                      className="block w-full text-left px-3 py-2 rounded-lg bg-green-100 hover:bg-green-200 transition-colors text-sm text-green-800"
+                    >
+                      ✅ 気に入りました！
+                    </button>
+                    <button
+                      onClick={() => {
+                        setShowFeedback(false);
+                        setShowFreeText(true);
+                        const notSatisfiedMessage: ChatMessage = {
+                          id: 'not_satisfied',
+                          from: 'user',
+                          text: 'もう少し違う提案が欲しいです',
+                          timestamp: new Date()
+                        };
+                        setChat(prev => [...prev, notSatisfiedMessage]);
+                        
+                        // 自由記述欄を表示
+                        setTimeout(() => {
+                          const freeTextMessage: ChatMessage = {
+                            id: 'free_text',
+                            from: 'bot',
+                            text: 'どのような商品をお探しでしょうか？具体的にご希望をお聞かせください。',
+                            type: 'textarea',
+                            timestamp: new Date()
+                          };
+                          setChat(prev => [...prev, freeTextMessage]);
+                        }, 1000);
+                      }}
+                      className="block w-full text-left px-3 py-2 rounded-lg bg-orange-100 hover:bg-orange-200 transition-colors text-sm text-orange-800"
+                    >
+                      🔄 もう少し違う提案が欲しいです
+                    </button>
+                  </div>
+                )}
+                
                 {message.type === "textarea" && (
                   <div className="mt-3">
                     <textarea
                       value={textareaValue}
                       onChange={(e) => setTextareaValue(e.target.value)}
-                      placeholder={message.optional ? "（任意）ご自由にご記入ください" : "ご記入ください"}
+                      placeholder="具体的にご希望をお聞かせください"
                       className="w-full h-20 px-3 py-2 border border-gray-300 rounded-lg text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     <div className="mt-2 flex justify-end gap-2">
-                      {message.optional && (
-                        <button
-                          onClick={() => {
-                            const newAnswers = {
-                              ...answers,
-                              [`question_${currentQuestionIndex}`]: ""
-                            };
-                            setTimeout(() => {
-                              generateSuggestionsWithAnswers(newAnswers);
-                            }, 1000);
-                          }}
-                          className="px-3 py-1 text-xs bg-gray-200 text-gray-600 rounded hover:bg-gray-300 transition-colors"
-                        >
-                          スキップ
-                        </button>
-                      )}
                       <button
                         onClick={handleTextareaSubmit}
                         disabled={!textareaValue.trim()}

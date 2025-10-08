@@ -224,11 +224,6 @@ export const questionFlows = {
         "たまに使えれば十分（週1〜2回）",
         "毎日しっかり使いたい"
       ]
-    },
-    {
-      question: "上記に当てはまらないお悩みやご希望がございましたら、ご自由にご記入ください。",
-      type: "textarea",
-      optional: true
     }
   ],
   "健康グッズ": [
@@ -419,29 +414,16 @@ export function generateCategorySuggestions(category: string, answers: Record<st
       return generateTeaSuggestions(answers);
     
     case "美容・スキンケア":
-      // 全5問の回答を組み合わせた提案ロジック
+      // 4問の回答を組み合わせた提案ロジック
       console.log("美容・スキンケア回答:", answers);
       
       const concern = answers.question_0 || "";
       const priority = answers.question_1 || "";
       const habit = answers.question_2 || "";
       const budget = answers.question_3 || "";
-      const freeText = answers.question_4 || "";
       
-      // 自由記述がある場合はGPT推論を実行
-      if (freeText.trim()) {
-        console.log("自由記述:", freeText);
-        // GPT API呼び出し（非同期処理のため、一旦デフォルト提案を返す）
-        // 実際の実装では、GiftChatUI側でGPT APIを呼び出して結果を更新する
-        suggestions.push(
-          { name: "カスタム提案（GPT推論中）", keywords: ["カスタム", "GPT", "推論"], priceRange: "¥3,000〜¥15,000" },
-          { name: "高級スキンケアセット", keywords: ["スキンケア", "美容", "化粧品"], priceRange: "¥4,000〜¥12,000" },
-          { name: "美顔器・美容機器", keywords: ["美顔器", "美容機器", "スキンケア", "エステ"], priceRange: "¥8,000〜¥25,000" }
-        );
-      } else {
-        // 通常の組み合わせロジック
-        suggestions = generateBeautySuggestions(concern, priority, habit, budget);
-      }
+      // 組み合わせロジック
+      suggestions = generateBeautySuggestions(concern, priority, habit, budget);
       break;
     
     case "健康グッズ":
