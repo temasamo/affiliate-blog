@@ -388,7 +388,12 @@ export function generateCategorySuggestions(category: string, answers: Record<st
     
     case "美容・スキンケア":
       // 最後の質問の回答に基づいて提案を決定
-      const lastAnswer = answers[`question_${Object.keys(answers).length - 1}`] || "";
+      const answerKeys = Object.keys(answers);
+      const lastAnswer = answerKeys.length > 0 ? answers[answerKeys[answerKeys.length - 1]] : "";
+      
+      // デバッグ用ログ（本番では削除）
+      console.log("美容・スキンケア回答:", answers);
+      console.log("最後の回答:", lastAnswer);
       
       if (lastAnswer === "ヘアケア") {
         // ヘアケア関連のアイテムを3つ提案
