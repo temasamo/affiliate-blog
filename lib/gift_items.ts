@@ -58,8 +58,8 @@ export const giftHaircareItems: GiftItem[] = [
   {
     id: "hair_styling_tools",
     name: "ヘアスタイリングツールセット",
-    description: "ブロワー、ブラシ、コームなど、美しいスタイリングをサポートするツールセット。",
-    keywords: ["ヘアスタイリング", "ブロワー", "ブラシ", "ツール", "ヘアケア"],
+    description: "ドライヤー、ブロワー、ブラシ、コームなど、美しいスタイリングをサポートするツールセット。",
+    keywords: ["ドライヤー", "ヘアスタイリング", "ブロワー", "ブラシ", "ツール", "ヘアケア"],
     priceRange: "¥4,000〜¥12,000",
   },
   {
@@ -401,8 +401,8 @@ export function generateCategorySuggestions(category: string, answers: Record<st
         // スキンケア関連のアイテムを提案
         suggestions.push(
           { name: "高級スキンケアセット", keywords: ["スキンケア", "美容", "化粧品"], priceRange: "¥4,000〜¥12,000" },
-          { name: "アンチエイジングセット", keywords: ["アンチエイジング", "美容", "スキンケア"], priceRange: "¥5,000〜¥15,000" },
-          { name: "保湿スキンケアセット", keywords: ["保湿", "スキンケア", "美容"], priceRange: "¥3,000〜¥8,000" }
+          { name: "美顔器・美容機器セット", keywords: ["美顔器", "美容機器", "スキンケア", "エステ"], priceRange: "¥8,000〜¥25,000" },
+          { name: "アンチエイジングセット", keywords: ["アンチエイジング", "美容", "スキンケア"], priceRange: "¥5,000〜¥15,000" }
         );
       } else if (lastAnswer === "バス・ボディケア") {
         // バス・ボディケア関連のアイテムを提案
@@ -422,8 +422,8 @@ export function generateCategorySuggestions(category: string, answers: Record<st
         // デフォルト：バランスの取れた提案
         suggestions.push(
           { name: "高級スキンケアセット", keywords: ["スキンケア", "美容", "化粧品"], priceRange: "¥4,000〜¥12,000" },
-          { name: "バスソルト・入浴剤セット", keywords: ["バスソルト", "入浴剤", "リラックス"], priceRange: "¥3,000〜¥8,000" },
-          { name: "ヘアケアセット", keywords: ["ヘアケア", "シャンプー", "トリートメント"], priceRange: "¥2,000〜¥6,000" }
+          { name: "美顔器・美容機器", keywords: ["美顔器", "美容機器", "スキンケア", "エステ"], priceRange: "¥8,000〜¥25,000" },
+          { name: "ヘアケア・ドライヤーセット", keywords: ["ヘアケア", "ドライヤー", "シャンプー", "トリートメント"], priceRange: "¥4,000〜¥12,000" }
         );
       }
       break;
