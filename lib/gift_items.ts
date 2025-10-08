@@ -1,9 +1,9 @@
 // ギフト提案データ（検索キーワードベース）
 export interface GiftItem {
-  id: string;
+  id?: string;
   name: string;
-  description: string;
-  keywords: string;
+  description?: string;
+  keywords: string[];
   priceRange: string;
 }
 
@@ -13,95 +13,96 @@ export const giftTeaItems: GiftItem[] = [
     id: "japanese_premium_tea",
     name: "日本茶 上級者向けセット",
     description: "煎茶、玉露、ほうじ茶など、日本茶の奥深さを味わえる上級者向けセット。",
-    keywords: "日本茶 ギフト 高級 煎茶 玉露",
+    keywords: ["日本茶", "ギフト", "高級", "煎茶", "玉露"],
     priceRange: "¥4,000〜¥7,000",
   },
   {
     id: "uji_matcha_set",
     name: "宇治抹茶 高級茶セット",
     description: "上質な宇治抹茶と玉露の詰め合わせ。ギフトボックス付きで、母の癒しの時間を彩ります。",
-    keywords: "宇治抹茶 玉露 高級 お茶 ギフト",
+    keywords: ["宇治抹茶", "玉露", "高級", "お茶", "ギフト"],
     priceRange: "¥3,000〜¥5,000",
   },
   {
     id: "herbal_relax_set",
     name: "ハーブティー リラックスセット",
     description: "カモミール、ラベンダー、ローズヒップなど、心を落ち着かせるハーブティーの詰め合わせ。",
-    keywords: "ハーブティー ギフト リラックス おしゃれ",
+    keywords: ["ハーブティー", "ギフト", "リラックス", "おしゃれ"],
     priceRange: "¥2,500〜¥4,000",
   },
 ];
 
 // 残り9カテゴリのギフトアイテム定義
-export const giftMiscItems = [
+export const giftMiscItems: GiftItem[] = [
   {
     id: "seasonal_flowers",
     name: "季節の花ギフト",
     description: "季節の花や観葉植物は、部屋を明るくし、心をなごませてくれる定番ギフト。",
-    keywords: "季節の花 ギフト フラワーアレンジメント プレゼント",
+    keywords: ["季節の花", "ギフト", "フラワーアレンジメント", "プレゼント"],
     priceRange: "¥2,000〜¥6,000",
   },
   {
     id: "health_goods",
     name: "健康グッズ",
     description: "血圧計や体温計、マッサージ器など、母の健康をサポートする実用的なアイテム。",
-    keywords: "健康 管理 ギフト マッサージ器 プレゼント",
+    keywords: ["健康", "管理", "ギフト", "マッサージ器", "プレゼント"],
     priceRange: "¥5,000〜¥15,000",
   },
   {
     id: "gourmet_gift",
     name: "高級グルメギフト",
     description: "和菓子・洋菓子・海鮮・お肉など、母の好みに合わせて贅沢な味をセレクト。",
-    keywords: "グルメギフト 高級 母の日 食品 ギフト",
+    keywords: ["グルメギフト", "高級", "母の日", "食品", "ギフト"],
     priceRange: "¥3,000〜¥10,000",
   },
   {
     id: "experience_gift",
     name: "体験ギフト",
     description: "温泉旅行、料理教室、陶芸、エステなど、思い出に残る\"非日常\"の贈り物。",
-    keywords: "体験ギフト 母 温泉旅行 チケット プレゼント",
+    keywords: ["体験ギフト", "母", "温泉旅行", "チケット", "プレゼント"],
     priceRange: "¥5,000〜¥20,000",
   },
   {
     id: "personalized_gift",
     name: "名入れ・メッセージ入りギフト",
     description: "名前入りの湯呑みや、感謝のメッセージが刻まれたタオル・ポーチなど。",
-    keywords: "名入れ ギフト 母 メッセージ入り プレゼント",
+    keywords: ["名入れ", "ギフト", "母", "メッセージ入り", "プレゼント"],
     priceRange: "¥3,000〜¥10,000",
   },
   {
     id: "photo_album",
     name: "フォトアルバム・家族の思い出ギフト",
     description: "家族の写真を集めたアルバムや、子ども・孫の成長記録をまとめたフォトブック。",
-    keywords: "フォトアルバム ギフト 家族写真 プレゼント",
+    keywords: ["フォトアルバム", "ギフト", "家族写真", "プレゼント"],
     priceRange: "¥2,000〜¥8,000",
   },
   {
     id: "home_comfort",
     name: "おうち時間を楽しむアイテム",
     description: "読書灯、ルームシューズ、ブランケットなど、家で過ごす時間を快適にするグッズ。",
-    keywords: "おうち時間 グッズ 母 プレゼント ルームシューズ",
+    keywords: ["おうち時間", "グッズ", "母", "プレゼント", "ルームシューズ"],
     priceRange: "¥2,000〜¥6,000",
   },
   {
     id: "seasonal_local",
     name: "季節限定・ご当地ギフト",
     description: "春の新茶、夏のゼリー、秋の栗スイーツ、冬のお鍋セットなど、季節感のある贈り物。",
-    keywords: "ご当地グルメ 季節限定 ギフト 春 新茶 プレゼント",
+    keywords: ["ご当地グルメ", "季節限定", "ギフト", "春", "新茶", "プレゼント"],
     priceRange: "¥3,000〜¥10,000",
   },
   {
     id: "relaxation_items",
     name: "癒し系リラクゼーションアイテム",
     description: "アロマディフューザー、入浴剤、ヒーリングCDなど、癒し時間を演出するギフト。",
-    keywords: "アロマ ギフト リラクゼーション プレゼント 癒しグッズ",
+    keywords: ["アロマ", "ギフト", "リラクゼーション", "プレゼント", "癒しグッズ"],
     priceRange: "¥2,000〜¥7,000",
   }
 ];
 
 // モールリンク生成関数（楽天、Amazon、Yahoo用）
-export const getMallLinks = (keywords: string) => {
-  const encoded = encodeURIComponent(keywords);
+export const getMallLinks = (keywords: string[]) => {
+  const keywordString = keywords.join(' ');
+  const encoded = encodeURIComponent(keywordString);
 
   return {
     amazon: `https://www.amazon.co.jp/s?k=${encoded}&tag=marketsupporter-22`,
