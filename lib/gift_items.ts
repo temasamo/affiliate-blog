@@ -1,13 +1,8 @@
 // ギフト提案データ（検索キーワードベース）
-import { fatherQuestionFlows, fatherInLawQuestionFlows, generateFatherSuggestions, generateFatherInLawSuggestions } from './gift_items_father';
+import { fatherQuestionFlows, fatherInLawQuestionFlows, generateFatherSuggestions, generateFatherInLawSuggestions, GiftItem } from './gift_items_father';
 
-export interface GiftItem {
-  id?: string;
-  name: string;
-  description?: string;
-  keywords: string[];
-  priceRange: string;
-}
+// GiftItem型を再エクスポート
+export type { GiftItem };
 
 // 高級お茶セット用の提案データ
 export const giftTeaItems: GiftItem[] = [

@@ -1,5 +1,13 @@
 // 実父・義父向けギフトカテゴリの追加データ
 
+export interface GiftItem {
+  id?: string;
+  name: string;
+  description?: string;
+  keywords: string[];
+  priceRange: string;
+}
+
 // 実父向け質問フロー
 export const fatherQuestionFlows = {
   "マッサージ機器": [
