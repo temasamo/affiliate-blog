@@ -1,4 +1,6 @@
 // ギフト提案データ（検索キーワードベース）
+import { fatherQuestionFlows, fatherInLawQuestionFlows, generateFatherSuggestions, generateFatherInLawSuggestions } from './gift_items_father';
+
 export interface GiftItem {
   id?: string;
   name: string;
@@ -553,6 +555,9 @@ export const questionFlows = {
   ]
 };
 
+// 実父・義父向け質問フローを統合
+Object.assign(questionFlows, fatherQuestionFlows, fatherInLawQuestionFlows);
+
 // 旧形式との互換性のため残す
 export const teaQuestions: Question[] = [
   {
@@ -648,6 +653,34 @@ export function generateCategorySuggestions(category: string, answers: Record<st
     case "上品なお茶・紅茶ギフト":
       const teaAnswer = answers.question_0 || "";
       suggestions = generateElegantTeaSuggestions(teaAnswer);
+      break;
+
+    // 実父向けカテゴリ
+    case "マッサージ機器":
+    case "健康食品・サプリメント":
+    case "睡眠グッズ":
+    case "お酒ギフト":
+    case "グルメギフト":
+    case "家電ガジェット":
+    case "趣味グッズ":
+    case "日常家電":
+    case "ブランド財布・キーケース":
+    case "スポーツ系グッズ":
+      suggestions = generateFatherSuggestions(category, answers);
+      break;
+
+    // 義父向けカテゴリ
+    case "高級グルメギフト":
+    case "プレミアムドリンク":
+    case "お酒（見た目重視）":
+    case "上品な健康グッズ":
+    case "ブランド小物":
+    case "靴下・肌着（上質系）":
+    case "シニア向けガジェット":
+    case "本・雑誌ギフト":
+    case "季節感ギフト":
+    case "和風雑貨":
+      suggestions = generateFatherInLawSuggestions(category, answers);
       break;
     
     case "キッチン雑貨・調理器具":

@@ -121,6 +121,45 @@ export default function GiftChatPage() {
             </div>
           </div>
 
+          {/* 実父と義父の違いについて */}
+          <div className="mt-8 bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl shadow-md p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              👨‍👧‍👦 実父と義父のギフト選びの違い
+            </h2>
+            <div className="max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-white rounded-xl p-6 shadow-sm">
+                  <h3 className="text-lg font-semibold text-blue-600 mb-4 text-center">
+                    👨‍👧‍👦 実父へのギフト
+                  </h3>
+                  <ul className="text-gray-700 space-y-2">
+                    <li>• <strong>実用性重視</strong> - 悩み解決や健康サポート</li>
+                    <li>• <strong>ストレートな感謝</strong> - 日頃の感謝を直接的に</li>
+                    <li>• <strong>趣味応援</strong> - お父さんの趣味を応援</li>
+                    <li>• <strong>健康配慮</strong> - 体調管理や疲労回復</li>
+                  </ul>
+                </div>
+                <div className="bg-white rounded-xl p-6 shadow-sm">
+                  <h3 className="text-lg font-semibold text-green-600 mb-4 text-center">
+                    👨‍👩‍👧‍👦 義父へのギフト
+                  </h3>
+                  <ul className="text-gray-700 space-y-2">
+                    <li>• <strong>印象重視</strong> - 上品で気が利いた印象</li>
+                    <li>• <strong>礼儀と気遣い</strong> - 丁寧で敬意を込めた</li>
+                    <li>• <strong>外さない定番</strong> - 万人受けする安全な選択</li>
+                    <li>• <strong>高級感</strong> - 上質で特別感のあるアイテム</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="mt-6 text-center">
+                <p className="text-gray-600 text-sm">
+                  実父には「ありがとう」を、義父には「気遣い」を込めて、<br />
+                  それぞれにふさわしいギフト選びをサポートします。
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* 説明セクション */}
           <div className="mt-12 bg-white rounded-2xl shadow-md p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">

@@ -120,25 +120,37 @@ export default function MotherInLawBirthdayGiftsPage() {
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">上質スキンケアセット</h3>
+              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥5,000〜¥15,000）</p>
               <p className="text-gray-600 mb-4">
                 ロクシタンやHACCIなど、香りと高級感を重視したブランドコスメ。<br />
                 <span className="font-semibold text-purple-600">「気が利いているね」</span>と言ってもらえる、上品で印象に残るギフトです。
               </p>
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-lg font-bold text-blue-600">¥5,000〜¥15,000</span>
-                <Link 
-                  href="https://www.rakuten.co.jp/" 
-                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  楽天で探す
-                </Link>
-              </div>
               <Link 
                 href="/events/birthday/chat?category=上質スキンケア&target=義母"
-                className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-center block"
+                className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
+              <div className="flex gap-2 justify-center">
+                <Link 
+                  href="https://www.rakuten.co.jp/" 
+                  className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
+                >
+                  楽天
+                </Link>
+                <Link 
+                  href="https://www.amazon.co.jp/" 
+                  className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
+                >
+                  Amazon
+                </Link>
+                <Link 
+                  href="https://shopping.yahoo.co.jp/" 
+                  className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
+                >
+                  Yahoo
+                </Link>
+              </div>
             </div>
 
             {/* ギフト2: 香りギフト */}
@@ -149,25 +161,37 @@ export default function MotherInLawBirthdayGiftsPage() {
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">香りギフト</h3>
+              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥3,000〜¥8,000）</p>
               <p className="text-gray-600 mb-4">
                 ハンドクリーム・入浴剤・アロマキャンドルなど、上品な香りで癒されるギフト。<br />
                 <span className="font-semibold text-purple-600">「いい香りね」</span>と毎日使ってもらえる、気遣いのこもった贈り物です。
               </p>
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-lg font-bold text-blue-600">¥3,000〜¥8,000</span>
-                <Link 
-                  href="https://www.rakuten.co.jp/" 
-                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  楽天で探す
-                </Link>
-              </div>
               <Link 
                 href="/events/birthday/chat?category=香りギフト&target=義母"
-                className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-center block"
+                className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
+              <div className="flex gap-2 justify-center">
+                <Link 
+                  href="https://www.rakuten.co.jp/" 
+                  className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
+                >
+                  楽天
+                </Link>
+                <Link 
+                  href="https://www.amazon.co.jp/" 
+                  className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
+                >
+                  Amazon
+                </Link>
+                <Link 
+                  href="https://shopping.yahoo.co.jp/" 
+                  className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
+                >
+                  Yahoo
+                </Link>
+              </div>
             </div>
 
             {/* ギフト3: 高級タオル・寝具 */}
@@ -178,25 +202,37 @@ export default function MotherInLawBirthdayGiftsPage() {
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">高級タオル・寝具</h3>
+              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥4,000〜¥12,000）</p>
               <p className="text-gray-600 mb-4">
                 今治タオルやオーガニックコットンなど、質感にこだわった上質なアイテム。<br />
                 <span className="font-semibold text-purple-600">「気持ちいい」</span>と毎日使ってもらえる、実用性と上品さを兼ね備えたギフトです。
               </p>
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-lg font-bold text-blue-600">¥4,000〜¥12,000</span>
-                <Link 
-                  href="https://www.rakuten.co.jp/" 
-                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  楽天で探す
-                </Link>
-              </div>
               <Link 
                 href="/events/birthday/chat?category=高級タオル・寝具&target=義母"
-                className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-center block"
+                className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
+              <div className="flex gap-2 justify-center">
+                <Link 
+                  href="https://www.rakuten.co.jp/" 
+                  className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
+                >
+                  楽天
+                </Link>
+                <Link 
+                  href="https://www.amazon.co.jp/" 
+                  className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
+                >
+                  Amazon
+                </Link>
+                <Link 
+                  href="https://shopping.yahoo.co.jp/" 
+                  className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
+                >
+                  Yahoo
+                </Link>
+              </div>
             </div>
 
             {/* ギフト4: コンパクト美容家電 */}
@@ -207,25 +243,37 @@ export default function MotherInLawBirthdayGiftsPage() {
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">コンパクト美容家電</h3>
+              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥6,000〜¥15,000）</p>
               <p className="text-gray-600 mb-4">
                 リファの美顔ローラーやナノスチーマーなど、コンパクトで使いやすい美容家電。<br />
                 <span className="font-semibold text-purple-600">「便利ね」</span>と実用性も評価される、上品で気が利いたギフトです。
               </p>
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-lg font-bold text-blue-600">¥6,000〜¥15,000</span>
-                <Link 
-                  href="https://www.rakuten.co.jp/" 
-                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  楽天で探す
-                </Link>
-              </div>
               <Link 
                 href="/events/birthday/chat?category=コンパクト美容家電&target=義母"
-                className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-center block"
+                className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
+              <div className="flex gap-2 justify-center">
+                <Link 
+                  href="https://www.rakuten.co.jp/" 
+                  className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
+                >
+                  楽天
+                </Link>
+                <Link 
+                  href="https://www.amazon.co.jp/" 
+                  className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
+                >
+                  Amazon
+                </Link>
+                <Link 
+                  href="https://shopping.yahoo.co.jp/" 
+                  className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
+                >
+                  Yahoo
+                </Link>
+              </div>
             </div>
 
             {/* ギフト5: 華やかスイーツギフト */}
@@ -236,25 +284,37 @@ export default function MotherInLawBirthdayGiftsPage() {
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">華やかスイーツギフト</h3>
+              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥3,000〜¥8,000）</p>
               <p className="text-gray-600 mb-4">
                 見た目も華やかで、外さない定番のスイーツギフト。個包装で季節感も演出。<br />
                 <span className="font-semibold text-purple-600">「美味しいわね」</span>と笑顔がこぼれる、安心して選べるギフトです。
               </p>
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-lg font-bold text-blue-600">¥3,000〜¥8,000</span>
-                <Link 
-                  href="https://www.rakuten.co.jp/" 
-                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  楽天で探す
-                </Link>
-              </div>
               <Link 
                 href="/events/birthday/chat?category=華やかスイーツギフト&target=義母"
-                className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-center block"
+                className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
+              <div className="flex gap-2 justify-center">
+                <Link 
+                  href="https://www.rakuten.co.jp/" 
+                  className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
+                >
+                  楽天
+                </Link>
+                <Link 
+                  href="https://www.amazon.co.jp/" 
+                  className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
+                >
+                  Amazon
+                </Link>
+                <Link 
+                  href="https://shopping.yahoo.co.jp/" 
+                  className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
+                >
+                  Yahoo
+                </Link>
+              </div>
             </div>
 
             {/* ギフト6: 上品なお茶・紅茶ギフト */}
@@ -265,25 +325,37 @@ export default function MotherInLawBirthdayGiftsPage() {
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">上品なお茶・紅茶ギフト</h3>
+              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥4,000〜¥10,000）</p>
               <p className="text-gray-600 mb-4">
                 パッケージも上品で、香り高いお茶や紅茶のギフトセット。<br />
                 <span className="font-semibold text-purple-600">「いい香りね」</span>と一息つく時間を彩る、心に残る贈り物です。
               </p>
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-lg font-bold text-blue-600">¥4,000〜¥10,000</span>
-                <Link 
-                  href="https://www.rakuten.co.jp/" 
-                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  楽天で探す
-                </Link>
-              </div>
               <Link 
                 href="/events/birthday/chat?category=上品なお茶・紅茶ギフト&target=義母"
-                className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-center block"
+                className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
+              <div className="flex gap-2 justify-center">
+                <Link 
+                  href="https://www.rakuten.co.jp/" 
+                  className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
+                >
+                  楽天
+                </Link>
+                <Link 
+                  href="https://www.amazon.co.jp/" 
+                  className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
+                >
+                  Amazon
+                </Link>
+                <Link 
+                  href="https://shopping.yahoo.co.jp/" 
+                  className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
+                >
+                  Yahoo
+                </Link>
+              </div>
             </div>
 
             {/* ギフト7: キッチン雑貨・調理器具 */}
@@ -294,25 +366,37 @@ export default function MotherInLawBirthdayGiftsPage() {
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">キッチン雑貨・調理器具</h3>
+              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥5,000〜¥15,000）</p>
               <p className="text-gray-600 mb-4">
                 高級カトラリーやセンスのいい食器など、玄人向けの上質なキッチンアイテム。<br />
                 <span className="font-semibold text-purple-600">「いいものね」</span>と料理好きの義母に喜ばれる、気が利いたギフトです。
               </p>
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-lg font-bold text-blue-600">¥5,000〜¥15,000</span>
-                <Link 
-                  href="https://www.rakuten.co.jp/" 
-                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  楽天で探す
-                </Link>
-              </div>
               <Link 
                 href="/events/birthday/chat?category=キッチン雑貨・調理器具&target=義母"
-                className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-center block"
+                className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
+              <div className="flex gap-2 justify-center">
+                <Link 
+                  href="https://www.rakuten.co.jp/" 
+                  className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
+                >
+                  楽天
+                </Link>
+                <Link 
+                  href="https://www.amazon.co.jp/" 
+                  className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
+                >
+                  Amazon
+                </Link>
+                <Link 
+                  href="https://shopping.yahoo.co.jp/" 
+                  className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
+                >
+                  Yahoo
+                </Link>
+              </div>
             </div>
 
             {/* ギフト8: アロマ・癒しグッズ */}
@@ -323,25 +407,37 @@ export default function MotherInLawBirthdayGiftsPage() {
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">アロマ・癒しグッズ</h3>
+              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥3,000〜¥8,000）</p>
               <p className="text-gray-600 mb-4">
                 ディフューザーや香りつきキャンドルなど、リラックスタイムを演出するアイテム。<br />
                 <span className="font-semibold text-purple-600">「癒されるわ」</span>と心身ともにリフレッシュしてもらえる、気遣いのギフトです。
               </p>
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-lg font-bold text-blue-600">¥3,000〜¥8,000</span>
-                <Link 
-                  href="https://www.rakuten.co.jp/" 
-                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  楽天で探す
-                </Link>
-              </div>
               <Link 
                 href="/events/birthday/chat?category=アロマ・癒しグッズ&target=義母"
-                className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-center block"
+                className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
+              <div className="flex gap-2 justify-center">
+                <Link 
+                  href="https://www.rakuten.co.jp/" 
+                  className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
+                >
+                  楽天
+                </Link>
+                <Link 
+                  href="https://www.amazon.co.jp/" 
+                  className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
+                >
+                  Amazon
+                </Link>
+                <Link 
+                  href="https://shopping.yahoo.co.jp/" 
+                  className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
+                >
+                  Yahoo
+                </Link>
+              </div>
             </div>
 
             {/* ギフト9: ブランド小物 */}
@@ -352,25 +448,37 @@ export default function MotherInLawBirthdayGiftsPage() {
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">ブランド小物</h3>
+              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥4,000〜¥12,000）</p>
               <p className="text-gray-600 mb-4">
                 エプロン・ハンカチ・ポーチなど、ポール&ジョーやラルフ・ローレンなどのブランド小物。<br />
                 <span className="font-semibold text-purple-600">「素敵ね」</span>とセンスを評価される、印象に残るギフトです。
               </p>
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-lg font-bold text-blue-600">¥4,000〜¥12,000</span>
-                <Link 
-                  href="https://www.rakuten.co.jp/" 
-                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  楽天で探す
-                </Link>
-              </div>
               <Link 
                 href="/events/birthday/chat?category=ブランド小物&target=義母"
-                className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-center block"
+                className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
+              <div className="flex gap-2 justify-center">
+                <Link 
+                  href="https://www.rakuten.co.jp/" 
+                  className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
+                >
+                  楽天
+                </Link>
+                <Link 
+                  href="https://www.amazon.co.jp/" 
+                  className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
+                >
+                  Amazon
+                </Link>
+                <Link 
+                  href="https://shopping.yahoo.co.jp/" 
+                  className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
+                >
+                  Yahoo
+                </Link>
+              </div>
             </div>
 
             {/* ギフト10: 季節の花＆プリザーブドギフト */}
@@ -381,25 +489,37 @@ export default function MotherInLawBirthdayGiftsPage() {
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">季節の花＆プリザーブドギフト</h3>
+              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥3,000〜¥10,000）</p>
               <p className="text-gray-600 mb-4">
                 生花やプリザーブドフラワー、一緒にギフト券も添えて。<br />
                 <span className="font-semibold text-purple-600">「きれいね」</span>と部屋を明るくする、華やかで印象的なギフトです。
               </p>
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-lg font-bold text-blue-600">¥3,000〜¥10,000</span>
-                <Link 
-                  href="https://www.rakuten.co.jp/" 
-                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  楽天で探す
-                </Link>
-              </div>
               <Link 
                 href="/events/birthday/chat?category=季節の花＆プリザーブドギフト&target=義母"
-                className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-center block"
+                className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
+              <div className="flex gap-2 justify-center">
+                <Link 
+                  href="https://www.rakuten.co.jp/" 
+                  className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
+                >
+                  楽天
+                </Link>
+                <Link 
+                  href="https://www.amazon.co.jp/" 
+                  className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
+                >
+                  Amazon
+                </Link>
+                <Link 
+                  href="https://shopping.yahoo.co.jp/" 
+                  className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
+                >
+                  Yahoo
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -407,37 +527,37 @@ export default function MotherInLawBirthdayGiftsPage() {
           <div className="bg-white rounded-2xl shadow-md p-8 mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">🌸 季節別おすすめギフト</h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              <div className="text-center">
+              <Link href="/events/under-construction" className="text-center group block bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
                 <div className="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
                   <span className="text-2xl">🌸</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">春</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-purple-600">春</h3>
                 <p className="text-gray-600 text-sm">桜モチーフのスキンケア、春の香りアロマなど</p>
-              </div>
+              </Link>
 
-              <div className="text-center">
+              <Link href="/events/under-construction" className="text-center group block bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
                 <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
                   <span className="text-2xl">☀️</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">夏</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-purple-600">夏</h3>
                 <p className="text-gray-600 text-sm">涼やかな香りのハンドクリーム、夏の花など</p>
-              </div>
+              </Link>
 
-              <div className="text-center">
+              <Link href="/events/under-construction" className="text-center group block bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
                 <div className="w-16 h-16 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center">
                   <span className="text-2xl">🍂</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">秋</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-purple-600">秋</h3>
                 <p className="text-gray-600 text-sm">温かみのあるアロマ、秋の香りスイーツなど</p>
-              </div>
+              </Link>
 
-              <div className="text-center">
+              <Link href="/events/under-construction" className="text-center group block bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
                 <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
                   <span className="text-2xl">❄️</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">冬</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-purple-600">冬</h3>
                 <p className="text-gray-600 text-sm">保湿重視のスキンケア、温かい香りのキャンドルなど</p>
-              </div>
+              </Link>
             </div>
           </div>
 

@@ -3,12 +3,12 @@ import Link from 'next/link';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 
-export default function FatherBirthdayGiftsPage() {
+export default function FatherInLawBirthdayGiftsPage() {
   return (
     <>
       <Header 
-        title="実父への誕生日プレゼント10選 - Market Supporter AI" 
-        description="実父への誕生日プレゼント選び。健康・趣味・実用品など、父への感謝を込めたギフト選びをサポートします。"
+        title="義父への誕生日プレゼント10選 - Market Supporter AI" 
+        description="義父への誕生日プレゼント選び。印象重視×無難な観点で選ぶ、義理の父へのギフト選びをサポートします。"
       />
       
       <main className="min-h-screen bg-gray-50">
@@ -16,23 +16,23 @@ export default function FatherBirthdayGiftsPage() {
           {/* パンくずリスト */}
           <nav className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-gray-500">
-              <li><Link href="/events" className="hover:text-blue-600">イベント</Link></li>
+              <li><Link href="/events" className="hover:text-green-600">イベント</Link></li>
               <li>/</li>
-              <li><Link href="/events/birthday" className="hover:text-blue-600">誕生日プレゼント</Link></li>
+              <li><Link href="/events/birthday" className="hover:text-green-600">誕生日プレゼント</Link></li>
               <li>/</li>
-              <li className="text-gray-900">実父へのプレゼント</li>
+              <li className="text-gray-900">義父へのプレゼント</li>
             </ol>
           </nav>
 
           {/* 共感型導入文 */}
-          <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl p-8 mb-12 border border-blue-200">
+          <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-8 mb-12 border border-green-200">
             <div className="text-center">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 「何を贈れば喜んでくれるだろう？」
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-                父の誕生日は、感謝の気持ちを伝える絶好の機会。でも、毎年何を贈れば良いか迷ってしまう方も多いはず。<br />
-                この記事では、<span className="font-semibold text-blue-600">健康・趣味・実用品・グルメ</span>など、父の笑顔を引き出すプレゼントを厳選して紹介します。
+                義父の誕生日は、感謝の気持ちを伝える絶好の機会。でも、毎年何を贈れば良いか迷ってしまう方も多いはず。<br />
+                この記事では、<span className="font-semibold text-green-600">印象重視・無難・上質</span>など、義父の笑顔を引き出すプレゼントを厳選して紹介します。
               </p>
             </div>
           </div>
@@ -40,69 +40,69 @@ export default function FatherBirthdayGiftsPage() {
           {/* ヒーローセクション */}
           <div className="text-center mb-12">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              実父への誕生日プレゼント10選
+              義父への誕生日プレゼント10選
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              健康・趣味・実用品・グルメなど、父への感謝を込めたギフト選び。<br />
-              いつもお疲れ様の父に、心を込めたプレゼントを選びましょう。
+              印象重視・無難・上質など、義父への感謝を込めたギフト選び。<br />
+              いつもお疲れ様の義父に、心を込めたプレゼントを選びましょう。
             </p>
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 max-w-2xl mx-auto">
-              <h2 className="text-xl font-semibold text-blue-900 mb-2">💝 実父へのプレゼント選びのポイント</h2>
-              <ul className="text-blue-800 text-left space-y-1">
-                <li>• 父の趣味や好みを考慮したギフト</li>
-                <li>• 健康を気遣う実用的なアイテム</li>
-                <li>• マッサージ・リラックス系のアイテム</li>
-                <li>• お酒・グルメ系の贅沢なギフト</li>
+            <div className="bg-green-50 border border-green-200 rounded-lg p-6 max-w-2xl mx-auto">
+              <h2 className="text-xl font-semibold text-green-900 mb-2">💝 義父へのプレゼント選びのポイント</h2>
+              <ul className="text-green-800 text-left space-y-1">
+                <li>• 印象が良く、上品なギフト</li>
+                <li>• 無難で万人受けするアイテム</li>
+                <li>• 高級感のある上質なアイテム</li>
+                <li>• 礼儀と気遣いが伝わるギフト</li>
               </ul>
             </div>
           </div>
 
           {/* AI相談セクション */}
-          <div className="bg-gradient-to-r from-blue-100 to-green-100 rounded-2xl p-8 mb-12 border border-blue-200">
+          <div className="bg-gradient-to-r from-green-100 to-blue-100 rounded-2xl p-8 mb-12 border border-green-200">
             <div className="text-center">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 🤖 AI相談でぴったりのギフトを見つけよう
               </h2>
               <p className="text-gray-700 mb-6">
-                お父さまの好みや生活スタイルをAIが聞き出して、<br />
+                義父さまの好みや生活スタイルをAIが聞き出して、<br />
                 あなただけの特別なギフトを提案します。
               </p>
               <div className="grid gap-4 md:grid-cols-3">
                 <Link 
-                  href="/events/birthday/chat?category=マッサージ機器&target=実父"
-                  className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-blue-200"
+                  href="/events/birthday/chat?category=高級グルメギフト&target=義父"
+                  className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-green-200"
                 >
                   <div className="text-center">
-                    <div className="w-12 h-12 mx-auto mb-3 bg-blue-100 rounded-full flex items-center justify-center">
-                      <span className="text-xl">💆</span>
+                    <div className="w-12 h-12 mx-auto mb-3 bg-green-100 rounded-full flex items-center justify-center">
+                      <span className="text-xl">🍽️</span>
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-1">マッサージ機器</h3>
+                    <h3 className="font-semibold text-gray-900 mb-1">高級グルメギフト</h3>
                     <p className="text-xs text-gray-600">AI相談で選ぶ</p>
                   </div>
                 </Link>
                 
                 <Link 
-                  href="/events/birthday/chat?category=お酒ギフト&target=実父"
-                  className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-blue-200"
+                  href="/events/birthday/chat?category=お酒（見た目重視）&target=義父"
+                  className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-green-200"
                 >
                   <div className="text-center">
-                    <div className="w-12 h-12 mx-auto mb-3 bg-blue-100 rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 mx-auto mb-3 bg-green-100 rounded-full flex items-center justify-center">
                       <span className="text-xl">🍶</span>
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-1">お酒ギフト</h3>
+                    <h3 className="font-semibold text-gray-900 mb-1">お酒（見た目重視）</h3>
                     <p className="text-xs text-gray-600">AI相談で選ぶ</p>
                   </div>
                 </Link>
                 
                 <Link 
-                  href="/events/birthday/chat?category=健康食品・サプリメント&target=実父"
-                  className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-blue-200"
+                  href="/events/birthday/chat?category=ブランド小物&target=義父"
+                  className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-green-200"
                 >
                   <div className="text-center">
-                    <div className="w-12 h-12 mx-auto mb-3 bg-blue-100 rounded-full flex items-center justify-center">
-                      <span className="text-xl">💊</span>
+                    <div className="w-12 h-12 mx-auto mb-3 bg-green-100 rounded-full flex items-center justify-center">
+                      <span className="text-xl">💼</span>
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-1">健康食品・サプリメント</h3>
+                    <h3 className="font-semibold text-gray-900 mb-1">ブランド小物</h3>
                     <p className="text-xs text-gray-600">AI相談で選ぶ</p>
                   </div>
                 </Link>
@@ -112,22 +112,22 @@ export default function FatherBirthdayGiftsPage() {
 
           {/* ギフト一覧 */}
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
-            {/* ギフト1: マッサージ機器 */}
+            {/* ギフト1: 高級グルメギフト */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
                 <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
                   <span className="text-gray-500">画像</span>
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">マッサージ機器</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">高級グルメギフト</h3>
               <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥8,000〜¥25,000）</p>
               <p className="text-gray-600 mb-4">
-                肩こりや腰痛に悩む父に、マッサージチェアやフットマッサージャーを。<br />
-                <span className="font-semibold text-blue-600">「疲れが取れる」</span>と喜ばれる、実用的で体に優しいギフトです。
+                黒毛和牛、鰻蒲焼、高級和菓子など、印象が良く上品なグルメギフト。<br />
+                <span className="font-semibold text-green-600">「美味しい！」と笑顔がこぼれる</span>、食卓が華やぐギフトです。
               </p>
               <Link 
-                href="/events/birthday/chat?category=マッサージ機器&target=実父"
-                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-center block mb-3"
+                href="/events/birthday/chat?category=高級グルメギフト&target=義父"
+                className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-2 px-4 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
@@ -153,22 +153,22 @@ export default function FatherBirthdayGiftsPage() {
               </div>
             </div>
 
-            {/* ギフト2: お酒ギフト */}
+            {/* ギフト2: お酒（見た目重視） */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
                 <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
                   <span className="text-gray-500">画像</span>
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">お酒ギフト</h3>
-              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥5,000〜¥20,000）</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">お酒（見た目重視）</h3>
+              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥6,000〜¥20,000）</p>
               <p className="text-gray-600 mb-4">
-                ウイスキー、日本酒、ワインなど、父の好みに合わせたお酒のギフト。<br />
-                <span className="font-semibold text-blue-600">「美味しい！」と笑顔がこぼれる</span>、晩酌が楽しくなる贅沢なギフトです。
+                木箱入りウイスキー、地酒飲み比べなど、見た目も美しいお酒のギフト。<br />
+                <span className="font-semibold text-green-600">「美味しい！」と笑顔がこぼれる</span>、晩酌が楽しくなる贅沢なギフトです。
               </p>
               <Link 
-                href="/events/birthday/chat?category=お酒ギフト&target=実父"
-                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-center block mb-3"
+                href="/events/birthday/chat?category=お酒（見た目重視）&target=義父"
+                className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-2 px-4 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
@@ -194,22 +194,22 @@ export default function FatherBirthdayGiftsPage() {
               </div>
             </div>
 
-            {/* ギフト3: 健康食品・サプリメント */}
+            {/* ギフト3: ブランド小物 */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
                 <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
                   <span className="text-gray-500">画像</span>
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">健康食品・サプリメント</h3>
-              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥3,000〜¥10,000）</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">ブランド小物</h3>
+              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥4,000〜¥18,000）</p>
               <p className="text-gray-600 mb-4">
-                高麗人参、DHA、コラーゲンなど、父の健康をサポートするサプリメント。<br />
-                <span className="font-semibold text-blue-600">「ずっと元気でいてほしい」</span>という想いが伝わる、思いやりのこもったギフトです。
+                ハンカチ、ネクタイ、ポーチなど、上質で印象の良いブランド小物。<br />
+                <span className="font-semibold text-green-600">「毎日使うものだから嬉しい」</span>と喜ばれる、長く愛用できるギフトです。
               </p>
               <Link 
-                href="/events/birthday/chat?category=健康食品・サプリメント&target=実父"
-                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-center block mb-3"
+                href="/events/birthday/chat?category=ブランド小物&target=義父"
+                className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-2 px-4 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
@@ -235,22 +235,22 @@ export default function FatherBirthdayGiftsPage() {
               </div>
             </div>
 
-            {/* ギフト4: 睡眠グッズ */}
+            {/* ギフト4: プレミアムドリンク */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
                 <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
                   <span className="text-gray-500">画像</span>
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">睡眠グッズ</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">プレミアムドリンク</h3>
               <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥5,000〜¥15,000）</p>
               <p className="text-gray-600 mb-4">
-                安眠枕、快眠グッズ、アイマスクなど、質の良い睡眠をサポートするアイテム。<br />
-                <span className="font-semibold text-blue-600">「よく眠れるようになった」</span>と喜ばれる、体調管理に役立つギフトです。
+                高級緑茶、コーヒーギフトなど、上品で印象の良いドリンクギフト。<br />
+                <span className="font-semibold text-green-600">「美味しい！」と笑顔がこぼれる</span>、日常が贅沢になるギフトです。
               </p>
               <Link 
-                href="/events/birthday/chat?category=睡眠グッズ&target=実父"
-                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-center block mb-3"
+                href="/events/birthday/chat?category=プレミアムドリンク&target=義父"
+                className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-2 px-4 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
@@ -276,22 +276,22 @@ export default function FatherBirthdayGiftsPage() {
               </div>
             </div>
 
-            {/* ギフト5: グルメギフト */}
+            {/* ギフト5: 上品な健康グッズ */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
                 <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
                   <span className="text-gray-500">画像</span>
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">グルメギフト</h3>
-              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥8,000〜¥25,000）</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">上品な健康グッズ</h3>
+              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥6,000〜¥18,000）</p>
               <p className="text-gray-600 mb-4">
-                和牛、うなぎ、海鮮など、父の好みに合わせた贅沢なグルメギフト。<br />
-                <span className="font-semibold text-blue-600">「美味しい！」と笑顔がこぼれる</span>、食卓が華やぐギフトです。
+                マッサージ器（コンパクト）、高級アイマスクなど、上品で実用的な健康グッズ。<br />
+                <span className="font-semibold text-green-600">「ずっと元気でいてほしい」</span>という想いが伝わる、思いやりのこもったギフトです。
               </p>
               <Link 
-                href="/events/birthday/chat?category=グルメギフト&target=実父"
-                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-center block mb-3"
+                href="/events/birthday/chat?category=上品な健康グッズ&target=義父"
+                className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-2 px-4 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
@@ -317,22 +317,22 @@ export default function FatherBirthdayGiftsPage() {
               </div>
             </div>
 
-            {/* ギフト6: 家電ガジェット */}
+            {/* ギフト6: 靴下・肌着（上質系） */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
                 <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
                   <span className="text-gray-500">画像</span>
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">家電ガジェット</h3>
-              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥8,000〜¥25,000）</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">靴下・肌着（上質系）</h3>
+              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥3,000〜¥10,000）</p>
               <p className="text-gray-600 mb-4">
-                スマートウォッチ、自動コーヒーメーカー、ネックファンなど、生活を便利にするガジェット。<br />
-                <span className="font-semibold text-blue-600">「便利になった」</span>と喜ばれる、実用的でおしゃれなギフトです。
+                シルク靴下、グンゼ肌着など、上質で実用的な靴下・肌着ギフト。<br />
+                <span className="font-semibold text-green-600">「毎日使うものだから嬉しい」</span>と喜ばれる、長く愛用できるギフトです。
               </p>
               <Link 
-                href="/events/birthday/chat?category=家電ガジェット&target=実父"
-                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-center block mb-3"
+                href="/events/birthday/chat?category=靴下・肌着（上質系）&target=義父"
+                className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-2 px-4 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
@@ -358,22 +358,22 @@ export default function FatherBirthdayGiftsPage() {
               </div>
             </div>
 
-            {/* ギフト7: 趣味グッズ */}
+            {/* ギフト7: シニア向けガジェット */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
                 <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
                   <span className="text-gray-500">画像</span>
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">趣味グッズ</h3>
-              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥5,000〜¥20,000）</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">シニア向けガジェット</h3>
+              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥5,000〜¥15,000）</p>
               <p className="text-gray-600 mb-4">
-                ゴルフ、釣り、読書など、父の趣味に合わせたグッズや道具。<br />
-                <span className="font-semibold text-blue-600">「趣味を応援してくれてありがとう」</span>と喜ばれる、心のこもったギフトです。
+                電波時計、デジタル血圧計など、シニアに優しいガジェット。<br />
+                <span className="font-semibold text-green-600">「便利になった」</span>と喜ばれる、実用的で体に優しいギフトです。
               </p>
               <Link 
-                href="/events/birthday/chat?category=趣味グッズ&target=実父"
-                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-center block mb-3"
+                href="/events/birthday/chat?category=シニア向けガジェット&target=義父"
+                className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-2 px-4 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
@@ -399,22 +399,22 @@ export default function FatherBirthdayGiftsPage() {
               </div>
             </div>
 
-            {/* ギフト8: 日常家電 */}
+            {/* ギフト8: 本・雑誌ギフト */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
                 <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
                   <span className="text-gray-500">画像</span>
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">日常家電</h3>
-              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥3,000〜¥15,000）</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">本・雑誌ギフト</h3>
+              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥3,000〜¥8,000）</p>
               <p className="text-gray-600 mb-4">
-                電動歯ブラシ、ネックファン、加湿器など、日常の生活を快適にする家電。<br />
-                <span className="font-semibold text-blue-600">「便利になった」</span>と喜ばれる、実用的で体に優しいギフトです。
+                歴史雑誌、趣味の本など、義父の興味に合わせた本・雑誌ギフト。<br />
+                <span className="font-semibold text-green-600">「趣味を応援してくれてありがとう」</span>と喜ばれる、心のこもったギフトです。
               </p>
               <Link 
-                href="/events/birthday/chat?category=日常家電&target=実父"
-                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-center block mb-3"
+                href="/events/birthday/chat?category=本・雑誌ギフト&target=義父"
+                className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-2 px-4 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
@@ -440,22 +440,22 @@ export default function FatherBirthdayGiftsPage() {
               </div>
             </div>
 
-            {/* ギフト9: ブランド財布・キーケース */}
+            {/* ギフト9: 季節感ギフト */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
                 <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
                   <span className="text-gray-500">画像</span>
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">ブランド財布・キーケース</h3>
-              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥8,000〜¥25,000）</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">季節感ギフト</h3>
+              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥4,000〜¥12,000）</p>
               <p className="text-gray-600 mb-4">
-                ポーター、ラルフローレンなど、上質で実用的な財布やキーケース。<br />
-                <span className="font-semibold text-blue-600">「毎日使うものだから嬉しい」</span>と喜ばれる、長く愛用できるギフトです。
+                父の日ギフト、秋の味覚セットなど、季節感のある贈り物。<br />
+                <span className="font-semibold text-green-600">「こんなのあるんだ！」</span>と驚きと喜びが一緒に届きます。
               </p>
               <Link 
-                href="/events/birthday/chat?category=ブランド財布・キーケース&target=実父"
-                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-center block mb-3"
+                href="/events/birthday/chat?category=季節感ギフト&target=義父"
+                className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-2 px-4 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
@@ -481,22 +481,22 @@ export default function FatherBirthdayGiftsPage() {
               </div>
             </div>
 
-            {/* ギフト10: スポーツ系グッズ */}
+            {/* ギフト10: 和風雑貨 */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
                 <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
                   <span className="text-gray-500">画像</span>
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">スポーツ系グッズ</h3>
-              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥5,000〜¥20,000）</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">和風雑貨</h3>
+              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥3,000〜¥10,000）</p>
               <p className="text-gray-600 mb-4">
-                ウォーキングシューズ、スポーツウェア、フィットネスグッズなど、健康維持をサポートするアイテム。<br />
-                <span className="font-semibold text-blue-600">「運動が楽しくなった」</span>と喜ばれる、健康を応援するギフトです。
+                風呂敷ギフト、竹製の和雑貨など、上品で印象の良い和風雑貨。<br />
+                <span className="font-semibold text-green-600">「毎日使うものだから嬉しい」</span>と喜ばれる、長く愛用できるギフトです。
               </p>
               <Link 
-                href="/events/birthday/chat?category=スポーツ系グッズ&target=実父"
-                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-center block mb-3"
+                href="/events/birthday/chat?category=和風雑貨&target=義父"
+                className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-2 px-4 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
@@ -528,34 +528,34 @@ export default function FatherBirthdayGiftsPage() {
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">🌸 季節別おすすめギフト</h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               <Link href="/events/under-construction" className="text-center group block bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
-                <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
                   <span className="text-2xl">🌸</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600">春</h3>
-                <p className="text-gray-600 text-sm">新茶、春の味覚、ウォーキンググッズなど</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600">春</h3>
+                <p className="text-gray-600 text-sm">新茶、春の味覚、和風雑貨など</p>
               </Link>
 
               <Link href="/events/under-construction" className="text-center group block bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
-                <div className="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
                   <span className="text-2xl">☀️</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600">夏</h3>
-                <p className="text-gray-600 text-sm">冷感グッズ、夏のビール、スポーツウェアなど</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600">夏</h3>
+                <p className="text-gray-600 text-sm">夏のビール、冷感グッズ、季節感ギフトなど</p>
               </Link>
 
               <Link href="/events/under-construction" className="text-center group block bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
                 <div className="w-16 h-16 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center">
                   <span className="text-2xl">🍂</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600">秋</h3>
-                <p className="text-gray-600 text-sm">秋の味覚、ウイスキー、アウトドアグッズなど</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600">秋</h3>
+                <p className="text-gray-600 text-sm">秋の味覚、ウイスキー、季節感ギフトなど</p>
               </Link>
 
               <Link href="/events/under-construction" className="text-center group block bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
                 <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
                   <span className="text-2xl">❄️</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600">冬</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600">冬</h3>
                 <p className="text-gray-600 text-sm">あったかグッズ、お鍋セット、高級食材など</p>
               </Link>
             </div>
@@ -566,19 +566,19 @@ export default function FatherBirthdayGiftsPage() {
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">🔗 関連ページ</h2>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               <Link 
-                href="/events/birthday/mother" 
+                href="/events/birthday/father" 
                 className="block bg-white rounded-xl p-4 hover:shadow-md transition-shadow"
               >
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">実母へのプレゼント</h3>
-                <p className="text-gray-600 text-sm">美容・癒し・健康・思い出系など、母への感謝を込めたギフト選び</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">実父へのプレゼント</h3>
+                <p className="text-gray-600 text-sm">健康・趣味・実用品など、父への感謝を込めたギフト選び</p>
               </Link>
 
               <Link 
-                href="/events/birthday/father-in-law" 
+                href="/events/birthday/mother-in-law" 
                 className="block bg-white rounded-xl p-4 hover:shadow-md transition-shadow"
               >
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">義父へのプレゼント</h3>
-                <p className="text-gray-600 text-sm">印象重視×無難な観点で選ぶ、義理の父へのギフト選び</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">義母へのプレゼント</h3>
+                <p className="text-gray-600 text-sm">センス良い×無難な観点で選ぶ、義理の母へのギフト選び</p>
               </Link>
 
               <Link 

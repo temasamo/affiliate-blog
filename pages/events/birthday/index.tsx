@@ -120,7 +120,7 @@ export default function BirthdayGiftsPage() {
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">🎁 特集ギフト</h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               <Link 
-                href="/events/birthday/health-gifts" 
+                href="/events/under-construction" 
                 className="group block bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors"
               >
                 <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600">
@@ -132,7 +132,7 @@ export default function BirthdayGiftsPage() {
               </Link>
 
               <Link 
-                href="/events/birthday/remote-gifts" 
+                href="/events/under-construction" 
                 className="group block bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors"
               >
                 <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600">
@@ -144,7 +144,7 @@ export default function BirthdayGiftsPage() {
               </Link>
 
               <Link 
-                href="/events/birthday/seasonal" 
+                href="/events/under-construction" 
                 className="group block bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors"
               >
                 <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600">
@@ -161,35 +161,35 @@ export default function BirthdayGiftsPage() {
           <div className="bg-white rounded-2xl shadow-md p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">💰 予算別ギフトガイド</h2>
             <div className="grid gap-6 md:grid-cols-3">
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-yellow-100 rounded-full flex items-center justify-center">
+              <Link href="/events/under-construction" className="text-center group">
+                <div className="w-16 h-16 mx-auto mb-4 bg-yellow-100 rounded-full flex items-center justify-center group-hover:bg-yellow-200 transition-colors">
                   <span className="text-2xl font-bold text-yellow-600">¥3,000</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">手軽なギフト</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600">手軽なギフト</h3>
                 <p className="text-gray-600 text-sm">
                   お菓子・お茶・小物など、気軽に贈れるギフト
                 </p>
-              </div>
+              </Link>
 
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center">
+              <Link href="/events/under-construction" className="text-center group">
+                <div className="w-16 h-16 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center group-hover:bg-orange-200 transition-colors">
                   <span className="text-2xl font-bold text-orange-600">¥5,000</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">定番ギフト</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600">定番ギフト</h3>
                 <p className="text-gray-600 text-sm">
                   花・グルメ・健康グッズなど、定番で喜ばれるギフト
                 </p>
-              </div>
+              </Link>
 
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center">
+              <Link href="/events/under-construction" className="text-center group">
+                <div className="w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center group-hover:bg-red-200 transition-colors">
                   <span className="text-2xl font-bold text-red-600">¥10,000</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">特別なギフト</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600">特別なギフト</h3>
                 <p className="text-gray-600 text-sm">
                   高級食材・体験ギフト・名入れ商品など
                 </p>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
