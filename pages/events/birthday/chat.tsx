@@ -100,6 +100,27 @@ export default function GiftChatPage() {
             />
           </div>
 
+          {/* 実父母と義理父母の分け方について */}
+          <div className="mt-12 bg-gradient-to-r from-pink-50 to-blue-50 rounded-2xl shadow-md p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              💝 なぜ実父母と義理父母で分けているの？
+            </h2>
+            <div className="max-w-3xl mx-auto">
+              <p className="text-gray-700 text-center leading-relaxed">
+                ギフトを贈る相手によって、気持ちもちょっと変わるから。<br />
+                実のお母さんには「ありがとう」をストレートに。<br />
+                義理のお母さんには「気遣い」や「礼儀」も込めて。<br />
+                <br />
+                ギフトを贈る時の気持ちのニュアンスの違いを大切にしたくて、<br />
+                私たちはご両親と義理のご両親で相談の入り口を分けています。<br />
+                <br />
+                <span className="text-blue-600 font-medium">
+                  相手のことを考える、やさしい時間になりますように。
+                </span>
+              </p>
+            </div>
+          </div>
+
           {/* 説明セクション */}
           <div className="mt-12 bg-white rounded-2xl shadow-md p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">

@@ -185,6 +185,187 @@ export const questionFlows = {
       options: ["見た目が華やか", "高級感", "実用性", "特別感"]
     }
   ],
+  // 義母向けカテゴリ
+  "上質スキンケア": [
+    {
+      question: "義母さまは普段、どんなお手入れをされていそうですか？",
+      options: ["化粧水や乳液などのスキンケア", "ハンドクリームなどのボディケア", "特にわからない"]
+    },
+    {
+      question: "上品な香り付きアイテムはお好きそうですか？",
+      options: ["はい", "無香料の方が良さそう", "わからない"]
+    },
+    {
+      question: "プレゼントするならどんな印象を届けたいですか？",
+      options: ["気が利いていて上品", "実用的で助かる", "見た目が華やか"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["5,000円以下", "5,000円〜10,000円", "10,000円以上"]
+    }
+  ],
+  "香りギフト": [
+    {
+      question: "義母さまは普段、どんな香りを好まれていそうですか？",
+      options: ["フローラル系", "フレッシュ系", "特にわからない"]
+    },
+    {
+      question: "香りの強さはどの程度が良さそうですか？",
+      options: ["控えめで上品", "しっかりと香る", "わからない"]
+    },
+    {
+      question: "プレゼントするならどんな印象を届けたいですか？",
+      options: ["気が利いていて上品", "実用的で助かる", "見た目が華やか"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["3,000円以下", "3,000円〜8,000円", "8,000円以上"]
+    }
+  ],
+  "高級タオル・寝具": [
+    {
+      question: "義母さまは普段、どんな質感のものを好まれていそうですか？",
+      options: ["やわらかくてふわふわ", "しっかりとした質感", "特にわからない"]
+    },
+    {
+      question: "色合いの好みはどのような感じですか？",
+      options: ["上品な色合い", "明るい色合い", "わからない"]
+    },
+    {
+      question: "プレゼントするならどんな印象を届けたいですか？",
+      options: ["気が利いていて上品", "実用的で助かる", "見た目が華やか"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["4,000円以下", "4,000円〜12,000円", "12,000円以上"]
+    }
+  ],
+  "コンパクト美容家電": [
+    {
+      question: "義母さまは普段、どんな美容ケアをされていそうですか？",
+      options: ["スキンケア", "ボディケア", "特にわからない"]
+    },
+    {
+      question: "家電の使いやすさはどの程度が良さそうですか？",
+      options: ["シンプルで簡単", "機能が充実", "わからない"]
+    },
+    {
+      question: "プレゼントするならどんな印象を届けたいですか？",
+      options: ["気が利いていて上品", "実用的で助かる", "見た目が華やか"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["6,000円以下", "6,000円〜15,000円", "15,000円以上"]
+    }
+  ],
+  "華やかスイーツギフト": [
+    {
+      question: "義母さまは普段、どんなスイーツを好まれていそうですか？",
+      options: ["和菓子", "洋菓子", "特にわからない"]
+    },
+    {
+      question: "見た目の好みはどのような感じですか？",
+      options: ["華やかで美しい", "シンプルで上品", "わからない"]
+    },
+    {
+      question: "プレゼントするならどんな印象を届けたいですか？",
+      options: ["気が利いていて上品", "実用的で助かる", "見た目が華やか"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["3,000円以下", "3,000円〜8,000円", "8,000円以上"]
+    }
+  ],
+  "上品なお茶・紅茶ギフト": [
+    {
+      question: "義母さまは普段、どんなお茶を飲まれていそうですか？",
+      options: ["日本茶", "紅茶", "特にわからない"]
+    },
+    {
+      question: "香りの好みはどのような感じですか？",
+      options: ["香り高い", "控えめ", "わからない"]
+    },
+    {
+      question: "プレゼントするならどんな印象を届けたいですか？",
+      options: ["気が利いていて上品", "実用的で助かる", "見た目が華やか"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["4,000円以下", "4,000円〜10,000円", "10,000円以上"]
+    }
+  ],
+  "キッチン雑貨・調理器具": [
+    {
+      question: "義母さまは普段、どんな料理をされていそうですか？",
+      options: ["和食中心", "洋食中心", "特にわからない"]
+    },
+    {
+      question: "調理器具の好みはどのような感じですか？",
+      options: ["高級で上質", "実用的", "わからない"]
+    },
+    {
+      question: "プレゼントするならどんな印象を届けたいですか？",
+      options: ["気が利いていて上品", "実用的で助かる", "見た目が華やか"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["5,000円以下", "5,000円〜15,000円", "15,000円以上"]
+    }
+  ],
+  "アロマ・癒しグッズ": [
+    {
+      question: "義母さまは普段、どんな時間を大切にされていそうですか？",
+      options: ["リラックスタイム", "お風呂タイム", "特にわからない"]
+    },
+    {
+      question: "香りの好みはどのような感じですか？",
+      options: ["フローラル系", "ウッディ系", "わからない"]
+    },
+    {
+      question: "プレゼントするならどんな印象を届けたいですか？",
+      options: ["気が利いていて上品", "実用的で助かる", "見た目が華やか"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["3,000円以下", "3,000円〜8,000円", "8,000円以上"]
+    }
+  ],
+  "ブランド小物": [
+    {
+      question: "義母さまは普段、どんなスタイルを好まれていそうですか？",
+      options: ["上品でクラシック", "モダンでおしゃれ", "特にわからない"]
+    },
+    {
+      question: "小物の好みはどのような感じですか？",
+      options: ["ブランド品", "シンプルで上質", "わからない"]
+    },
+    {
+      question: "プレゼントするならどんな印象を届けたいですか？",
+      options: ["気が利いていて上品", "実用的で助かる", "見た目が華やか"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["4,000円以下", "4,000円〜12,000円", "12,000円以上"]
+    }
+  ],
+  "季節の花＆プリザーブドギフト": [
+    {
+      question: "義母さまは普段、どんな花を好まれていそうですか？",
+      options: ["生花", "プリザーブドフラワー", "特にわからない"]
+    },
+    {
+      question: "色合いの好みはどのような感じですか？",
+      options: ["華やかな色合い", "上品な色合い", "わからない"]
+    },
+    {
+      question: "プレゼントするならどんな印象を届けたいですか？",
+      options: ["気が利いていて上品", "実用的で助かる", "見た目が華やか"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["3,000円以下", "3,000円〜10,000円", "10,000円以上"]
+    }
+  ],
   "美容・スキンケア": [
     {
       question: "お母さまは最近、お肌や髪について気になっていることはございますか？",
@@ -427,75 +608,102 @@ export function generateCategorySuggestions(category: string, answers: Record<st
       break;
     
     case "健康グッズ":
-      // 健康グッズ関連のアイテムを提案
-      suggestions.push(
-        { name: "血圧計・健康測定器", keywords: ["血圧計", "健康測定", "医療機器"], priceRange: "¥5,000〜¥15,000" },
-        { name: "マッサージ器具", keywords: ["マッサージ", "肩こり", "腰痛"], priceRange: "¥3,000〜¥10,000" },
-        { name: "健康サプリメント", keywords: ["サプリメント", "健康", "栄養"], priceRange: "¥2,000〜¥8,000" }
-      );
+      // ユーザーの回答に基づいてサブカテゴリを提案
+      const healthAnswer = answers.question_0 || "";
+      suggestions = generateHealthSuggestions(healthAnswer);
       break;
     
     case "季節の花ギフト":
-      // 花ギフト関連のアイテムを提案
-      suggestions.push(
-        { name: "季節の生花アレンジメント", keywords: ["生花", "フラワーアレンジ", "季節"], priceRange: "¥2,000〜¥6,000" },
-        { name: "観葉植物・鉢植え", keywords: ["観葉植物", "鉢植え", "グリーン"], priceRange: "¥3,000〜¥8,000" },
-        { name: "ドライフラワー・プリザーブド", keywords: ["ドライフラワー", "プリザーブド", "長持ち"], priceRange: "¥2,500〜¥7,000" }
-      );
+      // ユーザーの回答に基づいてサブカテゴリを提案
+      const flowerAnswer = answers.question_0 || "";
+      suggestions = generateFlowerSuggestions(flowerAnswer);
+      break;
+    
+    // 義母向けカテゴリ
+    case "上質スキンケア":
+      const skincareAnswer = answers.question_0 || "";
+      suggestions = generateSkincareSuggestions(skincareAnswer);
+      break;
+    
+    case "香りギフト":
+      const fragranceAnswer = answers.question_0 || "";
+      suggestions = generateFragranceSuggestions(fragranceAnswer);
+      break;
+    
+    case "高級タオル・寝具":
+      const towelAnswer = answers.question_0 || "";
+      suggestions = generateTowelSuggestions(towelAnswer);
+      break;
+    
+    case "コンパクト美容家電":
+      const beautyDeviceAnswer = answers.question_0 || "";
+      suggestions = generateBeautyDeviceSuggestions(beautyDeviceAnswer);
+      break;
+    
+    case "華やかスイーツギフト":
+      const sweetsAnswer = answers.question_0 || "";
+      suggestions = generateSweetsSuggestions(sweetsAnswer);
+      break;
+    
+    case "上品なお茶・紅茶ギフト":
+      const teaAnswer = answers.question_0 || "";
+      suggestions = generateTeaSuggestions(teaAnswer);
+      break;
+    
+    case "キッチン雑貨・調理器具":
+      const kitchenAnswer = answers.question_0 || "";
+      suggestions = generateKitchenSuggestions(kitchenAnswer);
+      break;
+    
+    case "アロマ・癒しグッズ":
+      const aromaAnswer = answers.question_0 || "";
+      suggestions = generateAromaSuggestions(aromaAnswer);
+      break;
+    
+    case "ブランド小物":
+      const brandAnswer = answers.question_0 || "";
+      suggestions = generateBrandSuggestions(brandAnswer);
+      break;
+    
+    case "季節の花＆プリザーブドギフト":
+      const flowerGiftAnswer = answers.question_0 || "";
+      suggestions = generateFlowerGiftSuggestions(flowerGiftAnswer);
       break;
     
     case "グルメギフト":
-      // グルメギフト関連のアイテムを提案
-      suggestions.push(
-        { name: "高級和菓子セット", keywords: ["和菓子", "日本茶", "伝統"], priceRange: "¥3,000〜¥8,000" },
-        { name: "洋菓子・ケーキセット", keywords: ["洋菓子", "ケーキ", "スイーツ"], priceRange: "¥2,500〜¥6,000" },
-        { name: "地方特産品セット", keywords: ["地方特産", "ご当地", "名産品"], priceRange: "¥3,000〜¥7,000" }
-      );
+      // ユーザーの回答に基づいてサブカテゴリを提案
+      const gourmetAnswer = answers.question_0 || "";
+      suggestions = generateGourmetSuggestions(gourmetAnswer);
       break;
     
     case "体験ギフト":
-      // 体験ギフト関連のアイテムを提案
-      suggestions.push(
-        { name: "温泉・リラクゼーション", keywords: ["温泉", "リラクゼーション", "癒し"], priceRange: "¥5,000〜¥20,000" },
-        { name: "料理教室・ワークショップ", keywords: ["料理教室", "ワークショップ", "体験"], priceRange: "¥3,000〜¥10,000" },
-        { name: "観劇・コンサートチケット", keywords: ["観劇", "コンサート", "エンターテイメント"], priceRange: "¥4,000〜¥15,000" }
-      );
+      // ユーザーの回答に基づいてサブカテゴリを提案
+      const experienceAnswer = answers.question_0 || "";
+      suggestions = generateExperienceSuggestions(experienceAnswer);
       break;
     
     case "名入れ・メッセージ入りギフト":
-      // 名入れギフト関連のアイテムを提案
-      suggestions.push(
-        { name: "名入れマグカップ・湯呑み", keywords: ["名入れ", "マグカップ", "湯呑み"], priceRange: "¥3,000〜¥8,000" },
-        { name: "名入れタオル・ハンカチ", keywords: ["名入れ", "タオル", "ハンカチ"], priceRange: "¥2,000〜¥5,000" },
-        { name: "名入れポーチ・バッグ", keywords: ["名入れ", "ポーチ", "バッグ"], priceRange: "¥3,500〜¥8,000" }
-      );
+      // ユーザーの回答に基づいてサブカテゴリを提案
+      const personalizedAnswer = answers.question_0 || "";
+      suggestions = generatePersonalizedSuggestions(personalizedAnswer);
       break;
     
     case "フォトアルバム・家族の思い出ギフト":
-      // 思い出ギフト関連のアイテムを提案
-      suggestions.push(
-        { name: "フォトアルバム制作", keywords: ["フォトアルバム", "写真", "思い出"], priceRange: "¥3,000〜¥10,000" },
-        { name: "デジタルフォトフレーム", keywords: ["デジタルフォトフレーム", "写真", "デジタル"], priceRange: "¥5,000〜¥15,000" },
-        { name: "手作りアルバムキット", keywords: ["手作り", "アルバム", "キット"], priceRange: "¥2,000〜¥6,000" }
-      );
+      // ユーザーの回答に基づいてサブカテゴリを提案
+      const memoryAnswer = answers.question_0 || "";
+      suggestions = generateMemorySuggestions(memoryAnswer);
       break;
     
     case "おうち時間を楽しむアイテム":
-      // おうち時間アイテム関連のアイテムを提案
-      suggestions.push(
-        { name: "リラックスブランケット", keywords: ["ブランケット", "リラックス", "おうち時間"], priceRange: "¥3,000〜¥8,000" },
-        { name: "加湿器・空気清浄機", keywords: ["加湿器", "空気清浄機", "健康"], priceRange: "¥4,000〜¥12,000" },
-        { name: "インテリア小物", keywords: ["インテリア", "小物", "装飾"], priceRange: "¥2,000〜¥6,000" }
-      );
+      // ユーザーの回答に基づいてサブカテゴリを提案
+      const homeTimeAnswer = answers.question_0 || "";
+      suggestions = generateHomeTimeSuggestions(homeTimeAnswer);
       break;
     
     case "季節限定・ご当地ギフト":
-      // 季節限定ギフト関連のアイテムを提案
-      suggestions.push(
-        { name: "季節限定お菓子", keywords: ["季節限定", "お菓子", "スイーツ"], priceRange: "¥2,000〜¥5,000" },
-        { name: "ご当地特産品", keywords: ["ご当地", "特産品", "地方"], priceRange: "¥3,000〜¥8,000" },
-        { name: "期間限定雑貨", keywords: ["期間限定", "雑貨", "小物"], priceRange: "¥2,500〜¥6,000" }
-      );
+      // ユーザーの回答に基づいてサブカテゴリを提案
+      const seasonalAnswer = answers.question_0 || "";
+      suggestions = generateSeasonalSuggestions(seasonalAnswer);
       break;
     
     default:
@@ -504,6 +712,298 @@ export function generateCategorySuggestions(category: string, answers: Record<st
   }
   
   return suggestions.slice(0, 3);
+}
+
+// 健康グッズの提案生成関数
+export function generateHealthSuggestions(healthAnswer: string): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+
+  // ユーザーの回答に基づいてサブカテゴリを提案
+  if (healthAnswer.includes("マッサージ器具") || healthAnswer.includes("マッサージ")) {
+    suggestions.push(
+      { name: "顔用マッサージ器具", keywords: ["顔", "マッサージ", "美顔器"], priceRange: "¥4,000〜¥10,000" },
+      { name: "腰用マッサージ器具", keywords: ["腰", "マッサージ", "腰痛"], priceRange: "¥6,000〜¥12,000" },
+      { name: "脚・足用マッサージ器具", keywords: ["足", "マッサージ", "むくみ"], priceRange: "¥5,000〜¥15,000" }
+    );
+  } else if (healthAnswer.includes("健康サプリメント") || healthAnswer.includes("サプリメント")) {
+    suggestions.push(
+      { name: "関節ケアサプリ", keywords: ["関節", "サプリ", "グルコサミン"], priceRange: "¥2,000〜¥6,000" },
+      { name: "骨密度サポート", keywords: ["骨", "サプリ", "カルシウム"], priceRange: "¥3,000〜¥8,000" },
+      { name: "免疫力サポート", keywords: ["免疫", "サプリ", "ビタミン"], priceRange: "¥2,000〜¥5,000" }
+    );
+  } else if (healthAnswer.includes("血圧計") || healthAnswer.includes("健康測定器")) {
+    suggestions.push(
+      { name: "手首式血圧計", keywords: ["手首", "血圧計", "コンパクト"], priceRange: "¥5,000〜¥8,000" },
+      { name: "上腕式血圧計", keywords: ["上腕", "血圧計", "高精度"], priceRange: "¥6,000〜¥12,000" },
+      { name: "体組成計", keywords: ["体組成計", "体重計", "体脂肪"], priceRange: "¥3,000〜¥10,000" }
+    );
+  } else if (healthAnswer.includes("温熱器具") || healthAnswer.includes("温熱")) {
+    suggestions.push(
+      { name: "首・肩用温熱器具", keywords: ["首", "肩", "温熱", "ホットパック"], priceRange: "¥3,000〜¥8,000" },
+      { name: "腰用温熱器具", keywords: ["腰", "温熱", "腰痛"], priceRange: "¥4,000〜¥10,000" },
+      { name: "足用温熱器具", keywords: ["足", "温熱", "冷え性"], priceRange: "¥2,500〜¥7,000" }
+    );
+  } else if (healthAnswer.includes("運動器具") || healthAnswer.includes("運動")) {
+    suggestions.push(
+      { name: "軽量ダンベル", keywords: ["ダンベル", "筋トレ", "軽量"], priceRange: "¥3,000〜¥8,000" },
+      { name: "ヨガマット・ストレッチ", keywords: ["ヨガ", "ストレッチ", "マット"], priceRange: "¥2,000〜¥6,000" },
+      { name: "バランスボール", keywords: ["バランスボール", "体幹", "運動"], priceRange: "¥2,500〜¥5,000" }
+    );
+  } else {
+    // デフォルト：バランスの取れた提案
+    suggestions.push(
+      { name: "血圧計・健康測定器", keywords: ["血圧計", "健康測定", "医療機器"], priceRange: "¥5,000〜¥15,000" },
+      { name: "マッサージ器具", keywords: ["マッサージ", "肩こり", "腰痛"], priceRange: "¥3,000〜¥10,000" },
+      { name: "健康サプリメント", keywords: ["サプリメント", "健康", "栄養"], priceRange: "¥2,000〜¥8,000" }
+    );
+  }
+
+  return suggestions;
+}
+
+// 季節の花ギフトの提案生成関数
+export function generateFlowerSuggestions(flowerAnswer: string): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+
+  // ユーザーの回答に基づいてサブカテゴリを提案
+  if (flowerAnswer.includes("生花") || flowerAnswer.includes("フラワーアレンジ")) {
+    suggestions.push(
+      { name: "季節の生花アレンジメント", keywords: ["生花", "フラワーアレンジ", "季節"], priceRange: "¥2,000〜¥6,000" },
+      { name: "バラの花束", keywords: ["バラ", "花束", "ローズ"], priceRange: "¥3,000〜¥8,000" },
+      { name: "季節の切り花セット", keywords: ["切り花", "季節", "フラワー"], priceRange: "¥1,500〜¥4,000" }
+    );
+  } else if (flowerAnswer.includes("観葉植物") || flowerAnswer.includes("鉢植え")) {
+    suggestions.push(
+      { name: "観葉植物・鉢植え", keywords: ["観葉植物", "鉢植え", "グリーン"], priceRange: "¥3,000〜¥8,000" },
+      { name: "多肉植物セット", keywords: ["多肉植物", "サボテン", "インテリア"], priceRange: "¥2,000〜¥5,000" },
+      { name: "ハーブ・香り植物", keywords: ["ハーブ", "香り", "料理"], priceRange: "¥1,500〜¥4,000" }
+    );
+  } else if (flowerAnswer.includes("ドライフラワー") || flowerAnswer.includes("プリザーブド")) {
+    suggestions.push(
+      { name: "ドライフラワー・プリザーブド", keywords: ["ドライフラワー", "プリザーブド", "長持ち"], priceRange: "¥2,500〜¥7,000" },
+      { name: "アーティフィシャルフラワー", keywords: ["造花", "アーティフィシャル", "インテリア"], priceRange: "¥2,000〜¥6,000" },
+      { name: "押し花・フラワーアート", keywords: ["押し花", "アート", "インテリア"], priceRange: "¥3,000〜¥8,000" }
+    );
+  } else {
+    // デフォルト：バランスの取れた提案
+    suggestions.push(
+      { name: "季節の生花アレンジメント", keywords: ["生花", "フラワーアレンジ", "季節"], priceRange: "¥2,000〜¥6,000" },
+      { name: "観葉植物・鉢植え", keywords: ["観葉植物", "鉢植え", "グリーン"], priceRange: "¥3,000〜¥8,000" },
+      { name: "ドライフラワー・プリザーブド", keywords: ["ドライフラワー", "プリザーブド", "長持ち"], priceRange: "¥2,500〜¥7,000" }
+    );
+  }
+
+  return suggestions;
+}
+
+// グルメギフトの提案生成関数
+export function generateGourmetSuggestions(gourmetAnswer: string): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+
+  // ユーザーの回答に基づいてサブカテゴリを提案
+  if (gourmetAnswer.includes("和菓子") || gourmetAnswer.includes("日本茶")) {
+    suggestions.push(
+      { name: "高級和菓子セット", keywords: ["和菓子", "日本茶", "伝統"], priceRange: "¥3,000〜¥8,000" },
+      { name: "抹茶・煎茶セット", keywords: ["抹茶", "煎茶", "日本茶"], priceRange: "¥2,500〜¥6,000" },
+      { name: "季節の和菓子", keywords: ["季節", "和菓子", "限定"], priceRange: "¥2,000〜¥5,000" }
+    );
+  } else if (gourmetAnswer.includes("洋菓子") || gourmetAnswer.includes("ケーキ")) {
+    suggestions.push(
+      { name: "洋菓子・ケーキセット", keywords: ["洋菓子", "ケーキ", "スイーツ"], priceRange: "¥2,500〜¥6,000" },
+      { name: "チョコレート・お菓子", keywords: ["チョコレート", "お菓子", "スイーツ"], priceRange: "¥2,000〜¥5,000" },
+      { name: "焼き菓子・クッキー", keywords: ["焼き菓子", "クッキー", "手作り風"], priceRange: "¥1,500〜¥4,000" }
+    );
+  } else if (gourmetAnswer.includes("地方特産") || gourmetAnswer.includes("ご当地")) {
+    suggestions.push(
+      { name: "地方特産品セット", keywords: ["地方特産", "ご当地", "名産品"], priceRange: "¥3,000〜¥7,000" },
+      { name: "海産物・乾物", keywords: ["海産物", "乾物", "海の幸"], priceRange: "¥2,500〜¥6,000" },
+      { name: "調味料・調理用品", keywords: ["調味料", "調理用品", "料理"], priceRange: "¥2,000〜¥5,000" }
+    );
+  } else {
+    // デフォルト：バランスの取れた提案
+    suggestions.push(
+      { name: "高級和菓子セット", keywords: ["和菓子", "日本茶", "伝統"], priceRange: "¥3,000〜¥8,000" },
+      { name: "洋菓子・ケーキセット", keywords: ["洋菓子", "ケーキ", "スイーツ"], priceRange: "¥2,500〜¥6,000" },
+      { name: "地方特産品セット", keywords: ["地方特産", "ご当地", "名産品"], priceRange: "¥3,000〜¥7,000" }
+    );
+  }
+
+  return suggestions;
+}
+
+// 体験ギフトの提案生成関数
+export function generateExperienceSuggestions(experienceAnswer: string): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+
+  // ユーザーの回答に基づいてサブカテゴリを提案
+  if (experienceAnswer.includes("温泉") || experienceAnswer.includes("リラクゼーション")) {
+    suggestions.push(
+      { name: "温泉・リラクゼーション", keywords: ["温泉", "リラクゼーション", "癒し"], priceRange: "¥5,000〜¥20,000" },
+      { name: "エステ・マッサージ", keywords: ["エステ", "マッサージ", "美容"], priceRange: "¥3,000〜¥15,000" },
+      { name: "ヨガ・フィットネス", keywords: ["ヨガ", "フィットネス", "健康"], priceRange: "¥2,000〜¥8,000" }
+    );
+  } else if (experienceAnswer.includes("料理教室") || experienceAnswer.includes("ワークショップ")) {
+    suggestions.push(
+      { name: "料理教室・ワークショップ", keywords: ["料理教室", "ワークショップ", "体験"], priceRange: "¥3,000〜¥10,000" },
+      { name: "手作り体験", keywords: ["手作り", "体験", "クラフト"], priceRange: "¥2,500〜¥8,000" },
+      { name: "文化体験", keywords: ["文化", "体験", "伝統"], priceRange: "¥2,000〜¥6,000" }
+    );
+  } else if (experienceAnswer.includes("観劇") || experienceAnswer.includes("コンサート")) {
+    suggestions.push(
+      { name: "観劇・コンサートチケット", keywords: ["観劇", "コンサート", "エンターテイメント"], priceRange: "¥4,000〜¥15,000" },
+      { name: "映画・イベント", keywords: ["映画", "イベント", "エンターテイメント"], priceRange: "¥2,000〜¥8,000" },
+      { name: "スポーツ観戦", keywords: ["スポーツ", "観戦", "チケット"], priceRange: "¥3,000〜¥12,000" }
+    );
+  } else {
+    // デフォルト：バランスの取れた提案
+    suggestions.push(
+      { name: "温泉・リラクゼーション", keywords: ["温泉", "リラクゼーション", "癒し"], priceRange: "¥5,000〜¥20,000" },
+      { name: "料理教室・ワークショップ", keywords: ["料理教室", "ワークショップ", "体験"], priceRange: "¥3,000〜¥10,000" },
+      { name: "観劇・コンサートチケット", keywords: ["観劇", "コンサート", "エンターテイメント"], priceRange: "¥4,000〜¥15,000" }
+    );
+  }
+
+  return suggestions;
+}
+
+// 名入れ・メッセージ入りギフトの提案生成関数
+export function generatePersonalizedSuggestions(personalizedAnswer: string): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+
+  // ユーザーの回答に基づいてサブカテゴリを提案
+  if (personalizedAnswer.includes("マグカップ") || personalizedAnswer.includes("湯呑み")) {
+    suggestions.push(
+      { name: "名入れマグカップ・湯呑み", keywords: ["名入れ", "マグカップ", "湯呑み"], priceRange: "¥3,000〜¥8,000" },
+      { name: "名入れコーヒーカップ", keywords: ["名入れ", "コーヒーカップ", "カップ"], priceRange: "¥2,500〜¥6,000" },
+      { name: "名入れ茶碗・お椀", keywords: ["名入れ", "茶碗", "お椀"], priceRange: "¥3,000〜¥7,000" }
+    );
+  } else if (personalizedAnswer.includes("タオル") || personalizedAnswer.includes("ハンカチ")) {
+    suggestions.push(
+      { name: "名入れタオル・ハンカチ", keywords: ["名入れ", "タオル", "ハンカチ"], priceRange: "¥2,000〜¥5,000" },
+      { name: "名入れバスタオル", keywords: ["名入れ", "バスタオル", "タオル"], priceRange: "¥2,500〜¥6,000" },
+      { name: "名入れ手ぬぐい", keywords: ["名入れ", "手ぬぐい", "伝統"], priceRange: "¥1,500〜¥4,000" }
+    );
+  } else if (personalizedAnswer.includes("ポーチ") || personalizedAnswer.includes("バッグ")) {
+    suggestions.push(
+      { name: "名入れポーチ・バッグ", keywords: ["名入れ", "ポーチ", "バッグ"], priceRange: "¥3,500〜¥8,000" },
+      { name: "名入れエコバッグ", keywords: ["名入れ", "エコバッグ", "バッグ"], priceRange: "¥2,000〜¥5,000" },
+      { name: "名入れ小物入れ", keywords: ["名入れ", "小物入れ", "収納"], priceRange: "¥2,500〜¥6,000" }
+    );
+  } else {
+    // デフォルト：バランスの取れた提案
+    suggestions.push(
+      { name: "名入れマグカップ・湯呑み", keywords: ["名入れ", "マグカップ", "湯呑み"], priceRange: "¥3,000〜¥8,000" },
+      { name: "名入れタオル・ハンカチ", keywords: ["名入れ", "タオル", "ハンカチ"], priceRange: "¥2,000〜¥5,000" },
+      { name: "名入れポーチ・バッグ", keywords: ["名入れ", "ポーチ", "バッグ"], priceRange: "¥3,500〜¥8,000" }
+    );
+  }
+
+  return suggestions;
+}
+
+// フォトアルバム・家族の思い出ギフトの提案生成関数
+export function generateMemorySuggestions(memoryAnswer: string): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+
+  // ユーザーの回答に基づいてサブカテゴリを提案
+  if (memoryAnswer.includes("フォトアルバム") || memoryAnswer.includes("アルバム")) {
+    suggestions.push(
+      { name: "フォトアルバム制作", keywords: ["フォトアルバム", "写真", "思い出"], priceRange: "¥3,000〜¥10,000" },
+      { name: "手作りアルバムキット", keywords: ["手作り", "アルバム", "キット"], priceRange: "¥2,000〜¥6,000" },
+      { name: "フォトブック・写真集", keywords: ["フォトブック", "写真集", "アルバム"], priceRange: "¥2,500〜¥8,000" }
+    );
+  } else if (memoryAnswer.includes("デジタルフォトフレーム") || memoryAnswer.includes("デジタル")) {
+    suggestions.push(
+      { name: "デジタルフォトフレーム", keywords: ["デジタルフォトフレーム", "写真", "デジタル"], priceRange: "¥5,000〜¥15,000" },
+      { name: "スマートフォトフレーム", keywords: ["スマート", "フォトフレーム", "WiFi"], priceRange: "¥6,000〜¥18,000" },
+      { name: "電子フォトアルバム", keywords: ["電子", "フォトアルバム", "デジタル"], priceRange: "¥4,000〜¥12,000" }
+    );
+  } else if (memoryAnswer.includes("手作り") || memoryAnswer.includes("クラフト")) {
+    suggestions.push(
+      { name: "手作りアルバムキット", keywords: ["手作り", "アルバム", "キット"], priceRange: "¥2,000〜¥6,000" },
+      { name: "スクラップブッキング", keywords: ["スクラップブッキング", "手作り", "クラフト"], priceRange: "¥2,500〜¥7,000" },
+      { name: "フォトクラフトキット", keywords: ["フォトクラフト", "手作り", "キット"], priceRange: "¥1,500〜¥5,000" }
+    );
+  } else {
+    // デフォルト：バランスの取れた提案
+    suggestions.push(
+      { name: "フォトアルバム制作", keywords: ["フォトアルバム", "写真", "思い出"], priceRange: "¥3,000〜¥10,000" },
+      { name: "デジタルフォトフレーム", keywords: ["デジタルフォトフレーム", "写真", "デジタル"], priceRange: "¥5,000〜¥15,000" },
+      { name: "手作りアルバムキット", keywords: ["手作り", "アルバム", "キット"], priceRange: "¥2,000〜¥6,000" }
+    );
+  }
+
+  return suggestions;
+}
+
+// おうち時間を楽しむアイテムの提案生成関数
+export function generateHomeTimeSuggestions(homeTimeAnswer: string): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+
+  // ユーザーの回答に基づいてサブカテゴリを提案
+  if (homeTimeAnswer.includes("リラックス") || homeTimeAnswer.includes("ブランケット")) {
+    suggestions.push(
+      { name: "リラックスブランケット", keywords: ["ブランケット", "リラックス", "おうち時間"], priceRange: "¥3,000〜¥8,000" },
+      { name: "抱き枕・クッション", keywords: ["抱き枕", "クッション", "リラックス"], priceRange: "¥2,500〜¥6,000" },
+      { name: "アロマ・香りアイテム", keywords: ["アロマ", "香り", "リラックス"], priceRange: "¥2,000〜¥5,000" }
+    );
+  } else if (homeTimeAnswer.includes("加湿器") || homeTimeAnswer.includes("空気清浄機")) {
+    suggestions.push(
+      { name: "加湿器・空気清浄機", keywords: ["加湿器", "空気清浄機", "健康"], priceRange: "¥4,000〜¥12,000" },
+      { name: "空気清浄機", keywords: ["空気清浄機", "健康", "空気"], priceRange: "¥5,000〜¥15,000" },
+      { name: "加湿器", keywords: ["加湿器", "湿度", "健康"], priceRange: "¥3,000〜¥8,000" }
+    );
+  } else if (homeTimeAnswer.includes("インテリア") || homeTimeAnswer.includes("小物")) {
+    suggestions.push(
+      { name: "インテリア小物", keywords: ["インテリア", "小物", "装飾"], priceRange: "¥2,000〜¥6,000" },
+      { name: "照明・ライト", keywords: ["照明", "ライト", "インテリア"], priceRange: "¥3,000〜¥8,000" },
+      { name: "収納・整理用品", keywords: ["収納", "整理", "インテリア"], priceRange: "¥2,500〜¥7,000" }
+    );
+  } else {
+    // デフォルト：バランスの取れた提案
+    suggestions.push(
+      { name: "リラックスブランケット", keywords: ["ブランケット", "リラックス", "おうち時間"], priceRange: "¥3,000〜¥8,000" },
+      { name: "加湿器・空気清浄機", keywords: ["加湿器", "空気清浄機", "健康"], priceRange: "¥4,000〜¥12,000" },
+      { name: "インテリア小物", keywords: ["インテリア", "小物", "装飾"], priceRange: "¥2,000〜¥6,000" }
+    );
+  }
+
+  return suggestions;
+}
+
+// 季節限定・ご当地ギフトの提案生成関数
+export function generateSeasonalSuggestions(seasonalAnswer: string): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+
+  // ユーザーの回答に基づいてサブカテゴリを提案
+  if (seasonalAnswer.includes("季節限定") || seasonalAnswer.includes("お菓子")) {
+    suggestions.push(
+      { name: "季節限定お菓子", keywords: ["季節限定", "お菓子", "スイーツ"], priceRange: "¥2,000〜¥5,000" },
+      { name: "季節の和菓子", keywords: ["季節", "和菓子", "限定"], priceRange: "¥2,500〜¥6,000" },
+      { name: "季節の洋菓子", keywords: ["季節", "洋菓子", "限定"], priceRange: "¥2,000〜¥5,000" }
+    );
+  } else if (seasonalAnswer.includes("ご当地") || seasonalAnswer.includes("特産品")) {
+    suggestions.push(
+      { name: "ご当地特産品", keywords: ["ご当地", "特産品", "地方"], priceRange: "¥3,000〜¥8,000" },
+      { name: "地方名産品", keywords: ["地方", "名産品", "特産品"], priceRange: "¥2,500〜¥7,000" },
+      { name: "ご当地グルメ", keywords: ["ご当地", "グルメ", "名産品"], priceRange: "¥2,000〜¥6,000" }
+    );
+  } else if (seasonalAnswer.includes("期間限定") || seasonalAnswer.includes("雑貨")) {
+    suggestions.push(
+      { name: "期間限定雑貨", keywords: ["期間限定", "雑貨", "小物"], priceRange: "¥2,500〜¥6,000" },
+      { name: "季節の雑貨", keywords: ["季節", "雑貨", "インテリア"], priceRange: "¥2,000〜¥5,000" },
+      { name: "限定デザインアイテム", keywords: ["限定", "デザイン", "アイテム"], priceRange: "¥3,000〜¥8,000" }
+    );
+  } else {
+    // デフォルト：バランスの取れた提案
+    suggestions.push(
+      { name: "季節限定お菓子", keywords: ["季節限定", "お菓子", "スイーツ"], priceRange: "¥2,000〜¥5,000" },
+      { name: "ご当地特産品", keywords: ["ご当地", "特産品", "地方"], priceRange: "¥3,000〜¥8,000" },
+      { name: "期間限定雑貨", keywords: ["期間限定", "雑貨", "小物"], priceRange: "¥2,500〜¥6,000" }
+    );
+  }
+
+  return suggestions;
 }
 
 // 美容・スキンケアの組み合わせ提案ロジック
@@ -664,4 +1164,249 @@ export function generateMiscSuggestions(answers: Record<string, string>): GiftIt
   }
   
   return suggestions.slice(0, 3);
+}
+
+// 義母向けサブカテゴリ提案関数
+
+// 上質スキンケア
+export function generateSkincareSuggestions(skincareAnswer: string): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+
+  if (skincareAnswer.includes("化粧水") || skincareAnswer.includes("スキンケア")) {
+    suggestions.push(
+      { name: "高級スキンケアセット", keywords: ["高級", "スキンケア", "化粧水", "乳液"], priceRange: "¥5,000〜¥12,000" },
+      { name: "ブランドコスメセット", keywords: ["ブランド", "コスメ", "上質", "スキンケア"], priceRange: "¥6,000〜¥15,000" },
+      { name: "香り付きスキンケア", keywords: ["香り", "スキンケア", "上品", "フローラル"], priceRange: "¥4,000〜¥10,000" }
+    );
+  } else if (skincareAnswer.includes("ハンドクリーム") || skincareAnswer.includes("ボディケア")) {
+    suggestions.push(
+      { name: "高級ハンドクリームセット", keywords: ["ハンドクリーム", "高級", "香り", "保湿"], priceRange: "¥3,000〜¥8,000" },
+      { name: "ボディケアセット", keywords: ["ボディケア", "保湿", "香り", "上質"], priceRange: "¥4,000〜¥10,000" },
+      { name: "アロマボディオイル", keywords: ["アロマ", "ボディオイル", "香り", "リラックス"], priceRange: "¥3,500〜¥8,000" }
+    );
+  } else {
+    suggestions.push(
+      { name: "高級スキンケアセット", keywords: ["高級", "スキンケア", "上質", "ギフト"], priceRange: "¥5,000〜¥12,000" },
+      { name: "香り付きスキンケア", keywords: ["香り", "スキンケア", "上品", "フローラル"], priceRange: "¥4,000〜¥10,000" },
+      { name: "高級ハンドクリームセット", keywords: ["ハンドクリーム", "高級", "香り", "保湿"], priceRange: "¥3,000〜¥8,000" }
+    );
+  }
+
+  return suggestions;
+}
+
+// 香りギフト
+export function generateFragranceSuggestions(fragranceAnswer: string): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+
+  if (fragranceAnswer.includes("フローラル")) {
+    suggestions.push(
+      { name: "フローラルハンドクリーム", keywords: ["フローラル", "ハンドクリーム", "香り", "上品"], priceRange: "¥2,500〜¥6,000" },
+      { name: "花の香りアロマキャンドル", keywords: ["フローラル", "アロマキャンドル", "香り", "癒し"], priceRange: "¥3,000〜¥8,000" },
+      { name: "フローラル入浴剤セット", keywords: ["フローラル", "入浴剤", "香り", "リラックス"], priceRange: "¥2,000〜¥5,000" }
+    );
+  } else if (fragranceAnswer.includes("フレッシュ")) {
+    suggestions.push(
+      { name: "フレッシュハンドクリーム", keywords: ["フレッシュ", "ハンドクリーム", "香り", "清潔感"], priceRange: "¥2,500〜¥6,000" },
+      { name: "シトラスアロマオイル", keywords: ["シトラス", "アロマオイル", "フレッシュ", "香り"], priceRange: "¥3,000〜¥7,000" },
+      { name: "フレッシュ入浴剤", keywords: ["フレッシュ", "入浴剤", "香り", "清潔感"], priceRange: "¥2,000〜¥5,000" }
+    );
+  } else {
+    suggestions.push(
+      { name: "上品な香りハンドクリーム", keywords: ["香り", "ハンドクリーム", "上品", "ギフト"], priceRange: "¥2,500〜¥6,000" },
+      { name: "アロマキャンドルセット", keywords: ["アロマキャンドル", "香り", "癒し", "上質"], priceRange: "¥3,000〜¥8,000" },
+      { name: "香り付き入浴剤", keywords: ["入浴剤", "香り", "リラックス", "上品"], priceRange: "¥2,000〜¥5,000" }
+    );
+  }
+
+  return suggestions;
+}
+
+// 高級タオル・寝具
+export function generateTowelSuggestions(towelAnswer: string): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+
+  if (towelAnswer.includes("やわらかくてふわふわ")) {
+    suggestions.push(
+      { name: "今治タオルセット", keywords: ["今治タオル", "やわらか", "高級", "上質"], priceRange: "¥4,000〜¥10,000" },
+      { name: "オーガニックコットンタオル", keywords: ["オーガニック", "コットン", "やわらか", "自然"], priceRange: "¥3,500〜¥8,000" },
+      { name: "高級バスタオルセット", keywords: ["バスタオル", "高級", "やわらか", "吸水"], priceRange: "¥5,000〜¥12,000" }
+    );
+  } else if (towelAnswer.includes("しっかりとした質感")) {
+    suggestions.push(
+      { name: "高級タオルセット", keywords: ["高級タオル", "しっかり", "質感", "上質"], priceRange: "¥4,000〜¥10,000" },
+      { name: "綿100%タオル", keywords: ["綿100%", "タオル", "しっかり", "吸水"], priceRange: "¥3,000〜¥8,000" },
+      { name: "寝具セット", keywords: ["寝具", "シーツ", "枕カバー", "上質"], priceRange: "¥6,000〜¥15,000" }
+    );
+  } else {
+    suggestions.push(
+      { name: "今治タオルセット", keywords: ["今治タオル", "高級", "上質", "ギフト"], priceRange: "¥4,000〜¥10,000" },
+      { name: "オーガニックコットンタオル", keywords: ["オーガニック", "コットン", "自然", "上質"], priceRange: "¥3,500〜¥8,000" },
+      { name: "高級バスタオルセット", keywords: ["バスタオル", "高級", "吸水", "上質"], priceRange: "¥5,000〜¥12,000" }
+    );
+  }
+
+  return suggestions;
+}
+
+// コンパクト美容家電
+export function generateBeautyDeviceSuggestions(beautyDeviceAnswer: string): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+
+  if (beautyDeviceAnswer.includes("スキンケア")) {
+    suggestions.push(
+      { name: "美顔ローラー", keywords: ["美顔ローラー", "スキンケア", "コンパクト", "リフトアップ"], priceRange: "¥6,000〜¥12,000" },
+      { name: "ナノスチーマー", keywords: ["ナノスチーマー", "スキンケア", "コンパクト", "保湿"], priceRange: "¥8,000〜¥15,000" },
+      { name: "美顔器セット", keywords: ["美顔器", "スキンケア", "コンパクト", "エイジングケア"], priceRange: "¥10,000〜¥20,000" }
+    );
+  } else if (beautyDeviceAnswer.includes("ボディケア")) {
+    suggestions.push(
+      { name: "ボディマッサージャー", keywords: ["ボディマッサージャー", "ボディケア", "コンパクト", "リラックス"], priceRange: "¥7,000〜¥15,000" },
+      { name: "美顔ローラー", keywords: ["美顔ローラー", "ボディケア", "コンパクト", "リフトアップ"], priceRange: "¥6,000〜¥12,000" },
+      { name: "コンパクト美顔器", keywords: ["美顔器", "ボディケア", "コンパクト", "エイジングケア"], priceRange: "¥8,000〜¥18,000" }
+    );
+  } else {
+    suggestions.push(
+      { name: "美顔ローラー", keywords: ["美顔ローラー", "コンパクト", "リフトアップ", "ギフト"], priceRange: "¥6,000〜¥12,000" },
+      { name: "ナノスチーマー", keywords: ["ナノスチーマー", "コンパクト", "保湿", "スキンケア"], priceRange: "¥8,000〜¥15,000" },
+      { name: "コンパクト美顔器", keywords: ["美顔器", "コンパクト", "エイジングケア", "上質"], priceRange: "¥8,000〜¥18,000" }
+    );
+  }
+
+  return suggestions;
+}
+
+// 華やかスイーツギフト
+export function generateSweetsSuggestions(sweetsAnswer: string): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+
+  if (sweetsAnswer.includes("和菓子")) {
+    suggestions.push(
+      { name: "高級和菓子セット", keywords: ["和菓子", "高級", "華やか", "ギフト"], priceRange: "¥3,000〜¥8,000" },
+      { name: "季節の和菓子", keywords: ["季節", "和菓子", "華やか", "限定"], priceRange: "¥2,500〜¥6,000" },
+      { name: "上品な和菓子ギフト", keywords: ["和菓子", "上品", "華やか", "ギフトボックス"], priceRange: "¥4,000〜¥10,000" }
+    );
+  } else if (sweetsAnswer.includes("洋菓子")) {
+    suggestions.push(
+      { name: "高級洋菓子セット", keywords: ["洋菓子", "高級", "華やか", "ギフト"], priceRange: "¥3,000〜¥8,000" },
+      { name: "季節の洋菓子", keywords: ["季節", "洋菓子", "華やか", "限定"], priceRange: "¥2,500〜¥6,000" },
+      { name: "上品な洋菓子ギフト", keywords: ["洋菓子", "上品", "華やか", "ギフトボックス"], priceRange: "¥4,000〜¥10,000" }
+    );
+  } else {
+    suggestions.push(
+      { name: "高級スイーツセット", keywords: ["スイーツ", "高級", "華やか", "ギフト"], priceRange: "¥3,000〜¥8,000" },
+      { name: "季節限定スイーツ", keywords: ["季節限定", "スイーツ", "華やか", "限定"], priceRange: "¥2,500〜¥6,000" },
+      { name: "上品なスイーツギフト", keywords: ["スイーツ", "上品", "華やか", "ギフトボックス"], priceRange: "¥4,000〜¥10,000" }
+    );
+  }
+
+  return suggestions;
+}
+
+// キッチン雑貨・調理器具
+export function generateKitchenSuggestions(kitchenAnswer: string): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+
+  if (kitchenAnswer.includes("和食")) {
+    suggestions.push(
+      { name: "高級和食器セット", keywords: ["和食器", "高級", "上質", "ギフト"], priceRange: "¥5,000〜¥15,000" },
+      { name: "上品な箸セット", keywords: ["箸", "上品", "高級", "和食"], priceRange: "¥3,000〜¥8,000" },
+      { name: "和食調理器具", keywords: ["調理器具", "和食", "高級", "実用的"], priceRange: "¥4,000〜¥12,000" }
+    );
+  } else if (kitchenAnswer.includes("洋食")) {
+    suggestions.push(
+      { name: "高級洋食器セット", keywords: ["洋食器", "高級", "上質", "ギフト"], priceRange: "¥5,000〜¥15,000" },
+      { name: "上品なカトラリー", keywords: ["カトラリー", "上品", "高級", "洋食"], priceRange: "¥4,000〜¥10,000" },
+      { name: "洋食調理器具", keywords: ["調理器具", "洋食", "高級", "実用的"], priceRange: "¥5,000〜¥15,000" }
+    );
+  } else {
+    suggestions.push(
+      { name: "高級食器セット", keywords: ["食器", "高級", "上質", "ギフト"], priceRange: "¥5,000〜¥15,000" },
+      { name: "上品なカトラリー", keywords: ["カトラリー", "上品", "高級", "実用的"], priceRange: "¥4,000〜¥10,000" },
+      { name: "高級調理器具", keywords: ["調理器具", "高級", "実用的", "上質"], priceRange: "¥5,000〜¥15,000" }
+    );
+  }
+
+  return suggestions;
+}
+
+// アロマ・癒しグッズ
+export function generateAromaSuggestions(aromaAnswer: string): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+
+  if (aromaAnswer.includes("リラックスタイム")) {
+    suggestions.push(
+      { name: "アロマディフューザー", keywords: ["アロマディフューザー", "リラックス", "香り", "癒し"], priceRange: "¥3,000〜¥8,000" },
+      { name: "アロマキャンドルセット", keywords: ["アロマキャンドル", "リラックス", "香り", "癒し"], priceRange: "¥2,500〜¥6,000" },
+      { name: "リラックスアロマオイル", keywords: ["アロマオイル", "リラックス", "香り", "癒し"], priceRange: "¥3,000〜¥7,000" }
+    );
+  } else if (aromaAnswer.includes("お風呂タイム")) {
+    suggestions.push(
+      { name: "アロマ入浴剤セット", keywords: ["入浴剤", "アロマ", "お風呂", "癒し"], priceRange: "¥2,000〜¥5,000" },
+      { name: "バスソルトセット", keywords: ["バスソルト", "お風呂", "癒し", "香り"], priceRange: "¥2,500〜¥6,000" },
+      { name: "お風呂用アロマオイル", keywords: ["アロマオイル", "お風呂", "癒し", "香り"], priceRange: "¥3,000〜¥7,000" }
+    );
+  } else {
+    suggestions.push(
+      { name: "アロマディフューザー", keywords: ["アロマディフューザー", "香り", "癒し", "上質"], priceRange: "¥3,000〜¥8,000" },
+      { name: "アロマキャンドルセット", keywords: ["アロマキャンドル", "香り", "癒し", "上品"], priceRange: "¥2,500〜¥6,000" },
+      { name: "アロマ入浴剤セット", keywords: ["入浴剤", "アロマ", "癒し", "香り"], priceRange: "¥2,000〜¥5,000" }
+    );
+  }
+
+  return suggestions;
+}
+
+// ブランド小物
+export function generateBrandSuggestions(brandAnswer: string): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+
+  if (brandAnswer.includes("上品でクラシック")) {
+    suggestions.push(
+      { name: "クラシックエプロン", keywords: ["エプロン", "クラシック", "上品", "ブランド"], priceRange: "¥4,000〜¥10,000" },
+      { name: "上品なハンカチセット", keywords: ["ハンカチ", "上品", "クラシック", "ブランド"], priceRange: "¥3,000〜¥8,000" },
+      { name: "クラシックポーチ", keywords: ["ポーチ", "クラシック", "上品", "ブランド"], priceRange: "¥4,000〜¥12,000" }
+    );
+  } else if (brandAnswer.includes("モダンでおしゃれ")) {
+    suggestions.push(
+      { name: "モダンエプロン", keywords: ["エプロン", "モダン", "おしゃれ", "ブランド"], priceRange: "¥4,000〜¥10,000" },
+      { name: "おしゃれなハンカチセット", keywords: ["ハンカチ", "おしゃれ", "モダン", "ブランド"], priceRange: "¥3,000〜¥8,000" },
+      { name: "モダンポーチ", keywords: ["ポーチ", "モダン", "おしゃれ", "ブランド"], priceRange: "¥4,000〜¥12,000" }
+    );
+  } else {
+    suggestions.push(
+      { name: "ブランドエプロン", keywords: ["エプロン", "ブランド", "上質", "ギフト"], priceRange: "¥4,000〜¥10,000" },
+      { name: "ブランドハンカチセット", keywords: ["ハンカチ", "ブランド", "上質", "ギフト"], priceRange: "¥3,000〜¥8,000" },
+      { name: "ブランドポーチ", keywords: ["ポーチ", "ブランド", "上質", "ギフト"], priceRange: "¥4,000〜¥12,000" }
+    );
+  }
+
+  return suggestions;
+}
+
+// 季節の花＆プリザーブドギフト
+export function generateFlowerGiftSuggestions(flowerGiftAnswer: string): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+
+  if (flowerGiftAnswer.includes("生花")) {
+    suggestions.push(
+      { name: "季節の生花アレンジメント", keywords: ["生花", "アレンジメント", "季節", "華やか"], priceRange: "¥3,000〜¥8,000" },
+      { name: "上品な生花ブーケ", keywords: ["生花", "ブーケ", "上品", "華やか"], priceRange: "¥4,000〜¥10,000" },
+      { name: "季節の生花ギフト", keywords: ["生花", "季節", "ギフト", "華やか"], priceRange: "¥3,000〜¥8,000" }
+    );
+  } else if (flowerGiftAnswer.includes("プリザーブドフラワー")) {
+    suggestions.push(
+      { name: "プリザーブドフラワーアレンジ", keywords: ["プリザーブドフラワー", "アレンジ", "長持ち", "華やか"], priceRange: "¥4,000〜¥12,000" },
+      { name: "上品なプリザーブドフラワー", keywords: ["プリザーブドフラワー", "上品", "長持ち", "ギフト"], priceRange: "¥5,000〜¥15,000" },
+      { name: "プリザーブドフラワーギフト", keywords: ["プリザーブドフラワー", "ギフト", "長持ち", "華やか"], priceRange: "¥4,000〜¥12,000" }
+    );
+  } else {
+    suggestions.push(
+      { name: "季節の花ギフト", keywords: ["花", "季節", "ギフト", "華やか"], priceRange: "¥3,000〜¥8,000" },
+      { name: "プリザーブドフラワーアレンジ", keywords: ["プリザーブドフラワー", "アレンジ", "長持ち", "華やか"], priceRange: "¥4,000〜¥12,000" },
+      { name: "上品な花ギフト", keywords: ["花", "上品", "ギフト", "華やか"], priceRange: "¥4,000〜¥10,000" }
+    );
+  }
+
+  return suggestions;
 }
