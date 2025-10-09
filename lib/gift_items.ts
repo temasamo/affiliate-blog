@@ -647,7 +647,7 @@ export function generateCategorySuggestions(category: string, answers: Record<st
     
     case "上品なお茶・紅茶ギフト":
       const teaAnswer = answers.question_0 || "";
-      suggestions = generateTeaSuggestions(teaAnswer);
+      suggestions = generateElegantTeaSuggestions(teaAnswer);
       break;
     
     case "キッチン雑貨・調理器具":
@@ -1378,6 +1378,33 @@ export function generateBrandSuggestions(brandAnswer: string): GiftItem[] {
       { name: "ブランドエプロン", keywords: ["エプロン", "ブランド", "上質", "ギフト"], priceRange: "¥4,000〜¥10,000" },
       { name: "ブランドハンカチセット", keywords: ["ハンカチ", "ブランド", "上質", "ギフト"], priceRange: "¥3,000〜¥8,000" },
       { name: "ブランドポーチ", keywords: ["ポーチ", "ブランド", "上質", "ギフト"], priceRange: "¥4,000〜¥12,000" }
+    );
+  }
+
+  return suggestions;
+}
+
+// 上品なお茶・紅茶ギフト
+export function generateElegantTeaSuggestions(teaAnswer: string): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+
+  if (teaAnswer.includes("日本茶")) {
+    suggestions.push(
+      { name: "高級日本茶セット", keywords: ["日本茶", "高級", "上品", "ギフト"], priceRange: "¥3,000〜¥8,000" },
+      { name: "上品な煎茶ギフト", keywords: ["煎茶", "上品", "日本茶", "ギフト"], priceRange: "¥2,500〜¥6,000" },
+      { name: "高級抹茶セット", keywords: ["抹茶", "高級", "上品", "日本茶"], priceRange: "¥4,000〜¥10,000" }
+    );
+  } else if (teaAnswer.includes("紅茶")) {
+    suggestions.push(
+      { name: "高級紅茶セット", keywords: ["紅茶", "高級", "上品", "ギフト"], priceRange: "¥3,000〜¥8,000" },
+      { name: "上品なアールグレイ", keywords: ["アールグレイ", "上品", "紅茶", "ギフト"], priceRange: "¥2,500〜¥6,000" },
+      { name: "高級ダージリンティー", keywords: ["ダージリンティー", "高級", "紅茶", "上品"], priceRange: "¥4,000〜¥10,000" }
+    );
+  } else {
+    suggestions.push(
+      { name: "高級お茶セット", keywords: ["お茶", "高級", "上品", "ギフト"], priceRange: "¥3,000〜¥8,000" },
+      { name: "上品な茶ギフト", keywords: ["茶", "上品", "ギフト", "高級"], priceRange: "¥2,500〜¥6,000" },
+      { name: "高級茶葉ギフト", keywords: ["茶葉", "高級", "上品", "ギフト"], priceRange: "¥4,000〜¥10,000" }
     );
   }
 
