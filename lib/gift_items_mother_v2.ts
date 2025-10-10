@@ -1,6 +1,17 @@
 // A1: スキンケアギフト専用システム（実母向け誕生日AI v2）
 // 新システムとして独立実装
 
+export interface Question {
+  id: string;
+  question: string;
+  options: string[];
+  condition?: {
+    questionId: string;
+    expectedAnswer: string | string[];
+  };
+  type: 'single' | 'multiple' | 'freeText';
+}
+
 export interface SkincareGiftItem {
   id: string;
   name: string;
@@ -18,17 +29,8 @@ export interface SkincareGiftItem {
   };
 }
 
-export interface SkincareQuestion {
-  id: string;
-  question: string;
-  options: string[];
-  type: 'single' | 'multiple';
-  condition?: string;
-  skipCondition?: string;
-}
-
 // A1専用質問フロー（13問）
-export const skincareQuestionFlow: SkincareQuestion[] = [
+export const skincareQuestionFlow: Question[] = [
   // ブロック1: お母さまの肌タイプ・悩み
   {
     id: 'age',

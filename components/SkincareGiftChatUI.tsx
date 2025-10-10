@@ -3,7 +3,7 @@ import {
   skincareQuestionFlow, 
   generateSkincareSuggestions, 
   generateAIComment,
-  SkincareQuestion,
+  Question,
   SkincareGiftItem 
 } from '../lib/gift_items_mother_v2';
 
