@@ -59,8 +59,8 @@ const SkincareGiftChatUI: React.FC<SkincareGiftChatUIProps> = ({ version = "v2" 
     }
 
     // 条件分岐チェック
-    if (question.skipCondition) {
-      const shouldSkip = checkSkipCondition(question.skipCondition);
+    if (question.condition) {
+      const shouldSkip = checkSkipCondition(question.condition);
       if (shouldSkip) {
         setCurrentQuestionIndex(prev => prev + 1);
         return;
@@ -81,10 +81,20 @@ const SkincareGiftChatUI: React.FC<SkincareGiftChatUIProps> = ({ version = "v2" 
   };
 
   // スキップ条件チェック
-  const checkSkipCondition = (condition: string): boolean => {
-    // 例：シンプルケア派の場合は香り質問をスキップ
-    const skincareStyle = answers.skincareStyle as string;
-    return skincareStyle === condition;
+  const checkSkipCondition = (condition: { questionId: string; expectedAnswer: string | string[] }): boolean => {
+    const prevAnswer = answers[condition.questionId];
+    const expected = condition.expectedAnswer;
+
+    if (Array.isArray(expected)) {
+      if (Array.isArray(prevAnswer)) {
+        return prevAnswer.some(ans => expected.includes(ans));
+      } else if (typeof prevAnswer === 'string') {
+        return expected.includes(prevAnswer);
+      }
+    } else {
+      return prevAnswer === expected;
+    }
+    return false;
   };
 
   // 会話メッセージを生成
@@ -170,8 +180,8 @@ const SkincareGiftChatUI: React.FC<SkincareGiftChatUIProps> = ({ version = "v2" 
     // 条件分岐を考慮して次の質問を決定
     while (nextQuestionIndex < skincareQuestionFlow.length) {
       const nextQuestion = skincareQuestionFlow[nextQuestionIndex];
-      if (nextQuestion.skipCondition) {
-        const shouldSkip = checkSkipCondition(nextQuestion.skipCondition);
+      if (nextQuestion.condition) {
+        const shouldSkip = checkSkipCondition(nextQuestion.condition);
         if (shouldSkip) {
           nextQuestionIndex++;
           continue;
