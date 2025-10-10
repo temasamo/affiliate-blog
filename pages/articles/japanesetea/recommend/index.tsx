@@ -74,7 +74,7 @@ export const getStaticProps: GetStaticProps<RecomendIndexProps> = async () => {
   if (fs.existsSync(articlesDirectory)) {
     const files = fs.readdirSync(articlesDirectory);
     files.forEach(file => {
-      if (file.endsWith('.md')) {
+      if ((file.endsWith('.md') || file.endsWith('.mdx')) && !file.includes('.backup')) {
         const filePath = path.join(articlesDirectory, file);
         const fileContents = fs.readFileSync(filePath, 'utf8');
         const { data: frontMatter } = matter(fileContents);
