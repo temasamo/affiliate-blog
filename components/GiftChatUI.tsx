@@ -66,6 +66,18 @@ export default function GiftChatUI({ category, target }: GiftChatUIProps) {
     if (questionIndex >= questions.length) return;
     
     const question = questions[questionIndex];
+    
+    // 条件分岐をチェック
+    if (question.condition) {
+      // 前の質問の回答を確認（質問2の回答をチェック）
+      const conditionAnswer = answers.question_2;
+      if (!conditionAnswer || !conditionAnswer.includes(question.condition)) {
+        // 条件に合わない場合は次の質問へ
+        setCurrentQuestionIndex(prev => prev + 1);
+        return;
+      }
+    }
+    
     const questionMessage: ChatMessage = {
       id: `question_${questionIndex}`,
       from: 'bot',
@@ -113,9 +125,25 @@ export default function GiftChatUI({ category, target }: GiftChatUIProps) {
     };
     setAnswers(newAnswers);
     
+    // 次の質問を探す（条件分岐を考慮）
+    let nextQuestionIndex = currentQuestionIndex + 1;
+    while (nextQuestionIndex < questions.length) {
+      const nextQuestion = questions[nextQuestionIndex];
+      if (nextQuestion.condition) {
+        // 質問2の回答をチェック
+        const conditionAnswer = newAnswers.question_2;
+        if (conditionAnswer && conditionAnswer.includes(nextQuestion.condition)) {
+          break; // 条件に合う質問が見つかった
+        }
+      } else {
+        break; // 条件なしの質問
+      }
+      nextQuestionIndex++;
+    }
+    
     // 次の質問へ
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(prev => prev + 1);
+    if (nextQuestionIndex < questions.length) {
+      setCurrentQuestionIndex(nextQuestionIndex);
     } else {
       // 最後の質問の場合、提案を生成（回答を直接渡す）
       setTimeout(() => {

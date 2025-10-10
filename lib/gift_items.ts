@@ -1,5 +1,5 @@
 // ギフト提案データ（検索キーワードベース）
-import { fatherQuestionFlows, fatherInLawQuestionFlows, generateFatherSuggestions, generateFatherInLawSuggestions, GiftItem } from './gift_items_father';
+import { fatherQuestionFlows, fatherInLawQuestionFlows, motherQuestionFlows, generateFatherSuggestions, generateFatherInLawSuggestions, generateMotherSuggestions, filterSuggestionsByBudget, GiftItem } from './gift_items_father';
 
 // GiftItem型を再エクスポート
 export type { GiftItem };
@@ -550,8 +550,8 @@ export const questionFlows = {
   ]
 };
 
-// 実父・義父向け質問フローを統合
-Object.assign(questionFlows, fatherQuestionFlows, fatherInLawQuestionFlows);
+// 実父・義父・実母向け質問フローを統合
+Object.assign(questionFlows, fatherQuestionFlows, fatherInLawQuestionFlows, motherQuestionFlows);
 
 // 旧形式との互換性のため残す
 export const teaQuestions: Question[] = [
@@ -594,18 +594,6 @@ export function generateCategorySuggestions(category: string, answers: Record<st
     case "高級お茶セット":
       return generateTeaSuggestions(answers);
     
-    case "美容・スキンケア":
-      // 4問の回答を組み合わせた提案ロジック
-      console.log("美容・スキンケア回答:", answers);
-      
-      const concern = answers.question_0 || "";
-      const priority = answers.question_1 || "";
-      const habit = answers.question_2 || "";
-      const budget = answers.question_3 || "";
-      
-      // 組み合わせロジック
-      suggestions = generateBeautySuggestions(concern, priority, habit, budget);
-      break;
     
     case "健康グッズ":
       // ユーザーの回答に基づいてサブカテゴリを提案
@@ -676,6 +664,16 @@ export function generateCategorySuggestions(category: string, answers: Record<st
     case "季節感ギフト":
     case "和風雑貨":
       suggestions = generateFatherInLawSuggestions(category, answers);
+      break;
+
+    // 実母向けカテゴリ
+    case "美容・スキンケア":
+      suggestions = generateMotherSuggestions(category, answers);
+      // 予算フィルタリングを適用
+      const budget = answers.question_6 || "";
+      if (budget) {
+        suggestions = filterSuggestionsByBudget(suggestions, budget);
+      }
       break;
     
     case "キッチン雑貨・調理器具":
