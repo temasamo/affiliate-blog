@@ -22,7 +22,7 @@ const nextConfig = {
     // ここでCSPを許可。既に headers() がある場合は img-src の行に追記してください。
     const csp = [
       // 必要に応じて default-src など他ディレクティブも統合
-      "img-src 'self' data: blob: https: https://upload.wikimedia.org https://*.wikimedia.org https://*.wikipedia.org",
+      "img-src 'self' data: blob: https: http: https://upload.wikimedia.org https://*.wikimedia.org https://*.wikipedia.org https://thumbnail.image.rakuten.co.jp https://image.rakuten.co.jp https://*.rakuten.co.jp https://i.moshimo.com https://af.moshimo.com",
     ].join('; ');
 
     return [
