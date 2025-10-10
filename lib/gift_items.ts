@@ -198,7 +198,7 @@ export const questionFlows = {
     },
     {
       question: "ご予算帯をお選びください",
-      options: ["5,000円以下", "5,000円〜10,000円", "10,000円以上"]
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
   ],
   "香りギフト": [
@@ -216,7 +216,7 @@ export const questionFlows = {
     },
     {
       question: "ご予算帯をお選びください",
-      options: ["3,000円以下", "3,000円〜8,000円", "8,000円以上"]
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
   ],
   "高級タオル・寝具": [
@@ -234,7 +234,7 @@ export const questionFlows = {
     },
     {
       question: "ご予算帯をお選びください",
-      options: ["4,000円以下", "4,000円〜12,000円", "12,000円以上"]
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
   ],
   "コンパクト美容家電": [
@@ -252,7 +252,7 @@ export const questionFlows = {
     },
     {
       question: "ご予算帯をお選びください",
-      options: ["6,000円以下", "6,000円〜15,000円", "15,000円以上"]
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
   ],
   "華やかスイーツギフト": [
@@ -270,7 +270,7 @@ export const questionFlows = {
     },
     {
       question: "ご予算帯をお選びください",
-      options: ["3,000円以下", "3,000円〜8,000円", "8,000円以上"]
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
   ],
   "上品なお茶・紅茶ギフト": [
@@ -288,7 +288,7 @@ export const questionFlows = {
     },
     {
       question: "ご予算帯をお選びください",
-      options: ["4,000円以下", "4,000円〜10,000円", "10,000円以上"]
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
   ],
   "キッチン雑貨・調理器具": [
@@ -306,7 +306,7 @@ export const questionFlows = {
     },
     {
       question: "ご予算帯をお選びください",
-      options: ["5,000円以下", "5,000円〜15,000円", "15,000円以上"]
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
   ],
   "アロマ・癒しグッズ": [
@@ -324,7 +324,7 @@ export const questionFlows = {
     },
     {
       question: "ご予算帯をお選びください",
-      options: ["3,000円以下", "3,000円〜8,000円", "8,000円以上"]
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
   ],
   "ブランド小物": [
@@ -342,7 +342,7 @@ export const questionFlows = {
     },
     {
       question: "ご予算帯をお選びください",
-      options: ["4,000円以下", "4,000円〜12,000円", "12,000円以上"]
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
   ],
   "季節の花＆プリザーブドギフト": [
@@ -360,7 +360,7 @@ export const questionFlows = {
     },
     {
       question: "ご予算帯をお選びください",
-      options: ["3,000円以下", "3,000円〜10,000円", "10,000円以上"]
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
   ],
   "美容・スキンケア": [
@@ -419,7 +419,7 @@ export const questionFlows = {
     },
     {
       question: "健康グッズの予算感は？",
-      options: ["5,000円以下", "5,000〜10,000円", "10,000円以上", "こだわらない"]
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
   ],
   "季節の花ギフト": [
@@ -437,13 +437,13 @@ export const questionFlows = {
     },
     {
       question: "花ギフトの予算感は？",
-      options: ["2,000円以下", "2,000〜5,000円", "5,000円以上", "こだわらない"]
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
   ],
   "グルメギフト": [
     {
       question: "お母さまはどんな食べ物が好きですか？",
-      options: ["甘いもの（スイーツなど）", "しょっぱいもの（煎餅・佃煮など）", "どちらも好き"]
+      options: ["甘いもの（スイーツなど）", "肉類", "海鮮", "くだもの", "どちらも好き"]
     },
     {
       question: "普段の食事の好みは？",
@@ -451,11 +451,19 @@ export const questionFlows = {
     },
     {
       question: "ギフトの予算感は？",
-      options: ["3,000円以下", "3,000〜5,000円", "5,000円以上", "こだわらない"]
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     },
     {
       question: "どんなグルメギフトに興味がありそうですか？",
       options: ["和菓子・日本茶", "洋菓子・紅茶", "地方特産品", "高級食材"]
+    },
+    {
+      question: "地方特産品の種類はいかがでしょうか？",
+      options: ["海産物・乾物", "農産物・果物", "調味料・調理用品", "特にこだわりなし"],
+      condition: {
+        dependsOn: "question_3",
+        value: "地方特産品"
+      }
     }
   ],
   "体験ギフト": [
@@ -473,7 +481,7 @@ export const questionFlows = {
     },
     {
       question: "体験ギフトの予算感は？",
-      options: ["5,000円以下", "5,000〜15,000円", "15,000円以上", "こだわらない"]
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
   ],
   "名入れ・メッセージ入りギフト": [
@@ -491,7 +499,7 @@ export const questionFlows = {
     },
     {
       question: "名入れギフトの予算感は？",
-      options: ["3,000円以下", "3,000〜8,000円", "8,000円以上", "こだわらない"]
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
   ],
   "フォトアルバム・家族の思い出ギフト": [
@@ -509,7 +517,7 @@ export const questionFlows = {
     },
     {
       question: "思い出ギフトの予算感は？",
-      options: ["3,000円以下", "3,000〜10,000円", "10,000円以上", "こだわらない"]
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
   ],
   "おうち時間を楽しむアイテム": [
@@ -527,7 +535,7 @@ export const questionFlows = {
     },
     {
       question: "おうち時間アイテムの予算感は？",
-      options: ["3,000円以下", "3,000〜8,000円", "8,000円以上", "こだわらない"]
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
   ],
   "季節限定・ご当地ギフト": [
@@ -544,8 +552,12 @@ export const questionFlows = {
       options: ["季節感を重視したい", "季節に関係なく", "どちらでも良い"]
     },
     {
+      question: "どんなタイプのギフトに興味がありますか？",
+      options: ["季節限定食品", "ご当地グルメ", "伝統工芸品", "季節の花・植物", "特にこだわりなし"]
+    },
+    {
       question: "季節限定ギフトの予算感は？",
-      options: ["3,000円以下", "3,000〜8,000円", "8,000円以上", "こだわらない"]
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
   ]
 };
@@ -643,7 +655,6 @@ export function generateCategorySuggestions(category: string, answers: Record<st
     case "健康食品・サプリメント":
     case "睡眠グッズ":
     case "お酒ギフト":
-    case "グルメギフト":
     case "家電ガジェット":
     case "趣味グッズ":
     case "日常家電":
@@ -698,8 +709,9 @@ export function generateCategorySuggestions(category: string, answers: Record<st
     
     case "グルメギフト":
       // ユーザーの回答に基づいてサブカテゴリを提案
-      const gourmetAnswer = answers.question_0 || "";
-      suggestions = generateGourmetSuggestions(gourmetAnswer);
+      const gourmetAnswer = answers.question_3 || "";
+      const subcategoryAnswer = answers.question_4 || "";
+      suggestions = generateGourmetSuggestions(gourmetAnswer, subcategoryAnswer);
       break;
     
     case "体験ギフト":
@@ -728,7 +740,7 @@ export function generateCategorySuggestions(category: string, answers: Record<st
     
     case "季節限定・ご当地ギフト":
       // ユーザーの回答に基づいてサブカテゴリを提案
-      const seasonalAnswer = answers.question_0 || "";
+      const seasonalAnswer = answers.question_3 || "";
       suggestions = generateSeasonalSuggestions(seasonalAnswer);
       break;
     
@@ -823,7 +835,7 @@ export function generateFlowerSuggestions(flowerAnswer: string): GiftItem[] {
 }
 
 // グルメギフトの提案生成関数
-export function generateGourmetSuggestions(gourmetAnswer: string): GiftItem[] {
+export function generateGourmetSuggestions(gourmetAnswer: string, subcategoryAnswer?: string): GiftItem[] {
   const suggestions: GiftItem[] = [];
 
   // ユーザーの回答に基づいてサブカテゴリを提案
@@ -840,11 +852,33 @@ export function generateGourmetSuggestions(gourmetAnswer: string): GiftItem[] {
       { name: "焼き菓子・クッキー", keywords: ["焼き菓子", "クッキー", "手作り風"], priceRange: "¥1,500〜¥4,000" }
     );
   } else if (gourmetAnswer.includes("地方特産") || gourmetAnswer.includes("ご当地")) {
-    suggestions.push(
-      { name: "地方特産品セット", keywords: ["地方特産", "ご当地", "名産品"], priceRange: "¥3,000〜¥7,000" },
-      { name: "海産物・乾物", keywords: ["海産物", "乾物", "海の幸"], priceRange: "¥2,500〜¥6,000" },
-      { name: "調味料・調理用品", keywords: ["調味料", "調理用品", "料理"], priceRange: "¥2,000〜¥5,000" }
-    );
+    // 地方特産品のサブカテゴリに基づく提案
+    if (subcategoryAnswer?.includes("海産物")) {
+      suggestions.push(
+        { name: "北海道海産物セット", keywords: ["北海道", "海産物", "海の幸"], priceRange: "¥3,000〜¥7,000" },
+        { name: "九州海産物セット", keywords: ["九州", "海産物", "海の幸"], priceRange: "¥2,500〜¥6,000" },
+        { name: "瀬戸内海産物セット", keywords: ["瀬戸内", "海産物", "海の幸"], priceRange: "¥2,800〜¥6,500" }
+      );
+    } else if (subcategoryAnswer?.includes("農産物")) {
+      suggestions.push(
+        { name: "青森りんごセット", keywords: ["青森", "りんご", "果物"], priceRange: "¥2,500〜¥5,000" },
+        { name: "山形さくらんぼセット", keywords: ["山形", "さくらんぼ", "果物"], priceRange: "¥3,000〜¥6,000" },
+        { name: "静岡お茶セット", keywords: ["静岡", "お茶", "日本茶"], priceRange: "¥2,000〜¥5,000" }
+      );
+    } else if (subcategoryAnswer?.includes("調味料")) {
+      suggestions.push(
+        { name: "九州調味料セット", keywords: ["九州", "調味料", "料理"], priceRange: "¥2,000〜¥4,500" },
+        { name: "北海道調味料セット", keywords: ["北海道", "調味料", "料理"], priceRange: "¥2,200〜¥5,000" },
+        { name: "関西調味料セット", keywords: ["関西", "調味料", "料理"], priceRange: "¥1,800〜¥4,000" }
+      );
+    } else {
+      // デフォルト：地方特産品のバランスの取れた提案
+      suggestions.push(
+        { name: "北海道特産品セット", keywords: ["北海道", "特産品", "地方"], priceRange: "¥3,000〜¥7,000" },
+        { name: "九州特産品セット", keywords: ["九州", "特産品", "地方"], priceRange: "¥2,500〜¥6,000" },
+        { name: "東北特産品セット", keywords: ["東北", "特産品", "地方"], priceRange: "¥2,800〜¥6,500" }
+      );
+    }
   } else {
     // デフォルト：バランスの取れた提案
     suggestions.push(
@@ -1013,6 +1047,12 @@ export function generateSeasonalSuggestions(seasonalAnswer: string): GiftItem[] 
       { name: "ご当地特産品", keywords: ["ご当地", "特産品", "地方"], priceRange: "¥3,000〜¥8,000" },
       { name: "地方名産品", keywords: ["地方", "名産品", "特産品"], priceRange: "¥2,500〜¥7,000" },
       { name: "ご当地グルメ", keywords: ["ご当地", "グルメ", "名産品"], priceRange: "¥2,000〜¥6,000" }
+    );
+  } else if (seasonalAnswer.includes("伝統工芸品")) {
+    suggestions.push(
+      { name: "有田焼セット", keywords: ["有田焼", "陶器", "伝統工芸"], priceRange: "¥4,000〜¥8,000" },
+      { name: "輪島塗セット", keywords: ["輪島塗", "漆器", "伝統工芸"], priceRange: "¥5,000〜¥12,000" },
+      { name: "南部鉄器セット", keywords: ["南部鉄器", "鉄器", "伝統工芸"], priceRange: "¥3,500〜¥7,000" }
     );
   } else if (seasonalAnswer.includes("期間限定") || seasonalAnswer.includes("雑貨")) {
     suggestions.push(

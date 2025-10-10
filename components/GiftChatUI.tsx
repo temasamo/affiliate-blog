@@ -17,7 +17,10 @@ interface ChatMessage {
 interface Question {
   question: string;
   options: string[];
-  condition?: string;
+  condition?: {
+    dependsOn: string;
+    value: string;
+  };
 }
 
 interface GiftChatUIProps {
@@ -75,13 +78,21 @@ export default function GiftChatUI({ category, target }: GiftChatUIProps) {
     
     // 条件分岐をチェック
     if (question.condition) {
-      // 前の質問の回答を確認（質問2の回答をチェック）
-      const conditionAnswer = answers.question_2;
-      if (!conditionAnswer || !conditionAnswer.includes(question.condition)) {
+      // 指定された質問の回答を確認
+      const conditionAnswer = answers[question.condition.dependsOn];
+      console.log('Condition check:', {
+        questionIndex,
+        condition: question.condition,
+        conditionAnswer,
+        allAnswers: answers
+      });
+      if (!conditionAnswer || !conditionAnswer.includes(question.condition.value)) {
         // 条件に合わない場合は次の質問へ
+        console.log('Condition not met, skipping question');
         setCurrentQuestionIndex(prev => prev + 1);
         return;
       }
+      console.log('Condition met, showing question');
     }
     
     const questionMessage: ChatMessage = {
@@ -133,22 +144,26 @@ export default function GiftChatUI({ category, target }: GiftChatUIProps) {
     
     // 次の質問を探す（条件分岐を考慮）
     let nextQuestionIndex = currentQuestionIndex + 1;
+    let foundValidQuestion = false;
+    
     while (nextQuestionIndex < questions.length) {
       const nextQuestion = questions[nextQuestionIndex];
       if (nextQuestion.condition) {
-        // 質問2の回答をチェック
-        const conditionAnswer = newAnswers.question_2;
-        if (conditionAnswer && conditionAnswer.includes(nextQuestion.condition)) {
+        // 指定された質問の回答をチェック
+        const conditionAnswer = newAnswers[nextQuestion.condition.dependsOn];
+        if (conditionAnswer && conditionAnswer.includes(nextQuestion.condition.value)) {
+          foundValidQuestion = true;
           break; // 条件に合う質問が見つかった
         }
       } else {
+        foundValidQuestion = true;
         break; // 条件なしの質問
       }
       nextQuestionIndex++;
     }
     
     // 次の質問へ
-    if (nextQuestionIndex < questions.length) {
+    if (foundValidQuestion && nextQuestionIndex < questions.length) {
       setCurrentQuestionIndex(nextQuestionIndex);
     } else {
       // 最後の質問の場合、提案を生成（回答を直接渡す）
