@@ -39,6 +39,12 @@ export function getTravelPostBySlug(slug: string) {
   if (!fs.existsSync(filePath)) {
     filePath = path.join(TRAVEL_DIR, slug + '.md');
   }
+  
+  // ファイルが存在しない場合はエラーを投げる
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`File not found: ${filePath}`);
+  }
+  
   const file = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(file);
   return { frontMatter: data, content, slug };
