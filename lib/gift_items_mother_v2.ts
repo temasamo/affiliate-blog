@@ -55,7 +55,10 @@ export const skincareQuestionFlow: Question[] = [
     question: '香りの強さの好みは？',
     options: ['無香料が好き', 'ほんのり香る程度', '香りがある方が嬉しい'],
     type: 'single',
-    skipCondition: 'シンプル（化粧水・乳液だけ）' // シンプル派は香り質問をスキップ
+    condition: {
+      questionId: 'skincareStyle',
+      expectedAnswer: ['平均的（美容液なども使う）', 'しっかり（多ステップ）']
+    }
   },
   
   // ブロック2: 贈り手のこだわり・想い
