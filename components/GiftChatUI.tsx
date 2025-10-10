@@ -14,6 +14,12 @@ interface ChatMessage {
   feedback?: boolean;
 }
 
+interface Question {
+  question: string;
+  options: string[];
+  condition?: string;
+}
+
 interface GiftChatUIProps {
   category: string;
   target: string;
@@ -56,7 +62,7 @@ export default function GiftChatUI({ category, target }: GiftChatUIProps) {
   };
 
   // カテゴリ別の質問フローを取得
-  const getQuestionsForCategory = () => {
+  const getQuestionsForCategory = (): Question[] => {
     return questionFlows[category as keyof typeof questionFlows] || [];
   };
 
