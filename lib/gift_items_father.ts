@@ -244,35 +244,30 @@ export const motherQuestionFlows = {
       question: "今回のプレゼントの方向性はいかがいたしましょうか？",
       options: ["普段使っているもののアップグレード版", "普段使わない特別なもの"]
     },
-    // アップグレード版の詳細質問
     {
-      question: "普段使っているもののカテゴリは？",
-      options: ["化粧品・スキンケア", "ヘアケア", "ボディケア", "その他"],
-      condition: "普段使っているもののアップグレード版"
-    },
-    {
-      question: "現在の価格帯は？",
-      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"],
-      condition: "普段使っているもののアップグレード版"
-    },
-    {
-      question: "どの程度のアップグレードを希望されますか？",
-      options: ["少し良いもの", "かなり良いもの", "最高級品", "特にこだわりなし"],
-      condition: "普段使っているもののアップグレード版"
-    },
-    // 特別なものの詳細質問
-    {
-      question: "具体的にお考えのものがございますか？",
-      options: ["基礎化粧品", "スペシャルケア", "ボディ・ヘアケア", "美容家電", "香水・フレグランス", "その他"],
-      condition: "普段使わない特別なもの"
-    },
-    {
-      question: "お母さまの生活スタイルは？",
-      options: ["アクティブ", "のんびり", "社交的", "家中心"],
-      condition: "普段使わない特別なもの"
+      question: "どんな内容をご希望ですか？",
+      options: ["基礎化粧品", "スペシャルケア", "ボディ・ヘアケア", "美容家電", "香水・フレグランス", "その他"]
     },
     {
       question: "ご予算帯をお選びください",
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
+    }
+  ],
+  "健康グッズ": [
+    {
+      question: "お母さまは健康習慣で意識していることはありますか？",
+      options: ["ウォーキングなど運動", "食事・栄養バランス", "特に意識していない"]
+    },
+    {
+      question: "健康管理で気になることは？",
+      options: ["血圧・血糖値", "肩こり・腰痛", "睡眠の質", "特にない"]
+    },
+    {
+      question: "どんな健康グッズに興味がありそうですか？",
+      options: ["測定器具", "マッサージ器具", "運動器具", "サプリメント"]
+    },
+    {
+      question: "健康グッズの予算感は？",
       options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
   ]
@@ -741,102 +736,141 @@ export function generateMotherSuggestions(category: string, answers: Record<stri
       const concernAnswer = answers.question_0 || "";
       const ageAnswer = answers.question_1 || "";
       const approachAnswer = answers.question_2 || "";
-      const budgetAnswer = answers.question_6 || ""; // 予算選択を取得
+      const categoryAnswer = answers.question_3 || "";
+      const budgetAnswer = answers.question_4 || ""; // 予算選択を取得
       
-      // アプローチ別の分岐
-      if (approachAnswer.includes("アップグレード版")) {
-        const categoryAnswer = answers.question_3 || "";
-        const currentPriceAnswer = answers.question_4 || "";
-        const upgradeLevelAnswer = answers.question_5 || "";
-        
-        if (categoryAnswer.includes("化粧品・スキンケア")) {
-          if (concernAnswer.includes("シミ・くすみ")) {
-            const baseProducts = [
-              { name: "美白美容液", keywords: ["美白", "美容液", "シミ", "くすみ", "スキンケア"] },
-              { name: "美白セット", keywords: ["美白", "セット", "スキンケア"] },
-              { name: "美白クリーム", keywords: ["美白", "クリーム", "スキンケア"] }
-            ];
-            
-            baseProducts.forEach(product => {
-              suggestions.push({
-                name: getProductNameByBudget(product.name, budgetAnswer),
-                keywords: product.keywords,
-                priceRange: getPriceRangeByBudget(budgetAnswer, "¥8,000〜¥25,000")
-              });
+      // カテゴリ別の分岐
+      if (categoryAnswer.includes("基礎化粧品")) {
+        if (concernAnswer.includes("シミ・くすみ")) {
+          const baseProducts = [
+            { name: "美白美容液", keywords: ["美白", "美容液", "シミ", "くすみ", "スキンケア"] },
+            { name: "美白セット", keywords: ["美白", "セット", "スキンケア"] },
+            { name: "美白クリーム", keywords: ["美白", "クリーム", "スキンケア"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, budgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(budgetAnswer, "¥8,000〜¥25,000")
             });
-          } else if (concernAnswer.includes("乾燥・小じわ")) {
-            const baseProducts = [
-              { name: "保湿美容液", keywords: ["保湿", "美容液", "乾燥", "小じわ", "スキンケア"] },
-              { name: "アンチエイジングセット", keywords: ["アンチエイジング", "セット", "スキンケア"] },
-              { name: "保湿クリーム", keywords: ["保湿", "クリーム", "スキンケア"] }
-            ];
-            
-            baseProducts.forEach(product => {
-              suggestions.push({
-                name: getProductNameByBudget(product.name, budgetAnswer),
-                keywords: product.keywords,
-                priceRange: getPriceRangeByBudget(budgetAnswer, "¥8,000〜¥25,000")
-              });
+          });
+        } else if (concernAnswer.includes("乾燥・小じわ")) {
+          const baseProducts = [
+            { name: "保湿美容液", keywords: ["保湿", "美容液", "乾燥", "小じわ", "スキンケア"] },
+            { name: "アンチエイジングセット", keywords: ["アンチエイジング", "セット", "スキンケア"] },
+            { name: "保湿クリーム", keywords: ["保湿", "クリーム", "スキンケア"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, budgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(budgetAnswer, "¥8,000〜¥25,000")
             });
-          } else if (concernAnswer.includes("たるみ")) {
-            const baseProducts = [
-              { name: "リフトアップ美容液", keywords: ["リフトアップ", "美容液", "たるみ", "エイジングケア", "スキンケア"] },
-              { name: "アンチエイジングセット", keywords: ["アンチエイジング", "セット", "たるみ", "スキンケア"] },
-              { name: "リフトクリーム", keywords: ["リフト", "クリーム", "たるみ", "スキンケア"] }
-            ];
-            
-            baseProducts.forEach(product => {
-              suggestions.push({
-                name: getProductNameByBudget(product.name, budgetAnswer),
-                keywords: product.keywords,
-                priceRange: getPriceRangeByBudget(budgetAnswer, "¥10,000〜¥30,000")
-              });
+          });
+        } else if (concernAnswer.includes("たるみ")) {
+          const baseProducts = [
+            { name: "リフトアップ美容液", keywords: ["リフトアップ", "美容液", "たるみ", "エイジングケア", "スキンケア"] },
+            { name: "アンチエイジングセット", keywords: ["アンチエイジング", "セット", "たるみ", "スキンケア"] },
+            { name: "リフトクリーム", keywords: ["リフト", "クリーム", "たるみ", "スキンケア"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, budgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(budgetAnswer, "¥10,000〜¥30,000")
             });
-          } else {
-            const baseProducts = [
-              { name: "スキンケアセット", keywords: ["スキンケア", "セット", "美容"] },
-              { name: "美容液", keywords: ["美容液", "スキンケア"] },
-              { name: "化粧水", keywords: ["化粧水", "スキンケア", "美容"] }
-            ];
-            
-            baseProducts.forEach(product => {
-              suggestions.push({
-                name: getProductNameByBudget(product.name, budgetAnswer),
-                keywords: product.keywords,
-                priceRange: getPriceRangeByBudget(budgetAnswer, "¥8,000〜¥25,000")
-              });
+          });
+        } else {
+          const baseProducts = [
+            { name: "スキンケアセット", keywords: ["スキンケア", "セット", "美容"] },
+            { name: "美容液", keywords: ["美容液", "スキンケア"] },
+            { name: "化粧水", keywords: ["化粧水", "スキンケア", "美容"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, budgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(budgetAnswer, "¥8,000〜¥25,000")
             });
-          }
-        } else if (categoryAnswer.includes("ヘアケア")) {
-          if (concernAnswer.includes("髪のダメージ")) {
-            const baseProducts = [
-              { name: "ヘアトリートメント", keywords: ["ヘアトリートメント", "ダメージ", "ヘアケア"] },
-              { name: "シャンプーセット", keywords: ["シャンプー", "セット", "ヘアケア"] },
-              { name: "ヘアオイル", keywords: ["ヘアオイル", "ダメージ", "ヘアケア"] }
-            ];
-            
-            baseProducts.forEach(product => {
-              suggestions.push({
-                name: getProductNameByBudget(product.name, budgetAnswer),
-                keywords: product.keywords,
-                priceRange: getPriceRangeByBudget(budgetAnswer, "¥5,000〜¥15,000")
-              });
+          });
+        }
+      } else if (categoryAnswer.includes("スペシャルケア")) {
+        if (concernAnswer.includes("シミ・くすみ")) {
+          const baseProducts = [
+            { name: "高濃度美白セラム", keywords: ["高濃度", "美白", "セラム", "シミ", "くすみ"] },
+            { name: "美白マスク", keywords: ["美白", "マスク", "集中ケア"] },
+            { name: "美白エッセンス", keywords: ["美白", "エッセンス", "集中ケア"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, budgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(budgetAnswer, "¥10,000〜¥30,000")
             });
-          } else {
-            const baseProducts = [
-              { name: "ヘアケアセット", keywords: ["ヘアケア", "セット", "美容"] },
-              { name: "シャンプー", keywords: ["シャンプー", "ヘアケア"] },
-              { name: "コンディショナー", keywords: ["コンディショナー", "ヘアケア", "美容"] }
-            ];
-            
-            baseProducts.forEach(product => {
-              suggestions.push({
-                name: getProductNameByBudget(product.name, budgetAnswer),
-                keywords: product.keywords,
-                priceRange: getPriceRangeByBudget(budgetAnswer, "¥5,000〜¥15,000")
-              });
+          });
+        } else if (concernAnswer.includes("乾燥・小じわ")) {
+          const baseProducts = [
+            { name: "高濃度保湿セラム", keywords: ["高濃度", "保湿", "セラム", "乾燥", "小じわ"] },
+            { name: "保湿マスク", keywords: ["保湿", "マスク", "集中ケア"] },
+            { name: "保湿エッセンス", keywords: ["保湿", "エッセンス", "集中ケア"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, budgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(budgetAnswer, "¥10,000〜¥30,000")
             });
-          }
+          });
+        } else if (concernAnswer.includes("たるみ")) {
+          const baseProducts = [
+            { name: "リフトアップセラム", keywords: ["リフトアップ", "セラム", "たるみ", "集中ケア"] },
+            { name: "リフトアップマスク", keywords: ["リフトアップ", "マスク", "集中ケア"] },
+            { name: "アンチエイジングエッセンス", keywords: ["アンチエイジング", "エッセンス", "集中ケア"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, budgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(budgetAnswer, "¥12,000〜¥35,000")
+            });
+          });
+        } else {
+          const baseProducts = [
+            { name: "スペシャルケアセット", keywords: ["スペシャルケア", "セット", "集中ケア"] },
+            { name: "高濃度セラム", keywords: ["高濃度", "セラム", "集中ケア"] },
+            { name: "集中ケアマスク", keywords: ["集中ケア", "マスク", "スペシャル"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, budgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(budgetAnswer, "¥10,000〜¥30,000")
+            });
+          });
+        }
+      } else if (categoryAnswer.includes("ボディ・ヘアケア")) {
+        if (concernAnswer.includes("髪のダメージ")) {
+          const baseProducts = [
+            { name: "ヘアトリートメント", keywords: ["ヘアトリートメント", "ダメージ", "ヘアケア"] },
+            { name: "シャンプーセット", keywords: ["シャンプー", "セット", "ヘアケア"] },
+            { name: "ヘアオイル", keywords: ["ヘアオイル", "ダメージ", "ヘアケア"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, budgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(budgetAnswer, "¥5,000〜¥15,000")
+            });
+          });
         } else {
           const baseProducts = [
             { name: "ボディケアセット", keywords: ["ボディケア", "セット", "美容"] },
@@ -852,102 +886,49 @@ export function generateMotherSuggestions(category: string, answers: Record<stri
             });
           });
         }
-      } else {
-        // 普段使わない特別なもの
-        const specialAnswer = answers.question_3 || "";
-        const lifestyleAnswer = answers.question_4 || "";
+      } else if (categoryAnswer.includes("美容家電")) {
+        const baseProducts = [
+          { name: "美顔器", keywords: ["美顔器", "美容家電", "スキンケア"] },
+          { name: "イオンフェイシャル", keywords: ["イオンフェイシャル", "美容家電", "美顔器"] },
+          { name: "超音波美顔器", keywords: ["超音波", "美顔器", "美容家電"] }
+        ];
         
-        if (specialAnswer.includes("特別感重視")) {
-          if (concernAnswer.includes("たるみ")) {
-            const baseProducts = [
-              { name: "リフトアップエステ体験券", keywords: ["リフトアップ", "エステ", "体験券", "たるみ", "特別"] },
-              { name: "フェイシャルスパ", keywords: ["フェイシャル", "スパ", "たるみ", "特別"] },
-              { name: "リフトアップ美容機器", keywords: ["リフトアップ", "美容機器", "たるみ", "特別"] }
-            ];
-            
-            baseProducts.forEach(product => {
-              suggestions.push({
-                name: getProductNameByBudget(product.name, budgetAnswer),
-                keywords: product.keywords,
-                priceRange: getPriceRangeByBudget(budgetAnswer, "¥20,000〜¥60,000")
-              });
-            });
-          } else {
-            const baseProducts = [
-              { name: "エステ体験券", keywords: ["エステ", "体験券", "特別", "美容"] },
-              { name: "スパギフト", keywords: ["スパ", "ギフト", "特別", "美容"] },
-              { name: "美容機器", keywords: ["美容機器", "特別", "エステ", "美容"] }
-            ];
-            
-            baseProducts.forEach(product => {
-              suggestions.push({
-                name: getProductNameByBudget(product.name, budgetAnswer),
-                keywords: product.keywords,
-                priceRange: getPriceRangeByBudget(budgetAnswer, "¥15,000〜¥50,000")
-              });
-            });
-          }
-        } else if (specialAnswer.includes("実用性重視")) {
-          if (concernAnswer.includes("たるみ")) {
-            const baseProducts = [
-              { name: "リフトアップグッズ", keywords: ["リフトアップ", "グッズ", "たるみ", "実用的", "特別"] },
-              { name: "フェイスマッサージツール", keywords: ["フェイスマッサージ", "ツール", "たるみ", "便利", "実用的"] },
-              { name: "エイジングケアセット", keywords: ["エイジングケア", "セット", "たるみ", "実用的", "特別"] }
-            ];
-            
-            baseProducts.forEach(product => {
-              suggestions.push({
-                name: getProductNameByBudget(product.name, budgetAnswer),
-                keywords: product.keywords,
-                priceRange: getPriceRangeByBudget(budgetAnswer, "¥8,000〜¥25,000")
-              });
-            });
-          } else {
-            const baseProducts = [
-              { name: "美容グッズセット", keywords: ["美容グッズ", "セット", "実用的", "特別", "美容"] },
-              { name: "スキンケアツール", keywords: ["スキンケア", "ツール", "便利", "実用的", "美容"] },
-              { name: "ヘアケアグッズ", keywords: ["ヘアケア", "グッズ", "実用的", "便利", "美容"] }
-            ];
-            
-            baseProducts.forEach(product => {
-              suggestions.push({
-                name: getProductNameByBudget(product.name, budgetAnswer),
-                keywords: product.keywords,
-                priceRange: getPriceRangeByBudget(budgetAnswer, "¥5,000〜¥15,000")
-              });
-            });
-          }
-        } else {
-          if (concernAnswer.includes("たるみ")) {
-            const baseProducts = [
-              { name: "リフトアップギフト", keywords: ["リフトアップ", "ギフト", "たるみ", "バランス", "特別"] },
-              { name: "エイジングケアセット", keywords: ["エイジングケア", "セット", "たるみ", "上質", "特別"] },
-              { name: "リフトアイテム", keywords: ["リフト", "アイテム", "たるみ", "特別感", "上質"] }
-            ];
-            
-            baseProducts.forEach(product => {
-              suggestions.push({
-                name: getProductNameByBudget(product.name, budgetAnswer),
-                keywords: product.keywords,
-                priceRange: getPriceRangeByBudget(budgetAnswer, "¥12,000〜¥35,000")
-              });
-            });
-          } else {
-            const baseProducts = [
-              { name: "美容ギフト", keywords: ["美容", "ギフト", "バランス", "特別", "実用的"] },
-              { name: "スキンケアセット", keywords: ["スキンケア", "セット", "上質", "特別", "美容"] },
-              { name: "美容アイテム", keywords: ["美容", "アイテム", "特別感", "上質", "美容"] }
-            ];
-            
-            baseProducts.forEach(product => {
-              suggestions.push({
-                name: getProductNameByBudget(product.name, budgetAnswer),
-                keywords: product.keywords,
-                priceRange: getPriceRangeByBudget(budgetAnswer, "¥10,000〜¥30,000")
-              });
-            });
-          }
-        }
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, budgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(budgetAnswer, "¥15,000〜¥50,000")
+          });
+        });
+      } else if (categoryAnswer.includes("香水・フレグランス")) {
+        const baseProducts = [
+          { name: "高級香水", keywords: ["香水", "フレグランス", "香り"] },
+          { name: "フレグランスセット", keywords: ["フレグランス", "セット", "香り"] },
+          { name: "ボディミスト", keywords: ["ボディミスト", "香り", "フレグランス"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, budgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(budgetAnswer, "¥8,000〜¥25,000")
+          });
+        });
+      } else {
+        // その他の場合
+        const baseProducts = [
+          { name: "美容ギフトセット", keywords: ["美容", "ギフト", "セット"] },
+          { name: "スキンケアセット", keywords: ["スキンケア", "セット", "美容"] },
+          { name: "美容アイテム", keywords: ["美容", "アイテム", "ギフト"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, budgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(budgetAnswer, "¥8,000〜¥25,000")
+          });
+        });
       }
       break;
 
