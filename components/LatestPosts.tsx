@@ -87,6 +87,11 @@ function getArticlePath(slug: string, category: string): string {
     return `/articles/events/${slug}`;
   }
   if (category === "日本酒") {
+    // typeフィールドまたはslugから推測してサブディレクトリを決定
+    if (slug.includes("knowledge") || slug.includes("2025-10-11-nihonshu-intro")) {
+      return `/articles/japanesesake/knowledge/${slug}`;
+    }
+    // デフォルトはbrands
     return `/articles/japanesesake/brands/${slug}`;
   }
   

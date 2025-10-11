@@ -93,7 +93,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               <span className="mx-2">/</span>
             </li>
             <li>
-              <Link href={getCategoryLink(category)} className="hover:text-blue-600 transition-colors">
+              <Link href={getCategoryLink(category, type)} className="hover:text-blue-600 transition-colors">
                 {getCategoryName(category)}
               </Link>
             </li>
@@ -110,7 +110,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
         <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 mb-6 sm:mb-8">
           <div className="flex flex-wrap items-center gap-2 mb-4">
             <Link 
-              href={getCategoryLink(category)}
+              href={getCategoryLink(category, type)}
               className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full hover:bg-blue-200 transition-colors"
             >
               {getCategoryName(category)}
@@ -1036,7 +1036,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
             ))}
             
             {/* 過去の記事一覧カード（4つ目） */}
-            <Link href={getCategoryLink(category)} className="group block">
+            <Link href={getCategoryLink(category, type)} className="group block">
               <div className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 bg-gradient-to-br from-gray-50 to-blue-50">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="text-base sm:text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
@@ -1137,7 +1137,7 @@ function getCategoryName(category: string): string {
 }
 
 // カテゴリリンクを取得する関数
-function getCategoryLink(category: string): string {
+function getCategoryLink(category: string, type?: string): string {
   const categoryLinks: { [key: string]: string } = {
     'sleep-health': '/sleep-health',
     'japanesetea': '/japanese-tea',
@@ -1145,7 +1145,7 @@ function getCategoryLink(category: string): string {
     '海外トレンド': '/overseas-trend',
     'japaneseproducts-popular-with-foreigners': '/japan-popular',
     'global-hot-picks': '/global-hot-picks',
-    'japanesesake': '/articles/japanesesake/brands'
+    'japanesesake': type === 'knowledge' ? '/articles/japanesesake/knowledge' : '/articles/japanesesake/brands'
   };
   return categoryLinks[category] || '/';
 }
