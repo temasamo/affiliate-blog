@@ -32,6 +32,14 @@ function getArticlePath(slug: string, category: string): string {
   
   // 睡眠・健康カテゴリの記事の場合
   if (category === "睡眠・健康") {
+    // Group5（朝スッキリ編）に属するスラッグを優先判定
+    const group5Slugs = [
+      "morning-refresh-pillow",
+    ];
+    if (group5Slugs.includes(slug)) {
+      return `/articles/sleep-health/pillow/group5/${slug}`;
+    }
+
     // Group4（特殊編）に属するスラッグを優先判定
     const group4Slugs = [
       "washable-pillow",
