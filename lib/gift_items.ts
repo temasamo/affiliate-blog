@@ -688,60 +688,93 @@ export function generateCategorySuggestions(category: string, answers: Record<st
       break;
     
     case "キッチン雑貨・調理器具":
-      const kitchenAnswer = answers.question_0 || "";
-      suggestions = generateKitchenSuggestions(kitchenAnswer);
+      suggestions = generateMotherSuggestions(category, answers);
+      // 予算フィルタリングを適用
+      const kitchenBudget = answers.question_4 || "";
+      if (kitchenBudget) {
+        suggestions = filterSuggestionsByBudget(suggestions, kitchenBudget);
+      }
       break;
     
     case "アロマ・癒しグッズ":
-      const aromaAnswer = answers.question_0 || "";
-      suggestions = generateAromaSuggestions(aromaAnswer);
+      suggestions = generateMotherSuggestions(category, answers);
+      // 予算フィルタリングを適用
+      const aromaBudget = answers.question_4 || "";
+      if (aromaBudget) {
+        suggestions = filterSuggestionsByBudget(suggestions, aromaBudget);
+      }
       break;
     
     case "ブランド小物":
-      const brandAnswer = answers.question_0 || "";
-      suggestions = generateBrandSuggestions(brandAnswer);
+      suggestions = generateMotherSuggestions(category, answers);
+      // 予算フィルタリングを適用
+      const brandBudget = answers.question_4 || "";
+      if (brandBudget) {
+        suggestions = filterSuggestionsByBudget(suggestions, brandBudget);
+      }
       break;
     
     case "季節の花＆プリザーブドギフト":
-      const flowerGiftAnswer = answers.question_0 || "";
-      suggestions = generateFlowerGiftSuggestions(flowerGiftAnswer);
+      suggestions = generateMotherSuggestions(category, answers);
+      // 予算フィルタリングを適用
+      const flowerGiftBudget = answers.question_4 || "";
+      if (flowerGiftBudget) {
+        suggestions = filterSuggestionsByBudget(suggestions, flowerGiftBudget);
+      }
       break;
     
     case "グルメギフト":
-      // ユーザーの回答に基づいてサブカテゴリを提案
-      const gourmetAnswer = answers.question_3 || "";
-      const subcategoryAnswer = answers.question_4 || "";
-      suggestions = generateGourmetSuggestions(gourmetAnswer, subcategoryAnswer);
+      suggestions = generateMotherSuggestions(category, answers);
+      // 予算フィルタリングを適用
+      const gourmetBudget = answers.question_4 || "";
+      if (gourmetBudget) {
+        suggestions = filterSuggestionsByBudget(suggestions, gourmetBudget);
+      }
       break;
     
     case "体験ギフト":
-      // ユーザーの回答に基づいてサブカテゴリを提案
-      const experienceAnswer = answers.question_0 || "";
-      suggestions = generateExperienceSuggestions(experienceAnswer);
+      suggestions = generateMotherSuggestions(category, answers);
+      // 予算フィルタリングを適用
+      const experienceBudget = answers.question_4 || "";
+      if (experienceBudget) {
+        suggestions = filterSuggestionsByBudget(suggestions, experienceBudget);
+      }
       break;
     
     case "名入れ・メッセージ入りギフト":
-      // ユーザーの回答に基づいてサブカテゴリを提案
-      const personalizedAnswer = answers.question_0 || "";
-      suggestions = generatePersonalizedSuggestions(personalizedAnswer);
+      suggestions = generateMotherSuggestions(category, answers);
+      // 予算フィルタリングを適用
+      const personalizedBudget = answers.question_4 || "";
+      if (personalizedBudget) {
+        suggestions = filterSuggestionsByBudget(suggestions, personalizedBudget);
+      }
       break;
     
     case "フォトアルバム・家族の思い出ギフト":
-      // ユーザーの回答に基づいてサブカテゴリを提案
-      const memoryAnswer = answers.question_0 || "";
-      suggestions = generateMemorySuggestions(memoryAnswer);
+      suggestions = generateMotherSuggestions(category, answers);
+      // 予算フィルタリングを適用
+      const memoryBudget = answers.question_4 || "";
+      if (memoryBudget) {
+        suggestions = filterSuggestionsByBudget(suggestions, memoryBudget);
+      }
       break;
     
     case "おうち時間を楽しむアイテム":
-      // ユーザーの回答に基づいてサブカテゴリを提案
-      const homeTimeAnswer = answers.question_0 || "";
-      suggestions = generateHomeTimeSuggestions(homeTimeAnswer);
+      suggestions = generateMotherSuggestions(category, answers);
+      // 予算フィルタリングを適用
+      const homeTimeBudget = answers.question_4 || "";
+      if (homeTimeBudget) {
+        suggestions = filterSuggestionsByBudget(suggestions, homeTimeBudget);
+      }
       break;
     
     case "季節限定・ご当地ギフト":
-      // ユーザーの回答に基づいてサブカテゴリを提案
-      const seasonalAnswer = answers.question_3 || "";
-      suggestions = generateSeasonalSuggestions(seasonalAnswer);
+      suggestions = generateMotherSuggestions(category, answers);
+      // 予算フィルタリングを適用
+      const seasonalBudget = answers.question_4 || "";
+      if (seasonalBudget) {
+        suggestions = filterSuggestionsByBudget(suggestions, seasonalBudget);
+      }
       break;
     
     default:
