@@ -270,6 +270,226 @@ export const motherQuestionFlows = {
       question: "健康グッズの予算感は？",
       options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
+  ],
+  "キッチン雑貨・調理器具": [
+    {
+      question: "お母さまは普段、どんな料理をされることが多いですか？",
+      options: ["和食中心", "洋食中心", "中華料理", "特にこだわりなし"]
+    },
+    {
+      question: "お母さまの年齢層をお教えください",
+      options: ["40代", "50代", "60代", "70代以上"]
+    },
+    {
+      question: "今回のプレゼントの方向性はいかがいたしましょうか？",
+      options: ["普段使っているもののアップグレード版", "普段使わない特別なもの"]
+    },
+    {
+      question: "どんな内容をご希望ですか？",
+      options: ["調理器具", "食器・カトラリー", "キッチン小物", "収納・整理用品", "その他"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
+    }
+  ],
+  "アロマ・癒しグッズ": [
+    {
+      question: "お母さまは普段、どんな時間を大切にされていそうですか？",
+      options: ["リラックスタイム", "お風呂タイム", "睡眠時間", "特にない"]
+    },
+    {
+      question: "お母さまの年齢層をお教えください",
+      options: ["40代", "50代", "60代", "70代以上"]
+    },
+    {
+      question: "今回のプレゼントの方向性はいかがいたしましょうか？",
+      options: ["普段使っているもののアップグレード版", "普段使わない特別なもの"]
+    },
+    {
+      question: "どんな内容をご希望ですか？",
+      options: ["アロマオイル・ディフューザー", "入浴剤・バス用品", "マッサージ用品", "リラックスグッズ", "その他"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
+    }
+  ],
+  "ブランド小物": [
+    {
+      question: "お母さまは普段、どんなスタイルを好まれていそうですか？",
+      options: ["上品でクラシック", "モダンでおしゃれ", "シンプルで実用的", "特にこだわりなし"]
+    },
+    {
+      question: "お母さまの年齢層をお教えください",
+      options: ["40代", "50代", "60代", "70代以上"]
+    },
+    {
+      question: "今回のプレゼントの方向性はいかがいたしましょうか？",
+      options: ["普段使っているもののアップグレード版", "普段使わない特別なもの"]
+    },
+    {
+      question: "どんな内容をご希望ですか？",
+      options: ["バッグ・ハンドバッグ", "財布・小銭入れ", "アクセサリー", "時計", "その他"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
+    }
+  ],
+  "季節の花＆プリザーブドギフト": [
+    {
+      question: "お母さまは普段、お花や植物を飾る習慣はありますか？",
+      options: ["よく飾っている", "たまに飾る", "ほとんど飾らない", "わからない"]
+    },
+    {
+      question: "お母さまの年齢層をお教えください",
+      options: ["40代", "50代", "60代", "70代以上"]
+    },
+    {
+      question: "今回のプレゼントの方向性はいかがいたしましょうか？",
+      options: ["普段使っているもののアップグレード版", "普段使わない特別なもの"]
+    },
+    {
+      question: "どんな内容をご希望ですか？",
+      options: ["生花・フラワーアレンジメント", "プリザーブドフラワー", "観葉植物", "ドライフラワー", "その他"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
+    }
+  ],
+  "グルメギフト": [
+    {
+      question: "お母さまは普段、どんな味の傾向がお好きですか？",
+      options: ["和食・日本料理", "洋食・フレンチ", "中華料理", "特にこだわりなし"]
+    },
+    {
+      question: "お母さまの年齢層をお教えください",
+      options: ["40代", "50代", "60代", "70代以上"]
+    },
+    {
+      question: "どのようなグルメギフトの体験をご希望ですか？",
+      options: ["日常を彩るちょっと贅沢な品", "特別な日に贈る希少な逸品"]
+    },
+    {
+      question: "どんな内容をご希望ですか？",
+      options: ["和菓子・日本茶", "洋菓子・紅茶", "海鮮・お肉", "調味料・加工品", "その他"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
+    }
+  ],
+  "体験ギフト": [
+    {
+      question: "お母さまは普段、どんな活動を楽しまれていそうですか？",
+      options: ["お料理・お菓子作り", "手芸・クラフト", "運動・スポーツ", "特にない"]
+    },
+    {
+      question: "お母さまの年齢層をお教えください",
+      options: ["40代", "50代", "60代", "70代以上"]
+    },
+    {
+      question: "どのような体験ギフトをご希望ですか？",
+      options: ["普段の活動をより充実させる体験", "新しい体験・特別な体験"]
+    },
+    {
+      question: "どんな内容をご希望ですか？",
+      options: ["料理教室・お菓子教室", "温泉・スパ", "エステ・美容", "旅行・観光", "その他"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
+    }
+  ],
+  "名入れ・メッセージ入りギフト": [
+    {
+      question: "お母さまは普段、どんなものを大切に使われていそうですか？",
+      options: ["食器・カトラリー", "バッグ・小物", "タオル・布製品", "特にない"]
+    },
+    {
+      question: "お母さまの年齢層をお教えください",
+      options: ["40代", "50代", "60代", "70代以上"]
+    },
+    {
+      question: "今回のプレゼントの方向性はいかがいたしましょうか？",
+      options: ["普段使っているもののアップグレード版", "普段使わない特別なもの"]
+    },
+    {
+      question: "どんな内容をご希望ですか？",
+      options: ["食器・カトラリー", "バッグ・小物", "タオル・布製品", "アクセサリー", "その他"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
+    }
+  ],
+  "フォトアルバム・家族の思い出ギフト": [
+    {
+      question: "お母さまは普段、写真を整理したり見返したりしますか？",
+      options: ["よくする", "たまにする", "ほとんどしない", "わからない"]
+    },
+    {
+      question: "お母さまの年齢層をお教えください",
+      options: ["40代", "50代", "60代", "70代以上"]
+    },
+    {
+      question: "どのような思い出ギフトをご希望ですか？",
+      options: ["普段の写真整理をより充実させる", "特別な思い出作り"]
+    },
+    {
+      question: "どんな内容をご希望ですか？",
+      options: ["フォトアルバム・写真整理", "デジタルフォトフレーム", "家族写真の加工・制作", "思い出の品の整理", "その他"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
+    }
+  ],
+  "おうち時間を楽しむアイテム": [
+    {
+      question: "お母さまは普段、おうちでどんな時間を過ごされていますか？",
+      options: ["読書・学習", "手芸・クラフト", "お料理・お菓子作り", "特にない"]
+    },
+    {
+      question: "お母さまの年齢層をお教えください",
+      options: ["40代", "50代", "60代", "70代以上"]
+    },
+    {
+      question: "どのようなおうち時間アイテムをご希望ですか？",
+      options: ["普段の活動をより充実させるアイテム", "新しい趣味・特別なアイテム"]
+    },
+    {
+      question: "どんな内容をご希望ですか？",
+      options: ["読書・学習用品", "手芸・クラフト用品", "お料理・お菓子作り用品", "リラックス用品", "その他"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
+    }
+  ],
+  "季節限定・ご当地ギフト": [
+    {
+      question: "お母さまは普段、季節の行事や地域の特産品に興味がありますか？",
+      options: ["とても興味がある", "たまに興味がある", "あまり興味がない", "わからない"]
+    },
+    {
+      question: "お母さまの年齢層をお教えください",
+      options: ["40代", "50代", "60代", "70代以上"]
+    },
+    {
+      question: "どのような季節・地域ギフトをご希望ですか？",
+      options: ["普段の生活に季節感を取り入れる", "特別な季節・地域の逸品"]
+    },
+    {
+      question: "どんな内容をご希望ですか？",
+      options: ["季節の食べ物・飲み物", "季節の花・植物", "ご当地特産品", "季節の雑貨", "その他"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
+    }
   ]
 };
 
@@ -932,11 +1152,841 @@ export function generateMotherSuggestions(category: string, answers: Record<stri
       }
       break;
 
+    case "キッチン雑貨・調理器具":
+      const kitchenConcernAnswer = answers.question_0 || "";
+      const kitchenAgeAnswer = answers.question_1 || "";
+      const kitchenApproachAnswer = answers.question_2 || "";
+      const kitchenCategoryAnswer = answers.question_3 || "";
+      const kitchenBudgetAnswer = answers.question_4 || "";
+      
+      if (kitchenCategoryAnswer.includes("調理器具")) {
+        const baseProducts = [
+          { name: "包丁セット", keywords: ["包丁", "調理器具", "キッチン"] },
+          { name: "フライパンセット", keywords: ["フライパン", "調理器具", "キッチン"] },
+          { name: "調理器具セット", keywords: ["調理器具", "セット", "キッチン"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, kitchenBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(kitchenBudgetAnswer, "¥8,000〜¥25,000")
+          });
+        });
+      } else if (kitchenCategoryAnswer.includes("食器・カトラリー")) {
+        const baseProducts = [
+          { name: "食器セット", keywords: ["食器", "セット", "キッチン"] },
+          { name: "カトラリーセット", keywords: ["カトラリー", "セット", "キッチン"] },
+          { name: "和食器セット", keywords: ["和食器", "セット", "キッチン"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, kitchenBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(kitchenBudgetAnswer, "¥6,000〜¥20,000")
+          });
+        });
+      } else {
+        const baseProducts = [
+          { name: "キッチン小物セット", keywords: ["キッチン小物", "セット", "キッチン"] },
+          { name: "収納用品", keywords: ["収納", "キッチン", "整理"] },
+          { name: "キッチン雑貨", keywords: ["キッチン雑貨", "キッチン"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, kitchenBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(kitchenBudgetAnswer, "¥5,000〜¥15,000")
+          });
+        });
+      }
+      break;
+
+    case "アロマ・癒しグッズ":
+      const aromaConcernAnswer = answers.question_0 || "";
+      const aromaAgeAnswer = answers.question_1 || "";
+      const aromaApproachAnswer = answers.question_2 || "";
+      const aromaCategoryAnswer = answers.question_3 || "";
+      const aromaBudgetAnswer = answers.question_4 || "";
+      
+      if (aromaCategoryAnswer.includes("アロマオイル・ディフューザー")) {
+        const baseProducts = [
+          { name: "アロマディフューザー", keywords: ["アロマ", "ディフューザー", "癒し"] },
+          { name: "アロマオイルセット", keywords: ["アロマオイル", "セット", "癒し"] },
+          { name: "アロマキャンドル", keywords: ["アロマキャンドル", "癒し", "香り"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, aromaBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(aromaBudgetAnswer, "¥5,000〜¥15,000")
+          });
+        });
+      } else if (aromaCategoryAnswer.includes("入浴剤・バス用品")) {
+        const baseProducts = [
+          { name: "入浴剤セット", keywords: ["入浴剤", "セット", "バス", "癒し"] },
+          { name: "バス用品セット", keywords: ["バス用品", "セット", "癒し"] },
+          { name: "バスソルト", keywords: ["バスソルト", "癒し", "バス"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, aromaBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(aromaBudgetAnswer, "¥3,000〜¥12,000")
+          });
+        });
+      } else {
+        const baseProducts = [
+          { name: "マッサージ用品", keywords: ["マッサージ", "癒し", "リラックス"] },
+          { name: "リラックスグッズ", keywords: ["リラックス", "癒し", "グッズ"] },
+          { name: "癒しグッズセット", keywords: ["癒しグッズ", "セット", "リラックス"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, aromaBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(aromaBudgetAnswer, "¥4,000〜¥15,000")
+          });
+        });
+      }
+      break;
+
+    case "ブランド小物":
+      const brandConcernAnswer = answers.question_0 || "";
+      const brandAgeAnswer = answers.question_1 || "";
+      const brandApproachAnswer = answers.question_2 || "";
+      const brandCategoryAnswer = answers.question_3 || "";
+      const brandBudgetAnswer = answers.question_4 || "";
+      
+      if (brandCategoryAnswer.includes("バッグ・ハンドバッグ")) {
+        const baseProducts = [
+          { name: "ハンドバッグ", keywords: ["ハンドバッグ", "バッグ", "ブランド"] },
+          { name: "トートバッグ", keywords: ["トートバッグ", "バッグ", "ブランド"] },
+          { name: "ショルダーバッグ", keywords: ["ショルダーバッグ", "バッグ", "ブランド"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, brandBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(brandBudgetAnswer, "¥8,000〜¥30,000")
+          });
+        });
+      } else if (brandCategoryAnswer.includes("財布・小銭入れ")) {
+        const baseProducts = [
+          { name: "長財布", keywords: ["長財布", "財布", "ブランド"] },
+          { name: "小銭入れ", keywords: ["小銭入れ", "財布", "ブランド"] },
+          { name: "カードケース", keywords: ["カードケース", "財布", "ブランド"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, brandBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(brandBudgetAnswer, "¥6,000〜¥25,000")
+          });
+        });
+      } else {
+        const baseProducts = [
+          { name: "アクセサリー", keywords: ["アクセサリー", "ブランド", "小物"] },
+          { name: "時計", keywords: ["時計", "ブランド", "小物"] },
+          { name: "ブランド小物セット", keywords: ["ブランド小物", "セット", "小物"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, brandBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(brandBudgetAnswer, "¥8,000〜¥35,000")
+          });
+        });
+      }
+      break;
+
+    case "季節の花＆プリザーブドギフト":
+      const flowerConcernAnswer = answers.question_0 || "";
+      const flowerAgeAnswer = answers.question_1 || "";
+      const flowerApproachAnswer = answers.question_2 || "";
+      const flowerCategoryAnswer = answers.question_3 || "";
+      const flowerBudgetAnswer = answers.question_4 || "";
+      
+      if (flowerCategoryAnswer.includes("生花・フラワーアレンジメント")) {
+        const baseProducts = [
+          { name: "フラワーアレンジメント", keywords: ["フラワーアレンジメント", "生花", "花"] },
+          { name: "生花ブーケ", keywords: ["生花ブーケ", "生花", "花"] },
+          { name: "季節の花束", keywords: ["季節の花束", "生花", "花"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, flowerBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(flowerBudgetAnswer, "¥3,000〜¥12,000")
+          });
+        });
+      } else if (flowerCategoryAnswer.includes("プリザーブドフラワー")) {
+        const baseProducts = [
+          { name: "プリザーブドフラワー", keywords: ["プリザーブドフラワー", "花", "長持ち"] },
+          { name: "プリザーブドアレンジ", keywords: ["プリザーブドアレンジ", "花", "長持ち"] },
+          { name: "プリザーブドブーケ", keywords: ["プリザーブドブーケ", "花", "長持ち"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, flowerBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(flowerBudgetAnswer, "¥5,000〜¥20,000")
+          });
+        });
+      } else {
+        const baseProducts = [
+          { name: "観葉植物", keywords: ["観葉植物", "植物", "花"] },
+          { name: "ドライフラワー", keywords: ["ドライフラワー", "花", "植物"] },
+          { name: "花ギフトセット", keywords: ["花ギフト", "セット", "花"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, flowerBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(flowerBudgetAnswer, "¥4,000〜¥15,000")
+          });
+        });
+      }
+      break;
+
+    case "グルメギフト":
+      const gourmetConcernAnswer = answers.question_0 || "";
+      const gourmetAgeAnswer = answers.question_1 || "";
+      const gourmetApproachAnswer = answers.question_2 || "";
+      const gourmetCategoryAnswer = answers.question_3 || "";
+      const gourmetBudgetAnswer = answers.question_4 || "";
+      
+      // 方向性に基づく分岐
+      if (gourmetApproachAnswer.includes("日常を彩るちょっと贅沢な品")) {
+        if (gourmetCategoryAnswer.includes("和菓子・日本茶")) {
+          const baseProducts = [
+            { name: "上質な和菓子セット", keywords: ["和菓子", "上質", "セット", "グルメ", "日常"] },
+            { name: "高級日本茶セット", keywords: ["日本茶", "高級", "セット", "グルメ", "日常"] },
+            { name: "季節の和菓子ギフト", keywords: ["和菓子", "季節", "ギフト", "グルメ", "日常"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, gourmetBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(gourmetBudgetAnswer, "¥4,000〜¥15,000")
+            });
+          });
+        } else if (gourmetCategoryAnswer.includes("洋菓子・紅茶")) {
+          const baseProducts = [
+            { name: "上質な洋菓子セット", keywords: ["洋菓子", "上質", "セット", "グルメ", "日常"] },
+            { name: "高級紅茶セット", keywords: ["紅茶", "高級", "セット", "グルメ", "日常"] },
+            { name: "季節の洋菓子ギフト", keywords: ["洋菓子", "季節", "ギフト", "グルメ", "日常"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, gourmetBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(gourmetBudgetAnswer, "¥5,000〜¥18,000")
+            });
+          });
+        } else {
+          const baseProducts = [
+            { name: "上質な海鮮ギフト", keywords: ["海鮮", "上質", "ギフト", "グルメ", "日常"] },
+            { name: "高級お肉ギフト", keywords: ["お肉", "高級", "ギフト", "グルメ", "日常"] },
+            { name: "上質な調味料セット", keywords: ["調味料", "上質", "セット", "グルメ", "日常"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, gourmetBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(gourmetBudgetAnswer, "¥6,000〜¥20,000")
+            });
+          });
+        }
+      } else if (gourmetApproachAnswer.includes("特別な日に贈る希少な逸品")) {
+        if (gourmetCategoryAnswer.includes("和菓子・日本茶")) {
+          const baseProducts = [
+            { name: "希少な和菓子逸品", keywords: ["和菓子", "希少", "逸品", "グルメ", "特別"] },
+            { name: "限定日本茶ギフト", keywords: ["日本茶", "限定", "ギフト", "グルメ", "特別"] },
+            { name: "伝統工芸和菓子", keywords: ["和菓子", "伝統工芸", "グルメ", "特別"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, gourmetBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(gourmetBudgetAnswer, "¥8,000〜¥25,000")
+            });
+          });
+        } else if (gourmetCategoryAnswer.includes("洋菓子・紅茶")) {
+          const baseProducts = [
+            { name: "希少な洋菓子逸品", keywords: ["洋菓子", "希少", "逸品", "グルメ", "特別"] },
+            { name: "限定紅茶ギフト", keywords: ["紅茶", "限定", "ギフト", "グルメ", "特別"] },
+            { name: "高級洋菓子コレクション", keywords: ["洋菓子", "高級", "コレクション", "グルメ", "特別"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, gourmetBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(gourmetBudgetAnswer, "¥10,000〜¥30,000")
+            });
+          });
+        } else {
+          const baseProducts = [
+            { name: "希少な海鮮逸品", keywords: ["海鮮", "希少", "逸品", "グルメ", "特別"] },
+            { name: "高級お肉逸品", keywords: ["お肉", "高級", "逸品", "グルメ", "特別"] },
+            { name: "限定調味料コレクション", keywords: ["調味料", "限定", "コレクション", "グルメ", "特別"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, gourmetBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(gourmetBudgetAnswer, "¥12,000〜¥35,000")
+            });
+          });
+        }
+      } else {
+        // デフォルト
+        const baseProducts = [
+          { name: "グルメギフトセット", keywords: ["グルメ", "ギフト", "セット"] },
+          { name: "高級グルメギフト", keywords: ["グルメ", "高級", "ギフト"] },
+          { name: "特別なグルメギフト", keywords: ["グルメ", "特別", "ギフト"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, gourmetBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(gourmetBudgetAnswer, "¥6,000〜¥20,000")
+          });
+        });
+      }
+      break;
+
+    case "体験ギフト":
+      const experienceConcernAnswer = answers.question_0 || "";
+      const experienceAgeAnswer = answers.question_1 || "";
+      const experienceApproachAnswer = answers.question_2 || "";
+      const experienceCategoryAnswer = answers.question_3 || "";
+      const experienceBudgetAnswer = answers.question_4 || "";
+      
+      // 方向性に基づく分岐
+      if (experienceApproachAnswer.includes("普段の活動をより充実させる体験")) {
+        if (experienceCategoryAnswer.includes("料理教室・お菓子作り")) {
+          const baseProducts = [
+            { name: "上級料理教室体験券", keywords: ["料理教室", "上級", "体験券", "体験", "充実"] },
+            { name: "専門お菓子教室体験券", keywords: ["お菓子教室", "専門", "体験券", "体験", "充実"] },
+            { name: "料理・お菓子教室セット", keywords: ["料理教室", "お菓子教室", "セット", "体験", "充実"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, experienceBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(experienceBudgetAnswer, "¥8,000〜¥25,000")
+            });
+          });
+        } else if (experienceCategoryAnswer.includes("温泉・スパ")) {
+          const baseProducts = [
+            { name: "高級温泉旅行券", keywords: ["温泉", "高級", "旅行券", "体験", "充実"] },
+            { name: "プレミアムスパ体験券", keywords: ["スパ", "プレミアム", "体験券", "体験", "充実"] },
+            { name: "温泉・スパ充実セット", keywords: ["温泉", "スパ", "セット", "体験", "充実"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, experienceBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(experienceBudgetAnswer, "¥10,000〜¥30,000")
+            });
+          });
+        } else {
+          const baseProducts = [
+            { name: "高級エステ体験券", keywords: ["エステ", "高級", "体験券", "体験", "充実"] },
+            { name: "充実旅行・観光券", keywords: ["旅行", "観光券", "体験", "充実"] },
+            { name: "充実体験ギフトセット", keywords: ["体験ギフト", "セット", "体験", "充実"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, experienceBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(experienceBudgetAnswer, "¥8,000〜¥35,000")
+            });
+          });
+        }
+      } else if (experienceApproachAnswer.includes("新しい体験・特別な体験")) {
+        if (experienceCategoryAnswer.includes("料理教室・お菓子作り")) {
+          const baseProducts = [
+            { name: "特別料理教室体験券", keywords: ["料理教室", "特別", "体験券", "体験", "新体験"] },
+            { name: "創作お菓子教室体験券", keywords: ["お菓子教室", "創作", "体験券", "体験", "新体験"] },
+            { name: "特別料理・お菓子教室セット", keywords: ["料理教室", "お菓子教室", "セット", "体験", "新体験"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, experienceBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(experienceBudgetAnswer, "¥12,000〜¥35,000")
+            });
+          });
+        } else if (experienceCategoryAnswer.includes("温泉・スパ")) {
+          const baseProducts = [
+            { name: "特別温泉旅行券", keywords: ["温泉", "特別", "旅行券", "体験", "新体験"] },
+            { name: "特別スパ体験券", keywords: ["スパ", "特別", "体験券", "体験", "新体験"] },
+            { name: "特別温泉・スパセット", keywords: ["温泉", "スパ", "セット", "体験", "新体験"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, experienceBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(experienceBudgetAnswer, "¥15,000〜¥40,000")
+            });
+          });
+        } else {
+          const baseProducts = [
+            { name: "特別エステ体験券", keywords: ["エステ", "特別", "体験券", "体験", "新体験"] },
+            { name: "特別旅行・観光券", keywords: ["旅行", "観光券", "体験", "新体験", "特別"] },
+            { name: "特別体験ギフトセット", keywords: ["体験ギフト", "セット", "体験", "新体験", "特別"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, experienceBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(experienceBudgetAnswer, "¥12,000〜¥45,000")
+            });
+          });
+        }
+      } else {
+        // デフォルト
+        const baseProducts = [
+          { name: "体験ギフトセット", keywords: ["体験ギフト", "セット", "体験"] },
+          { name: "特別体験ギフト", keywords: ["体験ギフト", "特別", "体験"] },
+          { name: "充実体験ギフト", keywords: ["体験ギフト", "充実", "体験"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, experienceBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(experienceBudgetAnswer, "¥8,000〜¥35,000")
+          });
+        });
+      }
+      break;
+
+    case "名入れ・メッセージ入りギフト":
+      const personalizedConcernAnswer = answers.question_0 || "";
+      const personalizedAgeAnswer = answers.question_1 || "";
+      const personalizedApproachAnswer = answers.question_2 || "";
+      const personalizedCategoryAnswer = answers.question_3 || "";
+      const personalizedBudgetAnswer = answers.question_4 || "";
+      
+      if (personalizedCategoryAnswer.includes("食器・カトラリー")) {
+        const baseProducts = [
+          { name: "名入れ食器セット", keywords: ["名入れ", "食器", "セット", "メッセージ"] },
+          { name: "名入れカトラリー", keywords: ["名入れ", "カトラリー", "メッセージ"] },
+          { name: "名入れ湯呑み", keywords: ["名入れ", "湯呑み", "メッセージ"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, personalizedBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(personalizedBudgetAnswer, "¥5,000〜¥18,000")
+          });
+        });
+      } else if (personalizedCategoryAnswer.includes("バッグ・小物")) {
+        const baseProducts = [
+          { name: "名入れバッグ", keywords: ["名入れ", "バッグ", "メッセージ"] },
+          { name: "名入れ小物", keywords: ["名入れ", "小物", "メッセージ"] },
+          { name: "名入れポーチ", keywords: ["名入れ", "ポーチ", "メッセージ"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, personalizedBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(personalizedBudgetAnswer, "¥4,000〜¥15,000")
+          });
+        });
+      } else {
+        const baseProducts = [
+          { name: "名入れタオル", keywords: ["名入れ", "タオル", "メッセージ"] },
+          { name: "名入れアクセサリー", keywords: ["名入れ", "アクセサリー", "メッセージ"] },
+          { name: "名入れギフトセット", keywords: ["名入れ", "ギフト", "セット", "メッセージ"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, personalizedBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(personalizedBudgetAnswer, "¥3,000〜¥12,000")
+          });
+        });
+      }
+      break;
+
+    case "フォトアルバム・家族の思い出ギフト":
+      const memoryConcernAnswer = answers.question_0 || "";
+      const memoryAgeAnswer = answers.question_1 || "";
+      const memoryApproachAnswer = answers.question_2 || "";
+      const memoryCategoryAnswer = answers.question_3 || "";
+      const memoryBudgetAnswer = answers.question_4 || "";
+      
+      // 方向性に基づく分岐
+      if (memoryApproachAnswer.includes("普段の写真整理をより充実させる")) {
+        if (memoryCategoryAnswer.includes("フォトアルバム・写真整理")) {
+          const baseProducts = [
+            { name: "高級フォトアルバム", keywords: ["フォトアルバム", "高級", "写真", "思い出", "充実"] },
+            { name: "充実写真整理用品", keywords: ["写真整理", "充実", "用品", "思い出"] },
+            { name: "高機能デジタルフォトフレーム", keywords: ["デジタルフォトフレーム", "高機能", "写真", "思い出", "充実"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, memoryBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(memoryBudgetAnswer, "¥5,000〜¥20,000")
+            });
+          });
+        } else if (memoryCategoryAnswer.includes("家族写真の加工・制作")) {
+          const baseProducts = [
+            { name: "充実家族写真加工サービス", keywords: ["家族写真", "加工", "サービス", "思い出", "充実"] },
+            { name: "高品質写真制作サービス", keywords: ["写真制作", "高品質", "サービス", "思い出", "充実"] },
+            { name: "充実思い出写真セット", keywords: ["思い出写真", "セット", "思い出", "充実"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, memoryBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(memoryBudgetAnswer, "¥8,000〜¥25,000")
+            });
+          });
+        } else {
+          const baseProducts = [
+            { name: "充実思い出の品整理サービス", keywords: ["思い出の品", "整理", "サービス", "思い出", "充実"] },
+            { name: "充実思い出ギフトセット", keywords: ["思い出ギフト", "セット", "思い出", "充実"] },
+            { name: "充実家族の思い出アイテム", keywords: ["家族の思い出", "アイテム", "思い出", "充実"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, memoryBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(memoryBudgetAnswer, "¥6,000〜¥20,000")
+            });
+          });
+        }
+      } else if (memoryApproachAnswer.includes("特別な思い出作り")) {
+        if (memoryCategoryAnswer.includes("フォトアルバム・写真整理")) {
+          const baseProducts = [
+            { name: "特別フォトアルバム", keywords: ["フォトアルバム", "特別", "写真", "思い出", "特別"] },
+            { name: "特別写真整理用品", keywords: ["写真整理", "特別", "用品", "思い出", "特別"] },
+            { name: "特別デジタルフォトフレーム", keywords: ["デジタルフォトフレーム", "特別", "写真", "思い出", "特別"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, memoryBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(memoryBudgetAnswer, "¥8,000〜¥30,000")
+            });
+          });
+        } else if (memoryCategoryAnswer.includes("家族写真の加工・制作")) {
+          const baseProducts = [
+            { name: "特別家族写真加工サービス", keywords: ["家族写真", "加工", "サービス", "思い出", "特別"] },
+            { name: "特別写真制作サービス", keywords: ["写真制作", "特別", "サービス", "思い出", "特別"] },
+            { name: "特別思い出写真セット", keywords: ["思い出写真", "セット", "思い出", "特別"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, memoryBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(memoryBudgetAnswer, "¥12,000〜¥35,000")
+            });
+          });
+        } else {
+          const baseProducts = [
+            { name: "特別思い出の品整理サービス", keywords: ["思い出の品", "整理", "サービス", "思い出", "特別"] },
+            { name: "特別思い出ギフトセット", keywords: ["思い出ギフト", "セット", "思い出", "特別"] },
+            { name: "特別家族の思い出アイテム", keywords: ["家族の思い出", "アイテム", "思い出", "特別"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, memoryBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(memoryBudgetAnswer, "¥10,000〜¥30,000")
+            });
+          });
+        }
+      } else {
+        // デフォルト
+        const baseProducts = [
+          { name: "思い出ギフトセット", keywords: ["思い出ギフト", "セット", "思い出"] },
+          { name: "特別思い出ギフト", keywords: ["思い出ギフト", "特別", "思い出"] },
+          { name: "充実思い出ギフト", keywords: ["思い出ギフト", "充実", "思い出"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, memoryBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(memoryBudgetAnswer, "¥6,000〜¥20,000")
+          });
+        });
+      }
+      break;
+
+    case "おうち時間を楽しむアイテム":
+      const homeTimeConcernAnswer = answers.question_0 || "";
+      const homeTimeAgeAnswer = answers.question_1 || "";
+      const homeTimeApproachAnswer = answers.question_2 || "";
+      const homeTimeCategoryAnswer = answers.question_3 || "";
+      const homeTimeBudgetAnswer = answers.question_4 || "";
+      
+      // 方向性に基づく分岐
+      if (homeTimeApproachAnswer.includes("普段の活動をより充実させるアイテム")) {
+        if (homeTimeCategoryAnswer.includes("読書・学習用品")) {
+          const baseProducts = [
+            { name: "充実読書用品セット", keywords: ["読書用品", "セット", "おうち時間", "充実"] },
+            { name: "高機能学習用品", keywords: ["学習用品", "高機能", "おうち時間", "充実"] },
+            { name: "充実読書・学習グッズ", keywords: ["読書", "学習", "グッズ", "おうち時間", "充実"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, homeTimeBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(homeTimeBudgetAnswer, "¥4,000〜¥15,000")
+            });
+          });
+        } else if (homeTimeCategoryAnswer.includes("手芸・クラフト用品")) {
+          const baseProducts = [
+            { name: "充実手芸用品セット", keywords: ["手芸用品", "セット", "おうち時間", "充実"] },
+            { name: "高品質クラフト用品", keywords: ["クラフト用品", "高品質", "おうち時間", "充実"] },
+            { name: "充実手芸・クラフトグッズ", keywords: ["手芸", "クラフト", "グッズ", "おうち時間", "充実"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, homeTimeBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(homeTimeBudgetAnswer, "¥5,000〜¥18,000")
+            });
+          });
+        } else {
+          const baseProducts = [
+            { name: "充実お料理・お菓子作り用品", keywords: ["お料理", "お菓子作り", "用品", "おうち時間", "充実"] },
+            { name: "高機能リラックス用品", keywords: ["リラックス用品", "高機能", "おうち時間", "充実"] },
+            { name: "充実おうち時間グッズセット", keywords: ["おうち時間", "グッズ", "セット", "充実"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, homeTimeBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(homeTimeBudgetAnswer, "¥4,000〜¥15,000")
+            });
+          });
+        }
+      } else if (homeTimeApproachAnswer.includes("新しい趣味・特別なアイテム")) {
+        if (homeTimeCategoryAnswer.includes("読書・学習用品")) {
+          const baseProducts = [
+            { name: "特別読書用品セット", keywords: ["読書用品", "セット", "おうち時間", "特別", "新趣味"] },
+            { name: "特別学習用品", keywords: ["学習用品", "特別", "おうち時間", "新趣味"] },
+            { name: "特別読書・学習グッズ", keywords: ["読書", "学習", "グッズ", "おうち時間", "特別", "新趣味"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, homeTimeBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(homeTimeBudgetAnswer, "¥6,000〜¥20,000")
+            });
+          });
+        } else if (homeTimeCategoryAnswer.includes("手芸・クラフト用品")) {
+          const baseProducts = [
+            { name: "特別手芸用品セット", keywords: ["手芸用品", "セット", "おうち時間", "特別", "新趣味"] },
+            { name: "特別クラフト用品", keywords: ["クラフト用品", "特別", "おうち時間", "新趣味"] },
+            { name: "特別手芸・クラフトグッズ", keywords: ["手芸", "クラフト", "グッズ", "おうち時間", "特別", "新趣味"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, homeTimeBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(homeTimeBudgetAnswer, "¥8,000〜¥25,000")
+            });
+          });
+        } else {
+          const baseProducts = [
+            { name: "特別お料理・お菓子作り用品", keywords: ["お料理", "お菓子作り", "用品", "おうち時間", "特別", "新趣味"] },
+            { name: "特別リラックス用品", keywords: ["リラックス用品", "特別", "おうち時間", "新趣味"] },
+            { name: "特別おうち時間グッズセット", keywords: ["おうち時間", "グッズ", "セット", "特別", "新趣味"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, homeTimeBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(homeTimeBudgetAnswer, "¥6,000〜¥20,000")
+            });
+          });
+        }
+      } else {
+        // デフォルト
+        const baseProducts = [
+          { name: "おうち時間グッズセット", keywords: ["おうち時間", "グッズ", "セット"] },
+          { name: "特別おうち時間グッズ", keywords: ["おうち時間", "グッズ", "特別"] },
+          { name: "充実おうち時間グッズ", keywords: ["おうち時間", "グッズ", "充実"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, homeTimeBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(homeTimeBudgetAnswer, "¥4,000〜¥15,000")
+          });
+        });
+      }
+      break;
+
+    case "季節限定・ご当地ギフト":
+      const seasonalConcernAnswer = answers.question_0 || "";
+      const seasonalAgeAnswer = answers.question_1 || "";
+      const seasonalApproachAnswer = answers.question_2 || "";
+      const seasonalCategoryAnswer = answers.question_3 || "";
+      const seasonalBudgetAnswer = answers.question_4 || "";
+      
+      // 方向性に基づく分岐
+      if (seasonalApproachAnswer.includes("普段の生活に季節感を取り入れる")) {
+        if (seasonalCategoryAnswer.includes("季節の食べ物・飲み物")) {
+          const baseProducts = [
+            { name: "日常に季節感を取り入れる食べ物ギフト", keywords: ["季節の食べ物", "ギフト", "季節限定", "日常", "季節感"] },
+            { name: "日常に季節感を取り入れる飲み物ギフト", keywords: ["季節の飲み物", "ギフト", "季節限定", "日常", "季節感"] },
+            { name: "日常季節感グルメセット", keywords: ["季節限定", "グルメ", "セット", "日常", "季節感"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, seasonalBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(seasonalBudgetAnswer, "¥4,000〜¥15,000")
+            });
+          });
+        } else if (seasonalCategoryAnswer.includes("ご当地特産品")) {
+          const baseProducts = [
+            { name: "日常に地域感を取り入れる特産品ギフト", keywords: ["ご当地特産品", "ギフト", "地域限定", "日常", "地域感"] },
+            { name: "日常地域限定ギフト", keywords: ["地域限定", "ギフト", "ご当地", "日常", "地域感"] },
+            { name: "日常特産品セット", keywords: ["特産品", "セット", "ご当地", "日常", "地域感"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, seasonalBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(seasonalBudgetAnswer, "¥5,000〜¥18,000")
+            });
+          });
+        } else {
+          const baseProducts = [
+            { name: "日常に季節感を取り入れる花・植物ギフト", keywords: ["季節の花", "植物", "ギフト", "季節限定", "日常", "季節感"] },
+            { name: "日常に季節感を取り入れる雑貨ギフト", keywords: ["季節の雑貨", "ギフト", "季節限定", "日常", "季節感"] },
+            { name: "日常季節感ギフトセット", keywords: ["季節限定", "ギフト", "セット", "日常", "季節感"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, seasonalBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(seasonalBudgetAnswer, "¥4,000〜¥15,000")
+            });
+          });
+        }
+      } else if (seasonalApproachAnswer.includes("特別な季節・地域の逸品")) {
+        if (seasonalCategoryAnswer.includes("季節の食べ物・飲み物")) {
+          const baseProducts = [
+            { name: "特別な季節の食べ物逸品", keywords: ["季節の食べ物", "特別", "逸品", "季節限定", "特別"] },
+            { name: "特別な季節の飲み物逸品", keywords: ["季節の飲み物", "特別", "逸品", "季節限定", "特別"] },
+            { name: "特別季節限定グルメ逸品", keywords: ["季節限定", "グルメ", "特別", "逸品", "特別"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, seasonalBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(seasonalBudgetAnswer, "¥8,000〜¥25,000")
+            });
+          });
+        } else if (seasonalCategoryAnswer.includes("ご当地特産品")) {
+          const baseProducts = [
+            { name: "特別なご当地特産品逸品", keywords: ["ご当地特産品", "特別", "逸品", "地域限定", "特別"] },
+            { name: "特別地域限定逸品", keywords: ["地域限定", "特別", "逸品", "ご当地", "特別"] },
+            { name: "特別特産品逸品セット", keywords: ["特産品", "特別", "逸品", "セット", "ご当地", "特別"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, seasonalBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(seasonalBudgetAnswer, "¥10,000〜¥30,000")
+            });
+          });
+        } else {
+          const baseProducts = [
+            { name: "特別な季節の花・植物逸品", keywords: ["季節の花", "植物", "特別", "逸品", "季節限定", "特別"] },
+            { name: "特別な季節の雑貨逸品", keywords: ["季節の雑貨", "特別", "逸品", "季節限定", "特別"] },
+            { name: "特別季節限定逸品セット", keywords: ["季節限定", "特別", "逸品", "セット", "特別"] }
+          ];
+          
+          baseProducts.forEach(product => {
+            suggestions.push({
+              name: getProductNameByBudget(product.name, seasonalBudgetAnswer),
+              keywords: product.keywords,
+              priceRange: getPriceRangeByBudget(seasonalBudgetAnswer, "¥8,000〜¥25,000")
+            });
+          });
+        }
+      } else {
+        // デフォルト
+        const baseProducts = [
+          { name: "季節限定ギフトセット", keywords: ["季節限定", "ギフト", "セット"] },
+          { name: "特別季節限定ギフト", keywords: ["季節限定", "ギフト", "特別"] },
+          { name: "日常季節感ギフト", keywords: ["季節限定", "ギフト", "日常", "季節感"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, seasonalBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(seasonalBudgetAnswer, "¥4,000〜¥15,000")
+          });
+        });
+      }
+      break;
+
     default:
       suggestions.push(
-        { name: "実用的な美容ギフト", keywords: ["美容", "ギフト", "実用的", "お母さん", "プレゼント"], priceRange: "¥5,000〜¥20,000" },
-        { name: "特別感のある美容ギフト", keywords: ["美容", "ギフト", "特別感", "お母さん", "プレゼント"], priceRange: "¥8,000〜¥30,000" },
-        { name: "バランスの良い美容ギフト", keywords: ["美容", "ギフト", "バランス", "お母さん", "プレゼント"], priceRange: "¥6,000〜¥25,000" }
+        { name: "実用的なギフト", keywords: ["実用", "ギフト", "お母さん", "プレゼント"], priceRange: "¥5,000〜¥20,000" },
+        { name: "特別感のあるギフト", keywords: ["特別感", "ギフト", "お母さん", "プレゼント"], priceRange: "¥8,000〜¥30,000" },
+        { name: "上質なギフト", keywords: ["上質", "ギフト", "お母さん", "プレゼント"], priceRange: "¥10,000〜¥35,000" }
       );
   }
 
