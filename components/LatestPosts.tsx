@@ -95,7 +95,7 @@ function getArticlePath(slug: string, category: string): string {
     // その他のイベント記事は一般的なパス
     return `/articles/events/${slug}`;
   }
-  if (category === "日本酒") {
+  if (category === "日本酒" || category === "japanesesake") {
     // typeフィールドまたはslugから推測してサブディレクトリを決定
     if (slug.includes("knowledge") || slug.includes("2025-10-11-nihonshu-intro")) {
       return `/articles/japanesesake/knowledge/${slug}`;
