@@ -33,7 +33,7 @@ export default function BirthdayGiftsPage() {
           </div>
 
           {/* カテゴリ一覧 */}
-          <div className="grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-12">
+          <div className="grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-5 mb-12">
             {/* 実母向け */}
             <Link 
               href="/events/birthday/mother" 
@@ -110,6 +110,26 @@ export default function BirthdayGiftsPage() {
                 </h3>
                 <p className="text-gray-600 text-sm">
                   堅すぎず気が利いた、義理の父へのギフト選び
+                </p>
+              </div>
+            </Link>
+
+            {/* 恋人向け */}
+            <Link 
+              href="/gift/couple/birthday" 
+              className="group block bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 p-6 hover:-translate-y-1"
+            >
+              <div className="text-center">
+                <div className="w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center">
+                  <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
+                  恋人へのプレゼント
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  彼氏・彼女の誕生日に贈る人気ギフト特集。年代・性格別に選びやすく、サプライズ演出やペアアイテムも紹介。
                 </p>
               </div>
             </Link>
