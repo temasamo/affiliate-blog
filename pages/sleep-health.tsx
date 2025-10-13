@@ -109,7 +109,27 @@ export default function SleepHealth({ knowledgeArticles, recommendArticles }: { 
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
-              </Link>            </div>
+              </Link>
+              {/* グループ5（朝スッキリ編）へのカード */}
+              <Link
+                href="/articles/sleep-health/pillow/summary/group5"
+                className="block rounded-2xl bg-gradient-to-br from-pink-50 to-rose-50 p-6 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="text-xs text-gray-500 mb-2">枕診断シリーズ</div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  グループ5（朝スッキリ編）｜朝・姿勢・家族・季節まで
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  生活に寄り添う枕選び。朝スッキリ、ストレートネック、カップル、子ども、季節対応まで。
+                </p>
+                <div className="mt-3 flex items-center text-sm text-pink-600">
+                  <span>まとめページへ</span>
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </Link>
+            </div>
           </div>
 
           {/* Recomend セクション */}
