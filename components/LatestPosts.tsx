@@ -37,6 +37,7 @@ function getArticlePath(slug: string, category: string): string {
       "morning-refresh-pillow",
       "straight-neck-pillow",
       "couple-pillow",
+      "kids-pillow",
     ];
     if (group5Slugs.includes(slug)) {
       return `/articles/sleep-health/pillow/group5/${slug}`;
