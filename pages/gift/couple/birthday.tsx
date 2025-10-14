@@ -62,12 +62,15 @@ export default function CoupleBirthdayGiftsPage() {
             {/* ギフト1: ペアアクセ/ペアウォッチ */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-48 rounded-lg overflow-hidden">
+                  <a href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fseiko3s%2Fsbtm170-ssdy020%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fseiko3s%2Fi%2F10055832%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade" target="_blank">
+                    <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/seiko3s/cabinet/cab02/sbtm170-ssdy020-a.jpg?_ex=500x500" alt="ペアウォッチ" style={{border: "medium", width: "100%", height: "100%", objectFit: "cover"}} />
+                  </a>
+                  <img src="https://i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: "0px"}} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">ペアアクセサリー・ペアウォッチ</h3>
-              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥8,000〜¥20,000）</p>
+              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥3,000〜¥60,000）</p>
               <p className="text-gray-600 mb-4">
                 形に残る“お揃い”は鉄板。<span className="font-semibold text-red-600">さりげないシンプル系</span>が長く使えて人気です。
               </p>
@@ -87,8 +90,11 @@ export default function CoupleBirthdayGiftsPage() {
             {/* ギフト2: ロマンチックギフト */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-48 rounded-lg overflow-hidden">
+                  <a href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Ffloreal%2Fch_01_a1000%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ffloreal%2Fi%2F10000701%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade" target="_blank">
+                    <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/floreal/cabinet/shohin_page/ch_01_a1000/ch_01_a1000_p2_01.jpg?_ex=500x500" alt="フラワーボックス" style={{border: "medium", width: "100%", height: "100%", objectFit: "cover"}} />
+                  </a>
+                  <img src="https://i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: "0px"}} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">フラワーボックス＋メッセージ</h3>
@@ -112,8 +118,11 @@ export default function CoupleBirthdayGiftsPage() {
             {/* ギフト3: 実用派ギフト */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-48 rounded-lg overflow-hidden">
+                  <a href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fnisyoshop%2Faromadiffuser%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fnisyoshop%2Fi%2F10000319%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade" target="_blank">
+                    <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/nisyoshop/cabinet/main01/aromadiffuser.jpg?_ex=500x500" alt="アロマ加湿器" style={{border: "medium", width: "100%", height: "100%", objectFit: "cover"}} />
+                  </a>
+                  <img src="https://i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: "0px"}} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">高品質スキンケア・アロマ加湿器</h3>
@@ -137,8 +146,11 @@ export default function CoupleBirthdayGiftsPage() {
             {/* ギフト4: 体験ギフト */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-48 rounded-lg overflow-hidden">
+                  <a href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fsowxp%2Frestaurant_red%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsowxp%2Fi%2F10000013%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade" target="_blank">
+                    <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sowxp/cabinet/restaurant-series/10767281/1restaurant.jpg?_ex=500x500" alt="レストラン体験ギフト" style={{border: "medium", width: "100%", height: "100%", objectFit: "cover"}} />
+                  </a>
+                  <img src="https://i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: "0px"}} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">サプライズディナー・宿泊体験</h3>
@@ -162,8 +174,11 @@ export default function CoupleBirthdayGiftsPage() {
             {/* ギフト5: おうち時間ギフト */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-48 rounded-lg overflow-hidden">
+                  <a href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fpurpleleaf%2F10000025%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fpurpleleaf%2Fi%2F10000032%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade" target="_blank">
+                    <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/purpleleaf/cabinet/disny/imgrc0103844102.jpg?_ex=500x500" alt="ペアマグ" style={{border: "medium", width: "100%", height: "100%", objectFit: "cover"}} />
+                  </a>
+                  <img src="https://i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: "0px"}} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">コーヒー・お茶・ペアマグ</h3>
