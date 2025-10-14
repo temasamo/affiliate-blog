@@ -69,21 +69,21 @@ export default function CoupleBirthdayGiftsPage() {
                   <img src="https://i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: "0px"}} />
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">ペアアクセサリー・ペアウォッチ</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">ペアウォッチ</h3>
               <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥3,000〜¥60,000）</p>
               <p className="text-gray-600 mb-4">
-                形に残る“お揃い”は鉄板。<span className="font-semibold text-red-600">さりげないシンプル系</span>が長く使えて人気です。
+                形に残る"お揃い"は鉄板。<span className="font-semibold text-red-600">さりげないシンプル系</span>が長く使えて人気です。
               </p>
               <Link 
-                href="/events/birthday/chat?category=ペアアクセサリー&target=恋人"
+                href="/events/birthday/chat?category=ペアウォッチ&target=恋人"
                 className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-2 px-4 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
               <div className="flex gap-2 justify-center">
-                <Link href="/api/out?mall=rakuten&brand=ペアアクセサリー ペアウォッチ" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
-                <Link href="/api/out?mall=amazon&brand=ペアアクセサリー ペアウォッチ" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
-                <Link href="/api/out?mall=yahoo&brand=ペアアクセサリー ペアウォッチ" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
+                <Link href="/api/out?mall=rakuten&brand=ペアウォッチ" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
+                <Link href="/api/out?mall=amazon&brand=ペアウォッチ" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
+                <Link href="/api/out?mall=yahoo&brand=ペアウォッチ" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
               </div>
             </div>
 
@@ -265,21 +265,21 @@ export default function CoupleBirthdayGiftsPage() {
                   <img src="https://i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: "0px"}} />
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">ロマンチックタイプ</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">ペアアクセサリー</h3>
               <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥3,000〜¥10,000）</p>
               <p className="text-gray-600 mb-4">
-                フラワーボックスやペアアクセなど、<span className="font-semibold text-red-600">気持ちが伝わる演出重視</span>のギフトに最適。
+                ペアリングやペアネックレスなど、<span className="font-semibold text-red-600">お揃いのアクセサリー</span>で特別感を演出。
               </p>
               <Link 
-                href="/gift/couple/ai?type=romantic"
+                href="/events/birthday/chat?category=ペアアクセサリー&target=恋人"
                 className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-2 px-4 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
               <div className="flex gap-2 justify-center">
-                <Link href="/api/out?mall=rakuten&brand=フラワーボックス ペアアクセサリー" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
-                <Link href="/api/out?mall=amazon&brand=フラワーボックス ペアアクセサリー" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
-                <Link href="/api/out?mall=yahoo&brand=フラワーボックス ペアアクセサリー" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
+                <Link href="/api/out?mall=rakuten&brand=ペアアクセサリー" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
+                <Link href="/api/out?mall=amazon&brand=ペアアクセサリー" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
+                <Link href="/api/out?mall=yahoo&brand=ペアアクセサリー" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
               </div>
             </div>
 
