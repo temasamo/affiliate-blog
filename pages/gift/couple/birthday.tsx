@@ -75,7 +75,7 @@ export default function CoupleBirthdayGiftsPage() {
                 形に残る"お揃い"は鉄板。<span className="font-semibold text-red-600">さりげないシンプル系</span>が長く使えて人気です。
               </p>
               <Link 
-                href="/events/birthday/chat?category=ペアウォッチ&target=恋人"
+                href="/events/birthday/chat?category=ペアアクセサリー&target=恋人"
                 className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-2 px-4 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
