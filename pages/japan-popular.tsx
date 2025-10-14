@@ -158,7 +158,7 @@ export const getStaticProps: GetStaticProps<JapanPopularProps> = async () => {
   if (fs.existsSync(recommendPath)) {
     const files = fs.readdirSync(recommendPath);
     files.forEach(file => {
-      if (file.endsWith('.md')) {
+      if (file.endsWith('.md') || file.endsWith('.mdx')) {
         const filePath = path.join(recommendPath, file);
         const fileContents = fs.readFileSync(filePath, 'utf8');
         const { data: frontMatter } = matter(fileContents);
@@ -179,7 +179,7 @@ export const getStaticProps: GetStaticProps<JapanPopularProps> = async () => {
   if (fs.existsSync(knowledgePath)) {
     const files = fs.readdirSync(knowledgePath);
     files.forEach(file => {
-      if (file.endsWith('.md')) {
+      if (file.endsWith('.md') || file.endsWith('.mdx')) {
         const filePath = path.join(knowledgePath, file);
         const fileContents = fs.readFileSync(filePath, 'utf8');
         const { data: frontMatter } = matter(fileContents);

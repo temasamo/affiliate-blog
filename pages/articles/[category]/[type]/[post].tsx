@@ -1016,6 +1016,49 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
           <GlobalHotPicksAds date={frontMatter.date || '2025-08-14'} />
         )}
 
+        {/* ペット用品記事の場合のみ広告表示 */}
+        {category === 'japaneseproducts-popular-with-foreigners' && post === '250108-japan-popular-pet-products' && (
+          <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 mt-6 sm:mt-8">
+            <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">🛒 おすすめペット用品</h2>
+            <p className="text-sm text-gray-600 mb-6">初めてペットを飼う方におすすめの商品を厳選してご紹介します。品質とコストパフォーマンスを重視した商品を選んでいます。</p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* 犬用品特集 */}
+              <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-4">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">🐕 犬用品特集</h3>
+                <ul className="space-y-2">
+                  <li><a href="/api/out?mall=amazon&brand=犬用品 フードボウル" target="_blank" rel="nofollow" referrerPolicy="no-referrer-when-downgrade" className="text-sm text-blue-600 hover:text-blue-800 underline">Amazonで犬用フードボウルを探す</a></li>
+                  <li><a href="/api/out?mall=amazon&brand=犬用品 首輪 リード" target="_blank" rel="nofollow" referrerPolicy="no-referrer-when-downgrade" className="text-sm text-blue-600 hover:text-blue-800 underline">Amazonで犬用首輪・リードを探す</a></li>
+                  <li><a href="/api/out?mall=amazon&brand=犬用品 ケージ" target="_blank" rel="nofollow" referrerPolicy="no-referrer-when-downgrade" className="text-sm text-blue-600 hover:text-blue-800 underline">Amazonで犬用ケージを探す</a></li>
+                  <li><a href="/api/out?mall=amazon&brand=犬用品 おもちゃ" target="_blank" rel="nofollow" referrerPolicy="no-referrer-when-downgrade" className="text-sm text-blue-600 hover:text-blue-800 underline">Amazonで犬用おもちゃを探す</a></li>
+                </ul>
+              </div>
+
+              {/* 猫用品特集 */}
+              <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-4">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">🐱 猫用品特集</h3>
+                <ul className="space-y-2">
+                  <li><a href="/api/out?mall=amazon&brand=猫用品 フードボウル" target="_blank" rel="nofollow" referrerPolicy="no-referrer-when-downgrade" className="text-sm text-blue-600 hover:text-blue-800 underline">Amazonで猫用フードボウルを探す</a></li>
+                  <li><a href="/api/out?mall=amazon&brand=猫用品 トイレ" target="_blank" rel="nofollow" referrerPolicy="no-referrer-when-downgrade" className="text-sm text-blue-600 hover:text-blue-800 underline">Amazonで猫用トイレを探す</a></li>
+                  <li><a href="/api/out?mall=amazon&brand=猫用品 爪とぎ" target="_blank" rel="nofollow" referrerPolicy="no-referrer-when-downgrade" className="text-sm text-blue-600 hover:text-blue-800 underline">Amazonで猫用爪とぎを探す</a></li>
+                  <li><a href="/api/out?mall=amazon&brand=猫用品 キャットタワー" target="_blank" rel="nofollow" referrerPolicy="no-referrer-when-downgrade" className="text-sm text-blue-600 hover:text-blue-800 underline">Amazonでキャットタワーを探す</a></li>
+                </ul>
+              </div>
+
+              {/* ペット用品全般 */}
+              <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-xl p-4">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">🐾 ペット用品全般</h3>
+                <ul className="space-y-2">
+                  <li><a href="/api/out?mall=amazon&brand=ペットフード" target="_blank" rel="nofollow" referrerPolicy="no-referrer-when-downgrade" className="text-sm text-blue-600 hover:text-blue-800 underline">Amazonでペットフードを探す</a></li>
+                  <li><a href="/api/out?mall=amazon&brand=ペット用品 ブラシ" target="_blank" rel="nofollow" referrerPolicy="no-referrer-when-downgrade" className="text-sm text-blue-600 hover:text-blue-800 underline">Amazonでペットブラシを探す</a></li>
+                  <li><a href="/api/out?mall=amazon&brand=ペット用品 キャリーケース" target="_blank" rel="nofollow" referrerPolicy="no-referrer-when-downgrade" className="text-sm text-blue-600 hover:text-blue-800 underline">Amazonでキャリーケースを探す</a></li>
+                  <li><a href="/api/out?mall=amazon&brand=ペット用品 おもちゃ" target="_blank" rel="nofollow" referrerPolicy="no-referrer-when-downgrade" className="text-sm text-blue-600 hover:text-blue-800 underline">Amazonでペットおもちゃを探す</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* 関連記事 */}
         <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 mt-6 sm:mt-8">
           <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">関連記事</h2>
