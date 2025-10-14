@@ -202,8 +202,11 @@ export default function CoupleBirthdayGiftsPage() {
             {/* ギフト6: 冬小物 */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-48 rounded-lg overflow-hidden">
+                  <a href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fqueenhead%2F7033-1%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fqueenhead%2Fi%2F10001606%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade" target="_blank">
+                    <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/queenhead/cabinet/23aw/23aw7033_0.jpg?_ex=500x500" alt="ストール" style={{border: "medium", width: "100%", height: "100%", objectFit: "cover"}} />
+                  </a>
+                  <img src="https://i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: "0px"}} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">手袋・ストール・ルームウェア</h3>
@@ -227,8 +230,11 @@ export default function CoupleBirthdayGiftsPage() {
             {/* タイプ別カード: 実用派タイプ */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-48 rounded-lg overflow-hidden">
+                  <a href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fno-plan%2F10000000%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fno-plan%2Fi%2F10000000%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade" target="_blank">
+                    <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/no-plan/cabinet/05804571/blthumbnail2.jpg?_ex=500x500" alt="スマートウォッチ" style={{border: "medium", width: "100%", height: "100%", objectFit: "cover"}} />
+                  </a>
+                  <img src="https://i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: "0px"}} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">実用派タイプ</h3>
@@ -252,8 +258,11 @@ export default function CoupleBirthdayGiftsPage() {
             {/* タイプ別カード: ロマンチックタイプ */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-48 rounded-lg overflow-hidden">
+                  <a href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fm-dragon%2Fac125%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fm-dragon%2Fi%2F10000171%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade" target="_blank">
+                    <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/m-dragon/cabinet/accessories/ac057/compass1589162755.jpg?_ex=500x500" alt="ペアアクセサリー" style={{border: "medium", width: "100%", height: "100%", objectFit: "cover"}} />
+                  </a>
+                  <img src="https://i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: "0px"}} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">ロマンチックタイプ</h3>
@@ -277,8 +286,11 @@ export default function CoupleBirthdayGiftsPage() {
             {/* タイプ別カード: 趣味・共感タイプ */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-48 rounded-lg overflow-hidden">
+                  <a href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Ftiarise%2Fasc-m%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftiarise%2Fi%2F10000371%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade" target="_blank">
+                    <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/tiarise/cabinet/products01/bag/item1_ascmn.jpg?_ex=500x500" alt="バッグ" style={{border: "medium", width: "100%", height: "100%", objectFit: "cover"}} />
+                  </a>
+                  <img src="https://i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: "0px"}} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">趣味・共感タイプ</h3>
