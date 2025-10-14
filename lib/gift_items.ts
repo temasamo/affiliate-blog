@@ -562,8 +562,96 @@ export const questionFlows = {
   ]
 };
 
-// 実父・義父・実母向け質問フローを統合
-Object.assign(questionFlows, fatherQuestionFlows, fatherInLawQuestionFlows, motherQuestionFlows);
+// 恋人向け質問フロー
+const coupleQuestionFlows = {
+  "ペアアクセサリー": [
+    {
+      question: "恋人の普段のファッションスタイルは？",
+      options: ["シンプル・カジュアル", "おしゃれ・トレンド", "上品・エレガント", "わからない"]
+    },
+    {
+      question: "どんなアクセサリーがお好きそうですか？",
+      options: ["シンプルなデザイン", "華やかなデザイン", "ブランド物", "わからない"]
+    },
+    {
+      question: "予算はどのくらいですか？",
+      options: ["5,000円未満", "5,000円〜10,000円", "10,000円〜20,000円", "20,000円以上"]
+    }
+  ],
+  "フラワーギフト": [
+    {
+      question: "恋人の好きな花の色は？",
+      options: ["ピンク系", "白系", "赤系", "わからない"]
+    },
+    {
+      question: "どんな印象のギフトにしたいですか？",
+      options: ["華やかで特別感", "上品で落ち着いた", "可愛らしく親しみやすい", "わからない"]
+    },
+    {
+      question: "予算はどのくらいですか？",
+      options: ["3,000円未満", "3,000円〜5,000円", "5,000円〜10,000円", "10,000円以上"]
+    }
+  ],
+  "美容・スキンケア": [
+    {
+      question: "恋人の普段のスキンケアは？",
+      options: ["シンプル（化粧水・乳液のみ）", "平均的（美容液なども使う）", "しっかり（多ステップ）", "わからない"]
+    },
+    {
+      question: "香りの好みは？",
+      options: ["無香料が好き", "ほんのり香る程度", "香りがある方が嬉しい", "わからない"]
+    },
+    {
+      question: "予算はどのくらいですか？",
+      options: ["5,000円未満", "5,000円〜10,000円", "10,000円〜20,000円", "20,000円以上"]
+    }
+  ],
+  "体験ギフト": [
+    {
+      question: "どんな体験がお好きそうですか？",
+      options: ["グルメ・レストラン", "旅行・宿泊", "エステ・スパ", "わからない"]
+    },
+    {
+      question: "一緒に楽しみたいですか？",
+      options: ["はい、一緒に楽しみたい", "一人で楽しんでもらいたい", "どちらでも良い"]
+    },
+    {
+      question: "予算はどのくらいですか？",
+      options: ["10,000円未満", "10,000円〜20,000円", "20,000円〜30,000円", "30,000円以上"]
+    }
+  ],
+  "おうち時間ギフト": [
+    {
+      question: "恋人の好きな飲み物は？",
+      options: ["コーヒー", "お茶", "その他", "わからない"]
+    },
+    {
+      question: "どんなスタイルのギフトにしたいですか？",
+      options: ["実用的で毎日使える", "特別感のある高級品", "可愛らしいデザイン", "わからない"]
+    },
+    {
+      question: "予算はどのくらいですか？",
+      options: ["2,000円未満", "2,000円〜5,000円", "5,000円〜10,000円", "10,000円以上"]
+    }
+  ],
+  "冬小物": [
+    {
+      question: "恋人の普段の服装の色味は？",
+      options: ["明るい色（白・ピンク・ベージュ）", "落ち着いた色（黒・グレー・ネイビー）", "カラフル", "わからない"]
+    },
+    {
+      question: "どんなスタイルがお好きそうですか？",
+      options: ["シンプル・カジュアル", "おしゃれ・トレンド", "上品・エレガント", "わからない"]
+    },
+    {
+      question: "予算はどのくらいですか？",
+      options: ["3,000円未満", "3,000円〜5,000円", "5,000円〜10,000円", "10,000円以上"]
+    }
+  ]
+};
+
+// 実父・義父・実母・恋人向け質問フローを統合
+Object.assign(questionFlows, fatherQuestionFlows, fatherInLawQuestionFlows, motherQuestionFlows, coupleQuestionFlows);
 
 // 旧形式との互換性のため残す
 export const teaQuestions: Question[] = [
@@ -677,8 +765,63 @@ export function generateCategorySuggestions(category: string, answers: Record<st
       suggestions = generateFatherInLawSuggestions(category, answers);
       break;
 
-    // 実母向けカテゴリ
+    // 恋人向けカテゴリ
+    case "ペアアクセサリー":
+      suggestions = generateCoupleAccessorySuggestions(answers);
+      break;
+    
+    case "フラワーギフト":
+      suggestions = generateCoupleFlowerSuggestions(answers);
+      break;
+    
     case "美容・スキンケア":
+      // 恋人向けの場合は特別なロジックを使用
+      if (answers.target === "恋人") {
+        suggestions = generateCoupleSkincareSuggestions(answers);
+      } else {
+        suggestions = generateMotherSuggestions(category, answers);
+        // 予算フィルタリングを適用
+        const budget = answers.question_4 || "";
+        if (budget) {
+          suggestions = filterSuggestionsByBudget(suggestions, budget);
+        }
+      }
+      break;
+    
+    case "体験ギフト":
+      // 恋人向けの場合は特別なロジックを使用
+      if (answers.target === "恋人") {
+        suggestions = generateCoupleExperienceSuggestions(answers);
+      } else {
+        suggestions = generateMotherSuggestions(category, answers);
+        // 予算フィルタリングを適用
+        const experienceBudget = answers.question_4 || "";
+        if (experienceBudget) {
+          suggestions = filterSuggestionsByBudget(suggestions, experienceBudget);
+        }
+      }
+      break;
+    
+    case "おうち時間ギフト":
+      // 恋人向けの場合は特別なロジックを使用
+      if (answers.target === "恋人") {
+        suggestions = generateCoupleHomeTimeSuggestions(answers);
+      } else {
+        suggestions = generateMotherSuggestions(category, answers);
+        // 予算フィルタリングを適用
+        const homeTimeBudget = answers.question_4 || "";
+        if (homeTimeBudget) {
+          suggestions = filterSuggestionsByBudget(suggestions, homeTimeBudget);
+        }
+      }
+      break;
+    
+    case "冬小物":
+      suggestions = generateCoupleWinterSuggestions(answers);
+      break;
+
+    // 実母向けカテゴリ（既存のロジック）
+    case "美容・スキンケア（実母）":
       suggestions = generateMotherSuggestions(category, answers);
       // 予算フィルタリングを適用
       const budget = answers.question_4 || "";
@@ -1535,4 +1678,228 @@ export function generateFlowerGiftSuggestions(flowerGiftAnswer: string): GiftIte
   }
 
   return suggestions;
+}
+
+// ===== 恋人向けカテゴリの提案ロジック =====
+
+// ペアアクセサリーの提案生成
+export function generateCoupleAccessorySuggestions(answers: Record<string, string>): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+  const style = answers.question_0 || "";
+  const accessoryType = answers.question_1 || "";
+  const budget = answers.question_2 || "";
+
+  // ファッションスタイルに基づく提案
+  if (style.includes("シンプル・カジュアル")) {
+    suggestions.push(
+      { name: "シンプルペアウォッチ", keywords: ["ペアウォッチ", "シンプル", "カジュアル", "お揃い"], priceRange: "¥8,000〜¥15,000" },
+      { name: "ミニマルペアリング", keywords: ["ペアリング", "ミニマル", "シンプル", "お揃い"], priceRange: "¥5,000〜¥12,000" },
+      { name: "カジュアルペアブレスレット", keywords: ["ペアブレスレット", "カジュアル", "シンプル", "お揃い"], priceRange: "¥3,000〜¥8,000" }
+    );
+  } else if (style.includes("おしゃれ・トレンド")) {
+    suggestions.push(
+      { name: "トレンドペアウォッチ", keywords: ["ペアウォッチ", "トレンド", "おしゃれ", "お揃い"], priceRange: "¥12,000〜¥25,000" },
+      { name: "ファッショナブルペアリング", keywords: ["ペアリング", "ファッション", "トレンド", "お揃い"], priceRange: "¥8,000〜¥18,000" },
+      { name: "スタイリッシュペアネックレス", keywords: ["ペアネックレス", "スタイリッシュ", "おしゃれ", "お揃い"], priceRange: "¥6,000〜¥15,000" }
+    );
+  } else if (style.includes("上品・エレガント")) {
+    suggestions.push(
+      { name: "エレガントペアウォッチ", keywords: ["ペアウォッチ", "エレガント", "上品", "お揃い"], priceRange: "¥15,000〜¥30,000" },
+      { name: "上品なペアリング", keywords: ["ペアリング", "上品", "エレガント", "お揃い"], priceRange: "¥10,000〜¥25,000" },
+      { name: "クラシックペアピアス", keywords: ["ペアピアス", "クラシック", "上品", "お揃い"], priceRange: "¥8,000〜¥20,000" }
+    );
+  } else {
+    // デフォルト提案
+    suggestions.push(
+      { name: "ベーシックペアウォッチ", keywords: ["ペアウォッチ", "ベーシック", "お揃い", "定番"], priceRange: "¥8,000〜¥20,000" },
+      { name: "シンプルペアリング", keywords: ["ペアリング", "シンプル", "お揃い", "定番"], priceRange: "¥5,000〜¥15,000" },
+      { name: "カジュアルペアブレスレット", keywords: ["ペアブレスレット", "カジュアル", "お揃い", "定番"], priceRange: "¥3,000〜¥10,000" }
+    );
+  }
+
+  return suggestions.slice(0, 3);
+}
+
+// フラワーギフトの提案生成
+export function generateCoupleFlowerSuggestions(answers: Record<string, string>): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+  const color = answers.question_0 || "";
+  const impression = answers.question_1 || "";
+  const budget = answers.question_2 || "";
+
+  // 花の色に基づく提案
+  if (color.includes("ピンク系")) {
+    suggestions.push(
+      { name: "ピンクローズギフト", keywords: ["ピンクローズ", "ロマンチック", "ギフト", "花"], priceRange: "¥3,000〜¥8,000" },
+      { name: "ピンクフラワーアレンジ", keywords: ["ピンク", "フラワーアレンジ", "可愛い", "ギフト"], priceRange: "¥4,000〜¥10,000" },
+      { name: "ピンクプリザーブドフラワー", keywords: ["ピンク", "プリザーブドフラワー", "長持ち", "ギフト"], priceRange: "¥5,000〜¥12,000" }
+    );
+  } else if (color.includes("白系")) {
+    suggestions.push(
+      { name: "ホワイトローズギフト", keywords: ["ホワイトローズ", "上品", "ギフト", "花"], priceRange: "¥3,000〜¥8,000" },
+      { name: "白いフラワーアレンジ", keywords: ["白", "フラワーアレンジ", "上品", "ギフト"], priceRange: "¥4,000〜¥10,000" },
+      { name: "ホワイトプリザーブドフラワー", keywords: ["白", "プリザーブドフラワー", "上品", "ギフト"], priceRange: "¥5,000〜¥12,000" }
+    );
+  } else if (color.includes("赤系")) {
+    suggestions.push(
+      { name: "レッドローズギフト", keywords: ["レッドローズ", "情熱的", "ギフト", "花"], priceRange: "¥3,000〜¥8,000" },
+      { name: "赤いフラワーアレンジ", keywords: ["赤", "フラワーアレンジ", "情熱的", "ギフト"], priceRange: "¥4,000〜¥10,000" },
+      { name: "レッドプリザーブドフラワー", keywords: ["赤", "プリザーブドフラワー", "情熱的", "ギフト"], priceRange: "¥5,000〜¥12,000" }
+    );
+  } else {
+    // デフォルト提案
+    suggestions.push(
+      { name: "ミックスフラワーギフト", keywords: ["ミックスフラワー", "カラフル", "ギフト", "花"], priceRange: "¥3,000〜¥8,000" },
+      { name: "季節のフラワーアレンジ", keywords: ["季節", "フラワーアレンジ", "ギフト", "花"], priceRange: "¥4,000〜¥10,000" },
+      { name: "プリザーブドフラワーギフト", keywords: ["プリザーブドフラワー", "長持ち", "ギフト", "花"], priceRange: "¥5,000〜¥12,000" }
+    );
+  }
+
+  return suggestions.slice(0, 3);
+}
+
+// 恋人向け美容・スキンケアの提案生成
+export function generateCoupleSkincareSuggestions(answers: Record<string, string>): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+  const skincareStyle = answers.question_0 || "";
+  const fragrance = answers.question_1 || "";
+  const budget = answers.question_2 || "";
+
+  // スキンケアスタイルに基づく提案
+  if (skincareStyle.includes("シンプル")) {
+    suggestions.push(
+      { name: "シンプルスキンケアセット", keywords: ["スキンケア", "シンプル", "化粧水", "乳液"], priceRange: "¥5,000〜¥10,000" },
+      { name: "ミニマル美容セット", keywords: ["美容", "ミニマル", "シンプル", "ケア"], priceRange: "¥4,000〜¥8,000" },
+      { name: "ベーシックケアギフト", keywords: ["ケア", "ベーシック", "シンプル", "ギフト"], priceRange: "¥3,000〜¥7,000" }
+    );
+  } else if (skincareStyle.includes("平均的")) {
+    suggestions.push(
+      { name: "美容液付きスキンケアセット", keywords: ["スキンケア", "美容液", "セット", "ケア"], priceRange: "¥8,000〜¥15,000" },
+      { name: "多機能美容セット", keywords: ["美容", "多機能", "セット", "ケア"], priceRange: "¥6,000〜¥12,000" },
+      { name: "充実ケアギフト", keywords: ["ケア", "充実", "美容液", "ギフト"], priceRange: "¥5,000〜¥10,000" }
+    );
+  } else if (skincareStyle.includes("しっかり")) {
+    suggestions.push(
+      { name: "フルステップスキンケアセット", keywords: ["スキンケア", "フルステップ", "多段階", "ケア"], priceRange: "¥12,000〜¥25,000" },
+      { name: "プレミアム美容セット", keywords: ["美容", "プレミアム", "高級", "セット"], priceRange: "¥10,000〜¥20,000" },
+      { name: "贅沢ケアギフト", keywords: ["ケア", "贅沢", "高級", "ギフト"], priceRange: "¥8,000〜¥18,000" }
+    );
+  } else {
+    // デフォルト提案
+    suggestions.push(
+      { name: "バランススキンケアセット", keywords: ["スキンケア", "バランス", "セット", "ケア"], priceRange: "¥6,000〜¥12,000" },
+      { name: "人気美容セット", keywords: ["美容", "人気", "セット", "ケア"], priceRange: "¥5,000〜¥10,000" },
+      { name: "定番ケアギフト", keywords: ["ケア", "定番", "ギフト", "美容"], priceRange: "¥4,000〜¥8,000" }
+    );
+  }
+
+  return suggestions.slice(0, 3);
+}
+
+// 恋人向け体験ギフトの提案生成
+export function generateCoupleExperienceSuggestions(answers: Record<string, string>): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+  const experienceType = answers.question_0 || "";
+  const together = answers.question_1 || "";
+  const budget = answers.question_2 || "";
+
+  // 体験タイプに基づく提案
+  if (experienceType.includes("グルメ・レストラン")) {
+    suggestions.push(
+      { name: "高級レストランディナー", keywords: ["レストラン", "ディナー", "グルメ", "体験"], priceRange: "¥15,000〜¥30,000" },
+      { name: "シェフ特製コース", keywords: ["シェフ", "コース", "グルメ", "体験"], priceRange: "¥12,000〜¥25,000" },
+      { name: "特別ディナー体験", keywords: ["ディナー", "特別", "グルメ", "体験"], priceRange: "¥10,000〜¥20,000" }
+    );
+  } else if (experienceType.includes("旅行・宿泊")) {
+    suggestions.push(
+      { name: "温泉宿泊プラン", keywords: ["温泉", "宿泊", "旅行", "体験"], priceRange: "¥20,000〜¥40,000" },
+      { name: "リゾートホテル宿泊", keywords: ["リゾート", "ホテル", "宿泊", "体験"], priceRange: "¥25,000〜¥50,000" },
+      { name: "特別宿泊体験", keywords: ["宿泊", "特別", "旅行", "体験"], priceRange: "¥15,000〜¥30,000" }
+    );
+  } else if (experienceType.includes("エステ・スパ")) {
+    suggestions.push(
+      { name: "高級エステ体験", keywords: ["エステ", "高級", "リラックス", "体験"], priceRange: "¥8,000〜¥20,000" },
+      { name: "スパトリートメント", keywords: ["スパ", "トリートメント", "リラックス", "体験"], priceRange: "¥10,000〜¥25,000" },
+      { name: "癒しエステ体験", keywords: ["エステ", "癒し", "リラックス", "体験"], priceRange: "¥6,000〜¥15,000" }
+    );
+  } else {
+    // デフォルト提案
+    suggestions.push(
+      { name: "特別体験ギフト", keywords: ["体験", "特別", "ギフト", "思い出"], priceRange: "¥10,000〜¥25,000" },
+      { name: "プレミアム体験", keywords: ["体験", "プレミアム", "特別", "ギフト"], priceRange: "¥8,000〜¥20,000" },
+      { name: "思い出体験ギフト", keywords: ["体験", "思い出", "ギフト", "特別"], priceRange: "¥6,000〜¥15,000" }
+    );
+  }
+
+  return suggestions.slice(0, 3);
+}
+
+// 恋人向けおうち時間ギフトの提案生成
+export function generateCoupleHomeTimeSuggestions(answers: Record<string, string>): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+  const drink = answers.question_0 || "";
+  const style = answers.question_1 || "";
+  const budget = answers.question_2 || "";
+
+  // 飲み物の好みに基づく提案
+  if (drink.includes("コーヒー")) {
+    suggestions.push(
+      { name: "高級コーヒーセット", keywords: ["コーヒー", "高級", "セット", "おうち時間"], priceRange: "¥3,000〜¥8,000" },
+      { name: "ペアコーヒーマグ", keywords: ["コーヒー", "ペア", "マグ", "お揃い"], priceRange: "¥2,000〜¥5,000" },
+      { name: "コーヒー器具セット", keywords: ["コーヒー", "器具", "セット", "おうち時間"], priceRange: "¥4,000〜¥10,000" }
+    );
+  } else if (drink.includes("お茶")) {
+    suggestions.push(
+      { name: "高級お茶セット", keywords: ["お茶", "高級", "セット", "おうち時間"], priceRange: "¥3,000〜¥8,000" },
+      { name: "ペアティーカップ", keywords: ["お茶", "ペア", "カップ", "お揃い"], priceRange: "¥2,000〜¥5,000" },
+      { name: "茶器セット", keywords: ["お茶", "茶器", "セット", "おうち時間"], priceRange: "¥4,000〜¥10,000" }
+    );
+  } else {
+    // デフォルト提案
+    suggestions.push(
+      { name: "おうち時間ギフトセット", keywords: ["おうち時間", "ギフト", "セット", "リラックス"], priceRange: "¥3,000〜¥8,000" },
+      { name: "ペアマグセット", keywords: ["ペア", "マグ", "セット", "お揃い"], priceRange: "¥2,000〜¥5,000" },
+      { name: "リラックスグッズセット", keywords: ["リラックス", "グッズ", "セット", "おうち時間"], priceRange: "¥4,000〜¥10,000" }
+    );
+  }
+
+  return suggestions.slice(0, 3);
+}
+
+// 恋人向け冬小物の提案生成
+export function generateCoupleWinterSuggestions(answers: Record<string, string>): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+  const color = answers.question_0 || "";
+  const style = answers.question_1 || "";
+  const budget = answers.question_2 || "";
+
+  // 色味に基づく提案
+  if (color.includes("明るい色")) {
+    suggestions.push(
+      { name: "明るい色の手袋", keywords: ["手袋", "明るい色", "冬", "小物"], priceRange: "¥3,000〜¥8,000" },
+      { name: "パステルストール", keywords: ["ストール", "パステル", "冬", "小物"], priceRange: "¥4,000〜¥10,000" },
+      { name: "明るいルームウェア", keywords: ["ルームウェア", "明るい色", "冬", "小物"], priceRange: "¥5,000〜¥12,000" }
+    );
+  } else if (color.includes("落ち着いた色")) {
+    suggestions.push(
+      { name: "落ち着いた色の手袋", keywords: ["手袋", "落ち着いた色", "冬", "小物"], priceRange: "¥3,000〜¥8,000" },
+      { name: "クラシックストール", keywords: ["ストール", "クラシック", "冬", "小物"], priceRange: "¥4,000〜¥10,000" },
+      { name: "上品なルームウェア", keywords: ["ルームウェア", "上品", "冬", "小物"], priceRange: "¥5,000〜¥12,000" }
+    );
+  } else if (color.includes("カラフル")) {
+    suggestions.push(
+      { name: "カラフル手袋", keywords: ["手袋", "カラフル", "冬", "小物"], priceRange: "¥3,000〜¥8,000" },
+      { name: "カラフルストール", keywords: ["ストール", "カラフル", "冬", "小物"], priceRange: "¥4,000〜¥10,000" },
+      { name: "カラフルルームウェア", keywords: ["ルームウェア", "カラフル", "冬", "小物"], priceRange: "¥5,000〜¥12,000" }
+    );
+  } else {
+    // デフォルト提案
+    suggestions.push(
+      { name: "冬小物ギフトセット", keywords: ["冬小物", "ギフト", "セット", "冬"], priceRange: "¥3,000〜¥8,000" },
+      { name: "定番手袋", keywords: ["手袋", "定番", "冬", "小物"], priceRange: "¥2,000〜¥6,000" },
+      { name: "人気ストール", keywords: ["ストール", "人気", "冬", "小物"], priceRange: "¥3,000〜¥8,000" }
+    );
+  }
+
+  return suggestions.slice(0, 3);
 }

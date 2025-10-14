@@ -245,13 +245,17 @@ export default function GiftChatUI({ category, target }: GiftChatUIProps) {
   const generateSuggestionsWithAnswers = (answersToUse: Record<string, string>) => {
     console.log("=== generateSuggestionsWithAnswers 呼び出し ===");
     console.log("カテゴリ:", category);
+    console.log("ターゲット:", target);
     console.log("回答:", answersToUse);
     
     addTypingMessage();
     
     setTimeout(() => {
+      // ターゲット情報を回答に追加
+      const answersWithTarget = { ...answersToUse, target };
+      
       // カテゴリ別の提案生成関数を使用
-      const suggestions = generateCategorySuggestions(category, answersToUse);
+      const suggestions = generateCategorySuggestions(category, answersWithTarget);
       
       const suggestionMessage: ChatMessage = {
         id: 'suggestions',
@@ -282,13 +286,17 @@ export default function GiftChatUI({ category, target }: GiftChatUIProps) {
   const generateSuggestions = () => {
     console.log("=== generateSuggestions 呼び出し ===");
     console.log("カテゴリ:", category);
+    console.log("ターゲット:", target);
     console.log("回答:", answers);
     
     addTypingMessage();
     
     setTimeout(() => {
+      // ターゲット情報を回答に追加
+      const answersWithTarget = { ...answers, target };
+      
       // カテゴリ別の提案生成関数を使用
-      const suggestions = generateCategorySuggestions(category, answers);
+      const suggestions = generateCategorySuggestions(category, answersWithTarget);
       
       const suggestionMessage: ChatMessage = {
         id: 'suggestions',

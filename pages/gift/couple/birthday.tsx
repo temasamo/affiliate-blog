@@ -56,57 +56,6 @@ export default function CoupleBirthdayGiftsPage() {
             </div>
           </div>
 
-          {/* AI相談セクション */}
-          <div className="bg-gradient-to-r from-red-100 to-pink-100 rounded-2xl p-8 mb-12 border border-red-200">
-            <div className="text-center">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                🤖 AI相談で“タイプ別”に最短提案
-              </h2>
-              <p className="text-gray-700 mb-6">
-                恋人の好みを3問で判定。タイプに合わせて最適なギフトを提案します。
-              </p>
-              <div className="grid gap-4 md:grid-cols-3">
-                <Link 
-                  href="/gift/couple/ai?type=practical"
-                  className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-red-200"
-                >
-                  <div className="text-center">
-                    <div className="w-12 h-12 mx-auto mb-3 bg-red-100 rounded-full flex items-center justify-center">
-                      <span className="text-xl">💼</span>
-                    </div>
-                    <h3 className="font-semibold text-gray-900 mb-1">実用派タイプ</h3>
-                    <p className="text-xs text-gray-600">AI相談で選ぶ</p>
-                  </div>
-                </Link>
-                
-                <Link 
-                  href="/gift/couple/ai?type=romantic"
-                  className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-red-200"
-                >
-                  <div className="text-center">
-                    <div className="w-12 h-12 mx-auto mb-3 bg-red-100 rounded-full flex items-center justify-center">
-                      <span className="text-xl">💐</span>
-                    </div>
-                    <h3 className="font-semibold text-gray-900 mb-1">ロマンチックタイプ</h3>
-                    <p className="text-xs text-gray-600">AI相談で選ぶ</p>
-                  </div>
-                </Link>
-                
-                <Link 
-                  href="/gift/couple/ai?type=hobby"
-                  className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow border border-red-200"
-                >
-                  <div className="text-center">
-                    <div className="w-12 h-12 mx-auto mb-3 bg-red-100 rounded-full flex items-center justify-center">
-                      <span className="text-xl">🎮</span>
-                    </div>
-                    <h3 className="font-semibold text-gray-900 mb-1">趣味・共感タイプ</h3>
-                    <p className="text-xs text-gray-600">AI相談で選ぶ</p>
-                  </div>
-                </Link>
-              </div>
-            </div>
-          </div>
 
           {/* ギフト一覧 */}
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
@@ -129,9 +78,9 @@ export default function CoupleBirthdayGiftsPage() {
                 🤖 AI相談で選ぶ
               </Link>
               <div className="flex gap-2 justify-center">
-                <Link href="/api/go/gift-accessory-rakuten" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
-                <Link href="/api/go/gift-accessory-amazon" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
-                <Link href="/api/go/gift-accessory-yahoo" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
+                <Link href="/api/out?mall=rakuten&brand=ペアアクセサリー ペアウォッチ" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
+                <Link href="/api/out?mall=amazon&brand=ペアアクセサリー ペアウォッチ" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
+                <Link href="/api/out?mall=yahoo&brand=ペアアクセサリー ペアウォッチ" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
               </div>
             </div>
 
@@ -154,9 +103,9 @@ export default function CoupleBirthdayGiftsPage() {
                 🤖 AI相談で選ぶ
               </Link>
               <div className="flex gap-2 justify-center">
-                <Link href="/api/go/gift-flower-rakuten" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
-                <Link href="/api/go/gift-flower-amazon" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
-                <Link href="/api/go/gift-flower-yahoo" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
+                <Link href="/api/out?mall=rakuten&brand=フラワーボックス ギフト" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
+                <Link href="/api/out?mall=amazon&brand=フラワーボックス ギフト" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
+                <Link href="/api/out?mall=yahoo&brand=フラワーボックス ギフト" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
               </div>
             </div>
 
@@ -179,9 +128,9 @@ export default function CoupleBirthdayGiftsPage() {
                 🤖 AI相談で選ぶ
               </Link>
               <div className="flex gap-2 justify-center">
-                <Link href="/api/go/gift-care-rakuten" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
-                <Link href="/api/go/gift-care-amazon" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
-                <Link href="/api/go/gift-care-yahoo" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
+                <Link href="/api/out?mall=rakuten&brand=スキンケア アロマ加湿器" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
+                <Link href="/api/out?mall=amazon&brand=スキンケア アロマ加湿器" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
+                <Link href="/api/out?mall=yahoo&brand=スキンケア アロマ加湿器" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
               </div>
             </div>
 
@@ -204,9 +153,9 @@ export default function CoupleBirthdayGiftsPage() {
                 🤖 AI相談で選ぶ
               </Link>
               <div className="flex gap-2 justify-center">
-                <Link href="/api/go/gift-experience-rakuten" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
-                <Link href="/api/go/gift-experience-amazon" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
-                <Link href="/api/go/gift-experience-yahoo" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
+                <Link href="/api/out?mall=rakuten&brand=体験ギフト ディナー 宿泊" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
+                <Link href="/api/out?mall=amazon&brand=体験ギフト ディナー 宿泊" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
+                <Link href="/api/out?mall=yahoo&brand=体験ギフト ディナー 宿泊" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
               </div>
             </div>
 
@@ -229,9 +178,9 @@ export default function CoupleBirthdayGiftsPage() {
                 🤖 AI相談で選ぶ
               </Link>
               <div className="flex gap-2 justify-center">
-                <Link href="/api/go/gift-home-rakuten" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
-                <Link href="/api/go/gift-home-amazon" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
-                <Link href="/api/go/gift-home-yahoo" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
+                <Link href="/api/out?mall=rakuten&brand=コーヒー お茶 ペアマグ" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
+                <Link href="/api/out?mall=amazon&brand=コーヒー お茶 ペアマグ" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
+                <Link href="/api/out?mall=yahoo&brand=コーヒー お茶 ペアマグ" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
               </div>
             </div>
 
@@ -254,9 +203,9 @@ export default function CoupleBirthdayGiftsPage() {
                 🤖 AI相談で選ぶ
               </Link>
               <div className="flex gap-2 justify-center">
-                <Link href="/api/go/gift-winter-rakuten" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
-                <Link href="/api/go/gift-winter-amazon" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
-                <Link href="/api/go/gift-winter-yahoo" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
+                <Link href="/api/out?mall=rakuten&brand=手袋 ストール ルームウェア" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
+                <Link href="/api/out?mall=amazon&brand=手袋 ストール ルームウェア" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
+                <Link href="/api/out?mall=yahoo&brand=手袋 ストール ルームウェア" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
               </div>
             </div>
 
@@ -279,9 +228,9 @@ export default function CoupleBirthdayGiftsPage() {
                 🤖 AI相談で選ぶ
               </Link>
               <div className="flex gap-2 justify-center">
-                <Link href="/api/go/gift-practical-rakuten" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
-                <Link href="/api/go/gift-practical-amazon" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
-                <Link href="/api/go/gift-practical-yahoo" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
+                <Link href="/api/out?mall=rakuten&brand=スマートウォッチ 名刺入れ 財布" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
+                <Link href="/api/out?mall=amazon&brand=スマートウォッチ 名刺入れ 財布" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
+                <Link href="/api/out?mall=yahoo&brand=スマートウォッチ 名刺入れ 財布" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
               </div>
             </div>
 
@@ -304,9 +253,9 @@ export default function CoupleBirthdayGiftsPage() {
                 🤖 AI相談で選ぶ
               </Link>
               <div className="flex gap-2 justify-center">
-                <Link href="/api/go/gift-romantic-rakuten" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
-                <Link href="/api/go/gift-romantic-amazon" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
-                <Link href="/api/go/gift-romantic-yahoo" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
+                <Link href="/api/out?mall=rakuten&brand=フラワーボックス ペアアクセサリー" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
+                <Link href="/api/out?mall=amazon&brand=フラワーボックス ペアアクセサリー" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
+                <Link href="/api/out?mall=yahoo&brand=フラワーボックス ペアアクセサリー" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
               </div>
             </div>
 
@@ -329,9 +278,9 @@ export default function CoupleBirthdayGiftsPage() {
                 🤖 AI相談で選ぶ
               </Link>
               <div className="flex gap-2 justify-center">
-                <Link href="/api/go/gift-hobby-rakuten" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
-                <Link href="/api/go/gift-hobby-amazon" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
-                <Link href="/api/go/gift-hobby-yahoo" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
+                <Link href="/api/out?mall=rakuten&brand=推し活グッズ 体験ギフト" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
+                <Link href="/api/out?mall=amazon&brand=推し活グッズ 体験ギフト" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
+                <Link href="/api/out?mall=yahoo&brand=推し活グッズ 体験ギフト" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
               </div>
             </div>
           </div>

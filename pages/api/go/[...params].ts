@@ -20,6 +20,52 @@ const AFFILIATE_URLS: Record<string, Record<string, string>> = {
     rakuten: 'https://af.moshimo.com/af/c/click?a_id=XXXX&p_id=54&pc_id=54&pl_id=6163&url=https://search.rakuten.co.jp/search/mall/高級+スキンケア+ギフト/',
     amazon: 'https://af.moshimo.com/af/c/click?a_id=XXXX&p_id=170&pc_id=185&pl_id=4062&url=https://www.amazon.co.jp/s?k=高級+スキンケア+ギフト',
     yahoo: 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=XXXX&pid=XXXX&vc_url=https://shopping.yahoo.co.jp/search?p=高級+スキンケア+ギフト'
+  },
+  // 恋人向けギフト関連
+  'gift-accessory': {
+    rakuten: 'https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=' + encodeURIComponent('https://search.rakuten.co.jp/search/mall/ペアアクセサリー+ペアウォッチ/'),
+    amazon: 'https://af.moshimo.com/af/c/click?a_id=5122395&p_id=170&pc_id=185&pl_id=4062&url=' + encodeURIComponent('https://www.amazon.co.jp/s?k=ペアアクセサリー+ペアウォッチ'),
+    yahoo: 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&vc_url=' + encodeURIComponent('https://shopping.yahoo.co.jp/search?p=ペアアクセサリー+ペアウォッチ')
+  },
+  'gift-flower': {
+    rakuten: 'https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=' + encodeURIComponent('https://search.rakuten.co.jp/search/mall/フラワーボックス+ギフト/'),
+    amazon: 'https://af.moshimo.com/af/c/click?a_id=5122395&p_id=170&pc_id=185&pl_id=4062&url=' + encodeURIComponent('https://www.amazon.co.jp/s?k=フラワーボックス+ギフト'),
+    yahoo: 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&vc_url=' + encodeURIComponent('https://shopping.yahoo.co.jp/search?p=フラワーボックス+ギフト')
+  },
+  'gift-care': {
+    rakuten: 'https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=' + encodeURIComponent('https://search.rakuten.co.jp/search/mall/スキンケア+アロマ加湿器/'),
+    amazon: 'https://af.moshimo.com/af/c/click?a_id=5122395&p_id=170&pc_id=185&pl_id=4062&url=' + encodeURIComponent('https://www.amazon.co.jp/s?k=スキンケア+アロマ加湿器'),
+    yahoo: 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&vc_url=' + encodeURIComponent('https://shopping.yahoo.co.jp/search?p=スキンケア+アロマ加湿器')
+  },
+  'gift-experience': {
+    rakuten: 'https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=' + encodeURIComponent('https://search.rakuten.co.jp/search/mall/体験ギフト+ディナー+宿泊/'),
+    amazon: 'https://af.moshimo.com/af/c/click?a_id=5122395&p_id=170&pc_id=185&pl_id=4062&url=' + encodeURIComponent('https://www.amazon.co.jp/s?k=体験ギフト+ディナー+宿泊'),
+    yahoo: 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&vc_url=' + encodeURIComponent('https://shopping.yahoo.co.jp/search?p=体験ギフト+ディナー+宿泊')
+  },
+  'gift-home': {
+    rakuten: 'https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=' + encodeURIComponent('https://search.rakuten.co.jp/search/mall/コーヒー+お茶+ペアマグ/'),
+    amazon: 'https://af.moshimo.com/af/c/click?a_id=5122395&p_id=170&pc_id=185&pl_id=4062&url=' + encodeURIComponent('https://www.amazon.co.jp/s?k=コーヒー+お茶+ペアマグ'),
+    yahoo: 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&vc_url=' + encodeURIComponent('https://shopping.yahoo.co.jp/search?p=コーヒー+お茶+ペアマグ')
+  },
+  'gift-winter': {
+    rakuten: 'https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=' + encodeURIComponent('https://search.rakuten.co.jp/search/mall/手袋+ストール+ルームウェア/'),
+    amazon: 'https://af.moshimo.com/af/c/click?a_id=5122395&p_id=170&pc_id=185&pl_id=4062&url=' + encodeURIComponent('https://www.amazon.co.jp/s?k=手袋+ストール+ルームウェア'),
+    yahoo: 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&vc_url=' + encodeURIComponent('https://shopping.yahoo.co.jp/search?p=手袋+ストール+ルームウェア')
+  },
+  'gift-practical': {
+    rakuten: 'https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=' + encodeURIComponent('https://search.rakuten.co.jp/search/mall/スマートウォッチ+名刺入れ+財布/'),
+    amazon: 'https://af.moshimo.com/af/c/click?a_id=5122395&p_id=170&pc_id=185&pl_id=4062&url=' + encodeURIComponent('https://www.amazon.co.jp/s?k=スマートウォッチ+名刺入れ+財布'),
+    yahoo: 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&vc_url=' + encodeURIComponent('https://shopping.yahoo.co.jp/search?p=スマートウォッチ+名刺入れ+財布')
+  },
+  'gift-romantic': {
+    rakuten: 'https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=' + encodeURIComponent('https://search.rakuten.co.jp/search/mall/フラワーボックス+ペアアクセサリー/'),
+    amazon: 'https://af.moshimo.com/af/c/click?a_id=5122395&p_id=170&pc_id=185&pl_id=4062&url=' + encodeURIComponent('https://www.amazon.co.jp/s?k=フラワーボックス+ペアアクセサリー'),
+    yahoo: 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&vc_url=' + encodeURIComponent('https://shopping.yahoo.co.jp/search?p=フラワーボックス+ペアアクセサリー')
+  },
+  'gift-hobby': {
+    rakuten: 'https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=' + encodeURIComponent('https://search.rakuten.co.jp/search/mall/推し活グッズ+体験ギフト/'),
+    amazon: 'https://af.moshimo.com/af/c/click?a_id=5122395&p_id=170&pc_id=185&pl_id=4062&url=' + encodeURIComponent('https://www.amazon.co.jp/s?k=推し活グッズ+体験ギフト'),
+    yahoo: 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&vc_url=' + encodeURIComponent('https://shopping.yahoo.co.jp/search?p=推し活グッズ+体験ギフト')
   }
 };
 
