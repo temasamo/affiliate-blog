@@ -381,19 +381,19 @@ export default function MotherBirthdayGiftsPage() {
               </Link>
               <div className="flex gap-2 justify-center">
                 <Link 
-                  href="https://www.rakuten.co.jp/" 
+                  href="/api/out?mall=rakuten&brand=名入れ・メッセージ入りギフト" 
                   className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
                 >
                   楽天
                 </Link>
                 <Link 
-                  href="https://www.amazon.co.jp/" 
+                  href="/api/out?mall=amazon&brand=名入れ・メッセージ入りギフト" 
                   className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
                 >
                   Amazon
                 </Link>
                 <Link 
-                  href="https://shopping.yahoo.co.jp/" 
+                  href="/api/out?mall=yahoo&brand=名入れ・メッセージ入りギフト" 
                   className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
                 >
                   Yahoo
@@ -422,19 +422,19 @@ export default function MotherBirthdayGiftsPage() {
               </Link>
               <div className="flex gap-2 justify-center">
                 <Link 
-                  href="https://www.rakuten.co.jp/" 
+                  href="/api/out?mall=rakuten&brand=フォトアルバム・家族の思い出ギフト" 
                   className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
                 >
                   楽天
                 </Link>
                 <Link 
-                  href="https://www.amazon.co.jp/" 
+                  href="/api/out?mall=amazon&brand=フォトアルバム・家族の思い出ギフト" 
                   className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
                 >
                   Amazon
                 </Link>
                 <Link 
-                  href="https://shopping.yahoo.co.jp/" 
+                  href="/api/out?mall=yahoo&brand=フォトアルバム・家族の思い出ギフト" 
                   className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
                 >
                   Yahoo
