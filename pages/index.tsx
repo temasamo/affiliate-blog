@@ -459,14 +459,14 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
 
   // 新着記事を取得（旅行記事を除外）
   const latest = await getLatestPosts(10);
-  const nonTravelLatest = latest.filter(post => post.category !== '旅行');
+  const nonTravelLatest = latest.filter(post => post.category !== '旅行' && post.category !== '温泉地ガイド');
   
   // 旅行記事も新着記事に含める
   const allLatestPosts = [...nonTravelLatest, ...travelPosts];
   
-  // 重複を除去（slugでユニークにする）
+  // 重複を除去（slugとtitleの組み合わせでユニークにする）
   const uniqueLatestPosts = allLatestPosts.filter((post, index, self) => 
-    index === self.findIndex(p => p.slug === post.slug)
+    index === self.findIndex(p => p.slug === post.slug && p.title === post.title)
   );
   
   uniqueLatestPosts.sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
