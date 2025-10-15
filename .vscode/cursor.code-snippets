@@ -1,0 +1,45 @@
+{
+  "Affiliate Links (旅館予約ブロック)": {
+    "prefix": "affiliate-links",
+    "body": [
+      "## ご予約はこちらから",
+      "",
+      "- [${1:旅館名}公式サイト](${2:https://example.com}) - ベストレート保証・直予約特典  ",
+      "- [楽天トラベルで${1:旅館名}を探す](https://af.moshimo.com/af/c/click?a_id=5140401&p_id=55&pc_id=55&pl_id=636&url=${3:https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2Fxxxxxx%2Fxxxxxx.html})  ",
+      "- [じゃらんで${1:旅館名}を探す](https://px.a8.net/svt/ejp?a8mat=45BUIQ+EJC1IQ+14CS+68EPE&url=${4:https%3A%2F%2Fwww.jalan.net%2Fyadxxxxxx%2F})  ",
+      "- [一休.comで${1:旅館名}を探す](https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=891975133&url=${5:https%3A%2F%2Fwww.ikyu.com%2F00000000%2F%3Fppc%3D2%26rc%3D1})  ",
+      "- [Yahoo!トラベルで${1:旅館名}を探す](https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3751180&pid=892040663&vc_url=${6:https%3A%2F%2Ftravel.yahoo.co.jp%2F00000000%2F%3Fdiscsort%3D1%26lc%3D1%26ppc%3D2%26rc%3D1%26st%3D1})"
+    ],
+    "description": "旅館紹介記事の末尾に挿入する公式＋4モールアフィリエイトリンクブロック"
+  },
+  "旅館記事フロントマター": {
+    "prefix": "ryokan-frontmatter",
+    "body": [
+      "---",
+      "title: \"${1:旅館名}（${2:都道府県・地域}）で過ごす極上の休日【${3:前編/後編}】｜${4:キャッチコピー}\"",
+      "date: \"${5:2025-XX-XX}\"",
+      "category: \"旅行\"",
+      "subcategory: \"個別旅館\"",
+      "tags: [\"${2:都道府県}\", \"${6:温泉地名}\", \"${1:旅館名}\", \"高級旅館\", \"美食\", \"AI旅行計画\"]",
+      "author: \"Market Supporter\"",
+      "lang: \"ja\"",
+      "description: \"${7:旅館の魅力を簡潔に表現した説明文}\"",
+      "published: true",
+      "---"
+    ],
+    "description": "個別旅館記事用のフロントマター"
+  },
+  "旅館記事セクション": {
+    "prefix": "ryokan-section",
+    "body": [
+      "## ${1:セクション名}",
+      "",
+      "${2:セクションの内容をここに記述}",
+      "",
+      "### ${3:サブセクション名}",
+      "",
+      "${4:サブセクションの内容}"
+    ],
+    "description": "旅館記事のセクション構造"
+  }
+}

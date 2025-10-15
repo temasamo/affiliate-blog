@@ -57,7 +57,8 @@ export default function FatherBirthdayGiftsPage() {
             </div>
           </div>
 
-          {/* AI相談セクション */}
+          {/* AI相談セクション - 一時的に非表示 */}
+          {/* 
           <div className="bg-gradient-to-r from-blue-100 to-green-100 rounded-2xl p-8 mb-12 border border-blue-200">
             <div className="text-center">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
@@ -109,6 +110,7 @@ export default function FatherBirthdayGiftsPage() {
               </div>
             </div>
           </div>
+          */}
 
           {/* ギフト一覧 */}
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
@@ -133,19 +135,19 @@ export default function FatherBirthdayGiftsPage() {
               </Link>
               <div className="flex gap-2 justify-center">
                 <Link 
-                  href="https://www.rakuten.co.jp/" 
+                  href="/api/out?mall=rakuten&brand=マッサージ機器" 
                   className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
                 >
                   楽天
                 </Link>
                 <Link 
-                  href="https://www.amazon.co.jp/" 
+                  href="/api/out?mall=amazon&brand=マッサージ機器" 
                   className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
                 >
                   Amazon
                 </Link>
                 <Link 
-                  href="https://shopping.yahoo.co.jp/" 
+                  href="/api/out?mall=yahoo&brand=マッサージ機器" 
                   className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
                 >
                   Yahoo
@@ -174,19 +176,19 @@ export default function FatherBirthdayGiftsPage() {
               </Link>
               <div className="flex gap-2 justify-center">
                 <Link 
-                  href="https://www.rakuten.co.jp/" 
+                  href="/api/out?mall=rakuten&brand=お酒ギフト" 
                   className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
                 >
                   楽天
                 </Link>
                 <Link 
-                  href="https://www.amazon.co.jp/" 
+                  href="/api/out?mall=amazon&brand=お酒ギフト" 
                   className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
                 >
                   Amazon
                 </Link>
                 <Link 
-                  href="https://shopping.yahoo.co.jp/" 
+                  href="/api/out?mall=yahoo&brand=お酒ギフト" 
                   className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
                 >
                   Yahoo
@@ -215,19 +217,19 @@ export default function FatherBirthdayGiftsPage() {
               </Link>
               <div className="flex gap-2 justify-center">
                 <Link 
-                  href="https://www.rakuten.co.jp/" 
+                  href="/api/out?mall=rakuten&brand=健康食品・サプリメント" 
                   className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
                 >
                   楽天
                 </Link>
                 <Link 
-                  href="https://www.amazon.co.jp/" 
+                  href="/api/out?mall=amazon&brand=健康食品・サプリメント" 
                   className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
                 >
                   Amazon
                 </Link>
                 <Link 
-                  href="https://shopping.yahoo.co.jp/" 
+                  href="/api/out?mall=yahoo&brand=健康食品・サプリメント" 
                   className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
                 >
                   Yahoo
@@ -256,19 +258,19 @@ export default function FatherBirthdayGiftsPage() {
               </Link>
               <div className="flex gap-2 justify-center">
                 <Link 
-                  href="https://www.rakuten.co.jp/" 
+                  href="/api/out?mall=rakuten&brand=睡眠グッズ" 
                   className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
                 >
                   楽天
                 </Link>
                 <Link 
-                  href="https://www.amazon.co.jp/" 
+                  href="/api/out?mall=amazon&brand=睡眠グッズ" 
                   className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
                 >
                   Amazon
                 </Link>
                 <Link 
-                  href="https://shopping.yahoo.co.jp/" 
+                  href="/api/out?mall=yahoo&brand=睡眠グッズ" 
                   className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
                 >
                   Yahoo
@@ -297,19 +299,19 @@ export default function FatherBirthdayGiftsPage() {
               </Link>
               <div className="flex gap-2 justify-center">
                 <Link 
-                  href="https://www.rakuten.co.jp/" 
+                  href="/api/out?mall=rakuten&brand=グルメギフト" 
                   className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
                 >
                   楽天
                 </Link>
                 <Link 
-                  href="https://www.amazon.co.jp/" 
+                  href="/api/out?mall=amazon&brand=グルメギフト" 
                   className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
                 >
                   Amazon
                 </Link>
                 <Link 
-                  href="https://shopping.yahoo.co.jp/" 
+                  href="/api/out?mall=yahoo&brand=グルメギフト" 
                   className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
                 >
                   Yahoo
@@ -338,19 +340,19 @@ export default function FatherBirthdayGiftsPage() {
               </Link>
               <div className="flex gap-2 justify-center">
                 <Link 
-                  href="https://www.rakuten.co.jp/" 
+                  href="/api/out?mall=rakuten&brand=家電ガジェット" 
                   className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
                 >
                   楽天
                 </Link>
                 <Link 
-                  href="https://www.amazon.co.jp/" 
+                  href="/api/out?mall=amazon&brand=家電ガジェット" 
                   className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
                 >
                   Amazon
                 </Link>
                 <Link 
-                  href="https://shopping.yahoo.co.jp/" 
+                  href="/api/out?mall=yahoo&brand=家電ガジェット" 
                   className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
                 >
                   Yahoo
@@ -379,19 +381,19 @@ export default function FatherBirthdayGiftsPage() {
               </Link>
               <div className="flex gap-2 justify-center">
                 <Link 
-                  href="https://www.rakuten.co.jp/" 
+                  href="/api/out?mall=rakuten&brand=趣味グッズ" 
                   className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
                 >
                   楽天
                 </Link>
                 <Link 
-                  href="https://www.amazon.co.jp/" 
+                  href="/api/out?mall=amazon&brand=趣味グッズ" 
                   className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
                 >
                   Amazon
                 </Link>
                 <Link 
-                  href="https://shopping.yahoo.co.jp/" 
+                  href="/api/out?mall=yahoo&brand=趣味グッズ" 
                   className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
                 >
                   Yahoo
@@ -420,19 +422,19 @@ export default function FatherBirthdayGiftsPage() {
               </Link>
               <div className="flex gap-2 justify-center">
                 <Link 
-                  href="https://www.rakuten.co.jp/" 
+                  href="/api/out?mall=rakuten&brand=日常家電" 
                   className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
                 >
                   楽天
                 </Link>
                 <Link 
-                  href="https://www.amazon.co.jp/" 
+                  href="/api/out?mall=amazon&brand=日常家電" 
                   className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
                 >
                   Amazon
                 </Link>
                 <Link 
-                  href="https://shopping.yahoo.co.jp/" 
+                  href="/api/out?mall=yahoo&brand=日常家電" 
                   className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
                 >
                   Yahoo
@@ -461,19 +463,19 @@ export default function FatherBirthdayGiftsPage() {
               </Link>
               <div className="flex gap-2 justify-center">
                 <Link 
-                  href="https://www.rakuten.co.jp/" 
+                  href="/api/out?mall=rakuten&brand=ブランド財布・キーケース" 
                   className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
                 >
                   楽天
                 </Link>
                 <Link 
-                  href="https://www.amazon.co.jp/" 
+                  href="/api/out?mall=amazon&brand=ブランド財布・キーケース" 
                   className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
                 >
                   Amazon
                 </Link>
                 <Link 
-                  href="https://shopping.yahoo.co.jp/" 
+                  href="/api/out?mall=yahoo&brand=ブランド財布・キーケース" 
                   className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
                 >
                   Yahoo
@@ -502,19 +504,19 @@ export default function FatherBirthdayGiftsPage() {
               </Link>
               <div className="flex gap-2 justify-center">
                 <Link 
-                  href="https://www.rakuten.co.jp/" 
+                  href="/api/out?mall=rakuten&brand=スポーツ系グッズ" 
                   className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
                 >
                   楽天
                 </Link>
                 <Link 
-                  href="https://www.amazon.co.jp/" 
+                  href="/api/out?mall=amazon&brand=スポーツ系グッズ" 
                   className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
                 >
                   Amazon
                 </Link>
                 <Link 
-                  href="https://shopping.yahoo.co.jp/" 
+                  href="/api/out?mall=yahoo&brand=スポーツ系グッズ" 
                   className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
                 >
                   Yahoo
