@@ -538,6 +538,24 @@ export const questionFlows = {
       options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
   ],
+  "おうちアイテム": [
+    {
+      question: "お母さまは家で過ごす時間が長い方ですか？",
+      options: ["自宅でのんびり過ごすのが好き", "外出が多い", "どちらとも言えない"]
+    },
+    {
+      question: "家でよく過ごす場所は？",
+      options: ["リビング", "寝室", "キッチン", "特に決まっていない"]
+    },
+    {
+      question: "どんなアイテムに興味がありそうですか？",
+      options: ["リラックスグッズ", "実用的なグッズ", "インテリアグッズ", "分からない"]
+    },
+    {
+      question: "おうちアイテムの予算感は？",
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
+    }
+  ],
   "季節限定・ご当地ギフト": [
     {
       question: "季節限定や期間限定の商品に魅力を感じるタイプですか？",
@@ -908,6 +926,15 @@ export function generateCategorySuggestions(category: string, answers: Record<st
       const homeTimeBudget = answers.question_4 || "";
       if (homeTimeBudget) {
         suggestions = filterSuggestionsByBudget(suggestions, homeTimeBudget);
+      }
+      break;
+    
+    case "おうちアイテム":
+      suggestions = generateMotherSuggestions(category, answers);
+      // 予算フィルタリングを適用
+      const homeItemBudget = answers.question_4 || "";
+      if (homeItemBudget) {
+        suggestions = filterSuggestionsByBudget(suggestions, homeItemBudget);
       }
       break;
     

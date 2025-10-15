@@ -117,8 +117,11 @@ export default function FatherInLawBirthdayGiftsPage() {
             {/* ギフト1: 高級グルメギフト */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2F29hijiri%2Fb6r350g%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2F29hijiri%2Fi%2F10000006%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/29hijiri/cabinet/700top/1bn236.jpg?_ex=200x200" alt="高級グルメギフト" style={{ border: 'medium', width: '200px', height: '200px', objectFit: 'cover' }} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{ border: '0px' }} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">高級グルメギフト</h3>
@@ -281,8 +284,11 @@ export default function FatherInLawBirthdayGiftsPage() {
             {/* ギフト5: 上品な健康グッズ */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fnissoplus%2Fnp-nr20w%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fnissoplus%2Fi%2F10000015%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/nissoplus/cabinet/item/neck_relax/main/250417_nr01.jpg?_ex=200x200" alt="上品な健康グッズ" style={{ border: 'medium', width: '200px', height: '200px', objectFit: 'cover' }} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{ border: '0px' }} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">上品な健康グッズ</h3>
@@ -445,8 +451,11 @@ export default function FatherInLawBirthdayGiftsPage() {
             {/* ギフト9: 季節感ギフト */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fluna-luce%2Ftaigi-105orange%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fluna-luce%2Fi%2F10006965%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/luna-luce/cabinet/taigi/taigi-105orange.jpg?_ex=200x200" alt="季節感ギフト" style={{ border: 'medium', width: '200px', height: '200px', objectFit: 'cover' }} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{ border: '0px' }} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">季節感ギフト</h3>

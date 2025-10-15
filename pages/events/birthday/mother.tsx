@@ -117,8 +117,11 @@ export default function MotherBirthdayGiftsPage() {
             {/* ギフト1: 高級お茶セット */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fteaon%2F10000300%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fteaon%2Fi%2F10000319%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/teaon/cabinet/shohin01/shohin/imgrc0112535436.jpg?_ex=200x200" alt="高級お茶セット" style={{ border: 'medium', width: '200px', height: '200px', objectFit: 'cover' }} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{ border: '0px' }} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">高級お茶セット</h3>
@@ -158,8 +161,11 @@ export default function MotherBirthdayGiftsPage() {
             {/* ギフト2: 美容・スキンケアセット */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fregalo-web%2F10004550%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fregalo-web%2Fi%2F10004550%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/regalo-web/cabinet/07705215/imgrc0091756314.jpg?_ex=200x200" alt="美容・スキンケアセット" style={{ border: 'medium', width: '200px', height: '200px', objectFit: 'cover' }} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{ border: '0px' }} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">美容・スキンケアセット</h3>
@@ -199,8 +205,11 @@ export default function MotherBirthdayGiftsPage() {
             {/* ギフト3: 花のギフト */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fflowerkitchen%2Ffksw-1974%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fflowerkitchen%2Fi%2F10010119%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/flowerkitchen/cabinet/pr/set/09061109/fksw-1974-02.jpg?_ex=200x200" alt="季節の花ギフト" style={{ border: 'medium', width: '200px', height: '200px', objectFit: 'cover' }} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{ border: '0px' }} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">季節の花ギフト</h3>
@@ -240,8 +249,11 @@ export default function MotherBirthdayGiftsPage() {
             {/* ギフト4: 健康グッズ */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fnissoplus%2Fnp-nr20w%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fnissoplus%2Fi%2F10000015%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/nissoplus/cabinet/item/neck_relax/main/250417_nr01.jpg?_ex=200x200" alt="健康グッズ" style={{ border: 'medium', width: '200px', height: '200px', objectFit: 'cover' }} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{ border: '0px' }} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">健康グッズ</h3>
@@ -281,8 +293,11 @@ export default function MotherBirthdayGiftsPage() {
             {/* ギフト5: グルメギフト */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2F29hijiri%2Fb6r350g%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2F29hijiri%2Fi%2F10000006%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/29hijiri/cabinet/700top/1bn236.jpg?_ex=200x200" alt="高級グルメギフト" style={{ border: 'medium', width: '200px', height: '200px', objectFit: 'cover' }} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{ border: '0px' }} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">高級グルメギフト</h3>
@@ -322,8 +337,11 @@ export default function MotherBirthdayGiftsPage() {
             {/* ギフト6: 体験ギフト */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fshoppress%2Fticket01set%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fshoppress%2Fi%2F10000896%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/shoppress/cabinet/ticket/ticket01_1_.jpg?_ex=200x200" alt="体験ギフト" style={{ border: 'medium', width: '200px', height: '200px', objectFit: 'cover' }} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{ border: '0px' }} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">体験ギフト</h3>
@@ -363,8 +381,11 @@ export default function MotherBirthdayGiftsPage() {
             {/* ギフト7: 名入れ・メッセージ入りギフト */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fcryla%2Fcryla7%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fcryla%2Fi%2F10000031%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/cryla/cabinet/imgrc0090856174.jpg?_ex=200x200" alt="名入れ・メッセージ入りギフト" style={{ border: 'medium', width: '200px', height: '200px', objectFit: 'cover' }} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{ border: '0px' }} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">名入れ・メッセージ入りギフト</h3>
@@ -404,8 +425,11 @@ export default function MotherBirthdayGiftsPage() {
             {/* ギフト8: フォトアルバム・家族の思い出ギフト */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Flucky13%2Fnapf4500%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Flucky13%2Fi%2F10235187%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/lucky13/cabinet/main34/napf4500.jpg?_ex=200x200" alt="フォトアルバム・家族の思い出ギフト" style={{ border: 'medium', width: '200px', height: '200px', objectFit: 'cover' }} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{ border: '0px' }} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">フォトアルバム・家族の思い出ギフト</h3>
@@ -442,40 +466,43 @@ export default function MotherBirthdayGiftsPage() {
               </div>
             </div>
 
-            {/* ギフト9: おうち時間を楽しむアイテム */}
+            {/* ギフト9: おうちアイテム */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fclassort%2Ffbh01%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fclassort%2Fi%2F10000190%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/classort/cabinet/shouhin-image/fbh01.jpg?_ex=200x200" alt="おうちアイテム" style={{ border: 'medium', width: '200px', height: '200px', objectFit: 'cover' }} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{ border: '0px' }} />
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">おうち時間を楽しむアイテム</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">おうちアイテム</h3>
               <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥2,000〜¥6,000）</p>
               <p className="text-gray-600 mb-4">
                 読書灯、ルームシューズ、ブランケットなど、家で過ごす時間を快適にするグッズ。<br />
                 母の<span className="font-semibold text-pink-600">「小さな幸せ時間」</span>をサポートする、実用的かつ心地よいギフトです。
               </p>
               <Link 
-                href="/events/birthday/chat?category=おうち時間を楽しむアイテム&target=実母"
+                href="/events/birthday/chat?category=おうちアイテム&target=実母"
                 className="w-full bg-gradient-to-r from-pink-500 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-pink-600 hover:to-pink-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
               </Link>
               <div className="flex gap-2 justify-center">
                 <Link 
-                  href="/api/out?mall=rakuten&brand=おうち時間を楽しむアイテム" 
+                  href="/api/out?mall=rakuten&brand=おうちアイテム" 
                   className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
                 >
                   楽天
                 </Link>
                 <Link 
-                  href="/api/out?mall=amazon&brand=おうち時間を楽しむアイテム" 
+                  href="/api/out?mall=amazon&brand=おうちアイテム" 
                   className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
                 >
                   Amazon
                 </Link>
                 <Link 
-                  href="/api/out?mall=yahoo&brand=おうち時間を楽しむアイテム" 
+                  href="/api/out?mall=yahoo&brand=おうちアイテム" 
                   className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
                 >
                   Yahoo
@@ -486,8 +513,11 @@ export default function MotherBirthdayGiftsPage() {
             {/* ギフト10: 季節限定・ご当地ギフト */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fluna-luce%2Ftaigi-105orange%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fluna-luce%2Fi%2F10006965%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/luna-luce/cabinet/taigi/taigi-105orange.jpg?_ex=200x200" alt="季節限定・ご当地ギフト" style={{ border: 'medium', width: '200px', height: '200px', objectFit: 'cover' }} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{ border: '0px' }} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">季節限定・ご当地ギフト</h3>

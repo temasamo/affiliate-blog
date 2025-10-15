@@ -486,8 +486,11 @@ export default function MotherInLawBirthdayGiftsPage() {
             {/* ギフト10: 季節の花＆プリザーブドギフト */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fflowerkitchen%2Ffksw-1974%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fflowerkitchen%2Fi%2F10010119%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/flowerkitchen/cabinet/pr/set/09061109/fksw-1974-02.jpg?_ex=200x200" alt="季節の花＆プリザーブドギフト" style={{ border: 'medium', width: '200px', height: '200px', objectFit: 'cover' }} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{ border: '0px' }} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">季節の花＆プリザーブドギフト</h3>

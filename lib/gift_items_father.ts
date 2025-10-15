@@ -1868,6 +1868,74 @@ export function generateMotherSuggestions(category: string, answers: Record<stri
       }
       break;
 
+    case "おうちアイテム":
+      const homeItemConcernAnswer = answers.question_0 || "";
+      const homeItemAgeAnswer = answers.question_1 || "";
+      const homeItemApproachAnswer = answers.question_2 || "";
+      const homeItemCategoryAnswer = answers.question_3 || "";
+      const homeItemBudgetAnswer = answers.question_4 || "";
+      
+      // 方向性に基づく分岐
+      if (homeItemApproachAnswer.includes("リラックスグッズ")) {
+        const baseProducts = [
+          { name: "リラックスブランケット", keywords: ["ブランケット", "リラックス", "おうちアイテム"] },
+          { name: "抱き枕・クッション", keywords: ["抱き枕", "クッション", "リラックス", "おうちアイテム"] },
+          { name: "アロマ・香りアイテム", keywords: ["アロマ", "香り", "リラックス", "おうちアイテム"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, homeItemBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(homeItemBudgetAnswer, "¥2,000〜¥8,000")
+          });
+        });
+      } else if (homeItemApproachAnswer.includes("実用的なグッズ")) {
+        const baseProducts = [
+          { name: "加湿器・空気清浄機", keywords: ["加湿器", "空気清浄機", "健康", "おうちアイテム"] },
+          { name: "空気清浄機", keywords: ["空気清浄機", "健康", "空気", "おうちアイテム"] },
+          { name: "加湿器", keywords: ["加湿器", "湿度", "健康", "おうちアイテム"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, homeItemBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(homeItemBudgetAnswer, "¥3,000〜¥12,000")
+          });
+        });
+      } else if (homeItemApproachAnswer.includes("インテリアグッズ")) {
+        const baseProducts = [
+          { name: "インテリア小物", keywords: ["インテリア", "小物", "装飾", "おうちアイテム"] },
+          { name: "照明・ライト", keywords: ["照明", "ライト", "インテリア", "おうちアイテム"] },
+          { name: "収納・整理用品", keywords: ["収納", "整理", "インテリア", "おうちアイテム"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, homeItemBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(homeItemBudgetAnswer, "¥2,000〜¥7,000")
+          });
+        });
+      } else {
+        // デフォルト：バランスの取れた提案
+        const baseProducts = [
+          { name: "リラックスブランケット", keywords: ["ブランケット", "リラックス", "おうちアイテム"] },
+          { name: "加湿器・空気清浄機", keywords: ["加湿器", "空気清浄機", "健康", "おうちアイテム"] },
+          { name: "インテリア小物", keywords: ["インテリア", "小物", "装飾", "おうちアイテム"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, homeItemBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(homeItemBudgetAnswer, "¥2,000〜¥8,000")
+          });
+        });
+      }
+      break;
+
     case "季節限定・ご当地ギフト":
       const seasonalConcernAnswer = answers.question_0 || "";
       const seasonalAgeAnswer = answers.question_1 || "";
