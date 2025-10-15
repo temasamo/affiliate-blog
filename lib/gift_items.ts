@@ -1,5 +1,5 @@
 // ギフト提案データ（検索キーワードベース）
-import { fatherQuestionFlows, fatherInLawQuestionFlows, motherQuestionFlows, generateFatherSuggestions, generateFatherInLawSuggestions, generateMotherSuggestions, filterSuggestionsByBudget, GiftItem } from './gift_items_father';
+import { fatherQuestionFlows, fatherInLawQuestionFlows, motherQuestionFlows, generateFatherSuggestions, generateFatherInLawSuggestions, generateMotherSuggestions, filterSuggestionsByBudget, GiftItem, getProductNameByBudget, getPriceRangeByBudget } from './gift_items_father';
 
 // GiftItem型を再エクスポート
 export type { GiftItem };
@@ -556,6 +556,42 @@ export const questionFlows = {
       options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
   ],
+  "実用派タイプ": [
+    {
+      question: "恋人は普段どんなアイテムを大切に使っていますか？",
+      options: ["時計・アクセサリー", "バッグ・財布", "デジタルガジェット", "分からない"]
+    },
+    {
+      question: "どのような実用性を重視しますか？",
+      options: ["毎日使えるもの", "長く使える品質の良いもの", "機能性の高いもの", "シンプルで使いやすいもの"]
+    },
+    {
+      question: "どんなスタイルがお好みですか？",
+      options: ["シンプル・ミニマル", "高級感のあるもの", "モダン・スタイリッシュ", "クラシック・上品"]
+    },
+    {
+      question: "実用派ギフトの予算感は？",
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
+    }
+  ],
+  "趣味・共感タイプ": [
+    {
+      question: "恋人の趣味や興味のあることは？",
+      options: ["音楽・映画", "スポーツ・アウトドア", "読書・学習", "アート・クリエイティブ"]
+    },
+    {
+      question: "どんな体験を共有したいですか？",
+      options: ["一緒に楽しめる体験", "相手の趣味を深められるもの", "新しい発見ができるもの", "特別な思い出になるもの"]
+    },
+    {
+      question: "ギフトで伝えたいメッセージは？",
+      options: ["応援・サポート", "感謝・愛情", "一緒に成長したい", "特別な存在であること"]
+    },
+    {
+      question: "趣味・共感ギフトの予算感は？",
+      options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
+    }
+  ],
   "季節限定・ご当地ギフト": [
     {
       question: "季節限定や期間限定の商品に魅力を感じるタイプですか？",
@@ -938,6 +974,24 @@ export function generateCategorySuggestions(category: string, answers: Record<st
       }
       break;
     
+    case "実用派タイプ":
+      suggestions = generateCoupleSuggestions(category, answers);
+      // 予算フィルタリングを適用
+      const practicalBudget = answers.question_4 || "";
+      if (practicalBudget) {
+        suggestions = filterSuggestionsByBudget(suggestions, practicalBudget);
+      }
+      break;
+    
+    case "趣味・共感タイプ":
+      suggestions = generateCoupleSuggestions(category, answers);
+      // 予算フィルタリングを適用
+      const hobbyBudget = answers.question_4 || "";
+      if (hobbyBudget) {
+        suggestions = filterSuggestionsByBudget(suggestions, hobbyBudget);
+      }
+      break;
+    
     case "季節限定・ご当地ギフト":
       suggestions = generateMotherSuggestions(category, answers);
       // 予算フィルタリングを適用
@@ -1231,6 +1285,163 @@ export function generateHomeTimeSuggestions(homeTimeAnswer: string): GiftItem[] 
     );
   }
 
+  return suggestions;
+}
+
+// カップル向けギフトの提案生成関数
+export function generateCoupleSuggestions(category: string, answers: Record<string, string>): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+  
+  switch (category) {
+    case "実用派タイプ":
+      const practicalItemAnswer = answers.question_0 || "";
+      const practicalUseAnswer = answers.question_1 || "";
+      const practicalStyleAnswer = answers.question_2 || "";
+      const practicalBudgetAnswer = answers.question_4 || "";
+      
+      // アイテムタイプに基づく分岐
+      if (practicalItemAnswer.includes("時計・アクセサリー")) {
+        const baseProducts = [
+          { name: "シンプルウォッチ", keywords: ["時計", "シンプル", "実用的", "カップル"] },
+          { name: "上質なアクセサリー", keywords: ["アクセサリー", "上質", "実用的", "カップル"] },
+          { name: "ペアウォッチ", keywords: ["ペアウォッチ", "時計", "実用的", "カップル"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, practicalBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(practicalBudgetAnswer, "¥5,000〜¥15,000")
+          });
+        });
+      } else if (practicalItemAnswer.includes("バッグ・財布")) {
+        const baseProducts = [
+          { name: "上質な財布", keywords: ["財布", "上質", "実用的", "カップル"] },
+          { name: "シンプルなバッグ", keywords: ["バッグ", "シンプル", "実用的", "カップル"] },
+          { name: "名刺入れ", keywords: ["名刺入れ", "実用的", "カップル"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, practicalBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(practicalBudgetAnswer, "¥3,000〜¥12,000")
+          });
+        });
+      } else if (practicalItemAnswer.includes("デジタルガジェット")) {
+        const baseProducts = [
+          { name: "スマートウォッチ", keywords: ["スマートウォッチ", "デジタル", "実用的", "カップル"] },
+          { name: "ワイヤレスイヤホン", keywords: ["イヤホン", "ワイヤレス", "実用的", "カップル"] },
+          { name: "モバイルバッテリー", keywords: ["バッテリー", "モバイル", "実用的", "カップル"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, practicalBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(practicalBudgetAnswer, "¥4,000〜¥20,000")
+          });
+        });
+      } else {
+        // デフォルト：バランスの取れた提案
+        const baseProducts = [
+          { name: "シンプルウォッチ", keywords: ["時計", "シンプル", "実用的", "カップル"] },
+          { name: "上質な財布", keywords: ["財布", "上質", "実用的", "カップル"] },
+          { name: "スマートウォッチ", keywords: ["スマートウォッチ", "デジタル", "実用的", "カップル"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, practicalBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(practicalBudgetAnswer, "¥5,000〜¥15,000")
+          });
+        });
+      }
+      break;
+      
+    case "趣味・共感タイプ":
+      const hobbyInterestAnswer = answers.question_0 || "";
+      const hobbyExperienceAnswer = answers.question_1 || "";
+      const hobbyMessageAnswer = answers.question_2 || "";
+      const hobbyBudgetAnswer = answers.question_4 || "";
+      
+      // 趣味に基づく分岐
+      if (hobbyInterestAnswer.includes("音楽・映画")) {
+        const baseProducts = [
+          { name: "高音質イヤホン", keywords: ["イヤホン", "音楽", "高音質", "カップル"] },
+          { name: "映画鑑賞セット", keywords: ["映画", "鑑賞", "セット", "カップル"] },
+          { name: "音楽関連グッズ", keywords: ["音楽", "グッズ", "カップル"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, hobbyBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(hobbyBudgetAnswer, "¥3,000〜¥12,000")
+          });
+        });
+      } else if (hobbyInterestAnswer.includes("スポーツ・アウトドア")) {
+        const baseProducts = [
+          { name: "スポーツ用品", keywords: ["スポーツ", "用品", "カップル"] },
+          { name: "アウトドアグッズ", keywords: ["アウトドア", "グッズ", "カップル"] },
+          { name: "フィットネスアイテム", keywords: ["フィットネス", "アイテム", "カップル"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, hobbyBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(hobbyBudgetAnswer, "¥4,000〜¥15,000")
+          });
+        });
+      } else if (hobbyInterestAnswer.includes("読書・学習")) {
+        const baseProducts = [
+          { name: "読書関連グッズ", keywords: ["読書", "グッズ", "カップル"] },
+          { name: "学習用品セット", keywords: ["学習", "用品", "セット", "カップル"] },
+          { name: "文房具セット", keywords: ["文房具", "セット", "カップル"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, hobbyBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(hobbyBudgetAnswer, "¥2,000〜¥8,000")
+          });
+        });
+      } else if (hobbyInterestAnswer.includes("アート・クリエイティブ")) {
+        const baseProducts = [
+          { name: "アート用品セット", keywords: ["アート", "用品", "セット", "カップル"] },
+          { name: "クリエイティブグッズ", keywords: ["クリエイティブ", "グッズ", "カップル"] },
+          { name: "手作りキット", keywords: ["手作り", "キット", "カップル"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, hobbyBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(hobbyBudgetAnswer, "¥3,000〜¥10,000")
+          });
+        });
+      } else {
+        // デフォルト：バランスの取れた提案
+        const baseProducts = [
+          { name: "高音質イヤホン", keywords: ["イヤホン", "音楽", "高音質", "カップル"] },
+          { name: "スポーツ用品", keywords: ["スポーツ", "用品", "カップル"] },
+          { name: "読書関連グッズ", keywords: ["読書", "グッズ", "カップル"] }
+        ];
+        
+        baseProducts.forEach(product => {
+          suggestions.push({
+            name: getProductNameByBudget(product.name, hobbyBudgetAnswer),
+            keywords: product.keywords,
+            priceRange: getPriceRangeByBudget(hobbyBudgetAnswer, "¥3,000〜¥12,000")
+          });
+        });
+      }
+      break;
+  }
+  
   return suggestions;
 }
 

@@ -243,7 +243,7 @@ export default function CoupleBirthdayGiftsPage() {
                 スマートウォッチ、名刺入れ、シンプルな財布など<span className="font-semibold text-red-600">毎日使える品質重視</span>の一品。
               </p>
               <Link 
-                href="/gift/couple/ai?type=practical"
+                href="/events/birthday/chat?category=実用派タイプ&target=恋人"
                 className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-2 px-4 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
@@ -299,7 +299,7 @@ export default function CoupleBirthdayGiftsPage() {
                 推し活グッズや体験ギフトなど、<span className="font-semibold text-red-600">一緒に楽しめる</span>カテゴリから厳選。
               </p>
               <Link 
-                href="/gift/couple/ai?type=hobby"
+                href="/events/birthday/chat?category=趣味・共感タイプ&target=恋人"
                 className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-2 px-4 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
