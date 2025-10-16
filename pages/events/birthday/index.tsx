@@ -33,7 +33,7 @@ export default function BirthdayGiftsPage() {
           </div>
 
           {/* カテゴリ一覧 */}
-          <div className="grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-5 mb-12">
+          <div className="grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-12">
             {/* 実母向け */}
             <Link 
               href="/events/birthday/mother" 
@@ -130,6 +130,49 @@ export default function BirthdayGiftsPage() {
                 </h3>
                 <p className="text-gray-600 text-sm">
                   彼氏・彼女の誕生日に贈る人気ギフト特集。年代・性格別に選びやすく、サプライズ演出やペアアイテムも紹介。
+                </p>
+              </div>
+            </Link>
+          </div>
+
+          {/* 追加カテゴリ一覧 */}
+          <div className="grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mb-12">
+            {/* 兄弟姉妹向け */}
+            <Link 
+              href="/events/birthday/siblings" 
+              className="group block bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 p-6 hover:-translate-y-1"
+            >
+              <div className="text-center">
+                <div className="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
+                  <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+                  兄弟姉妹へのプレゼント
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  趣味・実用品・グルメ・体験など、兄弟姉妹への感謝を込めたギフト選び
+                </p>
+              </div>
+            </Link>
+
+            {/* 子供向け */}
+            <Link 
+              href="/events/birthday/children" 
+              className="group block bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 p-6 hover:-translate-y-1"
+            >
+              <div className="text-center">
+                <div className="w-16 h-16 mx-auto mb-4 bg-yellow-100 rounded-full flex items-center justify-center">
+                  <svg className="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-yellow-600 transition-colors">
+                  子供へのプレゼント
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  おもちゃ・学習用品・スポーツ用品など、子供が喜ぶギフト選び
                 </p>
               </div>
             </Link>

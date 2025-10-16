@@ -140,3 +140,4 @@ const BeautySkincarePage: React.FC = () => {
 export default BeautySkincarePage;
 
 
+

@@ -17,7 +17,7 @@ export default function GiftChatPage() {
 
   // カテゴリとターゲットのバリデーション
   const validCategories = Object.keys(questionFlows);
-  const validTargets = ['実母', '実父', '義母', '義父', '恋人'];
+  const validTargets = ['実母', '実父', '義母', '義父', '恋人', '兄弟姉妹', '子供'];
 
   const isValidCategory = category && validCategories.includes(category as string);
   const isValidTarget = target && validTargets.includes(target as string);
@@ -75,7 +75,7 @@ export default function GiftChatPage() {
               <li>/</li>
               <li><Link href="/events/birthday" className="hover:text-blue-600">誕生日プレゼント</Link></li>
               <li>/</li>
-              <li><Link href={`/events/birthday/${target === '実母' ? 'mother' : target === '実父' ? 'father' : target === '義母' ? 'mother-in-law' : target === '義父' ? 'father-in-law' : 'couple/birthday'}`} className="hover:text-blue-600">{target}へのプレゼント</Link></li>
+              <li><Link href={`/events/birthday/${target === '実母' ? 'mother' : target === '実父' ? 'father' : target === '義母' ? 'mother-in-law' : target === '義父' ? 'father-in-law' : target === '兄弟姉妹' ? 'siblings' : target === '子供' ? 'children' : 'couple/birthday'}`} className="hover:text-blue-600">{target}へのプレゼント</Link></li>
               <li>/</li>
               <li className="text-gray-900">AI相談</li>
             </ol>
