@@ -773,7 +773,7 @@ const coupleQuestionFlows = {
       options: ["3,000円未満", "3,000円〜8,000円", "8,000円〜15,000円", "15,000円以上"]
     }
   ],
-  "体験ギフト": [
+  "兄弟姉妹体験ギフト": [
     {
       question: "兄弟姉妹の興味のある体験は？",
       options: ["料理教室", "陶芸体験", "温泉旅行", "スポーツ体験", "わからない"]
@@ -886,7 +886,7 @@ const coupleQuestionFlows = {
       options: ["3,000円未満", "3,000円〜8,000円", "8,000円〜15,000円", "15,000円以上"]
     }
   ],
-  "体験ギフト": [
+  "子供体験ギフト": [
     {
       question: "お子様の興味のある体験は？",
       options: ["動物園", "水族館", "科学館", "工場見学", "わからない"]
@@ -1137,6 +1137,12 @@ export function generateCategorySuggestions(category: string, answers: Record<st
         }
       }
       break;
+    case "兄弟姉妹体験ギフト":
+      suggestions = generateMotherSuggestions(category, answers);
+      break;
+    case "子供体験ギフト":
+      suggestions = generateMotherSuggestions(category, answers);
+      break;
     
     case "おうち時間ギフト":
       // 恋人向けの場合は特別なロジックを使用
@@ -1218,6 +1224,12 @@ export function generateCategorySuggestions(category: string, answers: Record<st
       if (experienceBudget) {
         suggestions = filterSuggestionsByBudget(suggestions, experienceBudget);
       }
+      break;
+    case "兄弟姉妹体験ギフト":
+      suggestions = generateMotherSuggestions(category, answers);
+      break;
+    case "子供体験ギフト":
+      suggestions = generateMotherSuggestions(category, answers);
       break;
     
     case "名入れ・メッセージ入りギフト":
