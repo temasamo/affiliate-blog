@@ -161,8 +161,11 @@ export default function FatherInLawBirthdayGiftsPage() {
             {/* ギフト2: お酒（見た目重視） */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-48 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&amp;p_id=54&amp;pc_id=54&amp;pl_id=616&amp;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fyokogoshi%2F720x3_089set%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fyokogoshi%2Fi%2F10000908%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/yokogoshi/cabinet/shohin/720x3/imgrc0156251671.jpg?_ex=500x500" alt="お酒（見た目重視）" style={{ border: 'medium', width: '200px', height: '200px', objectFit: 'cover' }} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&amp;p_id=54&amp;pc_id=54&amp;pl_id=616" alt="" loading="lazy" width="1" height="1" style={{ border: '0px' }} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">お酒（見た目重視）</h3>
