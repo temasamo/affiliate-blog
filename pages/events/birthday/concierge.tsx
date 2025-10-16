@@ -156,7 +156,7 @@ const generateConciergeSuggestions = (responses: Record<string, string>, categor
   const history = responses.history || "";
   
   // カテゴリ別の商品データベース
-  const productDatabase = {
+  const productDatabase: { [key: string]: Array<{ name: string; reason: string; priceRange: string; keywords: string[] }> } = {
     "ルームウェア": [
       { name: "tential ドライロングパジャマ", reason: "吸水性・速乾性に優れた快適なパジャマ", priceRange: "¥5,000〜¥12,000", keywords: ["快適", "吸水性", "速乾"] },
       { name: "高級綿パジャマセット", reason: "上質な綿素材で肌触り抜群", priceRange: "¥8,000〜¥15,000", keywords: ["高級", "綿", "肌触り"] },
