@@ -592,6 +592,24 @@ export const questionFlows = {
       options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
   ],
+  "洋服": [
+    {
+      question: "恋人の性別は？",
+      options: ["男性", "女性", "わからない"]
+    },
+    {
+      question: "恋人の普段のファッションスタイルは？",
+      options: ["カジュアル・リラックス", "おしゃれ・トレンド", "上品・エレガント", "わからない"]
+    },
+    {
+      question: "どんなアイテムが喜ばれそうですか？",
+      options: ["トップス（シャツ・ニット）", "ボトムス（パンツ・スカート）", "アウター（ジャケット・コート）", "わからない"]
+    },
+    {
+      question: "予算はどのくらいですか？",
+      options: ["5,000円未満", "5,000円〜10,000円", "10,000円〜20,000円", "20,000円以上"]
+    }
+  ],
   "季節限定・ご当地ギフト": [
     {
       question: "季節限定や期間限定の商品に魅力を感じるタイプですか？",
@@ -1084,6 +1102,7 @@ export function generateCategorySuggestions(category: string, answers: Record<st
     case "日常家電":
     case "ブランド財布・キーケース":
     case "スポーツ系グッズ":
+    case "ルームウェア":
       suggestions = generateFatherSuggestions(category, answers);
       break;
 
@@ -1160,6 +1179,10 @@ export function generateCategorySuggestions(category: string, answers: Record<st
     
     case "冬小物":
       suggestions = generateCoupleWinterSuggestions(answers);
+      break;
+    
+    case "洋服":
+      suggestions = generateCoupleClothingSuggestions(answers);
       break;
 
     // 実母向けカテゴリ（既存のロジック）
@@ -2430,6 +2453,151 @@ export function generateCoupleWinterSuggestions(answers: Record<string, string>)
       { name: "冬小物ギフトセット", keywords: ["冬小物", "ギフト", "セット", "冬"], priceRange: "¥3,000〜¥8,000" },
       { name: "定番手袋", keywords: ["手袋", "定番", "冬", "小物"], priceRange: "¥2,000〜¥6,000" },
       { name: "人気ストール", keywords: ["ストール", "人気", "冬", "小物"], priceRange: "¥3,000〜¥8,000" }
+    );
+  }
+
+  return suggestions.slice(0, 3);
+}
+
+// 恋人向け洋服の提案生成
+export function generateCoupleClothingSuggestions(answers: Record<string, string>): GiftItem[] {
+  const suggestions: GiftItem[] = [];
+  const gender = answers.question_0 || "";
+  const style = answers.question_1 || "";
+  const item = answers.question_2 || "";
+  const budget = answers.question_3 || "";
+
+  // 性別とスタイルに基づく提案
+  if (gender.includes("男性")) {
+    if (style.includes("カジュアル・リラックス")) {
+      if (item.includes("トップス")) {
+        suggestions.push(
+          { name: "メンズカジュアルニット", keywords: ["メンズ", "ニット", "カジュアル", "トップス", "洋服"], priceRange: "¥5,000〜¥15,000" },
+          { name: "メンズTシャツ", keywords: ["メンズ", "Tシャツ", "カジュアル", "トップス", "洋服"], priceRange: "¥3,000〜¥8,000" },
+          { name: "メンズカジュアルシャツ", keywords: ["メンズ", "シャツ", "カジュアル", "トップス", "洋服"], priceRange: "¥4,000〜¥12,000" }
+        );
+      } else if (item.includes("ボトムス")) {
+        suggestions.push(
+          { name: "メンズカジュアルパンツ", keywords: ["メンズ", "パンツ", "カジュアル", "ボトムス", "洋服"], priceRange: "¥5,000〜¥15,000" },
+          { name: "メンズジーンズ", keywords: ["メンズ", "ジーンズ", "カジュアル", "ボトムス", "洋服"], priceRange: "¥6,000〜¥18,000" },
+          { name: "メンズチノパンツ", keywords: ["メンズ", "チノパンツ", "カジュアル", "ボトムス", "洋服"], priceRange: "¥5,000〜¥15,000" }
+        );
+      } else if (item.includes("アウター")) {
+        suggestions.push(
+          { name: "メンズカジュアルジャケット", keywords: ["メンズ", "ジャケット", "カジュアル", "アウター", "洋服"], priceRange: "¥8,000〜¥20,000" },
+          { name: "メンズパーカー", keywords: ["メンズ", "パーカー", "カジュアル", "アウター", "洋服"], priceRange: "¥5,000〜¥15,000" },
+          { name: "メンズカーディガン", keywords: ["メンズ", "カーディガン", "カジュアル", "アウター", "洋服"], priceRange: "¥6,000〜¥18,000" }
+        );
+      }
+    } else if (style.includes("おしゃれ・トレンド")) {
+      if (item.includes("トップス")) {
+        suggestions.push(
+          { name: "メンズトレンドニット", keywords: ["メンズ", "ニット", "トレンド", "トップス", "洋服"], priceRange: "¥8,000〜¥20,000" },
+          { name: "メンズおしゃれシャツ", keywords: ["メンズ", "シャツ", "おしゃれ", "トップス", "洋服"], priceRange: "¥6,000〜¥18,000" },
+          { name: "メンズトレンドトップス", keywords: ["メンズ", "トップス", "トレンド", "おしゃれ", "洋服"], priceRange: "¥5,000〜¥15,000" }
+        );
+      } else if (item.includes("ボトムス")) {
+        suggestions.push(
+          { name: "メンズトレンドパンツ", keywords: ["メンズ", "パンツ", "トレンド", "ボトムス", "洋服"], priceRange: "¥8,000〜¥20,000" },
+          { name: "メンズトレンドジーンズ", keywords: ["メンズ", "ジーンズ", "トレンド", "ボトムス", "洋服"], priceRange: "¥8,000〜¥25,000" },
+          { name: "メンズおしゃれパンツ", keywords: ["メンズ", "パンツ", "おしゃれ", "ボトムス", "洋服"], priceRange: "¥7,000〜¥18,000" }
+        );
+      } else if (item.includes("アウター")) {
+        suggestions.push(
+          { name: "メンズトレンドジャケット", keywords: ["メンズ", "ジャケット", "トレンド", "アウター", "洋服"], priceRange: "¥12,000〜¥30,000" },
+          { name: "メンズおしゃれコート", keywords: ["メンズ", "コート", "おしゃれ", "アウター", "洋服"], priceRange: "¥15,000〜¥40,000" },
+          { name: "メンズトレンドアウター", keywords: ["メンズ", "アウター", "トレンド", "おしゃれ", "洋服"], priceRange: "¥10,000〜¥25,000" }
+        );
+      }
+    } else if (style.includes("上品・エレガント")) {
+      if (item.includes("トップス")) {
+        suggestions.push(
+          { name: "メンズエレガントニット", keywords: ["メンズ", "ニット", "エレガント", "トップス", "洋服"], priceRange: "¥10,000〜¥25,000" },
+          { name: "メンズ上品シャツ", keywords: ["メンズ", "シャツ", "上品", "トップス", "洋服"], priceRange: "¥8,000〜¥20,000" },
+          { name: "メンズエレガントトップス", keywords: ["メンズ", "トップス", "エレガント", "上品", "洋服"], priceRange: "¥6,000〜¥18,000" }
+        );
+      } else if (item.includes("ボトムス")) {
+        suggestions.push(
+          { name: "メンズエレガントパンツ", keywords: ["メンズ", "パンツ", "エレガント", "ボトムス", "洋服"], priceRange: "¥10,000〜¥25,000" },
+          { name: "メンズ上品パンツ", keywords: ["メンズ", "パンツ", "上品", "ボトムス", "洋服"], priceRange: "¥8,000〜¥20,000" },
+          { name: "メンズエレガントボトムス", keywords: ["メンズ", "ボトムス", "エレガント", "上品", "洋服"], priceRange: "¥6,000〜¥18,000" }
+        );
+      } else if (item.includes("アウター")) {
+        suggestions.push(
+          { name: "メンズエレガントジャケット", keywords: ["メンズ", "ジャケット", "エレガント", "アウター", "洋服"], priceRange: "¥15,000〜¥40,000" },
+          { name: "メンズ上品コート", keywords: ["メンズ", "コート", "上品", "アウター", "洋服"], priceRange: "¥20,000〜¥50,000" },
+          { name: "メンズエレガントアウター", keywords: ["メンズ", "アウター", "エレガント", "上品", "洋服"], priceRange: "¥12,000〜¥30,000" }
+        );
+      }
+    }
+  } else if (gender.includes("女性")) {
+    if (style.includes("カジュアル・リラックス")) {
+      if (item.includes("トップス")) {
+        suggestions.push(
+          { name: "レディースカジュアルニット", keywords: ["レディース", "ニット", "カジュアル", "トップス", "洋服"], priceRange: "¥5,000〜¥15,000" },
+          { name: "レディースTシャツ", keywords: ["レディース", "Tシャツ", "カジュアル", "トップス", "洋服"], priceRange: "¥3,000〜¥8,000" },
+          { name: "レディースカジュアルシャツ", keywords: ["レディース", "シャツ", "カジュアル", "トップス", "洋服"], priceRange: "¥4,000〜¥12,000" }
+        );
+      } else if (item.includes("ボトムス")) {
+        suggestions.push(
+          { name: "レディースカジュアルパンツ", keywords: ["レディース", "パンツ", "カジュアル", "ボトムス", "洋服"], priceRange: "¥5,000〜¥15,000" },
+          { name: "レディーススカート", keywords: ["レディース", "スカート", "カジュアル", "ボトムス", "洋服"], priceRange: "¥4,000〜¥12,000" },
+          { name: "レディースジーンズ", keywords: ["レディース", "ジーンズ", "カジュアル", "ボトムス", "洋服"], priceRange: "¥6,000〜¥18,000" }
+        );
+      } else if (item.includes("アウター")) {
+        suggestions.push(
+          { name: "レディースカジュアルジャケット", keywords: ["レディース", "ジャケット", "カジュアル", "アウター", "洋服"], priceRange: "¥8,000〜¥20,000" },
+          { name: "レディースカーディガン", keywords: ["レディース", "カーディガン", "カジュアル", "アウター", "洋服"], priceRange: "¥6,000〜¥18,000" },
+          { name: "レディースパーカー", keywords: ["レディース", "パーカー", "カジュアル", "アウター", "洋服"], priceRange: "¥5,000〜¥15,000" }
+        );
+      }
+    } else if (style.includes("おしゃれ・トレンド")) {
+      if (item.includes("トップス")) {
+        suggestions.push(
+          { name: "レディーストレンドニット", keywords: ["レディース", "ニット", "トレンド", "トップス", "洋服"], priceRange: "¥8,000〜¥20,000" },
+          { name: "レディースおしゃれシャツ", keywords: ["レディース", "シャツ", "おしゃれ", "トップス", "洋服"], priceRange: "¥6,000〜¥18,000" },
+          { name: "レディーストレンドトップス", keywords: ["レディース", "トップス", "トレンド", "おしゃれ", "洋服"], priceRange: "¥5,000〜¥15,000" }
+        );
+      } else if (item.includes("ボトムス")) {
+        suggestions.push(
+          { name: "レディーストレンドパンツ", keywords: ["レディース", "パンツ", "トレンド", "ボトムス", "洋服"], priceRange: "¥8,000〜¥20,000" },
+          { name: "レディースおしゃれスカート", keywords: ["レディース", "スカート", "おしゃれ", "ボトムス", "洋服"], priceRange: "¥6,000〜¥18,000" },
+          { name: "レディーストレンドジーンズ", keywords: ["レディース", "ジーンズ", "トレンド", "ボトムス", "洋服"], priceRange: "¥8,000〜¥25,000" }
+        );
+      } else if (item.includes("アウター")) {
+        suggestions.push(
+          { name: "レディーストレンドジャケット", keywords: ["レディース", "ジャケット", "トレンド", "アウター", "洋服"], priceRange: "¥12,000〜¥30,000" },
+          { name: "レディースおしゃれコート", keywords: ["レディース", "コート", "おしゃれ", "アウター", "洋服"], priceRange: "¥15,000〜¥40,000" },
+          { name: "レディーストレンドアウター", keywords: ["レディース", "アウター", "トレンド", "おしゃれ", "洋服"], priceRange: "¥10,000〜¥25,000" }
+        );
+      }
+    } else if (style.includes("上品・エレガント")) {
+      if (item.includes("トップス")) {
+        suggestions.push(
+          { name: "レディースエレガントニット", keywords: ["レディース", "ニット", "エレガント", "トップス", "洋服"], priceRange: "¥10,000〜¥25,000" },
+          { name: "レディース上品シャツ", keywords: ["レディース", "シャツ", "上品", "トップス", "洋服"], priceRange: "¥8,000〜¥20,000" },
+          { name: "レディースエレガントトップス", keywords: ["レディース", "トップス", "エレガント", "上品", "洋服"], priceRange: "¥6,000〜¥18,000" }
+        );
+      } else if (item.includes("ボトムス")) {
+        suggestions.push(
+          { name: "レディースエレガントパンツ", keywords: ["レディース", "パンツ", "エレガント", "ボトムス", "洋服"], priceRange: "¥10,000〜¥25,000" },
+          { name: "レディース上品スカート", keywords: ["レディース", "スカート", "上品", "ボトムス", "洋服"], priceRange: "¥8,000〜¥20,000" },
+          { name: "レディースエレガントボトムス", keywords: ["レディース", "ボトムス", "エレガント", "上品", "洋服"], priceRange: "¥6,000〜¥18,000" }
+        );
+      } else if (item.includes("アウター")) {
+        suggestions.push(
+          { name: "レディースエレガントジャケット", keywords: ["レディース", "ジャケット", "エレガント", "アウター", "洋服"], priceRange: "¥15,000〜¥40,000" },
+          { name: "レディース上品コート", keywords: ["レディース", "コート", "上品", "アウター", "洋服"], priceRange: "¥20,000〜¥50,000" },
+          { name: "レディースエレガントアウター", keywords: ["レディース", "アウター", "エレガント", "上品", "洋服"], priceRange: "¥12,000〜¥30,000" }
+        );
+      }
+    }
+  } else {
+    // デフォルト提案（性別不明の場合）
+    suggestions.push(
+      { name: "洋服ギフトセット", keywords: ["洋服", "ギフト", "セット", "ファッション"], priceRange: "¥5,000〜¥15,000" },
+      { name: "定番トップス", keywords: ["トップス", "定番", "洋服", "ファッション"], priceRange: "¥4,000〜¥12,000" },
+      { name: "定番ボトムス", keywords: ["ボトムス", "定番", "洋服", "ファッション"], priceRange: "¥5,000〜¥15,000" }
     );
   }
 
