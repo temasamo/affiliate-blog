@@ -226,6 +226,24 @@ export const fatherQuestionFlows = {
       question: "ご予算帯をお選びください",
       options: ["5,000円未満", "5,000円〜10,000円未満", "10,000円〜20,000円未満", "20,000円以上"]
     }
+  ],
+  "ルームウェア": [
+    {
+      question: "お父さんの家での過ごし方は？",
+      options: ["リラックス重視", "動きやすさ重視", "おしゃれ重視", "特にこだわりなし"]
+    },
+    {
+      question: "ルームウェアの種類は？",
+      options: ["パジャマ", "部屋着", "スウェット", "その他"]
+    },
+    {
+      question: "素材の好みは？",
+      options: ["綿", "フリース", "タオル地", "特にこだわりなし"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["3,000円未満", "3,000円〜8,000円", "8,000円〜15,000円", "15,000円以上"]
+    }
   ]
 };
 
@@ -932,6 +950,75 @@ export function generateFatherSuggestions(category: string, answers: Record<stri
           { name: "スポーツグッズ", keywords: ["スポーツ", "グッズ", "健康", "お父さん"], priceRange: "¥5,000〜¥20,000" },
           { name: "高級スポーツグッズ", keywords: ["スポーツ", "グッズ", "高級", "健康"], priceRange: "¥8,000〜¥25,000" },
           { name: "実用的なスポーツグッズ", keywords: ["スポーツ", "グッズ", "実用的", "健康"], priceRange: "¥6,000〜¥22,000" }
+        );
+      }
+      break;
+
+    case "ルームウェア":
+      const roomwearAnswer = answers.question_0 || ""; // 家での過ごし方を取得
+      const roomwearTypeAnswer = answers.question_1 || ""; // ルームウェアの種類を取得
+      const materialAnswer = answers.question_2 || ""; // 素材の好みを取得
+      
+      if (roomwearTypeAnswer.includes("パジャマ")) {
+        if (materialAnswer.includes("綿")) {
+          suggestions.push(
+            { name: "綿パジャマ", keywords: ["パジャマ", "綿", "ルームウェア", "快適"], priceRange: "¥3,000〜¥8,000" },
+            { name: "高級綿パジャマ", keywords: ["パジャマ", "綿", "高級", "ルームウェア"], priceRange: "¥5,000〜¥12,000" },
+            { name: "綿パジャマセット", keywords: ["パジャマ", "綿", "セット", "ルームウェア"], priceRange: "¥4,000〜¥10,000" }
+          );
+        } else if (materialAnswer.includes("フリース")) {
+          suggestions.push(
+            { name: "フリースパジャマ", keywords: ["パジャマ", "フリース", "ルームウェア", "暖かい"], priceRange: "¥4,000〜¥10,000" },
+            { name: "高級フリースパジャマ", keywords: ["パジャマ", "フリース", "高級", "ルームウェア"], priceRange: "¥6,000〜¥15,000" },
+            { name: "フリースパジャマセット", keywords: ["パジャマ", "フリース", "セット", "ルームウェア"], priceRange: "¥5,000〜¥12,000" }
+          );
+        } else {
+          suggestions.push(
+            { name: "快適パジャマ", keywords: ["パジャマ", "ルームウェア", "快適", "睡眠"], priceRange: "¥3,000〜¥8,000" },
+            { name: "高級パジャマ", keywords: ["パジャマ", "高級", "ルームウェア", "睡眠"], priceRange: "¥5,000〜¥12,000" },
+            { name: "パジャマセット", keywords: ["パジャマ", "セット", "ルームウェア", "睡眠"], priceRange: "¥4,000〜¥10,000" }
+          );
+        }
+      } else if (roomwearTypeAnswer.includes("部屋着")) {
+        if (materialAnswer.includes("綿")) {
+          suggestions.push(
+            { name: "綿部屋着", keywords: ["部屋着", "綿", "ルームウェア", "快適"], priceRange: "¥3,000〜¥8,000" },
+            { name: "高級綿部屋着", keywords: ["部屋着", "綿", "高級", "ルームウェア"], priceRange: "¥5,000〜¥12,000" },
+            { name: "綿部屋着セット", keywords: ["部屋着", "綿", "セット", "ルームウェア"], priceRange: "¥4,000〜¥10,000" }
+          );
+        } else if (materialAnswer.includes("タオル地")) {
+          suggestions.push(
+            { name: "タオル地部屋着", keywords: ["部屋着", "タオル地", "ルームウェア", "吸水性"], priceRange: "¥3,000〜¥8,000" },
+            { name: "高級タオル地部屋着", keywords: ["部屋着", "タオル地", "高級", "ルームウェア"], priceRange: "¥5,000〜¥12,000" },
+            { name: "タオル地部屋着セット", keywords: ["部屋着", "タオル地", "セット", "ルームウェア"], priceRange: "¥4,000〜¥10,000" }
+          );
+        } else {
+          suggestions.push(
+            { name: "快適部屋着", keywords: ["部屋着", "ルームウェア", "快適", "リラックス"], priceRange: "¥3,000〜¥8,000" },
+            { name: "高級部屋着", keywords: ["部屋着", "高級", "ルームウェア", "リラックス"], priceRange: "¥5,000〜¥12,000" },
+            { name: "部屋着セット", keywords: ["部屋着", "セット", "ルームウェア", "リラックス"], priceRange: "¥4,000〜¥10,000" }
+          );
+        }
+      } else if (roomwearTypeAnswer.includes("スウェット")) {
+        if (materialAnswer.includes("フリース")) {
+          suggestions.push(
+            { name: "フリーススウェット", keywords: ["スウェット", "フリース", "ルームウェア", "暖かい"], priceRange: "¥4,000〜¥10,000" },
+            { name: "高級フリーススウェット", keywords: ["スウェット", "フリース", "高級", "ルームウェア"], priceRange: "¥6,000〜¥15,000" },
+            { name: "フリーススウェットセット", keywords: ["スウェット", "フリース", "セット", "ルームウェア"], priceRange: "¥5,000〜¥12,000" }
+          );
+        } else {
+          suggestions.push(
+            { name: "快適スウェット", keywords: ["スウェット", "ルームウェア", "快適", "動きやすい"], priceRange: "¥3,000〜¥8,000" },
+            { name: "高級スウェット", keywords: ["スウェット", "高級", "ルームウェア", "動きやすい"], priceRange: "¥5,000〜¥12,000" },
+            { name: "スウェットセット", keywords: ["スウェット", "セット", "ルームウェア", "動きやすい"], priceRange: "¥4,000〜¥10,000" }
+          );
+        }
+      } else {
+        // デフォルト提案
+        suggestions.push(
+          { name: "快適ルームウェア", keywords: ["ルームウェア", "快適", "リラックス", "家着"], priceRange: "¥3,000〜¥8,000" },
+          { name: "高級ルームウェア", keywords: ["ルームウェア", "高級", "リラックス", "家着"], priceRange: "¥5,000〜¥12,000" },
+          { name: "ルームウェアセット", keywords: ["ルームウェア", "セット", "リラックス", "家着"], priceRange: "¥4,000〜¥10,000" }
         );
       }
       break;

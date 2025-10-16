@@ -553,6 +553,50 @@ export default function FatherBirthdayGiftsPage() {
                 </Link>
               </div>
             </div>
+
+            {/* ギフト11: ルームウェア */}
+            <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
+              <div className="aspect-w-16 aspect-h-9 mb-4">
+                <div className="w-full h-48 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&amp;p_id=54&amp;pc_id=54&amp;pl_id=616&amp;url=https%3A%2F%2Fitem.rakuten.co.jp%2Ftential%2Fbakune-drylong-m-set_25ss%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Ftential%2Fi%2F10000274%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/tential/cabinet/11564609/11564634/imgrc0113665866.jpg?_ex=128x128" alt="ルームウェア" style={{ border: 'medium', width: '200px', height: '200px', objectFit: 'cover' }} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&amp;p_id=54&amp;pc_id=54&amp;pl_id=616" alt="" loading="lazy" width="1" height="1" style={{ border: '0px' }} />
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">ルームウェア</h3>
+              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥3,000〜¥15,000）</p>
+              <p className="text-gray-600 mb-4">
+                パジャマ、部屋着、スウェットなど、家でくつろぐ時間を快適にするルームウェア。<br />
+                <span className="font-semibold text-blue-600">「家でリラックスできる」</span>と喜ばれる、日常を豊かにするギフトです。
+              </p>
+              <Link 
+                href="/events/birthday/chat?category=ルームウェア&target=実父"
+                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-center block mb-3"
+              >
+                🤖 AI相談で選ぶ
+              </Link>
+              <div className="flex gap-2 justify-center">
+                <Link 
+                  href="/api/out?mall=rakuten&brand=ルームウェア" 
+                  className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
+                >
+                  楽天
+                </Link>
+                <Link 
+                  href="/api/out?mall=amazon&brand=ルームウェア" 
+                  className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
+                >
+                  Amazon
+                </Link>
+                <Link 
+                  href="/api/out?mall=yahoo&brand=ルームウェア" 
+                  className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
+                >
+                  Yahoo
+                </Link>
+              </div>
+            </div>
           </div>
 
           {/* 季節別おすすめ */}
