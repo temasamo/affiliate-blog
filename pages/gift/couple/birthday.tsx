@@ -310,6 +310,34 @@ export default function CoupleBirthdayGiftsPage() {
                 <Link href="/api/out?mall=yahoo&brand=推し活グッズ 体験ギフト" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
               </div>
             </div>
+
+            {/* ギフト10: 洋服 */}
+            <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
+              <div className="aspect-w-16 aspect-h-9 mb-4">
+                <div className="w-full h-48 rounded-lg overflow-hidden">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&amp;p_id=54&amp;pc_id=54&amp;pl_id=616&amp;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fw-w-m%2Fcw6768-010%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fw-w-m%2Fi%2F10046833%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/w-w-m/cabinet/cm/2201a/cw6768-010_01.jpg?_ex=128x128" alt="" style={{border: "medium", width: "100%", height: "100%", objectFit: "cover"}} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&amp;p_id=54&amp;pc_id=54&amp;pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: "0px"}} />
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">洋服</h3>
+              <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥5,000〜¥20,000）</p>
+              <p className="text-gray-600 mb-4">
+                トップス、ボトムス、アウターなど、<span className="font-semibold text-red-600">普段着にプラス</span>できる実用的なギフト。
+              </p>
+              <Link 
+                href="/events/birthday/chat?category=洋服&target=恋人"
+                className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-2 px-4 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-300 text-center block mb-3"
+              >
+                🤖 AI相談で選ぶ
+              </Link>
+              <div className="flex gap-2 justify-center">
+                <Link href="/api/out?mall=rakuten&brand=洋服 ファッション" className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors">楽天</Link>
+                <Link href="/api/out?mall=amazon&brand=洋服 ファッション" className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors">Amazon</Link>
+                <Link href="/api/out?mall=yahoo&brand=洋服 ファッション" className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors">Yahoo</Link>
+              </div>
+            </div>
           </div>
 
           {/* 価格帯ガイド */}
