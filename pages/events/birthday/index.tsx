@@ -32,6 +32,7 @@ export default function BirthdayGiftsPage() {
             </div>
           </div>
 
+
           {/* カテゴリ一覧 */}
           <div className="grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-12">
             {/* 実母向け */}
