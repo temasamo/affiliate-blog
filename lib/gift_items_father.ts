@@ -233,12 +233,12 @@ export const fatherQuestionFlows = {
       options: ["リラックス重視", "動きやすさ重視", "おしゃれ重視", "特にこだわりなし"]
     },
     {
-      question: "ルームウェアの種類は？",
-      options: ["パジャマ", "部屋着", "スウェット", "その他"]
+      question: "どのタイプのルームウェアをお探しですか？",
+      options: ["パジャマ（寝間着）", "部屋着（普段着）", "スウェット（動きやすい）", "どれでも良い"]
     },
     {
-      question: "素材の好みは？",
-      options: ["綿", "フリース", "タオル地", "特にこだわりなし"]
+      question: "素材の好みはありますか？",
+      options: ["綿（通気性重視）", "フリース（保温重視）", "タオル地（吸水性重視）", "特にこだわりなし"]
     },
     {
       question: "ご予算帯をお選びください",
@@ -959,66 +959,96 @@ export function generateFatherSuggestions(category: string, answers: Record<stri
       const roomwearTypeAnswer = answers.question_1 || ""; // ルームウェアの種類を取得
       const materialAnswer = answers.question_2 || ""; // 素材の好みを取得
       
-      if (roomwearTypeAnswer.includes("パジャマ")) {
+      // パジャマ系の提案（tentialブランドのドライロングシリーズを参考）
+      if (roomwearTypeAnswer.includes("パジャマ") || roomwearTypeAnswer.includes("どれでも良い")) {
         if (materialAnswer.includes("綿")) {
           suggestions.push(
-            { name: "綿パジャマ", keywords: ["パジャマ", "綿", "ルームウェア", "快適"], priceRange: "¥3,000〜¥8,000" },
-            { name: "高級綿パジャマ", keywords: ["パジャマ", "綿", "高級", "ルームウェア"], priceRange: "¥5,000〜¥12,000" },
-            { name: "綿パジャマセット", keywords: ["パジャマ", "綿", "セット", "ルームウェア"], priceRange: "¥4,000〜¥10,000" }
+            { name: "メンズ綿パジャマ", keywords: ["メンズ", "パジャマ", "綿", "ルームウェア", "ドライロング", "tential"], priceRange: "¥3,000〜¥8,000" },
+            { name: "高級綿パジャマセット", keywords: ["メンズ", "パジャマ", "綿", "高級", "ルームウェア", "ドライロング"], priceRange: "¥5,000〜¥12,000" },
+            { name: "快適綿パジャマ", keywords: ["メンズ", "パジャマ", "綿", "快適", "ルームウェア", "tential"], priceRange: "¥4,000〜¥10,000" }
           );
         } else if (materialAnswer.includes("フリース")) {
           suggestions.push(
-            { name: "フリースパジャマ", keywords: ["パジャマ", "フリース", "ルームウェア", "暖かい"], priceRange: "¥4,000〜¥10,000" },
-            { name: "高級フリースパジャマ", keywords: ["パジャマ", "フリース", "高級", "ルームウェア"], priceRange: "¥6,000〜¥15,000" },
-            { name: "フリースパジャマセット", keywords: ["パジャマ", "フリース", "セット", "ルームウェア"], priceRange: "¥5,000〜¥12,000" }
-          );
-        } else {
-          suggestions.push(
-            { name: "快適パジャマ", keywords: ["パジャマ", "ルームウェア", "快適", "睡眠"], priceRange: "¥3,000〜¥8,000" },
-            { name: "高級パジャマ", keywords: ["パジャマ", "高級", "ルームウェア", "睡眠"], priceRange: "¥5,000〜¥12,000" },
-            { name: "パジャマセット", keywords: ["パジャマ", "セット", "ルームウェア", "睡眠"], priceRange: "¥4,000〜¥10,000" }
-          );
-        }
-      } else if (roomwearTypeAnswer.includes("部屋着")) {
-        if (materialAnswer.includes("綿")) {
-          suggestions.push(
-            { name: "綿部屋着", keywords: ["部屋着", "綿", "ルームウェア", "快適"], priceRange: "¥3,000〜¥8,000" },
-            { name: "高級綿部屋着", keywords: ["部屋着", "綿", "高級", "ルームウェア"], priceRange: "¥5,000〜¥12,000" },
-            { name: "綿部屋着セット", keywords: ["部屋着", "綿", "セット", "ルームウェア"], priceRange: "¥4,000〜¥10,000" }
+            { name: "メンズフリースパジャマ", keywords: ["メンズ", "パジャマ", "フリース", "ルームウェア", "暖かい", "tential"], priceRange: "¥4,000〜¥10,000" },
+            { name: "高級フリースパジャマ", keywords: ["メンズ", "パジャマ", "フリース", "高級", "ルームウェア", "暖かい"], priceRange: "¥6,000〜¥15,000" },
+            { name: "フリースパジャマセット", keywords: ["メンズ", "パジャマ", "フリース", "セット", "ルームウェア", "tential"], priceRange: "¥5,000〜¥12,000" }
           );
         } else if (materialAnswer.includes("タオル地")) {
           suggestions.push(
-            { name: "タオル地部屋着", keywords: ["部屋着", "タオル地", "ルームウェア", "吸水性"], priceRange: "¥3,000〜¥8,000" },
-            { name: "高級タオル地部屋着", keywords: ["部屋着", "タオル地", "高級", "ルームウェア"], priceRange: "¥5,000〜¥12,000" },
-            { name: "タオル地部屋着セット", keywords: ["部屋着", "タオル地", "セット", "ルームウェア"], priceRange: "¥4,000〜¥10,000" }
+            { name: "メンズタオル地パジャマ", keywords: ["メンズ", "パジャマ", "タオル地", "ルームウェア", "吸水性", "tential"], priceRange: "¥3,000〜¥8,000" },
+            { name: "高級タオル地パジャマ", keywords: ["メンズ", "パジャマ", "タオル地", "高級", "ルームウェア", "吸水性"], priceRange: "¥5,000〜¥12,000" },
+            { name: "タオル地パジャマセット", keywords: ["メンズ", "パジャマ", "タオル地", "セット", "ルームウェア", "tential"], priceRange: "¥4,000〜¥10,000" }
           );
         } else {
           suggestions.push(
-            { name: "快適部屋着", keywords: ["部屋着", "ルームウェア", "快適", "リラックス"], priceRange: "¥3,000〜¥8,000" },
-            { name: "高級部屋着", keywords: ["部屋着", "高級", "ルームウェア", "リラックス"], priceRange: "¥5,000〜¥12,000" },
-            { name: "部屋着セット", keywords: ["部屋着", "セット", "ルームウェア", "リラックス"], priceRange: "¥4,000〜¥10,000" }
+            { name: "メンズ快適パジャマ", keywords: ["メンズ", "パジャマ", "ルームウェア", "快適", "睡眠", "tential"], priceRange: "¥3,000〜¥8,000" },
+            { name: "メンズ高級パジャマ", keywords: ["メンズ", "パジャマ", "高級", "ルームウェア", "睡眠", "ドライロング"], priceRange: "¥5,000〜¥12,000" },
+            { name: "メンズパジャマセット", keywords: ["メンズ", "パジャマ", "セット", "ルームウェア", "睡眠", "tential"], priceRange: "¥4,000〜¥10,000" }
           );
         }
-      } else if (roomwearTypeAnswer.includes("スウェット")) {
+      } 
+      // 部屋着系の提案（tentialブランドの部屋着シリーズを参考）
+      else if (roomwearTypeAnswer.includes("部屋着")) {
+        if (materialAnswer.includes("綿")) {
+          suggestions.push(
+            { name: "メンズ綿部屋着", keywords: ["メンズ", "部屋着", "綿", "ルームウェア", "快適", "tential"], priceRange: "¥3,000〜¥8,000" },
+            { name: "高級綿部屋着", keywords: ["メンズ", "部屋着", "綿", "高級", "ルームウェア", "快適"], priceRange: "¥5,000〜¥12,000" },
+            { name: "綿部屋着セット", keywords: ["メンズ", "部屋着", "綿", "セット", "ルームウェア", "tential"], priceRange: "¥4,000〜¥10,000" }
+          );
+        } else if (materialAnswer.includes("タオル地")) {
+          suggestions.push(
+            { name: "メンズタオル地部屋着", keywords: ["メンズ", "部屋着", "タオル地", "ルームウェア", "吸水性", "tential"], priceRange: "¥3,000〜¥8,000" },
+            { name: "高級タオル地部屋着", keywords: ["メンズ", "部屋着", "タオル地", "高級", "ルームウェア", "吸水性"], priceRange: "¥5,000〜¥12,000" },
+            { name: "タオル地部屋着セット", keywords: ["メンズ", "部屋着", "タオル地", "セット", "ルームウェア", "tential"], priceRange: "¥4,000〜¥10,000" }
+          );
+        } else if (materialAnswer.includes("フリース")) {
+          suggestions.push(
+            { name: "メンズフリース部屋着", keywords: ["メンズ", "部屋着", "フリース", "ルームウェア", "暖かい", "tential"], priceRange: "¥4,000〜¥10,000" },
+            { name: "高級フリース部屋着", keywords: ["メンズ", "部屋着", "フリース", "高級", "ルームウェア", "暖かい"], priceRange: "¥6,000〜¥15,000" },
+            { name: "フリース部屋着セット", keywords: ["メンズ", "部屋着", "フリース", "セット", "ルームウェア", "tential"], priceRange: "¥5,000〜¥12,000" }
+          );
+        } else {
+          suggestions.push(
+            { name: "メンズ快適部屋着", keywords: ["メンズ", "部屋着", "ルームウェア", "快適", "リラックス", "tential"], priceRange: "¥3,000〜¥8,000" },
+            { name: "メンズ高級部屋着", keywords: ["メンズ", "部屋着", "高級", "ルームウェア", "リラックス", "tential"], priceRange: "¥5,000〜¥12,000" },
+            { name: "メンズ部屋着セット", keywords: ["メンズ", "部屋着", "セット", "ルームウェア", "リラックス", "tential"], priceRange: "¥4,000〜¥10,000" }
+          );
+        }
+      } 
+      // スウェット系の提案（tentialブランドのスウェットシリーズを参考）
+      else if (roomwearTypeAnswer.includes("スウェット")) {
         if (materialAnswer.includes("フリース")) {
           suggestions.push(
-            { name: "フリーススウェット", keywords: ["スウェット", "フリース", "ルームウェア", "暖かい"], priceRange: "¥4,000〜¥10,000" },
-            { name: "高級フリーススウェット", keywords: ["スウェット", "フリース", "高級", "ルームウェア"], priceRange: "¥6,000〜¥15,000" },
-            { name: "フリーススウェットセット", keywords: ["スウェット", "フリース", "セット", "ルームウェア"], priceRange: "¥5,000〜¥12,000" }
+            { name: "メンズフリーススウェット", keywords: ["メンズ", "スウェット", "フリース", "ルームウェア", "暖かい", "tential"], priceRange: "¥4,000〜¥10,000" },
+            { name: "高級フリーススウェット", keywords: ["メンズ", "スウェット", "フリース", "高級", "ルームウェア", "暖かい"], priceRange: "¥6,000〜¥15,000" },
+            { name: "フリーススウェットセット", keywords: ["メンズ", "スウェット", "フリース", "セット", "ルームウェア", "tential"], priceRange: "¥5,000〜¥12,000" }
+          );
+        } else if (materialAnswer.includes("綿")) {
+          suggestions.push(
+            { name: "メンズ綿スウェット", keywords: ["メンズ", "スウェット", "綿", "ルームウェア", "快適", "tential"], priceRange: "¥3,000〜¥8,000" },
+            { name: "高級綿スウェット", keywords: ["メンズ", "スウェット", "綿", "高級", "ルームウェア", "快適"], priceRange: "¥5,000〜¥12,000" },
+            { name: "綿スウェットセット", keywords: ["メンズ", "スウェット", "綿", "セット", "ルームウェア", "tential"], priceRange: "¥4,000〜¥10,000" }
+          );
+        } else if (materialAnswer.includes("タオル地")) {
+          suggestions.push(
+            { name: "メンズタオル地スウェット", keywords: ["メンズ", "スウェット", "タオル地", "ルームウェア", "吸水性", "tential"], priceRange: "¥3,000〜¥8,000" },
+            { name: "高級タオル地スウェット", keywords: ["メンズ", "スウェット", "タオル地", "高級", "ルームウェア", "吸水性"], priceRange: "¥5,000〜¥12,000" },
+            { name: "タオル地スウェットセット", keywords: ["メンズ", "スウェット", "タオル地", "セット", "ルームウェア", "tential"], priceRange: "¥4,000〜¥10,000" }
           );
         } else {
           suggestions.push(
-            { name: "快適スウェット", keywords: ["スウェット", "ルームウェア", "快適", "動きやすい"], priceRange: "¥3,000〜¥8,000" },
-            { name: "高級スウェット", keywords: ["スウェット", "高級", "ルームウェア", "動きやすい"], priceRange: "¥5,000〜¥12,000" },
-            { name: "スウェットセット", keywords: ["スウェット", "セット", "ルームウェア", "動きやすい"], priceRange: "¥4,000〜¥10,000" }
+            { name: "メンズ快適スウェット", keywords: ["メンズ", "スウェット", "ルームウェア", "快適", "動きやすい", "tential"], priceRange: "¥3,000〜¥8,000" },
+            { name: "メンズ高級スウェット", keywords: ["メンズ", "スウェット", "高級", "ルームウェア", "動きやすい", "tential"], priceRange: "¥5,000〜¥12,000" },
+            { name: "メンズスウェットセット", keywords: ["メンズ", "スウェット", "セット", "ルームウェア", "動きやすい", "tential"], priceRange: "¥4,000〜¥10,000" }
           );
         }
-      } else {
-        // デフォルト提案
+      } 
+      // その他の場合は、tentialブランドのルームウェアに特化した提案
+      else {
         suggestions.push(
-          { name: "快適ルームウェア", keywords: ["ルームウェア", "快適", "リラックス", "家着"], priceRange: "¥3,000〜¥8,000" },
-          { name: "高級ルームウェア", keywords: ["ルームウェア", "高級", "リラックス", "家着"], priceRange: "¥5,000〜¥12,000" },
-          { name: "ルームウェアセット", keywords: ["ルームウェア", "セット", "リラックス", "家着"], priceRange: "¥4,000〜¥10,000" }
+          { name: "メンズルームウェア", keywords: ["メンズ", "ルームウェア", "快適", "リラックス", "家着", "tential"], priceRange: "¥3,000〜¥8,000" },
+          { name: "高級ルームウェア", keywords: ["メンズ", "ルームウェア", "高級", "リラックス", "家着", "tential"], priceRange: "¥5,000〜¥12,000" },
+          { name: "ルームウェアセット", keywords: ["メンズ", "ルームウェア", "セット", "リラックス", "家着", "tential"], priceRange: "¥4,000〜¥10,000" }
         );
       }
       break;
