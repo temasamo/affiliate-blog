@@ -17,7 +17,7 @@ function getArticlePath(slug: string, category: string): string {
   
   // 温泉地ガイド記事の場合
   if (category === "温泉地ガイド") {
-    return `/content/travel/ryokan/${slug}`;
+    return `/travel/${slug}`;
   }
   
   // Global Hot Picksの場合

@@ -117,9 +117,9 @@ export default function MotherInLawBirthdayGiftsPage() {
             {/* ギフト1: 上質スキンケアセット */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
                   <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fshuuemura%2Fshu30001jp%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fshuuemura%2Fi%2F10000018%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
-                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/shuuemura/cabinet/images/packshots/shu30001jp-2-v9.jpg?_ex=128x128" alt="上質スキンケアセット" style={{border: 'medium'}} />
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/shuuemura/cabinet/images/packshots/shu30001jp-2-v9.jpg?_ex=200x200" alt="上質スキンケアセット" style={{border: 'medium', width: '200px', height: '200px', objectFit: 'cover'}} />
                   </a>
                   <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: '0px'}} />
                 </div>
@@ -161,8 +161,11 @@ export default function MotherInLawBirthdayGiftsPage() {
             {/* ギフト2: 香りギフト */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fasktrading%2Fit493%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fasktrading%2Fi%2F10061552%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/asktrading/cabinet/variety/goods4/it493_thum_n.jpg?_ex=200x200" alt="香りギフト" style={{border: 'medium', width: '200px', height: '200px', objectFit: 'cover'}} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: '0px'}} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">香りギフト</h3>
@@ -202,8 +205,11 @@ export default function MotherInLawBirthdayGiftsPage() {
             {/* ギフト3: 高級タオル・寝具 */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Floeuvredart%2Fitshrk100%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Floeuvredart%2Fi%2F10006379%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/loeuvredart/cabinet/towel/ituori/itu_haru100_01.jpg?_ex=200x200" alt="高級タオル・寝具" style={{border: 'medium', width: '200px', height: '200px', objectFit: 'cover'}} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: '0px'}} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">高級タオル・寝具</h3>
@@ -243,8 +249,11 @@ export default function MotherInLawBirthdayGiftsPage() {
             {/* ギフト4: コンパクト美容家電 */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Ffestino-shop%2Fsmhb033%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ffestino-shop%2Fi%2F10000170%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/festino-shop/cabinet/items/09306859/imgrc0083636606.jpg?_ex=200x200" alt="コンパクト美容家電" style={{border: 'medium', width: '200px', height: '200px', objectFit: 'cover'}} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: '0px'}} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">コンパクト美容家電</h3>
@@ -284,8 +293,11 @@ export default function MotherInLawBirthdayGiftsPage() {
             {/* ギフト5: 華やかスイーツギフト */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Ffunabashi-ya%2F878731%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ffunabashi-ya%2Fi%2F10000023%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/funabashi-ya/cabinet/petitscakes/051.jpg?_ex=200x200" alt="華やかスイーツギフト" style={{border: 'medium', width: '200px', height: '200px', objectFit: 'cover'}} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: '0px'}} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">華やかスイーツギフト</h3>
@@ -325,8 +337,11 @@ export default function MotherInLawBirthdayGiftsPage() {
             {/* ギフト6: 上品なお茶・紅茶ギフト */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Frikyu-en%2Fitem-set3%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frikyu-en%2Fi%2F10000010%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/rikyu-en/cabinet/tea/item-set3/imgrc0101693534.jpg?_ex=200x200" alt="上品なお茶・紅茶ギフト" style={{border: 'medium', width: '200px', height: '200px', objectFit: 'cover'}} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: '0px'}} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">上品なお茶・紅茶ギフト</h3>
@@ -366,8 +381,11 @@ export default function MotherInLawBirthdayGiftsPage() {
             {/* ギフト7: キッチン雑貨・調理器具 */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fluckywood%2F5-09710-2107%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fluckywood%2Fi%2F10000219%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/luckywood/cabinet/10688426/5-09710-2107.jpg?_ex=200x200" alt="キッチン雑貨・調理器具" style={{border: 'medium', width: '200px', height: '200px', objectFit: 'cover'}} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: '0px'}} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">キッチン雑貨・調理器具</h3>
@@ -407,8 +425,11 @@ export default function MotherInLawBirthdayGiftsPage() {
             {/* ギフト8: アロマ・癒しグッズ */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fcrystal-planet%2Fmrm02%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fcrystal-planet%2Fi%2F10065140%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/crystal-planet/cabinet/brand001/moreroom001/mrm17_yappari.jpg?_ex=200x200" alt="アロマ・癒しグッズ" style={{border: 'medium', width: '200px', height: '200px', objectFit: 'cover'}} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: '0px'}} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">アロマ・癒しグッズ</h3>
@@ -448,8 +469,11 @@ export default function MotherInLawBirthdayGiftsPage() {
             {/* ギフト9: ブランド小物 */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
+                <div className="w-full h-64 rounded-lg flex items-center justify-center">
+                  <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fartisan-artist%2F9wp-li117%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fartisan-artist%2Fi%2F10002355%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                    <img src="//thumbnail.image.rakuten.co.jp/@0_mall/artisan-artist/cabinet/img_std/9wp-li117blk_1.jpg?_ex=200x200" alt="ブランド小物" style={{border: 'medium', width: '200px', height: '200px', objectFit: 'cover'}} />
+                  </a>
+                  <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: '0px'}} />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">ブランド小物</h3>
