@@ -108,7 +108,7 @@ function getArticlePath(slug: string, category: string): string {
   }
   if (category === "日本酒" || category === "japanesesake") {
     // typeフィールドまたはslugから推測してサブディレクトリを決定
-    if (slug.includes("knowledge") || slug.includes("2025-10-11-nihonshu-intro") || slug.includes("2025-10-12-nihonshu-history") || slug.includes("2025-10-13-nihonshu-ingredients") || slug.includes("2025-10-13-nihonshu-seimaibuai")) {
+    if (slug.includes("knowledge") || slug.includes("2025-10-11-nihonshu-intro") || slug.includes("2025-10-12-nihonshu-history") || slug.includes("2025-10-13-nihonshu-ingredients") || slug.includes("2025-10-13-nihonshu-seimaibuai") || slug.includes("2025-10-15-nihonshu-classification") || slug.includes("2025-10-16-nihonshu-temperature") || slug.includes("2025-10-17-nihonshu-flavor")) {
       return `/articles/japanesesake/knowledge/${slug}`;
     }
     // デフォルトはbrands

@@ -82,3 +82,4 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const mdxSource = await serialize(content);
   return { props: { frontMatter, mdxSource } };
 };
+
