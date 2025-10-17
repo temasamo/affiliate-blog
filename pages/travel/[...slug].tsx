@@ -14,7 +14,7 @@ export async function getStaticPaths() {
   const slugs = getAllTravelSlugs();
   return {
     paths: slugs.map((s: string) => ({ params: { slug: s.split("/") } })),
-    fallback: false,
+    fallback: true,
   };
 }
 

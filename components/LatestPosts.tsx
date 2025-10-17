@@ -16,22 +16,6 @@ function getArticlePath(slug: string, category: string): string {
     if (slug === "meigetsuso-part2") {
       return `/travel/ryokan/2025-10-17-meigetsuso-part2`;
     }
-    // 温泉地ガイド記事の特別処理
-    if (slug === "yamagata-okitama-onsen") {
-      return `/travel/onsen/yamagata-okitama-onsen`;
-    }
-    if (slug === "yamagata-mogami-onsen") {
-      return `/travel/onsen/yamagata-mogami-onsen`;
-    }
-    if (slug === "yamagata-murayama-onsen-2") {
-      return `/travel/onsen/yamagata-murayama-onsen-2`;
-    }
-    if (slug === "yamagata-murayama-onsen-1") {
-      return `/travel/onsen/yamagata-murayama-onsen-1`;
-    }
-    if (slug === "yamagata-shonai-onsen") {
-      return `/travel/onsen/yamagata-shonai-onsen`;
-    }
     return `/travel/${slug}`;
   }
   
