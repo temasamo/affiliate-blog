@@ -375,7 +375,8 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
     travelPosts = slugs.map((s) => {
       try {
         const { frontMatter, slug } = getTravelPostBySlug(s);
-        return { slug, ...frontMatter };
+        // 実際のファイルパス（s）をslugとして使用
+        return { slug: s, ...frontMatter };
       } catch (error) {
         console.error(`Error getting travel post for slug ${s}:`, error);
         return null;
