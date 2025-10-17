@@ -12,17 +12,36 @@ import { getTravelPostBySlug, serializeMDX } from '@/lib/mdx';
 
 export async function getStaticPaths() {
   const slugs = getAllTravelSlugs();
+  
+  // 名月荘後編の特別処理：meigetsuso-part2 のパスも追加
+  const additionalPaths = [
+    { params: { slug: ["meigetsuso-part2"] } }
+  ];
+  
+  const allPaths = [
+    ...slugs.map((s: string) => ({ params: { slug: s.split("/") } })),
+    ...additionalPaths
+  ];
+  
   return {
-    paths: slugs.map((s: string) => ({ params: { slug: s.split("/") } })),
+    paths: allPaths,
     fallback: true,
   };
 }
 
 export async function getStaticProps({ params }: any) {
   const slugArray = params.slug as string[];
-  const slug = slugArray.join("/");
+  let slug = slugArray.join("/");
+  
+  // 名月荘後編の特別処理
+  if (slug === "meigetsuso-part2") {
+    slug = "ryokan/2025-10-17-meigetsuso-part2";
+  }
+  
   try {
+    console.log("[getStaticProps] Processing slug:", slug);
     const { content, frontMatter } = getTravelPostBySlug(slug);
+    console.log("[getStaticProps] FrontMatter:", frontMatter);
     
     // 非公開記事の場合は404を返す
     if (frontMatter?.published === false) {
@@ -46,6 +65,20 @@ const components = { AffButton,
 };
 
 function TravelPost({ mdxSource, frontMatter }: any) {
+  // エラーハンドリング
+  if (!frontMatter) {
+    return (
+      <main className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+        <article className="mx-auto max-w-4xl p-6 sm:p-10">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold text-red-600 mb-4">記事が見つかりません</h1>
+            <p className="text-gray-600">申し訳ございませんが、お探しの記事が見つかりませんでした。</p>
+          </div>
+        </article>
+      </main>
+    );
+  }
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       <article className="mx-auto max-w-4xl p-6 sm:p-10">
