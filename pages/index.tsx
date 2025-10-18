@@ -152,6 +152,95 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
         {/* 旅行の新着記事（Global Hot Picksの上に固定配置） */}
         <TravelTeaser posts={travelPosts} />
 
+        {/* AIアプリ情報セクション */}
+        <section className="mb-12 sm:mb-16">
+          <div className="relative rounded-2xl overflow-hidden shadow-lg">
+            {/* 背景動画 */}
+            <div className="absolute inset-0">
+              <video
+                src="/videos/categories/ai-apps-hero.mp4"
+                className="w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+            </div>
+            
+            {/* オーバーレイ */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/60 to-purple-600/60"></div>
+            
+            {/* コンテンツ */}
+            <div className="relative z-10 p-8 sm:p-12">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                  AIアプリ情報
+                </h2>
+                <p className="text-white/90 text-lg">
+                  最新AIツール・生産性向上
+                </p>
+              </div>
+              
+              {/* AIアプリ記事カード */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <Link href="/articles/ai-apps/recommend/2025-10-19-ai-travel-japan" className="group">
+                  <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 hover:bg-white/60 transition-all duration-300 transform hover:-translate-y-1">
+                    <div className="flex items-center mb-3">
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">AI旅行</span>
+                      <span className="ml-2 text-xs text-gray-500">2025.10.19</span>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                      AI旅行アプリ最前線
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      国内向けAI旅行アプリの最新動向と実用性を徹底分析
+                    </p>
+                  </div>
+                </Link>
+                
+                <Link href="/ai-apps" className="group">
+                  <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 hover:bg-white/60 transition-all duration-300 transform hover:-translate-y-1">
+                    <div className="flex items-center mb-3">
+                      <span className="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">AI活用</span>
+                      <span className="ml-2 text-xs text-gray-500">準備中</span>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+                      AI活用術
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      プロンプトエンジニアリング・業務効率化・AI活用事例
+                    </p>
+                  </div>
+                </Link>
+                
+                <Link href="/ai-apps/recommend" className="group">
+                  <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 hover:bg-white/60 transition-all duration-300 transform hover:-translate-y-1">
+                    <div className="flex items-center mb-3">
+                      <span className="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">おすすめ</span>
+                      <span className="ml-2 text-xs text-gray-500">1記事</span>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
+                      おすすめAIアプリ一覧
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      ChatGPT・Claude・Gemini・画像生成・動画編集AI
+                    </p>
+                  </div>
+                </Link>
+              </div>
+              
+              <div className="text-center mt-8">
+                <Link href="/ai-apps" className="inline-flex items-center px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full hover:bg-white/30 transition-all duration-300 border border-white/30">
+                  AIアプリ情報を見る
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Global Hot Picks セクション */}
         <section className="mb-12 sm:mb-16">
           <div className="flex items-center mb-8">
@@ -226,6 +315,15 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
               href="/japan-popular"
               bgImage="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400&h=300&fit=crop&crop=center"
               overlayColor="bg-black/40"
+            />
+            <CategoryCard
+              title="AIアプリ情報"
+              subtitle="AI Tools & Apps"
+              description="最新AIツール・生産性向上"
+              href="/ai-apps"
+              bgImage="/videos/categories/ai-apps-hero.mp4"
+              overlayColor="bg-gradient-to-br from-blue-500/60 to-purple-600/60"
+              isVideo={true}
             />
             <CategoryCard
               title="Global Hot Picks"
