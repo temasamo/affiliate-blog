@@ -90,6 +90,9 @@ export default function Header({ title = "Market Supporter AI", description = "A
               <Link href="/japanese-sake" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
                 日本酒
               </Link>
+              <Link href="/ai-apps" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
+                AIアプリ情報
+              </Link>
               <Link href="/japan-popular" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
                 人気の日本商品
               </Link>
@@ -157,6 +160,9 @@ export default function Header({ title = "Market Supporter AI", description = "A
                 </Link>
                 <Link href="/japanese-sake" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
                   日本酒
+                </Link>
+                <Link href="/ai-apps" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
+                  AIアプリ情報
                 </Link>
                 <Link href="/japan-popular" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
                   人気の日本商品

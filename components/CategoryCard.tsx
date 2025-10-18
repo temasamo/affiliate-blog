@@ -9,6 +9,7 @@ interface CategoryCardProps {
   subtitle?: string;
   textColor?: string;
   overlayColor?: string;
+  isVideo?: boolean;
 }
 
 export default function CategoryCard({
@@ -18,20 +19,32 @@ export default function CategoryCard({
   bgImage,
   subtitle,
   textColor = 'text-white',
-  overlayColor = 'bg-black/40'
+  overlayColor = 'bg-black/40',
+  isVideo = false
 }: CategoryCardProps) {
   return (
     <Link href={href} className="group block">
       <div className="relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-48">
-        {/* 背景画像 */}
+        {/* 背景画像/動画 */}
         <div className="absolute inset-0">
-          <Image
-            src={bgImage}
-            alt={title}
-            fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-          />
+          {isVideo ? (
+            <video
+              src={bgImage}
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          ) : (
+            <Image
+              src={bgImage}
+              alt={title}
+              fill
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+            />
+          )}
         </div>
         
         {/* オーバーレイ */}
