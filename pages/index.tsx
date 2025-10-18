@@ -183,11 +183,11 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
               
               {/* AIアプリ記事カード */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Link href="/articles/ai-apps/recommend/2025-10-19-ai-travel-japan" className="group">
+                <Link href="/articles/ai-apps/recommend/2025-10-18-ai-travel-japan" className="group">
                   <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 hover:bg-white/60 transition-all duration-300 transform hover:-translate-y-1">
                     <div className="flex items-center mb-3">
                       <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">AI旅行</span>
-                      <span className="ml-2 text-xs text-gray-500">2025.10.19</span>
+                      <span className="ml-2 text-xs text-gray-500">2025.10.18</span>
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                       AI旅行アプリ最前線

@@ -106,6 +106,19 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     return `/articles/japanesetea/recommend/${slug}`;
   }
   
+  // AIアプリ情報カテゴリの記事の場合
+  if (category === "AIアプリ情報") {
+    // subcategoryから推測してサブディレクトリを決定
+    if (subcategory === "おすすめAIアプリ") {
+      return `/articles/ai-apps/recommend/${slug}`;
+    }
+    if (subcategory === "AI活用術") {
+      return `/articles/ai-apps/knowledge/${slug}`;
+    }
+    // デフォルトはrecommend
+    return `/articles/ai-apps/recommend/${slug}`;
+  }
+  
   // 日本酒カテゴリの記事の場合
   
   // イベントカテゴリの記事の場合
@@ -119,7 +132,7 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
   }
   if (category === "日本酒" || category === "japanesesake") {
     // typeフィールドまたはslugから推測してサブディレクトリを決定
-    if (slug.includes("knowledge") || slug.includes("2025-10-11-nihonshu-intro") || slug.includes("2025-10-12-nihonshu-history") || slug.includes("2025-10-13-nihonshu-ingredients") || slug.includes("2025-10-13-nihonshu-seimaibuai") || slug.includes("2025-10-15-nihonshu-classification") || slug.includes("2025-10-16-nihonshu-temperature") || slug.includes("2025-10-17-nihonshu-flavor")) {
+    if (slug.includes("knowledge") || slug.includes("2025-10-11-nihonshu-intro") || slug.includes("2025-10-12-nihonshu-history") || slug.includes("2025-10-13-nihonshu-ingredients") || slug.includes("2025-10-13-nihonshu-seimaibuai") || slug.includes("2025-10-15-nihonshu-classification") || slug.includes("2025-10-16-nihonshu-temperature") || slug.includes("2025-10-17-nihonshu-flavor") || slug.includes("2025-10-18-nihonshu-storage")) {
       return `/articles/japanesesake/knowledge/${slug}`;
     }
     // デフォルトはbrands
