@@ -75,7 +75,7 @@ export default function Header({ title = "Market Supporter AI", description = "A
               <Link href="/sleep-health" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
                 睡眠・健康
               </Link>
-              <Link href="https://www.marketsupporter-ai.com/travel" className="text-gray-600 hover:text-blue-600 font-medium transition-colors" target="_blank" rel="noopener noreferrer">
+              <Link href="/travel" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
                 旅行
               </Link>
               <Link href="/japanese-tea" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
@@ -143,7 +143,7 @@ export default function Header({ title = "Market Supporter AI", description = "A
                 <Link href="/sleep-health" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
                   睡眠・健康
                 </Link>
-                <Link href="https://www.marketsupporter-ai.com/travel" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50" target="_blank" rel="noopener noreferrer">
+                <Link href="/travel" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
                   旅行
                 </Link>
                 <Link href="/japanese-tea" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">

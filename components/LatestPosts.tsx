@@ -4,18 +4,25 @@ type Item = {
   slug: string;
   title: string;
   category: string;
+  subcategory?: string;
   date: string | null;
   description?: string | null;
 };
 
 // 記事のパスを生成する関数
-function getArticlePath(slug: string, category: string): string {
+function getArticlePath(slug: string, category: string, subcategory?: string): string {
   // 旅行記事の場合
   if (category === "旅行") {
     // 名月荘後編の特別処理
     if (slug === "meigetsuso-part2") {
       return `/travel/ryokan/2025-10-17-meigetsuso-part2`;
     }
+    
+    // 温泉地ガイド記事の場合
+    if (subcategory === "温泉地ガイド") {
+      return `/travel/onsen/${slug}`;
+    }
+    
     return `/travel/${slug}`;
   }
   
@@ -147,7 +154,7 @@ export default function LatestPosts({ items }: { items: Item[] }) {
         {uniqueItems.slice(0, 5).map((p) => (
           <Link
             key={p.slug}
-            href={getArticlePath(p.slug, p.category)}
+            href={getArticlePath(p.slug, p.category, p.subcategory)}
             className="
               group block rounded-xl border border-gray-200 bg-white
               p-4 md:p-5 hover:shadow-md hover:border-gray-300 

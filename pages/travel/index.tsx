@@ -5,7 +5,7 @@ export async function getStaticProps() {
   const slugs = getTravelSlugs();
   const posts = slugs.map((s) => {
     const { frontMatter, slug } = getTravelPostBySlug(s);
-    return { slug, ...frontMatter } as any;
+    return { slug: s, ...frontMatter } as any; // ファイルパス（s）を使用
   });
   posts.sort((a: any, b: any) => (a.date < b.date ? 1 : -1));
   return { props: { posts } };
@@ -16,8 +16,9 @@ export default function TravelIndex({ posts }: { posts: any[] }) {
   console.log('All posts:', posts.map(p => ({ slug: p.slug, category: p.category, subcategory: p.subcategory, published: p.published })));
   
   // 温泉地ガイド（category: "旅行" かつ subcategory: "温泉地ガイド"）
+  // 一時的にonsen/配下の記事を除外
   const onsenGuidePosts = posts
-    .filter(p => p.category === '旅行' && p.subcategory === '温泉地ガイド' && p.published !== false)
+    .filter(p => p.category === '旅行' && p.subcategory === '温泉地ガイド' && p.published !== false && !p.slug.includes('yamagata-') && !p.slug.includes('hokkaido-') && !p.slug.includes('gero-') && !p.slug.includes('gifu'))
     .sort((a, b) => (a.date > b.date ? -1 : 1))
     .slice(0, 6);
   

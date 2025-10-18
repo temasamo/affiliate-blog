@@ -375,13 +375,25 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
     travelPosts = slugs.map((s) => {
       try {
         const { frontMatter, slug } = getTravelPostBySlug(s);
-        // 実際のファイルパス（s）をslugとして使用
-        return { slug: s, ...frontMatter };
+        // ファイルパスから最後の部分（実際のスラッグ）を抽出
+        const actualSlug = s.split('/').pop() || s;
+        return { slug: actualSlug, subcategory: frontMatter.subcategory || null, ...frontMatter };
       } catch (error) {
         console.error(`Error getting travel post for slug ${s}:`, error);
         return null;
       }
     }).filter(Boolean);
+    
+    // meigetsuso-part2の特別処理を追加
+    const meigetsusoPart2Post = travelPosts.find(post => post.slug === 'ryokan/2025-10-17-meigetsuso-part2');
+    if (meigetsusoPart2Post) {
+      // meigetsuso-part2のエイリアスを追加
+      travelPosts.push({
+        ...meigetsusoPart2Post,
+        slug: 'meigetsuso-part2'
+      });
+    }
+    
     travelPosts.sort((a: any, b: any) => (a.date < b.date ? 1 : -1));
     console.log('Travel posts:', travelPosts);
   } catch (e) {
