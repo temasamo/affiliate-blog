@@ -24,3 +24,14 @@ export async function toSakeMdx(source: string) {
     },
   });
 }
+
+/** 日本茶記事専用：MDXに変換（フロントマターを除外） */
+export async function toJapaneseTeaMdx(source: string) {
+  return serialize(source, {
+    parseFrontmatter: false,
+    mdxOptions: {
+      remarkPlugins: [remarkGfm],
+      rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+    },
+  });
+}

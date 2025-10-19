@@ -94,6 +94,14 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
 
   // 日本茶カテゴリの記事の場合
   if (category === "日本茶") {
+    // 特定の記事の修正
+    if (slug === "remove-teastains") {
+      return `/articles/japanesetea/knowledge/2025-10-19-remove-teastains`;
+    }
+    if (slug === "ryuouen-tea") {
+      return `/articles/japanesetea/recommend/ryuuouenn`;
+    }
+    
     // slugから推測してサブディレクトリを決定
     if (slug.includes("knowledge")) {
       return `/articles/japanesetea/knowledge/${slug}`;
