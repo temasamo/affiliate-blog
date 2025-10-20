@@ -1,6 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
+
+interface Message {
+  id: string;
+  type: 'user' | 'ai';
+  content: string;
+  timestamp: Date;
+  isTyping?: boolean;
+}
+
+interface ChatOption {
+  id: string;
+  text: string;
+  value: string;
+}
 
 // コンシェルジュAI用の質問フロー
 const conciergeQuestions = [
@@ -8,13 +22,26 @@ const conciergeQuestions = [
     id: "target",
     question: "プレゼントを贈る相手は誰ですか？",
     type: "select",
-    options: ["実父", "実母", "義父", "義母", "恋人", "兄弟姉妹", "子供"]
+    options: [
+      { id: "father", text: "実父", value: "実父" },
+      { id: "mother", text: "実母", value: "実母" },
+      { id: "father-in-law", text: "義父", value: "義父" },
+      { id: "mother-in-law", text: "義母", value: "義母" },
+      { id: "partner", text: "恋人", value: "恋人" },
+      { id: "siblings", text: "兄弟姉妹", value: "兄弟姉妹" },
+      { id: "children", text: "子供", value: "子供" }
+    ]
   },
   {
     id: "occasion", 
     question: "どんな機会のプレゼントですか？",
     type: "select",
-    options: ["誕生日", "記念日", "お礼", "その他"]
+    options: [
+      { id: "birthday", text: "誕生日", value: "誕生日" },
+      { id: "anniversary", text: "記念日", value: "記念日" },
+      { id: "thanks", text: "お礼", value: "お礼" },
+      { id: "other", text: "その他", value: "その他" }
+    ]
   },
   {
     id: "freeText",
@@ -32,7 +59,12 @@ const conciergeQuestions = [
     id: "budget",
     question: "予算はどのくらいですか？",
     type: "select",
-    options: ["3,000円未満", "3,000-8,000円", "8,000-15,000円", "15,000円以上"]
+    options: [
+      { id: "low", text: "3,000円未満", value: "3,000円未満" },
+      { id: "medium", text: "3,000-8,000円", value: "3,000-8,000円" },
+      { id: "high", text: "8,000-15,000円", value: "8,000-15,000円" },
+      { id: "premium", text: "15,000円以上", value: "15,000円以上" }
+    ]
   }
 ];
 
@@ -48,103 +80,75 @@ const analyzeConversation = (responses: Record<string, string>) => {
     "家で過ごす": { categories: ["ルームウェア", "家電", "趣味グッズ"], weight: 2 },
     "外出": { categories: ["ファッション", "小物", "体験ギフト"], weight: 2 },
     "運動": { categories: ["スポーツグッズ", "健康グッズ", "アウトドア"], weight: 2 },
-    "読書": { categories: ["本・雑誌", "文房具", "照明"], weight: 1.5 },
-    
-    // 年齢・性別関連
-    "50代": { categories: ["実用的", "高品質", "健康グッズ"], weight: 1.5 },
-    "60代": { categories: ["健康グッズ", "実用的", "高品質"], weight: 1.5 },
-    "男性": { categories: ["実用的", "趣味グッズ", "家電"], weight: 1.2 },
-    "女性": { categories: ["美容", "ファッション", "花"], weight: 1.2 },
-    
-    // 趣味・興味関連
     "料理": { categories: ["キッチン用品", "グルメ", "調理器具"], weight: 2 },
-    "ガーデニング": { categories: ["園芸用品", "花", "アウトドア"], weight: 2 },
-    "音楽": { categories: ["音楽関連", "体験ギフト", "家電"], weight: 1.5 },
-    "映画": { categories: ["エンターテイメント", "体験ギフト", "家電"], weight: 1.5 },
-    
-    // 過去の経験関連
-    "喜んでくれなかった": { categories: ["実用的", "日常的", "高品質"], weight: 2 },
-    "喜んでくれた": { categories: ["類似カテゴリ"], weight: 1.5 },
-    "使わなかった": { categories: ["実用的", "日常的"], weight: 2 },
-    
-    // 予算関連
-    "高級": { categories: ["高級食材", "ブランド品", "体験ギフト"], weight: 1.5 },
-    "手軽": { categories: ["小物", "お菓子", "文房具"], weight: 1.5 },
+    "読書": { categories: ["書籍", "文具", "読書関連グッズ"], weight: 2 },
+    "音楽": { categories: ["音楽関連", "楽器", "オーディオ"], weight: 2 },
+    "旅行": { categories: ["旅行用品", "体験ギフト", "アクセサリー"], weight: 2 },
     
     // 健康関連
-    "健康": { categories: ["健康グッズ", "マッサージ機器", "サプリメント"], weight: 2 },
-    "疲れ": { categories: ["マッサージ機器", "リラックスグッズ", "健康グッズ"], weight: 2 },
+    "健康": { categories: ["健康グッズ", "サプリメント", "フィットネス"], weight: 3 },
+    "美容": { categories: ["スキンケア", "化粧品", "美容グッズ"], weight: 3 },
+    "介護": { categories: ["介護用品", "健康グッズ", "安全グッズ"], weight: 3 },
     
-    // 実用性関連
-    "実用的": { categories: ["日常家電", "ルームウェア", "キッチン用品"], weight: 2 },
-    "毎日使う": { categories: ["日常家電", "ルームウェア", "キッチン用品"], weight: 2 }
+    // 趣味関連
+    "お茶": { categories: ["日本茶", "茶器", "茶道具"], weight: 3 },
+    "コーヒー": { categories: ["コーヒー", "コーヒー器具", "グルメ"], weight: 3 },
+    "花": { categories: ["花", "植物", "ガーデニング"], weight: 3 },
+    "手芸": { categories: ["手芸用品", "工芸品", "ハンドメイド"], weight: 3 },
+    
+    // 年齢層別
+    "50代": { categories: ["健康グッズ", "実用品", "趣味グッズ"], weight: 2 },
+    "60代": { categories: ["健康グッズ", "実用品", "趣味グッズ"], weight: 2 },
+    "70代": { categories: ["健康グッズ", "安全グッズ", "実用品"], weight: 2 },
   };
   
-  // カテゴリスコア計算
-  const categoryScores: Record<string, number> = {};
-  let reasoning = "";
+  const matchedCategories: Record<string, number> = {};
   
+  // キーワードマッチング
   Object.entries(keywords).forEach(([keyword, data]) => {
     if (text.includes(keyword)) {
       data.categories.forEach(category => {
-        categoryScores[category] = (categoryScores[category] || 0) + data.weight;
+        matchedCategories[category] = (matchedCategories[category] || 0) + data.weight;
       });
     }
   });
   
   // ターゲット別の重み付け
-  const targetWeights: Record<string, Record<string, number>> = {
-    "実父": { "実用的": 1.5, "健康グッズ": 1.3, "趣味グッズ": 1.2, "家電": 1.2 },
-    "実母": { "美容": 1.3, "花": 1.2, "キッチン用品": 1.2, "リラックスグッズ": 1.2 },
-    "義父": { "実用的": 1.4, "高品質": 1.3, "健康グッズ": 1.2 },
-    "義母": { "センス良い": 1.3, "高品質": 1.2, "花": 1.2 },
-    "恋人": { "ファッション": 1.4, "体験ギフト": 1.3, "小物": 1.2 },
-    "兄弟姉妹": { "趣味グッズ": 1.3, "体験ギフト": 1.2, "実用的": 1.1 },
-    "子供": { "おもちゃ": 1.5, "学習用品": 1.3, "スポーツ用品": 1.2 }
+  const targetPreferences: Record<string, string[]> = {
+    "実父": ["健康グッズ", "実用品", "趣味グッズ", "グルメ"],
+    "実母": ["美容", "スキンケア", "花", "キッチン用品", "日本茶"],
+    "義父": ["実用品", "健康グッズ", "グルメ"],
+    "義母": ["花", "スキンケア", "日本茶", "実用品"],
+    "恋人": ["ファッション", "アクセサリー", "体験ギフト", "小物"],
+    "兄弟姉妹": ["趣味グッズ", "体験ギフト", "実用品"],
+    "子供": ["おもちゃ", "学習用品", "スポーツ用品"]
   };
   
-  if (targetWeights[target]) {
-    Object.entries(targetWeights[target]).forEach(([category, weight]) => {
-      if (categoryScores[category]) {
-        categoryScores[category] *= weight;
-      }
+  if (targetPreferences[target]) {
+    targetPreferences[target].forEach(category => {
+      matchedCategories[category] = (matchedCategories[category] || 0) + 2;
     });
   }
   
-  // 予算別の重み付け
-  if (budget.includes("3,000円未満")) {
-    categoryScores["小物"] = (categoryScores["小物"] || 0) + 1;
-    categoryScores["お菓子"] = (categoryScores["お菓子"] || 0) + 1;
-  } else if (budget.includes("15,000円以上")) {
-    categoryScores["高級食材"] = (categoryScores["高級食材"] || 0) + 1;
-    categoryScores["体験ギフト"] = (categoryScores["体験ギフト"] || 0) + 1;
-  }
-  
-  // スコア順にソート
-  const sortedCategories = Object.entries(categoryScores)
-    .sort(([,a], [,b]) => b - a)
-    .slice(0, 3)
-    .map(([category]) => category);
-  
-  // 推論理由の生成
-  if (text.includes("喜んでくれなかった")) {
-    reasoning = "過去のプレゼントが不評だったので、より実用的で日常的に使えるものをおすすめします";
-  } else if (text.includes("家で過ごす")) {
-    reasoning = "家で過ごす時間が多い方なので、リラックスや快適さを重視したギフトが良さそうです";
-  } else if (text.includes("健康")) {
-    reasoning = "健康を気遣う方なので、健康関連のグッズが喜ばれそうです";
-  } else if (target === "実父") {
-    reasoning = "実父には実用性と品質を重視したギフトがおすすめです";
-  } else if (target === "実母") {
-    reasoning = "実母には美容や癒しを重視したギフトがおすすめです";
-  } else {
-    reasoning = "会話内容から、相手の好みに合ったギフトを提案します";
-  }
-  
-  return {
-    recommendedCategories: sortedCategories,
-    reasoning: reasoning
+  // 予算別フィルタリング
+  const budgetFilter = {
+    "3,000円未満": ["小物", "文具", "書籍", "花"],
+    "3,000-8,000円": ["実用品", "キッチン用品", "健康グッズ", "日本茶"],
+    "8,000-15,000円": ["高級品", "体験ギフト", "美容", "家電"],
+    "15,000円以上": ["高級品", "体験ギフト", "家電", "旅行用品"]
   };
+  
+  if (budgetFilter[budget]) {
+    budgetFilter[budget].forEach(category => {
+      matchedCategories[category] = (matchedCategories[category] || 0) + 1;
+    });
+  }
+  
+  // スコア順でソート
+  return Object.entries(matchedCategories)
+    .sort(([,a], [,b]) => b - a)
+    .slice(0, 5)
+    .map(([category]) => category);
 };
 
 // 動的商品推薦
@@ -153,60 +157,78 @@ const generateConciergeSuggestions = (responses: Record<string, string>, categor
   const target = responses.target || "";
   const budget = responses.budget || "";
   const freeText = responses.freeText || "";
-  const history = responses.history || "";
   
-  // カテゴリ別の商品データベース
-  const productDatabase: { [key: string]: Array<{ name: string; reason: string; priceRange: string; keywords: string[] }> } = {
-    "ルームウェア": [
-      { name: "tential ドライロングパジャマ", reason: "吸水性・速乾性に優れた快適なパジャマ", priceRange: "¥5,000〜¥12,000", keywords: ["快適", "吸水性", "速乾"] },
-      { name: "高級綿パジャマセット", reason: "上質な綿素材で肌触り抜群", priceRange: "¥8,000〜¥15,000", keywords: ["高級", "綿", "肌触り"] },
-      { name: "メンズ快適部屋着セット", reason: "家で過ごす時間を快適にするルームウェア", priceRange: "¥4,000〜¥10,000", keywords: ["快適", "部屋着", "リラックス"] }
-    ],
-    "健康グッズ": [
-      { name: "マッサージチェア", reason: "疲れを癒す本格的なマッサージ機能", priceRange: "¥15,000〜¥50,000", keywords: ["マッサージ", "疲労回復", "リラックス"] },
-      { name: "血圧計", reason: "健康管理に欠かせない血圧測定器", priceRange: "¥3,000〜¥8,000", keywords: ["健康", "血圧", "測定"] },
-      { name: "温熱マッサージ器", reason: "温熱効果で血行促進", priceRange: "¥5,000〜¥12,000", keywords: ["温熱", "血行", "マッサージ"] }
-    ],
-    "家電": [
-      { name: "電気ケトル", reason: "お湯を簡単に沸かせる便利家電", priceRange: "¥3,000〜¥8,000", keywords: ["お湯", "便利", "キッチン"] },
-      { name: "空気清浄機", reason: "空気をきれいにして健康をサポート", priceRange: "¥8,000〜¥20,000", keywords: ["空気", "健康", "清浄"] },
-      { name: "コーヒーメーカー", reason: "美味しいコーヒーを自宅で", priceRange: "¥5,000〜¥15,000", keywords: ["コーヒー", "美味しい", "自宅"] }
-    ],
-    "美容": [
-      { name: "エステ機器", reason: "自宅で本格的なエステ体験", priceRange: "¥8,000〜¥20,000", keywords: ["エステ", "美容", "自宅"] },
-      { name: "高級化粧品セット", reason: "上質なスキンケアで美肌をサポート", priceRange: "¥5,000〜¥15,000", keywords: ["化粧品", "スキンケア", "美肌"] },
-      { name: "ヘアケアセット", reason: "美しい髪を保つヘアケア用品", priceRange: "¥3,000〜¥8,000", keywords: ["ヘアケア", "美髪", "ケア"] }
-    ],
-    "花": [
-      { name: "季節の花束", reason: "季節感あふれる美しい花束", priceRange: "¥3,000〜¥8,000", keywords: ["季節", "美しい", "花束"] },
-      { name: "観葉植物", reason: "長く楽しめる緑のインテリア", priceRange: "¥2,000〜¥6,000", keywords: ["観葉植物", "インテリア", "長期間"] },
-      { name: "プリザーブドフラワー", reason: "長期間美しさを保つ特別な花", priceRange: "¥5,000〜¥12,000", keywords: ["プリザーブド", "長期間", "特別"] }
-    ],
-    "グルメ": [
-      { name: "高級和菓子セット", reason: "上質な和菓子で特別な時間を", priceRange: "¥3,000〜¥8,000", keywords: ["和菓子", "高級", "特別"] },
-      { name: "ワインセット", reason: "厳選されたワインで贅沢な時間を", priceRange: "¥5,000〜¥15,000", keywords: ["ワイン", "厳選", "贅沢"] },
-      { name: "チーズセット", reason: "世界各国のチーズを楽しむ", priceRange: "¥4,000〜¥10,000", keywords: ["チーズ", "世界各国", "楽しむ"] }
-    ],
-    "体験ギフト": [
-      { name: "温泉旅行券", reason: "心身ともにリフレッシュできる温泉旅行", priceRange: "¥10,000〜¥30,000", keywords: ["温泉", "旅行", "リフレッシュ"] },
-      { name: "料理教室体験", reason: "新しい料理を学ぶ楽しい体験", priceRange: "¥5,000〜¥12,000", keywords: ["料理", "学習", "体験"] },
-      { name: "コンサートチケット", reason: "音楽で心豊かな時間を過ごす", priceRange: "¥8,000〜¥20,000", keywords: ["音楽", "コンサート", "心豊か"] }
-    ]
-  };
-  
-  // カテゴリに基づく基本提案
-  if (productDatabase[category]) {
-    suggestions.push(...productDatabase[category]);
+  // カテゴリ別の基本提案
+  if (category === "日本茶") {
+    suggestions.push({
+      name: "高級日本茶セット",
+      reason: "上質な茶葉と茶器のセットで、日本の伝統を感じられるギフトです",
+      priceRange: "¥5,000〜¥15,000",
+      keywords: ["日本茶", "茶器", "伝統"]
+    });
   }
   
-  // 過去履歴を考慮した提案
-  if (history.includes("ワイン") && history.includes("喜んでくれなかった")) {
-    suggestions.unshift({
-      name: "tential ドライロングパジャマ",
-      reason: "過去にワインで不評だったので、実用的なルームウェアはいかがでしょうか？",
-      matchScore: 0.9,
-      priceRange: "¥5,000〜¥12,000",
-      keywords: ["実用的", "ルームウェア", "快適"]
+  if (category === "健康グッズ") {
+    suggestions.push({
+      name: "血圧計・健康測定器",
+      reason: "健康管理に役立つ、実用的で喜ばれるギフトです",
+      priceRange: "¥3,000〜¥10,000",
+      keywords: ["健康", "測定器", "実用的"]
+    });
+  }
+  
+  if (category === "美容・スキンケア") {
+    suggestions.push({
+      name: "高級スキンケアセット",
+      reason: "美容と健康をサポートする、厳選されたスキンケア商品です",
+      priceRange: "¥6,000〜¥20,000",
+      keywords: ["美容", "スキンケア", "高級"]
+    });
+  }
+  
+  if (category === "花・植物") {
+    suggestions.push({
+      name: "観葉植物・花ギフト",
+      reason: "お部屋を彩る、育てやすい植物や季節の花ギフトです",
+      priceRange: "¥2,000〜¥8,000",
+      keywords: ["花", "植物", "季節"]
+    });
+  }
+  
+  if (category === "キッチン用品") {
+    suggestions.push({
+      name: "高級調理器具セット",
+      reason: "料理好きの方に喜ばれる、実用的で高品質な調理器具です",
+      priceRange: "¥4,000〜¥12,000",
+      keywords: ["調理器具", "キッチン", "実用的"]
+    });
+  }
+  
+  if (category === "体験ギフト") {
+    suggestions.push({
+      name: "温泉・旅行体験券",
+      reason: "思い出に残る特別な体験をプレゼントできます",
+      priceRange: "¥8,000〜¥30,000",
+      keywords: ["体験", "旅行", "温泉"]
+    });
+  }
+  
+  // ターゲット別の特別提案
+  if (target === "実母" && category === "美容・スキンケア") {
+    suggestions.push({
+      name: "エステ・美容体験券",
+      reason: "お母さんの美容とリラックスをサポートする特別な体験です",
+      priceRange: "¥10,000〜¥25,000",
+      keywords: ["エステ", "美容", "リラックス"]
+    });
+  }
+  
+  if (target === "実父" && category === "健康グッズ") {
+    suggestions.push({
+      name: "健康サプリメントセット",
+      reason: "お父さんの健康をサポートする、厳選されたサプリメントです",
+      priceRange: "¥5,000〜¥15,000",
+      keywords: ["サプリメント", "健康", "実用的"]
     });
   }
   
@@ -215,7 +237,6 @@ const generateConciergeSuggestions = (responses: Record<string, string>, categor
     suggestions.unshift({
       name: "高級綿パジャマセット", 
       reason: "50代の男性に人気の実用的なギフトです",
-      matchScore: 0.85,
       priceRange: "¥8,000〜¥15,000",
       keywords: ["50代", "男性", "実用的"]
     });
@@ -257,282 +278,372 @@ const generateConciergeSuggestions = (responses: Record<string, string>, categor
   };
   
   if (targetPreferences[target]) {
-    filteredSuggestions = filteredSuggestions.sort((a, b) => {
-      const aScore = targetPreferences[target].reduce((score, keyword) => 
-        score + (a.keywords?.includes(keyword) ? 1 : 0), 0);
-      const bScore = targetPreferences[target].reduce((score, keyword) => 
-        score + (b.keywords?.includes(keyword) ? 1 : 0), 0);
-      return bScore - aScore;
-    });
+    filteredSuggestions = filteredSuggestions.filter(suggestion => 
+      targetPreferences[target].some(pref => 
+        suggestion.keywords.some(keyword => keyword.includes(pref))
+      )
+    );
   }
   
   return filteredSuggestions.slice(0, 3);
 };
 
 export default function ConciergeAI() {
+  const [messages, setMessages] = useState<Message[]>([]);
   const [currentStep, setCurrentStep] = useState(0);
   const [responses, setResponses] = useState<Record<string, string>>({});
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [recommendedCategories, setRecommendedCategories] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [suggestions, setSuggestions] = useState<any[]>([]);
+  const [isTyping, setIsTyping] = useState(false);
+  const [freeText, setFreeText] = useState("");
+  const [history, setHistory] = useState("");
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const handleAnswer = (questionId: string, answer: string) => {
-    const newResponses = { ...responses, [questionId]: answer };
-    setResponses(newResponses);
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  // タイピング表示のシミュレーション
+  const simulateTyping = (callback: () => void) => {
+    setIsTyping(true);
+    setTimeout(() => {
+      setIsTyping(false);
+      callback();
+    }, 1500 + Math.random() * 1000);
+  };
+
+  // メッセージを追加
+  const addMessage = (content: string, type: 'user' | 'ai', isTyping = false) => {
+    const message: Message = {
+      id: Date.now().toString(),
+      type,
+      content,
+      timestamp: new Date(),
+      isTyping
+    };
+    setMessages(prev => [...prev, message]);
+  };
+
+  // オプション選択
+  const handleOptionSelect = (option: ChatOption) => {
+    // ユーザーメッセージを追加
+    addMessage(option.text, 'user');
     
+    // 回答を保存
+    const question = conciergeQuestions[currentStep];
+    setResponses(prev => ({
+      ...prev,
+      [question.id]: option.value
+    }));
+
+    // 次の質問または結果表示
     if (currentStep < conciergeQuestions.length - 1) {
-      setCurrentStep(currentStep + 1);
+      simulateTyping(() => {
+        setCurrentStep(prev => prev + 1);
+        addMessage(conciergeQuestions[currentStep + 1].question, 'ai');
+      });
     } else {
-      // 全質問完了後、カテゴリ分析
-      const analysis = analyzeConversation(newResponses);
-      setRecommendedCategories(analysis.recommendedCategories);
-      setShowSuggestions(true);
+      // 最終回答
+      simulateTyping(() => {
+        const categories = analyzeConversation({
+          ...responses,
+          [question.id]: option.value
+        });
+        
+        let response = "お答えいただき、ありがとうございます！\n\n";
+        response += "あなたの回答を分析して、おすすめのカテゴリをご提案します：\n\n";
+        categories.forEach((category, index) => {
+          response += `${index + 1}. **${category}**\n`;
+        });
+        
+        response += "\nどのカテゴリに興味がありますか？";
+        
+        addMessage(response, 'ai');
+        setRecommendedCategories(categories);
+        setShowSuggestions(true);
+      });
     }
   };
 
+  // フリーテキスト送信
+  const handleFreeTextSubmit = (questionId: string, text: string) => {
+    addMessage(text, 'user');
+    
+    setResponses(prev => ({
+      ...prev,
+      [questionId]: text
+    }));
+
+    if (currentStep < conciergeQuestions.length - 1) {
+      simulateTyping(() => {
+        setCurrentStep(prev => prev + 1);
+        addMessage(conciergeQuestions[currentStep + 1].question, 'ai');
+      });
+    } else {
+      // 最終回答
+      simulateTyping(() => {
+        const categories = analyzeConversation({
+          ...responses,
+          [questionId]: text
+        });
+        
+        let response = "お答えいただき、ありがとうございます！\n\n";
+        response += "あなたの回答を分析して、おすすめのカテゴリをご提案します：\n\n";
+        categories.forEach((category, index) => {
+          response += `${index + 1}. **${category}**\n`;
+        });
+        
+        response += "\nどのカテゴリに興味がありますか？";
+        
+        addMessage(response, 'ai');
+        setRecommendedCategories(categories);
+        setShowSuggestions(true);
+      });
+    }
+  };
+
+  // カテゴリ選択
   const handleCategorySelect = (category: string) => {
     setSelectedCategory(category);
     const newSuggestions = generateConciergeSuggestions(responses, category);
     setSuggestions(newSuggestions);
+    
+    let response = `**${category}**カテゴリの商品をご提案します！\n\n`;
+    newSuggestions.forEach((suggestion, index) => {
+      response += `${index + 1}. **${suggestion.name}**\n`;
+      response += `   ${suggestion.reason}\n`;
+      response += `   価格: ${suggestion.priceRange}\n\n`;
+    });
+    
+    addMessage(response, 'ai');
   };
 
+  // 会話リセット
   const resetConversation = () => {
+    setMessages([]);
     setCurrentStep(0);
     setResponses({});
     setShowSuggestions(false);
     setRecommendedCategories([]);
     setSelectedCategory("");
     setSuggestions([]);
+    setFreeText("");
+    setHistory("");
+    setTimeout(() => {
+      addMessage(conciergeQuestions[0].question, 'ai');
+    }, 1000);
   };
+
+  // 初期化
+  useEffect(() => {
+    if (messages.length === 0) {
+      setTimeout(() => {
+        addMessage(conciergeQuestions[0].question, 'ai');
+      }, 1000);
+    }
+  }, []);
 
   return (
     <>
       <Head>
-        <title>プレゼントコンシェルジュAI | Market Supporter AI</title>
-        <meta name="description" content="AIがあなたにぴったりのプレゼントを見つけます。会話形式で簡単に最適なギフトを提案。" />
+        <title>プレゼントコンシェルジュAI - Market Supporter AI</title>
+        <meta name="description" content="AIがあなたにぴったりのプレゼントを見つけます。質問に答えるだけで、最適なギフトを提案します。" />
       </Head>
 
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div className="container mx-auto px-4 py-8">
-          {/* ヘッダー */}
-          <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              🎁 プレゼントコンシェルジュAI
-            </h1>
-            <p className="text-lg text-gray-600 mb-6">
-              AIがあなたにぴったりのプレゼントを見つけましょう
-            </p>
-            
-            {/* パンくずリスト */}
-            <nav className="flex justify-center mb-6">
-              <ol className="flex items-center space-x-2 text-sm text-gray-500">
-                <li><Link href="/" className="hover:text-blue-600">ホーム</Link></li>
-                <li>/</li>
-                <li><Link href="/events" className="hover:text-blue-600">イベント</Link></li>
-                <li>/</li>
-                <li><Link href="/events/birthday" className="hover:text-blue-600">誕生日プレゼント</Link></li>
-                <li>/</li>
-                <li className="text-gray-900">コンシェルジュAI</li>
-              </ol>
-            </nav>
+      <div className="min-h-screen bg-gray-100">
+        {/* ヘッダー */}
+        <div className="bg-white shadow-sm border-b">
+          <div className="max-w-4xl mx-auto px-4 py-4">
+            <div className="flex items-center justify-between">
+              <Link href="/events/birthday" className="text-blue-600 hover:text-blue-800">
+                ← 誕生日プレゼント特集に戻る
+              </Link>
+              <h1 className="text-lg font-semibold text-gray-900">
+                プレゼントコンシェルジュAI
+              </h1>
+            </div>
           </div>
+        </div>
 
-          {/* チャットエリア */}
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
-              {/* 進捗バー */}
-              {!showSuggestions && (
-                <div className="mb-6">
-                  <div className="flex justify-between text-sm text-gray-500 mb-2">
-                    <span>質問 {currentStep + 1} / {conciergeQuestions.length}</span>
-                    <span>{Math.round(((currentStep + 1) / conciergeQuestions.length) * 100)}%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div 
-                      className="bg-blue-600 h-2 rounded-full transition-all duration-300"
-                      style={{ width: `${((currentStep + 1) / conciergeQuestions.length) * 100}%` }}
-                    ></div>
-                  </div>
-                </div>
-              )}
-
-              {/* 質問エリア */}
-              {!showSuggestions && currentStep < conciergeQuestions.length && (
-                <div className="space-y-6">
-                  <div className="bg-blue-50 rounded-lg p-4">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                      {conciergeQuestions[currentStep].question}
-                    </h3>
-                    
-                    {conciergeQuestions[currentStep].type === "select" ? (
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        {conciergeQuestions[currentStep].options?.map((option, index) => (
-                          <button
-                            key={index}
-                            onClick={() => handleAnswer(conciergeQuestions[currentStep].id, option)}
-                            className="p-3 text-left border border-gray-200 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-colors"
-                          >
-                            {option}
-                          </button>
-                        ))}
+        {/* チャットエリア */}
+        <div className="max-w-4xl mx-auto px-4 py-6">
+          <div className="bg-white rounded-lg shadow-lg h-96 overflow-y-auto">
+            <div className="p-4 space-y-4">
+              {messages.map((message) => (
+                <div
+                  key={message.id}
+                  className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}
+                >
+                  <div
+                    className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
+                      message.type === 'user'
+                        ? 'bg-blue-500 text-white'
+                        : 'bg-gray-200 text-gray-800'
+                    }`}
+                  >
+                    {message.isTyping ? (
+                      <div className="flex space-x-1">
+                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                       </div>
                     ) : (
-                      <div className="space-y-4">
-                        <textarea
-                          placeholder={conciergeQuestions[currentStep].placeholder}
-                          className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                          rows={4}
-                          onKeyDown={(e) => {
-                            if (e.key === 'Enter' && !e.shiftKey) {
-                              e.preventDefault();
-                              const value = (e.target as HTMLTextAreaElement).value.trim();
-                              if (value) {
-                                handleAnswer(conciergeQuestions[currentStep].id, value);
-                              }
-                            }
-                          }}
-                        />
-                        <button
-                          onClick={() => {
-                            const textarea = document.querySelector('textarea') as HTMLTextAreaElement;
-                            const value = textarea?.value.trim();
-                            if (value) {
-                              handleAnswer(conciergeQuestions[currentStep].id, value);
-                            }
-                          }}
-                          className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                        >
-                          次へ
-                        </button>
-                      </div>
+                      <div className="whitespace-pre-line">{message.content}</div>
                     )}
                   </div>
                 </div>
-              )}
-
-              {/* カテゴリ提案エリア */}
-              {showSuggestions && !selectedCategory && (
-                <div className="space-y-6">
-                  <div className="text-center">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                      🤖 AI分析結果
-                    </h3>
-                    <p className="text-gray-600 mb-6">
-                      あなたの回答を分析した結果、以下のカテゴリがおすすめです
-                    </p>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {recommendedCategories.map((category, index) => (
-                      <button
-                        key={index}
-                        onClick={() => handleCategorySelect(category)}
-                        className="p-4 border-2 border-blue-200 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-colors text-center"
-                      >
-                        <h4 className="font-semibold text-gray-900 mb-2">{category}</h4>
-                        <p className="text-sm text-gray-600">AIがおすすめ</p>
-                      </button>
-                    ))}
-                  </div>
-                  
-                  <div className="text-center">
-                    <button
-                      onClick={resetConversation}
-                      className="text-blue-600 hover:text-blue-800 underline"
-                    >
-                      最初からやり直す
-                    </button>
+              ))}
+              
+              {isTyping && (
+                <div className="flex justify-start">
+                  <div className="bg-gray-200 text-gray-800 max-w-xs lg:max-w-md px-4 py-2 rounded-lg">
+                    <div className="flex space-x-1">
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                    </div>
                   </div>
                 </div>
               )}
+              
+              <div ref={messagesEndRef} />
+            </div>
+          </div>
 
-              {/* 商品提案エリア */}
-              {showSuggestions && selectedCategory && (
-                <div className="space-y-6">
-                  <div className="text-center">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                      🎯 {selectedCategory}のおすすめ
-                    </h3>
-                    <p className="text-gray-600 mb-6">
-                      あなたの要望に合った商品をご提案します
-                    </p>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {suggestions.map((suggestion, index) => (
-                      <div key={index} className="bg-gray-50 rounded-lg p-4">
-                        <h4 className="font-semibold text-gray-900 mb-2">{suggestion.name}</h4>
-                        <p className="text-sm text-gray-600 mb-3">{suggestion.reason}</p>
-                        <p className="text-sm font-medium text-blue-600 mb-4">{suggestion.priceRange}</p>
-                        <div className="flex gap-2">
-                          <Link
-                            href="/api/out?mall=rakuten&brand=プレゼント"
-                            className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
-                          >
-                            楽天
-                          </Link>
-                          <Link
-                            href="/api/out?mall=amazon&brand=プレゼント"
-                            className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
-                          >
-                            Amazon
-                          </Link>
-                          <Link
-                            href="/api/out?mall=yahoo&brand=プレゼント"
-                            className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
-                          >
-                            Yahoo
-                          </Link>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <div className="text-center space-x-4">
+          {/* 質問フォーム */}
+          {currentStep < conciergeQuestions.length && !showSuggestions && !isTyping && (
+            <div className="mt-4">
+              {conciergeQuestions[currentStep].type === 'select' ? (
+                <div className="space-y-2">
+                  {conciergeQuestions[currentStep].options.map((option) => (
                     <button
-                      onClick={() => setSelectedCategory("")}
-                      className="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors"
+                      key={option.id}
+                      onClick={() => handleOptionSelect(option)}
+                      className="w-full text-left bg-white border border-gray-300 rounded-lg px-4 py-3 hover:bg-gray-50 hover:border-blue-300 transition-colors"
                     >
-                      カテゴリを変更
+                      {option.text}
                     </button>
-                    <button
-                      onClick={resetConversation}
-                      className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                    >
-                      最初からやり直す
-                    </button>
-                  </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  <textarea
+                    value={conciergeQuestions[currentStep].id === 'freeText' ? freeText : history}
+                    onChange={(e) => {
+                      if (conciergeQuestions[currentStep].id === 'freeText') {
+                        setFreeText(e.target.value);
+                      } else {
+                        setHistory(e.target.value);
+                      }
+                    }}
+                    placeholder={conciergeQuestions[currentStep].placeholder}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    rows={3}
+                  />
+                  <button
+                    onClick={() => {
+                      const text = conciergeQuestions[currentStep].id === 'freeText' ? freeText : history;
+                      if (text.trim()) {
+                        handleFreeTextSubmit(conciergeQuestions[currentStep].id, text);
+                      }
+                    }}
+                    className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+                  >
+                    送信
+                  </button>
                 </div>
               )}
             </div>
+          )}
 
-            {/* 説明エリア */}
-            <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                🤖 コンシェルジュAIについて
+          {/* カテゴリ選択 */}
+          {showSuggestions && !selectedCategory && (
+            <div className="mt-4 space-y-2">
+              {recommendedCategories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => handleCategorySelect(category)}
+                  className="w-full text-left bg-white border border-gray-300 rounded-lg px-4 py-3 hover:bg-gray-50 hover:border-blue-300 transition-colors"
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          )}
+
+          {/* 商品提案 */}
+          {selectedCategory && suggestions.length > 0 && (
+            <div className="mt-6 bg-white rounded-lg shadow-md p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                {selectedCategory}のおすすめ商品
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">✨ 特徴</h4>
-                  <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• 会話形式で自然に要望を聞き取り</li>
-                    <li>• 過去のプレゼント履歴を考慮</li>
-                    <li>• AI分析による最適なカテゴリ提案</li>
-                    <li>• 個別にカスタマイズされた商品推薦</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">🎯 こんな方におすすめ</h4>
-                  <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• 何をプレゼントすべきか迷っている</li>
-                    <li>• 相手の好みがよくわからない</li>
-                    <li>• 過去のプレゼントが不評だった</li>
-                    <li>• 新しいアイデアが欲しい</li>
-                  </ul>
-                </div>
+              <div className="space-y-4">
+                {suggestions.map((suggestion, index) => (
+                  <div key={index} className="border border-gray-200 rounded-lg p-4">
+                    <h4 className="font-semibold text-gray-900 mb-2">
+                      {suggestion.name}
+                    </h4>
+                    <p className="text-gray-600 mb-2">
+                      {suggestion.reason}
+                    </p>
+                    <p className="text-sm text-gray-500 mb-3">
+                      価格: {suggestion.priceRange}
+                    </p>
+                    <div className="flex gap-2">
+                      <Link
+                        href="/api/out?mall=rakuten&brand=プレゼント"
+                        className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition-colors"
+                      >
+                        楽天
+                      </Link>
+                      <Link
+                        href="/api/out?mall=amazon&brand=プレゼント"
+                        className="bg-orange-500 text-white px-3 py-1 rounded text-sm hover:bg-orange-600 transition-colors"
+                      >
+                        Amazon
+                      </Link>
+                      <Link
+                        href="/api/out?mall=yahoo&brand=プレゼント"
+                        className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
+                      >
+                        Yahoo
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="text-center space-x-4 mt-6">
+                <button
+                  onClick={() => setSelectedCategory("")}
+                  className="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors"
+                >
+                  カテゴリを変更
+                </button>
+                <button
+                  onClick={resetConversation}
+                  className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  最初からやり直す
+                </button>
               </div>
             </div>
+          )}
+
+          {/* リセットボタン */}
+          <div className="mt-6 text-center">
+            <button
+              onClick={resetConversation}
+              className="text-gray-500 hover:text-gray-700 text-sm"
+            >
+              最初からやり直す
+            </button>
           </div>
         </div>
       </div>
