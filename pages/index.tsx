@@ -183,50 +183,52 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
               
               {/* AIアプリ記事カード */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Link href="/articles/ai-apps/recommend/2025-10-18-ai-travel-japan" className="group">
-                  <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 hover:bg-white/60 transition-all duration-300 transform hover:-translate-y-1">
-                    <div className="flex items-center mb-3">
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">AI旅行</span>
-                      <span className="ml-2 text-xs text-gray-500">2025.10.18</span>
+                {latest.filter(article => article.category === 'AIアプリ情報').slice(0, 3).map((article, index) => (
+                  <Link key={article.slug} href={`/articles/ai-apps/recommend/${article.slug}`} className="group">
+                    <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 hover:bg-white/60 transition-all duration-300 transform hover:-translate-y-1">
+                      <div className="flex items-center mb-3">
+                        <span className={`text-xs font-medium px-2.5 py-0.5 rounded-full ${
+                          index === 0 ? 'bg-blue-100 text-blue-800' :
+                          index === 1 ? 'bg-purple-100 text-purple-800' :
+                          'bg-green-100 text-green-800'
+                        }`}>
+                          {index === 0 ? 'AI旅行' : index === 1 ? 'AI活用' : 'おすすめ'}
+                        </span>
+                        <span className="ml-2 text-xs text-gray-500">
+                          {new Date(article.date).toLocaleDateString('ja-JP', { 
+                            year: 'numeric', 
+                            month: '2-digit', 
+                            day: '2-digit' 
+                          }).replace(/\//g, '.')}
+                        </span>
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
+                        {article.title}
+                      </h3>
+                      <p className="text-sm text-gray-600 line-clamp-2">
+                        {article.description}
+                      </p>
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                      AI旅行アプリ最前線
-                    </h3>
-                    <p className="text-sm text-gray-600">
-                      国内向けAI旅行アプリの最新動向と実用性を徹底分析
-                    </p>
-                  </div>
-                </Link>
+                  </Link>
+                ))}
                 
-                <Link href="/ai-apps" className="group">
-                  <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 hover:bg-white/60 transition-all duration-300 transform hover:-translate-y-1">
-                    <div className="flex items-center mb-3">
-                      <span className="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">AI活用</span>
-                      <span className="ml-2 text-xs text-gray-500">準備中</span>
+                {/* 記事が3つ未満の場合のフォールバック */}
+                {latest.filter(article => article.category === 'AIアプリ情報').length < 3 && (
+                  <Link href="/ai-apps/recommend" className="group">
+                    <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 hover:bg-white/60 transition-all duration-300 transform hover:-translate-y-1">
+                      <div className="flex items-center mb-3">
+                        <span className="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">おすすめ</span>
+                        <span className="ml-2 text-xs text-gray-500">一覧</span>
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
+                        おすすめAIアプリ一覧
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        ChatGPT・Claude・Gemini・画像生成・動画編集AI
+                      </p>
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
-                      AI活用術
-                    </h3>
-                    <p className="text-sm text-gray-600">
-                      プロンプトエンジニアリング・業務効率化・AI活用事例
-                    </p>
-                  </div>
-                </Link>
-                
-                <Link href="/ai-apps/recommend" className="group">
-                  <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 hover:bg-white/60 transition-all duration-300 transform hover:-translate-y-1">
-                    <div className="flex items-center mb-3">
-                      <span className="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">おすすめ</span>
-                      <span className="ml-2 text-xs text-gray-500">1記事</span>
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
-                      おすすめAIアプリ一覧
-                    </h3>
-                    <p className="text-sm text-gray-600">
-                      ChatGPT・Claude・Gemini・画像生成・動画編集AI
-                    </p>
-                  </div>
-                </Link>
+                  </Link>
+                )}
               </div>
               
               <div className="text-center mt-8">

@@ -11,7 +11,9 @@ type Mall =
   | "yahoo"
   | "amazon"
   | "vc"
-  | "asoview";
+  | "asoview"
+  | "expedia"
+  | "jalan";
 
 const enc = (s: string) => encodeURIComponent(s.trim());
 
@@ -26,6 +28,8 @@ const ALLOWED_HOSTS = new Set([
   "www.asoview.com",
   "asoview.com",
   "ad.jp.ap.valuecommerce.com",
+  "www.expedia.co.jp",
+  "www.jalan.net",
 ]);
 
 function rakutenOfficialByBrand(brand: string) {
@@ -108,6 +112,34 @@ function asoviewByRawUrl(rawUrl: string) {
   return `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=${sid}&pid=${pid}&vc_url=${enc(rawUrl.trim())}`;
 }
 
+function expediaByBrand(brand: string) {
+  const sid = process.env.VC_SID;
+  const pid = process.env.VC_PID_EXPEDIA;
+  if (!sid || !pid) throw new Error("VC_SID / VC_PID_EXPEDIA is not set");
+  const search = `https://www.expedia.co.jp/Hotel-Search?destination=${enc(brand)}`;
+  return `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=${sid}&pid=${pid}&vc_url=${enc(search)}`;
+}
+function expediaByRawUrl(rawUrl: string) {
+  const sid = process.env.VC_SID;
+  const pid = process.env.VC_PID_EXPEDIA;
+  if (!sid || !pid) throw new Error("VC_SID / VC_PID_EXPEDIA is not set");
+  return `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=${sid}&pid=${pid}&vc_url=${enc(rawUrl.trim())}`;
+}
+
+function jalanByBrand(brand: string) {
+  const sid = process.env.VC_SID;
+  const pid = process.env.VC_PID_JALAN;
+  if (!sid || !pid) throw new Error("VC_SID / VC_PID_JALAN is not set");
+  const search = `https://www.jalan.net/kakaku/area/${enc(brand)}/`;
+  return `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=${sid}&pid=${pid}&vc_url=${enc(search)}`;
+}
+function jalanByRawUrl(rawUrl: string) {
+  const sid = process.env.VC_SID;
+  const pid = process.env.VC_PID_JALAN;
+  if (!sid || !pid) throw new Error("VC_SID / VC_PID_JALAN is not set");
+  return `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=${sid}&pid=${pid}&vc_url=${enc(rawUrl.trim())}`;
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
   try {
     const mall = String(req.query.mall || "").toLowerCase() as Mall;
@@ -132,6 +164,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       else if (mall === "yahoo")    dest = yahooByBrand(brand);
       else if (mall === "amazon")   dest = amazonByBrand(brand);
       else if (mall === "asoview")  dest = asoviewByBrand(brand);
+      else if (mall === "expedia")  dest = expediaByBrand(brand);
+      else if (mall === "jalan")    dest = jalanByBrand(brand);
       else if (mall === "vc")       dest = vcGeneric(`https://example.com/?q=${enc(brand)}`);
       else { res.status(400).send("unsupported mall"); return; }
     } else {
@@ -140,7 +174,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       else if (mall === "yahoo")    dest = yahooByRawUrl(raw!);
       else if (mall === "amazon")   dest = amazonByRawUrl(raw!);
       else if (mall === "asoview")  dest = asoviewByRawUrl(raw!);
-      else if (mall === "vc")       dest = vcGeneric(raw!);
+      else if (mall === "expedia")  dest = expediaByRawUrl(raw!);
+      else if (mall === "jalan")    dest = jalanByRawUrl(raw!);
+      else if (mall === "vc")        dest = vcGeneric(raw!);
       else { res.status(400).send("unsupported mall"); return; }
     }
 

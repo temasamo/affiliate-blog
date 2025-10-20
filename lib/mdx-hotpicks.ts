@@ -35,3 +35,14 @@ export async function toJapaneseTeaMdx(source: string) {
     },
   });
 }
+
+/** AIアプリ記事専用：MDXに変換（フロントマターを除外） */
+export async function toAiAppsMdx(source: string) {
+  return serialize(source, {
+    parseFrontmatter: false,
+    mdxOptions: {
+      remarkPlugins: [remarkGfm],
+      rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+    },
+  });
+}

@@ -1,5 +1,6 @@
 import MdxRendererHotPicks from "@/components/MdxRendererHotPicks";
-import { toHotPicksMdx, toSakeMdx, toJapaneseTeaMdx } from "@/lib/mdx-hotpicks";
+import { toHotPicksMdx, toSakeMdx, toJapaneseTeaMdx, toAiAppsMdx } from "@/lib/mdx-hotpicks";
+import AffButton from "@/components/AffButton";
 import React, { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { GetStaticProps, GetStaticPaths } from 'next';
@@ -1455,20 +1456,23 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async ({ params }) =
       (category === 'global-hot-picks' || frontMatter.category === 'Global Hot Picks') &&
       (type === 'trend' || !type);
     
-    // 日本酒記事とsleep-health記事もMDXとして処理
+    // 日本酒記事、sleep-health記事、ai-apps記事もMDXとして処理
     const isJapaneseSake = category === 'japanesesake';
     const isSleepHealth = category === 'sleep-health';
     const isJapaneseTea = category === 'japanesetea';
+    const isAiApps = category === 'ai-apps';
 
     let mdxSource = null;
     let contentHtml = '';
 
-    if (isHotPicks || isJapaneseSake || isSleepHealth || isJapaneseTea) {
+    if (isHotPicks || isJapaneseSake || isSleepHealth || isJapaneseTea || isAiApps) {
       // Global Hot Picksまたは日本酒記事の場合はMDX処理
       if (isJapaneseSake) {
         mdxSource = await toSakeMdx(content);
       } else if (isJapaneseTea) {
         mdxSource = await toJapaneseTeaMdx(content);
+      } else if (isAiApps) {
+        mdxSource = await toAiAppsMdx(content);
       } else {
         mdxSource = await toHotPicksMdx(content);
       }
