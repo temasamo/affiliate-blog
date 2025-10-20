@@ -8,7 +8,7 @@ export default function BirthdayGiftsPage() {
     <>
       <Header 
         title="誕生日プレゼント特集 - Market Supporter AI" 
-        description="30代以上の子どもから両親・義理の両親への誕生日プレゼント選び。感謝の気持ちを込めたギフト選びをサポートします。"
+        description="大切な人への誕生日プレゼント選び。両親・義理の両親・恋人・兄弟・子供など、感謝の気持ちを込めたギフト選びをサポートします。"
       />
       
       <main className="min-h-screen bg-gray-50">
@@ -19,14 +19,15 @@ export default function BirthdayGiftsPage() {
               誕生日プレゼント特集
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              30代以上の子どもから両親・義理の両親への誕生日プレゼント選び。<br />
-              感謝の気持ちを込めたギフト選びをサポートします。
+              大切な人への誕生日プレゼント選び。<br />
+              両親・義理の両親・恋人・兄弟・子供など、感謝の気持ちを込めたギフト選びをサポートします。
             </p>
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 max-w-2xl mx-auto">
               <h2 className="text-xl font-semibold text-blue-900 mb-2">🎯 こんな方におすすめ</h2>
               <p className="text-blue-800">
-                両親の誕生日に何を贈ればいいか悩んでいる方<br />
-                義理の両親へのプレゼント選びに困っている方<br />
+                大切な人の誕生日に何を贈ればいいか悩んでいる方<br />
+                両親・義理の両親へのプレゼント選びに困っている方<br />
+                恋人・兄弟・子供へのギフトを探している方<br />
                 健康を気遣うギフトを探している方
               </p>
             </div>
