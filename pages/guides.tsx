@@ -85,7 +85,7 @@ export default function GuidesPage({ guides }: GuidesPageProps) {
                       )}
                       {guide.date && (
                         <p className="text-xs text-gray-500">
-                          {new Date(guide.date).toLocaleDateString('ja-JP')}
+                          {guide.date ? new Date(guide.date).toLocaleDateString('ja-JP') : '日付未設定'}
                         </p>
                       )}
                     </div>

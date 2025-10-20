@@ -195,11 +195,11 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
                           {index === 0 ? 'AI旅行' : index === 1 ? 'AI活用' : 'おすすめ'}
                         </span>
                         <span className="ml-2 text-xs text-gray-500">
-                          {new Date(article.date).toLocaleDateString('ja-JP', { 
+                          {article.date ? new Date(article.date).toLocaleDateString('ja-JP', { 
                             year: 'numeric', 
                             month: '2-digit', 
                             day: '2-digit' 
-                          }).replace(/\//g, '.')}
+                          }).replace(/\//g, '.') : '日付未設定'}
                         </span>
                       </div>
                       <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">

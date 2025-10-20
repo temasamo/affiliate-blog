@@ -94,7 +94,7 @@ export default function DiagnosticAIPage({ posts }: DiagnosticAIPageProps) {
                       )}
                       {post.date && (
                         <p className="text-xs text-gray-500">
-                          {new Date(post.date).toLocaleDateString('ja-JP')}
+                          {post.date ? new Date(post.date).toLocaleDateString('ja-JP') : '日付未設定'}
                         </p>
                       )}
                     </div>

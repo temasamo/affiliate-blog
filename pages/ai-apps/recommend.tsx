@@ -85,11 +85,11 @@ export default function AiAppsRecommend({ articles }: AiAppsRecommendProps) {
                   
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-500">
-                      {new Date(article.date).toLocaleDateString('ja-JP', {
+                      {article.date ? new Date(article.date).toLocaleDateString('ja-JP', {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric'
-                      })}
+                      }) : '日付未設定'}
                     </span>
                     <span className="text-blue-600 font-medium group-hover:text-blue-700 transition-colors">
                       詳細を見る →
