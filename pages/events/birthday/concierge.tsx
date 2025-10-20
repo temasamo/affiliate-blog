@@ -131,7 +131,7 @@ const analyzeConversation = (responses: Record<string, string>) => {
   }
   
   // 予算別フィルタリング
-  const budgetFilter = {
+  const budgetFilter: Record<string, string[]> = {
     "3,000円未満": ["小物", "文具", "書籍", "花"],
     "3,000-8,000円": ["実用品", "キッチン用品", "健康グッズ", "日本茶"],
     "8,000-15,000円": ["高級品", "体験ギフト", "美容", "家電"],
@@ -517,11 +517,11 @@ export default function ConciergeAI() {
           </div>
 
           {/* 質問フォーム */}
-          {currentStep < conciergeQuestions.length && !showSuggestions && !isTyping && (
+          {currentStep < conciergeQuestions.length && !showSuggestions && !isTyping && conciergeQuestions[currentStep] && (
             <div className="mt-4">
               {conciergeQuestions[currentStep].type === 'select' ? (
                 <div className="space-y-2">
-                  {conciergeQuestions[currentStep].options.map((option) => (
+                  {conciergeQuestions[currentStep].options?.map((option) => (
                     <button
                       key={option.id}
                       onClick={() => handleOptionSelect(option)}
