@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 
@@ -9,7 +9,26 @@ interface HeaderProps {
 
 export default function Header({ title = "Market Supporter AI", description = "AIが導く、賢い洞察と信頼できるおすすめ" }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAlcoholMenuOpen, setIsAlcoholMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const alcoholMenuRef = useRef<HTMLDivElement>(null);
+
+  // メニュー外をクリックした時にメニューを閉じる
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (alcoholMenuRef.current && !alcoholMenuRef.current.contains(event.target as Node)) {
+        setIsAlcoholMenuOpen(false);
+      }
+    };
+
+    if (isAlcoholMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isAlcoholMenuOpen]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -87,9 +106,46 @@ export default function Header({ title = "Market Supporter AI", description = "A
               <Link href="/events" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
                 イベント
               </Link>
-              <Link href="/japanese-sake" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
-                日本酒
-              </Link>
+              {/* お酒ドロップダウンメニュー */}
+              <div className="relative" ref={alcoholMenuRef}>
+                <button
+                  onClick={() => setIsAlcoholMenuOpen(!isAlcoholMenuOpen)}
+                  className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50 flex items-center"
+                >
+                  お酒
+                  <svg className={`ml-1 w-4 h-4 transition-transform ${isAlcoholMenuOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {/* ドロップダウンメニュー */}
+                {isAlcoholMenuOpen && (
+                  <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                    <Link 
+                      href="/japanese-sake" 
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                      onClick={() => setIsAlcoholMenuOpen(false)}
+                    >
+                      🍶 日本酒
+                    </Link>
+                    <Link 
+                      href="/whisky" 
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                      onClick={() => setIsAlcoholMenuOpen(false)}
+                    >
+                      🥃 ウイスキー
+                    </Link>
+                    <div className="border-t border-gray-100 my-1"></div>
+                    <Link 
+                      href="/alcohol" 
+                      className="block px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700 transition-colors"
+                      onClick={() => setIsAlcoholMenuOpen(false)}
+                    >
+                      お酒一覧を見る
+                    </Link>
+                  </div>
+                )}
+              </div>
               <Link href="/ai-apps" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
                 AIアプリ情報
               </Link>
@@ -158,9 +214,18 @@ export default function Header({ title = "Market Supporter AI", description = "A
                 <Link href="/events" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
                   イベント
                 </Link>
-                <Link href="/japanese-sake" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
-                  日本酒
-                </Link>
+                {/* お酒セクション */}
+                <div className="px-2 py-1">
+                  <div className="text-gray-600 font-medium mb-2">お酒</div>
+                  <div className="ml-4 space-y-2">
+                    <Link href="/japanese-sake" className="block text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
+                      🍶 日本酒
+                    </Link>
+                    <Link href="/whisky" className="block text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
+                      🥃 ウイスキー
+                    </Link>
+                  </div>
+                </div>
                 <Link href="/ai-apps" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
                   AIアプリ情報
                 </Link>

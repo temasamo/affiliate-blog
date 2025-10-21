@@ -502,7 +502,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   }
 
   // 全カテゴリの記事を取得（global-hot-picksも含める）
-  const categories = ['sleep-health', 'japanesetea', 'japanesesake', 'popularproducts-overseas', '海外トレンド', 'japaneseproducts-popular-with-foreigners', 'global-hot-picks'];
+  const categories = ['sleep-health', 'japanesetea', 'japanesesake', 'popularproducts-overseas', '海外トレンド', 'japaneseproducts-popular-with-foreigners', 'global-hot-picks', 'whisky'];
   
   categories.forEach(category => {
     const categoryPath = path.join(articlesDirectory, category);
