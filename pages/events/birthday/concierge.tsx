@@ -50,6 +50,35 @@ const conciergeQuestions = [
     placeholder: "例：50代の父で、最近は家で過ごすことが多いです..."
   },
   {
+    id: "preferences",
+    question: "相手の好みや嫌いなものはありますか？",
+    type: "freeText",
+    placeholder: "例：甘いものが苦手、ブランド品は好まない、実用的なものが好き..."
+  },
+  {
+    id: "purpose",
+    question: "このプレゼントで相手にどうなってほしいですか？",
+    type: "select",
+    options: [
+      { id: "surprise", text: "驚いてほしい", value: "驚いてほしい" },
+      { id: "practical", text: "日常で使ってほしい", value: "日常で使ってほしい" },
+      { id: "memorable", text: "思い出に残るもの", value: "思い出に残るもの" },
+      { id: "luxury", text: "特別感を味わってほしい", value: "特別感を味わってほしい" },
+      { id: "health", text: "健康になってほしい", value: "健康になってほしい" }
+    ]
+  },
+  {
+    id: "delivery",
+    question: "プレゼントの形式や渡し方は希望がありますか？",
+    type: "select",
+    options: [
+      { id: "direct", text: "直接手渡し", value: "直接手渡し" },
+      { id: "surprise", text: "サプライズ", value: "サプライズ" },
+      { id: "delivery", text: "配送", value: "配送" },
+      { id: "experience", text: "体験型", value: "体験型" }
+    ]
+  },
+  {
     id: "history",
     question: "これまでにプレゼントした経験はありますか？",
     type: "freeText", 
@@ -70,9 +99,11 @@ const conciergeQuestions = [
 
 // キーワード分析によるカテゴリ提案
 const analyzeConversation = (responses: Record<string, string>) => {
-  const text = (responses.freeText || "") + " " + (responses.history || "");
+  const text = (responses.freeText || "") + " " + (responses.history || "") + " " + (responses.preferences || "");
   const target = responses.target || "";
   const budget = responses.budget || "";
+  const purpose = responses.purpose || "";
+  const delivery = responses.delivery || "";
   
   // より詳細なキーワード分析
   const keywords = {
@@ -101,6 +132,32 @@ const analyzeConversation = (responses: Record<string, string>) => {
     "60代": { categories: ["健康グッズ", "実用品", "趣味グッズ"], weight: 2 },
     "70代": { categories: ["健康グッズ", "安全グッズ", "実用品"], weight: 2 },
   };
+
+  // 好み分析の強化
+  const preferenceKeywords = {
+    "甘いもの": { avoid: ["スイーツ", "お菓子", "甘い"], prefer: ["辛い", "苦い"] },
+    "ブランド品": { avoid: ["ブランド", "高級"], prefer: ["実用的", "シンプル"] },
+    "実用的": { prefer: ["実用品", "日用品", "家電"], avoid: ["装飾品", "観賞用"] },
+    "高級": { prefer: ["高級品", "ブランド品", "限定品"], avoid: ["安物", "大量生産"] },
+    "シンプル": { prefer: ["シンプル", "ミニマル", "無印"], avoid: ["派手", "装飾的"] }
+  };
+
+  // 目的別カテゴリマッピング
+  const purposeMapping: Record<string, string[]> = {
+    "驚いてほしい": ["体験ギフト", "珍しいもの", "サプライズ", "限定品"],
+    "日常で使ってほしい": ["実用品", "家電", "日用品", "キッチン用品"],
+    "思い出に残るもの": ["体験ギフト", "写真", "記念品", "旅行用品"],
+    "特別感を味わってほしい": ["高級品", "ブランド品", "限定品", "体験ギフト"],
+    "健康になってほしい": ["健康グッズ", "サプリメント", "フィットネス", "医療機器"]
+  };
+
+  // 配達形式別フィルタリング
+  const deliveryFilter: Record<string, string[]> = {
+    "直接手渡し": ["すべての商品"],
+    "サプライズ": ["小物", "アクセサリー", "体験ギフト", "花"],
+    "配送": ["重いもの除外", "壊れやすいもの除外", "冷蔵が必要なもの除外"],
+    "体験型": ["体験ギフト", "チケット", "予約制サービス", "旅行券"]
+  };
   
   const matchedCategories: Record<string, number> = {};
   
@@ -112,6 +169,36 @@ const analyzeConversation = (responses: Record<string, string>) => {
       });
     }
   });
+
+  // 好み分析の適用
+  Object.entries(preferenceKeywords).forEach(([preference, data]) => {
+    if (text.includes(preference)) {
+      // 好きなものを優先
+      data.prefer.forEach(category => {
+        matchedCategories[category] = (matchedCategories[category] || 0) + 3;
+      });
+      // 嫌いなものを除外
+      data.avoid.forEach(category => {
+        if (matchedCategories[category]) {
+          matchedCategories[category] = Math.max(0, matchedCategories[category] - 5);
+        }
+      });
+    }
+  });
+
+  // 目的別の重み付け
+  if (purposeMapping[purpose]) {
+    purposeMapping[purpose].forEach(category => {
+      matchedCategories[category] = (matchedCategories[category] || 0) + 4;
+    });
+  }
+
+  // 配達形式別のフィルタリング
+  if (deliveryFilter[delivery]) {
+    deliveryFilter[delivery].forEach(category => {
+      matchedCategories[category] = (matchedCategories[category] || 0) + 2;
+    });
+  }
   
   // ターゲット別の重み付け
   const targetPreferences: Record<string, string[]> = {
@@ -298,6 +385,7 @@ export default function ConciergeAI() {
   const [suggestions, setSuggestions] = useState<any[]>([]);
   const [isTyping, setIsTyping] = useState(false);
   const [freeText, setFreeText] = useState("");
+  const [preferences, setPreferences] = useState("");
   const [history, setHistory] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -434,6 +522,7 @@ export default function ConciergeAI() {
     setSelectedCategory("");
     setSuggestions([]);
     setFreeText("");
+    setPreferences("");
     setHistory("");
     setTimeout(() => {
       addMessage(conciergeQuestions[0].question, 'ai');
@@ -534,10 +623,16 @@ export default function ConciergeAI() {
               ) : (
                 <div className="space-y-4">
                   <textarea
-                    value={conciergeQuestions[currentStep].id === 'freeText' ? freeText : history}
+                    value={
+                      conciergeQuestions[currentStep].id === 'freeText' ? freeText :
+                      conciergeQuestions[currentStep].id === 'preferences' ? preferences :
+                      history
+                    }
                     onChange={(e) => {
                       if (conciergeQuestions[currentStep].id === 'freeText') {
                         setFreeText(e.target.value);
+                      } else if (conciergeQuestions[currentStep].id === 'preferences') {
+                        setPreferences(e.target.value);
                       } else {
                         setHistory(e.target.value);
                       }
@@ -548,7 +643,10 @@ export default function ConciergeAI() {
                   />
                   <button
                     onClick={() => {
-                      const text = conciergeQuestions[currentStep].id === 'freeText' ? freeText : history;
+                      const text = 
+                        conciergeQuestions[currentStep].id === 'freeText' ? freeText :
+                        conciergeQuestions[currentStep].id === 'preferences' ? preferences :
+                        history;
                       if (text.trim()) {
                         handleFreeTextSubmit(conciergeQuestions[currentStep].id, text);
                       }
