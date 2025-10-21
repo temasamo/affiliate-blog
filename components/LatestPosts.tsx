@@ -147,6 +147,16 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     return `/articles/whisky/knowledge/${slug}`;
   }
   
+  // 日本茶カテゴリの記事の場合
+  if (category === "japanesetea") {
+    // slugから推測してサブディレクトリを決定
+    if (slug.includes("knowledge") || slug.includes("2025-10-19-remove-teastains") || slug.includes("2025-10-22-bitter-green-tea")) {
+      return `/articles/japanesetea/knowledge/${slug}`;
+    }
+    // デフォルトはrecommend
+    return `/articles/japanesetea/recommend/${slug}`;
+  }
+  
   // イベントカテゴリの記事の場合
   if (category === "イベント") {
     // 季節のイベント（おせちなど）
