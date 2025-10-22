@@ -115,7 +115,7 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
   }
   
   // AIアプリ情報カテゴリの記事の場合
-  if (category === "AIアプリ情報") {
+  if (category === "AIアプリ情報" || category === "ai-apps") {
     // subcategoryから推測してサブディレクトリを決定
     if (subcategory === "おすすめAIアプリ") {
       return `/articles/ai-apps/recommend/${slug}`;
@@ -130,7 +130,7 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
   // 日本酒カテゴリの記事の場合
   if (category === "日本酒" || category === "japanesesake") {
     // typeフィールドまたはslugから推測してサブディレクトリを決定
-    if (slug.includes("knowledge") || slug.includes("2025-10-11-nihonshu-intro") || slug.includes("2025-10-12-nihonshu-history") || slug.includes("2025-10-13-nihonshu-ingredients") || slug.includes("2025-10-13-nihonshu-seimaibuai") || slug.includes("2025-10-15-nihonshu-classification") || slug.includes("2025-10-16-nihonshu-temperature") || slug.includes("2025-10-17-nihonshu-flavor") || slug.includes("2025-10-18-nihonshu-storage")) {
+    if (slug.includes("knowledge") || slug.includes("2025-10-11-nihonshu-intro") || slug.includes("2025-10-12-nihonshu-history") || slug.includes("2025-10-13-nihonshu-ingredients") || slug.includes("2025-10-13-nihonshu-seimaibuai") || slug.includes("2025-10-15-nihonshu-classification") || slug.includes("2025-10-16-nihonshu-temperature") || slug.includes("2025-10-17-nihonshu-flavor") || slug.includes("2025-10-18-nihonshu-storage") || slug.includes("2025-10-23-nihonshu-tastechange")) {
       return `/articles/japanesesake/knowledge/${slug}`;
     }
     // デフォルトはbrands
@@ -165,14 +165,6 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     }
     // その他のイベント記事は一般的なパス
     return `/articles/events/${slug}`;
-  }
-  if (category === "日本酒" || category === "japanesesake") {
-    // typeフィールドまたはslugから推測してサブディレクトリを決定
-    if (slug.includes("knowledge") || slug.includes("2025-10-11-nihonshu-intro") || slug.includes("2025-10-12-nihonshu-history") || slug.includes("2025-10-13-nihonshu-ingredients") || slug.includes("2025-10-13-nihonshu-seimaibuai") || slug.includes("2025-10-15-nihonshu-classification") || slug.includes("2025-10-16-nihonshu-temperature") || slug.includes("2025-10-17-nihonshu-flavor") || slug.includes("2025-10-18-nihonshu-storage")) {
-      return `/articles/japanesesake/knowledge/${slug}`;
-    }
-    // デフォルトはbrands
-    return `/articles/japanesesake/brands/${slug}`;
   }
   
   // その他の記事は一般的なパス
