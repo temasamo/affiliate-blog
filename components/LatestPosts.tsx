@@ -46,6 +46,7 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     // Group6（抱き枕編）に属するスラッグを優先判定
     const group6Slugs = [
       "hugpillow-effect",
+      "global-pillow-material-guide",
     ];
     if (group6Slugs.includes(slug)) {
       return `/articles/sleep-health/pillow/group6/${slug}`;
