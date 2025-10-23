@@ -40,14 +40,35 @@ export default function GiftChatUI({ category, target }: GiftChatUIProps) {
 
   // 初期メッセージ
   useEffect(() => {
+    // 対象者に応じたメッセージを生成
+    let targetMessage = '';
+    if (target === '恋人') {
+      // ペア系のカテゴリは「お二人に」、その他は「パートナーに」
+      if (category === 'ペアウォッチ' || category === 'ペアアクセサリー') {
+        targetMessage = 'お二人にあった商品をお探しできるようお手伝いいたしますね。';
+      } else {
+        targetMessage = 'パートナーにあった商品をお探しできるようお手伝いいたしますね。';
+      }
+    } else if (target === '実母') {
+      targetMessage = 'お母様にあった商品をお探しできるようお手伝いいたしますね。';
+    } else if (target === '義母') {
+      targetMessage = 'お義母様にあった商品をお探しできるようお手伝いいたしますね。';
+    } else if (target === '実父') {
+      targetMessage = 'お父様にあった商品をお探しできるようお手伝いいたしますね。';
+    } else if (target === '子供') {
+      targetMessage = 'お子様にあった商品をお探しできるようお手伝いいたしますね。';
+    } else {
+      targetMessage = 'お探しできるようお手伝いいたしますね。';
+    }
+
     const initialMessage: ChatMessage = {
       id: 'initial',
       from: 'bot',
-      text: `🎁「${category}」がおすすめカテゴリですね。\nいくつかお伺いしますね。`,
+      text: `🎁「${category}」をお探しですね？${targetMessage}それではいくつかお伺いさせてください。`,
       timestamp: new Date()
     };
     setChat([initialMessage]);
-  }, [category]);
+  }, [category, target]);
 
   // チャットを最下部にスクロール
   useEffect(() => {

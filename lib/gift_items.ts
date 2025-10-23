@@ -1304,11 +1304,11 @@ export function generateCategorySuggestions(category: string, answers: Record<st
       break;
     
     case "美容・スキンケアセット":
-      suggestions = generateMotherSuggestions(answers);
+      suggestions = generateMotherSuggestions(category, answers);
       break;
     
     case "高級グルメギフト":
-      suggestions = generateFatherInLawSuggestions(answers);
+      suggestions = generateFatherInLawSuggestions(category, answers);
       break;
     
     case "上質スキンケアセット":
