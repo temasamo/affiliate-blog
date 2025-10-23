@@ -75,7 +75,7 @@ export default function CoupleBirthdayGiftsPage() {
                 形に残る"お揃い"は鉄板。<span className="font-semibold text-red-600">さりげないシンプル系</span>が長く使えて人気です。
               </p>
               <Link 
-                href="/events/birthday/chat?category=ペアアクセサリー&target=恋人"
+                href="/events/birthday/chat?category=ペアウォッチ&target=恋人"
                 className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-2 px-4 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
@@ -100,10 +100,10 @@ export default function CoupleBirthdayGiftsPage() {
               <h3 className="text-xl font-semibold text-gray-900 mb-2">フラワーボックス＋メッセージ</h3>
               <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥3,000〜¥8,000）</p>
               <p className="text-gray-600 mb-4">
-                王道の“気持ちが伝わる”ギフト。手紙を添えて特別感を演出しましょう。
+                王道の"気持ちが伝わる"ギフト。手紙を添えて特別感を演出しましょう。
               </p>
               <Link 
-                href="/events/birthday/chat?category=フラワーギフト&target=恋人"
+                href="/events/birthday/chat?category=フラワーボックス＋メッセージ&target=恋人"
                 className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-2 px-4 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
@@ -131,7 +131,7 @@ export default function CoupleBirthdayGiftsPage() {
                 冬場に嬉しい保湿系や、寝室で使える<span className="font-semibold text-red-600">癒しのアロマ</span>が好相性。
               </p>
               <Link 
-                href="/events/birthday/chat?category=美容・スキンケア&target=恋人"
+                href="/events/birthday/chat?category=高品質スキンケア・アロマ加湿器&target=恋人"
                 className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-2 px-4 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
@@ -184,10 +184,10 @@ export default function CoupleBirthdayGiftsPage() {
               <h3 className="text-xl font-semibold text-gray-900 mb-2">コーヒー・お茶・ペアマグ</h3>
               <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥2,000〜¥6,000）</p>
               <p className="text-gray-600 mb-4">
-                おうちで一緒に楽しめる“ほっと時間”。名前入りのマグで特別感を。
+                おうちで一緒に楽しめる"ほっと時間"。名前入りのマグで特別感を。
               </p>
               <Link 
-                href="/events/birthday/chat?category=おうち時間ギフト&target=恋人"
+                href="/events/birthday/chat?category=コーヒー・お茶・ペアマグ&target=恋人"
                 className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-2 px-4 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
@@ -215,7 +215,7 @@ export default function CoupleBirthdayGiftsPage() {
                 寒い季節に嬉しい実用品。<span className="font-semibold text-red-600">色味は相手の普段着に合わせて</span>選ぶと失敗しません。
               </p>
               <Link 
-                href="/events/birthday/chat?category=冬小物&target=恋人"
+                href="/events/birthday/chat?category=手袋・ストール・ルームウェア&target=恋人"
                 className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-2 px-4 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ

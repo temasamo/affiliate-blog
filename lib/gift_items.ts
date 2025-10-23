@@ -167,6 +167,97 @@ export interface Question {
 
 // カテゴリ別質問フロー
 export const questionFlows = {
+  // 恋人向けカテゴリ
+  "ペアウォッチ": [
+    {
+      question: "お二人の好みのスタイルはどちらですか？",
+      options: ["シンプル・ミニマル", "クラシック・上品", "スポーティ・カジュアル"]
+    },
+    {
+      question: "普段のファッションはどちら寄りですか？",
+      options: ["カジュアル", "ビジネス・フォーマル", "ミックス"]
+    },
+    {
+      question: "機能性で重視したいのは？",
+      options: ["時間を見やすさ", "防水性", "デザイン重視"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["5,000円未満", "5,000円〜15,000円", "15,000円〜30,000円", "30,000円以上"]
+    }
+  ],
+  "フラワーボックス＋メッセージ": [
+    {
+      question: "お花の好みはどちらですか？",
+      options: ["華やかな花", "シンプルな花", "季節の花"]
+    },
+    {
+      question: "メッセージの内容は？",
+      options: ["感謝の気持ち", "愛の言葉", "思い出の共有"]
+    },
+    {
+      question: "プレゼントの印象は？",
+      options: ["ロマンチック", "上品", "可愛らしい"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["3,000円未満", "3,000円〜5,000円", "5,000円〜8,000円", "8,000円以上"]
+    }
+  ],
+  "高品質スキンケア・アロマ加湿器": [
+    {
+      question: "スキンケアの好みは？",
+      options: ["保湿重視", "香り重視", "機能重視"]
+    },
+    {
+      question: "アロマの香りは？",
+      options: ["フローラル系", "リラックス系", "フレッシュ系"]
+    },
+    {
+      question: "使用シーンは？",
+      options: ["寝室", "リビング", "バスルーム"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["5,000円未満", "5,000円〜8,000円", "8,000円〜12,000円", "12,000円以上"]
+    }
+  ],
+  "コーヒー・お茶・ペアマグ": [
+    {
+      question: "お二人の飲み物の好みは？",
+      options: ["コーヒー", "お茶", "両方"]
+    },
+    {
+      question: "マグのデザインは？",
+      options: ["シンプル", "可愛らしい", "お揃いデザイン"]
+    },
+    {
+      question: "特別感を演出したいのは？",
+      options: ["名前入り", "メッセージ入り", "記念日デザイン"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["2,000円未満", "2,000円〜4,000円", "4,000円〜6,000円", "6,000円以上"]
+    }
+  ],
+  "手袋・ストール・ルームウェア": [
+    {
+      question: "どのアイテムがお好みですか？",
+      options: ["手袋", "ストール", "ルームウェア"]
+    },
+    {
+      question: "素材の好みは？",
+      options: ["ウール", "コットン", "カシミア"]
+    },
+    {
+      question: "色の好みは？",
+      options: ["落ち着いた色", "明るい色", "モノトーン"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["3,000円未満", "3,000円〜5,000円", "5,000円〜8,000円", "8,000円以上"]
+    }
+  ],
   "高級お茶セット": [
     {
       question: "お母さまは普段お茶を飲む習慣はありますか？",
@@ -1136,6 +1227,26 @@ export function generateCategorySuggestions(category: string, answers: Record<st
     // 恋人向けカテゴリ
     case "ペアアクセサリー":
       suggestions = generateCoupleAccessorySuggestions(answers);
+      break;
+    
+    case "ペアウォッチ":
+      suggestions = generateCoupleAccessorySuggestions(answers);
+      break;
+    
+    case "フラワーボックス＋メッセージ":
+      suggestions = generateCoupleFlowerSuggestions(answers);
+      break;
+    
+    case "高品質スキンケア・アロマ加湿器":
+      suggestions = generateCoupleSkincareSuggestions(answers);
+      break;
+    
+    case "コーヒー・お茶・ペアマグ":
+      suggestions = generateCoupleHomeTimeSuggestions(answers);
+      break;
+    
+    case "手袋・ストール・ルームウェア":
+      suggestions = generateCoupleWinterSuggestions(answers);
       break;
     
     case "フラワーギフト":
