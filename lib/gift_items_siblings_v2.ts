@@ -22,6 +22,7 @@ export interface SiblingsGiftItem {
   features: string[];
   targetAge: string[];
   interests: string[];
+  keywords: string[]; // GiftItem型との互換性のため追加
   mallLinks: {
     rakuten: string;
     amazon: string;
@@ -130,6 +131,7 @@ export const siblingsGiftSuggestions: SiblingsGiftItem[] = [
     features: ['趣味に特化', '実用的', '長く楽しめる'],
     targetAge: ['20代', '30代', '40代', '50代', '60代以上'],
     interests: ['読書・学習', '映画・音楽', 'アート・創作'],
+    keywords: ['本', '雑誌', '趣味', '兄弟姉妹', 'ギフト'],
     mallLinks: {
       rakuten: '/api/go/siblings-book-rakuten',
       amazon: '/api/go/siblings-book-amazon',
@@ -146,6 +148,7 @@ export const siblingsGiftSuggestions: SiblingsGiftItem[] = [
     features: ['実用性重視', '最新技術', '毎日使える'],
     targetAge: ['20代', '30代', '40代'],
     interests: ['ゲーム・エンタメ', '映画・音楽'],
+    keywords: ['ガジェット', '実用的', '最新', '兄弟姉妹', 'ギフト'],
     mallLinks: {
       rakuten: '/api/go/siblings-gadget-rakuten',
       amazon: '/api/go/siblings-gadget-amazon',
@@ -162,6 +165,7 @@ export const siblingsGiftSuggestions: SiblingsGiftItem[] = [
     features: ['体験型', '思い出作り', '一緒に楽しめる'],
     targetAge: ['20代', '30代', '40代', '50代'],
     interests: ['スポーツ・アウトドア', '料理・グルメ', 'アート・創作'],
+    keywords: ['体験', '思い出', '一緒に楽しむ', '兄弟姉妹', 'ギフト'],
     mallLinks: {
       rakuten: '/api/go/siblings-experience-rakuten',
       amazon: '/api/go/siblings-experience-amazon',
@@ -178,6 +182,7 @@ export const siblingsGiftSuggestions: SiblingsGiftItem[] = [
     features: ['高級食材', '美味しさ重視', '実用的'],
     targetAge: ['20代', '30代', '40代', '50代', '60代以上'],
     interests: ['料理・グルメ'],
+    keywords: ['グルメ', '食材', 'お菓子', '兄弟姉妹', 'ギフト'],
     mallLinks: {
       rakuten: '/api/go/siblings-gourmet-rakuten',
       amazon: '/api/go/siblings-gourmet-amazon',
@@ -194,6 +199,7 @@ export const siblingsGiftSuggestions: SiblingsGiftItem[] = [
     features: ['スポーツ特化', '健康促進', 'アクティブ'],
     targetAge: ['20代', '30代', '40代'],
     interests: ['スポーツ・アウトドア'],
+    keywords: ['スポーツ', '健康', 'アクティブ', '兄弟姉妹', 'ギフト'],
     mallLinks: {
       rakuten: '/api/go/siblings-sports-rakuten',
       amazon: '/api/go/siblings-sports-amazon',

@@ -22,6 +22,7 @@ export interface ChildrenGiftItem {
   features: string[];
   targetAge: string[];
   interests: string[];
+  keywords: string[]; // GiftItem型との互換性のため追加
   mallLinks: {
     rakuten: string;
     amazon: string;
@@ -130,6 +131,7 @@ export const childrenGiftSuggestions: ChildrenGiftItem[] = [
     features: ['知育効果', '年齢適応', '安全設計'],
     targetAge: ['0-2歳（乳幼児）', '3-5歳（幼児）', '6-8歳（低学年）'],
     interests: ['おもちゃ・ゲーム', '読書・学習'],
+    keywords: ['知育', 'おもちゃ', '学習', '子供', 'ギフト'],
     mallLinks: {
       rakuten: '/api/go/children-educational-rakuten',
       amazon: '/api/go/children-educational-amazon',
@@ -146,6 +148,7 @@ export const childrenGiftSuggestions: ChildrenGiftItem[] = [
     features: ['運動促進', '健康向上', 'アクティブ'],
     targetAge: ['6-8歳（低学年）', '9-12歳（高学年）', '13-15歳（中学生）', '16-18歳（高校生）'],
     interests: ['スポーツ・運動'],
+    keywords: ['スポーツ', '運動', '健康', '子供', 'ギフト'],
     mallLinks: {
       rakuten: '/api/go/children-sports-rakuten',
       amazon: '/api/go/children-sports-amazon',
@@ -162,6 +165,7 @@ export const childrenGiftSuggestions: ChildrenGiftItem[] = [
     features: ['創造性向上', '表現力育成', 'アート体験'],
     targetAge: ['3-5歳（幼児）', '6-8歳（低学年）', '9-12歳（高学年）'],
     interests: ['アート・創作', '音楽・ダンス'],
+    keywords: ['アート', '創作', '表現', '子供', 'ギフト'],
     mallLinks: {
       rakuten: '/api/go/children-art-rakuten',
       amazon: '/api/go/children-art-amazon',
@@ -178,6 +182,7 @@ export const childrenGiftSuggestions: ChildrenGiftItem[] = [
     features: ['科学学習', '好奇心向上', '実験体験'],
     targetAge: ['6-8歳（低学年）', '9-12歳（高学年）', '13-15歳（中学生）'],
     interests: ['科学・実験', '読書・学習'],
+    keywords: ['科学', '実験', '学習', '子供', 'ギフト'],
     mallLinks: {
       rakuten: '/api/go/children-science-rakuten',
       amazon: '/api/go/children-science-amazon',
@@ -194,6 +199,7 @@ export const childrenGiftSuggestions: ChildrenGiftItem[] = [
     features: ['コミュニケーション', '戦略思考', '家族時間'],
     targetAge: ['6-8歳（低学年）', '9-12歳（高学年）', '13-15歳（中学生）', '16-18歳（高校生）'],
     interests: ['おもちゃ・ゲーム'],
+    keywords: ['ボードゲーム', 'カードゲーム', '家族', '子供', 'ギフト'],
     mallLinks: {
       rakuten: '/api/go/children-game-rakuten',
       amazon: '/api/go/children-game-amazon',

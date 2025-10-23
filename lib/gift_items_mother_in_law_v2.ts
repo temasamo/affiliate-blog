@@ -22,6 +22,7 @@ export interface MotherInLawGiftItem {
   features: string[];
   targetAge: string[];
   preferences: string[];
+  keywords: string[]; // GiftItem型との互換性のため追加
   mallLinks: {
     rakuten: string;
     amazon: string;
@@ -130,6 +131,7 @@ export const motherInLawGiftSuggestions: MotherInLawGiftItem[] = [
     features: ['上品なパッケージ', '高級茶葉', '実用的'],
     targetAge: ['50代', '60代', '70代', '80代以上'],
     preferences: ['お茶・日本文化', '上品で落ち着いた'],
+    keywords: ['日本茶', '高級', '上品', '義母', 'ギフト'],
     mallLinks: {
       rakuten: '/api/go/mother-in-law-tea-rakuten',
       amazon: '/api/go/mother-in-law-tea-amazon',
@@ -146,6 +148,7 @@ export const motherInLawGiftSuggestions: MotherInLawGiftItem[] = [
     features: ['高級ブランド', '特別感', '美肌効果'],
     targetAge: ['50代', '60代', '70代'],
     preferences: ['健康・美容', '華やかで明るい'],
+    keywords: ['スキンケア', '高級', '美容', '義母', 'ギフト'],
     mallLinks: {
       rakuten: '/api/go/mother-in-law-skincare-rakuten',
       amazon: '/api/go/mother-in-law-skincare-amazon',
@@ -162,6 +165,7 @@ export const motherInLawGiftSuggestions: MotherInLawGiftItem[] = [
     features: ['実用性重視', '高品質', '毎日使える'],
     targetAge: ['50代', '60代', '70代', '80代以上'],
     preferences: ['料理・グルメ', 'シンプルで実用的'],
+    keywords: ['キッチン用品', '実用的', '料理', '義母', 'ギフト'],
     mallLinks: {
       rakuten: '/api/go/mother-in-law-kitchen-rakuten',
       amazon: '/api/go/mother-in-law-kitchen-amazon',
