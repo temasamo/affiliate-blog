@@ -238,3 +238,4 @@ const ChildrenGiftChatUI: React.FC<ChildrenGiftChatUIProps> = ({ version = "v2" 
 };
 
 export default ChildrenGiftChatUI;
+
