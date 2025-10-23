@@ -1,5 +1,8 @@
 // ギフト提案データ（検索キーワードベース）
 import { fatherQuestionFlows, fatherInLawQuestionFlows, motherQuestionFlows, generateFatherSuggestions, generateFatherInLawSuggestions, generateMotherSuggestions, filterSuggestionsByBudget, GiftItem, getProductNameByBudget, getPriceRangeByBudget } from './gift_items_father';
+import { motherInLawQuestionFlow, generateMotherInLawSuggestions } from './gift_items_mother_in_law_v2';
+import { siblingsQuestionFlow, generateSiblingsSuggestions } from './gift_items_siblings_v2';
+import { childrenQuestionFlow, generateChildrenSuggestions } from './gift_items_children_v2';
 
 // GiftItem型を再エクスポート
 export type { GiftItem };
@@ -990,8 +993,32 @@ const coupleQuestionFlows = {
   ]
 };
 
-// 実父・義父・実母・恋人向け質問フローを統合
-Object.assign(questionFlows, fatherQuestionFlows, fatherInLawQuestionFlows, motherQuestionFlows, coupleQuestionFlows);
+// 義母向け質問フローを追加
+const motherInLawQuestionFlows = {
+  "義母向けスキンケア": motherInLawQuestionFlow.map(q => ({
+    question: q.question,
+    options: q.options
+  }))
+};
+
+// 兄弟姉妹向け質問フローを追加
+const siblingsQuestionFlows = {
+  "兄弟姉妹向けギフト": siblingsQuestionFlow.map(q => ({
+    question: q.question,
+    options: q.options
+  }))
+};
+
+// 子供向け質問フローを追加
+const childrenQuestionFlows = {
+  "子供向けギフト": childrenQuestionFlow.map(q => ({
+    question: q.question,
+    options: q.options
+  }))
+};
+
+// 実父・義父・実母・義母・兄弟姉妹・子供・恋人向け質問フローを統合
+Object.assign(questionFlows, fatherQuestionFlows, fatherInLawQuestionFlows, motherQuestionFlows, motherInLawQuestionFlows, siblingsQuestionFlows, childrenQuestionFlows, coupleQuestionFlows);
 
 // 旧形式との互換性のため残す
 export const teaQuestions: Question[] = [
@@ -1116,9 +1143,11 @@ export function generateCategorySuggestions(category: string, answers: Record<st
       break;
     
     case "美容・スキンケア":
-      // 恋人向けの場合は特別なロジックを使用
+      // 対象者別の特別なロジックを使用
       if (answers.target === "恋人") {
         suggestions = generateCoupleSkincareSuggestions(answers);
+      } else if (answers.target === "義母") {
+        suggestions = generateMotherInLawSuggestions(answers);
       } else {
         suggestions = generateMotherSuggestions(category, answers);
         // 予算フィルタリングを適用
@@ -1130,9 +1159,11 @@ export function generateCategorySuggestions(category: string, answers: Record<st
       break;
     
     case "体験ギフト":
-      // 恋人向けの場合は特別なロジックを使用
+      // 対象者別の特別なロジックを使用
       if (answers.target === "恋人") {
         suggestions = generateCoupleExperienceSuggestions(answers);
+      } else if (answers.target === "兄弟姉妹") {
+        suggestions = generateSiblingsSuggestions(answers);
       } else {
         suggestions = generateMotherSuggestions(category, answers);
         // 予算フィルタリングを適用
@@ -1143,10 +1174,10 @@ export function generateCategorySuggestions(category: string, answers: Record<st
       }
       break;
     case "兄弟姉妹体験ギフト":
-      suggestions = generateMotherSuggestions(category, answers);
+      suggestions = generateSiblingsSuggestions(answers);
       break;
     case "子供体験ギフト":
-      suggestions = generateMotherSuggestions(category, answers);
+      suggestions = generateChildrenSuggestions(answers);
       break;
     
     case "おうち時間ギフト":
