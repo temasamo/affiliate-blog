@@ -31,6 +31,15 @@ export default function Whisky({ brandArticles, knowledgeArticles }: WhiskyProps
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="bg-white rounded-2xl shadow-md p-8">
+          {/* パンくずリスト */}
+          <nav className="mb-8">
+            <ol className="flex items-center space-x-2 text-sm text-gray-500">
+              <li><Link href="/" className="hover:text-blue-600">ホーム</Link></li>
+              <li>/</li>
+              <li className="text-gray-900">ウイスキー</li>
+            </ol>
+          </nav>
+          
           <div className="text-center mb-8">
             <div className="relative h-48 mb-6 rounded-xl overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-amber-600/80 to-amber-800/80"></div>
