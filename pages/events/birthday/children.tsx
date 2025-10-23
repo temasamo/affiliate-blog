@@ -196,7 +196,7 @@ export default function ChildrenBirthdayGiftsPage() {
                 <span className="font-semibold text-yellow-600">「一緒に楽しめて嬉しい」</span>と喜ばれる、思い出に残るギフトです。
               </p>
               <Link 
-                href="/events/birthday/chat?category=子供体験ギフト&target=子供"
+                href="/events/birthday/chat?category=体験ギフト&target=子供"
                 className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-white py-2 px-4 rounded-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ

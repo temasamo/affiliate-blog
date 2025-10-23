@@ -175,7 +175,7 @@ export default function MotherBirthdayGiftsPage() {
                 <span className="font-semibold text-pink-600">「自分では買わないけどもらうと嬉しい」</span>そんな特別感のある"ご褒美コスメ"を届けましょう。母の美しさと笑顔を応援するギフトです。
               </p>
               <Link 
-                href="/events/birthday/chat?category=美容・スキンケア&target=実母"
+                href="/events/birthday/chat?category=美容・スキンケアセット&target=実母"
                 className="w-full bg-gradient-to-r from-pink-500 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-pink-600 hover:to-pink-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ
@@ -307,7 +307,7 @@ export default function MotherBirthdayGiftsPage() {
                 <span className="font-semibold text-pink-600">「美味しい！」と笑顔がこぼれる</span>、食卓が華やぐギフトです。普段は買わないちょっといいものを選ぶのがポイント。
               </p>
               <Link 
-                href="/events/birthday/chat?category=グルメギフト&target=実母"
+                href="/events/birthday/chat?category=高級グルメギフト&target=実母"
                 className="w-full bg-gradient-to-r from-pink-500 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-pink-600 hover:to-pink-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ

@@ -131,7 +131,7 @@ export default function MotherInLawBirthdayGiftsPage() {
                 <span className="font-semibold text-purple-600">「気が利いているね」</span>と言ってもらえる、上品で印象に残るギフトです。
               </p>
               <Link 
-                href="/events/birthday/chat?category=上質スキンケア&target=義母"
+                href="/events/birthday/chat?category=上質スキンケアセット&target=義母"
                 className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-center block mb-3"
               >
                 🤖 AI相談で選ぶ

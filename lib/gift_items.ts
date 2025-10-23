@@ -258,6 +258,60 @@ export const questionFlows = {
       options: ["3,000円未満", "3,000円〜5,000円", "5,000円〜8,000円", "8,000円以上"]
     }
   ],
+  "美容・スキンケアセット": [
+    {
+      question: "お母さまのスキンケアの好みは？",
+      options: ["保湿重視", "アンチエイジング", "香り重視"]
+    },
+    {
+      question: "ブランドの好みは？",
+      options: ["高級ブランド", "ナチュラル系", "医薬部外品"]
+    },
+    {
+      question: "使用シーンは？",
+      options: ["朝のスキンケア", "夜のスキンケア", "バスタイム"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["4,000円未満", "4,000円〜8,000円", "8,000円〜12,000円", "12,000円以上"]
+    }
+  ],
+  "高級グルメギフト": [
+    {
+      question: "お母さまの好みの味は？",
+      options: ["和風", "洋風", "中華風"]
+    },
+    {
+      question: "食材の好みは？",
+      options: ["海鮮", "肉類", "野菜・果物"]
+    },
+    {
+      question: "ギフトの印象は？",
+      options: ["上品", "華やか", "実用的"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["3,000円未満", "3,000円〜6,000円", "6,000円〜10,000円", "10,000円以上"]
+    }
+  ],
+  "上質スキンケアセット": [
+    {
+      question: "義母さまのスキンケアの好みは？",
+      options: ["保湿重視", "アンチエイジング", "香り重視"]
+    },
+    {
+      question: "ブランドの好みは？",
+      options: ["高級ブランド", "ナチュラル系", "医薬部外品"]
+    },
+    {
+      question: "使用シーンは？",
+      options: ["朝のスキンケア", "夜のスキンケア", "バスタイム"]
+    },
+    {
+      question: "ご予算帯をお選びください",
+      options: ["5,000円未満", "5,000円〜10,000円", "10,000円〜15,000円", "15,000円以上"]
+    }
+  ],
   "高級お茶セット": [
     {
       question: "お母さまは普段お茶を飲む習慣はありますか？",
@@ -1247,6 +1301,18 @@ export function generateCategorySuggestions(category: string, answers: Record<st
     
     case "手袋・ストール・ルームウェア":
       suggestions = generateCoupleWinterSuggestions(answers);
+      break;
+    
+    case "美容・スキンケアセット":
+      suggestions = generateMotherSuggestions(answers);
+      break;
+    
+    case "高級グルメギフト":
+      suggestions = generateFatherInLawSuggestions(answers);
+      break;
+    
+    case "上質スキンケアセット":
+      suggestions = generateMotherInLawSuggestions(answers);
       break;
     
     case "フラワーギフト":
