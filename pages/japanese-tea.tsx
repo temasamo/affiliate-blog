@@ -131,15 +131,7 @@ export default function JapaneseTea({ recommendArticles, knowledgeArticles }: Ja
                   <div className="space-y-2 mb-4">
                     <div className="flex items-center text-sm text-blue-600">
                       <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
-                      <span>あなたに最適なお茶を診断</span>
-                    </div>
-                    <div className="flex items-center text-sm text-blue-600">
-                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
-                      <span>味の好み・用途に合わせた提案</span>
-                    </div>
-                    <div className="flex items-center text-sm text-blue-600">
-                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
-                      <span>初心者から上級者まで対応</span>
+                      <span>あなたに最適なお茶を診断して提案</span>
                     </div>
                   </div>
                   <div className="flex items-center text-xs text-blue-600 font-medium">
