@@ -113,6 +113,46 @@ export default function JapaneseTea({ recommendArticles, knowledgeArticles }: Ja
             </div>
           </div>
 
+          {/* お茶診断AI セクション */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              お茶診断AI
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* お茶診断AI メインカード */}
+              <a href="https://tea-diagnosis.vercel.app/tea/quick-diagnosis" target="_blank" rel="noopener noreferrer" className="group block">
+                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-2 border-blue-200">
+                  <div className="flex items-center mb-3">
+                    <div className="text-2xl mr-3">🤖</div>
+                    <h3 className="text-lg font-semibold text-blue-700 group-hover:text-blue-800 transition-colors">
+                      お茶診断AI
+                    </h3>
+                  </div>
+                  <div className="space-y-2 mb-4">
+                    <div className="flex items-center text-sm text-blue-600">
+                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                      <span>あなたに最適なお茶を診断</span>
+                    </div>
+                    <div className="flex items-center text-sm text-blue-600">
+                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                      <span>味の好み・用途に合わせた提案</span>
+                    </div>
+                    <div className="flex items-center text-sm text-blue-600">
+                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                      <span>初心者から上級者まで対応</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center text-xs text-blue-600 font-medium">
+                    <span>お茶診断AIはこちら</span>
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
           {/* Knowledge セクション */}
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
