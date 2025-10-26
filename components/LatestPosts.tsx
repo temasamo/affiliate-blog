@@ -116,7 +116,7 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
   }
   
   // AIアプリ情報カテゴリの記事の場合
-  if (category === "AIアプリ情報" || category === "ai-apps") {
+  if (category === "AIアプリ情報" || category === "AIアプリ紹介" || category === "ai-apps") {
     // subcategoryから推測してサブディレクトリを決定
     if (subcategory === "おすすめAIアプリ") {
       return `/articles/ai-apps/recommend/${slug}`;
