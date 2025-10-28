@@ -8,7 +8,8 @@
     "validate-hot-picks": "node scripts/validate-global-hot-picks.js",
     "validate:ghp": "node scripts/validate-ghp.js",
     "check:category": "node scripts/check-frontmatter.js",
-    "fix:category": "node scripts/check-frontmatter.js --fix"
+    "fix:category": "node scripts/check-frontmatter.js --fix",
+    "seed:gift-ai": "ts-node scripts/seed_gift_ai_data.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.54.0",
