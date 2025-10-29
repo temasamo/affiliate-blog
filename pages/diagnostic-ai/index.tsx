@@ -47,7 +47,6 @@ export default function DiagnosticAIPage({ posts }: DiagnosticAIPageProps) {
             {/* 枕診断AI */}
             <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="text-center mb-6">
-                <div className="text-6xl mb-4">🛏️</div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-3">枕診断AI</h2>
                 <p className="text-gray-600 leading-relaxed">
                   科学的根拠に基づいて、あなたに最適な枕を診断します。睡眠の質向上をサポート。
@@ -67,18 +66,19 @@ export default function DiagnosticAIPage({ posts }: DiagnosticAIPageProps) {
                   睡眠の質向上アドバイス
                 </div>
               </div>
-              <Link 
-                href="/pillow-diagnosis" 
+              <a 
+                href="https://mm-diagnosis-pillow.vercel.app/pillow" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-center block"
               >
                 診断を開始する
-              </Link>
+              </a>
             </div>
 
             {/* お茶診断AI */}
             <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="text-center mb-6">
-                <div className="text-6xl mb-4">🍵</div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-3">お茶診断AI</h2>
                 <p className="text-gray-600 leading-relaxed">
                   あなたの好みと体調に合わせて、最適なお茶を診断します。日本茶の魅力を再発見。
@@ -111,7 +111,6 @@ export default function DiagnosticAIPage({ posts }: DiagnosticAIPageProps) {
             {/* Face診断AI */}
             <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="text-center mb-6">
-                <div className="text-6xl mb-4">📷</div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-3">Face診断AI</h2>
                 <p className="text-gray-600 leading-relaxed">
                   高精度な顔分析で、あなたの美しさを数値化。スキンケアやメイクの参考に。
