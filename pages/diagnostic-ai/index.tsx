@@ -18,7 +18,7 @@ export default function DiagnosticAIPage({ posts }: DiagnosticAIPageProps) {
     <>
       <Head>
         <title>診断AI | Market Supporter AI</title>
-        <meta name="description" content="AIを活用した診断ツールとガイド。枕診断AIシリーズなど、科学的根拠に基づいた診断コンテンツを提供します。" />
+        <meta name="description" content="AIを活用した診断ツール。枕診断AI、お茶診断AI、Face診断AIで、あなたの生活をサポートします。" />
       </Head>
 
       <div className="min-h-screen bg-gray-50">
@@ -38,80 +38,141 @@ export default function DiagnosticAIPage({ posts }: DiagnosticAIPageProps) {
               診断AI
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              AIを活用した診断ツールとガイド。科学的根拠に基づいた診断コンテンツで、あなたの生活をサポートします。
+              AIを活用した診断ツールで、あなたの生活をサポートします。科学的根拠に基づいた診断で、最適な選択を見つけましょう。
             </p>
           </div>
 
-          {/* 枕診断AIシリーズ */}
-          <div className="mb-16">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                枕診断AIシリーズ
-              </h2>
-              <p className="text-lg text-gray-600 mb-6">
-                科学的根拠に基づく枕選びの新時代
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link 
-                  href="/diagnostic-ai/makura/01-intro" 
-                  className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors"
-                >
-                  シリーズを読む →
-                </Link>
-                <Link 
-                  href="https://mm-diagnosis-pillow.vercel.app/pillow" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-pink-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                >
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                  診断を始める
-                </Link>
+          {/* 診断AI一覧 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {/* 枕診断AI */}
+            <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="text-center mb-6">
+                <div className="text-6xl mb-4">🛏️</div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-3">枕診断AI</h2>
+                <p className="text-gray-600 leading-relaxed">
+                  科学的根拠に基づいて、あなたに最適な枕を診断します。睡眠の質向上をサポート。
+                </p>
               </div>
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center text-sm text-gray-600">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                  睡眠姿勢の分析
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                  個人の体型に合わせた推奨
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                  睡眠の質向上アドバイス
+                </div>
+              </div>
+              <Link 
+                href="/pillow-diagnosis" 
+                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-center block"
+              >
+                診断を開始する
+              </Link>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {posts
-                .sort((a, b) => {
-                  if (!a.date || !b.date) return 0;
-                  return new Date(b.date).getTime() - new Date(a.date).getTime();
-                })
-                .map((post) => (
+
+            {/* お茶診断AI */}
+            <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="text-center mb-6">
+                <div className="text-6xl mb-4">🍵</div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-3">お茶診断AI</h2>
+                <p className="text-gray-600 leading-relaxed">
+                  あなたの好みと体調に合わせて、最適なお茶を診断します。日本茶の魅力を再発見。
+                </p>
+              </div>
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center text-sm text-gray-600">
+                  <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                  味の好み分析
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                  体調に合わせた推奨
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                  日本茶の知識と楽しみ方
+                </div>
+              </div>
+              <a 
+                href="https://tea-diagnosis.vercel.app/tea/quick-diagnosis" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 text-center block"
+              >
+                診断を開始する
+              </a>
+            </div>
+
+            {/* Face診断AI */}
+            <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="text-center mb-6">
+                <div className="text-6xl mb-4">📷</div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-3">Face診断AI</h2>
+                <p className="text-gray-600 leading-relaxed">
+                  高精度な顔分析で、あなたの美しさを数値化。スキンケアやメイクの参考に。
+                </p>
+              </div>
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center text-sm text-gray-600">
+                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                  顔の特徴分析
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                  美しさの数値化
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                  スキンケアアドバイス
+                </div>
+              </div>
+              <a 
+                href="https://face-diagnosis-web.vercel.app" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all duration-300 text-center block"
+              >
+                診断を開始する
+              </a>
+            </div>
+          </div>
+
+          {/* 枕診断AIシリーズ記事 */}
+          {posts.length > 0 && (
+            <div className="bg-white rounded-2xl shadow-lg p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                枕診断AI関連記事
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {posts.map((post) => (
                   <Link
                     key={post.slug}
                     href={`/diagnostic-ai/makura/${post.slug}`}
-                    className="block bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden"
+                    className="block p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors"
                   >
-                    <div className="p-6">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
-                        {post.title}
-                      </h3>
-                      {post.excerpt && (
-                        <p className="text-gray-600 text-sm line-clamp-3 mb-3">
-                          {post.excerpt}
-                        </p>
-                      )}
-                      {post.date && (
-                        <p className="text-xs text-gray-500">
-                          {post.date ? new Date(post.date).toLocaleDateString('ja-JP') : '日付未設定'}
-                        </p>
-                      )}
-                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      {post.title}
+                    </h3>
+                    {post.excerpt && (
+                      <p className="text-gray-600 text-sm mb-2">
+                        {post.excerpt}
+                      </p>
+                    )}
+                    {post.date && (
+                      <p className="text-xs text-gray-500">
+                        {new Date(post.date).toLocaleDateString('ja-JP')}
+                      </p>
+                    )}
                   </Link>
                 ))}
+              </div>
             </div>
-          </div>
-
-          {/* その他の診断コンテンツ */}
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              その他の診断コンテンツ
-            </h2>
-            <p className="text-gray-600 mb-8">
-              今後、睡眠診断、健康診断など、様々な診断コンテンツを追加予定です。
-            </p>
-          </div>
+          )}
         </div>
       </div>
     </>
@@ -139,4 +200,4 @@ export const getServerSideProps: GetServerSideProps = async () => {
       posts: diagnosticPosts,
     },
   };
-}; 
+};
