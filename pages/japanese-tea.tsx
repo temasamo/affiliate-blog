@@ -1,7 +1,7 @@
 // pages/japanese-tea.tsx
 import React from 'react';
 import Link from 'next/link';
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -208,7 +208,7 @@ export default function JapaneseTea({ recommendArticles, knowledgeArticles }: Ja
   );
 }
 
-export const getStaticProps: GetStaticProps<JapaneseTeaProps> = async () => {
+export const getServerSideProps: GetServerSideProps<JapaneseTeaProps> = async () => {
   const articlesDirectory = path.join(process.cwd(), 'articles', 'japanesetea');
   const recommendArticles: Article[] = [];
   const knowledgeArticles: Article[] = [];
@@ -223,8 +223,13 @@ export const getStaticProps: GetStaticProps<JapaneseTeaProps> = async () => {
         const fileContents = fs.readFileSync(filePath, 'utf8');
         const { data: frontMatter } = matter(fileContents);
         
+        // publishedがfalseの場合はスキップ
+        if (frontMatter.published === false) {
+          return;
+        }
+        
         recommendArticles.push({
-          slug: file.replace(/\.(md|mdx)$/, ''),
+          slug: frontMatter.slug || file.replace(/\.(md|mdx)$/, ''),
           title: frontMatter.title || '記事タイトル',
           description: frontMatter.description || '記事の説明',
           date: frontMatter.date || '2025.07.01',
@@ -244,8 +249,13 @@ export const getStaticProps: GetStaticProps<JapaneseTeaProps> = async () => {
         const fileContents = fs.readFileSync(filePath, 'utf8');
         const { data: frontMatter } = matter(fileContents);
         
+        // publishedがfalseの場合はスキップ
+        if (frontMatter.published === false) {
+          return;
+        }
+        
         knowledgeArticles.push({
-          slug: file.replace(/\.(md|mdx)$/, ''),
+          slug: frontMatter.slug || file.replace(/\.(md|mdx)$/, ''),
           title: frontMatter.title || '記事タイトル',
           description: frontMatter.description || '記事の説明',
           date: frontMatter.date || '2025.07.01',

@@ -540,8 +540,13 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
                   const fileContents = fs.readFileSync(filePath, 'utf8');
                   const { data: frontMatter } = matter(fileContents);
                   
+                  // publishedがfalseの場合はスキップ
+                  if (frontMatter.published === false) {
+                    return;
+                  }
+                  
                   allArticles.push({
-                    slug: file.replace(/\.(md|mdx)$/, ''),
+                    slug: frontMatter.slug || file.replace(/\.(md|mdx)$/, ''),
                     title: frontMatter.title || '記事タイトル',
                     description: frontMatter.description || '記事の説明',
                     date: frontMatter.date || '2025.07.01',

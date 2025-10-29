@@ -122,6 +122,12 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "leaf-opening-tea") {
       return `/articles/japanesetea/knowledge/2025-10-28-leaf-opening-tea`;
     }
+    if (slug === "japanese-tea-basics") {
+      return `/articles/japanesetea/knowledge/2025-10-30-japanese-tea-basics`;
+    }
+    if (slug === "what-is-sencha") {
+      return `/articles/japanesetea/knowledge/2025-10-30-sencha`;
+    }
     
     // slugから推測してサブディレクトリを決定
     if (slug.includes("knowledge")) {
