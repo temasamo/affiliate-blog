@@ -61,10 +61,6 @@ export default function DiagnosticAIPage({ posts }: DiagnosticAIPageProps) {
                   <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
                   個人の体型に合わせた推奨
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                  睡眠の質向上アドバイス
-                </div>
               </div>
               <a 
                 href="https://mm-diagnosis-pillow.vercel.app/pillow" 
@@ -93,10 +89,6 @@ export default function DiagnosticAIPage({ posts }: DiagnosticAIPageProps) {
                   <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
                   体調に合わせた推奨
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                  日本茶の知識と楽しみ方
-                </div>
               </div>
               <a 
                 href="https://tea-diagnosis.vercel.app/tea/quick-diagnosis" 
@@ -119,15 +111,11 @@ export default function DiagnosticAIPage({ posts }: DiagnosticAIPageProps) {
               <div className="space-y-3 mb-6">
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
-                  顔の特徴分析
+                  顔の変化の数値化
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
-                  美しさの数値化
-                </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
-                  スキンケアアドバイス
+                  AIによるコメント
                 </div>
               </div>
               <a 
