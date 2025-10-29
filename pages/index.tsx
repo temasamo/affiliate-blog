@@ -95,7 +95,7 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
 
         {/* 新着記事（Heroの直下） */}
         <div className="mx-auto max-w-6xl px-4 md:px-6 mb-16">
-          <LatestPosts items={latest} />
+          <LatestPosts items={latest.slice(0, 5)} />
         </div>
 
         {/* 枕診断AIシリーズ特集 */}
@@ -183,8 +183,17 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
               
               {/* AIアプリ記事カード */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {latest.filter(article => article.category === 'AIアプリ情報').slice(0, 3).map((article, index) => (
-                  <Link key={article.slug} href={`/articles/ai-apps/recommend/${article.slug}`} className="group">
+                {latest.filter(article => article.category === 'AIアプリ紹介').slice(0, 3).map((article, index) => {
+                  // AIアプリカテゴリの記事パスを生成
+                  const getArticlePath = (slug: string) => {
+                    if (slug === "ai-skin-analysis") {
+                      return `/articles/ai-apps/recommend/2025-10-29-ai-skin-analysis`;
+                    }
+                    return `/articles/ai-apps/recommend/${slug}`;
+                  };
+                  
+                  return (
+                  <Link key={article.slug} href={getArticlePath(article.slug)} className="group">
                     <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 hover:bg-white/60 transition-all duration-300 transform hover:-translate-y-1">
                       <div className="flex items-center mb-3">
                         <span className={`text-xs font-medium px-2.5 py-0.5 rounded-full ${
@@ -210,25 +219,9 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
                       </p>
                     </div>
                   </Link>
-                ))}
+                  );
+                })}
                 
-                {/* 記事が3つ未満の場合のフォールバック */}
-                {latest.filter(article => article.category === 'AIアプリ情報').length < 3 && (
-                  <Link href="/ai-apps/recommend" className="group">
-                    <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 hover:bg-white/60 transition-all duration-300 transform hover:-translate-y-1">
-                      <div className="flex items-center mb-3">
-                        <span className="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">おすすめ</span>
-                        <span className="ml-2 text-xs text-gray-500">一覧</span>
-                      </div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
-                        おすすめAIアプリ一覧
-                      </h3>
-                      <p className="text-sm text-gray-600">
-                        ChatGPT・Claude・Gemini・画像生成・動画編集AI
-                      </p>
-                    </div>
-                  </Link>
-                )}
               </div>
               
               <div className="text-center mt-8">
@@ -571,7 +564,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   const latestArticles = allArticles.slice(0, 3);
 
   // 新着記事を取得（旅行記事を除外）
-  const latest = await getLatestPosts(10);
+  const latest = await getLatestPosts(50); // より多くの記事を取得
   const nonTravelLatest = latest.filter(post => post.category !== '旅行' && post.category !== '温泉地ガイド');
   
   // 旅行記事も新着記事に含める
@@ -588,7 +581,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
     props: {
       latestArticles,
       travelPosts,
-      latest: uniqueLatestPosts.slice(0, 5),
+      latest: uniqueLatestPosts, // すべての記事を渡す（AIアプリセクションで必要なため）
     },
   };
 };

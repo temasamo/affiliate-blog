@@ -2,6 +2,7 @@ export const CATEGORY_LABELS: Record<string, string> = {
   "sleep-health": "睡眠・健康",
   "japanesetea": "日本茶",
   "japanesesake": "日本酒",
+  "ai-apps": "AIアプリ紹介",
   "global-hot-picks": "海外トレンド",
   "popular-japan": "人気の日本商品",
   "popular-japanese-items": "人気の日本商品",
@@ -24,6 +25,12 @@ export function deriveCategory(p: any): string | null {
   // blog配下のネストしたディレクトリ構造に対応
   const pathParts = slug.split("/");
   if (pathParts[0] === "blog" && pathParts.length > 1) {
+    const nestedHit = Object.keys(CATEGORY_LABELS).find((k) => pathParts[1] === k);
+    if (nestedHit) return CATEGORY_LABELS[nestedHit];
+  }
+  
+  // articles配下のネストしたディレクトリ構造に対応
+  if (pathParts[0] === "articles" && pathParts.length > 1) {
     const nestedHit = Object.keys(CATEGORY_LABELS).find((k) => pathParts[1] === k);
     if (nestedHit) return CATEGORY_LABELS[nestedHit];
   }

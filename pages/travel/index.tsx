@@ -126,10 +126,28 @@ export default function TravelIndex({ posts }: { posts: any[] }) {
               🏨 おすすめ個別旅館ガイド
             </h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {individualRyokanPosts.map((p) => (
+              {individualRyokanPosts.map((p) => {
+                // 個別旅館記事のリンクを生成
+                const getRyokanLink = (slug: string) => {
+                  if (slug === "meigetsuso-part1") {
+                    return `/travel/ryokan/2025-10-15-meigetsuso-part1`;
+                  }
+                  if (slug === "meigetsuso-part2") {
+                    return `/travel/ryokan/2025-10-17-meigetsuso-part2`;
+                  }
+                  if (slug === "koyo-onsen-part1") {
+                    return `/travel/ryokan/2025-10-29-koyo-onsen-part1`;
+                  }
+                  if (slug === "koyo-onsen-part2") {
+                    return `/travel/ryokan/2025-10-29-koyo-onsen-part2`;
+                  }
+                  return `/travel/ryokan/${slug}`;
+                };
+                
+                return (
                 <Link
                   key={p.slug}
-                  href={`/travel/${p.slug}`}
+                  href={getRyokanLink(p.slug)}
                   className="group block rounded-2xl bg-white/90 backdrop-blur-sm border border-white/30 p-6 hover:bg-white hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-1 no-underline"
                 >
                   <div className="flex items-center justify-between mb-3">
@@ -145,7 +163,8 @@ export default function TravelIndex({ posts }: { posts: any[] }) {
                     </p>
                   )}
                 </Link>
-              ))}
+                );
+              })}
             </div>
           </section>
         )}

@@ -13,14 +13,30 @@ type Item = {
 function getArticlePath(slug: string, category: string, subcategory?: string): string {
   // 旅行記事の場合
   if (category === "旅行") {
-    // 名月荘後編の特別処理
+    // 名月荘の記事の特別処理
+    if (slug === "meigetsuso-part1") {
+      return `/travel/ryokan/2025-10-15-meigetsuso-part1`;
+    }
     if (slug === "meigetsuso-part2") {
       return `/travel/ryokan/2025-10-17-meigetsuso-part2`;
+    }
+    
+    // 古窯の記事の特別処理
+    if (slug === "koyo-onsen-part1") {
+      return `/travel/ryokan/2025-10-29-koyo-onsen-part1`;
+    }
+    if (slug === "koyo-onsen-part2") {
+      return `/travel/ryokan/2025-10-29-koyo-onsen-part2`;
     }
     
     // 温泉地ガイド記事の場合
     if (subcategory === "温泉地ガイド") {
       return `/travel/onsen/${slug}`;
+    }
+    
+    // 個別旅館記事の場合
+    if (subcategory === "個別旅館" || subcategory === "おすすめ個別旅館ガイド") {
+      return `/travel/ryokan/${slug}`;
     }
     
     return `/travel/${slug}`;
@@ -121,6 +137,11 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
   
   // AIアプリ情報カテゴリの記事の場合
   if (category === "AIアプリ情報" || category === "AIアプリ紹介" || category === "ai-apps") {
+    // 特定の記事の修正
+    if (slug === "ai-skin-analysis") {
+      return `/articles/ai-apps/recommend/2025-10-29-ai-skin-analysis`;
+    }
+    
     // subcategoryから推測してサブディレクトリを決定
     if (subcategory === "おすすめAIアプリ") {
       return `/articles/ai-apps/recommend/${slug}`;
