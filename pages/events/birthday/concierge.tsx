@@ -110,7 +110,13 @@ const analyzeConversation = (responses: Record<string, string>) => {
     // 生活スタイル関連
     "家で過ごす": { categories: ["ルームウェア", "家電", "趣味グッズ"], weight: 2 },
     "外出": { categories: ["ファッション", "小物", "体験ギフト"], weight: 2 },
-    "運動": { categories: ["スポーツグッズ", "健康グッズ", "アウトドア"], weight: 2 },
+    "運動": { categories: ["スポーツグッズ", "健康グッズ", "アウトドア"], weight: 3 },
+    "スポーツ": { categories: ["スポーツグッズ", "アウトドア", "フィットネス"], weight: 3 },
+    "フィットネス": { categories: ["スポーツグッズ", "健康グッズ", "アウトドア"], weight: 3 },
+    "ジム": { categories: ["スポーツグッズ", "フィットネス", "健康グッズ"], weight: 3 },
+    "ランニング": { categories: ["スポーツグッズ", "アウトドア", "健康グッズ"], weight: 3 },
+    "ウォーキング": { categories: ["スポーツグッズ", "アウトドア", "健康グッズ"], weight: 3 },
+    "アウトドア": { categories: ["スポーツグッズ", "アウトドア", "体験ギフト"], weight: 3 },
     "料理": { categories: ["キッチン用品", "グルメ", "調理器具"], weight: 2 },
     "読書": { categories: ["書籍", "文具", "読書関連グッズ"], weight: 2 },
     "音楽": { categories: ["音楽関連", "楽器", "オーディオ"], weight: 2 },
@@ -169,6 +175,15 @@ const analyzeConversation = (responses: Record<string, string>) => {
       });
     }
   });
+
+  // スポーツ関連ワードが含まれる場合は強制的にスポーツ系を優先
+  const sportsKeywords = [
+    "運動", "スポーツ", "フィットネス", "ジム", "ランニング", "ウォーキング", "アウトドア"
+  ];
+  if (sportsKeywords.some(k => text.includes(k))) {
+    matchedCategories["スポーツグッズ"] = (matchedCategories["スポーツグッズ"] || 0) + 10;
+    matchedCategories["アウトドア"] = (matchedCategories["アウトドア"] || 0) + 4;
+  }
 
   // 好み分析の適用
   Object.entries(preferenceKeywords).forEach(([preference, data]) => {
@@ -300,6 +315,27 @@ const generateConciergeSuggestions = (responses: Record<string, string>, categor
     });
   }
   
+  if (category === "スポーツグッズ") {
+    suggestions.push({
+      name: "スポーツ用品・フィットネスグッズ",
+      reason: "健康維持と運動をサポートする、実用的で喜ばれるギフトです",
+      priceRange: "¥5,000〜¥20,000",
+      keywords: ["スポーツ", "フィットネス", "健康", "実用的"]
+    });
+    suggestions.push({
+      name: "アウトドア用品",
+      reason: "アウトドア活動を楽しむための実用的なアイテムです",
+      priceRange: "¥6,000〜¥15,000",
+      keywords: ["アウトドア", "スポーツ", "実用的"]
+    });
+    suggestions.push({
+      name: "スポーツウェア・シューズ",
+      reason: "運動をより快適に楽しめる、高品質なスポーツ用品です",
+      priceRange: "¥8,000〜¥25,000",
+      keywords: ["スポーツウェア", "シューズ", "運動"]
+    });
+  }
+  
   // ターゲット別の特別提案
   if (target === "実母" && category === "美容・スキンケア") {
     suggestions.push({
@@ -316,6 +352,21 @@ const generateConciergeSuggestions = (responses: Record<string, string>, categor
       reason: "お父さんの健康をサポートする、厳選されたサプリメントです",
       priceRange: "¥5,000〜¥15,000",
       keywords: ["サプリメント", "健康", "実用的"]
+    });
+  }
+  
+  if (target === "兄弟姉妹" && category === "スポーツグッズ") {
+    suggestions.push({
+      name: "スポーツ用品・フィットネスグッズ",
+      reason: "兄弟姉妹の健康と運動をサポートする、実用的で喜ばれるギフトです",
+      priceRange: "¥5,000〜¥20,000",
+      keywords: ["スポーツ", "フィットネス", "健康", "兄弟姉妹"]
+    });
+    suggestions.push({
+      name: "アウトドア用品・キャンプグッズ",
+      reason: "一緒にアウトドア活動を楽しめる、実用的なアイテムです",
+      priceRange: "¥6,000〜¥15,000",
+      keywords: ["アウトドア", "キャンプ", "スポーツ", "兄弟姉妹"]
     });
   }
   

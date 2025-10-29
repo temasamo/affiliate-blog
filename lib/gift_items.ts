@@ -1218,6 +1218,63 @@ export function generateCategorySuggestions(category: string, answers: Record<st
       const flowerAnswer = answers.question_0 || "";
       suggestions = generateFlowerSuggestions(flowerAnswer);
       break;
+
+    case "スポーツグッズ": {
+      const sportsType = answers.question_0 || ""; // ジョギング/筋トレ/球技/アウトドア
+      const sportsItem = answers.question_1 || ""; // ウェア/シューズ/器具
+      const budgetAnswer = answers.question_2 || "";
+
+      const base: GiftItem[] = [];
+
+      // ベース提案（タイプ別）
+      if (sportsType.includes("ジョギング") || sportsType.includes("ランニング")) {
+        base.push(
+          { name: "ランニング用ウェアセット", description: "吸汗速乾のシャツとショーツのセット", keywords: ["ランニング", "スポーツウェア", "速乾"], priceRange: "¥5,000〜¥12,000" },
+          { name: "ランニングシューズ", description: "クッション性と安定性に優れた入門モデル", keywords: ["ランニング", "シューズ", "クッション"], priceRange: "¥8,000〜¥20,000" },
+          { name: "GPSウォッチ・歩数計", description: "距離・心拍数の計測でモチベーションUP", keywords: ["ランニング", "ウォッチ", "心拍"], priceRange: "¥10,000〜¥25,000" }
+        );
+      } else if (sportsType.includes("筋トレ")) {
+        base.push(
+          { name: "ダンベル・チューブセット", description: "自宅で全身トレーニングができる基本セット", keywords: ["筋トレ", "ダンベル", "チューブ"], priceRange: "¥4,000〜¥10,000" },
+          { name: "ヨガマット・フォームローラー", description: "体幹トレとコンディショニングの必需品", keywords: ["筋トレ", "ヨガマット", "フォームローラー"], priceRange: "¥3,000〜¥8,000" },
+          { name: "トレーニングウェア", description: "動きやすく速乾性の高いウェア", keywords: ["筋トレ", "スポーツウェア", "速乾"], priceRange: "¥5,000〜¥12,000" }
+        );
+      } else if (sportsType.includes("球技")) {
+        base.push(
+          { name: "ボール（サッカー/バスケ等）", description: "定番の実用アイテム", keywords: ["球技", "ボール", "スポーツ"], priceRange: "¥3,000〜¥8,000" },
+          { name: "スポーツウェア", description: "練習用に使いやすいベーシックウェア", keywords: ["球技", "スポーツウェア"], priceRange: "¥4,000〜¥10,000" },
+          { name: "シューズケア用品", description: "シューズを長持ちさせるケアセット", keywords: ["球技", "シューズ", "ケア"], priceRange: "¥2,000〜¥5,000" }
+        );
+      } else if (sportsType.includes("アウトドア")) {
+        base.push(
+          { name: "アウトドアチェア", description: "軽量で持ち運びやすい折りたたみチェア", keywords: ["アウトドア", "チェア", "キャンプ"], priceRange: "¥5,000〜¥12,000" },
+          { name: "保冷ボトル・ハイドレーション", description: "保冷保温に優れたボトル", keywords: ["アウトドア", "ボトル", "保冷"], priceRange: "¥3,000〜¥6,000" },
+          { name: "ランタン・ライト", description: "明るく安全なLEDランタン", keywords: ["アウトドア", "ランタン", "LED"], priceRange: "¥4,000〜¥10,000" }
+        );
+      } else {
+        base.push(
+          { name: "スポーツ用品・フィットネスグッズ", description: "健康維持と運動をサポートする実用的なアイテム", keywords: ["スポーツ", "フィットネス", "実用的"], priceRange: "¥5,000〜¥20,000" },
+          { name: "アウトドア用品", description: "外でのアクティビティを楽しむ基本セット", keywords: ["アウトドア", "キャンプ", "実用的"], priceRange: "¥6,000〜¥15,000" },
+          { name: "スポーツウェア・シューズ", description: "動きやすく快適", keywords: ["スポーツウェア", "シューズ", "運動"], priceRange: "¥8,000〜¥25,000" }
+        );
+      }
+
+      // アイテム種別の補強（ウェア/シューズ/器具）
+      if (sportsItem.includes("ウェア")) {
+        base.unshift({ name: "スポーツウェアセット", description: "トップス＋ボトムスの定番セット", keywords: ["スポーツウェア", "速乾", "運動"], priceRange: "¥5,000〜¥12,000" });
+      } else if (sportsItem.includes("シューズ")) {
+        base.unshift({ name: "スポーツシューズ", description: "用途別に選べる定番モデル", keywords: ["シューズ", "ランニング", "トレーニング"], priceRange: "¥8,000〜¥20,000" });
+      } else if (sportsItem.includes("器具")) {
+        base.unshift({ name: "トレーニング器具セット", description: "ダンベル・チューブなどの基本器具", keywords: ["器具", "筋トレ", "トレーニング"], priceRange: "¥4,000〜¥10,000" });
+      }
+
+      suggestions = base;
+      // 予算フィルタリング
+      if (budgetAnswer) {
+        suggestions = filterSuggestionsByBudget(suggestions, budgetAnswer);
+      }
+      break;
+    }
     
     // 義母向けカテゴリ
     case "上質スキンケア":
