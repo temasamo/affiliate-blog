@@ -64,6 +64,8 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
       "hugpillow-effect",
       "global-pillow-material-guide",
       "mogu-body-pillow-guide",
+      "world-pillow-brands-comparison",
+      "japan-pillow-brands",
     ];
     if (group6Slugs.includes(slug)) {
       return `/articles/sleep-health/pillow/group6/${slug}`;
