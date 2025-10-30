@@ -189,19 +189,40 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
                     if (slug === "ai-skin-analysis") {
                       return `/articles/ai-apps/recommend/2025-10-29-ai-skin-analysis`;
                     }
+                    if (slug === "ai-health-tracking") {
+                      return `/articles/ai-apps/recommend/2025-10-31-ai-health-tracking`;
+                    }
                     return `/articles/ai-apps/recommend/${slug}`;
                   };
+                  
+                  // 記事内容に基づいてラベルを決定
+                  const getArticleLabel = (slug: string, title: string, description?: string) => {
+                    const searchText = `${slug} ${title} ${description || ''}`.toLowerCase();
+                    // AI旅行関連
+                    if (searchText.includes('travel') || searchText.includes('旅行') || searchText.includes('トラベル') || searchText.includes('トラベル')) {
+                      return { label: 'AI旅行', colorClass: 'bg-blue-100 text-blue-800' };
+                    }
+                    // AI活用関連（美容、肌、健康、翻訳、画像生成など）
+                    if (searchText.includes('beauty') || searchText.includes('美容') || 
+                        searchText.includes('skin') || searchText.includes('肌') || 
+                        searchText.includes('health') || searchText.includes('健康') || 
+                        searchText.includes('translation') || searchText.includes('翻訳') || 
+                        searchText.includes('image') || searchText.includes('画像') || 
+                        searchText.includes('generation') || searchText.includes('生成')) {
+                      return { label: 'AI活用', colorClass: 'bg-purple-100 text-purple-800' };
+                    }
+                    // デフォルト
+                    return { label: 'おすすめ', colorClass: 'bg-green-100 text-green-800' };
+                  };
+                  
+                  const labelInfo = getArticleLabel(article.slug, article.title, article.description || undefined);
                   
                   return (
                   <Link key={article.slug} href={getArticlePath(article.slug)} className="group">
                     <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 hover:bg-white/60 transition-all duration-300 transform hover:-translate-y-1">
                       <div className="flex items-center mb-3">
-                        <span className={`text-xs font-medium px-2.5 py-0.5 rounded-full ${
-                          index === 0 ? 'bg-blue-100 text-blue-800' :
-                          index === 1 ? 'bg-purple-100 text-purple-800' :
-                          'bg-green-100 text-green-800'
-                        }`}>
-                          {index === 0 ? 'AI旅行' : index === 1 ? 'AI活用' : 'おすすめ'}
+                        <span className={`text-xs font-medium px-2.5 py-0.5 rounded-full ${labelInfo.colorClass}`}>
+                          {labelInfo.label}
                         </span>
                         <span className="ml-2 text-xs text-gray-500">
                           {article.date ? new Date(article.date).toLocaleDateString('ja-JP', { 

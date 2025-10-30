@@ -149,6 +149,9 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "ai-skin-analysis") {
       return `/articles/ai-apps/recommend/2025-10-29-ai-skin-analysis`;
     }
+    if (slug === "ai-health-tracking") {
+      return `/articles/ai-apps/recommend/2025-10-31-ai-health-tracking`;
+    }
     
     // subcategoryから推測してサブディレクトリを決定
     if (subcategory === "おすすめAIアプリ") {
