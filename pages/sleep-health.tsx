@@ -129,6 +129,25 @@ export default function SleepHealth({ knowledgeArticles, recommendArticles }: { 
                   </svg>
                 </div>
               </Link>
+              {/* グループ6（抱き枕編）へのカード */}
+              <Link
+                href="/articles/sleep-health/pillow/group6"
+                className="block rounded-2xl bg-gradient-to-br from-cyan-50 to-teal-50 p-6 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="text-xs text-gray-500 mb-2">枕診断シリーズ</div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  グループ6（抱き枕編）｜効果・選び方・ブランド比較
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  抱き枕の効果と正しい使い方、おすすめ商品を紹介。リラックス効果と体のバランスを整える抱き枕選びのポイントを解説します。
+                </p>
+                <div className="mt-3 flex items-center text-sm text-cyan-600">
+                  <span>記事一覧を見る</span>
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </Link>
             </div>
           </div>
 
