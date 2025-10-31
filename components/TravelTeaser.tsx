@@ -58,10 +58,47 @@ export default function TravelTeaser({ posts = [] }: Props) {
         <div className="relative h-full p-4 sm:p-6 lg:p-8">
           <div className="grid h-full content-start gap-4 sm:grid-cols-2 lg:grid-cols-3">
 
-            {posts.slice(0, 3).map((p) => (
+            {posts.slice(0, 3).map((p) => {
+              // 旅行記事のリンクを生成する関数
+              const getTravelLink = (slug: string, subcategory?: string) => {
+                // 名月荘の記事の特別処理
+                if (slug === "meigetsuso-part1") {
+                  return `/travel/ryokan/2025-10-15-meigetsuso-part1`;
+                }
+                if (slug === "meigetsuso-part2") {
+                  return `/travel/ryokan/2025-10-17-meigetsuso-part2`;
+                }
+                
+                // 古窯の記事の特別処理
+                if (slug === "koyo-onsen-part1") {
+                  return `/travel/ryokan/2025-10-29-koyo-onsen-part1`;
+                }
+                if (slug === "koyo-onsen-part2") {
+                  return `/travel/ryokan/2025-10-29-koyo-onsen-part2`;
+                }
+                
+                // ファイルパス形式のslugを処理（例: "ryokan/2025-10-29-koyo-onsen-part1"）
+                if (slug.includes('/')) {
+                  return `/travel/${slug}`;
+                }
+                
+                // 温泉地ガイド記事の場合
+                if (subcategory === "温泉地ガイド") {
+                  return `/travel/onsen/${slug}`;
+                }
+                
+                // 個別旅館記事の場合
+                if (subcategory === "個別旅館" || subcategory === "おすすめ個別旅館ガイド") {
+                  return `/travel/ryokan/${slug}`;
+                }
+                
+                return `/travel/${slug}`;
+              };
+              
+              return (
           <Link
             key={p.slug}
-            href={`/travel/${p.slug}`}
+            href={getTravelLink(p.slug, p.subcategory)}
                 /* ガラス風カード：背景をぼかしつつ半透明に */
                 className="rounded-2xl border
                            border-white/60
@@ -81,7 +118,8 @@ export default function TravelTeaser({ posts = [] }: Props) {
                   </p>
             )}
           </Link>
-        ))}
+              );
+            })}
 
           </div>
         </div>
