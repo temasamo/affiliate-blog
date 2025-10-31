@@ -228,24 +228,24 @@ export default function LatestPosts({ items }: { items: Item[] }) {
         </Link>
       </div>
 
-      <div className="grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
         {uniqueItems.slice(0, 5).map((p) => (
           <Link
             key={p.slug}
             href={getArticlePath(p.slug, p.category, p.subcategory)}
             className="
               group block rounded-xl border border-gray-200 bg-white
-              p-4 md:p-5 hover:shadow-md hover:border-gray-300 
+              p-3 sm:p-4 md:p-5 hover:shadow-md hover:border-gray-300 
               transition-all duration-200 hover:-translate-y-1
             "
           >
-            <div className="mb-3 flex items-center gap-2">
+            <div className="mb-2 sm:mb-3 flex items-center gap-2">
               {p.category && (
                 <span
                   className="
                     inline-flex items-center rounded-full
-                    border border-gray-300 px-2.5 py-1
-                    text-xs font-medium
+                    border border-gray-300 px-1.5 sm:px-2 md:px-2.5 py-0.5 sm:py-1
+                    text-[10px] sm:text-xs font-medium
                     bg-gray-50 text-gray-700
                   "
                 >
@@ -254,7 +254,7 @@ export default function LatestPosts({ items }: { items: Item[] }) {
               )}
               {p.date && (
                 <time
-                  className="text-xs text-gray-500"
+                  className="text-[10px] sm:text-xs text-gray-500"
                   dateTime={p.date}
                   aria-label="公開日"
                 >
@@ -263,14 +263,14 @@ export default function LatestPosts({ items }: { items: Item[] }) {
               )}
             </div>
             <h3 className="
-              line-clamp-2 text-sm md:text-base font-medium text-gray-900
-              group-hover:text-blue-600 transition-colors mb-2
+              line-clamp-2 text-xs sm:text-sm md:text-base font-medium text-gray-900
+              group-hover:text-blue-600 transition-colors mb-1.5 sm:mb-2
             ">
               {p.title}
             </h3>
             {p.description && (
               <p className="
-                line-clamp-2 text-xs md:text-sm text-gray-600
+                line-clamp-2 text-[10px] sm:text-xs md:text-sm text-gray-600
                 leading-relaxed
               ">
                 {p.description}

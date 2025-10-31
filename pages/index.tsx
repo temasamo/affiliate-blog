@@ -42,10 +42,10 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
           <div className="
             relative overflow-hidden rounded-3xl
             bg-gradient-to-br from-gray-50 to-gray-100
-            h-[30vh] md:h-[28vh] lg:h-[25vh]   /* ★ 高さを30%程度に調整 */
-            max-h-[300px] min-h-[200px]        /* ★ 保険：上限・下限 */
-            px-6 md:px-8 lg:px-10
-            py-8 md:py-10 lg:py-12
+            h-[20vh] md:h-[28vh] lg:h-[25vh]   /* ★ スマホでは高さを小さく調整 */
+            max-h-[250px] md:max-h-[300px] min-h-[160px] md:min-h-[200px]        /* ★ スマホでは上限・下限を小さく */
+            px-4 sm:px-6 md:px-8 lg:px-10
+            py-4 sm:py-6 md:py-8 lg:py-10
             text-center shadow-lg border border-gray-100
           ">
                         {/* 背景の80%を覆う透かし画像 */}
@@ -59,33 +59,24 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
               <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-blue-50/30"></div>
             </div>
             
-            {/* モバイル用の小さな透かし画像 */}
-            <div className="absolute top-4 right-4 w-24 h-24 md:hidden opacity-70">
-              <div className="w-full h-full bg-cover bg-center bg-no-repeat" 
-                   style={{
-                     backgroundImage: 'url("/images/handshake-robot.jpg")'
-                   }}>
-              </div>
-            </div>
-            
             {/* コンテンツ */}
             <div className="relative z-10">
-            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight">
               Market Supporter AI
             </h1>
-            <p className="mt-3 md:mt-4 text-base md:text-lg text-gray-600">
+            <p className="mt-2 sm:mt-3 md:mt-4 text-sm sm:text-base md:text-lg text-gray-600">
               AIが導く、賢い洞察と信頼できるおすすめ
             </p>
             <Link 
               href="/contents" 
-              className="inline-flex items-center px-8 py-3 bg-blue-500 text-white font-semibold rounded-full hover:bg-blue-600 transition-colors shadow-md hover:shadow-lg hover-lift"
+              className="inline-flex items-center px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 text-sm sm:text-base bg-blue-500 text-white font-semibold rounded-full hover:bg-blue-600 transition-colors shadow-md hover:shadow-lg hover-lift"
               onClick={() => window.gtag?.('event', 'select_content', {
                 content_type: 'cta',
                 content_id: 'home_hero_contents_button'
               })}
             >
               コンテンツ一覧を見る
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
