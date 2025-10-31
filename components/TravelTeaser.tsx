@@ -61,19 +61,19 @@ export default function TravelTeaser({ posts = [] }: Props) {
             {posts.slice(0, 3).map((p) => {
               // 旅行記事のリンクを生成する関数
               const getTravelLink = (slug: string, subcategory?: string) => {
-                // 名月荘の記事の特別処理
-                if (slug === "meigetsuso-part1") {
+                // 名月荘の記事の特別処理（複数のslug形式に対応）
+                if (slug === "meigetsuso-part1" || slug.includes("meigetsuso-part1")) {
                   return `/travel/ryokan/2025-10-15-meigetsuso-part1`;
                 }
-                if (slug === "meigetsuso-part2") {
+                if (slug === "meigetsuso-part2" || slug.includes("meigetsuso-part2")) {
                   return `/travel/ryokan/2025-10-17-meigetsuso-part2`;
                 }
                 
-                // 古窯の記事の特別処理
-                if (slug === "koyo-onsen-part1") {
+                // 古窯の記事の特別処理（複数のslug形式に対応）
+                if (slug === "koyo-onsen-part1" || slug.includes("koyo-onsen-part1") || slug === "2025-10-29-koyo-onsen-part1") {
                   return `/travel/ryokan/2025-10-29-koyo-onsen-part1`;
                 }
-                if (slug === "koyo-onsen-part2") {
+                if (slug === "koyo-onsen-part2" || slug.includes("koyo-onsen-part2") || slug === "2025-10-29-koyo-onsen-part2") {
                   return `/travel/ryokan/2025-10-29-koyo-onsen-part2`;
                 }
                 
