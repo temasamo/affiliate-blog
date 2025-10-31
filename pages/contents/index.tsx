@@ -4,12 +4,16 @@ import Head from "next/head";
 const items = [
   { title: "睡眠・健康", href: "/sleep-health", desc: "睡眠と健康を底上げする実践ガイドや最新知見をまとめています。" },
   { title: "日本茶", href: "/japanese-tea", desc: "日本茶の基礎・健康効果・おすすめの飲み方を分かりやすく。" },
+  { title: "旅行", href: "/travel", desc: "おすすめ旅行先や体験記、旅を充実させるヒントをまとめています。" },
+  { title: "日本酒", href: "/japanese-sake", desc: "銘柄紹介・知識・コンシェルジュAIで日本酒の世界を深める。" },
+  { title: "ウイスキー", href: "/whisky", desc: "世界のウイスキーを知る基礎知識から選び方まで。" },
+  { title: "イベント", href: "/events", desc: "季節のイベントや特別な日におすすめのコンテンツ。" },
+  { title: "AIアプリ情報", href: "/ai-apps", desc: "最新AIツール・生産性向上アプリを紹介。" },
+  { title: "診断AI", href: "/diagnostic-ai", desc: "用途別に最適アイテムを提案する診断コンテンツ。" },
   { title: "海外トレンド（Global Hot Picks）", href: "/articles/global-hot-picks/trend", desc: "海外で話題のプロダクトを毎日ピックアップ。" },
   { title: "人気の日本商品", href: "/japan-popular", desc: "国内外で人気の日本発アイテムを厳選。" },
-  { title: "診断AI", href: "/diagnostic-ai", desc: "用途別に最適アイテムを提案する診断コンテンツ。" },
   { title: "ガイド一覧", href: "/guides", desc: "枕診断AIシリーズなど、科学的根拠に基づいた診断コンテンツ。" },
   { title: "教育", href: "/education", desc: "読み物・学習向けコンテンツのハブ。" },
-  { title: "旅行", href: "/travel", desc: "おすすめ旅行先や体験記、旅を充実させるヒントをまとめています。" },
 ];
 
 export default function ContentsIndex() {
