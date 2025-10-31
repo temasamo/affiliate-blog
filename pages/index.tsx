@@ -38,14 +38,14 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
       {/* メインコンテンツ */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         {/* ヒーローセクション */}
-        <section className="mb-12 sm:mb-16">
+        <section className="mb-6 sm:mb-8">
           <div className="
             relative overflow-hidden rounded-3xl
             bg-gradient-to-br from-gray-50 to-gray-100
-            h-[20vh] md:h-[28vh] lg:h-[25vh]   /* ★ スマホでは高さを小さく調整 */
-            max-h-[250px] md:max-h-[300px] min-h-[160px] md:min-h-[200px]        /* ★ スマホでは上限・下限を小さく */
-            px-4 sm:px-6 md:px-8 lg:px-10
-            py-4 sm:py-6 md:py-8 lg:py-10
+            h-[15vh] md:h-[22vh] lg:h-[20vh]   /* ★ より小さく調整 */
+            max-h-[180px] md:max-h-[250px] min-h-[120px] md:min-h-[160px]        /* ★ より小さく */
+            px-3 sm:px-5 md:px-7 lg:px-9
+            py-2 sm:py-3 md:py-4 lg:py-5
             text-center shadow-lg border border-gray-100
           ">
                         {/* 背景の80%を覆う透かし画像 */}
@@ -61,30 +61,39 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
             
             {/* コンテンツ */}
             <div className="relative z-10">
-            <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight">
+            <h1 className="text-xl sm:text-2xl md:text-4xl font-extrabold tracking-tight">
               Market Supporter AI
             </h1>
-            <p className="mt-2 sm:mt-3 md:mt-4 text-sm sm:text-base md:text-lg text-gray-600">
+            <p className="mt-1.5 sm:mt-2 md:mt-3 text-xs sm:text-sm md:text-base bg-blue-600 text-white inline-block px-3 sm:px-4 md:px-5 py-1 sm:py-1.5 md:py-2 rounded-full font-medium">
               AIが導く、賢い洞察と信頼できるおすすめ
+            </p>
+            </div>
+          </div>
+        </section>
+
+        {/* メッセージとコンテンツ一覧ボタンセクション */}
+        <section className="mx-auto max-w-6xl px-4 md:px-6 mb-4 sm:mb-6">
+          <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 sm:p-5 md:p-6 text-center">
+            <p className="text-xs sm:text-sm md:text-base text-gray-700 max-w-3xl mx-auto leading-relaxed mb-4">
+              AIを活用して、みなさんの「知りたい」「選びたい」「買いたい」をサポート。情報を整理し、購入時の判断と生活の向上をサポートします。
             </p>
             <Link 
               href="/contents" 
-              className="inline-flex items-center px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 text-sm sm:text-base bg-blue-500 text-white font-semibold rounded-full hover:bg-blue-600 transition-colors shadow-md hover:shadow-lg hover-lift"
+              className="inline-flex items-center px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm md:text-base bg-blue-500 text-white font-semibold rounded-full hover:bg-blue-600 transition-colors shadow-md hover:shadow-lg hover:-translate-y-1"
               onClick={() => window.gtag?.('event', 'select_content', {
                 content_type: 'cta',
                 content_id: 'home_hero_contents_button'
               })}
             >
               コンテンツ一覧を見る
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
-            </div>
           </div>
         </section>
 
-        {/* 新着記事（Heroの直下） */}
+        {/* 新着記事 */}
         <div className="mx-auto max-w-6xl px-4 md:px-6 mb-16">
           <LatestPosts items={latest.slice(0, 5)} />
         </div>
