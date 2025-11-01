@@ -64,7 +64,7 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
             <h1 className="text-xl sm:text-2xl md:text-4xl font-extrabold tracking-tight">
               Market Supporter AI
             </h1>
-            <p className="mt-1.5 sm:mt-2 md:mt-3 text-xs sm:text-sm md:text-base bg-blue-600 text-white inline-block px-3 sm:px-4 md:px-5 py-1 sm:py-1.5 md:py-2 rounded-full font-medium">
+            <p className="mt-1.5 sm:mt-2 md:mt-3 text-xs sm:text-sm md:text-base text-gray-600 font-medium">
               AIが導く、賢い洞察と信頼できるおすすめ
             </p>
             </div>
