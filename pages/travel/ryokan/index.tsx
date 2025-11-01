@@ -24,7 +24,7 @@ function getTravelArticleLink(slug: string, subcategory?: string): string {
     return `/travel/ryokan/2025-11-01-koyo-renewal`;
   }
   
-  // ファイルパス形式のslugを処理（例: "ryokan/2025-11-01-koyo-renewal"）
+  // ファイルパス形式のslugを処理（例: "ryokan/2025-11-01-koyo-renewal", "onsen/yamagata-mogami-onsen"）
   if (slug.includes('/')) {
     return `/travel/${slug}`;
   }
@@ -49,12 +49,15 @@ export default function RyokanIndex({ posts }: { posts: any[] }) {
       // slugがryokan/で始まるファイルを優先的に含める
       const isRyokanPath = p.slug && typeof p.slug === 'string' && p.slug.startsWith('ryokan/');
       
+      // slugがonsen/で始まるファイルも含める（おすすめ個別旅館ガイドに移動）
+      const isOnsenPath = p.slug && typeof p.slug === 'string' && p.slug.startsWith('onsen/');
+      
       // 個別旅館の条件に一致するもの
       const isRyokanCategory = (p.category === '旅行' || p.category === '旅館・温泉') && 
         (p.subcategory === '個別旅館' || p.subcategory === 'おすすめ個別旅館ガイド');
       
-      // content/travel/ryokan配下のすべてのファイルを表示（リダイレクト対象も含む）
-      return (isRyokanPath || isRyokanCategory) && p.published !== false;
+      // content/travel/ryokan配下とcontent/travel/onsen配下のすべてのファイルを表示
+      return (isRyokanPath || isOnsenPath || isRyokanCategory) && p.published !== false;
     })
     .sort((a, b) => (a.date > b.date ? -1 : 1));
 

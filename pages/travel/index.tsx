@@ -24,13 +24,13 @@ function getTravelArticleLink(slug: string, subcategory?: string): string {
     return `/travel/ryokan/2025-11-01-koyo-renewal`;
   }
   
-  // ファイルパス形式のslugを処理（例: "ryokan/2025-11-01-koyo-renewal"）
+  // ファイルパス形式のslugを処理（例: "ryokan/2025-11-01-koyo-renewal", "onsen/yamagata-mogami-onsen"）
   if (slug.includes('/')) {
     return `/travel/${slug}`;
   }
   
-  // 温泉地ガイド記事の場合
-  if (subcategory === "温泉地ガイド") {
+  // 温泉地ガイド記事の場合（ただしonsen/で始まるものは除外）
+  if (subcategory === "温泉地ガイド" && !(slug && typeof slug === 'string' && slug.startsWith('onsen/'))) {
     return `/travel/onsen/${slug}`;
   }
   
@@ -54,9 +54,21 @@ export async function getStaticProps() {
 }
 
 export default function TravelIndex({ posts }: { posts: any[] }) {
-  // 温泉地ガイド（category: "旅行" かつ subcategory: "温泉地ガイド"）
+  // 温泉地ガイド（category: "旅行" かつ subcategory: "温泉地ガイド"、またはonsen/で始まる記事）
   const onsenGuidePosts = posts
-    .filter(p => p.category === '旅行' && p.subcategory === '温泉地ガイド' && p.published !== false && !p.slug.includes('yamagata-') && !p.slug.includes('hokkaido-') && !p.slug.includes('gero-') && !p.slug.includes('gifu'))
+    .filter(p => {
+      // content/travel/onsenにある記事（onsen/で始まるslug）を含める
+      const isOnsenPath = p.slug && typeof p.slug === 'string' && p.slug.startsWith('onsen/');
+      
+      // 温泉地ガイド記事（category: "旅行" && subcategory: "温泉地ガイド"）
+      // ただし、onsen/で始まるものは既に含まれているため、onsen/で始まらないもののみ
+      const isOnsenGuide = !isOnsenPath && 
+        p.category === '旅行' && 
+        p.subcategory === '温泉地ガイド';
+      
+      // onsen/で始まる記事または温泉地ガイド記事を含める
+      return (isOnsenPath || isOnsenGuide) && p.published !== false;
+    })
     .sort((a, b) => (a.date > b.date ? -1 : 1));
   
   // 高級温泉旅館ガイド（slugに"luxury"が含まれるもの、またはcategory: "旅行ガイド"）
@@ -64,20 +76,22 @@ export default function TravelIndex({ posts }: { posts: any[] }) {
     .filter((p) => (p.slug && p.slug.includes('luxury')) || p.category === '旅行ガイド')
     .sort((a, b) => (a.date > b.date ? -1 : 1));
   
-  // おすすめ個別旅館ガイド（category: "旅行" かつ subcategory: "個別旅館"、またはslugがryokan/で始まるもの）
+  // おすすめ個別旅館ガイド（category: "旅行" かつ subcategory: "個別旅館"、またはslugがryokan/で始まるもの、またはonsen/で始まるもの）
   const individualRyokanPosts = posts
     .filter(p => {
       const isRyokanPath = p.slug && typeof p.slug === 'string' && p.slug.startsWith('ryokan/');
+      const isOnsenPath = p.slug && typeof p.slug === 'string' && p.slug.startsWith('onsen/');
       const isRyokanCategory = (p.category === '旅行' || p.category === '旅館・温泉') && (p.subcategory === '個別旅館' || p.subcategory === 'おすすめ個別旅館ガイド');
-      return (isRyokanPath || isRyokanCategory) && p.published !== false;
+      return (isRyokanPath || isOnsenPath || isRyokanCategory) && p.published !== false;
     })
     .sort((a, b) => (a.date > b.date ? -1 : 1));
   
-  // その他の記事（luxuryを含まず、温泉地ガイドでも個別旅館でもないもの、ryokan/で始まるものも除外）
+  // その他の記事（luxuryを含まず、温泉地ガイドでも個別旅館でもないもの、ryokan/で始まるものもonsen/で始まるものも除外）
   const otherPosts = posts.filter((p) => 
     p.slug && 
     !p.slug.includes('luxury') && 
     !p.slug.startsWith('ryokan/') &&
+    !p.slug.startsWith('onsen/') &&
     !(p.category === '旅行' && p.subcategory === '温泉地ガイド') &&
     !(p.category === '旅行' && p.subcategory === '個別旅館') &&
     !(p.category === '旅行' && p.subcategory === 'おすすめ個別旅館ガイド') &&
@@ -127,6 +141,44 @@ export default function TravelIndex({ posts }: { posts: any[] }) {
               厳選された旅行情報とお得な予約方法をご紹介。温泉地ガイド、高級温泉旅館ランキング、個別旅館の詳しい情報まで、あなたの理想の旅を見つけるお手伝いをします。
             </p>
           </div>
+
+          {/* おすすめ個別旅館ガイドセクション */}
+          {individualRyokanPosts.length > 0 && (
+            <section className="mb-12">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-2xl font-bold text-gray-900">🏨 おすすめ個別旅館ガイド</h2>
+                {individualRyokanPosts.length > 3 && (
+                  <Link 
+                    href="/travel/ryokan" 
+                    className="text-blue-600 hover:text-blue-800 font-medium"
+                  >
+                    すべて見る →
+                  </Link>
+                )}
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {individualRyokanPosts.slice(0, 3).map((p) => (
+                  <Link
+                    key={p.slug}
+                    href={getTravelArticleLink(p.slug, p.subcategory)}
+                    className="group block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100"
+                  >
+                    <div className="p-6">
+                      <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors mb-2">
+                        {p.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                        {p.description}
+                      </p>
+                      <div className="text-xs text-gray-500">
+                        {p.date}
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* 温泉地ガイドセクション */}
           <section className="mb-12">
@@ -186,44 +238,6 @@ export default function TravelIndex({ posts }: { posts: any[] }) {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {luxuryOnsenPosts.slice(0, 3).map((p) => (
-                  <Link
-                    key={p.slug}
-                    href={getTravelArticleLink(p.slug, p.subcategory)}
-                    className="group block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100"
-                  >
-                    <div className="p-6">
-                      <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors mb-2">
-                        {p.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-3 line-clamp-2">
-                        {p.description}
-                      </p>
-                      <div className="text-xs text-gray-500">
-                        {p.date}
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </section>
-          )}
-
-          {/* おすすめ個別旅館ガイドセクション */}
-          {individualRyokanPosts.length > 0 && (
-            <section className="mb-12">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold text-gray-900">🏨 おすすめ個別旅館ガイド</h2>
-                {individualRyokanPosts.length > 3 && (
-                  <Link 
-                    href="/travel/ryokan" 
-                    className="text-blue-600 hover:text-blue-800 font-medium"
-                  >
-                    すべて見る →
-                  </Link>
-                )}
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {individualRyokanPosts.slice(0, 3).map((p) => (
                   <Link
                     key={p.slug}
                     href={getTravelArticleLink(p.slug, p.subcategory)}
