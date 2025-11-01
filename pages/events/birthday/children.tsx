@@ -62,9 +62,10 @@ export default function ChildrenBirthdayGiftsPage() {
             {/* ギフト1: 知育おもちゃ */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
-                </div>
+                <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fmarz-shop%2Ftoy-block001%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmarz-shop%2Fi%2F10023917%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                  <img src="//thumbnail.image.rakuten.co.jp/@0_mall/marz-shop/cabinet/image10/toy-block001-bl.jpg?_ex=500x500" alt="" style={{border: "medium"}} className="w-full h-40 object-cover rounded-lg" />
+                </a>
+                <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: "0px"}} />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">知育おもちゃ</h3>
               <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥3,000〜¥15,000）</p>
@@ -103,9 +104,10 @@ export default function ChildrenBirthdayGiftsPage() {
             {/* ギフト2: スポーツ用品 */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
-                </div>
+                <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fkaimonotengoku%2F10000001%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkaimonotengoku%2Fi%2F10000001%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                  <img src="//thumbnail.image.rakuten.co.jp/@0_mall/kaimonotengoku/cabinet/201-01.jpg?_ex=500x500" alt="" style={{border: "medium"}} className="w-full h-40 object-cover rounded-lg" />
+                </a>
+                <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: "0px"}} />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">スポーツ用品</h3>
               <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥5,000〜¥20,000）</p>
@@ -144,9 +146,10 @@ export default function ChildrenBirthdayGiftsPage() {
             {/* ギフト3: 学習用品 */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
-                </div>
+                <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fkizuna13%2F56etwj10%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkizuna13%2Fi%2F10002326%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                  <img src="//thumbnail.image.rakuten.co.jp/@0_mall/kizuna13/cabinet/img06/56etwj10.jpg?_ex=500x500" alt="" style={{border: "medium"}} className="w-full h-40 object-cover rounded-lg" />
+                </a>
+                <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: "0px"}} />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">学習用品</h3>
               <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥3,000〜¥15,000）</p>
@@ -226,9 +229,10 @@ export default function ChildrenBirthdayGiftsPage() {
             {/* ギフト5: 本・絵本 */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
-                </div>
+                <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15529019%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19186149%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                  <img src="//thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/3095/9784092173095.jpg?_ex=500x500" alt="" style={{border: "medium"}} className="w-full h-40 object-cover rounded-lg" />
+                </a>
+                <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: "0px"}} />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">本・絵本</h3>
               <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥1,000〜¥5,000）</p>
@@ -267,9 +271,10 @@ export default function ChildrenBirthdayGiftsPage() {
             {/* ギフト6: 音楽・楽器 */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
-                </div>
+                <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fshimamuragakki%2Fmt0162801%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fshimamuragakki%2Fi%2F10258931%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                  <img src="//thumbnail.image.rakuten.co.jp/@0_mall/shimamuragakki/cabinet/mt01628/mt0162801.jpg?_ex=500x500" alt="" style={{border: "medium"}} className="w-full h-40 object-cover rounded-lg" />
+                </a>
+                <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: "0px"}} />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">音楽・楽器</h3>
               <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥5,000〜¥25,000）</p>
@@ -308,9 +313,10 @@ export default function ChildrenBirthdayGiftsPage() {
             {/* ギフト7: アート・工作用品 */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
-                </div>
+                <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fbunbougu-shibuya%2F1390846%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbunbougu-shibuya%2Fi%2F10012591%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                  <img src="//thumbnail.image.rakuten.co.jp/@0_mall/bunbougu-shibuya/cabinet/65/kg_8.jpg?_ex=500x500" alt="" style={{border: "medium"}} className="w-full h-40 object-cover rounded-lg" />
+                </a>
+                <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: "0px"}} />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">アート・工作用品</h3>
               <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥2,000〜¥10,000）</p>
@@ -349,9 +355,10 @@ export default function ChildrenBirthdayGiftsPage() {
             {/* ギフト8: ゲーム・パズル */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
-                </div>
+                <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fnttxstore%2Fqzx0024996%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fnttxstore%2Fi%2F10002935%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                  <img src="//thumbnail.image.rakuten.co.jp/@0_mall/nttxstore/cabinet/12098631/4904810903451.jpg?_ex=500x500" alt="" style={{border: "medium"}} className="w-full h-40 object-cover rounded-lg" />
+                </a>
+                <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: "0px"}} />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">ゲーム・パズル</h3>
               <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥3,000〜¥15,000）</p>
@@ -390,9 +397,10 @@ export default function ChildrenBirthdayGiftsPage() {
             {/* ギフト9: 衣類・ファッション */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
-                </div>
+                <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fdevirockstore%2F742-40%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdevirockstore%2Fi%2F10003987%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                  <img src="//thumbnail.image.rakuten.co.jp/@0_mall/devirockstore/cabinet/itempage/25aw/1udl19128/1udl19128-02.jpg?_ex=500x500" alt="" style={{border: "medium"}} className="w-full h-40 object-cover rounded-lg" />
+                </a>
+                <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: "0px"}} />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">衣類・ファッション</h3>
               <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥3,000〜¥15,000）</p>
@@ -431,9 +439,10 @@ export default function ChildrenBirthdayGiftsPage() {
             {/* ギフト10: おもちゃ・人形 */}
             <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">画像</span>
-                </div>
+                <a href="//af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fnetbaby%2Fa73642xxx%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fnetbaby%2Fi%2F10024385%2F" rel="nofollow" referrerPolicy="no-referrer-when-downgrade">
+                  <img src="//thumbnail.image.rakuten.co.jp/@0_mall/netbaby/cabinet/559/4977554514559.jpg?_ex=500x500" alt="" style={{border: "medium"}} className="w-full h-40 object-cover rounded-lg" />
+                </a>
+                <img src="//i.moshimo.com/af/i/impression?a_id=5122395&p_id=54&pc_id=54&pl_id=616" alt="" loading="lazy" width="1" height="1" style={{border: "0px"}} />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">おもちゃ・人形</h3>
               <p className="text-sm text-gray-700 mb-2">（参考価格帯：¥2,000〜¥10,000）</p>
