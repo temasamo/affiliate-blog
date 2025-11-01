@@ -11,8 +11,8 @@ type Item = {
 
 // 記事のパスを生成する関数
 function getArticlePath(slug: string, category: string, subcategory?: string): string {
-  // 旅行記事の場合
-  if (category === "旅行") {
+  // 旅行記事の場合（カテゴリが"旅行"または"旅館・温泉"などの旅行関連）
+  if (category === "旅行" || category === "旅館・温泉" || category === "travel" || slug.includes("ryokan") || slug.includes("travel")) {
     // 名月荘の記事の特別処理
     if (slug === "meigetsuso-part1") {
       return `/travel/ryokan/2025-10-15-meigetsuso-part1`;
@@ -27,6 +27,14 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     }
     if (slug === "koyo-onsen-part2") {
       return `/travel/ryokan/2025-10-29-koyo-onsen-part2`;
+    }
+    if (slug === "koyo-renewal" || slug.includes("koyo-renewal") || slug === "2025-11-01-koyo-renewal" || slug.includes("2025-11-01-koyo-renewal")) {
+      return `/travel/ryokan/2025-11-01-koyo-renewal`;
+    }
+    
+    // ファイルパス形式のslugを処理（例: "ryokan/2025-11-01-koyo-renewal"）
+    if (slug.includes('/')) {
+      return `/travel/${slug}`;
     }
     
     // 温泉地ガイド記事の場合
@@ -167,7 +175,7 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
   // 日本酒カテゴリの記事の場合
   if (category === "日本酒" || category === "japanesesake") {
     // typeフィールドまたはslugから推測してサブディレクトリを決定
-    if (slug.includes("knowledge") || slug.includes("2025-10-11-nihonshu-intro") || slug.includes("2025-10-12-nihonshu-history") || slug.includes("2025-10-13-nihonshu-ingredients") || slug.includes("2025-10-13-nihonshu-seimaibuai") || slug.includes("2025-10-15-nihonshu-classification") || slug.includes("2025-10-16-nihonshu-temperature") || slug.includes("2025-10-17-nihonshu-flavor") || slug.includes("2025-10-18-nihonshu-storage") || slug.includes("2025-10-23-nihonshu-tastechange") || slug.includes("2025-10-29-nihonshu-brewing-methods") || slug.includes("2025-10-30-nihonshu-nama-vs-hiire")) {
+    if (slug.includes("knowledge") || slug.includes("2025-10-11-nihonshu-intro") || slug.includes("2025-10-12-nihonshu-history") || slug.includes("2025-10-13-nihonshu-ingredients") || slug.includes("2025-10-13-nihonshu-seimaibuai") || slug.includes("2025-10-15-nihonshu-classification") || slug.includes("2025-10-16-nihonshu-temperature") || slug.includes("2025-10-17-nihonshu-flavor") || slug.includes("2025-10-18-nihonshu-storage") || slug.includes("2025-10-23-nihonshu-tastechange") || slug.includes("2025-10-29-nihonshu-brewing-methods") || slug.includes("2025-10-30-nihonshu-nama-vs-hiire") || slug.includes("2025-11-01-seimaibuai")) {
       return `/articles/japanesesake/knowledge/${slug}`;
     }
     // デフォルトはbrands

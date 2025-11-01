@@ -76,8 +76,11 @@ export default function TravelTeaser({ posts = [] }: Props) {
                 if (slug === "koyo-onsen-part2" || slug.includes("koyo-onsen-part2") || slug === "2025-10-29-koyo-onsen-part2") {
                   return `/travel/ryokan/2025-10-29-koyo-onsen-part2`;
                 }
+                if (slug === "koyo-renewal" || slug.includes("koyo-renewal") || slug === "2025-11-01-koyo-renewal" || slug.includes("2025-11-01-koyo-renewal")) {
+                  return `/travel/ryokan/2025-11-01-koyo-renewal`;
+                }
                 
-                // ファイルパス形式のslugを処理（例: "ryokan/2025-10-29-koyo-onsen-part1"）
+                // ファイルパス形式のslugを処理（例: "ryokan/2025-10-29-koyo-onsen-part1", "ryokan/2025-11-01-koyo-renewal"）
                 if (slug.includes('/')) {
                   return `/travel/${slug}`;
                 }
