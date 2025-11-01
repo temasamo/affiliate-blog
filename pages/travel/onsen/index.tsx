@@ -32,7 +32,7 @@ export default function OnsenGuideIndex({ posts }: { posts: any[] }) {
           {onsenGuides.map((p) => (
             <Link
               key={p.slug}
-              href={`/travel/${p.slug}`}
+              href={`/travel/onsen/${p.slug}`}
               className="group block rounded-2xl bg-white/90 backdrop-blur-sm border border-white/30 p-6 hover:bg-white hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-1 no-underline"
             >
               <div className="flex items-center justify-between mb-3">
