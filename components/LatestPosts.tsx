@@ -138,6 +138,12 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "what-is-sencha") {
       return `/articles/japanesetea/knowledge/2025-10-30-sencha`;
     }
+    if (slug === "deep-steamed-sencha") {
+      return `/articles/japanesetea/knowledge/2025-11-02-deep-steamed-sencha`;
+    }
+    if (slug === "gyokuro") {
+      return `/articles/japanesetea/knowledge/2025-11-03-gyokuro`;
+    }
     
     // slugから推測してサブディレクトリを決定
     if (slug.includes("knowledge")) {
@@ -159,6 +165,9 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     }
     if (slug === "ai-health-tracking") {
       return `/articles/ai-apps/recommend/2025-10-31-ai-health-tracking`;
+    }
+    if (slug === "ai-fashion-coordination-apps") {
+      return `/articles/ai-apps/recommend/2025-11-02-ai-fashion-coordination`;
     }
     
     // subcategoryから推測してサブディレクトリを決定

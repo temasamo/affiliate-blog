@@ -192,6 +192,9 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
                     if (slug === "ai-health-tracking") {
                       return `/articles/ai-apps/recommend/2025-10-31-ai-health-tracking`;
                     }
+                    if (slug === "ai-fashion-coordination-apps") {
+                      return `/articles/ai-apps/recommend/2025-11-02-ai-fashion-coordination`;
+                    }
                     return `/articles/ai-apps/recommend/${slug}`;
                   };
                   
@@ -516,7 +519,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   }
 
   // 全カテゴリの記事を取得（global-hot-picksも含める）
-  const categories = ['sleep-health', 'japanesetea', 'japanesesake', 'popularproducts-overseas', '海外トレンド', 'japaneseproducts-popular-with-foreigners', 'global-hot-picks', 'whisky'];
+  const categories = ['sleep-health', 'japanesetea', 'japanesesake', 'ai-apps', 'popularproducts-overseas', '海外トレンド', 'japaneseproducts-popular-with-foreigners', 'global-hot-picks', 'whisky'];
   
   categories.forEach(category => {
     const categoryPath = path.join(articlesDirectory, category);
@@ -555,7 +558,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
           if (fs.existsSync(typePath)) {
             const files = fs.readdirSync(typePath);
             files.forEach(file => {
-              if (file.endsWith('.md')) {
+              if (file.endsWith('.md') || file.endsWith('.mdx')) {
                 try {
                   const filePath = path.join(typePath, file);
                   const fileContents = fs.readFileSync(filePath, 'utf8');

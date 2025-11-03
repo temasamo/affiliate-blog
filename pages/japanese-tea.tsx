@@ -1,7 +1,7 @@
 // pages/japanese-tea.tsx
 import React from 'react';
 import Link from 'next/link';
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -26,20 +26,27 @@ export default function JapaneseTea({ recommendArticles, knowledgeArticles }: Ja
     <div className="min-h-screen bg-gray-50">
       <Header 
         title="日本茶 - Market Supporter AI"
-        description="緑茶・抹茶・お茶文化の紹介と商品比較を行います。"
+        description="日本茶の基礎・健康効果・おすすめの飲み方を分かりやすく。"
       />
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="bg-white rounded-2xl shadow-md p-8">
+          {/* パンくずリスト */}
+          <nav className="mb-8">
+            <ol className="flex items-center space-x-2 text-sm text-gray-500">
+              <li><Link href="/" className="hover:text-blue-600">ホーム</Link></li>
+              <li>/</li>
+              <li className="text-gray-900">日本茶</li>
+            </ol>
+          </nav>
+          
           <div className="text-center mb-8">
             <div className="relative h-48 mb-6 rounded-xl overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-green-500/80 to-emerald-600/80"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300">
-                <img
-                  src="/images/macha-kyusu.jpg"
-                  alt="日本茶"
-                  className="w-full h-full object-cover"
-                />
+                <div className="w-full h-full flex items-center justify-center text-6xl">
+                  🍵
+                </div>
               </div>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
@@ -47,159 +54,109 @@ export default function JapaneseTea({ recommendArticles, knowledgeArticles }: Ja
                     日本茶
                   </div>
                   <div className="text-white/90 text-lg bg-black/30 px-6 py-2 rounded-full backdrop-blur-sm">
-                    緑茶・抹茶・お茶文化
+                    基礎・健康効果・おすすめの飲み方
                   </div>
                 </div>
               </div>
             </div>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              緑茶・抹茶・お茶文化の紹介と商品比較を行います。
+            <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
+              日本茶の奥深い世界を探索しましょう。基礎知識、健康効果、おすすめの飲み方など、
+              あなたにぴったりの日本茶を見つける情報をご用意しています。
             </p>
           </div>
 
-          {/* Recomend セクション */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              おすすめ商品
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                          {recommendArticles.slice(0, 6).map((article) => (
-              <Link key={article.slug} href={`/articles/japanesetea/recommend/${article.slug}`} className="group block">
-                  <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+          {/* おすすめ商品セクション */}
+          <section className="mb-12">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold text-gray-900">おすすめ商品</h2>
+              <Link 
+                href="/articles/japanesetea/recommend" 
+                className="text-blue-600 hover:text-blue-800 font-medium"
+              >
+                すべて見る →
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {recommendArticles.slice(0, 3).map((article) => (
+                <Link
+                  key={article.slug}
+                  href={`/articles/japanesetea/recommend/${article.slug}`}
+                  className="group block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100"
+                >
+                  <div className="p-6">
+                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors mb-2">
                       {article.title}
                     </h3>
-                    <p className="text-sm text-gray-600">{article.description}</p>
-                    <div className="mt-3 flex items-center text-xs text-purple-600">
-                      <span>詳細を見る</span>
-                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
+                    <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                      {article.description}
+                    </p>
+                    <div className="text-xs text-gray-500">
+                      {article.date}
                     </div>
                   </div>
                 </Link>
               ))}
-              {/* おすすめ商品一覧カード */}
-              <Link href="/articles/japanesetea/recommend" className="group block">
-                <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-2 border-purple-200">
-                  <div className="flex items-center mb-3">
-                    <div className="text-2xl mr-3">🛒</div>
-                    <h3 className="text-lg font-semibold text-purple-700 group-hover:text-purple-800 transition-colors">
-                      おすすめ商品一覧
-                    </h3>
-                  </div>
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center text-sm text-purple-600">
-                      <span className="w-2 h-2 bg-purple-400 rounded-full mr-2"></span>
-                      <span>抹茶セット・急須・茶器</span>
-                    </div>
-                    <div className="flex items-center text-sm text-purple-600">
-                      <span className="w-2 h-2 bg-purple-400 rounded-full mr-2"></span>
-                      <span>初心者〜上級者向け</span>
-                    </div>
-                    <div className="flex items-center text-sm text-purple-600">
-                      <span className="w-2 h-2 bg-purple-400 rounded-full mr-2"></span>
-                      <span>価格比較・レビュー付き</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center text-xs text-purple-600 font-medium">
-                    <span>全{recommendArticles.length}記事を見る</span>
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
+            </div>
+          </section>
+
+          {/* 知識セクション */}
+          <section className="mb-12">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold text-gray-900">日本茶知識</h2>
+              <Link 
+                href="/articles/japanesetea/knowledge" 
+                className="text-blue-600 hover:text-blue-800 font-medium"
+              >
+                すべて見る →
               </Link>
             </div>
-          </div>
-
-          {/* お茶診断AI セクション */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              お茶診断AI
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* お茶診断AI メインカード */}
-              <a href="https://tea-diagnosis.vercel.app/tea/quick-diagnosis" target="_blank" rel="noopener noreferrer" className="group block">
-                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-2 border-blue-200">
-                  <div className="flex items-center mb-3">
-                    <div className="text-2xl mr-3">🤖</div>
-                    <h3 className="text-lg font-semibold text-blue-700 group-hover:text-blue-800 transition-colors">
-                      お茶診断AI
-                    </h3>
-                  </div>
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center text-sm text-blue-600">
-                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
-                      <span>あなたに最適なお茶を診断して提案</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center text-xs text-blue-600 font-medium">
-                    <span>お茶診断AIはこちら</span>
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          {/* Knowledge セクション */}
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              日本茶知識
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {knowledgeArticles.slice(0, 6).map((article) => (
-                <Link key={article.slug} href={`/articles/japanesetea/knowledge/${article.slug}`} className="group block">
-                  <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {knowledgeArticles.slice(0, 3).map((article) => (
+                <Link
+                  key={article.slug}
+                  href={`/articles/japanesetea/knowledge/${article.slug}`}
+                  className="group block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100"
+                >
+                  <div className="p-6">
+                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors mb-2">
                       {article.title}
                     </h3>
-                    <p className="text-sm text-gray-600">{article.description}</p>
-                    <div className="mt-3 flex items-center text-xs text-green-600">
-                      <span>詳細を見る</span>
-                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
+                    <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                      {article.description}
+                    </p>
+                    <div className="text-xs text-gray-500">
+                      {article.date}
                     </div>
                   </div>
                 </Link>
               ))}
-              {/* 日本茶知識一覧カード */}
-              <Link href="/articles/japanesetea/knowledge" className="group block">
-                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-2 border-green-200">
-                  <div className="flex items-center mb-3">
-                    <div className="text-2xl mr-3">📚</div>
-                    <h3 className="text-lg font-semibold text-green-700 group-hover:text-green-800 transition-colors">
-                      日本茶知識一覧
-                    </h3>
-                  </div>
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center text-sm text-green-600">
-                      <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
-                      <span>抹茶の歴史・道具の使い方</span>
-                    </div>
-                    <div className="flex items-center text-sm text-green-600">
-                      <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
-                      <span>急須の種類・選び方</span>
-                    </div>
-                    <div className="flex items-center text-sm text-green-600">
-                      <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
-                      <span>日本茶ライフスタイル</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center text-xs text-green-600 font-medium">
-                    <span>全{knowledgeArticles.length}記事を見る</span>
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              </Link>
             </div>
-          </div>
+          </section>
+
+          {/* お茶診断AIセクション */}
+          <section className="mb-12">
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-8 border border-green-200">
+              <div className="text-center">
+                <div className="text-4xl mb-4">🤖</div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">お茶診断AI</h2>
+                <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+                  あなたの好みやシーンに合わせて、最適な日本茶を提案します。
+                  初心者から上級者まで、誰でも簡単に使える診断AIです。
+                </p>
+                <Link
+                  href="https://tea-diagnosis.vercel.app/tea/quick-diagnosis"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition-colors"
+                >
+                  診断を開始する
+                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </section>
         </div>
       </main>
 
@@ -208,71 +165,69 @@ export default function JapaneseTea({ recommendArticles, knowledgeArticles }: Ja
   );
 }
 
-export const getServerSideProps: GetServerSideProps<JapaneseTeaProps> = async () => {
-  const articlesDirectory = path.join(process.cwd(), 'articles', 'japanesetea');
-  const recommendArticles: Article[] = [];
-  const knowledgeArticles: Article[] = [];
-
-  // Recommend 記事を取得
+export const getStaticProps: GetStaticProps<JapaneseTeaProps> = async () => {
+  const articlesDirectory = path.join(process.cwd(), 'articles/japanesetea');
+  
+  // おすすめ商品記事を取得
   const recommendPath = path.join(articlesDirectory, 'recommend');
+  const recommendArticles: Article[] = [];
+  
   if (fs.existsSync(recommendPath)) {
-    const files = fs.readdirSync(recommendPath);
+    const files = fs.readdirSync(recommendPath).filter(f => f.endsWith('.md') || f.endsWith('.mdx'));
     files.forEach(file => {
-      if (file.endsWith('.md') || file.endsWith('.mdx')) {
-        const filePath = path.join(recommendPath, file);
-        const fileContents = fs.readFileSync(filePath, 'utf8');
-        const { data: frontMatter } = matter(fileContents);
-        
-        // publishedがfalseの場合はスキップ
-        if (frontMatter.published === false) {
-          return;
-        }
-        
-        recommendArticles.push({
-          slug: frontMatter.slug || file.replace(/\.(md|mdx)$/, ''),
-          title: frontMatter.title || '記事タイトル',
-          description: frontMatter.description || '記事の説明',
-          date: frontMatter.date || '2025.07.01',
-          type: 'recommend'
-        });
+      const filePath = path.join(recommendPath, file);
+      const fileContents = fs.readFileSync(filePath, 'utf8');
+      const { data: frontMatter } = matter(fileContents);
+      
+      // publishedがfalseの場合はスキップ
+      if (frontMatter.published === false) {
+        return;
       }
+      
+      recommendArticles.push({
+        slug: frontMatter.slug || file.replace(/\.(md|mdx)$/, ''),
+        title: frontMatter.title || '記事タイトル',
+        description: frontMatter.description || '記事の説明',
+        date: frontMatter.date || '2025.07.01',
+        type: 'recommend'
+      });
     });
   }
 
-  // Knowledge 記事を取得
+  // 知識記事を取得
   const knowledgePath = path.join(articlesDirectory, 'knowledge');
+  const knowledgeArticles: Article[] = [];
+  
   if (fs.existsSync(knowledgePath)) {
-    const files = fs.readdirSync(knowledgePath);
+    const files = fs.readdirSync(knowledgePath).filter(f => f.endsWith('.md') || f.endsWith('.mdx'));
     files.forEach(file => {
-      if (file.endsWith('.md') || file.endsWith('.mdx')) {
-        const filePath = path.join(knowledgePath, file);
-        const fileContents = fs.readFileSync(filePath, 'utf8');
-        const { data: frontMatter } = matter(fileContents);
-        
-        // publishedがfalseの場合はスキップ
-        if (frontMatter.published === false) {
-          return;
-        }
-        
-        knowledgeArticles.push({
-          slug: frontMatter.slug || file.replace(/\.(md|mdx)$/, ''),
-          title: frontMatter.title || '記事タイトル',
-          description: frontMatter.description || '記事の説明',
-          date: frontMatter.date || '2025.07.01',
-          type: 'knowledge'
-        });
+      const filePath = path.join(knowledgePath, file);
+      const fileContents = fs.readFileSync(filePath, 'utf8');
+      const { data: frontMatter } = matter(fileContents);
+      
+      // publishedがfalseの場合はスキップ
+      if (frontMatter.published === false) {
+        return;
       }
+      
+      // ファイル名ベースのslugを使用（実際のファイル名から拡張子を除いたもの）
+      const fileBasedSlug = file.replace(/\.(md|mdx)$/, '');
+      
+      knowledgeArticles.push({
+        slug: fileBasedSlug,
+        title: frontMatter.title || '記事タイトル',
+        description: frontMatter.description || '記事の説明',
+        date: frontMatter.date || '2025.07.01',
+        type: 'knowledge'
+      });
     });
   }
-
-  // 日付順でソート（新しい順）
-  recommendArticles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  knowledgeArticles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return {
     props: {
-      recommendArticles,
-      knowledgeArticles,
+      recommendArticles: recommendArticles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
+      knowledgeArticles: knowledgeArticles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
     },
   };
 };
+
