@@ -98,7 +98,7 @@ const conciergeQuestions = [
 ];
 
 // キーワード分析によるカテゴリ提案
-const analyzeConversation = (responses: Record<string, string>) => {
+const analyzeConversation = (responses: Record<string, string>, rejectedCategories: string[] = []) => {
   const text = (responses.freeText || "") + " " + (responses.history || "") + " " + (responses.preferences || "");
   const target = responses.target || "";
   const budget = responses.budget || "";
@@ -127,7 +127,7 @@ const analyzeConversation = (responses: Record<string, string>) => {
     "美容": { categories: ["スキンケア", "化粧品", "美容グッズ"], weight: 3 },
     "介護": { categories: ["介護用品", "健康グッズ", "安全グッズ"], weight: 3 },
     
-    // 趣味関連
+    // 趣味関連（通常の重み付け）
     "お茶": { categories: ["日本茶", "茶器", "茶道具"], weight: 3 },
     "コーヒー": { categories: ["コーヒー", "コーヒー器具", "グルメ"], weight: 3 },
     "花": { categories: ["花", "植物", "ガーデニング"], weight: 3 },
@@ -183,6 +183,102 @@ const analyzeConversation = (responses: Record<string, string>) => {
   if (sportsKeywords.some(k => text.includes(k))) {
     matchedCategories["スポーツグッズ"] = (matchedCategories["スポーツグッズ"] || 0) + 10;
     matchedCategories["アウトドア"] = (matchedCategories["アウトドア"] || 0) + 4;
+  }
+
+  // 趣味関連のキーワードマッピング（明確に趣味が回答された場合の高得点）
+  const hobbyKeywords: Record<string, { categories: string[], weight: number }> = {
+    // 車・バイク関連
+    "車": { categories: ["カー用品", "アクセサリー", "実用品"], weight: 8 },
+    "カー": { categories: ["カー用品", "アクセサリー", "実用品"], weight: 8 },
+    "自動車": { categories: ["カー用品", "アクセサリー", "実用品"], weight: 8 },
+    "バイク": { categories: ["バイク用品", "アウトドア", "アクセサリー"], weight: 8 },
+    "オートバイ": { categories: ["バイク用品", "アウトドア", "アクセサリー"], weight: 8 },
+    "ドライブ": { categories: ["カー用品", "旅行用品", "体験ギフト"], weight: 10 },
+    "運転": { categories: ["カー用品", "旅行用品", "実用品"], weight: 8 },
+    "ドライブが好き": { categories: ["カー用品", "旅行用品", "体験ギフト"], weight: 12 },
+    
+    // 写真・カメラ関連
+    "写真": { categories: ["カメラ用品", "写真用品", "実用品"], weight: 8 },
+    "カメラ": { categories: ["カメラ用品", "写真用品", "実用品"], weight: 8 },
+    "撮影": { categories: ["カメラ用品", "写真用品", "実用品"], weight: 8 },
+    
+    // 釣り・アウトドア関連
+    "釣り": { categories: ["釣り用品", "アウトドア", "スポーツグッズ"], weight: 8 },
+    "フィッシング": { categories: ["釣り用品", "アウトドア", "スポーツグッズ"], weight: 8 },
+    "登山": { categories: ["アウトドア", "スポーツグッズ", "旅行用品"], weight: 8 },
+    "キャンプ": { categories: ["アウトドア", "キャンプ用品", "スポーツグッズ"], weight: 8 },
+    
+    // ゴルフ関連
+    "ゴルフ": { categories: ["ゴルフ用品", "スポーツグッズ", "アウトドア"], weight: 8 },
+    
+    // ガーデニング関連
+    "ガーデニング": { categories: ["ガーデニング用品", "花", "植物"], weight: 8 },
+    "園芸": { categories: ["ガーデニング用品", "花", "植物"], weight: 8 },
+    
+    // ワイン・お酒関連
+    "ワイン": { categories: ["ワイン", "グルメ", "食器"], weight: 8 },
+    "日本酒": { categories: ["日本酒", "グルメ", "食器"], weight: 8 },
+    "ウイスキー": { categories: ["ウイスキー", "グルメ", "食器"], weight: 8 },
+    "お酒": { categories: ["お酒", "グルメ", "食器"], weight: 8 },
+    
+    // ゲーム関連
+    "ゲーム": { categories: ["ゲーム", "趣味グッズ", "実用品"], weight: 8 },
+    "テレビゲーム": { categories: ["ゲーム", "趣味グッズ", "実用品"], weight: 8 },
+    
+    // 映画・エンタメ関連
+    "映画": { categories: ["映画関連", "趣味グッズ", "実用品"], weight: 8 },
+    "映画鑑賞": { categories: ["映画関連", "趣味グッズ", "実用品"], weight: 8 },
+    
+    // 楽器・音楽関連（既存の音楽を強化）
+    "楽器": { categories: ["楽器", "音楽関連", "オーディオ"], weight: 8 },
+    "ピアノ": { categories: ["楽器", "音楽関連", "オーディオ"], weight: 8 },
+    "ギター": { categories: ["楽器", "音楽関連", "オーディオ"], weight: 8 },
+    
+    // 読書関連（既存を強化）
+    "読書好き": { categories: ["書籍", "文具", "読書関連グッズ"], weight: 8 },
+    "本": { categories: ["書籍", "文具", "読書関連グッズ"], weight: 8 },
+    
+    // 料理関連（既存を強化）
+    "料理好き": { categories: ["キッチン用品", "グルメ", "調理器具"], weight: 8 },
+    "クッキング": { categories: ["キッチン用品", "グルメ", "調理器具"], weight: 8 },
+  };
+
+  // 「趣味」「好き」というキーワードが含まれる場合、趣味関連の加点を強化
+  const hasHobbyKeyword = text.includes("趣味") || 
+                          text.includes("好きなことは") || 
+                          text.includes("好きなものは") ||
+                          text.includes("が好き") ||
+                          text.includes("好きです") ||
+                          text.includes("好き");
+  
+  // 「好き」と一緒に使われている趣味キーワードを検出（例：「ドライブが好き」）
+  const likePattern = /([^、。！？\s]+)(が好き|好きです|好き)/;
+  const likeMatch = text.match(likePattern);
+  const likedItem = likeMatch ? likeMatch[1].trim() : null;
+  
+  if (hasHobbyKeyword || likedItem) {
+    // 趣味関連キーワードを検出して高得点を付与
+    Object.entries(hobbyKeywords).forEach(([keyword, data]) => {
+      // 「〜が好き」形式の場合は特に高い重み
+      if (likedItem && (likedItem.includes(keyword) || keyword.includes(likedItem))) {
+        data.categories.forEach(category => {
+          matchedCategories[category] = (matchedCategories[category] || 0) + data.weight + 2; // 追加の+2ポイント
+        });
+      } else if (text.includes(keyword)) {
+        data.categories.forEach(category => {
+          matchedCategories[category] = (matchedCategories[category] || 0) + data.weight;
+        });
+      }
+    });
+  } else {
+    // 「趣味」というキーワードがなくても、趣味関連の単語が含まれている場合は通常の重み付け
+    Object.entries(hobbyKeywords).forEach(([keyword, data]) => {
+      if (text.includes(keyword)) {
+        data.categories.forEach(category => {
+          matchedCategories[category] = (matchedCategories[category] || 0) + Math.floor(data.weight / 2); // 半分の重み
+        });
+      }
+    });
   }
 
   // 好み分析の適用
@@ -246,11 +342,11 @@ const analyzeConversation = (responses: Record<string, string>) => {
     });
   }
   
-  // スコア順でソート
+  // スコア順でソート（全カテゴリを返す、拒否されたカテゴリは除外）
   return Object.entries(matchedCategories)
     .sort(([,a], [,b]) => b - a)
-    .slice(0, 5)
-    .map(([category]) => category);
+    .map(([category]) => category)
+    .filter(category => !rejectedCategories.includes(category));
 };
 
 // 動的商品推薦
@@ -438,6 +534,8 @@ export default function ConciergeAI() {
   const [freeText, setFreeText] = useState("");
   const [preferences, setPreferences] = useState("");
   const [history, setHistory] = useState("");
+  const [currentCategoryPage, setCurrentCategoryPage] = useState(0); // 現在表示しているカテゴリのページ（3つずつ）
+  const [rejectedCategories, setRejectedCategories] = useState<string[]>([]); // ユーザーが拒否したカテゴリ
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -490,21 +588,28 @@ export default function ConciergeAI() {
     } else {
       // 最終回答
       simulateTyping(() => {
-        const categories = analyzeConversation({
+        const allCategories = analyzeConversation({
           ...responses,
           [question.id]: option.value
-        });
+        }, rejectedCategories);
+        
+        // 拒否されたカテゴリは既に除外されている
+        const filteredCategories = allCategories;
+        
+        // 最初の3つを取得
+        const firstThree = filteredCategories.slice(0, 3);
         
         let response = "お答えいただき、ありがとうございます！\n\n";
         response += "あなたの回答を分析して、おすすめのカテゴリをご提案します：\n\n";
-        categories.forEach((category, index) => {
+        firstThree.forEach((category, index) => {
           response += `${index + 1}. **${category}**\n`;
         });
         
-        response += "\nどのカテゴリに興味がありますか？";
+        response += "\nどのカテゴリに興味がありますか？気に入るものがなければ、「別の提案を見る」ボタンから他のカテゴリもご確認いただけます。";
         
         addMessage(response, 'ai');
-        setRecommendedCategories(categories);
+        setRecommendedCategories(filteredCategories);
+        setCurrentCategoryPage(0);
         setShowSuggestions(true);
       });
     }
@@ -527,21 +632,28 @@ export default function ConciergeAI() {
     } else {
       // 最終回答
       simulateTyping(() => {
-        const categories = analyzeConversation({
+        const allCategories = analyzeConversation({
           ...responses,
           [questionId]: text
-        });
+        }, rejectedCategories);
+        
+        // 拒否されたカテゴリは既に除外されている
+        const filteredCategories = allCategories;
+        
+        // 最初の3つを取得
+        const firstThree = filteredCategories.slice(0, 3);
         
         let response = "お答えいただき、ありがとうございます！\n\n";
         response += "あなたの回答を分析して、おすすめのカテゴリをご提案します：\n\n";
-        categories.forEach((category, index) => {
+        firstThree.forEach((category, index) => {
           response += `${index + 1}. **${category}**\n`;
         });
         
-        response += "\nどのカテゴリに興味がありますか？";
+        response += "\nどのカテゴリに興味がありますか？気に入るものがなければ、「別の提案を見る」ボタンから他のカテゴリもご確認いただけます。";
         
         addMessage(response, 'ai');
-        setRecommendedCategories(categories);
+        setRecommendedCategories(filteredCategories);
+        setCurrentCategoryPage(0);
         setShowSuggestions(true);
       });
     }
@@ -563,6 +675,25 @@ export default function ConciergeAI() {
     addMessage(response, 'ai');
   };
 
+  // 別のカテゴリを提案
+  const showNextCategories = () => {
+    const startIndex = (currentCategoryPage + 1) * 3;
+    const nextThree = recommendedCategories.slice(startIndex, startIndex + 3);
+    
+    if (nextThree.length > 0) {
+      let response = "別のカテゴリをご提案します：\n\n";
+      nextThree.forEach((category, index) => {
+        response += `${index + 1}. **${category}**\n`;
+      });
+      response += "\nどのカテゴリに興味がありますか？";
+      
+      addMessage(response, 'ai');
+      setCurrentCategoryPage(prev => prev + 1);
+    } else {
+      addMessage("申し訳ございませんが、これ以上ご提案できるカテゴリがありません。最初からやり直すか、別の質問にお答えください。", 'ai');
+    }
+  };
+
   // 会話リセット
   const resetConversation = () => {
     setMessages([]);
@@ -575,6 +706,8 @@ export default function ConciergeAI() {
     setFreeText("");
     setPreferences("");
     setHistory("");
+    setCurrentCategoryPage(0);
+    setRejectedCategories([]);
     setTimeout(() => {
       addMessage(conciergeQuestions[0].question, 'ai');
     }, 1000);
@@ -711,10 +844,10 @@ export default function ConciergeAI() {
             </div>
           )}
 
-          {/* カテゴリ選択 */}
+          {/* カテゴリ選択（3つずつ表示） */}
           {showSuggestions && !selectedCategory && (
             <div className="mt-4 space-y-2">
-              {recommendedCategories.map((category) => (
+              {recommendedCategories.slice(currentCategoryPage * 3, (currentCategoryPage + 1) * 3).map((category) => (
                 <button
                   key={category}
                   onClick={() => handleCategorySelect(category)}
@@ -723,6 +856,15 @@ export default function ConciergeAI() {
                   {category}
                 </button>
               ))}
+              {/* 次のカテゴリがある場合、「別の提案を見る」ボタンを表示 */}
+              {recommendedCategories.length > (currentCategoryPage + 1) * 3 && (
+                <button
+                  onClick={showNextCategories}
+                  className="w-full bg-gray-100 text-gray-700 border border-gray-300 rounded-lg px-4 py-3 hover:bg-gray-200 transition-colors mt-2"
+                >
+                  別の提案を見る
+                </button>
+              )}
             </div>
           )}
 
