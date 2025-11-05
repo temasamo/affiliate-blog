@@ -8,21 +8,26 @@ type Mall =
   | "rakuten"
   | "rakuten_moshimo"
   | "rakuten_official"
+  | "rakuten-travel"
   | "yahoo"
+  | "yahoo-travel"
   | "amazon"
   | "vc"
   | "asoview"
   | "expedia"
-  | "jalan";
+  | "jalan"
+  | "ikyu";
 
 const enc = (s: string) => encodeURIComponent(s.trim());
 
 const ALLOWED_HOSTS = new Set([
   "hb.afl.rakuten.co.jp",
   "search.rakuten.co.jp",
+  "travel.rakuten.co.jp",
   "af.moshimo.com",
   "ck.jp.ap.valuecommerce.com",
   "shopping.yahoo.co.jp",
+  "travel.yahoo.co.jp",
   "www.amazon.co.jp",
   "amzn.to",
   "www.asoview.com",
@@ -30,6 +35,9 @@ const ALLOWED_HOSTS = new Set([
   "ad.jp.ap.valuecommerce.com",
   "www.expedia.co.jp",
   "www.jalan.net",
+  "www.ikkyu.com",
+  "www.ikyu.com",
+  "px.a8.net",
 ]);
 
 function rakutenOfficialByBrand(brand: string) {
@@ -126,17 +134,60 @@ function expediaByRawUrl(rawUrl: string) {
   return `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=${sid}&pid=${pid}&vc_url=${enc(rawUrl.trim())}`;
 }
 
-function jalanByBrand(brand: string) {
-  const sid = process.env.VC_SID;
-  const pid = process.env.VC_PID_JALAN;
-  if (!sid || !pid) throw new Error("VC_SID / VC_PID_JALAN is not set");
-  const search = `https://www.jalan.net/kakaku/area/${enc(brand)}/`;
+function rakutenTravelByBrand(brand: string) {
+  // もしも経由の楽天トラベル
+  const a = process.env.MOSHIMO_A_ID_TRAVEL || "5140401";
+  const p = process.env.MOSHIMO_P_ID_TRAVEL || "55";
+  const pc = process.env.MOSHIMO_PC_ID_TRAVEL || "55";
+  const pl = process.env.MOSHIMO_PL_ID_TRAVEL || "636";
+  // 検索URLではなく、トップページから検索してもらう形式に変更
+  const search = `https://travel.rakuten.co.jp/`;
+  return `https://af.moshimo.com/af/c/click?a_id=${a}&p_id=${p}&pc_id=${pc}&pl_id=${pl}&url=${enc(search)}`;
+}
+function rakutenTravelByRawUrl(rawUrl: string) {
+  const a = process.env.MOSHIMO_A_ID_TRAVEL || "5140401";
+  const p = process.env.MOSHIMO_P_ID_TRAVEL || "55";
+  const pc = process.env.MOSHIMO_PC_ID_TRAVEL || "55";
+  const pl = process.env.MOSHIMO_PL_ID_TRAVEL || "636";
+  return `https://af.moshimo.com/af/c/click?a_id=${a}&p_id=${p}&pc_id=${pc}&pl_id=${pl}&url=${enc(rawUrl)}`;
+}
+
+function yahooTravelByBrand(brand: string) {
+  const sid = process.env.VC_SID || "3751180";
+  const pid = process.env.VC_PID_YAHOO_TRAVEL || "892040663";
+  // 検索URLではなく、トップページから検索してもらう形式に変更
+  const search = `https://travel.yahoo.co.jp/`;
   return `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=${sid}&pid=${pid}&vc_url=${enc(search)}`;
 }
+function yahooTravelByRawUrl(rawUrl: string) {
+  const sid = process.env.VC_SID || "3751180";
+  const pid = process.env.VC_PID_YAHOO_TRAVEL || "892040663";
+  return `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=${sid}&pid=${pid}&vc_url=${enc(rawUrl)}`;
+}
+
+function jalanByBrand(brand: string) {
+  // A8ネットワークを使用（既存の/api/go/[id].tsと同じ）
+  const a8mat = "45BUIQ+EJC1IQ+14CS+68EPE"; // じゃらんのA8マトリクスコード
+  // 検索URLではなく、トップページから検索してもらう形式に変更
+  const search = `https://www.jalan.net/`;
+  return `https://px.a8.net/svt/ejp?a8mat=${a8mat}&a8ejpredirect=${enc(search)}`;
+}
 function jalanByRawUrl(rawUrl: string) {
-  const sid = process.env.VC_SID;
-  const pid = process.env.VC_PID_JALAN;
-  if (!sid || !pid) throw new Error("VC_SID / VC_PID_JALAN is not set");
+  // A8ネットワークを使用
+  const a8mat = "45BUIQ+EJC1IQ+14CS+68EPE";
+  return `https://px.a8.net/svt/ejp?a8mat=${a8mat}&url=${enc(rawUrl.trim())}`;
+}
+
+function ikyuByBrand(brand: string) {
+  const sid = process.env.VC_SID || "3751180";
+  const pid = process.env.VC_PID_IKYU || "892087941";
+  // 一休.comの検索URL（実際の検索機能を確認して調整が必要な場合あり）
+  const search = `https://www.ikkyu.com/search/?keyword=${enc(brand)}`;
+  return `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=${sid}&pid=${pid}&vc_url=${enc(search)}`;
+}
+function ikyuByRawUrl(rawUrl: string) {
+  const sid = process.env.VC_SID || "3751180";
+  const pid = process.env.VC_PID_IKYU || "892087941";
   return `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=${sid}&pid=${pid}&vc_url=${enc(rawUrl.trim())}`;
 }
 
@@ -159,23 +210,29 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     let dest = "";
 
     if (brand) {
-      if (useRakutenMoshimo)        dest = rakutenMoshimoByBrand(brand);
+      if (mall === "rakuten-travel") dest = rakutenTravelByBrand(brand);
+      else if (mall === "yahoo-travel") dest = yahooTravelByBrand(brand);
+      else if (useRakutenMoshimo)        dest = rakutenMoshimoByBrand(brand);
       else if (useRakutenOfficial)  dest = rakutenOfficialByBrand(brand);
       else if (mall === "yahoo")    dest = yahooByBrand(brand);
       else if (mall === "amazon")   dest = amazonByBrand(brand);
       else if (mall === "asoview")  dest = asoviewByBrand(brand);
       else if (mall === "expedia")  dest = expediaByBrand(brand);
       else if (mall === "jalan")    dest = jalanByBrand(brand);
+      else if (mall === "ikyu")     dest = ikyuByBrand(brand);
       else if (mall === "vc")       dest = vcGeneric(`https://example.com/?q=${enc(brand)}`);
       else { res.status(400).send("unsupported mall"); return; }
     } else {
-      if (useRakutenMoshimo)        dest = rakutenMoshimoByRawUrl(raw!);
+      if (mall === "rakuten-travel") dest = rakutenTravelByRawUrl(raw!);
+      else if (mall === "yahoo-travel") dest = yahooTravelByRawUrl(raw!);
+      else if (useRakutenMoshimo)        dest = rakutenMoshimoByRawUrl(raw!);
       else if (useRakutenOfficial)  dest = rakutenOfficialByRawUrl(raw!);
       else if (mall === "yahoo")    dest = yahooByRawUrl(raw!);
       else if (mall === "amazon")   dest = amazonByRawUrl(raw!);
       else if (mall === "asoview")  dest = asoviewByRawUrl(raw!);
       else if (mall === "expedia")  dest = expediaByRawUrl(raw!);
       else if (mall === "jalan")    dest = jalanByRawUrl(raw!);
+      else if (mall === "ikyu")     dest = ikyuByRawUrl(raw!);
       else if (mall === "vc")        dest = vcGeneric(raw!);
       else { res.status(400).send("unsupported mall"); return; }
     }
