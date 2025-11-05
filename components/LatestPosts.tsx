@@ -146,6 +146,9 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "gyokuro") {
       return `/articles/japanesetea/knowledge/2025-11-03-gyokuro`;
     }
+    if (slug === "matcha") {
+      return `/articles/japanesetea/knowledge/2025-11-06-matcha`;
+    }
     
     // slugから推測してサブディレクトリを決定
     if (slug.includes("knowledge")) {
