@@ -72,6 +72,12 @@ export async function getStaticProps() {
         const filePath = path.join(dir, file);
         const fileContents = fs.readFileSync(filePath, "utf8");
         const { data: frontMatter } = matter(fileContents);
+        
+        // publishedがfalseの場合はスキップ
+        if (frontMatter.published === false) {
+          return;
+        }
+        
         articles.push({
           slug,
           title: frontMatter.title || "記事タイトル",

@@ -74,6 +74,8 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
       "mogu-body-pillow-guide",
       "world-pillow-brands-comparison",
       "japan-pillow-brands",
+      "japan-expert-pillow-brands",
+      "european-luxury-pillow-brands",
     ];
     if (group6Slugs.includes(slug)) {
       return `/articles/sleep-health/pillow/group6/${slug}`;
@@ -168,6 +170,9 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     }
     if (slug === "ai-fashion-coordination-apps") {
       return `/articles/ai-apps/recommend/2025-11-02-ai-fashion-coordination`;
+    }
+    if (slug === "ai-mental-health-apps") {
+      return `/articles/ai-apps/recommend/2025-11-05-ai-mental-health`;
     }
     
     // subcategoryから推測してサブディレクトリを決定
