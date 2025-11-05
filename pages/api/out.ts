@@ -140,8 +140,8 @@ function rakutenTravelByBrand(brand: string) {
   const p = process.env.MOSHIMO_P_ID_TRAVEL || "55";
   const pc = process.env.MOSHIMO_PC_ID_TRAVEL || "55";
   const pl = process.env.MOSHIMO_PL_ID_TRAVEL || "636";
-  // 検索URLではなく、トップページから検索してもらう形式に変更
-  const search = `https://travel.rakuten.co.jp/`;
+  // 検索URLを使用（/api/go/[id].tsの実例を参考）
+  const search = `https://travel.rakuten.co.jp/HOTEL/search/keyword?f_keyword=${enc(brand)}`;
   return `https://af.moshimo.com/af/c/click?a_id=${a}&p_id=${p}&pc_id=${pc}&pl_id=${pl}&url=${enc(search)}`;
 }
 function rakutenTravelByRawUrl(rawUrl: string) {
@@ -155,8 +155,8 @@ function rakutenTravelByRawUrl(rawUrl: string) {
 function yahooTravelByBrand(brand: string) {
   const sid = process.env.VC_SID || "3751180";
   const pid = process.env.VC_PID_YAHOO_TRAVEL || "892040663";
-  // 検索URLではなく、トップページから検索してもらう形式に変更
-  const search = `https://travel.yahoo.co.jp/`;
+  // 検索URLを使用（/api/go/[id].tsの実例を参考）
+  const search = `https://travel.yahoo.co.jp/search/?keyword=${enc(brand)}`;
   return `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=${sid}&pid=${pid}&vc_url=${enc(search)}`;
 }
 function yahooTravelByRawUrl(rawUrl: string) {
@@ -168,9 +168,9 @@ function yahooTravelByRawUrl(rawUrl: string) {
 function jalanByBrand(brand: string) {
   // A8ネットワークを使用（既存の/api/go/[id].tsと同じ）
   const a8mat = "45BUIQ+EJC1IQ+14CS+68EPE"; // じゃらんのA8マトリクスコード
-  // 検索URLではなく、トップページから検索してもらう形式に変更
-  const search = `https://www.jalan.net/`;
-  return `https://px.a8.net/svt/ejp?a8mat=${a8mat}&a8ejpredirect=${enc(search)}`;
+  // 検索URLを使用（/api/go/[id].tsの実例を参考）
+  const search = `https://www.jalan.net/uw/uwp2000/uww2001.do?keyword=${enc(brand)}`;
+  return `https://px.a8.net/svt/ejp?a8mat=${a8mat}&url=${enc(search)}`;
 }
 function jalanByRawUrl(rawUrl: string) {
   // A8ネットワークを使用
