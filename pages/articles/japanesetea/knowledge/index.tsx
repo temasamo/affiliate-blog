@@ -84,8 +84,11 @@ export const getStaticProps: GetStaticProps<KnowledgeIndexProps> = async () => {
           return;
         }
         
+        // ファイル名ベースのslugを使用（ルーティングがファイル名ベースのため）
+        const fileBasedSlug = file.replace(/\.(md|mdx)$/, '');
+        
         articles.push({
-          slug: frontMatter.slug || file.replace(/\.(md|mdx)$/, ''),
+          slug: fileBasedSlug,
           title: frontMatter.title || '記事タイトル',
           description: frontMatter.description || '記事の説明',
           date: frontMatter.date || '2025.07.01'
