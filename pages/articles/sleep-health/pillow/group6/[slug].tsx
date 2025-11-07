@@ -41,7 +41,7 @@ export default function Article({ frontMatter, mdxSource }: { frontMatter: any; 
               </p>
             )}
           </div>
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg max-w-none prose-table-responsive">
             <MDXRemote {...mdxSource} components={{ AffButton }} />
           </div>
         </div>

@@ -157,6 +157,42 @@
     @apply border-gray-200 my-8;
   }
 
+  /* 表のスマホ対応 */
+  .prose-table-responsive table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1.5rem 0;
+  }
+  .prose-table-responsive table thead,
+  .prose-table-responsive table tbody,
+  .prose-table-responsive table tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  .prose-table-responsive table th,
+  .prose-table-responsive table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+    word-wrap: break-word;
+  }
+  .prose-table-responsive table th {
+    font-weight: 600;
+    background-color: #f9fafb;
+  }
+  @media (max-width: 640px) {
+    .prose-table-responsive table {
+      font-size: 0.875rem;
+    }
+    .prose-table-responsive table th,
+    .prose-table-responsive table td {
+      padding: 0.5rem;
+    }
+  }
+
   /* 見出し全体はリンク見えしない */
   .prose h1 a.heading-anchor,
   .prose h2 a.heading-anchor,

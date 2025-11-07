@@ -76,6 +76,7 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
       "japan-pillow-brands",
       "japan-expert-pillow-brands",
       "european-luxury-pillow-brands",
+      "japan-vs-global-pillow-brands",
     ];
     if (group6Slugs.includes(slug)) {
       return `/articles/sleep-health/pillow/group6/${slug}`;
