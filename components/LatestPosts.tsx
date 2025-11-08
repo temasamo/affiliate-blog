@@ -181,6 +181,9 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "ai-mental-health-apps") {
       return `/articles/ai-apps/recommend/2025-11-05-ai-mental-health`;
     }
+    if (slug === "ai-travel-planner-apps") {
+      return `/articles/ai-apps/recommend/2025-11-08-ai-travel-planner-apps`;
+    }
     
     // subcategoryから推測してサブディレクトリを決定
     if (subcategory === "おすすめAIアプリ") {
