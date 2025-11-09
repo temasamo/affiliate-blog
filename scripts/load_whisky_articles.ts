@@ -5,8 +5,25 @@ import OpenAI from "openai";
 import matter from "gray-matter";
 import dotenv from "dotenv";
 
-// .env.localファイルを読み込む
-dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
+// .env.localファイルが存在する場合のみ読み込む（ローカル開発用）
+const envLocalPath = path.resolve(process.cwd(), ".env.local");
+if (fs.existsSync(envLocalPath)) {
+  dotenv.config({ path: envLocalPath });
+}
+
+// 環境変数の検証
+if (!process.env.SUPABASE_URL) {
+  console.error("❌ エラー: SUPABASE_URL環境変数が設定されていません");
+  process.exit(1);
+}
+if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
+  console.error("❌ エラー: SUPABASE_SERVICE_ROLE_KEY環境変数が設定されていません");
+  process.exit(1);
+}
+if (!process.env.OPENAI_API_KEY) {
+  console.error("❌ エラー: OPENAI_API_KEY環境変数が設定されていません");
+  process.exit(1);
+}
 
 const supabase = createClient(
   process.env.SUPABASE_URL!,
