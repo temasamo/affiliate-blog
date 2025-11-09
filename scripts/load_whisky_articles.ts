@@ -44,13 +44,24 @@ async function generateEmbedding(input: string) {
   return res.data[0].embedding;
 }
 
-async function processDirectory(dirPath: string, type: "knowledge" | "brands") {
+async function processDirectory(dirPath: string, type: "knowledge" | "brands", targetSlugs?: string[]) {
   if (!fs.existsSync(dirPath)) {
     console.log(`⚠️ ディレクトリが存在しません: ${dirPath}`);
     return;
   }
 
-  const files = fs.readdirSync(dirPath).filter(f => f.endsWith(".mdx") || f.endsWith(".md"));
+  let files = fs.readdirSync(dirPath).filter(f => f.endsWith(".mdx") || f.endsWith(".md"));
+  
+  // 特定のslugが指定されている場合はフィルタリング
+  if (targetSlugs && targetSlugs.length > 0) {
+    const originalCount = files.length;
+    files = files.filter(file => {
+      const slug = file.replace(/\.(mdx|md)$/, "");
+      return targetSlugs.includes(slug);
+    });
+    console.log(`🎯 対象記事のみ処理: ${files.length}件（全${originalCount}件中）`);
+  }
+  
   console.log(`📂 ${type} ディレクトリ: ${files.length}件のファイルを検出`);
 
   for (const file of files) {
@@ -131,6 +142,12 @@ async function processDirectory(dirPath: string, type: "knowledge" | "brands") {
 async function main() {
   console.log("🚀 ウイスキー記事のRAG同期を開始します...\n");
 
+  // コマンドライン引数から対象slugを取得（例: npx tsx scripts/load_whisky_articles.ts whisky-distillation whisky-ingredients）
+  const targetSlugs = process.argv.slice(2).filter(arg => !arg.startsWith("-"));
+  if (targetSlugs.length > 0) {
+    console.log(`📌 対象記事: ${targetSlugs.join(", ")}\n`);
+  }
+
   // テーブルの存在確認
   const { data: tableCheck, error: tableError } = await supabase
     .from("whisky_articles")
@@ -149,8 +166,8 @@ async function main() {
   const knowledgeDir = path.resolve("./articles/whisky/knowledge");
   const brandsDir = path.resolve("./articles/whisky/brands");
 
-  await processDirectory(knowledgeDir, "knowledge");
-  await processDirectory(brandsDir, "brands");
+  await processDirectory(knowledgeDir, "knowledge", targetSlugs.length > 0 ? targetSlugs : undefined);
+  await processDirectory(brandsDir, "brands", targetSlugs.length > 0 ? targetSlugs : undefined);
 
   console.log("\n🎉 全記事の登録が完了しました。");
 }
