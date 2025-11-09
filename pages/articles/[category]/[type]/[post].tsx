@@ -143,7 +143,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
 
         {/* 通常記事の表示 */}
         <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8">
-          <article className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
+          <article className="prose prose-sm sm:prose-base lg:prose-lg max-w-none prose-table-responsive">
             {(isHotPicks || mdxSource) ? (
               <MdxRendererHotPicks mdx={mdxSource} />
             ) : (
