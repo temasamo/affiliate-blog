@@ -3,6 +3,10 @@ import path from "path";
 import { createClient } from "@supabase/supabase-js";
 import OpenAI from "openai";
 import matter from "gray-matter";
+import dotenv from "dotenv";
+
+// .env.localファイルを読み込む
+dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
 
 const supabase = createClient(
   process.env.SUPABASE_URL!,
@@ -93,4 +97,5 @@ main().catch((err) => {
   console.error("❌ スクリプト実行エラー:", err);
   process.exit(1);
 });
+
 

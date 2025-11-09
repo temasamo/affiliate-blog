@@ -23,7 +23,12 @@ jobs:
 
       - name: 📥 Install dependencies
         run: |
-          npm ci || pnpm install
+          if [ -f "pnpm-lock.yaml" ]; then
+            npm install -g pnpm
+            pnpm install
+          else
+            npm install
+          fi
 
       - name: 🧠 Run embedding sync script
         run: |
@@ -35,4 +40,5 @@ jobs:
 
       - name: ✅ Log confirmation
         run: echo "RAG embedding sync completed successfully ✅"
+
 
