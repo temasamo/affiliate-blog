@@ -11,25 +11,30 @@ if (fs.existsSync(envLocalPath)) {
   dotenv.config({ path: envLocalPath });
 }
 
+// 環境変数の取得（NEXT_PUBLIC_プレフィックスにも対応）
+const supabaseUrl = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const openaiApiKey = process.env.OPENAI_API_KEY;
+
 // 環境変数の検証
-if (!process.env.SUPABASE_URL) {
-  console.error("❌ エラー: SUPABASE_URL環境変数が設定されていません");
+if (!supabaseUrl) {
+  console.error("❌ エラー: SUPABASE_URLまたはNEXT_PUBLIC_SUPABASE_URL環境変数が設定されていません");
   process.exit(1);
 }
-if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
+if (!supabaseServiceRoleKey) {
   console.error("❌ エラー: SUPABASE_SERVICE_ROLE_KEY環境変数が設定されていません");
   process.exit(1);
 }
-if (!process.env.OPENAI_API_KEY) {
+if (!openaiApiKey) {
   console.error("❌ エラー: OPENAI_API_KEY環境変数が設定されていません");
   process.exit(1);
 }
 
 const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
+  supabaseUrl,
+  supabaseServiceRoleKey
 );
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const openai = new OpenAI({ apiKey: openaiApiKey });
 
 async function generateEmbedding(input: string) {
   const res = await openai.embeddings.create({
@@ -64,6 +69,8 @@ async function processDirectory(dirPath: string, type: "knowledge" | "brands") {
       const title = frontMatter.title || file.replace(/\.(mdx|md)$/, "");
       const slug = frontMatter.slug || file.replace(/\.(mdx|md)$/, "");
       const description = frontMatter.description || "";
+      const category = frontMatter.category || "ウイスキー知識";
+      const tags = frontMatter.tags || [];
 
       // コンテンツからfrontmatterを除いた本文を取得
       // ベクトル化用のテキストを作成（タイトル + 説明 + 本文）
@@ -74,21 +81,44 @@ async function processDirectory(dirPath: string, type: "knowledge" | "brands") {
       // 埋め込みベクトルを生成
       const embedding = await generateEmbedding(textForEmbedding);
 
-      // Supabaseに保存
-      const { error } = await supabase.from("whisky_articles").upsert({
-        slug,
+      // 既存のレコードをslugで検索（titleで検索する場合）
+      const { data: existing } = await supabase
+        .from("whisky_articles")
+        .select("id")
+        .eq("title", title)
+        .single();
+
+      // Supabaseに保存（テーブル構造に合わせて修正）
+      const dataToSave: any = {
         title,
-        description,
         content: content.trim(),
-        type,
         embedding,
+        category,
+        tags,
         updated_at: new Date().toISOString(),
-      }, {
-        onConflict: "slug"
-      });
+      };
+
+      let error;
+      if (existing?.id) {
+        // 既存レコードを更新
+        const { error: updateError } = await supabase
+          .from("whisky_articles")
+          .update(dataToSave)
+          .eq("id", existing.id);
+        error = updateError;
+      } else {
+        // 新規レコードを作成
+        const { error: insertError } = await supabase
+          .from("whisky_articles")
+          .insert(dataToSave);
+        error = insertError;
+      }
 
       if (error) {
-        console.error(`❌ エラー: ${file}`, error);
+        console.error(`❌ エラー: ${file}`);
+        console.error(`   エラーコード: ${error.code}`);
+        console.error(`   メッセージ: ${error.message}`);
+        console.error(`   詳細: ${JSON.stringify(error, null, 2)}`);
       } else {
         console.log(`✅ 登録完了: ${file} (${title})`);
       }
@@ -100,6 +130,21 @@ async function processDirectory(dirPath: string, type: "knowledge" | "brands") {
 
 async function main() {
   console.log("🚀 ウイスキー記事のRAG同期を開始します...\n");
+
+  // テーブルの存在確認
+  const { data: tableCheck, error: tableError } = await supabase
+    .from("whisky_articles")
+    .select("*")
+    .limit(1);
+
+  if (tableError) {
+    console.error("❌ テーブルエラー:", tableError.message);
+    console.error("   テーブル 'whisky_articles' が存在しないか、アクセス権限がありません。");
+    console.error("   Supabaseでテーブルを作成してください。");
+    process.exit(1);
+  }
+
+  console.log("✅ テーブル 'whisky_articles' に接続できました\n");
 
   const knowledgeDir = path.resolve("./articles/whisky/knowledge");
   const brandsDir = path.resolve("./articles/whisky/brands");
