@@ -18,7 +18,7 @@ export default function DiagnosticAIPage({ posts }: DiagnosticAIPageProps) {
     <>
       <Head>
         <title>診断AI | Market Supporter AI</title>
-        <meta name="description" content="AIを活用した診断ツール。枕診断AI、お茶診断AI、Face診断AIで、あなたの生活をサポートします。" />
+        <meta name="description" content="AIを活用した診断ツール。枕診断AI、お茶診断AIで、あなたの生活をサポートします。" />
       </Head>
 
       <div className="min-h-screen bg-gray-50">
@@ -43,7 +43,7 @@ export default function DiagnosticAIPage({ posts }: DiagnosticAIPageProps) {
           </div>
 
           {/* 診断AI一覧 */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {/* 枕診断AI */}
             <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="text-center mb-6">
@@ -95,34 +95,6 @@ export default function DiagnosticAIPage({ posts }: DiagnosticAIPageProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 text-center block"
-              >
-                診断を開始する
-              </a>
-            </div>
-
-            {/* Face診断AI */}
-            <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="text-center mb-6">
-                <h2 className="text-2xl font-bold text-gray-900 mb-3">Face診断AI</h2>
-                <p className="text-gray-600 leading-relaxed">
-                  高精度な顔分析で、あなたの美しさを数値化。スキンケアやメイクの参考に。
-                </p>
-              </div>
-              <div className="space-y-3 mb-6">
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
-                  顔の変化の数値化
-                </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
-                  AIによるコメント
-                </div>
-              </div>
-              <a 
-                href="https://face-diagnosis-web.vercel.app" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all duration-300 text-center block"
               >
                 診断を開始する
               </a>
