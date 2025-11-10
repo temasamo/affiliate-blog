@@ -135,14 +135,14 @@ function expediaByRawUrl(rawUrl: string) {
 }
 
 function rakutenTravelByBrand(brand: string) {
-  // もしも経由の楽天トラベル
+  // もしも経由の楽天トラベル（トップページにリダイレクト）
   const a = process.env.MOSHIMO_A_ID_TRAVEL || "5140401";
   const p = process.env.MOSHIMO_P_ID_TRAVEL || "55";
   const pc = process.env.MOSHIMO_PC_ID_TRAVEL || "55";
   const pl = process.env.MOSHIMO_PL_ID_TRAVEL || "636";
-  // 検索URLを使用（/api/go/[id].tsの実例を参考）
-  const search = `https://travel.rakuten.co.jp/HOTEL/search/keyword?f_keyword=${enc(brand)}`;
-  return `https://af.moshimo.com/af/c/click?a_id=${a}&p_id=${p}&pc_id=${pc}&pl_id=${pl}&url=${enc(search)}`;
+  // トップページにリダイレクト（ユーザーが検索できる）
+  const topPage = `https://travel.rakuten.co.jp/`;
+  return `https://af.moshimo.com/af/c/click?a_id=${a}&p_id=${p}&pc_id=${pc}&pl_id=${pl}&url=${enc(topPage)}`;
 }
 function rakutenTravelByRawUrl(rawUrl: string) {
   const a = process.env.MOSHIMO_A_ID_TRAVEL || "5140401";
@@ -155,9 +155,9 @@ function rakutenTravelByRawUrl(rawUrl: string) {
 function yahooTravelByBrand(brand: string) {
   const sid = process.env.VC_SID || "3751180";
   const pid = process.env.VC_PID_YAHOO_TRAVEL || "892040663";
-  // 検索URLを使用（/api/go/[id].tsの実例を参考）
-  const search = `https://travel.yahoo.co.jp/search/?keyword=${enc(brand)}`;
-  return `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=${sid}&pid=${pid}&vc_url=${enc(search)}`;
+  // トップページにリダイレクト（ユーザーが検索できる）
+  const topPage = `https://travel.yahoo.co.jp/`;
+  return `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=${sid}&pid=${pid}&vc_url=${enc(topPage)}`;
 }
 function yahooTravelByRawUrl(rawUrl: string) {
   const sid = process.env.VC_SID || "3751180";
@@ -168,9 +168,9 @@ function yahooTravelByRawUrl(rawUrl: string) {
 function jalanByBrand(brand: string) {
   // A8ネットワークを使用（既存の/api/go/[id].tsと同じ）
   const a8mat = "45BUIQ+EJC1IQ+14CS+68EPE"; // じゃらんのA8マトリクスコード
-  // 検索URLを使用（/api/go/[id].tsの実例を参考）
-  const search = `https://www.jalan.net/uw/uwp2000/uww2001.do?keyword=${enc(brand)}`;
-  return `https://px.a8.net/svt/ejp?a8mat=${a8mat}&url=${enc(search)}`;
+  // トップページにリダイレクト（ユーザーが検索できる）
+  const topPage = `https://www.jalan.net/`;
+  return `https://px.a8.net/svt/ejp?a8mat=${a8mat}&a8ejpredirect=${enc(topPage)}`;
 }
 function jalanByRawUrl(rawUrl: string) {
   // A8ネットワークを使用

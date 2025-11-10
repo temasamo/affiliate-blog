@@ -11,38 +11,8 @@ type Item = {
 
 // 記事のパスを生成する関数
 function getArticlePath(slug: string, category: string, subcategory?: string): string {
-  // AIアプリ情報カテゴリの記事の場合（旅行記事の判定より前に配置）
-  if (category === "AIアプリ情報" || category === "AIアプリ紹介" || category === "ai-apps") {
-    // 特定の記事の修正
-    if (slug === "ai-skin-analysis") {
-      return `/articles/ai-apps/recommend/2025-10-29-ai-skin-analysis`;
-    }
-    if (slug === "ai-health-tracking") {
-      return `/articles/ai-apps/recommend/2025-10-31-ai-health-tracking`;
-    }
-    if (slug === "ai-fashion-coordination-apps") {
-      return `/articles/ai-apps/recommend/2025-11-02-ai-fashion-coordination`;
-    }
-    if (slug === "ai-mental-health-apps") {
-      return `/articles/ai-apps/recommend/2025-11-05-ai-mental-health`;
-    }
-    if (slug === "ai-travel-planner-apps") {
-      return `/articles/ai-apps/recommend/2025-11-08-ai-travel-planner-apps`;
-    }
-    
-    // subcategoryから推測してサブディレクトリを決定
-    if (subcategory === "おすすめAIアプリ") {
-      return `/articles/ai-apps/recommend/${slug}`;
-    }
-    if (subcategory === "AI活用術") {
-      return `/articles/ai-apps/knowledge/${slug}`;
-    }
-    // デフォルトはrecommend
-    return `/articles/ai-apps/recommend/${slug}`;
-  }
-  
-  // 旅行記事の場合（カテゴリが"旅行"または"旅館・温泉"などの旅行関連）
-  if (category === "旅行" || category === "旅館・温泉" || category === "travel" || slug.includes("ryokan") || slug.includes("travel")) {
+  // 旅行記事の場合（カテゴリが"旅行"、"旅行・観光"、"旅館・温泉"などの旅行関連）
+  if (category === "旅行" || category === "旅行・観光" || category === "旅館・温泉" || category === "travel" || slug.includes("ryokan") || slug.includes("travel")) {
     // 名月荘の記事の特別処理
     if (slug === "meigetsuso-part1") {
       return `/travel/ryokan/2025-10-15-meigetsuso-part1`;
@@ -62,7 +32,7 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
       return `/travel/ryokan/2025-11-01-koyo-renewal`;
     }
     
-    // ファイルパス形式のslugを処理（例: "ryokan/2025-11-01-koyo-renewal"）
+    // ファイルパス形式のslugを処理（例: "ryokan/2025-11-01-koyo-renewal", "others/2025-11-10-fujigoko-petstay"）
     if (slug.includes('/')) {
       return `/travel/${slug}`;
     }
@@ -194,6 +164,33 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     }
     // デフォルトはrecommend（多くの記事が推薦系のため）
     return `/articles/japanesetea/recommend/${slug}`;
+  }
+  
+  // AIアプリ情報カテゴリの記事の場合
+  if (category === "AIアプリ情報" || category === "AIアプリ紹介" || category === "ai-apps") {
+    // 特定の記事の修正
+    if (slug === "ai-skin-analysis") {
+      return `/articles/ai-apps/recommend/2025-10-29-ai-skin-analysis`;
+    }
+    if (slug === "ai-health-tracking") {
+      return `/articles/ai-apps/recommend/2025-10-31-ai-health-tracking`;
+    }
+    if (slug === "ai-fashion-coordination-apps") {
+      return `/articles/ai-apps/recommend/2025-11-02-ai-fashion-coordination`;
+    }
+    if (slug === "ai-mental-health-apps") {
+      return `/articles/ai-apps/recommend/2025-11-05-ai-mental-health`;
+    }
+    
+    // subcategoryから推測してサブディレクトリを決定
+    if (subcategory === "おすすめAIアプリ") {
+      return `/articles/ai-apps/recommend/${slug}`;
+    }
+    if (subcategory === "AI活用術") {
+      return `/articles/ai-apps/knowledge/${slug}`;
+    }
+    // デフォルトはrecommend
+    return `/articles/ai-apps/recommend/${slug}`;
   }
   
   // 日本酒カテゴリの記事の場合

@@ -198,9 +198,6 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
                     if (slug === "ai-mental-health-apps") {
                       return `/articles/ai-apps/recommend/2025-11-05-ai-mental-health`;
                     }
-                    if (slug === "ai-travel-planner-apps") {
-                      return `/articles/ai-apps/recommend/2025-11-08-ai-travel-planner-apps`;
-                    }
                     return `/articles/ai-apps/recommend/${slug}`;
                   };
                   
@@ -498,9 +495,22 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
     travelPosts = slugs.map((s) => {
       try {
         const { frontMatter, slug } = getTravelPostBySlug(s);
-        // ファイルパスから最後の部分（実際のスラッグ）を抽出
-        const actualSlug = s.split('/').pop() || s;
-        return { slug: actualSlug, subcategory: frontMatter.subcategory || null, ...frontMatter };
+        // 非公開記事は除外
+        if (frontMatter.published === false) {
+          return null;
+        }
+        // 完全なslugを保持（サブディレクトリを含む）
+        const actualSlug = s;
+        // カテゴリを統一（「旅行・観光」→「旅行」、未定義の場合は「旅行」をデフォルトに）
+        const normalizedCategory = frontMatter.category === '旅行・観光' 
+          ? '旅行' 
+          : (frontMatter.category || '旅行');
+        return { 
+          ...frontMatter,
+          slug: actualSlug, 
+          subcategory: frontMatter.subcategory || null, 
+          category: normalizedCategory
+        };
       } catch (error) {
         console.error(`Error getting travel post for slug ${s}:`, error);
         return null;
@@ -600,7 +610,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
 
   // 新着記事を取得（旅行記事を除外）
   const latest = await getLatestPosts(50); // より多くの記事を取得
-  const nonTravelLatest = latest.filter(post => post.category !== '旅行' && post.category !== '温泉地ガイド');
+  const nonTravelLatest = latest.filter(post => post.category !== '旅行' && post.category !== '旅行・観光' && post.category !== '温泉地ガイド');
   
   // 旅行記事も新着記事に含める
   const allLatestPosts = [...nonTravelLatest, ...travelPosts];
