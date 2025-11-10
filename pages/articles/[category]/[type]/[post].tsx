@@ -1182,6 +1182,11 @@ function getCategoryName(category: string): string {
 
 // カテゴリリンクを取得する関数
 function getCategoryLink(category: string, type?: string): string {
+  // whiskyカテゴリの場合は、typeに応じてリンクを返す
+  if (category === 'whisky') {
+    return type === 'knowledge' ? '/articles/whisky/knowledge' : '/whisky';
+  }
+  
   const categoryLinks: { [key: string]: string } = {
     'sleep-health': '/sleep-health',
     'japanesetea': '/japanese-tea',
