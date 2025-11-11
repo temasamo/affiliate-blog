@@ -1182,6 +1182,17 @@ function getCategoryName(category: string): string {
 
 // カテゴリリンクを取得する関数
 function getCategoryLink(category: string, type?: string): string {
+  // ai-appsカテゴリの場合は、typeに応じてリンクを返す
+  if (category === 'ai-apps') {
+    if (type === 'recommend') {
+      return '/ai-apps/recommend';
+    }
+    if (type === 'knowledge') {
+      return '/articles/ai-apps/knowledge';
+    }
+    return '/ai-apps';
+  }
+  
   const categoryLinks: { [key: string]: string } = {
     'sleep-health': '/sleep-health',
     'japanesetea': '/japanese-tea',

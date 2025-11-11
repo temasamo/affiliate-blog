@@ -181,6 +181,12 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "ai-mental-health-apps") {
       return `/articles/ai-apps/recommend/2025-11-05-ai-mental-health`;
     }
+    if (slug === "ai-travel-planner-apps") {
+      return `/articles/ai-apps/recommend/2025-11-08-ai-travel-planner-apps`;
+    }
+    if (slug === "ai-learning-support-apps") {
+      return `/articles/ai-apps/recommend/2025-11-12-ai-learning-support-apps`;
+    }
     
     // subcategoryから推測してサブディレクトリを決定
     if (subcategory === "おすすめAIアプリ") {
@@ -196,7 +202,7 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
   // 日本酒カテゴリの記事の場合
   if (category === "日本酒" || category === "japanesesake") {
     // typeフィールドまたはslugから推測してサブディレクトリを決定
-    if (slug.includes("knowledge") || slug.includes("2025-10-11-nihonshu-intro") || slug.includes("2025-10-12-nihonshu-history") || slug.includes("2025-10-13-nihonshu-ingredients") || slug.includes("2025-10-13-nihonshu-seimaibuai") || slug.includes("2025-10-15-nihonshu-classification") || slug.includes("2025-10-16-nihonshu-temperature") || slug.includes("2025-10-17-nihonshu-flavor") || slug.includes("2025-10-18-nihonshu-storage") || slug.includes("2025-10-23-nihonshu-tastechange") || slug.includes("2025-10-29-nihonshu-brewing-methods") || slug.includes("2025-10-30-nihonshu-nama-vs-hiire") || slug.includes("2025-11-01-seimaibuai") || slug.includes("2025-11-04-nihonshu-genshu") || slug.includes("2025-11-04-nihonshu-muroka-jukusei-hiyaoroshi") || slug.includes("2025-11-11-nihonshu-") || slug.includes("nihonshu-")) {
+    if (slug.includes("knowledge") || slug.includes("2025-10-11-nihonshu-intro") || slug.includes("2025-10-12-nihonshu-history") || slug.includes("2025-10-13-nihonshu-ingredients") || slug.includes("2025-10-13-nihonshu-seimaibuai") || slug.includes("2025-10-15-nihonshu-classification") || slug.includes("2025-10-16-nihonshu-temperature") || slug.includes("2025-10-17-nihonshu-flavor") || slug.includes("2025-10-18-nihonshu-storage") || slug.includes("2025-10-23-nihonshu-tastechange") || slug.includes("2025-10-29-nihonshu-brewing-methods") || slug.includes("2025-10-30-nihonshu-nama-vs-hiire") || slug.includes("2025-11-01-seimaibuai") || slug.includes("2025-11-04-nihonshu-genshu") || slug.includes("2025-11-04-nihonshu-muroka-jukusei-hiyaoroshi") || slug.includes("nihonshu-")) {
       return `/articles/japanesesake/knowledge/${slug}`;
     }
     // デフォルトはbrands
