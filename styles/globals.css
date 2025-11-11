@@ -157,6 +157,22 @@
     @apply border-gray-200 my-8;
   }
 
+  /* プロセ内の画像スタイル */
+  .prose img {
+    @apply max-w-full h-auto rounded-lg shadow-md my-4;
+    border: 1px solid #e5e7eb;
+  }
+
+  /* プロセ内のアフィリエイト画像スタイル */
+  .prose a[href*="rakuten.co.jp"] img,
+  .prose a[href*="moshimo.com"] img,
+  .prose a[href*="valuecommerce.com"] img,
+  .prose a[href*="amazon.co.jp"] img {
+    @apply border-2 border-blue-200 hover:border-blue-400 transition-colors duration-200;
+    display: block;
+    margin: 1rem 0;
+  }
+
   /* 表のスマホ対応 */
   .prose-table-responsive table {
     display: block;

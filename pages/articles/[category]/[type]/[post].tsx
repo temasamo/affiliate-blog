@@ -1182,11 +1182,6 @@ function getCategoryName(category: string): string {
 
 // カテゴリリンクを取得する関数
 function getCategoryLink(category: string, type?: string): string {
-  // whiskyカテゴリの場合は、typeに応じてリンクを返す
-  if (category === 'whisky') {
-    return type === 'knowledge' ? '/articles/whisky/knowledge' : '/whisky';
-  }
-  
   const categoryLinks: { [key: string]: string } = {
     'sleep-health': '/sleep-health',
     'japanesetea': '/japanese-tea',
@@ -1461,17 +1456,16 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async ({ params }) =
       (category === 'global-hot-picks' || frontMatter.category === 'Global Hot Picks') &&
       (type === 'trend' || !type);
     
-    // 日本酒記事、sleep-health記事、ai-apps記事、whisky記事もMDXとして処理
+    // 日本酒記事、sleep-health記事、ai-apps記事もMDXとして処理
     const isJapaneseSake = category === 'japanesesake';
     const isSleepHealth = category === 'sleep-health';
     const isJapaneseTea = category === 'japanesetea';
     const isAiApps = category === 'ai-apps';
-    const isWhisky = category === 'whisky';
 
     let mdxSource = null;
     let contentHtml = '';
 
-    if (isHotPicks || isJapaneseSake || isSleepHealth || isJapaneseTea || isAiApps || isWhisky) {
+    if (isHotPicks || isJapaneseSake || isSleepHealth || isJapaneseTea || isAiApps) {
       // Global Hot Picksまたは日本酒記事の場合はMDX処理
       if (isJapaneseSake) {
         mdxSource = await toSakeMdx(content);
@@ -1479,8 +1473,6 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async ({ params }) =
         mdxSource = await toJapaneseTeaMdx(content);
       } else if (isAiApps) {
         mdxSource = await toAiAppsMdx(content);
-      } else if (isWhisky) {
-        mdxSource = await toHotPicksMdx(content);
       } else {
         mdxSource = await toHotPicksMdx(content);
       }
