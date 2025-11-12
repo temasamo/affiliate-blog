@@ -1,5 +1,5 @@
 import MdxRendererHotPicks from "@/components/MdxRendererHotPicks";
-import { toHotPicksMdx, toSakeMdx, toJapaneseTeaMdx, toAiAppsMdx } from "@/lib/mdx-hotpicks";
+import { toHotPicksMdx, toSakeMdx, toJapaneseTeaMdx, toAiAppsMdx, toWhiskyMdx } from "@/lib/mdx-hotpicks";
 import AffButton from "@/components/AffButton";
 import React, { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -1193,6 +1193,17 @@ function getCategoryLink(category: string, type?: string): string {
     return '/ai-apps';
   }
   
+  // whiskyカテゴリの場合は、typeに応じてリンクを返す
+  if (category === 'whisky') {
+    if (type === 'brands') {
+      return '/articles/whisky/brands';
+    }
+    if (type === 'knowledge') {
+      return '/articles/whisky/knowledge';
+    }
+    return '/whisky';
+  }
+  
   const categoryLinks: { [key: string]: string } = {
     'sleep-health': '/sleep-health',
     'japanesetea': '/japanese-tea',
@@ -1467,16 +1478,17 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async ({ params }) =
       (category === 'global-hot-picks' || frontMatter.category === 'Global Hot Picks') &&
       (type === 'trend' || !type);
     
-    // 日本酒記事、sleep-health記事、ai-apps記事もMDXとして処理
+    // 日本酒記事、sleep-health記事、ai-apps記事、whisky記事もMDXとして処理
     const isJapaneseSake = category === 'japanesesake';
     const isSleepHealth = category === 'sleep-health';
     const isJapaneseTea = category === 'japanesetea';
     const isAiApps = category === 'ai-apps';
+    const isWhisky = category === 'whisky';
 
     let mdxSource = null;
     let contentHtml = '';
 
-    if (isHotPicks || isJapaneseSake || isSleepHealth || isJapaneseTea || isAiApps) {
+    if (isHotPicks || isJapaneseSake || isSleepHealth || isJapaneseTea || isAiApps || isWhisky) {
       // Global Hot Picksまたは日本酒記事の場合はMDX処理
       if (isJapaneseSake) {
         mdxSource = await toSakeMdx(content);
@@ -1484,6 +1496,8 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async ({ params }) =
         mdxSource = await toJapaneseTeaMdx(content);
       } else if (isAiApps) {
         mdxSource = await toAiAppsMdx(content);
+      } else if (isWhisky) {
+        mdxSource = await toWhiskyMdx(content);
       } else {
         mdxSource = await toHotPicksMdx(content);
       }

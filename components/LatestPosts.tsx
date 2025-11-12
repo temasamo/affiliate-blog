@@ -211,12 +211,23 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
   
   // ウイスキーカテゴリの記事の場合
   if (category === "ウイスキー知識" || category === "ウイスキー") {
+    // 特定の記事の修正
+    if (slug === "yamazaki-hakushu") {
+      return `/articles/whisky/brands/2025-11-12-yamazaki-hakushu`;
+    }
+    if (slug === "nikka-three-pillars") {
+      return `/articles/whisky/brands/2025-11-12-nikka-three-pillars`;
+    }
+    // subcategoryから推測してサブディレクトリを決定
+    if (subcategory === "知識") {
+      return `/articles/whisky/knowledge/${slug}`;
+    }
     // slugから推測してサブディレクトリを決定
     if (slug.includes("knowledge") || slug.includes("basic")) {
       return `/articles/whisky/knowledge/${slug}`;
     }
-    // デフォルトはknowledge
-    return `/articles/whisky/knowledge/${slug}`;
+    // デフォルトはbrands（銘柄紹介）
+    return `/articles/whisky/brands/${slug}`;
   }
   
   // 日本茶カテゴリの記事の場合
