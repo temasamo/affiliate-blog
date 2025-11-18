@@ -138,7 +138,7 @@ export default function JapaneseSake({ brandArticles, knowledgeArticles }: Japan
             <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-8 border border-amber-200">
               <div className="text-center">
                 <div className="text-4xl mb-4">🤖</div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">日本酒コンシェルジュAI</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">日本酒診断AI（開発中）</h2>
                 <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
                   あなたの好みやシーンに合わせて、最適な日本酒を提案します。
                   初心者から上級者まで、誰でも簡単に使える診断AIです。
