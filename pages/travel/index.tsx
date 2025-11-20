@@ -47,7 +47,7 @@ export async function getStaticProps() {
   const slugs = getTravelSlugs();
   const posts = slugs.map((s) => {
     const { frontMatter, slug } = getTravelPostBySlug(s);
-    return { slug: s, ...frontMatter } as any; // ファイルパス（s）を使用
+    return { ...frontMatter, slug: s } as any; // ファイルパス（s）を優先して使用
   });
   posts.sort((a: any, b: any) => (a.date < b.date ? 1 : -1));
   return { props: { posts } };
