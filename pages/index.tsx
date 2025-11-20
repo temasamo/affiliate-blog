@@ -204,6 +204,9 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
                     if (slug === "ai-learning-support-apps") {
                       return `/articles/ai-apps/recommend/2025-11-12-ai-learning-support-apps`;
                     }
+                    if (slug === "ai-productivity-apps") {
+                      return `/articles/ai-apps/recommend/2025-11-20-ai-productivity-apps`;
+                    }
                     return `/articles/ai-apps/recommend/${slug}`;
                   };
                   
@@ -616,17 +619,24 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
 
   // 新着記事を取得（旅行記事を除外）
   const latest = await getLatestPosts(50); // より多くの記事を取得
+  console.log('getLatestPosts result:', latest.slice(0, 5).map(p => ({ slug: p.slug, category: p.category, date: p.date })));
   const nonTravelLatest = latest.filter(post => post.category !== '旅行' && post.category !== '旅行・観光' && post.category !== '温泉地ガイド');
   
   // 旅行記事も新着記事に含める
   const allLatestPosts = [...nonTravelLatest, ...travelPosts];
   
-  // 重複を除去（slugとtitleの組み合わせでユニークにする）
+  // 重複を除去（slugとcategoryの組み合わせでユニークにする）
   const uniqueLatestPosts = allLatestPosts.filter((post, index, self) => 
-    index === self.findIndex(p => p.slug === post.slug && p.title === post.title)
+    index === self.findIndex(p => p.slug === post.slug && (p.category === post.category || (!p.category && !post.category)))
   );
   
-  uniqueLatestPosts.sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  uniqueLatestPosts.sort((a: any, b: any) => {
+    const da = a.date ? new Date(a.date).getTime() : 0;
+    const db = b.date ? new Date(b.date).getTime() : 0;
+    return db - da;
+  });
+  
+  console.log('uniqueLatestPosts result:', uniqueLatestPosts.slice(0, 5).map(p => ({ slug: p.slug, category: p.category, date: p.date })));
 
   return {
     props: {

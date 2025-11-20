@@ -196,6 +196,9 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "ai-learning-support-apps") {
       return `/articles/ai-apps/recommend/2025-11-12-ai-learning-support-apps`;
     }
+    if (slug === "ai-productivity-apps") {
+      return `/articles/ai-apps/recommend/2025-11-20-ai-productivity-apps`;
+    }
     
     // subcategoryから推測してサブディレクトリを決定
     if (subcategory === "おすすめAIアプリ") {
@@ -268,12 +271,19 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
 }
 
 export default function LatestPosts({ items }: { items: Item[] }) {
-  if (!items?.length) return null;
+  if (!items?.length) {
+    console.log('LatestPosts: items is empty or undefined', items);
+    return null;
+  }
+
+  console.log('LatestPosts: received items', items.slice(0, 5).map(i => ({ slug: i.slug, category: i.category, date: i.date })));
 
   // 重複を除去（slugとcategoryの組み合わせでユニークにする）
   const uniqueItems = items.filter((item, index, self) => 
     index === self.findIndex(t => t.slug === item.slug && t.category === item.category)
   );
+  
+  console.log('LatestPosts: uniqueItems', uniqueItems.slice(0, 5).map(i => ({ slug: i.slug, category: i.category, date: i.date })));
 
   return (
     <section className="mt-8 md:mt-10">
