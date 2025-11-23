@@ -91,9 +91,11 @@ export const getStaticProps: GetStaticProps = async () => {
   const allArticles = getAllPosts();
   
   // ウイスキー知識カテゴリの記事のみをフィルタリング
+  // ただし、銘柄紹介ページ（/articles/whisky/brands/）の記事は除外
   const whiskyKnowledgeArticles = allArticles.filter(article => 
     article.category === 'ウイスキー知識' && 
-    article.published === true
+    article.published === true &&
+    !article.href.startsWith('/articles/whisky/brands/')
   );
 
   // 日付でソート（新しい順）
