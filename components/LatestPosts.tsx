@@ -199,6 +199,9 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "ai-productivity-apps") {
       return `/articles/ai-apps/recommend/2025-11-20-ai-productivity-apps`;
     }
+    if (slug === "ai-models-2025-comparison") {
+      return `/articles/ai-apps/recommend/2025-11-24-ai-models-2025-comparison`;
+    }
     
     // subcategoryから推測してサブディレクトリを決定
     if (subcategory === "おすすめAIアプリ") {
