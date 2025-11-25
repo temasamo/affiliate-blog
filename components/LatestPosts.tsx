@@ -237,13 +237,16 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
   }
   
   // ウイスキーカテゴリの記事の場合
-  if (category === "ウイスキー知識" || category === "ウイスキー") {
+  if (category === "ウイスキー知識" || category === "ウイスキー" || category === "ウイスキー基礎知識") {
     // 特定の記事の修正
     if (slug === "yamazaki-hakushu") {
       return `/articles/whisky/brands/2025-11-12-yamazaki-hakushu`;
     }
     if (slug === "nikka-three-pillars") {
       return `/articles/whisky/brands/2025-11-12-nikka-three-pillars`;
+    }
+    if (slug === "why-yamazaki-hakushu-shortage-part1") {
+      return `/articles/whisky/knowledge/2025-11-25-why-yamazaki-hakushu-shortage-part1`;
     }
     // subcategoryから推測してサブディレクトリを決定
     if (subcategory === "知識") {
