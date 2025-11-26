@@ -248,6 +248,9 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "why-yamazaki-hakushu-shortage-part1") {
       return `/articles/whisky/knowledge/2025-11-25-why-yamazaki-hakushu-shortage-part1`;
     }
+    if (slug === "why-yamazaki-hakushu-shortage-part2") {
+      return `/articles/whisky/knowledge/2025-11-26-why-yamazaki-hakushu-shortage-part2`;
+    }
     // subcategoryから推測してサブディレクトリを決定
     if (subcategory === "知識") {
       return `/articles/whisky/knowledge/${slug}`;
