@@ -22,6 +22,7 @@ export async function toSakeMdx(source: string) {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [
+        rehypeRaw, // HTMLタグ（aタグ、imgタグなど）を処理
         rehypeSlug,
         rehypeAutolinkHeadings,
       ],
