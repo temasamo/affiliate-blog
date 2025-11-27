@@ -1175,7 +1175,8 @@ function getCategoryName(category: string): string {
     'popularproducts-overseas': '海外トレンド',
     '海外トレンド': '海外トレンド',
     'japaneseproducts-popular-with-foreigners': '人気の日本商品',
-    'global-hot-picks': 'Global Hot Picks'
+    'global-hot-picks': 'Global Hot Picks',
+    'general-knowledge': '一般教養'
   };
   return categoryNames[category] || category;
 }
@@ -1211,7 +1212,8 @@ function getCategoryLink(category: string, type?: string): string {
     '海外トレンド': '/overseas-trend',
     'japaneseproducts-popular-with-foreigners': '/japan-popular',
     'global-hot-picks': '/global-hot-picks',
-    'japanesesake': type === 'knowledge' ? '/articles/japanesesake/knowledge' : '/articles/japanesesake/brands'
+    'japanesesake': type === 'knowledge' ? '/articles/japanesesake/knowledge' : '/articles/japanesesake/brands',
+    'general-knowledge': type === 'knowledge' ? '/articles/general-knowledge/knowledge' : '/articles/general-knowledge/knowledge'
   };
   return categoryLinks[category] || '/';
 }

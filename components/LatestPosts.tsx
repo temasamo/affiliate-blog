@@ -199,9 +199,6 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "ai-productivity-apps") {
       return `/articles/ai-apps/recommend/2025-11-20-ai-productivity-apps`;
     }
-    if (slug === "ai-models-2025-comparison") {
-      return `/articles/ai-apps/recommend/2025-11-24-ai-models-2025-comparison`;
-    }
     
     // subcategoryから推測してサブディレクトリを決定
     if (subcategory === "おすすめAIアプリ") {
@@ -237,19 +234,13 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
   }
   
   // ウイスキーカテゴリの記事の場合
-  if (category === "ウイスキー知識" || category === "ウイスキー" || category === "ウイスキー基礎知識") {
+  if (category === "ウイスキー知識" || category === "ウイスキー") {
     // 特定の記事の修正
     if (slug === "yamazaki-hakushu") {
       return `/articles/whisky/brands/2025-11-12-yamazaki-hakushu`;
     }
     if (slug === "nikka-three-pillars") {
       return `/articles/whisky/brands/2025-11-12-nikka-three-pillars`;
-    }
-    if (slug === "why-yamazaki-hakushu-shortage-part1") {
-      return `/articles/whisky/knowledge/2025-11-25-why-yamazaki-hakushu-shortage-part1`;
-    }
-    if (slug === "why-yamazaki-hakushu-shortage-part2") {
-      return `/articles/whisky/knowledge/2025-11-26-why-yamazaki-hakushu-shortage-part2`;
     }
     // subcategoryから推測してサブディレクトリを決定
     if (subcategory === "知識") {
@@ -281,6 +272,20 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     }
     // その他のイベント記事は一般的なパス
     return `/articles/events/${slug}`;
+  }
+  
+  // 一般教養カテゴリの記事の場合
+  if (category === "一般教養" || category === "general-knowledge") {
+    // slugがファイル名形式（例: "2025-11-27-japan-doge"）の場合はそのまま使用
+    if (slug.includes("2025-")) {
+      return `/articles/general-knowledge/knowledge/${slug}`;
+    }
+    // slugが短い形式（例: "japan-doge"）の場合、ファイル名を推測
+    // 実際のファイル名は "2025-11-27-japan-doge" のような形式を想定
+    // ただし、正確なファイル名が分からない場合は、slugをそのまま使用
+    // 記事詳細ページのgetStaticPathsがファイル名から生成するため、
+    // ここではslugをそのまま使用し、実際のファイル名と一致させる必要がある
+    return `/articles/general-knowledge/knowledge/${slug}`;
   }
   
   // その他の記事は一般的なパス

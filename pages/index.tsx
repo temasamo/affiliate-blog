@@ -207,9 +207,6 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
                     if (slug === "ai-productivity-apps") {
                       return `/articles/ai-apps/recommend/2025-11-20-ai-productivity-apps`;
                     }
-                    if (slug === "ai-models-2025-comparison") {
-                      return `/articles/ai-apps/recommend/2025-11-24-ai-models-2025-comparison`;
-                    }
                     return `/articles/ai-apps/recommend/${slug}`;
                   };
                   
@@ -490,7 +487,8 @@ function getCategoryDisplayName(category: string): string {
     'popularproducts-overseas': '海外トレンド',
     '海外トレンド': '海外トレンド',
     'japaneseproducts-popular-with-foreigners': '人気の日本商品',
-    'global-hot-picks': 'Global Hot Picks'
+    'global-hot-picks': 'Global Hot Picks',
+    'general-knowledge': '一般教養'
   };
   return categoryNames[category] || category;
 }
@@ -547,7 +545,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   }
 
   // 全カテゴリの記事を取得（global-hot-picksも含める）
-  const categories = ['sleep-health', 'japanesetea', 'japanesesake', 'ai-apps', 'popularproducts-overseas', '海外トレンド', 'japaneseproducts-popular-with-foreigners', 'global-hot-picks', 'whisky'];
+  const categories = ['sleep-health', 'japanesetea', 'japanesesake', 'ai-apps', 'popularproducts-overseas', '海外トレンド', 'japaneseproducts-popular-with-foreigners', 'global-hot-picks', 'whisky', 'general-knowledge'];
   
   categories.forEach(category => {
     const categoryPath = path.join(articlesDirectory, category);

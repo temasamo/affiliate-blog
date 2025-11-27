@@ -11,6 +11,7 @@ export const CATEGORY_LABELS: Record<string, string> = {
   "diagnostic-ai": "診断AI",
   "education": "教育",
   "travel": "旅行",
+  "general-knowledge": "一般教養",
 };
 
 export function deriveCategory(p: any): string | null {
