@@ -1,6 +1,8 @@
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import { getAllPosts } from '../../../../lib/posts';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 import Header from '../../../../components/Header';
 
 interface Article {
@@ -88,16 +90,38 @@ export default function KnowledgeIndex({ articles }: KnowledgeIndexProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allArticles = getAllPosts();
+  const articlesDirectory = path.join(process.cwd(), 'articles/whisky/knowledge');
+  const articles: Article[] = [];
   
-  // ウイスキー知識カテゴリの記事のみをフィルタリング
-  const whiskyKnowledgeArticles = allArticles.filter(article => 
-    article.category === 'ウイスキー知識' && 
-    article.published === true
-  );
+  if (fs.existsSync(articlesDirectory)) {
+    const files = fs.readdirSync(articlesDirectory).filter(f => f.endsWith('.mdx') || f.endsWith('.md'));
+    files.forEach(file => {
+      const filePath = path.join(articlesDirectory, file);
+      const fileContents = fs.readFileSync(filePath, 'utf8');
+      const { data: frontMatter } = matter(fileContents);
+      
+      // publishedがfalseの場合はスキップ
+      if (frontMatter.published === false) {
+        return;
+      }
+      
+      // ファイル名ベースのslugを使用（ルーティングがファイル名ベースのため）
+      const fileBasedSlug = file.replace(/\.(md|mdx)$/, '');
+      
+      articles.push({
+        slug: fileBasedSlug,
+        title: frontMatter.title || '記事タイトル',
+        description: frontMatter.description || '記事の説明',
+        date: frontMatter.date || '2025.01.01',
+        category: frontMatter.category || 'ウイスキー知識',
+        tags: frontMatter.tags || [],
+        published: frontMatter.published !== false
+      });
+    });
+  }
 
   // 日付でソート（新しい順）
-  const sortedArticles = whiskyKnowledgeArticles.sort((a, b) => 
+  const sortedArticles = articles.sort((a, b) => 
     new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
