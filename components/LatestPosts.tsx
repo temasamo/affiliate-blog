@@ -328,9 +328,36 @@ export default function LatestPosts({ items }: { items: Item[] }) {
   console.log('LatestPosts: received items', items.slice(0, 5).map(i => ({ slug: i.slug, category: i.category, date: i.date })));
 
   // 重複を除去（slugとcategoryの組み合わせでユニークにする）
-  const uniqueItems = items.filter((item, index, self) => 
-    index === self.findIndex(t => t.slug === item.slug && t.category === item.category)
-  );
+  // 同じ記事を指す異なるslug（例: tokyo-tower-roppongi-illumination と others/2025-11-tokyo-winter-illumination）も除去
+  const uniqueItems = items.filter((item, index, self) => {
+    // 同じslugとcategoryの組み合わせで既に存在する場合は除去
+    const isDuplicateBySlug = index !== self.findIndex(t => 
+      t.slug === item.slug && t.category === item.category
+    );
+    
+    if (isDuplicateBySlug) {
+      return false;
+    }
+    
+    // 同じ記事を指す異なるslugを検出（ファイルパス形式のslugを優先）
+    if (item.category === '東京観光') {
+      // tokyo-tower-roppongi-illumination と others/2025-11-tokyo-winter-illumination は同じ記事
+      if (item.slug === 'tokyo-tower-roppongi-illumination') {
+        const hasFileBasedSlug = self.some((t, idx) => 
+          idx !== index &&
+          t.slug === 'others/2025-11-tokyo-winter-illumination' && 
+          t.category === '東京観光' &&
+          t.date === item.date &&
+          t.title === item.title
+        );
+        if (hasFileBasedSlug) {
+          return false; // ファイルパス形式のslugを優先して、短いslugを除去
+        }
+      }
+    }
+    
+    return true;
+  });
   
   console.log('LatestPosts: uniqueItems', uniqueItems.slice(0, 5).map(i => ({ slug: i.slug, category: i.category, date: i.date })));
 

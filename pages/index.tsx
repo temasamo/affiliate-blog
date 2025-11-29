@@ -612,15 +612,47 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   // 新着記事を取得（旅行記事を除外）
   const latest = await getLatestPosts(50); // より多くの記事を取得
   console.log('getLatestPosts result:', latest.slice(0, 5).map(p => ({ slug: p.slug, category: p.category, date: p.date })));
-  const nonTravelLatest = latest.filter(post => post.category !== '旅行' && post.category !== '旅行・観光' && post.category !== '温泉地ガイド');
+  const nonTravelLatest = latest.filter(post => 
+    post.category !== '旅行' && 
+    post.category !== '旅行・観光' && 
+    post.category !== '温泉地ガイド' &&
+    post.category !== '東京観光' // 東京観光も除外（travelPostsに含まれるため）
+  );
   
   // 旅行記事も新着記事に含める
   const allLatestPosts = [...nonTravelLatest, ...travelPosts];
   
   // 重複を除去（slugとcategoryの組み合わせでユニークにする）
-  const uniqueLatestPosts = allLatestPosts.filter((post, index, self) => 
-    index === self.findIndex(p => p.slug === post.slug && (p.category === post.category || (!p.category && !post.category)))
-  );
+  // 同じ記事を指す異なるslug（例: tokyo-tower-roppongi-illumination と others/2025-11-tokyo-winter-illumination）も除去
+  const uniqueLatestPosts = allLatestPosts.filter((post, index, self) => {
+    // 同じslugとcategoryの組み合わせで既に存在する場合は除去
+    const isDuplicateBySlug = index !== self.findIndex(p => 
+      p.slug === post.slug && (p.category === post.category || (!p.category && !post.category))
+    );
+    
+    if (isDuplicateBySlug) {
+      return false;
+    }
+    
+    // 同じ記事を指す異なるslugを検出（ファイルパス形式のslugを優先）
+    if (post.category === '東京観光') {
+      // tokyo-tower-roppongi-illumination と others/2025-11-tokyo-winter-illumination は同じ記事
+      if (post.slug === 'tokyo-tower-roppongi-illumination') {
+        const hasFileBasedSlug = self.some((p, idx) => 
+          idx !== index &&
+          p.slug === 'others/2025-11-tokyo-winter-illumination' && 
+          p.category === '東京観光' &&
+          p.date === post.date &&
+          p.title === post.title
+        );
+        if (hasFileBasedSlug) {
+          return false; // ファイルパス形式のslugを優先して、短いslugを除去
+        }
+      }
+    }
+    
+    return true;
+  });
   
   uniqueLatestPosts.sort((a: any, b: any) => {
     const da = a.date ? new Date(a.date).getTime() : 0;
