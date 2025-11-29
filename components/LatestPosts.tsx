@@ -242,6 +242,28 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "nikka-three-pillars") {
       return `/articles/whisky/brands/2025-11-12-nikka-three-pillars`;
     }
+    // global-major-whiskies-part1のファイル名ベースのパスに変換
+    if (slug === "global-major-whiskies-part1") {
+      return `/articles/whisky/knowledge/2025-11-29-global-major-whiskies-part1`;
+    }
+    // why-yamazaki-hakushu-shortage-part1のファイル名ベースのパスに変換
+    if (slug === "why-yamazaki-hakushu-shortage-part1" || slug.includes("why-yamazaki-hakushu-shortage-part1")) {
+      return `/articles/whisky/knowledge/2025-11-25-why-yamazaki-hakushu-shortage-part1`;
+    }
+    // why-yamazaki-hakushu-shortage-part2のファイル名ベースのパスに変換
+    if (slug === "why-yamazaki-hakushu-shortage-part2" || slug.includes("why-yamazaki-hakushu-shortage-part2")) {
+      return `/articles/whisky/knowledge/2025-11-26-why-yamazaki-hakushu-shortage-part2`;
+    }
+    // カテゴリーが「ウイスキー知識」の場合は常にknowledgeにルーティング
+    if (category === "ウイスキー知識") {
+      // slugがファイル名形式（日付プレフィックス付き）の場合はそのまま使用
+      if (slug.includes("2025-")) {
+        return `/articles/whisky/knowledge/${slug}`;
+      }
+      // slugが短い形式の場合は、ファイル名を推測する必要がある
+      // ただし、正確なファイル名が分からない場合は、slugをそのまま使用
+      return `/articles/whisky/knowledge/${slug}`;
+    }
     // subcategoryから推測してサブディレクトリを決定
     if (subcategory === "知識") {
       return `/articles/whisky/knowledge/${slug}`;
