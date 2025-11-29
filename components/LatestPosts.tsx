@@ -11,8 +11,8 @@ type Item = {
 
 // 記事のパスを生成する関数
 function getArticlePath(slug: string, category: string, subcategory?: string): string {
-  // 旅行記事の場合（カテゴリが"旅行"、"旅行・観光"、"旅館・温泉"などの旅行関連）
-  if (category === "旅行" || category === "旅行・観光" || category === "旅館・温泉" || category === "travel" || slug.includes("ryokan") || slug.includes("travel")) {
+  // 旅行記事の場合（カテゴリが"旅行"、"旅行・観光"、"旅館・温泉"、"東京観光"などの旅行関連）
+  if (category === "旅行" || category === "旅行・観光" || category === "旅館・温泉" || category === "東京観光" || category === "travel" || slug.includes("ryokan") || slug.includes("travel")) {
     // 名月荘の記事の特別処理
     if (slug === "meigetsuso-part1") {
       return `/travel/ryokan/2025-10-15-meigetsuso-part1`;
@@ -30,6 +30,11 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     }
     if (slug === "koyo-renewal" || slug.includes("koyo-renewal") || slug === "2025-11-01-koyo-renewal" || slug.includes("2025-11-01-koyo-renewal")) {
       return `/travel/ryokan/2025-11-01-koyo-renewal`;
+    }
+    
+    // 東京タワー・六本木イルミネーション記事の特別処理
+    if (slug === "tokyo-tower-roppongi-illumination") {
+      return `/travel/others/2025-11-tokyo-winter-illumination`;
     }
     
     // ファイルパス形式のslugを処理（例: "ryokan/2025-11-01-koyo-renewal", "others/2025-11-10-fujigoko-petstay"）
