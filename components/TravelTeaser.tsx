@@ -5,8 +5,6 @@ type Props = { posts?: any[] };
 export default function TravelTeaser({ posts = [] }: Props) {
   if (!Array.isArray(posts) || posts.length === 0) return null;
 
-  const enableVideo = process.env.NEXT_PUBLIC_TRAVEL_TEASER_BG_VIDEO === "true";
-
   return (
     <section className="my-10">
       <div className="mb-4 flex items-baseline justify-between">
@@ -21,38 +19,18 @@ export default function TravelTeaser({ posts = [] }: Props) {
              <div className="relative overflow-hidden rounded-3xl border shadow-sm
                              min-h-[260px] sm:min-h-[320px] lg:min-h-[380px]">
 
-               {/* BG Image/Video */}
-               {enableVideo ? (
-                 <div aria-hidden className="absolute inset-0">
-                   <video
-                     className="h-full w-full object-cover"
-                     autoPlay
-                     muted
-                     loop
-                     playsInline
-                     poster="/media/travel-teaser.jpg"
-                   >
-                     <source src="/media/travel-autumn.mp4" type="video/mp4" />
-                   </video>
-
-                   {/* 可読性を保つ薄い暗幕＋下部グラデ */}
-                   <div className="absolute inset-0 bg-black/20" />
-                   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28
-                                   bg-gradient-to-t from-black/35 to-transparent" />
-                 </div>
-               ) : (
-                 <div aria-hidden className="absolute inset-0">
-                   <img
-                     src="/media/travel-teaser.jpg"
-                     alt="Travel background"
-                     className="h-full w-full object-cover"
-                   />
-                   {/* 画像用のオーバーレイ */}
-                   <div className="absolute inset-0 bg-black/30" />
-                   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32
-                                   bg-gradient-to-t from-black/50 to-transparent" />
-                 </div>
-               )}
+               {/* BG Image */}
+               <div aria-hidden className="absolute inset-0">
+                 <img
+                   src="/media/travel-teaser-winter.jpg"
+                   alt="Travel background"
+                   className="h-full w-full object-cover"
+                 />
+                 {/* 画像用のオーバーレイ */}
+                 <div className="absolute inset-0 bg-black/30" />
+                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32
+                                 bg-gradient-to-t from-black/50 to-transparent" />
+               </div>
 
         {/* コンテンツ層 */}
         <div className="relative h-full p-4 sm:p-6 lg:p-8">

@@ -98,58 +98,7 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
           <LatestPosts items={latest.slice(0, 5)} />
         </div>
 
-        {/* 枕診断AIシリーズ特集 */}
-        <section className="mb-12">
-          <div className="relative bg-gradient-to-r from-blue-200 to-indigo-200 border border-blue-400 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
-            {/* 背景画像 */}
-            <div className="absolute inset-0 opacity-10 pointer-events-none">
-              <img 
-                src="/images/pillow-back.jpg" 
-                alt="枕診断AI背景" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            {/* コンテンツ */}
-            <div className="relative z-10">
-              <div className="flex items-center mb-6">
-                <div className="bg-blue-500 text-white p-2 rounded-full mr-3">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900">枕診断AI</h3>
-                  <p className="text-sm text-gray-600">科学的根拠に基づく枕選びの新時代</p>
-                </div>
-              </div>
-              
-              {/* 2つのボタン */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link 
-                  href="https://mm-diagnosis-pillow.vercel.app/pillow" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-pink-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                >
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                  枕診断AIページへ
-                </Link>
-                <Link 
-                  href="/guides" 
-                  className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
-                >
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                  枕診断AIと枕について
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* 旅行の新着記事（Global Hot Picksの上に固定配置） */}
+        {/* 旅行の新着記事 */}
         <TravelTeaser posts={travelPosts} />
 
         {/* AIアプリ情報セクション */}
@@ -272,33 +221,54 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
           </div>
         </section>
 
-        {/* Global Hot Picks セクション */}
-        <section className="mb-12 sm:mb-16">
-          <div className="flex items-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Global Hot Picks</h2>
-            <span className="ml-3 bg-purple-500 text-white text-xs px-3 py-1 rounded-full font-medium">TREND</span>
-          </div>
-          <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-6 sm:p-8 border border-purple-100">
-            <div className="text-center mb-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">海外で急上昇中の商品</h3>
-              <p className="text-gray-600">TikTok・Amazon US・Google Trendsで話題の最新アイテム</p>
+        {/* 枕診断AIシリーズ特集 */}
+        <section className="mb-12">
+          <div className="relative bg-gradient-to-r from-blue-200 to-indigo-200 border border-blue-400 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+            {/* 背景画像 */}
+            <div className="absolute inset-0 opacity-10 pointer-events-none">
+              <img 
+                src="/images/pillow-back.jpg" 
+                alt="枕診断AI背景" 
+                className="w-full h-full object-cover"
+              />
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-              {latestArticles.filter(article => article.category === 'global-hot-picks').slice(0, 3).map((article, index) => (
-                <Link key={index} href={`/articles/global-hot-picks/trend/${article.slug}`} className="block bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-2xl mb-2">🔥</div>
-                  <h4 className="font-semibold text-gray-900 mb-1">{article.title.replace('Global Hot Picks｜', '')}</h4>
-                  <p className="text-sm text-gray-600">{article.description}</p>
+            {/* コンテンツ */}
+            <div className="relative z-10">
+              <div className="flex items-center mb-6">
+                <div className="bg-blue-500 text-white p-2 rounded-full mr-3">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900">枕診断AI</h3>
+                  <p className="text-sm text-gray-600">科学的根拠に基づく枕選びの新時代</p>
+                </div>
+              </div>
+              
+              {/* 2つのボタン */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Link 
+                  href="https://mm-diagnosis-pillow.vercel.app/pillow" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-pink-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  枕診断AIページへ
                 </Link>
-              ))}
-            </div>
-            <div className="text-center">
-              <Link href="/global-hot-picks" className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition-colors">
-                トレンド一覧へ
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
+                <Link 
+                  href="/guides" 
+                  className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                  枕診断AIと枕について
+                </Link>
+              </div>
             </div>
           </div>
         </section>
@@ -326,25 +296,10 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
               overlayColor="bg-black/40"
             />
             <CategoryCard
-              title="海外トレンド"
-              subtitle="Deep-Dive Overseas Trend"
-              description="海外で話題の商品を日本で"
-              href="/overseas-trend"
-              bgImage="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400&h=300&fit=crop&crop=center"
-              overlayColor="bg-black/40"
-            />
-            <CategoryCard
               title="日本酒"
               description="銘柄紹介・知識・コンシェルジュAI"
               href="/japanese-sake"
-              bgImage="https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=400&h=300&fit=crop&crop=center"
-              overlayColor="bg-black/40"
-            />
-            <CategoryCard
-              title="人気の日本商品"
-              description="国内で注目のアイテム"
-              href="/japan-popular"
-              bgImage="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400&h=300&fit=crop&crop=center"
+              bgImage="/images/categories/sake-back.jpg"
               overlayColor="bg-black/40"
             />
             <CategoryCard
@@ -355,6 +310,42 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
               bgImage="/videos/categories/ai-apps-hero.mp4"
               overlayColor="bg-gradient-to-br from-blue-500/60 to-purple-600/60"
               isVideo={true}
+            />
+            <CategoryCard
+              title="ウイスキー"
+              description="銘柄紹介・知識・選び方ガイド"
+              href="/articles/whisky/knowledge"
+              bgImage="/images/categories/whisky-bg.jpg"
+              overlayColor="bg-black/40"
+            />
+            <CategoryCard
+              title="イベント"
+              description="季節のイベント・おすすめ情報"
+              href="/events"
+              bgImage="https://images.unsplash.com/photo-1511578314322-379afb476865?w=400&h=300&fit=crop&crop=center"
+              overlayColor="bg-black/40"
+            />
+            <CategoryCard
+              title="一般教養"
+              description="知識・教養・時事解説"
+              href="/articles/general-knowledge/knowledge"
+              bgImage="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop&crop=center"
+              overlayColor="bg-black/40"
+            />
+            <CategoryCard
+              title="海外トレンド"
+              subtitle="Deep-Dive Overseas Trend"
+              description="海外で話題の商品を日本で"
+              href="/overseas-trend"
+              bgImage="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400&h=300&fit=crop&crop=center"
+              overlayColor="bg-black/40"
+            />
+            <CategoryCard
+              title="人気の日本商品"
+              description="国内で注目のアイテム"
+              href="/japan-popular"
+              bgImage="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400&h=300&fit=crop&crop=center"
+              overlayColor="bg-black/40"
             />
             <CategoryCard
               title="Global Hot Picks"
