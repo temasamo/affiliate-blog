@@ -37,6 +37,11 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
       return `/travel/others/2025-11-tokyo-winter-illumination`;
     }
     
+    // 恵比寿イルミネーション記事の特別処理
+    if (slug === "ebisu-winter-illumination") {
+      return `/travel/others/2025-11-ebisu-winter-illumination`;
+    }
+    
     // ファイルパス形式のslugを処理（例: "ryokan/2025-11-01-koyo-renewal", "others/2025-11-10-fujigoko-petstay"）
     if (slug.includes('/')) {
       return `/travel/${slug}`;
