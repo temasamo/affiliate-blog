@@ -260,6 +260,10 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "global-major-whiskies-part1") {
       return `/articles/whisky/knowledge/2025-11-29-global-major-whiskies-part1`;
     }
+    // global-major-whiskies-part2のファイル名ベースのパスに変換
+    if (slug === "global-major-whiskies-part2" || slug.includes("global-major-whiskies-part2")) {
+      return `/articles/whisky/knowledge/2025-12-02-global-major-whiskies-part2`;
+    }
     // why-yamazaki-hakushu-shortage-part1のファイル名ベースのパスに変換
     if (slug === "why-yamazaki-hakushu-shortage-part1" || slug.includes("why-yamazaki-hakushu-shortage-part1")) {
       return `/articles/whisky/knowledge/2025-11-25-why-yamazaki-hakushu-shortage-part1`;
