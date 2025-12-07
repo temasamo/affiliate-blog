@@ -285,6 +285,10 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "why-yamazaki-hakushu-shortage-part2" || slug.includes("why-yamazaki-hakushu-shortage-part2")) {
       return `/articles/whisky/knowledge/2025-11-26-why-yamazaki-hakushu-shortage-part2`;
     }
+    // jimbeam-smoky-highballのファイル名ベースのパスに変換
+    if (slug === "jimbeam-smoky-highball" || slug.includes("jimbeam-smoky-highball")) {
+      return `/articles/whisky/knowledge/2025-12-07-jimbeam-smoky-highball`;
+    }
     // カテゴリーが「ウイスキー知識」の場合は常にknowledgeにルーティング
     if (category === "ウイスキー知識") {
       // slugがファイル名形式（日付プレフィックス付き）の場合はそのまま使用

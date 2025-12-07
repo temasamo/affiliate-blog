@@ -63,7 +63,16 @@ export async function toWhiskyMdx(source: string) {
     parseFrontmatter: false,
     mdxOptions: {
       remarkPlugins: [remarkGfm],
-      rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+      rehypePlugins: [
+        [
+          rehypeRaw,
+          {
+            passThrough: ['mdxJsxFlowElement', 'mdxJsxTextElement'], // JSX要素をパススルー
+          },
+        ],
+        rehypeSlug,
+        rehypeAutolinkHeadings,
+      ],
     },
   });
 }
