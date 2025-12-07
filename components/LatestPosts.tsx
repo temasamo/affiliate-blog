@@ -337,6 +337,10 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug.includes("2025-")) {
       return `/articles/general-knowledge/knowledge/${slug}`;
     }
+    // aws-ainfra-impactのファイル名ベースのパスに変換
+    if (slug === "aws-ainfra-impact" || slug.includes("aws-ainfra-impact")) {
+      return `/articles/general-knowledge/knowledge/2025-12-08-aws-ainfra-impact`;
+    }
     // slugが短い形式（例: "japan-doge"）の場合、ファイル名を推測
     // 実際のファイル名は "2025-11-27-japan-doge" のような形式を想定
     // ただし、正確なファイル名が分からない場合は、slugをそのまま使用
