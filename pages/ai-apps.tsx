@@ -42,6 +42,9 @@ function getAiAppsArticleLink(slug: string, type: string): string {
   if (slug === "ai-learning-support-apps") {
     return `/articles/ai-apps/recommend/2025-11-12-ai-learning-support-apps`;
   }
+  if (slug === "ai-kakeibo-2025") {
+    return `/articles/ai-apps/recommend/2025-12-11-ai-kakeibo-2025`;
+  }
   // slugが既にファイル名形式（日付プレフィックス付き）の場合はそのまま使用
   if (slug.match(/^\d{4}-\d{2}-\d{2}-/)) {
     return `/articles/ai-apps/${type}/${slug}`;

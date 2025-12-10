@@ -156,6 +156,9 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
                     if (slug === "ai-productivity-apps") {
                       return `/articles/ai-apps/recommend/2025-11-20-ai-productivity-apps`;
                     }
+                    if (slug === "ai-kakeibo-2025") {
+                      return `/articles/ai-apps/recommend/2025-12-11-ai-kakeibo-2025`;
+                    }
                     return `/articles/ai-apps/recommend/${slug}`;
                   };
                   
