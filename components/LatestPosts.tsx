@@ -293,6 +293,10 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "jimbeam-smoky-highball" || slug.includes("jimbeam-smoky-highball")) {
       return `/articles/whisky/knowledge/2025-12-07-jimbeam-smoky-highball`;
     }
+    // white-kaku-highball-review のファイル名ベースのパスに変換
+    if (slug === "white-kaku-highball-review" || slug.includes("white-kaku-highball-review")) {
+      return `/articles/whisky/knowledge/2025-12-10-white-kaku-highball-review`;
+    }
     // カテゴリーが「ウイスキー知識」の場合は常にknowledgeにルーティング
     if (category === "ウイスキー知識") {
       // slugがファイル名形式（日付プレフィックス付き）の場合はそのまま使用
