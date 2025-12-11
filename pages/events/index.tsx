@@ -121,6 +121,36 @@ export default function EventsPage() {
                   </p>
                 </div>
               </Link>
+
+              {/* クリスマス・誕生日ギフト記事 */}
+              <Link 
+                href="/articles/events/seasonal/christmas-birthday-beauty-gift-2025" 
+                className="group block bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden hover:-translate-y-1"
+              >
+                <div className="aspect-w-16 aspect-h-9 bg-gradient-to-br from-pink-50 via-rose-50 to-amber-50">
+                  <div className="flex items-center justify-center">
+                    <svg className="w-16 h-16 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 1.343-3 3 0 2.25 3 5 3 5s3-2.75 3-5c0-1.657-1.343-3-3-3z" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="inline-flex items-center rounded-full border border-gray-300 px-2.5 py-1 text-xs font-medium bg-gray-50 text-gray-700">
+                      イベント
+                    </span>
+                    <time className="text-xs text-gray-500" dateTime="2025-12-05">
+                      2025-12-05
+                    </time>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    2025年クリスマス＆誕生日に贈りたい美容ギフト
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    乾燥する冬に「うるおい」を贈る。肌にやさしい保湿ギフト「アクアジェル プレミアム」を紹介。
+                  </p>
+                </div>
+              </Link>
             </div>
           </div>
         </div>

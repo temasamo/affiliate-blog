@@ -338,6 +338,9 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "osechi") {
       return `/articles/events/seasonal/new-year/${slug}`;
     }
+    if (slug === "christmas-birthday-beauty-gift-2025") {
+      return `/articles/events/seasonal/${slug}`;
+    }
     // その他のイベント記事は一般的なパス
     return `/articles/events/${slug}`;
   }
