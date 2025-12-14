@@ -304,6 +304,10 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "white-kaku-highball-review" || slug.includes("white-kaku-highball-review")) {
       return `/articles/whisky/knowledge/2025-12-10-white-kaku-highball-review`;
     }
+    // teachers-true-smoky-highball のファイル名ベースのパスに変換
+    if (slug === "teachers-true-smoky-highball" || slug.includes("teachers-true-smoky-highball")) {
+      return `/articles/whisky/knowledge/2025-12-14-teachers-true-smoky-highball`;
+    }
     // カテゴリーが「ウイスキー知識」の場合は常にknowledgeにルーティング
     if (category === "ウイスキー知識") {
       // slugがファイル名形式（日付プレフィックス付き）の場合はそのまま使用
