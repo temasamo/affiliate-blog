@@ -367,6 +367,10 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "country-risk-china-recent-tensions" || slug.includes("country-risk-china-recent-tensions")) {
       return `/articles/general-knowledge/knowledge/2025-12-12-country-risk-china-recent-tensions`;
     }
+    // country-risk-china-4-typesのファイル名ベースのパスに変換
+    if (slug === "country-risk-china-4-types" || slug.includes("country-risk-china-4-types")) {
+      return `/articles/general-knowledge/knowledge/2025-12-14-country-risk-china-4-types`;
+    }
     // slugが短い形式（例: "japan-doge"）の場合、ファイル名を推測
     // 実際のファイル名は "2025-11-27-japan-doge" のような形式を想定
     // ただし、正確なファイル名が分からない場合は、slugをそのまま使用
