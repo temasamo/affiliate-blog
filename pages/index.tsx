@@ -594,7 +594,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
                     title: frontMatter.title || '記事タイトル',
                     description: frontMatter.description || '記事の説明',
                     date: frontMatter.date || '2025.07.01',
-                    category: category,
+                    category: frontMatter.category || category,
                     type: type
                   });
                 } catch (e) {
