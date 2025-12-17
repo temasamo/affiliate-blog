@@ -267,6 +267,10 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "modern-sake-guide-part1" || slug.includes("modern-sake-guide-part1")) {
       return `/articles/japanesesake/knowledge/2025-12-16-modern-sake-guide-part1`;
     }
+    // modern-sake-guide-part2 のファイル名ベースのパスに変換
+    if (slug === "modern-sake-guide-part2" || slug.includes("modern-sake-guide-part2")) {
+      return `/articles/japanesesake/knowledge/2025-12-17-modern-guide-part2`;
+    }
     // typeフィールドまたはslugから推測してサブディレクトリを決定
     if (slug.includes("knowledge") || slug.includes("kirekei") || slug.includes("2025-10-11-nihonshu-intro") || slug.includes("2025-10-12-nihonshu-history") || slug.includes("2025-10-13-nihonshu-ingredients") || slug.includes("2025-10-13-nihonshu-seimaibuai") || slug.includes("2025-10-15-nihonshu-classification") || slug.includes("2025-10-16-nihonshu-temperature") || slug.includes("2025-10-17-nihonshu-flavor") || slug.includes("2025-10-18-nihonshu-storage") || slug.includes("2025-10-23-nihonshu-tastechange") || slug.includes("2025-10-29-nihonshu-brewing-methods") || slug.includes("2025-10-30-nihonshu-nama-vs-hiire") || slug.includes("2025-11-01-seimaibuai") || slug.includes("2025-11-04-nihonshu-genshu") || slug.includes("2025-11-04-nihonshu-muroka-jukusei-hiyaoroshi") || slug.includes("2025-11-11-nihonshu-") || slug.includes("2025-11-21-sake-5types-part1") || slug.includes("sake-5types") || slug.includes("sake-fruity-7brands-for-learners") || slug.includes("nihonshu-")) {
       return `/articles/japanesesake/knowledge/${slug}`;
