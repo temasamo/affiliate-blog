@@ -115,7 +115,7 @@ export const getStaticProps: GetStaticProps<KnowledgeIndexProps> = async () => {
         slug: file.replace(/\.(mdx?)$/, ''),
         title: frontMatter.title || '記事タイトル',
         description: frontMatter.description || '記事の説明',
-        date: frontMatter.date || '2025.01.01'
+        date: typeof frontMatter.date === 'string' ? frontMatter.date : (frontMatter.date ? String(frontMatter.date) : '2025.01.01')
       });
     });
   }

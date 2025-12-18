@@ -1515,10 +1515,16 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async ({ params }) =
       contentHtml = processedContent.toString();
     }
 
+    // frontMatter.dateがDateオブジェクトの場合は文字列に変換
+    const serializedFrontMatter = {
+      ...frontMatter,
+      date: typeof frontMatter.date === 'string' ? frontMatter.date : (frontMatter.date ? String(frontMatter.date) : '2025.07.01')
+    };
+
     return {
       props: {
         content: contentHtml,
-        frontMatter,
+        frontMatter: serializedFrontMatter,
         category,
         type: type || 'trend',
         post: post,

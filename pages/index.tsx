@@ -513,7 +513,8 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
           ...frontMatter,
           slug: actualSlug, 
           subcategory: frontMatter.subcategory || null, 
-          category: normalizedCategory
+          category: normalizedCategory,
+          date: typeof frontMatter.date === 'string' ? frontMatter.date : (frontMatter.date ? String(frontMatter.date) : '2025.07.01')
         };
       } catch (error) {
         console.error(`Error getting travel post for slug ${s}:`, error);
@@ -610,7 +611,10 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
 
   // 日付順でソート（新しい順）して最新3件を取得
   allArticles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  const latestArticles = allArticles.slice(0, 3);
+  const latestArticles = allArticles.slice(0, 3).map(article => ({
+    ...article,
+    date: typeof article.date === 'string' ? article.date : String(article.date || '2025.07.01')
+  }));
 
   // 新着記事を取得（旅行記事を除外）
   const latest = await getLatestPosts(50); // より多くの記事を取得
