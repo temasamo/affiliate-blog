@@ -54,6 +54,9 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "asakusa-newyear-part1" || slug.includes("asakusa-newyear-part1")) {
       return `/travel/others/2025-12-18-asakusa-newyear-part1`;
     }
+    if (slug === "asakusa-newyear-part2" || slug.includes("asakusa-newyear-part2")) {
+      return `/travel/others/2025-12-18-asakusa-new-year-part2`;
+    }
     
     // ファイルパス形式のslugを処理（例: "ryokan/2025-11-01-koyo-renewal", "others/2025-11-10-fujigoko-petstay"）
     if (slug.includes('/')) {
