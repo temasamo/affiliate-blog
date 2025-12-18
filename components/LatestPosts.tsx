@@ -47,6 +47,14 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
       return `/travel/others/2025-12-06-shinjuku-winter-illumination`;
     }
     
+    // 浅草初詣記事の特別処理
+    if (slug === "asakusa-newyear-intro" || slug.includes("asakusa-newyear-intro")) {
+      return `/travel/others/2025-12-18-asakusa-newyear-intro`;
+    }
+    if (slug === "asakusa-newyear-part1" || slug.includes("asakusa-newyear-part1")) {
+      return `/travel/others/2025-12-18-asakusa-newyear-part1`;
+    }
+    
     // ファイルパス形式のslugを処理（例: "ryokan/2025-11-01-koyo-renewal", "others/2025-11-10-fujigoko-petstay"）
     if (slug.includes('/')) {
       return `/travel/${slug}`;
