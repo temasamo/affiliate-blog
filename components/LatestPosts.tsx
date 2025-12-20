@@ -398,6 +398,22 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "toyota-china-risk-overview" || slug.includes("toyota-china-risk-overview")) {
       return `/articles/general-knowledge/knowledge/2025-12-19-toyota-chaina-risk-overview`;
     }
+    // 税制改正記事のファイル名ベースのパスに変換
+    if (slug === "tax-reform-outline-2026-individual" || slug.includes("tax-reform-outline-2026-individual")) {
+      return `/articles/general-knowledge/knowledge/2025-12-20-tax-reform-outline-2026-individual`;
+    }
+    if (slug === "tax-reform-outline-2026-corporate-state" || slug.includes("tax-reform-outline-2026-corporate-state")) {
+      return `/articles/general-knowledge/knowledge/2025-12-20-tax-reform-outline-2026-corporate-state`;
+    }
+    if (slug === "tax-reform-2026-overall-map" || slug.includes("tax-reform-2026-overall-map")) {
+      return `/articles/general-knowledge/knowledge/2025-12-20-tax-reform-2026-overall-map`;
+    }
+    if (slug === "tax-reform-2026-individual-detail" || slug.includes("tax-reform-2026-individual-detail")) {
+      return `/articles/general-knowledge/knowledge/2025-12-20-tax-reform-2026-individual-detail`;
+    }
+    if (slug === "tax-reform-2026-corporate-detail" || slug.includes("tax-reform-2026-corporate-detail")) {
+      return `/articles/general-knowledge/knowledge/2025-12-25-tax-reform-2026-corporate-detail`;
+    }
     // slugが短い形式（例: "japan-doge"）の場合、ファイル名を推測
     // 実際のファイル名は "2025-11-27-japan-doge" のような形式を想定
     // ただし、正確なファイル名が分からない場合は、slugをそのまま使用
