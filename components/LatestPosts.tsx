@@ -414,6 +414,9 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "tax-reform-2026-corporate-detail" || slug.includes("tax-reform-2026-corporate-detail")) {
       return `/articles/general-knowledge/knowledge/2025-12-25-tax-reform-2026-corporate-detail`;
     }
+    if (slug === "tax-reform-2026-global-enterprise" || slug.includes("tax-reform-2026-global-enterprise")) {
+      return `/articles/general-knowledge/knowledge/2025-12-20-tax-reform-2026-global-enterprise`;
+    }
     // slugが短い形式（例: "japan-doge"）の場合、ファイル名を推測
     // 実際のファイル名は "2025-11-27-japan-doge" のような形式を想定
     // ただし、正確なファイル名が分からない場合は、slugをそのまま使用
