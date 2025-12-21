@@ -412,7 +412,7 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
       return `/articles/general-knowledge/knowledge/2025-12-20-tax-reform-2026-individual-detail`;
     }
     if (slug === "tax-reform-2026-corporate-detail" || slug.includes("tax-reform-2026-corporate-detail")) {
-      return `/articles/general-knowledge/knowledge/2025-12-25-tax-reform-2026-corporate-detail`;
+      return `/articles/general-knowledge/knowledge/2025-12-20-tax-reform-2026-corporate-detail`;
     }
     if (slug === "tax-reform-2026-global-enterprise" || slug.includes("tax-reform-2026-global-enterprise")) {
       return `/articles/general-knowledge/knowledge/2025-12-20-tax-reform-2026-global-enterprise`;
