@@ -159,6 +159,9 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
                     if (slug === "ai-kakeibo-2025") {
                       return `/articles/ai-apps/recommend/2025-12-11-ai-kakeibo-2025`;
                     }
+                    if (slug === "ai-schedule-task-management-2026-newyear" || slug.includes("ai-schedule-task-management-2026-newyear")) {
+                      return `/articles/ai-apps/recommend/2026-01-07-ai-schedule-task-manegement-2026-newyear`;
+                    }
                     return `/articles/ai-apps/recommend/${slug}`;
                   };
                   
