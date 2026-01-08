@@ -342,7 +342,7 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     // カテゴリーが「ウイスキー知識」の場合は常にknowledgeにルーティング
     if (category === "ウイスキー知識") {
       // slugがファイル名形式（日付プレフィックス付き）の場合はそのまま使用
-      if (slug.includes("2025-")) {
+      if (slug.includes("2025-") || slug.includes("2026-")) {
         return `/articles/whisky/knowledge/${slug}`;
       }
       // slugが短い形式の場合は、ファイル名を推測する必要がある
