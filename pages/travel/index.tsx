@@ -76,13 +76,14 @@ export default function TravelIndex({ posts }: { posts: any[] }) {
     .filter((p) => (p.slug && p.slug.includes('luxury')) || p.category === '旅行ガイド')
     .sort((a, b) => (a.date > b.date ? -1 : 1));
   
-  // おすすめ個別旅館ガイド（category: "旅行" かつ subcategory: "個別旅館"、またはslugがryokan/で始まるもの、またはonsen/で始まるもの）
+  // おすすめ個別旅館ガイド（category: "旅行" かつ subcategory: "個別旅館"、またはslugがryokan/で始まるもの。onsen/で始まるものは除外）
   const individualRyokanPosts = posts
     .filter(p => {
       const isRyokanPath = p.slug && typeof p.slug === 'string' && p.slug.startsWith('ryokan/');
       const isOnsenPath = p.slug && typeof p.slug === 'string' && p.slug.startsWith('onsen/');
       const isRyokanCategory = (p.category === '旅行' || p.category === '旅館・温泉') && (p.subcategory === '個別旅館' || p.subcategory === 'おすすめ個別旅館ガイド');
-      return (isRyokanPath || isOnsenPath || isRyokanCategory) && p.published !== false;
+      // onsen/で始まる記事は除外（温泉地ガイドセクションに表示されるため）
+      return (isRyokanPath || isRyokanCategory) && !isOnsenPath && p.published !== false;
     })
     .sort((a, b) => (a.date > b.date ? -1 : 1));
   

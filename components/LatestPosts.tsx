@@ -11,8 +11,8 @@ type Item = {
 
 // 記事のパスを生成する関数
 function getArticlePath(slug: string, category: string, subcategory?: string): string {
-  // 旅行記事の場合（カテゴリが"旅行"、"旅行・観光"、"旅館・温泉"、"東京観光"などの旅行関連）
-  if (category === "旅行" || category === "旅行・観光" || category === "旅館・温泉" || category === "東京観光" || category === "travel" || slug.includes("ryokan") || slug.includes("travel")) {
+  // 旅行記事の場合（カテゴリが"旅行"、"旅行・観光"、"旅館・温泉"、"東京観光"、"温泉地ガイド"などの旅行関連）
+  if (category === "旅行" || category === "旅行・観光" || category === "旅館・温泉" || category === "東京観光" || category === "温泉地ガイド" || category === "travel" || slug.includes("ryokan") || slug.includes("travel") || slug.includes("onsen")) {
     // 名月荘の記事の特別処理
     if (slug === "meigetsuso-part1") {
       return `/travel/ryokan/2025-10-15-meigetsuso-part1`;
@@ -58,9 +58,14 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
       return `/travel/others/2025-12-18-asakusa-new-year-part2`;
     }
     
-    // ファイルパス形式のslugを処理（例: "ryokan/2025-11-01-koyo-renewal", "others/2025-11-10-fujigoko-petstay"）
+    // ファイルパス形式のslugを処理（例: "ryokan/2025-11-01-koyo-renewal", "others/2025-11-10-fujigoko-petstay", "onsen/kusatsu-onsen-guide-with-sake"）
     if (slug.includes('/')) {
       return `/travel/${slug}`;
+    }
+    
+    // 草津温泉記事の特別処理（フロントマターのslugの場合）
+    if (slug === "kusatsu-onsen-guide" || slug.includes("kusatsu-onsen-guide-with-sake")) {
+      return `/travel/onsen/kusatsu-onsen-guide-with-sake`;
     }
     
     // 温泉地ガイド記事の場合
@@ -78,7 +83,11 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
   
   // 温泉地ガイド記事の場合
   if (category === "温泉地ガイド") {
-    return `/travel/${slug}`;
+    // ファイルパス形式のslugを処理（例: "onsen/kusatsu-onsen"）
+    if (slug.includes('/')) {
+      return `/travel/${slug}`;
+    }
+    return `/travel/onsen/${slug}`;
   }
   
   // Global Hot Picksの場合

@@ -12,6 +12,8 @@ import { getTravelPostBySlug, serializeMDX } from '@/lib/mdx';
 
 export async function getStaticPaths() {
   const slugs = getAllTravelSlugs();
+  console.log("[getStaticPaths] All travel slugs:", slugs);
+  console.log("[getStaticPaths] Filtered kusatsu slugs:", slugs.filter((s: string) => s.includes('kusatsu')));
   
   // 名月荘後編の特別処理：meigetsuso-part2 のパスも追加
   const additionalPaths = [
@@ -23,9 +25,12 @@ export async function getStaticPaths() {
     ...additionalPaths
   ];
   
+  console.log("[getStaticPaths] All paths count:", allPaths.length);
+  console.log("[getStaticPaths] Kusatsu paths:", allPaths.filter((p: any) => p.params.slug.join("/").includes('kusatsu')));
+  
   return {
     paths: allPaths,
-    fallback: false,
+    fallback: "blocking",
   };
 }
 

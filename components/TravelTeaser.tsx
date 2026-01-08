@@ -38,7 +38,7 @@ export default function TravelTeaser({ posts = [] }: Props) {
 
             {posts.slice(0, 3).map((p) => {
               // 旅行記事のリンクを生成する関数
-              const getTravelLink = (slug: string, subcategory?: string) => {
+              const getTravelLink = (slug: string, category?: string, subcategory?: string) => {
                 // 名月荘の記事の特別処理（複数のslug形式に対応）
                 if (slug === "meigetsuso-part1" || slug.includes("meigetsuso-part1")) {
                   return `/travel/ryokan/2025-10-15-meigetsuso-part1`;
@@ -58,13 +58,13 @@ export default function TravelTeaser({ posts = [] }: Props) {
                   return `/travel/ryokan/2025-11-01-koyo-renewal`;
                 }
                 
-                // ファイルパス形式のslugを処理（例: "ryokan/2025-10-29-koyo-onsen-part1", "ryokan/2025-11-01-koyo-renewal"）
+                // ファイルパス形式のslugを処理（例: "ryokan/2025-10-29-koyo-onsen-part1", "onsen/kusatsu-onsen"）
                 if (slug.includes('/')) {
                   return `/travel/${slug}`;
                 }
                 
-                // 温泉地ガイド記事の場合
-                if (subcategory === "温泉地ガイド") {
+                // 温泉地ガイド記事の場合（category === "温泉地ガイド"）
+                if (category === "温泉地ガイド" || subcategory === "温泉地ガイド") {
                   return `/travel/onsen/${slug}`;
                 }
                 
@@ -79,7 +79,7 @@ export default function TravelTeaser({ posts = [] }: Props) {
               return (
           <Link
             key={p.slug}
-            href={getTravelLink(p.slug, p.subcategory)}
+            href={getTravelLink(p.slug, p.category, p.subcategory)}
                 /* ガラス風カード：背景をぼかしつつ半透明に */
                 className="rounded-2xl border
                            border-white/60
