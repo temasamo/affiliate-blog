@@ -385,10 +385,14 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
   }
   
   // 一般教養カテゴリの記事の場合
-  if (category === "一般教養" || category === "general-knowledge" || category === "海外展開") {
+  if (category === "一般教養" || category === "general-knowledge" || category === "海外展開" || category === "海外展開・国際経営") {
     // slugがファイル名形式（例: "2025-11-27-japan-doge", "2026-01-09-overseas-expansion-map-for-smbs"）の場合はそのまま使用
     if (slug.includes("2025-") || slug.includes("2026-")) {
       return `/articles/general-knowledge/knowledge/${slug}`;
+    }
+    // overseas-expansion-data-analysis-smbのファイル名ベースのパスに変換
+    if (slug === "overseas-expansion-data-analysis-smb" || slug.includes("overseas-expansion-data-analysis-smb")) {
+      return `/articles/general-knowledge/knowledge/2026-01-09-overseas-expansion-data-analysis-smb`;
     }
     // aws-ainfra-impactのファイル名ベースのパスに変換
     if (slug === "aws-ainfra-impact" || slug.includes("aws-ainfra-impact")) {
