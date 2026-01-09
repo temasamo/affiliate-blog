@@ -385,9 +385,9 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
   }
   
   // 一般教養カテゴリの記事の場合
-  if (category === "一般教養" || category === "general-knowledge") {
-    // slugがファイル名形式（例: "2025-11-27-japan-doge"）の場合はそのまま使用
-    if (slug.includes("2025-")) {
+  if (category === "一般教養" || category === "general-knowledge" || category === "海外展開") {
+    // slugがファイル名形式（例: "2025-11-27-japan-doge", "2026-01-09-overseas-expansion-map-for-smbs"）の場合はそのまま使用
+    if (slug.includes("2025-") || slug.includes("2026-")) {
       return `/articles/general-knowledge/knowledge/${slug}`;
     }
     // aws-ainfra-impactのファイル名ベースのパスに変換
