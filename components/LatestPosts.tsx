@@ -385,10 +385,18 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
   }
   
   // 一般教養カテゴリの記事の場合
-  if (category === "一般教養" || category === "general-knowledge" || category === "海外展開" || category === "海外展開・国際経営") {
+  if (category === "一般教養" || category === "general-knowledge" || category === "海外展開" || category === "海外展開・国際経営" || category === "海外展開・専門家の役割" || category === "海外進出") {
     // slugがファイル名形式（例: "2025-11-27-japan-doge", "2026-01-09-overseas-expansion-map-for-smbs"）の場合はそのまま使用
     if (slug.includes("2025-") || slug.includes("2026-")) {
       return `/articles/general-knowledge/knowledge/${slug}`;
+    }
+    // overseas-expansion-industry-shift-10yearsのファイル名ベースのパスに変換
+    if (slug === "overseas-expansion-industry-shift-10years" || slug.includes("overseas-expansion-industry-shift-10years")) {
+      return `/articles/general-knowledge/knowledge/2026-01-09-overseas-expansion-industry-shift-10years`;
+    }
+    // overseas-expansion-support-players-tax-accountantのファイル名ベースのパスに変換
+    if (slug === "overseas-expansion-support-players-tax-accountant" || slug.includes("overseas-expansion-support-players-tax-accountant")) {
+      return `/articles/general-knowledge/knowledge/2026-01-09-overseas-expansion-support-players-tax-accountant`;
     }
     // overseas-expansion-data-analysis-smbのファイル名ベースのパスに変換
     if (slug === "overseas-expansion-data-analysis-smb" || slug.includes("overseas-expansion-data-analysis-smb")) {
