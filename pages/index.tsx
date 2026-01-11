@@ -575,8 +575,9 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
           });
         }
       } else {
-        // 他のカテゴリはrecommendとknowledgeディレクトリを確認
-        const types = ['recommend', 'knowledge'];
+        // japanesesakeカテゴリの場合はbrandsとknowledgeディレクトリを確認
+        // その他のカテゴリはrecommendとknowledgeディレクトリを確認
+        const types = category === 'japanesesake' ? ['brands', 'knowledge'] : ['recommend', 'knowledge'];
         types.forEach(type => {
           const typePath = path.join(categoryPath, type);
           if (fs.existsSync(typePath)) {
