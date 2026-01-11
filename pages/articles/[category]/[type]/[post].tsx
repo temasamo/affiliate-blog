@@ -1508,8 +1508,8 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async ({ params }) =
       // 生のHTML（アフィリエイトタグなど）をそのまま通す
       const processedContent = await unified()
         .use(remarkParse)
-        .use(remarkRehype, { allowDangerousHtml: true })
-        .use(rehypeRaw)
+        .use(remarkRehype)
+        .use(rehypeRaw, { allowDangerousHtml: true })
         .use(rehypeStringify)
         .process(content);
       contentHtml = processedContent.toString();
