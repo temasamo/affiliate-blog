@@ -1509,7 +1509,7 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async ({ params }) =
       const processedContent = await unified()
         .use(remarkParse)
         .use(remarkRehype)
-        .use(rehypeRaw, { allowDangerousHtml: true })
+        .use(rehypeRaw)
         .use(rehypeStringify)
         .process(content);
       contentHtml = processedContent.toString();
