@@ -406,6 +406,10 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     if (slug === "sme-overseas-expansion-recent-trends-success" || slug.includes("sme-overseas-expansion-recent-trends-success")) {
       return `/articles/general-knowledge/knowledge/2026-01-10-sme-overseas-expansion-recent-trends-success`;
     }
+    // sme-overseas-expansion-supporters-selectionのファイル名ベースのパスに変換
+    if (slug === "sme-overseas-expansion-supporters-selection" || slug.includes("sme-overseas-expansion-supporters-selection")) {
+      return `/articles/general-knowledge/knowledge/2026-01-13-sme-overseas-expansion-supporters-selection`;
+    }
     // aws-ainfra-impactのファイル名ベースのパスに変換
     if (slug === "aws-ainfra-impact" || slug.includes("aws-ainfra-impact")) {
       return `/articles/general-knowledge/knowledge/2025-12-08-aws-ainfra-impact`;
