@@ -54,7 +54,7 @@ export async function getStaticProps() {
 }
 
 export default function TravelIndex({ posts }: { posts: any[] }) {
-  // 温泉地ガイド（category: "旅行" かつ subcategory: "温泉地ガイド"、またはonsen/で始まる記事）
+  // 温泉地ガイド（category: "旅行" かつ subcategory: "温泉地ガイド"、category: "温泉地ガイド"、またはonsen/で始まる記事）
   const onsenGuidePosts = posts
     .filter(p => {
       // content/travel/onsenにある記事（onsen/で始まるslug）を含める
@@ -65,9 +65,12 @@ export default function TravelIndex({ posts }: { posts: any[] }) {
       const isOnsenGuide = !isOnsenPath && 
         p.category === '旅行' && 
         p.subcategory === '温泉地ガイド';
+
+      // 直接 category が温泉地ガイドの記事も対象にする
+      const isOnsenCategory = !isOnsenPath && p.category === '温泉地ガイド';
       
       // onsen/で始まる記事または温泉地ガイド記事を含める
-      return (isOnsenPath || isOnsenGuide) && p.published !== false;
+      return (isOnsenPath || isOnsenGuide || isOnsenCategory) && p.published !== false;
     })
     .sort((a, b) => (a.date > b.date ? -1 : 1));
   
@@ -94,6 +97,7 @@ export default function TravelIndex({ posts }: { posts: any[] }) {
     !p.slug.startsWith('ryokan/') &&
     !p.slug.startsWith('onsen/') &&
     !(p.category === '旅行' && p.subcategory === '温泉地ガイド') &&
+    p.category !== '温泉地ガイド' &&
     !(p.category === '旅行' && p.subcategory === '個別旅館') &&
     !(p.category === '旅行' && p.subcategory === 'おすすめ個別旅館ガイド') &&
     !(p.category === '旅館・温泉' && (p.subcategory === '個別旅館' || p.subcategory === 'おすすめ個別旅館ガイド')) &&
