@@ -49,6 +49,7 @@ export default function OthersIndex({ posts }: { posts: any[] }) {
     p.slug && 
     !p.slug.includes('luxury') && 
     !(p.category === '旅行' && p.subcategory === '温泉地ガイド') &&
+    p.category !== '温泉地ガイド' &&
     !(p.category === '旅行' && p.subcategory === '個別旅館') &&
     !(p.category === '旅行' && p.subcategory === 'おすすめ個別旅館ガイド') &&
     !(p.category === '旅館・温泉' && (p.subcategory === '個別旅館' || p.subcategory === 'おすすめ個別旅館ガイド')) &&

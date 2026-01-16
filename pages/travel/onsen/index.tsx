@@ -41,8 +41,11 @@ export default function OnsenGuideIndex({ posts }: { posts: any[] }) {
         (p.category === '旅行') && 
         p.subcategory === '温泉地ガイド';
       
+      // category が温泉地ガイドの記事も対象にする
+      const isOnsenCategory = !isOnsenPath && p.category === '温泉地ガイド';
+      
       // onsen/で始まる記事または温泉地ガイド記事を含める
-      const matches = isOnsenPath || isOnsenGuide;
+      const matches = isOnsenPath || isOnsenGuide || isOnsenCategory;
       
       // publishedがfalseでないものを含める
       return matches && p.published !== false;
