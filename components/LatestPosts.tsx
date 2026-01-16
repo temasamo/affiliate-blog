@@ -100,6 +100,11 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     return `/diagnostic-ai/makura/${slug}`;
   }
   
+  // sleep-healthカテゴリの記事の場合
+  if (category === "sleep-health") {
+    return `/articles/sleep-health/health/${slug}`;
+  }
+
   // 睡眠・健康カテゴリの記事の場合
   if (category === "睡眠・健康") {
     // Group6（抱き枕編）に属するスラッグを優先判定

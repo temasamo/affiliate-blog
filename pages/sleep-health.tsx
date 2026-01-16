@@ -11,7 +11,15 @@ type Article = {
   date: string;
 };
 
-export default function SleepHealth({ knowledgeArticles, recommendArticles }: { knowledgeArticles: Article[]; recommendArticles: Article[]; }) {
+export default function SleepHealth({
+  knowledgeArticles,
+  recommendArticles,
+  healthArticles,
+}: {
+  knowledgeArticles: Article[];
+  recommendArticles: Article[];
+  healthArticles: Article[];
+}) {
   return (
     <div className="min-h-screen bg-gray-50">
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
@@ -25,6 +33,53 @@ export default function SleepHealth({ knowledgeArticles, recommendArticles }: { 
             </Link>
             <h1 className="text-3xl font-bold text-gray-900 mb-4">睡眠・健康</h1>
             <p className="text-gray-600">快適な睡眠と健康な生活をサポートする情報をお届けします。</p>
+          </div>
+
+          {/* 健康（美容）セクション */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              健康（美容）
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {healthArticles.slice(0, 3).map((article) => (
+                <Link key={article.slug} href={`/articles/sleep-health/health/${article.slug}`} className="group block">
+                  <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-rose-600 transition-colors">
+                      {article.title}
+                    </h3>
+                    <p className="text-sm text-gray-600">{article.description}</p>
+                    <div className="mt-3 flex items-center text-xs text-rose-600">
+                      <span>詳細を見る</span>
+                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+              <Link href="/articles/sleep-health/health" className="group block">
+                <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-2 border-rose-200">
+                  <div className="flex items-center mb-3">
+                    <div className="text-2xl mr-3">🧴</div>
+                    <h3 className="text-lg font-semibold text-rose-700 group-hover:text-rose-800 transition-colors">
+                      健康（美容）一覧
+                    </h3>
+                  </div>
+                  <div className="space-y-2 mb-4">
+                    <div className="flex items-center text-sm text-rose-600">
+                      <span className="w-2 h-2 bg-rose-400 rounded-full mr-2"></span>
+                      <span>睡眠と美容のケア視点</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center text-xs text-rose-600 font-medium">
+                    <span>全{healthArticles.length}記事を見る</span>
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+            </div>
           </div>
 
           {/* 枕選びガイドセクション */}
@@ -261,6 +316,53 @@ export default function SleepHealth({ knowledgeArticles, recommendArticles }: { 
               </Link>
             </div>
           </div>
+
+          {/* 健康（美容）セクション */}
+          <div className="mt-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              健康（美容）
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {healthArticles.slice(0, 3).map((article) => (
+                <Link key={article.slug} href={`/articles/sleep-health/health/${article.slug}`} className="group block">
+                  <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-rose-600 transition-colors">
+                      {article.title}
+                    </h3>
+                    <p className="text-sm text-gray-600">{article.description}</p>
+                    <div className="mt-3 flex items-center text-xs text-rose-600">
+                      <span>詳細を見る</span>
+                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+              <Link href="/articles/sleep-health/health" className="group block">
+                <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-2 border-rose-200">
+                  <div className="flex items-center mb-3">
+                    <div className="text-2xl mr-3">🧴</div>
+                    <h3 className="text-lg font-semibold text-rose-700 group-hover:text-rose-800 transition-colors">
+                      健康（美容）一覧
+                    </h3>
+                  </div>
+                  <div className="space-y-2 mb-4">
+                    <div className="flex items-center text-sm text-rose-600">
+                      <span className="w-2 h-2 bg-rose-400 rounded-full mr-2"></span>
+                      <span>睡眠と美容のケア視点</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center text-xs text-rose-600 font-medium">
+                    <span>全{healthArticles.length}記事を見る</span>
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
         </div>
       </main>
     </div>
@@ -270,6 +372,7 @@ export default function SleepHealth({ knowledgeArticles, recommendArticles }: { 
 export async function getStaticProps() {
   const knowledgeDir = path.join(process.cwd(), "articles/sleep-health/knowledge");
   const recommendDir = path.join(process.cwd(), "articles/sleep-health/recommend");
+  const healthDir = path.join(process.cwd(), "articles/sleep-health/health");
 
   const getArticles = (dir: string) => {
     if (!fs.existsSync(dir)) return [];
@@ -291,11 +394,13 @@ export async function getStaticProps() {
 
   const knowledgeArticles = getArticles(knowledgeDir);
   const recommendArticles = getArticles(recommendDir);
+  const healthArticles = getArticles(healthDir);
 
   return {
     props: {
       knowledgeArticles,
       recommendArticles,
+      healthArticles,
     },
   };
 }
