@@ -69,7 +69,7 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     }
     
     // 温泉地ガイド記事の場合
-    if (subcategory === "温泉地ガイド") {
+    if (subcategory === "温泉地ガイド" || category === "温泉地ガイド") {
       return `/travel/onsen/${slug}`;
     }
     

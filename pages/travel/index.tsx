@@ -147,44 +147,6 @@ export default function TravelIndex({ posts }: { posts: any[] }) {
             </p>
           </div>
 
-          {/* おすすめ個別旅館ガイドセクション */}
-          {individualRyokanPosts.length > 0 && (
-            <section className="mb-12">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold text-gray-900">🏨 おすすめ個別旅館ガイド</h2>
-                {individualRyokanPosts.length > 3 && (
-                  <Link 
-                    href="/travel/ryokan" 
-                    className="text-blue-600 hover:text-blue-800 font-medium"
-                  >
-                    すべて見る →
-                  </Link>
-                )}
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {individualRyokanPosts.slice(0, 3).map((p) => (
-                  <Link
-                    key={p.slug}
-                    href={getTravelArticleLink(p.slug, p.subcategory)}
-                    className="group block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100"
-                  >
-                    <div className="p-6">
-                      <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors mb-2">
-                        {p.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-3 line-clamp-2">
-                        {p.description}
-                      </p>
-                      <div className="text-xs text-gray-500">
-                        {p.date}
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </section>
-          )}
-
           {/* おすすめ観光地セクション */}
           {otherPosts.length > 0 && (
             <section className="mb-12">
@@ -264,6 +226,44 @@ export default function TravelIndex({ posts }: { posts: any[] }) {
               </div>
             )}
           </section>
+
+          {/* おすすめ個別旅館ガイドセクション */}
+          {individualRyokanPosts.length > 0 && (
+            <section className="mb-12">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-2xl font-bold text-gray-900">🏨 おすすめ個別旅館ガイド</h2>
+                {individualRyokanPosts.length > 3 && (
+                  <Link 
+                    href="/travel/ryokan" 
+                    className="text-blue-600 hover:text-blue-800 font-medium"
+                  >
+                    すべて見る →
+                  </Link>
+                )}
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {individualRyokanPosts.slice(0, 3).map((p) => (
+                  <Link
+                    key={p.slug}
+                    href={getTravelArticleLink(p.slug, p.subcategory)}
+                    className="group block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100"
+                  >
+                    <div className="p-6">
+                      <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors mb-2">
+                        {p.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                        {p.description}
+                      </p>
+                      <div className="text-xs text-gray-500">
+                        {p.date}
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* 高級温泉旅館ガイドセクション */}
           {luxuryOnsenPosts.length > 0 && (
