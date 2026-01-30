@@ -49,15 +49,17 @@ export default function RyokanIndex({ posts }: { posts: any[] }) {
       // slugがryokan/で始まるファイルを優先的に含める
       const isRyokanPath = p.slug && typeof p.slug === 'string' && p.slug.startsWith('ryokan/');
       
-      // slugがonsen/で始まるファイルも含める（おすすめ個別旅館ガイドに移動）
+      // slugがonsen/で始まるファイルは温泉地ガイド用なので除外
       const isOnsenPath = p.slug && typeof p.slug === 'string' && p.slug.startsWith('onsen/');
       
       // 個別旅館の条件に一致するもの
       const isRyokanCategory = (p.category === '旅行' || p.category === '旅館・温泉') && 
         (p.subcategory === '個別旅館' || p.subcategory === 'おすすめ個別旅館ガイド');
       
-      // content/travel/ryokan配下とcontent/travel/onsen配下のすべてのファイルを表示
-      return (isRyokanPath || isOnsenPath || isRyokanCategory) && p.published !== false;
+      const isOnsenGuideCategory = p.subcategory === '温泉地ガイド' || p.category === '温泉地ガイド';
+
+      // content/travel/ryokan配下と個別旅館カテゴリのみを表示（温泉地ガイドは除外）
+      return (isRyokanPath || isRyokanCategory) && !isOnsenPath && !isOnsenGuideCategory && p.published !== false;
     })
     .sort((a, b) => (a.date > b.date ? -1 : 1));
 
