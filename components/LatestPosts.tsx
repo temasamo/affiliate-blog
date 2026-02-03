@@ -545,14 +545,14 @@ export default function LatestPosts({ items }: { items: Item[] }) {
           const linkHref = p.href?.length ? p.href : getArticlePath(p.slug, p.category, p.subcategory);
           return (
             <Link
-            key={p.slug}
-            href={linkHref}
-            className="
-              group block rounded-xl border border-gray-200 bg-white
-              p-3 sm:p-4 md:p-5 hover:shadow-md hover:border-gray-300 
-              transition-all duration-200 hover:-translate-y-1
-            "
-          >
+              key={p.slug}
+              href={linkHref}
+              className="
+                group block rounded-xl border border-gray-200 bg-white
+                p-3 sm:p-4 md:p-5 hover:shadow-md hover:border-gray-300 
+                transition-all duration-200 hover:-translate-y-1
+              "
+            >
             <div className="mb-2 sm:mb-3 flex items-center gap-2">
               {p.category && (
                 <span
