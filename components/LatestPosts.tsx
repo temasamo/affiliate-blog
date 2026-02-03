@@ -7,6 +7,7 @@ type Item = {
   subcategory?: string;
   date: string | null;
   description?: string | null;
+  href?: string;
 };
 
 // 記事のパスを生成する関数
@@ -540,10 +541,12 @@ export default function LatestPosts({ items }: { items: Item[] }) {
       </div>
 
       <div className="grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-        {uniqueItems.slice(0, 5).map((p) => (
-          <Link
+        {uniqueItems.slice(0, 5).map((p) => {
+          const linkHref = p.href?.length ? p.href : getArticlePath(p.slug, p.category, p.subcategory);
+          return (
+            <Link
             key={p.slug}
-            href={getArticlePath(p.slug, p.category, p.subcategory)}
+            href={linkHref}
             className="
               group block rounded-xl border border-gray-200 bg-white
               p-3 sm:p-4 md:p-5 hover:shadow-md hover:border-gray-300 

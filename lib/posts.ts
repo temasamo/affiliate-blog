@@ -20,6 +20,7 @@ export type SimplePost = {
   category: string; // ★常に文字列
   date: string | null;
   description?: string | null;
+  href: string;
 };
 
 /** ───────── 収集対象 ───────── **/
@@ -287,6 +288,7 @@ export async function getLatestPosts(limit = 5): Promise<SimplePost[]> {
       category: deriveCategory(p) || "その他",
       date: p.date ?? null,
       description: p.excerpt ?? null,
+      href: p.href ?? "",
     }));
 
   // 重複を除去（slugとcategoryの組み合わせでユニークにする）
