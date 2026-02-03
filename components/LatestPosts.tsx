@@ -11,8 +11,20 @@ type Item = {
 
 // 記事のパスを生成する関数
 function getArticlePath(slug: string, category: string, subcategory?: string): string {
-  // 旅行記事の場合（カテゴリが"旅行"、"旅行・観光"、"旅館・温泉"、"東京観光"、"温泉地ガイド"などの旅行関連）
-  if (category === "旅行" || category === "旅行・観光" || category === "旅館・温泉" || category === "東京観光" || category === "温泉地ガイド" || category === "travel" || slug.includes("ryokan") || slug.includes("travel") || slug.includes("onsen")) {
+  const travelCategoryNames = new Set([
+    "旅行",
+    "旅行・観光",
+    "旅館・温泉",
+    "東京観光",
+    "温泉地ガイド",
+    "travel",
+  ]);
+  const travelSlugPrefixes = new Set(["ryokan", "onsen", "others", "travel"]);
+  const slugPrefix = slug.includes("/") ? slug.split("/")[0] || "" : "";
+  const isTravelSlug = slug.includes("/") && travelSlugPrefixes.has(slugPrefix);
+  const isTravelCategory = travelCategoryNames.has(category);
+
+  if (isTravelCategory || isTravelSlug) {
     // 名月荘の記事の特別処理
     if (slug === "meigetsuso-part1") {
       return `/travel/ryokan/2025-10-15-meigetsuso-part1`;
