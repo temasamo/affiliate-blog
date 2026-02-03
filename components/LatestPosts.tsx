@@ -24,6 +24,8 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
   const isTravelSlug = slug.includes("/") && travelSlugPrefixes.has(slugPrefix);
   const isTravelCategory = travelCategoryNames.has(category);
 
+  const isOnsenCategory = category === "温泉地ガイド";
+
   if (isTravelCategory || isTravelSlug) {
     // 名月荘の記事の特別処理
     if (slug === "meigetsuso-part1") {
@@ -73,6 +75,10 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     // ファイルパス形式のslugを処理（例: "ryokan/2025-11-01-koyo-renewal", "others/2025-11-10-fujigoko-petstay", "onsen/kusatsu-onsen-guide-with-sake"）
     if (slug.includes('/')) {
       return `/travel/${slug}`;
+    }
+    
+    if (isOnsenCategory) {
+      return `/travel/onsen/${slug}`;
     }
     
     // 草津温泉記事の特別処理（フロントマターのslugの場合）
