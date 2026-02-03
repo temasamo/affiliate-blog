@@ -591,7 +591,8 @@ export default function LatestPosts({ items }: { items: Item[] }) {
               </p>
             )}
           </Link>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
