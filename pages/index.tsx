@@ -132,7 +132,10 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
               
               {/* AIアプリ記事カード */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {latest.filter(article => article.category === 'AIアプリ紹介').slice(0, 3).map((article, index) => {
+                {latest
+                  .filter((article) => ["AIアプリ紹介", "AIアプリ", "ai-apps"].includes(article.category))
+                  .slice(0, 3)
+                  .map((article, index) => {
                   // AIアプリカテゴリの記事パスを生成
                   const getArticlePath = (slug: string) => {
                     if (slug === "ai-skin-analysis") {
@@ -187,8 +190,9 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
                   
                   const labelInfo = getArticleLabel(article.slug, article.title, article.description || undefined);
                   
+                  const linkHref = article.href?.length ? article.href : getArticlePath(article.slug);
                   return (
-                  <Link key={article.slug} href={getArticlePath(article.slug)} className="group">
+                  <Link key={article.slug} href={linkHref} className="group">
                     <div className="bg-white/50 backdrop-blur-sm rounded-xl p-6 hover:bg-white/60 transition-all duration-300 transform hover:-translate-y-1">
                       <div className="flex items-center mb-3">
                         <span className={`text-xs font-medium px-2.5 py-0.5 rounded-full ${labelInfo.colorClass}`}>
