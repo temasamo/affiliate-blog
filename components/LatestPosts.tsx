@@ -26,6 +26,19 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
   const isTravelCategory = travelCategoryNames.has(category);
 
   const isOnsenCategory = category === "温泉地ガイド";
+  const generalKnowledgeMarkers = [
+    "一般教養",
+    "general-knowledge",
+    "industry-analysis",
+    "海外展開",
+    "海外展開・国際経営",
+    "海外展開・専門家の役割",
+    "海外進出",
+    "業界分析",
+  ];
+  const isGeneralKnowledgeCategory = generalKnowledgeMarkers.some((marker) =>
+    category.includes(marker)
+  );
 
   if (isTravelCategory || isTravelSlug) {
     // 名月荘の記事の特別処理
@@ -410,7 +423,7 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
   }
   
   // 一般教養カテゴリの記事の場合
-  if (category === "一般教養" || category === "general-knowledge" || category === "industry-analysis" || category === "海外展開" || category === "海外展開・国際経営" || category === "海外展開・専門家の役割" || category === "海外進出" || category === "業界分析") {
+  if (isGeneralKnowledgeCategory) {
     // slugがファイル名形式（例: "2025-11-27-japan-doge", "2026-01-09-overseas-expansion-map-for-smbs"）の場合はそのまま使用
     if (slug.includes("2025-") || slug.includes("2026-")) {
       return `/articles/general-knowledge/knowledge/${slug}`;
