@@ -47,6 +47,9 @@ export function getTravelPostBySlug(slug: string) {
   
   const file = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(file);
+  if (data.date instanceof Date) {
+    data.date = data.date.toISOString().split('T')[0];
+  }
   return { frontMatter: data, content, slug };
 }
 
