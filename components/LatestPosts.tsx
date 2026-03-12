@@ -30,6 +30,7 @@ function getArticlePath(slug: string, category: string, subcategory?: string): s
     "一般教養",
     "general-knowledge",
     "industry-analysis",
+    "産業分析",
     "海外展開",
     "海外展開・国際経営",
     "海外展開・専門家の役割",
