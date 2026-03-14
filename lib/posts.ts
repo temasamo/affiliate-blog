@@ -291,10 +291,17 @@ export async function getLatestPosts(limit = 5): Promise<SimplePost[]> {
       href: p.href ?? "",
     }));
 
-  // 重複を除去（slugとcategoryの組み合わせでユニークにする）
-  const uniquePosts = filtered.filter((post, index, self) => 
-    index === self.findIndex(p => p.slug === post.slug && p.category === post.category)
-  );
+  // 重複を除去（href優先、無ければslug+category+dateでユニーク化）
+  const seen = new Set<string>();
+  const uniquePosts = filtered.filter((post) => {
+    const hrefKey = post.href?.trim();
+    const key = hrefKey
+      ? `href:${hrefKey}`
+      : `slug:${post.slug}|category:${post.category}|date:${post.date ?? ""}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 
   return uniquePosts
     .sort((a, b) => {
