@@ -1,0 +1,947 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>業界分析｜フィジカルAI・AIロボット産業（外部環境編）</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0f0e;
+    --paper: #f5f2ed;
+    --cream: #ede9e1;
+    --accent: #c84b2f;
+    --accent2: #2563a8;
+    --muted: #6b6760;
+    --rule: #c9c4bb;
+    --highlight: #fff8e6;
+    --code-bg: #1a1917;
+    --code-fg: #e8e3d9;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: var(--paper);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.9;
+    font-weight: 300;
+  }
+
+  /* MASTHEAD */
+  .masthead {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .masthead .label { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    border-bottom: 2px solid var(--ink);
+    padding: 60px 60px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 340px; height: 100%;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 8px,
+      rgba(200,75,47,0.06) 8px,
+      rgba(200,75,47,0.06) 9px
+    );
+    pointer-events: none;
+  }
+  .hero-kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(26px, 4vw, 42px);
+    font-weight: 700;
+    line-height: 1.35;
+    max-width: 740px;
+    letter-spacing: -0.01em;
+  }
+  .hero-meta {
+    margin-top: 24px;
+    display: flex;
+    gap: 32px;
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .hero-meta span::before { content: '── '; }
+
+  /* LAYOUT */
+  .wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+
+  /* TOC */
+  .toc {
+    background: var(--cream);
+    border-left: 4px solid var(--ink);
+    padding: 28px 32px;
+    margin: 48px 0;
+  }
+  .toc-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .toc ol {
+    padding-left: 0;
+    list-style: none;
+    counter-reset: toc;
+  }
+  .toc li {
+    counter-increment: toc;
+    padding: 5px 0;
+    border-bottom: 1px dotted var(--rule);
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .toc li::before {
+    content: counter(toc, decimal-leading-zero);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .toc a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 400;
+  }
+  .toc a:hover { color: var(--accent); }
+
+  /* SECTIONS */
+  .chapter {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+  }
+  .chapter:first-child { border-top: none; }
+
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+  .chapter-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--paper);
+    background: var(--ink);
+    padding: 3px 8px;
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .chapter h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  /* Subheadings */
+  h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 32px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink);
+  }
+
+  p { margin-bottom: 16px; }
+
+  /* DATA CALLOUT */
+  .data-box {
+    background: var(--highlight);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    border-radius: 0 2px 2px 0;
+  }
+  .data-box .label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .data-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  .data-box ul li {
+    padding: 5px 0;
+    border-bottom: 1px dotted var(--rule);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .data-box ul li:last-child { border-bottom: none; }
+  .data-box ul li strong {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* STAT GRID */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 28px 0;
+  }
+  .stat-cell {
+    background: var(--paper);
+    padding: 20px 18px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--accent);
+    line-height: 1.1;
+    display: block;
+  }
+  .stat-desc {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  /* NOTE BOX */
+  .note-box {
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    padding: 18px 22px;
+    margin: 24px 0;
+    font-size: 13.5px;
+  }
+  .note-box .note-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  /* SUMMARY TABLE */
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+    font-size: 13.5px;
+  }
+  .summary-table th {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 500;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+  .summary-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    line-height: 1.7;
+  }
+  .summary-table tr:nth-child(even) td { background: var(--cream); }
+
+  /* DISCLAIMER */
+  .disclaimer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 32px 40px;
+    margin-top: 64px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .disclaimer h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    border: none;
+    padding: 0;
+    margin-bottom: 12px;
+    margin-top: 0;
+  }
+
+  /* SOURCE */
+  .source-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    color: var(--muted);
+    background: var(--cream);
+    display: inline-block;
+    padding: 2px 7px;
+    margin: 2px 2px 2px 0;
+    border: 1px solid var(--rule);
+  }
+
+  /* CTA NEXT */
+  .next-box {
+    border: 2px solid var(--ink);
+    padding: 32px 36px;
+    margin-top: 64px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  .next-box .arrow {
+    font-size: 36px;
+    color: var(--accent);
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .next-box h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    border: none;
+    padding: 0;
+    margin: 0 0 10px;
+  }
+  .next-box p { margin: 0; font-size: 14px; color: var(--muted); }
+
+  hr.section-rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 32px 0;
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 40px 24px 36px; }
+    .wrapper { padding: 0 24px 60px; }
+    .masthead { padding: 10px 20px; font-size: 10px; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <span class="label">産業構造分析レポート</span>
+  <span>2026年3月発行 ── フィジカルAI・AIロボット産業</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-kicker">Industry Structure Analysis ／ External Environment</div>
+  <h1>業界分析｜フィジカルAI・AIロボット産業<br>（外部環境編）</h1>
+  <div class="hero-meta">
+    <span>就職・転職検討者向け</span>
+    <span>株式投資家向け</span>
+    <span>数字と事実のみ記載</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+<!-- TOC -->
+<nav class="toc">
+  <div class="toc-title">目次</div>
+  <ol>
+    <li><a href="#ch0">この記事の目的</a></li>
+    <li><a href="#ch1">市場規模と成長の実態</a></li>
+    <li><a href="#ch2">制度・政策との関係性</a></li>
+    <li><a href="#ch3">経済的前提条件</a></li>
+    <li><a href="#ch4">社会・人口動態の影響</a></li>
+    <li><a href="#ch5">技術・DXの位置づけ</a></li>
+    <li><a href="#ch6">参入・撤退の制約</a></li>
+    <li><a href="#ch7">経済安全保障との距離</a></li>
+    <li><a href="#ch8">外部環境の整理</a></li>
+    <li><a href="#ch9">次におすすめの資料</a></li>
+  </ol>
+</nav>
+
+<!-- CH0 -->
+<div class="chapter" id="ch0">
+  <div class="chapter-header">
+    <span class="chapter-num">第0章</span>
+    <h2>この記事の目的</h2>
+  </div>
+
+  <p>本記事は、フィジカルAI（特にAIロボット）産業の外部環境を、公開されている統計・政府資料・業界団体データに基づき整理したものです。</p>
+
+  <div class="data-box">
+    <div class="label">この記事でやること</div>
+    <ul>
+      <li>市場規模・成長率・台数などの数値データの整理</li>
+      <li>政府政策・補助金・規制内容の事実確認</li>
+      <li>コスト構造・価格決定の仕組みの記述</li>
+      <li>少子高齢化・労働供給構造との関係の整理</li>
+      <li>技術トレンド・普及実態の現状記録</li>
+      <li>参入コスト・許認可・制度的制約の確認</li>
+      <li>経済安全保障上の位置づけの確認</li>
+    </ul>
+  </div>
+
+  <div class="data-box">
+    <div class="label">この記事でやらないこと</div>
+    <ul>
+      <li>将来市場規模の断定的な予測</li>
+      <li>「有望」「厳しい」などの評価・推奨</li>
+      <li>転職・投資に関する具体的な判断・アドバイス</li>
+      <li>個別銘柄・企業の評価</li>
+    </ul>
+  </div>
+
+  <div class="note-box">
+    <div class="note-label">スタンス</div>
+    本記事は業界構造を理解するための情報提供を目的としています。転職・就職の判断および投資判断は、読者ご自身が複数の情報源をもとに行ってください。
+  </div>
+</div>
+
+<!-- CH1 -->
+<div class="chapter" id="ch1">
+  <div class="chapter-header">
+    <span class="chapter-num">第1章</span>
+    <h2>市場規模と成長の実態</h2>
+  </div>
+
+  <h3>世界市場規模（産業用ロボット：2024年実績）</h3>
+
+  <p>国際ロボット連盟（IFR）が2025年9月に発表した「ワールドロボティクス2025」によると、<strong>2024年の世界の産業用ロボット新規導入台数は54万2,000台</strong>であり、4年連続で50万台の水準を超えました。この数値は過去10年で2倍以上の拡大です。世界稼働台数は<strong>466万台</strong>（前年比9%増）に達しています。</p>
+
+  <div class="stat-grid">
+    <div class="stat-cell">
+      <span class="stat-num">54.2<span style="font-size:16px">万台</span></span>
+      <div class="stat-desc">2024年 年間新規導入台数<br>（産業用ロボット世界）</div>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">466<span style="font-size:16px">万台</span></span>
+      <div class="stat-desc">2024年 世界稼働台数<br>（前年比+9%）</div>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">+5%<span style="font-size:14px">CAGR</span></span>
+      <div class="stat-desc">新規導入台数CAGR<br>2018〜2023年</div>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">+12%<span style="font-size:14px">CAGR</span></span>
+      <div class="stat-desc">世界稼働台数CAGR<br>2018〜2023年</div>
+    </div>
+  </div>
+
+  <p>産業用ロボット市場の金額ベースでは、2022年の世界販売額が<strong>158億米ドル</strong>（IFR発表、前年比4%増）でした。調査会社によって集計範囲・定義が異なるため、金額ベースの数値は情報源により幅があります（各社レポートで約178〜428億ドル規模とされる）。</p>
+
+  <h3>AIロボット市場（フィジカルAI含む）の規模感</h3>
+
+  <p>AIロボット市場はAI機能を持つロボット全般を対象としており、定義や集計範囲が調査機関によって異なります。複数の民間調査機関（Grand View Research、Straits Research等）による2023〜2024年の推計値は、それぞれ<strong>82億〜190億米ドル前後</strong>のレンジに分布しています。</p>
+
+  <div class="note-box">
+    <div class="note-label">数値のばらつきについて</div>
+    民間調査会社のAIロボット市場規模の推計値は、「AIロボット」の定義の違い（AIを搭載した全ロボット vs ヒューマノイド限定など）により大きく異なります。読者は定義を確認した上で各数値を参照してください。
+  </div>
+
+  <h3>過去10年のCAGR（産業用ロボット・導入台数ベース）</h3>
+
+  <p>IFRのデータでは、2014年の産業用ロボット年間導入台数は約22万台でしたが、2024年には54万2,000台に達しており、<strong>10年間でおよそ2倍超</strong>に拡大しました。稼働台数ベースのCAGRは年率+12%程度（2018〜2023年）です。</p>
+
+  <h3>地域別シェア（2024年）</h3>
+
+  <p>2024年の新規導入台数の地域構成は、アジアが全体の<strong>74%</strong>を占め、欧州16%、南北アメリカ9%という構造です。中国単体で世界全体の<strong>54%</strong>（29万5,000台）を占めており、2024年に稼働台数が200万台を突破し世界最大の稼働国となっています。中国国内メーカーの国内市場シェアは57%と、初めて外国メーカーを上回りました。</p>
+
+  <h3>日本の位置づけ（2024年）</h3>
+
+  <p>日本の新規導入台数は<strong>4万4,500台</strong>（前年比4%減）で世界第2位を維持しています。稼働台数は<strong>45万500台</strong>（前年比3%増）で、こちらも中国に次ぐ世界第2位です。ロボット密度（製造業従業員1万人あたりの稼働台数）では世界第4位（397台）です。日本は産業用ロボットの生産輸出国でもあり、世界のロボット生産の約38%を供給（2023年）しています。</p>
+
+  <h3>主要企業（国内外）</h3>
+
+  <div class="data-box">
+    <div class="label">主要企業リスト（産業用ロボット分野）</div>
+    <ul>
+      <li><strong>国内：</strong>ファナック（FANUC）、安川電機、川崎重工業、不二越、デンソーウェーブ、ダイヘン、KUKA（独・中国美的グループ傘下）</li>
+      <li><strong>海外（欧米）：</strong>ABB（スイス）、KUKA（ドイツ）、Universal Robots（デンマーク・テラダイン傘下）</li>
+      <li><strong>中国：</strong>埃斯頓（ESTUN）、遨博（AUBO）、哈工智能（HZROBOT）など国内シェアが急拡大中</li>
+      <li><strong>フィジカルAI・ヒューマノイド：</strong>Tesla（Optimus）、Figure AI、Agility Robotics、Boston Dynamics、1X Technologies（米）、字節跳動系・AgiBot・Unitree（中）、SoftBank Robotics（日）</li>
+    </ul>
+  </div>
+
+  <h3>ヒューマノイドロボット分野（最新動向）</h3>
+
+  <p>ヒューマノイドロボットのスタートアップへの投資は2024年に過去最高を記録しました。現時点（2025〜2026年）での商用導入は自動車工場・物流施設への限定的な試験導入段階です。現状の導入コストは平均<strong>25万ドル前後</strong>とされており、量産化による低下が注目されています（経済産業省・AIロボティクス検討会資料、2025年）。</p>
+
+  <div class="note-box">
+    <div class="note-label">出典</div>
+    <span class="source-tag">IFR「World Robotics 2025」2025年9月</span>
+    <span class="source-tag">IFR「World Robotics 2024」2024年9月</span>
+    <span class="source-tag">日本機械工業連合会「2023年度ロボット産業・技術振興調査研究報告書」2024年3月</span>
+    <span class="source-tag">経済産業省・AIロボティクス検討会資料 2025年10月</span>
+    <span class="source-tag">三井業際研究所レポート「ヒューマノイドロボット」2025年</span>
+  </div>
+</div>
+
+<!-- CH2 -->
+<div class="chapter" id="ch2">
+  <div class="chapter-header">
+    <span class="chapter-num">第2章</span>
+    <h2>制度・政策との関係性</h2>
+  </div>
+
+  <h3>日本政府の主要政策</h3>
+
+  <p>経済産業省はロボット政策室を設置しており、継続的にロボット導入・開発を支援しています。2025年12月23日には閣議決定された「人工知能基本計画」において、フィジカルAIが国家重点課題として明記されました。同計画において「製造業・サービス業が蓄積した質の高いデータを学習させ、ロボットが自律的に人間を支援するフィジカルAIの実現」が国家目標として設定されています。</p>
+
+  <p>2026年1月の高市首相年頭記者会見でも「フィジカルAI」という語が明示的に用いられ、日本の国家戦略として位置付けられました（IOG地経学研究所資料、2026年3月）。</p>
+
+  <h3>補助金・予算措置</h3>
+
+  <div class="data-box">
+    <div class="label">主要補助金・予算（直近）</div>
+    <ul>
+      <li><strong>令和6年度補正予算「フィジカルAIの開発促進」：205〜220億円</strong>（経済産業省、AIロボティクス検討会資料2025年10月時点）</li>
+      <li><strong>令和6年度補正予算「AI・ソフトウェア起点のロボット開発を促進するオープン開発環境構築」：103億円</strong></li>
+      <li><strong>革新的ロボット研究開発等基盤構築事業（ロボフレ事業）：</strong>経済産業省が実施。サービス分野・三品産業等への導入支援。補助率・上限額は年度・枠により異なる</li>
+      <li><strong>中小企業省力化投資補助金（省力化補助金）：</strong>カタログ型は最大1,000万円（賃上げ達成時1,500万円）、一般型は最大8,000万円（条件により1億円）。補助率1/2以下</li>
+      <li><strong>ものづくり補助金：</strong>ロボット導入が対象経費に含まれる。補助率・上限は枠・企業規模で異なる</li>
+      <li><strong>NEDO：</strong>AIロボット・フィジカルAIを独立した研究公募分野として設置（2024年度公募分野一覧に「ロボット」「AI」が明記）</li>
+    </ul>
+  </div>
+
+  <h3>規制の有無と内容</h3>
+
+  <p>産業用ロボットに関しては、労働安全衛生法および労働安全衛生規則が適用されます。80W以上の出力を持つ産業用ロボットは安全柵の設置が原則義務付けられており（労働安全衛生規則第150条の4）、操作・保守作業者には「産業用ロボットの教示等の業務に係る特別教育」の受講が義務化されています（同規則第36条第31号）。</p>
+
+  <p>80W未満の協働ロボットについては、2013年（平成25年）12月24日付通達（基発1224第2号）により、リスクアセスメントで危険がないと判断された場合に安全柵なしの協働作業が認められており、特別教育の受講義務もありません。</p>
+
+  <p>ヒューマノイドロボットおよびサービスロボットに対する包括的な安全規制は2026年3月時点では未整備であり、用途・環境に応じた個別対応が必要です。AI規制については、欧州でAI規制法（AI Act）が2024年に施行されており、日本では個別用途対応が基本方針です。</p>
+
+  <h3>直近の制度変更</h3>
+
+  <div class="data-box">
+    <div class="label">主な制度変更履歴</div>
+    <ul>
+      <li><strong>2013年12月：</strong>労働安全衛生規則第150条の4改定。80W未満の協働ロボットに安全柵不要、人との協働作業を認可</li>
+      <li><strong>2024年：</strong>欧州AI規制法（AI Act）施行。日本企業の欧州展開に影響</li>
+      <li><strong>2024年：</strong>中小企業省力化投資補助金スタート。ロボットが補助対象製品に含まれる</li>
+      <li><strong>2025年3月：</strong>一般社団法人AIロボット協会（AIRoA）設立。AIロボット用基盤モデル開発を目的とする</li>
+      <li><strong>2025年12月：</strong>人工知能基本計画閣議決定。フィジカルAIを国家重点課題に明示</li>
+    </ul>
+  </div>
+
+  <div class="note-box">
+    <div class="note-label">出典</div>
+    <span class="source-tag">経済産業省「ロボット政策」ページ</span>
+    <span class="source-tag">厚生労働省「労働安全衛生規則」</span>
+    <span class="source-tag">内閣府「人工知能基本計画」2025年12月23日</span>
+    <span class="source-tag">経済産業省・AIロボティクス検討会資料2025年10月</span>
+    <span class="source-tag">経済産業省中小企業庁「省力化補助金」2024年6月</span>
+  </div>
+</div>
+
+<!-- CH3 -->
+<div class="chapter" id="ch3">
+  <div class="chapter-header">
+    <span class="chapter-num">第3章</span>
+    <h2>経済的前提条件</h2>
+  </div>
+
+  <h3>価格決定権の所在</h3>
+
+  <p>産業用ロボット市場における価格決定は、以下の構造を持っています。ロボット本体については、ABB・FANUC・安川電機・KUKA等の大手数社が技術・ブランド力を背景に価格主導権を持つ寡占構造です。ただし、協働ロボット分野では中国・台湾メーカーが低価格製品を展開しており、価格競争圧力が生じています。システムインテグレーション（SIer）工程では、案件ごとの見積もりが原則であり、標準的な価格表は存在しません。</p>
+
+  <h3>主要コスト構成比（ユーザー側：導入コスト）</h3>
+
+  <p>産業用ロボットのユーザー側での導入コストは、ロボット本体のみではなく周辺機器・SIコストが大きな割合を占めます。日本ロボット工業会（2017年）の事例データでは、工作機械への着脱システム（合計980万円）のうちシステムインテグレーション費が約520万円（全体の約53%）を占めています。別の事例（合計1,610万円）でもSIコストが約550万円（約34%）を占めています。</p>
+
+  <div class="data-box">
+    <div class="label">ロボット導入コスト構成（参考事例）</div>
+    <ul>
+      <li><strong>ロボット本体（垂直多関節）：</strong>約300〜400万円（制御盤含む）が相場。可搬重量・仕様で大幅に変動</li>
+      <li><strong>周辺機器（ハンド・架台・安全柵等）：</strong>200万円〜</li>
+      <li><strong>システムインテグレーション（設計・組立・ティーチング等）：</strong>事例の34〜53%を占める。複雑なシステムほど比率が高い</li>
+      <li><strong>単純システム合計：</strong>980万〜1,610万円（小規模事例）</li>
+      <li><strong>複数台・複雑システム：</strong>5,050万円〜2億円超（食品工場等の事例）</li>
+      <li><strong>協働ロボット本体：</strong>200〜300万円台から（中国・台湾勢による廉価品あり）</li>
+    </ul>
+  </div>
+
+  <h3>主要コスト構成比（メーカー側：製造コスト・ヒューマノイド）</h3>
+
+  <p>経済産業省AIロボティクス検討会資料（2025年10月）によると、ヒューマノイドロボットのハードウェアコンポーネントのうち、製造原価（BOM）への影響と性能差別化への寄与が双方高いのは<strong>アクチュエーターとセンサー</strong>です。アクチュエーター（準ダイレクトドライブ型）の主要サプライヤーは現在、中国企業が中心です。</p>
+
+  <h3>直近5年の人件費・原材料費の動向</h3>
+
+  <p>日本の製造業の人件費については、2025年の春季労使交渉（連合最終集計）の賃上げ率は5%台の水準でした。製造業就業者数は2024年に1,046万人とわずかに減少しており（2025年版ものづくり白書）、34歳以下の若年就業者は2002年以降減少傾向が継続しています。</p>
+
+  <p>原材料費については、半導体・電子部品・レアアースが主要コスト要因であり、地政学リスクによるサプライチェーン不安定性が継続しています。円安局面では輸入コスト上昇圧力が生じており、日本メーカーの製造コスト構造に影響します。</p>
+
+  <div class="note-box">
+    <div class="note-label">出典</div>
+    <span class="source-tag">日本ロボット工業会「ここが知りたい！ロボット活用の基礎知識」2017年</span>
+    <span class="source-tag">ミスミ「ロボット基礎情報・特集：導入費用とコスト構造」</span>
+    <span class="source-tag">経済産業省・AIロボティクス検討会資料2025年10月</span>
+    <span class="source-tag">経済産業省「2025年版ものづくり白書」概要</span>
+  </div>
+</div>
+
+<!-- CH4 -->
+<div class="chapter" id="ch4">
+  <div class="chapter-header">
+    <span class="chapter-num">第4章</span>
+    <h2>社会・人口動態の影響</h2>
+  </div>
+
+  <h3>需要側の構造変化</h3>
+
+  <p>日本における産業用ロボット需要の主要ドライバーは、製造業・物流・食品加工・介護等における人手不足です。経済産業省が経済産業研究所（RIETI）と連携して作成した「2040年の産業構造・就業構造の推計」（2025年5月）では、多くの産業で研究者・技術者が不足傾向にあり、AIやロボット等の活用を担う人材の不足が顕在化すると示されています。同資料では2040年に向けて「次世代型投資（研究開発・ソフトウェア・ロボット・通信機器等）が1.8倍に」（ストックベース）という推計が示されています。</p>
+
+  <p>需要産業の変化としては、自動車産業が長年の最大市場でしたが、EV化に伴う生産工程の再編が進んでおり（IFR2024年報告書でも指摘）、電子機器・金属加工など一般産業分野が補完的に成長しています。サービスロボット分野では2024年の医療用ロボットが前年比91%増、業務用が9%増と記録されています（IFR発表）。</p>
+
+  <h3>労働供給側の制約</h3>
+
+  <p>日本の製造業就業者は2002年以降、34歳以下の若年就業者数が384万人（2002年）から259万人（2023年）へと約125万人減少しています（2024年版ものづくり白書）。一方、65歳以上の高齢就業者は増加傾向にあります。この「労働の高齢化」は技能継承リスクと直結しています。</p>
+
+  <p>中小企業の人手不足感は2024年時点でコロナ禍以前と同水準の深刻な状態にあります（2025年版ものづくり白書）。人手不足に直面している中小企業は7割近くとされています。</p>
+
+  <h3>少子高齢化との関係</h3>
+
+  <p>日本の生産年齢人口（15〜64歳）は1997年の8,697万人をピークに減少が続いており、2017年時点で7,604万人でした。社人研の推計では、2030年に6,875万人、2040年に5,978万人となる見通しです。高齢者人口（65歳以上）は2050年頃まで3,600〜3,900万人で高水準を維持する見通しです（内閣府資料）。</p>
+
+  <p>韓国・シンガポール等、日本よりもロボット密度の高い国も少子高齢化への対応としてロボット化を進めており、同様の人口構造変化が世界的にロボット需要の底上げ要因として働いています。</p>
+
+  <div class="note-box">
+    <div class="note-label">出典</div>
+    <span class="source-tag">経済産業省「2025年版ものづくり白書」概要</span>
+    <span class="source-tag">経済産業省「2040年の産業構造・就業構造の推計」2025年5月</span>
+    <span class="source-tag">内閣府「第2章第1節 技術革新・少子高齢化を踏まえた労働市場の課題」</span>
+    <span class="source-tag">IFR「World Robotics 2025」</span>
+  </div>
+</div>
+
+<!-- CH5 -->
+<div class="chapter" id="ch5">
+  <div class="chapter-header">
+    <span class="chapter-num">第5章</span>
+    <h2>技術・DXの位置づけ</h2>
+  </div>
+
+  <h3>技術は「代替」か「補助」か</h3>
+
+  <p>現行の産業用ロボット（溶接・搬送・組み立て・検査工程）は、特定の定型作業における人的労働の<strong>「代替」</strong>として機能しています。MITのアセモグル教授らの研究では、米国において労働者1,000人あたりロボット1台追加ごとに雇用比率が低下するという定量的な関係が確認されています（Stratistics MRC資料に引用）。</p>
+
+  <p>一方、協働ロボット（コボット）や医療支援ロボットは人との協働を前提とした<strong>「補助」</strong>型として設計されています。フィジカルAI・ヒューマノイドロボットについては、現時点では非構造的な環境（家庭・複雑な工場作業等）への適用は開発段階であり、代替か補助かの区分はユースケースごとに異なります。</p>
+
+  <h3>現在の普及率・導入実態</h3>
+
+  <p>製造業従業員1万人あたりの稼働台数（ロボット密度）は、世界平均が162台（2023年）です。国別では韓国1,012台、シンガポール730台、ドイツ415台、日本397台、中国392台の順です（IFR「World Robotics 2023」発表、2024年1月）。</p>
+
+  <p>協働ロボットは全産業用ロボット設置台数の約11%（2023年）であり、2017年のIFR集計開始以来、着実に比率が上昇しています。ただし、大企業ではリスクアセスメント対応に時間を要するケースが多いとされています。</p>
+
+  <h3>主要技術トレンド（2024〜2025年）</h3>
+
+  <p>IFRが発表した2024年のロボットトレンドトップ5は、①AIと機械学習、②協働ロボットの新アプリケーション、③モバイルマニピュレータ、④デジタルツイン、⑤ヒューマノイドです。</p>
+
+  <p>フィジカルAIの技術面では、VLA（Vision-Language-Action）モデルおよびVLM（Vision-Language Model）等のロボット基盤モデルの開発が急進しています。これにより、従来は知覚・判断・行動の各プロセスに個別ソフトウェアが必要だったところ、統合的な基盤モデルによる制御が可能になりつつあります（経済産業省・AIロボティクス検討会資料）。</p>
+
+  <p>ハードウェア面では、アクチュエーターの準ダイレクトドライブ（QDD）方式の普及とコスト低下が進んでいます。主要サプライヤーは現状、中国企業が中心です。</p>
+
+  <div class="note-box">
+    <div class="note-label">出典</div>
+    <span class="source-tag">IFR「2024年のロボットトレンドトップ5」</span>
+    <span class="source-tag">IFR「Robot Density」2024年1月</span>
+    <span class="source-tag">経済産業省・AIロボティクス検討会資料2025年10月</span>
+    <span class="source-tag">日本総研「生成AIがもたらすロボット技術の進化」2025年9月</span>
+  </div>
+</div>
+
+<!-- CH6 -->
+<div class="chapter" id="ch6">
+  <div class="chapter-header">
+    <span class="chapter-num">第6章</span>
+    <h2>参入・撤退の制約</h2>
+  </div>
+
+  <h3>必要な許認可・資格</h3>
+
+  <p><strong>メーカー側（製造・販売）：</strong>ロボット製造自体に対する固有の許認可制度は現時点では存在しません。ただし、製品安全性確認（ISO 10218、ISO/TS 15066等の国際規格）、電気用品安全法等の適用可能性があります。</p>
+
+  <p><strong>ユーザー側（導入・運用）：</strong>80W以上の産業用ロボットを職場に導入・運用する場合、操作・保守担当者に対して「産業用ロボットの教示等の業務に係る特別教育」の受講義務があります（労働安全衛生法第59条第3項）。受講時間は学科・実技合計で7〜9時間程度です。協働ロボット（80W未満）については、この義務はありません。</p>
+
+  <p><strong>SIer（システムインテグレーター）：</strong>ロボットシステムの設計・施工に対する国家資格は現在設けられていませんが、「ロボット・セーフティアセッサ」等の民間資格が業界内で推奨されています。</p>
+
+  <h3>初期投資額レンジ</h3>
+
+  <div class="data-box">
+    <div class="label">初期投資規模（ユーザー側・導入）</div>
+    <ul>
+      <li><strong>協働ロボット単体：</strong>200〜300万円台（廉価品含む）</li>
+      <li><strong>産業用ロボット単体（垂直多関節）：</strong>300〜400万円（制御盤含む）</li>
+      <li><strong>小規模システム（本体＋周辺機器＋SI）：</strong>980万〜1,610万円</li>
+      <li><strong>中〜大規模システム：</strong>5,000万円〜2億円以上</li>
+      <li><strong>回収期間（一般的な計画）：</strong>2〜5年</li>
+    </ul>
+  </div>
+
+  <h3>新規参入数／撤退数（直近）</h3>
+
+  <p>産業用ロボット市場では、中国メーカーが2023〜2024年にかけて国内市場シェアを47〜57%まで拡大させており、新規参入が加速しています。IFRは「協働ロボットの新たなメーカーが市場に参入するとともに、既存メーカーも新製品ラインナップを追加する傾向がある」と指摘しています（World Robotics 2024）。</p>
+
+  <p>フィジカルAI・ヒューマノイド分野では、2024〜2025年に多数のスタートアップが資金調達を実施しており、新規参入が活発です。一方、2025年のフィジカルAI関連スタートアップの資金調達総額は、2025年最初の9ヶ月だけで161億ドルとされています（PwC Japan資料）。国内における撤退数についての公式統計は現時点では公開されていません。</p>
+
+  <div class="note-box">
+    <div class="note-label">出典</div>
+    <span class="source-tag">日本ロボット工業会「ロボット活用の基礎知識」2017年</span>
+    <span class="source-tag">IFR「World Robotics 2024・2025」</span>
+    <span class="source-tag">厚生労働省「労働安全衛生法・同規則」</span>
+    <span class="source-tag">PwC Japan「フィジカルAI×汎用ロボット躍進の本質」2025年</span>
+  </div>
+</div>
+
+<!-- CH7 -->
+<div class="chapter" id="ch7">
+  <div class="chapter-header">
+    <span class="chapter-num">第7章</span>
+    <h2>経済安全保障との距離</h2>
+  </div>
+
+  <h3>国家重要分野への該当</h3>
+
+  <p>フィジカルAI・AIロボットは、2025年12月23日に閣議決定された「人工知能基本計画」において国家重点課題として明示されています。同計画では「フィジカルAIの事業や産業への先導導入を支援する」ことが経済産業省の施策として明示されました。</p>
+
+  <p>また、地経学研究所（IOG）の分析（2026年3月）によると、フィジカルAIの競争環境において日本は計算資源・リスクマネー・研究者の観点で米中に対し構造的に劣位にある側面があるとされており、国家安全保障上の技術自立が課題として認識されています。</p>
+
+  <h3>政府案件比率・補助金受給</h3>
+
+  <p>政府が直接ロボット調達を行う比率は防衛・インフラ用途に限られており、民間産業用途が市場の大部分を占めます。ただし、補助金・助成金を通じた政府の関与は実質的に大きく、令和6年度補正予算だけでもフィジカルAI関連で<strong>220億円超</strong>の国費が投入されています。NEDOを通じた研究開発費を加えると、政府支援の総額はさらに大きくなります。</p>
+
+  <h3>外資依存度</h3>
+
+  <p>産業用ロボット本体の主要サプライヤーは日本・ドイツ・スイスが中心ですが、日本市場では米国・欧州メーカーからの輸入品も使用されています。ソフトウェア（AI基盤モデル・クラウドインフラ）については、現状で主要ロボット基盤モデルは米国企業（NVIDIA等）に技術的に依存している部分があります。ヒューマノイドの主要コンポーネント（アクチュエーター等）では中国サプライヤーへの依存が生じています（経済産業省・AIロボティクス検討会資料2025年10月）。</p>
+
+  <p>自動車の自動運転分野では、日系メーカーがE2E技術を英国・中国のAI企業に依存しているケースが確認されています（IOG地経学研究所資料2026年3月）。</p>
+
+  <h3>国際競争・地政学リスク</h3>
+
+  <p>IFRは地政学的リスクが「依然として重要なリスクと不確実性の要因」であると指摘しています（World Robotics 2025）。米中対立を背景とした貿易摩擦・輸出規制は、半導体・精密電子部品のサプライチェーンを通じてロボット産業にも影響します。中国市場では国内メーカーのシェアが2022年の約28%から2024年には57%に急拡大しており、既存の外資系メーカーにとっての市場構造の変化が生じています。</p>
+
+  <div class="note-box">
+    <div class="note-label">出典</div>
+    <span class="source-tag">内閣府「人工知能基本計画」2025年12月23日閣議決定</span>
+    <span class="source-tag">経済産業省・AIロボティクス検討会資料2025年10月</span>
+    <span class="source-tag">IOG地経学研究所「フィジカルAIをめぐる国際競争と日本の戦略的位置」2026年3月</span>
+    <span class="source-tag">IFR「World Robotics 2025」</span>
+  </div>
+</div>
+
+<!-- CH8 -->
+<div class="chapter" id="ch8">
+  <div class="chapter-header">
+    <span class="chapter-num">第8章</span>
+    <h2>外部環境の整理</h2>
+  </div>
+
+  <h3>第1〜7章の数値サマリー</h3>
+
+  <table class="summary-table">
+    <thead>
+      <tr>
+        <th>項目</th>
+        <th>数値・事実</th>
+        <th>出典</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>産業用ロボット世界新規導入台数（2024年）</td>
+        <td>54.2万台（過去10年で2倍超）</td>
+        <td>IFR</td>
+      </tr>
+      <tr>
+        <td>産業用ロボット世界稼働台数（2024年）</td>
+        <td>466万台（前年比+9%）</td>
+        <td>IFR</td>
+      </tr>
+      <tr>
+        <td>稼働台数CAGR（2018〜2023年）</td>
+        <td>+12%</td>
+        <td>IFR</td>
+      </tr>
+      <tr>
+        <td>中国の世界シェア（導入台数2024年）</td>
+        <td>54%（29.5万台）、国内メーカーシェア57%</td>
+        <td>IFR</td>
+      </tr>
+      <tr>
+        <td>日本の新規導入台数（2024年）</td>
+        <td>4.45万台（世界第2位）</td>
+        <td>IFR</td>
+      </tr>
+      <tr>
+        <td>日本のロボット密度</td>
+        <td>製造業従業員1万人あたり397台（世界第4位）</td>
+        <td>IFR</td>
+      </tr>
+      <tr>
+        <td>ヒューマノイドの現状コスト</td>
+        <td>平均約25万ドル（現時点）</td>
+        <td>経済産業省資料</td>
+      </tr>
+      <tr>
+        <td>日本政府のフィジカルAI予算（R6補正）</td>
+        <td>220億円超（AI開発促進+開発環境構築）</td>
+        <td>経済産業省</td>
+      </tr>
+      <tr>
+        <td>産業用ロボット導入コスト（小規模システム）</td>
+        <td>980万〜1,610万円</td>
+        <td>日本ロボット工業会事例</td>
+      </tr>
+      <tr>
+        <td>日本の製造業若年就業者減少（2002〜2023年）</td>
+        <td>384万人→259万人（約125万人減）</td>
+        <td>ものづくり白書2024年版</td>
+      </tr>
+      <tr>
+        <td>中小企業の人手不足比率</td>
+        <td>約7割が人手不足に直面</td>
+        <td>各種調査</td>
+      </tr>
+      <tr>
+        <td>協働ロボットの産業用ロボット比率（2023年）</td>
+        <td>全体の約11%</td>
+        <td>IFR</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>「変えられない前提条件」の明文化</h3>
+
+  <div class="data-box">
+    <div class="label">構造的前提条件（外部環境として固定的な要因）</div>
+    <ul>
+      <li>日本の生産年齢人口は2040年に向けて継続的に減少する（社人研推計）</li>
+      <li>製造業の34歳以下若年就業者は2002年以降、減少トレンドにある（ものづくり白書）</li>
+      <li>中国が世界の産業用ロボット導入台数の過半数を占める地域集中構造が続いている（IFR）</li>
+      <li>産業用ロボット（80W以上）の操作・保守に特別教育受講義務が法定されている（労働安全衛生法）</li>
+      <li>ロボットシステムの導入コストはロボット本体だけでなくSI費用が大きな割合を占める構造がある</li>
+      <li>フィジカルAI・ヒューマノイドの主要AI基盤モデル開発は米国企業が主導しており、主要部品（アクチュエーター）サプライヤーは中国企業が中心という構造がある（経済産業省資料）</li>
+      <li>フィジカルAIは日本の国家政策（人工知能基本計画）に明示された重点領域であり、補助金・公的支援の対象となっている</li>
+      <li>国際的な競争環境では米中が巨大な投資規模と資本力を背景に主導しており、日本は精密機械技術・製造ノウハウ面では強みを持つ一方、AI基盤モデル・リスクマネー面では規模的な差がある（IOG、PwC等の分析）</li>
+    </ul>
+  </div>
+</div>
+
+<!-- CH9 -->
+<div class="chapter" id="ch9">
+  <div class="chapter-header">
+    <span class="chapter-num">第9章</span>
+    <h2>次におすすめの資料</h2>
+  </div>
+
+  <p>本記事では外部環境（マクロ・業界構造）に関する数値と事実を整理しました。業界理解をさらに深めるためには、以下の情報源が有益です。</p>
+
+  <h3>一次情報源（無料）</h3>
+  <div class="data-box">
+    <div class="label">一次情報源</div>
+    <ul>
+      <li><strong>IFR（国際ロボット連盟）：</strong>ifr.org ── 年次統計レポート「World Robotics」（一部無料）</li>
+      <li><strong>日本ロボット工業会：</strong>jara.jp ── 統計データ（四半期・年間）</li>
+      <li><strong>経済産業省ロボット政策ページ：</strong>meti.go.jp ── 政策・補助金・AIロボティクス検討会資料</li>
+      <li><strong>経済産業省「ものづくり白書」：</strong>毎年6月頃公表。製造業全般のデータ</li>
+      <li><strong>NEDO（国立研究開発法人新エネルギー・産業技術総合開発機構）：</strong>nedo.go.jp ── 研究公募情報・成果報告書</li>
+      <li><strong>内閣府「人工知能基本計画」：</strong>2025年12月23日閣議決定版</li>
+    </ul>
+  </div>
+
+  <div class="next-box">
+    <div class="arrow">→</div>
+    <div>
+      <h3>内部環境編（次回）について</h3>
+      <p>本記事は外部環境（PEST分析相当）に絞っています。競合構造・企業内部の収益構造・人材市場・個別企業の財務指標については「内部環境編」で扱います。就職・転職および株式投資の判断に際しては、外部環境と内部環境の両方を参照してください。</p>
+    </div>
+  </div>
+
+  <div class="next-box" style="margin-top:24px;">
+    <div class="arrow">★</div>
+    <div>
+      <h3>転職・投資の判断には複数の情報源を</h3>
+      <p>本記事の数値・事実はあくまで業界構造理解のためのものです。転職・就職判断には個人のスキル・経験・ライフプランとの照合が必要です。投資判断には財務分析・バリュエーション・リスク許容度の検討が必要です。いずれも本記事単独での判断は推奨しません。</p>
+    </div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <h3>免責事項・スタンス</h3>
+  <p>本記事に記載されている数値・データは、各章末に示した一次情報源に基づいています。市場規模推計値は調査機関・集計定義により幅があり、単一の数値として断定するものではありません。本記事は業界構造の理解支援を目的とした情報提供であり、投資の勧誘・推奨、転職・就職のアドバイスを目的とするものではありません。本記事に基づく判断・行動の結果については、読者自身が責任を負うものとします。</p>
+</div>
+
+</div><!-- /wrapper -->
+<div style="
+  background: #0f0f0e;
+  color: #f5f2ed;
+  text-align: center;
+  padding: 24px 40px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+">
+  <a 
+    href="https://www.marketsupporter-ai.com"
+    style="
+      color: #c84b2f;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+    "
+  >
+    ← Market Supporter AI トップへ戻る
+  </a>
+  　｜　
+  <a 
+    href="https://www.marketsupporter-ai.com/articles/general-knowledge/knowledge"
+    style="
+      color: #f5f2ed;
+      text-decoration: none;
+    "
+  >
+    一般教養の記事一覧へ
+  </a>
+</div>
+</body>
+</html>
