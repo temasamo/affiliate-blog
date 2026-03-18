@@ -1,0 +1,970 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>業界分析｜高市政権「戦略17分野」先行検討技術①フィジカルAI（内部環境編）</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0f0e;
+    --paper: #f5f2ed;
+    --cream: #ede9e1;
+    --accent: #c84b2f;
+    --accent2: #2563a8;
+    --muted: #6b6760;
+    --rule: #c9c4bb;
+    --highlight: #fff8e6;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: var(--paper);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.9;
+    font-weight: 300;
+  }
+
+  .masthead {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .masthead .label { color: var(--accent); }
+
+  .hero {
+    border-bottom: 2px solid var(--ink);
+    padding: 60px 60px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 340px; height: 100%;
+    background: repeating-linear-gradient(
+      -45deg, transparent, transparent 8px,
+      rgba(200,75,47,0.06) 8px, rgba(200,75,47,0.06) 9px
+    );
+    pointer-events: none;
+  }
+  .hero-kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(22px, 3.5vw, 38px);
+    font-weight: 700;
+    line-height: 1.4;
+    max-width: 740px;
+    letter-spacing: -0.01em;
+  }
+  .hero-meta {
+    margin-top: 24px;
+    display: flex;
+    gap: 32px;
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .hero-meta span::before { content: '── '; }
+
+  .data-notice {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 24px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+  .data-notice strong { color: var(--accent); }
+
+  .wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+
+  .toc {
+    background: var(--cream);
+    border-left: 4px solid var(--ink);
+    padding: 28px 32px;
+    margin: 48px 0;
+  }
+  .toc-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .toc ol {
+    padding-left: 0;
+    list-style: none;
+    counter-reset: toc;
+  }
+  .toc li {
+    counter-increment: toc;
+    padding: 5px 0;
+    border-bottom: 1px dotted var(--rule);
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .toc li::before {
+    content: counter(toc, decimal-leading-zero);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .toc a { color: var(--ink); text-decoration: none; font-size: 13.5px; }
+  .toc a:hover { color: var(--accent); }
+
+  .chapter {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+  }
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+  .chapter-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--paper);
+    background: var(--ink);
+    padding: 3px 8px;
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .chapter h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 32px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  p { margin-bottom: 16px; }
+
+  .data-box {
+    background: var(--highlight);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    border-radius: 0 2px 2px 0;
+  }
+  .data-box .label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .data-box ul { list-style: none; padding: 0; }
+  .data-box ul li {
+    padding: 5px 0;
+    border-bottom: 1px dotted var(--rule);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .data-box ul li:last-child { border-bottom: none; }
+  .data-box ul li strong { color: var(--accent); font-weight: 500; }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 28px 0;
+  }
+  .stat-cell {
+    background: var(--paper);
+    padding: 20px 18px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--accent);
+    line-height: 1.1;
+    display: block;
+  }
+  .stat-desc {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  .note-box {
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    padding: 18px 22px;
+    margin: 24px 0;
+    font-size: 13.5px;
+  }
+  .note-box .note-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+    font-size: 13.5px;
+  }
+  .summary-table th {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 500;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+  .summary-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    line-height: 1.7;
+  }
+  .summary-table tr:nth-child(even) td { background: var(--cream); }
+
+  .next-box {
+    border: 2px solid var(--ink);
+    padding: 28px 32px;
+    margin-top: 32px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .next-box .arrow {
+    font-size: 32px;
+    color: var(--accent);
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .next-box h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 17px;
+    border: none;
+    padding: 0;
+    margin: 0 0 10px;
+  }
+  .next-box p { margin: 0; font-size: 14px; color: var(--muted); }
+
+  .disclaimer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 32px 40px;
+    margin-top: 64px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .disclaimer h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    border: none;
+    padding: 0;
+    margin-bottom: 12px;
+    margin-top: 0;
+  }
+
+  .source-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    color: var(--muted);
+    background: var(--cream);
+    display: inline-block;
+    padding: 2px 7px;
+    margin: 2px 2px 2px 0;
+    border: 1px solid var(--rule);
+  }
+
+  .badge-strategy {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--paper);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    padding: 3px 10px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 40px 24px 36px; }
+    .wrapper { padding: 0 24px 60px; }
+    .masthead { padding: 10px 20px; font-size: 10px; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+    .next-box { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <span class="label">産業構造分析レポート</span>
+  <span>2026年3月発行 ── フィジカルAI・AIロボット産業（内部環境編）</span>
+</div>
+
+<div class="hero">
+  <div class="badge-strategy">戦略17分野 ／ 先行検討技術① ／ 内部環境編</div>
+  <div class="hero-kicker">Industry Structure Analysis ／ Internal Environment</div>
+  <h1>業界分析｜高市政権「戦略17分野」<br>先行検討技術①フィジカルAI<br>（内部環境編）</h1>
+  <div class="hero-meta">
+    <span>就職・転職検討者向け</span>
+    <span>株式投資家向け</span>
+    <span>数字と事実のみ記載</span>
+  </div>
+</div>
+
+<div class="data-notice">
+  <strong>本レポートのデータ基準時点：2026年3月</strong>　／　財務数値は各社2024年度（2025年3月期）確定値を原則使用。推計値には「推計」と付記しています。
+</div>
+
+<div class="wrapper">
+
+<nav class="toc">
+  <div class="toc-title">目次</div>
+  <ol>
+    <li><a href="#ch0">この内部環境編の立ち位置</a></li>
+    <li><a href="#ch1">業界内プレイヤー構成</a></li>
+    <li><a href="#ch2">バリューチェーンと利益の所在</a></li>
+    <li><a href="#ch3">収益構造の全体像</a></li>
+    <li><a href="#ch4">主要企業の財務指標概要</a></li>
+    <li><a href="#ch5">人件費構造と労働集約性</a></li>
+    <li><a href="#ch6">人材市場の実態（概要）</a></li>
+    <li><a href="#ch7">現場と本部の非対称性</a></li>
+    <li><a href="#ch8">構造的に忙しさが増幅する理由</a></li>
+    <li><a href="#ch9">誤解されやすいポイント</a></li>
+    <li><a href="#ch10">内部環境の整理</a></li>
+    <li><a href="#ch11">有料版への橋渡し</a></li>
+  </ol>
+</nav>
+
+<!-- CH0 -->
+<div class="chapter" id="ch0">
+  <div class="chapter-header">
+    <span class="chapter-num">第0章</span>
+    <h2>この内部環境編の立ち位置</h2>
+  </div>
+
+  <p>本レポートは「フィジカルAI・AIロボット産業（外部環境編）」の続編です。外部環境編では市場規模・政策・人口動態・技術トレンドという「業界を取り巻く前提条件」を整理しました。本編では、その前提条件が業界内部でどのような構造として現れているかを、数字と事実に基づいて記述します。</p>
+
+  <div class="data-box">
+    <div class="label">この内部環境編でやること</div>
+    <ul>
+      <li>業界内のプレイヤー構成・規模別分布の確認</li>
+      <li>バリューチェーンと利益が集まる工程の特定（評価なし）</li>
+      <li>収益構造・財務指標の業界平均および大手事実の整理</li>
+      <li>人件費構造・労働集約性の定量的な記述</li>
+      <li>人材市場の概要（職種・年収・求人倍率）の確認</li>
+      <li>現場と本部の権限・業務比率に関する構造的事実の記述</li>
+      <li>需要変動・稼働率・離職率に関する構造的事実の記述</li>
+      <li>よく流通する誤解と実態の乖離の確認</li>
+    </ul>
+  </div>
+
+  <div class="data-box">
+    <div class="label">この内部環境編でやらないこと</div>
+    <ul>
+      <li>勝ち組・負け組プレイヤーの断定</li>
+      <li>組織改革・権限移譲・DX推進の提言</li>
+      <li>個別銘柄の投資推奨</li>
+      <li>向いている人・向いていない人の話（有料版で扱います）</li>
+      <li>職種別詳細年収・キャリア設計（有料版で扱います）</li>
+      <li>将来業績の断定予測</li>
+    </ul>
+  </div>
+
+  <div class="note-box">
+    <div class="note-label">スタンス</div>
+    本レポートは業界構造の理解を目的とした情報提供です。転職・就職の判断および投資判断は、読者ご自身が複数の情報源をもとに行ってください。
+  </div>
+</div>
+
+<!-- CH1 -->
+<div class="chapter" id="ch1">
+  <div class="chapter-header">
+    <span class="chapter-num">第1章</span>
+    <h2>業界内プレイヤー構成</h2>
+  </div>
+
+  <h3>業界の層構造</h3>
+
+  <p>フィジカルAI・AIロボット産業は、単一の均質な産業ではなく、以下の4層に分かれる垂直分業構造をとっています。①部品・コンポーネント製造（精密減速機・アクチュエーター・サーボモーター）、②ロボット本体の開発・製造（メーカー層）、③システムインテグレーション（SIer層）、④エンドユーザー（製造業・物流・医療等）です。各層でプレイヤーの性格・利益率・人材市場が大きく異なります。</p>
+
+  <h3>メーカー層のプレイヤー構成と集中度</h3>
+
+  <p>産業用ロボット本体の世界市場は、ABB（スイス）・KUKA（ドイツ、美的集団傘下）・ファナック（日本）・安川電機（日本）の4社が「世界4強」と呼ばれる寡占構造を形成しています。2024年度売上高（ロボット事業）は、ABBのロボティクス部門が約22.99億米ドル（約3,439億円）、ファナックのロボット部門が約3,296億円、安川電機のロボット事業が約2,374億円です。上位2〜3社で世界シェアの約30〜40%前後が集中する集中型市場です。</p>
+
+  <div class="stat-grid">
+    <div class="stat-cell">
+      <span class="stat-num">4<span style="font-size:14px">社</span></span>
+      <div class="stat-desc">世界産業用ロボット市場<br>「4強」プレイヤー数</div>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">〜13.5%</span>
+      <div class="stat-desc">世界1位ABBの<br>市場シェア（推計2025年）</div>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">57%</span>
+      <div class="stat-desc">中国国内市場における<br>中国メーカーシェア（2024年）</div>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">159<span style="font-size:14px">社</span></span>
+      <div class="stat-desc">国内SIer正会員数<br>（日本ロボットSIer協会）</div>
+    </div>
+  </div>
+
+  <h3>SIer層のプレイヤー構成</h3>
+
+  <p>国内のロボットシステムインテグレーター（SIer）の把握・統計は難しく、日本ロボットシステムインテグレータ協会（SIer協会、2018年設立）の正会員企業数は2025年末時点で159社です。ただし同協会非加盟の中小SIerも多数存在し、全体の事業者数は数百社規模とされています。規模別では、年商数億〜数十億円の中小企業が多数を占め、大手SIerは少数です。参入障壁となる国家資格制度がないため分散構造が続いています。</p>
+
+  <h3>部品・コンポーネント層の集中度</h3>
+
+  <p>ロボットの中核部品（精密減速機）では、ナブテスコ（RV減速機）とハーモニック・ドライブ・システムズ（波動歯車装置）が世界市場の上位を占める寡占構造で、高い価格決定力を持ちます。近年は中国企業（南通振康機械、蘇州緑的諧波等）が同分野への参入を進めています。</p>
+
+  <div class="note-box">
+    <div class="note-label">出典</div>
+    <span class="source-tag">deallab「産業用ロボット業界の世界市場シェア分析」2025年</span>
+    <span class="source-tag">FA・ロボットシステムインテグレータ協会（SIer協会）会員ハンドブック2025年12月版</span>
+    <span class="source-tag">各社有価証券報告書・決算短信（2024年度）</span>
+    <span class="source-tag">factory-dx-center.com「スカラロボット市場シェア2025年版」</span>
+  </div>
+</div>
+
+<!-- CH2 -->
+<div class="chapter" id="ch2">
+  <div class="chapter-header">
+    <span class="chapter-num">第2章</span>
+    <h2>バリューチェーンと利益の所在</h2>
+  </div>
+
+  <h3>バリューチェーンの全体像</h3>
+
+  <div class="data-box">
+    <div class="label">フィジカルAI・産業用ロボット産業のバリューチェーン（上流→下流）</div>
+    <ul>
+      <li><strong>【上流】部品・素材：</strong>精密減速機（ナブテスコ、ハーモニック等）、サーボモーター、センサー、半導体・電子部品。原材料費直結。</li>
+      <li><strong>【上流〜中流】AI基盤モデル・ソフトウェア：</strong>ロボット制御OS、VLAモデル等。現状は米国（NVIDIA等）が主要サプライヤー。</li>
+      <li><strong>【中流】ロボット本体製造：</strong>ファナック・安川電機・ABB・KUKA等のメーカー。高付加価値・寡占構造。営業利益率は大手で20%超も存在。</li>
+      <li><strong>【中流〜下流】SIer（システムインテグレーション）：</strong>設計・周辺機器選定・組立・ティーチング・保守。導入コスト全体の34〜53%を占める。分散構造・中小多数。</li>
+      <li><strong>【下流】エンドユーザー（自動車・電機・食品・物流・医療等）：</strong>需要を生成するが価格交渉力は規模次第。</li>
+      <li><strong>【アフター】保守・メンテナンス：</strong>ファナックは「生涯保守」を明示。安定した収益源となる反復フロー型ビジネス。</li>
+    </ul>
+  </div>
+
+  <h3>利益が集まる工程の位置（事実として）</h3>
+
+  <p>公開財務情報から確認できる事実として、ロボット本体製造工程（大手メーカー層）が業界内で最も高い営業利益率を記録しています。精密減速機等の寡占部品メーカーも高い価格交渉力を持ちます。一方、SIer層は案件ごとの見積もりによる収益であり、大手以外は小規模・固定費の重い構造です。</p>
+
+  <p>アフターサービス（保守・メンテナンス）は、導入台数に比例して安定した収益が積み上がるストック型の性格を持っており、メーカー大手はこの領域を重視しています。ファナックは100カ国以上に270以上のサービス拠点を配置しています。</p>
+
+  <h3>上流・下流の力関係の構造</h3>
+
+  <p>精密減速機・半導体等の上流部品は寡占的であり、大手ロボットメーカーであってもサプライヤーへの価格交渉力は限定的な側面があります。下流のエンドユーザー側（自動車メーカー等の大規模顧客）は、複数メーカーの相見積もりをとれる立場にあり、ロボット本体の価格に一定の下押し圧力がかかる構造があります。ただし、精密な位置制御・生涯保守体制・SIerとの長年の取引関係が参入障壁として機能しています。</p>
+
+  <div class="note-box">
+    <div class="note-label">出典</div>
+    <span class="source-tag">日本ロボット工業会「ロボット活用の基礎知識」2017年</span>
+    <span class="source-tag">日経クロステック「営業利益率30%超、ロボット業界にもリカーリングの波」2022年</span>
+    <span class="source-tag">deallab「産業用ロボット業界の世界市場シェア分析」2025年</span>
+    <span class="source-tag">ファナック有価証券報告書・IRページ</span>
+  </div>
+</div>
+
+<!-- CH3 -->
+<div class="chapter" id="ch3">
+  <div class="chapter-header">
+    <span class="chapter-num">第3章</span>
+    <h2>収益構造の全体像</h2>
+  </div>
+
+  <h3>業界の収益構造の特徴（フロー型 vs ストック型）</h3>
+
+  <p>フィジカルAI・産業用ロボット産業の収益構造は、プレイヤー層によって大きく異なります。</p>
+
+  <p>ロボット本体の販売は設備投資サイクルと連動するフロー型収益であり、景気・設備投資動向に連動して変動します。ファナックは自社の業種を「設備業界」と有価証券報告書で明記しており、「景気変動の波や企業の設備投資意欲の変化による影響を少なからず受ける」と記述しています（2024年統合報告書）。</p>
+
+  <p>一方、保守・メンテナンス・部品供給は稼働台数に比例して積み上がるストック型収益であり、利益の安定化に寄与します。ファナックの「生涯保守」はこのストック収益を意識した経営モデルです。SIerの収益はプロジェクトごとのフロー型が主体です。</p>
+
+  <h3>大手メーカー vs SIer・中小企業の収益構造の差異</h3>
+
+  <div class="data-box">
+    <div class="label">収益構造の比較（事実のみ）</div>
+    <ul>
+      <li><strong>大手ロボットメーカー（ファナック）：</strong>2024年度売上高7,971億円・連結営業利益率 約24.7%（経常利益ベース2025年3月期）。無借金経営、自己資本比率89%（単体）。設備投資サイクルによる変動が大。</li>
+      <li><strong>大手ロボットメーカー（安川電機）：</strong>2025年2月期連結売上高5,757億円・ROE予10.78%（IRBank）。モーションコントロールとロボットの2本柱で変動を分散。</li>
+      <li><strong>中小SIer（業界概算）：</strong>SIer業界の平均年収は400〜650万円のレンジ（就活・転職サイト集計）。中小SIer多数は規模が小さく、案件依存型の収益構造。公開財務データは限定的。</li>
+      <li><strong>収益構造の型：</strong>大手メーカー＝フロー（本体）＋ストック（保守）の複合型。SIer＝フロー（プロジェクト）主体。精密部品メーカー＝ストック（供給継続）主体。</li>
+    </ul>
+  </div>
+
+  <div class="note-box">
+    <div class="note-label">出典</div>
+    <span class="source-tag">ファナック2025年3月期決算短信・統合報告書2024</span>
+    <span class="source-tag">安川電機2025年2月期決算短信</span>
+    <span class="source-tag">IRBank「6954ファナック」「6506安川電機」2026年3月</span>
+    <span class="source-tag">SalesNow Data Lab「ファナック決算分析レポート」2026年3月</span>
+  </div>
+</div>
+
+<!-- CH4 -->
+<div class="chapter" id="ch4">
+  <div class="chapter-header">
+    <span class="chapter-num">第4章</span>
+    <h2>主要企業の財務指標概要</h2>
+  </div>
+
+  <h3>業界全体の財務的特徴</h3>
+
+  <p>産業用ロボット大手メーカーは製造業の中でも高い営業利益率を示す企業が存在する一方、業界全体が設備投資サイクルに連動する波動性を持ちます。2022〜2023年度に在庫調整局面があり、2024〜2025年度に持ち直しの動きが見られました（ファナック決算短信2025年3月期）。</p>
+
+  <div class="stat-grid">
+    <div class="stat-cell">
+      <span class="stat-num">〜25%</span>
+      <div class="stat-desc">ファナック営業利益率<br>（2024年度、単体ベース）</div>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">89%</span>
+      <div class="stat-desc">ファナック自己資本比率<br>（2025年3月期、単体）</div>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">9.36%</span>
+      <div class="stat-desc">ファナックROE（実績）<br>（IRBank、2025年3月期）</div>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">10.78%</span>
+      <div class="stat-desc">安川電機ROE（予想）<br>（IRBank、2025年2月期）</div>
+    </div>
+  </div>
+
+  <h3>業界特有の財務構造</h3>
+
+  <p>大手ロボットメーカーは研究開発費・設備投資が高水準で推移する傾向があります。ファナックは山梨県忍野村の広大な工場・研究施設に設備を集中させ、「より少ない部品で低コストにロボットを開発」するアーキテクチャを採用しています。在庫については、景気変動局面で棚卸資産の増減が大きく業績に影響します（2022〜2024年度の在庫調整が典型例）。</p>
+
+  <p>SIer中小企業については、上場企業が少なく業界全体の財務指標の把握は困難です。収益規模・利益率・財務構造の詳細は個別企業ごとに大きく異なります。</p>
+
+  <div class="note-box">
+    <div class="note-label">注意事項</div>
+    本章の個別企業数値はすべて公開情報（有価証券報告書・決算短信・IR資料）に基づく事実の記述です。投資推奨・個別企業評価は本レポートの範囲外です。詳細な個別企業分析は有料版で扱います。
+  </div>
+
+  <div class="note-box">
+    <div class="note-label">出典</div>
+    <span class="source-tag">ファナック有価証券報告書・2025年3月期決算短信</span>
+    <span class="source-tag">安川電機2025年2月期決算短信（IFRS）</span>
+    <span class="source-tag">IRBank「6954」「6506」2026年3月時点</span>
+    <span class="source-tag">SalesNow Data Lab 2026年3月</span>
+  </div>
+</div>
+
+<!-- CH5 -->
+<div class="chapter" id="ch5">
+  <div class="chapter-header">
+    <span class="chapter-num">第5章</span>
+    <h2>人件費構造と労働集約性</h2>
+  </div>
+
+  <h3>人件費率の水準</h3>
+
+  <p>ロボットメーカー大手は、製造業の中でも相対的に人件費率が低い部類に入ります。ファナックは2025年3月期において、単体従業員4,105人（連結8,256人）で売上高7,971億円（連結）を達成しており、一人あたり売上高は連結ベースで約9,650万円（推計）です。ファナックの2025年3月期単体平均年収は1,164万円（有価証券報告書）で、大手製造業として高水準にあります。</p>
+
+  <h3>業種・職種別の労働集約性の差</h3>
+
+  <div class="data-box">
+    <div class="label">職種・層別 人件費・労働集約性の差異</div>
+    <ul>
+      <li><strong>ロボットメーカー（研究開発・エンジニア）：</strong>高付加価値・高年収。少数精鋭かつ設備・資本集約型。ファナック平均年収1,164万円（2025年3月期、単体）。</li>
+      <li><strong>ロボットSIer（中堅〜中小）：</strong>現場作業・ティーチングは労働集約的。プロジェクト単位の人員配置。人手不足が構造的に解消されにくい工程。</li>
+      <li><strong>精密部品メーカー（減速機等）：</strong>製造工程は技能集約的。熟練工の確保が課題。</li>
+      <li><strong>ロボットエンジニア（フィールド・保守）：</strong>産業用ロボット保守フィールドエンジニアの平均年収は約586万円（厚生労働省jobtag参照）。</li>
+    </ul>
+  </div>
+
+  <h3>なぜ効率化が難しい工程があるか（構造的理由）</h3>
+
+  <p>SIer工程（システムインテグレーション）は、顧客ごと・現場ごとにカスタマイズが必要であり、標準化・自動化が他の製造工程に比べて困難です。ティーチング（ロボットへの動作指示）は熟練者が行う労働集約的な作業で、案件ごとに一から実施が必要なケースが多いとされています。ただし、AIティーチングレス技術の開発が進んでおり（三菱電機等が2022年国際ロボット展で発表）、構造変化の途上にあります。</p>
+
+  <div class="note-box">
+    <div class="note-label">出典</div>
+    <span class="source-tag">ファナック有価証券報告書2025年3月期</span>
+    <span class="source-tag">厚生労働省jobtag「産業ロボットの保守・メンテナンス」</span>
+    <span class="source-tag">日経クロステック「ロボット業界にもリカーリングの波」2022年</span>
+  </div>
+</div>
+
+<!-- CH6 -->
+<div class="chapter" id="ch6">
+  <div class="chapter-header">
+    <span class="chapter-num">第6章</span>
+    <h2>人材市場の実態（概要）</h2>
+  </div>
+
+  <h3>業界の平均年収レンジ（直近）</h3>
+
+  <div class="stat-grid">
+    <div class="stat-cell">
+      <span class="stat-num">1,164<span style="font-size:14px">万円</span></span>
+      <div class="stat-desc">ファナック 単体平均年収<br>（2025年3月期、有価証券報告書）</div>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">586<span style="font-size:14px">万円</span></span>
+      <div class="stat-desc">産業ロボット保守<br>フィールドエンジニア平均年収</div>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">400〜650<span style="font-size:14px">万円</span></span>
+      <div class="stat-desc">SIer（ロボット・FA系）<br>年収レンジ（業界概算）</div>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">3.17<span style="font-size:14px">倍</span></span>
+      <div class="stat-desc">IT技術関連職の有効求人倍率<br>（東京ハローワーク、2025年）</div>
+    </div>
+  </div>
+
+  <h3>主要職種のリスト</h3>
+
+  <div class="data-box">
+    <div class="label">フィジカルAI・AIロボット産業の主要職種（7職種）</div>
+    <ul>
+      <li><strong>①ロボット開発エンジニア：</strong>新機種・新機能の設計開発。機械・電気・制御の複合スキル要。主に大手メーカー。</li>
+      <li><strong>②AIソフトウェアエンジニア：</strong>VLAモデル・ロボット基盤モデルの開発・適用。スタートアップ・大手メーカー両方。</li>
+      <li><strong>③システムインテグレーター（SIer）：</strong>導入計画・設計・組立・ティーチング・検収。SIer企業が主。</li>
+      <li><strong>④フィールドエンジニア（保守・メンテナンス）：</strong>稼働中システムの保守点検。全国各地への出張が発生しやすい。</li>
+      <li><strong>⑤セールスエンジニア：</strong>顧客への技術提案・見積もり。メーカー・SIer両方で需要。</li>
+      <li><strong>⑥品質・安全管理：</strong>CE認証・労働安全衛生法対応・品質保証。規制対応が重要な工程。</li>
+      <li><strong>⑦プロジェクトマネージャー（SIer・メーカー）：</strong>複合プロジェクトの工程管理。平均年収891万円（経済産業省IT関連産業調査ベースの参考値）。</li>
+    </ul>
+  </div>
+
+  <h3>未経験採用の有無・転職市場の需要感</h3>
+
+  <p>ロボットエンジニア・SIer職は、機械・電気・制御工学の基礎知識を前提とするケースが多く、純粋な未経験採用は限定的です。ただし、製造業・電気系・ソフトウェア系からの転職は技術の親和性から一定の需要があります。AIロボット・フィジカルAI分野では、2025年〜2026年にかけて主要メーカー・スタートアップの採用が増加傾向にあります。IT技術関連職の有効求人倍率は3.17倍（東京ハローワーク2025年）で、職種全体平均（1.48倍）を大きく上回る水準です。</p>
+
+  <div class="note-box">
+    <div class="note-label">職種別詳細への注記</div>
+    職種別の詳細年収・スキル要件・キャリア設計については有料版で扱います。
+  </div>
+
+  <div class="note-box">
+    <div class="note-label">出典</div>
+    <span class="source-tag">ファナック有価証券報告書2025年3月期</span>
+    <span class="source-tag">厚生労働省jobtag「産業ロボットの保守・メンテナンス」</span>
+    <span class="source-tag">東京ハローワーク「職種別有効求人・求職状況」2025年</span>
+    <span class="source-tag">経済産業省「IT関連産業の給与等に関する実態調査」</span>
+    <span class="source-tag">willof.jp「ロボットエンジニアの平均年収」2025年</span>
+  </div>
+</div>
+
+<!-- CH7 -->
+<div class="chapter" id="ch7">
+  <div class="chapter-header">
+    <span class="chapter-num">第7章</span>
+    <h2>現場と本部の非対称性</h2>
+  </div>
+
+  <h3>意思決定権限の所在</h3>
+
+  <p>大手ロボットメーカーでは、製品開発・価格設定・顧客仕様対応の権限は本社・開発部門が主導します。ファナックは「工場の自動化」という一貫した方針のもと、製品戦略・研究開発・生産を忍野村の本社拠点に高度に集中させた体制をとっています。意思決定の集中度は大手ほど高い傾向があります。</p>
+
+  <p>SIer（特に中小企業）では、現場エンジニアが顧客折衝・設計変更・ティーチングを一体的に担う傾向が強く、現場の裁量範囲は相対的に広い一方で、正式な権限移譲の仕組みは未整備のケースが多いとされています。</p>
+
+  <h3>管理業務比率の事実</h3>
+
+  <p>ロボットSIer業界では、SIerのスキル標準の制定が経済産業省・日本ロボット工業会・ロボット革命イニシアティブ協議会によって進められており（11カテゴリ、スキルレベル1〜7段階）、業務プロセスの標準化が課題として認識されています。プロジェクト管理・文書作成・安全確認等の管理業務の比率については、産業全体としての統計データは現時点で公開されていません。</p>
+
+  <h3>評価と実態のズレ（構造として）</h3>
+
+  <p>SIer業界では、技術スキルの評価基準と実際の案件難易度・業務量の関係が不明確なケースがあります。日本ロボットシステムインテグレータ協会がスキル標準を制定しているものの、国家資格としての法的位置づけがないため、評価の均質性は確保されていません。</p>
+
+  <div class="note-box">
+    <div class="note-label">出典</div>
+    <span class="source-tag">ファナック統合報告書2024</span>
+    <span class="source-tag">日本ロボットシステムインテグレータ協会「スキル標準」</span>
+    <span class="source-tag">robokaru.jp「ロボットSIerの市場」2023年</span>
+  </div>
+</div>
+
+<!-- CH8 -->
+<div class="chapter" id="ch8">
+  <div class="chapter-header">
+    <span class="chapter-num">第8章</span>
+    <h2>構造的に忙しさが増幅する理由</h2>
+  </div>
+
+  <h3>需要変動率</h3>
+
+  <p>産業用ロボット市場は設備投資サイクルに強く連動するため、需要変動が激しい産業です。ファナック単体の売上高は2021年度から2023年度（2024年3月期）にかけて拡大後、2024〜2025年にかけて一部在庫調整局面が発生し、2022年度下期から2024年前半にかけて在庫調整が続きました（ファナック決算短信）。需要のピーク・谷の振れ幅は年間で10〜20%以上になる局面もあります。</p>
+
+  <h3>欠員時の業務増加構造</h3>
+
+  <p>SIer業界では、人材確保の困難が業界全体の構造課題として認識されています。日本ロボットシステムインテグレータ協会は「人材不足や人材育成が課題」と明示しており（同協会ウェブサイト）、案件増加に対して技術者数が追いつかないケースが生じやすい構造にあります。欠員時は既存技術者に業務が集中するという構造が生じやすいとされています。</p>
+
+  <h3>離職率</h3>
+
+  <p>ロボット・SIer業界固有の離職率の統計は公開されていません。参考値として、製造業全体の離職率は約10〜12%程度（厚生労働省「雇用動向調査」2024年）で推移しており、技術系・専門職では業界平均より低い傾向がありますが、現場作業・出張頻度の高い職種では変動があります。</p>
+
+  <div class="note-box">
+    <div class="note-label">出典</div>
+    <span class="source-tag">ファナック2025年3月期決算短信・2025年3月期第3四半期決算短信</span>
+    <span class="source-tag">日本ロボットシステムインテグレータ協会ウェブサイト</span>
+    <span class="source-tag">厚生労働省「雇用動向調査」2024年</span>
+    <span class="source-tag">robokaru.jp「ロボットSIerの市場」2023年</span>
+  </div>
+</div>
+
+<!-- CH9 -->
+<div class="chapter" id="ch9">
+  <div class="chapter-header">
+    <span class="chapter-num">第9章</span>
+    <h2>誤解されやすいポイント</h2>
+  </div>
+
+  <h3>誤解①「国策＝業界全体が恩恵を受ける」</h3>
+
+  <p><strong>よく語られる指標：</strong>フィジカルAIは戦略17分野の先行検討技術第1号。令和6年度補正予算で205〜220億円が計上。</p>
+
+  <p><strong>実態との乖離：</strong>補助金・政策支援の受益者は主に開発側（メーカー・スタートアップ）であり、SIer全体や末端の保守エンジニアへの直接的な恩恵は限定的です。また、政策支援の対象は「日本メーカー・スタートアップ」が中心であり、外資系大手や中小SIerがそのまま恩恵を受けるわけではありません。</p>
+
+  <h3>誤解②「市場拡大＝既存プレイヤーの売上拡大」</h3>
+
+  <p><strong>よく語られる指標：</strong>世界産業用ロボット導入台数は2024年に54万2,000台（IFR）。10年で2倍超。</p>
+
+  <p><strong>実態との乖離：</strong>市場拡大の54%は中国市場が生み出したものであり、かつ2024年に中国国内メーカーのシェアが57%と外資を上回りました（IFR）。日本メーカーの中国市場でのシェアは構造的に縮小しつつある事実があります。また、日本国内の導入台数は2024年に前年比4%減を記録しています（IFR）。</p>
+
+  <h3>誤解③「ロボット業界＝テック企業・高年収」</h3>
+
+  <p><strong>よく語られる指標：</strong>ファナックの平均年収1,164万円（2025年3月期）。フィジカルAIのスタートアップが巨額調達。</p>
+
+  <p><strong>実態との乖離：</strong>ファナックの高年収は少数精鋭・研究集約型の大手メーカーとしての特殊事例であり、業界全体に適用できる数字ではありません。SIer中小企業の年収は400〜650万円のレンジが実態です。また、産業用ロボット保守・フィールドエンジニアの平均年収は約586万円です。ヒューマノイド・AIロボットのスタートアップへの投資規模と、現時点での従業員の報酬水準は必ずしも連動しません。</p>
+
+  <div class="note-box">
+    <div class="note-label">出典</div>
+    <span class="source-tag">IFR「World Robotics 2025」</span>
+    <span class="source-tag">ファナック有価証券報告書2025年3月期</span>
+    <span class="source-tag">厚生労働省jobtag「産業ロボットの保守・メンテナンス」</span>
+    <span class="source-tag">経済産業省令和6年度補正予算資料</span>
+  </div>
+</div>
+
+<!-- CH10 -->
+<div class="chapter" id="ch10">
+  <div class="chapter-header">
+    <span class="chapter-num">第10章</span>
+    <h2>内部環境の整理</h2>
+  </div>
+
+  <h3>第1〜9章の数値サマリー</h3>
+
+  <table class="summary-table">
+    <thead>
+      <tr>
+        <th>項目</th>
+        <th>数値・事実</th>
+        <th>出典</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>世界産業用ロボット市場シェア1位</td>
+        <td>ABB（〜13.5%推計）、次いでKUKA・ファナック・安川電機の4強</td>
+        <td>deallab・factory-dx-center</td>
+      </tr>
+      <tr>
+        <td>国内SIer協会正会員数</td>
+        <td>159社（2025年末）</td>
+        <td>日本ロボットSIer協会</td>
+      </tr>
+      <tr>
+        <td>ファナック2024年度売上高（連結）</td>
+        <td>7,971億円（前年比+0.2%）</td>
+        <td>ファナック決算短信2025年3月期</td>
+      </tr>
+      <tr>
+        <td>ファナック経常利益率（2024年度）</td>
+        <td>約24.7%（経常利益1,967億円）</td>
+        <td>ファナック決算短信2025年3月期</td>
+      </tr>
+      <tr>
+        <td>ファナック自己資本比率（単体）</td>
+        <td>89.0%（2025年3月期）</td>
+        <td>SalesNow Data Lab</td>
+      </tr>
+      <tr>
+        <td>ファナックROE（実績）</td>
+        <td>9.36%（2025年3月期）</td>
+        <td>IRBank</td>
+      </tr>
+      <tr>
+        <td>安川電機ROE（予想）</td>
+        <td>10.78%（2025年2月期）</td>
+        <td>IRBank</td>
+      </tr>
+      <tr>
+        <td>ファナック単体平均年収</td>
+        <td>1,164万円（平均年齢39.9歳、2025年3月期）</td>
+        <td>有価証券報告書</td>
+      </tr>
+      <tr>
+        <td>産業ロボット保守エンジニア平均年収</td>
+        <td>約586万円</td>
+        <td>厚生労働省jobtag</td>
+      </tr>
+      <tr>
+        <td>SIer年収レンジ（概算）</td>
+        <td>400〜650万円</td>
+        <td>doda・willof等集計</td>
+      </tr>
+      <tr>
+        <td>IT技術関連職有効求人倍率</td>
+        <td>3.17倍（職種全体平均1.48倍）</td>
+        <td>東京ハローワーク2025年</td>
+      </tr>
+      <tr>
+        <td>SIコストの導入総コスト比率</td>
+        <td>34〜53%（事例による）</td>
+        <td>日本ロボット工業会2017年</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>「構造的に固定されやすい要素」</h3>
+
+  <div class="data-box">
+    <div class="label">内部環境として固定的な構造要因</div>
+    <ul>
+      <li>産業用ロボット本体市場はABB・KUKA・ファナック・安川電機の4社寡占構造が継続しており、新興メーカーによる大手置き換えは短期では困難な参入障壁がある</li>
+      <li>精密減速機（ナブテスコ・ハーモニック等）は上流の寡占部品として価格交渉力を持ち、ロボットメーカーもコスト構造上の制約を受ける</li>
+      <li>SIer工程は顧客・現場ごとのカスタマイズ性が高く、標準化・自動化が他工程より困難な構造的特性がある（AIティーチングレス化は進行中）</li>
+      <li>設備投資サイクルへの連動により、ロボット本体の需要は景気変動に応じた波動を持つ構造がある</li>
+      <li>大手メーカー（ファナック等）の生涯保守体制・サービス拠点網は構築に長年を要するため、新規参入者が短期に複製することが困難</li>
+      <li>国内SIer産業は資格制度不整備・中小多数の分散構造が継続しており、収益性の業界内格差は続いている</li>
+      <li>AIロボット・フィジカルAIの基盤ソフトウェア・AI基盤モデルは現状、米国企業（NVIDIA等）への依存が大きいという構造がある</li>
+    </ul>
+  </div>
+
+  <h3>「個人・企業努力で動かせない領域」</h3>
+
+  <div class="data-box">
+    <div class="label">個人・個社の努力では変えられない構造</div>
+    <ul>
+      <li>中国市場における国内メーカーシェア拡大（外資系メーカーは構造的に不利な局面）</li>
+      <li>日本国内の生産年齢人口の減少に伴うSIer人材不足の継続</li>
+      <li>設備投資サイクルに連動した需要変動（エンドユーザーの投資判断に依存）</li>
+      <li>上流部品（精密減速機・半導体）のサプライヤー構造と価格決定</li>
+      <li>AI基盤モデルの開発競争における米中企業の主導（日本単独での追従困難）</li>
+    </ul>
+  </div>
+</div>
+
+<!-- CH11 -->
+<div class="chapter" id="ch11">
+  <div class="chapter-header">
+    <span class="chapter-num">第11章</span>
+    <h2>有料版への橋渡し</h2>
+  </div>
+
+  <p>本レポートでは外部環境編・内部環境編（本編）を通じて、フィジカルAI・AIロボット産業の構造的な前提条件を整理しました。実際の就職・転職判断および投資判断には、この構造理解を踏まえた「個人・企業単位の判断」が必要です。以下の有料版では、その判断材料となる詳細データを提供します。</p>
+
+  <div class="next-box">
+    <div class="arrow">💼</div>
+    <div>
+      <h3>就活・転職向け有料版</h3>
+      <p>本構造の中で「詰みやすい職種」「逃げ道があるポジション」の具体分析、職種別の詳細年収・スキル要件・キャリア設計の実態データ、未経験からの参入可否・採用選考の傾向、を扱います。</p>
+    </div>
+  </div>
+
+  <div class="next-box">
+    <div class="arrow">📊</div>
+    <div>
+      <h3>投資判断向け有料版</h3>
+      <p>主要上場企業（ファナック・安川電機・川崎重工業・ナブテスコ等）の財務指標詳細比較、バリューチェーン上での投資注目工程の整理、業界特有のリスク要因（在庫サイクル・中国依存・AI代替リスク）の定量整理、を扱います。</p>
+    </div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  <h3>免責事項・スタンス</h3>
+  <p>本レポートに記載されている数値・データは、各章末に示した一次情報源（有価証券報告書・政府統計・業界団体資料）に基づいています。個別企業の財務数値は公開情報の事実記述であり、投資勧誘・投資推奨を目的とするものではありません。本レポートは業界構造の理解支援を目的とした情報提供であり、転職・就職のアドバイスおよび投資推奨を行うものではありません。本レポートに基づく判断・行動の結果については、読者自身が責任を負うものとします。データ基準時点は2026年3月です。</p>
+</div>
+
+</div><!-- /wrapper -->
+<div style="
+  background: #0f0f0e;
+  color: #f5f2ed;
+  text-align: center;
+  padding: 24px 40px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+">
+  <a 
+    href="https://www.marketsupporter-ai.com"
+    style="
+      color: #c84b2f;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+    "
+  >
+    ← Market Supporter AI トップへ戻る
+  </a>
+  　｜　
+  <a 
+    href="https://www.marketsupporter-ai.com/articles/general-knowledge/knowledge"
+    style="
+      color: #f5f2ed;
+      text-decoration: none;
+    "
+  >
+    一般教養の記事一覧へ
+  </a>
+</div>
+</body>
+</html>
