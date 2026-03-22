@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>業界分析｜高市政権「戦略17分野」デジタル・サイバーセキュリティ 先行検討技術③データプラットフォーム（外部環境編）</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+  :root {
+    --ink: #0f0f0e;
+    --paper: #f5f2ed;
+    --cream: #ede9e1;
+    --accent: #c84b2f;
+    --muted: #6b6760;
+    --rule: #c9c4bb;
+    --highlight: #fff8e6;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .masthead {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    border-bottom: 3px solid var(--accent);
+  }
+  .masthead-right { color: var(--muted); }
+
+  .hero {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 40%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      45deg, transparent, transparent 4px,
+      rgba(200,75,47,0.07) 4px, rgba(200,75,47,0.07) 5px
+    );
+  }
+  .hero-label {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    padding: 4px 10px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(20px, 3.2vw, 34px);
+    font-weight: 900;
+    line-height: 1.4;
+    max-width: 820px;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+  }
+  .hero h1 em { color: var(--accent); font-style: normal; }
+  .hero-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 16px; }
+  .hero-badge {
+    border: 1px solid rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.75);
+    font-size: 11px;
+    padding: 4px 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.06em;
+  }
+  .data-notice {
+    background: rgba(200,75,47,0.15);
+    border-left: 3px solid var(--accent);
+    padding: 10px 16px;
+    margin-top: 24px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  .toc {
+    background: var(--cream);
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding: 32px 40px;
+  }
+  .toc h2 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 6px 28px;
+  }
+  .toc-item {
+    font-size: 13px;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 3px 0;
+    border-bottom: 1px dashed var(--rule);
+    display: flex;
+    gap: 8px;
+  }
+  .toc-item:hover { color: var(--accent); }
+  .toc-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  .chapter {
+    padding: 48px 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .chapter:nth-child(even) { background: var(--cream); }
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .chapter-num {
+    background: var(--accent);
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .chapter h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 10px;
+    flex: 1;
+  }
+  .chapter h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 24px 0 10px;
+    padding-left: 10px;
+    border-left: 3px solid var(--accent);
+  }
+  .chapter p { margin-bottom: 14px; }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 24px 0;
+  }
+  .stat-cell {
+    background: var(--paper);
+    padding: 18px 16px;
+    text-align: center;
+  }
+  .chapter:nth-child(even) .stat-cell { background: #f0ece4; }
+  .stat-cell .stat-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1.2;
+    display: block;
+  }
+  .stat-cell .stat-unit {
+    font-size: 12px;
+    color: var(--muted);
+    display: block;
+    margin-top: 2px;
+  }
+  .stat-cell .stat-label {
+    font-size: 11px;
+    color: var(--ink);
+    display: block;
+    margin-top: 6px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .data-box {
+    background: var(--highlight);
+    border: 1px solid #e0d8c4;
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .data-box .box-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .data-box ul { padding-left: 0; list-style: none; }
+  .data-box ul li {
+    padding: 5px 0 5px 16px;
+    border-bottom: 1px dashed var(--rule);
+    font-size: 13px;
+    position: relative;
+  }
+  .data-box ul li::before {
+    content: '▸';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-size: 11px;
+  }
+  .data-box ul li:last-child { border-bottom: none; }
+
+  .note-box {
+    background: rgba(200,75,47,0.05);
+    border: 1px dashed var(--accent);
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .note-box strong { color: var(--accent); }
+
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 13px;
+  }
+  .summary-table thead tr { background: var(--ink); color: var(--paper); }
+  .summary-table thead th {
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+  .summary-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .summary-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.03); }
+  .summary-table tbody td { padding: 9px 14px; vertical-align: top; }
+  .summary-table td:first-child { font-weight: 700; color: var(--accent); font-size: 12px; }
+  .summary-table td:nth-child(2) { font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
+
+  .next-box {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 28px 32px;
+    margin: 20px 0;
+    border-left: 5px solid var(--accent);
+  }
+  .next-box .next-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .next-box h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 17px;
+    margin-bottom: 12px;
+    border-left: none;
+    padding-left: 0;
+  }
+  .next-box ul { padding-left: 0; list-style: none; }
+  .next-box ul li {
+    padding: 4px 0 4px 14px;
+    font-size: 13px;
+    position: relative;
+    color: rgba(245,242,237,0.85);
+  }
+  .next-box ul li::before {
+    content: '▸';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-size: 11px;
+  }
+
+  .source-tag {
+    display: inline-block;
+    background: rgba(0,0,0,0.06);
+    border: 1px solid var(--rule);
+    padding: 3px 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin: 2px 3px;
+    letter-spacing: 0.04em;
+  }
+  .source-wrap {
+    margin-top: 20px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--rule);
+  }
+
+  .disclaimer {
+    background: var(--ink);
+    color: rgba(245,242,237,0.5);
+    padding: 24px 40px;
+    font-size: 11px;
+    line-height: 1.7;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.03em;
+  }
+
+  .rule-thick { border: none; border-top: 3px solid var(--ink); margin: 0; }
+  .rule-thin { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+  /* 依存構造テーブル */
+  .dep-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 12px;
+  }
+  .dep-table thead tr { background: var(--ink); color: var(--paper); }
+  .dep-table thead th {
+    padding: 8px 12px;
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+  }
+  .dep-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .dep-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.03); }
+  .dep-table tbody td { padding: 8px 12px; vertical-align: top; font-size: 12px; }
+  .dep-table td:first-child { font-weight: 700; }
+  .dep-table .acc { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 11px; }
+
+  @media (max-width: 600px) {
+    .masthead { flex-direction: column; gap: 6px; padding: 10px 16px; }
+    .hero { padding: 36px 16px 30px; }
+    .chapter { padding: 32px 16px; }
+    .toc { padding: 24px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <span>産業構造分析レポート</span>
+  <span class="masthead-right">2026年03月発行 ── デジタル・サイバーセキュリティ／データプラットフォーム（外部環境編）</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-label">INDUSTRY ANALYSIS REPORT — EXTERNAL ENVIRONMENT</div>
+    <h1>業界分析｜高市政権「戦略17分野」<br>デジタル・サイバーセキュリティ<br>先行検討技術③<em>データプラットフォーム</em>（外部環境編）</h1>
+    <div class="hero-meta">
+      <span class="hero-badge">就職・転職検討者向け</span>
+      <span class="hero-badge">株式投資家向け</span>
+      <span class="hero-badge">数字と事実のみ記載</span>
+    </div>
+    <div class="data-notice">
+      本レポートのデータ基準時点：2026年03月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thick">
+
+<!-- TOC -->
+<div class="toc">
+  <div class="container">
+    <h2>目次 — TABLE OF CONTENTS</h2>
+    <div class="toc-grid">
+      <a class="toc-item" href="#ch0"><span class="toc-num">00</span>この記事の目的</a>
+      <a class="toc-item" href="#ch1"><span class="toc-num">01</span>市場規模と成長の実態</a>
+      <a class="toc-item" href="#ch2"><span class="toc-num">02</span>制度・政策との関係性</a>
+      <a class="toc-item" href="#ch3"><span class="toc-num">03</span>経済的前提条件</a>
+      <a class="toc-item" href="#ch4"><span class="toc-num">04</span>社会・人口動態の影響</a>
+      <a class="toc-item" href="#ch5"><span class="toc-num">05</span>技術・DXの位置づけ</a>
+      <a class="toc-item" href="#ch6"><span class="toc-num">06</span>参入・撤退の制約</a>
+      <a class="toc-item" href="#ch7"><span class="toc-num">07</span>経済安全保障との距離</a>
+      <a class="toc-item" href="#ch8"><span class="toc-num">08</span>外部環境の整理</a>
+      <a class="toc-item" href="#ch9"><span class="toc-num">09</span>次におすすめの資料</a>
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thin">
+
+<!-- CH0 -->
+<div class="chapter" id="ch0">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 00</span>
+      <h2>この記事の目的</h2>
+    </div>
+
+    <p>本記事は、高市政権「戦略17分野」のうち「デジタル・サイバーセキュリティ」分野の先行検討技術③「データプラットフォーム」の外部環境を、公開されている統計・政府資料・業界団体データに基づき整理したものです。</p>
+
+    <p>内閣官房の公式資料（日本成長戦略会議第3回・2026年3月10日）によると、データプラットフォームは「AIの普及に伴い、データをAIで利用可能な状態にするデータ精製等の重要性が増大。産業競争力や経済安全保障に係るデータを他国のプラットフォームに依存せず安心して処理できる国内サービスの確保が急務」と位置づけられています。</p>
+
+    <div class="data-box">
+      <div class="box-title">この記事でやること／やらないこと</div>
+      <ul>
+        <li>【やること】データプラットフォーム・クラウド・パブリッククラウド市場規模の数値整理</li>
+        <li>【やること】日本政府の政策・補助金・ガバメントクラウドの事実確認</li>
+        <li>【やること】外資依存度（AWS・Azure・Google）の構造整理</li>
+        <li>【やること】経済安全保障上の位置づけの確認</li>
+        <li>【やらないこと】将来市場規模の断定的な予測</li>
+        <li>【やらないこと】儲かる／厳しいという評価・投資推奨</li>
+        <li>【やらないこと】キャリア・戦略への言及</li>
+      </ul>
+    </div>
+
+    <p>本記事は業界構造を理解するための情報提供を目的としています。転職・就職の判断および投資判断は、読者ご自身が複数の情報源をもとに行ってください。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">内閣官房 日本成長戦略会議第3回 資料1（2026年3月10日）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH1 -->
+<div class="chapter" id="ch1">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 01</span>
+      <h2>市場規模と成長の実態</h2>
+    </div>
+
+    <h3>国内データプラットフォーム市場（直近確定値）</h3>
+    <p>IDC Japanの調査（2025年6月17日発表）によると、2025年の国内データプラットフォーム市場のソフトウェア売上規模は7,371億円（前年比成長率7.7%）と推計されています。同市場の2024年〜2029年の年間平均成長率（CAGR）は7.7%で推移し、2029年には9,934億円に達すると予測されています（推計）。</p>
+
+    <h3>国内パブリッククラウドサービス市場（2024年確定値）</h3>
+    <p>データプラットフォームを支えるクラウド基盤として、IDC Japanの調査（2025年2月20日発表）によると、2024年の国内パブリッククラウドサービス市場は前年比26.1%増の4兆1,423億円（売上額ベース）となりました。2024年〜2029年のCAGRは16.3%で推移し、2029年には8兆8,164億円（推計）に達する見込みです。</p>
+
+    <h3>世界パブリッククラウド市場（2024年）</h3>
+    <p>総務省「令和7年版 情報通信白書」（2025年）によると、世界のパブリッククラウドサービスの売上高は2024年に7,733億ドル（前年比22.4%増）に達しました。世界のクラウドインフラサービスへの支出額シェアは、2024年第2四半期時点でAmazonが約32%、Microsoftが23%、Googleが12%と、3社合計で約67%を占めています。</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">7,371</span>
+        <span class="stat-unit">億円</span>
+        <span class="stat-label">国内データプラットフォーム市場<br>（2025年推計・IDC Japan）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">4兆1,423</span>
+        <span class="stat-unit">億円</span>
+        <span class="stat-label">国内パブリッククラウド市場<br>（2024年確定値・IDC Japan）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">7,733</span>
+        <span class="stat-unit">億ドル</span>
+        <span class="stat-label">世界パブリッククラウド市場<br>（2024年・総務省白書）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">7.7</span>
+        <span class="stat-unit">%</span>
+        <span class="stat-label">国内データプラットフォーム<br>CAGR（2024〜2029年推計）</span>
+      </div>
+    </div>
+
+    <h3>主要企業（国内外）</h3>
+    <div class="data-box">
+      <div class="box-title">データプラットフォーム分野 主要企業</div>
+      <ul>
+        <li>【クラウドインフラ（海外）】Amazon Web Services（米・シェア約32%）、Microsoft Azure（米・同23%）、Google Cloud（米・同12%）、Oracle Cloud（米）</li>
+        <li>【クラウドインフラ（国内）】さくらインターネット（ガバメントクラウド認定・条件付き）、NTTコミュニケーションズ、富士通クラウド</li>
+        <li>【データプラットフォームソフトウェア（海外）】Snowflake（米）、Databricks（米）、Oracle（米）、SAP（独）</li>
+        <li>【SI・導入支援（国内）】NTTデータグループ、富士通、NEC、日立製作所、BIPROGY（旧日本ユニシス）</li>
+        <li>【データセンター（国内）】IDCフロンティア、さくらインターネット、エクイニクス（米）、デジタル・リアルティ（米）</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">IDC Japan 国内データプラットフォーム市場予測（2025年6月17日）</span>
+      <span class="source-tag">IDC Japan 国内パブリッククラウドサービス市場予測（2025年2月20日）</span>
+      <span class="source-tag">総務省 令和7年版 情報通信白書 第8節（2025年）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH2 -->
+<div class="chapter" id="ch2">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 02</span>
+      <h2>制度・政策との関係性</h2>
+    </div>
+
+    <h3>高市政権「戦略17分野」における位置づけ</h3>
+    <p>内閣官房の資料（日本成長戦略会議第3回・2026年3月10日）において、「デジタル・サイバーセキュリティ」分野の先行検討技術①として「データプラットフォーム」が明示されています。本レポートではシリーズ通し番号として③を付しています。政府の方向性として「製造業等で豊富なデータを有する強みを活かし、フィジカルAIも見据え、データ精製技術や組織を超えたデータ連携技術の開発等を通じ、国内プラットフォームサービスの育成につなげる」と明記されています。</p>
+
+    <h3>ガバメントクラウド政策</h3>
+    <p>デジタル庁は政府・地方公共団体のシステムをクラウドに集約する「ガバメントクラウド」を推進しています。2025年2月時点でガバメントクラウドを利用しているシステムは2,918システムに達しています（デジタル庁「デジタル社会の実現に向けた重点計画」2025年6月13日閣議決定）。2024年4月時点で認定されているガバメントクラウド事業者はAWS・Microsoft Azure・Oracle Cloud・Google Cloudの外資4社と、国産では初めてさくらインターネット（条件付き）の計5社です。</p>
+
+    <h3>主要政策・補助金（直近実績）</h3>
+    <div class="data-box">
+      <div class="box-title">主要政策・補助金（直近3年の変化）</div>
+      <ul>
+        <li>【2022年】経済安全保障推進法成立。データ処理基盤が経済安全保障の対象に</li>
+        <li>【2023年】データセンターの地方分散化方針（経済産業省）。100を超える地方自治体が新施設誘致に関心</li>
+        <li>【2024年】さくらインターネットのGPUクラウド基盤（135億円整備計画）に対し国が約半額を補助。国産クラウド育成を経済安保観点から推進</li>
+        <li>【2024年】デジタルマーケットプレイス（DMP）の本格稼働。国・地方公共団体がSaaS等を簡便に調達できる仕組みが運用開始</li>
+        <li>【2025年6月】「デジタル社会の実現に向けた重点計画」閣議決定。政府内AIの利活用加速・DMP経由の横展開を明記</li>
+        <li>【2026年3月】日本成長戦略会議第3回。データプラットフォームを先行検討技術として官民投資ロードマップ策定を開始</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">内閣官房 日本成長戦略会議第3回 資料1（2026年3月10日）</span>
+      <span class="source-tag">デジタル庁 デジタル社会の実現に向けた重点計画（2025年6月13日閣議決定）</span>
+      <span class="source-tag">さくらのクラウド ガバメントクラウド解説（2024年）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH3 -->
+<div class="chapter" id="ch3">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 03</span>
+      <h2>経済的前提条件</h2>
+    </div>
+
+    <h3>価格決定権の所在</h3>
+    <p>クラウドインフラ（IaaS・PaaS）の価格決定権は現時点でAWS・Microsoft・Googleの3社が実質的に握っています。世界市場の約67%を3社が占める構造の下、日本市場でも同様の集中が観察されます。国内企業（NTT・富士通等）は主にSI・導入支援・保守という「サービスレイヤー」での収益を確保しており、クラウドインフラそのものの価格交渉力は限定的です。</p>
+
+    <h3>主要コスト構成</h3>
+    <div class="data-box">
+      <div class="box-title">データプラットフォーム提供者のコスト構成概要</div>
+      <ul>
+        <li>【データセンター建設・設備】土地・建物・電力設備・冷却システム。大規模施設では数百億〜数千億円規模の初期投資が先行。日本のデータセンターサービス市場は2023年に2兆7,361億円（IDC Japan・2024年10月）</li>
+        <li>【電力コスト】データセンターは大量の電力を消費。日本では電力価格の高さがコスト競争力に影響。グリーンデータセンター（再生可能エネルギー活用）への移行コストが増加中</li>
+        <li>【人件費】データエンジニア・セキュリティエンジニア・クラウドアーキテクト等の専門人材コスト。国内では人材不足が継続</li>
+        <li>【ソフトウェアライセンス・開発費】データ管理・ガバナンス・セキュリティ機能の開発・維持費</li>
+      </ul>
+    </div>
+
+    <h3>電力制約とグリッド接続待ちの深刻化</h3>
+    <p>生成AI特化型データセンターの建設ラッシュにより、電力インフラの制約が物理的な「参入障壁」として機能し始めています。Gartnerの予測（2025年11月）によると、世界のデータセンター電力消費量は2025年の448TWhから2030年には980TWhへと約2倍に増加する見込みであり、このうちAI最適化サーバーが2030年には電力消費の44%を占めるとされています。</p>
+    <p>日本では首都圏へのデータセンター集中と電力供給能力のミスマッチが顕在化しています。東京電力パワーグリッドの公式インタビュー（日経エネルギーNext）によると、データセンターからの送電網接続協議が急増しており「お待ちいただくケースが増えている」状態です。データセンターの建設サイクルは3〜5年であるのに対し、変電所建設・送電線新設などを含む系統整備には7〜10年を要するため、「時間軸のミスマッチ」がボトルネックとなっています。総務省の報告書「ワット・ビット連携の実現に向けて」（2025年2月）も、2040年のICTセクタの電力需要が2020年比で約2〜27倍の幅で変動しうると試算しています。</p>
+
+    <div class="data-box">
+      <div class="box-title">電力制約が参入障壁として機能する構造（事実）</div>
+      <ul>
+        <li>データセンター建設サイクル：3〜5年 ←→ 系統整備（変電所・送電線）：7〜10年。この時間軸のミスマッチが接続待ちを常態化させている</li>
+        <li>東電PG管内：接続協議・施工の両面で「かなり増加」しており、系統解析リソースの不足が待ち時間を延ばす悪循環が発生中（東電PG副社長インタビュー、日経エネルギーNext）</li>
+        <li>日本の再エネポテンシャルは北海道・九州等の地方に偏在する一方、データセンター需要は首都圏に集中しており、地理的ミスマッチが構造的に継続</li>
+        <li>政府の「ワット・ビット連携」「GX戦略地域」（DC集積型として全国90件の提案が寄せられた）はこの制約への対応策だが、制度・インフラ整備は進行中</li>
+      </ul>
+    </div>
+
+    <h3>デジタル貿易赤字の現状</h3>
+    <p>海外クラウドへの依存により、日本のデジタル貿易赤字は5兆円規模に達しているとされます。生成AIやクラウドサービスの利用拡大に伴い、今後も同赤字が拡大する構造的圧力があります。これが国産クラウド育成を経済安全保障の観点から正当化する文脈として政府資料に繰り返し登場しています。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">Gartner データセンター電力消費予測プレスリリース（2025年11月）</span>
+      <span class="source-tag">総務省 生成AIの電力消費拡大にどう対応すべきか（2025年2月）</span>
+      <span class="source-tag">日経エネルギーNext 東電PG岡本副社長インタビュー</span>
+      <span class="source-tag">IDC Japan 国内データセンターサービス市場予測（2024年10月）</span>
+      <span class="source-tag">双日テックイノベーション さくらのクラウドと4大クラウド比較（2024年）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH4 -->
+<div class="chapter" id="ch4">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 04</span>
+      <h2>社会・人口動態の影響</h2>
+    </div>
+
+    <h3>需要側の構造変化</h3>
+    <p>データプラットフォームへの需要拡大の背景には、生成AIの普及があります。日本のAIシステム市場規模（支出額）は2024年に1兆3,412億円（前年比56.5%増）となっており、2029年には4兆1,873億円まで拡大すると予測されています（推計・IDC Japan、総務省令和7年版白書に収録）。AIシステムの実装にはデータの収集・精製・管理基盤が不可欠であり、これがデータプラットフォーム需要の構造的な押し上げ要因となっています。</p>
+
+    <h3>フィジカルAIとの連動</h3>
+    <p>内閣官房の資料は、データプラットフォームを「フィジカルAIも見据えた」技術として位置づけています。ロボット・自動運転・産業機器等のフィジカルAIが生成する大量のセンサーデータ・制御データを処理・精製・連携する基盤として、データプラットフォームの需要が産業用途でも拡大する構造が示されています。</p>
+
+    <h3>「2025年の崖」とDX需要</h3>
+    <p>経済産業省が2018年に提示した「2025年の崖」（既存システムの老朽化による競争力低下リスク）を背景に、企業のレガシーシステムからクラウド・データプラットフォームへの移行が継続しています。クラウド企業を利用している企業の割合は72.2%に達しており（総務省 令和5年版 情報通信白書）、利用内容としては「ファイル保管・データ共有」（61.8%）が最多です。</p>
+
+    <h3>少子高齢化とデジタル人材不足</h3>
+    <p>経済産業省の試算によれば、2030年には約79万人のIT人材が不足すると予測されています（推計）。データエンジニア・クラウドアーキテクト等の専門人材は特に供給が追いつかない状況が継続しており、人材不足が国内データプラットフォーム産業の供給能力を構造的に制約しています。</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">1兆3,412</span>
+        <span class="stat-unit">億円</span>
+        <span class="stat-label">日本AIシステム市場規模<br>（2024年・IDC Japan推計）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">72.2</span>
+        <span class="stat-unit">%</span>
+        <span class="stat-label">クラウド利用企業比率<br>（令和5年版 情報通信白書）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">約79</span>
+        <span class="stat-unit">万人</span>
+        <span class="stat-label">2030年IT人材不足数<br>（推計・経済産業省）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">56.5</span>
+        <span class="stat-unit">%増</span>
+        <span class="stat-label">日本AIシステム市場<br>前年比（2024年）</span>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">総務省 令和7年版 情報通信白書（2025年）</span>
+      <span class="source-tag">総務省 令和5年版 情報通信白書（2023年）</span>
+      <span class="source-tag">経済産業省 IT人材需給調査（2019年・2030年推計）</span>
+      <span class="source-tag">内閣官房 日本成長戦略会議第3回 資料1（2026年3月10日）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH5 -->
+<div class="chapter" id="ch5">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 05</span>
+      <h2>技術・DXの位置づけ</h2>
+    </div>
+
+    <h3>データプラットフォームの技術的役割</h3>
+    <p>政府が先行検討技術として「データプラットフォーム」を位置づける際の技術的背景は、「AIで利用可能な状態にするデータ精製」の必要性にあります。生成AIや機械学習モデルは、大量の高品質データを処理可能な状態で供給されることを前提としており、データの収集・整備・連携・管理（データガバナンス）を担うプラットフォームが「AIの普及を支える基盤インフラ」として機能します。</p>
+
+    <h3>主要技術トレンド（2024〜2026年）</h3>
+    <div class="data-box">
+      <div class="box-title">データプラットフォーム 主要技術トレンド</div>
+      <ul>
+        <li>【ウラノス・エコシステム（Ouranos Ecosystem）】経済産業省・IPA・NEDO主導の日本発データスペース構想。2023年4月命名、2024年8月「本格実装へ」と経産省が発表。企業・業界・国境を横断したデータ連携基盤の構築を目指す。2025年3月31日にはEU自動車業界のデータ連携基盤「Catena-X」との相互運用性実証に成功（IPA発表）。IPAは2026年3月までに技術標準仕様（ODS-RAM）の実装可能版公開を目標として設定している。欧州GAIA-X・Catena-Xへの対抗軸として機能するという位置づけが政府資料に示されており、自動車・蓄電池のカーボンフットプリント（CFP）算出・デュー・デリジェンス（DD）対応が先行ユースケースとなっている</li>
+        <li>【生成AI×データプラットフォーム統合】AIエージェントの発展に伴い、データプラットフォームに「AI内蔵型データ品質管理」「コンテキスト認識型監視」機能の組み込みが各ベンダーで進行中（IDC Japan分析、2025年）</li>
+        <li>【エッジコンピューティング連携】日本のエッジコンピューティング市場は2025年に前年比12.9%増の1.9兆円（推計・IDC Japan、2025年4月）。フィジカルAIの現場データをエッジ処理しクラウドのデータプラットフォームに連携する構造が形成されつつある</li>
+        <li>【ガバメントクラウドのAI活用】デジタル庁は「政府内におけるAIの利活用のさらなる加速と将来的な地方自治体への展開」を方針として明示（2025年6月閣議決定）</li>
+        <li>【ソブリンクラウド】経済安全保障の観点から、データが物理的に国内に留まるソブリンクラウドへの関心が政府・金融・医療分野で高まっている</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">経済産業省 ウラノス・エコシステム（Ouranos Ecosystem）公式ページ</span>
+      <span class="source-tag">IPA プレス発表 ウラノス・エコシステムとCatena-X相互運用性実証（2025年3月31日）</span>
+      <span class="source-tag">IPA ODS-RAMホワイトペーパー（2025年2月28日）</span>
+      <span class="source-tag">IDC Japan 国内データプラットフォーム市場予測（2025年6月）</span>
+      <span class="source-tag">IDC Japan 国内エッジインフラ市場予測（2025年4月）</span>
+      <span class="source-tag">デジタル庁 デジタル社会の実現に向けた重点計画（2025年6月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH6 -->
+<div class="chapter" id="ch6">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 06</span>
+      <h2>参入・撤退の制約</h2>
+    </div>
+
+    <h3>必要な許認可・資格</h3>
+    <p>データプラットフォーム事業への参入に固有の参入規制は存在しません。ただし、政府・自治体向けのガバメントクラウドに参入するためにはデジタル庁による認定が必要です。認定要件には最高水準の情報セキュリティの確保（不正アクセス防止・データ暗号化等）が含まれます。また、金融・医療分野のデータを取り扱う場合は各業法（金融商品取引法・医療情報の安全管理ガイドライン等）に基づく要件が追加されます。ISMAP（政府情報システムのためのセキュリティ評価制度）への登録が実質的な要件として機能しています。</p>
+
+    <h3>初期投資額レンジ</h3>
+    <div class="data-box">
+      <div class="box-title">参入に要する初期投資の規模感（事実ベース）</div>
+      <ul>
+        <li>【大規模クラウドインフラ（ハイパースケーラー相当）】数千億〜兆円規模。AWS・Azure・Googleは日本国内のデータセンター拡張に継続的に大規模投資を実施中</li>
+        <li>【中規模データセンター建設】数百億円規模。NTTが2022年に約400億円を投じてグリーンデータセンターを新設した事例がある</li>
+        <li>【国産クラウドのGPU基盤整備】さくらインターネットは2025年度までに135億円でGPUクラウド基盤を整備（うち約半額を政府補助）</li>
+        <li>【SaaS・データプラットフォームソフトウェア参入】ソフトウェアのみであれば初期投資は相対的に低いが、ISMAPやガバメントクラウド認定には審査コスト・セキュリティ要件対応コストが発生</li>
+      </ul>
+    </div>
+
+    <h3>新規参入動向</h3>
+    <p>大規模クラウドインフラへの新規参入は初期投資規模から極めて限定的です。ガバメントクラウドに国産として参入したさくらインターネットの事例は、政府補助と国策的背景があって初めて成立した参入として位置づけられています。ソフトウェアレイヤー（データ管理・ガバナンスツール）では国内スタートアップの参入も観察されます。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">デジタル庁 ガバメントクラウド事業者選定要件（2023〜2024年）</span>
+      <span class="source-tag">双日テックイノベーション さくらのクラウド解説（2024年）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH7 -->
+<div class="chapter" id="ch7">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 07</span>
+      <h2>経済安全保障との距離</h2>
+    </div>
+
+    <h3>国家重要分野への該当</h3>
+    <p>データプラットフォームは経済安全保障推進法（2022年）の特定重要物資・特定社会基盤事業の対象として位置づけられており、高市政権の戦略17分野「デジタル・サイバーセキュリティ」の先行検討技術として明示されています。政府の問題意識として「産業競争力や経済安全保障に係るデータを他国のプラットフォームに依存せず安心して処理できる国内サービスの確保が急務」と内閣官房資料に明記されています。</p>
+
+    <h3>外資依存度の構造</h3>
+
+    <table class="dep-table">
+      <thead>
+        <tr>
+          <th>領域</th>
+          <th>現状の外資依存構造</th>
+          <th>主要事業者</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>クラウドインフラ（世界）</td>
+          <td class="acc">米国3社で約67%</td>
+          <td>AWS（32%）・Azure（23%）・Google（12%）</td>
+        </tr>
+        <tr>
+          <td>ガバメントクラウド（日本）</td>
+          <td class="acc">外資4社＋国産1社（条件付き）</td>
+          <td>AWS・Azure・Oracle・Google＋さくら（条件付）</td>
+        </tr>
+        <tr>
+          <td>データプラットフォームソフトウェア</td>
+          <td class="acc">海外製品が主流</td>
+          <td>Snowflake・Databricks・Oracle・SAP等</td>
+        </tr>
+        <tr>
+          <td>デジタル貿易赤字</td>
+          <td class="acc">約5兆円規模</td>
+          <td>海外クラウド利用料の純流出として計上</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>政府補助金・支援額</h3>
+    <p>2025年度補正予算において高市政権は戦略17分野向けに6.4兆円の予算措置を講じており（三井住友DSアセットマネジメント分析・2026年2月）、このうちデジタル・サイバーセキュリティ分野への配分の詳細は2026年夏の成長戦略策定に向けて議論が継続中です。個別事例として、さくらインターネットのGPUクラウド基盤には国費約67億円（135億円の約半額）が投入されています。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">内閣官房 日本成長戦略会議第3回 資料1（2026年3月10日）</span>
+      <span class="source-tag">総務省 令和7年版 情報通信白書（2025年）</span>
+      <span class="source-tag">さくらのクラウド ガバメントクラウド解説（2024年）</span>
+      <span class="source-tag">三井住友DSアセットマネジメント 高市政権成長戦略分析（2026年2月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH8 -->
+<div class="chapter" id="ch8">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 08</span>
+      <h2>外部環境の整理</h2>
+    </div>
+
+    <h3>第1〜7章の数値サマリー</h3>
+
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>章</th>
+          <th>指標名</th>
+          <th>数値</th>
+          <th>出典・時点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>第1章</td>
+          <td>国内データプラットフォーム市場（2025年推計）</td>
+          <td>7,371億円</td>
+          <td>IDC Japan 2025年6月</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>国内データプラットフォーム CAGR（2024〜2029年）</td>
+          <td>7.7%（推計）</td>
+          <td>IDC Japan 2025年6月</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>国内パブリッククラウド市場（2024年確定値）</td>
+          <td>4兆1,423億円（前年比+26.1%）</td>
+          <td>IDC Japan 2025年2月</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>世界パブリッククラウド市場（2024年）</td>
+          <td>7,733億ドル（前年比+22.4%）</td>
+          <td>総務省 令和7年版白書 2025年</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>世界クラウドインフラ 米3社合計シェア</td>
+          <td>約67%（2024年Q2）</td>
+          <td>総務省 令和7年版白書 2025年</td>
+        </tr>
+        <tr>
+          <td>第2章</td>
+          <td>ガバメントクラウド利用システム数（2025年2月）</td>
+          <td>2,918システム</td>
+          <td>デジタル庁 重点計画 2025年6月</td>
+        </tr>
+        <tr>
+          <td>第4章</td>
+          <td>日本AIシステム市場（2024年推計）</td>
+          <td>1兆3,412億円（前年比+56.5%）</td>
+          <td>IDC Japan・総務省 2025年</td>
+        </tr>
+        <tr>
+          <td>第4章</td>
+          <td>クラウド利用企業比率</td>
+          <td>72.2%</td>
+          <td>総務省 令和5年版白書 2023年</td>
+        </tr>
+        <tr>
+          <td>第4章</td>
+          <td>2030年IT人材不足数（推計）</td>
+          <td>約79万人</td>
+          <td>経済産業省 2019年調査</td>
+        </tr>
+        <tr>
+          <td>第5章</td>
+          <td>日本エッジコンピューティング市場（2025年推計）</td>
+          <td>1.9兆円（前年比+12.9%）</td>
+          <td>IDC Japan 2025年4月</td>
+        </tr>
+        <tr>
+          <td>第7章</td>
+          <td>デジタル貿易赤字（概算）</td>
+          <td>約5兆円規模</td>
+          <td>各種報道・業界推計</td>
+        </tr>
+        <tr>
+          <td>第7章</td>
+          <td>戦略17分野向け2025年度補正予算</td>
+          <td>6.4兆円</td>
+          <td>三井住友DSアセットマネジメント 2026年2月</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>「変えられない前提条件」の明文化</h3>
+    <div class="data-box">
+      <div class="box-title">構造的前提条件（外部環境として固定的な要因）</div>
+      <ul>
+        <li>世界のクラウドインフラはAWS・Microsoft・Googleの米国3社が約67%を寡占しており、短期では変動しない</li>
+        <li>ガバメントクラウドの認定事業者は2024年4月時点で外資4社＋国産1社（条件付き）であり、国産比率は極めて低い</li>
+        <li>日本のデジタル貿易赤字は約5兆円規模であり、クラウド・AIサービスの利用拡大に伴い構造的に拡大圧力がかかる</li>
+        <li>大規模クラウドインフラへの参入には数百億〜兆円規模の資本が必要であり、民間単独での新規参入は極めて困難</li>
+        <li>IT人材の不足（2030年に約79万人不足推計）が国内データプラットフォーム産業の供給能力を構造的に制約する</li>
+        <li>経済安全保障推進法による特定重要物資指定・高市政権の戦略17分野指定により、国産クラウド・データプラットフォームへの政府関与は今後も継続する</li>
+        <li>フィジカルAI（ロボット・自動運転・産業機器）の普及がデータプラットフォームへの需要を産業用途でも構造的に押し上げる</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">本レポート第1〜7章に記載の各統計の集約</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH9 -->
+<div class="chapter" id="ch9">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 09</span>
+      <h2>次におすすめの資料</h2>
+    </div>
+
+    <h3>一次情報源リスト（無料）</h3>
+    <div class="data-box">
+      <div class="box-title">一次情報源リスト</div>
+      <ul>
+        <li>【内閣官房 日本成長戦略会議】cas.go.jp ── 戦略17分野の公式資料・官民投資ロードマップ素案。データプラットフォームの政策方針の原文確認に必須</li>
+        <li>【デジタル庁 重点計画】digital.go.jp ── 「デジタル社会の実現に向けた重点計画」（年次更新）。ガバメントクラウド・データ連携基盤の進捗を確認できる</li>
+        <li>【総務省 情報通信白書】soumu.go.jp ── クラウド・データセンター・AI市場の統計（年次発行。令和7年版は2025年）</li>
+        <li>【IDC Japan プレスリリース】idc.com ── 国内データプラットフォーム・クラウド・AIシステム市場の定期的な数値更新。一部無料で公開</li>
+        <li>【経済産業省 デジタル産業政策】meti.go.jp ── クラウド・データ利活用・DX関連政策の一次情報</li>
+        <li>【JEITA ソリューションサービス市場規模調査】jeita.or.jp ── デジタルプラットフォームサービス・デジタルソリューションサービスの市場規模（年次）</li>
+      </ul>
+    </div>
+
+    <div class="next-box">
+      <div class="next-label">NEXT — 内部環境編について</div>
+      <h3>プレイヤー構成・収益構造・人材市場の実態</h3>
+      <ul>
+        <li>国内データプラットフォーム業界のプレイヤー構成と集中度</li>
+        <li>外資クラウド・国産SIer・スタートアップのバリューチェーン上の位置と利益の所在</li>
+        <li>収益構造と大手vs中小の格差（ストック型収益の実態）</li>
+        <li>データエンジニア・クラウドアーキテクト等の人材市場・平均年収の概要</li>
+      </ul>
+    </div>
+
+    <p style="font-size:13px; color:var(--muted); margin-top:16px;">本レポートは外部環境（PEST分析相当）に絞っています。プレイヤー構成・バリューチェーン・収益構造・人材市場については内部環境編で扱います。両方を参照した上で、就職・転職・投資の判断を行ってください。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">免責事項：本記事に記載されている数値・データは各章末に示した一次情報源に基づきます。投資の勧誘・推奨、転職・就職のアドバイスを目的とするものではありません。</span>
+    </div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <div class="container">
+    <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。掲載データは各記載出典に基づきますが、数値の正確性・完全性を保証するものではありません。投資判断は自己責任において行ってください。市場規模推計値は調査機関・集計定義により幅があり、単一の数値として断定するものではありません。データ基準時点は2026年03月です。</p>
+    <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年03月 産業構造分析レポート ── データプラットフォーム（外部環境編）</p>
+    <p style="margin-top:8px;">
+      <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+      　｜　
+      <a href="https://www.marketsupporter-ai.com/articles/general-knowledge/knowledge" style="color: rgba(245,242,237,0.4); font-size:11px;">一般教養の記事一覧へ</a>
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
