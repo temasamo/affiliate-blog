@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>業界分析｜高市政権「戦略17分野」デジタル・サイバーセキュリティ 先行検討技術④セキュリティの確保された政府・地方公共団体のDX基盤（外部環境編）</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+  :root {
+    --ink: #0f0f0e;
+    --paper: #f5f2ed;
+    --cream: #ede9e1;
+    --accent: #c84b2f;
+    --muted: #6b6760;
+    --rule: #c9c4bb;
+    --highlight: #fff8e6;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .masthead {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    border-bottom: 3px solid var(--accent);
+  }
+  .masthead-right { color: var(--muted); }
+
+  .hero {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 40%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      45deg, transparent, transparent 4px,
+      rgba(200,75,47,0.07) 4px, rgba(200,75,47,0.07) 5px
+    );
+  }
+  .hero-label {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    padding: 4px 10px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(20px, 3.2vw, 34px);
+    font-weight: 900;
+    line-height: 1.4;
+    max-width: 820px;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+  }
+  .hero h1 em { color: var(--accent); font-style: normal; }
+  .hero-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 16px; }
+  .hero-badge {
+    border: 1px solid rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.75);
+    font-size: 11px;
+    padding: 4px 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.06em;
+  }
+  .data-notice {
+    background: rgba(200,75,47,0.15);
+    border-left: 3px solid var(--accent);
+    padding: 10px 16px;
+    margin-top: 24px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  .toc {
+    background: var(--cream);
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding: 32px 40px;
+  }
+  .toc h2 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 6px 28px;
+  }
+  .toc-item {
+    font-size: 13px;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 3px 0;
+    border-bottom: 1px dashed var(--rule);
+    display: flex;
+    gap: 8px;
+  }
+  .toc-item:hover { color: var(--accent); }
+  .toc-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  .chapter {
+    padding: 48px 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .chapter:nth-child(even) { background: var(--cream); }
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .chapter-num {
+    background: var(--accent);
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .chapter h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 10px;
+    flex: 1;
+  }
+  .chapter h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 24px 0 10px;
+    padding-left: 10px;
+    border-left: 3px solid var(--accent);
+  }
+  .chapter p { margin-bottom: 14px; }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 24px 0;
+  }
+  .stat-cell {
+    background: var(--paper);
+    padding: 18px 16px;
+    text-align: center;
+  }
+  .chapter:nth-child(even) .stat-cell { background: #f0ece4; }
+  .stat-cell .stat-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1.2;
+    display: block;
+  }
+  .stat-cell .stat-unit {
+    font-size: 12px;
+    color: var(--muted);
+    display: block;
+    margin-top: 2px;
+  }
+  .stat-cell .stat-label {
+    font-size: 11px;
+    color: var(--ink);
+    display: block;
+    margin-top: 6px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .data-box {
+    background: var(--highlight);
+    border: 1px solid #e0d8c4;
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .data-box .box-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .data-box ul { padding-left: 0; list-style: none; }
+  .data-box ul li {
+    padding: 5px 0 5px 16px;
+    border-bottom: 1px dashed var(--rule);
+    font-size: 13px;
+    position: relative;
+  }
+  .data-box ul li::before {
+    content: '▸';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-size: 11px;
+  }
+  .data-box ul li:last-child { border-bottom: none; }
+
+  .note-box {
+    background: rgba(200,75,47,0.05);
+    border: 1px dashed var(--accent);
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .note-box strong { color: var(--accent); }
+
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 13px;
+  }
+  .summary-table thead tr { background: var(--ink); color: var(--paper); }
+  .summary-table thead th {
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+  .summary-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .summary-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.03); }
+  .summary-table tbody td { padding: 9px 14px; vertical-align: top; }
+  .summary-table td:first-child { font-weight: 700; color: var(--accent); font-size: 12px; }
+  .summary-table td:nth-child(2) { font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
+
+  .next-box {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 28px 32px;
+    margin: 20px 0;
+    border-left: 5px solid var(--accent);
+  }
+  .next-box .next-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .next-box h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 17px;
+    margin-bottom: 12px;
+    border-left: none;
+    padding-left: 0;
+  }
+  .next-box ul { padding-left: 0; list-style: none; }
+  .next-box ul li {
+    padding: 4px 0 4px 14px;
+    font-size: 13px;
+    position: relative;
+    color: rgba(245,242,237,0.85);
+  }
+  .next-box ul li::before {
+    content: '▸';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-size: 11px;
+  }
+
+  .source-tag {
+    display: inline-block;
+    background: rgba(0,0,0,0.06);
+    border: 1px solid var(--rule);
+    padding: 3px 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin: 2px 3px;
+    letter-spacing: 0.04em;
+  }
+  .source-wrap {
+    margin-top: 20px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--rule);
+  }
+
+  .disclaimer {
+    background: var(--ink);
+    color: rgba(245,242,237,0.5);
+    padding: 24px 40px;
+    font-size: 11px;
+    line-height: 1.7;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.03em;
+  }
+
+  .rule-thick { border: none; border-top: 3px solid var(--ink); margin: 0; }
+  .rule-thin { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+  /* 政策・制度テーブル */
+  .policy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 12px;
+  }
+  .policy-table thead tr { background: var(--ink); color: var(--paper); }
+  .policy-table thead th {
+    padding: 8px 12px;
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+  }
+  .policy-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .policy-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.03); }
+  .policy-table tbody td { padding: 8px 12px; vertical-align: top; }
+  .policy-table td:first-child { font-weight: 700; font-size: 12px; }
+  .policy-table .acc { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 11px; }
+  .policy-table .year { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); }
+
+  /* インシデント年表 */
+  .incident-list { margin: 16px 0; }
+  .incident-item {
+    display: flex;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--rule);
+    font-size: 13px;
+  }
+  .incident-item:last-child { border-bottom: none; }
+  .incident-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    flex-shrink: 0;
+    width: 80px;
+    padding-top: 2px;
+  }
+  .incident-text { flex: 1; }
+
+  @media (max-width: 600px) {
+    .masthead { flex-direction: column; gap: 6px; padding: 10px 16px; }
+    .hero { padding: 36px 16px 30px; }
+    .chapter { padding: 32px 16px; }
+    .toc { padding: 24px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <span>産業構造分析レポート</span>
+  <span class="masthead-right">2026年03月発行 ── デジタル・サイバーセキュリティ／政府・自治体DX基盤（外部環境編）</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-label">INDUSTRY ANALYSIS REPORT — EXTERNAL ENVIRONMENT</div>
+    <h1>業界分析｜高市政権「戦略17分野」<br>デジタル・サイバーセキュリティ<br>先行検討技術④<em>セキュリティの確保された<br>政府・地方公共団体のDX基盤</em>（外部環境編）</h1>
+    <div class="hero-meta">
+      <span class="hero-badge">就職・転職検討者向け</span>
+      <span class="hero-badge">株式投資家向け</span>
+      <span class="hero-badge">数字と事実のみ記載</span>
+    </div>
+    <div class="data-notice">
+      本レポートのデータ基準時点：2026年03月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thick">
+
+<!-- TOC -->
+<div class="toc">
+  <div class="container">
+    <h2>目次 — TABLE OF CONTENTS</h2>
+    <div class="toc-grid">
+      <a class="toc-item" href="#ch0"><span class="toc-num">00</span>このレポートの目的と読み方</a>
+      <a class="toc-item" href="#ch1"><span class="toc-num">01</span>市場規模と成長率</a>
+      <a class="toc-item" href="#ch2"><span class="toc-num">02</span>制度・政策の枠組み</a>
+      <a class="toc-item" href="#ch3"><span class="toc-num">03</span>経済的前提条件</a>
+      <a class="toc-item" href="#ch4"><span class="toc-num">04</span>社会・人口動態との連関</a>
+      <a class="toc-item" href="#ch5"><span class="toc-num">05</span>技術・DXの位置づけ</a>
+      <a class="toc-item" href="#ch6"><span class="toc-num">06</span>参入・撤退の条件</a>
+      <a class="toc-item" href="#ch7"><span class="toc-num">07</span>経済安全保障との接続</a>
+      <a class="toc-item" href="#ch8"><span class="toc-num">08</span>外部環境の整理</a>
+      <a class="toc-item" href="#ch9"><span class="toc-num">09</span>内部環境編への橋渡し</a>
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thin">
+
+<!-- CH0 -->
+<div class="chapter" id="ch0">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 00</span>
+      <h2>このレポートの目的と読み方</h2>
+    </div>
+    <p>本レポートは、高市政権「戦略17分野」デジタル・サイバーセキュリティの先行検討技術④「セキュリティの確保された政府・地方公共団体のDX基盤」の外部環境を、就職・転職検討者および株式投資家向けに数字と事実のみで記述します。</p>
+    <div class="data-box">
+      <div class="box-title">このレポートで整理する外部環境の範囲</div>
+      <ul>
+        <li>【市場規模】国内サイバーセキュリティ市場・政府IT調達市場・ガバメントクラウド関連市場の規模と成長率</li>
+        <li>【制度・政策】ISMAP・地方公共団体情報システム標準化・自治体DX・ゼロトラスト導入方針・サイバーセキュリティ産業振興戦略</li>
+        <li>【経済的前提】政府IT予算・自治体のシステム移行コスト・デジタル赤字とセキュリティ製品の外資依存</li>
+        <li>【社会・人口動態】人口減少による自治体DX需要・サイバー攻撃の件数増加・デジタル人材不足</li>
+        <li>【技術DX】ゼロトラスト・SBOM・量子耐性暗号・能動的サイバー防御の政策的位置づけ</li>
+        <li>【参入条件】ISMAP登録・政府統一基準・調達申合せ・国産セキュリティ製品振興策</li>
+        <li>【経済安全保障】外資セキュリティ製品依存・能動的サイバー防御法制・重要インフラ保護</li>
+      </ul>
+    </div>
+    <p>良し悪しの評価・投資推奨・将来予測は行いません。構造を示すことで終わります。</p>
+    <div class="source-wrap"><span class="source-tag">本レポート基本方針</span></div>
+  </div>
+</div>
+
+<!-- CH1 -->
+<div class="chapter" id="ch1">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 01</span>
+      <h2>市場規模と成長率</h2>
+    </div>
+
+    <h3>世界のサイバーセキュリティ市場</h3>
+    <p>世界のサイバーセキュリティ市場（売上高）は2024年に前年比9.7%増の867億ドルとなりました（総務省 令和7年版 情報通信白書・2025年）。主要事業者は2019年からPalo Alto Networks・Cisco・Fortinetの3社が上位3位でしたが、2024年第2四半期時点でCiscoに代わりMicrosoftが上位3位に入っています。Palo Alto Networksは市場シェア10%に迫る勢いで拡大しています。</p>
+
+    <h3>国内情報セキュリティ市場</h3>
+    <p>JNSA（日本ネットワークセキュリティ協会）の「2024年度 国内情報セキュリティ市場調査報告書」（2025年6月発表）によると、2024年度の国内情報セキュリティ市場規模は前年度比8.0%増の1兆7,995億円（推定見込値）であり、2025年度には前年度比8.1%増の1兆9,458億円（予測値）への拡大が見込まれています。なお同報告書に記載の2023年度確定値は1兆6,665億円（前年度比13.8%増）です。国内のサイバーセキュリティ製品市場では、外資系企業のシェアが2022年・2023年ともに約50%を占めており、国内のセキュリティ製品はその多くを海外に依存している状況が継続しています（IDC Japan・2025年4月）。</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">867</span>
+        <span class="stat-unit">億ドル</span>
+        <span class="stat-label">世界サイバーセキュリティ市場<br>（2024年・前年比+9.7%）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">1兆7,995</span>
+        <span class="stat-unit">億円</span>
+        <span class="stat-label">国内情報セキュリティ市場<br>（2024年度推定見込値・前年比+8.0%・JNSA）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">1兆9,458</span>
+        <span class="stat-unit">億円</span>
+        <span class="stat-label">国内情報セキュリティ市場<br>（2025年度予測値・前年比+8.1%・JNSA）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">約50</span>
+        <span class="stat-unit">%</span>
+        <span class="stat-label">国内セキュリティ製品市場<br>外資系企業シェア（2022〜2023年）</span>
+      </div>
+    </div>
+
+    <h3>国内セキュリティ産業の目標値</h3>
+    <p>経済産業省は2025年3月に「サイバーセキュリティ産業振興戦略」を取りまとめ、10年以内（2035年目途）に国内企業のサイバーセキュリティ関連売上高を現在の約0.9兆円から約3兆円超へ拡大することを目標として設定しました。この目標は政策文書として明示されているものであり、達成を保証するものではありません。</p>
+
+    <h3>政府IT調達と自治体DX関連市場</h3>
+    <p>政府・自治体向けDX基盤の市場規模として、地方公共団体情報システムの標準化対象は20業務・全国約1,700団体・約3万4,592システムにのぼります（デジタル庁調査・2023年10月時点）。標準化基本方針（2023年9月・閣議決定）では、移行完了後に2018年度比で少なくとも3割のシステム運用経費削減を目標として設定しています。ただし2025年時点では自治体から「移行後の運用経費が増加する」との声が地方三団体から相次いでおり、石破前総理指示のもとでワーキングチームが総合的な対策を検討中です（2025年6月13日資料・デジタル庁）。</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">約0.9→3</span>
+        <span class="stat-unit">兆円超</span>
+        <span class="stat-label">国内サイバーセキュリティ産業<br>売上高目標（10年以内・経産省）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">約1,700</span>
+        <span class="stat-unit">団体</span>
+        <span class="stat-label">標準化対象の地方公共団体数<br>（デジタル庁）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">34,592</span>
+        <span class="stat-unit">システム</span>
+        <span class="stat-label">標準化対象の地方公共団体<br>システム総数（2023年10月）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">▲30</span>
+        <span class="stat-unit">%以上</span>
+        <span class="stat-label">移行後の運用経費削減目標<br>（2018年度比・標準化基本方針）</span>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">総務省 令和7年版 情報通信白書 第10節（2025年）</span>
+      <span class="source-tag">JNSA 2024年 国内情報セキュリティ市場調査報告書（2025年7月）</span>
+      <span class="source-tag">IDC Japan 国内情報セキュリティ製品市場シェア 2024年上半期（2025年4月）</span>
+      <span class="source-tag">経済産業省 サイバーセキュリティ産業振興戦略（2025年3月）</span>
+      <span class="source-tag">デジタル庁 自治体情報システム標準化・ガバクラ移行後の運用経費に係る総合的な対策（2025年6月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH2 -->
+<div class="chapter" id="ch2">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 02</span>
+      <h2>制度・政策の枠組み</h2>
+    </div>
+
+    <h3>主要制度・政策の体系</h3>
+    <table class="policy-table">
+      <thead>
+        <tr>
+          <th>制度・政策名</th>
+          <th>策定・開始</th>
+          <th>主な内容</th>
+          <th>所管</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>サイバーセキュリティ基本法</td>
+          <td class="year">2014年成立</td>
+          <td>サイバーセキュリティ戦略本部の設置・国家戦略の法的根拠</td>
+          <td>内閣官房NISC</td>
+        </tr>
+        <tr>
+          <td>ISMAP（政府情報システムのためのセキュリティ評価制度）</td>
+          <td class="year">2020年6月開始</td>
+          <td>政府機関がクラウドを調達する際の安全性評価制度。原則ISMAP登録サービスから調達</td>
+          <td>内閣官房・デジタル庁・総務省・経産省</td>
+        </tr>
+        <tr>
+          <td>ISMAP-LIU（SaaSサービス向け）</td>
+          <td class="year">2022年11月開始</td>
+          <td>リスクの小さなSaaSを対象とする簡易版ISMAP</td>
+          <td>同上</td>
+        </tr>
+        <tr>
+          <td>地方公共団体情報システムの標準化に関する法律</td>
+          <td class="year">2021年5月成立</td>
+          <td>自治体基幹20業務の標準準拠システム利用を義務化。2025年度末移行目標</td>
+          <td>デジタル庁・総務省</td>
+        </tr>
+        <tr>
+          <td>地方公共団体情報システム標準化基本方針</td>
+          <td class="year">2023年9月閣議決定<br>2024年12月改定</td>
+          <td>標準準拠システムへの移行基準・ガバメントクラウド利用要件を規定</td>
+          <td>デジタル庁</td>
+        </tr>
+        <tr>
+          <td>政府情報システム統一基準群（令和5年度版）</td>
+          <td class="year">2023年7月公表</td>
+          <td>各府省庁が情報セキュリティポリシーに適用する統一基準</td>
+          <td>内閣官房NISC</td>
+        </tr>
+        <tr>
+          <td>サイバーセキュリティ産業振興戦略</td>
+          <td class="year">2025年3月策定</td>
+          <td>国産セキュリティ産業振興・スタートアップ試行活用・国内売上3兆円超目標</td>
+          <td>経済産業省</td>
+        </tr>
+        <tr>
+          <td>デジタル社会の実現に向けた重点計画</td>
+          <td class="year">毎年改訂（最新2025年6月）</td>
+          <td>DX with Cybersecurity・ゼロトラスト設計・SBOM・量子耐性暗号・能動的防御を明示</td>
+          <td>デジタル庁</td>
+        </tr>
+        <tr>
+          <td>サイバー対処能力強化法・整備法</td>
+          <td class="year">2025年5月16日成立</td>
+          <td>能動的サイバー防御を可能にする法制。第217回通常国会で成立。Kプロ第2弾（約300億円）と連動</td>
+          <td>内閣官房・防衛省</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>ISMAP制度の実態</h3>
+    <p>ISMAPは2020年6月に開始され、国際基準等をもとに第三者監査を経て安全性が評価されたクラウドサービスを登録する制度です。政府機関等は原則として「ISMAPクラウドサービスリスト」に掲載されたサービスから調達することとされています。一方で、「ISMAPはスタートアップにとって審査負担が重い」「海外大手クラウドベンダーを優遇する仕組みになっている可能性がある」との指摘が産業振興戦略の検討会でも上がっており、制度の簡略化が課題として認識されています。</p>
+
+    <h3>自治体標準化の進捗（2025年時点）</h3>
+    <p>自治体基幹20業務の標準準拠システムへの移行期限は原則2025年度末（2026年3月末）です。ただし2025年1月末時点で全体の8.6%（2,989システム）は「特定移行支援システム」として把握されており、デジタル庁の重点計画ではこれらをおおむね5年以内（2030年度末まで）に移行できるよう支援するとされています。また移行後の運用経費増加が自治体から相次いで指摘されており、為替円安（2018年110円前後→2025年150円前後）や人件費上昇（2024年春闘+4.1%等）が外資クラウドの円換算コスト押し上げ要因となっています。</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">8.6</span>
+        <span class="stat-unit">%</span>
+        <span class="stat-label">2026年度以降への移行が<br>避けられないシステム比率（2025年1月末）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">150</span>
+        <span class="stat-unit">円/ドル前後</span>
+        <span class="stat-label">2025年の為替水準<br>（2018年比約40円安）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">20</span>
+        <span class="stat-unit">業務</span>
+        <span class="stat-label">標準化義務対象の<br>自治体基幹業務数</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">約300</span>
+        <span class="stat-unit">億円</span>
+        <span class="stat-label">Kプロ第2弾「先進的サイバー<br>防御機能強化」予算（2024年7月〜）</span>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">内閣官房NISC サイバーセキュリティ2024（2024年7月）</span>
+      <span class="source-tag">内閣官房NISC サイバーセキュリティ2025（2025年6月）</span>
+      <span class="source-tag">デジタル庁 地方公共団体情報システム標準化基本方針（2024年12月閣議決定）</span>
+      <span class="source-tag">経済産業省 サイバーセキュリティ産業振興戦略（2025年3月）</span>
+      <span class="source-tag">デジタル庁 自治体情報システムの標準化・ガバクラ移行後の運用経費に係る総合的な対策概要（2025年6月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH3 -->
+<div class="chapter" id="ch3">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 03</span>
+      <h2>経済的前提条件</h2>
+    </div>
+
+    <h3>政府・自治体のIT支出構造</h3>
+    <p>国内のIT投資総額は2024年度に前年比4.3%増の5.8兆円規模（推計）です。政府・自治体のDX基盤投資は、地方公共団体情報システム標準化に向けた「デジタル基盤改革支援基金」（J-LIS経由）による補助が継続しています。標準化対象20業務のシステム移行経費（データ移行・文字の標準化等）および移行準備経費（現行システムの概要調査・比較分析等）が補助対象とされています。</p>
+
+    <h3>セキュリティ製品の外資依存とデジタル赤字</h3>
+    <p>国内セキュリティ製品市場における外資系シェア約50%（2022〜2023年・IDC Japan）は、データプラットフォーム編で整理したデジタル貿易赤字約5兆円規模（推計）の一因を構成しています。ゼロトラスト分野・Webセキュリティ分野等の市場規模・成長率ともに大きい有望分野では、その多くで外資企業が主要ポジションを占めているとサイバーセキュリティ産業振興戦略が明示しています。</p>
+
+    <h3>サイバー攻撃被害の経済的規模</h3>
+    <p>総務省 令和7年版 情報通信白書（2025年）によると、2024年に実施されたトレンドマイクロの調査では過去3年間でサイバー攻撃を受けた法人組織の累計被害額の平均が約1億7,100万円にのぼるとされています。2024年5月には、金融機関や地方公共団体等からの委託を受けて情報処理・印刷発送業務を行う企業でランサムウェア攻撃が発生し、多数の地方公共団体で個人情報漏えいが公表されました。こうした被害の経済的損失が政府・自治体のセキュリティ投資を後押しする構造があります。</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">約1.71</span>
+        <span class="stat-unit">億円</span>
+        <span class="stat-label">サイバー攻撃被害法人の<br>平均累計被害額（トレンドマイクロ2024年）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">約50</span>
+        <span class="stat-unit">%</span>
+        <span class="stat-label">国内セキュリティ製品市場<br>外資系シェア（2022〜2023年・IDC）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">5.8</span>
+        <span class="stat-unit">兆円</span>
+        <span class="stat-label">国内IT投資総額<br>（2024年度・前年比+4.3%）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">約13秒</span>
+        <span class="stat-unit">に1回</span>
+        <span class="stat-label">NICTER観測網の1IPアドレス当たり<br>受信頻度（2024年・NICT・過去最高）</span>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">総務省 令和7年版 情報通信白書 第10節（2025年）</span>
+      <span class="source-tag">NICT NICTER観測レポート2024年</span>
+      <span class="source-tag">経済産業省 サイバーセキュリティ産業振興戦略（2025年3月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH4 -->
+<div class="chapter" id="ch4">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 04</span>
+      <h2>社会・人口動態との連関</h2>
+    </div>
+
+    <h3>人口減少と自治体DXの構造的接続</h3>
+    <p>デジタル社会の実現に向けた重点計画（2025年6月版）は、日本の総人口が2070年に現在の約7割に減少し、生産年齢人口も2024年の約7,373万人から2050年には約5,540万人（約25%減）になると見込まれる中で、「中長期的な公共サービスの維持すらままならなくなる」という構造的課題を正面に掲げています。この人口減少圧力が政府・自治体DX基盤投資の根本的な需要側要因です。自治体職員の減少と業務量の増大というミスマッチを、DX基盤の共通化・標準化で解消するという論理が制度設計の基礎にあります。</p>
+
+    <h3>サイバー攻撃件数の増加傾向</h3>
+    <p>NICTが運用するNICTERの2024年の総観測パケット数は約6,862億パケットで、2015年（約632億パケット）の10.86倍に達し、過去最高を記録しました。2024年には重要インフラを含む複数分野にわたるDDoS攻撃（2024年12月〜2025年1月）、自治体委託先へのランサムウェア攻撃（2024年5月）など、政府・自治体に直接・間接的な影響を与えたサイバーインシデントが複数発生しています。</p>
+
+    <div class="incident-list">
+      <div class="incident-item">
+        <span class="incident-date">2024年5月</span>
+        <span class="incident-text">金融機関・地方公共団体等の委託先情報処理事業者へのランサムウェア攻撃。多数の地方公共団体から個人情報漏えいが公表された。</span>
+      </div>
+      <div class="incident-item">
+        <span class="incident-date">2024年6月</span>
+        <span class="incident-text">出版事業等大手企業へのランサムウェア攻撃。ウェブサービス停止・書籍流通事業に影響が生じた。</span>
+      </div>
+      <div class="incident-item">
+        <span class="incident-date">2024年12月〜<br>2025年1月</span>
+        <span class="incident-text">航空・金融分野を含む複数の重要インフラへのDDoS攻撃。航空会社国内外便の遅延・インターネットバンキングへのログイン障害等が発生した。</span>
+      </div>
+    </div>
+
+    <h3>デジタル人材不足と行政DXの制約</h3>
+    <p>経済産業省は2030年に最大79万人のIT人材不足（推計）を見込んでおり、この人材不足は政府・自治体DXの実施主体である行政機関にも直接影響します。デジタル庁は都道府県と市区町村の連携によるDX推進体制を構築し、デジタル人材の確保・育成を含めた市区町村支援に取り組む方針を示しています。RISS（情報処理安全確保支援士）の登録者数は2025年4月時点で約2万4,000人であり、経済産業省は2030年までに5万人への拡大を目標として設定しました。</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">10.86</span>
+        <span class="stat-unit">倍</span>
+        <span class="stat-label">サイバー攻撃観測パケット数<br>2024年 vs 2015年（NICTER・過去最高）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">約25</span>
+        <span class="stat-unit">%減</span>
+        <span class="stat-label">生産年齢人口<br>2024年→2050年推計（内閣府）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">約2.4万人</span>
+        <span class="stat-unit">→5万人</span>
+        <span class="stat-label">RISS登録者数<br>現状→2030年目標（経産省）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">約79</span>
+        <span class="stat-unit">万人</span>
+        <span class="stat-label">2030年IT人材不足数<br>（推計・経済産業省）</span>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">デジタル庁 デジタル社会の実現に向けた重点計画（2025年6月）</span>
+      <span class="source-tag">内閣官房NISC サイバーセキュリティ2025（2025年6月）</span>
+      <span class="source-tag">NICT NICTER観測レポート2024年</span>
+      <span class="source-tag">経済産業省 サイバーセキュリティ人材育成研究会最終報告書（2025年5月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH5 -->
+<div class="chapter" id="ch5">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 05</span>
+      <h2>技術・DXの位置づけ</h2>
+    </div>
+
+    <h3>「DX with Cybersecurity」の政策的位置づけ</h3>
+    <p>デジタル庁の重点計画（2025年6月版）および2021年策定のサイバーセキュリティ戦略は「DX with Cybersecurity」すなわちデジタル化と同時並行でセキュリティを実装する方針を明示しています。ゼロトラスト設計・CPSF（Cyber-Physical Security Framework）・SBOM（ソフトウェア部品表）・量子耐性暗号・能動的防御という技術領域が政府方針文書に明記されており、これらが政府・自治体DX基盤の技術標準として実装されていく枠組みです。</p>
+
+    <div class="data-box">
+      <div class="box-title">重点計画（2025年版）に明記された技術・DX要素</div>
+      <ul>
+        <li>【ゼロトラストセキュリティ】「信頼しない・常に確認する」原則。クラウド移行に伴いISMAP登録サービス前提のゼロトラスト設計が政府機関に展開される。IAM（アイデンティティ・アクセス管理）市場の拡大を後押し。</li>
+        <li>【SBOM（ソフトウェア部品表）】ソフトウェアを構成するコンポーネントを一覧化する手法。生成AI・自動車ソフト更新時代に不可欠な「部品表」として政府が普及を推進。産業横断のガイドラインとして整備中。</li>
+        <li>【量子耐性暗号（耐量子暗号）】量子コンピュータによる暗号解読に対応する次世代暗号。政府DX基盤の長期的な安全性確保に向けて移行計画の検討が進んでいる。</li>
+        <li>【能動的サイバー防御】サイバー攻撃への先制的・積極的防御。「サイバー対処能力強化法」および整備法が2025年5月16日に第217回通常国会で成立。Kプロ第2弾（約300億円）として2024年7月より研究開発を実施中。</li>
+        <li>【CPSF（サイバー・フィジカル・セキュリティフレームワーク）】Society 5.0でサイバーとフィジカルが融合する社会を前提とした安全確保の枠組み。業界ガイドラインとして産業横断で整備中。</li>
+        <li>【ガバメントAI・AI基盤】デジタル庁が構築する政府AI基盤（ガバメントAI）と地方公共団体への提供。安全・安心なAI利活用環境の整備。</li>
+      </ul>
+    </div>
+
+    <h3>ゼロトラスト市場の成長</h3>
+    <p>ゼロトラスト分野は国内情報セキュリティ市場の中で「市場規模・成長率ともに大きい有望分野」として経済産業省が明示しており、その多くで外資企業が主要ポジションを占めています。IAM（アイデンティティ・アクセス管理）製品市場は2023年度に前年比20.0%増の約1,502億円と高成長を示しており（JNSA・2025年）、ゼロトラスト実現の中核として需要が継続しています。</p>
+
+    <h3>ガバメントクラウドの技術的位置づけ</h3>
+    <p>ガバメントクラウドはデジタル庁が整備するクラウドコンピューティングサービスの共通基盤であり、自治体の標準準拠システムはこの上に構築されます。2025年3月24日には「ガバメントクラウドの適切な利用によるコスト最適化のアプローチガイド第1.0版」が公開されました。クラウドプロバイダーはAWS・Azure・Google Cloud・Oracleの外資4社が認定済みであり、さくらのクラウドは2023年11月に2025年度末までに全要件を満たすことを条件として決定されています（認定済み4社＋条件付き決定1社の計5社体制）。</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">約1,502</span>
+        <span class="stat-unit">億円</span>
+        <span class="stat-label">IAM（アイデンティティ管理）製品市場<br>（2023年度・前年比+20%・JNSA）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">4社</span>
+        <span class="stat-unit">（外資）</span>
+        <span class="stat-label">ガバメントクラウド認定<br>クラウドプロバイダー数（2025年）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">約300</span>
+        <span class="stat-unit">億円</span>
+        <span class="stat-label">先進的サイバー防御機能強化<br>Kプロ第2弾予算（2024年7月〜）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">2025年<br>5月16日</span>
+        <span class="stat-unit">成立</span>
+        <span class="stat-label">サイバー対処能力強化法<br>（第217回通常国会）</span>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">デジタル庁 デジタル社会の実現に向けた重点計画（2025年6月）</span>
+      <span class="source-tag">JAPANSecuritySummit Update デジタル庁データ戦略DX with Cybersecurity（2025年7月）</span>
+      <span class="source-tag">JNSA 2024年 国内情報セキュリティ市場調査報告書（2025年7月）</span>
+      <span class="source-tag">内閣官房NISC サイバーセキュリティ2024（2024年7月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH6 -->
+<div class="chapter" id="ch6">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 06</span>
+      <h2>参入・撤退の条件</h2>
+    </div>
+
+    <h3>政府・自治体向け市場への参入条件</h3>
+    <p>政府・地方公共団体のDX基盤市場へ参入するためには、制度的な認定・登録が実質的な条件として機能しています。特にクラウドサービス提供事業者にとってのISMAP登録と、自治体基幹システム提供事業者にとっての標準仕様適合が、調達参加のための実質的ハードルです。</p>
+
+    <div class="data-box">
+      <div class="box-title">主要な参入条件（事実の列挙）</div>
+      <ul>
+        <li>【ISMAPクラウドサービスリスト登録】政府機関向けクラウドサービスの調達は原則このリストから実施。登録には国際基準（ISO/IEC 27017等）をもとにした第三者監査プロセスが必要。スタートアップからは「審査負担が重い」との指摘が相次いでいる（経産省検討会・2024年）。</li>
+        <li>【標準仕様適合（自治体向け）】自治体基幹20業務のシステムは標準化基準への適合が義務化されている。各制度所管省庁が策定した標準仕様書への準拠確認が必要。</li>
+        <li>【政府情報システム統一基準群への対応】府省庁向けシステム・セキュリティ製品・サービスを提供する場合、統一基準群（令和5年度版）と同等以上のセキュリティ対策への対応が求められる。</li>
+        <li>【IT調達申合せ（2018年12月）への対応】特に防護すべき情報システム・機器・役務等に関する調達については、サプライチェーン・リスクへの対応として必要な措置が定められている。</li>
+        <li>【RISS（情報処理安全確保支援士）】セキュリティ関連業務においてRISS資格保有者の配置が評価要件になる傾向がある。義務ではないが、政府調達では実質的な加点要素として機能する場合がある。</li>
+      </ul>
+    </div>
+
+    <h3>スタートアップの参入障壁と振興策</h3>
+    <p>経済産業省のサイバーセキュリティ産業振興戦略は、「活用実績のないスタートアップが販路を拡大することが困難」「事業拡大に対する継続的な投資が妨げられている悪循環」を明示的に問題として認定しています。これに対し、政府機関等によるスタートアップ製品の試行的活用・IPA「コラボレーション・プラットフォーム」を活用したSIerとベンダーのマッチングの場の創出・大規模研究開発の推進などが対策として盛り込まれています。</p>
+
+    <h3>ベンダーロックインと撤退障壁</h3>
+    <p>自治体基幹システムはベンダーロックインが深刻な問題として指摘されてきました。標準化・ガバメントクラウド移行はこの解消を目的の一つとして掲げていますが、移行後も公共SaaS提供事業者との継続関係が生じるため、ロックイン構造が完全に解消されるかは移行後の実態次第です。標準仕様への準拠が義務化されたことで、同一業務に複数ベンダーが参入できる環境は整備されます。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">経済産業省 サイバーセキュリティ産業振興戦略（2025年3月）</span>
+      <span class="source-tag">内閣官房NISC サイバーセキュリティ2024（2024年7月）</span>
+      <span class="source-tag">デジタル庁 地方公共団体情報システム標準化・共通化への取組資料（2024年）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH7 -->
+<div class="chapter" id="ch7">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 07</span>
+      <h2>経済安全保障との接続</h2>
+    </div>
+
+    <h3>セキュリティ製品の外資依存と安全保障</h3>
+    <p>経済産業省のサイバーセキュリティ産業振興戦略は、国内で活用されるセキュリティ製品の多くを海外製が占めている現状が「我が国の安全保障を確保する観点」と「デジタル赤字の解消に貢献する観点」の両面から課題であることを明示しています。ゼロトラスト分野・Webセキュリティ分野等の成長領域で外資企業が主要ポジションを占めている状況は、政府DX基盤のセキュリティを外資製品に依存する構造が継続・拡大していることを意味します。</p>
+
+    <h3>能動的サイバー防御の法制化</h3>
+    <p>「サイバー対処能力強化法」および整備法は2025年5月16日に第217回通常国会で成立しました。これによりサイバー攻撃への先制的・積極的防御が法的に可能となる枠組みが整備されました。Kプロ（経済安全保障推進法に基づく特定重要技術研究開発支援）第2弾「先進的サイバー防御機能・分析能力強化」（約300億円）は2024年7月より研究開発が実施中であり、法成立と連動して政府・重要インフラを対象とした積極的なサイバー防御体制の構築が進みます。</p>
+
+    <h3>重要インフラ保護と政府DXの交差点</h3>
+    <p>サイバーセキュリティ基本法上の重要インフラは情報通信・金融・航空・鉄道・電力・ガス・政府・行政サービス等14分野が指定されています。政府・地方公共団体のDX基盤はこの重要インフラに直接含まれており、DX推進とセキュリティ確保を同時に達成する「DX with Cybersecurity」が制度設計の基本方針となっています。NISCは重要インフラ保護を担い、デジタル庁はDX推進を担うという二元的なリーダーシップ体制が構築されています。</p>
+
+    <div class="data-box">
+      <div class="box-title">経済安全保障上の課題（政策文書に基づく事実）</div>
+      <ul>
+        <li>国内セキュリティ製品の外資シェア約50%（2022〜2023年）という製品供給の海外依存</li>
+        <li>ゼロトラスト・Webセキュリティ等の成長分野で外資が主要ポジション（経産省産業振興戦略）</li>
+        <li>ガバメントクラウドのプロバイダーは外資4社（AWS・Azure・Google・Oracle）が認定済み、さくらのクラウドが2025年度末までに全要件充足を条件に決定（計5社体制）</li>
+        <li>サイバー対処能力強化法・整備法が2025年5月16日に成立。政府・重要インフラへの積極的防御体制の整備が開始</li>
+        <li>Kプロ第2弾（約300億円）による国産サイバー防御技術の研究開発支援が進行中</li>
+        <li>RISS登録者数を2030年までに約2.4万人→5万人へ拡大という人材育成目標が設定済み</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">経済産業省 サイバーセキュリティ産業振興戦略（2025年3月）</span>
+      <span class="source-tag">内閣官房NISC サイバーセキュリティ2025（2025年6月）</span>
+      <span class="source-tag">デジタル庁 デジタル社会の実現に向けた重点計画（2025年6月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH8 -->
+<div class="chapter" id="ch8">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 08</span>
+      <h2>外部環境の整理</h2>
+    </div>
+
+    <h3>第1〜7章の数値サマリー</h3>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>章</th>
+          <th>指標名</th>
+          <th>数値</th>
+          <th>出典・時点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>第1章</td>
+          <td>世界サイバーセキュリティ市場</td>
+          <td>867億ドル（前年比+9.7%）</td>
+          <td>総務省 令和7年版 情報通信白書 2025年</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>国内情報セキュリティ市場（2024年度推定見込値）</td>
+          <td>1兆7,995億円（前年比+8.0%）</td>
+          <td>JNSA 2024年度国内情報セキュリティ市場調査報告書 2025年6月</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>国内情報セキュリティ市場（2025年度予測値）</td>
+          <td>1兆9,458億円（前年比+8.1%）</td>
+          <td>JNSA 同上</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>国内セキュリティ製品外資系シェア</td>
+          <td>約50%（2022〜2023年）</td>
+          <td>IDC Japan 2025年4月</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>国内サイバーセキュリティ産業振興目標</td>
+          <td>約0.9兆円→3兆円超（10年以内）</td>
+          <td>経済産業省 サイバーセキュリティ産業振興戦略 2025年3月</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>自治体標準化対象システム総数</td>
+          <td>34,592システム（約1,700団体）</td>
+          <td>デジタル庁調査 2023年10月</td>
+        </tr>
+        <tr>
+          <td>第2章</td>
+          <td>移行期限を過ぎるシステム比率（推計）</td>
+          <td>全体の8.6%（2,989システム）</td>
+          <td>デジタル庁 2025年1月末時点</td>
+        </tr>
+        <tr>
+          <td>第3章</td>
+          <td>サイバー攻撃被害法人の平均累計被害額</td>
+          <td>約1億7,100万円（過去3年）</td>
+          <td>総務省 令和7年版 情報通信白書（2025年）記載・トレンドマイクロ2024年調査</td>
+        </tr>
+        <tr>
+          <td>第3章</td>
+          <td>NICTER観測網の1IP当たり受信頻度（2024年）</td>
+          <td>約13秒に1回（過去最高）</td>
+          <td>NICT NITERレポート 2024年</td>
+        </tr>
+        <tr>
+          <td>第4章</td>
+          <td>NICTERパケット数増加倍率（2015→2024年）</td>
+          <td>10.86倍</td>
+          <td>NICT NITERレポート 2024年</td>
+        </tr>
+        <tr>
+          <td>第4章</td>
+          <td>RISS登録者数・目標</td>
+          <td>約2.4万人（2025年4月）→5万人（2030年目標）</td>
+          <td>経済産業省 サイバーセキュリティ人材育成研究会 2025年5月</td>
+        </tr>
+        <tr>
+          <td>第5章</td>
+          <td>IAM製品市場（2023年度）</td>
+          <td>約1,502億円（前年比+20.0%）</td>
+          <td>JNSA 2025年7月</td>
+        </tr>
+        <tr>
+          <td>第7章</td>
+          <td>Kプロ第2弾予算</td>
+          <td>約300億円（2024年7月〜）</td>
+          <td>内閣官房NISC サイバーセキュリティ2025</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>構造的に固定されやすい要素</h3>
+    <div class="data-box">
+      <div class="box-title">構造的に固定されやすい要素（事実の列挙）</div>
+      <ul>
+        <li>ISMAPの登録プロセス（第三者監査コスト・期間）が外資大手に有利に機能しやすく、スタートアップの参入障壁として継続している</li>
+        <li>ゼロトラスト・Webセキュリティ等の成長分野での外資主導構造は、製品の累積実績・導入実績重視の商慣習により固定されやすい</li>
+        <li>ガバメントクラウドが外資4社認定という構造は、自治体標準化の完了後も継続する（国産クラウドの参入は制度的には開かれているが実績積み上げが必要）</li>
+        <li>サイバー対処能力強化法・整備法が2025年5月16日成立（第217回通常国会）により、政府・重要インフラへのセキュリティ投資義務が強化される方向性が法的に確定した</li>
+        <li>人口減少による自治体職員の減少という構造的圧力が、DX基盤への投資需要を中長期で支える</li>
+        <li>サイバー攻撃の観測パケット数が2015年比10.86倍という脅威の増大トレンドは、政策的・技術的に即時解消できない</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">本レポート第1〜7章に記載の各統計の集約</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH9 -->
+<div class="chapter" id="ch9">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 09</span>
+      <h2>内部環境編への橋渡し</h2>
+    </div>
+
+    <p>外部環境編では以下の構造を数字と事実で整理しました。</p>
+    <div class="data-box">
+      <div class="box-title">外部環境編の整理（5点）</div>
+      <ul>
+        <li>国内セキュリティ市場は2024年度推定見込値1兆7,995億円・2025年度予測値1兆9,458億円と拡大しているが、製品の約50%を外資が占める構造が継続している</li>
+        <li>地方公共団体情報システムの標準化・ガバメントクラウド移行（20業務・約1,700団体・約3万4,592システム）が2025〜2026年度に集中実施されており、移行後の運用経費問題が顕在化している</li>
+        <li>サイバー攻撃の観測パケット数は2015年比10.86倍（過去最高）を記録し、政府・自治体を標的としたインシデントが複数発生している</li>
+        <li>ISMAP・標準仕様適合・政府統一基準対応という制度的ハードルが市場への参入条件として機能している一方、スタートアップの参入障壁として機能している面も政策文書で認定されている</li>
+        <li>能動的サイバー防御の法制化・Kプロ第2弾（約300億円）・RISS5万人目標という政策的手当てが進行中である</li>
+      </ul>
+    </div>
+
+    <div class="next-box">
+      <div class="next-label">NEXT — 内部環境編で整理すること</div>
+      <h3>外圧がプレイヤー構成・収益・人材にどう現れるか</h3>
+      <ul>
+        <li>外資セキュリティ製品ベンダー・大手SIer・国産セキュリティ企業・スタートアップという業態別プレイヤー構成と収益構造の差異</li>
+        <li>ISMAP登録・政府統一基準対応というコストが利益率・営業活動にどう影響しているか</li>
+        <li>セキュリティエンジニア・SOCアナリスト・GRC専門家等の職種別人材市場の実態と年収水準</li>
+        <li>「現場（SOC・セキュリティ運用）」と「本部（コンサル・提案）」の非対称性と評価構造</li>
+        <li>自治体標準化移行が生み出す短期需要と、移行完了後の市場構造の変化</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">本レポートの総括</span>
+    </div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <div class="container">
+    <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。掲載データは各記載出典に基づきますが、数値の正確性・完全性を保証するものではありません。投資判断は自己責任において行ってください。本レポートの内容は作成時点の情報に基づいており、市場環境・政策変更等により実態が変化する可能性があります。個別企業に関する投資推奨は一切含みません。データ基準時点は2026年03月です。</p>
+    <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年03月 産業構造分析レポート ── 政府・地方公共団体のDX基盤（外部環境編）</p>
+    <p style="margin-top:8px;">
+      <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+      　｜　
+      <a href="https://www.marketsupporter-ai.com/articles/general-knowledge/knowledge" style="color: rgba(245,242,237,0.4); font-size:11px;">一般教養の記事一覧へ</a>
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
