@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>業界分析｜高市政権「戦略17分野」情報通信 先行検討技術⑤オール光ネットワーク（APN：All-Photonics Network）（外部環境編）</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+  :root {
+    --ink: #0f0f0e;
+    --paper: #f5f2ed;
+    --cream: #ede9e1;
+    --accent: #c84b2f;
+    --muted: #6b6760;
+    --rule: #c9c4bb;
+    --highlight: #fff8e6;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .masthead {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    border-bottom: 3px solid var(--accent);
+  }
+  .masthead-right { color: var(--muted); }
+
+  .hero {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 40%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      45deg, transparent, transparent 4px,
+      rgba(200,75,47,0.07) 4px, rgba(200,75,47,0.07) 5px
+    );
+  }
+  .hero-label {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    padding: 4px 10px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(20px, 3.2vw, 34px);
+    font-weight: 900;
+    line-height: 1.4;
+    max-width: 820px;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+  }
+  .hero h1 em { color: var(--accent); font-style: normal; }
+  .hero-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 16px; }
+  .hero-badge {
+    border: 1px solid rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.75);
+    font-size: 11px;
+    padding: 4px 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.06em;
+  }
+  .data-notice {
+    background: rgba(200,75,47,0.15);
+    border-left: 3px solid var(--accent);
+    padding: 10px 16px;
+    margin-top: 24px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  .toc {
+    background: var(--cream);
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding: 32px 40px;
+  }
+  .toc h2 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 6px 28px;
+  }
+  .toc-item {
+    font-size: 13px;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 3px 0;
+    border-bottom: 1px dashed var(--rule);
+    display: flex;
+    gap: 8px;
+  }
+  .toc-item:hover { color: var(--accent); }
+  .toc-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  .chapter {
+    padding: 48px 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .chapter:nth-child(even) { background: var(--cream); }
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .chapter-num {
+    background: var(--accent);
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .chapter h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 10px;
+    flex: 1;
+  }
+  .chapter h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 24px 0 10px;
+    padding-left: 10px;
+    border-left: 3px solid var(--accent);
+  }
+  .chapter p { margin-bottom: 14px; }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 24px 0;
+  }
+  .stat-cell {
+    background: var(--paper);
+    padding: 18px 16px;
+    text-align: center;
+  }
+  .chapter:nth-child(even) .stat-cell { background: #f0ece4; }
+  .stat-cell .stat-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1.2;
+    display: block;
+  }
+  .stat-cell .stat-unit {
+    font-size: 12px;
+    color: var(--muted);
+    display: block;
+    margin-top: 2px;
+  }
+  .stat-cell .stat-label {
+    font-size: 11px;
+    color: var(--ink);
+    display: block;
+    margin-top: 6px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .data-box {
+    background: var(--highlight);
+    border: 1px solid #e0d8c4;
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .data-box .box-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .data-box ul { padding-left: 0; list-style: none; }
+  .data-box ul li {
+    padding: 5px 0 5px 16px;
+    border-bottom: 1px dashed var(--rule);
+    font-size: 13px;
+    position: relative;
+  }
+  .data-box ul li::before {
+    content: '▸';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-size: 11px;
+  }
+  .data-box ul li:last-child { border-bottom: none; }
+
+  .note-box {
+    background: rgba(200,75,47,0.05);
+    border: 1px dashed var(--accent);
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .note-box strong { color: var(--accent); }
+
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 13px;
+  }
+  .summary-table thead tr { background: var(--ink); color: var(--paper); }
+  .summary-table thead th {
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+  .summary-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .summary-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.03); }
+  .summary-table tbody td { padding: 9px 14px; vertical-align: top; }
+  .summary-table td:first-child { font-weight: 700; color: var(--accent); font-size: 12px; }
+  .summary-table td:nth-child(2) { font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
+
+  /* ロードマップ年表 */
+  .timeline { margin: 20px 0; }
+  .timeline-item {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--rule);
+    font-size: 13px;
+  }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-year {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+    flex-shrink: 0;
+    width: 90px;
+    padding-top: 2px;
+  }
+  .timeline-text { flex: 1; }
+
+  .next-box {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 28px 32px;
+    margin: 20px 0;
+    border-left: 5px solid var(--accent);
+  }
+  .next-box .next-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .next-box h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 17px;
+    margin-bottom: 12px;
+    border-left: none;
+    padding-left: 0;
+  }
+  .next-box ul { padding-left: 0; list-style: none; }
+  .next-box ul li {
+    padding: 4px 0 4px 14px;
+    font-size: 13px;
+    position: relative;
+    color: rgba(245,242,237,0.85);
+  }
+  .next-box ul li::before {
+    content: '▸';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-size: 11px;
+  }
+
+  .source-tag {
+    display: inline-block;
+    background: rgba(0,0,0,0.06);
+    border: 1px solid var(--rule);
+    padding: 3px 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin: 2px 3px;
+    letter-spacing: 0.04em;
+  }
+  .source-wrap {
+    margin-top: 20px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--rule);
+  }
+
+  .disclaimer {
+    background: var(--ink);
+    color: rgba(245,242,237,0.5);
+    padding: 24px 40px;
+    font-size: 11px;
+    line-height: 1.7;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.03em;
+  }
+
+  .rule-thick { border: none; border-top: 3px solid var(--ink); margin: 0; }
+  .rule-thin { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+  /* 技術比較テーブル */
+  .tech-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 12px;
+  }
+  .tech-table thead tr { background: var(--ink); color: var(--paper); }
+  .tech-table thead th {
+    padding: 8px 12px;
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+  }
+  .tech-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .tech-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.03); }
+  .tech-table tbody td { padding: 8px 12px; vertical-align: top; font-size: 12px; }
+  .tech-table td:first-child { font-weight: 700; }
+  .tech-table .acc { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 11px; }
+
+  @media (max-width: 600px) {
+    .masthead { flex-direction: column; gap: 6px; padding: 10px 16px; }
+    .hero { padding: 36px 16px 30px; }
+    .chapter { padding: 32px 16px; }
+    .toc { padding: 24px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <span>産業構造分析レポート</span>
+  <span class="masthead-right">2026年03月発行 ── 情報通信／オール光ネットワーク（APN）（外部環境編）</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-label">INDUSTRY ANALYSIS REPORT — EXTERNAL ENVIRONMENT</div>
+    <h1>業界分析｜高市政権「戦略17分野」<br>情報通信<br>先行検討技術⑤<em>オール光ネットワーク<br>（APN：All-Photonics Network）</em>（外部環境編）</h1>
+    <div class="hero-meta">
+      <span class="hero-badge">就職・転職検討者向け</span>
+      <span class="hero-badge">株式投資家向け</span>
+      <span class="hero-badge">数字と事実のみ記載</span>
+    </div>
+    <div class="data-notice">
+      本レポートのデータ基準時点：2026年03月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thick">
+
+<!-- TOC -->
+<div class="toc">
+  <div class="container">
+    <h2>目次 — TABLE OF CONTENTS</h2>
+    <div class="toc-grid">
+      <a class="toc-item" href="#ch0"><span class="toc-num">00</span>このレポートの目的と読み方</a>
+      <a class="toc-item" href="#ch1"><span class="toc-num">01</span>市場規模と成長率</a>
+      <a class="toc-item" href="#ch2"><span class="toc-num">02</span>制度・政策の枠組み</a>
+      <a class="toc-item" href="#ch3"><span class="toc-num">03</span>経済的前提条件</a>
+      <a class="toc-item" href="#ch4"><span class="toc-num">04</span>社会・人口動態との連関</a>
+      <a class="toc-item" href="#ch5"><span class="toc-num">05</span>技術・DXの位置づけ</a>
+      <a class="toc-item" href="#ch6"><span class="toc-num">06</span>参入・撤退の条件</a>
+      <a class="toc-item" href="#ch7"><span class="toc-num">07</span>経済安全保障との接続</a>
+      <a class="toc-item" href="#ch8"><span class="toc-num">08</span>外部環境の整理</a>
+      <a class="toc-item" href="#ch9"><span class="toc-num">09</span>内部環境編への橋渡し</a>
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thin">
+
+<!-- CH0 -->
+<div class="chapter" id="ch0">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 00</span>
+      <h2>このレポートの目的と読み方</h2>
+    </div>
+    <p>本レポートは、高市政権「戦略17分野」情報通信の先行検討技術⑤「オール光ネットワーク（APN：All-Photonics Network）」の外部環境を、就職・転職検討者および株式投資家向けに数字と事実のみで記述します。</p>
+
+    <div class="data-box">
+      <div class="box-title">APNとは何か——3行で把握する</div>
+      <ul>
+        <li>【技術の概要】端末からネットワーク・データセンターまで、光電変換を極力なくし光信号のままデータを伝送するネットワーク構想。NTTが推進するIOWN（Innovative Optical and Wireless Network）構想の中核技術。</li>
+        <li>【既存技術との違い】現在の通信網は途中で光→電気→光の変換を繰り返す。APNはこの変換を省くことで、伝送容量125倍・エンドツーエンド遅延1/200・電力効率100倍（2030年目標値・NTT）を目指す。</li>
+        <li>【なぜ今か】生成AIの普及に伴うデータトラフィックの急増・データセンターの消費電力増大・通信遅延という3つの構造的課題に対し、APNが「AI×電力制約×通信遅延」すべてに同時に応答するインフラとして位置づけられた。</li>
+      </ul>
+    </div>
+
+    <div class="data-box">
+      <div class="box-title">このレポートで整理する外部環境の範囲</div>
+      <ul>
+        <li>【市場規模】光通信関連市場の世界規模・国内動向・2030年予測</li>
+        <li>【制度・政策】Beyond 5G推進戦略2.0・NICT基金・ITU-T標準化の進捗</li>
+        <li>【経済的前提】AI需要によるデータトラフィック増加・消費電力問題・海外調達依存の実態</li>
+        <li>【技術DX】IOWNの商用サービス開始状況・ユースケース・2030年ロードマップ</li>
+        <li>【参入条件】技術参入の難易度・NTT主導エコシステムの構造・標準化の進捗</li>
+        <li>【経済安全保障】海外通信機器依存・国際標準化での主導権・北米市場シェア目標</li>
+      </ul>
+    </div>
+    <p>良し悪しの評価・投資推奨・将来予測は行いません。構造を示すことで終わります。</p>
+    <div class="source-wrap"><span class="source-tag">本レポート基本方針</span></div>
+  </div>
+</div>
+
+<!-- CH1 -->
+<div class="chapter" id="ch1">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 01</span>
+      <h2>市場規模と成長率</h2>
+    </div>
+
+    <h3>光通信関連市場（世界）</h3>
+    <p>光通信およびネットワーク機器の世界市場規模は2024年に251億6,900万米ドルに達しました。今後2033年までに451億3,450万米ドルに成長すると予測されており、2025年から2033年のCAGRは6.7%と見込まれています（IMARC Group・2025年）。なお、別調査では2024年の光学通信システムとネットワーキング市場を155億3,000万米ドルとし、2032年に295億米ドルへ成長すると予測するものもあり（Fortune Business Insights・2025年）、調査機関により対象範囲・集計方法が異なることに留意が必要です。高い成長性については各調査機関の方向性は一致しています。</p>
+
+    <h3>日本政府が掲げる市場規模目標</h3>
+    <p>高市政権「戦略17分野」のPDF資料（日本成長戦略会議第3回・2026年3月）では、光通信関連市場は「2030年に約53兆円」と記載されています。これは光通信関連の装置・デバイス・サービスを広く含む政府推計値であり、APN単体の市場規模ではありません。同資料は「AI社会を支える基幹インフラであり、安全保障上も重要。国内でも海外企業からの調達が拡大する中、自律性確保が急務」と選定理由を明示しています。</p>
+
+    <h3>光通信関連装置・デバイス（世界市場）</h3>
+    <p>富士キメラ総研の調査（2019年公表・※コロナ前の調査であり現在のAI需要急増は反映されていない）によると、光通信関連装置・キーデバイスの世界市場は2018年に10兆57億円、2025年には2018年比56.4%増の15兆6,469億円が予測されていました。光伝送ネットワーク市場は2025年に270億米ドル（約4兆円推計）、2030年には404億4,000万米ドルに達する見込みで、CAGRは8.42%とされています（Mordor Intelligence・2025年）。</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">約53</span>
+        <span class="stat-unit">兆円</span>
+        <span class="stat-label">光通信関連市場予測<br>（2030年・政府推計・日本成長戦略会議）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">251.7</span>
+        <span class="stat-unit">億ドル</span>
+        <span class="stat-label">光通信・ネットワーク機器<br>世界市場（2024年・IMARC）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">270</span>
+        <span class="stat-unit">億ドル</span>
+        <span class="stat-label">光伝送ネットワーク<br>世界市場（2025年・Mordor）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">CAGR<br>6〜9</span>
+        <span class="stat-unit">%</span>
+        <span class="stat-label">光通信市場の成長率帯<br>（各調査機関・2025〜2033年）</span>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <strong>【注記】</strong>本章に記載の市場規模数値（251億ドル・155億ドル・270億ドル・53兆円等）は、調査機関ごとに対象範囲（装置・ネットワーク・デバイス・サービス等）・集計方法・地域範囲が異なるため、単純比較はできません。
+    </div>
+
+    <h3>国内APNの現状規模</h3>
+    <p>APNは現在（2026年3月時点）、商用サービス開始から約3年の段階であり、国内市場は本格普及前の初期段階にあります。矢野経済研究所（2025年12月）による調査では、APNの普及にはユースケースの確立に向けた取り組みが重要として「3つの普及シナリオ」を提示しており、将来の普及規模は前提条件によって大きく異なります。総務省・NICTは2030年頃の国内本格導入を目標として定め、その後の海外展開につなげる方針です（Beyond 5G推進戦略2.0・2024年8月）。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回 戦略17分野における主要な製品・技術等（2026年3月）</span>
+      <span class="source-tag">IMARC Group 光通信およびネットワーク機器市場（2025年）</span>
+      <span class="source-tag">Mordor Intelligence 光伝送ネットワーク市場（2025年）</span>
+      <span class="source-tag">矢野経済研究所 APN普及に向けた調査（2025年12月）</span>
+      <span class="source-tag">富士キメラ総研 光通信関連市場総調査（2019年）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH2 -->
+<div class="chapter" id="ch2">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 02</span>
+      <h2>制度・政策の枠組み</h2>
+    </div>
+
+    <h3>主要政策・制度の体系</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="timeline-year">2020年6月</span>
+        <span class="timeline-text"><strong>Beyond 5G推進戦略</strong>（総務省）策定。2030年代のBeyond 5G導入に向けた国家戦略の法的枠組みを設定。IOWNグローバルフォーラムへの支援開始。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2022年度〜</span>
+        <span class="timeline-text"><strong>Beyond 5G（6G）基金事業</strong>（総務省・NICT）開始。総額1,002億円（令和4年度補正662億円＋令和5年度当初150億円＋令和5年度補正190億円）。オール光ネットワーク個別技術の研究開発を支援。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2023年3月</span>
+        <span class="timeline-text"><strong>APN IOWN1.0</strong>の商用サービス開始（NTT東日本・西日本）。NTTのIOWN構想に基づくAPNの商用サービスとして世界初。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2024年5月</span>
+        <span class="timeline-text"><strong>「オール光ネットワーク共通基盤技術の開発の方向性及び普及方策について」</strong>（情報通信審議会）公表。複数事業者間連携の共通基盤技術の必要性を明記。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2024年7月</span>
+        <span class="timeline-text"><strong>ITU-T（国際電気通信連合電気通信標準化部門）</strong>にAPN のアーキテクチャ等を提案。作業部会の開始が決定。2026年度での承認を目指す。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2024年8月</span>
+        <span class="timeline-text"><strong>Beyond 5G推進戦略2.0</strong>（総務省）公表。APN・NTN・RANの3分野を戦略分野として位置付け。2030年頃の国内本格導入と海外展開を明示。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2024年10月</span>
+        <span class="timeline-text"><strong>NTT・KDDI・富士通・NEC・楽天モバイルの5社共同提案</strong>がBeyond 5G基金事業（共通基盤技術確立型）に採択。複数事業者間のAPN相互接続技術を研究開発。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2024年12月</span>
+        <span class="timeline-text"><strong>「All-Photonics Connect powered by IOWN」</strong>（NTT東日本・西日本）提供開始。最大800Gbps対応、ユーザー拠点間として世界最高水準（NTT公表値ベース）とする帯域保証型サービス。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2025年1月</span>
+        <span class="timeline-text"><strong>「APN普及・拡大に向けた取組について」</strong>（総務省）公表。国内外でのユースケース創出・国際連携の具体方策を整理。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2026年3月</span>
+        <span class="timeline-text"><strong>高市政権「戦略17分野」</strong>にオール光ネットワーク（APN）が情報通信分野の先行検討技術として明示。光通信関連市場2030年約53兆円目標と国際市場シェア獲得方針を公表。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2026年度目途</span>
+        <span class="timeline-text"><strong>ITU-T標準化</strong>の承認を目指す（IOWN Global Forum・2024年7月提案ベース）。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2027年以降</span>
+        <span class="timeline-text"><strong>国際的なフォーラム標準への順次反映</strong>を計画（Beyond 5G推進戦略2.0）。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2028年頃</span>
+        <span class="timeline-text"><strong>複数事業者間共通基盤技術の確立</strong>を目標（Beyond 5G推進戦略2.0）。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2030年頃</span>
+        <span class="timeline-text"><strong>国内本格導入</strong>と<strong>海外展開</strong>を目標（総務省）。複数事業者間をシームレスにつなぐAPNサービスの実現。</span>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">総務省 Beyond 5G推進戦略2.0（2024年8月）</span>
+      <span class="source-tag">総務省 APN普及・拡大に向けた取組について（2025年1月）</span>
+      <span class="source-tag">NICT Beyond 5G基金事業 採択結果（2024年10月）</span>
+      <span class="source-tag">NTT東日本 All-Photonics Connect powered by IOWN 提供開始（2024年12月）</span>
+      <span class="source-tag">Beyond 5G新経営戦略センター AI×未来×オール光ネットワーク 標準化ガイドブック（2025年10月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH3 -->
+<div class="chapter" id="ch3">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 03</span>
+      <h2>経済的前提条件</h2>
+    </div>
+
+    <h3>AI需要によるデータトラフィックの急増</h3>
+    <p>生成AIの普及に伴い、データセンターにおける通信量は急増しています。AI需要は「計算量（GPU処理）」だけでなく、AIモデルの学習・推論過程で生じる大量のデータ転送により「データ移動量」を指数的に増加させます。この「通信ネットワークの問題」こそがAPNの必要性の本質的な背景です。AIファブリック用の光ファイバートランシーバーの収益は2028年まで年率30%のペースで増加すると予測されており、非AI導入の9%ペースを大きく上回っています（Mordor Intelligence・2025年）。Lumen Technologies（米国）は2024年に80億米ドルの新規ファイバ契約に調印し、うちMicrosoftとの大型受注がAI主導の光需要規模を裏付けています。</p>
+
+    <h3>データセンターの消費電力問題</h3>
+    <p>現行の電子ベース通信ネットワークは光→電気→光の変換を繰り返すことで膨大な電力を消費します。NTTのIOWN構想はAPNにより電力効率を現在の100倍にすることを2030年の目標値として設定しています。政府も「カーボンニュートラルに求められる低消費電力化への需要が高まることが想定される」（NICT基金事業の採択理由）として、APNを低消費電力インフラとして位置づけています。この消費電力削減というインセンティブが、通信事業者・データセンター事業者のAPN採用を後押しする経済的動機の一つになっています。</p>
+
+    <h3>国内通信機器の海外依存構造</h3>
+    <p>日本国内でも通信機器の海外企業からの調達が拡大しており、自律性確保が急務とされています（日本成長戦略会議・2026年3月）。光通信・ネットワーク市場の主要企業はNokia・Ciena・Cisco・Huawei・Ericsson等の欧米・中国系が中心を占めており、富士通・NECは上位企業群に含まれますが市場全体では国内企業のシェアは限定的です。三菱電機はデータセンター向けEML（電界吸収型光変調器集積レーザダイオード）において世界シェア約50%を持つことが報告されています（三菱電機・2024年6月取材）が、これは特定デバイスに限定した数値です。</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">+30</span>
+        <span class="stat-unit">%/年</span>
+        <span class="stat-label">AIファブリック向け光トランシーバー<br>収益成長予測（〜2028年・Mordor）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">100</span>
+        <span class="stat-unit">倍</span>
+        <span class="stat-label">APN 2030年目標の電力効率<br>（現在比・NTT IOWN目標値）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">125</span>
+        <span class="stat-unit">倍</span>
+        <span class="stat-label">APN 2030年目標の伝送容量<br>（現在比・NTT IOWN目標値）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">1/200</span>
+        <span class="stat-unit"></span>
+        <span class="stat-label">APN 2030年目標の<br>エンドツーエンド遅延（NTT目標値）</span>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <strong>【注記】</strong>NTTの2030年目標値（電力効率100倍・伝送容量125倍・遅延1/200）は研究開発目標であり、現時点の達成値ではありません。実環境での達成は未確認です。
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">Mordor Intelligence 光伝送ネットワーク市場（2025年）</span>
+      <span class="source-tag">NTT IOWN APN機能と特性（公式）</span>
+      <span class="source-tag">三菱電機 Biz Timeline 光デバイスとデータセンター（2024年6月）</span>
+      <span class="source-tag">日本成長戦略会議 第3回 資料（2026年3月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH4 -->
+<div class="chapter" id="ch4">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 04</span>
+      <h2>社会・人口動態との連関</h2>
+    </div>
+
+    <h3>AI社会への移行という構造的需要</h3>
+    <p>総務省のBeyond 5G推進戦略2.0（2024年8月）は、2030年代のAI社会として「個別分野に特化した小規模・分散化した多数のAIや、これを駆動するデータセンター等の計算資源群を連携させ、モノ（自動車・ドローン・ロボット等）やセンサーを含む多様なユーザとを場所を問わずにつなぐことが可能な、低遅延・高信頼・低消費電力な次世代情報通信基盤（Beyond 5G）が求められている」と明示しています。この「小規模・分散AI×オール光ネットワーク」という組み合わせが政府の描く2030年代のインフラ像であり、APNへの需要を構造的に支える社会的背景です。</p>
+
+    <h3>5G普及と6G移行という通信世代交代</h3>
+    <p>5Gは2024年時点で全国主要都市への展開が進んでいますが、5G基地局のフロントホール（基地局とアンテナをつなぐ部分）のオール光ネットワーク化も、APNの重要なユースケースとして位置づけられています。6G（Beyond 5G）の2030年代実用化に向け、ITU-Rの第5研究委員会では2030年頃の標準化完成を目標として検討が進んでいます（総務省 令和7年版 情報通信白書・2025年）。APNは6Gのコアインフラとして位置づけられています。</p>
+
+    <h3>デジタルツインとリアルタイム処理の需要</h3>
+    <p>製造業・都市インフラ・医療等の分野でデジタルツイン（物理空間をリアルタイムで仮想空間に再現する技術）の実装が進んでいます。デジタルツインの実現にはリアルタイムかつ大容量のデータ伝送が必要であり、APNの超低遅延特性（目標：エンドツーエンド遅延1/200）が技術的前提条件として機能します。NTT東日本・西日本はデジタルツインをAPNの主要ユースケースの一つとして明示しています。</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">2030年</span>
+        <span class="stat-unit">頃</span>
+        <span class="stat-label">国内APN本格導入目標<br>（複数事業者間シームレス接続）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">2030年</span>
+        <span class="stat-unit">頃</span>
+        <span class="stat-label">6G（Beyond 5G）標準化完成<br>目標（ITU-R WP5D）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">2026年</span>
+        <span class="stat-unit">度目途</span>
+        <span class="stat-label">ITU-T標準化承認目標<br>（IOWN Global Forum提案・2024年7月）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">2028年</span>
+        <span class="stat-unit">頃</span>
+        <span class="stat-label">複数事業者間共通基盤技術<br>確立目標（Beyond 5G推進戦略2.0）</span>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">総務省 Beyond 5G推進戦略2.0（2024年8月）</span>
+      <span class="source-tag">総務省 令和7年版 情報通信白書 Beyond 5G節（2025年）</span>
+      <span class="source-tag">NTT東日本 All-Photonics Connect ユースケース（2024年12月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH5 -->
+<div class="chapter" id="ch5">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 05</span>
+      <h2>技術・DXの位置づけ</h2>
+    </div>
+
+    <h3>APNの技術的位置づけ</h3>
+    <p>APNはNTTが推進するIOWN構想の中核技術であり、端末からネットワーク・データセンター内部まで光信号のままで通信させることを目指す次世代ネットワーク構想です。現行の通信方式との技術的差異を以下に整理します。</p>
+
+    <table class="tech-table">
+      <thead>
+        <tr>
+          <th>比較項目</th>
+          <th>現行（電子ベース）</th>
+          <th>APN目標値（2030年）</th>
+          <th>出典</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>電力効率</td>
+          <td>現状</td>
+          <td class="acc">100倍</td>
+          <td>NTT IOWN目標</td>
+        </tr>
+        <tr>
+          <td>伝送容量</td>
+          <td>現状</td>
+          <td class="acc">125倍</td>
+          <td>同上</td>
+        </tr>
+        <tr>
+          <td>エンドツーエンド遅延</td>
+          <td>現状</td>
+          <td class="acc">1/200</td>
+          <td>同上</td>
+        </tr>
+        <tr>
+          <td>最大サービス帯域</td>
+          <td>APN IOWN1.0：数十Gbps</td>
+          <td class="acc">最大800Gbps（2024年12月〜）</td>
+          <td>NTT東日本 2024年12月</td>
+        </tr>
+        <tr>
+          <td>フィールド伝送実証</td>
+          <td>—</td>
+          <td class="acc">1波長1.2Tbps・336km（2023年・NTT）</td>
+          <td>NTT 2023年10月</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>IOWNグローバルフォーラムの位置づけ</h3>
+    <p>IOWN Global Forumは2019年にNTT・インテル・ソニーが設立した業界団体で、APNの国際標準化と普及を推進しています。2024年7月にITU-T（電気通信標準化部門）にAPNのアーキテクチャ等を提案し、標準化作業部会の開始が決定されました。2026年度での承認を目指しています。国際標準化が実現すれば、複数国・複数事業者間でのAPN相互接続が容易になり、グローバル市場の開拓につながる構造があります。</p>
+
+    <h3>現在の商用サービス状況（2026年3月時点）</h3>
+    <div class="data-box">
+      <div class="box-title">APNの商用サービス展開状況</div>
+      <ul>
+        <li>【2023年3月】APN IOWN1.0の商用サービス開始（NTT東日本・西日本）。NTTのIOWN構想に基づくAPNの商用サービスとして世界初。eスポーツ・ライブ・データセンター間接続等で技術検証・ユースケース実証を実施。</li>
+        <li>【2024年12月】「All-Photonics Connect powered by IOWN」提供開始（最大800Gbps、ユーザー拠点間帯域保証型）。2025年日本国際博覧会（大阪・関西万博）夢洲会場でも提供。</li>
+        <li>【2024年8月〜】富士通が総務省委託事業として欧州（ドイツ・デュッセルドルフ）にオープンAPNラボを開設。北米への展開も計画中。</li>
+        <li>【2024年10月〜】NTT・KDDI・富士通・NEC・楽天モバイルの5社がNICT基金事業で複数事業者間APN相互接続の共通基盤技術研究開発を開始。</li>
+        <li>【現状の課題】ユースケースが限定的（データセンター間・eスポーツ等の高付加価値用途が中心）。複数事業者間のシームレス接続は研究開発段階。国際標準化は2026年度承認目途。</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">NTT IOWN APN機能と特性（公式）</span>
+      <span class="source-tag">NTT東日本 All-Photonics Connect powered by IOWN 提供開始（2024年12月）</span>
+      <span class="source-tag">富士通 オープンAPNラボ欧州開設（2024年8月）</span>
+      <span class="source-tag">Beyond 5G新経営戦略センター 標準化ガイドブック（2025年10月）</span>
+      <span class="source-tag">矢野経済研究所 APN普及調査（2025年12月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH6 -->
+<div class="chapter" id="ch6">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 06</span>
+      <h2>参入・撤退の条件</h2>
+    </div>
+
+    <h3>NTT主導エコシステムという構造</h3>
+    <p>APNは「単一企業で完結しないインフラ」であり、エコシステムへの参加が実質的な参入条件となる産業構造を持っています。APNはNTTが推進するIOWN構想から生まれており、現時点での主要プレイヤー・技術仕様・標準化活動のイニシアチブはNTTグループが握っています。IOWN Global ForumはNTT主導で設立・運営されており、加盟企業（NTT・KDDI・富士通・NEC・楽天モバイル・ソニー・インテル等）がこのエコシステムの中で技術開発・商用化を進める構造です。この構造は、APNへの参入を検討する企業にとって「NTTエコシステムへの参加」が実質的な参入条件の一つになっているという側面があります。</p>
+
+    <h3>技術参入の難易度</h3>
+    <div class="data-box">
+      <div class="box-title">参入に必要な技術領域（事実の列挙）</div>
+      <ul>
+        <li>【光電融合デバイス（PEC）】光と電気の変換を担うデバイスの小型化・高速化・低消費電力化。NTTが中核技術として研究開発中。チョークポイントとなりうる技術領域。</li>
+        <li>【光ファイバー・光トランシーバー】大容量伝送を支える光部品。三菱電機がデータセンター向けEMLで世界シェア約50%（特定デバイス）。住友電工・フジクラ等も光ファイバーで国際競争力を持つ。</li>
+        <li>【光スイッチ・ROADM（再構成可能光アドイドロップマルチプレクサ）】ネットワーク上で光信号の経路を切り替える装置。分散型ROADM技術が今回の5社共同研究の対象。</li>
+        <li>【ネットワーク管理・API】複数事業者間をシームレスにつなぐための共通インターフェース。研究開発段階（2028年頃の確立目標）。</li>
+        <li>【光コヒーレント技術・400G/800G以上対応】現在の商用サービスで実装済みの高速大容量技術。Ciena・Infinera・Nokia等の外資が先行する領域。</li>
+      </ul>
+    </div>
+
+    <h3>NICT基金を活用した公的支援</h3>
+    <p>総務省・NICTのBeyond 5G基金（総額1,002億円）は、APNを含む次世代通信インフラ技術の研究開発・国際標準化を支援しています。2024年10月には5社共同提案が「社会実装・海外展開志向型戦略的プログラム（共通基盤技術確立型）」として採択されました。この基金は民間企業の参入コストを下げる役割を果たしており、スタートアップを含む幅広い企業の「スタートアップ創出型萌芽的研究開発支援事業」も含まれます。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">IOWN Global Forum 公式（iowngf.org）</span>
+      <span class="source-tag">楽天モバイル NICT基金採択プレスリリース（2024年10月）</span>
+      <span class="source-tag">総務省 Beyond 5Gに向けた取組（2023年12月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH7 -->
+<div class="chapter" id="ch7">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 07</span>
+      <h2>経済安全保障との接続</h2>
+    </div>
+
+    <h3>通信インフラの自律性確保という観点</h3>
+    <p>日本成長戦略会議（2026年3月）の資料は、情報通信分野を「AI社会を支える基幹インフラであり、安全保障上も重要。国内でも海外企業からの調達が拡大する中、自律性確保が急務」と位置づけています。これは、通信インフラの基幹部品・システムが特定の外国企業に依存することが経済安全保障上のリスクとなるという認識から来ています。</p>
+
+    <h3>北米市場シェア獲得という国際戦略</h3>
+    <p>Beyond 5G推進戦略2.0（2024年8月）は、「2030年代半ば〜後半頃に、我が国が強みを持つ製品・サービス市場において、我が国企業がパートナー企業とともに、市場シェア上位数者に入ることを目指す」と明記しています。戦略17分野のPDFでも「北米市場でのシェア拡大を梃子として国際市場の獲得につなげる」と方向性を示しています。富士通による欧州APNラボ開設（2024年8月）は、この海外展開戦略の具体的な第一歩です。</p>
+
+    <h3>国際標準化での主導権</h3>
+    <p>通信インフラの国際標準を握ることは、採用製品・技術の選定に影響力を持つことを意味します。APNのITU-T標準化（2024年7月提案・2026年度承認目途）が実現すれば、日本発の技術仕様がグローバル標準として採用される可能性があります。Beyond 5G推進戦略では「5G必須特許の世界トップシェアと同水準の10%以上を獲得することを目指す」という必須特許目標も明示されています。</p>
+
+    <div class="data-box">
+      <div class="box-title">経済安全保障上の課題（政策文書に基づく事実）</div>
+      <ul>
+        <li>国内でも通信機器の海外企業からの調達が拡大しており、基幹通信インフラの自律性確保が急務（日本成長戦略会議・2026年3月）</li>
+        <li>光通信・ネットワーク市場のグローバル主要企業はNokia・Ciena・Cisco・Huawei・Ericsson等が中心。日本企業は富士通・NECが上位企業群に入るが市場全体でのシェアは限定的</li>
+        <li>「2030年代半ば〜後半頃に市場シェア上位数者に入る」という目標は2026年3月時点で達成されていない政策目標</li>
+        <li>ITU-T標準化の2026年度承認目途は、各国からの質問・知財指摘等を受けながら交渉を継続している段階</li>
+        <li>Beyond 5G必須特許10%以上獲得目標は、2026年3月時点で研究開発・標準化活動を継続中の長期目標</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回 資料（2026年3月）</span>
+      <span class="source-tag">総務省 Beyond 5G推進戦略2.0（2024年8月）</span>
+      <span class="source-tag">Beyond 5G新経営戦略センター 標準化ガイドブック（2025年10月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH8 -->
+<div class="chapter" id="ch8">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 08</span>
+      <h2>外部環境の整理</h2>
+    </div>
+
+    <h3>第1〜7章の数値サマリー</h3>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>章</th>
+          <th>指標名</th>
+          <th>数値</th>
+          <th>出典・時点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>第1章</td>
+          <td>光通信関連市場予測（政府推計）</td>
+          <td>約53兆円（2030年）</td>
+          <td>日本成長戦略会議 第3回 2026年3月</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>光通信・ネットワーク機器 世界市場</td>
+          <td>251億6,900万ドル（2024年）</td>
+          <td>IMARC Group 2025年</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>光伝送ネットワーク世界市場</td>
+          <td>270億ドル（2025年）・CAGR 8.42%</td>
+          <td>Mordor Intelligence 2025年</td>
+        </tr>
+        <tr>
+          <td>第2章</td>
+          <td>Beyond 5G基金事業 総額</td>
+          <td>1,002億円（令和4〜5年度）</td>
+          <td>総務省・NICT 2023年12月</td>
+        </tr>
+        <tr>
+          <td>第2章</td>
+          <td>APN最大サービス帯域（現行商用）</td>
+          <td>最大800Gbps（2024年12月〜）</td>
+          <td>NTT東日本 2024年12月</td>
+        </tr>
+        <tr>
+          <td>第3章</td>
+          <td>AIファブリック向け光トランシーバー収益成長</td>
+          <td>年率+30%（〜2028年）</td>
+          <td>Mordor Intelligence 2025年</td>
+        </tr>
+        <tr>
+          <td>第3章</td>
+          <td>APN 2030年目標（電力効率）</td>
+          <td>現在比100倍（目標値）</td>
+          <td>NTT IOWN 公式</td>
+        </tr>
+        <tr>
+          <td>第3章</td>
+          <td>APN 2030年目標（伝送容量）</td>
+          <td>現在比125倍（目標値）</td>
+          <td>同上</td>
+        </tr>
+        <tr>
+          <td>第7章</td>
+          <td>Beyond 5G必須特許獲得目標</td>
+          <td>10%以上（5Gトップシェアと同水準）</td>
+          <td>総務省 Beyond 5G推進戦略</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>構造的に固定されやすい要素</h3>
+    <div class="data-box">
+      <div class="box-title">構造的に固定されやすい要素（短期で変わりにくい前提）</div>
+      <ul>
+        <li>NTT主導のIOWNエコシステムという産業構造は、APNの技術仕様・標準化・商用化の主導権をNTTグループが握る構造を固定しやすい</li>
+        <li>ITU-T標準化が2026年度承認目途というスケジュールは、国際標準への反映が2027年以降になることを意味し、グローバル市場展開は中期以降が本格化する</li>
+        <li>AI需要によるデータトラフィック急増・データセンター消費電力増大という構造的圧力は、APNへの需要を中長期で支える経済的動機として機能する</li>
+        <li>光通信・ネットワーク機器のグローバル主要企業（Nokia・Ciena・Cisco・Huawei・Ericsson等）が先行する市場地位は、短期で変動しない</li>
+        <li>複数事業者間のシームレス接続という技術的ハードルが2028年頃の確立目標であることは、それまでAPNの活用が限定的なユースケースにとどまる可能性を示す</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">本レポート第1〜7章に記載の各統計の集約</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH9 -->
+<div class="chapter" id="ch9">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 09</span>
+      <h2>内部環境編への橋渡し</h2>
+    </div>
+
+    <p>外部環境編では以下の構造を数字と事実で整理しました。</p>
+    <div class="data-box">
+      <div class="box-title">外部環境編の整理（5点）</div>
+      <ul>
+        <li>光通信関連市場は2030年約53兆円（政府推計）という大きな規模感が示されているが、APN単体市場は現在本格普及前の初期段階にある</li>
+        <li>APN商用サービスは2023年3月に世界初の開始（NTT東日本・西日本）、2024年12月に最大800Gbpsへ進化した段階にあり、複数事業者間接続は2028年頃の技術確立が目標</li>
+        <li>ITU-T標準化は2024年7月提案・2026年度承認目途で進行中。国際標準への反映は2027年以降の予定</li>
+        <li>NTT主導のIOWNエコシステム・NICT基金1,002億円・5社共同研究という官民一体の推進体制が整備されている</li>
+        <li>光通信・ネットワーク機器グローバル市場では外資が主要ポジションを占め、国内海外調達依存が「自律性確保が急務」として政策課題とされている</li>
+      </ul>
+    </div>
+
+    <div class="next-box">
+      <div class="next-label">NEXT — 内部環境編で整理すること</div>
+      <h3>外圧がプレイヤー構成・収益・人材にどう現れるか</h3>
+      <ul>
+        <li>NTTグループ・KDDI・富士通・NEC・楽天モバイルという主要プレイヤーのバリューチェーン上の役割と収益構造の差異</li>
+        <li>三菱電機・住友電工・フジクラ等の光部品・デバイスメーカーの収益構造とAPN需要との接続</li>
+        <li>「NICT基金を取りにいく」という研究開発投資の実態と利益化までの時間軸</li>
+        <li>光通信エンジニア・フォトニクス研究者・ネットワークアーキテクトの人材市場と年収水準</li>
+        <li>2028年複数事業者間技術確立・2030年本格導入というロードマップが業界内部の投資・採用判断にどう影響するか</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">本レポートの総括</span>
+    </div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <div class="container">
+    <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。掲載データは各記載出典に基づきますが、数値の正確性・完全性を保証するものではありません。投資判断は自己責任において行ってください。本レポートの内容は作成時点の情報に基づいており、市場環境・政策変更等により実態が変化する可能性があります。個別企業に関する投資推奨は一切含みません。NTTのIOWN目標値（電力効率100倍等）は研究開発目標であり、達成を保証するものではありません。データ基準時点は2026年03月です。</p>
+    <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年03月 産業構造分析レポート ── オール光ネットワーク（APN）（外部環境編）</p>
+    <p style="margin-top:8px;">
+      <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+      　｜　
+      <a href="https://www.marketsupporter-ai.com/articles/general-knowledge/knowledge" style="color: rgba(245,242,237,0.4); font-size:11px;">一般教養の記事一覧へ</a>
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
