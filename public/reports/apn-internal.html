@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>業界分析｜高市政権「戦略17分野」情報通信 先行検討技術⑤オール光ネットワーク（APN）（内部環境編）</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+  :root {
+    --ink: #0f0f0e;
+    --paper: #f5f2ed;
+    --cream: #ede9e1;
+    --accent: #c84b2f;
+    --muted: #6b6760;
+    --rule: #c9c4bb;
+    --highlight: #fff8e6;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .masthead {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    border-bottom: 3px solid var(--accent);
+  }
+  .masthead-right { color: var(--muted); }
+
+  .hero {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 40%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      45deg, transparent, transparent 4px,
+      rgba(200,75,47,0.07) 4px, rgba(200,75,47,0.07) 5px
+    );
+  }
+  .hero-label {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    padding: 4px 10px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(20px, 3.2vw, 34px);
+    font-weight: 900;
+    line-height: 1.4;
+    max-width: 820px;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+  }
+  .hero h1 em { color: var(--accent); font-style: normal; }
+  .hero-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 16px; }
+  .hero-badge {
+    border: 1px solid rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.75);
+    font-size: 11px;
+    padding: 4px 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.06em;
+  }
+  .data-notice {
+    background: rgba(200,75,47,0.15);
+    border-left: 3px solid var(--accent);
+    padding: 10px 16px;
+    margin-top: 24px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  .toc {
+    background: var(--cream);
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding: 32px 40px;
+  }
+  .toc h2 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 6px 28px;
+  }
+  .toc-item {
+    font-size: 13px;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 3px 0;
+    border-bottom: 1px dashed var(--rule);
+    display: flex;
+    gap: 8px;
+  }
+  .toc-item:hover { color: var(--accent); }
+  .toc-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  .chapter {
+    padding: 48px 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .chapter:nth-child(even) { background: var(--cream); }
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .chapter-num {
+    background: var(--accent);
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .chapter h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 10px;
+    flex: 1;
+  }
+  .chapter h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 24px 0 10px;
+    padding-left: 10px;
+    border-left: 3px solid var(--accent);
+  }
+  .chapter p { margin-bottom: 14px; }
+
+  .connect-banner {
+    background: var(--ink);
+    border-left: 5px solid var(--accent);
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    font-size: 13px;
+    color: rgba(245,242,237,0.85);
+  }
+  .connect-banner strong { color: var(--accent); }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 24px 0;
+  }
+  .stat-cell {
+    background: var(--paper);
+    padding: 18px 16px;
+    text-align: center;
+  }
+  .chapter:nth-child(even) .stat-cell { background: #f0ece4; }
+  .stat-cell .stat-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1.2;
+    display: block;
+  }
+  .stat-cell .stat-unit {
+    font-size: 12px;
+    color: var(--muted);
+    display: block;
+    margin-top: 2px;
+  }
+  .stat-cell .stat-label {
+    font-size: 11px;
+    color: var(--ink);
+    display: block;
+    margin-top: 6px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .data-box {
+    background: var(--highlight);
+    border: 1px solid #e0d8c4;
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .data-box .box-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .data-box ul { padding-left: 0; list-style: none; }
+  .data-box ul li {
+    padding: 5px 0 5px 16px;
+    border-bottom: 1px dashed var(--rule);
+    font-size: 13px;
+    position: relative;
+  }
+  .data-box ul li::before {
+    content: '▸';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-size: 11px;
+  }
+  .data-box ul li:last-child { border-bottom: none; }
+
+  .note-box {
+    background: rgba(200,75,47,0.05);
+    border: 1px dashed var(--accent);
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .note-box strong { color: var(--accent); }
+
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 13px;
+  }
+  .summary-table thead tr { background: var(--ink); color: var(--paper); }
+  .summary-table thead th {
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+  .summary-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .summary-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.03); }
+  .summary-table tbody td { padding: 9px 14px; vertical-align: top; }
+  .summary-table td:first-child { font-weight: 700; color: var(--accent); font-size: 12px; }
+  .summary-table td:nth-child(2) { font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
+
+  /* バリューチェーン */
+  .vc-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin: 24px 0;
+    overflow-x: auto;
+  }
+  .vc-step {
+    flex: 1;
+    min-width: 110px;
+    text-align: center;
+    padding: 14px 8px;
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    position: relative;
+    font-size: 11px;
+  }
+  .vc-step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 700;
+    z-index: 1;
+    background: var(--paper);
+    padding: 2px 3px;
+  }
+  .chapter:nth-child(even) .vc-step:not(:last-child)::after { background: var(--cream); }
+  .vc-step.high-val { background: rgba(200,75,47,0.1); border-color: var(--accent); }
+  .vc-step .vc-name { font-weight: 700; font-size: 11px; margin-bottom: 4px; }
+  .vc-step .vc-rate { font-family: 'IBM Plex Mono', monospace; color: var(--accent); font-size: 13px; font-weight: 600; }
+  .vc-step .vc-note { font-size: 10px; color: var(--muted); margin-top: 3px; }
+  .vc-step .vc-player { font-size: 10px; color: var(--ink); margin-top: 4px; font-weight: 700; }
+
+  /* 誤解カード */
+  .myth-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .myth-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 16px;
+  }
+  .chapter:nth-child(even) .myth-card { background: var(--paper); }
+  .myth-card .myth-claim {
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .myth-card .myth-fact { font-size: 13px; font-weight: 700; }
+  .myth-card .myth-data {
+    font-size: 11px;
+    color: var(--accent);
+    margin-top: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    line-height: 1.6;
+  }
+
+  /* 業態比較テーブル */
+  .biz-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 12px;
+  }
+  .biz-table thead tr { background: var(--ink); color: var(--paper); }
+  .biz-table thead th {
+    padding: 8px 12px;
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+  }
+  .biz-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .biz-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.03); }
+  .biz-table tbody td { padding: 8px 12px; vertical-align: top; font-size: 12px; }
+  .biz-table td:first-child { font-weight: 700; }
+  .biz-table .acc { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 11px; }
+
+  .next-box {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 28px 32px;
+    margin: 20px 0;
+    border-left: 5px solid var(--accent);
+  }
+  .next-box .next-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .next-box h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 17px;
+    margin-bottom: 12px;
+    border-left: none;
+    padding-left: 0;
+  }
+  .next-box ul { padding-left: 0; list-style: none; }
+  .next-box ul li {
+    padding: 4px 0 4px 14px;
+    font-size: 13px;
+    position: relative;
+    color: rgba(245,242,237,0.85);
+  }
+  .next-box ul li::before {
+    content: '▸';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-size: 11px;
+  }
+
+  .source-tag {
+    display: inline-block;
+    background: rgba(0,0,0,0.06);
+    border: 1px solid var(--rule);
+    padding: 3px 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin: 2px 3px;
+    letter-spacing: 0.04em;
+  }
+  .source-wrap {
+    margin-top: 20px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--rule);
+  }
+
+  .disclaimer {
+    background: var(--ink);
+    color: rgba(245,242,237,0.5);
+    padding: 24px 40px;
+    font-size: 11px;
+    line-height: 1.7;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.03em;
+  }
+
+  .rule-thick { border: none; border-top: 3px solid var(--ink); margin: 0; }
+  .rule-thin { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+  @media (max-width: 600px) {
+    .masthead { flex-direction: column; gap: 6px; padding: 10px 16px; }
+    .hero { padding: 36px 16px 30px; }
+    .chapter { padding: 32px 16px; }
+    .toc { padding: 24px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <span>産業構造分析レポート</span>
+  <span class="masthead-right">2026年03月発行 ── 情報通信／オール光ネットワーク（APN）（内部環境編）</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-label">INDUSTRY ANALYSIS REPORT — INTERNAL ENVIRONMENT</div>
+    <h1>業界分析｜高市政権「戦略17分野」<br>情報通信<br>先行検討技術⑤<em>オール光ネットワーク<br>（APN：All-Photonics Network）</em>（内部環境編）</h1>
+    <div class="hero-meta">
+      <span class="hero-badge">就職・転職検討者向け</span>
+      <span class="hero-badge">株式投資家向け</span>
+      <span class="hero-badge">数字と事実のみ記載</span>
+    </div>
+    <div class="data-notice">
+      本レポートのデータ基準時点：2026年03月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thick">
+
+<!-- TOC -->
+<div class="toc">
+  <div class="container">
+    <h2>目次 — TABLE OF CONTENTS</h2>
+    <div class="toc-grid">
+      <a class="toc-item" href="#ch0"><span class="toc-num">00</span>この内部環境編の立ち位置</a>
+      <a class="toc-item" href="#ch1"><span class="toc-num">01</span>業界内プレイヤー構成</a>
+      <a class="toc-item" href="#ch2"><span class="toc-num">02</span>バリューチェーンと利益の所在</a>
+      <a class="toc-item" href="#ch3"><span class="toc-num">03</span>収益構造の全体像</a>
+      <a class="toc-item" href="#ch4"><span class="toc-num">04</span>主要企業の財務指標概要</a>
+      <a class="toc-item" href="#ch5"><span class="toc-num">05</span>人件費構造と労働集約性</a>
+      <a class="toc-item" href="#ch6"><span class="toc-num">06</span>人材市場の実態（概要）</a>
+      <a class="toc-item" href="#ch7"><span class="toc-num">07</span>現場と本部の非対称性</a>
+      <a class="toc-item" href="#ch8"><span class="toc-num">08</span>構造的に忙しさが増幅する理由</a>
+      <a class="toc-item" href="#ch9"><span class="toc-num">09</span>誤解されやすいポイント</a>
+      <a class="toc-item" href="#ch10"><span class="toc-num">10</span>内部環境の整理</a>
+      <a class="toc-item" href="#ch11"><span class="toc-num">11</span>有料版への橋渡し</a>
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thin">
+
+<!-- CH0 -->
+<div class="chapter" id="ch0">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 00</span>
+      <h2>この内部環境編の立ち位置</h2>
+    </div>
+
+    <div class="connect-banner">
+      <strong>外部環境編との接続：</strong>外部環境編では、光通信関連市場2030年約53兆円（政府推計）・光通信・ネットワーク機器世界市場2024年251億ドル（IMARC）・Beyond 5G基金総額1,002億円・APN最大800Gbpsの商用開始（2024年12月）・ITU-T標準化2026年度承認目途・2030年国内本格導入目標という外部構造を整理しました。本編ではその前提を受け、「外部の圧力がこの産業の業態・収益・人材にどのような構造的特性として現れているか」を数字と事実で記述します。
+    </div>
+
+    <div class="data-box">
+      <div class="box-title">本編でやること／やらないこと</div>
+      <ul>
+        <li>【やること】NTTグループ・KDDI・富士通・NEC・光デバイスメーカー（三菱電機・住友電工・フジクラ等）・スタートアップという業態別のプレイヤー構成と利益構造を数値で記述する</li>
+        <li>【やること】「NTT主導エコシステム」という産業構造が収益・研究開発投資・人材にどう影響するかを構造として示す</li>
+        <li>【やること】「研究開発投資先行・商用化は中長期」という時間軸が業界内部の投資判断・人材採用にどう反映されるかを記述する</li>
+        <li>【やらないこと】勝ち組・負け組の断定</li>
+        <li>【やらないこと】キャリア戦略・投資推奨・良し悪しの評価</li>
+      </ul>
+    </div>
+    <p>構造を示すことで終わります。判断は読者に委ねます。</p>
+    <div class="source-wrap"><span class="source-tag">本レポート基本方針</span></div>
+  </div>
+</div>
+
+<!-- CH1 -->
+<div class="chapter" id="ch1">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 01</span>
+      <h2>業界内プレイヤー構成</h2>
+    </div>
+
+    <h3>5つの業態による構成</h3>
+    <p>APN産業の国内プレイヤーは業態によって役割・収益構造・研究開発投資の性格が大きく異なります。中心はNTT主導のIOWNエコシステムであり、そこに通信キャリア・機器ベンダー・光デバイスメーカー・スタートアップが連なる構造です。</p>
+
+    <table class="biz-table">
+      <thead>
+        <tr>
+          <th>業態</th>
+          <th>主な役割</th>
+          <th>代表プレイヤー</th>
+          <th>収益の性格</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>通信キャリア<br>（インフラ主導）</td>
+          <td>APNサービスの商用提供・ネットワーク設計・IOWN標準化主導</td>
+          <td class="acc">NTT東日本・西日本・NTTコミュニケーションズ、KDDI、ソフトバンク</td>
+          <td>インフラ型ストック。設備投資先行・長期回収。APNは初期段階で収益化に時間を要する</td>
+        </tr>
+        <tr>
+          <td>光通信機器<br>ベンダー</td>
+          <td>光伝送装置・ROADM・光トランシーバの設計・製造・提供</td>
+          <td class="acc">富士通、NEC、Nokia（日本法人）、Ciena（日本法人）</td>
+          <td>装置型フロー＋保守ストック。APN対応機器の開発投資が先行。海外ベンダーとの競合あり</td>
+        </tr>
+        <tr>
+          <td>光デバイス<br>メーカー</td>
+          <td>光電融合デバイス（PEC）・光ファイバー・光トランシーバ部品の製造</td>
+          <td class="acc">三菱電機、住友電工、フジクラ、古河電工、NTTイノベーティブデバイス</td>
+          <td>部品型ストック。特定デバイスの高シェアを持つ企業は収益性が高い。設備投資が重い</td>
+        </tr>
+        <tr>
+          <td>研究開発<br>・コンサル</td>
+          <td>APN技術の基礎・応用研究、NICT基金受託研究、ユースケース開発</td>
+          <td class="acc">NTT R&D（約2,300名）、NICT、大学・研究機関、コンサルティングファーム</td>
+          <td>研究費受託型。NICT基金1,002億円が主要財源の一部。商用化までの収益化は間接的</td>
+        </tr>
+        <tr>
+          <td>スタートアップ<br>・新興企業</td>
+          <td>APNユースケース開発・光デバイス新技術・次世代フォトニクス応用</td>
+          <td class="acc">国内フォトニクス系スタートアップ（NICT萌芽的研究支援対象）</td>
+          <td>VC投資型。NICT基金のスタートアップ枠が参入を支援。エコシステム参加が成長要件</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>IOWNエコシステムの中核としてのNTT</h3>
+    <p>NTT R&D（NTT総合研究所）は約2,300名の研究者を擁し（※NTT R&D全体の研究者数であり、APN専属ではありません）、国内でも最大級の研究体制の一つとして、IOWN・APN・光電融合（PEC）・次世代コンピューティング（DCI）の基盤技術研究を担っています（NTT 電気通信市場検証会議ヒアリング資料・2024年12月）。NTT持株会社の有価証券報告書（2024年度）による平均年収は1,069万円であり、NTTグループ全体ではこの水準から子会社によって差があります。国内ITサービス市場の2024年ベンダー売上ランキングでは富士通・日立・NEC・NTTデータが上位4社であり（IDCジャパン・2025年7月）、APN関連事業はこれらSIer各社の事業ポートフォリオの一部として位置づけられています。</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">約2,300</span>
+        <span class="stat-unit">名</span>
+        <span class="stat-label">NTT R&Dの研究者数<br>（2024年・NTT公表）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">1,069</span>
+        <span class="stat-unit">万円</span>
+        <span class="stat-label">NTT持株 平均年収<br>（有証報告書・2025年3月期）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">929</span>
+        <span class="stat-unit">万円</span>
+        <span class="stat-label">富士通 平均年収<br>（有証報告書・2025年3月期）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">923</span>
+        <span class="stat-unit">万円</span>
+        <span class="stat-label">NTTデータ 平均年収<br>（有証報告書・2025年3月期）</span>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <strong>【注記】</strong>各社の数値はいずれも2025年3月期の有価証券報告書に基づきます。ただし売上高／売上収益は会計基準（富士通・NEC：IFRS、NTTデータ：日本基準）により定義が異なるため、単純比較はできません。
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">NTT 電気通信市場検証会議ヒアリング資料（2024年12月）</span>
+      <span class="source-tag">NTT 有価証券報告書（2025年3月期）</span>
+      <span class="source-tag">富士通 有価証券報告書（2025年3月期）</span>
+      <span class="source-tag">NTTデータ 有価証券報告書（2025年3月期）</span>
+      <span class="source-tag">IDCジャパン 国内ITサービス市場ベンダー売上ランキング（2025年7月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH2 -->
+<div class="chapter" id="ch2">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 02</span>
+      <h2>バリューチェーンと利益の所在</h2>
+    </div>
+
+    <h3>APNのバリューチェーン構造</h3>
+    <p>APNのバリューチェーンは「基礎研究・デバイス開発」→「光通信機器・インフラ構築」→「ネットワークサービス提供」→「ユースケース・アプリケーション」という流れで構成されます。現時点（2026年3月）では商用化初期段階であり、利益の集中箇所は限定的です。</p>
+
+    <div class="vc-flow">
+      <div class="vc-step high-val">
+        <div class="vc-name">光デバイス<br>製造</div>
+        <div class="vc-rate">高</div>
+        <div class="vc-note">特定デバイスで<br>高シェア確立済み</div>
+        <div class="vc-player">三菱電機・住友電工<br>フジクラ等</div>
+      </div>
+      <div class="vc-step">
+        <div class="vc-name">光通信機器<br>装置</div>
+        <div class="vc-rate">中</div>
+        <div class="vc-note">海外ベンダーと競合<br>APN対応投資先行</div>
+        <div class="vc-player">富士通・NEC<br>Nokia・Ciena</div>
+      </div>
+      <div class="vc-step">
+        <div class="vc-name">インフラ<br>構築・SI</div>
+        <div class="vc-rate">中</div>
+        <div class="vc-note">人件費依存<br>受託型フロー</div>
+        <div class="vc-player">NTTグループ<br>KDDI・富士通</div>
+      </div>
+      <div class="vc-step high-val">
+        <div class="vc-name">ネットワーク<br>サービス</div>
+        <div class="vc-rate">高</div>
+        <div class="vc-note">ストック型課金<br>帯域保証付加価値</div>
+        <div class="vc-player">NTT東日本<br>西日本・KDDI</div>
+      </div>
+      <div class="vc-step">
+        <div class="vc-name">ユースケース<br>・アプリ</div>
+        <div class="vc-rate">未確立</div>
+        <div class="vc-note">eスポーツ・DC間等<br>普及前の初期段階</div>
+        <div class="vc-player">各業種<br>スタートアップ</div>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <strong>【構造注記】</strong>現時点ではサービス層よりもデバイス層（特定デバイスで高シェアを持つ光デバイスメーカー）で収益が先行しやすい構造にあります。ネットワークサービス層の本格的な収益化は2030年頃の国内普及を経て段階的に進む見通しが政策上の目標として示されています。
+    </div>
+
+    <h3>「研究開発投資先行・商用化は中長期」という時間軸</h3>
+    <p>APNは2023年3月に商用サービスを開始しましたが、現在（2026年3月）のユースケースはデータセンター間接続・eスポーツ・放送制作等の高付加価値・限定的な用途が中心です。複数事業者間のシームレス接続という本格的な商用化は2028年頃の技術確立を経て2030年頃の実現が目標とされています。このロードマップは、APN関連の研究開発投資が収益化するまでに4〜8年の時間軸があることを意味します。光デバイスメーカー・機器ベンダーの設備投資・研究開発投資も同様の時間軸で先行しています。</p>
+
+    <div class="data-box">
+      <div class="box-title">IOWNロードマップと収益化の時間軸（NTT公表資料に基づく）</div>
+      <ul>
+        <li>【IOWN 1.0（現在）】APN：データセンター間の光接続。2023年3月商用開始・2024年12月に最大800Gbpsへ拡充。ユースケースは限定的。</li>
+        <li>【IOWN 2.0（2026年頃）】DCI（Data Centric Infrastructure）：データセンター内のボード間配線の光化。光電融合デバイスPEC-2の商用提供開始予定。</li>
+        <li>【IOWN 3.0（2028年頃）】チップ間配線の光化。PEC-3の開発目標時期。複数事業者間共通基盤技術確立目標と重なる。</li>
+        <li>【IOWN 4.0（2032年以降）】チップ内配線の光化。電力効率100倍・伝送容量125倍の最終目標達成を目指す段階。</li>
+        <li>【共通点】いずれのステップも、技術確立→装置化→サービス化→ユースケース普及という順序で収益化が進むため、先行投資と収益化の間に時間的ギャップが発生する。</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">NTT R&D IOWN INTEGRAL（2024年）</span>
+      <span class="source-tag">NTTデータ DATA INSIGHT IOWN技術解説（2025年4月）</span>
+      <span class="source-tag">NTT 電気通信市場検証会議ヒアリング資料（2024年12月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH3 -->
+<div class="chapter" id="ch3">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 03</span>
+      <h2>収益構造の全体像</h2>
+    </div>
+
+    <h3>業態別収益構造の特性</h3>
+    <div class="note-box">
+      <strong>【収益構造の本質】</strong>APNは「ネットワーク単体で完結する新規収益モデル」ではなく、既存通信インフラの高度化として既存収益に組み込まれる構造にあります。通信キャリアにとってのAPNは既存の光回線サービスの上位グレードであり、光デバイスメーカーにとってはAI需要によるトランシーバー需要増への対応です。この構造を前提に各業態の収益性を読む必要があります。
+    </div>
+    <div class="data-box">
+      <div class="box-title">業態別 収益構造の特性</div>
+      <ul>
+        <li>【通信キャリア（NTT東西・KDDI等）】APNサービスはインフラ型ストック収益。先行投資（設備・研究開発）の回収に長期を要する。現在はAPN向けの専用回線サービスとして高付加価値（高単価）なユーザー向けに提供されており、大量普及による収益規模化は2030年以降の本格化が政策上の目標として示されている。</li>
+        <li>【光通信機器ベンダー（富士通・NEC等）】光伝送装置の受注型フロー＋保守ストック。APN対応のIOWN機器開発投資が先行。国内市場に加え、NICT基金事業の受託研究が研究開発費の一部を補填する構造。海外ベンダー（Nokia・Ciena・Huawei等）との価格・性能競争が続く。</li>
+        <li>【光デバイスメーカー（三菱電機・住友電工等）】部品単価×出荷数量による収益。特定デバイスで高シェアを確立した企業（例：三菱電機のデータセンター向けEMLで世界シェア約50%）は相対的に高収益。AI需要拡大によるデータセンター向けトランシーバ需要の増加が追い風。設備投資・量産体制構築コストが重い。</li>
+        <li>【NTT R&D】NTTグループ各社から拠出された研究開発費等を活用して基盤的研究開発を推進（2023年度のNTT持株が実施する基盤的研究開発と事業会社が実施する実用化研究開発に要した費用はNICT検証資料に記載）。研究成果の商用化はグループ事業会社が担う構造。</li>
+        <li>【スタートアップ】NICT基金の「スタートアップ創出型萌芽的研究開発支援事業」が主要な資金源の一つ。IOWNエコシステムに接続することでNTTグループとの協業機会が生まれる一方、独自の販路開拓は限定的な初期段階。</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">NTT 電気通信市場検証会議ヒアリング資料（2024年12月）</span>
+      <span class="source-tag">三菱電機 Biz Timeline 光デバイスとデータセンター（2024年6月）</span>
+      <span class="source-tag">総務省 Beyond 5G基金事業概要（2023年12月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH4 -->
+<div class="chapter" id="ch4">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 04</span>
+      <h2>主要企業の財務指標概要</h2>
+    </div>
+
+    <h3>主要プレイヤーの売上・平均年収（2024〜2025年度）</h3>
+    <div class="note-box">
+      <strong>【注記】</strong>各社の数値はいずれも2025年3月期の有価証券報告書に基づきます。ただし売上高／売上収益は会計基準（富士通・NEC：IFRS、NTTデータ：日本基準）により定義が異なるため、単純比較はできません。
+    </div>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>企業</th>
+          <th>売上規模</th>
+          <th>平均年収</th>
+          <th>出典・時点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>NTT（持株）</td>
+          <td>グループ全体（通信事業最大手）</td>
+          <td>1,069万円</td>
+          <td>有証報告書 2025年3月期</td>
+        </tr>
+        <tr>
+          <td>富士通</td>
+          <td>売上収益 約3兆5,501億円（IFRS）</td>
+          <td>929万円</td>
+          <td>有証報告書 2025年3月期</td>
+        </tr>
+        <tr>
+          <td>NTTデータグループ</td>
+          <td>売上高 約4兆4,300億円（日本基準）</td>
+          <td>923万円</td>
+          <td>有証報告書 2025年3月期</td>
+        </tr>
+        <tr>
+          <td>NEC</td>
+          <td>売上収益 約3兆3,700億円（IFRS）</td>
+          <td>963万円</td>
+          <td>有証報告書 2025年3月期</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>国内ITサービス市場の文脈における位置づけ</h3>
+    <p>2024年の国内ITサービス市場ベンダー売上ランキング（IDCジャパン・2025年7月）では、富士通・日立製作所・NEC・NTTデータが上位4社を占めています。APN関連ビジネスはこれらの企業にとって現時点では成長投資領域であり、既存事業（SI・システム保守・クラウドサービス等）の規模と比較すると売上寄与は限定的です。APN固有の収益を他事業から分離した形での財務開示は現在のところ行われていません。</p>
+
+    <div class="note-box">
+      <strong>【注記】</strong>各社の有価証券報告書に記載の平均年収は会社全体の従業員平均であり、APN関連研究開発職・光デバイス技術職に特化した数値ではありません。職種・専門性・在籍会社によって実際の年収は大きく異なります。
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">NTT 有価証券報告書（2025年3月期）</span>
+      <span class="source-tag">富士通 有価証券報告書（2025年3月期）</span>
+      <span class="source-tag">NTTデータグループ 有価証券報告書（2025年3月期）</span>
+      <span class="source-tag">NEC 有価証券報告書（2025年3月期）</span>
+      <span class="source-tag">IDCジャパン 国内ITサービス市場ベンダー売上ランキング（2025年7月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH5 -->
+<div class="chapter" id="ch5">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 05</span>
+      <h2>人件費構造と労働集約性</h2>
+    </div>
+
+    <h3>研究開発型vs製造型の二重構造</h3>
+    <p>APN産業の人件費構造は、関わる業態によって大きく異なります。NTT R&Dのような研究開発組織は「知識集約型」であり、博士号取得者・フォトニクス専門家が高い割合を占め、個人の専門性が収益に直結します。光デバイスメーカーは「製造型」であり、設備投資とオペレーター・技術者の人件費が主要コストです。SIer（富士通・NEC等）のAPN関連部門は「受託型」であり、プロジェクト工数に応じた人月コスト構造を持ちます。</p>
+
+    <div class="data-box">
+      <div class="box-title">業態別 人件費構造の特性</div>
+      <ul>
+        <li>【NTT R&D・研究機関】博士号取得者比率が高い。専門性に応じた給与設定。NTT持株平均年収1,069万円（2024年度有証）の水準に近い研究開発職が存在。ただし研究成果の商用化は別事業会社が担うため、研究者自身の収益への直接的寄与は間接的。</li>
+        <li>【光デバイスメーカー】製造現場の技術者・エンジニア層と研究開発層が混在。AI需要増加によるデータセンター向けトランシーバ需要急増が採用・処遇の改善圧力を生んでいる。設備投資（クリーンルーム・製造装置）が固定費として重くのしかかる。</li>
+        <li>【光通信機器ベンダー（富士通・NEC）】APN対応製品の開発エンジニア層。通信システム・光デバイス・ネットワーク制御の複合スキルが求められる。平均年収は各社水準（富士通929万円・NEC963万円・いずれも2025年3月期有証）を参照。</li>
+        <li>【通信キャリア（NTT東西・KDDI等）】ネットワークアーキテクト・フォトニクスエンジニア・標準化担当者等の専門職は希少で処遇が高い傾向。APNサービスの導入・保守担当は通常のネットワーク技術者層と重複する。</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">NTT 有価証券報告書（2025年3月期）</span>
+      <span class="source-tag">富士通 有価証券報告書（2025年3月期）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH6 -->
+<div class="chapter" id="ch6">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 06</span>
+      <h2>人材市場の実態（概要）</h2>
+    </div>
+
+    <h3>APN関連の主要職種</h3>
+    <div class="data-box">
+      <div class="box-title">APN関連 主要職種（7職種）</div>
+      <ul>
+        <li>【フォトニクス研究者・光電融合エンジニア】光導波路デバイス・光電融合（PEC）デバイスの設計・試作・評価。NTT R&Dが採用を継続中。博士号が実質的な採用要件になりやすい。「石英系導波路デバイスの設計・作製・評価技術」などの高度な専門スキルが求められる（NTT R&D採用ページ・2025年）。</li>
+        <li>【光伝送システムエンジニア】APN対応の光伝送装置・ROADMのシステム設計・実装。富士通・NEC・通信キャリアが主な採用主体。光通信の基礎知識＋ネットワーク設計スキルの組み合わせが評価軸。</li>
+        <li>【ネットワークアーキテクト（APN対応）】複数事業者間のAPN相互接続アーキテクチャ設計。2028年頃の技術確立に向けた研究開発・設計を担う。NTT・KDDI・富士通・NECの5社共同研究の参加企業が主な採用先。</li>
+        <li>【光ファイバー・ケーブル技術者】光ファイバー（マルチコアファイバー等の次世代規格を含む）の製造・品質管理・フィールド敷設技術。住友電工・フジクラ・古河電工が主な採用主体。</li>
+        <li>【標準化担当者（ITU-T・IOWN GF）】ITU-T等の国際標準化機関での交渉・提案を担う。英語力＋深い技術理解が必須。NTT・KDDI等の通信キャリアが主な採用先。希少職種。</li>
+        <li>【ユースケース開発エンジニア・PM】APNを活用したユースケース（医療・製造・eスポーツ・デジタルツイン等）のシステム設計・実証。通信知識＋特定業種のドメイン知識の組み合わせが評価されやすい。</li>
+        <li>【フォトニクス系スタートアップ人材】光デバイス新技術・次世代フォトニクス応用の開発。NICT萌芽的研究支援対象のスタートアップが採用主体。研究成果の事業化経験が求められる。</li>
+      </ul>
+    </div>
+
+    <h3>研究者採用と博士号の位置づけ</h3>
+    <p>NTT R&Dの採用ページ（2025年）では、光電融合（PEC）デバイス関連のポジションについて「光デバイスに関するスペシャリストとの共同作業」「研究開発スペシャリストとして活躍できる」という記述があり、高度な専門性を前提とした採用が行われています。NTT研究所・富士通研究所・NECの研究開発部門では、フォトニクス専攻の博士号取得者が優遇される傾向があります。</p>
+
+    <h3>主要企業の年収参照値</h3>
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">1,069</span>
+        <span class="stat-unit">万円</span>
+        <span class="stat-label">NTT持株 全社平均年収<br>（有証報告書・2025年3月期）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">929</span>
+        <span class="stat-unit">万円</span>
+        <span class="stat-label">富士通 全社平均年収<br>（有証報告書・2025年3月期）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">923</span>
+        <span class="stat-unit">万円</span>
+        <span class="stat-label">NTTデータ 全社平均年収<br>（有証報告書・2025年3月期）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">832</span>
+        <span class="stat-unit">万円</span>
+        <span class="stat-label">NTT研究開発職平均（参考）<br>（OpenWork社員投稿ベース・2025年）</span>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <strong>【注記】</strong>上記年収はいずれも会社全体の平均であり、APN・フォトニクス専門職に特化した数値ではありません。研究開発職・専門技術職は全社平均より高い傾向がありますが、個別の職種・グレード・経験によって大きく異なります。
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">NTT 有価証券報告書（2025年3月期）</span>
+      <span class="source-tag">富士通 有価証券報告書（2025年3月期）</span>
+      <span class="source-tag">NTTデータグループ 有価証券報告書（2025年3月期）</span>
+      <span class="source-tag">OpenWork NTT年収データ（2025年）</span>
+      <span class="source-tag">NTT R&D 採用ページ 光導波路デバイス研究開発職（2025年）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH7 -->
+<div class="chapter" id="ch7">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 07</span>
+      <h2>現場と本部の非対称性</h2>
+    </div>
+
+    <h3>研究成果の商用化に関わる意思決定の分散</h3>
+    <p>NTT R&Dで生まれた技術（APN・PEC・DCI等）は、研究所が直接商用化するのではなく、NTT東日本・西日本・NTTコミュニケーションズ等のグループ事業会社がサービス化を担う構造になっています。研究開発投資と収益責任が分離しているため、投資判断と収益回収の主体が一致しない構造が存在します。研究者は技術開発に専念しますが、どの技術をいつ・どの形で商用化するかの意思決定は事業会社・持株会社の経営判断に委ねられます。この「研究と商用化の分離」が、研究者にとって自身の成果が市場でどう評価されるかを把握しにくい構造を生み出しています。</p>
+
+    <h3>標準化活動と日常業務の二重負荷</h3>
+    <p>ITU-T・IOWN Global Forum等の国際標準化活動に参加するエンジニアは、通常の研究開発・設計業務と並行して、国際会議への出席・英文技術提案書の作成・各国代表との交渉を行います。Beyond 5G新経営戦略センターの標準化ガイドブック（2025年10月）は「毎回丁寧な説明と交渉を繰り返した」という実態を記述しており、標準化担当者への業務集中が課題として認識されています。</p>
+
+    <h3>NICT基金採択と実研究の管理構造</h3>
+    <p>NICT基金（総額1,002億円）を受託する際、NTT・KDDI・富士通・NEC・楽天モバイルの5社は研究開発項目ごとに役割分担を設定し、共同研究として推進します。各社の担当エンジニアは基金の目標・マイルストーン・報告要件に従って研究を進める一方、自社の事業目標とのアラインメントを同時に求められる構造があります。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">NTT R&D IOWN INTEGRAL（2024年）</span>
+      <span class="source-tag">Beyond 5G新経営戦略センター 標準化ガイドブック（2025年10月）</span>
+      <span class="source-tag">楽天モバイル NICT基金採択プレスリリース（2024年10月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH8 -->
+<div class="chapter" id="ch8">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 08</span>
+      <h2>構造的に忙しさが増幅する理由</h2>
+    </div>
+
+    <h3>AI需要急増によるデータセンター向けトランシーバ需要の爆発的拡大</h3>
+    <p>AIファブリック用の光ファイバートランシーバーの収益は2028年まで年率30%のペースで増加すると予測されています（Mordor Intelligence・2025年）。これは光デバイスメーカーにとって既存の生産能力を超える受注が発生しやすい状況を意味し、製造ラインの24時間稼働・品質管理要員の増強という現場への直接的な業務圧力を生み出しています。三菱電機のデータセンター向けEMLは世界シェア約50%を有しており（特定デバイス領域）、需要急増への対応が優先課題となっています。</p>
+
+    <h3>技術ロードマップの更新頻度と設計変更の連鎖</h3>
+    <p>IOWNのロードマップは1.0→2.0→3.0→4.0と段階的に更新され、各ステップで技術仕様が変化します。機器ベンダー（富士通・NEC等）の開発エンジニアは、NTTの技術ロードマップの変更に追随しながら自社製品の設計を更新し続ける必要があります。これに加えてITU-T標準化の進捗に合わせたアーキテクチャ変更も発生するため、開発工程の見直しが繰り返される構造があります。</p>
+
+    <h3>希少専門人材の需要過多</h3>
+    <p>フォトニクス専門研究者・光電融合エンジニア・APN対応ネットワークアーキテクトは極めて希少な専門職です。NTT R&Dの約2,300名という研究者数は国内でも最大級の研究体制の一つですが（APN専属ではない）、APN・PECの専門家の絶対数は限られており、社内での人材集中（複数プロジェクトへの同時関与）が発生しやすい構造があります。5社共同研究の推進と並行して通常業務を行う担当者への集中も課題です。</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">+30</span>
+        <span class="stat-unit">%/年</span>
+        <span class="stat-label">AIファブリック向け光トランシーバー<br>収益成長（〜2028年・Mordor）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">約2,300</span>
+        <span class="stat-unit">名</span>
+        <span class="stat-label">NTT R&D研究者数<br>（2024年・NTT公表）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">1,002</span>
+        <span class="stat-unit">億円</span>
+        <span class="stat-label">Beyond 5G基金総額<br>（令和4〜5年度・総務省・NICT）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">5社</span>
+        <span class="stat-unit">共同研究</span>
+        <span class="stat-label">NTT・KDDI・富士通・NEC<br>・楽天モバイル（2024年10月〜）</span>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">Mordor Intelligence 光伝送ネットワーク市場（2025年）</span>
+      <span class="source-tag">NTT 電気通信市場検証会議ヒアリング資料（2024年12月）</span>
+      <span class="source-tag">楽天モバイル NICT基金採択プレスリリース（2024年10月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH9 -->
+<div class="chapter" id="ch9">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 09</span>
+      <h2>誤解されやすいポイント</h2>
+    </div>
+
+    <p>APN・光通信産業については、外部から見える像と内部の構造実態の間に乖離が生じやすいパターンがあります。</p>
+
+    <div class="myth-grid">
+      <div class="myth-card">
+        <div class="myth-claim">「NTTが推進しているなら安定した仕事だ」</div>
+        <div class="myth-fact">研究開発ステージの産業は収益化が中長期</div>
+        <div class="myth-data">
+          NTT主導 ←→ IOWN 4.0完成目標は2032年以降<br>
+          現時点はユースケースが限定的・複数事業者間接続は2028年頃の技術確立が目標。安定性は企業規模によるものであり、APN事業自体の収益安定性とは別の話。
+        </div>
+      </div>
+      <div class="myth-card">
+        <div class="myth-claim">「53兆円市場に今すぐ参入できる」</div>
+        <div class="myth-fact">53兆円は2030年の光通信関連市場全体の政府推計</div>
+        <div class="myth-data">
+          2030年目標 ←→ 現在はIOWN 1.0の初期商用段階<br>
+          APN単体の市場規模ではなく光通信関連の装置・デバイス・サービス全体の広い推計。エコシステム参加なしの参入は技術的・商業的に困難。
+        </div>
+      </div>
+      <div class="myth-card">
+        <div class="myth-claim">「光デバイスは地味な分野だ」</div>
+        <div class="myth-fact">AI需要急増でトランシーバー需要が爆発的に拡大中</div>
+        <div class="myth-data">
+          従来の認識 ←→ AIファブリック向け年率+30%成長（〜2028年）<br>
+          三菱電機のデータセンター向けEMLで世界シェア約50%（特定デバイス）。AI×光デバイスが交差する局面にある。
+        </div>
+      </div>
+    </div>
+
+    <div class="myth-grid">
+      <div class="myth-card">
+        <div class="myth-claim">「研究職はゆっくり働ける」</div>
+        <div class="myth-fact">標準化・基金管理・通常研究の三重負荷</div>
+        <div class="myth-data">
+          研究職のイメージ ←→ ITU-T標準化交渉・NICT基金マイルストーン・ロードマップ更新への追随<br>
+          国際標準化担当者は「毎回丁寧な説明と交渉を繰り返した」という実態（標準化ガイドブック2025年）。
+        </div>
+      </div>
+      <div class="myth-card">
+        <div class="myth-claim">「IOWNはNTT単独のプロジェクトだ」</div>
+        <div class="myth-fact">KDDI・富士通・NEC・楽天モバイル・グローバル企業も参画</div>
+        <div class="myth-data">
+          NTT主導 ←→ IOWN Global Forumにソニー・インテル等も加盟<br>
+          5社共同のNICT基金事業・ITU-T標準化活動・富士通の欧州APNラボ等、業界横断の取り組みが進行中。
+        </div>
+      </div>
+      <div class="myth-card">
+        <div class="myth-claim">「フォトニクスの仕事は国内限定だ」</div>
+        <div class="myth-fact">北米市場シェア獲得が国家目標・欧州展開も進行中</div>
+        <div class="myth-data">
+          国内技術 ←→ 「北米市場シェア拡大を梃子として国際市場獲得」（戦略17分野）<br>
+          富士通は欧州APNラボ（独・デュッセルドルフ）を開設し北米展開も計画中（2024年8月）。
+        </div>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">NTT R&D IOWN INTEGRAL（2024年）</span>
+      <span class="source-tag">Beyond 5G新経営戦略センター 標準化ガイドブック（2025年10月）</span>
+      <span class="source-tag">富士通 オープンAPNラボ欧州開設（2024年8月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH10 -->
+<div class="chapter" id="ch10">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 10</span>
+      <h2>内部環境の整理</h2>
+    </div>
+
+    <h3>第1〜9章の数値サマリー</h3>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>章</th>
+          <th>指標名</th>
+          <th>数値</th>
+          <th>出典・時点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>第1章</td>
+          <td>NTT R&D研究者数</td>
+          <td>約2,300名</td>
+          <td>NTT 電気通信市場検証会議ヒアリング資料 2024年12月</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>NTT持株 全社平均年収</td>
+          <td>1,069万円</td>
+          <td>有証報告書 2024年度</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>富士通 全社平均年収</td>
+          <td>929万円</td>
+          <td>有証報告書 2025年3月期</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>NTTデータ 全社平均年収</td>
+          <td>923万円</td>
+          <td>有証報告書 2025年3月期</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>NTT研究開発職平均年収（クチコミベース・参考値）</td>
+          <td>832万円</td>
+          <td>OpenWork 社員投稿ベース 2025年</td>
+        </tr>
+        <tr>
+          <td>第2章</td>
+          <td>IOWN 2.0（DCI）商用サービス予定</td>
+          <td>2026年頃</td>
+          <td>NTT R&D IOWN INTEGRAL 2024年</td>
+        </tr>
+        <tr>
+          <td>第2章</td>
+          <td>複数事業者間共通基盤技術確立目標</td>
+          <td>2028年頃</td>
+          <td>Beyond 5G推進戦略2.0 2024年8月</td>
+        </tr>
+        <tr>
+          <td>第3章</td>
+          <td>三菱電機 DC向けEML世界シェア（特定デバイス）</td>
+          <td>約50%</td>
+          <td>三菱電機 Biz Timeline 2024年6月</td>
+        </tr>
+        <tr>
+          <td>第8章</td>
+          <td>AIファブリック光トランシーバー収益成長</td>
+          <td>年率+30%（〜2028年）</td>
+          <td>Mordor Intelligence 2025年</td>
+        </tr>
+        <tr>
+          <td>第8章</td>
+          <td>Beyond 5G基金総額</td>
+          <td>1,002億円</td>
+          <td>総務省・NICT 2023年12月</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>構造的に固定されやすい要素（短期で変わりにくい前提）</h3>
+    <div class="data-box">
+      <div class="box-title">構造的に固定されやすい要素（短期で変わりにくい前提）</div>
+      <ul>
+        <li>NTT R&Dが技術イニシアチブを握り、KDDI・富士通・NEC等がエコシステムとして参画するというプレイヤー構造は、IOWN 1.0〜4.0のロードマップが変更されない限り固定される</li>
+        <li>研究開発投資から商用サービス収益化までに4〜8年の時間的ギャップが発生するという構造は、技術の性質上短期では変わらない</li>
+        <li>フォトニクス専門研究者・光電融合エンジニアという希少専門人材の需要過多は、人材育成に数年を要するため短期解消できない</li>
+        <li>AI需要急増による光デバイス（特にトランシーバー）の年率+30%成長という需要圧力は、2028年頃まで継続する構造的要因として機能する</li>
+        <li>ITU-T標準化の2026年度承認目途という国際標準化スケジュールは、各国との交渉過程で変動しうるが、国際合意形成の時間的長さは構造的に変わらない</li>
+        <li>光通信機器市場でNokia・Ciena・Cisco・Huaweiが先行するグローバル競合環境は、日本企業がシェアを奪うには長期の取り組みを要する</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">本レポート第1〜9章に記載の各統計の集約</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH11 -->
+<div class="chapter" id="ch11">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 11</span>
+      <h2>有料版への橋渡し</h2>
+    </div>
+
+    <p>本レポートではAPN産業の内部構造を数字と事実で記述しました。この構造の中で個人・法人としてどう動くかは、より詳細な分析が必要です。</p>
+
+    <div class="next-box">
+      <div class="next-label">FOR CAREER — 就活・転職向け有料版</div>
+      <h3>NTTエコシステムのどこに入るか</h3>
+      <ul>
+        <li>NTT R&D・NTT東西・KDDI・富士通・NEC・光デバイスメーカーというバリューチェーン上で「専門性が積みやすいポジション」と「商用化に近いポジション」の具体的分析</li>
+        <li>フォトニクス研究者・光伝送システムエンジニア・ネットワークアーキテクト・標準化担当者・ユースケースPMという職種別の詳細年収レンジとスキル要件</li>
+        <li>「研究所→事業会社→海外展開」というIOWNキャリア動線の実態</li>
+        <li>博士号の有無が年収・ポジションに与える影響の構造的整理</li>
+        <li>「2028年頃のフェーズ移行」を見据えたキャリア設計の考え方</li>
+      </ul>
+    </div>
+
+    <div class="next-box">
+      <div class="next-label">FOR INVESTMENT — 投資判断向け有料版</div>
+      <h3>研究開発先行型産業の財務実態</h3>
+      <ul>
+        <li>NTTグループ・富士通・NEC・三菱電機・住友電工・フジクラのAPN関連事業の収益構造と全体事業へのインパクト</li>
+        <li>NICT基金1,002億円の配分先と、受託研究から商用化までの収益化フロー</li>
+        <li>光デバイスメーカー（三菱電機・住友電工等）のAI需要急増への対応と設備投資計画</li>
+        <li>「2030年国内本格導入」目標が達成された場合と未達の場合で各社の収益構造がどう変わるか</li>
+        <li>国際標準化の成否がグローバル市場シェア獲得に与える影響の分析</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <div class="container">
+    <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。掲載データは各記載出典に基づきますが、数値の正確性・完全性を保証するものではありません。投資判断は自己責任において行ってください。平均年収は各社有価証券報告書の全社平均であり、APN・フォトニクス専門職に限定した数値ではありません。IOWNのロードマップ目標値は研究開発目標であり達成を保証するものではありません。データ基準時点は2026年03月です。</p>
+    <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年03月 産業構造分析レポート ── オール光ネットワーク（APN）（内部環境編）</p>
+    <p style="margin-top:8px;">
+      <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+      　｜　
+      <a href="https://www.marketsupporter-ai.com/articles/general-knowledge/knowledge" style="color: rgba(245,242,437,0.4); font-size:11px;">一般教養の記事一覧へ</a>
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
