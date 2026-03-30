@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>業界分析｜高市政権「戦略17分野」防衛産業 先行検討技術⑦小型無人航空機（外部環境編）</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+  :root {
+    --ink: #0f0f0e;
+    --paper: #f5f2ed;
+    --cream: #ede9e1;
+    --accent: #c84b2f;
+    --muted: #6b6760;
+    --rule: #c9c4bb;
+    --highlight: #fff8e6;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .masthead {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    border-bottom: 3px solid var(--accent);
+  }
+  .masthead-right { color: var(--muted); }
+
+  .hero {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 40%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      45deg, transparent, transparent 4px,
+      rgba(200,75,47,0.07) 4px, rgba(200,75,47,0.07) 5px
+    );
+  }
+  .hero-label {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    padding: 4px 10px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(20px, 3.2vw, 34px);
+    font-weight: 900;
+    line-height: 1.4;
+    max-width: 820px;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+  }
+  .hero h1 em { color: var(--accent); font-style: normal; }
+  .hero-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 16px; }
+  .hero-badge {
+    border: 1px solid rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.75);
+    font-size: 11px;
+    padding: 4px 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.06em;
+  }
+  .data-notice {
+    background: rgba(200,75,47,0.15);
+    border-left: 3px solid var(--accent);
+    padding: 10px 16px;
+    margin-top: 24px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  .toc {
+    background: var(--cream);
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding: 32px 40px;
+  }
+  .toc h2 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 6px 28px;
+  }
+  .toc-item {
+    font-size: 13px;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 3px 0;
+    border-bottom: 1px dashed var(--rule);
+    display: flex;
+    gap: 8px;
+  }
+  .toc-item:hover { color: var(--accent); }
+  .toc-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  .chapter {
+    padding: 48px 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .chapter:nth-child(even) { background: var(--cream); }
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .chapter-num {
+    background: var(--accent);
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .chapter h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 10px;
+    flex: 1;
+  }
+  .chapter h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 24px 0 10px;
+    padding-left: 10px;
+    border-left: 3px solid var(--accent);
+  }
+  .chapter p { margin-bottom: 14px; }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 24px 0;
+  }
+  .stat-cell {
+    background: var(--paper);
+    padding: 18px 16px;
+    text-align: center;
+  }
+  .chapter:nth-child(even) .stat-cell { background: #f0ece4; }
+  .stat-cell .stat-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1.2;
+    display: block;
+  }
+  .stat-cell .stat-unit {
+    font-size: 12px;
+    color: var(--muted);
+    display: block;
+    margin-top: 2px;
+  }
+  .stat-cell .stat-label {
+    font-size: 11px;
+    color: var(--ink);
+    display: block;
+    margin-top: 6px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .data-box {
+    background: var(--highlight);
+    border: 1px solid #e0d8c4;
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .data-box .box-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .data-box ul { padding-left: 0; list-style: none; }
+  .data-box ul li {
+    padding: 5px 0 5px 16px;
+    border-bottom: 1px dashed var(--rule);
+    font-size: 13px;
+    position: relative;
+  }
+  .data-box ul li::before {
+    content: '▸';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-size: 11px;
+  }
+  .data-box ul li:last-child { border-bottom: none; }
+
+  .note-box {
+    background: rgba(200,75,47,0.05);
+    border: 1px dashed var(--accent);
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .note-box strong { color: var(--accent); }
+
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 13px;
+  }
+  .summary-table thead tr { background: var(--ink); color: var(--paper); }
+  .summary-table thead th {
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+  .summary-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .summary-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.03); }
+  .summary-table tbody td { padding: 9px 14px; vertical-align: top; }
+  .summary-table td:first-child { font-weight: 700; color: var(--accent); font-size: 12px; }
+  .summary-table td:nth-child(2) { font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
+
+  .timeline { margin: 20px 0; }
+  .timeline-item {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--rule);
+    font-size: 13px;
+  }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-year {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+    flex-shrink: 0;
+    width: 100px;
+    padding-top: 2px;
+  }
+  .timeline-text { flex: 1; }
+
+  .next-box {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 28px 32px;
+    margin: 20px 0;
+    border-left: 5px solid var(--accent);
+  }
+  .next-box .next-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .next-box h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 17px;
+    margin-bottom: 12px;
+    border-left: none;
+    padding-left: 0;
+  }
+  .next-box ul { padding-left: 0; list-style: none; }
+  .next-box ul li {
+    padding: 4px 0 4px 14px;
+    font-size: 13px;
+    position: relative;
+    color: rgba(245,242,237,0.85);
+  }
+  .next-box ul li::before {
+    content: '▸';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-size: 11px;
+  }
+
+  .source-tag {
+    display: inline-block;
+    background: rgba(0,0,0,0.06);
+    border: 1px solid var(--rule);
+    padding: 3px 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin: 2px 3px;
+    letter-spacing: 0.04em;
+  }
+  .source-wrap {
+    margin-top: 20px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--rule);
+  }
+
+  .disclaimer {
+    background: var(--ink);
+    color: rgba(245,242,237,0.5);
+    padding: 24px 40px;
+    font-size: 11px;
+    line-height: 1.7;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.03em;
+  }
+
+  .rule-thick { border: none; border-top: 3px solid var(--ink); margin: 0; }
+  .rule-thin { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+  /* 2×2比較グリッド */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 20px 0;
+  }
+  .compare-cell {
+    background: var(--paper);
+    padding: 16px 18px;
+    font-size: 13px;
+  }
+  .chapter:nth-child(even) .compare-cell { background: #f0ece4; }
+  .compare-cell .cell-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  @media (max-width: 600px) {
+    .masthead { flex-direction: column; gap: 6px; padding: 10px 16px; }
+    .hero { padding: 36px 16px 30px; }
+    .chapter { padding: 32px 16px; }
+    .toc { padding: 24px 16px; }
+    .compare-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <span>産業構造分析レポート</span>
+  <span class="masthead-right">2026年03月発行 ── 防衛産業／小型無人航空機（外部環境編）</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-label">INDUSTRY ANALYSIS REPORT — EXTERNAL ENVIRONMENT</div>
+    <h1>業界分析｜高市政権「戦略17分野」<br>防衛産業<br>先行検討技術⑦<em>小型無人航空機</em>（外部環境編）</h1>
+    <div class="hero-meta">
+      <span class="hero-badge">就職・転職検討者向け</span>
+      <span class="hero-badge">株式投資家向け</span>
+      <span class="hero-badge">数字と事実のみ記載</span>
+    </div>
+    <div class="data-notice">
+      本レポートのデータ基準時点：2026年03月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thick">
+
+<!-- TOC -->
+<div class="toc">
+  <div class="container">
+    <h2>目次 — TABLE OF CONTENTS</h2>
+    <div class="toc-grid">
+      <a class="toc-item" href="#ch0"><span class="toc-num">00</span>このレポートの目的と読み方</a>
+      <a class="toc-item" href="#ch1"><span class="toc-num">01</span>市場規模と成長率</a>
+      <a class="toc-item" href="#ch2"><span class="toc-num">02</span>制度・政策の枠組み</a>
+      <a class="toc-item" href="#ch3"><span class="toc-num">03</span>経済的前提条件</a>
+      <a class="toc-item" href="#ch4"><span class="toc-num">04</span>社会・安全保障との連関</a>
+      <a class="toc-item" href="#ch5"><span class="toc-num">05</span>技術・DXの位置づけ</a>
+      <a class="toc-item" href="#ch6"><span class="toc-num">06</span>参入・撤退の条件</a>
+      <a class="toc-item" href="#ch7"><span class="toc-num">07</span>経済安全保障との接続</a>
+      <a class="toc-item" href="#ch8"><span class="toc-num">08</span>外部環境の整理</a>
+      <a class="toc-item" href="#ch9"><span class="toc-num">09</span>内部環境編への橋渡し</a>
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thin">
+
+<!-- CH0 -->
+<div class="chapter" id="ch0">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 00</span>
+      <h2>このレポートの目的と読み方</h2>
+    </div>
+    <p>本レポートは、高市政権「戦略17分野」防衛産業の先行検討技術⑦「小型無人航空機」の外部環境を、就職・転職検討者および株式投資家向けに数字と事実のみで記述します。所管は経産省・防衛省です。</p>
+
+    <div class="data-box">
+      <div class="box-title">「小型無人航空機」とは何か——3行で把握する</div>
+      <ul>
+        <li>【技術の概要】小型の無人航空機（UAV：Unmanned Aerial Vehicle）。消費者向け空撮用途から、インフラ点検・農業・物流・防衛まで幅広い用途を持つデュアルユース（防民両用）技術。本レポートが対象とするのは特に防衛・安全保障用途を含む小型無人航空機の産業基盤。</li>
+        <li>【現状の問題】世界の民生用ドローン市場はDJI（中国）が約7割のシェアを占める。日本の防衛・政府用途でも重要構成品の多くを特定国（主に中国）からの供給に依存してきた。本格的な量産体制が国内に整っていない。</li>
+        <li>【なぜ今か】ウクライナ紛争でのドローン大量投入が「新しい戦い方」を示した。防衛用途での消耗品的な大量調達需要・民生市場の拡大・経済安全保障上のサプライチェーン自律化という3つの力が重なり、国内産業基盤の構築が急務とされた。</li>
+      </ul>
+    </div>
+
+    <div class="data-box">
+      <div class="box-title">このレポートで整理する外部環境の範囲</div>
+      <ul>
+        <li>【市場規模】無人航空機の世界・国内市場規模・防衛向け市場・2030年予測</li>
+        <li>【制度・政策】SHIELD構想・防衛力整備計画・政府調達方針・経済安保法における特定重要物資指定</li>
+        <li>【経済的前提】中国製依存の実態・国産化コスト・デュアルユース市場の構造</li>
+        <li>【技術DX】自律飛行・群制御・AIソフトウェア・サイバーセキュリティの技術動向</li>
+        <li>【参入条件】ファストパス調達・スタートアップ参入・量産体制構築の難易度</li>
+        <li>【経済安全保障】特定国依存・装備移転・同盟国・同志国とのサプライチェーン協力</li>
+      </ul>
+    </div>
+    <p>良し悪しの評価・投資推奨・将来予測は行いません。構造を示すことで終わります。</p>
+    <div class="source-wrap"><span class="source-tag">本レポート基本方針</span></div>
+  </div>
+</div>
+
+<!-- CH1 -->
+<div class="chapter" id="ch1">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 01</span>
+      <h2>市場規模と成長率</h2>
+    </div>
+
+    <h3>民生用無人航空機市場（世界・国内）</h3>
+    <p>高市政権「戦略17分野」PDF資料（日本成長戦略会議第3回・2026年3月）では、民生分野の無人航空機機体の世界市場は2024年の約1兆円から2030年には約1.5兆円に拡大すると記載されています。日本市場は同期間で約1,100億円から約2,700億円への成長が予測されています。これらはPDF掲載の政府推計値です。</p>
+    <p>国内ドローンビジネス市場（機体・サービス・周辺サービスの合計）は、2024年度に前年比13%増の4,371億円に達したと推計されます（インプレス総合研究所・2025年3月）。2028年度には9,054億円に達すると見込まれています（同・年平均成長率18.6%・2023年度〜2028年度）。</p>
+
+    <h3>防衛用無人航空機市場（世界）</h3>
+    <p>軍用ドローン市場は2024年に161億米ドルに達し、2025年には182億米ドルに成長しました（Global Market Insights・2026年1月）。2025年から2035年にかけてCAGR 6.4%程度での成長が複数の調査機関で見込まれています。なお複数の調査機関が軍用ドローンの定義・対象範囲の設定が異なるため、数値の幅に注意が必要です。</p>
+    <p>防衛用ドローン（対ドローンシステムを含む広義の防衛向け無人機）の世界市場は2024年に約120億米ドルで、2037年には約400億米ドルへ成長すると予測する調査もあります（CAGR 約3%・SDKI）。調査機関によって対象範囲・算定方法が異なるため、単純比較はできません。</p>
+
+    <div class="note-box">
+      <strong>【注記】</strong>各市場規模数値は調査機関によって対象範囲（民生・防衛・小型限定・全UAV）・集計方法・地域範囲が異なります。単純比較はできません。
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">約1兆</span>
+        <span class="stat-unit">円</span>
+        <span class="stat-label">無人航空機機体 世界市場<br>（2024年・政府推計・PDF記載）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">約1.5兆</span>
+        <span class="stat-unit">円</span>
+        <span class="stat-label">無人航空機機体 世界市場<br>（2030年予測・同上）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">約1,100</span>
+        <span class="stat-unit">億円</span>
+        <span class="stat-label">日本市場（2024年）<br>（同PDF記載）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">約2,700</span>
+        <span class="stat-unit">億円</span>
+        <span class="stat-label">日本市場（2030年予測）<br>（同PDF記載）</span>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回 戦略17分野における主要な製品・技術等（2026年3月）</span>
+      <span class="source-tag">インプレス総合研究所 ドローンビジネス調査報告書2025（2025年3月）</span>
+      <span class="source-tag">Global Market Insights 軍用ドローン市場（2026年1月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH2 -->
+<div class="chapter" id="ch2">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 02</span>
+      <h2>制度・政策の枠組み</h2>
+    </div>
+
+    <h3>主要政策・制度の体系</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="timeline-year">2017年</span>
+        <span class="timeline-text">中国で<strong>国家情報法</strong>施行。中国政府が国内企業等に情報提供を求めることができる旨が規定され、DJI製ドローンへのセキュリティ懸念が欧米・日本で顕在化する契機となった。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2020年9月</span>
+        <span class="timeline-text"><strong>「政府機関等における無人航空機の調達等に関する方針」</strong>（内閣官房 小型無人機に関する関係府省庁連絡会議）公表。政府機関の調達において、セキュリティが担保されたドローンに限定する方針を明記。事実上の中国製ドローン新規調達排除として受け止められた。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2022年度〜</span>
+        <span class="timeline-text"><strong>防衛力整備計画（2023〜2027年度）</strong>において無人アセットに計約1兆円を投じる方針を示す。5年間の防衛関係費総額は約43兆円。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2023年</span>
+        <span class="timeline-text"><strong>経済安全保障推進法に基づき、ドローンが「特定重要物資」に指定</strong>。国産化支援のための安定供給確保支援基金の活用が可能となった。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2025年8月</span>
+        <span class="timeline-text">防衛省が令和8年度概算要求を公表。無人アセットによる多層的沿岸防衛体制<strong>「SHIELD」</strong>（Synchronized, Hybrid, Integrated and Enhanced Littoral Defense）の構築として1,287億円を計上。令和9年度中の体制構築を目標。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2025年12月</span>
+        <span class="timeline-text">米国FCC（連邦通信委員会）が外国製ドローンおよびその重要部品を規制対象リストに追加すると発表。日米両国で脱中国製ドローンの動きが制度化。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">令和8年度<br>（2026年度）</span>
+        <span class="timeline-text">防衛省の令和8年度予算案として<strong>SHIELD早期構築に約1,001億円</strong>を計上（防衛省 令和8年度予算案概要・2025年12月）。令和8年度の無人機関連予算全体は2,773億円（前年比約3倍）。防衛関係費総額は9兆353億円と初の9兆円台。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2026年3月</span>
+        <span class="timeline-text">高市政権<strong>「戦略17分野」</strong>に「小型無人航空機」が防衛産業分野の先行検討技術として明示。民生分野2030年目標「8万台の機体・重要部品の供給確保」・スタートアップのファストパス調達・デュアルユース産業基盤構築の方針を公表。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2027年度中</span>
+        <span class="timeline-text">SHIELDによる多層的沿岸防衛体制の構築完成目標（防衛省方針）。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2030年</span>
+        <span class="timeline-text">民生分野において<strong>8万台の機体・重要部品の供給確保</strong>を目標（日本成長戦略会議・2026年3月）。この基盤を防衛分野においても活用する方針。</span>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">防衛省 防衛力抜本的強化の進捗と予算 令和8年度予算案の概要（2025年12月）</span>
+      <span class="source-tag">防衛省 令和8年度概算要求の概要（2025年8月）</span>
+      <span class="source-tag">日本成長戦略会議 第3回 小型無人航空機（2026年3月）</span>
+      <span class="source-tag">内閣官房 小型無人機に関する関係府省庁連絡会議（2020年9月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH3 -->
+<div class="chapter" id="ch3">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 03</span>
+      <h2>経済的前提条件</h2>
+    </div>
+
+    <h3>中国DJIの世界市場支配という構造的前提</h3>
+    <p>民生用（コンシューマー・産業用）ドローン市場では、中国のDJI（大疆創新科技）が世界シェアの約7割を占めるとされています（複数の調査・報道・2024〜2025年時点）。DJIは価格・性能・ソフトウェアを一体化したエコシステムで競合を圧倒してきました。日本の政府機関が保有するドローン330機のうち259機が中国製（2019年5月時点・報道）であったことが、政府調達方針転換の直接的な背景の一つです。</p>
+
+    <h3>国産ドローンのコスト構造</h3>
+    <p>国産ドローンの価格はDJIの主力機より1桁（約10倍）高いとされています（野村総合研究所・報道）。国内メーカーは量産体制が整っておらず、一品もの的な製造が価格上昇の主因です。中国勢は量産を前提に汎用部品を大量使用してコストを下げており、量産体制が確立されなければこの価格差は縮まりにくい構造があります。また国内メーカーの多くはスモールビジネス規模で、フライトコントローラーやフレーム・モーター・プロペラなど多くの構成部品を中国製に依存してきた実態があります。</p>
+
+    <h3>デュアルユース市場というコスト分散モデル</h3>
+    <p>戦略17分野のPDF資料は、民生市場のスケールメリットを活用して生産・技術基盤を構築し、それを防衛分野に活用するという「防民一体」の産業基盤構築モデルを明示しています。民生需要（点検・農業・物流・防犯）と防衛需要を同一の生産ラインで賄うことで量産効果を生み、単価を引き下げる構想です。このモデルが機能するには、民生側での8万台達成（2030年）という数量確保が前提条件となります。</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">約7割</span>
+        <span class="stat-unit"></span>
+        <span class="stat-label">DJI（中国）の民生用<br>ドローン世界シェア（推計）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">約1桁</span>
+        <span class="stat-unit">高い</span>
+        <span class="stat-label">国産ドローンとDJIの<br>価格差（野村総研・報道）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">2,773</span>
+        <span class="stat-unit">億円</span>
+        <span class="stat-label">令和8年度 無人機関連<br>防衛予算（前年比約3倍）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">8万</span>
+        <span class="stat-unit">台</span>
+        <span class="stat-label">民生分野 機体・部品<br>供給確保目標（2030年）</span>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回 小型無人航空機（2026年3月）</span>
+      <span class="source-tag">野村総合研究所コメント（日本経済新聞・2021年12月）</span>
+      <span class="source-tag">防衛省 令和8年度予算案概要（2025年12月）</span>
+      <span class="source-tag">東洋経済オンライン「米トランプ政権が進めるドローン脱中国化の壁」（2026年3月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH4 -->
+<div class="chapter" id="ch4">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 04</span>
+      <h2>社会・安全保障との連関</h2>
+    </div>
+
+    <h3>ウクライナ紛争が示した「新しい戦い方」</h3>
+    <p>ロシアによるウクライナ侵攻（2022年2月〜）では、双方が安価な民生転用ドローンを含む小型無人航空機を大量投入しました。ウクライナは2025年までにFPV（一人称視点）ドローンの保有数を3倍に増強する計画を発表し、約26億米ドルを投じて450万機を調達する方針が報じられています。英国王立防衛安全保障研究所（RUSI）の論文では、ロシア軍の損害の約3分の2がウクライナのドローンによるものとされています。この実戦例が日本の防衛省に「消耗品としての大量調達・国内生産基盤」という政策判断に影響を与えた背景として位置づけられています。</p>
+
+    <h3>人手不足・社会インフラとの連関（民生側）</h3>
+    <p>国内のドローンビジネス市場は、インフラ点検・農業・物流・防災といった人手不足対応用途を中心に拡大しています。2022年6月に目視外飛行（レベル4：有人地帯での補助者なし目視外飛行）が解禁され、2025年度以降に物流等での本格的な商用化が立ち上がると見込まれています。こうした民生側の需要拡大が、防衛側の量産体制構築のスケールメリットにつながる「防民好循環」の社会的前提となっています。</p>
+
+    <h3>SHIELD構想の具体像</h3>
+    <div class="data-box">
+      <div class="box-title">SHIELD（多層的沿岸防衛体制）の構成（防衛省公表資料）</div>
+      <ul>
+        <li>【航空自衛隊】艦艇攻撃用UAV（長距離飛行・敵艦艇等を攻撃）、レーダーサイト防衛用UAV（敵UAVからレーダーサイトを防衛）</li>
+        <li>【海上自衛隊】艦載型UAV（小型・水上艦艇の情報収集・警戒監視能力向上・攻撃可能）、水上艦発射型UAV（艦艇から発射し敵艦艇等を攻撃）</li>
+        <li>【陸上自衛隊を含む複数種】USV（無人水上艇）・UUV（無人潜水艇）との組み合わせによる多層的な沿岸防衛体制</li>
+        <li>【初期段階の調達方針】将来的な国産化を目指しつつ、2027年度中の体制構築スケジュールから、初期段階では外国製無人機（トルコ・イスラエル・米国等）の購入に頼る計画と報じられている（2026年3月時点）</li>
+        <li>【予算規模】令和8年度予算案でSHIELD早期構築に1,001億円。令和8年度の無人機関連予算全体は2,773億円（前年比約3倍）。</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">防衛省 令和8年度予算案概要 SHIELD構築（2025年12月）</span>
+      <span class="source-tag">J-Defense解説「令和8年度防衛予算案──無人アセット」（2026年1月）</span>
+      <span class="source-tag">Fortune Business Insights 小型ドローン市場（2025年）</span>
+      <span class="source-tag">インプレス総合研究所 ドローンビジネス調査報告書2025（2025年3月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH5 -->
+<div class="chapter" id="ch5">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 05</span>
+      <h2>技術・DXの位置づけ</h2>
+    </div>
+
+    <h3>AIと自律飛行・群制御</h3>
+    <p>防衛用途・高度民生用途のドローンでは、AIを活用した自律飛行・群制御（スウォーム）・標的識別の技術競争が激化しています。米国国防総省は2025年度に自律型無人システム開発に18億ドルを投資し、前年比約24%増としました。日本の戦略17分野PDF資料も「機体の自律性や群制御、飛行管制等のためのAIやソフトウェアの開発で各国が競争。我が国はソフトウェアの開発力が不十分」と明記しています。</p>
+
+    <h3>サイバーセキュリティと国産化の接点</h3>
+    <p>政府は2020年9月の調達方針で、政府機関によるドローン調達に「飛行記録や撮影データが漏洩しない機体の選定」という要件を設けました。この要件が事実上の中国製排除となった一方、国産ドローンの競争優位性として「サイバーセキュリティの確保」が位置づけられています。国内で安全保障上・重要インフラ点検上のセキュリティが求められる市場（政府機関・電力・通信・インフラ保有企業等）が、国産機体の主要ターゲット市場として設定されています。</p>
+
+    <h3>技術水準の現状（2026年3月時点）</h3>
+    <div class="compare-grid">
+      <div class="compare-cell">
+        <span class="cell-label">日本の強み</span>
+        センサー・モーター・カーボン素材等の部品製造技術。自動車部品メーカーの電動化技術の転用可能性（JTEKT・エクセディ等の参入）。ACSL（国内唯一のドローン専業上場企業）が開発・量産化した国産機体「SOTEN（蒼天）」の防衛省採用実績。プロドローン（国内メーカーのトップ特許出願数）。
+      </div>
+      <div class="compare-cell">
+        <span class="cell-label">日本の課題</span>
+        ソフトウェア・AI開発力の不足（戦略17分野PDFに明記）。量産体制の未確立（規模の小さい企業への開発・生産リソースの分散）。フライトコントローラー等の重要構成品の中国製依存。試験設備（風洞試験等）の能力不足。伝統的防衛産業との連携の希薄さ。
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回 小型無人航空機（2026年3月）</span>
+      <span class="source-tag">ACSL 防衛省航空自衛隊採用プレスリリース（2024年）</span>
+      <span class="source-tag">Global Market Insights 軍用ドローン市場（2026年1月）</span>
+      <span class="source-tag">日本能率協会総合研究所 ドローン業界環境（2025年）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH6 -->
+<div class="chapter" id="ch6">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 06</span>
+      <h2>参入・撤退の条件</h2>
+    </div>
+
+    <h3>「ファストパス調達」によるスタートアップ参入の制度整備</h3>
+    <p>戦略17分野PDFは、スタートアップ企業等の先端技術の迅速な導入のために「ファストパス調達」という柔軟な契約制度の活用を推進するとしています。これは従来の防衛調達において参入障壁の一つとなっていた、長期の調達プロセスや大規模な実績要件をスタートアップが回避できる仕組みです。ただし2026年3月時点での具体的な制度内容・運用実績は限定的で、整備中の段階です。</p>
+
+    <h3>量産体制構築への資金支援</h3>
+    <p>経済安全保障推進法に基づく「安定供給確保支援基金」を活用した機体・重要部品の量産設備投資への支援が講じられています。これにより新規参入企業・スタートアップが量産設備投資を行う際のコスト負担が軽減される構造があります。</p>
+
+    <h3>防衛調達への参入障壁（2026年3月現在の実態）</h3>
+    <div class="data-box">
+      <div class="box-title">防衛調達参入の構造的障壁（事実の列挙）</div>
+      <ul>
+        <li>特定国が世界市場シェアの7割以上を占めており、国内企業による市場の獲得が進んでおらず、新規参入・設備投資等の投資が進まない</li>
+        <li>関連企業の規模が小さい上、開発・生産リソースが分散しており投資余力が小さい。生産ノウハウに優れた伝統的防衛産業との連携は希薄</li>
+        <li>自律飛行や群制御等のソフトウェア面で人材・開発基盤が不十分（戦略17分野PDFに明記）</li>
+        <li>スタートアップが防衛調達に参画するハードルが高い（ファストパス制度は整備中）</li>
+        <li>国産機体へのニーズが大きい「サイバーセキュリティが重視される分野」での市場が未成熟</li>
+        <li>初期段階（2027年度中のSHIELD体制構築）では外国製機体の調達が先行し、国産化は中長期の目標</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回 小型無人航空機（2026年3月）</span>
+      <span class="source-tag">防衛省 令和8年度予算案概要（2025年12月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH7 -->
+<div class="chapter" id="ch7">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 07</span>
+      <h2>経済安全保障との接続</h2>
+    </div>
+
+    <h3>特定重要物資としての位置づけ</h3>
+    <p>ドローンは経済安全保障推進法に基づき「特定重要物資」に指定されています。これにより、供給停止リスクへの対応を目的とした国内生産基盤の構築に対して国が積極的に支援できる法的根拠が整いました。</p>
+
+    <h3>中国製重要構成品への依存という構造問題</h3>
+    <p>バッテリー・モーター・フライトコントローラー・センサー等の重要構成品の多くを中国製に依存してきた実態があります。戦略17分野PDFは「製造に必要な重要構成品の多くを特定国からの供給に依存。サプライチェーンリスクも顕在化する中、各国ではサプライチェーンの国内回帰や同盟国・同志国間の協力を追求する動き」と明示しています。</p>
+
+    <h3>同盟国・同志国との装備移転・サプライチェーン協力</h3>
+    <p>戦略17分野PDFは、DICAS・PIPIR・OSA等の枠組みを活用した同盟国・同志国とのサプライチェーン協力・装備移転の推進を方針として示しています。これはDJI等の中国製ドローンへの依存を低減させようとしている同志国（米・豪・英等）と連携し、代替的なサプライチェーンを構築するという方向性です。</p>
+
+    <div class="data-box">
+      <div class="box-title">経済安全保障上の課題（政策文書に基づく事実）</div>
+      <ul>
+        <li>中国DJIは2020年12月に米国商務省産業安全保障局のエンティティリストに掲載（投資・調達規制の対象）。2025年12月には米FCC（連邦通信委員会）が外国製ドローン・重要部品を規制対象リストに追加</li>
+        <li>日本政府の保有ドローン330機のうち259機が中国製（2019年5月時点・報道）という調達依存の実態が、2020年の政府調達方針転換のきっかけの一つ</li>
+        <li>経済安全保障推進法に基づくドローンの「特定重要物資」指定（2023年）は、国内産業基盤への財政支援の法的根拠</li>
+        <li>SHIELD構築の初期段階では外国製（トルコ・イスラエル・米国等）の機体調達が先行するという現実は、「国内生産基盤ゼロからの立ち上げ」という産業基盤構築の難しさを示す</li>
+        <li>同志国との協力枠組み（DICAS・PIPIR・OSA等）は整備中であり、具体的なサプライチェーン協力の成果は2026年3月時点で限定的</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回 小型無人航空機（2026年3月）</span>
+      <span class="source-tag">東洋経済オンライン「米トランプ政権が進めるドローン脱中国化の壁」（2026年3月）</span>
+      <span class="source-tag">Wikipedia DJI（会社）－政府機関での使用</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH8 -->
+<div class="chapter" id="ch8">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 08</span>
+      <h2>外部環境の整理</h2>
+    </div>
+
+    <h3>第1〜7章の数値サマリー</h3>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>章</th>
+          <th>指標名</th>
+          <th>数値</th>
+          <th>出典・時点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>第1章</td>
+          <td>無人航空機機体 世界市場</td>
+          <td>約1兆円（2024年）→約1.5兆円（2030年予測）</td>
+          <td>日本成長戦略会議 2026年3月</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>無人航空機機体 日本市場</td>
+          <td>約1,100億円（2024年）→約2,700億円（2030年予測）</td>
+          <td>同上</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>国内ドローンビジネス市場（機体+サービス）</td>
+          <td>4,371億円（2024年度・前年比+13%）</td>
+          <td>インプレス総合研究所 2025年3月</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>軍用ドローン世界市場</td>
+          <td>161億ドル（2024年）→182億ドル（2025年）</td>
+          <td>Global Market Insights 2026年1月</td>
+        </tr>
+        <tr>
+          <td>第2章</td>
+          <td>SHIELD早期構築予算（令和8年度予算案）</td>
+          <td>1,001億円</td>
+          <td>防衛省 2025年12月</td>
+        </tr>
+        <tr>
+          <td>第2章</td>
+          <td>令和8年度 無人機関連防衛予算全体</td>
+          <td>2,773億円（前年比約3倍）</td>
+          <td>同上</td>
+        </tr>
+        <tr>
+          <td>第2章</td>
+          <td>防衛力整備計画 無人アセット投資</td>
+          <td>計約1兆円（2023〜2027年度）</td>
+          <td>防衛省 防衛力整備計画</td>
+        </tr>
+        <tr>
+          <td>第3章</td>
+          <td>DJI（中国）民生用ドローン世界シェア</td>
+          <td>約7割（推計）</td>
+          <td>複数調査・報道 2024〜2025年</td>
+        </tr>
+        <tr>
+          <td>第3章</td>
+          <td>2030年 民生分野供給目標</td>
+          <td>8万台（機体・重要部品）</td>
+          <td>日本成長戦略会議 2026年3月</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>構造的に固定されやすい要素（短期で変わりにくい前提）</h3>
+    <div class="data-box">
+      <div class="box-title">構造的に固定されやすい要素（短期で変わりにくい前提）</div>
+      <ul>
+        <li>DJIが約7割の世界シェアを握る民生用ドローン市場の構造は、価格・性能・エコシステムの優位性が変わらない限り短期では変動しない</li>
+        <li>国産ドローンとDJI主力機の約10倍という価格差は、量産体制が確立されない段階では縮まりにくい</li>
+        <li>SHIELD初期調達での外国製機体先行という方針は、2027年度中の体制構築スケジュールが変わらない限り固定される</li>
+        <li>重要構成品（バッテリー・モーター・フライトコントローラー等）の中国製依存は、国産代替品の開発・量産が完了するまで継続する</li>
+        <li>ウクライナ紛争等が示した防衛用小型ドローンの需要急増という構造的要因は、世界的な安全保障環境が変わらない限り持続する</li>
+        <li>ソフトウェア・AI開発力の不十分さは、人材育成・開発基盤整備に時間を要するため短期では解消されない</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">本レポート第1〜7章に記載の各統計の集約</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH9 -->
+<div class="chapter" id="ch9">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 09</span>
+      <h2>内部環境編への橋渡し</h2>
+    </div>
+
+    <p>外部環境編では以下の構造を数字と事実で整理しました。</p>
+    <div class="data-box">
+      <div class="box-title">外部環境編の整理（5点）</div>
+      <ul>
+        <li>無人航空機の民生世界市場は2024年約1兆円→2030年約1.5兆円・日本市場は約1,100億円→約2,700億円（政府推計）で、国産化の政策的後押しがある一方、DJIが約7割を握る現実がある</li>
+        <li>令和8年度予算案でSHIELD早期構築に1,001億円・無人機関連全体で2,773億円（前年比約3倍）・5年間で計約1兆円という政府の大型需要創出が産業基盤構築の主要な経済的根拠</li>
+        <li>初期段階のSHIELD調達は外国製機体先行・2027年度中体制完成が目標という時間軸は、国産化が「中長期の課題」であることを示す</li>
+        <li>ドローンは「特定重要物資」に指定され、安定供給確保支援基金・ファストパス調達・デュアルユース産業基盤構築という政策支援の枠組みが整備中</li>
+        <li>量産体制未確立・ソフトウェア開発力不足・中国製構成品依存・企業の小規模分散という産業構造上の課題は外部から見えにくいが政策文書に明記されている</li>
+      </ul>
+    </div>
+
+    <div class="next-box">
+      <div class="next-label">NEXT — 内部環境編で整理すること</div>
+      <h3>外圧がプレイヤー構成・収益・人材にどう現れるか</h3>
+      <ul>
+        <li>防衛産業（三菱重工・川崎重工・IHI等）とスタートアップ（ACSL・プロドローン等）と自動車部品メーカー（JTEKT・エクセディ等）という3業態のバリューチェーン上の役割と収益構造</li>
+        <li>「ファストパス調達」「安定供給確保支援基金」「NEDO支援」という資金フローが各プレイヤーに与える影響</li>
+        <li>防衛調達の価格・量・サイクルという受注構造と、民生市場での商用展開のコスト構造の差異</li>
+        <li>ドローンパイロット（国家資格・二等・一等）・ドローンエンジニア・自律制御AIエンジニア・サイバーセキュリティ専門家という人材市場の実態</li>
+        <li>「2030年8万台供給確保」という目標と現状の量産能力ギャップが業界内部の投資・採用判断にどう影響するか</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">本レポートの総括</span>
+    </div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <div class="container">
+    <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。掲載データは各記載出典に基づきますが、数値の正確性・完全性を保証するものではありません。投資判断は自己責任において行ってください。市場規模数値は各調査機関の定義・算定方法が異なるため単純比較はできません。防衛関連予算・調達計画は国会審議・政策変更により変動します。データ基準時点は2026年03月です。</p>
+    <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年03月 産業構造分析レポート ── 小型無人航空機（外部環境編）</p>
+    <p style="margin-top:8px;">
+      <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+      　｜　
+      <a href="https://www.marketsupporter-ai.com/articles/general-knowledge/knowledge" style="color: rgba(245,242,237,0.4); font-size:11px;">一般教養の記事一覧へ</a>
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
