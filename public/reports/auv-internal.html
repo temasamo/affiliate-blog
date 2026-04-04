@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>業界分析｜高市政権「戦略17分野」防衛産業 先行検討技術⑦小型無人航空機（内部環境編）</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+  :root {
+    --ink: #0f0f0e;
+    --paper: #f5f2ed;
+    --cream: #ede9e1;
+    --accent: #c84b2f;
+    --muted: #6b6760;
+    --rule: #c9c4bb;
+    --highlight: #fff8e6;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .masthead {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    border-bottom: 3px solid var(--accent);
+  }
+  .masthead-right { color: var(--muted); }
+
+  .hero {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 40%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      45deg, transparent, transparent 4px,
+      rgba(200,75,47,0.07) 4px, rgba(200,75,47,0.07) 5px
+    );
+  }
+  .hero-label {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    padding: 4px 10px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(20px, 3.2vw, 34px);
+    font-weight: 900;
+    line-height: 1.4;
+    max-width: 820px;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+  }
+  .hero h1 em { color: var(--accent); font-style: normal; }
+  .hero-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 16px; }
+  .hero-badge {
+    border: 1px solid rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.75);
+    font-size: 11px;
+    padding: 4px 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.06em;
+  }
+  .data-notice {
+    background: rgba(200,75,47,0.15);
+    border-left: 3px solid var(--accent);
+    padding: 10px 16px;
+    margin-top: 24px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  .toc {
+    background: var(--cream);
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding: 32px 40px;
+  }
+  .toc h2 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 6px 28px;
+  }
+  .toc-item {
+    font-size: 13px;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 3px 0;
+    border-bottom: 1px dashed var(--rule);
+    display: flex;
+    gap: 8px;
+  }
+  .toc-item:hover { color: var(--accent); }
+  .toc-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  .chapter {
+    padding: 48px 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .chapter:nth-child(even) { background: var(--cream); }
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .chapter-num {
+    background: var(--accent);
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .chapter h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 10px;
+    flex: 1;
+  }
+  .chapter h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 24px 0 10px;
+    padding-left: 10px;
+    border-left: 3px solid var(--accent);
+  }
+  .chapter p { margin-bottom: 14px; }
+
+  .connect-banner {
+    background: var(--ink);
+    border-left: 5px solid var(--accent);
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    font-size: 13px;
+    color: rgba(245,242,237,0.85);
+  }
+  .connect-banner strong { color: var(--accent); }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 24px 0;
+  }
+  .stat-cell {
+    background: var(--paper);
+    padding: 18px 16px;
+    text-align: center;
+  }
+  .chapter:nth-child(even) .stat-cell { background: #f0ece4; }
+  .stat-cell .stat-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1.2;
+    display: block;
+  }
+  .stat-cell .stat-unit {
+    font-size: 12px;
+    color: var(--muted);
+    display: block;
+    margin-top: 2px;
+  }
+  .stat-cell .stat-label {
+    font-size: 11px;
+    color: var(--ink);
+    display: block;
+    margin-top: 6px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .data-box {
+    background: var(--highlight);
+    border: 1px solid #e0d8c4;
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .data-box .box-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .data-box ul { padding-left: 0; list-style: none; }
+  .data-box ul li {
+    padding: 5px 0 5px 16px;
+    border-bottom: 1px dashed var(--rule);
+    font-size: 13px;
+    position: relative;
+  }
+  .data-box ul li::before {
+    content: '▸';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-size: 11px;
+  }
+  .data-box ul li:last-child { border-bottom: none; }
+
+  .note-box {
+    background: rgba(200,75,47,0.05);
+    border: 1px dashed var(--accent);
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .note-box strong { color: var(--accent); }
+
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 13px;
+  }
+  .summary-table thead tr { background: var(--ink); color: var(--paper); }
+  .summary-table thead th {
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+  .summary-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .summary-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.03); }
+  .summary-table tbody td { padding: 9px 14px; vertical-align: top; }
+  .summary-table td:first-child { font-weight: 700; color: var(--accent); font-size: 12px; }
+  .summary-table td:nth-child(2) { font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
+
+  /* バリューチェーン */
+  .vc-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin: 24px 0;
+    overflow-x: auto;
+  }
+  .vc-step {
+    flex: 1;
+    min-width: 110px;
+    text-align: center;
+    padding: 14px 8px;
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    position: relative;
+    font-size: 11px;
+  }
+  .vc-step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 700;
+    z-index: 1;
+    background: var(--paper);
+    padding: 2px 3px;
+  }
+  .chapter:nth-child(even) .vc-step:not(:last-child)::after { background: var(--cream); }
+  .vc-step.high-val { background: rgba(200,75,47,0.1); border-color: var(--accent); }
+  .vc-step .vc-name { font-weight: 700; font-size: 11px; margin-bottom: 4px; }
+  .vc-step .vc-rate { font-family: 'IBM Plex Mono', monospace; color: var(--accent); font-size: 13px; font-weight: 600; }
+  .vc-step .vc-note { font-size: 10px; color: var(--muted); margin-top: 3px; }
+  .vc-step .vc-player { font-size: 10px; color: var(--ink); margin-top: 4px; font-weight: 700; }
+
+  /* 業態比較テーブル */
+  .biz-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 12px;
+  }
+  .biz-table thead tr { background: var(--ink); color: var(--paper); }
+  .biz-table thead th {
+    padding: 8px 12px;
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+  }
+  .biz-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .biz-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.03); }
+  .biz-table tbody td { padding: 8px 12px; vertical-align: top; font-size: 12px; }
+  .biz-table td:first-child { font-weight: 700; }
+  .biz-table .acc { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 11px; }
+
+  .next-box {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 28px 32px;
+    margin: 20px 0;
+    border-left: 5px solid var(--accent);
+  }
+  .next-box .next-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .next-box h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 17px;
+    margin-bottom: 12px;
+    border-left: none;
+    padding-left: 0;
+  }
+  .next-box ul { padding-left: 0; list-style: none; }
+  .next-box ul li {
+    padding: 4px 0 4px 14px;
+    font-size: 13px;
+    position: relative;
+    color: rgba(245,242,237,0.85);
+  }
+  .next-box ul li::before {
+    content: '▸';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-size: 11px;
+  }
+
+  .source-tag {
+    display: inline-block;
+    background: rgba(0,0,0,0.06);
+    border: 1px solid var(--rule);
+    padding: 3px 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin: 2px 3px;
+    letter-spacing: 0.04em;
+  }
+  .source-wrap {
+    margin-top: 20px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--rule);
+  }
+
+  .disclaimer {
+    background: var(--ink);
+    color: rgba(245,242,237,0.5);
+    padding: 24px 40px;
+    font-size: 11px;
+    line-height: 1.7;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.03em;
+  }
+
+  .rule-thick { border: none; border-top: 3px solid var(--ink); margin: 0; }
+  .rule-thin { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+  @media (max-width: 600px) {
+    .masthead { flex-direction: column; gap: 6px; padding: 10px 16px; }
+    .hero { padding: 36px 16px 30px; }
+    .chapter { padding: 32px 16px; }
+    .toc { padding: 24px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <span>産業構造分析レポート</span>
+  <span class="masthead-right">2026年03月発行 ── 防衛産業／小型無人航空機（内部環境編）</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-label">INDUSTRY ANALYSIS REPORT — INTERNAL ENVIRONMENT</div>
+    <h1>業界分析｜高市政権「戦略17分野」<br>防衛産業<br>先行検討技術⑦<em>小型無人航空機</em>（内部環境編）</h1>
+    <div class="hero-meta">
+      <span class="hero-badge">就職・転職検討者向け</span>
+      <span class="hero-badge">株式投資家向け</span>
+      <span class="hero-badge">数字と事実のみ記載</span>
+    </div>
+    <div class="data-notice">
+      本レポートのデータ基準時点：2026年03月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thick">
+
+<!-- TOC -->
+<div class="toc">
+  <div class="container">
+    <h2>目次 — TABLE OF CONTENTS</h2>
+    <div class="toc-grid">
+      <a class="toc-item" href="#ch0"><span class="toc-num">00</span>この内部環境編の立ち位置</a>
+      <a class="toc-item" href="#ch1"><span class="toc-num">01</span>業界内プレイヤー構成</a>
+      <a class="toc-item" href="#ch2"><span class="toc-num">02</span>バリューチェーンと利益の所在</a>
+      <a class="toc-item" href="#ch3"><span class="toc-num">03</span>収益構造の全体像</a>
+      <a class="toc-item" href="#ch4"><span class="toc-num">04</span>主要企業の財務指標概要</a>
+      <a class="toc-item" href="#ch5"><span class="toc-num">05</span>人件費構造と労働集約性</a>
+      <a class="toc-item" href="#ch6"><span class="toc-num">06</span>人材市場の実態（概要）</a>
+      <a class="toc-item" href="#ch7"><span class="toc-num">07</span>現場と本部の非対称性</a>
+      <a class="toc-item" href="#ch8"><span class="toc-num">08</span>構造的に忙しさが増幅する理由</a>
+      <a class="toc-item" href="#ch9"><span class="toc-num">09</span>誤解されやすいポイント</a>
+      <a class="toc-item" href="#ch10"><span class="toc-num">10</span>内部環境の整理</a>
+      <a class="toc-item" href="#ch11"><span class="toc-num">11</span>有料版への橋渡し</a>
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thin">
+
+<!-- CH0 -->
+<div class="chapter" id="ch0">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 00</span>
+      <h2>この内部環境編の立ち位置</h2>
+    </div>
+
+    <div class="connect-banner">
+      <strong>外部環境編との接続：</strong>外部環境編では、無人航空機機体 世界市場2024年約1兆円→2030年約1.5兆円（政府推計）・SHIELD早期構築予算1,001億円・令和8年度無人機関連防衛予算2,773億円（前年比約3倍）・DJI約7割の世界シェア・国産ドローンのDJI比約10倍の価格差・2030年8万台供給目標・ドローンの「特定重要物資」指定という外部構造を整理しました。本編ではその前提を受け、「外部の圧力がこの産業の業態・収益・人材にどのような構造的特性として現れているか」を数字と事実で記述します。
+    </div>
+
+    <div class="data-box">
+      <div class="box-title">本編でやること／やらないこと</div>
+      <ul>
+        <li>【やること】伝統的防衛大手（三菱重工・川崎重工・IHI）・国産ドローンスタートアップ（ACSL・プロドローン等）・自動車部品メーカー参入組（JTEKT・エクセディ等）という3業態のプレイヤー構成と収益構造の差異を数値で記述する</li>
+        <li>【やること】「防衛調達価格改革（利益率改善）」という産業構造変化と、SHIELD予算という大型需要創出が各プレイヤーの収益にどう影響するかを構造として示す</li>
+        <li>【やること】ドローンパイロット・ドローンエンジニア・自律制御AIエンジニアという人材市場の実態を整理する</li>
+        <li>【やらないこと】特定銘柄の投資推奨・勝ち負けの断定・良し悪しの評価</li>
+      </ul>
+    </div>
+    <p>構造を示すことで終わります。判断は読者に委ねます。</p>
+    <div class="source-wrap"><span class="source-tag">本レポート基本方針</span></div>
+  </div>
+</div>
+
+<!-- CH1 -->
+<div class="chapter" id="ch1">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 01</span>
+      <h2>業界内プレイヤー構成</h2>
+    </div>
+
+    <h3>4つの業態による構成</h3>
+    <p>国内の小型無人航空機産業は、防衛調達という特殊な需要構造を持つため、一般的な民生産業とは異なるプレイヤー構成を持ちます。防衛大手が「プライム（元請）」として防衛省から直接受注し、スタートアップや部品メーカーがサプライチェーンに組み込まれる縦型の構造が基本です。</p>
+
+    <table class="biz-table">
+      <thead>
+        <tr>
+          <th>業態</th>
+          <th>主な役割</th>
+          <th>代表プレイヤー</th>
+          <th>収益の性格</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>伝統的防衛大手<br>（プライム）</td>
+          <td>防衛省・防衛装備庁への直接受注。大型システムインテグレーション。戦闘支援無人機・高度UAVの研究開発。</td>
+          <td class="acc">三菱重工業、川崎重工業、IHI、三菱電機、NEC</td>
+          <td>政府調達型ストック。防衛装備庁との長期契約。利益率は改善傾向（後述）。防衛事業は各社全体の一セグメント。</td>
+        </tr>
+        <tr>
+          <td>国産ドローン<br>スタートアップ</td>
+          <td>民生・政府調達向けの国産機体開発・量産。セキュアドローンの標準機供給。防衛調達への参入（ファストパス活用）。</td>
+          <td class="acc">ACSL（6232・東証グロース）、プロドローン、テラ・ラボ、スカイドライブ等</td>
+          <td>売上規模は小さく赤字段階が多い。NEDO助成金・SBIR・安定供給確保支援基金が収益補填。量産達成が黒字化の前提条件。</td>
+        </tr>
+        <tr>
+          <td>自動車部品<br>メーカー参入組</td>
+          <td>電動化技術（モーター・バッテリー制御）を転用した部品供給・機体メーカーへの資本参加。</td>
+          <td class="acc">JTEKT（プロドローンへ出資・2023年）、エクセディ（イームズロボティクスへ出資・2024年）等</td>
+          <td>EV向け需要減少への対応として参入。部品単価×出荷量型。量産体制が整う前はコスト先行。</td>
+        </tr>
+        <tr>
+          <td>民生ドローン<br>サービス事業者</td>
+          <td>インフラ点検・農業・測量・物流・警備等の民生用途でのドローン運用サービス提供。</td>
+          <td class="acc">NTTイードローンテクノロジー（NTT東日本系）、ソニーグループ（Airpeak）、各地域スタートアップ</td>
+          <td>サービス型フロー収益。1件2〜5万円（空撮案件）・測量外注50万円程度等の小口案件が中心。セキュリティ需要で政府機関からの受注拡大に余地。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>重工3社の防衛事業急拡大という文脈</h3>
+    <p>防衛大手3社（三菱重工・川崎重工・IHI）の2025年3月期における防衛関連事業の売上収益は3社合計で1兆5,110億円と前期比25%増加する見通しとされていました（日本経済新聞・2024年11月）。実績として三菱重工の航空・防衛・宇宙セグメントの事業利益は2024年度に前期比272億円増の999億円、川崎重工の航空宇宙システムセグメントは同558億円で前期の赤字から黒字転換、IHIの航空・宇宙・防衛は同1,227億円で前期赤字から黒字転換しています（ビジネスジャーナル・2025年6月）。</p>
+
+    <div class="note-box">
+      <strong>【注記】</strong>三菱重工・川崎重工・IHIの各セグメント数値は、「航空・防衛・宇宙」「航空宇宙システム」等のセグメント全体の数値であり、無人航空機単体の収益ではありません。各社ともドローン専業の収益を独立開示していません。
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">1兆4,567</span>
+        <span class="stat-unit">億円</span>
+        <span class="stat-label">三菱重工 防衛装備品契約実績<br>（2024年度・防衛装備庁）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">6,383</span>
+        <span class="stat-unit">億円</span>
+        <span class="stat-label">川崎重工 防衛装備品契約実績<br>（2024年度・前年比+64.2%）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">999</span>
+        <span class="stat-unit">億円</span>
+        <span class="stat-label">三菱重工 航空・防衛・宇宙<br>事業利益（2024年度）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">976</span>
+        <span class="stat-unit">百万円</span>
+        <span class="stat-label">ACSL 売上高<br>（2025年6月期・純損失272百万円）</span>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">ビジネスジャーナル「防衛産業、なぜ一転して儲かる産業に変貌」（2025年6月）</span>
+      <span class="source-tag">かぶりっじ「防衛費増額で注目される防衛関連銘柄」（2025年12月）</span>
+      <span class="source-tag">Buffett Code ACSL財務データ（2025年6月期）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH2 -->
+<div class="chapter" id="ch2">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 02</span>
+      <h2>バリューチェーンと利益の所在</h2>
+    </div>
+
+    <h3>小型無人航空機のバリューチェーン構造</h3>
+    <p>小型無人航空機のバリューチェーンは「部品・素材供給」→「機体設計・製造」→「システムインテグレーション（防衛向け）」→「サービス提供（民生向け）」という流れで構成されます。現時点（2026年3月）では防衛調達の初期段階であり、利益の集中箇所は「プライム（防衛大手）の受注」と「特定部品での高シェアを持つサプライヤー」に限定されています。</p>
+
+    <div class="vc-flow">
+      <div class="vc-step high-val">
+        <div class="vc-name">部品・素材<br>供給</div>
+        <div class="vc-rate">高（一部）</div>
+        <div class="vc-note">中国製代替の<br>国産化が急務</div>
+        <div class="vc-player">自動車部品メーカー<br>電機メーカー</div>
+      </div>
+      <div class="vc-step">
+        <div class="vc-name">機体設計<br>・製造</div>
+        <div class="vc-rate">低〜中</div>
+        <div class="vc-note">量産前で赤字<br>スタートアップ中心</div>
+        <div class="vc-player">ACSL・プロドローン<br>テラ・ラボ等</div>
+      </div>
+      <div class="vc-step high-val">
+        <div class="vc-name">防衛向け<br>SI・受注</div>
+        <div class="vc-rate">高</div>
+        <div class="vc-note">利益率改善中<br>大型受注集中</div>
+        <div class="vc-player">三菱重工・川崎重工<br>IHI・三菱電機</div>
+      </div>
+      <div class="vc-step">
+        <div class="vc-name">民生向け<br>サービス</div>
+        <div class="vc-rate">中（成長中）</div>
+        <div class="vc-note">点検・農業・<br>物流等の小口</div>
+        <div class="vc-player">NTTイードローン<br>ソニー等</div>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <strong>【構造注記】</strong>現時点では防衛調達のプライム（大型システムインテグレーション）と特定部品での高シェア確立企業で収益が先行しやすい構造にあります。国産機体スタートアップは量産体制確立前の先行投資段階にあります。
+    </div>
+
+    <h3>防衛調達の「利益率改革」という構造変化</h3>
+    <p>かつて防衛産業は「儲からない産業」とされ、撤退する企業が相次いでいました。防衛装備庁が発注先企業の利益額の算定方式を変え、最大15%まで利益を付与する形に変更したことが、近年の防衛産業収益改善の主要因の一つとされています（ビジネスジャーナル・2025年6月）。加えて防衛費の急拡大（防衛力整備計画5年間43兆円）により受注規模そのものが拡大し、固定費回収が容易になった点も利益率改善に寄与しています。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">ビジネスジャーナル「防衛産業、なぜ一転して儲かる産業に変貌」（2025年6月）</span>
+      <span class="source-tag">東洋経済オンライン「重工3社に聞いた来期成長のカギ」（2025年10月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH3 -->
+<div class="chapter" id="ch3">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 03</span>
+      <h2>収益構造の全体像</h2>
+    </div>
+
+    <h3>収益構造の本質</h3>
+    <div class="note-box">
+      <strong>【収益構造の本質】</strong>小型無人航空機は「ドローン単体で新規市場を創る」モデルではなく、既存の防衛調達の拡大・民生サービスの上位グレード化・既存部品産業の転用という形で既存事業の延長として収益化される構造にあります。防衛大手にとってのSHIELD対応は既存の防衛受注拡大であり、自動車部品メーカーにとってのドローン参入は既存の電動化技術の転用です。
+    </div>
+
+    <div class="data-box">
+      <div class="box-title">業態別 収益構造の特性</div>
+      <ul>
+        <li>【防衛大手（三菱重工・川崎重工・IHI等）】SHIELD等の大型防衛調達を中心に防衛事業が急拡大中。利益率改革により防衛調達の採算が改善。ただしSHIELD初期段階は外国製機体の調達が先行するため、国産UAV開発が利益に寄与するのは中長期。研究開発投資（AI搭載・自律制御・群制御）は先行投資段階。三菱重工の防衛省との年間契約金額は1兆円以上とみられる。</li>
+        <li>【国産ドローンスタートアップ（ACSL等）】ACSLの2025年6月期売上高は976百万円（前期比47.6%増）だが純損失272百万円の赤字段階。防衛省航空自衛隊への採用実績・米国子会社設立・500機受注等の実績は積み上げているが、量産体制確立前の先行投資フェーズ。NEDO助成金や安定供給確保支援基金等の公的支援が損失補填の一部となる構造。</li>
+        <li>【自動車部品メーカー参入組（JTEKT・エクセディ等）】モーター・バッテリー制御等の電動化技術を転用してドローン部品市場に参入。既存設備の活用で参入コストを抑制可能だが、ドローン向け量産需要が十分に生まれるまでは規模効果が出にくい。出資・提携という形でリスクを限定しながら技術・ノウハウを蓄積するフェーズ。</li>
+        <li>【民生ドローンサービス事業者】点検・農業・測量・物流等の小口案件が中心。国産機体へのセキュリティニーズが高い政府機関・電力会社・通信会社等からの受注が成長ドライバー。2025年度以降の目視外飛行（レベル4）本格普及を待って物流等の大型市場が立ち上がる見通し。現時点では収益規模は限定的。</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">Buffett Code ACSL財務データ（2025年6月期）</span>
+      <span class="source-tag">DPCA「ドローン産業、中国製部品への依存」（2025年9月）</span>
+      <span class="source-tag">東洋経済オンライン「国策が追い風の防衛産業、2026年は輸出拡大の分水嶺」（2025年12月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH4 -->
+<div class="chapter" id="ch4">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 04</span>
+      <h2>主要企業の財務指標概要</h2>
+    </div>
+
+    <h3>防衛大手の防衛セグメント動向（2025年3月期）</h3>
+    <div class="note-box">
+      <strong>【注記】</strong>下表の数値は各社の「航空・防衛・宇宙」等のセグメント全体の数値であり、無人航空機単体の収益ではありません。会計基準・セグメント定義が各社異なるため単純比較はできません。
+    </div>
+
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>企業</th>
+          <th>防衛関連指標</th>
+          <th>数値</th>
+          <th>出典・時点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>三菱重工業</td>
+          <td>防衛装備品契約実績（防衛省契約）</td>
+          <td>1兆4,567億円（2024年度）</td>
+          <td>防衛装備庁・かぶりっじ 2025年12月</td>
+        </tr>
+        <tr>
+          <td>三菱重工業</td>
+          <td>航空・防衛・宇宙 事業利益</td>
+          <td>999億円（2024年度・前期比+272億円）</td>
+          <td>ビジネスジャーナル 2025年6月</td>
+        </tr>
+        <tr>
+          <td>川崎重工業</td>
+          <td>防衛装備品契約実績</td>
+          <td>6,383億円（2024年度・前年比+64.2%）</td>
+          <td>防衛装備庁・かぶりっじ 2025年12月</td>
+        </tr>
+        <tr>
+          <td>川崎重工業</td>
+          <td>航空宇宙システム 事業利益</td>
+          <td>558億円（2024年度・前期赤字から黒字転換）</td>
+          <td>ビジネスジャーナル 2025年6月</td>
+        </tr>
+        <tr>
+          <td>IHI</td>
+          <td>航空・宇宙・防衛 事業利益</td>
+          <td>1,227億円（2024年度・前期赤字から黒字転換）</td>
+          <td>同上</td>
+        </tr>
+        <tr>
+          <td>IHI</td>
+          <td>航空・宇宙・防衛 事業 営業利益率</td>
+          <td>22.1%（2024年度）</td>
+          <td>同上</td>
+        </tr>
+        <tr>
+          <td>ACSL（6232）</td>
+          <td>売上高・純損益</td>
+          <td>売上976百万円・純損失272百万円（2025年6月期）</td>
+          <td>Buffett Code 2025年6月期</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>防衛大手の中長期目標（各社公表）</h3>
+    <div class="data-box">
+      <div class="box-title">防衛大手の防衛事業 中長期売上目標（各社公表）</div>
+      <ul>
+        <li>【三菱重工業】2024〜2026年度に年間防衛事業売上高1兆円規模を目指す（2022年度は5,000億円弱）</li>
+        <li>【川崎重工業】2030年度に防衛事業売上収益5,000億〜7,000億円を目指す（2022年度2,400億円）</li>
+        <li>【IHI】2030年度に航空・宇宙・防衛事業売上収益8,000億円を目指す（2023年度の約2倍）・営業利益率15%程度が目標</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">東洋経済オンライン「重工3社の防衛売上25%増」（2024年11月）</span>
+      <span class="source-tag">東洋経済オンライン「重工3社の次の一手」（2025年10月）</span>
+      <span class="source-tag">ビジネスジャーナル「防衛産業、なぜ一転して儲かる産業に変貌」（2025年6月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH5 -->
+<div class="chapter" id="ch5">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 05</span>
+      <h2>人件費構造と労働集約性</h2>
+    </div>
+
+    <h3>業態別 人件費構造の特性</h3>
+    <div class="data-box">
+      <div class="box-title">業態別 人件費構造の特性</div>
+      <ul>
+        <li>【防衛大手（三菱重工・川崎重工・IHI）】大手総合重工業の処遇水準。大型防衛受注拡大により人員増強・生産能力拡充が進行中。防衛事業に関わる技術者・設計者・システムエンジニアの採用競争が激化。AI搭載無人機・自律制御の研究開発職は希少かつ高需要。</li>
+        <li>【国産ドローンスタートアップ（ACSL等）】売上規模が小さく、高水準の処遇を持続するには量産収益が必要。ACSLの2025年6月期は純損失272百万円の赤字段階。ベンチャー的な処遇（ストックオプション等の活用）が一部で見られる。ドローンエンジニア・自律制御エンジニアの獲得競争が大企業との間でも発生。</li>
+        <li>【民生ドローンサービス事業者・パイロット】ドローンパイロットの平均年収は約454万円（IoTBiz調査）。ドローンエンジニアの年収相場は500〜700万円程度（複数調査）。高度な専門性（AIや自律制御）を持つエンジニアはより高い傾向。国家資格（一等・二等無人航空機操縦士技能証明）保有者は希少性が高い。</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">IoTBiz「ドローンに関わる仕事とは」（2024年）</span>
+      <span class="source-tag">HELICAM「ドローン求人完全ガイド」（2025年7月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH6 -->
+<div class="chapter" id="ch6">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 06</span>
+      <h2>人材市場の実態（概要）</h2>
+    </div>
+
+    <h3>ドローン関連の主要職種</h3>
+    <div class="data-box">
+      <div class="box-title">小型無人航空機関連 主要職種（6職種）</div>
+      <ul>
+        <li>【ドローンパイロット（操縦士）】ドローンを操縦して空撮・農薬散布・測量・点検・物流等を行う職種。国家資格（一等・二等 無人航空機操縦士技能証明）が有人地帯での目視外飛行に必要。平均年収は約454万円（IoTBiz調査・2024年）。仕事内容・専門性・地域・雇用形態によって大きく変動する。厚生労働省jobtag（令和4年度）によるドローンパイロットの有効求人倍率は4.21。</li>
+        <li>【ドローンエンジニア（機体・制御）】機体設計・制御ソフトウェア開発・実装・検証を担う。航空工学・電子工学・プログラミングの複合スキルが必要。国内では開発者が少なく需要が高まっている。年収相場は500〜700万円程度（複数調査・2025年）。高度な専門知識が要求されるため参入ハードルは操縦士より高い。</li>
+        <li>【自律制御・AIエンジニア】自律飛行・群制御・機体AI搭載を担うソフトウェア・AIエンジニア。防衛用途での需要が急増中。戦略17分野PDFが「ソフトウェア開発力が不十分」と明記するほど希少。防衛大手・スタートアップ・大学研究機関が獲得を競う。</li>
+        <li>【防衛調達・契約管理職】防衛装備庁等との複雑な調達契約手続きを担う職種。防衛大手に集中。防衛独特の調達プロセス知識が必要。ファストパス調達等の新制度対応も求められる。</li>
+        <li>【サイバーセキュリティ専門家（ドローン系）】政府機関・重要インフラ向けのセキュアドローン評価・認証・ガイドライン策定に関わる専門職。政府調達方針（2020年9月）以降、需要が増加。</li>
+        <li>【ドローン講師・資格指導者】国家資格化（2022年12月〜）を受けてドローンスクールが増加し、講師需要が拡大。年収は400〜600万円程度が相場（複数情報）。副業・兼業としての活用も見られる。</li>
+      </ul>
+    </div>
+
+    <h3>国家資格の整備状況（2026年3月時点）</h3>
+    <p>2022年12月5日の改正航空法施行により、無人航空機操縦士の国家資格制度が新設されました。一等（有人地帯での目視外飛行〈レベル4〉可能）と二等（一定条件下での目視外飛行可能）の2種類があります。有人地帯での完全自律飛行や物流等の高度活用には一等資格が前提となります。2026年3月時点では国家資格取得者の絶対数はまだ限られており、特に一等資格保有者は希少です。</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">約454</span>
+        <span class="stat-unit">万円</span>
+        <span class="stat-label">ドローンパイロット平均年収<br>（IoTBiz調査・2024年）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">500〜700</span>
+        <span class="stat-unit">万円</span>
+        <span class="stat-label">ドローンエンジニア年収相場<br>（複数調査・2025年）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">4.21</span>
+        <span class="stat-unit">倍</span>
+        <span class="stat-label">ドローンパイロット有効求人倍率<br>（厚生労働省jobtag・令和4年度）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">2022年<br>12月〜</span>
+        <span class="stat-unit"></span>
+        <span class="stat-label">無人航空機操縦士<br>国家資格制度スタート</span>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <strong>【注記】</strong>ドローンパイロットの年収・求人倍率は業種・専門性・雇用形態・地域によって大きく異なります。防衛関連の専門職（自律制御AIエンジニア等）は全体平均より高い水準にある傾向がありますが、独立した統計データは現在のところ限定的です。
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">IoTBiz「ドローンに関わる仕事とは」（2024年）</span>
+      <span class="source-tag">厚生労働省 job tag ドローンパイロット職業詳細（令和4年度）</span>
+      <span class="source-tag">HELICAM「ドローン求人完全ガイド」（2025年7月）</span>
+      <span class="source-tag">国土交通省 改正航空法 無人航空機操縦士技能証明（2022年12月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH7 -->
+<div class="chapter" id="ch7">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 07</span>
+      <h2>現場と本部の非対称性</h2>
+    </div>
+
+    <h3>「単年度予算」という防衛調達の構造問題</h3>
+    <p>防衛産業では「単年度ごとの政府予算のさじ加減次第で、将来の予見や投資をしにくい」という構造的課題が業界内で認識されています（東洋経済オンライン・防衛企業役員コメント・2025年12月）。高市政権は「投資の予見可能性の向上につながる措置によって、民間投資を後押ししていく必要がある」との認識を示していますが、単年度予算の仕組みが根本的に変わらない限り、企業の長期設備投資判断には不確実性が残ります。</p>
+
+    <h3>スタートアップと伝統的防衛産業の連携希薄という構造</h3>
+    <p>戦略17分野のPDF資料は「生産ノウハウに優れた伝統的防衛産業とスタートアップの連携は希薄」と明記しています。ACSLのような国産スタートアップが持つ最先端の機体技術・ソフトウェアと、三菱重工等が持つ防衛調達のノウハウ・設備・組織能力が有機的に結合されていないという産業構造上の問題です。この連携促進のためにファストパス調達・メンター支援制度の導入が政策的に推進されていますが、2026年3月時点で制度整備は進行中です。</p>
+
+    <h3>研究開発費の回収時間軸の長さ</h3>
+    <p>三菱重工が2022年度から実施している「無人機へのAI搭載技術の研究試作」・川崎重工が2022年4月に落札した「自律向上型戦闘支援無人機の機能性能及び運用上の効果に関する研究試作（約39億円）」等の防衛装備庁発注の研究開発案件は、成果が実際の調達・サービス化に結びつくまでに数年〜10年以上を要します。研究開発投資と収益回収の主体が分離している点は、APN分野と同様の構造的課題です。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">東洋経済オンライン「国策が追い風の防衛産業、2026年は輸出拡大の分水嶺」（2025年12月）</span>
+      <span class="source-tag">日本成長戦略会議 第3回 小型無人航空機（2026年3月）</span>
+      <span class="source-tag">Yahoo!ニュース 専門家「三菱重工、AI搭載の戦闘支援無人機の模型初公開」（2024年10月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH8 -->
+<div class="chapter" id="ch8">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 08</span>
+      <h2>構造的に忙しさが増幅する理由</h2>
+    </div>
+
+    <h3>SHIELD対応という急速な需要創出と人材不足の同時発生</h3>
+    <p>令和8年度予算案における無人機関連防衛予算2,773億円（前年比約3倍）という急速な需要創出は、防衛大手の受注部門・調達担当・技術者に対して短期間での対応能力を求めています。しかし防衛調達に習熟した人材・自律制御の研究開発者・国産機体の製造技術者は短期で増やせない希少資源であり、需要急増と人材不足が同時に発生する構造があります。</p>
+
+    <h3>中国製構成品の国産代替開発という並行タスク</h3>
+    <p>フライトコントローラー・バッテリー・モーターといった中国製構成品の国産代替品開発と、機体・サービスの量産化は同時並行で進める必要があります。部品メーカー参入（JTEKT・エクセディ等）が始まっていますが、部品単体の技術開発・認証・量産ラインの整備という複数のステップが必要であり、担当者への業務集中が発生しやすい構造があります。</p>
+
+    <h3>民生市場立ち上げと防衛市場対応の二重構造</h3>
+    <p>国産ドローンスタートアップは民生市場（インフラ点検・農業・物流等）での量産収益化と、防衛省・政府機関向けのセキュアドローン供給という2つの事業を同時に追う必要があります。どちらか一方の収益化に集中するには市場規模が未成熟であり、両方を同時に推進するにはリソースが不足するというスタートアップ特有の二重のプレッシャーが発生します。</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">2,773</span>
+        <span class="stat-unit">億円</span>
+        <span class="stat-label">令和8年度 無人機関連<br>防衛予算（前年比約3倍）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">4.21</span>
+        <span class="stat-unit">倍</span>
+        <span class="stat-label">ドローンパイロット<br>有効求人倍率（令和4年度）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">約10倍</span>
+        <span class="stat-unit"></span>
+        <span class="stat-label">国産ドローン vs DJI<br>の価格差（量産前）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">8万台</span>
+        <span class="stat-unit">（2030年）</span>
+        <span class="stat-label">民生分野 供給目標<br>（現状は達成手前）</span>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">防衛省 令和8年度予算案概要（2025年12月）</span>
+      <span class="source-tag">日本成長戦略会議 第3回 小型無人航空機（2026年3月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH9 -->
+<div class="chapter" id="ch9">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 09</span>
+      <h2>誤解されやすいポイント</h2>
+    </div>
+
+    <div class="data-box">
+      <div class="box-title">誤解されやすいポイント（6点）</div>
+      <ul>
+        <li>【「防衛予算が増えたからドローン企業は儲かる」】三菱重工・川崎重工・IHIはSHIELD予算の恩恵を受けやすいが、初期調達は外国製機体が先行する可能性がある。国産スタートアップ（ACSL等）がSHIELD予算から直接大型受注を得るには量産体制・防衛調達プロセスへの対応という前提条件がある。</li>
+        <li>【「国家資格を取ればドローンの仕事がある」】ドローンパイロット専業の安定した雇用市場はまだ発展途上。有効求人倍率4.21倍は求職者より求人が多いことを示すが、案件の多くは本業の一部としてドローン業務を担当するケース。専業で安定収入を得るには空撮・農業・測量等の特定分野でのドメイン専門性が必要。</li>
+        <li>【「DJIが排除されたから国産ドローンが売れる」】政府調達での中国製排除は国産化の需要を生んだが、価格差（約10倍）と性能差が縮まらなければ民間企業での普及は限定的。政府調達市場（約1,000機前後・当初）は国産化の起爆剤だが全体市場としては小規模。</li>
+        <li>【「スタートアップに入れば成長できる」】ACSL等の国産スタートアップは赤字段階であり、量産による黒字化は今後の課題。大手メーカーと比べて処遇水準の安定性が異なる点に注意が必要。ただし希少技術の習得機会・ストックオプション等の面では大手にはない価値がある。</li>
+        <li>【「ドローンエンジニアはAI・ソフトが主役」】機体のハードウェア設計（航空工学・電子工学・材料力学）も依然として重要。防衛用途では耐久性・環境適合性・セキュリティ等のハード要件が厳しい。ソフト一辺倒の視点では産業の実態を見誤りやすい。</li>
+        <li>【「防衛産業は安定した仕事だ」】防衛大手の受注は急拡大中だが、それは政府予算の急拡大に依存している。単年度予算構造のもとでは「今期は大型案件が集中した」という変動が発生し、防衛企業役員自身が「予見可能性が低い」と認識している（東洋経済・2025年12月）。</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">東洋経済オンライン「国策が追い風の防衛産業」（2025年12月）</span>
+      <span class="source-tag">厚生労働省 job tag（令和4年度）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH10 -->
+<div class="chapter" id="ch10">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 10</span>
+      <h2>内部環境の整理</h2>
+    </div>
+
+    <h3>第1〜9章の数値サマリー</h3>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>章</th>
+          <th>指標名</th>
+          <th>数値</th>
+          <th>出典・時点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>第1章</td>
+          <td>三菱重工 防衛装備品契約実績（防衛省）</td>
+          <td>1兆4,567億円（2024年度）</td>
+          <td>防衛装備庁 2024年度</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>川崎重工 防衛装備品契約実績</td>
+          <td>6,383億円（2024年度・前年比+64.2%）</td>
+          <td>同上</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>三菱重工 航空・防衛・宇宙 事業利益</td>
+          <td>999億円（2024年度）</td>
+          <td>ビジネスジャーナル 2025年6月</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>IHI 航空・宇宙・防衛 営業利益率</td>
+          <td>22.1%（2024年度）</td>
+          <td>同上</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>ACSL 売上高・純損益</td>
+          <td>976百万円・純損失272百万円（2025年6月期）</td>
+          <td>Buffett Code 2025年6月期</td>
+        </tr>
+        <tr>
+          <td>第6章</td>
+          <td>ドローンパイロット平均年収</td>
+          <td>約454万円</td>
+          <td>IoTBiz調査 2024年</td>
+        </tr>
+        <tr>
+          <td>第6章</td>
+          <td>ドローンエンジニア年収相場</td>
+          <td>500〜700万円程度</td>
+          <td>複数調査 2025年</td>
+        </tr>
+        <tr>
+          <td>第6章</td>
+          <td>ドローンパイロット有効求人倍率</td>
+          <td>4.21倍（令和4年度）</td>
+          <td>厚生労働省 job tag</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>構造的に固定されやすい要素（短期で変わりにくい前提）</h3>
+    <div class="data-box">
+      <div class="box-title">構造的に固定されやすい要素（短期で変わりにくい前提）</div>
+      <ul>
+        <li>三菱重工・川崎重工・IHIがプライム（元請）として防衛調達の主体となる縦型の産業構造は、これらの企業が持つ設備・ノウハウ・調達実績によって短期では変わらない</li>
+        <li>スタートアップ国産ドローンメーカーが量産体制を確立して黒字化するには、8万台（2030年目標）という民生需要の積み上げと並行した量産投資が必要であり、時間軸は中長期</li>
+        <li>ドローンパイロット有効求人倍率4.21倍という人材不足は、国家資格制度が整備されても実際の有資格者の輩出に時間を要するため短期解消されない</li>
+        <li>中国製構成品への依存は、国産代替品の開発・認証・量産という段階的なプロセスを経るため短期での解消は困難</li>
+        <li>SHIELD初期調達での外国製機体先行という方針は、2027年度中の体制構築スケジュールが変わらない限り固定される</li>
+        <li>単年度予算構造による防衛調達の予見可能性の低さは、制度改革が進まない限り企業の長期投資判断の不確実性として残る</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">本レポート第1〜9章に記載の各統計の集約</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH11 -->
+<div class="chapter" id="ch11">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 11</span>
+      <h2>有料版への橋渡し</h2>
+    </div>
+
+    <p>本レポートでは小型無人航空機産業の内部構造を数字と事実で記述しました。この構造の中で個人・法人としてどう動くかは、より詳細な分析が必要です。</p>
+
+    <div class="next-box">
+      <div class="next-label">FOR CAREER — 就活・転職向け有料版</div>
+      <h3>防衛大手vsスタートアップ、どちらに入るか</h3>
+      <ul>
+        <li>三菱重工・川崎重工・IHI（防衛部門）とACSL・プロドローン等（スタートアップ）のバリューチェーン上での役割・処遇・キャリアパスの具体的比較</li>
+        <li>ドローンパイロット（一等・二等）・ドローンエンジニア・自律制御AIエンジニア・防衛調達専門家という職種別の詳細年収レンジとスキル要件</li>
+        <li>「国家資格取得→どの業態に入るか」というキャリア設計の考え方</li>
+        <li>自動車部品メーカー（JTEKT・エクセディ等）からドローン産業への転職パスの実態</li>
+        <li>「2027年度SHIELD体制完成・2030年8万台目標」というロードマップを見据えたキャリア設計の考え方</li>
+      </ul>
+    </div>
+
+    <div class="next-box">
+      <div class="next-label">FOR INVESTMENT — 投資判断向け有料版</div>
+      <h3>防衛予算急拡大の恩恵が誰に届くか</h3>
+      <ul>
+        <li>三菱重工・川崎重工・IHI各社の防衛事業中長期目標（売上1兆円・5,000〜7,000億円・8,000億円）の達成蓋然性と前提条件</li>
+        <li>ACSL（6232）の量産体制確立・黒字化への道筋と現在の財務状況（売上976百万円・純損失272百万円・2025年6月期）</li>
+        <li>SHIELD初期調達での外国製機体先行という事実が国産スタートアップの株価・業績にどう影響するか</li>
+        <li>自動車部品メーカー参入（JTEKT・エクセディ等）のドローン事業インパクトと本業への影響</li>
+        <li>「単年度予算構造」という不確実性が防衛関連銘柄の株価変動に与える構造的要因の分析</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <div class="container">
+    <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。掲載データは各記載出典に基づきますが、数値の正確性・完全性を保証するものではありません。投資判断は自己責任において行ってください。防衛関連セグメントの数値は各社の防衛事業単体ではなく、より広いセグメント全体の数値を含む場合があります。年収データは業種・専門性・雇用形態によって大きく異なります。防衛関連予算・調達計画は国会審議・政策変更により変動します。データ基準時点は2026年03月です。</p>
+    <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年03月 産業構造分析レポート ── 小型無人航空機（内部環境編）</p>
+    <p style="margin-top:8px;">
+      <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+      　｜　
+      <a href="https://www.marketsupporter-ai.com/articles/general-knowledge/knowledge" style="color: rgba(245,242,237,0.4); font-size:11px;">一般教養の記事一覧へ</a>
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
