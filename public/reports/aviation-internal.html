@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>業界分析｜高市政権「戦略17分野」航空・宇宙 先行検討技術⑧民間航空機（次期単通路機・次世代航空機）（内部環境編）</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+  :root {
+    --ink: #0f0f0e;
+    --paper: #f5f2ed;
+    --cream: #ede9e1;
+    --accent: #c84b2f;
+    --muted: #6b6760;
+    --rule: #c9c4bb;
+    --highlight: #fff8e6;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.8; }
+
+  .masthead { background: var(--ink); color: var(--paper); padding: 10px 40px; display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; border-bottom: 3px solid var(--accent); }
+  .masthead-right { color: var(--muted); }
+
+  .hero { background: var(--ink); color: var(--paper); padding: 60px 40px 50px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200,75,47,0.07) 4px, rgba(200,75,47,0.07) 5px); }
+  .hero-label { display: inline-block; background: var(--accent); color: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.12em; padding: 4px 10px; margin-bottom: 20px; }
+  .hero h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(20px, 3.2vw, 34px); font-weight: 900; line-height: 1.4; max-width: 820px; letter-spacing: 0.02em; margin-bottom: 24px; }
+  .hero h1 em { color: var(--accent); font-style: normal; }
+  .hero-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 16px; }
+  .hero-badge { border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.75); font-size: 11px; padding: 4px 12px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.06em; }
+  .data-notice { background: rgba(200,75,47,0.15); border-left: 3px solid var(--accent); padding: 10px 16px; margin-top: 24px; font-size: 12px; color: rgba(255,255,255,0.8); font-family: 'IBM Plex Mono', monospace; }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  .toc { background: var(--cream); border-top: 3px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 32px 40px; }
+  .toc h2 { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 16px; text-transform: uppercase; }
+  .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 6px 28px; }
+  .toc-item { font-size: 13px; color: var(--ink); text-decoration: none; padding: 3px 0; border-bottom: 1px dashed var(--rule); display: flex; gap: 8px; }
+  .toc-item:hover { color: var(--accent); }
+  .toc-num { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--accent); flex-shrink: 0; padding-top: 2px; }
+
+  .chapter { padding: 48px 40px; border-bottom: 1px solid var(--rule); }
+  .chapter:nth-child(even) { background: var(--cream); }
+  .chapter-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 28px; }
+  .chapter-num { background: var(--accent); color: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; padding: 4px 10px; flex-shrink: 0; margin-top: 4px; }
+  .chapter h2 { font-family: 'Noto Serif JP', serif; font-size: 22px; font-weight: 700; line-height: 1.4; border-bottom: 2px solid var(--ink); padding-bottom: 10px; flex: 1; }
+  .chapter h3 { font-family: 'Noto Serif JP', serif; font-size: 16px; font-weight: 700; margin: 24px 0 10px; padding-left: 10px; border-left: 3px solid var(--accent); }
+  .chapter p { margin-bottom: 14px; }
+
+  .connect-banner { background: var(--ink); border-left: 5px solid var(--accent); padding: 16px 20px; margin-bottom: 28px; font-size: 13px; color: rgba(245,242,237,0.85); }
+  .connect-banner strong { color: var(--accent); }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 24px 0; }
+  .stat-cell { background: var(--paper); padding: 18px 16px; text-align: center; }
+  .chapter:nth-child(even) .stat-cell { background: #f0ece4; }
+  .stat-cell .stat-num { font-family: 'IBM Plex Mono', monospace; font-size: 22px; font-weight: 600; color: var(--accent); line-height: 1.2; display: block; }
+  .stat-cell .stat-unit { font-size: 12px; color: var(--muted); display: block; margin-top: 2px; }
+  .stat-cell .stat-label { font-size: 11px; color: var(--ink); display: block; margin-top: 6px; font-weight: 700; letter-spacing: 0.04em; }
+
+  .data-box { background: var(--highlight); border: 1px solid #e0d8c4; border-left: 4px solid var(--accent); padding: 20px 24px; margin: 20px 0; }
+  .data-box .box-title { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+  .data-box ul { padding-left: 0; list-style: none; }
+  .data-box ul li { padding: 5px 0 5px 16px; border-bottom: 1px dashed var(--rule); font-size: 13px; position: relative; }
+  .data-box ul li::before { content: '▸'; color: var(--accent); position: absolute; left: 0; font-size: 11px; }
+  .data-box ul li:last-child { border-bottom: none; }
+
+  .note-box { background: rgba(200,75,47,0.05); border: 1px dashed var(--accent); padding: 16px 20px; margin: 20px 0; font-size: 13px; color: var(--muted); }
+  .note-box strong { color: var(--accent); }
+
+  .summary-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+  .summary-table thead tr { background: var(--ink); color: var(--paper); }
+  .summary-table thead th { padding: 10px 14px; text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; }
+  .summary-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .summary-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.03); }
+  .summary-table tbody td { padding: 9px 14px; vertical-align: top; }
+  .summary-table td:first-child { font-weight: 700; color: var(--accent); font-size: 12px; }
+
+  .biz-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 12px; }
+  .biz-table thead tr { background: var(--ink); color: var(--paper); }
+  .biz-table thead th { padding: 8px 12px; text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.06em; }
+  .biz-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .biz-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.03); }
+  .biz-table tbody td { padding: 8px 12px; vertical-align: top; }
+  .biz-table td:first-child { font-weight: 700; }
+  .biz-table .acc { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 11px; }
+
+  .next-box { background: var(--ink); color: var(--paper); padding: 28px 32px; margin: 20px 0; border-left: 5px solid var(--accent); }
+  .next-box .next-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; }
+  .next-box h3 { font-family: 'Noto Serif JP', serif; font-size: 17px; margin-bottom: 12px; border-left: none; padding-left: 0; }
+  .next-box ul { padding-left: 0; list-style: none; }
+  .next-box ul li { padding: 4px 0 4px 14px; font-size: 13px; position: relative; color: rgba(245,242,237,0.85); }
+  .next-box ul li::before { content: '▸'; color: var(--accent); position: absolute; left: 0; font-size: 11px; }
+
+  .source-tag { display: inline-block; background: rgba(0,0,0,0.06); border: 1px solid var(--rule); padding: 3px 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin: 2px 3px; letter-spacing: 0.04em; }
+  .source-wrap { margin-top: 20px; padding-top: 12px; border-top: 1px dashed var(--rule); }
+
+  .disclaimer { background: var(--ink); color: rgba(245,242,237,0.5); padding: 24px 40px; font-size: 11px; line-height: 1.7; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.03em; }
+  .rule-thick { border: none; border-top: 3px solid var(--ink); margin: 0; }
+  .rule-thin { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+  @media (max-width: 600px) {
+    .masthead { flex-direction: column; gap: 6px; padding: 10px 16px; }
+    .hero { padding: 36px 16px 30px; }
+    .chapter { padding: 32px 16px; }
+    .toc { padding: 24px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <span>産業構造分析レポート</span>
+  <span class="masthead-right">2026年03月発行 ── 航空・宇宙／民間航空機（内部環境編）</span>
+</div>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-label">INDUSTRY ANALYSIS REPORT — INTERNAL ENVIRONMENT</div>
+    <h1>業界分析｜高市政権「戦略17分野」<br>航空・宇宙<br>先行検討技術⑧<em>民間航空機</em><br>（次期単通路機・次世代航空機）（内部環境編）</h1>
+    <div class="hero-meta">
+      <span class="hero-badge">就職・転職検討者向け</span>
+      <span class="hero-badge">株式投資家向け</span>
+      <span class="hero-badge">数字と事実のみ記載</span>
+    </div>
+    <div class="data-notice">
+      本レポートのデータ基準時点：2026年03月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thick">
+
+<div class="toc">
+  <div class="container">
+    <h2>目次 — TABLE OF CONTENTS</h2>
+    <div class="toc-grid">
+      <a class="toc-item" href="#ch0"><span class="toc-num">00</span>この内部環境編の立ち位置</a>
+      <a class="toc-item" href="#ch1"><span class="toc-num">01</span>業界内プレイヤー構成</a>
+      <a class="toc-item" href="#ch2"><span class="toc-num">02</span>バリューチェーンと利益の所在</a>
+      <a class="toc-item" href="#ch3"><span class="toc-num">03</span>収益構造の全体像</a>
+      <a class="toc-item" href="#ch4"><span class="toc-num">04</span>主要企業の財務指標概要</a>
+      <a class="toc-item" href="#ch5"><span class="toc-num">05</span>人件費構造と労働集約性</a>
+      <a class="toc-item" href="#ch6"><span class="toc-num">06</span>人材市場の実態（概要）</a>
+      <a class="toc-item" href="#ch7"><span class="toc-num">07</span>現場と本部の非対称性</a>
+      <a class="toc-item" href="#ch8"><span class="toc-num">08</span>構造的に忙しさが増幅する理由</a>
+      <a class="toc-item" href="#ch9"><span class="toc-num">09</span>誤解されやすいポイント</a>
+      <a class="toc-item" href="#ch10"><span class="toc-num">10</span>内部環境の整理</a>
+      <a class="toc-item" href="#ch11"><span class="toc-num">11</span>有料版への橋渡し</a>
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thin">
+
+<!-- CH0 -->
+<div class="chapter" id="ch0">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 00</span>
+      <h2>この内部環境編の立ち位置</h2>
+    </div>
+    <div class="connect-banner">
+      <strong>外部環境編との接続：</strong>外部環境編では、民間航空機世界市場2,112億ドル・今後20年新造機需要4万3,600機（うち単通路機72%）・単通路機受注残1万機（過去最高）・エアバス60〜65%の単通路機シェア・ボーイング2018年以来赤字・NMA開発凍結・日本の2050年目標（6兆円/年・8,000機・エンジンシェア40%）・認証専門人材不足・試験設備老朽化という外部構造を整理しました。本編ではその前提を受け、「外部の構造がこの産業の業態・収益・人材にどのような特性として現れているか」を数字と事実で記述します。
+    </div>
+    <div class="data-box">
+      <div class="box-title">本編でやること／やらないこと</div>
+      <ul>
+        <li>【やること】三菱重工（機体構造Tier1）・川崎重工（機体構造・エンジン）・SUBARU（機体構造）・IHI（エンジン専業型）という業態別の収益構造の差異を、実際の財務数値で記述する</li>
+        <li>【やること】IHIのPW1100G-JMエンジン問題（2024年3月期900億円赤字）という重大な内部リスク事例の構造を示す</li>
+        <li>【やること】「機体構造Tier1（機体製造型）」vs「エンジンリカーリング型」という2つの収益モデルの構造的差異を数値で示す</li>
+        <li>【やること】航空機設計エンジニア・エンジン技術者・認証専門家という人材市場の実態を整理する</li>
+        <li>【やらないこと】特定銘柄の投資推奨・勝ち負けの断定・良し悪しの評価</li>
+      </ul>
+    </div>
+    <div class="source-wrap"><span class="source-tag">本レポート基本方針</span></div>
+  </div>
+</div>
+
+<!-- CH1 -->
+<div class="chapter" id="ch1">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 01</span>
+      <h2>業界内プレイヤー構成</h2>
+    </div>
+
+    <h3>日本の民間航空機産業の主要プレイヤー4業態</h3>
+    <table class="biz-table">
+      <thead>
+        <tr>
+          <th>業態</th>
+          <th>主な役割</th>
+          <th>代表プレイヤー</th>
+          <th>収益の性格</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>機体構造<br>Tier1サプライヤー</td>
+          <td>ボーイング等の海外OEMの機体構造（主翼・胴体・尾翼等）の設計・製造をTier1として担当。B787での35%担当が最大の実績。</td>
+          <td class="acc">三菱重工業（787主翼）、川崎重工業（787前胴等）、SUBARU（787中央翼ボックス等）</td>
+          <td>機体製造型フロー収益。OEMの生産レートに直結。コロナ禍・ストライキ・品質問題等でOEMが減産すると即座に影響を受ける構造。</td>
+        </tr>
+        <tr>
+          <td>航空機エンジン<br>国際共同開発参画</td>
+          <td>GE・P&W・RRなどの世界大手エンジンメーカーの国際共同開発プログラムにワークシェアで参画。スペアパーツ・MROによるリカーリング収益が特徴。</td>
+          <td class="acc">IHI（GTF/PW1100G-JMで約15%、GE90/GEnxで約13%）、三菱重工航空エンジン、川崎重工業</td>
+          <td>エンジンリカーリング型。新造エンジンの製造収益に加え、稼働中エンジンのスペアパーツ・修理整備（MRO）で長期リカーリング収益が発生。機体製造型より景気変動の影響を受けにくい構造。</td>
+        </tr>
+        <tr>
+          <td>航空機部品・<br>内装品メーカー</td>
+          <td>シート・ギャレー・窓枠・ドア等の内装品、各種航空機部品の製造。欧米大手装備品メーカーの下で一定の地位を持つ。</td>
+          <td class="acc">ジャムコ（内装品・Tier1）、日本エヤークラフトサプライ等の中堅・中小メーカー</td>
+          <td>Tier2〜3の中小企業が多く、発注元OEMの生産計画変動に直接影響される。コロナ禍では経営悪化・人材流出が顕著だった。</td>
+        </tr>
+        <tr>
+          <td>素材・部素材<br>メーカー</td>
+          <td>炭素繊維複合材・チタン・アルミ合金等の素材供給。航空機の軽量化・高強度化の基盤技術を担う。</td>
+          <td class="acc">東レ（炭素繊維）、東邦テナックス（炭素繊維）、三菱ケミカルグループ等</td>
+          <td>素材のサプライチェーン上流に位置。航空機分野向け長期供給契約型収益。東レはB787向け炭素繊維の主要サプライヤーとして長期契約を有する。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note-box">
+      <strong>【重要注記】</strong>三菱重工・川崎重工・IHIの「航空・防衛・宇宙」等のセグメント数値は、民間航空機のみを切り出した数値ではなく、防衛・宇宙等を含むセグメント全体の数値です。民間航空機事業単体の財務開示は限定的です。
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">経済産業省「我が国航空機産業の今後の方向性について」（2024年3月）</span>
+      <span class="source-tag">IHI GTF Advantage型式承認取得プレスリリース（2025年4月）</span>
+      <span class="source-tag">日刊工業新聞「787機体の減産解除」（2024年7月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH2 -->
+<div class="chapter" id="ch2">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 02</span>
+      <h2>バリューチェーンと利益の所在</h2>
+    </div>
+
+    <h3>「機体製造型」vs「エンジンリカーリング型」——収益モデルの構造的差異</h3>
+    <p>日本の民間航空機産業の収益構造を理解する上で最も重要なのは、「機体構造Tier1（機体製造型）」と「エンジン国際共同開発（リカーリング型）」という2つの収益モデルの構造的差異です。</p>
+    <div class="data-box">
+      <div class="box-title">2つの収益モデルの比較</div>
+      <ul>
+        <li>【機体製造型（三菱重工・川崎重工・SUBARU）】機体1機につきいくらという「フロー収益」が基本。OEMの生産レートが上がれば収益増、下がれば収益減という直接連動型。ボーイングの品質問題・ストライキ・COVID-19による生産停止が即座に日本側の受注・売上に影響。先行投資（設備・工具・人員）は必要だが、アフターサービス収益は限定的。</li>
+        <li>【エンジンリカーリング型（IHI中心）】新造エンジン製造収益に加え、世界中で稼働中のエンジンのスペアパーツ販売・修理整備（MRO）によるリカーリング収益が中長期で積み上がる。一度エンジンプログラムに参画すればそのエンジンの全運用期間（20〜30年）にわたり収益が続く。機体製造型に比べて景気変動の影響を受けにくい安定型ビジネスモデル。ただしプログラムリスク（不具合発生時の巨額損失）が内在する。</li>
+      </ul>
+    </div>
+    <p>ダイヤモンド・オンライン（2024年12月）は「重工3社では規模で劣るIHIのビジネスモデルの優位性が高い」と分析しており、エンジンリカーリング型の収益安定性が評価されています。ただしIHIはPW1100G-JMエンジンのプログラムリスクが2024年3月期に顕在化し、過去最大の900億円赤字を計上した先例があります（後述）。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">ダイヤモンド・オンライン「重工3社の航空機ビジネス」（2024年12月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH3 -->
+<div class="chapter" id="ch3">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 03</span>
+      <h2>収益構造の全体像</h2>
+    </div>
+
+    <h3>業態別 収益構造の特性</h3>
+    <div class="data-box">
+      <div class="box-title">業態別 収益構造の特性（2026年3月時点）</div>
+      <ul>
+        <li>【三菱重工（機体Tier1中心）】B787主翼・胴体が主力事業。2025年度から737・787の生産が本格回復し「前年度対比で着実に売上収益を上積みできる」と同社執行役員が発言（航空新聞社・2026年）。向こう3年で増産に伴う売上増を見込む。777Xの型式証明取得（2027年納入目標）が次の成長ドライバー。民間機事業の事業利益は493億円（2024年度・三菱重工決算資料）。ただしこれは防衛・宇宙を含む「航空・防衛・宇宙」セグメントの数値ではなく、三菱重工社内の民間機セグメントの事業利益。</li>
+        <li>【川崎重工（機体Tier1・エンジン）】B787前胴等の機体構造とエンジン部品の双方に参画。787増産基調への転換とともに生産能力を月産8機に引き上げ。「増産を待っている状況」（同社専務執行役員・2024年7月）。</li>
+        <li>【SUBARU（機体Tier1）】B787中央翼ボックスを担当。「長い目で見れば需要が伸びるのは間違いない」として自動化・生産効率化を推進中（同社執行役員・2024年7月）。</li>
+        <li>【IHI（エンジンリカーリング型）】A320neoファミリー搭載PW1100G-JMエンジンにプログラムシェア約15%（国内シェア65%）で参画。2025年3月期は民間エンジン事業・防衛事業が大きく成長し「受注高・売上収益・営業利益・当期利益すべてにおいて過去最高を達成」（IHI決算説明資料・2025年5月）。2025年3月期純利益：850億円の黒字（前期682億円赤字から黒字回復）。ただしPW1100G-JMプログラムの追加検査費用・補償費用は2024年以降数年間で発生し続ける見込みであり、引き続きリスクとして管理中。</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">航空新聞社「三菱重工民間機事業、ボーイング生産量回復で収益拡大」（2026年）</span>
+      <span class="source-tag">IHI 2024年度（2025年3月期）決算説明資料（2025年5月）</span>
+      <span class="source-tag">日刊工業新聞「787機体の減産解除」（2024年7月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH4 -->
+<div class="chapter" id="ch4">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 04</span>
+      <h2>主要企業の財務指標概要</h2>
+    </div>
+
+    <h3>IHI PW1100G-JMエンジン問題——プログラムリスクの顕在化</h3>
+    <p>IHIが参画するプラット・アンド・ホイットニー製PW1100G-JMエンジン（A320neoファミリー搭載）で、2023年に高温部品の品質問題による大規模な追加検査・修理が必要になりました。IHIは同プログラムへの参画比率（約15%）に応じた追加整備費用・補償費用として、2024年3月期に約1,600億円を費用計上し、最終損益が**900億円の赤字**（同社過去最大）となりました（日本経済新聞・2023年10月）。「航空エンジン事業はIHIの最大の稼ぎ頭。当時は会社が傾くかもしれないと思った」という社員コメントが報じられています（東洋経済オンライン・2023年12月）。</p>
+    <p>その後IHIは回復基調に転じ、2025年3月期は純利益**850億円の黒字**を達成しました（IHI決算・2025年5月）。ただしPW1100G-JM追加検査プログラムの影響（2024〜2026年の期間に平均350機の地上駐機が見込まれる）は継続中であり、引き続き監視対象です。</p>
+
+    <h3>主要企業の財務指標サマリー（2024〜2025年3月期）</h3>
+    <div class="note-box">
+      <strong>【注記】</strong>下表の数値は各社の「航空・防衛・宇宙」等のセグメント全体または全社の数値を含みます。民間航空機事業単体の財務開示は限定的です。会計基準（IFRS）に基づきます。
+    </div>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>企業</th>
+          <th>指標</th>
+          <th>数値</th>
+          <th>出典・時点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>三菱重工業</td>
+          <td>民間機セグメント 事業利益</td>
+          <td>493億円（2024年度）</td>
+          <td>三菱重工決算資料 2025年5月</td>
+        </tr>
+        <tr>
+          <td>三菱重工業</td>
+          <td>787主翼 生産能力（月産）</td>
+          <td>7機（増強後）</td>
+          <td>日刊工業新聞 2024年7月</td>
+        </tr>
+        <tr>
+          <td>川崎重工業</td>
+          <td>787前胴等 生産能力（月産）</td>
+          <td>8機（増強後）</td>
+          <td>同上</td>
+        </tr>
+        <tr>
+          <td>IHI</td>
+          <td>2024年3月期 最終損益</td>
+          <td>▲900億円（過去最大赤字）</td>
+          <td>日本経済新聞 2023年10月</td>
+        </tr>
+        <tr>
+          <td>IHI</td>
+          <td>2025年3月期 最終損益</td>
+          <td>+850億円（黒字回復・過去最高）</td>
+          <td>IHI決算 2025年5月</td>
+        </tr>
+        <tr>
+          <td>IHI</td>
+          <td>PW1100G-JMプログラム参画比率</td>
+          <td>約15%（国内シェア65%）</td>
+          <td>IHIプレスリリース 2025年4月</td>
+        </tr>
+        <tr>
+          <td>IHI</td>
+          <td>GTF Advantage 型式承認取得</td>
+          <td>2025年2月27日（FAA）</td>
+          <td>同上</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">493</span>
+        <span class="stat-unit">億円</span>
+        <span class="stat-label">三菱重工 民間機 事業利益<br>（2024年度）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">▲900</span>
+        <span class="stat-unit">億円</span>
+        <span class="stat-label">IHI 2024年3月期 最終損益<br>（過去最大赤字・PW1100G問題）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">+850</span>
+        <span class="stat-unit">億円</span>
+        <span class="stat-label">IHI 2025年3月期 最終損益<br>（過去最高・黒字回復）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">約15%</span>
+        <span class="stat-unit"></span>
+        <span class="stat-label">IHIのPW1100G-JM<br>プログラム参画比率</span>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">三菱重工業 2024年度第4四半期 決算説明資料（2025年5月）</span>
+      <span class="source-tag">IHI 2024年度（2025年3月期）決算説明資料（2025年5月）</span>
+      <span class="source-tag">東洋経済オンライン「IHIの過去最大赤字を招いた割に合わない契約」（2023年12月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH5 -->
+<div class="chapter" id="ch5">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 05</span>
+      <h2>人件費構造と労働集約性</h2>
+    </div>
+
+    <h3>航空機産業の人件費構造</h3>
+    <p>日本の航空機産業は「航空機専業ではなく、多数の事業のうちの1つとして民間航空機事業を実施する」企業が主要プレイヤーであることが特徴です（経済産業省・2024年3月）。三菱重工・川崎重工・IHI・SUBARUはいずれも多角経営企業であり、航空機事業部門の人件費は全社の人件費構造の一部として管理されています。</p>
+    <p>航空機産業の労働集約性は、機体製造型とエンジン型で異なります。機体製造（787主翼・胴体等）は高精度の複合材加工・組み立てを伴う製造業であり、熟練技能者・技術者が多く必要です。エンジン事業はスペアパーツ管理・MRO（修理整備）の比重が高く、エンジン技術に特化した専門職が必要です。</p>
+
+    <h3>コロナ禍での人材流出という構造的傷痕</h3>
+    <p>2021年のコロナ禍での生産額大幅減少（9,500億円）は、航空機サプライヤー各社において経営悪化・受注減少・人材流出という三重の打撃をもたらしました（経済産業省・2024年3月）。熟練技能者の流出は短期では回復せず、生産再開時の採用・育成コストとして現在も影響が残っています。三菱重工・川崎重工とも787増産基調での人材採用を進めていますが、熟練技能者の確保が課題として残っています。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">経済産業省「我が国航空機産業の今後の方向性について」（2024年3月）</span>
+      <span class="source-tag">日刊工業新聞「787機体の減産解除」（2024年7月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH6 -->
+<div class="chapter" id="ch6">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 06</span>
+      <h2>人材市場の実態（概要）</h2>
+    </div>
+
+    <h3>航空機産業の主要職種と年収水準</h3>
+    <div class="data-box">
+      <div class="box-title">民間航空機関連 主要職種（5職種）</div>
+      <ul>
+        <li>【航空機設計・開発エンジニア】機体の構造設計・エンジン設計・システム設計・解析（熱・空力・強度・振動）等を担う。航空工学・機械工学・電気工学の学位保有者が多い。大手航空機メーカーや航空宇宙関連企業での年収は一般的に**600万〜1,500万円程度**（JOBOON調査・2024年）。Indeed調査では航空エンジニアの月給平均が約37.5万円（年収約450万円）という幅広い数値もある（Indeed・2025年）。専門性・経験・企業規模により大きく異なる。</li>
+        <li>【認証専門家（型式証明・耐空証明）】FAA・EASA・JCAB等の航空当局との認証プロセスを担う職種。日本成長戦略会議 第3回 資料2（2026年3月）が「安全認証に対応する専門人材不足」と明示するほど希少。国内では三菱重工等の大手に集中しており、MRJプログラムでの認証経験者が貴重な知見を持つ。大手メーカー勤務の場合、航空機設計エンジニア同等以上の処遇が多い。</li>
+        <li>【エンジン技術者（MRO含む）】エンジンの設計・製造・スペアパーツ管理・修理整備（MRO）を担う。IHI・三菱重工航空エンジン・川崎重工が主な雇用先。エンジン整備士は国家資格（航空整備士）取得者が多い。三菱重工MRO部門では熟練整備士がエンジン整備のスペシャリストとして活躍。</li>
+        <li>【複合材技術者（炭素繊維複合材）】CFRP（炭素繊維強化プラスチック）等の複合材の設計・成形・品質保証を担う。B787での大量採用以来、日本企業の強みとなっている分野。東レ・三菱重工・川崎重工等に集中。</li>
+        <li>【生産技術・品質管理職】機体構造製造での高精度加工・自動化・品質保証を担う職種。三菱重工の江波工場M-PALライン（自動組立ライン）のような先進設備の運用人材が求められる。</li>
+      </ul>
+    </div>
+
+    <div class="note-box">
+      <strong>【注記】</strong>航空機エンジニアの年収は勤務先・専門性・職種・経験によって大きく異なります。大手航空機メーカー勤務（三菱重工・IHI等）の専門職と、アウトソーシング企業経由のエンジニア派遣では処遇水準が異なります。600万〜1,500万円という数値は大手メーカー勤務の場合の目安であり、全体平均ではありません。
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">600〜1,500</span>
+        <span class="stat-unit">万円</span>
+        <span class="stat-label">航空機エンジニア年収<br>（大手航空機メーカー・JOBOON 2024年）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">約450</span>
+        <span class="stat-unit">万円/年</span>
+        <span class="stat-label">航空エンジニア月給平均から換算<br>（Indeed・2025年・幅広い業態含む）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">希少</span>
+        <span class="stat-unit"></span>
+        <span class="stat-label">認証専門家（FAA/EASA対応）<br>資料2に「人材不足」と明記</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">300万</span>
+        <span class="stat-unit">点</span>
+        <span class="stat-label">航空機の部品点数<br>（幅広い職種需要の背景）</span>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">JOBOON「航空機エンジニアの仕事内容・年収」（2024年）</span>
+      <span class="source-tag">Indeed「日本での航空エンジニアの給与」（2025年）</span>
+      <span class="source-tag">日本成長戦略会議 第3回 資料2（2026年3月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH7 -->
+<div class="chapter" id="ch7">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 07</span>
+      <h2>現場と本部の非対称性</h2>
+    </div>
+
+    <h3>海外OEM依存という構造的従属性</h3>
+    <p>日本の機体構造Tier1企業（三菱重工・川崎重工・SUBARU）の民間航空機事業は、最終的な設計・型式証明・販売・アフターサービスをすべてボーイング（またはエアバス）が担っており、日本企業は「決められた仕様に従って製造する」役割に限定されています。このため現場技術者は品質・納期・コスト削減のプレッシャーを受けながらも、仕様変更・プログラム開始・製造レートの決定権を持ちません。</p>
+    <p>経済産業省（2024年3月）は「単通路機市場への参画は限定的」「仕様設計・認証等の上流工程への参画が課題」として、この構造的従属性を明示しています。三菱重工の787民間機セグメント幹部も「ボーイングの増産を待っている状況」（2024年）と述べており、主導権がOEM側にある構造が確認できます。</p>
+
+    <h3>エンジンプログラムリスクの内在（IHI事例）</h3>
+    <p>エンジンリカーリング型ビジネスモデルはリスク・リワード構造が機体製造型と異なります。長期・安定的なリカーリング収益が期待できる反面、エンジンプログラムで不具合が発生した場合は参画比率に応じて巨額の損失を応分負担しなければならないというプログラムリスクを内在しています。IHIのPW1100G-JM問題（2024年3月期900億円赤字）はこのリスクが顕在化した事例であり、「プログラムに深く参画することと、プログラムリスクを抱えることは表裏一体」という産業構造の実態を示しています。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">経済産業省「我が国航空機産業の今後の方向性について」（2024年3月）</span>
+      <span class="source-tag">航空新聞社「三菱重工民間機事業」（2026年）</span>
+      <span class="source-tag">東洋経済オンライン「IHIの過去最大赤字を招いた割に合わない契約」（2023年12月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH8 -->
+<div class="chapter" id="ch8">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 08</span>
+      <h2>構造的に忙しさが増幅する理由</h2>
+    </div>
+
+    <h3>787増産基調と人材確保の同時進行</h3>
+    <p>2025年度から787・737の生産が本格回復基調に入ったため、三菱重工・川崎重工等は増産対応のための採用・育成と生産能力増強を同時に進める必要があります。コロナ禍での人材流出後の回復期であるため、熟練技能者の確保が特に困難な状況にあります。777Xの型式証明取得（2027年納入目標）に向けた量産準備も並行して必要であり、複数の大型プログラムへの同時対応が求められます。</p>
+
+    <h3>IHIのPW1100G-JM対応という継続的負荷</h3>
+    <p>IHIはPW1100G-JMエンジン追加検査プログラムの対応（2024〜2026年に平均350機/年の地上駐機への補償・追加整備）を通常業務と並行して続けています。サプライチェーンの部品供給遅延が整備の遅れをさらに複雑にしており、担当部門への業務集中が発生しています。同時に新エンジンGTF Advantageの量産立ち上げ（2025年後半から納入開始）・次期戦闘機（GCAP）用エンジンの国際共同開発という新規プログラムへの対応も求められています。</p>
+
+    <h3>認証人材不足という構造的ボトルネック</h3>
+    <p>日本成長戦略会議 第3回 資料2（2026年3月）が「認証専門人材不足」を主要課題として明示している通り、FAA・EASA対応の認証専門家は国内で慢性的に不足しています。三菱スペースジェット（MRJ）の開発中止（2023年2月・三菱航空機清算）により蓄積された認証ノウハウの一部が失われた点も、業界全体の認証能力の課題として残っています。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">IHI 2024年度決算説明資料（2025年5月）</span>
+      <span class="source-tag">日本成長戦略会議 第3回 資料2（2026年3月）</span>
+      <span class="source-tag">航空新聞社「三菱重工民間機事業」（2026年）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH9 -->
+<div class="chapter" id="ch9">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 09</span>
+      <h2>誤解されやすいポイント</h2>
+    </div>
+    <div class="data-box">
+      <div class="box-title">誤解されやすいポイント（5点）</div>
+      <ul>
+        <li>【「B787の35%を担っているから日本は強い」】機体製造の35%というのは「決められた仕様通りに製造する」Tier1の役割であり、仕様設計・型式証明・顧客への販売・アフターサービスはすべてボーイングが担っています。この「製造はできるが設計・認証ができない」というのが日本の産業構造上の課題として政策文書に明記されています。</li>
+        <li>【「IHIのエンジン事業は安定している」】リカーリング型の安定性は本来の強みですが、PW1100G-JMの不具合（2024年3月期900億円赤字）が示す通り、プログラムリスクは常に内在します。一つのプログラムへの深い参画は「長期安定収益」と「プログラムリスク」の両面を意味します。</li>
+        <li>【「787の増産が続けばずっと好調」】ボーイングの生産レートは品質問題・労使交渉・需要変動によって変化します。三菱重工幹部自身が「ボーイングよりコンサバに見ている」（2024年）と述べており、OEM依存型の収益は安定性に限界があります。</li>
+        <li>【「認証さえとれれば単通路機に参画できる」】認証取得には人材育成・試験設備整備・FAA/EASAとの関係構築に長期間を要します。MRJの開発中止という先例が示す通り、認証プロセスは「コスト・時間・技術の三重の難関」であり、参画するだけで済む問題ではありません。</li>
+        <li>【「次世代機開発があれば必ず日本に参画機会がある」】ボーイングが次世代機を開発しなければ参画機会は生まれません。NMA凍結（2020年）という先例があり、次世代機開発の意思決定は日本企業が関与できない領域です。</li>
+      </ul>
+    </div>
+    <div class="source-wrap">
+      <span class="source-tag">本レポート第1〜8章の総括</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH10 -->
+<div class="chapter" id="ch10">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 10</span>
+      <h2>内部環境の整理</h2>
+    </div>
+    <h3>数値サマリー</h3>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>章</th>
+          <th>指標名</th>
+          <th>数値</th>
+          <th>出典・時点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>第4章</td>
+          <td>三菱重工 民間機 事業利益</td>
+          <td>493億円（2024年度）</td>
+          <td>三菱重工決算資料 2025年5月</td>
+        </tr>
+        <tr>
+          <td>第4章</td>
+          <td>三菱重工 787主翼生産能力</td>
+          <td>月産7機（増強後）</td>
+          <td>日刊工業新聞 2024年7月</td>
+        </tr>
+        <tr>
+          <td>第4章</td>
+          <td>IHI PW1100G-JM参画比率</td>
+          <td>約15%（国内シェア65%）</td>
+          <td>IHI 2025年4月</td>
+        </tr>
+        <tr>
+          <td>第4章</td>
+          <td>IHI 2024年3月期 最終損益</td>
+          <td>▲900億円（過去最大赤字）</td>
+          <td>日本経済新聞 2023年10月</td>
+        </tr>
+        <tr>
+          <td>第4章</td>
+          <td>IHI 2025年3月期 最終損益</td>
+          <td>+850億円（過去最高・黒字回復）</td>
+          <td>IHI決算 2025年5月</td>
+        </tr>
+        <tr>
+          <td>第6章</td>
+          <td>航空機エンジニア年収（大手）</td>
+          <td>600〜1,500万円程度</td>
+          <td>JOBOON 2024年</td>
+        </tr>
+        <tr>
+          <td>第6章</td>
+          <td>航空エンジニア月給平均</td>
+          <td>約37.5万円/月（年収換算約450万円）</td>
+          <td>Indeed 2025年</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>構造的に固定されやすい要素</h3>
+    <div class="data-box">
+      <div class="box-title">構造的に固定されやすい要素</div>
+      <ul>
+        <li>三菱重工・川崎重工・SUBARUが機体製造Tier1として、IHIがエンジンリカーリング型として確立した役割分担は、新規プログラム参画が確定するまで変化しない</li>
+        <li>機体製造型収益がボーイングの生産レートに連動するという構造的従属性は、日本が設計・認証の上流工程を担わない限り変化しない</li>
+        <li>エンジンリカーリング型にプログラムリスクが内在するという構造は、参画契約の性質上変わらない</li>
+        <li>コロナ禍での人材流出後の熟練技能者回復には時間を要し、短期での解消は困難</li>
+        <li>認証専門人材の慢性不足は、育成に長期間を要するため短期解消されない</li>
+        <li>単通路機・エアバス機への参画が限定的という構造は、新規プログラムへの参画確定まで続く</li>
+      </ul>
+    </div>
+    <div class="source-wrap"><span class="source-tag">本レポート第1〜9章の集約</span></div>
+  </div>
+</div>
+
+<!-- CH11 -->
+<div class="chapter" id="ch11">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 11</span>
+      <h2>有料版への橋渡し</h2>
+    </div>
+    <div class="next-box">
+      <div class="next-label">FOR CAREER — 就活・転職向け有料版</div>
+      <h3>機体製造型・エンジン型・認証専門家、どの職種・企業に入るか</h3>
+      <ul>
+        <li>三菱重工・川崎重工・SUBARU（機体Tier1）vs IHI（エンジンリカーリング型）の処遇・キャリアパス・業務の性格の具体的比較</li>
+        <li>認証専門家（FAA・EASA対応）という希少職種への入り方・育成ルート・処遇水準の実態</li>
+        <li>MRJプログラム解散後の認証経験者が今どこにいるか——転職市場での希少性の実態</li>
+        <li>エンジン技術者・複合材技術者・生産技術者という職種別の詳細年収レンジとスキル要件</li>
+        <li>「単通路機上流参画」という政策目標が実現した場合に、どの業態・職種に最初にポジションが生まれるか</li>
+      </ul>
+    </div>
+    <div class="next-box">
+      <div class="next-label">FOR INVESTMENT — 投資判断向け有料版</div>
+      <h3>787増産回復・777X・次世代機という3つのドライバーの時間軸</h3>
+      <ul>
+        <li>787増産（2025〜2027年）・777X型式証明取得（2027年目標）・次世代機（不確定）という3段階のドライバーが三菱重工・川崎重工・SUBARUの民間航空機収益にどう影響するかの時間軸整理</li>
+        <li>IHIのPW1100G-JM追加検査プログラム（2024〜2026年期間の継続影響）とGTF Advantage量産立ち上げの財務インパクト</li>
+        <li>エンジンリカーリング型（IHI）と機体製造型（三菱重工・川崎重工）の収益安定性の構造的差異を数値で読む方法</li>
+        <li>「単通路機上流参画」という政策目標が実現した場合の各社の財務インパクトの推計方法</li>
+        <li>ボーイングの次世代機開発動向が日本企業の中長期収益にどう連動するかのモニタリング指標</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  <div class="container">
+    <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。掲載データは各記載出典に基づきますが、数値の正確性・完全性を保証するものではありません。投資判断は自己責任において行ってください。航空機産業のセグメント財務数値は民間航空機事業単体ではなく、より広いセグメント全体の数値を含む場合があります。年収データは業種・専門性・雇用形態によって大きく異なります。データ基準時点は2026年03月です。</p>
+    <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年03月 産業構造分析レポート ── 民間航空機（次期単通路機・次世代航空機）（内部環境編）</p>
+    <p style="margin-top:8px;">
+      <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
