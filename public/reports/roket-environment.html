@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>業界分析｜高市政権「戦略17分野」航空・宇宙 先行検討技術⑨ロケット・射場（外部環境編）</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+  :root {
+    --ink: #0f0f0e;
+    --paper: #f5f2ed;
+    --cream: #ede9e1;
+    --accent: #c84b2f;
+    --muted: #6b6760;
+    --rule: #c9c4bb;
+    --highlight: #fff8e6;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.8; }
+
+  .masthead { background: var(--ink); color: var(--paper); padding: 10px 40px; display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; border-bottom: 3px solid var(--accent); }
+  .masthead-right { color: var(--muted); }
+
+  .hero { background: var(--ink); color: var(--paper); padding: 60px 40px 50px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200,75,47,0.07) 4px, rgba(200,75,47,0.07) 5px); }
+  .hero-label { display: inline-block; background: var(--accent); color: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.12em; padding: 4px 10px; margin-bottom: 20px; }
+  .hero h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(20px, 3.2vw, 34px); font-weight: 900; line-height: 1.4; max-width: 820px; letter-spacing: 0.02em; margin-bottom: 24px; }
+  .hero h1 em { color: var(--accent); font-style: normal; }
+  .hero-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 16px; }
+  .hero-badge { border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.75); font-size: 11px; padding: 4px 12px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.06em; }
+  .data-notice { background: rgba(200,75,47,0.15); border-left: 3px solid var(--accent); padding: 10px 16px; margin-top: 24px; font-size: 12px; color: rgba(255,255,255,0.8); font-family: 'IBM Plex Mono', monospace; }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  .toc { background: var(--cream); border-top: 3px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 32px 40px; }
+  .toc h2 { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 16px; text-transform: uppercase; }
+  .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 6px 28px; }
+  .toc-item { font-size: 13px; color: var(--ink); text-decoration: none; padding: 3px 0; border-bottom: 1px dashed var(--rule); display: flex; gap: 8px; }
+  .toc-item:hover { color: var(--accent); }
+  .toc-num { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--accent); flex-shrink: 0; padding-top: 2px; }
+
+  .chapter { padding: 48px 40px; border-bottom: 1px solid var(--rule); }
+  .chapter:nth-child(even) { background: var(--cream); }
+  .chapter-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 28px; }
+  .chapter-num { background: var(--accent); color: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; padding: 4px 10px; flex-shrink: 0; margin-top: 4px; }
+  .chapter h2 { font-family: 'Noto Serif JP', serif; font-size: 22px; font-weight: 700; line-height: 1.4; border-bottom: 2px solid var(--ink); padding-bottom: 10px; flex: 1; }
+  .chapter h3 { font-family: 'Noto Serif JP', serif; font-size: 16px; font-weight: 700; margin: 24px 0 10px; padding-left: 10px; border-left: 3px solid var(--accent); }
+  .chapter p { margin-bottom: 14px; }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 24px 0; }
+  .stat-cell { background: var(--paper); padding: 18px 16px; text-align: center; }
+  .chapter:nth-child(even) .stat-cell { background: #f0ece4; }
+  .stat-cell .stat-num { font-family: 'IBM Plex Mono', monospace; font-size: 22px; font-weight: 600; color: var(--accent); line-height: 1.2; display: block; }
+  .stat-cell .stat-unit { font-size: 12px; color: var(--muted); display: block; margin-top: 2px; }
+  .stat-cell .stat-label { font-size: 11px; color: var(--ink); display: block; margin-top: 6px; font-weight: 700; letter-spacing: 0.04em; }
+
+  .data-box { background: var(--highlight); border: 1px solid #e0d8c4; border-left: 4px solid var(--accent); padding: 20px 24px; margin: 20px 0; }
+  .data-box .box-title { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+  .data-box ul { padding-left: 0; list-style: none; }
+  .data-box ul li { padding: 5px 0 5px 16px; border-bottom: 1px dashed var(--rule); font-size: 13px; position: relative; }
+  .data-box ul li::before { content: '▸'; color: var(--accent); position: absolute; left: 0; font-size: 11px; }
+  .data-box ul li:last-child { border-bottom: none; }
+
+  .note-box { background: rgba(200,75,47,0.05); border: 1px dashed var(--accent); padding: 16px 20px; margin: 20px 0; font-size: 13px; color: var(--muted); }
+  .note-box strong { color: var(--accent); }
+
+  .summary-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+  .summary-table thead tr { background: var(--ink); color: var(--paper); }
+  .summary-table thead th { padding: 10px 14px; text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; }
+  .summary-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .summary-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.03); }
+  .summary-table tbody td { padding: 9px 14px; vertical-align: top; }
+  .summary-table td:first-child { font-weight: 700; color: var(--accent); font-size: 12px; }
+
+  .timeline { margin: 20px 0; }
+  .timeline-item { display: flex; gap: 16px; padding: 12px 0; border-bottom: 1px dashed var(--rule); font-size: 13px; }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-year { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--accent); font-weight: 600; flex-shrink: 0; width: 120px; padding-top: 2px; }
+  .timeline-text { flex: 1; }
+
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 20px 0; }
+  .compare-cell { background: var(--paper); padding: 16px 18px; font-size: 13px; }
+  .chapter:nth-child(even) .compare-cell { background: #f0ece4; }
+  .compare-cell .cell-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 8px; display: block; }
+
+  .rocket-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 12px; }
+  .rocket-table thead tr { background: var(--ink); color: var(--paper); }
+  .rocket-table thead th { padding: 8px 12px; text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.06em; }
+  .rocket-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .rocket-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.03); }
+  .rocket-table tbody td { padding: 8px 12px; vertical-align: top; font-size: 12px; }
+  .rocket-table td:first-child { font-weight: 700; }
+  .rocket-table .acc { color: var(--accent); font-family: 'IBM Plex Mono', monospace; }
+
+  .next-box { background: var(--ink); color: var(--paper); padding: 28px 32px; margin: 20px 0; border-left: 5px solid var(--accent); }
+  .next-box .next-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; }
+  .next-box h3 { font-family: 'Noto Serif JP', serif; font-size: 17px; margin-bottom: 12px; border-left: none; padding-left: 0; }
+  .next-box ul { padding-left: 0; list-style: none; }
+  .next-box ul li { padding: 4px 0 4px 14px; font-size: 13px; position: relative; color: rgba(245,242,237,0.85); }
+  .next-box ul li::before { content: '▸'; color: var(--accent); position: absolute; left: 0; font-size: 11px; }
+
+  .source-tag { display: inline-block; background: rgba(0,0,0,0.06); border: 1px solid var(--rule); padding: 3px 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin: 2px 3px; letter-spacing: 0.04em; }
+  .source-wrap { margin-top: 20px; padding-top: 12px; border-top: 1px dashed var(--rule); }
+
+  .disclaimer { background: var(--ink); color: rgba(245,242,237,0.5); padding: 24px 40px; font-size: 11px; line-height: 1.7; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.03em; }
+  .rule-thick { border: none; border-top: 3px solid var(--ink); margin: 0; }
+  .rule-thin { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+  @media (max-width: 600px) {
+    .masthead { flex-direction: column; gap: 6px; padding: 10px 16px; }
+    .hero { padding: 36px 16px 30px; }
+    .chapter { padding: 32px 16px; }
+    .toc { padding: 24px 16px; }
+    .compare-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <span>産業構造分析レポート</span>
+  <span class="masthead-right">2026年03月発行 ── 航空・宇宙／ロケット・射場（外部環境編）</span>
+</div>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-label">INDUSTRY ANALYSIS REPORT — EXTERNAL ENVIRONMENT</div>
+    <h1>業界分析｜高市政権「戦略17分野」<br>航空・宇宙<br>先行検討技術⑨<em>ロケット・射場</em>（外部環境編）</h1>
+    <div class="hero-meta">
+      <span class="hero-badge">就職・転職検討者向け</span>
+      <span class="hero-badge">株式投資家向け</span>
+      <span class="hero-badge">数字と事実のみ記載</span>
+    </div>
+    <div class="data-notice">
+      本レポートのデータ基準時点：2026年03月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thick">
+
+<div class="toc">
+  <div class="container">
+    <h2>目次 — TABLE OF CONTENTS</h2>
+    <div class="toc-grid">
+      <a class="toc-item" href="#ch0"><span class="toc-num">00</span>このレポートの目的と読み方</a>
+      <a class="toc-item" href="#ch1"><span class="toc-num">01</span>市場規模と成長率</a>
+      <a class="toc-item" href="#ch2"><span class="toc-num">02</span>制度・政策の枠組み</a>
+      <a class="toc-item" href="#ch3"><span class="toc-num">03</span>経済的前提条件</a>
+      <a class="toc-item" href="#ch4"><span class="toc-num">04</span>社会・安全保障との連関</a>
+      <a class="toc-item" href="#ch5"><span class="toc-num">05</span>技術・DXの位置づけ</a>
+      <a class="toc-item" href="#ch6"><span class="toc-num">06</span>参入・撤退の条件</a>
+      <a class="toc-item" href="#ch7"><span class="toc-num">07</span>経済安全保障との接続</a>
+      <a class="toc-item" href="#ch8"><span class="toc-num">08</span>外部環境の整理</a>
+      <a class="toc-item" href="#ch9"><span class="toc-num">09</span>内部環境編への橋渡し</a>
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thin">
+
+<!-- CH0 -->
+<div class="chapter" id="ch0">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 00</span>
+      <h2>このレポートの目的と読み方</h2>
+    </div>
+    <p>本レポートは、高市政権「戦略17分野」航空・宇宙の先行検討技術⑨「ロケット・射場」の外部環境を、就職・転職検討者および株式投資家向けに数字と事実のみで記述します。所管は内閣府（経済安全保障）です。</p>
+    <div class="data-box">
+      <div class="box-title">「ロケット・射場」とは何か——3行で把握する</div>
+      <ul>
+        <li>【技術の概要】人工衛星・宇宙探査機等を宇宙空間に運ぶロケット（打上げ輸送システム）と、ロケットを打ち上げるための射場（スペースポート）・試験設備等のインフラ。通信・観測・測位・安全保障のあらゆる宇宙利用の根幹となるインフラ。</li>
+        <li>【現状の問題】2025年の世界打上げ回数は米国（SpaceX含む）192回・中国91回に対して日本はわずか3回。国内衛星の国内打上げ比率は2015〜2024年累計で50%にとどまり、民間衛星の多くが海外（主にSpaceX）から打ち上げられている状態。射場・試験設備は整備後50年近く経過し老朽化が深刻。</li>
+        <li>【なぜ今か】衛星コンステレーション（大量の小型衛星群）の世界的拡大でロケット需要が急増し、SpaceXが市場を独占しつつある。この「SpaceX一強」構造に対する懸念から、日本国内・アジア地域での独立した打上げ能力確保が経済安全保障上の急務となっている。</li>
+      </ul>
+    </div>
+    <div class="data-box">
+      <div class="box-title">このレポートで整理する外部環境の範囲</div>
+      <ul>
+        <li>【市場規模】宇宙産業全体・宇宙打上げ市場の規模と成長率予測</li>
+        <li>【制度・政策】日本成長戦略会議の2030・2040年目標・宇宙戦略基金・宇宙基本計画</li>
+        <li>【経済的前提】SpaceX一強構造・Falcon9との価格差・H3ロケットのコスト目標・再使用技術の台頭</li>
+        <li>【技術DX】再使用ロケット・衛星コンステレーション・民間新規参入</li>
+        <li>【参入条件】射場不足・試験設備老朽化・打上げ回数の壁・大規模先行投資</li>
+        <li>【経済安全保障】自律的宇宙アクセス・SpaceX依存リスク・安全保障衛星との連動</li>
+      </ul>
+    </div>
+    <p>良し悪しの評価・投資推奨・将来予測は行いません。構造を示すことで終わります。</p>
+    <div class="source-wrap"><span class="source-tag">本レポート基本方針</span></div>
+  </div>
+</div>
+
+<!-- CH1 -->
+<div class="chapter" id="ch1">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 01</span>
+      <h2>市場規模と成長率</h2>
+    </div>
+
+    <h3>宇宙産業全体の世界市場規模</h3>
+    <p>世界の宇宙産業の規模は2022年時点で約54兆円と推計されています（経済産業省「国内外の宇宙産業の動向を踏まえた経済産業省の取組と今後について」・2024年3月）。世界経済フォーラム（WEF）は、宇宙には年率9%で成長を続け2035年には現在の2.8倍に達する成長機会があると分析しており（WEF「Space: The $1.8 Trillion Opportunity for Global Economic Growth」・2024年）、この成長率は世界のGDP成長率（5%）の2倍・半導体産業の成長率（6〜8%）と同等とされています（経産省資料・2025年2月）。</p>
+    <p>日本成長戦略会議 第3回 資料2「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「2030年代における世界の市場規模は150兆円ともいわれる」としています。</p>
+
+    <h3>宇宙打上げ市場の規模</h3>
+    <p>宇宙打上げ市場（ロケット打上げサービス）は2024年に14,314百万ドルと評価され、2033年までに41,650百万ドルに拡大、CAGRは12.6%と予測されています（Global Growth Insights）。また衛星打上げロケット市場は2024年に46.5億ドルと推計され、2029年までに121.1億ドルに達する見込み（CAGR 21.10%）とされています（Mordor Intelligence）。</p>
+
+    <h3>日本の宇宙産業規模と政府目標</h3>
+    <p>日本の宇宙産業規模は2020年時点で約4兆円（経産省）。宇宙基本計画（2023年6月改訂）は「2030年代の早期に8兆円に拡大する」ことを政府目標として掲げています（政策目標として示されている）。</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">約54兆</span>
+        <span class="stat-unit">円（2022年）</span>
+        <span class="stat-label">世界宇宙産業規模<br>（経産省 2024年3月）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">約150兆</span>
+        <span class="stat-unit">円</span>
+        <span class="stat-label">2030年代の世界市場見通し<br>（資料2 2026年3月）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">CAGR<br>12.6%</span>
+        <span class="stat-unit"></span>
+        <span class="stat-label">宇宙打上げ市場成長率<br>（2024〜2033年・Global Growth Insights）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">約4兆→8兆</span>
+        <span class="stat-unit">円</span>
+        <span class="stat-label">日本宇宙産業規模<br>（2020年実績→2030年代目標）</span>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <strong>【注記】</strong>市場規模数値は調査機関・集計範囲によって異なります。「宇宙産業」の定義（機器産業のみか、利用サービス産業・民生機器産業・ユーザー産業を含むか）により大きく変わるため、単純比較はできません。
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回 資料2（2026年3月）</span>
+      <span class="source-tag">経産省「国内外の宇宙産業の動向」（2024年3月）</span>
+      <span class="source-tag">Global Growth Insights 宇宙打上げ市場（2024年）</span>
+      <span class="source-tag">Mordor Intelligence 衛星打上げロケット市場（2024年）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH2 -->
+<div class="chapter" id="ch2">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 02</span>
+      <h2>制度・政策の枠組み</h2>
+    </div>
+
+    <h3>日本の宇宙輸送政策ロードマップ</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="timeline-year">2020〜2024年</span>
+        <span class="timeline-text">H3ロケット開発・H-IIA後継機として三菱重工が事業化。2023年3月のH3試験機1号機打上げ失敗を経て、2024年2月の試験機2号機で打上げ成功。同年7月に3号機（だいち4号）・11月に4号機（きらめき3号）の打上げにも成功し、基幹ロケットとしての実績を積み上げ開始。Eutelsatとの商業打上げ契約を初めて締結。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2023年6月</span>
+        <span class="timeline-text">宇宙基本計画改訂。2030年代早期に日本の宇宙産業規模を8兆円（2020年比2倍）に拡大する目標を明記（政策目標として示されている）。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2024年度</span>
+        <span class="timeline-text">宇宙戦略基金第1期が本格始動。総額3,000億円（総務省240億円・文部科学省1,500億円・経済産業省1,260億円）、22テーマを設定。「ロケット用大型構造部品を対象とした金属3D積層に係る基盤技術開発」（清水建設採択）等の結果が発表。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2026年3月</span>
+        <span class="timeline-text">高市政権「戦略17分野」に「ロケット・射場」が航空・宇宙分野の先行検討技術⑨として明示。2030年頃に年30回以上の打上げ・国内衛星の国内打上げ比率60〜80%・2040年に年1,500〜3,000億円規模の打上げサービス需要獲得という目標を明示（政策目標として示されている）（日本成長戦略会議 第3回 資料2・2026年3月）。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2030年頃（政策目標）</span>
+        <span class="timeline-text">基幹ロケットで年10〜22機・新規参入ロケットで年20〜30機の高頻度打上げを目指す。国内衛星の国内打上げ比率60〜80%以上（政策目標として示されている）。H3のアップグレード（低コスト化・量産化・打上げ高頻度化）を段階的に実施し、2030年代に次期基幹ロケットへ繋げるロードマップ。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2040年頃（政策目標）</span>
+        <span class="timeline-text">年1,500〜3,000億円規模の打上げサービス需要獲得（政策目標として示されている）。アジア・中東・欧州等の海外衛星需要の獲得を視野に入れる。民間による有人宇宙輸送・次世代宇宙輸送システムの実現も長期目標として設定。</span>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回 資料2（2026年3月）</span>
+      <span class="source-tag">宇宙基本計画（2023年6月改訂）</span>
+      <span class="source-tag">SPACE Media「2024年の国内ロケット開発・打ち上げ動向まとめ」（2024年12月）</span>
+      <span class="source-tag">UchuBiz「2024年の宇宙活動を振り返る」（2024年12月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH3 -->
+<div class="chapter" id="ch3">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 03</span>
+      <h2>経済的前提条件</h2>
+    </div>
+
+    <h3>SpaceX一強構造——世界打上げ回数の実態</h3>
+    <p>2025年時点の世界のロケット打上げ回数は米国（SpaceX含む）192回・中国91回・日本3回です（日本成長戦略会議 第3回 資料2・2026年3月）。SpaceXのFalcon 9は2024年に132回の打上げを実施し、世界全体のロケット打上げ数の50%超を占めました（Wikipedia・JAXA資料）。2024年はStarlink（SpaceX自社衛星コンステレーション）が90回・GTO（静止軌道投入）が10回です（JAXA H3プロジェクトチーム・2025年3月）。</p>
+
+    <h3>打上げ価格の比較</h3>
+    <table class="rocket-table">
+      <thead>
+        <tr>
+          <th>ロケット</th>
+          <th>打上げ価格</th>
+          <th>GTO能力</th>
+          <th>特徴</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>SpaceX Falcon 9</td>
+          <td class="acc">$69.75M（GTO・1段回収前提）</td>
+          <td>5.5トン</td>
+          <td>2024年に132回打上げ。再使用（1段回収）で実コストは推定2,000万ドル以下（2024年・Wikipedia）。世界市場の50%超を独占。</td>
+        </tr>
+        <tr>
+          <td>SpaceX Falcon Heavy</td>
+          <td class="acc">$90M（1段コア/LRB回収前提）</td>
+          <td>8.0トン</td>
+          <td>2024年は2回打上げ。重量衛星向け。</td>
+        </tr>
+        <tr>
+          <td>H-IIA（旧型）</td>
+          <td class="acc">約100億円（約6,700万ドル）</td>
+          <td>4〜6トン</td>
+          <td>打上げ成功率97.96%（49号機まで）。2024年度中に運用終了予定。Falcon 9より高コスト。</td>
+        </tr>
+        <tr>
+          <td>H3（新型・目標）</td>
+          <td class="acc">約50億円（約3,300万ドル）目標</td>
+          <td>4〜6.5トン（形態別）</td>
+          <td>H-IIA比約半減が目標。2024年に3・4号機の打上げ成功。商業初受注（Eutelsat）。使い捨て方式。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note-box">
+      <strong>【注記】</strong>H3の「約50億円」はJAXA・三菱重工の設計目標値であり、確定した販売価格ではありません。実際の商業打上げ価格は今後の交渉・実績積み上げを通じて確定します。Falcon 9の「推定2,000万ドル以下」は再使用進展後のコスト推計であり、公式価格ではありません。
+    </div>
+
+    <h3>国内衛星の国内打上げ比率という現実</h3>
+    <p>国内衛星の国内打上げ比率は2015〜2024年累計で50%です（資料2・2026年3月）。政府衛星は国内打上げが多いものの、民間衛星の多くは海外（主にSpaceX）から打ち上げられています。「衛星事業者はSpaceXによる市場の寡占を懸念し、それ以外の打上げサービスを求める需要も顕在化しつつある」という認識が政府・業界の共通認識となっています（経産省・2024年3月）。</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">192</span>
+        <span class="stat-unit">回（2025年）</span>
+        <span class="stat-label">米国の打上げ回数<br>（資料2 2026年3月）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">3</span>
+        <span class="stat-unit">回（2025年）</span>
+        <span class="stat-label">日本の打上げ回数<br>（同上）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">50%</span>
+        <span class="stat-unit"></span>
+        <span class="stat-label">国内衛星の国内打上げ比率<br>（2015〜2024年累計）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">132</span>
+        <span class="stat-unit">回（2024年）</span>
+        <span class="stat-label">SpaceX Falcon9の年間打上げ回数<br>（世界全体の50%超）</span>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回 資料2（2026年3月）</span>
+      <span class="source-tag">JAXA H3プロジェクトチーム「世界のロケット開発動向とH3高度化」（2025年3月）</span>
+      <span class="source-tag">経産省「国内外の宇宙産業の動向」（2024年3月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH4 -->
+<div class="chapter" id="ch4">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 04</span>
+      <h2>社会・安全保障との連関</h2>
+    </div>
+
+    <h3>宇宙利用の社会インフラ化</h3>
+    <p>通信・観測・測位・安全保障等で宇宙空間の利用が進み、ロケット・射場はこれらすべての宇宙利用の根幹となるインフラです。GPS・衛星通信・気象衛星・情報収集衛星（安全保障目的）は現代の社会・経済・安全保障にとって不可欠であり、これらを打ち上げる能力を自律的に持つことが「宇宙アクセスの自律性確保」として政策課題となっています。</p>
+
+    <h3>衛星コンステレーションという需要爆発</h3>
+    <p>多数の衛星を軌道上に配置する衛星コンステレーション構築計画が多数発表されており、米中を中心に打上げ回数が急増しています。SpaceXのStarlinkは2024年に単体で90回のFalcon 9打上げを実施しており、コンステレーション向けの定期・大量打上げが新たな産業形態として確立しています。この需要に日本が対応できるかが「SpaceX依存からの脱却」の鍵とされています。</p>
+
+    <h3>安全保障上の宇宙利用拡大</h3>
+    <p>H3ロケット4号機（2024年11月）でXバンド防衛通信衛星「きらめき3号」を打ち上げた実績が示す通り、防衛用途の衛星打上げは基幹ロケット需要の重要な柱です。安全保障分野含め自律的な宇宙アクセス手段の確保が宇宙基本計画でも明記されており、防衛費増額に伴い政府衛星の打上げ需要増加が見込まれます。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回 資料2（2026年3月）</span>
+      <span class="source-tag">JAXA H3プロジェクトチーム資料（2025年3月）</span>
+      <span class="source-tag">JAXA「H3ロケット4号機によるきらめき3号打上げ」（2024年）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH5 -->
+<div class="chapter" id="ch5">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 05</span>
+      <h2>技術・DXの位置づけ</h2>
+    </div>
+
+    <h3>再使用技術という産業パラダイムの転換</h3>
+    <p>SpaceXのFalcon 9が2015年に1段再使用を実現して以来、「再使用によるコスト削減」が世界の宇宙輸送技術の主流となりつつあります。2024年現在、Falcon 9の1段再使用後のコストは推定2,000万ドル以下とされており（Wikipedia）、使い捨てが基本のH3（目標約50億円）との価格差が課題として残ります。ただし再使用は必ずしも低コストに直結しないという議論もあり、使い捨て方式の極限追求（H3の設計思想）も選択肢として維持されています。</p>
+    <p>JAXA H3プロジェクトチームの2025年3月資料は「H3のアップグレード2では再使用技術の飛行実証・大型化を目指す」として、将来的な再使用化への対応を段階的に進める方針を示しています。</p>
+
+    <h3>H3ロケットの段階的高度化計画</h3>
+    <div class="data-box">
+      <div class="box-title">H3ロケットの段階的高度化（JAXA 2025年3月資料）</div>
+      <ul>
+        <li>【アップグレード1（2025年度〜）】複数の小型衛星を搭載するライドシェア型ミッションへの対応。衛星コンステレーション需要への対応を開始。</li>
+        <li>【アップグレード2】低コスト化・量産化・打上げ高頻度化を目指す。再使用技術の飛行実証・ロケット1段を複数束ねたヘビーリフター（大型化）等の検討。</li>
+        <li>【アップグレード3】次期基幹ロケットに向けた能力強化。2030年代に「次期基幹ロケット」にシームレスに繋げるロードマップ。</li>
+        <li>【射場整備】種子島宇宙センターの既存射場は年6回程度が上限とされており、高頻度打上げには射場・射点の増設が不可欠。新規射場の整備・地方との連携（北海道・和歌山等）も検討されている。</li>
+      </ul>
+    </div>
+
+    <h3>民間新規参入ロケットの台頭</h3>
+    <p>日本でも民間ロケット企業の新規参入が加速しています。インターステラテクノロジズ（北海道）・スペースワン（和歌山・カイロス）・将来宇宙輸送システム等が独自ロケットの開発・打上げを進めています。2024年にはカイロスロケット初号機が打上げを試み（打上げ失敗）、2025年以降に再挑戦を予定しています。宇宙戦略基金では民間ロケット開発支援が22テーマの一つとして採択されています。</p>
+
+    <div class="compare-grid">
+      <div class="compare-cell">
+        <span class="cell-label">基幹ロケット（JAXA・三菱重工）</span>
+        H3ロケット。政府衛星打上げの確実性を最優先。高信頼性・使い捨て方式。目標コスト約50億円。年6回程度（現状）。官需中心に民需も獲得を目指す。LE-9エンジン（液体水素・液体酸素）を採用。
+      </div>
+      <div class="compare-cell">
+        <span class="cell-label">新規参入ロケット（民間）</span>
+        インターステラテクノロジズ・スペースワン等。より小型・低コスト・高頻度を目指す。宇宙戦略基金等の支援を受け開発中。打上げ失敗も含め経験蓄積の段階。将来的に基幹ロケットと組み合わせた年30回以上の目標達成を担う位置づけ。
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">JAXA H3プロジェクトチーム「世界のロケット開発動向とH3高度化」（2025年3月）</span>
+      <span class="source-tag">宙畑「宇宙ビジネス企業81社とゆく年くる年」（2024年12月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH6 -->
+<div class="chapter" id="ch6">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 06</span>
+      <h2>参入・撤退の条件</h2>
+    </div>
+
+    <h3>ロケット産業の参入障壁</h3>
+    <p>ロケット産業は「打上げ失敗リスクが事業継続に直結し、開発期間や打上げ再開までの期間が長期化する」という特殊な産業です（資料2・2026年3月）。一度の打上げ失敗が信頼喪失→受注減→事業継続危機という連鎖を生む可能性があり、実績の積み上げが参入の前提条件です。H3試験機1号機の失敗（2023年3月）がその典型的な例です。</p>
+
+    <h3>射場・試験設備の老朽化という固定的ボトルネック</h3>
+    <p>資料2（2026年3月）は「打上/試験設備等の多くは整備後50年近く経過し老朽化が激しく、安定した打上げや開発の継続に対してリスクを有する状態」と明示しています。種子島宇宙センターを中心とする射場設備・燃焼試験場・推進剤保管設備・追跡管制設備等の老朽化対応は待ったなしの課題であり、大規模な先行投資が必要です。</p>
+
+    <h3>「大規模先行投資・長い回収期間・官需依存」という三重構造</h3>
+    <div class="data-box">
+      <div class="box-title">ロケット産業参入の三重障壁（資料2に明示）</div>
+      <ul>
+        <li>【大規模先行投資】ロケット開発・製造能力強化・射場設備整備には数百億〜数千億円規模の先行投資が必要。回収までの期間が長い（10〜20年規模）。</li>
+        <li>【官需依存性の高さ】現状では政府衛星の打上げが主要収益源。民間需要（商業打上げ）を獲得するには価格・信頼性・打上げ頻度でSpaceXとの競争に勝つ必要がある。</li>
+        <li>【安全保障上の顧客制限リスク】安全保障上の理由等で特定の国・企業の衛星を打ち上げられない可能性がある（輸出管理・国際関係等）。</li>
+        <li>【SpaceXとの価格差】Falcon 9のGTO 5.5トンで$69.75M（約100億円）に対し、H3の目標コストは約50億円（約3,300万ドル）と価格面では有利な面もあるが、Falcon 9の再使用が進んだ場合は逆転する可能性がある。</li>
+        <li>【打上げ頻度の壁】種子島1カ所・年6回程度という現状の制約では、コンステレーション向けの高頻度打上げ需要に対応できない。射場増設・新規射場整備に時間と投資を要する。</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回 資料2（2026年3月）</span>
+      <span class="source-tag">JAXA H3プロジェクトチーム資料（2025年3月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH7 -->
+<div class="chapter" id="ch7">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 07</span>
+      <h2>経済安全保障との接続</h2>
+    </div>
+
+    <h3>「宇宙アクセスの自律性確保」という国家目標</h3>
+    <p>資料1「戦略17分野における主要な製品・技術等」（2026年3月）は「宇宙利用のためにはロケット打上げ能力が不可欠。国内衛星の多くは海外から打ち上げられており、米・中・欧・印が打上げ能力を強化する中、我が国も自律的な宇宙空間へのアクセス確保・拡大が急務」と明示しています。特定の外国ロケット（現実的にはSpaceX）に依存した状態では、地政学的変化・価格交渉・打上げ順位調整等でリスクが生じます。</p>
+
+    <h3>宇宙戦略基金という政策ツール</h3>
+    <p>宇宙戦略基金第1期は総額3,000億円・22テーマで構成され、ロケット開発・射場整備・衛星製造・関連インフラの各分野を支援しています。アンカーテナンシー（政府による打上げサービスの計画的調達）による民間の投資予見性向上も政策として示されており（資料2・2026年3月）、単年度予算による予見可能性の低さという従来の課題への対処が進んでいます。</p>
+
+    <h3>ロケット部品の特定重要物資指定</h3>
+    <p>経済安保推進法に基づくロケット部品等の特定重要物資支援が政策パッケージに明示されています（資料2・2026年3月）。ロケット製造に必要な部品・素材のサプライチェーン強靱化が経済安全保障の観点から政策的に位置づけられています。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回 資料1「戦略17分野における主要な製品・技術等」（2026年3月）</span>
+      <span class="source-tag">日本成長戦略会議 第3回 資料2（2026年3月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH8 -->
+<div class="chapter" id="ch8">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 08</span>
+      <h2>外部環境の整理</h2>
+    </div>
+
+    <h3>第1〜7章の数値サマリー</h3>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>章</th>
+          <th>指標名</th>
+          <th>数値</th>
+          <th>出典・時点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>第1章</td>
+          <td>世界宇宙産業規模</td>
+          <td>約54兆円（2022年）</td>
+          <td>経産省 2024年3月</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>2030年代の世界市場見通し</td>
+          <td>約150兆円</td>
+          <td>資料2 2026年3月</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>宇宙打上げ市場 CAGR</td>
+          <td>12.6%（2024〜2033年）</td>
+          <td>Global Growth Insights</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>日本宇宙産業規模→目標</td>
+          <td>約4兆円（2020年）→8兆円（2030年代・政策目標）</td>
+          <td>宇宙基本計画 2023年</td>
+        </tr>
+        <tr>
+          <td>第3章</td>
+          <td>米国の打上げ回数（2025年）</td>
+          <td>192回</td>
+          <td>資料2 2026年3月</td>
+        </tr>
+        <tr>
+          <td>第3章</td>
+          <td>日本の打上げ回数（2025年）</td>
+          <td>3回</td>
+          <td>同上</td>
+        </tr>
+        <tr>
+          <td>第3章</td>
+          <td>SpaceX Falcon 9 打上げ回数（2024年）</td>
+          <td>132回（世界全体の50%超）</td>
+          <td>Wikipedia・JAXA資料 2025年3月</td>
+        </tr>
+        <tr>
+          <td>第3章</td>
+          <td>Falcon 9 打上げ価格（GTO）</td>
+          <td>$69.75M（1段回収前提）</td>
+          <td>JAXA資料 2025年3月</td>
+        </tr>
+        <tr>
+          <td>第3章</td>
+          <td>H-IIA打上げコスト</td>
+          <td>約100億円</td>
+          <td>複数報道・JAXA資料</td>
+        </tr>
+        <tr>
+          <td>第3章</td>
+          <td>H3目標コスト</td>
+          <td>約50億円（設計目標値）</td>
+          <td>JAXA・三菱重工 目標値</td>
+        </tr>
+        <tr>
+          <td>第3章</td>
+          <td>国内衛星の国内打上げ比率</td>
+          <td>50%（2015〜2024年累計）</td>
+          <td>資料2 2026年3月</td>
+        </tr>
+        <tr>
+          <td>第2章</td>
+          <td>宇宙戦略基金 第1期総額</td>
+          <td>3,000億円・22テーマ</td>
+          <td>UchuBiz 2024年12月</td>
+        </tr>
+        <tr>
+          <td>第2章</td>
+          <td>2030年目標（打上げ回数）</td>
+          <td>年30回以上（政策目標として示されている）</td>
+          <td>資料2 2026年3月</td>
+        </tr>
+        <tr>
+          <td>第2章</td>
+          <td>2040年目標（打上げ需要）</td>
+          <td>年1,500〜3,000億円規模（政策目標として示されている）</td>
+          <td>同上</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>構造的に固定されやすい要素</h3>
+    <div class="data-box">
+      <div class="box-title">構造的に固定されやすい要素（短期で変わりにくい前提）</div>
+      <ul>
+        <li>SpaceXの市場支配（2024年に世界の50%超）は、その技術的・コスト的優位から短期では変化しない</li>
+        <li>日本の打上げ回数（現状3回/年）から政策目標30回/年への到達には、射場整備・製造能力向上・新規参入ロケットの量産化という複数の前提条件が必要であり、時間軸は中長期</li>
+        <li>種子島射場の老朽化設備の更新は投資を決定しても完工まで数年を要するため、短期での打上げ頻度向上には限界がある</li>
+        <li>Falcon 9の再使用によるコスト削減が続く場合、H3の価格競争力は悪化する方向に働く</li>
+        <li>宇宙安全保障・コンステレーション向け打上げ需要の拡大という大きなトレンドは変化しない</li>
+        <li>大規模先行投資・長い回収期間・官需依存という産業構造は、民間商業打上げが本格化するまで変化しない</li>
+      </ul>
+    </div>
+    <div class="source-wrap"><span class="source-tag">本レポート第1〜7章に記載の各統計の集約</span></div>
+  </div>
+</div>
+
+<!-- CH9 -->
+<div class="chapter" id="ch9">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 09</span>
+      <h2>内部環境編への橋渡し</h2>
+    </div>
+    <p>外部環境編では以下の構造を数字と事実で整理しました。</p>
+    <div class="data-box">
+      <div class="box-title">外部環境編の整理（5点）</div>
+      <ul>
+        <li>世界宇宙産業54兆円（2022年）→2030年代150兆円という急成長市場の中で、宇宙打上げ市場はCAGR 12.6%で拡大中</li>
+        <li>SpaceXが2024年に132回・世界全体の50%超を打上げるという「一強構造」が確立しており、日本（3回/年）との格差は構造的に大きい</li>
+        <li>H3のコスト目標約50億円はH-IIA比半減（約100億円）だが、Falcon 9の$69.75M（約100億円）と同等〜競合可能な価格帯。ただし再使用コストは2,000万ドル以下と推定される</li>
+        <li>国内衛星の国内打上げ比率50%（民間衛星は多くが海外打上げ）という現実から、2030年の60〜80%目標達成には射場整備・製造能力向上・新規参入ロケットの量産化が前提</li>
+        <li>射場・試験設備の老朽化（整備後50年近く）・大規模先行投資・官需依存・打上げ失敗リスクという四重の構造的課題が政策文書に明示されている</li>
+      </ul>
+    </div>
+    <div class="next-box">
+      <div class="next-label">NEXT — 内部環境編で整理すること</div>
+      <h3>外圧がプレイヤー構成・収益・人材にどう現れるか</h3>
+      <ul>
+        <li>三菱重工（H3製造・打上げサービス事業化）・IHI（LE-9エンジン・固体ロケット）・三菱電機（衛星製造）という主要プレイヤーの収益構造</li>
+        <li>インターステラテクノロジズ・スペースワン等の民間新規参入ロケット企業の財務実態・資金調達状況</li>
+        <li>ロケットエンジニア・宇宙機器技術者の年収・人材市場の実態</li>
+        <li>「官需依存・単年度予算」という収益構造の限界と民間商業打上げへの転換の難しさ</li>
+        <li>宇宙戦略基金3,000億円の採択状況とロケット開発への波及実態</li>
+      </ul>
+    </div>
+    <div class="source-wrap"><span class="source-tag">本レポートの総括</span></div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  <div class="container">
+    <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。掲載データは各記載出典に基づきますが、数値の正確性・完全性を保証するものではありません。投資判断は自己責任において行ってください。H3ロケットの「約50億円」はJAXA・三菱重工の設計目標値であり確定した販売価格ではありません。市場規模数値は各調査機関の定義・算定方法が異なるため単純比較はできません。「政策目標として示されている」と注記した数値は、政府が目標として掲げた値であり、達成を保証するものではありません。データ基準時点は2026年03月です。</p>
+    <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年03月 産業構造分析レポート ── ロケット・射場（外部環境編）</p>
+    <p style="margin-top:8px;">
+      <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
