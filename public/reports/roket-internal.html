@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.13/html-to-image.min.js" integrity="sha512-iZ2ORl595Wx6miw+GuadDet4WQbdSWS3JLMoNfY8cRGoEFy6oT3G9IbcrBeL6AfkgpA51ETt/faX6yLV+/gFJg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      (function() {
+        const originalConsole = window.console;
+        window.console = {
+          log: (...args) => {
+            originalConsole.log(...args);
+            window.parent.postMessage({ type: 'console', message: args.join(' ') }, '*');
+          },
+          error: (...args) => {
+            originalConsole.error(...args);
+            window.parent.postMessage({ type: 'console', message: 'Error: ' + args.join(' ') }, '*');
+          },
+          warn: (...args) => {
+            originalConsole.warn(...args);
+            window.parent.postMessage({ type: 'console', message: 'Warning: ' + args.join(' ') }, '*');
+          }
+        };
+
+        let requestId = 0;
+        let callbacksMap = new Map();
+        let streamControllers = new Map();
+        
+        window.claude = {
+          complete: (prompt) => {
+            return new Promise((resolve, reject) => {
+              const id = requestId++;
+              callbacksMap.set(id, { resolve, reject });
+              window.parent.postMessage({ type: 'claudeComplete', id, prompt }, '*');
+            });
+          }
+        };
+
+        window.storage = {
+          get: (key, shared = false) => {
+            return new Promise((resolve, reject) => {
+              const id = requestId++;
+              callbacksMap.set(id, { resolve, reject });
+              window.parent.postMessage({ type: 'storageGet', id, key, shared }, '*');
+            });
+          },
+          set: (key, value, shared = false) => {
+            return new Promise((resolve, reject) => {
+              const id = requestId++;
+              callbacksMap.set(id, { resolve, reject });
+              window.parent.postMessage({ type: 'storageSet', id, key, value, shared }, '*');
+            });
+          },
+          delete: (key, shared = false) => {
+            return new Promise((resolve, reject) => {
+              const id = requestId++;
+              callbacksMap.set(id, { resolve, reject });
+              window.parent.postMessage({ type: 'storageDelete', id, key, shared }, '*');
+            });
+          },
+          list: (prefix, shared = false) => {
+            return new Promise((resolve, reject) => {
+              const id = requestId++;
+              callbacksMap.set(id, { resolve, reject });
+              window.parent.postMessage({ type: 'storageList', id, prefix, shared }, '*');
+            });
+          }
+        };
+
+        let pendingBlobs = new Map();
+        URL.createObjectURL = (blob) => {
+          // Store the blob and create an ID and URL for it
+          const blobId = `blob-${Date.now()}-${Math.random()}`;
+          pendingBlobs.set(blobId, blob);
+          return `blob-request://${blobId}`;
+        };
+
+        URL.revokeObjectURL = (url) => {
+          // Remove the blob from our store
+          const blobId = url.replace("blob-request://", "");
+          pendingBlobs.delete(blobId);
+        };
+
+        const getBlobFromURL = (url) => {
+          const blobId = url.replace("blob-request://", "");
+          return pendingBlobs.get(blobId);
+        };
+
+        // Override global fetch with streaming support
+        window.fetch = (url, init = {}) => {
+          return new Promise((resolve, reject) => {
+            const id = requestId++;
+            const channelId = `fetch-${id}-${Date.now()}`;
+            
+            callbacksMap.set(id, { 
+              resolve: (response) => {
+                // Create a ReadableStream for the response body
+                const stream = new ReadableStream({
+                  start(controller) {
+                    streamControllers.set(channelId, controller);
+                  },
+                  cancel() {
+                    streamControllers.delete(channelId);
+                  }
+                });
+                
+                // Create and return the Response with the stream
+                resolve(new Response(stream, {
+                  status: response.status,
+                  statusText: response.statusText,
+                  headers: response.headers
+                }));
+              },
+              reject,
+              channelId
+            });
+            
+            window.parent.postMessage({
+              type: 'proxyFetch',
+              id,
+              url,
+              init,
+              channelId
+            }, '*');
+          });
+        };
+
+        window.addEventListener('message', async (event) => {
+          if (event.data.type === 'takeScreenshot') {
+            const rootElement = document.getElementById('artifacts-component-root-html');
+            if (!rootElement) {
+              window.parent.postMessage({
+                type: 'screenshotError',
+                error: new Error('Root element not found'),
+              }, '*');
+            }
+            const screenshot = await htmlToImage.toPng(rootElement, {
+              imagePlaceholder:
+                "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjePDgwX8ACOQDoNsk0PMAAAAASUVORK5CYII=",
+            });
+            window.parent.postMessage({
+              type: 'screenshotData',
+              data: screenshot,
+            }, '*');
+          } else if (event.data.type === 'claudeComplete') {
+            const callback = callbacksMap.get(event.data.id);
+            if (event.data.error) {
+              callback.reject(new Error(event.data.error));
+            } else {
+              callback.resolve(event.data.completion);
+            }
+            callbacksMap.delete(event.data.id);
+          } else if (event.data.type === 'proxyFetchResponse') {
+            const callback = callbacksMap.get(event.data.id);
+            if (event.data.error) {
+              callback.reject(new Error(event.data.error));
+              callbacksMap.delete(event.data.id);
+            } else {
+              // Initial response with headers, status, etc.
+              callback.resolve({
+                status: event.data.status,
+                statusText: event.data.statusText,
+                headers: event.data.headers
+              });
+              // Don't delete the callback yet if streaming
+              if (!event.data.body) {
+                callbacksMap.delete(event.data.id);
+              }
+            }
+          } else if (event.data.type === 'proxyFetchStream') {
+            // Handle streaming data chunks
+            const controller = streamControllers.get(event.data.channelId);
+            if (controller) {
+              if (event.data.error) {
+                controller.error(new Error(event.data.error));
+                streamControllers.delete(event.data.channelId);
+              } else if (event.data.done) {
+                controller.close();
+                streamControllers.delete(event.data.channelId);
+                // Clean up the callback
+                const callback = Array.from(callbacksMap.entries()).find(
+                  ([_, value]) => value.channelId === event.data.channelId
+                );
+                if (callback) {
+                  callbacksMap.delete(callback[0]);
+                }
+              } else if (event.data.chunk) {
+                controller.enqueue(new Uint8Array(event.data.chunk));
+              }
+            }
+          } else if (event.data.type === 'storageGet') {
+            const callback = callbacksMap.get(event.data.id);
+            if (event.data.error) {
+              callback.reject(new Error(event.data.error));
+            } else {
+              callback.resolve(event.data.result);
+            }
+            callbacksMap.delete(event.data.id);
+          } else if (event.data.type === 'storageSet') {
+            const callback = callbacksMap.get(event.data.id);
+            if (event.data.error) {
+              callback.reject(new Error(event.data.error));
+            } else {
+              callback.resolve(event.data.result);
+            }
+            callbacksMap.delete(event.data.id);
+          } else if (event.data.type === 'storageDelete') {
+            const callback = callbacksMap.get(event.data.id);
+            if (event.data.error) {
+              callback.reject(new Error(event.data.error));
+            } else {
+              callback.resolve(event.data.result);
+            }
+            callbacksMap.delete(event.data.id);
+          } else if (event.data.type === 'storageList') {
+            const callback = callbacksMap.get(event.data.id);
+            if (event.data.error) {
+              callback.reject(new Error(event.data.error));
+            } else {
+              callback.resolve(event.data.result);
+            }
+            callbacksMap.delete(event.data.id);
+          }
+        });
+
+        window.addEventListener('click', (event) => {
+          const isEl = event.target instanceof HTMLElement;
+          if (!isEl) return;
+    
+          // find ancestor links
+          const linkEl = event.target.closest("a");
+          if (!linkEl || !linkEl.href) return;
+    
+          event.preventDefault();
+          event.stopImmediatePropagation();
+    
+          if (linkEl.href.startsWith("blob-request:")) {
+            const blob = getBlobFromURL(linkEl.href);
+            if (!blob) return;
+            void blob.arrayBuffer().then((data) => {
+              window.parent.postMessage({
+                type: "downloadFile",
+                filename: linkEl.download,
+                data,
+                mimeType: blob.type || "application/octet-stream",
+              });
+            });
+          } else if (linkEl.href.startsWith("data:")) {
+            const [header, base64Data] = linkEl.href.split(",");
+            const mimeMatch = header.match(/data:([^;]+)/);
+            const mimeType = mimeMatch ? mimeMatch[1] : "application/octet-stream";
+            const binaryString = atob(base64Data);
+            const data = Uint8Array.from(binaryString, (c) =>
+              c.charCodeAt(0),
+            ).buffer;
+            window.parent.postMessage({
+              type: "downloadFile",
+              filename: linkEl.download,
+              data,
+              mimeType,
+            });
+          } else {
+            let linkUrl;
+            try {
+              linkUrl = new URL(linkEl.href);
+            } catch (error) {
+              return;
+            }
+    
+            if (linkUrl.hostname === window.location.hostname) return;
+      
+            window.parent.postMessage({
+              type: 'openExternal',
+              href: linkEl.href,
+            }, '*');
+          }
+      });
+
+        const originalOpen = window.open;
+        window.open = function (url) {
+          window.parent.postMessage({
+            type: "openExternal",
+            href: url,
+          }, "*");
+        };
+
+        window.addEventListener('error', (event) => {
+          window.parent.postMessage({ type: 'console', message: 'Uncaught Error: ' + event.message }, '*');
+        });
+      })();
+    </script>
+  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>業界分析｜高市政権「戦略17分野」航空・宇宙 先行検討技術⑧民間航空機（次期単通路機・次世代航空機）（外部環境編）</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+  :root {
+    --ink: #0f0f0e;
+    --paper: #f5f2ed;
+    --cream: #ede9e1;
+    --accent: #c84b2f;
+    --muted: #6b6760;
+    --rule: #c9c4bb;
+    --highlight: #fff8e6;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.8; }
+
+  .masthead { background: var(--ink); color: var(--paper); padding: 10px 40px; display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; border-bottom: 3px solid var(--accent); }
+  .masthead-right { color: var(--muted); }
+
+  .hero { background: var(--ink); color: var(--paper); padding: 60px 40px 50px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200,75,47,0.07) 4px, rgba(200,75,47,0.07) 5px); }
+  .hero-label { display: inline-block; background: var(--accent); color: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.12em; padding: 4px 10px; margin-bottom: 20px; }
+  .hero h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(20px, 3.2vw, 34px); font-weight: 900; line-height: 1.4; max-width: 820px; letter-spacing: 0.02em; margin-bottom: 24px; }
+  .hero h1 em { color: var(--accent); font-style: normal; }
+  .hero-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 16px; }
+  .hero-badge { border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.75); font-size: 11px; padding: 4px 12px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.06em; }
+  .data-notice { background: rgba(200,75,47,0.15); border-left: 3px solid var(--accent); padding: 10px 16px; margin-top: 24px; font-size: 12px; color: rgba(255,255,255,0.8); font-family: 'IBM Plex Mono', monospace; }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  .toc { background: var(--cream); border-top: 3px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 32px 40px; }
+  .toc h2 { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 16px; text-transform: uppercase; }
+  .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 6px 28px; }
+  .toc-item { font-size: 13px; color: var(--ink); text-decoration: none; padding: 3px 0; border-bottom: 1px dashed var(--rule); display: flex; gap: 8px; }
+  .toc-item:hover { color: var(--accent); }
+  .toc-num { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--accent); flex-shrink: 0; padding-top: 2px; }
+
+  .chapter { padding: 48px 40px; border-bottom: 1px solid var(--rule); }
+  .chapter:nth-child(even) { background: var(--cream); }
+  .chapter-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 28px; }
+  .chapter-num { background: var(--accent); color: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; padding: 4px 10px; flex-shrink: 0; margin-top: 4px; }
+  .chapter h2 { font-family: 'Noto Serif JP', serif; font-size: 22px; font-weight: 700; line-height: 1.4; border-bottom: 2px solid var(--ink); padding-bottom: 10px; flex: 1; }
+  .chapter h3 { font-family: 'Noto Serif JP', serif; font-size: 16px; font-weight: 700; margin: 24px 0 10px; padding-left: 10px; border-left: 3px solid var(--accent); }
+  .chapter p { margin-bottom: 14px; }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 24px 0; }
+  .stat-cell { background: var(--paper); padding: 18px 16px; text-align: center; }
+  .chapter:nth-child(even) .stat-cell { background: #f0ece4; }
+  .stat-cell .stat-num { font-family: 'IBM Plex Mono', monospace; font-size: 22px; font-weight: 600; color: var(--accent); line-height: 1.2; display: block; }
+  .stat-cell .stat-unit { font-size: 12px; color: var(--muted); display: block; margin-top: 2px; }
+  .stat-cell .stat-label { font-size: 11px; color: var(--ink); display: block; margin-top: 6px; font-weight: 700; letter-spacing: 0.04em; }
+
+  .data-box { background: var(--highlight); border: 1px solid #e0d8c4; border-left: 4px solid var(--accent); padding: 20px 24px; margin: 20px 0; }
+  .data-box .box-title { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+  .data-box ul { padding-left: 0; list-style: none; }
+  .data-box ul li { padding: 5px 0 5px 16px; border-bottom: 1px dashed var(--rule); font-size: 13px; position: relative; }
+  .data-box ul li::before { content: '▸'; color: var(--accent); position: absolute; left: 0; font-size: 11px; }
+  .data-box ul li:last-child { border-bottom: none; }
+
+  .note-box { background: rgba(200,75,47,0.05); border: 1px dashed var(--accent); padding: 16px 20px; margin: 20px 0; font-size: 13px; color: var(--muted); }
+  .note-box strong { color: var(--accent); }
+
+  .summary-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+  .summary-table thead tr { background: var(--ink); color: var(--paper); }
+  .summary-table thead th { padding: 10px 14px; text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; }
+  .summary-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .summary-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.03); }
+  .summary-table tbody td { padding: 9px 14px; vertical-align: top; }
+  .summary-table td:first-child { font-weight: 700; color: var(--accent); font-size: 12px; }
+
+  .timeline { margin: 20px 0; }
+  .timeline-item { display: flex; gap: 16px; padding: 12px 0; border-bottom: 1px dashed var(--rule); font-size: 13px; }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-year { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--accent); font-weight: 600; flex-shrink: 0; width: 120px; padding-top: 2px; }
+  .timeline-text { flex: 1; }
+
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 20px 0; }
+  .compare-cell { background: var(--paper); padding: 16px 18px; font-size: 13px; }
+  .chapter:nth-child(even) .compare-cell { background: #f0ece4; }
+  .compare-cell .cell-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 8px; display: block; }
+
+  .next-box { background: var(--ink); color: var(--paper); padding: 28px 32px; margin: 20px 0; border-left: 5px solid var(--accent); }
+  .next-box .next-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; }
+  .next-box h3 { font-family: 'Noto Serif JP', serif; font-size: 17px; margin-bottom: 12px; border-left: none; padding-left: 0; }
+  .next-box ul { padding-left: 0; list-style: none; }
+  .next-box ul li { padding: 4px 0 4px 14px; font-size: 13px; position: relative; color: rgba(245,242,237,0.85); }
+  .next-box ul li::before { content: '▸'; color: var(--accent); position: absolute; left: 0; font-size: 11px; }
+
+  .source-tag { display: inline-block; background: rgba(0,0,0,0.06); border: 1px solid var(--rule); padding: 3px 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin: 2px 3px; letter-spacing: 0.04em; }
+  .source-wrap { margin-top: 20px; padding-top: 12px; border-top: 1px dashed var(--rule); }
+
+  .disclaimer { background: var(--ink); color: rgba(245,242,237,0.5); padding: 24px 40px; font-size: 11px; line-height: 1.7; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.03em; }
+  .rule-thick { border: none; border-top: 3px solid var(--ink); margin: 0; }
+  .rule-thin { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+  @media (max-width: 600px) {
+    .masthead { flex-direction: column; gap: 6px; padding: 10px 16px; }
+    .hero { padding: 36px 16px 30px; }
+    .chapter { padding: 32px 16px; }
+    .toc { padding: 24px 16px; }
+    .compare-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body id="artifacts-component-root-html">
+
+<div class="masthead">
+  <span>産業構造分析レポート</span>
+  <span class="masthead-right">2026年03月発行 ── 航空・宇宙／民間航空機（外部環境編）</span>
+</div>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-label">INDUSTRY ANALYSIS REPORT — EXTERNAL ENVIRONMENT</div>
+    <h1>業界分析｜高市政権「戦略17分野」<br>航空・宇宙<br>先行検討技術⑧<em>民間航空機</em><br>（次期単通路機・次世代航空機）（外部環境編）</h1>
+    <div class="hero-meta">
+      <span class="hero-badge">就職・転職検討者向け</span>
+      <span class="hero-badge">株式投資家向け</span>
+      <span class="hero-badge">数字と事実のみ記載</span>
+    </div>
+    <div class="data-notice">
+      本レポートのデータ基準時点：2026年03月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thick">
+
+<div class="toc">
+  <div class="container">
+    <h2>目次 — TABLE OF CONTENTS</h2>
+    <div class="toc-grid">
+      <a class="toc-item" href="#ch0"><span class="toc-num">00</span>このレポートの目的と読み方</a>
+      <a class="toc-item" href="#ch1"><span class="toc-num">01</span>市場規模と成長率</a>
+      <a class="toc-item" href="#ch2"><span class="toc-num">02</span>制度・政策の枠組み</a>
+      <a class="toc-item" href="#ch3"><span class="toc-num">03</span>経済的前提条件</a>
+      <a class="toc-item" href="#ch4"><span class="toc-num">04</span>社会・安全保障との連関</a>
+      <a class="toc-item" href="#ch5"><span class="toc-num">05</span>技術・DXの位置づけ</a>
+      <a class="toc-item" href="#ch6"><span class="toc-num">06</span>参入・撤退の条件</a>
+      <a class="toc-item" href="#ch7"><span class="toc-num">07</span>経済安全保障との接続</a>
+      <a class="toc-item" href="#ch8"><span class="toc-num">08</span>外部環境の整理</a>
+      <a class="toc-item" href="#ch9"><span class="toc-num">09</span>内部環境編への橋渡し</a>
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thin">
+
+<!-- CH0 -->
+<div class="chapter" id="ch0">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 00</span>
+      <h2>このレポートの目的と読み方</h2>
+    </div>
+    <p>本レポートは、高市政権「戦略17分野」航空・宇宙の先行検討技術⑧「民間航空機（次期単通路機・次世代航空機）」の外部環境を、就職・転職検討者および株式投資家向けに数字と事実のみで記述します。所管は内閣府（経済安全保障）です。</p>
+
+    <div class="data-box">
+      <div class="box-title">「民間航空機（次期単通路機・次世代航空機）」とは何か——3行で把握する</div>
+      <ul>
+        <li>【技術の概要】単通路機（ナローボディ機）は150〜220席程度の短中距離向け民間旅客機。A320neoやB737 MAXが現行主力機。「次世代航空機」は水素エンジン・電動化等の環境新技術を搭載した次世代型機。本レポートが扱うのはこれらの開発・製造サプライチェーンへの日本の参画拡大という産業政策テーマ。</li>
+        <li>【現状の問題】日本はB787双通路機のTier1サプライヤーとして機体製造の35%を担う実績を持つが、単通路機市場（世界需要の70%超）とエアバス機への参画は限定的。国内に完成機OEM（最終組立・型式証明保有企業）が存在せず、海外OEMの開発動向に左右される構造にある。</li>
+        <li>【なぜ今か】航空旅客需要の今後20年2倍成長・単通路機受注残が1万機超という需要急増、ボーイングの経営不振による次世代機開発の遅れ、2050年カーボンニュートラル目標に向けた航空機の脱炭素化という3つの変化が重なり、日本がインテグレーション能力（上流工程参画・仕様設計・認証）を獲得する機会の窓が開きつつある。</li>
+      </ul>
+    </div>
+
+    <div class="data-box">
+      <div class="box-title">このレポートで整理する外部環境の範囲</div>
+      <ul>
+        <li>【市場規模】民間航空機世界市場・単通路機の需要予測・2050年目標</li>
+        <li>【制度・政策】日本成長戦略会議の目標・JAXA試験インフラ整備・認証取得能力向上・SAF支援</li>
+        <li>【経済的前提】エアバス・ボーイング2強体制・NMA計画凍結・ボーイング経営不振・単通路機受注残</li>
+        <li>【技術DX】環境新技術（水素・電動化）・SAF・2050年CNへのロードマップ</li>
+        <li>【参入条件】Tier1参画の前提条件・認証専門人材不足・試験設備不足</li>
+        <li>【経済安全保障】航空機産業のデュアルユース性・防衛シナジー・サプライチェーン強靱化</li>
+      </ul>
+    </div>
+    <p>良し悪しの評価・投資推奨・将来予測は行いません。構造を示すことで終わります。</p>
+    <div class="source-wrap"><span class="source-tag">本レポート基本方針</span></div>
+  </div>
+</div>
+
+<!-- CH1 -->
+<div class="chapter" id="ch1">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 01</span>
+      <h2>市場規模と成長率</h2>
+    </div>
+
+    <h3>民間航空機の世界市場規模</h3>
+    <p>旅客機・航空機・リージョナルジェット業界の世界市場規模は2024年に2,112億ドルと推計されており、2029年にかけて年平均4.5%で成長し2,644億ドルへと拡大することが見込まれています（Research and Markets・deallab）。</p>
+    <p>航空機エンジン業界の世界市場規模は2024年に1,537億ドルで、2032年にかけて年平均7.77%で成長し2,798億ドルへの拡大が見込まれています（Fortune Business Insights・2024年）。</p>
+
+    <h3>単通路機の需要予測——世界需要の70%超</h3>
+    <p>ボーイングの「2025年民間航空機市場予測（CMO）」によると、今後20年間の民間航空機需要は4万3,600機で、うち単通路機が72%を占める見込みです（ボーイング・2025年6月）。2024年CMOでは4万4,000機で単通路機が76%（3万3,380機）という予測でした。牽引役は新興市場の短距離旅行とLCC（格安航空会社）の拡大です。</p>
+    <p>単通路機の受注残は1万機と過去最高水準に達しており、受注解消に10年かかる状態が続いています（日本経済新聞・2025年）。エアバスの受注残は8,726機・ボーイングは5,643機（2025年1月時点）で、金額換算すると数千億ドル規模の収益ストリームが積み上がっています。</p>
+
+    <h3>日本の航空機産業の規模</h3>
+    <p>日本の航空機産業の合計生産額は2019年に1兆8,000億円超と2兆円規模に近づきましたが、コロナ禍で2021年に9,500億円まで落ち込みました（日本航空宇宙工業会）。2023年には1兆4,000億円超に回復し、2025年には初めて2兆円を超えたと報じられています（日本経済新聞・2026年2月）。</p>
+    <p>日本成長戦略会議 第3回 資料2「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は、2019年時点での日本航空機産業売上高を年間2兆円規模と記載しています。</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">2,112</span>
+        <span class="stat-unit">億ドル</span>
+        <span class="stat-label">民間航空機 世界市場規模<br>（2024年・Research and Markets）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">4万3,600</span>
+        <span class="stat-unit">機</span>
+        <span class="stat-label">今後20年間 新造機需要<br>（ボーイング2025年CMO）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">72%</span>
+        <span class="stat-unit"></span>
+        <span class="stat-label">うち単通路機の比率<br>（2025年CMO）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">1万</span>
+        <span class="stat-unit">機</span>
+        <span class="stat-label">単通路機受注残・過去最高<br>（日経・2025年）</span>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <strong>【注記】</strong>市場規模数値は調査機関によって対象範囲・集計方法が異なります。単純比較はできません。
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">ボーイング 2025年民間航空機市場予測（CMO）（2025年6月）</span>
+      <span class="source-tag">ボーイング 2024年民間航空機市場予測（CMO）（2024年7月）</span>
+      <span class="source-tag">Research and Markets / deallab 民間航空機市場（2024年）</span>
+      <span class="source-tag">日本経済新聞「単通路機受注残1万機」（2025年）</span>
+      <span class="source-tag">日本経済新聞「航空機・部品の国内生産、25年に初の2兆円超え」（2026年2月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH2 -->
+<div class="chapter" id="ch2">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 02</span>
+      <h2>制度・政策の枠組み</h2>
+    </div>
+
+    <h3>日本の航空機産業政策ロードマップ</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="timeline-year">2019年</span>
+        <span class="timeline-text">日本航空機産業の合計生産額が<strong>1兆8,000億円超</strong>に達し2兆円規模に近づく。三菱重工・川崎重工・SUBARUの3社でB787機体製造の35%を担うTier1サプライヤーとしての地位を確立。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2021〜2023年</span>
+        <span class="timeline-text">コロナ禍で2021年に生産額9,500億円まで落ち込む。ボーイングの品質問題・737MAXトラブル・787製造停止も重なり、日本の航空機サプライヤーは受注減・経営悪化・人材流出という三重の打撃を受ける。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2024年3月</span>
+        <span class="timeline-text">経済産業省「我が国航空機産業の今後の方向性について」公表。単通路機市場・収益性の高い装備品・システム事業への参画が限定的という課題を明示。「インテグレーション能力の獲得」を中長期目標として設定。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2025年</span>
+        <span class="timeline-text">国内の航空機・部品生産額が初めて2兆円を超える（日本経済新聞・2026年2月）。民間旅客機用エンジンや機体部品が伸長。自動車関連需要の代替産業としての期待が高まる。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2026年3月</span>
+        <span class="timeline-text">高市政権「戦略17分野」に「民間航空機（次期単通路機・次世代航空機）」が航空・宇宙分野の先行検討技術⑧として明示。所管：内閣府（経済安全保障）。2050年に約6兆円/年規模以上の市場獲得・次期単通路機8,000機製造・搭載エンジン世界シェア40%という目標を明示（日本成長戦略会議 第3回 資料2・2026年3月）。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2030年代</span>
+        <span class="timeline-text">次期単通路機（エアバス・ボーイングの次世代機）の開発着手・量産開始が想定される時間軸。日本が上流工程（仕様設計・認証）から参画することが政策目標。JAXA等の試験・実証インフラ整備が並行して進む。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2035年以降</span>
+        <span class="timeline-text">水素燃焼技術を搭載した次世代航空機の中小型機への導入が想定される時間軸（NEDO調査・2022年）。燃料電池は小型機を中心に2025年代以降から導入見通し。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2050年</span>
+        <span class="timeline-text">国際民間航空機関（ICAO）・IATA（国際航空運送協会）が2050年カーボンニュートラル達成を目標として合意済み（2021〜2022年）。SAF（持続可能な航空燃料）・環境新技術・運航方式改善の組み合わせが不可欠とされる。日本の航空機産業の目標：約6兆円/年規模以上の市場獲得。</span>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回 資料2「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+      <span class="source-tag">経済産業省「我が国航空機産業の今後の方向性について」（2024年3月）</span>
+      <span class="source-tag">NEDO「次世代航空機の開発に関する情報収集等調査」（2022年度）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH3 -->
+<div class="chapter" id="ch3">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 03</span>
+      <h2>経済的前提条件</h2>
+    </div>
+
+    <h3>エアバス・ボーイング2強体制という構造的前提</h3>
+    <p>民間航空機市場（中大型機）はエアバスとボーイングの2社がほぼ市場を二分しており、単通路機市場ではエアバスが約60〜65%のシェアを握っています。エアバスは2024年に766機を納入したのに対し、ボーイングは348機にとどまりました。ボーイングは2024年通期で118億ドルの赤字を計上し、2018年以来黒字を計上していない状態が続いています。</p>
+    <p>エアバスの受注残は8,726機（2025年1月時点）で、現在の製造体制での完納には約13年を要する見込みです。A321neoが受注残の大半を占めており、単通路機市場でのエアバス優位は当面継続する見通しです。</p>
+
+    <h3>ボーイングNMA（次世代中型機）計画凍結という構造変化</h3>
+    <p>ボーイングはコロナ前（2018〜2019年）に737MAXと787の間に位置する中型機「NMA（New Midmarket Airplane）」の開発を計画しており、座席数220〜270席・2025年頃の就航を想定していました。三菱重工が主要部品参画を狙い、東レも炭素繊維供給を目指していました。しかしコロナ禍による需要消滅と737MAX・787の同時トラブルにより、2020年にNMA開発計画を事実上打ち切りました（日本経済新聞・2020年4月）。2023年12月のボーイング幹部発言では「現状は進捗がない（NMAについて）」と明言されています（Aviation Wire・2023年12月）。</p>
+    <p>この「次世代機開発の空白」が、エアバスA321XLRの市場独走を許した一因であり、同時に次世代機が開発される際に日本が上流工程から参画する機会となり得る構造でもあります。</p>
+
+    <h3>日本のポジションの現状</h3>
+    <p>日本の機体構造事業はボーイング双通路機を中心にTier1サプライヤーとしての地位を確立していますが、エアバス機・単通路機市場への参画は限定的です（経済産業省・2024年3月）。機体事業に比べてエンジン・装備品・システム分野の収益性が高く、IHIはGTFエンジン（プラット・アンド・ホイットニー）へのリカーリング収益型ビジネスモデルでボーイング機体事業の影響を受けにくい構造を持っています。</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">60〜65%</span>
+        <span class="stat-unit"></span>
+        <span class="stat-label">エアバスの単通路機<br>世界市場シェア（推計・2025年）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">118</span>
+        <span class="stat-unit">億ドル赤字</span>
+        <span class="stat-label">ボーイング2024年通期<br>（2018年以来黒字なし）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">35%</span>
+        <span class="stat-unit"></span>
+        <span class="stat-label">B787機体製造における<br>日本メーカーの担当比率</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">約2兆</span>
+        <span class="stat-unit">円</span>
+        <span class="stat-label">日本航空機産業 合計生産額<br>（2025年・初の2兆円超え）</span>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">SecondWave「エアバスが制す航空市場：ボーイングを凌駕した半世紀の軌跡」（2025年6月）</span>
+      <span class="source-tag">Aviation Wire「NMA開発進捗なし」（2023年12月）</span>
+      <span class="source-tag">日本経済新聞「ボーイング、次世代機開発断念」（2020年4月）</span>
+      <span class="source-tag">日刊工業新聞/ニュースイッチ「787機体の増産解除」（2024年）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH4 -->
+<div class="chapter" id="ch4">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 04</span>
+      <h2>社会・安全保障との連関</h2>
+    </div>
+
+    <h3>航空旅客需要の長期拡大という社会的基盤</h3>
+    <p>ボーイングの2025年CMOによると、航空旅客需要は今後20年間で毎年平均4.7%増加する見込みです。新興国市場は2044年に世界の民間航空機のうち50%超を占めるとみられ、特にアジア地域内での旅客需要増加・LCC拡大・航空機の性能向上による適用航路拡大が単通路機需要の主要な牽引役となっています。</p>
+    <p>日本は国際旅客輸送の96%を航空輸送に依存しており（経済産業省・2024年）、航空機産業は国民経済が依拠する重要インフラです。航空機の部品点数は300万点にも及び、中小を含めた幅広いサプライチェーンが存在し、波及効果の大きい産業です。</p>
+
+    <h3>2050年カーボンニュートラルという制度的制約</h3>
+    <p>ICAOは2022年10月に2050年カーボンニュートラル達成の目標を合意しました。SAF（持続可能な航空燃料）の活用・新技術（水素・電動化）の導入・運航方式改善の組み合わせなしには目標達成が困難とされており、新型機開発における環境性能の要件が年々厳しくなっています。エアバスは2035年頃の水素推進航空機導入を目指す「ZEROe」プロジェクトを進行中です。</p>
+
+    <h3>防衛産業とのデュアルユース性</h3>
+    <p>日本成長戦略会議 第3回 資料2（2026年3月）は「民間航空機開発において必要な設備やサプライチェーン、人材等は防衛産業と共通部分も多くシナジー効果が高く安全保障上も重要。民間航空機産業への投資は、防衛分野への技術裨益を生むとともに、日米間の航空・防衛協力を支える戦略的基盤として不可欠」と明示しています。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">ボーイング 2025年民間航空機市場予測（CMO）（2025年6月）</span>
+      <span class="source-tag">日本成長戦略会議 第3回 資料2（2026年3月）</span>
+      <span class="source-tag">経済産業省「我が国航空機産業の今後の方向性について」（2024年3月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH5 -->
+<div class="chapter" id="ch5">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 05</span>
+      <h2>技術・DXの位置づけ</h2>
+    </div>
+
+    <h3>次期単通路機へのインテグレーション能力獲得</h3>
+    <p>日本成長戦略会議 第3回 資料2（2026年3月）は「次期単通路機では、これまで我が国が参画できていない仕様設計や認証等の工程に参画することで、システムインテグレーション能力の獲得を目指す」としています。現在の日本の参画は主に「製造・品質保証」の段階であり、「仕様設計・上流工程・認証」への参画が次のステップとして位置づけられています。</p>
+
+    <h3>環境新技術（水素・電動化・SAF）</h3>
+    <div class="data-box">
+      <div class="box-title">航空機の脱炭素化技術の時間軸（NEDO調査・2022年度）</div>
+      <ul>
+        <li>【SAF（持続可能な航空燃料）】現行機のエンジンでそのまま使用可能。国際的な普及展開が最も早い。国際競争力のある価格での安定供給体制構築が日本の政策課題。</li>
+        <li>【燃料電池】小型機を中心に2025年代以降の導入が見込まれる。</li>
+        <li>【水素燃焼技術】中小型機中心に2035年以降の導入が想定される時間軸。エアバスZEROeは2035年頃を目指す。</li>
+        <li>【電動化（バッテリー電動）】短距離・小型機中心。バッテリーエネルギー密度の向上が前提条件。</li>
+        <li>【超電導システム等】高効率・高出力の実現が可能となる先進技術として日本が強みを有する分野。</li>
+      </ul>
+    </div>
+
+    <h3>認証取得能力の不足という構造的課題</h3>
+    <p>日本成長戦略会議 第3回 資料2（2026年3月）は「安全認証に対応する専門人材不足」「試験設備の不足や老朽化」をボトルネックとして明示しています。FAA（米国連邦航空局）・EASA（欧州航空安全局）との相互認証取得・国際標準への対応が日本企業の単通路機上流参画の前提条件となりますが、この分野の専門人材は国内で慢性的に不足しています。</p>
+
+    <div class="compare-grid">
+      <div class="compare-cell">
+        <span class="cell-label">日本の強み（資料2明示）</span>
+        環境新技術（水素・電動化等）の技術開発基盤。製造技術と品質保証（B787での実績）。高精度生産と高品質保証を支えるDX技術。炭素繊維複合材（東レ・東邦テナックス等）。IHIのエンジン部品でのリカーリング収益モデル。
+      </div>
+      <div class="compare-cell">
+        <span class="cell-label">日本の課題（資料2明示）</span>
+        国内に完成機OEMがなく海外OEMの動向に左右。仕様設計・認証等の上流工程への参画が限定的。認証専門人材不足。試験設備の不足・老朽化。部素材サプライチェーンのキャパシティ不足。単通路機・エアバス機への参画が限定的。
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回 資料2（2026年3月）</span>
+      <span class="source-tag">経済産業省「我が国航空機産業の今後の方向性について」（2024年3月）</span>
+      <span class="source-tag">NEDO「次世代航空機の開発に関する情報収集等調査」（2022年度）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH6 -->
+<div class="chapter" id="ch6">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 06</span>
+      <h2>参入・撤退の条件</h2>
+    </div>
+
+    <h3>航空機産業参入の高い障壁</h3>
+    <p>航空機産業は部品点数300万点・10〜20年の開発期間・型式証明取得という参入障壁の高い産業です。航空会社は実績を最優先するため、新規参入企業が実績なしにTier1認定を受けることは極めて困難です。日本企業はB787プログラムで35%の機体製造を担う実績を積み上げましたが、単通路機・エアバス機での実績は限定的な状態が続いています。</p>
+
+    <h3>「投資回収に10〜20年かかる」という資金構造</h3>
+    <p>航空機開発は初期の研究開発から型式証明取得・量産・アフターマーケットまでの全工程で、投資開始から利益回収まで10〜20年を要する産業です。日本成長戦略会議 第3回 資料2（2026年3月）は「先行技術開発投資が大きく、投資回収までに時間がかかる」を主要なボトルネックとして明示しています。この時間軸の長さと不確実性が民間企業単独での大規模投資を困難にしており、政府支援の役割が大きくなる構造です。</p>
+
+    <h3>JAXA試験・実証インフラの整備</h3>
+    <p>政策パッケージとして、JAXA等の研究機関の試験・実証インフラ基盤の不足・老朽化への対応として設備整備支援が示されています。試験設備の整備は「海外の技術や設備では取得できない認証に有利な試験機能」の確保として位置づけられており、国内での飛行試験環境の整備が開発期間短縮・費用低減につながるとされています。</p>
+
+    <div class="data-box">
+      <div class="box-title">参入障壁の具体的な構造（政策文書に基づく事実）</div>
+      <ul>
+        <li>型式証明（TC）の取得には米FAA・欧州EASAとの関係構築と国際標準への適合が必要で、専門人材の育成に長期間を要する</li>
+        <li>世界の部素材サプライチェーンは欧米の一部事業者により寡占化されており、供給力がひっ迫している</li>
+        <li>航空機専業企業が少なく、日本の主要プレイヤーは多数の事業のうちの1つとして民間航空機事業を実施するため、民間航空機事業に投入できるリソースには限りがある（経済産業省・2024年）</li>
+        <li>MRJ（三菱スペースジェット）の開発中止（2023年2月）という先行事例が示す通り、国産完成機OEM事業の難易度は極めて高い</li>
+        <li>ボーイングNMA凍結という「機会の窓の閉鎖」の先例がある一方、次世代単通路機開発が進めば再び大型参画機会が生まれる構造でもある</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回 資料2（2026年3月）</span>
+      <span class="source-tag">経済産業省「我が国航空機産業の今後の方向性について」（2024年3月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH7 -->
+<div class="chapter" id="ch7">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 07</span>
+      <h2>経済安全保障との接続</h2>
+    </div>
+
+    <h3>航空機産業の戦略的重要性</h3>
+    <p>日本成長戦略会議 第3回 資料1「戦略17分野における主要な製品・技術等」（2026年3月）は、民間航空機産業の選定理由として「民間航空機開発のサプライチェーンや人材等は防衛産業とのシナジー効果も高く、安全保障上も重要であり、生産・技術基盤の自律性確保が急務」としています。</p>
+
+    <h3>サプライチェーン強靱化の課題</h3>
+    <p>航空機向けの高品質な部素材（炭素繊維・チタン・特殊合金・セラミック複合材・粉末冶金等）のサプライチェーンは欧米の一部事業者により寡占化されており、世界的に供給力がひっ迫しています。特に次期単通路機搭載エンジンの高温・高圧部へ参入するためのセラミック複合材（CMC）や粉末冶金等の国内サプライチェーン構築が急務とされています（資料2・2026年3月）。</p>
+
+    <h3>日米航空・防衛協力という戦略的文脈</h3>
+    <p>資料2（2026年3月）は「民間航空機産業への投資は、日米間の航空・防衛協力を支える戦略的基盤として不可欠」と明示しています。B787を通じて確立した日米間の民間航空機サプライチェーン協力関係は、防衛分野での協力基盤とも連動しており、単通路機分野での参画拡大はこの協力関係を次世代に継続・拡大するという安全保障上の意味を持ちます。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回 資料1「戦略17分野における主要な製品・技術等」（2026年3月）</span>
+      <span class="source-tag">日本成長戦略会議 第3回 資料2（2026年3月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH8 -->
+<div class="chapter" id="ch8">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 08</span>
+      <h2>外部環境の整理</h2>
+    </div>
+
+    <h3>第1〜7章の数値サマリー</h3>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>章</th>
+          <th>指標名</th>
+          <th>数値</th>
+          <th>出典・時点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>第1章</td>
+          <td>民間航空機 世界市場規模</td>
+          <td>2,112億ドル（2024年）</td>
+          <td>Research and Markets</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>今後20年間 新造機需要</td>
+          <td>4万3,600機（ボーイング2025年CMO）</td>
+          <td>ボーイング 2025年6月</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>うち単通路機比率</td>
+          <td>72%（2025年CMO）</td>
+          <td>同上</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>単通路機受注残</td>
+          <td>1万機・過去最高（解消に10年）</td>
+          <td>日本経済新聞 2025年</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>エアバス受注残</td>
+          <td>8,726機（2025年1月）</td>
+          <td>SecondWave 2025年6月</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>ボーイング受注残</td>
+          <td>5,643機（2025年1月）</td>
+          <td>同上</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>日本航空機産業 合計生産額</td>
+          <td>2025年に初の2兆円超え</td>
+          <td>日本経済新聞 2026年2月</td>
+        </tr>
+        <tr>
+          <td>第2章</td>
+          <td>2050年の日本の目標</td>
+          <td>約6兆円/年規模以上の市場獲得</td>
+          <td>資料2 2026年3月</td>
+        </tr>
+        <tr>
+          <td>第2章</td>
+          <td>次期単通路機 製造目標</td>
+          <td>2050年までに約8,000機</td>
+          <td>同上</td>
+        </tr>
+        <tr>
+          <td>第2章</td>
+          <td>次期単通路機搭載エンジン目標</td>
+          <td>世界シェア約40%</td>
+          <td>同上</td>
+        </tr>
+        <tr>
+          <td>第3章</td>
+          <td>エアバス単通路機市場シェア</td>
+          <td>約60〜65%（推計・2025年）</td>
+          <td>SecondWave 2025年6月</td>
+        </tr>
+        <tr>
+          <td>第3章</td>
+          <td>ボーイング2024年通期損失</td>
+          <td>118億ドル（2018年以来黒字なし）</td>
+          <td>同上</td>
+        </tr>
+        <tr>
+          <td>第3章</td>
+          <td>B787機体製造の日本比率</td>
+          <td>35%（三菱重工・川崎重工・SUBARU）</td>
+          <td>日刊工業新聞 2024年</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>構造的に固定されやすい要素（短期で変わりにくい前提）</h3>
+    <div class="data-box">
+      <div class="box-title">構造的に固定されやすい要素</div>
+      <ul>
+        <li>エアバス・ボーイング2強体制は、参入障壁の高さ（開発費・型式証明・サプライチェーン）から短期では変化しない</li>
+        <li>単通路機受注残1万機・解消に10年という需要積み上げは、生産能力が急拡大しない限り数年間継続する</li>
+        <li>日本企業の単通路機・エアバス機への参画が限定的という構造は、新規プログラムへの参画が確定するまで変化しない</li>
+        <li>ボーイングNMA開発凍結（2020年）により、次世代機が開発されるまで日本の大型参画機会は限定的となっている</li>
+        <li>認証専門人材不足・試験設備の不足は人材育成とインフラ整備に時間を要するため短期解消されない</li>
+        <li>2050年CN目標は国際合意として固定されており、航空機の環境新技術開発の方向性を規定し続ける</li>
+        <li>投資回収に10〜20年かかるという航空機産業の資金構造は、産業の性格上変化しない</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">本レポート第1〜7章に記載の各統計の集約</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH9 -->
+<div class="chapter" id="ch9">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 09</span>
+      <h2>内部環境編への橋渡し</h2>
+    </div>
+    <p>外部環境編では以下の構造を数字と事実で整理しました。</p>
+    <div class="data-box">
+      <div class="box-title">外部環境編の整理（5点）</div>
+      <ul>
+        <li>民間航空機世界市場は2,112億ドル（2024年）で今後20年4万3,600機の新造機需要・うち72%が単通路機という大市場。単通路機受注残1万機・解消に10年という強い需要基盤がある</li>
+        <li>エアバスが単通路機市場の60〜65%を握り・ボーイングは2018年以来黒字なし・NMA計画凍結という「2強体制の揺らぎ」が日本の参画機会の背景にある</li>
+        <li>日本は2025年に初の2兆円超えを達成し回復基調だが、単通路機・エアバス機への参画が限定的・国内に完成機OEMなしという産業構造上の課題が残る</li>
+        <li>2050年目標（6兆円/年・8,000機製造・エンジン世界シェア40%）は政策的に明示されているが、達成には仕様設計・認証等の上流工程参画という「これまで参画できていない工程」への参入が前提</li>
+        <li>認証専門人材不足・試験設備の不足・部素材サプライチェーンのひっ迫という3つのボトルネックが政策文書に明記されており、短期では解消されない</li>
+      </ul>
+    </div>
+
+    <div class="next-box">
+      <div class="next-label">NEXT — 内部環境編で整理すること</div>
+      <h3>外圧がプレイヤー構成・収益・人材にどう現れるか</h3>
+      <ul>
+        <li>三菱重工・川崎重工・SUBARU（機体構造）とIHI・川崎重工・三菱重工（エンジン）という業態別の収益構造の差異——特にIHIのリカーリング型収益モデルの実態</li>
+        <li>ボーイング787増産回復が各社財務に与える影響の実数</li>
+        <li>NMA計画凍結（三菱重工への直接影響）とMRJ開発中止（三菱航空機の清算）が産業全体に残した構造的影響</li>
+        <li>航空機設計エンジニア・認証専門家・複合材技術者・整備士（MRO）という人材市場の実態</li>
+        <li>「上流工程参画」に必要な仕様設計・システムインテグレーション人材がどれだけ不足しているか</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">本レポートの総括</span>
+    </div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  <div class="container">
+    <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。掲載データは各記載出典に基づきますが、数値の正確性・完全性を保証するものではありません。投資判断は自己責任において行ってください。市場規模数値は各調査機関の定義・算定方法が異なるため単純比較はできません。データ基準時点は2026年03月です。</p>
+    <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年03月 産業構造分析レポート ── 民間航空機（次期単通路機・次世代航空機）（外部環境編）</p>
+    <p style="margin-top:8px;">
+      <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
