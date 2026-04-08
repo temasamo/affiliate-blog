@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>業界分析｜高市政権「戦略17分野」航空・宇宙 無人航空機（民生）（外部環境編）</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+  :root {
+    --ink: #0f0f0e;
+    --paper: #f5f2ed;
+    --cream: #ede9e1;
+    --accent: #c84b2f;
+    --muted: #6b6760;
+    --rule: #c9c4bb;
+    --highlight: #fff8e6;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.8; }
+
+  .masthead { background: var(--ink); color: var(--paper); padding: 10px 40px; display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; border-bottom: 3px solid var(--accent); }
+  .masthead-right { color: var(--muted); }
+
+  .hero { background: var(--ink); color: var(--paper); padding: 60px 40px 50px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200,75,47,0.07) 4px, rgba(200,75,47,0.07) 5px); }
+  .hero-label { display: inline-block; background: var(--accent); color: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.12em; padding: 4px 10px; margin-bottom: 20px; }
+  .hero h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(20px, 3.2vw, 34px); font-weight: 900; line-height: 1.4; max-width: 820px; letter-spacing: 0.02em; margin-bottom: 24px; }
+  .hero h1 em { color: var(--accent); font-style: normal; }
+  .hero-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 16px; }
+  .hero-badge { border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.75); font-size: 11px; padding: 4px 12px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.06em; }
+  .data-notice { background: rgba(200,75,47,0.15); border-left: 3px solid var(--accent); padding: 10px 16px; margin-top: 24px; font-size: 12px; color: rgba(255,255,255,0.8); font-family: 'IBM Plex Mono', monospace; }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  .toc { background: var(--cream); border-top: 3px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 32px 40px; }
+  .toc h2 { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 16px; text-transform: uppercase; }
+  .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 6px 28px; }
+  .toc-item { font-size: 13px; color: var(--ink); text-decoration: none; padding: 3px 0; border-bottom: 1px dashed var(--rule); display: flex; gap: 8px; }
+  .toc-item:hover { color: var(--accent); }
+  .toc-num { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--accent); flex-shrink: 0; padding-top: 2px; }
+
+  .chapter { padding: 48px 40px; border-bottom: 1px solid var(--rule); }
+  .chapter:nth-child(even) { background: var(--cream); }
+  .chapter-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 28px; }
+  .chapter-num { background: var(--accent); color: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; padding: 4px 10px; flex-shrink: 0; margin-top: 4px; }
+  .chapter h2 { font-family: 'Noto Serif JP', serif; font-size: 22px; font-weight: 700; line-height: 1.4; border-bottom: 2px solid var(--ink); padding-bottom: 10px; flex: 1; }
+  .chapter h3 { font-family: 'Noto Serif JP', serif; font-size: 16px; font-weight: 700; margin: 24px 0 10px; padding-left: 10px; border-left: 3px solid var(--accent); }
+  .chapter p { margin-bottom: 14px; }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 24px 0; }
+  .stat-cell { background: var(--paper); padding: 18px 16px; text-align: center; }
+  .chapter:nth-child(even) .stat-cell { background: #f0ece4; }
+  .stat-cell .stat-num { font-family: 'IBM Plex Mono', monospace; font-size: 20px; font-weight: 600; color: var(--accent); line-height: 1.2; display: block; }
+  .stat-cell .stat-unit { font-size: 12px; color: var(--muted); display: block; margin-top: 2px; }
+  .stat-cell .stat-label { font-size: 11px; color: var(--ink); display: block; margin-top: 6px; font-weight: 700; letter-spacing: 0.04em; }
+
+  .data-box { background: var(--highlight); border: 1px solid #e0d8c4; border-left: 4px solid var(--accent); padding: 20px 24px; margin: 20px 0; }
+  .data-box .box-title { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+  .data-box ul { padding-left: 0; list-style: none; }
+  .data-box ul li { padding: 5px 0 5px 16px; border-bottom: 1px dashed var(--rule); font-size: 13px; position: relative; }
+  .data-box ul li::before { content: '▸'; color: var(--accent); position: absolute; left: 0; font-size: 11px; }
+  .data-box ul li:last-child { border-bottom: none; }
+
+  .note-box { background: rgba(200,75,47,0.05); border: 1px dashed var(--accent); padding: 16px 20px; margin: 20px 0; font-size: 13px; color: var(--muted); }
+  .note-box strong { color: var(--accent); }
+
+  .summary-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+  .summary-table thead tr { background: var(--ink); color: var(--paper); }
+  .summary-table thead th { padding: 10px 14px; text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; }
+  .summary-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .summary-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.03); }
+  .summary-table tbody td { padding: 9px 14px; vertical-align: top; }
+  .summary-table td:first-child { font-weight: 700; color: var(--accent); font-size: 12px; }
+
+  .timeline { margin: 20px 0; }
+  .timeline-item { display: flex; gap: 16px; padding: 12px 0; border-bottom: 1px dashed var(--rule); font-size: 13px; }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-year { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--accent); font-weight: 600; flex-shrink: 0; width: 120px; padding-top: 2px; }
+  .timeline-text { flex: 1; }
+
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 20px 0; }
+  .compare-cell { background: var(--paper); padding: 16px 18px; font-size: 13px; }
+  .chapter:nth-child(even) .compare-cell { background: #f0ece4; }
+  .compare-cell .cell-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 8px; display: block; }
+
+  .level-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 12px; }
+  .level-table thead tr { background: var(--ink); color: var(--paper); }
+  .level-table thead th { padding: 8px 12px; text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.06em; }
+  .level-table tbody tr { border-bottom: 1px solid var(--rule); }
+  .level-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.03); }
+  .level-table tbody td { padding: 8px 12px; vertical-align: top; font-size: 12px; }
+  .level-table td:first-child { font-weight: 700; color: var(--accent); font-family: 'IBM Plex Mono', monospace; }
+
+  .next-box { background: var(--ink); color: var(--paper); padding: 28px 32px; margin: 20px 0; border-left: 5px solid var(--accent); }
+  .next-box .next-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; }
+  .next-box h3 { font-family: 'Noto Serif JP', serif; font-size: 17px; margin-bottom: 12px; border-left: none; padding-left: 0; }
+  .next-box ul { padding-left: 0; list-style: none; }
+  .next-box ul li { padding: 4px 0 4px 14px; font-size: 13px; position: relative; color: rgba(245,242,237,0.85); }
+  .next-box ul li::before { content: '▸'; color: var(--accent); position: absolute; left: 0; font-size: 11px; }
+
+  .source-tag { display: inline-block; background: rgba(0,0,0,0.06); border: 1px solid var(--rule); padding: 3px 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin: 2px 3px; letter-spacing: 0.04em; }
+  .source-wrap { margin-top: 20px; padding-top: 12px; border-top: 1px dashed var(--rule); }
+
+  .disclaimer { background: var(--ink); color: rgba(245,242,237,0.5); padding: 24px 40px; font-size: 11px; line-height: 1.7; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.03em; }
+  .rule-thick { border: none; border-top: 3px solid var(--ink); margin: 0; }
+  .rule-thin { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+  @media (max-width: 600px) {
+    .masthead { flex-direction: column; gap: 6px; padding: 10px 16px; }
+    .hero { padding: 36px 16px 30px; }
+    .chapter { padding: 32px 16px; }
+    .toc { padding: 24px 16px; }
+    .compare-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <span>産業構造分析レポート</span>
+  <span class="masthead-right">2026年03月発行 ── 航空・宇宙／無人航空機（民生）（外部環境編）</span>
+</div>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-label">INDUSTRY ANALYSIS REPORT — EXTERNAL ENVIRONMENT</div>
+    <h1>業界分析｜高市政権「戦略17分野」<br>航空・宇宙<br><em>無人航空機（民生）</em>（外部環境編）</h1>
+    <div class="hero-meta">
+      <span class="hero-badge">就職・転職検討者向け</span>
+      <span class="hero-badge">株式投資家向け</span>
+      <span class="hero-badge">数字と事実のみ記載</span>
+    </div>
+    <div class="data-notice">
+      本レポートのデータ基準時点：2026年03月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thick">
+
+<div class="toc">
+  <div class="container">
+    <h2>目次 — TABLE OF CONTENTS</h2>
+    <div class="toc-grid">
+      <a class="toc-item" href="#ch0"><span class="toc-num">00</span>このレポートの目的と読み方</a>
+      <a class="toc-item" href="#ch1"><span class="toc-num">01</span>市場規模と成長率</a>
+      <a class="toc-item" href="#ch2"><span class="toc-num">02</span>制度・政策の枠組み</a>
+      <a class="toc-item" href="#ch3"><span class="toc-num">03</span>経済的前提条件</a>
+      <a class="toc-item" href="#ch4"><span class="toc-num">04</span>社会・安全保障との連関</a>
+      <a class="toc-item" href="#ch5"><span class="toc-num">05</span>技術・DXの位置づけ</a>
+      <a class="toc-item" href="#ch6"><span class="toc-num">06</span>参入・撤退の条件</a>
+      <a class="toc-item" href="#ch7"><span class="toc-num">07</span>経済安全保障との接続</a>
+      <a class="toc-item" href="#ch8"><span class="toc-num">08</span>外部環境の整理</a>
+      <a class="toc-item" href="#ch9"><span class="toc-num">09</span>内部環境編への橋渡し</a>
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thin">
+
+<!-- CH0 -->
+<div class="chapter" id="ch0">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 00</span>
+      <h2>このレポートの目的と読み方</h2>
+    </div>
+    <p>本レポートは、高市政権「戦略17分野」航空・宇宙の「無人航空機（民生）」の外部環境を、就職・転職検討者および株式投資家向けに数字と事実のみで記述します。所管は内閣府（経済安全保障）です。</p>
+    <p>なお「⑦小型無人航空機（防衛）」は防衛調達・SHIELD等の安全保障需要を中心に整理しました。本編では民生用途（インフラ点検・農業・物流・防犯等）を中心とした無人航空機市場の外部構造を記述します。両者は機体・技術・企業においてデュアルユースの重複があります。</p>
+    <div class="data-box">
+      <div class="box-title">「無人航空機（民生）」とは何か——3行で把握する</div>
+      <ul>
+        <li>【技術の概要】インフラ点検・農業・物流・測量・防犯等の民生用途に活用される無人航空機（ドローン）。有人地帯での目視外飛行（レベル4）が2022年12月の改正航空法施行で解禁され、事業化が本格化しつつある段階。</li>
+        <li>【現状の問題】世界市場では特定1国（中国・DJI等）が機体の7割超を占め、バッテリー等の重要部品も同国に依存。日本国内では量産体制が未整備で、国産機体はコスト競争力に劣る。目視外飛行の事業化に向けた技術・制度整備は進行中だが、収益化には時間を要する。</li>
+        <li>【なぜ今か】レベル4飛行解禁・国家資格制度創設・2030年8万台供給目標という政策的後押しと、DJI等への依存リスク（サイバーセキュリティ・経済安全保障）に対する代替需要が重なり、国産ドローン産業の育成が急務となっている。</li>
+      </ul>
+    </div>
+    <p>良し悪しの評価・投資推奨・将来予測は行いません。</p>
+    <div class="source-wrap"><span class="source-tag">本レポート基本方針</span></div>
+  </div>
+</div>
+
+<!-- CH1 -->
+<div class="chapter" id="ch1">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 01</span>
+      <h2>市場規模と成長率</h2>
+    </div>
+
+    <h3>世界の無人航空機市場規模</h3>
+    <p>世界のUAV（無人航空機）市場規模は2024年に364億ドルと評価され、2032年までに1,259億ドルへ成長、CAGRは17.3%と予測されています（Fortune Business Insights・2025年12月）。また世界の産業用ドローン市場（メーカー販売金額ベース）は2024年に3,187億円と予測されています（矢野経済研究所・2024年4月）。</p>
+    <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は、無人航空機の世界機体市場を2024年約1兆円→2030年約1.5兆円、日本市場は同約1,100億円→約2,700億円への伸びと予測しています（政策文書上の推計値）。</p>
+
+    <h3>日本国内のドローンビジネス市場</h3>
+    <p>2024年度の日本国内におけるドローンビジネス市場規模は4,371億円（前年度比13.4%増）と推測されています（インプレス総合研究所「ドローンビジネス調査報告書2025」・2025年3月）。2024〜2030年度の年間平均成長率は15.2%で推移し、2030年度には1兆195億円に達すると予測されています（同）。</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">364億</span>
+        <span class="stat-unit">ドル（2024年）</span>
+        <span class="stat-label">世界UAV市場規模<br>（Fortune Business Insights）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">CAGR<br>17.3%</span>
+        <span class="stat-unit">（2024〜2032年）</span>
+        <span class="stat-label">世界UAV市場成長率<br>（同上）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">4,371</span>
+        <span class="stat-unit">億円（2024年度）</span>
+        <span class="stat-label">国内ドローンビジネス市場<br>（インプレス総合研究所）</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">1兆195</span>
+        <span class="stat-unit">億円（2030年度・推計）</span>
+        <span class="stat-label">国内ドローンビジネス市場<br>成長予測（同上）</span>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <strong>【注記】</strong>市場規模数値は調査機関・集計範囲（機体のみか、サービス・周辺機器含むか）によって大きく異なります。単純比較はできません。「資料2の推計値」は政策文書上の参考値です。
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+      <span class="source-tag">インプレス総合研究所「ドローンビジネス調査報告書2025」（2025年3月）</span>
+      <span class="source-tag">Fortune Business Insights UAV市場（2025年12月）</span>
+      <span class="source-tag">矢野経済研究所 産業用ドローン世界市場（2024年4月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH2 -->
+<div class="chapter" id="ch2">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 02</span>
+      <h2>制度・政策の枠組み</h2>
+    </div>
+
+    <h3>飛行レベル制度——Level 1〜4の構造</h3>
+    <table class="level-table">
+      <thead>
+        <tr>
+          <th>レベル</th>
+          <th>飛行形態</th>
+          <th>必要要件</th>
+          <th>主な用途</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>レベル1</td>
+          <td>目視内・手動操縦</td>
+          <td>なし（基本的な飛行ルール遵守）</td>
+          <td>趣味・空撮（基本）</td>
+        </tr>
+        <tr>
+          <td>レベル2</td>
+          <td>目視内・自動操縦</td>
+          <td>なし（同上）</td>
+          <td>農薬散布・写真測量</td>
+        </tr>
+        <tr>
+          <td>レベル3</td>
+          <td>無人地帯・目視外・補助者なし</td>
+          <td>二等技能証明・第二種機体認証</td>
+          <td>過疎地・山間部の配送</td>
+        </tr>
+        <tr>
+          <td>レベル3.5</td>
+          <td>無人地帯・目視外・機上カメラ確認</td>
+          <td>操縦ライセンス保有・機上カメラ活用</td>
+          <td>市街地外の物流（2024年度新設）</td>
+        </tr>
+        <tr>
+          <td>レベル4</td>
+          <td>有人地帯・補助者なし・目視外</td>
+          <td>一等技能証明・第一種機体認証・国交大臣許可</td>
+          <td>都市部物流・インフラ点検・緊急配送</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>制度整備の主要マイルストーン</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="timeline-year">2022年6月</span>
+        <span class="timeline-text">100g以上の全ての無人航空機の機体登録が義務化。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2022年12月5日</span>
+        <span class="timeline-text">改正航空法施行。レベル4（有人地帯での補助者なし目視外飛行）の実現に向けた機体認証制度・無人航空機操縦者技能証明制度（国家資格）が創設。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2023年3月</span>
+        <span class="timeline-text">ACSL社の機体が第一種型式認証を取得（国内初）。日本郵便が有人地帯でのレベル4飛行を開始。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2024年度</span>
+        <span class="timeline-text">レベル3.5飛行の制度を新設。機上カメラによる歩行者等の有無確認で補助者・看板の設置を不要とし、物流分野の事業化を促進。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2025年12月</span>
+        <span class="timeline-text">ドローン民間資格による飛行許可申請が廃止予定。飛行許可申請の要件が国家資格に一本化される方向。</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2026年3月</span>
+        <span class="timeline-text">高市政権「戦略17分野」の主要な製品・技術等に「無人航空機」が明示（日本成長戦略会議 第3回 資料1）。2030年に8万台の機体・重要部品供給確保が目標とされる（政策目標として示されている）。</span>
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">国土交通省 改正航空法（2022年12月施行）</span>
+      <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+      <span class="source-tag">内閣官房「レベル4飛行の実現のための制度整備状況」（2024年）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH3 -->
+<div class="chapter" id="ch3">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 03</span>
+      <h2>経済的前提条件</h2>
+    </div>
+
+    <h3>DJIの7割超シェアという市場の現実</h3>
+    <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「無人航空機の世界市場シェアは単独の国が7割以上を占め、バッテリーなどの重要部品についても当該国が大きなシェアを持つ」と明示しています。中国のDJI（大疆創新）が民生用ドローンの世界市場で約7割のシェアを持ち、日本の国産ドローンとの価格差は約10倍（量産前）とされています（⑦小型無人航空機編）。</p>
+    <p>この価格差は量産体制が整っていない国産機体の構造的コスト高が主因であり、政府調達・セキュリティ需要という「DJIを選べない市場」での国産化が先行する構造となっています。</p>
+
+    <h3>用途別の市場構造</h3>
+    <div class="data-box">
+      <div class="box-title">国内ドローンビジネス 主要用途の市場特性</div>
+      <ul>
+        <li>【インフラ点検（最大規模）】橋梁・鉄塔・送電線・基地局・ダム等の点検。2024年度から大手インフラ保有企業でのドローン点検がさらに進展し、サービス化して他社へ提供する動きも拡大（インプレス総合研究所・2025年12月）。点検・計測はドローン関連ビジネス中で最大規模の市場。</li>
+        <li>【農業（農薬散布・モニタリング）】農薬散布・肥料散布・作物モニタリング等。高齢化が進む農村部での人手不足解消ニーズが高い。一定規模の市場が形成されており、ヤマハ発動機等が産業用農業ドローンで先行。</li>
+        <li>【測量・建設】写真測量・土量計測・施工管理等。建設現場での活用が急速に普及。目視内飛行（レベル2）での自動航行が多いため相対的に規制ハードルが低い。</li>
+        <li>【物流（成長期待最大）】ラストワンマイル配送・離島・山間部向け配送。レベル3〜4飛行の解禁により事業化が本格化しつつある。日本郵便（レベル4）・楽天・セイノーHD等が実証・商用化を進めている。ただし採算確立には至っていないケースが多い。</li>
+        <li>【防犯・警備・空撮】施設警備・イベント撮影・報道等。ドローンショー市場は2024年度に前年比約2倍に急拡大（インプレス総合研究所・2025年3月）。</li>
+      </ul>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+      <span class="source-tag">インプレス総合研究所「ドローンビジネス調査報告書2025」（2025年3月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH4 -->
+<div class="chapter" id="ch4">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 04</span>
+      <h2>社会・安全保障との連関</h2>
+    </div>
+
+    <h3>人手不足・インフラ老朽化という社会的需要</h3>
+    <p>日本では少子高齢化に伴う人手不足・インフラの老朽化・農業従事者の高齢化という社会課題が深刻化しており、無人航空機はこれらの課題解決のインフラとして位置づけられています。特に山間部・離島・過疎地での物流・点検・農業支援は、人員を配置するコストが高く、ドローンの経済合理性が成立しやすい構造です。</p>
+    <p>災害対応分野では、令和6年能登半島地震での被災地域への物資輸送・状況確認へのドローン活用実績が蓄積されており、平時から緊急時への転用という観点からも需要が高まっています。</p>
+
+    <h3>デュアルユースという安全保障との接続</h3>
+    <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「防衛需要も拡大（デュアルユース）」と明示しており、民生ドローンの技術・製造基盤は防衛ドローン（SHIELD等）にも転用されます。この点は⑦小型無人航空機（防衛）との重複領域です。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH5 -->
+<div class="chapter" id="ch5">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 05</span>
+      <h2>技術・DXの位置づけ</h2>
+    </div>
+
+    <h3>目視外飛行（レベル3〜4）の事業化が市場拡大の鍵</h3>
+    <p>国内ドローン市場の成長率予測（CAGR 15.2%・2024〜2030年度）の前提となっている市場拡大シナリオは、レベル4飛行（有人地帯での目視外飛行）の事業化が本格化することを含んでいます。インプレス総合研究所（2025年3月）は「レベル4飛行の実現により物流分野や都市部での活用が本格化すれば、市場はさらに飛躍的に拡大すると期待される」としています。</p>
+
+    <h3>自動・自律飛行技術とAIの役割</h3>
+    <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「中長期的に競争力の源泉となるAIを活用した自律化などを見据え、要素技術開発を進める」としています。自動飛行・障害物回避・群制御・AI画像解析という技術は、民生用途（自動点検・自律農薬散布）と防衛用途（自律制御・群制御）に共通のデュアルユース技術です。</p>
+
+    <h3>運航管理システム（UTM）の整備</h3>
+    <p>複数のドローンが同時に安全に飛行するための運航管理システム（UTM：Unmanned Traffic Management）の整備が制度的課題として認識されています。国土交通省は「空の産業革命に向けたロードマップ2022」に基づき、2025年頃のStep2（UTMプロバイダ認定制度創設）・その後のStep3（高度自律・多数機同時運航）の実現を目指しています。</p>
+
+    <div class="compare-grid">
+      <div class="compare-cell">
+        <span class="cell-label">技術的強み（資料2明示）</span>
+        自動・自律飛行・AI画像解析・センサー制御。目視外飛行が有効となる環境（災害・インフラ老朽化・物流人手不足）が身近にあることで、国内での技術開発・実証が進めやすい。
+      </div>
+      <div class="compare-cell">
+        <span class="cell-label">技術的課題（資料2明示）</span>
+        目視外飛行の事業化に向けた技術・ビジネスモデルの経済合理性に関する不確実性。国際規格が海外主導で標準化され、認証に使用する国際規格への対応が課題。試験設備の能力不足。
+      </div>
+    </div>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+      <span class="source-tag">インプレス総合研究所「ドローンビジネス調査報告書2025」（2025年3月）</span>
+      <span class="source-tag">国土交通省「空の産業革命に向けたロードマップ2022」</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH6 -->
+<div class="chapter" id="ch6">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 06</span>
+      <h2>参入・撤退の条件</h2>
+    </div>
+
+    <h3>「DJIを選べない市場」が国産機体の参入起点</h3>
+    <p>民間の汎用ドローン市場ではDJIの価格競争力が圧倒的ですが、政府機関・重要インフラ（電力・通信・鉄道）・防衛関連での利用においてはサイバーセキュリティ・情報漏洩リスクへの懸念からDJI等の中国製機体を採用しにくい状況が続いています。この「DJIを選べない市場」が国産ドローンメーカーの主要な参入起点となっています。</p>
+    <p>日本政府は2020年9月に政府調達ドローンのセキュリティ要件に関する方針を示しており、機体・通信・データ管理の各レイヤーでのセキュリティ確保が国産ドローンの差別化軸となっています。</p>
+
+    <h3>認証取得・試験設備不足という参入障壁</h3>
+    <p>レベル4飛行に必要な第一種機体認証の取得には、安全性評価・型式認証という長い認証プロセスが必要です。資料2（2026年3月）は「認証取得、試験・実証の知見を有する人材が不足」「試験設備の能力不足により機体開発において地上試験で実施可能な内容が限定的」とし、飛行試験への依存度が高い現状をボトルネックとして明示しています。</p>
+
+    <h3>採算確立の難しさ——物流ドローンの実態</h3>
+    <p>物流ドローンの採算確立には、機体コスト・パイロット人件費・インフラ（バーティポート・充電設備）・運航管理費を上回る収益が必要です。過疎地・離島での配送ニーズはあるものの、1フライトあたりの配送量が限られるため、スケールメリットが出にくい構造が残っています。レベル3.5飛行制度（2024年度新設）によるコスト削減効果がどの程度あるかは、2025〜2026年の実証事例の積み上げを待つ段階です。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+      <span class="source-tag">内閣官房「レベル4飛行の実現のための制度整備状況」（2024年）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH7 -->
+<div class="chapter" id="ch7">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 07</span>
+      <h2>経済安全保障との接続</h2>
+    </div>
+
+    <h3>「特定重要物資」指定とサプライチェーン強靱化</h3>
+    <p>国産ドローンは経済安保推進法に基づく「特定重要物資」に指定されており、安定供給確保支援基金による機体・重要部品の量産体制構築への設備投資支援が行われています（資料2・2026年3月）。フライトコントローラー・バッテリー・モーター等の重要部品の国産代替開発が政策的に促進されています。</p>
+
+    <h3>2030年「8万台」という供給目標の意味</h3>
+    <p>資料2（2026年3月）は2030年時点で「安定供給及びサイバーセキュリティの確保が特に求められる国内の点検・物流・防犯用途に対して、8万台の機体・重要部品の供給を確保する」ことを政策目標として示しています。この目標は国産機体の量産体制が確立した場合の想定規模を示しており、現在の国産機体供給量は大幅に下回っている段階です。</p>
+
+    <div class="source-wrap">
+      <span class="source-tag">日本成長戦略会議 第3回 資料1「戦略17分野における主要な製品・技術等」（2026年3月）</span>
+      <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+    </div>
+  </div>
+</div>
+
+<!-- CH8 -->
+<div class="chapter" id="ch8">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 08</span>
+      <h2>外部環境の整理</h2>
+    </div>
+
+    <h3>第1〜7章の数値サマリー</h3>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>章</th>
+          <th>指標名</th>
+          <th>数値</th>
+          <th>出典・時点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>第1章</td>
+          <td>世界UAV市場規模</td>
+          <td>364億ドル（2024年）→1,259億ドル（2032年）</td>
+          <td>Fortune Business Insights 2025年12月</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>世界UAV市場 CAGR</td>
+          <td>17.3%（2024〜2032年）</td>
+          <td>同上</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>世界機体市場（資料2推計）</td>
+          <td>約1兆円（2024年）→約1.5兆円（2030年）</td>
+          <td>資料2 2026年3月</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>日本機体市場（資料2推計）</td>
+          <td>約1,100億円（2024年）→約2,700億円（2030年）</td>
+          <td>同上</td>
+        </tr>
+        <tr>
+          <td>第1章</td>
+          <td>国内ドローンビジネス市場</td>
+          <td>4,371億円（2024年度）→1兆195億円（2030年度・推計）</td>
+          <td>インプレス総合研究所 2025年3月</td>
+        </tr>
+        <tr>
+          <td>第3章</td>
+          <td>特定1国の世界市場シェア</td>
+          <td>7割以上（機体・重要部品）</td>
+          <td>資料2 2026年3月</td>
+        </tr>
+        <tr>
+          <td>第7章</td>
+          <td>2030年供給目標</td>
+          <td>8万台（政策目標として示されている）</td>
+          <td>同上</td>
+        </tr>
+        <tr>
+          <td>第2章</td>
+          <td>国家資格制度スタート</td>
+          <td>2022年12月5日（改正航空法施行）</td>
+          <td>国土交通省</td>
+        </tr>
+        <tr>
+          <td>第2章</td>
+          <td>レベル3.5制度新設</td>
+          <td>2024年度</td>
+          <td>内閣官房 2024年</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>構造的に固定されやすい要素</h3>
+    <div class="data-box">
+      <div class="box-title">構造的に固定されやすい要素</div>
+      <ul>
+        <li>DJI等の特定1国が世界市場の7割超を占めるという競合構造は、国産機体が量産コスト競争力を確立するまで変化しない</li>
+        <li>「DJIを選べない市場（政府・重要インフラ・防衛）」が国産機体の主要需要源となるという構造は、セキュリティ要件が維持される限り続く</li>
+        <li>レベル4飛行での物流事業化の採算確立には、機体コスト低下・量産化・UTM整備という複数の前提条件があり、時間軸は中長期</li>
+        <li>認証専門人材不足・試験設備不足は短期では解消されない</li>
+        <li>国際規格が海外主導で標準化が進むという構造は、日本が標準化への参加・主導を強化しない限り変化しない</li>
+        <li>2030年8万台という政策目標は現状の国産供給量を大幅に上回っており、量産体制構築が前提条件</li>
+      </ul>
+    </div>
+    <div class="source-wrap"><span class="source-tag">本レポート第1〜7章に記載の各統計の集約</span></div>
+  </div>
+</div>
+
+<!-- CH9 -->
+<div class="chapter" id="ch9">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 09</span>
+      <h2>内部環境編への橋渡し</h2>
+    </div>
+    <div class="data-box">
+      <div class="box-title">外部環境編の整理（5点）</div>
+      <ul>
+        <li>世界UAV市場は364億ドル（2024年）CAGR 17.3%・日本国内市場は4,371億円（2024年度）CAGR 15.2%という高成長市場だが、現状は特定1国（中国）が7割超を独占</li>
+        <li>レベル4飛行解禁（2022年12月）・国家資格制度創設・レベル3.5制度新設（2024年度）という段階的な制度整備が進行中で、物流・点検分野の事業化環境が整いつつある</li>
+        <li>「DJIを選べない市場（政府・重要インフラ・防衛）」での国産代替需要が国産ドローン産業育成の起点。2030年8万台の供給目標（政策目標として示されている）は現状の国産供給量を大幅に上回る</li>
+        <li>物流ドローンの採算確立には機体コスト削減・量産化・UTM整備という複数の前提条件が必要で、事業化は進行中だが採算確立には時間を要する</li>
+        <li>認証専門人材不足・試験設備不足・国際標準化の遅れという3つの構造的ボトルネックが政策文書に明示されている</li>
+      </ul>
+    </div>
+    <div class="next-box">
+      <div class="next-label">NEXT — 内部環境編で整理すること</div>
+      <h3>外圧がプレイヤー構成・収益・人材にどう現れるか</h3>
+      <ul>
+        <li>ACSL・プロドローン・スカイドライブ・テラ・ラボ等の国産ドローンメーカーの財務・資金調達実態</li>
+        <li>ヤマハ発動機（農業用）・NTTイードローンテクノロジー・ソニーグループ等の既存大手の民生ドローン事業の収益規模</li>
+        <li>ドローンパイロット・ドローンエンジニア・認証専門家の人材市場（⑦との重複を参照しつつ民生に特化した追加データ）</li>
+        <li>「DJIを選べない市場」でどの企業が受益しているか・採算確立の状況</li>
+        <li>宇宙戦略基金・安定供給確保支援基金からの支援実態</li>
+      </ul>
+    </div>
+    <div class="source-wrap"><span class="source-tag">本レポートの総括</span></div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  <div class="container">
+    <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。市場規模数値は各調査機関の定義・算定方法が異なるため単純比較はできません。「政策目標として示されている」と注記した数値は政府が目標として掲げた値であり達成を保証するものではありません。データ基準時点は2026年03月です。</p>
+    <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年03月 産業構造分析レポート ── 無人航空機（民生）（外部環境編）</p>
+    <p style="margin-top:8px;"><a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a></p>
+  </div>
+</div>
+
+</body>
+</html>
