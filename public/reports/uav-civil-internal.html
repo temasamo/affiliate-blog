@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業界分析｜高市政権「戦略17分野」航空・宇宙 無人航空機（民生）（内部環境編）</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+    :root {
+        --ink: #0f0f0e;
+        --paper: #f5f2ed;
+        --cream: #ede9e1;
+        --accent: #c84b2f;
+        --muted: #6b6760;
+        --rule: #c9c4bb;
+        --highlight: #fff8e6;
+    }
+
+    *, * ::before, * ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        border-bottom: 3px solid var(--accent);
+    }
+
+    .masthead-right {
+        color: var(--muted);
+    }
+
+    .hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 60px 40px 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200, 75, 47, 0.07) 4px, rgba(200, 75, 47, 0.07) 5px);
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        padding: 4px 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(20px, 3.2vw, 34px);
+        font-weight: 900;
+        line-height: 1.4;
+        max-width: 820px;
+        letter-spacing: 0.02em;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+        color: var(--accent);
+        font-style: normal;
+    }
+
+    .hero-meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+
+    .hero-badge {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 11px;
+        padding: 4px 12px;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.06em;
+    }
+
+    .data-notice {
+        background: rgba(200, 75, 47, 0.15);
+        border-left: 3px solid var(--accent);
+        padding: 10px 16px;
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .toc {
+        background: var(--cream);
+        border-top: 3px solid var(--ink);
+        border-bottom: 1px solid var(--rule);
+        padding: 32px 40px;
+    }
+
+    .toc h2 {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 16px;
+        text-transform: uppercase;
+    }
+
+    .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 6px 28px;
+    }
+
+    .toc-item {
+        font-size: 13px;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 3px 0;
+        border-bottom: 1px dashed var(--rule);
+        display: flex;
+        gap: 8px;
+    }
+
+    .toc-item:hover {
+        color: var(--accent);
+    }
+
+    .toc-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        flex-shrink: 0;
+        padding-top: 2px;
+    }
+
+    .chapter {
+        padding: 48px 40px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .chapter:nth-child(even) {
+        background: var(--cream);
+    }
+
+    .chapter-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .chapter-num {
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .chapter h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.4;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 10px;
+        flex: 1;
+    }
+
+    .chapter h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 24px 0 10px;
+        padding-left: 10px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .chapter p {
+        margin-bottom: 14px;
+    }
+
+    .connect-banner {
+        background: var(--ink);
+        border-left: 5px solid var(--accent);
+        padding: 16px 20px;
+        margin-bottom: 28px;
+        font-size: 13px;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .connect-banner strong {
+        color: var(--accent);
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 24px 0;
+    }
+
+    .stat-cell {
+        background: var(--paper);
+        padding: 18px 16px;
+        text-align: center;
+    }
+
+    .chapter:nth-child(even) .stat-cell {
+        background: #f0ece4;
+    }
+
+    .stat-cell .stat-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--accent);
+        line-height: 1.2;
+        display: block;
+    }
+
+    .stat-cell .stat-unit {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-top: 2px;
+    }
+
+    .stat-cell .stat-label {
+        font-size: 11px;
+        color: var(--ink);
+        display: block;
+        margin-top: 6px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .data-box {
+        background: var(--highlight);
+        border: 1px solid #e0d8c4;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 20px 0;
+    }
+
+    .data-box .box-title {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .data-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .data-box ul li {
+        padding: 5px 0 5px 16px;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+        position: relative;
+    }
+
+    .data-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .data-box ul li:last-child {
+        border-bottom: none;
+    }
+
+    .note-box {
+        background: rgba(200, 75, 47, 0.05);
+        border: 1px dashed var(--accent);
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .note-box strong {
+        color: var(--accent);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13px;
+    }
+
+    .summary-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .summary-table thead th {
+        padding: 10px 14px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+    }
+
+    .summary-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .summary-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .summary-table tbody td {
+        padding: 9px 14px;
+        vertical-align: top;
+    }
+
+    .summary-table td:first-child {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 12px;
+    }
+
+    .biz-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 12px;
+    }
+
+    .biz-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .biz-table thead th {
+        padding: 8px 12px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.06em;
+    }
+
+    .biz-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .biz-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .biz-table tbody td {
+        padding: 8px 12px;
+        vertical-align: top;
+        font-size: 12px;
+    }
+
+    .biz-table td:first-child {
+        font-weight: 700;
+    }
+
+    .biz-table .acc {
+        color: var(--accent);
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+    }
+
+    .next-box {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 28px 32px;
+        margin: 20px 0;
+        border-left: 5px solid var(--accent);
+    }
+
+    .next-box .next-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .next-box h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 17px;
+        margin-bottom: 12px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .next-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .next-box ul li {
+        padding: 4px 0 4px 14px;
+        font-size: 13px;
+        position: relative;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .next-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.06);
+        border: 1px solid var(--rule);
+        padding: 3px 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        color: var(--muted);
+        margin: 2px 3px;
+        letter-spacing: 0.04em;
+    }
+
+    .source-wrap {
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 1px dashed var(--rule);
+    }
+
+    .disclaimer {
+        background: var(--ink);
+        color: rgba(245, 242, 237, 0.5);
+        padding: 24px 40px;
+        font-size: 11px;
+        line-height: 1.7;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.03em;
+    }
+
+    .rule-thick {
+        border: none;
+        border-top: 3px solid var(--ink);
+        margin: 0;
+    }
+
+    .rule-thin {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .masthead {
+            flex-direction: column;
+            gap: 6px;
+            padding: 10px 16px;
+        }
+
+        .hero {
+            padding: 36px 16px 30px;
+        }
+
+        .chapter {
+            padding: 32px 16px;
+        }
+
+        .toc {
+            padding: 24px 16px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span>産業構造分析レポート</span>
+        <span class="masthead-right">2026年03月発行 ── 航空・宇宙／無人航空機（民生）（内部環境編）</span>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-label">INDUSTRY ANALYSIS REPORT — INTERNAL ENVIRONMENT</div>
+            <h1>
+                業界分析｜高市政権「戦略17分野」
+                <br>
+                航空・宇宙
+                <br>
+                <em>無人航空機（民生）</em>
+                （内部環境編）
+            </h1>
+            <div class="hero-meta">
+                <span class="hero-badge">就職・転職検討者向け</span>
+                <span class="hero-badge">株式投資家向け</span>
+                <span class="hero-badge">数字と事実のみ記載</span>
+            </div>
+            <div class="data-notice">本レポートのデータ基準時点：2026年03月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用</div>
+        </div>
+    </div>
+
+    <hr class="rule-thick">
+
+    <div class="toc">
+        <div class="container">
+            <h2>目次 — TABLE OF CONTENTS</h2>
+            <div class="toc-grid">
+                <a class="toc-item" href="#ch0">
+                    <span class="toc-num">00</span>
+                    この内部環境編の立ち位置
+                </a>
+                <a class="toc-item" href="#ch1">
+                    <span class="toc-num">01</span>
+                    業界内プレイヤー構成
+                </a>
+                <a class="toc-item" href="#ch2">
+                    <span class="toc-num">02</span>
+                    バリューチェーンと収益の所在
+                </a>
+                <a class="toc-item" href="#ch3">
+                    <span class="toc-num">03</span>
+                    主要企業の財務指標概要
+                </a>
+                <a class="toc-item" href="#ch4">
+                    <span class="toc-num">04</span>
+                    ACSL——上場国産ドローンメーカーの収益実態
+                </a>
+                <a class="toc-item" href="#ch5">
+                    <span class="toc-num">05</span>
+                    ヤマハ発動機——農業用で国内最長実績
+                </a>
+                <a class="toc-item" href="#ch6">
+                    <span class="toc-num">06</span>
+                    人材市場の実態
+                </a>
+                <a class="toc-item" href="#ch7">
+                    <span class="toc-num">07</span>
+                    構造的課題の所在
+                </a>
+                <a class="toc-item" href="#ch8">
+                    <span class="toc-num">08</span>
+                    誤解されやすいポイント
+                </a>
+                <a class="toc-item" href="#ch9">
+                    <span class="toc-num">09</span>
+                    内部環境の整理
+                </a>
+                <a class="toc-item" href="#ch10">
+                    <span class="toc-num">10</span>
+                    有料版への橋渡し
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <!-- CH0 -->
+    <div class="chapter" id="ch0">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <h2>この内部環境編の立ち位置</h2>
+            </div>
+            <div class="connect-banner">
+                <strong>外部環境編との接続：</strong>
+                外部環境編では、世界UAV市場364億ドル（2024年）CAGR 17.3%・国内市場4,371億円（2024年度）CAGR 15.2%・特定1国が7割超を占める競合構造・レベル4解禁（2022年12月）・2030年8万台目標（政策目標として示されている）・認証専門人材不足・試験設備不足・国際標準化の遅れという外部構造を整理しました。本編ではその前提を受け、「外部の構造がこの産業の業態・収益・人材にどのような特性として現れているか」を数字と事実で記述します。
+                    
+            </div>
+            <div class="data-box">
+                <div class="box-title">本編でやること／やらないこと</div>
+                <ul>
+                    <li>【やること】ACSL（東証グロース上場・国産機体メーカー）の財務実態を決算数値で記述する</li>
+                    <li>【やること】ヤマハ発動機（農業用無人ヘリ・ドローン・国内最長実績）の事業特性を示す</li>
+                    <li>【やること】「開発投資先行型・赤字継続・政府調達が収益の柱」という国産ドローンメーカーの収益構造の特性を示す</li>
+                    <li>【やること】ドローンエンジニア・パイロット・認証専門家の人材市場実態を整理する</li>
+                    <li>【やらないこと】特定銘柄の投資推奨・勝ち負けの断定・良し悪しの評価</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート基本方針</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH1 -->
+    <div class="chapter" id="ch1">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <h2>業界内プレイヤー構成</h2>
+            </div>
+            <table class="biz-table">
+                <thead>
+                    <tr>
+                        <th>業態</th>
+                        <th>主な役割</th>
+                        <th>代表プレイヤー</th>
+                        <th>収益の性格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            国産機体
+                            <br>
+                            メーカー
+                        </td>
+                        <td>セキュアな国産ドローン機体の開発・製造・販売。政府調達・重要インフラ向けを主軸に展開。DJI等が対象外とされる市場（政府・防衛・インフラ）での代替機体供給。</td>
+                        <td class="acc">ACSL（6232・東証グロース）、プロドローン、センシンロボティクス等</td>
+                        <td>機体販売型フロー収益＋PoC・運用支援。現状は開発投資先行の赤字フェーズが多い。政府調達（防衛装備庁・自治体等）が収益の主要な柱。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            農業用無人機
+                            <br>
+                            メーカー（農機系）
+                        </td>
+                        <td>農薬散布・肥料散布用の産業用無人ヘリコプター・農業ドローンの製造・販売。1987年からの長い実績を持つ国内最長歴のカテゴリー。</td>
+                        <td class="acc">ヤマハ発動機（産業用無人ヘリ「FAZER R」・農業ドローン「YMR-II」）、クボタ（T10K・T25K）、マゼックス等</td>
+                        <td>機体販売型収益。農薬散布の省力化需要に支えられた実績市場。DJIとの競合より農機メーカーとしての差別化で独自地位を保つ。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            物流ドローン
+                            <br>
+                            サービス
+                        </td>
+                        <td>ラストワンマイル配送・離島・山間部向け宅配をドローンで実現するサービス事業者。レベル3〜4飛行で事業化。実証から商用化移行の段階。</td>
+                        <td class="acc">楽天（楽天ドローン）、日本郵便、セイノーHD、エアロネクスト等</td>
+                        <td>サービス収益型。現状は採算確立に至っていないケースが多く、実証段階。機体はDJI等の外部調達が多い。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            インフラ点検
+                            <br>
+                            ドローンサービス
+                        </td>
+                        <td>橋梁・鉄塔・送電線・基地局等の点検業務を無人化。従来の人力点検からの置き換えが進む最大規模の民生ドローン用途。</td>
+                        <td class="acc">センシンロボティクス、ブルーイノベーション、東京電力パワーグリッド系等の事業者</td>
+                        <td>点検サービス受託型収益。発注元企業（電力・通信・鉄道等）からの継続受注が収益基盤。機体はDJI・国産混在。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ドローン運航
+                            <br>
+                            管理・周辺
+                        </td>
+                        <td>UTM（運航管理システム）・ドローンポート・保険・スクール・地図情報サービス等の周辺業態。</td>
+                        <td class="acc">NTT e-Drone Technology（UTM）、ゼンリン（地図）、各損保（保険）、全国ドローンスクール</td>
+                        <td>多様な収益モデル。市場拡大に伴い成長。レベル4普及によりUTMプロバイダの役割が拡大する構造。</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="source-wrap">
+                <span class="source-tag">各社公開情報・FISCO「ACSL取材レポート」（2025年11月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH2 -->
+    <div class="chapter" id="ch2">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <h2>バリューチェーンと収益の所在</h2>
+            </div>
+            <h3>「DJIを選べない市場」での国産機体の収益構造</h3>
+            <p>国産ドローンメーカー（ACSL等）の現状の収益構造は「DJIを選べない市場」での機体販売が主柱です。政府機関・防衛関連・重要インフラ（電力・通信・鉄道）での調達では、サイバーセキュリティ・情報漏洩リスクへの懸念からDJI等の中国製機体が敬遠されており、国産機体への需要が発生しています。ACSLが2024年に防衛装備庁向けSOTEN（蒼天）の大型案件を複数受注したのはこの構造の典型例です。</p>
+            <p>ただしこの需要は「セキュリティが担保された機体に対する調達」であり、民間市場での本格的な量産・商業化とは異なります。民間市場での量産・採算確立が国産機体の自立的収益成長の条件ですが、現状のDJIとのコスト差が障壁となっています。</p>
+            <h3>農業用無人機の収益構造（ヤマハ発動機型）</h3>
+            <p>ヤマハ発動機は1987年に産業用無人ヘリコプターを世界初実用化し、農業用散布機として国内で40年近くの実績を積んできました。農業用ドローン（YMR-II）は2023年春から本格展開しており、農機メーカーとしての販売網・アフターサービス・農家との信頼関係を活かした機体販売型収益モデルです。DJIとは「農業専用高性能機体」で差別化しており、価格帯（275万円〜）は中〜高価格帯。セキュリティ懸念よりも性能・信頼性・アフターサービスでの競争力を維持しています。</p>
+            <div class="source-wrap">
+                <span class="source-tag">FISCO「ACSL取材レポート」（2025年11月）</span>
+                <span class="source-tag">ヤマハ発動機「産業用無人航空機事業」（2022年10月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH3 -->
+    <div class="chapter" id="ch3">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <h2>主要企業の財務指標概要</h2>
+            </div>
+            <div class="note-box">
+                <strong>【注記】</strong>
+                ヤマハ発動機の産業用無人機事業は「ロボティクス」セグメントに含まれており、無人機単体の収益は独立開示されていません。ACSL（6232）は東証グロース上場企業で有価証券報告書・決算短信を公開しています。
+                    
+            </div>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>企業</th>
+                        <th>指標</th>
+                        <th>数値</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ACSL</td>
+                        <td>2024年12月期 売上高</td>
+                        <td>26.55億円（前期比+196.3%）</td>
+                        <td>ACSL決算 2025年2月</td>
+                    </tr>
+                    <tr>
+                        <td>ACSL</td>
+                        <td>2024年12月期 営業損失</td>
+                        <td>▲22.93億円（前期▲20.71億円）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>ACSL</td>
+                        <td>増収の主な要因</td>
+                        <td>インド市場・地上走行ロボット大型案件（約17億円）が寄与</td>
+                        <td>FISCO 2025年11月</td>
+                    </tr>
+                    <tr>
+                        <td>ACSL</td>
+                        <td>国家プロジェクト採択</td>
+                        <td>3件・2026年までに合計26億円の補助金受領予定</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>ACSL</td>
+                        <td>防衛装備庁向け受注実績</td>
+                        <td>SOTEN（蒼天）複数件：3.7億円・3.5億円・2.31億円・1.7億円等</td>
+                        <td>Drone.jp 2024〜2025年</td>
+                    </tr>
+                    <tr>
+                        <td>ACSL</td>
+                        <td>量産体制</td>
+                        <td>1,000台規模。NDAA（米国国防権限法）準拠</td>
+                        <td>ACSL公式・FISCO</td>
+                    </tr>
+                    <tr>
+                        <td>ACSL</td>
+                        <td>次世代小型機体 販売予定</td>
+                        <td>2026年中頃から販売開始見通し</td>
+                        <td>FISCO 2025年11月</td>
+                    </tr>
+                    <tr>
+                        <td>ヤマハ発動機</td>
+                        <td>産業用無人ヘリ 世界初実用化</td>
+                        <td>1987年（R-50）</td>
+                        <td>ヤマハ発動機公式</td>
+                    </tr>
+                    <tr>
+                        <td>ヤマハ発動機</td>
+                        <td>FAZER Rシリーズ 第二種型式認証取得</td>
+                        <td>2025年9月12日（5機種・エンジン駆動モデル初）</td>
+                        <td>ヤマハ発動機 2025年9月</td>
+                    </tr>
+                    <tr>
+                        <td>ヤマハ発動機</td>
+                        <td>農業ドローン YMR-08 価格</td>
+                        <td>275万4千円（税込・発売時点）</td>
+                        <td>各販売店公開情報</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">26.55</span>
+                    <span class="stat-unit">億円</span>
+                    <span class="stat-label">
+                        ACSL 2024年12月期 売上高
+                        <br>
+                        （前期比+196.3%）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">▲22.93</span>
+                    <span class="stat-unit">億円</span>
+                    <span class="stat-label">
+                        ACSL 2024年12月期 営業損失
+                        <br>
+                        （赤字継続中）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">26億</span>
+                    <span class="stat-unit">円</span>
+                    <span class="stat-label">
+                        ACSL 国家プロジェクト3件
+                        <br>
+                        補助金受領予定（〜2026年）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">1987</span>
+                    <span class="stat-unit">年</span>
+                    <span class="stat-label">
+                        ヤマハ 産業用無人ヘリ
+                        <br>
+                        世界初実用化
+                    </span>
+                </div>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">ACSL 2024年12月期 決算短信（2025年2月）</span>
+                <span class="source-tag">FISCO「ACSL取材レポート」（2025年11月）</span>
+                <span class="source-tag">ヤマハ発動機 ニュースリリース（2025年9月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH4 -->
+    <div class="chapter" id="ch4">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 04</span>
+                <h2>ACSL——上場国産ドローンメーカーの収益実態</h2>
+            </div>
+            <h3>「開発投資先行型」の構造</h3>
+            <p>ACSLは2013年に千葉大学発スタートアップとして設立され、現在東証グロース市場に上場しています（6232）。制御技術をソースコードレベルで自社保有し、ソフト・ハードともに自社開発する技術力が強みです。2024年12月期の売上高は26.55億円と前期比196.3%増を達成しましたが、営業損失は22.93億円と赤字継続中です。</p>
+            <p>増収の主因はインド市場での地上走行ロボット大型案件（約17億円）であり、国内ドローン事業単体の収益化はまだ道半ばの状況です。2022年に策定した中期経営計画「ACSL Accelerate 2022」では2025年12月期に売上高100億円・営業利益10億円を目標としていましたが、「国内における脱中国の進展遅れ」「物流用機体が実証実験段階に留まること」が計画遅延の要因とされています（FISCO・2025年11月）。</p>
+            <h3>政府調達・防衛需要が収益の主柱</h3>
+            <p>ACSLは「選択と集中」として経済安全保障・脱中国製品が明確な日本の政府調達に注力しています。防衛装備庁向け小型空撮機体SOTEN（蒼天）の大型受注が2024年以降複数件続いており（3.7億円・3.5億円・2.31億円・1.7億円等）、政府系調達が現状の主要収益源です。2026年中頃から次世代小型機体の販売開始を予定しており、米国NDAA準拠で米国政府調達市場への参入も目指しています。</p>
+            <div class="source-wrap">
+                <span class="source-tag">FISCO「ACSL取材レポート」（2025年11月）</span>
+                <span class="source-tag">Drone.jp 各受注プレスリリース（2024〜2025年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH5 -->
+    <div class="chapter" id="ch5">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 05</span>
+                <h2>ヤマハ発動機——農業用で国内最長実績</h2>
+            </div>
+            <h3>1987年からの産業用無人ヘリ事業</h3>
+            <p>ヤマハ発動機は1987年に農業用薬剤散布を目的とした産業用無人ヘリコプター「R-50」を世界初実用化し、以来40年近く国内農業の省力化に貢献してきました。産業用無人機事業はロボティクス事業（サーフェスマウンター・半導体製造装置・産業用ロボット・産業用無人航空機等を含む）に区分されており、単体の財務数値は独立開示されていません。</p>
+            <p>2023年春に農業用ドローンYMR-IIを発売し、2025年9月にはFAZER Rシリーズ5機種がエンジン駆動モデルとして初の第二種型式認証を取得しました。農業用ドローン市場では2024年度に国内市場シェア30%の獲得を目指していました（マイナビニュース・2022年10月の計画値）。DJIとの競合では「農業専用の高散布性能・信頼性・アフターサービス」での差別化を基本戦略としています。</p>
+            <div class="note-box">
+                <strong>【注記】</strong>
+                ヤマハ発動機の産業用無人機事業の売上高・利益は有価証券報告書上でロボティクスセグメント全体に含まれており、無人機単体の財務データは独立開示されていません。市場シェア30%は2022年時点の目標値であり、達成を確認できるデータは公開されていません。
+                    
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">ヤマハ発動機 産業用無人航空機事業紹介（2022年10月）</span>
+                <span class="source-tag">ヤマハ発動機 FAZER R第二種型式認証取得（2025年9月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH6 -->
+    <div class="chapter" id="ch6">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 06</span>
+                <h2>人材市場の実態</h2>
+            </div>
+            <h3>民生ドローン産業の主要職種</h3>
+            <div class="data-box">
+                <div class="box-title">民生ドローン関連 主要職種（5職種）</div>
+                <ul>
+                    <li>【ドローン機体設計・開発エンジニア】機体設計・制御系・ソフトウェア（フライトコントローラー）・通信・センサー統合等を担う。ACSLはソースコードレベルでの制御技術自社保有を強みとしており、機体設計・ソフトウェア双方を担えるエンジニアを継続的に採用。スタートアップ（ACSL・プロドローン等）と大手（ヤマハ発動機・NTT系等）で処遇が異なる。</li>
+                    <li>【ドローンオペレーター（国家資格保有者）】一等・二等無人航空機操縦士技能証明の国家資格保有者。レベル4飛行では一等資格必須。2022年12月の国家資格制度創設以降、資格保有者数は増加中。物流・点検・農業各分野で需要が拡大しており、特に一等資格保有者は希少。</li>
+                    <li>【ドローン認証・安全性エンジニア】第一種・第二種機体認証取得を担う職種。航空法・国際規格への対応・試験飛行の管理等を担う希少職種。外部環境編で「認証取得の知見を有する人材が不足」と政策文書に明示されている通り、国内でも慢性的に希少。</li>
+                    <li>【ドローンサービス営業・事業開発】インフラ点検・農業・物流各分野でのドローンサービス受注を担う職種。技術系出身者の他、異業種（建設・農業・物流・コンサル等）からの転職者も多い。ドローンサービス市場の成長とともに需要が拡大。</li>
+                    <li>【農業ドローン専門技術者・サポートエンジニア】農業用無人ヘリコプター・農業ドローンの整備・農家への技術サポートを担う。ヤマハ発動機等が全国25カ所以上の教習拠点を持ち、認定技術者の育成に力を入れている。農村部・地方での需要が特に高い。</li>
+                </ul>
+            </div>
+            <p>ドローン関連エンジニアの年収は企業規模・職種・専門性によって大きく異なります。大手メーカー（ヤマハ発動機のロボティクス部門等）の機体設計エンジニアは同社の技術系年収水準に準じますが、スタートアップ（ACSL等）は現状の赤字フェーズ継続を反映して、大手より変動が大きい傾向があります。ドローンオペレーター（国家資格保有者）の市場は形成期にあり、採用事例・報酬相場の蓄積が始まっています。</p>
+            <div class="source-wrap">
+                <span class="source-tag">ACSL公式採用情報（2026年）</span>
+                <span class="source-tag">ヤマハ発動機「産業用無人航空機事業」（2022年10月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH7 -->
+    <div class="chapter" id="ch7">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 07</span>
+                <h2>構造的課題の所在</h2>
+            </div>
+            <h3>「量産体制未整備」という根本的制約</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「本格的な量産体制は整っていない」と明示しています。国産機体メーカーは需要が限定的で量産によるコスト低減ができず、DJIとのコスト差が縮まらないという構造的なジレンマが続いています。「量産するには需要が必要だが、需要を獲得するにはコスト競争力が必要」というジレンマが産業構造の根本的制約です。</p>
+            <h3>物流ドローンの採算確立の難しさ</h3>
+            <p>日本郵便が2023年3月にレベル4飛行を開始し、過疎地・離島向けの配送実証が続いています。しかし採算確立に至っていないケースが多く、機体コスト・パイロット人件費・UTMシステム・バーティポート整備費の全体コストが1フライトあたりの配送収益を上回る構造が続いています。レベル3.5制度（2024年度）・UTMの整備進展・機体価格の低下という複数の前提条件がそろわないと、採算は確立しにくい構造です。</p>
+            <h3>スタートアップと既存産業の連携希薄</h3>
+            <p>国産ドローン産業はスタートアップ（ACSL・プロドローン等）が技術開発を主導する一方で、既存の重工・電機大手（三菱電機・川崎重工等）の参画は限定的です。既存航空機産業（三菱重工・SUBARU等）との機体技術・認証ノウハウの共有も限られており、産業全体の技術基盤構築に一定の時間を要する状況が続いています。</p>
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH8 -->
+    <div class="chapter" id="ch8">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 08</span>
+                <h2>誤解されやすいポイント</h2>
+            </div>
+            <div class="data-box">
+                <div class="box-title">誤解されやすいポイント（5点）</div>
+                <ul>
+                    <li>【「レベル4解禁で物流ドローンが普及する」】レベル4の法制度は2022年12月に整備されましたが、採算確立・量産体制・UTM整備・バーティポート普及という複数の前提条件がそろわないと、本格普及には至りません。日本郵便が商用サービスを開始している一方で、「採算確立」は「法制度整備」とは別の問題です。</li>
+                    <li>【「ACSL株が上がっているので業績が好調」】ACSLは2024年12月期に売上高26.55億円と前期比大幅増収を達成しましたが、営業損失22.93億円の赤字継続中です。増収の主因はインドでの地上走行ロボット案件（約17億円）であり、国内ドローン事業単体の採算確立は別の課題です。</li>
+                    <li>【「国産ドローンはすぐにDJIに追いつける」】DJIとのコスト差・量産規模・技術蓄積の差は大きく、短期での対等競争は現実的ではありません。国産機体の優位性は「セキュリティ・NDAA準拠・政府調達」という特定市場に限定されています。</li>
+                    <li>【「農業ドローンはすでに成熟市場」】農業用ドローンはDJIシリーズ・ヤマハ発動機・クボタ等が競合する市場ですが、農水省によれば水田での無人機活用率は2020年に45%で、まだ拡大余地があります。ただし農業ドローン市場全体のCAGRは民生ドローン全体より低く、成熟化が早い。</li>
+                    <li>【「国家資格ができたのでドローンパイロットは高収入職種」】一等無人航空機操縦士技能証明は2022年12月に創設された資格ですが、資格保有者市場の報酬相場はまだ形成途上です。資格保有者が増加するにつれて希少性が低下する可能性もあります。</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜7章の総括</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH9 -->
+    <div class="chapter" id="ch9">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 09</span>
+                <h2>内部環境の整理</h2>
+            </div>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>章</th>
+                        <th>指標名</th>
+                        <th>数値</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第3章</td>
+                        <td>ACSL 2024年12月期 売上高</td>
+                        <td>26.55億円（前期比+196.3%）</td>
+                        <td>ACSL決算 2025年2月</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>ACSL 2024年12月期 営業損失</td>
+                        <td>▲22.93億円</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>ACSL 国家プロジェクト補助金</td>
+                        <td>2026年までに合計26億円受領予定（3件）</td>
+                        <td>FISCO 2025年11月</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>ACSL 防衛装備庁向け受注</td>
+                        <td>複数件：計15億円規模（2024〜2025年）</td>
+                        <td>Drone.jp 各プレスリリース</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>ヤマハ 産業用無人ヘリ 実用化</td>
+                        <td>1987年（世界初）</td>
+                        <td>ヤマハ発動機</td>
+                    </tr>
+                    <tr>
+                        <td>第5章</td>
+                        <td>ヤマハ FAZER R 第二種型式認証</td>
+                        <td>2025年9月12日（5機種・エンジン駆動初）</td>
+                        <td>同上</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="data-box">
+                <div class="box-title">構造的に固定されやすい要素</div>
+                <ul>
+                    <li>ACSLが政府調達・防衛需要を主要収益源とする構造は、民間量産が本格化するまで変化しにくい</li>
+                    <li>国産機体がDJIとのコスト差を縮めるには量産規模拡大が前提であり、中長期の時間軸が必要</li>
+                    <li>ヤマハ発動機の農業用ドローン事業は農機メーカーとしての販売網・実績が参入障壁となり、既存地位を維持しやすい</li>
+                    <li>ドローン認証専門人材の希少性は育成に時間を要するため短期解消しない</li>
+                    <li>物流ドローンの採算確立には機体コスト・UTM・バーティポートという複数の前提条件がそろう必要があり、短期での構造変化は起きにくい</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜8章の集約</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH10 -->
+    <div class="chapter" id="ch10">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 10</span>
+                <h2>有料版への橋渡し</h2>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR CAREER — 就活・転職向け有料版</div>
+                <h3>機体メーカー・サービス事業者・農機系、どの業態に入るか</h3>
+                <ul>
+                    <li>ACSL（東証グロース・開発投資先行赤字フェーズ）vs ヤマハ発動機（大手・農業用確立市場）vs 物流ドローン事業者（実証段階）という業態別の処遇・キャリアパスの具体的比較</li>
+                    <li>ドローン機体設計エンジニア・認証専門家・オペレーター（一等国家資格）という職種別の詳細年収レンジ</li>
+                    <li>スタートアップ（ACSL等）の「赤字継続フェーズ」での採用と、補助金・国家プロジェクトの採択状況が採用計画に与える影響</li>
+                    <li>「国家資格保有ドローンパイロット」は本当に希少職種か——市場形成期の実態</li>
+                </ul>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR INVESTMENT — 投資判断向け有料版</div>
+                <h3>ACSL（6232）の「増収・赤字継続」という構造を読む</h3>
+                <ul>
+                    <li>ACSLの増収主因（インド地上走行ロボット約17億円）が国内ドローン事業の収益化とどう違うか</li>
+                    <li>国家プロジェクト3件・補助金26億円（〜2026年）・次世代機販売開始（2026年中頃）というカタリストの時間軸</li>
+                    <li>防衛装備庁受注（継続）と民間市場開拓（進行中）という2つの収益ドライバーの比重変化</li>
+                    <li>ヤマハ発動機ロボティクスセグメントの農業ドローン事業の規模感を読む方法</li>
+                    <li>「DJIを選べない市場」の拡大速度（日本の脱中国進展）と国産機体メーカーの受益規模の考え方</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <div class="container">
+            <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。掲載データは各記載出典に基づきますが、数値の正確性・完全性を保証するものではありません。投資判断は自己責任において行ってください。ヤマハ発動機の産業用無人機事業はロボティクスセグメント全体に含まれており単体の財務データは独立開示されていません。ACSLの業績予測・補助金受領予定は各社公表の見通しであり、確定した数値ではありません。データ基準時点は2026年03月です。</p>
+            <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年03月 産業構造分析レポート ── 無人航空機（民生）（内部環境編）</p>
+            <p style="margin-top:8px;">
+                <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
