@@ -627,12 +627,19 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   // 新着記事を取得（旅行記事を除外）
   const latest = await getLatestPosts(50); // より多くの記事を取得
   console.log('getLatestPosts result:', latest.slice(0, 5).map(p => ({ slug: p.slug, category: p.category, date: p.date })));
-  const nonTravelLatest = latest.filter(post => 
-    post.category !== '旅行' && 
-    post.category !== '旅行・観光' && 
-    post.category !== '温泉地ガイド' &&
-    post.category !== '東京観光' // 東京観光も除外（travelPostsに含まれるため）
-  );
+  const nonTravelLatest = latest.filter(post => {
+    // content/travel のMDXは getLatestPosts にも載るが、下で travelPosts ともマージするため二重になる。
+    // カテゴリが「観光戦略」など旅行以外の表記でも、/travel/ 配下はここでは除外する。
+    if (post.href?.startsWith('/travel/')) {
+      return false;
+    }
+    return (
+      post.category !== '旅行' &&
+      post.category !== '旅行・観光' &&
+      post.category !== '温泉地ガイド' &&
+      post.category !== '東京観光' // 東京観光も除外（travelPostsに含まれるため）
+    );
+  });
   
   // 旅行記事も新着記事に含める
   const allLatestPosts = [...nonTravelLatest, ...travelPosts];
