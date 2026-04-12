@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業界分析｜高市政権「戦略17分野」航空・宇宙 空飛ぶクルマ（eVTOL・AAM）（外部環境編）</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+    :root {
+        --ink: #0f0f0e;
+        --paper: #f5f2ed;
+        --cream: #ede9e1;
+        --accent: #c84b2f;
+        --muted: #6b6760;
+        --rule: #c9c4bb;
+        --highlight: #fff8e6;
+    }
+
+    *, * ::before, * ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        border-bottom: 3px solid var(--accent);
+    }
+
+    .masthead-right {
+        color: var(--muted);
+    }
+
+    .hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 60px 40px 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200, 75, 47, 0.07) 4px, rgba(200, 75, 47, 0.07) 5px);
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        padding: 4px 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(20px, 3.2vw, 34px);
+        font-weight: 900;
+        line-height: 1.4;
+        max-width: 820px;
+        letter-spacing: 0.02em;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+        color: var(--accent);
+        font-style: normal;
+    }
+
+    .hero-meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+
+    .hero-badge {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 11px;
+        padding: 4px 12px;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.06em;
+    }
+
+    .data-notice {
+        background: rgba(200, 75, 47, 0.15);
+        border-left: 3px solid var(--accent);
+        padding: 10px 16px;
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .toc {
+        background: var(--cream);
+        border-top: 3px solid var(--ink);
+        border-bottom: 1px solid var(--rule);
+        padding: 32px 40px;
+    }
+
+    .toc h2 {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 16px;
+        text-transform: uppercase;
+    }
+
+    .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 6px 28px;
+    }
+
+    .toc-item {
+        font-size: 13px;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 3px 0;
+        border-bottom: 1px dashed var(--rule);
+        display: flex;
+        gap: 8px;
+    }
+
+    .toc-item:hover {
+        color: var(--accent);
+    }
+
+    .toc-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        flex-shrink: 0;
+        padding-top: 2px;
+    }
+
+    .chapter {
+        padding: 48px 40px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .chapter:nth-child(even) {
+        background: var(--cream);
+    }
+
+    .chapter-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .chapter-num {
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .chapter h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.4;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 10px;
+        flex: 1;
+    }
+
+    .chapter h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 24px 0 10px;
+        padding-left: 10px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .chapter p {
+        margin-bottom: 14px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 24px 0;
+    }
+
+    .stat-cell {
+        background: var(--paper);
+        padding: 18px 16px;
+        text-align: center;
+    }
+
+    .chapter:nth-child(even) .stat-cell {
+        background: #f0ece4;
+    }
+
+    .stat-cell .stat-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent);
+        line-height: 1.2;
+        display: block;
+    }
+
+    .stat-cell .stat-unit {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-top: 2px;
+    }
+
+    .stat-cell .stat-label {
+        font-size: 11px;
+        color: var(--ink);
+        display: block;
+        margin-top: 6px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .data-box {
+        background: var(--highlight);
+        border: 1px solid #e0d8c4;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 20px 0;
+    }
+
+    .data-box .box-title {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .data-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .data-box ul li {
+        padding: 5px 0 5px 16px;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+        position: relative;
+    }
+
+    .data-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .data-box ul li:last-child {
+        border-bottom: none;
+    }
+
+    .note-box {
+        background: rgba(200, 75, 47, 0.05);
+        border: 1px dashed var(--accent);
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .note-box strong {
+        color: var(--accent);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13px;
+    }
+
+    .summary-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .summary-table thead th {
+        padding: 10px 14px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+    }
+
+    .summary-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .summary-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .summary-table tbody td {
+        padding: 9px 14px;
+        vertical-align: top;
+    }
+
+    .summary-table td:first-child {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 12px;
+    }
+
+    .timeline {
+        margin: 20px 0;
+    }
+
+    .timeline-item {
+        display: flex;
+        gap: 16px;
+        padding: 12px 0;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+    }
+
+    .timeline-item:last-child {
+        border-bottom: none;
+    }
+
+    .timeline-year {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        color: var(--accent);
+        font-weight: 600;
+        flex-shrink: 0;
+        width: 130px;
+        padding-top: 2px;
+    }
+
+    .timeline-text {
+        flex: 1;
+    }
+
+    .compare-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 20px 0;
+    }
+
+    .compare-cell {
+        background: var(--paper);
+        padding: 16px 18px;
+        font-size: 13px;
+    }
+
+    .chapter:nth-child(even) .compare-cell {
+        background: #f0ece4;
+    }
+
+    .compare-cell .cell-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .next-box {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 28px 32px;
+        margin: 20px 0;
+        border-left: 5px solid var(--accent);
+    }
+
+    .next-box .next-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .next-box h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 17px;
+        margin-bottom: 12px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .next-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .next-box ul li {
+        padding: 4px 0 4px 14px;
+        font-size: 13px;
+        position: relative;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .next-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.06);
+        border: 1px solid var(--rule);
+        padding: 3px 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        color: var(--muted);
+        margin: 2px 3px;
+        letter-spacing: 0.04em;
+    }
+
+    .source-wrap {
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 1px dashed var(--rule);
+    }
+
+    .disclaimer {
+        background: var(--ink);
+        color: rgba(245, 242, 237, 0.5);
+        padding: 24px 40px;
+        font-size: 11px;
+        line-height: 1.7;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.03em;
+    }
+
+    .rule-thick {
+        border: none;
+        border-top: 3px solid var(--ink);
+        margin: 0;
+    }
+
+    .rule-thin {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .masthead {
+            flex-direction: column;
+            gap: 6px;
+            padding: 10px 16px;
+        }
+
+        .hero {
+            padding: 36px 16px 30px;
+        }
+
+        .chapter {
+            padding: 32px 16px;
+        }
+
+        .toc {
+            padding: 24px 16px;
+        }
+
+        .compare-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span>産業構造分析レポート</span>
+        <span class="masthead-right">2026年03月発行 ── 航空・宇宙／空飛ぶクルマ（eVTOL・AAM）（外部環境編）</span>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-label">INDUSTRY ANALYSIS REPORT — EXTERNAL ENVIRONMENT</div>
+            <h1>
+                業界分析｜高市政権「戦略17分野」
+                <br>
+                航空・宇宙
+                <br>
+                <em>空飛ぶクルマ</em>
+                （eVTOL・AAM）（外部環境編）
+            </h1>
+            <div class="hero-meta">
+                <span class="hero-badge">就職・転職検討者向け</span>
+                <span class="hero-badge">株式投資家向け</span>
+                <span class="hero-badge">数字と事実のみ記載</span>
+            </div>
+            <div class="data-notice">本レポートのデータ基準時点：2026年03月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用</div>
+        </div>
+    </div>
+
+    <hr class="rule-thick">
+
+    <div class="toc">
+        <div class="container">
+            <h2>目次 — TABLE OF CONTENTS</h2>
+            <div class="toc-grid">
+                <a class="toc-item" href="#ch0">
+                    <span class="toc-num">00</span>
+                    このレポートの目的と読み方
+                </a>
+                <a class="toc-item" href="#ch1">
+                    <span class="toc-num">01</span>
+                    市場規模と成長率
+                </a>
+                <a class="toc-item" href="#ch2">
+                    <span class="toc-num">02</span>
+                    制度・政策の枠組み
+                </a>
+                <a class="toc-item" href="#ch3">
+                    <span class="toc-num">03</span>
+                    経済的前提条件
+                </a>
+                <a class="toc-item" href="#ch4">
+                    <span class="toc-num">04</span>
+                    社会・安全保障との連関
+                </a>
+                <a class="toc-item" href="#ch5">
+                    <span class="toc-num">05</span>
+                    技術・DXの位置づけ
+                </a>
+                <a class="toc-item" href="#ch6">
+                    <span class="toc-num">06</span>
+                    参入・撤退の条件
+                </a>
+                <a class="toc-item" href="#ch7">
+                    <span class="toc-num">07</span>
+                    経済安全保障との接続
+                </a>
+                <a class="toc-item" href="#ch8">
+                    <span class="toc-num">08</span>
+                    外部環境の整理
+                </a>
+                <a class="toc-item" href="#ch9">
+                    <span class="toc-num">09</span>
+                    内部環境編への橋渡し
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <!-- CH0 -->
+    <div class="chapter" id="ch0">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <h2>このレポートの目的と読み方</h2>
+            </div>
+            <p>本レポートは、高市政権「戦略17分野」航空・宇宙の「空飛ぶクルマ」の外部環境を、就職・転職検討者および株式投資家向けに数字と事実のみで記述します。所管は内閣府（経済安全保障）です。</p>
+            <div class="data-box">
+                <div class="box-title">「空飛ぶクルマ」とは何か——3行で把握する</div>
+                <ul>
+                    <li>【技術の概要】電動垂直離着陸機（eVTOL：Electric Vertical Take-Off and Landing aircraft）を中核とする次世代空モビリティ（AAM：Advanced Air Mobility）。一般的に「電動」「自動飛行」「垂直離着陸」の3要素を持つ機体を指す。海外ではeVTOL・UAM（Urban Air Mobility）・AAMとも呼ばれる。</li>
+                    <li>【現状の問題】世界的に技術開発段階にあり、機体・サービス市場は未成立。欧米メーカー（Joby Aviation・Archer Aviation等）が型式証明取得プロセスで先行。日本国産メーカーSkyDriveは2025年2月に国交省から適用基準を発行されたが、型式証明取得は2026年以降の目標。認証に関する国際的な統一基準がなく、制度整備が国際的に進行中。</li>
+                    <li>【なぜ今か】2040年頃の世界市場（機体・サービス等含む）は約200兆円という予測（資料1・2026年3月）が示されており、先行者利益を獲得できるかが問われる段階。大阪・関西万博（2025年4月13日〜10月13日）が国産機体の社会実装を示す最初の機会として注目されている。</li>
+                </ul>
+            </div>
+            <p>良し悪しの評価・投資推奨・将来予測は行いません。</p>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート基本方針</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH1 -->
+    <div class="chapter" id="ch1">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <h2>市場規模と成長率</h2>
+            </div>
+
+            <h3>市場予測の幅——定義・範囲・前提条件によって大きく異なる</h3>
+            <p>空飛ぶクルマ（eVTOL・AAM）の市場規模予測は、調査機関・定義・前提条件によって桁違いの幅があります。機体販売のみを対象とした推計か、運航サービス・インフラ・MRO・保険等まで含むかで大きく変わります。以下に代表的な調査数値を示しますが、比較には注意が必要です。</p>
+
+            <div class="data-box">
+                <div class="box-title">代表的な市場予測数値の比較（出典・定義の差異に注意）</div>
+                <ul>
+                    <li>【資料1（2026年3月）】2040年頃：約200兆円（世界・機体・サービス等含む）——資料1「戦略17分野における主要な製品・技術等」（2026年3月）。「未だ技術開発段階だが、2040年には世界の市場（機体・サービス等含む）は約200兆円に」と記述。</li>
+                    <li>【矢野経済研究所（2022年5月）】2025年146億円→2030年6兆3,900億円→2050年約123兆円（世界・eVTOL・メーカー販売金額ベースの推計）。短期から中長期にかけて指数関数的な成長を想定。</li>
+                    <li>【Report Ocean（2025年）】AAM世界市場：99億ドル（2024年）→460億ドル（2033年）・CAGR 23.7%。</li>
+                    <li>【Straits Research】eVTOL機市場（機体のみ）：4億ドル（2024年）→24.7億ドル（2033年）・CAGR約22%。</li>
+                    <li>【KPMG（2024年）】eVTOL市場は2023〜2030年にCAGR 52%で成長する見込みと分析。最大市場は北米、欧州・アジア太平洋が続く。</li>
+                </ul>
+            </div>
+
+            <h3>日本の政策目標</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「欧米製機体と差別化が可能な路線（都市内運航、観光などの短距離路線）を中心に、国内外市場の獲得を目指す（2040年頃：約1,500億円）」を政策目標として示しています（政策目標として示されている）。</p>
+
+            <div class="note-box">
+                <strong>【注記】</strong>
+                上記の市場予測数値はすべて推計値であり、実現を保証するものではありません。eVTOLは世界的に技術開発・認証プロセス段階にあり、現時点で商用運航は限定的です。「約200兆円」「6兆3,900億円」等は将来の市場形成シナリオに基づく推計値です。
+                    
+            </div>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">約200兆</span>
+                    <span class="stat-unit">円（2040年頃・推計）</span>
+                    <span class="stat-label">
+                        世界市場（機体・サービス等）
+                        <br>
+                        資料1 2026年3月
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">99億→460億</span>
+                    <span class="stat-unit">ドル（2024→2033年）</span>
+                    <span class="stat-label">
+                        世界AAM市場 CAGR 23.7%
+                        <br>
+                        （Report Ocean 2025年）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">4億→24.7億</span>
+                    <span class="stat-unit">ドル（2024→2033年）</span>
+                    <span class="stat-label">
+                        世界eVTOL機体市場 CAGR 22%
+                        <br>
+                        （Straits Research）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">約1,500億</span>
+                    <span class="stat-unit">円（2040年頃・政策目標）</span>
+                    <span class="stat-label">
+                        日本の国内外市場獲得目標
+                        <br>
+                        （政策目標として示されている）
+                    </span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回 資料1「戦略17分野における主要な製品・技術等」（2026年3月）</span>
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">矢野経済研究所 空飛ぶクルマ世界市場調査（2022年5月）</span>
+                <span class="source-tag">Report Ocean AAM市場レポート（2025年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH2 -->
+    <div class="chapter" id="ch2">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <h2>制度・政策の枠組み</h2>
+            </div>
+
+            <h3>型式証明という絶対的なハードル</h3>
+            <p>空飛ぶクルマを商用運航するには、各国の航空当局による型式証明が必要です。型式証明とは、機体の設計・構造・強度・性能等が安全基準に適合していることを国が審査・検査する制度です。認証を取得なければ一人の乗客も有償で乗せることができません。この「型式証明」が空飛ぶクルマ産業最大の参入障壁となっています。</p>
+
+            <h3>認証の現状（2026年3月時点）</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-year">2021年10月</span>
+                    <span class="timeline-text">SkyDrive（日本）が国産初の空飛ぶクルマ型式証明申請を国土交通省に提出。受理。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2022年3月</span>
+                    <span class="timeline-text">SkyDriveがSD-05型の適用基準を「耐空性審査要領第II部」ベースで構築することを国交省と合意。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2024年4月29日</span>
+                    <span class="timeline-text">SkyDriveのFAA（米国連邦航空局）への型式証明申請が受理。日米同時の型式証明活動が本格始動。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2025年2月10日</span>
+                    <span class="timeline-text">国交省からSkyDrive SD-05型の型式証明適用基準を発行。機体固有の耐空性・環境基準の詳細がおおむね確定し、今後の開発・試験が加速する段階へ。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2025年（海外）</span>
+                    <span class="timeline-text">米国Joby AviationがFAA型式証明プロセスの第4段階（試験・分析）に進行中（2025年2月時点・NEDO資料）。Archer Aviationも同プロセスで審査要領合意済み。Joby・Archerとも最短での商業運航は2025〜2026年を目指している。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2025年4〜10月</span>
+                    <span class="timeline-text">大阪・関西万博（4月13日〜10月13日）。SkyDriveが航空局の許可を得てデモフライトを実施予定。2地点間での運航事業者に選定済み。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2026年以降（目標）</span>
+                    <span class="timeline-text">SkyDriveが日本での型式証明取得・商用運航開始を目標（SkyDrive公式・目標値）。その後米国でも型式証明取得を目指す。</span>
+                </div>
+            </div>
+
+            <h3>国際標準化の争点</h3>
+            <p>eVTOLの認証基準は欧米主導で標準化が進んでいます。ASTMやEUROCAEといった欧米の標準化機関が中心となっており、FAAとEASAが規制のハーモナイゼーション（整合化）を推進しています。日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「認証に使用する国際規格が海外主導で標準化、機体開発と並行した制度整備が国際的に進行中」をボトルネックとして明示しています。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">SkyDrive 型式証明適用基準発行プレスリリース（2025年2月）</span>
+                <span class="source-tag">SkyDrive FAA型式証明申請受理プレスリリース（2024年6月）</span>
+                <span class="source-tag">NEDO「空飛ぶクルマの法規制・国際標準化動向」（2025年4月）</span>
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH3 -->
+    <div class="chapter" id="ch3">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <h2>経済的前提条件</h2>
+            </div>
+
+            <h3>「技術開発段階・市場未成立」という現状認識</h3>
+            <p>資料2（2026年3月）は「空飛ぶクルマは、世界的に技術開発段階にあり、機体・サービス市場は未成立」と明示しています。これは「将来の大市場予測」と現実の差異を示す重要な記述です。</p>
+            <p>現在商業飛行が行われているeVTOLは限定的であり、EHang（中国）の EH216-Sが2023年に中国民航局から型式証明を取得し中国国内で有人の商業飛行を開始しているものの、グローバルな市場形成は認証取得・量産・インフラ整備という複数の前提条件を必要とします。</p>
+
+            <h3>コスト構造と採算確立の難しさ</h3>
+            <div class="data-box">
+                <div class="box-title">eVTOL事業化のコスト課題</div>
+                <ul>
+                    <li>【機体開発コスト】認証取得には数百億〜数千億円規模の開発投資が必要。ホンダジェットの事例では認証に数年間・240万ページの書類提出が必要だったとされる（三菱スペースジェットの認証失敗の教訓を踏まえた分析より）。</li>
+                    <li>【バッテリー航続距離の制約】現状のバッテリー技術ではeVTOLの航続距離は数十〜100km程度が多く、長距離輸送には向かない。主要な用途は都市内・短距離路線に限定される。</li>
+                    <li>【バーティポート（離着陸場）整備コスト】都市内での運航にはバーティポートの整備が必要。大都市での用地確保・建設費・騒音規制対応が参入障壁となる。</li>
+                    <li>【運航コストと採算性】パイロット人件費・メンテナンス・保険・空域管理等の運航コストが高く、採算確立には一定規模の運航頻度が必要。自動化が進む前の有人飛行段階での採算確立は難しいとされる。</li>
+                </ul>
+            </div>
+
+            <h3>競合の様相——欧米・中国メーカーが先行</h3>
+            <p>世界には300社超のeVTOL開発企業が存在しており（2024年時点・Market Growth Reports）、2024年時点で300以上のeVTOL機モデルが開発中とされています。型式証明の最終段階に近いのは米国Joby Aviation・Archer Aviationであり、欧州ではエアバス（CityAirbus NextGen）・Volocopterが有力です。中国ではEHangが先行して型式証明を取得しています。日本のSkyDriveは型式証明プロセスで欧米に遅れをとっている状況ですが、万博でのデモフライトを経て認証プロセスを加速させる段階にあります。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">NEDO「空飛ぶクルマの法規制・国際標準化動向」（2025年4月）</span>
+                <span class="source-tag">NEC wisdom「空飛ぶクルマの開発競争は第2世代に突入」（2024年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH4 -->
+    <div class="chapter" id="ch4">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 04</span>
+                <h2>社会・安全保障との連関</h2>
+            </div>
+
+            <h3>都市交通渋滞解消・地域交通格差という社会的需要</h3>
+            <p>空飛ぶクルマの主要な社会的需要は都市交通渋滞の解消・地域交通格差の解消・災害時の緊急輸送です。特に東南アジア等の都市では都心部の約10km圏内で長時間の交通渋滞が日常的に発生しており、短距離・高頻度移動へのニーズが高いとされています（資料2・2026年3月）。観光地・リゾート・離島での移動手段としての需要も期待されています。</p>
+
+            <h3>防衛・安全保障との親和性</h3>
+            <p>資料1（2026年3月）は「要素技術開発やサプライヤー育成は、安全保障上も重要な航空機産業の発展にも貢献するなど、生産・技術基盤の自律性確保が重要」と明示しています。eVTOLの電動推進・自律飛行・軽量構造等の技術は民間・防衛双方への転用が可能なデュアルユース技術として位置づけられています。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回 資料1「戦略17分野における主要な製品・技術等」（2026年3月）</span>
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH5 -->
+    <div class="chapter" id="ch5">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 05</span>
+                <h2>技術・DXの位置づけ</h2>
+            </div>
+
+            <h3>「マルチコプター型」日本機体の技術戦略</h3>
+            <p>資料2（2026年3月）は「開発支援を行っている国内機体（マルチコプター型）は、都市内運航や観光などの短距離路線で強みを持ち、これらのニーズがある都市及び観光地において価格競争力を活かしながらビジネスモデルを構築し、市場展開する」と示しています。日本国内メーカーは小型・軽量・安価なマルチコプター型機体を強みとし、欧米メーカーが注力する長距離・高速ティルトローター型との差別化を図る戦略です。</p>
+
+            <h3>自動・自律飛行への段階的移行</h3>
+            <p>大阪府ロードマップによれば、2025年頃の「立ち上げ期」はライセンスを取得したパイロットが操縦し限られた路線で定期運航→2030年頃の「拡大期」に自動化比率が高まりパイロット不搭乗の遠隔操縦導入→2035年以降の「成熟期」に人間が関与しない自律飛行による高密度運航、という段階的移行が想定されています（日経クロステック・2022年、大阪府「大阪版ロードマップ」をもとに）。自律飛行が実現してはじめてパイロット費用の削減・乗客数増・運航コスト低減が可能になり、採算性が改善します。</p>
+
+            <h3>バッテリー・モーター技術の進展</h3>
+            <p>eVTOLの競争力はバッテリーのエネルギー密度・モーターの電力密度・軽量複合材技術の進展に依存します。現状のバッテリー技術では航続距離・搭載能力に制約があり、2030年代以降のバッテリー性能向上が市場拡大の前提条件のひとつです。日本はCFRP（炭素繊維複合材）や高精度モーター技術で既存航空機産業から強みを有しており、サプライヤーとしての参画が期待されています（経産省AAM市場参入可能性検討事業最終報告書・2025年2月）。</p>
+
+            <div class="compare-grid">
+                <div class="compare-cell">
+                    <span class="cell-label">日本の技術的強み（資料2）</span>
+
+                            国内機体（マルチコプター型）の小型・軽量・価格競争力。自動車産業のモノづくりノウハウの活用。CFRP等の既存航空機産業からの素材技術。他産業からの新規参入・既存航空機部品産業の事業拡大の可能性。
+                          
+                </div>
+                <div class="compare-cell">
+                    <span class="cell-label">技術的課題（資料2）</span>
+
+                            欧米メーカーの開発先行。試験設備の能力不足（実機サイズの風洞試験等が限定的）。認証取得の長期性・コストの高さ。バッテリー航続距離の制約。認証専門人材の不足。
+                          
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">経産省「将来のAAM市場獲得・参入可能性検討事業 最終報告書」（2025年2月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH6 -->
+    <div class="chapter" id="ch6">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 06</span>
+                <h2>参入・撤退の条件</h2>
+            </div>
+
+            <h3>「型式証明」という絶対的な参入障壁</h3>
+            <p>商用有人飛行には型式証明が必須です。三菱スペースジェット（MRJ）が型式証明取得の困難さにより開発中止（2023年2月）に至った先例が示す通り、認証プロセスは「コスト・時間・技術の三重の難関」です。世界に300社超の開発企業が存在する一方で、型式証明取得の最終段階に近いのは米国の数社に限られており、多くの企業が資金調達困難・認証遅延により撤退・縮小に追い込まれています。欧州の有力企業Liliumは2024年に経営破綻（その後再建手続き中）しており、開発リスクの高さが示されています。</p>
+
+            <h3>「キャッシュフローの不安定性」という財務的課題</h3>
+            <p>資料2（2026年3月）は「認証取得に向けた長期の航空機開発に伴うキャッシュフローの不安定性」をボトルネックとして明示しています。型式証明取得には数年〜10年規模の開発期間と数百億〜数千億円の投資が必要である一方、商用運航開始まで収益が発生しないため、資金調達の継続性が事業継続の鍵です。</p>
+
+            <h3>日本の戦略的ポジション——国産OEMか部品サプライヤーか</h3>
+            <p>経産省の最終報告書（2025年2月）は「欧米諸国と比較して日本はOEMの数が少なく、海外OEMによる機体開発の主導が進むことにより、日本のAAM産業としての脅威になり得る」と指摘しています。日本が選択できる戦略的ポジションは「国産OEMとして完成機開発を主導する（SkyDrive型）」か「海外OEMへの部品サプライヤーとして参入する（CFRP・モーター・電池等）」かに大きく二分されます。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">経産省「将来のAAM市場獲得・参入可能性検討事業 最終報告書」（2025年2月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH7 -->
+    <div class="chapter" id="ch7">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 07</span>
+                <h2>経済安全保障との接続</h2>
+            </div>
+
+            <h3>航空機産業基盤との一体的育成</h3>
+            <p>資料1（2026年3月）は空飛ぶクルマの「要素技術開発やサプライヤー育成は、安全保障上も重要な航空機産業の発展にも貢献する」と位置づけており、民間航空機・防衛・宇宙との産業基盤共有が政策的に期待されています。eVTOL機体開発で蓄積される電動推進・軽量構造・自律制御等の技術は、次世代航空機・次世代無人機の技術基盤にも転用可能です。</p>
+
+            <h3>JAXA低速風洞等の試験設備整備</h3>
+            <p>資料2（2026年3月）は「実機を用い実機環境を模擬できる低速風洞等をJAXAに整備することにより、天候不順や自然環境のばらつきにとらわれない国内での飛行試験環境の獲得や開発期間短縮・開発費用低減につながる」と示しています。これは単にeVTOL向けではなく、無人航空機（民生）と共通の試験インフラとして整備される方向です。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回 資料1「戦略17分野における主要な製品・技術等」（2026年3月）</span>
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH8 -->
+    <div class="chapter" id="ch8">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 08</span>
+                <h2>外部環境の整理</h2>
+            </div>
+
+            <h3>数値サマリー</h3>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>章</th>
+                        <th>指標名</th>
+                        <th>数値</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第1章</td>
+                        <td>世界市場（2040年頃・機体・サービス等）</td>
+                        <td>約200兆円（推計）</td>
+                        <td>資料1 2026年3月</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>世界AAM市場 CAGR</td>
+                        <td>23.7%（2024→2033年・99億→460億ドル）</td>
+                        <td>Report Ocean 2025年</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>世界eVTOL機体市場 CAGR</td>
+                        <td>約22%（2024→2033年・4億→24.7億ドル）</td>
+                        <td>Straits Research</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>日本政策目標（2040年頃）</td>
+                        <td>約1,500億円（政策目標として示されている）</td>
+                        <td>資料2 2026年3月</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>SkyDrive 国交省適用基準発行</td>
+                        <td>2025年2月10日</td>
+                        <td>SkyDrive 2025年2月</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>SkyDrive 型式証明取得目標</td>
+                        <td>2026年以降（目標値）</td>
+                        <td>SkyDrive 公式</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>SkyDrive FAA申請受理</td>
+                        <td>2024年4月29日</td>
+                        <td>SkyDrive 2024年6月</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>Joby Aviation FAA審査段階</td>
+                        <td>第4段階（2025年2月時点）</td>
+                        <td>NEDO資料 2025年4月</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>大阪・関西万博 開催期間</td>
+                        <td>2025年4月13日〜10月13日</td>
+                        <td>万博公式</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>構造的に固定されやすい要素</h3>
+            <div class="data-box">
+                <div class="box-title">構造的に固定されやすい要素</div>
+                <ul>
+                    <li>型式証明が商用有人飛行の絶対的な前提条件であり、認証プロセスは数年規模を要するため短期解消しない</li>
+                    <li>欧米（Joby・Archer）が型式証明プロセスで先行しているという競合優位は、SkyDriveの認証完了まで続く</li>
+                    <li>「市場が未成立」という状態は、型式証明取得・量産体制確立・バーティポート整備という複数の前提条件がそろうまで変化しない</li>
+                    <li>国際認証基準が欧米主導で策定されているという構造は、日本が標準化への積極参加・主導を強化しない限り変化しない</li>
+                    <li>バッテリー航続距離の制約が改善されない間は、都市内・短距離路線に市場が限定される構造が続く</li>
+                    <li>認証専門人材（三菱スペースジェット開発での教訓を保有する人材含む）の希少性は短期解消しない</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜7章に記載の各統計の集約</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH9 -->
+    <div class="chapter" id="ch9">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 09</span>
+                <h2>内部環境編への橋渡し</h2>
+            </div>
+            <div class="data-box">
+                <div class="box-title">外部環境編の整理（5点）</div>
+                <ul>
+                    <li>世界市場予測は「約200兆円（2040年・資料1）」から「4億ドル（2024年・機体のみ）」まで調査機関・定義によって大きく異なる。現状は「技術開発段階・市場未成立」（資料2明示）</li>
+                    <li>型式証明が絶対的な参入障壁。欧米（Joby・Archer）が先行し、SkyDriveは2025年2月に適用基準発行を得て型式証明プロセスを加速中。2026年以降の商用運航開始が目標</li>
+                    <li>大阪・関西万博（2025年4月〜10月）がSkyDriveのデモフライト機会。社会受容性向上と認証加速の重要局面</li>
+                    <li>「キャッシュフローの不安定性・ビジネスモデルの不確実性・欧米メーカーの先行」という3つの不確実性が資料2に明示されている</li>
+                    <li>日本の戦略は「国産OEM（SkyDrive型）」か「部品サプライヤー（CFRP・モーター等）」に二分されており、どちらを主軸とするかが産業構造の帰結を左右する</li>
+                </ul>
+            </div>
+            <div class="next-box">
+                <div class="next-label">NEXT — 内部環境編で整理すること</div>
+                <h3>外圧がプレイヤー構成・収益・人材にどう現れるか</h3>
+                <ul>
+                    <li>SkyDrive（主要国産OEM）の財務実態・資金調達・開発状況の詳細</li>
+                    <li>トヨタ・スズキ・ANAホールディングス等の既存大手の空飛ぶクルマ関連投資の収益構造</li>
+                    <li>eVTOL開発エンジニア・認証専門家・パイロットの人材市場実態</li>
+                    <li>「開発投資先行・長い認証期間・市場未成立」という産業段階での就職・投資判断の実態</li>
+                    <li>部品サプライヤー（CFRP・モーター・バッテリー等）各社の参画状況と収益の見通し</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポートの総括</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <div class="container">
+            <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。eVTOL・空飛ぶクルマの市場予測数値はすべて各調査機関の推計値であり実現を保証するものではありません。「政策目標として示されている」と注記した数値は政府が目標として掲げた値であり達成を保証するものではありません。SkyDriveの「2026年以降に型式証明取得」は同社の目標値であり、確定した日程ではありません。データ基準時点は2026年03月です。</p>
+            <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年03月 産業構造分析レポート ── 空飛ぶクルマ（eVTOL・AAM）（外部環境編）</p>
+            <p style="margin-top:8px;">
+                <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
