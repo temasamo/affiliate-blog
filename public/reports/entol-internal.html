@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業界分析｜高市政権「戦略17分野」航空・宇宙 空飛ぶクルマ（eVTOL・AAM）（内部環境編）</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+    :root {
+        --ink: #0f0f0e;
+        --paper: #f5f2ed;
+        --cream: #ede9e1;
+        --accent: #c84b2f;
+        --muted: #6b6760;
+        --rule: #c9c4bb;
+        --highlight: #fff8e6;
+    }
+
+    *, * ::before, * ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        border-bottom: 3px solid var(--accent);
+    }
+
+    .masthead-right {
+        color: var(--muted);
+    }
+
+    .hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 60px 40px 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200, 75, 47, 0.07) 4px, rgba(200, 75, 47, 0.07) 5px);
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        padding: 4px 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(20px, 3.2vw, 34px);
+        font-weight: 900;
+        line-height: 1.4;
+        max-width: 820px;
+        letter-spacing: 0.02em;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+        color: var(--accent);
+        font-style: normal;
+    }
+
+    .hero-meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+
+    .hero-badge {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 11px;
+        padding: 4px 12px;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.06em;
+    }
+
+    .data-notice {
+        background: rgba(200, 75, 47, 0.15);
+        border-left: 3px solid var(--accent);
+        padding: 10px 16px;
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .toc {
+        background: var(--cream);
+        border-top: 3px solid var(--ink);
+        border-bottom: 1px solid var(--rule);
+        padding: 32px 40px;
+    }
+
+    .toc h2 {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 16px;
+        text-transform: uppercase;
+    }
+
+    .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 6px 28px;
+    }
+
+    .toc-item {
+        font-size: 13px;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 3px 0;
+        border-bottom: 1px dashed var(--rule);
+        display: flex;
+        gap: 8px;
+    }
+
+    .toc-item:hover {
+        color: var(--accent);
+    }
+
+    .toc-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        flex-shrink: 0;
+        padding-top: 2px;
+    }
+
+    .chapter {
+        padding: 48px 40px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .chapter:nth-child(even) {
+        background: var(--cream);
+    }
+
+    .chapter-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .chapter-num {
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .chapter h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.4;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 10px;
+        flex: 1;
+    }
+
+    .chapter h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 24px 0 10px;
+        padding-left: 10px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .chapter p {
+        margin-bottom: 14px;
+    }
+
+    .connect-banner {
+        background: var(--ink);
+        border-left: 5px solid var(--accent);
+        padding: 16px 20px;
+        margin-bottom: 28px;
+        font-size: 13px;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .connect-banner strong {
+        color: var(--accent);
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 24px 0;
+    }
+
+    .stat-cell {
+        background: var(--paper);
+        padding: 18px 16px;
+        text-align: center;
+    }
+
+    .chapter:nth-child(even) .stat-cell {
+        background: #f0ece4;
+    }
+
+    .stat-cell .stat-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent);
+        line-height: 1.2;
+        display: block;
+    }
+
+    .stat-cell .stat-unit {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-top: 2px;
+    }
+
+    .stat-cell .stat-label {
+        font-size: 11px;
+        color: var(--ink);
+        display: block;
+        margin-top: 6px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .data-box {
+        background: var(--highlight);
+        border: 1px solid #e0d8c4;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 20px 0;
+    }
+
+    .data-box .box-title {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .data-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .data-box ul li {
+        padding: 5px 0 5px 16px;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+        position: relative;
+    }
+
+    .data-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .data-box ul li:last-child {
+        border-bottom: none;
+    }
+
+    .note-box {
+        background: rgba(200, 75, 47, 0.05);
+        border: 1px dashed var(--accent);
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .note-box strong {
+        color: var(--accent);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13px;
+    }
+
+    .summary-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .summary-table thead th {
+        padding: 10px 14px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+    }
+
+    .summary-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .summary-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .summary-table tbody td {
+        padding: 9px 14px;
+        vertical-align: top;
+    }
+
+    .summary-table td:first-child {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 12px;
+    }
+
+    .biz-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 12px;
+    }
+
+    .biz-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .biz-table thead th {
+        padding: 8px 12px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.06em;
+    }
+
+    .biz-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .biz-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .biz-table tbody td {
+        padding: 8px 12px;
+        vertical-align: top;
+        font-size: 12px;
+    }
+
+    .biz-table td:first-child {
+        font-weight: 700;
+    }
+
+    .biz-table .acc {
+        color: var(--accent);
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+    }
+
+    .next-box {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 28px 32px;
+        margin: 20px 0;
+        border-left: 5px solid var(--accent);
+    }
+
+    .next-box .next-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .next-box h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 17px;
+        margin-bottom: 12px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .next-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .next-box ul li {
+        padding: 4px 0 4px 14px;
+        font-size: 13px;
+        position: relative;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .next-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.06);
+        border: 1px solid var(--rule);
+        padding: 3px 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        color: var(--muted);
+        margin: 2px 3px;
+        letter-spacing: 0.04em;
+    }
+
+    .source-wrap {
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 1px dashed var(--rule);
+    }
+
+    .disclaimer {
+        background: var(--ink);
+        color: rgba(245, 242, 237, 0.5);
+        padding: 24px 40px;
+        font-size: 11px;
+        line-height: 1.7;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.03em;
+    }
+
+    .rule-thick {
+        border: none;
+        border-top: 3px solid var(--ink);
+        margin: 0;
+    }
+
+    .rule-thin {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .masthead {
+            flex-direction: column;
+            gap: 6px;
+            padding: 10px 16px;
+        }
+
+        .hero {
+            padding: 36px 16px 30px;
+        }
+
+        .chapter {
+            padding: 32px 16px;
+        }
+
+        .toc {
+            padding: 24px 16px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span>産業構造分析レポート</span>
+        <span class="masthead-right">2026年04月発行 ── 航空・宇宙／空飛ぶクルマ（eVTOL・AAM）（内部環境編）</span>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-label">INDUSTRY ANALYSIS REPORT — INTERNAL ENVIRONMENT</div>
+            <h1>
+                業界分析｜高市政権「戦略17分野」
+                <br>
+                航空・宇宙
+                <br>
+                <em>空飛ぶクルマ</em>
+                （eVTOL・AAM）（内部環境編）
+            </h1>
+            <div class="hero-meta">
+                <span class="hero-badge">就職・転職検討者向け</span>
+                <span class="hero-badge">株式投資家向け</span>
+                <span class="hero-badge">数字と事実のみ記載</span>
+            </div>
+            <div class="data-notice">本レポートのデータ基準時点：2026年04月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用</div>
+        </div>
+    </div>
+
+    <hr class="rule-thick">
+
+    <div class="toc">
+        <div class="container">
+            <h2>目次 — TABLE OF CONTENTS</h2>
+            <div class="toc-grid">
+                <a class="toc-item" href="#ch0">
+                    <span class="toc-num">00</span>
+                    この内部環境編の立ち位置
+                </a>
+                <a class="toc-item" href="#ch1">
+                    <span class="toc-num">01</span>
+                    業界内プレイヤー構成
+                </a>
+                <a class="toc-item" href="#ch2">
+                    <span class="toc-num">02</span>
+                    収益構造の本質
+                </a>
+                <a class="toc-item" href="#ch3">
+                    <span class="toc-num">03</span>
+                    SkyDrive——国産主要OEMの財務実態
+                </a>
+                <a class="toc-item" href="#ch4">
+                    <span class="toc-num">04</span>
+                    既存大手の参入状況
+                </a>
+                <a class="toc-item" href="#ch5">
+                    <span class="toc-num">05</span>
+                    人材市場の実態
+                </a>
+                <a class="toc-item" href="#ch6">
+                    <span class="toc-num">06</span>
+                    構造的課題の所在
+                </a>
+                <a class="toc-item" href="#ch7">
+                    <span class="toc-num">07</span>
+                    誤解されやすいポイント
+                </a>
+                <a class="toc-item" href="#ch8">
+                    <span class="toc-num">08</span>
+                    内部環境の整理
+                </a>
+                <a class="toc-item" href="#ch9">
+                    <span class="toc-num">09</span>
+                    有料版への橋渡し
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <!-- CH0 -->
+    <div class="chapter" id="ch0">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <h2>この内部環境編の立ち位置</h2>
+            </div>
+            <div class="connect-banner">
+                <strong>外部環境編との接続：</strong>
+                外部環境編では、2040年頃の世界市場予測約200兆円（資料1 2026年3月）・「技術開発段階・市場未成立」という現状（資料2 2026年3月）・型式証明が絶対的参入障壁・欧米メーカーが先行・SkyDriveが2025年2月に適用基準発行で認証プロセスを加速・大阪万博デモフライト成功（2025年4〜8月）・キャッシュフロー不安定性という構造を整理しました。本編ではその前提を受け、「外部の構造がこの産業の業態・収益・人材にどのような特性として現れているか」を数字と事実で記述します。
+                    
+            </div>
+            <div class="data-box">
+                <div class="box-title">本編でやること／やらないこと</div>
+                <ul>
+                    <li>【やること】SkyDrive（国産主要OEM）の累計資金調達・資本構成・開発状況を数値で記述する</li>
+                    <li>【やること】スズキ・トヨタ・JR東日本・JR九州・Osaka Metro等の既存大手の参入状況を整理する</li>
+                    <li>【やること】「開発投資先行・収益なし・認証完了が前提」という産業段階の収益構造の特性を示す</li>
+                    <li>【やること】eVTOL関連エンジニア・認証専門家の人材市場実態を整理する</li>
+                    <li>【やらないこと】特定銘柄の投資推奨・勝ち負けの断定・良し悪しの評価</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート基本方針</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH1 -->
+    <div class="chapter" id="ch1">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <h2>業界内プレイヤー構成</h2>
+            </div>
+            <table class="biz-table">
+                <thead>
+                    <tr>
+                        <th>業態</th>
+                        <th>主な役割</th>
+                        <th>代表プレイヤー（日本中心）</th>
+                        <th>収益の性格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            国産eVTOL
+                            <br>
+                            OEMメーカー
+                        </td>
+                        <td>機体の設計・開発・製造・型式証明取得・商用運航サービスの提供。日本国内では事実上SkyDriveが唯一の有力プレイヤー。</td>
+                        <td class="acc">SkyDrive（愛知県豊田市・2018年設立）</td>
+                        <td>現段階は開発投資先行・収益なし。型式証明取得・商用運航開始後に機体販売・運航サービス収益が発生する予定。累計430億円超の資金調達で開発継続中。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            機体製造・技術
+                            <br>
+                            パートナー
+                        </td>
+                        <td>eVTOL機体の製造工程・部品供給・技術支援を担う既存自動車・製造業メーカー。</td>
+                        <td class="acc">スズキ（機体製造を2024年から開始・技術連携）、豊田鉄工、日本発條、ユニバンス</td>
+                        <td>SkyDriveへの出資＋製造・技術協力。商用化後に機体製造受注収益が見込まれる。現段階は投資・協力フェーズ。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            交通インフラ・
+                            <br>
+                            運航サービス
+                        </td>
+                        <td>既存の鉄道・航空インフラとeVTOLを連携させ、陸空シームレス移動を提供する運航事業者。</td>
+                        <td class="acc">JR東日本・JR九州（資本業務提携）、Osaka Metro・近鉄GHD（資本業務提携）、ANAホールディングス（Volocopter提携）</td>
+                        <td>SkyDriveへの出資＋バーティポート整備・航路開発。商用化後の運航収益を見込む。現段階は準備・提携フェーズ。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            部品・素材
+                            <br>
+                            サプライヤー
+                        </td>
+                        <td>eVTOL向けの電動モーター・バッテリー・CFRP等の高性能軽量素材・電子部品の供給。</td>
+                        <td class="acc">村田製作所（出資実績）、東レ（CFRP）、日本電産（モーター研究）等</td>
+                        <td>部品・素材の供給収益。市場規模が拡大するほど需要が増加する構造。現段階は試作・開発協力フェーズ。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            運航管理・
+                            <br>
+                            周辺インフラ
+                        </td>
+                        <td>UTM（UAM空域管理）・バーティポート設計・保険・地図データ等の周辺業態。</td>
+                        <td class="acc">NEC（空域管理）、大林組（出資・インフラ整備）、関西電力（出資・インフラ）等</td>
+                        <td>サービス収益型。eVTOLの社会実装が進むにつれて需要が拡大する構造。</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="source-wrap">
+                <span class="source-tag">SkyDrive プレシリーズDプレスリリース（2025年7月）</span>
+                <span class="source-tag">SkyDrive 採用ページ（2025年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH2 -->
+    <div class="chapter" id="ch2">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <h2>収益構造の本質</h2>
+            </div>
+            <h3>「認証完了まで収益ゼロ・投資先行」という産業段階</h3>
+            <p>空飛ぶクルマ産業（eVTOL）は現在、世界的に「認証完了まで商用収益が発生しない」という特殊な産業段階にあります。機体が完成しても型式証明がなければ乗客を乗せて飛ぶことができず、機体の売上も発生しません。このため業界全体が「開発投資先行・長期赤字・資金調達継続が事業継続の条件」という構造にあります。</p>
+            <p>世界的な先行企業Joby Aviation（米国）は2025年時点でナスダック上場済みながら大幅赤字が続いており、2024年の純損失は約8.3億ドルと報じられています。これは世界トップ級の先行企業でも「認証取得前は赤字継続が正常状態」であることを示しています。日本のSkyDriveも同様の構造にあり、現段階での収益は原則として資金調達・補助金に依存しています。</p>
+            <h3>「デモフライト＋プレオーダー」による事業の可視化</h3>
+            <p>SkyDriveは2025年の大阪・関西万博でのデモフライト成功（143万人超が来場）・7カ国380機超のプレオーダー受付開始という形で事業の現実性を投資家・パートナー企業に示しています。これらは直接の収益ではなく、次の資金調達ラウンド・パートナー獲得・社会受容性向上のための「事業の可視化」として機能しています。</p>
+            <div class="source-wrap">
+                <span class="source-tag">SkyDrive CEO Insights 2026年1月</span>
+                <span class="source-tag">SkyDrive プレシリーズDプレスリリース（2025年7月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH3 -->
+    <div class="chapter" id="ch3">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <h2>SkyDrive——国産主要OEMの財務実態</h2>
+            </div>
+            <div class="note-box">
+                <strong>【注記】</strong>
+                SkyDriveは非上場企業のため有価証券報告書等の財務詳細は公開されていません。以下の数値はプレスリリース・公開情報に基づきます。
+                    
+            </div>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>指標</th>
+                        <th>数値</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>累計資金調達額</td>
+                        <td>430億円超（2025年7月時点）</td>
+                        <td>SkyDrive 2025年7月</td>
+                    </tr>
+                    <tr>
+                        <td>プレシリーズDラウンド</td>
+                        <td>83億円（2025年7月・三菱UFJ銀行・スズキ・JR東日本・JR九州等11社）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>設立年</td>
+                        <td>2018年</td>
+                        <td>SkyDrive公式</td>
+                    </tr>
+                    <tr>
+                        <td>社員数</td>
+                        <td>300名以上のスペシャリスト（世界各国から）</td>
+                        <td>SkyDrive採用ページ 2025年</td>
+                    </tr>
+                    <tr>
+                        <td>エンジニア外国籍比率</td>
+                        <td>約4割（2025年12月時点）</td>
+                        <td>SkyDrive 2025年12月</td>
+                    </tr>
+                    <tr>
+                        <td>プレオーダー数</td>
+                        <td>7カ国380機超（2025年7月時点）</td>
+                        <td>SkyDrive 2025年7月</td>
+                    </tr>
+                    <tr>
+                        <td>大阪万博 来場者数（AAMステーション）</td>
+                        <td>143万人超（2025年4〜8月）</td>
+                        <td>SkyDrive CEO Insights 2026年1月</td>
+                    </tr>
+                    <tr>
+                        <td>万博デモフライト期間</td>
+                        <td>2025年4月〜・7月31日〜8月24日に期間延長実施</td>
+                        <td>SkyDrive公式</td>
+                    </tr>
+                    <tr>
+                        <td>商用運航目標</td>
+                        <td>2028年（日本・大分県・岩手県等）</td>
+                        <td>各パートナー発表</td>
+                    </tr>
+                    <tr>
+                        <td>飛行試験場</td>
+                        <td>愛知県豊田市・山口県の2カ所（自社）</td>
+                        <td>SkyDrive 2025年12月</td>
+                    </tr>
+                    <tr>
+                        <td>型式証明 適用基準発行</td>
+                        <td>2025年2月10日（国土交通省）</td>
+                        <td>SkyDrive 2025年2月</td>
+                    </tr>
+                    <tr>
+                        <td>証明計画策定フェーズ</td>
+                        <td>2026年3月時点（航空局との協議中）</td>
+                        <td>SkyDrive公式</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">430億超</span>
+                    <span class="stat-unit">円</span>
+                    <span class="stat-label">
+                        SkyDrive 累計資金調達額
+                        <br>
+                        （2025年7月時点）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">83億</span>
+                    <span class="stat-unit">円</span>
+                    <span class="stat-label">
+                        プレシリーズDラウンド
+                        <br>
+                        （2025年7月・11社）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">143万人超</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        大阪万博AAMステーション
+                        <br>
+                        来場者数（2025年）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">380機超</span>
+                    <span class="stat-unit">（7カ国）</span>
+                    <span class="stat-label">
+                        プレオーダー数
+                        <br>
+                        （2025年7月時点）
+                    </span>
+                </div>
+            </div>
+            <h3>主要出資者（2025年7月時点）</h3>
+            <div class="data-box">
+                <div class="box-title">主要出資者（確認できる範囲・順不同）</div>
+                <ul>
+                    <li>【自動車・製造】スズキ（機体製造パートナー・技術連携協定締結）、豊田鉄工、日本発條、ユニバンス</li>
+                    <li>【金融】三菱UFJ銀行（プレシリーズDリード）、SuMi TRUSTイノベーション投資事業有限責任組合</li>
+                    <li>【鉄道・交通インフラ】JR東日本・JR九州（資本業務提携）、Osaka Metro・近鉄グループホールディングス（既存）</li>
+                    <li>【建設・エネルギー・商社】大林組、関西電力、伊藤忠テクノロジーベンチャーズ</li>
+                    <li>【その他】村田製作所（間接出資実績）、三井住友ファイナンス＆リース（過去に出資実績）</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">SkyDrive プレシリーズDプレスリリース（2025年7月）</span>
+                <span class="source-tag">SkyDrive CEO Insights（2026年1月）</span>
+                <span class="source-tag">各出資企業 有価証券報告書・プレスリリース</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH4 -->
+    <div class="chapter" id="ch4">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 04</span>
+                <h2>既存大手の参入状況</h2>
+            </div>
+            <h3>スズキ——製造パートナーとして中心的役割</h3>
+            <p>スズキはSkyDriveへの出資に加え、2022年8月に「空飛ぶクルマ」の事業・技術連携に関する協定を締結。2024年より機体製造を開始しており、SkyDriveのCEOは「スズキ様の多大なるご支援のもと完成した機体は無事故での飛行試験を積み重ねた」と述べています（SkyDrive・2025年7月）。スズキにとってeVTOLは「二輪・四輪・マリンに次ぐ新たなモビリティ事業の一つとして育成する」という位置づけです（スズキ有価証券報告書・2024年6月）。</p>
+            <h3>JR東日本・JR九州——陸空連携の実現</h3>
+            <p>JR東日本はSkyDriveとの資本業務提携（2025年7月）を通じ、岩手県での運航エリア検討を開始しています。JR九州は大分県での2028年サービス開始を目標に、大分県の補助金（令和7年度次世代空モビリティ商用サービス開発事業費補助金）を活用した調査事業を開始しています。鉄道会社としての参画理由は「既存の交通ネットワークとeVTOLを組み合わせ陸と空をシームレスにつなぐ」という事業シナジーです。</p>
+            <h3>ANAホールディングス——Volocopter提携（欧州OEM）</h3>
+            <p>ANAホールディングスはドイツVolocopterと提携しており、Volocopterのエアタクシーサービスの日本での展開を検討しています。Volocopterは2025年に欧州での型式証明取得・商業飛行開始を目指す有力プレイヤーです。</p>
+            <h3>トヨタ自動車——間接関与</h3>
+            <p>トヨタはSkyDriveの創業期に4,500万円の支援金を提供した経緯があります。また子会社ウーブン・バイ・トヨタはモビリティ分野の研究開発を担っており、eVTOL領域との接点も持ちます。ただし現段階でのトヨタとSkyDriveの直接的な出資関係は公開情報からは確認されていません。</p>
+            <div class="source-wrap">
+                <span class="source-tag">SkyDrive プレシリーズDプレスリリース（2025年7月）</span>
+                <span class="source-tag">スズキ 有価証券報告書（2024年6月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH5 -->
+    <div class="chapter" id="ch5">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 05</span>
+                <h2>人材市場の実態</h2>
+            </div>
+            <h3>eVTOL関連 主要職種</h3>
+            <div class="data-box">
+                <div class="box-title">eVTOL関連 主要職種（5職種）</div>
+                <ul>
+                    <li>【飛行試験エンジニア（最高希少）】eVTOL固有の要件に合わせた飛行試験計画の策定・飛行試験データの収集・分析・操縦システムの総合評価・航空局との折衝を担う。「ドローンや航空機・ヘリコプターなどの航空業界出身で飛行試験に関する経験が必須」（SkyDrive求人・自動運転ラボ 2024年）。予定年収600万〜1,300万円（SkyDrive求人）。認証プロセスが進むにつれて業務集中度が最も高い職種。</li>
+                    <li>【型式証明・認証エンジニア】FAA・JCAB等との認証プロセスを担う職種。三菱スペースジェット（MRJ）・ホンダジェット等での認証経験者が希少。SkyDriveはMRJの副社長経験者（岸信夫氏）をCTOとして招聘した実績がある。認証専門家の絶対数が業界全体で不足している点は外部環境編でも確認済み。</li>
+                    <li>【eVTOL設計エンジニア（電動推進・構造・制御）】電動推進システム・機体構造・飛行制御・自律飛行ソフトウェアの設計開発を担う。SkyDriveは世界各国から300名以上のスペシャリストが集い、エンジニアの外国籍比率が約4割（2025年12月）という国際的な人材構成。最高開発責任者はエアバス出身のフランス人（Arnaud Coville氏・2023年1月就任）。</li>
+                    <li>【eVTOL事業開発・運航計画】バーティポートの立地選定・航路設計・行政折衝・顧客開拓を担う職種。技術系出身者の他、鉄道・航空・不動産・コンサル等からの転職者も多い。鉄道各社（JR東日本・JR九州等）との提携が進む局面で、双方向の人材流動が想定される。</li>
+                    <li>【エアモビリティパイロット】将来的に有人eVTOLを操縦する職種。現段階では操縦士（航空機免許保有者）がデモフライトに関与しており、将来の自律化移行前の有人操縦フェーズでの需要がある。資格要件・育成制度は整備中。</li>
+                </ul>
+            </div>
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">600〜1,300</span>
+                    <span class="stat-unit">万円</span>
+                    <span class="stat-label">
+                        飛行試験エンジニア 予定年収
+                        <br>
+                        （SkyDrive求人・自動運転ラボ 2024年）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">300名超</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        SkyDrive 社員数
+                        <br>
+                        （世界各国スペシャリスト）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">約4割</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        SkyDrive エンジニア
+                        <br>
+                        外国籍比率（2025年12月）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">希少</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        認証専門家
+                        <br>
+                        （型式証明・MRJ経験者等）
+                    </span>
+                </div>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">自動運転ラボ「空飛ぶクルマ業界、二極化の様相」SkyDrive求人情報（2024年）</span>
+                <span class="source-tag">SkyDrive 採用ページ・CEO Insights（2025〜2026年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH6 -->
+    <div class="chapter" id="ch6">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 06</span>
+                <h2>構造的課題の所在</h2>
+            </div>
+            <h3>「資金調達の継続性」が事業継続の条件</h3>
+            <p>SkyDriveは2018年の設立から7年以上にわたり開発投資先行を続けており、2026年3月現在も型式証明取得の最終段階には至っていません。累計430億円超の資金調達を継続しているものの、型式証明取得・量産体制確立・商用運航開始というマイルストーンを達成するまでさらに投資が必要です。「資金調達の継続性が事業継続の条件」という構造は2028年の商用運航開始まで続きます。</p>
+            <h3>MRJの教訓——認証プロセスの難しさ</h3>
+            <p>三菱スペースジェット（MRJ）は2023年2月に開発中止となりましたが、その最大の原因はFAAの型式証明取得の困難さとされています。「書類提出・設計変更・再試験」のサイクルが想定を超えて繰り返され、開発費が膨らみ最終的に中止に至りました。SkyDriveはMRJ副社長経験者をCTOとして招聘し、この教訓を踏まえた認証プロセスを構築しています（SkyDrive公式・EMIRA 2020年）。ただし「MRJの二の舞になりかねない」という懸念も業界関係者から指摘されています（沢田雅之 note・2025年2月）。</p>
+            <h3>世界での淘汰圧——Liliumの経営破綻</h3>
+            <p>欧州の有力eVTOL企業Lilium（ドイツ）は2024年に経営破綻（その後新会社として再建手続き）しました。世界に300社超の開発企業が存在する一方で、資金調達・認証取得の困難さから多くの企業が縮小・撤退しています。日本国内でも空飛ぶクルマ開発企業A.L.I.Technologiesが経営破綻（2022年）しています。「先頭集団に残り続けること」が市場形成後の受益を得る条件であり、そのための資金調達継続が業界全体の課題です。</p>
+            <div class="source-wrap">
+                <span class="source-tag">SkyDrive CEO Insights（2026年1月）</span>
+                <span class="source-tag">自動運転ラボ「空飛ぶクルマ業界、二極化の様相」（2024年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH7 -->
+    <div class="chapter" id="ch7">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 07</span>
+                <h2>誤解されやすいポイント</h2>
+            </div>
+            <div class="data-box">
+                <div class="box-title">誤解されやすいポイント（5点）</div>
+                <ul>
+                    <li>【「大阪万博でのデモフライト成功＝商用化が近い」】デモフライトは航空局の許可を得た試験的飛行であり、乗客を乗せた有償の商用運航ではありません。商用運航には型式証明取得が必要であり、SkyDriveの目標は2026年以降（2028年商用サービス開始目標）です。</li>
+                    <li>【「累計430億円の調達があるから財務は安定」】430億円は7年以上の開発期間にわたって積み上げた累計額であり、現在の手元資金ではありません。型式証明取得・量産体制確立にはさらに投資が必要であり、次のラウンドの調達継続が事業の前提条件です。</li>
+                    <li>【「380機のプレオーダーは確定受注」】プレオーダーは購入意向の表明であり、確定した売上契約とは異なります。型式証明取得後に正式な売買契約が成立する性格のものです。</li>
+                    <li>【「スズキが出資しているから量産体制は整っている」】スズキとの技術連携・機体製造開始は2024年以降ですが、これは認証前の試作・開発フェーズの機体製造です。量産体制の確立は型式証明取得後の別の課題です。</li>
+                    <li>【「eVTOLエンジニアはどんな経験者でも転職できる」】SkyDriveの求人が示す通り、飛行試験エンジニア・認証専門家は「航空業界出身で飛行試験経験が必須」という厳しい条件があります。ドローン・航空機・自動車・電気工学等の専門性は活かせますが、「誰でも転職できる」市場ではありません。</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜6章の総括</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH8 -->
+    <div class="chapter" id="ch8">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 08</span>
+                <h2>内部環境の整理</h2>
+            </div>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>章</th>
+                        <th>指標名</th>
+                        <th>数値</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第3章</td>
+                        <td>SkyDrive 累計資金調達額</td>
+                        <td>430億円超（2025年7月時点）</td>
+                        <td>SkyDrive 2025年7月</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>SkyDrive プレシリーズDラウンド</td>
+                        <td>83億円（2025年7月・11社）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>SkyDrive プレオーダー</td>
+                        <td>7カ国380機超（2025年7月）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>万博AAMステーション来場者</td>
+                        <td>143万人超（2025年）</td>
+                        <td>SkyDrive CEO Insights 2026年1月</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>SkyDrive 社員数・外国籍比率</td>
+                        <td>300名超・エンジニア約4割外国籍</td>
+                        <td>SkyDrive 2025年</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>SkyDrive 商用運航目標</td>
+                        <td>2028年（日本）</td>
+                        <td>各パートナー発表</td>
+                    </tr>
+                    <tr>
+                        <td>第5章</td>
+                        <td>飛行試験エンジニア 予定年収</td>
+                        <td>600万〜1,300万円</td>
+                        <td>自動運転ラボ 2024年</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="data-box">
+                <div class="box-title">構造的に固定されやすい要素</div>
+                <ul>
+                    <li>SkyDriveが日本国産eVTOL OEMの唯一の有力プレイヤーという地位は、新規参入企業が認証プロセスを追いつくまで変化しない</li>
+                    <li>型式証明取得まで商用収益が発生しないという産業構造は、認証取得まで変化しない</li>
+                    <li>資金調達の継続性が事業継続の条件という構造は、商用運航で収益化が始まるまで続く</li>
+                    <li>認証専門家（MRJ経験者等）の希少性は人材育成に時間を要するため短期解消しない</li>
+                    <li>スズキ・JR東日本・JR九州等の資本業務提携網は既に構築されており、商用化後の製造・運航基盤として機能する予定</li>
+                    <li>2028年商用運航開始という目標は複数のパートナー企業も想定して計画しており、目標時期の短期変更は複数企業への影響を伴う</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜7章の集約</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH9 -->
+    <div class="chapter" id="ch9">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 09</span>
+                <h2>有料版への橋渡し</h2>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR CAREER — 就活・転職向け有料版</div>
+                <h3>SkyDrive（国産スタートアップ）vs 既存大手（スズキ・JR・ANAグループ等）、どちらで関わるか</h3>
+                <ul>
+                    <li>SkyDrive（開発投資先行フェーズ）vs 製造パートナー（スズキ）vs 運航インフラ（JR系）という業態別の処遇・キャリアパスの具体的比較</li>
+                    <li>飛行試験エンジニア（600万〜1,300万円）・型式証明専門家・eVTOL設計エンジニアという職種別の詳細年収レンジとキャリア要件</li>
+                    <li>「航空機・ドローン・自動車・電気工学出身者」各バックグラウンドからeVTOL業界への転職パスの実態</li>
+                    <li>MRJ開発中止で蓄積された認証ノウハウを持つ人材が今どこにいるか——eVTOL業界での価値</li>
+                    <li>2028年商用運航目標が実現した場合、どの職種・業態に最初にポジションが生まれるか</li>
+                </ul>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR INVESTMENT — 投資判断向け有料版</div>
+                <h3>SkyDriveの430億円調達から2028年商用化への時間軸と財務影響を読む</h3>
+                <ul>
+                    <li>SkyDriveへの間接投資機会——スズキ・JR東日本・JR九州・大林組・関西電力等の出資企業のeVTOL関連事業の財務インパクト推計方法</li>
+                    <li>型式証明取得（2026年以降目標）→量産開始→商用運航（2028年）という3段階のマイルストーンと投資判断への接続</li>
+                    <li>プレオーダー380機超という数字が機体価格・売上に換算されるとどのくらいの規模感になるか（推計方法）</li>
+                    <li>Joby Aviation（米・ナスダック上場）との比較——上場企業として財務開示がある米国先行企業の収益モデルをSkyDriveに当てはめた場合の試算方法</li>
+                    <li>世界での淘汰（Lilium破綻等）が続く中、先頭集団に残るための条件と日本関連企業の現在地</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <div class="container">
+            <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。SkyDriveは非上場企業のため財務詳細の開示は限定的です。プレオーダーは確定受注ではありません。年収データは公開された求人情報に基づく参考値です。「2028年商用運航」は各社の目標値であり確定した予定ではありません。データ基準時点は2026年04月です。</p>
+            <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年04月 産業構造分析レポート ── 空飛ぶクルマ（eVTOL・AAM）（内部環境編）</p>
+            <p style="margin-top:8px;">
+                <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
