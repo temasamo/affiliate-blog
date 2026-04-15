@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業界分析｜高市政権「戦略17分野」海洋 海洋無人機（海洋ドローン）（外部環境編）</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+    :root {
+        --ink: #0f0f0e;
+        --paper: #f5f2ed;
+        --cream: #ede9e1;
+        --accent: #c84b2f;
+        --muted: #6b6760;
+        --rule: #c9c4bb;
+        --highlight: #fff8e6;
+    }
+
+    *, * ::before, * ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        border-bottom: 3px solid var(--accent);
+    }
+
+    .masthead-right {
+        color: var(--muted);
+    }
+
+    .hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 60px 40px 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200, 75, 47, 0.07) 4px, rgba(200, 75, 47, 0.07) 5px);
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        padding: 4px 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(20px, 3.2vw, 34px);
+        font-weight: 900;
+        line-height: 1.4;
+        max-width: 820px;
+        letter-spacing: 0.02em;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+        color: var(--accent);
+        font-style: normal;
+    }
+
+    .hero-meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+
+    .hero-badge {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 11px;
+        padding: 4px 12px;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.06em;
+    }
+
+    .data-notice {
+        background: rgba(200, 75, 47, 0.15);
+        border-left: 3px solid var(--accent);
+        padding: 10px 16px;
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .toc {
+        background: var(--cream);
+        border-top: 3px solid var(--ink);
+        border-bottom: 1px solid var(--rule);
+        padding: 32px 40px;
+    }
+
+    .toc h2 {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 16px;
+        text-transform: uppercase;
+    }
+
+    .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 6px 28px;
+    }
+
+    .toc-item {
+        font-size: 13px;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 3px 0;
+        border-bottom: 1px dashed var(--rule);
+        display: flex;
+        gap: 8px;
+    }
+
+    .toc-item:hover {
+        color: var(--accent);
+    }
+
+    .toc-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        flex-shrink: 0;
+        padding-top: 2px;
+    }
+
+    .chapter {
+        padding: 48px 40px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .chapter:nth-child(even) {
+        background: var(--cream);
+    }
+
+    .chapter-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .chapter-num {
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .chapter h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.4;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 10px;
+        flex: 1;
+    }
+
+    .chapter h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 24px 0 10px;
+        padding-left: 10px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .chapter p {
+        margin-bottom: 14px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 24px 0;
+    }
+
+    .stat-cell {
+        background: var(--paper);
+        padding: 18px 16px;
+        text-align: center;
+    }
+
+    .chapter:nth-child(even) .stat-cell {
+        background: #f0ece4;
+    }
+
+    .stat-cell .stat-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent);
+        line-height: 1.2;
+        display: block;
+    }
+
+    .stat-cell .stat-unit {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-top: 2px;
+    }
+
+    .stat-cell .stat-label {
+        font-size: 11px;
+        color: var(--ink);
+        display: block;
+        margin-top: 6px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .data-box {
+        background: var(--highlight);
+        border: 1px solid #e0d8c4;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 20px 0;
+    }
+
+    .data-box .box-title {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .data-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .data-box ul li {
+        padding: 5px 0 5px 16px;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+        position: relative;
+    }
+
+    .data-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .data-box ul li:last-child {
+        border-bottom: none;
+    }
+
+    .note-box {
+        background: rgba(200, 75, 47, 0.05);
+        border: 1px dashed var(--accent);
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .note-box strong {
+        color: var(--accent);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13px;
+    }
+
+    .summary-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .summary-table thead th {
+        padding: 10px 14px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+    }
+
+    .summary-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .summary-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .summary-table tbody td {
+        padding: 9px 14px;
+        vertical-align: top;
+    }
+
+    .summary-table td:first-child {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 12px;
+    }
+
+    .compare-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 20px 0;
+    }
+
+    .compare-cell {
+        background: var(--paper);
+        padding: 16px 18px;
+        font-size: 13px;
+    }
+
+    .chapter:nth-child(even) .compare-cell {
+        background: #f0ece4;
+    }
+
+    .compare-cell .cell-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .timeline {
+        margin: 20px 0;
+    }
+
+    .timeline-item {
+        display: flex;
+        gap: 16px;
+        padding: 12px 0;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+    }
+
+    .timeline-item:last-child {
+        border-bottom: none;
+    }
+
+    .timeline-year {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        color: var(--accent);
+        font-weight: 600;
+        flex-shrink: 0;
+        width: 120px;
+        padding-top: 2px;
+    }
+
+    .timeline-text {
+        flex: 1;
+    }
+
+    .next-box {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 28px 32px;
+        margin: 20px 0;
+        border-left: 5px solid var(--accent);
+    }
+
+    .next-box .next-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .next-box h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 17px;
+        margin-bottom: 12px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .next-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .next-box ul li {
+        padding: 4px 0 4px 14px;
+        font-size: 13px;
+        position: relative;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .next-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.06);
+        border: 1px solid var(--rule);
+        padding: 3px 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        color: var(--muted);
+        margin: 2px 3px;
+        letter-spacing: 0.04em;
+    }
+
+    .source-wrap {
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 1px dashed var(--rule);
+    }
+
+    .disclaimer {
+        background: var(--ink);
+        color: rgba(245, 242, 237, 0.5);
+        padding: 24px 40px;
+        font-size: 11px;
+        line-height: 1.7;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.03em;
+    }
+
+    .rule-thick {
+        border: none;
+        border-top: 3px solid var(--ink);
+        margin: 0;
+    }
+
+    .rule-thin {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .masthead {
+            flex-direction: column;
+            gap: 6px;
+            padding: 10px 16px;
+        }
+
+        .hero {
+            padding: 36px 16px 30px;
+        }
+
+        .chapter {
+            padding: 32px 16px;
+        }
+
+        .toc {
+            padding: 24px 16px;
+        }
+
+        .compare-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span>産業構造分析レポート</span>
+        <span class="masthead-right">2026年04月発行 ── 海洋／海洋無人機（海洋ドローン）（外部環境編）</span>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-label">INDUSTRY ANALYSIS REPORT — EXTERNAL ENVIRONMENT</div>
+            <h1>
+                業界分析｜高市政権「戦略17分野」
+                <br>
+                海洋
+                <br>
+                <em>海洋無人機（海洋ドローン）</em>
+                （外部環境編）
+            </h1>
+            <div class="hero-meta">
+                <span class="hero-badge">就職・転職検討者向け</span>
+                <span class="hero-badge">株式投資家向け</span>
+                <span class="hero-badge">数字と事実のみ記載</span>
+            </div>
+            <div class="data-notice">本レポートのデータ基準時点：2026年04月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用</div>
+        </div>
+    </div>
+
+    <hr class="rule-thick">
+
+    <div class="toc">
+        <div class="container">
+            <h2>目次 — TABLE OF CONTENTS</h2>
+            <div class="toc-grid">
+                <a class="toc-item" href="#ch0">
+                    <span class="toc-num">00</span>
+                    このレポートの目的と読み方
+                </a>
+                <a class="toc-item" href="#ch1">
+                    <span class="toc-num">01</span>
+                    市場規模と成長率
+                </a>
+                <a class="toc-item" href="#ch2">
+                    <span class="toc-num">02</span>
+                    制度・政策の枠組み
+                </a>
+                <a class="toc-item" href="#ch3">
+                    <span class="toc-num">03</span>
+                    経済的前提条件
+                </a>
+                <a class="toc-item" href="#ch4">
+                    <span class="toc-num">04</span>
+                    社会・安全保障との連関
+                </a>
+                <a class="toc-item" href="#ch5">
+                    <span class="toc-num">05</span>
+                    技術・DXの位置づけ
+                </a>
+                <a class="toc-item" href="#ch6">
+                    <span class="toc-num">06</span>
+                    参入・撤退の条件
+                </a>
+                <a class="toc-item" href="#ch7">
+                    <span class="toc-num">07</span>
+                    経済安全保障との接続
+                </a>
+                <a class="toc-item" href="#ch8">
+                    <span class="toc-num">08</span>
+                    外部環境の整理
+                </a>
+                <a class="toc-item" href="#ch9">
+                    <span class="toc-num">09</span>
+                    内部環境編への橋渡し
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <!-- CH0 -->
+    <div class="chapter" id="ch0">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <h2>このレポートの目的と読み方</h2>
+            </div>
+            <p>本レポートは、高市政権「戦略17分野」海洋の「海洋無人機（海洋ドローン）」の外部環境を、就職・転職検討者および株式投資家向けに数字と事実のみで記述します。所管は内閣府（海洋）です。</p>
+            <div class="data-box">
+                <div class="box-title">「海洋無人機（海洋ドローン）」とは何か——3行で把握する</div>
+                <ul>
+                    <li>【技術の概要】海洋で活動する無人機の総称。水中で活動するAUV（自律型無人探査機）・ROV（遠隔操作型無人探査機）・UUV（無人潜水機）と、水上で活動するUSV（無人水上機）の4タイプが主要。石油・ガス開発、海洋調査、安全保障、洋上風力発電インフラ管理、海底資源調査等の広範な用途に活用される。</li>
+                    <li>【現状の問題】欧米が石油・ガス開発・安全保障の豊富な資金を背景に産業化で先行している。日本は造船技術・深海探査等の強みを持つが、活動規模が極めて限定的で欧米企業との厚みの差が大きい。「政府調達の規模・時期など大規模需要の見通しが乏しい」こと・「新規産業であるため保険負担が高止まり」することが産業化の障壁となっている（資料2・2026年3月）。</li>
+                    <li>【なぜ今か】安全保障分野での無人アセットの重要性が格段に増大し、デュアルユース技術としての位置づけが強化。日本のEEZ（排他的経済水域）は広大であり省人化・無人化ニーズが高い。洋上風力等の新産業の出現も含め適用機運が高まっており、2023年12月にAUV戦略が閣議決定された。</li>
+                </ul>
+            </div>
+            <p>良し悪しの評価・投資推奨・将来予測は行いません。</p>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート基本方針</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH1 -->
+    <div class="chapter" id="ch1">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <h2>市場規模と成長率</h2>
+            </div>
+
+            <h3>世界の海洋無人機市場規模——複数調査機関の数値</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「世界のAUV、USV等の海洋無人機の市場は40〜50億ドル（出典：一般社団法人海洋産業研究・振興協会）、年平均8〜15%の成長が見込まれる」と示しています。同資料は「2030年頃には100億ドルを超える見込み」としています。</p>
+            <p>複数の調査機関の数値も同水準を示しています。世界UUV（無人潜水機）市場は2024年に48億ドル・2030年に111億ドル・CAGR 15.0%（市場調査レポート2024年10月）。世界AUV市場単体では2024年に21.1億ドル・2030年に56.5億ドル・CAGR 17.9%（Statistix MRC 2025年9月）。海洋AUV・ROV合計市場は2024年に33.1億ドル・2029年に59.7億ドル・CAGR 12.8%（The Business Research Company 2025年）と推計されています。</p>
+
+            <div class="note-box">
+                <strong>【注記】</strong>
+                市場規模数値は調査機関・集計範囲（AUVのみか、USV・ROV含むか）によって大きく異なります。資料2の「40〜50億ドル」は海洋産業研究・振興協会の推計に基づく政策文書上の数値です。
+                    
+            </div>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">40〜50億</span>
+                    <span class="stat-unit">ドル（現状）</span>
+                    <span class="stat-label">
+                        世界海洋無人機市場
+                        <br>
+                        （資料2・2026年3月）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">8〜15%</span>
+                    <span class="stat-unit">年平均成長率</span>
+                    <span class="stat-label">
+                        世界市場 成長見通し
+                        <br>
+                        （資料2・2026年3月）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">100億ドル超</span>
+                    <span class="stat-unit">（2030年頃・推計）</span>
+                    <span class="stat-label">
+                        世界市場見込み
+                        <br>
+                        （資料2・2026年3月）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">世界3割</span>
+                    <span class="stat-unit">（10年後・40〜50億ドル程度）</span>
+                    <span class="stat-label">
+                        日本の市場シェア目標
+                        <br>
+                        （政策目標として示されている）
+                    </span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">市場調査レポート（UUV市場 2024年10月）</span>
+                <span class="source-tag">The Business Research Company（AUV・ROV市場 2025年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH2 -->
+    <div class="chapter" id="ch2">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <h2>制度・政策の枠組み</h2>
+            </div>
+
+            <h3>AUV戦略の決定——2023年12月</h3>
+            <p>総合海洋政策本部は2023年12月に「AUVの社会実装に向けた戦略（AUV戦略）」を決定しました。「2030年までに我が国のAUV産業が育成され、海外展開まで可能となるよう、国主導の下で官民が連携して取り組む」と示しており（内閣府・2025年2月）、AUVを洋上風力発電インフラ管理・海洋資源開発・海洋調査・安全保障・海洋環境保全・防災減災等の広範な分野に導入することを目標としています。</p>
+
+            <h3>AUV利用実証事業（令和6年度）</h3>
+            <p>内閣府 総合海洋政策推進事務局はAUV利用実証事業を令和6年度から実施し、2025年1月21日に成果報告会を開催しました。4件の利用実証試験（洋上風力発電施設への活用等を含む）の成果が報告され、2030年までの事業化に向けた各者の取組が示されました。「AUV官民プラットフォーム」の構築も進められています（内閣府・2025年2月）。</p>
+
+            <h3>主要マイルストーン</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-year">2023年12月</span>
+                    <span class="timeline-text">総合海洋政策本部がAUV戦略を決定。2030年までのAUV産業育成・海外展開を国家目標として明示。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2024年度</span>
+                    <span class="timeline-text">内閣府がAUV利用実証事業を開始（4件）。洋上風力発電施設へのAUV利用等を含む実証試験を実施。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2025年1月21日</span>
+                    <span class="timeline-text">AUV利用実証事業 令和6年度の成果報告会を開催。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2025年度</span>
+                    <span class="timeline-text">三菱重工業が防衛装備庁と大型USV試作艇の試作契約を締結。海上自衛隊向け試験での運用実績を積み上げ中（JET-Robotics・2025年）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2026年3月</span>
+                    <span class="timeline-text">高市政権「戦略17分野」に「海洋無人機（海洋ドローン）」が明示（日本成長戦略会議 第3回 資料1）。10年後に世界市場3割・40〜50億ドル程度の獲得が政策目標として示されている。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2030年（目標）</span>
+                    <span class="timeline-text">AUV産業の育成・海外展開を目標（AUV戦略・政策目標として示されている）。世界市場100億ドル超を見込む中、日本の世界3割シェア獲得が目標。</span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">内閣府「AUVの社会実装に向けた戦略（AUV戦略）」（2023年12月）</span>
+                <span class="source-tag">内閣府 総合海洋政策推進事務局（2025年2月）</span>
+                <span class="source-tag">日本成長戦略会議 第3回 資料1「戦略17分野における主要な製品・技術等」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH3 -->
+    <div class="chapter" id="ch3">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <h2>経済的前提条件</h2>
+            </div>
+
+            <h3>欧米先行という競合構造</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「石油・ガス開発、安全保障等の分野で豊富な資金力を背景に欧米企業の産業化が先行」と明示しています。Kongsberg Maritime（ノルウェー）・Teledyne Marine（米国）・Saab AB（スウェーデン）・Oceaneering International（米国）・L3Harris Technologies（米国）等の欧米大手が市場をリードしており、上位5社で2024年の市場シェアの45.9%を占めています（GM Insights 2025年）。</p>
+            <p>日本は「造船技術等を背景に科学調査・技術開発等の分野を中心に技術基盤を発展させ、特に深海探査等の分野で強みを生かし世界をリードする取組を展開」している（資料2）ものの、産業規模では欧米と大きな差があります。</p>
+
+            <h3>用途の多様化——新産業の出現</h3>
+            <div class="data-box">
+                <div class="box-title">主要用途と市場の特性</div>
+                <ul>
+                    <li>【石油・ガス開発（最大の既存市場）】海底パイプライン点検・海底地形調査・掘削支援。欧米企業が豊富な資金で先行。防衛・安全保障用途とともに防衛・商業探査が防衛に次ぐ大きなセグメント（CAGR 12.2%・水中ドローン市場）。</li>
+                    <li>【安全保障・防衛（最大規模・最高成長率）】機雷探知・対潜水艦戦・海洋監視・ISR（情報・監視・偵察）。米海軍が2025会計年度に無人システムに1億7,730万ドルの予算を計上。日本でも防衛装備庁が三菱重工等に大型USV試作艇の開発を委託。デュアルユース技術として防民一体の重要性が格段に上昇。</li>
+                    <li>【洋上風力発電（新産業・急成長）】洋上風力発電施設の設置・保守管理・海底ケーブル検査・海底地形調査。日本では洋上風力拡大に伴い急成長が期待される。内閣府のAUV利用実証事業（令和6年度）でも洋上風力施設へのAUV活用が主要テーマの一つ。</li>
+                    <li>【海洋科学調査・深海探査（日本の強み）】海底鉱物資源探査・地震・防災研究・海洋環境モニタリング。JAMSTECが世界トップ水準の深海探査技術を保有。Shell Ocean Discovery XPrize準優勝（Team KUROSHIO）等の国際的実績もある。</li>
+                    <li>【海面養殖・漁業（新用途）】水産養殖施設のモニタリング・海洋環境観測・漁業資源調査。漁業衰退・担い手不足という日本の社会課題と直結する新用途として期待されている。</li>
+                </ul>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">GM Insights 水中ドローン市場レポート（2025年）</span>
+                <span class="source-tag">内閣府 AUV利用実証事業（2025年2月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH4 -->
+    <div class="chapter" id="ch4">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 04</span>
+                <h2>社会・安全保障との連関</h2>
+            </div>
+
+            <h3>日本のEEZ——広大な「海の国土」</h3>
+            <p>日本の排他的経済水域（EEZ）は約447万km²と世界第6位の広さを持ちます（国土面積37.8万km²の約12倍）。この広大な海域を従来の有人船舶で効率的に調査・監視するには膨大な人員とコストが必要であり、無人化・省人化のニーズが高い構造にあります。少子高齢化による人口減少が進む中で、海洋調査・監視・資源開発における省人化は不可欠な課題です。</p>
+
+            <h3>安全保障上の重要性——「デュアルユース技術」としての位置づけ</h3>
+            <p>資料2（2026年3月）は「近年、安全保障分野での無人アセットの重要性は格段に増大し、その強化が喫緊の課題。安全保障上の必要性とそれを実現する需要の拡大のためには、防衛利用と産業化が不可分なデュアルユース技術としての重要性が格段に上昇」と明示しています。ウクライナ・黒海での無人水上艦艇（USV）による実戦投入事例が海洋無人機の安全保障上の有効性を証明し、各国の調達スケジュールを加速させています。</p>
+            <p>アジア太平洋地域では中国の艦隊増強・インド太平洋への影響力拡大を背景に、日本・オーストラリア・インド等が海洋無人機の開発・調達を強化しています（GM Insights 2025年）。</p>
+
+            <h3>海底資源・レアアース——南鳥島周辺の戦略的意義</h3>
+            <p>南鳥島周辺の日本のEEZ海底にはレアアースを含む泥・マンガン団塊・海底熱水鉱床等の鉱物資源が確認されており、AUVを活用した海底資源調査が戦略的重要性を持っています。JAMSTECのSIP（戦略的イノベーション創造プログラム）第3期では複数のAUVを活用した海洋資源調査・モニタリングが進められています。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">JAMSTEC SIP第3期「海洋安全保障プラットフォームの構築」（2025年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH5 -->
+    <div class="chapter" id="ch5">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 05</span>
+                <h2>技術・DXの位置づけ</h2>
+            </div>
+
+            <h3>「群制御」という技術的転換点</h3>
+            <p>資料2（2026年3月）は「複数の機体・機種を『群』として一体的に制御する新たな運用技術等が出現し、活用可能性が飛躍的に拡大」と示しています。従来の1機体・1オペレーターという運用から、AIによる群制御（複数AUVの協調運用）への移行が技術的な転換点として注目されています。JAMSTECは複数のAUVを同時に運用する実証試験（SIP第2期でのAUV隊列制御）にも成功しています。</p>
+
+            <h3>AI・センシング・通信技術との統合</h3>
+            <p>水中通信の最大の制約は「電波が水中ではほとんど伝わらない」点です。現状では音響通信（ソナー）が主流ですが、通信速度・距離に制限があります。衛星通信を搭載したUSVが水中のAUVと音響通信で連携し、USVが衛星経由で陸上管制室にデータを送る「USV・AUV連携システム」が技術的な解決策として注目されています（JET-Robotics・2025年）。またAIによる異常検知・自律判断能力の向上が商用での普及を促進しています。</p>
+
+            <div class="compare-grid">
+                <div class="compare-cell">
+                    <span class="cell-label">日本の技術的強み（資料2）</span>
+
+                            造船技術・深海探査技術（世界最深級の探査実績）。重工業・造船業との連携。JAMSTECによる高性能AUV・ROVの開発実績。Shell Ocean Discovery XPrize準優勝（Team KUROSHIO）等の国際的評価。海底資源調査・科学調査での先行実績。
+                          
+                </div>
+                <div class="compare-cell">
+                    <span class="cell-label">技術的課題（資料2）</span>
+
+                            欧米企業に比して活動の規模が極めて限定的。開発・運用等の専門人材不足。先行的取組を実施する実証環境・海域確保の難しさ。水中通信技術の制約（電波が水中で届かない）。群制御・自律判断AIの実装水準。
+                          
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">JAMSTEC「深海探査システムの現状と今後の展望」（2025年）</span>
+                <span class="source-tag">JET-Robotics「USV（無人水上艇）とは？」（2025年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH6 -->
+    <div class="chapter" id="ch6">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 06</span>
+                <h2>参入・撤退の条件</h2>
+            </div>
+
+            <h3>「大規模需要の見通しの乏しさ」という根本的障壁</h3>
+            <p>資料2（2026年3月）は「政府調達の規模・時期など、大規模需要の見通しの乏しさ」を最大の不確実性として明示しています。航空ドローン（民生）のような「明確な民間市場」がまだ形成されていないため、企業が先行投資をしにくい構造があります。この課題に対してAUV戦略では「官が主導して工程の共有を図り、関連動向等に応じて適時に更新する」とし、需要の可視化を政策的に進める方針が示されています。</p>
+
+            <h3>「初期ハードルの高さ」と保険・規制の未整備</h3>
+            <p>資料2（2026年3月）は「新規産業であることに起因する保険負担の高止まり」「規制上の扱い等の制度面での見通しの乏しさ」をボトルネックとして明示しています。海洋無人機の商業運用には船舶安全法・港則法・海洋汚染防止法等の既存規制との整合性が必要であり、無人機特有のルール整備が進行中の段階です。</p>
+
+            <h3>スタートアップ参入の機運——欧米との差を埋める機会</h3>
+            <p>資料2（2026年3月）は「新たな技術の進展に伴い、スタートアップの新規参入等の機運が高まっており、こうした動向と連動した発展の好機」とも述べています。AI・センシング等のソフトウェア技術は既存の重工業より新興企業が有利な領域であり、SBIRなどを活用したスタートアップへの支援が政策的に明示されています。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">内閣府「AUVの社会実装に向けた戦略（AUV戦略）」（2023年12月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH7 -->
+    <div class="chapter" id="ch7">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 07</span>
+                <h2>経済安全保障との接続</h2>
+            </div>
+
+            <h3>「海洋国家」としての戦略的不可欠性</h3>
+            <p>資料1（2026年3月）は「海洋国家として、安全保障の観点から海を守り、また、成長の基盤として海を活かしていくことが重要であり、海洋無人機はその不可欠な要素」と位置づけています。海洋無人機は単なる民間産業ではなく、国家の海洋権益確保・経済安全保障の基盤インフラとして位置づけられています。</p>
+
+            <h3>「高付加価値モデル」という日本の戦略方針</h3>
+            <p>資料2（2026年3月）の勝ち筋は「機体単体（ハード）の省人化・高性能化等の技術開発を継続するとともに、複数の機体・機種の『群』としての利用や周辺技術と併せた運用サービスや取得する海洋データの利活用の方法（ソフト）も含めたパッケージ全体で高付加価値モデルを展開する」です。単なる機体製造業ではなく、データ・サービス込みのパッケージ展開で国際競争力を確立するという方針です。</p>
+
+            <h3>分野横断的連携——造船・宇宙との接続</h3>
+            <p>資料2（2026年3月）は「海洋無人機関連産業のバリューチェーン及び分野横断的（造船・宇宙等）な連携体制の構築」を目指すべき機能として明示しています。造船業との連携（大型船舶・研究船へのAUV搭載）・宇宙との連携（衛星通信による水中・水上無人機の遠隔管制）が具体的な方向性として示されています。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回 資料1「戦略17分野における主要な製品・技術等」（2026年3月）</span>
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH8 -->
+    <div class="chapter" id="ch8">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 08</span>
+                <h2>外部環境の整理</h2>
+            </div>
+
+            <h3>数値サマリー</h3>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>章</th>
+                        <th>指標名</th>
+                        <th>数値</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第1章</td>
+                        <td>世界海洋無人機市場（現状）</td>
+                        <td>40〜50億ドル</td>
+                        <td>資料2 2026年3月（海洋産業研究・振興協会）</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>世界市場 年平均成長率</td>
+                        <td>8〜15%</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>世界市場（2030年頃）</td>
+                        <td>100億ドルを超える見込み</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>日本の目標（10年後）</td>
+                        <td>世界市場3割・40〜50億ドル程度（政策目標として示されている）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>世界UUV市場（調査機関）</td>
+                        <td>48億ドル（2024年）→111億ドル（2030年）CAGR 15.0%</td>
+                        <td>市場調査レポート 2024年</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>AUV戦略 決定</td>
+                        <td>2023年12月（総合海洋政策本部）</td>
+                        <td>内閣府</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>AUV利用実証事業 成果報告会</td>
+                        <td>2025年1月21日（令和6年度・4件）</td>
+                        <td>内閣府 2025年2月</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>三菱重工 大型USV試作艇</td>
+                        <td>2025年度に防衛装備庁と試作契約締結</td>
+                        <td>JET-Robotics 2025年</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>構造的に固定されやすい要素</h3>
+            <div class="data-box">
+                <div class="box-title">構造的に固定されやすい要素</div>
+                <ul>
+                    <li>欧米企業（Kongsberg・Teledyne・Saab等）が石油・ガス開発・防衛需要を背景に先行しているという競合構造は、日本が産業規模を拡大するまで変化しない</li>
+                    <li>日本のEEZが世界第6位の広さを持つという地理的優位性は変化しない——ただしこれを活かす産業基盤が未整備</li>
+                    <li>「政府調達の規模・時期の見通しの乏しさ」という民間投資の障壁は、AUV戦略の実施状況によって変化するが短期解消しない</li>
+                    <li>水中通信の制約（電波が水中で届かない）は基礎的な物理的制約であり、音響通信の改良・衛星連携で対処されるが根本的制約は続く</li>
+                    <li>深海探査技術でのJAMSTECの強みは蓄積された実績であり、簡単に模倣できない参入障壁として機能する</li>
+                    <li>デュアルユース技術としての安全保障需要は国際情勢が緊張する限り成長を続ける構造にある</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜7章に記載の各統計の集約</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH9 -->
+    <div class="chapter" id="ch9">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 09</span>
+                <h2>内部環境編への橋渡し</h2>
+            </div>
+            <div class="data-box">
+                <div class="box-title">外部環境編の整理（5点）</div>
+                <ul>
+                    <li>世界市場は40〜50億ドル・CAGR 8〜15%・2030年100億ドル超見込み。欧米が先行し「覇権国が存在しない」ため日本にも国際競争力獲得の余地があるとされる（資料2）</li>
+                    <li>2023年12月にAUV戦略が決定され、2030年までの産業育成・海外展開が国家目標として明示。内閣府の利用実証事業（令和6年度）が進行中</li>
+                    <li>石油・ガス開発・防衛・洋上風力・科学調査・養殖と用途が広範。防衛需要（デュアルユース）が安全保障上の喫緊課題として位置づけられている</li>
+                    <li>「政府調達の見通しの乏しさ」「保険負担の高止まり」「規制整備の途上」という3つの産業化障壁が資料2に明示されている</li>
+                    <li>日本の戦略は「機体+データ+運用サービスのパッケージ展開」による高付加価値化。造船・宇宙との分野横断連携が方針として示されている</li>
+                </ul>
+            </div>
+            <div class="next-box">
+                <div class="next-label">NEXT — 内部環境編で整理すること</div>
+                <h3>外圧がプレイヤー構成・収益・人材にどう現れるか</h3>
+                <ul>
+                    <li>三菱重工（大型USV試作・機雷探知）・三井E&amp;S（AUV連携型USV）・川崎重工等の重工系プレイヤーの海洋無人機事業の収益規模</li>
+                    <li>JAMSTEC（科学調査・深海探査の国立研究機関）の研究開発体制と産業化への接続</li>
+                    <li>海洋関連スタートアップ（Team KUROSHIO関連等）の財務実態・資金調達</li>
+                    <li>海洋無人機エンジニア・海洋工学専門家の人材市場実態（希少性・年収）</li>
+                    <li>AUV戦略の実施状況——官民プラットフォームの形成と民間投資の動向</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポートの総括</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <div class="container">
+            <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。市場規模数値は各調査機関の定義・算定方法が異なるため単純比較はできません。「政策目標として示されている」と注記した数値は政府が目標として掲げた値であり達成を保証するものではありません。データ基準時点は2026年04月です。</p>
+            <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年04月 産業構造分析レポート ── 海洋無人機（海洋ドローン）（外部環境編）</p>
+            <p style="margin-top:8px;">
+                <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
