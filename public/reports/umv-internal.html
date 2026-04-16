@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業界分析｜高市政権「戦略17分野」海洋 海洋無人機（海洋ドローン）（内部環境編）</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+    :root {
+        --ink: #0f0f0e;
+        --paper: #f5f2ed;
+        --cream: #ede9e1;
+        --accent: #c84b2f;
+        --muted: #6b6760;
+        --rule: #c9c4bb;
+        --highlight: #fff8e6;
+    }
+
+    *, * ::before, * ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        border-bottom: 3px solid var(--accent);
+    }
+
+    .masthead-right {
+        color: var(--muted);
+    }
+
+    .hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 60px 40px 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200, 75, 47, 0.07) 4px, rgba(200, 75, 47, 0.07) 5px);
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        padding: 4px 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(20px, 3.2vw, 34px);
+        font-weight: 900;
+        line-height: 1.4;
+        max-width: 820px;
+        letter-spacing: 0.02em;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+        color: var(--accent);
+        font-style: normal;
+    }
+
+    .hero-meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+
+    .hero-badge {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 11px;
+        padding: 4px 12px;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.06em;
+    }
+
+    .data-notice {
+        background: rgba(200, 75, 47, 0.15);
+        border-left: 3px solid var(--accent);
+        padding: 10px 16px;
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .toc {
+        background: var(--cream);
+        border-top: 3px solid var(--ink);
+        border-bottom: 1px solid var(--rule);
+        padding: 32px 40px;
+    }
+
+    .toc h2 {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 16px;
+        text-transform: uppercase;
+    }
+
+    .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 6px 28px;
+    }
+
+    .toc-item {
+        font-size: 13px;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 3px 0;
+        border-bottom: 1px dashed var(--rule);
+        display: flex;
+        gap: 8px;
+    }
+
+    .toc-item:hover {
+        color: var(--accent);
+    }
+
+    .toc-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        flex-shrink: 0;
+        padding-top: 2px;
+    }
+
+    .chapter {
+        padding: 48px 40px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .chapter:nth-child(even) {
+        background: var(--cream);
+    }
+
+    .chapter-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .chapter-num {
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .chapter h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.4;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 10px;
+        flex: 1;
+    }
+
+    .chapter h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 24px 0 10px;
+        padding-left: 10px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .chapter p {
+        margin-bottom: 14px;
+    }
+
+    .connect-banner {
+        background: var(--ink);
+        border-left: 5px solid var(--accent);
+        padding: 16px 20px;
+        margin-bottom: 28px;
+        font-size: 13px;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .connect-banner strong {
+        color: var(--accent);
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 24px 0;
+    }
+
+    .stat-cell {
+        background: var(--paper);
+        padding: 18px 16px;
+        text-align: center;
+    }
+
+    .chapter:nth-child(even) .stat-cell {
+        background: #f0ece4;
+    }
+
+    .stat-cell .stat-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent);
+        line-height: 1.2;
+        display: block;
+    }
+
+    .stat-cell .stat-unit {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-top: 2px;
+    }
+
+    .stat-cell .stat-label {
+        font-size: 11px;
+        color: var(--ink);
+        display: block;
+        margin-top: 6px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .data-box {
+        background: var(--highlight);
+        border: 1px solid #e0d8c4;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 20px 0;
+    }
+
+    .data-box .box-title {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .data-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .data-box ul li {
+        padding: 5px 0 5px 16px;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+        position: relative;
+    }
+
+    .data-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .data-box ul li:last-child {
+        border-bottom: none;
+    }
+
+    .note-box {
+        background: rgba(200, 75, 47, 0.05);
+        border: 1px dashed var(--accent);
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .note-box strong {
+        color: var(--accent);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13px;
+    }
+
+    .summary-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .summary-table thead th {
+        padding: 10px 14px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+    }
+
+    .summary-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .summary-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .summary-table tbody td {
+        padding: 9px 14px;
+        vertical-align: top;
+    }
+
+    .summary-table td:first-child {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 12px;
+    }
+
+    .biz-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 12px;
+    }
+
+    .biz-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .biz-table thead th {
+        padding: 8px 12px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.06em;
+    }
+
+    .biz-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .biz-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .biz-table tbody td {
+        padding: 8px 12px;
+        vertical-align: top;
+        font-size: 12px;
+    }
+
+    .biz-table td:first-child {
+        font-weight: 700;
+    }
+
+    .biz-table .acc {
+        color: var(--accent);
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+    }
+
+    .next-box {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 28px 32px;
+        margin: 20px 0;
+        border-left: 5px solid var(--accent);
+    }
+
+    .next-box .next-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .next-box h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 17px;
+        margin-bottom: 12px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .next-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .next-box ul li {
+        padding: 4px 0 4px 14px;
+        font-size: 13px;
+        position: relative;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .next-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.06);
+        border: 1px solid var(--rule);
+        padding: 3px 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        color: var(--muted);
+        margin: 2px 3px;
+        letter-spacing: 0.04em;
+    }
+
+    .source-wrap {
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 1px dashed var(--rule);
+    }
+
+    .disclaimer {
+        background: var(--ink);
+        color: rgba(245, 242, 237, 0.5);
+        padding: 24px 40px;
+        font-size: 11px;
+        line-height: 1.7;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.03em;
+    }
+
+    .rule-thick {
+        border: none;
+        border-top: 3px solid var(--ink);
+        margin: 0;
+    }
+
+    .rule-thin {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .masthead {
+            flex-direction: column;
+            gap: 6px;
+            padding: 10px 16px;
+        }
+
+        .hero {
+            padding: 36px 16px 30px;
+        }
+
+        .chapter {
+            padding: 32px 16px;
+        }
+
+        .toc {
+            padding: 24px 16px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span>産業構造分析レポート</span>
+        <span class="masthead-right">2026年04月発行 ── 海洋／海洋無人機（海洋ドローン）（内部環境編）</span>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-label">INDUSTRY ANALYSIS REPORT — INTERNAL ENVIRONMENT</div>
+            <h1>
+                業界分析｜高市政権「戦略17分野」
+                <br>
+                海洋
+                <br>
+                <em>海洋無人機（海洋ドローン）</em>
+                （内部環境編）
+            </h1>
+            <div class="hero-meta">
+                <span class="hero-badge">就職・転職検討者向け</span>
+                <span class="hero-badge">株式投資家向け</span>
+                <span class="hero-badge">数字と事実のみ記載</span>
+            </div>
+            <div class="data-notice">本レポートのデータ基準時点：2026年04月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用</div>
+        </div>
+    </div>
+
+    <hr class="rule-thick">
+
+    <div class="toc">
+        <div class="container">
+            <h2>目次 — TABLE OF CONTENTS</h2>
+            <div class="toc-grid">
+                <a class="toc-item" href="#ch0">
+                    <span class="toc-num">00</span>
+                    この内部環境編の立ち位置
+                </a>
+                <a class="toc-item" href="#ch1">
+                    <span class="toc-num">01</span>
+                    業界内プレイヤー構成
+                </a>
+                <a class="toc-item" href="#ch2">
+                    <span class="toc-num">02</span>
+                    収益構造の本質
+                </a>
+                <a class="toc-item" href="#ch3">
+                    <span class="toc-num">03</span>
+                    三菱重工——防衛・安全保障型の収益構造
+                </a>
+                <a class="toc-item" href="#ch4">
+                    <span class="toc-num">04</span>
+                    川崎重工——潜水艦技術から民生AUVへ
+                </a>
+                <a class="toc-item" href="#ch5">
+                    <span class="toc-num">05</span>
+                    三井E&amp;S——多機能USVとXPRIZE実績
+                </a>
+                <a class="toc-item" href="#ch6">
+                    <span class="toc-num">06</span>
+                    JAMSTEC——研究機関としての産業化接続
+                </a>
+                <a class="toc-item" href="#ch7">
+                    <span class="toc-num">07</span>
+                    人材市場の実態
+                </a>
+                <a class="toc-item" href="#ch8">
+                    <span class="toc-num">08</span>
+                    構造的課題の所在
+                </a>
+                <a class="toc-item" href="#ch9">
+                    <span class="toc-num">09</span>
+                    誤解されやすいポイント
+                </a>
+                <a class="toc-item" href="#ch10">
+                    <span class="toc-num">10</span>
+                    内部環境の整理
+                </a>
+                <a class="toc-item" href="#ch11">
+                    <span class="toc-num">11</span>
+                    有料版への橋渡し
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <!-- CH0 -->
+    <div class="chapter" id="ch0">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <h2>この内部環境編の立ち位置</h2>
+            </div>
+            <div class="connect-banner">
+                <strong>外部環境編との接続：</strong>
+                外部環境編では、世界市場40〜50億ドル・CAGR 8〜15%・2030年100億ドル超見込み・日本の3割シェア目標（政策目標として示されている）・AUV戦略2023年12月決定・欧米先行・「覇権国不在」・防衛デュアルユースの重要性・3つの産業化障壁（政府調達の見通し乏しさ・保険高止まり・規制未整備）という外部構造を整理しました。本編ではその前提を受け、「外部の構造がこの産業の業態・収益・人材にどのような特性として現れているか」を数字と事実で記述します。
+                    
+            </div>
+            <div class="data-box">
+                <div class="box-title">本編でやること／やらないこと</div>
+                <ul>
+                    <li>【やること】三菱重工（USV・UUV・機雷探知）・川崎重工（AUV「SPICE」）・三井E&S（AUV連携型USV・Team KUROSHIO）の海洋無人機事業の実態を記述する</li>
+                    <li>【やること】JAMSTEC（国立研究開発法人・世界トップ水準の深海探査）の組織規模・財務・産業化への接続を記述する</li>
+                    <li>【やること】「官需先行・研究機関中心・民間産業化は途上」という収益構造の特性を示す</li>
+                    <li>【やること】海洋無人機・深海エンジニアの人材市場実態を整理する</li>
+                    <li>【やらないこと】特定銘柄の投資推奨・勝ち負けの断定・良し悪しの評価</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート基本方針</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH1 -->
+    <div class="chapter" id="ch1">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <h2>業界内プレイヤー構成</h2>
+            </div>
+            <table class="biz-table">
+                <thead>
+                    <tr>
+                        <th>業態</th>
+                        <th>主な役割</th>
+                        <th>代表プレイヤー</th>
+                        <th>収益の性格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            重工系
+                            <br>
+                            防衛・海洋無人機メーカー
+                        </td>
+                        <td>防衛装備庁受託でのUSV・UUV開発（機雷処理・洋上監視）。潜水艦・艦艇技術の転用で深海対応能力を有する。</td>
+                        <td class="acc">三菱重工業（USV試作・UUV機雷探知OZZ-5・日仏共同研究）、川崎重工業（AUV SPICE・深度3,000m）</td>
+                        <td>防衛調達（官需）＋民間商業（海底パイプライン検査等）。海洋無人機単体の収益は全社売上の一部。三菱重工の防衛・宇宙セグメントが全社業績を牽引する構造だが海洋無人機単体の財務は独立開示なし。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            造船系
+                            <br>
+                            USV・AUV連携
+                        </td>
+                        <td>造船技術・艦艇技術を活かしたUSV・AUV展開回収システムの開発。海洋調査・防衛双方への対応。</td>
+                        <td class="acc">三井E&amp;S（AUV連携型USV・洋上中継器ASV・機雷処分用USV・Team KUROSHIO参画）</td>
+                        <td>海洋調査向け機体販売＋防衛調達。Shell Ocean Discovery XPRIZE準優勝（Team KUROSHIO）という国際的実績を持つ。海洋事業は三井E&S全社売上の一部。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            国立研究機関
+                            <br>
+                            （深海探査・科学調査）
+                        </td>
+                        <td>有人潜水調査船「しんかい6500」・AUV・ROV等を用いた世界最深水準の深海探査・科学調査。産業化への技術移転・実証フィールドの提供役も担う。</td>
+                        <td class="acc">JAMSTEC（国立研究開発法人海洋研究開発機構）</td>
+                        <td>国からの運営費交付金が主要財源。商業収益は限定的。技術開発・実証データの産業界への提供を通じて産業化を支援する構造。SIP（戦略的イノベーション創造プログラム）での複数AUV協調制御実証等を担う。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            海洋調査・
+                            <br>
+                            AUV運用サービス
+                        </td>
+                        <td>JAMSTECの研究船・AUV・ROVの運航・管理を受託。海洋調査支援業務。</td>
+                        <td class="acc">日本海洋事業（JAMSTEC向け探査機運用・海洋調査支援）</td>
+                        <td>海洋調査受託サービス収益。船員・技術員が現場運用を担う。安定的な受託収益モデル。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            スタートアップ・
+                            <br>
+                            新興技術企業
+                        </td>
+                        <td>AI・センシング・群制御等のソフトウェア技術に強みを持つ新興企業。SBIRやAUV官民プラットフォームを活用した参入。</td>
+                        <td class="acc">各種スタートアップ（AUV官民プラットフォーム参加企業）</td>
+                        <td>開発投資先行・補助金・政府調達が初期収益源。海洋無人機スタートアップは国内では黎明期。</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="source-wrap">
+                <span class="source-tag">JET-Robotics「USV（無人水上艇）とは？」（2025年）</span>
+                <span class="source-tag">日経クロステック「川崎重工のAUV SPICE」（2023年6月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH2 -->
+    <div class="chapter" id="ch2">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <h2>収益構造の本質</h2>
+            </div>
+            <h3>「官需先行・研究機関中心・民間産業化は途上」という現状</h3>
+            <p>日本の海洋無人機産業の収益構造は、現段階では「防衛装備庁からの研究試作・開発委託（官需）」と「JAMSTECからの研究調査支援受託」が主要な収益の柱です。石油・ガス開発・洋上風力等の民間商業需要からの収益は限定的で、産業化は途上の段階です。</p>
+            <p>これは外部環境編で確認した「大規模需要の見通しの乏しさ」という構造が収益に直接反映されたものです。三菱重工・川崎重工・三井E&Sの海洋無人機事業は各社の全社売上に比して規模が小さく、独立したセグメントとして財務開示されていないケースがほとんどです。</p>
+            <h3>防衛需要の拡大が産業化の「橋渡し」になる構造</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「防衛や資源・エネルギー分野での初期需要創出により、国内生産基盤の構築につなげる」と示しています。防衛調達による量産・技術蓄積→民生転用というデュアルユースの好循環が政策として意図されています。日本政府が2027年度までに防衛費をGDP比2%（年間約11兆円）に増額する計画の中で、海洋無人機（USV・UUV等）への投資も増加しています。</p>
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH3 -->
+    <div class="chapter" id="ch3">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <h2>三菱重工——防衛・安全保障型の収益構造</h2>
+            </div>
+            <h3>USV試作艇——防衛装備庁委託で大型開発中</h3>
+            <p>三菱重工業は防衛装備庁の委託を受け、大型USV（無人水上機）試作艇を開発中です。2025年度に防衛装備庁と試作契約を締結し、海上自衛隊向け試験での運用実績を積んでいます（JET-Robotics・2025年）。機雷戦・洋上監視等の防衛用途を見据えた独自プラットフォームです。</p>
+            <p>2023年の防衛・セキュリティ展示会「DSEI Japan」では、UAV搭載・UUV水中投入・自走式機雷処分用弾薬（EMD）投入が可能な多機能USV試作機（全長8.8m・約6トン）を披露しています（日経クロステック・2023年）。</p>
+            <h3>UUV機雷探知——日仏共同研究でOZZ-5型を開発</h3>
+            <p>三菱重工はフランスThales社と共同で次世代機雷探知UUV「OZZ-5」の開発を進めています（2021年契約・三菱重工公式）。「防衛装備品の分野に関する共同プロジェクトの枠組みで協力を強化する」という日仏協力のロードマップに基づく事業です。</p>
+            <div class="note-box">
+                <strong>【注記】</strong>
+                三菱重工の海洋無人機事業は「航空・防衛・宇宙」セグメントに含まれており、海洋無人機単体の売上・利益は独立開示されていません。2025年3月期の全社売上収益は5兆271億円・事業利益3,831億円（過去最高）ですが、これは防衛・エネルギー・民間航空機全体の数値です。
+                    
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">JET-Robotics「USV（無人水上艇）とは？」（2025年）</span>
+                <span class="source-tag">日経クロステック「三菱重工が沿岸監視の無人母艦」（2023年3月）</span>
+                <span class="source-tag">三菱重工「UUVの高度化へ日仏共同研究事業で契約」（2021年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH4 -->
+    <div class="chapter" id="ch4">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 04</span>
+                <h2>川崎重工——潜水艦技術から民生AUVへ</h2>
+            </div>
+            <h3>AUV「SPICE」——世界初のロボットアーム搭載・深度3,000m対応</h3>
+            <p>川崎重工業は2023年に、世界初の検査用ロボットアームを搭載した自律型無人潜水機（AUV）「SPICE」を英Modus Subsea Services（モダスサブシー・サービス）に納入しました（日経クロステック・2023年）。全長約5.6m・深度3,000mまで潜航可能で、海底パイプラインを自律航行しながら近接検査します。北海をはじめとする世界の海底パイプライン敷設海域での運用が予定されています。</p>
+            <p>川崎重工は1906年に国産初の潜水艇を建造し、1960年に海上自衛隊向け国産初潜水艦「おやしお」を建造した実績を持ちます。この潜水艦技術をAUVに応用する戦略で、1998年からAUV開発に着手しました。SPICEの開発自体は2013年に国土交通省の補助金を受けてスタートしています（日経クロステック・2023年）。</p>
+            <div class="note-box">
+                <strong>【注記】</strong>
+                川崎重工業の海洋無人機事業は「エネルギーソリューション＆マリン」カンパニー等に含まれており、AUV単体の売上・利益は独立開示されていません。民生向けAUVの商業展開は初期段階で、収益規模は限定的です。
+                    
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">日経クロステック「川崎重工が新技術満載の自律航行潜水機」（2023年6月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH5 -->
+    <div class="chapter" id="ch5">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 05</span>
+                <h2>三井E&S——多機能USVとXPRIZE実績</h2>
+            </div>
+            <h3>AUV連携型USV・機雷処分用USV・洋上中継器ASV</h3>
+            <p>三井E&Sは海洋調査と防衛の双方で海洋無人機の開発実績を持ちます。主要製品は洋上中継器ASV（AUV展開・回収と衛星通信ゲートウェイを兼ねる多機能型）・USV1号機・機雷処分用USVです（JET-Robotics・2025年）。JAMSTEC向けの海洋資源モニタリングSIP実証での長時間観測にも採用されています。</p>
+            <h3>Shell Ocean Discovery XPRIZE準優勝——Team KUROSHIO</h3>
+            <p>三井E&Sが技術を提供したTeam KUROSHIOは、Shell Ocean Discovery XPRIZE（深海探査の国際技術競技大会）で準優勝を獲得しています。AUVを実際に国際競技会で投入した実績は、国際舞台での技術評価という点で他の国内企業との差別化要素となっています。</p>
+            <div class="note-box">
+                <strong>【注記】</strong>
+                三井E&Sの海洋無人機事業の売上・利益は公式には独立開示されていません。同社は2023年3月期に当期純損失105億円を計上するなど財務的に厳しい局面があり、2024年3月期以降の事業再構築を進めています。
+                    
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">JET-Robotics「USV（無人水上艇）とは？」（2025年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH6 -->
+    <div class="chapter" id="ch6">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 06</span>
+                <h2>JAMSTEC——研究機関としての産業化接続</h2>
+            </div>
+            <h3>組織規模・財務</h3>
+            <p>国立研究開発法人海洋研究開発機構（JAMSTEC）は、日本の海洋科学技術の総合的な研究機関として2004年に独立行政法人化されました。職員数は948名（2024年12月31日時点・マイナビ2026）。主要財源は国からの運営費交付金であり、商業収益は限定的です。</p>
+            <p>2023年度の事務・技術系職員の平均年収は**812.3万円**（残業代除く）、うち平均ボーナス**233.5万円**でした（海洋研究開発機構公式・KomuInfo集計）。平均年齢は46.7歳、対象職員数286人。国家公務員の平均より高い水準にあります。</p>
+
+            <h3>深海探査技術と産業化への橋渡し機能</h3>
+            <p>JAMSTECは有人潜水調査船「しんかい6500」（潜航深度6,500m）・AUV「かいこうMk-IV」等を保有し、世界最深水準の深海探査能力を持ちます。2024年9月には地球深部探査船「ちきゅう」で総ドリルパイプ長7,906mという「最も深い海洋科学掘削」のギネス世界記録を達成しました。</p>
+            <p>SIP（戦略的イノベーション創造プログラム）第2期では複数AUVの隊列制御実証に成功しており、民間企業へのデータ提供・技術移転を通じて産業化を支援しています。AUV官民プラットフォームにも参加しており、研究機関と産業界の橋渡し機能を担っています。</p>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">948名</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        JAMSTEC 職員数
+                        <br>
+                        （2024年12月31日時点）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">812.3</span>
+                    <span class="stat-unit">万円</span>
+                    <span class="stat-label">
+                        JAMSTEC 平均年収
+                        <br>
+                        （2023年度・事務技術系・残業代除く）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">46.7歳</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        JAMSTEC 平均年齢
+                        <br>
+                        （2023年度・事務技術系）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">6,500m</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        しんかい6500 潜航深度
+                        <br>
+                        （世界最深水準）
+                    </span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">マイナビ2026 JAMSTEC会社概要（2024年12月31日時点）</span>
+                <span class="source-tag">KomuInfo「JAMSTEC年収2023年度」（海洋研究開発機構公式データ）</span>
+                <span class="source-tag">JAMSTEC「研究プラットフォーム運用部門」（2025年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH7 -->
+    <div class="chapter" id="ch7">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 07</span>
+                <h2>人材市場の実態</h2>
+            </div>
+            <h3>海洋無人機関連 主要職種</h3>
+            <div class="data-box">
+                <div class="box-title">海洋無人機関連 主要職種（5職種）</div>
+                <ul>
+                    <li>【AUV・ROV設計エンジニア（機械・電気）】AUV・ROVの機体設計・推進システム・耐圧構造・センサー統合等を担う。深海対応の耐圧・耐食設計の知識が必要。川崎重工（潜水艦技術転用）・三井E&S・JAMSTECが主要な就職先。潜水艦・艦艇技術経験者の転用が多い。</li>
+                    <li>【水中・海洋ロボット制御エンジニア（ソフトウェア）】AUVの自律航行・AI群制御・センサーフュージョン等のソフトウェア開発を担う。海中通信の制約（電波不使用・音響通信）への対応が必要。AI・自律制御の技術が重視される新興職種。スタートアップでの需要が増加中。</li>
+                    <li>【海洋調査・AUV運用技術者】JAMSTECや日本海洋事業等でAUV・ROVを実際に運用する技術職。航海・潜水調査の実務経験が必要。JAMSTEC技術職（機電系）の採用区分が相当し、水中音響通信・センサ計測・深海探査ロボットの実装等を担う。</li>
+                    <li>【防衛・安全保障向け海洋無人機エンジニア】三菱重工・川崎重工等での防衛装備庁受託事業に従事。USV・UUVの機雷探知・対潜水艦戦・海洋監視機能の開発。防衛技術者としての安全保障知識が必要。防衛費拡大を背景に採用需要が増加中。</li>
+                    <li>【海洋無人機事業開発・政策渉外】AUV官民プラットフォーム・政府事業・民間顧客（洋上風力事業者・石油ガス会社等）との事業開発を担う。技術系出身者の他、海洋政策・エネルギー・造船業界出身者も参入。産業化の初期段階で需要が形成されつつある。</li>
+                </ul>
+            </div>
+            <p>海洋無人機関連エンジニアの年収は企業によって異なります。三菱重工・川崎重工等の大手重工は各社の技術系水準に準じます（三菱重工全社平均年収約1,017.7万円・2024年度有証報告書）。JAMSTECは平均812.3万円（2023年度・残業代除く）と独立行政法人として比較的高い水準です。</p>
+            <div class="note-box">
+                <strong>【注記】</strong>
+                三菱重工・川崎重工の全社平均年収は海洋無人機部門に特化したものではなく全社平均です。JAMSTECの平均年収は事務・技術系職員（286人）の数値であり、研究職等は含まない場合があります。
+                    
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">JAMSTEC 新卒採用サイト（2026年）</span>
+                <span class="source-tag">KomuInfo（JAMSTEC・2023年度）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH8 -->
+    <div class="chapter" id="ch8">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 08</span>
+                <h2>構造的課題の所在</h2>
+            </div>
+            <h3>「欧米企業との活動規模の格差」という根本的課題</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「石油・ガス開発、安全保障利用を背景に先行している欧米企業に比して、活動の規模が極めて限定的」と明示しています。Kongsberg Maritime・Teledyne Marine等の欧米大手は石油メジャー等の民間資金で多数の商業実績を積んでいる一方、日本のプレイヤーは研究・試作フェーズが中心です。</p>
+            <h3>スタートアップと既存産業の連携希薄</h3>
+            <p>資料2（2026年3月）は「スタートアップの新規参入等の機運が高まっている」と述べる一方で、「ヒト・モノ・カネをはじめとする全方位の資源制約（開発・運用等の専門人材、欧米の関連企業群との厚みの相違等）」も明示しています。国内の海洋無人機スタートアップは数が少なく、重工系大手との連携も限定的な段階です。</p>
+            <h3>実証環境・海域確保の難しさ</h3>
+            <p>資料2（2026年3月）は「先行的取組を実施する実証環境・海域確保の難しさ」をボトルネックとして明示しています。航空ドローンと異なり、海洋無人機の実証には船舶・海域・気象条件等が必要で、試験コストが高く頻度も限られます。これが日本のAUV開発が研究目的に偏りがちで商業実績が少ない一因となっています。</p>
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH9 -->
+    <div class="chapter" id="ch9">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 09</span>
+                <h2>誤解されやすいポイント</h2>
+            </div>
+            <div class="data-box">
+                <div class="box-title">誤解されやすいポイント（4点）</div>
+                <ul>
+                    <li>【「JAMSTECが世界トップ水準だから日本の海洋無人機産業は強い」】JAMSTECは深海探査の科学的・技術的能力では世界トップ水準ですが、産業規模（商業実績・機体の量産・民間売上）では欧米企業との差が大きい状況が続いています。「科学的強み」と「産業競争力」は別の問題です。</li>
+                    <li>【「川崎重工がSPICEを納入したから量産体制が整っている」】SPICE-1は「世界初のロボットアーム搭載AUV」として英国企業に1機納入した段階です。量産体制・商業展開の本格化はこれからの段階であり、単体の納入実績が量産を意味するわけではありません。</li>
+                    <li>【「防衛費増額でただちに海洋無人機産業が成長する」】防衛費の増額は三菱重工・川崎重工等の海洋無人機関連事業にとってプラス材料ですが、防衛調達には開発から量産まで長期間かかります。また防衛向けの収益が即座に民間市場（洋上風力・石油ガス等）の産業化につながるわけではありません。</li>
+                    <li>【「海洋無人機エンジニアは簡単に転職できる」】AUV・ROV設計に必要な「深海対応の耐圧・耐食設計」「水中音響通信」「深海環境でのセンサー制御」等は特殊な専門性が必要です。一般的な機械・電気エンジニアがすぐに参入できる市場ではなく、JAMSTECや重工系での長期育成が前提となるケースが多い。</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜8章の総括</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH10 -->
+    <div class="chapter" id="ch10">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 10</span>
+                <h2>内部環境の整理</h2>
+            </div>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>章</th>
+                        <th>指標名</th>
+                        <th>数値</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第3章</td>
+                        <td>三菱重工 大型USV試作艇 試作契約</td>
+                        <td>2025年度（防衛装備庁と締結）</td>
+                        <td>JET-Robotics 2025年</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>三菱重工 日仏共同UUV機雷探知</td>
+                        <td>OZZ-5型・2021年契約・2024年まで国内検証</td>
+                        <td>三菱重工 2021年3月</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>川崎重工 AUV「SPICE」</td>
+                        <td>世界初ロボットアーム搭載・深度3,000m・2023年英国企業へ納入</td>
+                        <td>日経クロステック 2023年6月</td>
+                    </tr>
+                    <tr>
+                        <td>第5章</td>
+                        <td>三井E&S Team KUROSHIO</td>
+                        <td>Shell Ocean Discovery XPRIZE準優勝</td>
+                        <td>JET-Robotics 2025年</td>
+                    </tr>
+                    <tr>
+                        <td>第6章</td>
+                        <td>JAMSTEC 職員数</td>
+                        <td>948名（2024年12月31日時点）</td>
+                        <td>マイナビ2026</td>
+                    </tr>
+                    <tr>
+                        <td>第6章</td>
+                        <td>JAMSTEC 平均年収</td>
+                        <td>812.3万円（2023年度・事務技術系・残業代除く）</td>
+                        <td>海洋研究開発機構公式</td>
+                    </tr>
+                    <tr>
+                        <td>第6章</td>
+                        <td>JAMSTEC 平均年齢</td>
+                        <td>46.7歳（2023年度・事務技術系286人）</td>
+                        <td>同上</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="data-box">
+                <div class="box-title">構造的に固定されやすい要素</div>
+                <ul>
+                    <li>三菱重工・川崎重工が防衛装備庁向けUSV・AUV開発のプライムという地位は短期には変化しない</li>
+                    <li>JAMSTECが日本の深海探査・AUV技術の中核機関という位置づけは変化しない</li>
+                    <li>「官需先行・民間産業化途上」という収益構造は、洋上風力・石油ガス等の民間需要が本格化するまで続く</li>
+                    <li>欧米大手との活動規模の差は、国内企業が商業実績を積み重ねるまで縮まらない</li>
+                    <li>AUV・ROV専門エンジニアの希少性は長期育成が必要なため短期解消しない</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜9章の集約</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH11 -->
+    <div class="chapter" id="ch11">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 11</span>
+                <h2>有料版への橋渡し</h2>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR CAREER — 就活・転職向け有料版</div>
+                <h3>重工系（三菱・川崎）vs JAMSTEC vs 新興企業、どこに入るか</h3>
+                <ul>
+                    <li>三菱重工（防衛・安全保障主軸）・川崎重工（民生AUV・潜水艦技術転用）・JAMSTEC（科学調査・独立行政法人処遇）という業態別の処遇・キャリアパスの具体的比較</li>
+                    <li>AUV機械設計・水中制御ソフトウェア・運用技術者・防衛海洋無人機という職種別の詳細年収レンジとスキル要件</li>
+                    <li>「潜水艦エンジニア」「海洋工学出身者」「制御・AI専門家」各バックグラウンドからの転職パスの実態</li>
+                    <li>JAMSTEC技術職（機電系）の採用競争率と採用パターン（博士・修士・実務経験者）の実態</li>
+                    <li>海洋無人機スタートアップ参入の現状——AUV官民プラットフォームを通じた参入機会</li>
+                </ul>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR INVESTMENT — 投資判断向け有料版</div>
+                <h3>三菱重工・川崎重工・三井E&Sの海洋無人機関連事業の財務規模を読む</h3>
+                <ul>
+                    <li>三菱重工の防衛・宇宙セグメント（事業利益999億円・2024年度）のうち海洋無人機関連事業の比重の読み方</li>
+                    <li>川崎重工のAUV SPICE商業展開——北海での採用が拡大した場合の売上インパクトの考え方</li>
+                    <li>三井E&Sの財務再構築と海洋無人機事業の位置づけ</li>
+                    <li>AUV戦略・AUV官民プラットフォームの進捗状況が民間投資に与える影響の読み方</li>
+                    <li>日本の防衛費GDP比2%計画の中で海洋無人機（USV・UUV）予算がどの程度を占めるかの試算方法</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <div class="container">
+            <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。三菱重工・川崎重工・三井E&Sの海洋無人機事業の売上・利益は各社の全社財務に含まれており独立開示されていません。JAMSTECの平均年収は事務・技術系職員のデータです。データ基準時点は2026年04月です。</p>
+            <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年04月 産業構造分析レポート ── 海洋無人機（海洋ドローン）（内部環境編）</p>
+            <p style="margin-top:8px;">
+                <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
