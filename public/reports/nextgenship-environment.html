@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業界分析｜高市政権「戦略17分野」造船 次世代船舶（外部環境編）</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+    :root {
+        --ink: #0f0f0e;
+        --paper: #f5f2ed;
+        --cream: #ede9e1;
+        --accent: #c84b2f;
+        --muted: #6b6760;
+        --rule: #c9c4bb;
+        --highlight: #fff8e6;
+    }
+
+    *, * ::before, * ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        border-bottom: 3px solid var(--accent);
+    }
+
+    .masthead-right {
+        color: var(--muted);
+    }
+
+    .hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 60px 40px 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200, 75, 47, 0.07) 4px, rgba(200, 75, 47, 0.07) 5px);
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        padding: 4px 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(20px, 3.2vw, 34px);
+        font-weight: 900;
+        line-height: 1.4;
+        max-width: 820px;
+        letter-spacing: 0.02em;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+        color: var(--accent);
+        font-style: normal;
+    }
+
+    .hero-meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+
+    .hero-badge {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 11px;
+        padding: 4px 12px;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.06em;
+    }
+
+    .data-notice {
+        background: rgba(200, 75, 47, 0.15);
+        border-left: 3px solid var(--accent);
+        padding: 10px 16px;
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .toc {
+        background: var(--cream);
+        border-top: 3px solid var(--ink);
+        border-bottom: 1px solid var(--rule);
+        padding: 32px 40px;
+    }
+
+    .toc h2 {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 16px;
+        text-transform: uppercase;
+    }
+
+    .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 6px 28px;
+    }
+
+    .toc-item {
+        font-size: 13px;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 3px 0;
+        border-bottom: 1px dashed var(--rule);
+        display: flex;
+        gap: 8px;
+    }
+
+    .toc-item:hover {
+        color: var(--accent);
+    }
+
+    .toc-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        flex-shrink: 0;
+        padding-top: 2px;
+    }
+
+    .chapter {
+        padding: 48px 40px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .chapter:nth-child(even) {
+        background: var(--cream);
+    }
+
+    .chapter-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .chapter-num {
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .chapter h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.4;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 10px;
+        flex: 1;
+    }
+
+    .chapter h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 24px 0 10px;
+        padding-left: 10px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .chapter p {
+        margin-bottom: 14px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 24px 0;
+    }
+
+    .stat-cell {
+        background: var(--paper);
+        padding: 18px 16px;
+        text-align: center;
+    }
+
+    .chapter:nth-child(even) .stat-cell {
+        background: #f0ece4;
+    }
+
+    .stat-cell .stat-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent);
+        line-height: 1.2;
+        display: block;
+    }
+
+    .stat-cell .stat-unit {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-top: 2px;
+    }
+
+    .stat-cell .stat-label {
+        font-size: 11px;
+        color: var(--ink);
+        display: block;
+        margin-top: 6px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .data-box {
+        background: var(--highlight);
+        border: 1px solid #e0d8c4;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 20px 0;
+    }
+
+    .data-box .box-title {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .data-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .data-box ul li {
+        padding: 5px 0 5px 16px;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+        position: relative;
+    }
+
+    .data-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .data-box ul li:last-child {
+        border-bottom: none;
+    }
+
+    .note-box {
+        background: rgba(200, 75, 47, 0.05);
+        border: 1px dashed var(--accent);
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .note-box strong {
+        color: var(--accent);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13px;
+    }
+
+    .summary-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .summary-table thead th {
+        padding: 10px 14px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+    }
+
+    .summary-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .summary-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .summary-table tbody td {
+        padding: 9px 14px;
+        vertical-align: top;
+    }
+
+    .summary-table td:first-child {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 12px;
+    }
+
+    .compare-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 20px 0;
+    }
+
+    .compare-cell {
+        background: var(--paper);
+        padding: 16px 18px;
+        font-size: 13px;
+    }
+
+    .chapter:nth-child(even) .compare-cell {
+        background: #f0ece4;
+    }
+
+    .compare-cell .cell-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .timeline {
+        margin: 20px 0;
+    }
+
+    .timeline-item {
+        display: flex;
+        gap: 16px;
+        padding: 12px 0;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+    }
+
+    .timeline-item:last-child {
+        border-bottom: none;
+    }
+
+    .timeline-year {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        color: var(--accent);
+        font-weight: 600;
+        flex-shrink: 0;
+        width: 120px;
+        padding-top: 2px;
+    }
+
+    .timeline-text {
+        flex: 1;
+    }
+
+    .next-box {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 28px 32px;
+        margin: 20px 0;
+        border-left: 5px solid var(--accent);
+    }
+
+    .next-box .next-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .next-box h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 17px;
+        margin-bottom: 12px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .next-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .next-box ul li {
+        padding: 4px 0 4px 14px;
+        font-size: 13px;
+        position: relative;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .next-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.06);
+        border: 1px solid var(--rule);
+        padding: 3px 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        color: var(--muted);
+        margin: 2px 3px;
+        letter-spacing: 0.04em;
+    }
+
+    .source-wrap {
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 1px dashed var(--rule);
+    }
+
+    .disclaimer {
+        background: var(--ink);
+        color: rgba(245, 242, 237, 0.5);
+        padding: 24px 40px;
+        font-size: 11px;
+        line-height: 1.7;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.03em;
+    }
+
+    .rule-thick {
+        border: none;
+        border-top: 3px solid var(--ink);
+        margin: 0;
+    }
+
+    .rule-thin {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .masthead {
+            flex-direction: column;
+            gap: 6px;
+            padding: 10px 16px;
+        }
+
+        .hero {
+            padding: 36px 16px 30px;
+        }
+
+        .chapter {
+            padding: 32px 16px;
+        }
+
+        .toc {
+            padding: 24px 16px;
+        }
+
+        .compare-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span>産業構造分析レポート</span>
+        <span class="masthead-right">2026年04月発行 ── 造船／次世代船舶（外部環境編）</span>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-label">INDUSTRY ANALYSIS REPORT — EXTERNAL ENVIRONMENT</div>
+            <h1>
+                業界分析｜高市政権「戦略17分野」
+                <br>
+                造船
+                <br>
+                <em>次世代船舶</em>
+                （外部環境編）
+            </h1>
+            <div class="hero-meta">
+                <span class="hero-badge">就職・転職検討者向け</span>
+                <span class="hero-badge">株式投資家向け</span>
+                <span class="hero-badge">数字と事実のみ記載</span>
+            </div>
+            <div class="data-notice">本レポートのデータ基準時点：2026年04月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用</div>
+        </div>
+    </div>
+
+    <hr class="rule-thick">
+
+    <div class="toc">
+        <div class="container">
+            <h2>目次 — TABLE OF CONTENTS</h2>
+            <div class="toc-grid">
+                <a class="toc-item" href="#ch0">
+                    <span class="toc-num">00</span>
+                    このレポートの目的と読み方
+                </a>
+                <a class="toc-item" href="#ch1">
+                    <span class="toc-num">01</span>
+                    市場規模と競合構造
+                </a>
+                <a class="toc-item" href="#ch2">
+                    <span class="toc-num">02</span>
+                    制度・政策の枠組み
+                </a>
+                <a class="toc-item" href="#ch3">
+                    <span class="toc-num">03</span>
+                    経済的前提条件
+                </a>
+                <a class="toc-item" href="#ch4">
+                    <span class="toc-num">04</span>
+                    社会・安全保障との連関
+                </a>
+                <a class="toc-item" href="#ch5">
+                    <span class="toc-num">05</span>
+                    技術・DXの位置づけ
+                </a>
+                <a class="toc-item" href="#ch6">
+                    <span class="toc-num">06</span>
+                    参入・撤退の条件
+                </a>
+                <a class="toc-item" href="#ch7">
+                    <span class="toc-num">07</span>
+                    経済安全保障との接続
+                </a>
+                <a class="toc-item" href="#ch8">
+                    <span class="toc-num">08</span>
+                    外部環境の整理
+                </a>
+                <a class="toc-item" href="#ch9">
+                    <span class="toc-num">09</span>
+                    内部環境編への橋渡し
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <!-- CH0 -->
+    <div class="chapter" id="ch0">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <h2>このレポートの目的と読み方</h2>
+            </div>
+            <p>本レポートは、高市政権「戦略17分野」造船の「次世代船舶」の外部環境を、就職・転職検討者および株式投資家向けに数字と事実のみで記述します。所管は国土交通省・内閣府（経済安全保障）です。</p>
+            <div class="data-box">
+                <div class="box-title">「次世代船舶」とは何か——3行で把握する</div>
+                <ul>
+                    <li>【技術の概要】アンモニア・水素・LNG・メタノール等の新燃料を使用し、GHG（温室効果ガス）排出をゼロまたは大幅削減するゼロエミッション船およびその関連技術。IMOが「2050年頃までにGHG排出ゼロ」を目標に掲げたことで、全世界の外航船舶が燃料・推進システムの大転換を迫られている。</li>
+                    <li>【現状の問題】日本の造船建造量は2019年1,600万総トンから2024年900万総トンへと減少が継続。中国が2024年の世界受注量（CGTベース）の約70%を占め、日本のシェアは約13%に低下している。「生産性が高く品質・省エネ技術で優位性があるが、規模が小さく人材不足が深刻」という構造的課題がある（資料2・2026年3月）。</li>
+                    <li>【なぜ今か】2050年カーボンニュートラルに向けてゼロエミッション船への代替建造需要が急増見込み。2035年には建造需要の6割程度がゼロエミッション船等に達するとされており（資料2・2026年3月）、この「ゲームチェンジ」の機会に先行者利益を獲得できるかが日本造船業の命運を左右する局面にある。</li>
+                </ul>
+            </div>
+            <p>良し悪しの評価・投資推奨・将来予測は行いません。</p>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート基本方針</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH1 -->
+    <div class="chapter" id="ch1">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <h2>市場規模と競合構造</h2>
+            </div>
+
+            <h3>世界の造船市場規模</h3>
+            <p>世界の造船市場規模は2024年に約1,456億ドルと推定され、2029年には約1,845億ドルへ・CAGR 4.84%で成長すると予測されています（Mordor Intelligence）。2024年の世界の新造船受注は6,600万CGT・2,040億ドルと過去17年間で最大の受注量を記録しました（クラークソンズリサーチ・2024年）。</p>
+
+            <h3>日中韓3カ国で9割超の寡占構造</h3>
+            <p>日中韓3カ国で世界の造船生産量の9割以上を占める寡占状態が続いています（Better Equation Research・2025年）。2024年の国別シェアは以下の通りです。中国はCGTベースで世界受注量の約70%超を獲得し、15年連続で世界一の座を維持しています。日本の2024年新規受注は838万CGT・世界シェア約13%、生産量シェアは12%（前年比3%減）でした（同）。</p>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">6,600万</span>
+                    <span class="stat-unit">CGT（2024年世界受注）</span>
+                    <span class="stat-label">
+                        過去17年最大の受注量
+                        <br>
+                        （クラークソンズ 2024年）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">約70%</span>
+                    <span class="stat-unit">（2024年・CGTベース）</span>
+                    <span class="stat-label">
+                        中国の世界受注シェア
+                        <br>
+                        （Better Equation 2025年）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">約13%</span>
+                    <span class="stat-unit">（2024年・CGTベース）</span>
+                    <span class="stat-label">
+                        日本の世界受注シェア
+                        <br>
+                        （同上）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">900万</span>
+                    <span class="stat-unit">総トン（2024年）</span>
+                    <span class="stat-label">
+                        日本の建造量
+                        <br>
+                        （資料2 2026年3月）
+                    </span>
+                </div>
+            </div>
+
+            <h3>日本の建造量減少——2019年比▲44%</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「近年、我が国造船業の建造量は減少傾向が継続（2019年1,600万総トン→2024年900万総トン）。足下では、我が国船主の1年間の造船需要を下回り、海外の造船所に頼らざるを得ない状況」と明示しています。</p>
+
+            <div class="note-box">
+                <strong>【注記】</strong>
+                世界造船市場規模は調査機関・集計範囲・集計単位（金額ベースか総トン数・CGTベースか）によって大きく異なります。単純比較はできません。
+                    
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">Better Equation Research「世界の造船業界の現状と造船量ランキング（2025年版）」（2025年）</span>
+                <span class="source-tag">Mordor Intelligence 造船市場規模（2024〜2029年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH2 -->
+    <div class="chapter" id="ch2">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <h2>制度・政策の枠組み</h2>
+            </div>
+
+            <h3>IMO GHG削減戦略——2050年ゼロエミッション目標</h3>
+            <p>国際海事機関（IMO）は2023年7月に「2023 IMO GHG削減戦略」を採択し、従来の「2050年までに50%排出削減」から「2050年頃までにGHG排出ゼロ」へと目標を大幅に強化しました（国土交通省・2023年7月）。この目標強化が全世界の造船・海運業界に対して燃料・推進システムの大転換を迫る最大の外部圧力となっています。</p>
+            <p>中期対策（GHG強度規制＋GHGプライシング）は2025年4月のIMO MEPC 83で承認・2025年秋の臨時MEPCで採択の方向で検討が進んでいます（日本海事センター・2024年10月）。</p>
+
+            <h3>EU FuelEU Maritime——2025年から導入</h3>
+            <p>EUは2025年から「FuelEU Maritime」（EU域内・発着船を対象とする燃料のGHG強度規制）を導入しています。EU域内に関与する日本の海運・造船事業者への影響が始まっており、EU基準に準拠した次世代燃料・船舶への対応が国際競争力維持の条件となっています（日本海事センター・2024年10月）。</p>
+
+            <h3>日本の政策目標と官民投資</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-year">2021年7月</span>
+                    <span class="timeline-text">グリーンイノベーション（GI）基金「次世代船舶の開発」プロジェクト開始（NEDO・国交省）。水素燃料船・アンモニア燃料船の開発・LNG船のメタンスリップ対策等を4テーマで支援。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2023年7月</span>
+                    <span class="timeline-text">IMOが「2050年頃までにGHG排出ゼロ」目標を採択（MEPC 80）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2025年</span>
+                    <span class="timeline-text">EU FuelEU Maritime導入開始。IMO中期対策（GHG強度規制）の採択を目指す。アンモニア燃料船の実証運航開始（2026年）に向けた準備が本格化。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2026年（目標）</span>
+                    <span class="timeline-text">アンモニア燃料船の実証運航開始を目標（国交省・政策目標として示されている）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2026年3月</span>
+                    <span class="timeline-text">日本成長戦略会議 第3回で「次世代船舶」が戦略17分野に明示。2035年に1,800万総トン・市場規模約5兆円を建造する目標・官民で1兆円規模の投資（政策目標として示されている）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2027年（目標）</span>
+                    <span class="timeline-text">水素燃料船の実証運航開始を目標（国交省・政策目標として示されている）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2028年（目標）</span>
+                    <span class="timeline-text">アンモニア燃料船の商業運航実現をできるだけ早期に達成する目標（国交省・政策目標として示されている）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2035年（目標）</span>
+                    <span class="timeline-text">日本において1,800万総トン（市場規模約5兆円・2024年比倍増）を建造する目標。建造需要の6割程度がゼロエミッション船等に達すると見込む（資料2・政策目標として示されている）。</span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">国土交通省「国際海運2050年頃までにGHG排出ゼロ目標に合意」（2023年7月）</span>
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">国交省・NEDO「グリーンイノベーション基金 次世代船舶の開発」（2025年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH3 -->
+    <div class="chapter" id="ch3">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <h2>経済的前提条件</h2>
+            </div>
+
+            <h3>「船価の約7割が材料費」という固有のコスト構造</h3>
+            <p>資料2（2026年3月）は「船価の約7割を材料費（鋼材、舶用機器等）が占め、船舶受注後（船価確定後）に材料を調達するため、物価の上昇局面で利益が圧迫される傾向」と明示しています。このコスト構造は鋼材・資材の高騰が直接収益に影響するという造船業固有のリスクを示しています。</p>
+
+            <h3>受注から竣工まで3〜4年——長い事業サイクル</h3>
+            <p>資料2（2026年3月）は「船舶の受注と竣工の期間が長い（近年は3〜4年）」とボトルネックとして明示しています。航空機・自動車と異なり、1隻単位の大型受注品であることと、建造の全工程が特定造船所に依存することから、需要変動への対応が難しい構造があります。</p>
+
+            <h3>ゼロエミッション化によるコスト上昇という課題</h3>
+            <p>資料2（2026年3月）は「ゼロエミッション化による大幅なコスト上昇が起きる見込みであることを踏まえ、早急な需要の創出が必要」と明示しています。アンモニア燃料タンクは重油タンクに比べて約2.7倍の容積が必要（次世代環境船舶開発センター）であり、機器の新規開発・燃料供給システムの整備・安全基準対応等の追加コストが従来船と比較して大幅に増加します。この「コスト高のゼロエミッション船を誰が最初に発注するか」という初期需要創出が政策課題として明示されています。</p>
+
+            <h3>2024年の世界受注活況——グリーンフリート更新が牽引</h3>
+            <p>2024年の世界新造船受注が過去17年最大（6,600万CGT・2,040億ドル）を記録した主要因として、IMO環境規制強化・EU FuelEU Maritime導入を背景とするLNG二元燃料船・メタノール対応船等への代替需要（グリーンフリート更新）が挙げられています。環境対応船の受注では中国が世界市場の78.5%を占めており（Better Equation 2025年）、次世代船舶分野でも中国の先行という競合構造が続いています。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">Better Equation Research（2025年）</span>
+                <span class="source-tag">次世代環境船舶開発センター「脱炭素社会に向けたゼロエミッション船開発」</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH4 -->
+    <div class="chapter" id="ch4">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 04</span>
+                <h2>社会・安全保障との連関</h2>
+            </div>
+
+            <h3>「海上輸送の安全保障」としての造船業</h3>
+            <p>資料2（2026年3月）は「四面を海に囲まれエネルギーや食料等の物資を海外に頼る我が国にとって海上輸送は必要不可欠。造船業は海上輸送に使用する船舶を安定的に供給し、国民生活や経済活動を支える極めて重要な役割を担っている」と位置づけています。また「商船を建造する造船業は、我が国の海上警備や防衛を担う船舶を建造しており、安全保障の観点からも必要な産業」とも明示しています。</p>
+            <p>資料2（2026年3月）は「我が国造船業の建造量の減少傾向が継続した場合、海上貿易に不可欠な船舶の建造を極度に他国へ依存せざるを得なくなる恐れ」とリスクを明示しており、造船能力の維持が国家安全保障の観点から必須とされています。</p>
+
+            <h3>地域雇用・経済の基盤産業</h3>
+            <p>資料2（2026年3月）は「国内生産比率が約8割、地域生産比率9割以上であることに加え、ほぼ全ての部品を国内調達しており、地域の経済・雇用を支えている」と明示しています。造船所が立地する長崎・愛媛・広島・兵庫等の地域では造船業が基幹産業であり、建造能力の低下は地域経済への直接的な打撃となります。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH5 -->
+    <div class="chapter" id="ch5">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 05</span>
+                <h2>技術・DXの位置づけ</h2>
+            </div>
+
+            <h3>「燃料の大転換期」——アンモニア・水素・メタノール・LNG</h3>
+            <p>現在の船舶燃料は重油（HFO）が主流で総トン数ベースで約90%を占めています。2050年カーボンニュートラルに向けてアンモニア・水素・メタノール・LNG等への燃料転換が必要ですが、現時点では「何が主流の代替燃料になるか」は確定しておらず、複数シナリオへの対応が有効とされています（次世代環境船舶開発センター）。各燃料の主要課題は以下の通りです。</p>
+
+            <div class="data-box">
+                <div class="box-title">主要代替燃料の特徴と課題</div>
+                <ul>
+                    <li>【LNG（現在の過渡燃料）】既に商用船に普及。CO2は重油比約25%削減可能だが完全ゼロエミッションではない。メタンスリップ（未燃メタンの大気放出）がGHG観点で課題。GI基金でメタンスリップ大幅削減技術の開発が進行中。</li>
+                    <li>【アンモニア（有力候補）】燃焼時のCO2ゼロ。既存のサプライチェーン（肥料用途）が存在。ただし熱量あたり体積が重油の約2.7倍・沸点がマイナス33℃・毒性が高いという特徴があり、安全基準整備が課題。2026年実証運航・2028年商業運航開始目標（政策目標として示されている）。</li>
+                    <li>【水素】燃焼時のCO2ゼロ。体積がさらに大きく・液化に超低温（マイナス253℃）が必要。長距離外航船への適用に技術的課題が多い。2027年実証運航・2030年以降商業運航目標（政策目標として示されている）。</li>
+                    <li>【メタノール（注目増加）】液体で扱いやすく既存の安全基準の適用が容易。グリーンメタノールはCO2大幅削減可能。マースク等の欧州海運大手が採用を進めておりグローバルでの採用事例が増加中。</li>
+                </ul>
+            </div>
+
+            <h3>AI・ロボット・DXによる造船生産性向上</h3>
+            <p>資料2（2026年3月）の勝ち筋として「DX、AI、ロボット等の導入によって更なる生産性向上を図る」「AI・ロボティクスを活用した自動化設備が必要」が明示されています。次世代船舶は従来の船舶より複雑で工数が多いため、AI・ロボット活用による溶接・ブロック加工の自動化は不可欠な競争力強化手段です。今治造船は2025年8月に新燃料船の燃料タンク生産能力向上のため2028年度をめどに建屋増設を決定しています（脱炭素技術センター・2025年）。</p>
+
+            <div class="compare-grid">
+                <div class="compare-cell">
+                    <span class="cell-label">日本の技術的強み（資料2）</span>
+
+                            生産性が高く品質・省エネ技術で韓国・中国に対する優位性が認められる。アンモニア燃料船の基本設計・ClassNKのAIP取得実績（次世代環境船舶開発センター）。GI基金による技術開発が先行。IMOでの国際ルール策定への参画実績。
+                          
+                </div>
+                <div class="compare-cell">
+                    <span class="cell-label">技術的課題（資料2）</span>
+
+                            ゼロエミッション化による大幅コスト上昇。次世代船舶は従来より複雑で技術力の高い設計者・技能者が必要。建造能力拡大には長期間・多額の設備投資（ドック・クレーン・自動化設備等）が必要。人材不足が深刻化。
+                          
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">国交省・NEDO「グリーンイノベーション基金 次世代船舶の開発」（2025年）</span>
+                <span class="source-tag">次世代環境船舶開発センター「国際海運2050ネットゼロへ向けて」</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH6 -->
+    <div class="chapter" id="ch6">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 06</span>
+                <h2>参入・撤退の条件</h2>
+            </div>
+
+            <h3>「日中韓9割超の世界単一市場」での厳しい国際競争</h3>
+            <p>資料2（2026年3月）は「造船業は世界単一市場で厳しい国際競争（日中韓で9割以上）があり、次世代船舶についても、コスト面での国際競争が厳しい」と明示しています。造船業は本質的に世界単一市場で顧客（船主）は最も安く最も良い船を提供できる国の造船所に発注します。日本国内の優遇策だけでは国際競争を乗り越えられない構造があります。</p>
+
+            <h3>建造能力拡大には「長期間・多額の設備投資」が必要</h3>
+            <p>資料2（2026年3月）は「ドック、クレーンを始めとした大規模な施設・設備やAI・ロボティクスを活用した自動化設備が必要。建造能力拡大には長期間・多額の設備投資が必要」と明示しています。造船所の設備は非常に大型・特殊であり、1基数十億〜数百億円規模のドライドック・超大型クレーン等の設備投資が前提となります。2035年に1,800万総トン（2024年比倍増）という目標のためには、この投資を早期に着手する必要があります。</p>
+
+            <h3>「先行者利益」という戦略的機会</h3>
+            <p>資料2（2026年3月）の勝ち筋は「将来、船舶の大半が新燃料に移行する想定の下、次世代船舶の技術開発・生産体制整備・国際ルールの策定の主導・初期需要の創出等により、中国や韓国に対する優位性を確立し、先行者利益とシェアを獲得する」です。技術的複雑性の高いゼロエミッション船においては、早期に建造実績・安全データ・認証を積み重ねた国が標準設定力を持つという先行者利益の構造が存在します。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH7 -->
+    <div class="chapter" id="ch7">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 07</span>
+                <h2>経済安全保障との接続</h2>
+            </div>
+
+            <h3>官民で1兆円規模の投資——グリーン投資と建造能力向上</h3>
+            <p>資料2（2026年3月）は「2035年までに官民で1兆円規模の投資を想定」と示しています。内訳は「①非価格競争力向上のためのグリーン投資（官民：2,800億円規模）」と「②次世代船舶の建造を含む造船能力の抜本的向上（官民：7,300億円規模）」の2本柱です（政策目標として示されている）。</p>
+
+            <h3>「造船業再生基金」による建造能力向上</h3>
+            <p>資料1（2026年3月）は「造船業再生基金を通じた建造能力向上により、造船業の自律性を確保する」と明示しています。造船業再生基金は日本政策投資銀行等を通じた出融資スキームで、設備投資の資金調達を支援します。</p>
+
+            <h3>IMOでの国際ルール策定主導</h3>
+            <p>資料2（2026年3月）の勝ち筋の一つは「国際海事機関（IMO）における国際ルールの策定を主導する」です。アンモニア燃料船・水素燃料船の建造・運航に関する国際安全基準の策定において、日本が技術開発の先行を活かして標準化をリードすることが競争優位の源泉となります。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回 資料1「戦略17分野における主要な製品・技術等」（2026年3月）</span>
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH8 -->
+    <div class="chapter" id="ch8">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 08</span>
+                <h2>外部環境の整理</h2>
+            </div>
+
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>章</th>
+                        <th>指標名</th>
+                        <th>数値</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第1章</td>
+                        <td>日本の建造量（現状）</td>
+                        <td>900万総トン（2024年）←1,600万総トン（2019年）</td>
+                        <td>資料2 2026年3月</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>世界新造船受注（2024年）</td>
+                        <td>6,600万CGT・2,040億ドル（過去17年最大）</td>
+                        <td>クラークソンズ 2024年</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>中国の世界受注シェア</td>
+                        <td>約70%超（2024年・CGTベース）</td>
+                        <td>Better Equation 2025年</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>日本の世界受注シェア</td>
+                        <td>約13%（2024年・CGTベース）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>2035年建造目標</td>
+                        <td>1,800万総トン・市場規模約5兆円（2024年比倍増）</td>
+                        <td>資料2 2026年3月</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>2035年ゼロエミッション船比率</td>
+                        <td>建造需要の6割程度（見込み）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>官民投資規模</td>
+                        <td>2035年までに1兆円規模（グリーン2,800億円＋建造能力7,300億円）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>アンモニア燃料船 実証運航</td>
+                        <td>2026年開始目標（政策目標として示されている）</td>
+                        <td>国交省</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>水素燃料船 実証運航</td>
+                        <td>2027年開始目標（政策目標として示されている）</td>
+                        <td>国交省</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>船価に占める材料費</td>
+                        <td>約7割</td>
+                        <td>資料2 2026年3月</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>受注〜竣工期間</td>
+                        <td>近年3〜4年</td>
+                        <td>同上</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="data-box">
+                <div class="box-title">構造的に固定されやすい要素</div>
+                <ul>
+                    <li>日中韓3カ国で9割超という造船市場の寡占構造は短期では変化しない</li>
+                    <li>中国が環境対応船でも世界市場の78.5%を受注という先行状況は日本の技術・量産体制強化まで続く</li>
+                    <li>「船価の約7割が材料費」というコスト構造は材料の調達構造が変わらない限り続く</li>
+                    <li>受注から竣工3〜4年という長い事業サイクルは大型船舶建造の本質的特性であり変化しない</li>
+                    <li>「何が主流の代替燃料になるか未確定」という技術的不確実性は2030年代前半まで続く可能性がある</li>
+                    <li>IMO・EUの環境規制強化という外圧は後退しない方向で、2050年ゼロエミッション目標を前提に市場が動いている</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜7章に記載の各統計の集約</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH9 -->
+    <div class="chapter" id="ch9">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 09</span>
+                <h2>内部環境編への橋渡し</h2>
+            </div>
+            <div class="data-box">
+                <div class="box-title">外部環境編の整理（5点）</div>
+                <ul>
+                    <li>日本の建造量は2019年1,600万総トンから2024年900万総トンへ減少継続。世界受注シェアは約13%（中国約70%）。日中韓9割超の寡占市場で厳しい国際競争が続く</li>
+                    <li>IMO「2050年頃GHG排出ゼロ」・EU FuelEU Maritime開始が外圧として機能し、2035年には建造需要の6割程度がゼロエミッション船等に達する見込み（資料2）。これが「ゲームチェンジ」の機会とされている</li>
+                    <li>2035年目標：1,800万総トン（約5兆円・2024年比倍増）・官民1兆円投資（グリーン2,800億円＋建造能力7,300億円）。アンモニア燃料船2026年実証・2028年商業運航が目標（政策目標として示されている）</li>
+                    <li>「船価の約7割が材料費」「受注〜竣工3〜4年」という固有のコスト・事業サイクル構造。ゼロエミッション化による大幅コスト上昇が追加課題として明示されている</li>
+                    <li>規模が小さく人材不足・設備投資不足・代替燃料の技術的不確実性という3つの構造的課題が資料2に明示されている</li>
+                </ul>
+            </div>
+            <div class="next-box">
+                <div class="next-label">NEXT — 内部環境編で整理すること</div>
+                <h3>外圧がプレイヤー構成・収益・人材にどう現れるか</h3>
+                <ul>
+                    <li>今治造船（国内最大手・非上場）・ジャパンマリンユナイテッド（今治出資）・三菱重工業（長崎造船所）等の国内主要造船所の規模・財務実態</li>
+                    <li>IHI原動機・三井E&S・ジャパンエンジンコーポレーション等の舶用機器メーカーのアンモニア・水素エンジン開発の収益構造</li>
+                    <li>日本郵船・商船三井・川崎汽船（3社を総称して「日本の三大海運」）のゼロエミッション船への投資動向</li>
+                    <li>造船エンジニア・船舶設計者・溶接技能者の人材市場実態（人材不足・賃金・後継者問題）</li>
+                    <li>GI基金・造船業再生基金からの支援実態と受益企業の動向</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポートの総括</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <div class="container">
+            <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。市場規模数値は各調査機関の定義・算定方法が異なるため単純比較はできません。「政策目標として示されている」と注記した数値は政府が目標として掲げた値であり達成を保証するものではありません。データ基準時点は2026年04月です。</p>
+            <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年04月 産業構造分析レポート ── 次世代船舶（外部環境編）</p>
+            <p style="margin-top:8px;">
+                <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
