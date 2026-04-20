@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業界分析｜高市政権「戦略17分野」造船 次世代船舶（内部環境編）</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+    :root {
+        --ink: #0f0f0e;
+        --paper: #f5f2ed;
+        --cream: #ede9e1;
+        --accent: #c84b2f;
+        --muted: #6b6760;
+        --rule: #c9c4bb;
+        --highlight: #fff8e6;
+    }
+
+    *, * ::before, * ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        border-bottom: 3px solid var(--accent);
+    }
+
+    .masthead-right {
+        color: var(--muted);
+    }
+
+    .hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 60px 40px 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200, 75, 47, 0.07) 4px, rgba(200, 75, 47, 0.07) 5px);
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        padding: 4px 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(20px, 3.2vw, 34px);
+        font-weight: 900;
+        line-height: 1.4;
+        max-width: 820px;
+        letter-spacing: 0.02em;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+        color: var(--accent);
+        font-style: normal;
+    }
+
+    .hero-meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+
+    .hero-badge {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 11px;
+        padding: 4px 12px;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.06em;
+    }
+
+    .data-notice {
+        background: rgba(200, 75, 47, 0.15);
+        border-left: 3px solid var(--accent);
+        padding: 10px 16px;
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .toc {
+        background: var(--cream);
+        border-top: 3px solid var(--ink);
+        border-bottom: 1px solid var(--rule);
+        padding: 32px 40px;
+    }
+
+    .toc h2 {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 16px;
+        text-transform: uppercase;
+    }
+
+    .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 6px 28px;
+    }
+
+    .toc-item {
+        font-size: 13px;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 3px 0;
+        border-bottom: 1px dashed var(--rule);
+        display: flex;
+        gap: 8px;
+    }
+
+    .toc-item:hover {
+        color: var(--accent);
+    }
+
+    .toc-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        flex-shrink: 0;
+        padding-top: 2px;
+    }
+
+    .chapter {
+        padding: 48px 40px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .chapter:nth-child(even) {
+        background: var(--cream);
+    }
+
+    .chapter-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .chapter-num {
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .chapter h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.4;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 10px;
+        flex: 1;
+    }
+
+    .chapter h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 24px 0 10px;
+        padding-left: 10px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .chapter p {
+        margin-bottom: 14px;
+    }
+
+    .connect-banner {
+        background: var(--ink);
+        border-left: 5px solid var(--accent);
+        padding: 16px 20px;
+        margin-bottom: 28px;
+        font-size: 13px;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .connect-banner strong {
+        color: var(--accent);
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 24px 0;
+    }
+
+    .stat-cell {
+        background: var(--paper);
+        padding: 18px 16px;
+        text-align: center;
+    }
+
+    .chapter:nth-child(even) .stat-cell {
+        background: #f0ece4;
+    }
+
+    .stat-cell .stat-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent);
+        line-height: 1.2;
+        display: block;
+    }
+
+    .stat-cell .stat-unit {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-top: 2px;
+    }
+
+    .stat-cell .stat-label {
+        font-size: 11px;
+        color: var(--ink);
+        display: block;
+        margin-top: 6px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .data-box {
+        background: var(--highlight);
+        border: 1px solid #e0d8c4;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 20px 0;
+    }
+
+    .data-box .box-title {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .data-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .data-box ul li {
+        padding: 5px 0 5px 16px;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+        position: relative;
+    }
+
+    .data-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .data-box ul li:last-child {
+        border-bottom: none;
+    }
+
+    .note-box {
+        background: rgba(200, 75, 47, 0.05);
+        border: 1px dashed var(--accent);
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .note-box strong {
+        color: var(--accent);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13px;
+    }
+
+    .summary-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .summary-table thead th {
+        padding: 10px 14px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+    }
+
+    .summary-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .summary-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .summary-table tbody td {
+        padding: 9px 14px;
+        vertical-align: top;
+    }
+
+    .summary-table td:first-child {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 12px;
+    }
+
+    .biz-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 12px;
+    }
+
+    .biz-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .biz-table thead th {
+        padding: 8px 12px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.06em;
+    }
+
+    .biz-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .biz-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .biz-table tbody td {
+        padding: 8px 12px;
+        vertical-align: top;
+        font-size: 12px;
+    }
+
+    .biz-table td:first-child {
+        font-weight: 700;
+    }
+
+    .biz-table .acc {
+        color: var(--accent);
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+    }
+
+    .next-box {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 28px 32px;
+        margin: 20px 0;
+        border-left: 5px solid var(--accent);
+    }
+
+    .next-box .next-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .next-box h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 17px;
+        margin-bottom: 12px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .next-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .next-box ul li {
+        padding: 4px 0 4px 14px;
+        font-size: 13px;
+        position: relative;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .next-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.06);
+        border: 1px solid var(--rule);
+        padding: 3px 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        color: var(--muted);
+        margin: 2px 3px;
+        letter-spacing: 0.04em;
+    }
+
+    .source-wrap {
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 1px dashed var(--rule);
+    }
+
+    .disclaimer {
+        background: var(--ink);
+        color: rgba(245, 242, 237, 0.5);
+        padding: 24px 40px;
+        font-size: 11px;
+        line-height: 1.7;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.03em;
+    }
+
+    .rule-thick {
+        border: none;
+        border-top: 3px solid var(--ink);
+        margin: 0;
+    }
+
+    .rule-thin {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .masthead {
+            flex-direction: column;
+            gap: 6px;
+            padding: 10px 16px;
+        }
+
+        .hero {
+            padding: 36px 16px 30px;
+        }
+
+        .chapter {
+            padding: 32px 16px;
+        }
+
+        .toc {
+            padding: 24px 16px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span>産業構造分析レポート</span>
+        <span class="masthead-right">2026年04月発行 ── 造船／次世代船舶（内部環境編）</span>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-label">INDUSTRY ANALYSIS REPORT — INTERNAL ENVIRONMENT</div>
+            <h1>
+                業界分析｜高市政権「戦略17分野」
+                <br>
+                造船
+                <br>
+                <em>次世代船舶</em>
+                （内部環境編）
+            </h1>
+            <div class="hero-meta">
+                <span class="hero-badge">就職・転職検討者向け</span>
+                <span class="hero-badge">株式投資家向け</span>
+                <span class="hero-badge">数字と事実のみ記載</span>
+            </div>
+            <div class="data-notice">本レポートのデータ基準時点：2026年04月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用</div>
+        </div>
+    </div>
+
+    <hr class="rule-thick">
+
+    <div class="toc">
+        <div class="container">
+            <h2>目次 — TABLE OF CONTENTS</h2>
+            <div class="toc-grid">
+                <a class="toc-item" href="#ch0">
+                    <span class="toc-num">00</span>
+                    この内部環境編の立ち位置
+                </a>
+                <a class="toc-item" href="#ch1">
+                    <span class="toc-num">01</span>
+                    業界内プレイヤー構成
+                </a>
+                <a class="toc-item" href="#ch2">
+                    <span class="toc-num">02</span>
+                    収益構造の本質
+                </a>
+                <a class="toc-item" href="#ch3">
+                    <span class="toc-num">03</span>
+                    今治造船——国内最大手の財務実態
+                </a>
+                <a class="toc-item" href="#ch4">
+                    <span class="toc-num">04</span>
+                    三大海運——需要側の財務と投資
+                </a>
+                <a class="toc-item" href="#ch5">
+                    <span class="toc-num">05</span>
+                    舶用機器メーカー——GI基金の担い手
+                </a>
+                <a class="toc-item" href="#ch6">
+                    <span class="toc-num">06</span>
+                    世界初アンモニア燃料船竣工
+                </a>
+                <a class="toc-item" href="#ch7">
+                    <span class="toc-num">07</span>
+                    人材市場の実態
+                </a>
+                <a class="toc-item" href="#ch8">
+                    <span class="toc-num">08</span>
+                    構造的課題の所在
+                </a>
+                <a class="toc-item" href="#ch9">
+                    <span class="toc-num">09</span>
+                    誤解されやすいポイント
+                </a>
+                <a class="toc-item" href="#ch10">
+                    <span class="toc-num">10</span>
+                    内部環境の整理
+                </a>
+                <a class="toc-item" href="#ch11">
+                    <span class="toc-num">11</span>
+                    有料版への橋渡し
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <!-- CH0 -->
+    <div class="chapter" id="ch0">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <h2>この内部環境編の立ち位置</h2>
+            </div>
+            <div class="connect-banner">
+                <strong>外部環境編との接続：</strong>
+                外部環境編では、日本の建造量2024年900万総トン（2019年比▲44%）・中国の世界受注シェア約70%・2035年目標1,800万総トン約5兆円・官民1兆円投資・アンモニア燃料船2026年実証・IMO2050年ゼロエミッション目標・「船価の約7割が材料費・受注〜竣工3〜4年」という外部構造を整理しました。本編ではその前提を受け、「外部の構造がこの産業の業態・収益・人材にどのような特性として現れているか」を数字と事実で記述します。
+                    
+            </div>
+            <div class="data-box">
+                <div class="box-title">本編でやること／やらないこと</div>
+                <ul>
+                    <li>【やること】今治造船（国内最大手・非上場）の売上・建造量・従業員・受注残を数値で記述する</li>
+                    <li>【やること】日本郵船・商船三井・川崎汽船（三大海運）の財務規模とゼロエミッション船への投資動向を整理する</li>
+                    <li>【やること】GI基金「次世代船舶の開発」プロジェクトの技術開発実施者（川崎重工・ヤンマー・ジャパンエンジンコーポレーション等）を整理する</li>
+                    <li>【やること】世界初アンモニア燃料船（2024年8月竣工）の実態を記述する</li>
+                    <li>【やること】造船エンジニア・技能者の人材市場実態を整理する</li>
+                    <li>【やらないこと】特定銘柄の投資推奨・勝ち負けの断定・良し悪しの評価</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート基本方針</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH1 -->
+    <div class="chapter" id="ch1">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <h2>業界内プレイヤー構成</h2>
+            </div>
+            <table class="biz-table">
+                <thead>
+                    <tr>
+                        <th>業態</th>
+                        <th>主な役割</th>
+                        <th>代表プレイヤー</th>
+                        <th>収益の性格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>大手造船所（専業）</td>
+                        <td>大型商船（ばら積み・コンテナ・タンカー・LNG船等）の設計・建造を中心とする造船専業。国内建造量の大半を担う。</td>
+                        <td class="acc">今治造船（国内最大手・非上場）、ジャパンマリンユナイテッド（JMU・今治造船出資）、日本シップヤード（今治造船とJMUの共同出資）</td>
+                        <td>船舶建造受注収益。1隻あたり数十〜数百億円の大型受注。「受注後3〜4年で竣工・入金」という長期事業サイクル。為替の影響大（円安で受注競争力・収益が改善）。</td>
+                    </tr>
+                    <tr>
+                        <td>重工系造船（複合事業）</td>
+                        <td>防衛・航空・エネルギー等の多角的な事業を持ちながら、造船部門でLNG船・艦艇等の高付加価値船を建造。</td>
+                        <td class="acc">三菱重工業（長崎造船所・下関造船所等）</td>
+                        <td>造船部門は全社売上の一部。防衛・航空宇宙が業績を牽引。造船では主に海上自衛隊向け艦艇・LNG船等の高付加価値船に特化。</td>
+                    </tr>
+                    <tr>
+                        <td>舶用機器メーカー</td>
+                        <td>船舶用エンジン・燃料タンク・燃料供給システム・推進装置等の舶用機器を設計・製造する。次世代燃料船の「コア技術」を担う。</td>
+                        <td class="acc">川崎重工業（舶用エンジン）、ヤンマー（4ストロークエンジン）、ジャパンエンジンコーポレーション（2ストロークエンジン）、IHI原動機、三井E&S（燃料タンク・燃料供給システム）</td>
+                        <td>舶用機器販売収益。次世代船舶（アンモニア・水素）の普及で需要が増加する構造。GI基金の主要な技術開発実施者として補助金収入も。</td>
+                    </tr>
+                    <tr>
+                        <td>海運会社（需要側）</td>
+                        <td>船舶を発注・保有・運航し、荷主の貨物を海上輸送する。造船所への発注者・次世代燃料船の「初期需要創出者」として産業を牽引する役割。</td>
+                        <td class="acc">日本郵船（9101）、商船三井（9104）、川崎汽船（9107）</td>
+                        <td>海運サービス収益（運賃）。海運市況（景気・荷動き・紅海情勢等）の影響を強く受ける景気敏感業種。三社ともコロナ特需後の財務体力を活かしてLNG船・次世代燃料船へ積極投資中。</td>
+                    </tr>
+                    <tr>
+                        <td>船級協会・設計・検査</td>
+                        <td>船舶の設計承認・品質検査・型式証明等を担う。次世代船舶の安全基準策定において国際的に重要な役割。</td>
+                        <td class="acc">日本海事協会（ClassNK・日本で最大の船級協会）</td>
+                        <td>検査・認証サービス収益。次世代船舶の安全基準整備で役割が拡大。</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="source-wrap">
+                <span class="source-tag">マイナビ2027 今治造船グループ会社概要</span>
+                <span class="source-tag">国交省・NEDO「グリーンイノベーション基金 次世代船舶の開発」（2025年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH2 -->
+    <div class="chapter" id="ch2">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <h2>収益構造の本質</h2>
+            </div>
+            <h3>「円安・受注残積み上げ・単価上昇」が収益改善の構造</h3>
+            <p>2024年〜2025年の日本の造船業の収益は、円安（輸出企業として円安は収益にプラス）・建造量回復・次世代燃料船の単価上昇という3要因で改善しています。今治造船の2025年3月期売上高は前期比5%増の4,646億円と増収を達成しています（日経・2025年7月）。受注残は約4年分（82隻・420万総トン）を積み上げており、当面の建造スケジュールは充足しています。</p>
+            <h3>「ゼロエミッション化によるコスト上昇」という収益圧迫要因</h3>
+            <p>外部環境編で確認した通り、ゼロエミッション船は従来船より大幅にコストが高くなります。アンモニア燃料タンクは体積が約2.7倍必要であり（次世代環境船舶開発センター）、エンジン・燃料供給システム・安全装置等の追加コストが乗ります。この「コスト高のゼロエミッション船の初期需要を誰が発注するか」という問題は、政策支援（GX移行債・海運税制）によって支援される方向が示されています（国交省）。</p>
+            <h3>海運市況サイクルが需要に影響——「景気敏感業種」の特性</h3>
+            <p>造船所への発注者である海運会社（日本郵船・商船三井・川崎汽船等）は海運市況（運賃）の影響を強く受ける景気敏感業種です。コロナ特需（2021〜2022年）の超高収益で財務体力を強化した三大海運は現在、その資金でLNG船・次世代燃料船への投資を進めています。しかし2026年3月期はコンテナ船市況のピークアウトで各社減益が見込まれており、発注意欲への影響が注視されています。</p>
+            <div class="source-wrap">
+                <span class="source-tag">日経「今治造船の25年3月期」（2025年7月）</span>
+                <span class="source-tag">かぶリッジ「海運株の見通し」（2026年1月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH3 -->
+    <div class="chapter" id="ch3">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <h2>今治造船——国内最大手の財務実態</h2>
+            </div>
+            <div class="note-box">
+                <strong>【注記】</strong>
+                今治造船は非上場企業のため有価証券報告書等の詳細な財務開示はありません。以下の数値は決算公告・採用情報・報道情報に基づきます。
+                    
+            </div>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>指標</th>
+                        <th>数値</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>売上高</td>
+                        <td>4,646億円（2025年3月期・前期比5%増）</td>
+                        <td>日経 2025年7月・マイナビ2027</td>
+                    </tr>
+                    <tr>
+                        <td>純利益</td>
+                        <td>300億7,900万円（2025年3月期・前期比142%増）</td>
+                        <td>官報決算データベース</td>
+                    </tr>
+                    <tr>
+                        <td>利益剰余金</td>
+                        <td>4,214億9,200万円（2025年3月期）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>総資産</td>
+                        <td>1兆1,605億円（2025年3月期）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>資本金</td>
+                        <td>300億円</td>
+                        <td>マイナビ2027</td>
+                    </tr>
+                    <tr>
+                        <td>竣工量</td>
+                        <td>68隻・308万総トン（2025年3月期・前期比14%減）</td>
+                        <td>日経 2025年7月</td>
+                    </tr>
+                    <tr>
+                        <td>受注量</td>
+                        <td>82隻・420万総トン（2025年3月期・約4年分）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>グループ従業員</td>
+                        <td>3,229名（構内協力工含め約18,257名）</td>
+                        <td>マイナビ2027</td>
+                    </tr>
+                    <tr>
+                        <td>創業</td>
+                        <td>1901年（今治市小浦町）</td>
+                        <td>今治造船公式</td>
+                    </tr>
+                    <tr>
+                        <td>建造実績</td>
+                        <td>グループ全体3,000隻達成（2025年2月）</td>
+                        <td>LogisticsToday 2025年2月</td>
+                    </tr>
+                    <tr>
+                        <td>次世代燃料船受注</td>
+                        <td>2025年3月期受注82隻のうち6隻がメタノール焚きばら積み貨物船</td>
+                        <td>日経 2025年7月</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">4,646億</span>
+                    <span class="stat-unit">円</span>
+                    <span class="stat-label">
+                        今治造船 売上高
+                        <br>
+                        （2025年3月期）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">308万</span>
+                    <span class="stat-unit">総トン</span>
+                    <span class="stat-label">
+                        今治造船 竣工量
+                        <br>
+                        （68隻・2025年3月期）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">420万</span>
+                    <span class="stat-unit">総トン（受注残）</span>
+                    <span class="stat-label">
+                        今治造船 受注量
+                        <br>
+                        （82隻・約4年分）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">約18,257名</span>
+                    <span class="stat-unit">（協力工含む）</span>
+                    <span class="stat-label">
+                        今治造船グループ
+                        <br>
+                        構内人員
+                    </span>
+                </div>
+            </div>
+            <h3>「日本シップヤード」——国内1・2位の連携</h3>
+            <p>今治造船とジャパンマリンユナイテッド（JMU・国内2位）は2020年に共同出資会社「日本シップヤード株式会社」を設立しています。LNG船を除くすべての一般商船・海洋浮体構造物の設計・販売等を担い、国内1・2位の連携により中韓造船業との競争力強化を図っています（deallab 2025年）。日本シップヤードはGI基金「次世代船舶の開発」プロジェクトの技術開発実施者にも選定されています（国交省・NEDO 2025年）。</p>
+            <div class="source-wrap">
+                <span class="source-tag">日経「今治造船の25年3月期」（2025年7月）</span>
+                <span class="source-tag">マイナビ2027 今治造船グループ会社概要</span>
+                <span class="source-tag">官報決算データベース 今治造船第93期</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH4 -->
+    <div class="chapter" id="ch4">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 04</span>
+                <h2>三大海運——需要側の財務と投資</h2>
+            </div>
+            <h3>商船三井——LNG船世界最大規模・1兆2,000億円投資</h3>
+            <p>商船三井（9104）の2025年3月期の売上高は1兆7,755億円・経常利益4,197億円（2024年3月期から回復）です（マネラボ・2026年3月）。LNG船を世界最大級の約107隻運航（発注残含め132隻・2025年3月期時点）しており、15〜20年の長期契約が中心です。2023〜2025年度の投資額1兆2,000億円のうち、LNG輸送船などを中心に9,000億円まで意思決定済みです（ニュースイッチ・2024年）。</p>
+
+            <h3>三大海運 LNG船増強計画——2030年度までに4割超増加</h3>
+            <p>日本郵船・商船三井・川崎汽船の海運大手3社は、2030年度までにLNG運搬船を合計で4割超増やす計画を持っています（2025年1月報道・かぶリッジ）。脱炭素の移行期においてLNG船は「過渡期の主力燃料輸送船」として需要が増加しており、三大海運の発注が日本造船所の受注を支える構造があります。</p>
+
+            <h3>2025年3月期 三大海運 財務比較</h3>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>企業</th>
+                        <th>売上高</th>
+                        <th>自己資本比率</th>
+                        <th>特記事項</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>日本郵船（9101）</td>
+                        <td>2兆円超（2025年3月期）</td>
+                        <td>67.6%</td>
+                        <td>業界最大規模。ONE（コンテナ船合弁）の業績が貢献。2025年7月にオランダ物流会社を約2,100億円で買収。</td>
+                    </tr>
+                    <tr>
+                        <td>商船三井（9104）</td>
+                        <td>1兆7,755億円</td>
+                        <td>—</td>
+                        <td>LNG船世界最大規模。23〜25年度投資額1兆2,000億円。風力推進装置「ウインドチャレンジャー」を実装。</td>
+                    </tr>
+                    <tr>
+                        <td>川崎汽船（9107）</td>
+                        <td>—</td>
+                        <td>74.6%（最高水準）</td>
+                        <td>自己資本比率が3社で最高。液化CO2輸送事業・洋上風力発電支援船事業に参入。</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="note-box">
+                <strong>【注記】</strong>
+                海運会社の売上高・利益は海運市況（運賃）の変動を受けて大きく変動します。2021〜2022年のコロナ特需による超高収益からの調整が続いており、2026年3月期は各社減益が見込まれています。「現在の財務」はあくまでも2025年3月期時点のスナップショットです。
+                    
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">マネラボ「商船三井の株価」（2026年3月）</span>
+                <span class="source-tag">ニュースイッチ「海運3社は積極投資継続」（2024年）</span>
+                <span class="source-tag">かぶリッジ「2026年の海運株の見通し」（2026年1月）</span>
+                <span class="source-tag">とうさいブログ「海運大手3社2025年3月期決算比較」（2025年6月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH5 -->
+    <div class="chapter" id="ch5">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 05</span>
+                <h2>舶用機器メーカー——GI基金の担い手</h2>
+            </div>
+            <p>グリーンイノベーション（GI）基金「次世代船舶の開発」プロジェクト（2021年開始・NEDO・国交省）の技術開発実施者は以下の企業・機関です（国交省・NEDO・2025年）。</p>
+            <div class="data-box">
+                <div class="box-title">GI基金「次世代船舶の開発」プロジェクト 技術開発実施者（確認できる範囲）</div>
+                <ul>
+                    <li>【造船所・設計】日本シップヤード（今治造船＋JMU合弁）</li>
+                    <li>【舶用エンジン（2ストローク・大型外航船向け）】ジャパンエンジンコーポレーション（アンモニア混焼エンジン2024年11月試験運転完了・初号機2025年9月完成予定）</li>
+                    <li>【舶用エンジン（4ストローク・中型船・小型船向け）】ヤンマー（2023年4月に世界初の4ストローク商用実機アンモニア燃料試験開始）</li>
+                    <li>【舶用エンジン・推進システム】川崎重工業、IHI原動機</li>
+                    <li>【燃料タンク・燃料供給システム】三井E&S（アンモニア燃料タンク詳細設計・陸上カップリング試験実施中）</li>
+                    <li>【その他参加企業】カナデビア（旧クボタ）、富士電機、伊藤忠商事</li>
+                    <li>【海運会社（実証運航担当）】日本郵船、商船三井、川崎汽船、NSユナイテッド海運</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">国交省・NEDO「グリーンイノベーション基金 次世代船舶の開発」（2025年）</span>
+                <span class="source-tag">脱炭素技術センター「ゼロエミッション船とは」（2026年1月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH6 -->
+    <div class="chapter" id="ch6">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 06</span>
+                <h2>世界初アンモニア燃料船竣工</h2>
+            </div>
+            <h3>2024年8月23日——世界初の商用アンモニア燃料船が竣工</h3>
+            <p>2024年8月23日、世界初の商用アンモニア燃料船（タグボート）が竣工しました（国交省・NEDO・2025年）。日本郵船とIHI原動機が共同開発し、日本郵船子会社の新日本海洋社が東京湾内で大型船けん引業務に使用します。</p>
+            <p>2024年11月末までの間、東京湾内において実証運航を実施しました。重油使用時と比較して最大約95%のGHG排出量削減を達成しています（同上）。2023年12月には、純国産エンジンを搭載するアンモニア燃料アンモニア輸送船の建造契約も締結されました（同上）。</p>
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">2024年8月23日</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        世界初 商用アンモニア
+                        <br>
+                        燃料船（タグボート）竣工
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">最大約95%</span>
+                    <span class="stat-unit">GHG削減</span>
+                    <span class="stat-label">
+                        重油使用時比
+                        <br>
+                        東京湾内実証運航
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">2023年4月</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        ヤンマーが世界初の4スト
+                        <br>
+                        商用実機アンモニア燃料試験開始
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">2025年9月</span>
+                    <span class="stat-unit">（予定）</span>
+                    <span class="stat-label">
+                        ジャパンエンジンコーポレーション
+                        <br>
+                        アンモニア混焼エンジン初号機完成
+                    </span>
+                </div>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">国交省・NEDO「グリーンイノベーション基金 次世代船舶の開発」（2025年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH7 -->
+    <div class="chapter" id="ch7">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 07</span>
+                <h2>人材市場の実態</h2>
+            </div>
+            <h3>造船業界の就労者構成</h3>
+            <p>造船業界の就労者数は約7〜8万人で、15年間ほぼ横ばいで推移しています。内訳は「技能者（現場）約8割・技術者（設計・研究開発）約2割」という構成です（造船業界キャリア記事 2017年時点の国交省データ）。社内工（直用）と社外工（下請）が混在しており、今治造船グループでは直用3,229名に対して構内協力工含めた総員は約18,257名と約5.7倍の規模です。</p>
+            <div class="data-box">
+                <div class="box-title">造船関連 主要職種と年収水準</div>
+                <ul>
+                    <li>【造船の仕事 全体平均】約459万円（求人ボックス・2025年4月・求人情報に基づく参考値）。給与幅は305万〜875万円と広い。</li>
+                    <li>【船舶設計エンジニア（今治造船 広島工場）】予定年収500万〜700万円（doda求人情報）。LNG船需要拡大に伴う採用増。CAD使用・船体・機関設計の実務経験者が対象。</li>
+                    <li>【溶接工・技能者（現場）】「業界全体で若手不足が深刻。腕があれば仕事はある」という状況。JIS溶接技能者評価試験（厚板・全姿勢）が造船への入場パス。船級協会認定資格（ClassNK等）が必須になるケースも。夜勤・長期出張に対応できれば収入増。</li>
+                    <li>【次世代燃料船エンジニア（新設・希少）】アンモニア・水素燃料システムの設計・試験・認証を担う。GI基金プロジェクトに参画するジャパンエンジンコーポレーション・ヤンマー・三井E&S・川崎重工等が主な就職先。専門性が高く育成に時間がかかるため希少性が高い。</li>
+                    <li>【造船営業・船舶マーケティング】国内外の海運会社・石油会社・商社への船舶提案営業。英語力・国際海運の知識が必要。今治造船・三菱重工・JMU等が主な採用企業。</li>
+                </ul>
+            </div>
+            <h3>「人材不足が深刻化」という構造的問題</h3>
+            <p>資料2（2026年3月）は「設計や現場において人材不足が深刻化。特に次世代船舶は従来の船舶より複雑で工数が多いため、技術力が高い設計者や技能者が必要」と明示しています。建造量の増加と次世代船舶の技術的複雑化が重なる中で、人材確保が業界全体の課題です。今治造船は2025年3月に技能実習生の受け入れ停止処分（5年間）を受けており（出入国在留管理庁・2025年3月）、技能者確保に新たな課題が生じています。</p>
+            <div class="source-wrap">
+                <span class="source-tag">求人ボックス「造船の仕事の平均年収」（2025年4月）</span>
+                <span class="source-tag">doda 今治造船 船舶設計職（広島工場）求人情報</span>
+                <span class="source-tag">資料2「次世代船舶」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH8 -->
+    <div class="chapter" id="ch8">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 08</span>
+                <h2>構造的課題の所在</h2>
+            </div>
+            <h3>「技能実習生問題」——今治造船の受け入れ停止</h3>
+            <p>国内最大手の今治造船は2025年3月25日、認定していた技能実習計画が出入国在留管理庁より全て取り消され、今後5年間の技能実習生の受け入れ停止処分を受けました（Wikipedia・2025年）。造船業は下請・協力工への依存度が高く（今治造船グループでは直用3,229名に対して協力工含む総員約18,257名）、外国人技能実習生がその一部を担っていました。この処分は建造体制に影響を与える可能性がある構造的な問題として業界に注目されています。</p>
+            <h3>単年度予算と長期設備投資の乖離</h3>
+            <p>造船所の建造能力拡大に必要なドライドック・超大型クレーン等の設備投資は1基数十〜数百億円規模で、投資回収に長期間かかります。資料2（2026年3月）は「建造能力拡大には長期間・多額の設備投資が必要」と明示しており、官民1兆円規模の投資が2035年目標達成に不可欠です。</p>
+            <h3>スタートアップと既存大手の連携が限定的</h3>
+            <p>次世代船舶の技術開発（GI基金）は主に既存の大手重工・舶用機器メーカーが担っており、スタートアップの参入は限定的です。海洋無人機（海洋ドローン）分野ではAUV官民プラットフォームが設置されていますが、次世代船舶分野でのスタートアップ参入機会は現状では少ない状況です。</p>
+            <div class="source-wrap">
+                <span class="source-tag">資料2「次世代船舶」（2026年3月）</span>
+                <span class="source-tag">Wikipedia「今治造船」（2025年3月〜）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH9 -->
+    <div class="chapter" id="ch9">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 09</span>
+                <h2>誤解されやすいポイント</h2>
+            </div>
+            <div class="data-box">
+                <div class="box-title">誤解されやすいポイント（4点）</div>
+                <ul>
+                    <li>【「2024年世界受注が過去17年最大＝日本造船業が好調」】2024年の世界受注活況（6,600万CGT）の恩恵を最も受けたのは中国（受注シェア約70%）です。日本のシェアは約13%であり、世界受注の活況と日本の建造量増加は直結しません。日本の建造量回復には設備増強と人材確保が前提です。</li>
+                    <li>【「今治造船の売上4,646億円は日本の造船業全体の数値」】今治造船は国内最大手ですが、日本全体の造船業ではありません。国内には今治造船グループ・JMU・三菱重工・その他中小造船所が存在します。日本全体の年間建造金額は数兆円規模になります。</li>
+                    <li>【「世界初アンモニア燃料船が竣工したから商用化は近い」】2024年8月竣工のアンモニア燃料タグボートは「小型・東京湾内限定・実証運航」段階です。外航大型商船（コンテナ船・バルカー等）のアンモニア燃料化は2028年商業運航開始が目標（政策目標として示されている）であり、2030年代に本格普及する想定です。</li>
+                    <li>【「三大海運は高配当で財務が盤石」】コロナ特需（2021〜2022年）で積み上げた財務体力は実在しますが、海運市況の変動で業績が大きく変動する景気敏感業種です。2026年3月期は3社とも大幅減益が見込まれています。LNG船・次世代燃料船への投資は長期的な成長投資であり、短期業績とは別の軸で評価する必要があります。</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜8章の総括</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH10 -->
+    <div class="chapter" id="ch10">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 10</span>
+                <h2>内部環境の整理</h2>
+            </div>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>章</th>
+                        <th>指標名</th>
+                        <th>数値</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第3章</td>
+                        <td>今治造船 売上高</td>
+                        <td>4,646億円（2025年3月期・前期比5%増）</td>
+                        <td>日経 2025年7月</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>今治造船 竣工量</td>
+                        <td>68隻・308万総トン（前期比14%減）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>今治造船 受注量（受注残）</td>
+                        <td>82隻・420万総トン（約4年分）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>今治造船 グループ人員</td>
+                        <td>直用3,229名・協力工含め約18,257名</td>
+                        <td>マイナビ2027</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>今治造船 次世代燃料船受注</td>
+                        <td>2025年3月期受注のうち6隻がメタノール焚き</td>
+                        <td>日経 2025年7月</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>商船三井 売上高</td>
+                        <td>1兆7,755億円（2025年3月期）</td>
+                        <td>マネラボ 2026年3月</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>商船三井 LNG船</td>
+                        <td>約107隻運航（発注残含め132隻・2025年3月期）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>商船三井 投資額</td>
+                        <td>2023〜2025年度で1兆2,000億円</td>
+                        <td>ニュースイッチ 2024年</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>三大海運 LNG船増強計画</td>
+                        <td>2030年度までに合計4割超増加</td>
+                        <td>かぶリッジ 2026年1月</td>
+                    </tr>
+                    <tr>
+                        <td>第6章</td>
+                        <td>世界初アンモニア燃料船竣工</td>
+                        <td>2024年8月23日（タグボート）・重油比最大約95%GHG削減</td>
+                        <td>国交省・NEDO 2025年</td>
+                    </tr>
+                    <tr>
+                        <td>第7章</td>
+                        <td>造船の仕事 平均年収</td>
+                        <td>約459万円（求人ボックス・2025年4月・参考値）</td>
+                        <td>求人ボックス 2025年4月</td>
+                    </tr>
+                    <tr>
+                        <td>第7章</td>
+                        <td>今治造船 船舶設計職 予定年収</td>
+                        <td>500万〜700万円（広島工場・doda求人情報）</td>
+                        <td>doda</td>
+                    </tr>
+                    <tr>
+                        <td>第7章</td>
+                        <td>造船業界就労者数</td>
+                        <td>約7〜8万人（技能者8割・技術者2割）</td>
+                        <td>国交省データ（2017年）</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="data-box">
+                <div class="box-title">構造的に固定されやすい要素</div>
+                <ul>
+                    <li>今治造船が国内最大手という地位は、他社が同規模に達するまで変化しない</li>
+                    <li>今治造船・JMU・三菱重工という3グループが国内造船の大半を担う構造は短期では変化しない</li>
+                    <li>三大海運（日本郵船・商船三井・川崎汽船）が日本造船所への主要発注者という構造は変化しない</li>
+                    <li>GI基金の技術開発実施者として選定された企業群（川崎重工・ヤンマー・ジャパンエンジンコーポレーション等）が次世代燃料エンジン開発の中核を担うという構造は2035年まで続く</li>
+                    <li>造船業の技能者8割・技術者2割という就労者構成と、下請協力工への依存構造は短期では変化しない</li>
+                    <li>今治造船の約4年分の受注残は当面の建造スケジュールを確保している</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜9章の集約</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH11 -->
+    <div class="chapter" id="ch11">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 11</span>
+                <h2>有料版への橋渡し</h2>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR CAREER — 就活・転職向け有料版</div>
+                <h3>今治造船・JMU・三菱重工・舶用機器メーカー・三大海運、どこで関わるか</h3>
+                <ul>
+                    <li>今治造船（非上場・専業・高い技術力）vs 三菱重工（上場・多角化・防衛・高年収）vs 舶用機器メーカー（GI基金参加・次世代技術の最前線）という業態別の処遇・キャリアパスの具体的比較</li>
+                    <li>船舶設計エンジニア（500万〜700万円・今治doda求人）・次世代燃料システムエンジニア（ジャパンエンジンコーポレーション・ヤンマー等）・溶接技能者という職種別の詳細年収レンジとスキル要件</li>
+                    <li>「機械・電気・化学工学出身者」各バックグラウンドから次世代船舶分野への転職パスの実態</li>
+                    <li>今治造船の技能実習生受け入れ停止（5年間）の造船現場への実際の影響と、代替採用の動向</li>
+                    <li>三大海運（日本郵船・商船三井・川崎汽船）の次世代燃料船プロジェクト要員の採用動向</li>
+                </ul>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR INVESTMENT — 投資判断向け有料版</div>
+                <h3>今治造船が非上場のため、関連上場企業をどう読むか</h3>
+                <ul>
+                    <li>三菱重工（7011）の造船部門——長崎造船所・下関造船所の次世代船舶事業の売上・利益への寄与の読み方</li>
+                    <li>川崎重工（7012）の舶用エンジン部門——GI基金でのアンモニア燃料エンジン開発が事業化に繋がるまでの時間軸</li>
+                    <li>ジャパンエンジンコーポレーション（6016・東証スタンダード）——アンモニア混焼エンジン初号機（2025年9月完成予定）から商業化への道筋</li>
+                    <li>三大海運（9101・9104・9107）のLNG船・次世代燃料船投資計画と海運市況の影響の読み方</li>
+                    <li>官民1兆円投資（グリーン2,800億円＋建造能力7,300億円）の実施状況と受益企業の特定方法</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <div class="container">
+            <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。今治造船は非上場企業のため財務詳細の開示は限定的です。海運会社の業績は海運市況の影響を強く受け大きく変動します。年収データは公開された求人情報に基づく参考値であり会社全体の水準を保証するものではありません。「政策目標として示されている」と注記した数値は政府が目標として掲げた値であり達成を保証するものではありません。データ基準時点は2026年04月です。</p>
+            <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年04月 産業構造分析レポート ── 次世代船舶（内部環境編）</p>
+            <p style="margin-top:8px;">
+                <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
