@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業界分析｜高市政権「戦略17分野」マテリアル 永久磁石（内部環境編）</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+    :root {
+        --ink: #0f0f0e;
+        --paper: #f5f2ed;
+        --cream: #ede9e1;
+        --accent: #c84b2f;
+        --muted: #6b6760;
+        --rule: #c9c4bb;
+        --highlight: #fff8e6;
+    }
+
+    *, * ::before, * ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        border-bottom: 3px solid var(--accent);
+    }
+
+    .masthead-right {
+        color: var(--muted);
+    }
+
+    .hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 60px 40px 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200, 75, 47, 0.07) 4px, rgba(200, 75, 47, 0.07) 5px);
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        padding: 4px 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(20px, 3.2vw, 34px);
+        font-weight: 900;
+        line-height: 1.4;
+        max-width: 820px;
+        letter-spacing: 0.02em;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+        color: var(--accent);
+        font-style: normal;
+    }
+
+    .hero-meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+
+    .hero-badge {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 11px;
+        padding: 4px 12px;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.06em;
+    }
+
+    .data-notice {
+        background: rgba(200, 75, 47, 0.15);
+        border-left: 3px solid var(--accent);
+        padding: 10px 16px;
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .toc {
+        background: var(--cream);
+        border-top: 3px solid var(--ink);
+        border-bottom: 1px solid var(--rule);
+        padding: 32px 40px;
+    }
+
+    .toc h2 {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 16px;
+        text-transform: uppercase;
+    }
+
+    .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 6px 28px;
+    }
+
+    .toc-item {
+        font-size: 13px;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 3px 0;
+        border-bottom: 1px dashed var(--rule);
+        display: flex;
+        gap: 8px;
+    }
+
+    .toc-item:hover {
+        color: var(--accent);
+    }
+
+    .toc-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        flex-shrink: 0;
+        padding-top: 2px;
+    }
+
+    .chapter {
+        padding: 48px 40px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .chapter:nth-child(even) {
+        background: var(--cream);
+    }
+
+    .chapter-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .chapter-num {
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .chapter h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.4;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 10px;
+        flex: 1;
+    }
+
+    .chapter h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 24px 0 10px;
+        padding-left: 10px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .chapter p {
+        margin-bottom: 14px;
+    }
+
+    .connect-banner {
+        background: var(--ink);
+        border-left: 5px solid var(--accent);
+        padding: 16px 20px;
+        margin-bottom: 28px;
+        font-size: 13px;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .connect-banner strong {
+        color: var(--accent);
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 24px 0;
+    }
+
+    .stat-cell {
+        background: var(--paper);
+        padding: 18px 16px;
+        text-align: center;
+    }
+
+    .chapter:nth-child(even) .stat-cell {
+        background: #f0ece4;
+    }
+
+    .stat-cell .stat-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent);
+        line-height: 1.2;
+        display: block;
+    }
+
+    .stat-cell .stat-unit {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-top: 2px;
+    }
+
+    .stat-cell .stat-label {
+        font-size: 11px;
+        color: var(--ink);
+        display: block;
+        margin-top: 6px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .data-box {
+        background: var(--highlight);
+        border: 1px solid #e0d8c4;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 20px 0;
+    }
+
+    .data-box .box-title {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .data-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .data-box ul li {
+        padding: 5px 0 5px 16px;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+        position: relative;
+    }
+
+    .data-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .data-box ul li:last-child {
+        border-bottom: none;
+    }
+
+    .note-box {
+        background: rgba(200, 75, 47, 0.05);
+        border: 1px dashed var(--accent);
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .note-box strong {
+        color: var(--accent);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13px;
+    }
+
+    .summary-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .summary-table thead th {
+        padding: 10px 14px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+    }
+
+    .summary-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .summary-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .summary-table tbody td {
+        padding: 9px 14px;
+        vertical-align: top;
+    }
+
+    .summary-table td:first-child {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 12px;
+    }
+
+    .biz-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 12px;
+    }
+
+    .biz-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .biz-table thead th {
+        padding: 8px 12px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.06em;
+    }
+
+    .biz-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .biz-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .biz-table tbody td {
+        padding: 8px 12px;
+        vertical-align: top;
+        font-size: 12px;
+    }
+
+    .biz-table td:first-child {
+        font-weight: 700;
+    }
+
+    .biz-table .acc {
+        color: var(--accent);
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+    }
+
+    .next-box {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 28px 32px;
+        margin: 20px 0;
+        border-left: 5px solid var(--accent);
+    }
+
+    .next-box .next-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .next-box h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 17px;
+        margin-bottom: 12px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .next-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .next-box ul li {
+        padding: 4px 0 4px 14px;
+        font-size: 13px;
+        position: relative;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .next-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.06);
+        border: 1px solid var(--rule);
+        padding: 3px 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        color: var(--muted);
+        margin: 2px 3px;
+        letter-spacing: 0.04em;
+    }
+
+    .source-wrap {
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 1px dashed var(--rule);
+    }
+
+    .disclaimer {
+        background: var(--ink);
+        color: rgba(245, 242, 237, 0.5);
+        padding: 24px 40px;
+        font-size: 11px;
+        line-height: 1.7;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.03em;
+    }
+
+    .rule-thick {
+        border: none;
+        border-top: 3px solid var(--ink);
+        margin: 0;
+    }
+
+    .rule-thin {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .masthead {
+            flex-direction: column;
+            gap: 6px;
+            padding: 10px 16px;
+        }
+
+        .hero {
+            padding: 36px 16px 30px;
+        }
+
+        .chapter {
+            padding: 32px 16px;
+        }
+
+        .toc {
+            padding: 24px 16px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span>産業構造分析レポート</span>
+        <span class="masthead-right">2026年04月発行 ── マテリアル（重要鉱物・部素材）／永久磁石（内部環境編）</span>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-label">INDUSTRY ANALYSIS REPORT — INTERNAL ENVIRONMENT</div>
+            <h1>
+                業界分析｜高市政権「戦略17分野」
+                <br>
+                マテリアル（重要鉱物・部素材）
+                <br>
+                <em>永久磁石</em>
+                （内部環境編）
+            </h1>
+            <div class="hero-meta">
+                <span class="hero-badge">就職・転職検討者向け</span>
+                <span class="hero-badge">株式投資家向け</span>
+                <span class="hero-badge">数字と事実のみ記載</span>
+            </div>
+            <div class="data-notice">本レポートのデータ基準時点：2026年04月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用</div>
+        </div>
+    </div>
+
+    <hr class="rule-thick">
+
+    <div class="toc">
+        <div class="container">
+            <h2>目次 — TABLE OF CONTENTS</h2>
+            <div class="toc-grid">
+                <a class="toc-item" href="#ch0">
+                    <span class="toc-num">00</span>
+                    この内部環境編の立ち位置
+                </a>
+                <a class="toc-item" href="#ch1">
+                    <span class="toc-num">01</span>
+                    業界内プレイヤー構成
+                </a>
+                <a class="toc-item" href="#ch2">
+                    <span class="toc-num">02</span>
+                    プロテリアル——起源企業の現在地
+                </a>
+                <a class="toc-item" href="#ch3">
+                    <span class="toc-num">03</span>
+                    信越化学工業——一貫生産と高収益体質
+                </a>
+                <a class="toc-item" href="#ch4">
+                    <span class="toc-num">04</span>
+                    大同特殊鋼——重希土類フリー磁石の先陣
+                </a>
+                <a class="toc-item" href="#ch5">
+                    <span class="toc-num">05</span>
+                    TDK——電子部品大手の磁性材料事業
+                </a>
+                <a class="toc-item" href="#ch6">
+                    <span class="toc-num">06</span>
+                    収益構造の本質
+                </a>
+                <a class="toc-item" href="#ch7">
+                    <span class="toc-num">07</span>
+                    人材市場の実態
+                </a>
+                <a class="toc-item" href="#ch8">
+                    <span class="toc-num">08</span>
+                    構造的課題の所在
+                </a>
+                <a class="toc-item" href="#ch9">
+                    <span class="toc-num">09</span>
+                    誤解されやすいポイント
+                </a>
+                <a class="toc-item" href="#ch10">
+                    <span class="toc-num">10</span>
+                    内部環境の整理
+                </a>
+                <a class="toc-item" href="#ch11">
+                    <span class="toc-num">11</span>
+                    有料版への橋渡し
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <!-- CH0 -->
+    <div class="chapter" id="ch0">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <h2>この内部環境編の立ち位置</h2>
+            </div>
+            <div class="connect-banner">
+                <strong>外部環境編との接続：</strong>
+                外部環境編では、電動車向けネオジム磁石需要が2017〜2040年で約27倍増・中国勢が世界シェア8割強・重レアアース（Dy・Tb）はほぼ100%中国依存・2025年4月から中国が輸出管理強化・5月に日本向け輸出が近年最低水準（25.7トン）に落込み・「特定国以外で高性能磁石の供給能力を有するのは事実上我が国のみ」という外部構造を整理しました。本編では、その前提のもとで「外部の構造がこの産業のプレイヤー・収益・人材にどのような特性として現れているか」を数字と事実で記述します。
+                    
+            </div>
+            <div class="data-box">
+                <div class="box-title">本編でやること／やらないこと</div>
+                <ul>
+                    <li>【やること】プロテリアル（非上場）・信越化学工業（4063）・大同特殊鋼（5471）・TDK（6762）という国内主要4社の事業実態・財務規模・最近の動向を記述する</li>
+                    <li>【やること】各社の「省レアアース/レアアースフリー磁石」開発の具体的な取組状況と投資計画を整理する</li>
+                    <li>【やること】磁性材料エンジニア・希土類化学研究者の人材市場実態を整理する</li>
+                    <li>【やること】2025年の中国輸出規制強化が各社にどう影響したかを記述する</li>
+                    <li>【やらないこと】特定銘柄の投資推奨・勝ち負けの断定・良し悪しの評価</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート基本方針</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH1 -->
+    <div class="chapter" id="ch1">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <h2>業界内プレイヤー構成</h2>
+            </div>
+            <table class="biz-table">
+                <thead>
+                    <tr>
+                        <th>プレイヤー</th>
+                        <th>上場区分</th>
+                        <th>磁石事業の位置づけ</th>
+                        <th>主な強み</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            プロテリアル
+                            <br>
+                            （旧日立金属）
+                        </td>
+                        <td class="acc">
+                            非上場
+                            <br>
+                            （PEファンド傘下・再上場準備中）
+                        </td>
+                        <td>磁性材料・特殊鋼・電線・自動車部品の複合事業。2026年4月1日付で磁性材料事業を分社化。ネオジム磁石（NEOMAX®）が主要製品。</td>
+                        <td>1982年のネオジム磁石発明の起源企業（佐川眞人氏）。最高グレードの磁石技術。レアアース分離精製から磁石製造まで一貫体制。省レアアース磁石の開発進行中。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            信越化学工業
+                            <br>
+                            （4063）
+                        </td>
+                        <td class="acc">東証プライム</td>
+                        <td>塩化ビニル・半導体シリコンウエハー・シリコーン・希土類磁石等を手がける多角化化学企業。磁石は電子材料事業の一部。全社売上高・利益は非開示（国内最大手の化学企業の一つ）。</td>
+                        <td>レアアース酸化物の分離精製から磁石製造まで一貫生産。粒界拡散合金法（重レアアース使用量最低限化技術）を保有。全社営業利益率30%超という高収益体質。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            大同特殊鋼
+                            <br>
+                            （5471）
+                        </td>
+                        <td class="acc">東証プライム</td>
+                        <td>特殊鋼・磁石・工具鋼等の複合事業。磁石は製造子会社ダイドー電子（岐阜県中津川市）が担当。中期経営計画（2025〜2031年度）で磁石を戦略成長分野に位置づけ。</td>
+                        <td>世界初の「重希土類完全フリーネオジム磁石」をホンダと共同で実用化（HV用モーター向け）。佐川眞人氏（ネオジム磁石発明者・ノーベル賞候補）を顧問に招聘。熱間加工磁石という独自製法を確立。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            TDK
+                            <br>
+                            （6762）
+                        </td>
+                        <td class="acc">東証プライム</td>
+                        <td>電子部品（コンデンサ・インダクタ・センサ等）・電池・磁性材料の多角化電子部品企業。磁石は磁性材料事業の一部として展開。</td>
+                        <td>フェライト磁石・ネオジム磁石・サマリウムコバルト磁石と幅広い製品ラインナップ。電子機器向けの小型・精密磁石に強み。世界最大規模の電子部品メーカーの一社。</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="source-wrap">
+                <span class="source-tag">日経ビジネス「脱・中国で世界が注目」（2024年4月）</span>
+                <span class="source-tag">プロテリアル公式「2026年4月1日付組織再編」（2025年12月）</span>
+                <span class="source-tag">ニュースイッチ「大同特殊鋼が高機能磁石で攻勢かける」</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH2 -->
+    <div class="chapter" id="ch2">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <h2>プロテリアル——起源企業の現在地</h2>
+            </div>
+
+            <div class="note-box">
+                <strong>【注記】</strong>
+                プロテリアルは非上場企業のため詳細な財務開示はありません。以下の情報は公式プレスリリース・報道情報・Wikipedia等の公開情報に基づきます。
+                    
+            </div>
+
+            <h3>沿革——1982年発明から買収・社名変更・分社化へ</h3>
+            <p>1982年、住友特殊金属（後に日立金属と合併し「日立金属」、現プロテリアル）に在籍していた佐川眞人氏が世界で初めてネオジム磁石を発明しました。これが現在の永久磁石産業の起点です。その後日立グループの中核素材メーカーとして成長しましたが、2022年にベインキャピタル率いる日米ファンド連合（ABB Fund）が買収し、日立グループを離脱しました。2023年に社名を「株式会社プロテリアル」に変更しています（Wikipedia）。</p>
+
+            <h3>2026年4月1日付組織再編——磁性材料事業の分社化</h3>
+            <p>プロテリアルは2026年4月1日付で組織再編を実施しました（プロテリアル公式・2025年12月15日発表）。現在の特殊鋼・ロール・パワーエレクトロニクスの各事業を親会社である株式会社BCJ-52と統合したうえで、「パワー＆エレクトロニクスマテリアル事業部（仮称）」および「航空＆産業アロイ事業部（仮称）」を設置する形に再編しています。磁性材料事業および電線事業・自動車部品事業は現在のプロテリアルに残存する形で商号変更します。この再編を通じて「再上場に向けた取り組みを進めていく」と発表しています。</p>
+
+            <h3>省レアアース磁石——発明者の遺産を継ぐ開発</h3>
+            <p>日経（2025年6月19日）は「省レアアースで脱中国依存 プロテリアルや信越化学が挑む磁石革命」と報じており、プロテリアルが省レアアース磁石の開発を進めていることを伝えています。磁石の起源企業として、フェライト磁石の配置・ローター設計を工夫してEV用途への活用可能性を研究しているほか、NEOMAX®ブランドの高グレード磁石でも省Dy・省Tb技術の開発が進行中です。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">プロテリアル公式「2026年4月1日付組織再編」（2025年12月15日）</span>
+                <span class="source-tag">Wikipedia「プロテリアル」（2025年3月時点）</span>
+                <span class="source-tag">日経「省レアアースで脱中国依存 プロテリアルや信越化学が挑む磁石革命」（2025年6月19日）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH3 -->
+    <div class="chapter" id="ch3">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <h2>信越化学工業——一貫生産と高収益体質</h2>
+            </div>
+
+            <h3>レアアース酸化物の分離精製から磁石まで一貫生産</h3>
+            <p>信越化学工業（4063）は、レアアース酸化物の分離精製からレアアース元素の還元・マグネット合金の溶解鋳造・粉砕成形・焼結加工・磁気回路部品のアセンブルまで、原料加工から組立加工まで一貫して製造する体制を持っています（信越アステック・製品紹介）。塩化ビニル・半導体シリコンウエハー・シリコーンという主力事業と並ぶ希土類磁石事業を電子材料事業部門のもとで展開しています。</p>
+
+            <h3>粒界拡散合金法——重レアアース使用量を最低限化する独自技術</h3>
+            <p>信越化学工業は「粒界拡散合金法」という独自技術を保有しており、これによりネオジム磁石の耐熱性向上に必要な重レアアース（ジスプロシウム・テルビウム等）の金属組織分布を制御し、使用量を最低限にとどめながら磁力の低下を伴わずに耐熱性を向上させることに成功しています（信越化学工業SDGs事例・日本化学工業協会）。これはEV用モーター向け高耐熱磁石においてジスプロシウム等の調達量削減を直接実現する技術です。</p>
+
+            <h3>2025年4〜12月期決算説明会での社長発言</h3>
+            <p>信越化学工業の斉藤恭彦社長は2026年1月27日（2025年4〜12月期連結決算説明会）で、中国によるレアアース輸出規制について「原料確保は極めて重大な課題だ」「当社はそれなりに在庫を持っているが、中国からの供給の先行きが読めない」と述べました。また「磁石工場の稼働率は非常に高いが、レアアース磁石の引き合いが大変強い」とも発言しています（日経・2026年1月27日）。中国の輸出規制強化が需要を押し上げつつも原料確保に緊張をもたらしている状況を示しています。</p>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">30%超</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        信越化学工業 全社営業利益率
+                        <br>
+                        （高収益体質）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">非常に高い</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        磁石工場の稼働率
+                        <br>
+                        （2026年1月 社長発言）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">粒界拡散合金法</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        重レアアース使用量
+                        <br>
+                        最低限化の独自技術
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">1976年〜</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        レアアースマグネット
+                        <br>
+                        事業開始（SmCo5）
+                    </span>
+                </div>
+            </div>
+
+            <div class="note-box">
+                <strong>【注記】</strong>
+                信越化学工業は磁石事業の売上・利益を単独では開示していません。磁石事業単体の財務規模は公開情報からは確認できません。
+                    
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日経「信越化学社長、レアアース『在庫確保も先行き読めず』」（2026年1月27日）</span>
+                <span class="source-tag">信越化学工業SDGs事例「レア・アースマグネット（前編）」（日本化学工業協会）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH4 -->
+    <div class="chapter" id="ch4">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 04</span>
+                <h2>大同特殊鋼——重希土類フリー磁石の先陣</h2>
+            </div>
+
+            <h3>世界初「重希土類完全フリーネオジム磁石」の実用化</h3>
+            <p>大同特殊鋼（5471）はホンダと共同でHV用モーター向けに「重希土類完全フリーネオジム磁石」を世界で初めて実用化しました（東洋経済・2025年10月）。重希土類（ジスプロシウム・テルビウム）をほぼ100%中国に依存するという調達リスクを根本的に回避した磁石です。製造には「熱間加工磁石」という独自製法を確立しており、微細化した金属粉を超急冷後に熱間プレスすることで重希土類を使用しなくても微細な結晶構造を実現し、磁力を強化できます（ニュースイッチ）。</p>
+
+            <h3>注文急増——2025年4月以降の引き合い増加</h3>
+            <p>2025年4月以降、中国の輸出管理強化を受け、自動車部品を中心に重希土類完全フリー製品に対する注文・引き合いが急増しました（東洋経済・2025年10月；株探・2025年10月）。中国のレアアース輸出規制リスクを回避したい自動車・部品メーカーからの需要シフトが加速しています。</p>
+
+            <h3>生産能力3倍への投資計画——2027〜2028年度で段階的増強</h3>
+            <p>大同特殊鋼は製造子会社ダイドー電子（岐阜県中津川市）での磁石製造ラインを増設中です（ニュースイッチ）。段階的な生産能力強化の計画は以下の通りです。</p>
+
+            <div class="data-box">
+                <div class="box-title">ダイドー電子 磁石製造ライン増設計画（大同特殊鋼・ニュースイッチ）</div>
+                <ul>
+                    <li>【現状】既存の磁石製造ライン（増設前）</li>
+                    <li>【第1期：2025年度内に設備導入→2027年度まで】月産能力を月45トンに引き上げ</li>
+                    <li>【第2期：2028年度まで】月産能力を月90トンに倍増（第1期比）</li>
+                    <li>【第3期：2030年度を見据えて】さらなる段階的強化を計画</li>
+                </ul>
+            </div>
+
+            <h3>中期経営計画——2025年度から累計680億円の設備投資</h3>
+            <p>大同特殊鋼の中期経営計画は2025年度から累計680億円の設備投資を計画し、2031年3月期に営業利益260億円の効果（設備投資の累積効果）を見込んでいます（织原松治氏のnote記事・2026年2月）。海外売上比率はすでに約28〜30%前後に達しており、自動車・半導体向け海外顧客への磁石販売も積み上がっています。</p>
+
+            <h3>佐川眞人氏を顧問に招聘</h3>
+            <p>大同特殊鋼は1982年のネオジム磁石発明者であり毎年ノーベル賞候補として名が挙がる佐川眞人氏を顧問に招聘しています（東洋経済・2025年10月）。発明者自身の知見を量産・事業化に活かすという体制が競争力の源泉となっています。</p>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">月45トン</span>
+                    <span class="stat-unit">→月90トン</span>
+                    <span class="stat-label">
+                        ダイドー電子 磁石生産能力
+                        <br>
+                        （2027年度→2028年度目標）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">累計680億円</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        大同特殊鋼 設備投資計画
+                        <br>
+                        （2025〜2031年度・中計）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">営業利益+260億円</span>
+                    <span class="stat-unit">（2031年3月期）</span>
+                    <span class="stat-label">
+                        設備投資の累積効果目標
+                        <br>
+                        （中期経営計画）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">約28〜30%</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        大同特殊鋼 海外売上比率
+                        <br>
+                        （自動車・半導体向け）
+                    </span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">東洋経済「大同特殊鋼。注文増で生産量3倍へ向けた投資計画」（2025年10月）</span>
+                <span class="source-tag">ニュースイッチ「大同特殊鋼が高機能磁石で攻勢かける」</span>
+                <span class="source-tag">株探「大同特鋼 重希土を使わない磁石開発企業として物色」（2025年10月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH5 -->
+    <div class="chapter" id="ch5">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 05</span>
+                <h2>TDK——電子部品大手の磁性材料事業</h2>
+            </div>
+
+            <h3>フェライト磁石から希土類磁石まで幅広いラインナップ</h3>
+            <p>TDK（6762）は電子部品の世界的大手であり、フェライト磁石・ネオジム磁石（NdFeB）・サマリウムコバルト磁石（SmCo）という主要3種類の永久磁石製品を手がけています。電子機器向けの小型・精密磁石に特に強みを持ち、ハードディスクドライブ・スピーカー・センサー・産業機器向けモーター等に供給しています。</p>
+            <p>日経（2025年6月19日）はネオジム磁石を手がける国内主要企業として「プロテリアルのほか信越化学工業、TDK、大同特殊鋼などが手がけている」とTDKを明記しています。</p>
+            <p>TDKの磁石・磁性材料事業の単体の売上・利益は非開示です。全社（2025年3月期）の売上規模はおよそ2兆円前後の電子部品大手です。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日経「省レアアースで脱中国依存 プロテリアルや信越化学が挑む磁石革命」（2025年6月19日）</span>
+                <span class="source-tag">TDK統合報告書2024</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH6 -->
+    <div class="chapter" id="ch6">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 06</span>
+                <h2>収益構造の本質</h2>
+            </div>
+
+            <h3>「原材料費が大半」という永久磁石固有のコスト構造</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「永久磁石の原価は原材料費が大半を占める」と明示しています。ネオジム・鉄・ホウ素・重レアアース（Dy・Tb）という原材料費が製品原価の大部分を占め、原材料価格の変動（特にレアアース価格）が直接収益に影響します。このため、原料調達先の多様化・省Dy/Tb技術・リサイクルによるレアアース回収が収益安定化の鍵となります。</p>
+
+            <h3>「中国輸出規制強化＝日本製磁石の需要増」という逆説的な機会</h3>
+            <p>2025年4月からの中国の重レアアース輸出管理強化は、短期的には日本メーカーの原料調達コスト・調達リスクを高める一方で、欧米・日本の自動車・産業機器メーカーが「中国製磁石への依存リスクを回避するために日本製磁石への切替えを検討する」という需要増加をもたらしています。信越化学工業の社長発言「引き合いが大変強い」（2026年1月）や大同特殊鋼への注文急増がこれを裏付けています。</p>
+
+            <h3>「重希土類フリー磁石」の競争優位</h3>
+            <p>大同特殊鋼が実用化した重希土類完全フリーネオジム磁石は、中国依存ほぼ100%の重レアアース（Dy・Tb）を使用しないため、調達リスクと原料コスト変動リスクから根本的に切り離された製品です。中国の輸出規制強化が強まるほど、この製品の競争優位性が高まる構造があります。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">日経「信越化学社長発言」（2026年1月27日）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH7 -->
+    <div class="chapter" id="ch7">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 07</span>
+                <h2>人材市場の実態</h2>
+            </div>
+
+            <h3>磁性材料・希土類化学エンジニアという専門職</h3>
+            <p>永久磁石の開発・製造に関わる主要職種は「磁性材料研究者・エンジニア（材料工学・物理・化学系バックグラウンド）」「プロセスエンジニア（焼結・熱間加工・粉末冶金）」「レアアース化学者（分離精製・化合物設計）」「品質・認証エンジニア（船級・自動車業界規格対応）」の4つが中心です。これらはいずれも高度な専門知識を要し、学習曲線が長い職種です。</p>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）の政策文書には人材の固有課題は特に明示されていませんが、省レアアース/レアアースフリー磁石の開発・量産化には材料科学・粉末冶金・磁気物理学の複合的な専門知識が必要であり、即戦力人材の確保に時間がかかる構造があります。</p>
+
+            <h3>主要就職先と事業規模</h3>
+            <div class="data-box">
+                <div class="box-title">磁石・磁性材料分野の主要就職先（2026年04月時点）</div>
+                <ul>
+                    <li>【プロテリアル（非上場）】磁性材料・特殊鋼等の複合事業。冶金研究所（島根県安来市）・グローバル技術革新センター（埼玉県熊谷市）等の研究拠点。2026年4月の分社化・再上場準備で組織変化が続く時期。</li>
+                    <li>【信越化学工業（4063）】全社営業利益率30%超の高収益企業。磁石・半導体・化学の複合事業で、キャリアパスの幅が広い。磁石事業の主要拠点は岡山・赤磐市（信越磁性材料）等。</li>
+                    <li>【大同特殊鋼（5471）】2025〜2028年度にかけて大規模な設備投資・増産体制構築中で人材需要が高まっている時期。製造子会社ダイドー電子（岐阜県中津川市）が磁石量産拠点。2025年度から累計680億円投資で「成長分野への転換」を宣言。</li>
+                    <li>【TDK（6762）】世界最大規模の電子部品メーカーとして、グローバルなキャリアパスを提供。磁石・磁性材料の研究開発拠点は秋田（TDKの発祥地）等に存在。</li>
+                </ul>
+            </div>
+
+            <div class="note-box">
+                <strong>【注記】</strong>
+                磁性材料エンジニアの年収水準は各社の採用情報・転職サイトから確認する必要があります。本レポートでは現時点で確認できた確定値がないため、年収レンジの記載は省略します。特殊鋼・素材系の大手メーカーとして、製造業の技術職一般水準（600〜800万円台前後）に準じると推定されますが、出典のある数値ではありません。
+                    
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">プロテリアル公式「事業・研究拠点一覧」</span>
+                <span class="source-tag">Wikipedia「プロテリアル」（2025年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH8 -->
+    <div class="chapter" id="ch8">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 08</span>
+                <h2>構造的課題の所在</h2>
+            </div>
+
+            <h3>「市中リサイクル網が未整備」——量産実用化への最後の壁</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「市中からのリサイクル網が未整備であり、磁石/レアアース回収の品質・量・コストが課題」と明示しています。廃EV・廃ハードディスク・廃洗濯機等から磁石・レアアースを回収する体制が産業として確立されておらず、回収量・品質・コストのいずれも課題が残っています。リサイクルが確立すれば原材料の中国依存を根本的に緩和できますが、スキーム整備には産官学の連携と制度設計が必要です。</p>
+
+            <h3>「著しく低い価格付けがなされたレアアース磁石の流通リスク」</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「著しく低い価格付けがなされたレアアース磁石の流通リスク」を不確実性要因として明示しています。中国メーカーが政府補助金等を背景に低価格で磁石を供給し続けると、日本メーカーの省レアアース磁石・高グレード磁石の価格優位性が損なわれるリスクがあります。</p>
+
+            <h3>「省レアアース/レアアースフリー磁石の技術確立の不確実性」</h3>
+            <p>同資料は「省レアアース/レアアースフリー磁石の技術確立の不確実性」を課題として明示しています。大同特殊鋼がHV用途で世界初実用化を達成している一方で、EVの高出力・高温環境への対応や量産コストの低減という課題は継続中です。2028年度頃の開発終了目標（政策目標として示されている）は確定値ではなく、技術的難易度に依存します。</p>
+
+            <h3>原料調達リスクが設備投資判断を左右する</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「レアアース原料価格の変動によって、量産用設備やリサイクル設備の投資リスクが発生」と明示しています。設備投資の回収見通しが原料価格・調達見通しに左右されるため、民間企業の自発的な大規模投資が難しく、政府の補助金・融資支援が不可欠な構造があります。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH9 -->
+    <div class="chapter" id="ch9">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 09</span>
+                <h2>誤解されやすいポイント</h2>
+            </div>
+            <div class="data-box">
+                <div class="box-title">誤解されやすいポイント（4点）</div>
+                <ul>
+                    <li>【「大同特殊鋼が重希土フリー磁石を世界初実用化＝日本が重希土類依存を脱却」】大同特殊鋼がHV（ハイブリッド車）モーター向けで世界初実用化したのは事実です。ただしHV向けは比較的低温環境での使用が中心です。EV（純電気自動車）の駆動モーターは高出力・高温環境での動作が必要なため、重希土類フリー磁石の大規模EV展開はさらなる技術開発と量産コスト低減が前提です。「HVで実用化＝EV全面展開可能」ではありません。</li>
+                    <li>【「信越化学工業＝磁石専業メーカー」】信越化学工業は塩化ビニル・半導体シリコンウエハー・シリコーン・希土類磁石等を手がける総合化学企業です。磁石は重要事業の一つですが、同社の主力は半導体シリコンウエハーと塩化ビニル等です。磁石事業の売上・利益は単独で非開示です。</li>
+                    <li>【「プロテリアルがネオジム磁石の発明者企業だから世界最大シェア」】プロテリアル（旧日立金属）はネオジム磁石の起源企業ですが、現在の世界シェアは日本勢合計で約15%です（中国勢8割強）。「発明者＝現在の市場リーダー」ではありません。プロテリアルは高グレード・精密磁石市場での競争力を持ちますが、汎用ネオジム磁石の量産では中国勢との価格競争が続いています。</li>
+                    <li>【「中国の輸出規制強化＝即座に日本メーカーの業績が改善」】信越化学工業の社長が「磁石工場の稼働率は非常に高い。引き合いが大変強い」と発言したことは事実ですが、同時に「在庫確保も先行き読めず」という原料調達リスクも強調しています。需要増加と原料調達コスト増加・不確実性が同時に発生しており、業績への影響は原料調達状況によって異なります。</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜8章の総括</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH10 -->
+    <div class="chapter" id="ch10">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 10</span>
+                <h2>内部環境の整理</h2>
+            </div>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>章</th>
+                        <th>指標名</th>
+                        <th>数値・事実</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第2章</td>
+                        <td>プロテリアル 組織再編</td>
+                        <td>2026年4月1日付で磁性材料事業を分社化・再上場準備中</td>
+                        <td>プロテリアル公式 2025年12月</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>プロテリアル 沿革</td>
+                        <td>1982年ネオジム磁石発明（佐川眞人氏）の起源企業。2022年ベインキャピタル傘下・日立グループ離脱。2023年社名変更。</td>
+                        <td>Wikipedia</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>信越化学工業 磁石工場稼働率</td>
+                        <td>「非常に高い」・「引き合いが大変強い」（2026年1月 社長発言）</td>
+                        <td>日経 2026年1月27日</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>信越化学工業 全社営業利益率</td>
+                        <td>30%超（高収益体質）</td>
+                        <td>投資家向け記事 2025年</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>大同特殊鋼 重希土フリー磁石</td>
+                        <td>世界初「重希土類完全フリーネオジム磁石」をホンダと共同でHV用モーター向けに実用化</td>
+                        <td>東洋経済 2025年10月</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>ダイドー電子 磁石生産能力目標</td>
+                        <td>2027年度までに月45トン→2028年度までに月90トン</td>
+                        <td>ニュースイッチ</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>大同特殊鋼 中計投資額</td>
+                        <td>2025〜2031年度 累計680億円・2031年3月期 営業利益+260億円効果</td>
+                        <td>大同特殊鋼 中期経営計画</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>大同特殊鋼 海外売上比率</td>
+                        <td>約28〜30%（自動車・半導体向け）</td>
+                        <td>大同特殊鋼 統合レポート等</td>
+                    </tr>
+                    <tr>
+                        <td>第6章</td>
+                        <td>磁石の原価構造</td>
+                        <td>原材料費が大半を占める（レアアース価格変動が収益に直結）</td>
+                        <td>資料2 2026年3月</td>
+                    </tr>
+                    <tr>
+                        <td>第8章</td>
+                        <td>市中リサイクル網</td>
+                        <td>「未整備。品質・量・コストが課題」と明示</td>
+                        <td>資料2 2026年3月</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="data-box">
+                <div class="box-title">構造的に固定されやすい要素</div>
+                <ul>
+                    <li>プロテリアル（起源企業）・信越化学工業・大同特殊鋼・TDKという国内主要4社の構図は短期では変化しない</li>
+                    <li>信越化学工業の「レアアース酸化物の分離精製から磁石まで一貫生産」という体制は設備投資済みの強固な競争優位</li>
+                    <li>大同特殊鋼の「重希土類完全フリー磁石の世界初実用化」という先行実績は追随困難な技術的差別化</li>
+                    <li>「原材料費が大半を占める」というコスト構造は、省レアアースフリー磁石が普及するまで変化しない</li>
+                    <li>磁性材料エンジニアの希少性は、育成に時間がかかるため短期では解消しない</li>
+                    <li>リサイクル網の未整備という課題は、スキーム設計と制度整備に時間がかかるため短期では解消しない</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜9章の集約</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH11 -->
+    <div class="chapter" id="ch11">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 11</span>
+                <h2>有料版への橋渡し</h2>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR CAREER — 就活・転職向け有料版</div>
+                <h3>プロテリアル・信越化学・大同特殊鋼・TDK、どこで関わるか</h3>
+                <ul>
+                    <li>プロテリアル（非上場・再上場準備中・磁石分社化直後）の現在の採用状況と処遇水準</li>
+                    <li>信越化学工業の磁石部門・半導体部門・化学部門それぞれのキャリアパスと処遇の違い</li>
+                    <li>大同特殊鋼が2025〜2028年度に「成長分野として大規模増設中」のダイドー電子で磁石エンジニアとして関わるルート</li>
+                    <li>材料工学・物理・化学・機械工学各バックグラウンドからの磁石業界への転職パスの実態</li>
+                    <li>磁性材料エンジニア・希土類化学研究者の市場年収レンジと転職市場の状況</li>
+                </ul>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR INVESTMENT — 投資判断向け有料版</div>
+                <h3>プロテリアルが非上場のため、関連上場企業をどう読むか</h3>
+                <ul>
+                    <li>信越化学工業（4063）——磁石事業が全社業績に占める割合と、中国輸出規制強化後の磁石需要増加が業績に与える影響の読み方</li>
+                    <li>大同特殊鋼（5471）——累計680億円設備投資の進捗と、重希土類フリー磁石の受注増加が2026〜2031年度業績に反映されるタイムラインの読み方</li>
+                    <li>TDK（6762）——電子部品事業全体の中での磁石・磁性材料事業の位置づけと成長寄与の読み方</li>
+                    <li>政府補助金（設備投資補助金・国産磁石への切替え支援）の受益企業の特定方法</li>
+                    <li>「著しく低価格な中国製磁石の流通リスク」が上場3社の業績に与え得るシナリオ整理</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <div class="container">
+            <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。プロテリアルは非上場企業のため財務詳細の開示は限定的です。信越化学工業・大同特殊鋼・TDKの磁石事業単体の財務数値は各社とも非開示です。「政策目標として示されている」と注記した数値は政府が目標として掲げた値であり達成を保証するものではありません。データ基準時点は2026年04月です。</p>
+            <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年04月 産業構造分析レポート ── 永久磁石（内部環境編）</p>
+            <p style="margin-top:8px;">
+                <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
