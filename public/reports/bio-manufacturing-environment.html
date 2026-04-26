@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業界分析｜高市政権「戦略17分野」合成生物学・バイオ バイオものづくり（外部環境編）</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+    :root {
+        --ink: #0f0f0e;
+        --paper: #f5f2ed;
+        --cream: #ede9e1;
+        --accent: #c84b2f;
+        --muted: #6b6760;
+        --rule: #c9c4bb;
+        --highlight: #fff8e6;
+    }
+
+    *, * ::before, * ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        border-bottom: 3px solid var(--accent);
+    }
+
+    .masthead-right {
+        color: var(--muted);
+    }
+
+    .hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 60px 40px 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200, 75, 47, 0.07) 4px, rgba(200, 75, 47, 0.07) 5px);
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        padding: 4px 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(20px, 3.2vw, 34px);
+        font-weight: 900;
+        line-height: 1.4;
+        max-width: 820px;
+        letter-spacing: 0.02em;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+        color: var(--accent);
+        font-style: normal;
+    }
+
+    .hero-meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+
+    .hero-badge {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 11px;
+        padding: 4px 12px;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.06em;
+    }
+
+    .data-notice {
+        background: rgba(200, 75, 47, 0.15);
+        border-left: 3px solid var(--accent);
+        padding: 10px 16px;
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .toc {
+        background: var(--cream);
+        border-top: 3px solid var(--ink);
+        border-bottom: 1px solid var(--rule);
+        padding: 32px 40px;
+    }
+
+    .toc h2 {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 16px;
+        text-transform: uppercase;
+    }
+
+    .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 6px 28px;
+    }
+
+    .toc-item {
+        font-size: 13px;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 3px 0;
+        border-bottom: 1px dashed var(--rule);
+        display: flex;
+        gap: 8px;
+    }
+
+    .toc-item:hover {
+        color: var(--accent);
+    }
+
+    .toc-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        flex-shrink: 0;
+        padding-top: 2px;
+    }
+
+    .chapter {
+        padding: 48px 40px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .chapter:nth-child(even) {
+        background: var(--cream);
+    }
+
+    .chapter-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .chapter-num {
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .chapter h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.4;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 10px;
+        flex: 1;
+    }
+
+    .chapter h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 24px 0 10px;
+        padding-left: 10px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .chapter p {
+        margin-bottom: 14px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 24px 0;
+    }
+
+    .stat-cell {
+        background: var(--paper);
+        padding: 18px 16px;
+        text-align: center;
+    }
+
+    .chapter:nth-child(even) .stat-cell {
+        background: #f0ece4;
+    }
+
+    .stat-cell .stat-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent);
+        line-height: 1.2;
+        display: block;
+    }
+
+    .stat-cell .stat-unit {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-top: 2px;
+    }
+
+    .stat-cell .stat-label {
+        font-size: 11px;
+        color: var(--ink);
+        display: block;
+        margin-top: 6px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .data-box {
+        background: var(--highlight);
+        border: 1px solid #e0d8c4;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 20px 0;
+    }
+
+    .data-box .box-title {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .data-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .data-box ul li {
+        padding: 5px 0 5px 16px;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+        position: relative;
+    }
+
+    .data-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .data-box ul li:last-child {
+        border-bottom: none;
+    }
+
+    .note-box {
+        background: rgba(200, 75, 47, 0.05);
+        border: 1px dashed var(--accent);
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .note-box strong {
+        color: var(--accent);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13px;
+    }
+
+    .summary-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .summary-table thead th {
+        padding: 10px 14px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+    }
+
+    .summary-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .summary-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .summary-table tbody td {
+        padding: 9px 14px;
+        vertical-align: top;
+    }
+
+    .summary-table td:first-child {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 12px;
+    }
+
+    .compare-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 20px 0;
+    }
+
+    .compare-cell {
+        background: var(--paper);
+        padding: 16px 18px;
+        font-size: 13px;
+    }
+
+    .chapter:nth-child(even) .compare-cell {
+        background: #f0ece4;
+    }
+
+    .compare-cell .cell-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .timeline {
+        margin: 20px 0;
+    }
+
+    .timeline-item {
+        display: flex;
+        gap: 16px;
+        padding: 12px 0;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+    }
+
+    .timeline-item:last-child {
+        border-bottom: none;
+    }
+
+    .timeline-year {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        color: var(--accent);
+        font-weight: 600;
+        flex-shrink: 0;
+        width: 130px;
+        padding-top: 2px;
+    }
+
+    .timeline-text {
+        flex: 1;
+    }
+
+    .next-box {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 28px 32px;
+        margin: 20px 0;
+        border-left: 5px solid var(--accent);
+    }
+
+    .next-box .next-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .next-box h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 17px;
+        margin-bottom: 12px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .next-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .next-box ul li {
+        padding: 4px 0 4px 14px;
+        font-size: 13px;
+        position: relative;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .next-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.06);
+        border: 1px solid var(--rule);
+        padding: 3px 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        color: var(--muted);
+        margin: 2px 3px;
+        letter-spacing: 0.04em;
+    }
+
+    .source-wrap {
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 1px dashed var(--rule);
+    }
+
+    .disclaimer {
+        background: var(--ink);
+        color: rgba(245, 242, 237, 0.5);
+        padding: 24px 40px;
+        font-size: 11px;
+        line-height: 1.7;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.03em;
+    }
+
+    .rule-thick {
+        border: none;
+        border-top: 3px solid var(--ink);
+        margin: 0;
+    }
+
+    .rule-thin {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .masthead {
+            flex-direction: column;
+            gap: 6px;
+            padding: 10px 16px;
+        }
+
+        .hero {
+            padding: 36px 16px 30px;
+        }
+
+        .chapter {
+            padding: 32px 16px;
+        }
+
+        .toc {
+            padding: 24px 16px;
+        }
+
+        .compare-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span>産業構造分析レポート</span>
+        <span class="masthead-right">2026年04月発行 ── 合成生物学・バイオ／バイオものづくり（外部環境編）</span>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-label">INDUSTRY ANALYSIS REPORT — EXTERNAL ENVIRONMENT</div>
+            <h1>
+                業界分析｜高市政権「戦略17分野」
+                <br>
+                合成生物学・バイオ
+                <br>
+                <em>バイオものづくり</em>
+                （外部環境編）
+            </h1>
+            <div class="hero-meta">
+                <span class="hero-badge">就職・転職検討者向け</span>
+                <span class="hero-badge">株式投資家向け</span>
+                <span class="hero-badge">数字と事実のみ記載</span>
+            </div>
+            <div class="data-notice">本レポートのデータ基準時点：2026年04月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用</div>
+        </div>
+    </div>
+
+    <hr class="rule-thick">
+
+    <div class="toc">
+        <div class="container">
+            <h2>目次 — TABLE OF CONTENTS</h2>
+            <div class="toc-grid">
+                <a class="toc-item" href="#ch0">
+                    <span class="toc-num">00</span>
+                    このレポートの目的と読み方
+                </a>
+                <a class="toc-item" href="#ch1">
+                    <span class="toc-num">01</span>
+                    市場規模と需要構造
+                </a>
+                <a class="toc-item" href="#ch2">
+                    <span class="toc-num">02</span>
+                    制度・政策の枠組み
+                </a>
+                <a class="toc-item" href="#ch3">
+                    <span class="toc-num">03</span>
+                    経済的前提条件
+                </a>
+                <a class="toc-item" href="#ch4">
+                    <span class="toc-num">04</span>
+                    米国・中国・欧州の動向
+                </a>
+                <a class="toc-item" href="#ch5">
+                    <span class="toc-num">05</span>
+                    技術・DXの位置づけ
+                </a>
+                <a class="toc-item" href="#ch6">
+                    <span class="toc-num">06</span>
+                    参入・撤退の条件
+                </a>
+                <a class="toc-item" href="#ch7">
+                    <span class="toc-num">07</span>
+                    経済安全保障との接続
+                </a>
+                <a class="toc-item" href="#ch8">
+                    <span class="toc-num">08</span>
+                    外部環境の整理
+                </a>
+                <a class="toc-item" href="#ch9">
+                    <span class="toc-num">09</span>
+                    内部環境編への橋渡し
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <!-- CH0 -->
+    <div class="chapter" id="ch0">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <h2>このレポートの目的と読み方</h2>
+            </div>
+            <p>本レポートは、高市政権「戦略17分野」合成生物学・バイオの「バイオものづくり」の外部環境を、就職・転職検討者および株式投資家向けに数字と事実のみで記述します。所管は経済産業省です。</p>
+            <div class="data-box">
+                <div class="box-title">「バイオものづくり」とは何か——3行で把握する</div>
+                <ul>
+                    <li>【技術の概要】遺伝子技術（ゲノム編集・合成生物学等）を活用して微生物や動植物等の細胞によって物質を生産する製造技術。化学素材・燃料・食品・繊維等、幅広い産業分野で化石資源に代わる生産プロセスとして活用される。「スマートセル（高度にゲノムがデザインされた細胞）」を用いた物質生産が中核。</li>
+                    <li>【現状の問題】日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「技術・ノウハウ・データが分散しており生産効率が低い」「既存製品との厳しい価格競争にさらされる中、安定した需要の見通しが不十分」「技術・サプライチェーンが発展途上で既存製品と比べて生産コストが高い」という3点を主な課題として明示している。</li>
+                    <li>【なぜ今か】米国バイデン大統領令（2022年9月）のファクトシートが「バイオものづくりが今後10年以内に製造業の世界生産の約1/3を置き換え、約30兆ドル（約4,000兆円）に達する」という分析を示し、米中欧が兆円単位の国家投資を競っている。日本はホワイトバイオ分野での経済効果として約165兆円（2030〜2040年）を目標値として掲げており（2020 McKinsey・経産省計算）、2040年の日本企業の売上目標を11.9兆円としている（資料1・2026年3月）。</li>
+                </ul>
+            </div>
+            <p>良し悪しの評価・投資推奨・将来予測は行いません。</p>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート基本方針</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH1 -->
+    <div class="chapter" id="ch1">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <h2>市場規模と需要構造</h2>
+            </div>
+
+            <h3>バイオテクノロジー全体の世界市場規模</h3>
+            <p>バイオテクノロジー分野（健康・医療・ものづくり・農林水産を含む全体）の世界市場は2030年に約200兆円〜500兆円規模に達すると見込まれています（日本政策投資銀行・2023年3月）。バイオものづくり（工業化学・素材・燃料・食品等のいわゆる「ホワイトバイオ」中心）の経済効果に限定すると、2030〜2040年で約165兆円が見込まれています（2020 McKinsey Global Institute分析を元に1ドル150円で経産省計算）。</p>
+            <p>合成生物学・次世代バイオプラットフォームに特化した市場では、2024年に245.8億ドルと評価され、2034年には1,929.5億ドル規模（CAGR 28.63%）へ急拡大するとの予測も示されています（GII市場調査レポート）。バイオものづくり産業全体では、2040年の世界市場規模を150兆円と予測する調査もあります（アックスタイムズ・2025年7月）。</p>
+
+            <div class="note-box">
+                <strong>【注記】</strong>
+                バイオものづくりの市場規模数値は、調査機関・集計範囲（医薬品含む・含まない、ホワイトバイオのみ等）・定義・想定シナリオによって大きく異なります。上記の複数数値は定義・集計対象が異なるため単純比較はできません。
+                    
+            </div>
+
+            <h3>6つの主要応用分野</h3>
+            <p>バイオものづくりの応用分野は「①バイオ医薬品（モノクローナル抗体・組換えタンパク質・ワクチン等）」「②産業用酵素（洗剤・食品加工・テキスタイル・バイオ燃料等）」「③バイオ燃料（バイオエタノール・バイオディーゼル・持続可能な航空燃料等）」「④バイオプラスチック・バイオマテリアル（PLA・PHA等）」「⑤バイオ化学品（有機酸・アミノ酸・ビタミン等）」「⑥バイオ農業（生物農薬・生物肥料等）」の6つが中心です（GII市場調査レポート）。このうち本レポートは医薬品・再生医療以外の「素材・燃料・化学品・食品等のバイオものづくり」（ホワイトバイオ）を主な対象とします。</p>
+
+            <h3>日本の目標——2040年に日本企業の売上11.9兆円</h3>
+            <p>日本成長戦略会議 第3回 資料1「戦略17分野における主要な製品・技術等」（2026年3月）は「2040年の我が国企業の売上（合計）目標は11.9兆円」と明示しています（政策目標として示されている）。この目標は「基盤となるバイオ製造技術の優位性確保および高付加価値領域（高機能成分・素材等）を中心とするグローバルでの市場獲得」と「経済安全保障・脱炭素の観点から国内生産が肝要な製品領域における輸入品代替」の2軸で達成を目指すとされています（同）。</p>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">約165兆円</span>
+                    <span class="stat-unit">（ホワイトバイオ中心）</span>
+                    <span class="stat-label">
+                        バイオ産業の経済効果
+                        <br>
+                        （2030〜2040年・McKinsey／経産省）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">150兆円</span>
+                    <span class="stat-unit">（2040年予測）</span>
+                    <span class="stat-label">
+                        バイオものづくり産業
+                        <br>
+                        世界市場規模予測
+                        <br>
+                        （アックスタイムズ 2025年7月）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">11.9兆円</span>
+                    <span class="stat-unit">（2040年目標）</span>
+                    <span class="stat-label">
+                        日本企業の売上目標
+                        <br>
+                        （資料1 2026年3月）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">CAGR 28.63%</span>
+                    <span class="stat-unit">（2024→2034年）</span>
+                    <span class="stat-label">
+                        合成生物学・次世代
+                        <br>
+                        バイオプラットフォーム市場
+                        <br>
+                        （GII 市場調査）
+                    </span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回 資料1「戦略17分野における主要な製品・技術等」（2026年3月）</span>
+                <span class="source-tag">経産省「バイオものづくり革命の実現」（2023年4月）</span>
+                <span class="source-tag">アックスタイムズ「バイオものづくり市場を調査」（2025年7月）</span>
+                <span class="source-tag">GII市場調査レポート（合成生物学・次世代バイオプラットフォーム）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH2 -->
+    <div class="chapter" id="ch2">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <h2>制度・政策の枠組み</h2>
+            </div>
+
+            <h3>日本の政策目標（2026年3月時点）</h3>
+            <div class="data-box">
+                <div class="box-title">達成すべき戦略的目標（資料2・2026年3月・政策目標として示されている）</div>
+                <ul>
+                    <li>【技術目標】バイオ製造技術の高効率化（AI・データの活用によるドライ領域強化、ウェット領域の強みとの融合）</li>
+                    <li>【生産目標】国内資源（再生可能なバイオマス資源・廃棄物などの未利用資源）の活用拡大および国内バイオ製造設備の増加</li>
+                    <li>【市場目標】高付加価値領域を中心とするグローバルでの市場獲得、および国内生産が肝要な製品領域での輸入品代替</li>
+                    <li>【人材目標】バイオものづくり産業を牽引する人材エコシステムの構築（産官学人材交流・産業からバックキャストした大学・高専教育）</li>
+                </ul>
+            </div>
+
+            <h3>日本のバイオ戦略——2019年策定・2024年改定</h3>
+            <p>日本政府は2019年にバイオ戦略を策定し（2020年更新）、「2030年に世界最先端のバイオエコノミー社会」を目標として掲げました。2024年6月には「バイオエコノミー戦略」を統合イノベーション戦略推進会議で決定しています。2022年度には「バイオものづくり等のバイオ分野に総額1兆円規模の大型予算」が措置され、本格的な国家プロジェクトが始動しています（バイオエコノミー戦略・2024年6月）。</p>
+
+            <h3>主要マイルストーン</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-year">2019年</span>
+                    <span class="timeline-text">日本政府がバイオ戦略を策定（2020年更新）。「2030年に世界最先端のバイオエコノミー社会」を目標に設定。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2022年9月</span>
+                    <span class="timeline-text">米国バイデン大統領が「持続可能で安全・安心な米国バイオエコノミーのためのバイオテクノロジーとバイオものづくりイノベーション推進に関する大統領令」に署名。「今後10年以内に製造業の世界生産の約1/3を置き換え・約30兆ドル（約4,000兆円）に達する」という分析を公表。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2022年度</span>
+                    <span class="timeline-text">日本でバイオ分野に総額1兆円規模の大型予算が措置。スマートセル開発・バイオファウンドリ整備等の国家プロジェクトが本格始動（バイオエコノミー戦略・2024年6月）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2024年6月</span>
+                    <span class="timeline-text">日本政府が「バイオエコノミー戦略」を統合イノベーション戦略推進会議で決定。バイオものづくりによる化石資源からの脱却・資源自律経済の実現を方針として明示。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2026年2月</span>
+                    <span class="timeline-text">経産省の産業構造審議会「合成生物学・バイオ分野の現状と課題」が整理・公表（2026年2月3日）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2026年3月</span>
+                    <span class="timeline-text">日本成長戦略会議 第3回で「バイオものづくり」が戦略17分野に明示。2040年の日本企業売上目標11.9兆円（政策目標として示されている）。官民投資の具体像・定量的インパクトは「今夏の日本成長戦略の策定に向けて取りまとめ予定」と記載。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2026年夏（予定）</span>
+                    <span class="timeline-text">日本成長戦略の策定と官民投資ロードマップの取りまとめ予定。官民投資の具体的金額・時期が明確化される見通し（資料2・2026年3月）。</span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回 資料1「戦略17分野における主要な製品・技術等」（2026年3月）</span>
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">バイオエコノミー戦略（統合イノベーション戦略推進会議・2024年6月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH3 -->
+    <div class="chapter" id="ch3">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <h2>経済的前提条件</h2>
+            </div>
+
+            <h3>「既存製品との価格差」という最大の商業化障壁</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「既存製品との厳しい価格競争にさらされる中、安定した需要の見通しが不十分」「技術・サプライチェーンが発展途上で既存製品と比べて生産コストが高い」を主要課題として明示しています。石油由来製品は長年にわたる大規模生産によるコスト最適化が進んでおり、バイオものづくり製品がこれと対等な価格競争力を持つには、スケールアップ・技術高度化・初期需要創出という段階的な取り組みが必要です。</p>
+
+            <h3>「設備投資リスク」という産業化の構造問題</h3>
+            <p>同資料は「スケールに応じた機器設備および大規模生産設備への投資が行いにくい」「技術・生産プロセス開発段階における過大な設備投資リスクを分散・低減させる仕組み」が必要と明示しています。バイオものづくりは発酵・培養スケールアップの不確実性が高く、ラボスケール→パイロットスケール→商用スケールへの移行で大規模な追加投資が必要です。この「スケールアップリスク」が民間投資を抑制する構造的問題として認識されています。</p>
+
+            <h3>「安価な糖原料と労働力にアクセス可能な地域」での先行商用化</h3>
+            <p>同資料は「安価な糖原料と労働力にアクセス可能な地域において一部商用化が先行（米：トウモロコシ、南米：サトウキビ、中：大規模生産能力）」と明示しています。バイオものづくりの商用化先進地域は、安価なバイオマス原料（糖原料）へのアクセスが競争優位の源泉となっており、日本の立地環境（高コスト・糖価調整制度により砂糖の原料糖が割高になる構造等）は産業化の障壁になっています。日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「糖価調整制度における工業原料糖の除外」を政策課題として明示しています。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH4 -->
+    <div class="chapter" id="ch4">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 04</span>
+                <h2>米国・中国・欧州の動向</h2>
+            </div>
+
+            <h3>米国——大統領令と「30兆ドル」の分析</h3>
+            <p>米国は2022年9月12日の大統領令でバイオものづくりを国家戦略の中核に位置づけました（統合イノベーション戦略推進会議）。National Biotechnology and Biomanufacturing Initiativeのファクトシートは「バイオものづくりが今後10年以内に製造業の世界生産の約1/3を置き換え、金額換算で約30兆ドル（約4,000兆円）に達する」という分析を示しています。2023年3月にはさらなる具体的な方向性を示した「Bold Goals for U.S. Biotechnology and Biomanufacturing」を発表しています。</p>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「米国や中国では技術開発を一元的に担うプラットフォームが台頭し、競争が熾烈化している」と明示しています。米国では商業規模のバイオファウンドリへの大規模投資が進んでいます。</p>
+
+            <h3>中国——大規模生産能力と第14次5カ年計画</h3>
+            <p>中国は「第14次5カ年計画バイオエコノミー発展計画」（2021年）で合成生物学・バイオものづくりを国家重点分野に位置づけ、天津市・中国科学院の合成生物技術イノベーションセンター・山西省の合成生物産業エコロジーパーク等への投資を進めています（アックスタイムズ・2024年）。安価な原料・大規模生産能力・国家補助金を背景に、中国は国際市場での競争力を急速に高めています。</p>
+
+            <h3>欧州——Horizon EuropeとCBE JUによる体系的支援</h3>
+            <p>EUは「欧州バイオエコノミー戦略」のもとで、研究開発プログラム「Horizon Europe」・「Circular Bio-based Europe Joint Undertaking（CBE JU）」による助成を実施しています（アックスタイムズ・2024年）。EUは2025年から施行中のEU Green Dealと連動して、バイオベース製品の需要創出・グリーン公共調達の推進を組み合わせた初期市場の形成を図っています。</p>
+
+            <h3>各国競争の構図</h3>
+            <div class="compare-grid">
+                <div class="compare-cell">
+                    <span class="cell-label">日本の強み（資料2）</span>
+
+                            発酵産業の長年の蓄積（味噌・醤油・酒・医薬品中間体等）。エンジニアリング・機器分野における技術的強み。ウェット領域（実際の実験・製造現場）の成熟度。国内バイオマス資源（農林水産物・廃棄物等）の活用可能性。バイオエコノミー戦略への2022年度1兆円規模投資。
+                          
+                </div>
+                <div class="compare-cell">
+                    <span class="cell-label">競合優位の構造</span>
+
+                            米国：国家戦略・大規模ベンチャー投資・バイオファウンドリ先行。中国：大規模生産能力・安価な原料・国家補助。南米（ブラジル等）：安価なサトウキビ原料。欧州：体系的な政策支援・需要創出。日本はウェット領域の技術優位を保ちつつ、AI/ドライ領域との融合強化が課題。
+                          
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">バイオエコノミー戦略（2024年6月）</span>
+                <span class="source-tag">経産省「バイオものづくり革命の実現」（2023年4月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH5 -->
+    <div class="chapter" id="ch5">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 05</span>
+                <h2>技術・DXの位置づけ</h2>
+            </div>
+
+            <h3>「ウェット」と「ドライ」の融合——競争力の律速要因</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「バイオものづくりの競争力の源泉はバイオ製造技術そのものであり、特に『ウェット』領域の成熟度が国際競争力を決定する」と明示しています。</p>
+            <p>「ウェット」領域とは微生物や細胞を培養・発酵させ、条件調整や装置運転を通じて目的物質を安定的・大量に生産するための知見や技能を含む実際の実験・製造現場を担う領域です。「ドライ」領域とは設計・解析・シミュレーションなどの計算・情報処理を担う領域です（同）。</p>
+
+            <h3>DBTLサイクル——バイオとデジタルの融合の核</h3>
+            <p>最先端のバイオものづくりには「DBTLサイクル」と呼ばれる手法が用いられます。Design（設計）→Build（構築）→Test（試験）→Learn（学習）の高速サイクルをゲノム合成・ゲノム編集等のバイオテクノロジーと機械学習・ロボティクス等のデジタル技術の統合的な運用で回すことで、スマートセル開発の効率化・高度化が進みます（日本政策投資銀行・2023年3月）。AI・機械学習を活用してこのサイクルを加速できる企業・プラットフォームが国際競争力を左右します。</p>
+
+            <h3>スマートセル——高度にゲノムがデザインされた細胞</h3>
+            <p>バイオものづくりの中核技術は「スマートセル」の設計・開発です。スマートセルとは高度にゲノムがデザインされた微生物・細胞であり、物質生産性を高度に高め、目的物質を効率的に産生します（経産省・2023年4月）。スマートセルの開発コスト・スピードは10年前と比較して大幅に低下しており、合成生物学の発展がこれを可能にしています。</p>
+
+            <h3>バイオファウンドリ——産業化のインフラ</h3>
+            <p>バイオファウンドリとはDNA合成・ゲノム編集・培養・解析等の一連のスマートセル開発プロセスを自動化・高速化するロボット・AI統合型の研究製造施設です。米英中が先行して整備しており、日本もSIP（戦略的イノベーション創造プログラム）等を通じてバイオファウンドリの整備を進めています。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">経産省「バイオものづくり革命の実現」（2023年4月）</span>
+                <span class="source-tag">日本政策投資銀行「我が国におけるバイオものづくりの産業化に向けて」（2023年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH6 -->
+    <div class="chapter" id="ch6">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 06</span>
+                <h2>参入・撤退の条件</h2>
+            </div>
+
+            <h3>4つの構造的課題——資料2（2026年3月）の整理</h3>
+            <div class="data-box">
+                <div class="box-title">投資促進に向けた課題（資料2・2026年3月）</div>
+                <ul>
+                    <li>【①リソース制約・人材】ウェット技術（特に育種改良・培養）、スケールアップによる産業化、AI・デジタル技術への素養、経営管理という複合的な能力を持った人材の不足。</li>
+                    <li>【①リソース制約・インフラ】スケールに応じた機器設備および大規模生産設備への投資が行いにくい（資金調達難・投資リスク大）。</li>
+                    <li>【②不確実性・事業技術】需要不十分、コスト増、生産効率の低さ（技術・ノウハウ・データの分散等）。</li>
+                    <li>【②不確実性・市場】規制・ルールの未整備、既存製品との価格差、消費者受容性が不安定（GMO・ゲノム編集食品等に対する認知・受容の問題）。</li>
+                    <li>【②不確実性・財務】他分野投資による資金調達難。長期・高リスクな投資回収構造。</li>
+                    <li>【②不確実性・国際環境】脱炭素トランジションの遅滞（GX政策の進捗によって需要の立ち上がりが変化する）。</li>
+                </ul>
+            </div>
+
+            <h3>「消費者受容性」という固有のリスク</h3>
+            <p>バイオものづくりの産業化にはGMO（遺伝子組換え）・ゲノム編集技術を使用した製品への消費者受容性が不可欠です。日本では遺伝子組換え表示制度・ゲノム編集食品の届出制度が整備されていますが、消費者認知はまだ発展途上です。資料2（2026年3月）は「消費者の認知拡大・文化創造に向けた環境整備（消費者教育・学校教育・マーケティング・広報）」を政策課題として明示しています。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH7 -->
+    <div class="chapter" id="ch7">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 07</span>
+                <h2>経済安全保障との接続</h2>
+            </div>
+
+            <h3>「輸入資源依存・製造業空洞化・地球温暖化」という3課題への対応</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「バイオものづくりは国内資源（再生可能なバイオマス資源、廃棄物などの未利用資源）を有効活用し、我が国技術により国内で生産・高付加価値化させることが可能。輸入資源依存、製造業の空洞化、地球温暖化といった課題を乗り越えながら経済安全保障を実現するとともにグローバルの成長を取り込む鍵となる」と位置づけています。</p>
+
+            <h3>「主導権を他国に握られた場合の産業化余地の喪失」という危機感</h3>
+            <p>同資料は「米中をはじめとする技術開発競争の中で、主導権を他国に握られた場合、国内で産業化・事業化する余地は急速に失われる恐れがある」と明示しています。バイオものづくりの技術プラットフォーム（ゲノム設計ツール・AI設計支援・バイオファウンドリ）が特定国に集中すれば、その国の規格・技術・知財に依存する構造が生じます。現状、ゲノム設計ツールのGinkgo Bioworks（米）・Twist Bioscience（米）等の米国プラットフォーム企業が国際市場で先行しています。</p>
+
+            <h3>「バイオエタノール等の国内生産基盤構築」という安全保障的需要</h3>
+            <p>同資料は「経済安全保障や脱炭素の観点から国内生産基盤の構築が肝要となる領域（バイオエタノール等）における需要創出および供給能力拡充を進め、中長期的な外部依存リスクの低減と経済の自律性確保を図る」と明示しています。航空燃料（SAF・持続可能な航空燃料）のバイオ由来品については国際的な需要創出の動きが本格化しており、日本においても2030年に国内航空燃料の10%をSAFにする目標（国交省）が設定されています。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH8 -->
+    <div class="chapter" id="ch8">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 08</span>
+                <h2>外部環境の整理</h2>
+            </div>
+
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>章</th>
+                        <th>指標名</th>
+                        <th>数値</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第1章</td>
+                        <td>バイオ産業の経済効果（ホワイトバイオ中心）</td>
+                        <td>約165兆円（2030〜2040年）</td>
+                        <td>McKinsey／経産省計算</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>バイオものづくり産業 世界市場規模予測</td>
+                        <td>2040年150兆円</td>
+                        <td>アックスタイムズ 2025年7月</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>合成生物学・次世代バイオプラットフォーム市場</td>
+                        <td>245.8億ドル（2024年）→1,929.5億ドル（2034年）CAGR 28.63%</td>
+                        <td>GII市場調査レポート</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>日本企業の売上目標</td>
+                        <td>11.9兆円（2040年・政策目標として示されている）</td>
+                        <td>資料1 2026年3月</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>日本のバイオ分野への予算措置</td>
+                        <td>2022年度に総額1兆円規模の大型予算</td>
+                        <td>バイオエコノミー戦略 2024年6月</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>米国の試算</td>
+                        <td>今後10年以内に製造業の世界生産の約1/3を置き換え・約30兆ドル（約4,000兆円）</td>
+                        <td>米国大統領令ファクトシート 2022年9月</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>先行商用化地域の優位</td>
+                        <td>米：トウモロコシ、南米：サトウキビ、中：大規模生産能力</td>
+                        <td>資料2 2026年3月</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>官民投資の具体金額</td>
+                        <td>「今夏の日本成長戦略の策定に向けて取りまとめ予定」（未確定）</td>
+                        <td>資料2 2026年3月</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="data-box">
+                <div class="box-title">構造的に固定されやすい要素</div>
+                <ul>
+                    <li>「既存の石油由来製品との価格差」という競争上の不利は、スケールアップと技術高度化・初期需要創出が進むまで変化しない</li>
+                    <li>「安価な糖原料・労働力を持つ地域の先行商用化」という地政学的優位は日本の政策支援だけでは短期に解消しない</li>
+                    <li>「ウェット領域の成熟度が競争力を決定する」という産業特性は、その成熟度が変化しない限り続く</li>
+                    <li>米国・中国の大規模投資と先行するプラットフォーム企業の優位は短期で逆転しない</li>
+                    <li>「消費者受容性の不安定さ」はGMO・ゲノム編集製品への理解促進に時間を要するため短期では解消しない</li>
+                    <li>「脱炭素トランジションの進捗が需要を左右する」という外部依存構造はGX政策の動向次第で変化し得る</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜7章に記載の各統計の集約</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH9 -->
+    <div class="chapter" id="ch9">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 09</span>
+                <h2>内部環境編への橋渡し</h2>
+            </div>
+            <div class="data-box">
+                <div class="box-title">外部環境編の整理（5点）</div>
+                <ul>
+                    <li>バイオものづくり（ホワイトバイオ中心）の経済効果は2030〜2040年で約165兆円（McKinsey／経産省）・2040年の日本企業売上目標11.9兆円（資料1）。市場の将来性に各国が国家投資を競っている</li>
+                    <li>米国大統領令（2022年）が「今後10年で製造業世界生産の約1/3・約30兆ドル規模」という分析を示し、米中欧が兆円単位の国家投資を実施中。日本は2022年度に1兆円規模の予算を措置済み</li>
+                    <li>日本の勝ち筋は「ウェット領域（発酵産業蓄積・エンジニアリング）の技術優位＋AI/ドライ領域の強化融合」。ただし商業化は実証・パイロット段階が中心で量産はこれから</li>
+                    <li>主な課題：①既存製品との価格差（コスト高）②スケールアップの設備投資リスク（民間投資が進みにくい）③人材不足（ウェット技術・AI素養・経営の複合人材）④消費者受容性の不安定さ</li>
+                    <li>官民投資の具体的金額・時期は「2026年夏の日本成長戦略取りまとめまでに提示予定」（資料2・2026年3月）と明示されており、現時点では未確定</li>
+                </ul>
+            </div>
+            <div class="next-box">
+                <div class="next-label">NEXT — 内部環境編で整理すること</div>
+                <h3>外圧がプレイヤー構成・収益・人材にどう現れるか</h3>
+                <ul>
+                    <li>味の素・協和キリン・東レ・積水化学・カネカ等の国内主要プレイヤーとバイオものづくりの位置づけ</li>
+                    <li>ShibauraInstitute・Ginkgo Bioworks等の海外プラットフォームとの関係</li>
+                    <li>SIPバイオものづくり・バイオファウンドリ拠点（理化学研究所・産総研等）の研究開発体制の実態</li>
+                    <li>バイオスタートアップ（Spiber・Euglena・Green Earth Institute等）の事業化進捗と資金調達状況</li>
+                    <li>バイオものづくり人材（ウェット技術者・AI/バイオインフォマティクス人材）の市場実態と年収</li>
+                    <li>CAPEX支援・公的受託ファウンドリ設置という政策手段の現状</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポートの総括</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <div class="container">
+            <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。市場規模数値は各調査機関の定義・算定方法・集計対象が異なるため単純比較はできません。「政策目標として示されている」と注記した数値は政府が目標として掲げた値であり達成を保証するものではありません。官民投資の具体的金額は2026年夏の取りまとめ予定であり本時点では未確定です。データ基準時点は2026年04月です。</p>
+            <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年04月 産業構造分析レポート ── バイオものづくり（外部環境編）</p>
+            <p style="margin-top:8px;">
+                <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
