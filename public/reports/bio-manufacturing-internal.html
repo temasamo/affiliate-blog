@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業界分析｜高市政権「戦略17分野」合成生物学・バイオ バイオものづくり（内部環境編）</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+    :root {
+        --ink: #0f0f0e;
+        --paper: #f5f2ed;
+        --cream: #ede9e1;
+        --accent: #c84b2f;
+        --muted: #6b6760;
+        --rule: #c9c4bb;
+        --highlight: #fff8e6;
+    }
+
+    *, * ::before, * ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        border-bottom: 3px solid var(--accent);
+    }
+
+    .masthead-right {
+        color: var(--muted);
+    }
+
+    .hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 60px 40px 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200, 75, 47, 0.07) 4px, rgba(200, 75, 47, 0.07) 5px);
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        padding: 4px 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(20px, 3.2vw, 34px);
+        font-weight: 900;
+        line-height: 1.4;
+        max-width: 820px;
+        letter-spacing: 0.02em;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+        color: var(--accent);
+        font-style: normal;
+    }
+
+    .hero-meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+
+    .hero-badge {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 11px;
+        padding: 4px 12px;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.06em;
+    }
+
+    .data-notice {
+        background: rgba(200, 75, 47, 0.15);
+        border-left: 3px solid var(--accent);
+        padding: 10px 16px;
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .toc {
+        background: var(--cream);
+        border-top: 3px solid var(--ink);
+        border-bottom: 1px solid var(--rule);
+        padding: 32px 40px;
+    }
+
+    .toc h2 {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 16px;
+        text-transform: uppercase;
+    }
+
+    .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 6px 28px;
+    }
+
+    .toc-item {
+        font-size: 13px;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 3px 0;
+        border-bottom: 1px dashed var(--rule);
+        display: flex;
+        gap: 8px;
+    }
+
+    .toc-item:hover {
+        color: var(--accent);
+    }
+
+    .toc-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        flex-shrink: 0;
+        padding-top: 2px;
+    }
+
+    .chapter {
+        padding: 48px 40px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .chapter:nth-child(even) {
+        background: var(--cream);
+    }
+
+    .chapter-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .chapter-num {
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .chapter h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.4;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 10px;
+        flex: 1;
+    }
+
+    .chapter h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 24px 0 10px;
+        padding-left: 10px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .chapter p {
+        margin-bottom: 14px;
+    }
+
+    .connect-banner {
+        background: var(--ink);
+        border-left: 5px solid var(--accent);
+        padding: 16px 20px;
+        margin-bottom: 28px;
+        font-size: 13px;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .connect-banner strong {
+        color: var(--accent);
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 24px 0;
+    }
+
+    .stat-cell {
+        background: var(--paper);
+        padding: 18px 16px;
+        text-align: center;
+    }
+
+    .chapter:nth-child(even) .stat-cell {
+        background: #f0ece4;
+    }
+
+    .stat-cell .stat-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent);
+        line-height: 1.2;
+        display: block;
+    }
+
+    .stat-cell .stat-unit {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-top: 2px;
+    }
+
+    .stat-cell .stat-label {
+        font-size: 11px;
+        color: var(--ink);
+        display: block;
+        margin-top: 6px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .data-box {
+        background: var(--highlight);
+        border: 1px solid #e0d8c4;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 20px 0;
+    }
+
+    .data-box .box-title {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .data-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .data-box ul li {
+        padding: 5px 0 5px 16px;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+        position: relative;
+    }
+
+    .data-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .data-box ul li:last-child {
+        border-bottom: none;
+    }
+
+    .note-box {
+        background: rgba(200, 75, 47, 0.05);
+        border: 1px dashed var(--accent);
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .note-box strong {
+        color: var(--accent);
+    }
+
+    .alert-box {
+        background: rgba(200, 75, 47, 0.12);
+        border: 2px solid var(--accent);
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+    }
+
+    .alert-box .alert-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        margin-bottom: 8px;
+        display: block;
+        font-weight: 700;
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13px;
+    }
+
+    .summary-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .summary-table thead th {
+        padding: 10px 14px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+    }
+
+    .summary-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .summary-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .summary-table tbody td {
+        padding: 9px 14px;
+        vertical-align: top;
+    }
+
+    .summary-table td:first-child {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 12px;
+    }
+
+    .biz-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 12px;
+    }
+
+    .biz-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .biz-table thead th {
+        padding: 8px 12px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.06em;
+    }
+
+    .biz-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .biz-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .biz-table tbody td {
+        padding: 8px 12px;
+        vertical-align: top;
+        font-size: 12px;
+    }
+
+    .biz-table td:first-child {
+        font-weight: 700;
+    }
+
+    .biz-table .acc {
+        color: var(--accent);
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+    }
+
+    .next-box {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 28px 32px;
+        margin: 20px 0;
+        border-left: 5px solid var(--accent);
+    }
+
+    .next-box .next-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .next-box h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 17px;
+        margin-bottom: 12px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .next-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .next-box ul li {
+        padding: 4px 0 4px 14px;
+        font-size: 13px;
+        position: relative;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .next-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.06);
+        border: 1px solid var(--rule);
+        padding: 3px 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        color: var(--muted);
+        margin: 2px 3px;
+        letter-spacing: 0.04em;
+    }
+
+    .source-wrap {
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 1px dashed var(--rule);
+    }
+
+    .disclaimer {
+        background: var(--ink);
+        color: rgba(245, 242, 237, 0.5);
+        padding: 24px 40px;
+        font-size: 11px;
+        line-height: 1.7;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.03em;
+    }
+
+    .rule-thick {
+        border: none;
+        border-top: 3px solid var(--ink);
+        margin: 0;
+    }
+
+    .rule-thin {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .masthead {
+            flex-direction: column;
+            gap: 6px;
+            padding: 10px 16px;
+        }
+
+        .hero {
+            padding: 36px 16px 30px;
+        }
+
+        .chapter {
+            padding: 32px 16px;
+        }
+
+        .toc {
+            padding: 24px 16px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span>産業構造分析レポート</span>
+        <span class="masthead-right">2026年04月発行 ── 合成生物学・バイオ／バイオものづくり（内部環境編）</span>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-label">INDUSTRY ANALYSIS REPORT — INTERNAL ENVIRONMENT</div>
+            <h1>
+                業界分析｜高市政権「戦略17分野」
+                <br>
+                合成生物学・バイオ
+                <br>
+                <em>バイオものづくり</em>
+                （内部環境編）
+            </h1>
+            <div class="hero-meta">
+                <span class="hero-badge">就職・転職検討者向け</span>
+                <span class="hero-badge">株式投資家向け</span>
+                <span class="hero-badge">数字と事実のみ記載</span>
+            </div>
+            <div class="data-notice">本レポートのデータ基準時点：2026年04月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用</div>
+        </div>
+    </div>
+
+    <hr class="rule-thick">
+
+    <div class="toc">
+        <div class="container">
+            <h2>目次 — TABLE OF CONTENTS</h2>
+            <div class="toc-grid">
+                <a class="toc-item" href="#ch0">
+                    <span class="toc-num">00</span>
+                    この内部環境編の立ち位置
+                </a>
+                <a class="toc-item" href="#ch1">
+                    <span class="toc-num">01</span>
+                    業界内プレイヤー構成
+                </a>
+                <a class="toc-item" href="#ch2">
+                    <span class="toc-num">02</span>
+                    味の素——発酵技術100年の蓄積とバイオサイクル
+                </a>
+                <a class="toc-item" href="#ch3">
+                    <span class="toc-num">03</span>
+                    ユーグレナ——微細藻類からSAFへ
+                </a>
+                <a class="toc-item" href="#ch4">
+                    <span class="toc-num">04</span>
+                    Spiber——1,100億円調達と事業再編
+                </a>
+                <a class="toc-item" href="#ch5">
+                    <span class="toc-num">05</span>
+                    研究機関・公的インフラ
+                </a>
+                <a class="toc-item" href="#ch6">
+                    <span class="toc-num">06</span>
+                    収益構造の本質
+                </a>
+                <a class="toc-item" href="#ch7">
+                    <span class="toc-num">07</span>
+                    人材市場の実態
+                </a>
+                <a class="toc-item" href="#ch8">
+                    <span class="toc-num">08</span>
+                    構造的課題の所在
+                </a>
+                <a class="toc-item" href="#ch9">
+                    <span class="toc-num">09</span>
+                    誤解されやすいポイント
+                </a>
+                <a class="toc-item" href="#ch10">
+                    <span class="toc-num">10</span>
+                    内部環境の整理
+                </a>
+                <a class="toc-item" href="#ch11">
+                    <span class="toc-num">11</span>
+                    有料版への橋渡し
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <!-- CH0 -->
+    <div class="chapter" id="ch0">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <h2>この内部環境編の立ち位置</h2>
+            </div>
+            <div class="connect-banner">
+                <strong>外部環境編との接続：</strong>
+                外部環境編では、バイオものづくり産業の世界市場が2040年に150兆円規模・日本企業の売上目標11.9兆円（2040年・政策目標）・米国「製造業の約1/3を置き換える」・日本は2022年度に1兆円規模の予算措置・ウェット領域（発酵産業蓄積）に日本の勝ち筋・既存製品との価格差・スケールアップ設備投資リスク・消費者受容性の不安定さという4つの構造的課題を整理しました。本編ではその前提のもとで「外部の構造がこの産業のプレイヤー・収益・人材にどのような特性として現れているか」を数字と事実で記述します。
+                    
+            </div>
+            <div class="data-box">
+                <div class="box-title">本編でやること／やらないこと</div>
+                <ul>
+                    <li>【やること】味の素（2802）のバイオ＆ファインケミカル事業における発酵技術の実態と財務規模を記述する</li>
+                    <li>【やること】ユーグレナ（2931）の売上・従業員・バイオ燃料「サステオ」の事業化進捗を整理する</li>
+                    <li>【やること】Spiber（スパイバー・非上場）の1,100億円調達・2024年12月期財務・2026年3月の事業再編の実態を記述する</li>
+                    <li>【やること】理化学研究所・産総研・SIPバイオものづくり等の公的研究インフラの位置づけを整理する</li>
+                    <li>【やること】バイオものづくり人材（ウェット技術者・バイオインフォマティクス人材）の市場実態を整理する</li>
+                    <li>【やらないこと】特定銘柄の投資推奨・勝ち負けの断定・良し悪しの評価</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート基本方針</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH1 -->
+    <div class="chapter" id="ch1">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <h2>業界内プレイヤー構成</h2>
+            </div>
+            <table class="biz-table">
+                <thead>
+                    <tr>
+                        <th>業態</th>
+                        <th>代表プレイヤー</th>
+                        <th>バイオものづくりでの役割</th>
+                        <th>事業化ステージ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>大手食品・化学（発酵技術保有）</td>
+                        <td class="acc">味の素（2802）、協和キリン（4151）、カネカ（4118）、東レ（3402）、積水化学（4204）</td>
+                        <td>100年超の発酵技術蓄積を活用したアミノ酸・有機酸・機能性素材のバイオ生産。バイオ転換（石油→バイオマス原料への製法切替）を進行中の素材・化学品製造。</td>
+                        <td>商用生産段階（アミノ酸等一部）〜スケールアップ段階（バイオ素材）</td>
+                    </tr>
+                    <tr>
+                        <td>バイオ燃料・エネルギー</td>
+                        <td class="acc">ユーグレナ（2931）、出光興産、ENEOS</td>
+                        <td>微細藻類・廃食油・バイオマス等を原料とする持続可能な航空燃料（SAF）・バイオディーゼル燃料の製造・実証・商用化。国内SAF普及の担い手として政策的に重要な位置づけ。</td>
+                        <td>実証〜初期商用段階</td>
+                    </tr>
+                    <tr>
+                        <td>バイオ素材スタートアップ</td>
+                        <td class="acc">Spiber（スパイバー・非上場・再編中）、Green Earth Institute（非上場・味の素出資）</td>
+                        <td>合成生物学・スマートセル設計による新規機能性素材（構造タンパク質繊維等）・アンモニア生物的固定（GHG削減）の実用化。技術的先鋒役だが商用収益化は課題。</td>
+                        <td>実証〜初期商用段階（収益化途上）</td>
+                    </tr>
+                    <tr>
+                        <td>公的研究機関</td>
+                        <td class="acc">理化学研究所（RIKEN）、産業技術総合研究所（産総研）、農業・食品産業技術総合研究機構（農研機構）</td>
+                        <td>スマートセル開発・バイオファウンドリ整備・DBTLサイクルの技術基盤提供。SIP（戦略的イノベーション創造プログラム）「バイオものづくり」の実施機関。</td>
+                        <td>研究・実証段階</td>
+                    </tr>
+                    <tr>
+                        <td>大手化学・エンジニアリング（設備側）</td>
+                        <td class="acc">千代田化工建設、日揮、東洋エンジニアリング</td>
+                        <td>バイオリアクター設計・発酵プラント建設・スケールアップエンジニアリング。バイオものづくりの産業化には大型設備投資が不可欠で、エンジニアリング会社が重要な役割を果たす。</td>
+                        <td>個別案件ベースで受注</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="source-wrap">
+                <span class="source-tag">各社公開情報・経産省「バイオものづくり革命の実現」（2023年4月）</span>
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH2 -->
+    <div class="chapter" id="ch2">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <h2>味の素——発酵技術100年の蓄積とバイオサイクル</h2>
+            </div>
+
+            <h3>「アミノサイエンス®」という独自フレームと発酵の基盤</h3>
+            <p>味の素（2802）は100年以上にわたるアミノ酸の研究・発酵技術の蓄積を持ち、これを「アミノサイエンス®」として体系化しています（味の素グループ公式）。タイ・ブラジル等の海外工場でサトウキビ・キャッサバ等から糖を取り出し、発酵槽で微生物にアミノ酸（グルタミン酸・リジン等）を生産させるプロセスは、バイオものづくりの商用生産が既に確立した事例です。</p>
+            <p>味の素グループは世界31か国・地域で事業を展開しており、研究開発要員は世界全体で約1,700名・うち博士号取得者500名超を擁しています（味の素グループ公式）。2024年度（2025年3月期）のR&D投資計画は約309億円で、前年度の287億円から約7.7%増加しています（TechnoProducer・2025年12月）。</p>
+
+            <h3>バイオサイクル——発酵残渣のほぼ100%を資源として活用</h3>
+            <p>味の素グループの発酵工場（タイ・ブラジル等）では、発酵後に残る発酵母液（栄養素を豊富に含む）を廃棄せず「コプロドクト（Co-product）」として有機肥料・飼料に加工し、現地農家に還元しています。コプロドクトのほぼ100%（約160万トン/年）を資源として活用する「バイオサイクル」を実装済みです（TechnoProducer・2025年12月）。これは外部環境編で「国内資源の活用拡大」「脱化石資源依存」として示された政策目標の実例となっています。</p>
+
+            <h3>次世代バイオ技術——ゲノム編集・カーボンニュートラルなアミノ酸生産菌</h3>
+            <p>味の素はバイオスタートアップのLogomix社との共同研究による「カーボンニュートラルなアミノ酸生産菌株」のゲノム編集開発を進めています。またオンサイトでのアンモニア生産技術の導入検討など、GHG削減に向けた技術開発が進行中です（TechnoProducer・2025年12月）。</p>
+            <p>子会社のGreen Earth Institute（GEI）は味の素・東京工業大学・VCが2017年に設立したバイオベンチャーであり、生物的窒素固定（アンモニアの微生物による生産）技術を開発しています。化学的アンモニア合成（ハーバー・ボッシュ法）は世界の総エネルギー消費の約2%を占めるとされており、バイオ的代替の実現はGHG削減に大きな意味を持ちます。</p>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">世界31か国</span>
+                    <span class="stat-unit">・地域</span>
+                    <span class="stat-label">味の素グループ 事業展開規模</span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">約1,700名</span>
+                    <span class="stat-unit">（博士500名超）</span>
+                    <span class="stat-label">味の素グループ R&D人員</span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">約309億円</span>
+                    <span class="stat-unit">（2024年度計画）</span>
+                    <span class="stat-label">味の素グループ R&D投資</span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">約160万トン/年</span>
+                    <span class="stat-unit">（ほぼ100%活用）</span>
+                    <span class="stat-label">
+                        味の素 コプロドクト資源化
+                        <br>
+                        （バイオサイクル）
+                    </span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">味の素グループ公式「研究開発」「バイオ・ファイン研究所」</span>
+                <span class="source-tag">TechnoProducer「味の素の知財戦略」（2025年12月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH3 -->
+    <div class="chapter" id="ch3">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <h2>ユーグレナ——微細藻類からSAFへ</h2>
+            </div>
+
+            <h3>売上476億円・従業員1,168名——バイオ燃料を軸に展開</h3>
+            <p>ユーグレナ（2931）の2024年12月期の売上高は476億円・従業員数は1,168名（連結・2024年12月末）です（株式会社ユーグレナ企業情報・2024年）。2005年に世界初のユーグレナ（ミドリムシ）屋外大量培養を実現して以来、食品・化粧品・バイオ燃料の3軸で事業を展開しています。2012年東証マザーズ上場・2014年東証一部上場を達成しています。</p>
+
+            <h3>バイオ燃料「サステオ」——SAF・バイオディーゼルの商用化</h3>
+            <p>ユーグレナのバイオ燃料ブランド「サステオ」は、使用済み食用油や微細藻類由来のバイオジェット・ディーゼル燃料です。2021年にはサステオを利用した初フライトを実現しています。2024年12月には、HVO（水素化植物油）51%混合の次世代バイオディーゼル燃料を開発し、軽油規格に適合する混合比率として国内最高水準を達成しました（ユーグレナ公式・2024年12月）。</p>
+            <p>2024年には、PETRONAS（マレーシア国営石油）・Enilive（ENIグループのバイオ燃料事業）との3社でマレーシアにおけるバイオ燃料製造プラントの建設・運営プロジェクトへの最終投資決定を完了しています（ユーグレナ公式・2024年）。2025年2月には「持続可能な航空燃料（SAF）の導入促進に向けた官民協議会」の構成員となっています。</p>
+            <p>2025年4月には、国産ゲノム編集技術「CRISPR-Cas3」を用いたユーグレナの品種改良に成功したことを発表しており、生産性向上に向けた技術開発が続いています（ユーグレナ公式・2025年4月）。</p>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">476億円</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        ユーグレナ 売上高
+                        <br>
+                        （2024年12月期）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">1,168名</span>
+                    <span class="stat-unit">（連結）</span>
+                    <span class="stat-label">
+                        ユーグレナ 従業員数
+                        <br>
+                        （2024年12月末）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">HVO51%混合</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        次世代バイオディーゼル
+                        <br>
+                        「サステオ」（2024年12月）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">
+                        2024年最終
+                        <br>
+                        投資決定
+                    </span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        マレーシアでのバイオ燃料
+                        <br>
+                        製造プラント（PETRONAS・Eniliveと3社）
+                    </span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">株式会社ユーグレナ企業情報（2024年12月末）</span>
+                <span class="source-tag">ユーグレナ公式プレスリリース各種（2024〜2025年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH4 -->
+    <div class="chapter" id="ch4">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 04</span>
+                <h2>Spiber——1,100億円調達と事業再編</h2>
+            </div>
+
+            <div class="alert-box">
+                <span class="alert-label">⚠ 本章は2026年3〜4月の事業再編を反映した最新情報です</span>
+
+                      Spiberは2026年3月に私的整理に入り、事業の一部をCRANE株式会社へ譲渡する大規模な組織再編を実施しました。以下は2026年04月時点の情報です。
+                    
+            </div>
+
+            <h3>創業以来累計約1,100億円の調達——日本バイオ・ヘルスケア分野で最大</h3>
+            <p>Spiber（スパイバー株式会社・2007年創業・山形県鶴岡市）は創業以来、国内外の企業・機関から累計約1,100億円を調達しています（日経・報道）。これは日経バイオテクが集計した国内バイオ・ヘルスケアスタートアップの累積調達額ランキングで2位以下を大きく引き離した1位です（日経バイオテク「バイオ・ヘルスケアスタートアップ総覧 2023-2024」）。</p>
+            <p>植物由来のバイオマスを主な原料に、独自の微生物発酵（ブリューイング）プロセスで製造する人工構造タンパク質素材「Brewed Protein™（ブリュード・プロテイン）」を開発・生産してきました。タイ・ラヨン県に量産プラントを持ち、ノースフェイス・バーバリー等15ブランドへの採用実績を持ちます（Spiber公式）。</p>
+
+            <h3>2024年12月期財務——売上4億円・純損失295億円・GC注記</h3>
+            <p>2024年12月期（単体）の決算公告では、売上高（営業収益）4億1,400万円に対し、営業損失48億9,000万円・純損失295億円という財務内容が明示されています（FACTA・2025年6月）。純損失が営業損失を大きく上回ったのは、米国で建設中だった工場資産に関連する特別損失が計上されたためです。また財務諸表の注記に「継続企業の前提（ゴーイング・コンサーン）に関する注記（GC注記）」が付されており、2025年12月28日を期限とする362億円の借入金返済に懸念が示されていました。</p>
+
+            <h3>2026年3月——私的整理とCRANEへの事業譲渡・新生Spiberの発足</h3>
+            <p>Spiberは2026年3月に私的整理に入り、Brewed Protein事業（US事業など一部を除く）をCRANE株式会社へ譲渡しました（STARTUP DB・2026年3月）。2026年4月1日には、旧Spiberの一部事業を承継した「新生Spiber」として新たな経営体制のもとで始動しています。2025年12月には、ソフトバンクグループ孫正義氏の長女・川名麻耶氏が率いるBOLDとの事業支援契約も公表されています。</p>
+
+            <div class="note-box">
+                <strong>【Spiberが示す構造的課題】</strong>
+                Spiberのケースは、バイオものづくりスタートアップが直面する「技術先行・商業化遅延・スケールアップコスト超過」という構造的課題を具体的に示しています。創業以来1,100億円超を調達しながら2024年時点で売上4億円という状況は、外部環境編で指摘した「既存製品との価格差」「スケールアップ設備投資リスク」「長期・高リスクな投資回収構造」の実例です。この事例は業界全体の参照点として重要な意味を持ちます。
+                    
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">FACTA「バイオユニコーン『Spiber』途方もない大赤字」（2025年6月）</span>
+                <span class="source-tag">STARTUP DB「Spiber」（2026年3月更新）</span>
+                <span class="source-tag">庶民のIPO「Spiber（スパイバー）の上場はいつ？」（2026年4月更新）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH5 -->
+    <div class="chapter" id="ch5">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 05</span>
+                <h2>研究機関・公的インフラ</h2>
+            </div>
+
+            <h3>SIPバイオものづくり——公的研究基盤の中核</h3>
+            <p>内閣府・JST（科学技術振興機構）が推進するSIP（戦略的イノベーション創造プログラム）「バイオものづくり」は、理化学研究所（RIKEN）・産業技術総合研究所（産総研）・農業・食品産業技術総合研究機構（農研機構）等を中核として進められています。スマートセル開発・バイオファウンドリ整備・DBTLサイクルの高速化・実証生産設備の整備が主要課題です。</p>
+            <p>理化学研究所は「バイオリソース研究センター」でのスマートセル関連の生物素材の保存・提供・研究開発を担っており、産総研は「バイオメディカル研究部門」でバイオファウンドリの整備・運用を進めています。これらの研究機関は日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）で「公的受託ファウンドリの設置」として政策課題に明示されたインフラ整備の実施主体です。</p>
+
+            <h3>慶應義塾大学先端生命科学研究所（鶴岡タウンキャンパス）——Spiberの起源</h3>
+            <p>Spiberは慶應義塾大学先端生命科学研究所（山形県鶴岡市・IAB）から生まれた大学発スタートアップです。IABは2001年に設立され、代謝工学・合成生物学・バイオインフォマティクスの分野で国際的に高い評価を受けており、Spiberをはじめとする複数のバイオスタートアップの拠点となっています。「鶴岡モデル」と呼ばれる大学・産業・地域の連携による産業化エコシステムは、日本のバイオものづくり産業化の先行事例として注目されています。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">内閣府SIP「バイオものづくり」公式</span>
+                <span class="source-tag">理化学研究所・産総研各公式サイト</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH6 -->
+    <div class="chapter" id="ch6">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 06</span>
+                <h2>収益構造の本質</h2>
+            </div>
+
+            <h3>「大手の安定収益×スタートアップの高リスク投資」という二重構造</h3>
+            <p>日本のバイオものづくり産業の収益構造は2つの層に分かれています。①「既存の商用バイオ生産事業（発酵アミノ酸・有機酸等）で安定収益を持つ大手（味の素等）」と②「新規バイオ素材・バイオ燃料への大規模先行投資を行いながら収益化途上のスタートアップ・新規事業（Spiber・ユーグレナのSAF部門等）」です。</p>
+            <p>大手のバイオ関連事業（発酵）は技術的成熟度が高く、安定した収益基盤を持っています。一方、新規バイオ素材・バイオ燃料は外部環境編で指摘した「既存製品との価格差」「スケールアップリスク」により、長期間の赤字・先行投資が続く構造です。Spiberの2024年12月期（売上4億円・純損失295億円）はその極端な例です。</p>
+
+            <h3>「グリーン公共調達」が収益化の鍵</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「グリーン調達（初期需要喚起）」を政策手段として明示しています。SAF（持続可能な航空燃料）については国交省が「2030年に国内航空燃料の10%をSAFに」という目標を設定しており、JAL・ANAがSAF購入契約を締結しています。航空会社による購入義務・目標が法制化されれば、バイオ燃料事業者の収益基盤が改善する構造があります。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">国交省「SAF導入促進策」各種</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH7 -->
+    <div class="chapter" id="ch7">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 07</span>
+                <h2>人材市場の実態</h2>
+            </div>
+
+            <h3>求められる3つの専門性の組み合わせ</h3>
+            <div class="data-box">
+                <div class="box-title">バイオものづくり分野の主要職種と必要専門性</div>
+                <ul>
+                    <li>【ウェット技術者（発酵・培養）】微生物・細胞の培養条件設計・スケールアップ・発酵槽の運転管理。味の素・ユーグレナ・協和キリン等の大手と、バイオスタートアップ双方で需要が高い。生化学・発酵工学・微生物学バックグラウンドが前提。日本の発酵産業の蓄積から輩出されてきたが、合成生物学の高度化に伴いゲノム編集・代謝設計の知識が追加で求められるようになっている。</li>
+                    <li>【バイオインフォマティクス・AI/ドライ研究者】ゲノムデータ解析・代謝フラックス解析・AIによるスマートセル設計。DBTLサイクルの高速化に不可欠。情報工学・数理生物学・計算科学バックグラウンドと生物学の複合知識が必要で、日本では特に希少。理化学研究所・産総研・各大学の競争倍率が高い。</li>
+                    <li>【スケールアップエンジニア（プロセスエンジニアリング）】ラボスケールの実験条件を数十〜数百倍の工業スケールに移行させる専門職。発酵化学エンジニアリング・反応工学の知識が必要。千代田化工建設・日揮・東洋エンジニアリング等に在籍するほか、大手化学メーカーの生産技術部門でも需要がある。</li>
+                    <li>【バイオ素材事業開発・知財管理】新規バイオ素材の用途開拓・顧客開拓・特許戦略。バイオ知識と事業開発・知財の複合人材。スタートアップ・大手化学の事業戦略部門での需要が増加している。</li>
+                </ul>
+            </div>
+
+            <h3>「ウェット×ドライ×スケールアップ」の複合人材が希少</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「ウェット技術（特に育種改良・培養）、スケールアップによる産業化、AI・デジタル技術への素養、経営管理といった複合的な能力を持った人材の不足」を明示しています。これらを一人で兼ね備える人材は国内外で極めて希少です。味の素グループのR&D要員約1,700名（博士号500名超）という規模は、この希少人材を長年にわたって組織的に育成してきた結果を示しています。</p>
+
+            <div class="note-box">
+                <strong>【注記】</strong>
+                バイオものづくり関連職種の具体的な年収水準は、企業規模・職種・ステージにより大きく異なります。大手（味の素・ユーグレナ等）の研究職は製造業の技術系水準（600〜900万円台）に準じると推定されますが、本時点で出典のある確定値がないため年収レンジの記載は省略します。
+                    
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">味の素グループ公式「研究開発人員」</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH8 -->
+    <div class="chapter" id="ch8">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 08</span>
+                <h2>構造的課題の所在</h2>
+            </div>
+
+            <h3>「Spiberの教訓」——スケールアップ失敗のリスク</h3>
+            <p>Spiberが示した問題の核心は「ラボ・パイロットスケールでの技術的成功が、工業スケールでの商用生産コストを保証しない」という点です。タイの量産プラント建設・米国工場建設への大規模投資を進めながらも、コスト競争力のある商用生産が実現できず、2024年に売上4億円・純損失295億円に至りました。これは外部環境編が指摘した「技術・生産プロセス開発段階における過大な設備投資リスク」が現実化した事例です。</p>
+
+            <h3>「初期需要不足」——官需なき商業化の困難</h3>
+            <p>バイオものづくり製品の商業化には、既存の石油由来製品に対してコスト競争力を持つか、価格差を上回る付加価値・需要創出が必要です。日本では現時点でグリーン公共調達の義務化・購入支援が限定的であり、民間の初期需要だけで商業化を進めるには厳しい価格環境が続いています。日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）が「公共調達等による初期需要創出」を政策課題として明示しているのは、この実態を受けてのものです。</p>
+
+            <h3>「スタートアップと既存大手の連携の難しさ」</h3>
+            <p>バイオものづくりの産業化には、スタートアップの技術開発力と大手企業・エンジニアリング会社の設備・資金・市場アクセスの組み合わせが理想的です。しかし「大手は技術リスクを取りにくい」「スタートアップは大手の意思決定速度に合わない」という組織文化の差から、効果的な連携が難しいケースが多い実態があります。Spiberがカーライルグループ等から多額の資金調達を続けながらも産業化に至らなかった経緯は、連携の難しさを象徴しています。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">FACTA「バイオユニコーン『Spiber』途方もない大赤字」（2025年6月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH9 -->
+    <div class="chapter" id="ch9">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 09</span>
+                <h2>誤解されやすいポイント</h2>
+            </div>
+            <div class="data-box">
+                <div class="box-title">誤解されやすいポイント（4点）</div>
+                <ul>
+                    <li>【「日本の発酵産業の強み＝バイオものづくりの競争力確立済み」】味の素のアミノ酸発酵は商用確立済みですが、これは特定の産業用途（食品・飼料用アミノ酸等）に限られます。バイオプラスチック・バイオ素材・バイオ燃料等の新規バイオものづくりは実証〜初期商用段階であり、「発酵産業の蓄積＝新規バイオものづくりの競争力」とは直結しません。</li>
+                    <li>【「Spiberの1,100億円調達は業界の健全な成長の証拠」】Spiberは事業再編に至っており、1,100億円調達と事業成功は別の話です。バイオスタートアップへの大規模投資が常に商業化につながるわけではなく、Spiberのケースはスケールアップリスクの現実例として整理する必要があります。</li>
+                    <li>【「ユーグレナ＝バイオ燃料専業」】ユーグレナ（2931）の主力事業は食品（ユーグレナ配合の健康食品・サプリメント）と化粧品です。バイオ燃料「サステオ」は重要な成長事業ですが、2024年12月期の売上476億円の主要部分は食品・化粧品です。「ユーグレナ＝バイオ燃料企業」という理解は不正確です。</li>
+                    <li>【「バイオものづくりの官民投資額は既に確定している」】日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「官民投資の具体像・定量的インパクトは今夏の日本成長戦略の策定に向けて取りまとめ予定」と明示しており、バイオものづくり分野の官民投資の具体的金額は2026年04月時点では未確定です。</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜8章の総括</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH10 -->
+    <div class="chapter" id="ch10">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 10</span>
+                <h2>内部環境の整理</h2>
+            </div>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>章</th>
+                        <th>指標名</th>
+                        <th>数値・事実</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第2章</td>
+                        <td>味の素グループ 事業展開</td>
+                        <td>世界31か国・地域・R&D人員約1,700名（博士500名超）</td>
+                        <td>味の素グループ公式</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>味の素グループ R&D投資</td>
+                        <td>約309億円（2024年度計画・前年度比+7.7%）</td>
+                        <td>TechnoProducer 2025年12月</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>味の素 バイオサイクル</td>
+                        <td>コプロドクトほぼ100%（約160万トン/年）を資源化（タイ・ブラジル等）</td>
+                        <td>TechnoProducer 2025年12月</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>ユーグレナ 売上高</td>
+                        <td>476億円（2024年12月期）</td>
+                        <td>ユーグレナ企業情報 2024年12月末</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>ユーグレナ 従業員数</td>
+                        <td>1,168名（連結・2024年12月末）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>ユーグレナ マレーシア投資</td>
+                        <td>2024年にPETRONAS・Eniliveとバイオ燃料製造プラントへの最終投資決定完了</td>
+                        <td>ユーグレナ公式 2024年</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>Spiber 累計調達額</td>
+                        <td>創業以来約1,100億円（日本バイオ・ヘルスケアスタートアップ1位）</td>
+                        <td>日経バイオテク・日経</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>Spiber 2024年12月期</td>
+                        <td>売上4億1,400万円・営業損失48億9,000万円・純損失295億円・GC注記</td>
+                        <td>FACTA 2025年6月</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>Spiber 事業再編</td>
+                        <td>2026年3月に私的整理・Brewed Protein事業をCRANE株式会社へ譲渡。4月1日に新体制始動</td>
+                        <td>STARTUP DB 2026年3月</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="data-box">
+                <div class="box-title">構造的に固定されやすい要素</div>
+                <ul>
+                    <li>味の素の「発酵アミノ酸の商用大規模生産」という技術・設備的基盤は、他社が同規模に達するまで変化しない</li>
+                    <li>「バイオものづくりのスケールアップリスクが高い」という産業特性は、技術成熟とインフラ整備が進むまで続く</li>
+                    <li>ユーグレナのSAFは2024年の最終投資決定が完了しており、マレーシア工場の建設・稼働スケジュールが固定されている</li>
+                    <li>「バイオインフォマティクス×ウェット×スケールアップの複合人材が希少」という構造は、育成に時間を要するため短期では解消しない</li>
+                    <li>SIPバイオものづくり・バイオファウンドリの公的研究インフラは2022年度の1兆円規模予算措置により整備が進んでいる</li>
+                    <li>官民投資の具体金額は2026年夏の日本成長戦略取りまとめまでは未確定という状態が続く</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜9章の集約</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH11 -->
+    <div class="chapter" id="ch11">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 11</span>
+                <h2>有料版への橋渡し</h2>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR CAREER — 就活・転職向け有料版</div>
+                <h3>味の素・ユーグレナ・スタートアップ・公的機関、どこで関わるか</h3>
+                <ul>
+                    <li>味の素グループのバイオ＆ファインケミカル事業部門と食品事業部門、それぞれのキャリアパス・処遇の具体的比較</li>
+                    <li>ユーグレナのSAF・バイオ燃料部門と食品・化粧品部門、事業ステージによる職種・働き方の違い</li>
+                    <li>理化学研究所・産総研のバイオものづくり研究ポジション——任期付き研究員・テニュアトラックの実態と年収水準</li>
+                    <li>バイオインフォマティクス・AI/ドライ研究者の転職市場——大手製薬・化学・食品vs.スタートアップの処遇比較</li>
+                    <li>鶴岡モデル（慶應IAB発スタートアップ）等の地方バイオスタートアップに関わるキャリアの実態</li>
+                </ul>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR INVESTMENT — 投資判断向け有料版</div>
+                <h3>上場バイオものづくり関連企業の「バイオ事業」をどう読むか</h3>
+                <ul>
+                    <li>味の素（2802）——バイオ＆ファインケミカル系事業がどの程度全社業績に寄与しているか・ABF（半導体材料）との関係性</li>
+                    <li>ユーグレナ（2931）——SAF事業の収益化タイムラインと食品・化粧品事業の黒字転換状況の読み方</li>
+                    <li>カネカ（4118）——バイオプラスチックPHBH（Kaneka Biodegradable Polymer PHBH）の事業化進捗と収益への反映時期</li>
+                    <li>Spiberの事業再編後（CRANE株式会社）の動向——新体制下での事業継続と資金調達状況</li>
+                    <li>2026年夏の「日本成長戦略」取りまとめで官民投資が確定した場合の受益企業の特定方法</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <div class="container">
+            <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。Spiberの財務情報は公開された決算公告・報道に基づきますが、非上場企業であり詳細な財務情報は限定的です。ユーグレナ・味の素等の事業詳細は各社公開情報に基づきます。「政策目標として示されている」と注記した数値は政府が目標として掲げた値であり達成を保証するものではありません。官民投資の具体的金額は2026年夏の取りまとめ予定であり本時点では未確定です。データ基準時点は2026年04月です。</p>
+            <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年04月 産業構造分析レポート ── バイオものづくり（内部環境編）</p>
+            <p style="margin-top:8px;">
+                <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
