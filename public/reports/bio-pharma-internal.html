@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業界分析｜高市政権「戦略17分野」合成生物学・バイオ バイオ医薬品・再生医療等製品等（内部環境編）</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+    :root {
+        --ink: #0f0f0e;
+        --paper: #f5f2ed;
+        --cream: #ede9e1;
+        --accent: #c84b2f;
+        --muted: #6b6760;
+        --rule: #c9c4bb;
+        --highlight: #fff8e6;
+    }
+
+    *, * ::before, * ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        border-bottom: 3px solid var(--accent);
+    }
+
+    .masthead-right {
+        color: var(--muted);
+    }
+
+    .hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 60px 40px 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200, 75, 47, 0.07) 4px, rgba(200, 75, 47, 0.07) 5px);
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        padding: 4px 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(20px, 3.2vw, 34px);
+        font-weight: 900;
+        line-height: 1.4;
+        max-width: 820px;
+        letter-spacing: 0.02em;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+        color: var(--accent);
+        font-style: normal;
+    }
+
+    .hero-meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+
+    .hero-badge {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 11px;
+        padding: 4px 12px;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.06em;
+    }
+
+    .data-notice {
+        background: rgba(200, 75, 47, 0.15);
+        border-left: 3px solid var(--accent);
+        padding: 10px 16px;
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .toc {
+        background: var(--cream);
+        border-top: 3px solid var(--ink);
+        border-bottom: 1px solid var(--rule);
+        padding: 32px 40px;
+    }
+
+    .toc h2 {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 16px;
+        text-transform: uppercase;
+    }
+
+    .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 6px 28px;
+    }
+
+    .toc-item {
+        font-size: 13px;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 3px 0;
+        border-bottom: 1px dashed var(--rule);
+        display: flex;
+        gap: 8px;
+    }
+
+    .toc-item:hover {
+        color: var(--accent);
+    }
+
+    .toc-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        flex-shrink: 0;
+        padding-top: 2px;
+    }
+
+    .chapter {
+        padding: 48px 40px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .chapter:nth-child(even) {
+        background: var(--cream);
+    }
+
+    .chapter-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .chapter-num {
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .chapter h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.4;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 10px;
+        flex: 1;
+    }
+
+    .chapter h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 24px 0 10px;
+        padding-left: 10px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .chapter p {
+        margin-bottom: 14px;
+    }
+
+    .connect-banner {
+        background: var(--ink);
+        border-left: 5px solid var(--accent);
+        padding: 16px 20px;
+        margin-bottom: 28px;
+        font-size: 13px;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .connect-banner strong {
+        color: var(--accent);
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 24px 0;
+    }
+
+    .stat-cell {
+        background: var(--paper);
+        padding: 18px 16px;
+        text-align: center;
+    }
+
+    .chapter:nth-child(even) .stat-cell {
+        background: #f0ece4;
+    }
+
+    .stat-cell .stat-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent);
+        line-height: 1.2;
+        display: block;
+    }
+
+    .stat-cell .stat-unit {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-top: 2px;
+    }
+
+    .stat-cell .stat-label {
+        font-size: 11px;
+        color: var(--ink);
+        display: block;
+        margin-top: 6px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .data-box {
+        background: var(--highlight);
+        border: 1px solid #e0d8c4;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 20px 0;
+    }
+
+    .data-box .box-title {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .data-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .data-box ul li {
+        padding: 5px 0 5px 16px;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+        position: relative;
+    }
+
+    .data-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .data-box ul li:last-child {
+        border-bottom: none;
+    }
+
+    .note-box {
+        background: rgba(200, 75, 47, 0.05);
+        border: 1px dashed var(--accent);
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .note-box strong {
+        color: var(--accent);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13px;
+    }
+
+    .summary-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .summary-table thead th {
+        padding: 10px 14px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+    }
+
+    .summary-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .summary-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .summary-table tbody td {
+        padding: 9px 14px;
+        vertical-align: top;
+    }
+
+    .summary-table td:first-child {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 12px;
+    }
+
+    .biz-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 12px;
+    }
+
+    .biz-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .biz-table thead th {
+        padding: 8px 12px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.06em;
+    }
+
+    .biz-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .biz-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .biz-table tbody td {
+        padding: 8px 12px;
+        vertical-align: top;
+        font-size: 12px;
+    }
+
+    .biz-table td:first-child {
+        font-weight: 700;
+    }
+
+    .biz-table .acc {
+        color: var(--accent);
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+    }
+
+    .next-box {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 28px 32px;
+        margin: 20px 0;
+        border-left: 5px solid var(--accent);
+    }
+
+    .next-box .next-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .next-box h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 17px;
+        margin-bottom: 12px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .next-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .next-box ul li {
+        padding: 4px 0 4px 14px;
+        font-size: 13px;
+        position: relative;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .next-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.06);
+        border: 1px solid var(--rule);
+        padding: 3px 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        color: var(--muted);
+        margin: 2px 3px;
+        letter-spacing: 0.04em;
+    }
+
+    .source-wrap {
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 1px dashed var(--rule);
+    }
+
+    .disclaimer {
+        background: var(--ink);
+        color: rgba(245, 242, 237, 0.5);
+        padding: 24px 40px;
+        font-size: 11px;
+        line-height: 1.7;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.03em;
+    }
+
+    .rule-thick {
+        border: none;
+        border-top: 3px solid var(--ink);
+        margin: 0;
+    }
+
+    .rule-thin {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .masthead {
+            flex-direction: column;
+            gap: 6px;
+            padding: 10px 16px;
+        }
+
+        .hero {
+            padding: 36px 16px 30px;
+        }
+
+        .chapter {
+            padding: 32px 16px;
+        }
+
+        .toc {
+            padding: 24px 16px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span>産業構造分析レポート</span>
+        <span class="masthead-right">2026年04月発行 ── 合成生物学・バイオ／バイオ医薬品・再生医療等製品等（内部環境編）</span>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-label">INDUSTRY ANALYSIS REPORT — INTERNAL ENVIRONMENT</div>
+            <h1>
+                業界分析｜高市政権「戦略17分野」
+                <br>
+                合成生物学・バイオ
+                <br>
+                <em>バイオ医薬品・再生医療等製品等</em>
+                （内部環境編）
+            </h1>
+            <div class="hero-meta">
+                <span class="hero-badge">就職・転職検討者向け</span>
+                <span class="hero-badge">株式投資家向け</span>
+                <span class="hero-badge">数字と事実のみ記載</span>
+            </div>
+            <div class="data-notice">本レポートのデータ基準時点：2026年04月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用</div>
+        </div>
+    </div>
+
+    <hr class="rule-thick">
+
+    <div class="toc">
+        <div class="container">
+            <h2>目次 — TABLE OF CONTENTS</h2>
+            <div class="toc-grid">
+                <a class="toc-item" href="#ch0">
+                    <span class="toc-num">00</span>
+                    この内部環境編の立ち位置
+                </a>
+                <a class="toc-item" href="#ch1">
+                    <span class="toc-num">01</span>
+                    業界内プレイヤー構成
+                </a>
+                <a class="toc-item" href="#ch2">
+                    <span class="toc-num">02</span>
+                    第一三共——ADC戦略と1兆8,862億円の実態
+                </a>
+                <a class="toc-item" href="#ch3">
+                    <span class="toc-num">03</span>
+                    富士フイルム——「バイオ医薬のTSMC」への1兆円投資
+                </a>
+                <a class="toc-item" href="#ch4">
+                    <span class="toc-num">04</span>
+                    AGC——日米欧10拠点のバイオCDMO
+                </a>
+                <a class="toc-item" href="#ch5">
+                    <span class="toc-num">05</span>
+                    再生医療スタートアップ——クオリプス・住友ファーマ
+                </a>
+                <a class="toc-item" href="#ch6">
+                    <span class="toc-num">06</span>
+                    収益構造の本質
+                </a>
+                <a class="toc-item" href="#ch7">
+                    <span class="toc-num">07</span>
+                    人材市場の実態
+                </a>
+                <a class="toc-item" href="#ch8">
+                    <span class="toc-num">08</span>
+                    構造的課題の所在
+                </a>
+                <a class="toc-item" href="#ch9">
+                    <span class="toc-num">09</span>
+                    誤解されやすいポイント
+                </a>
+                <a class="toc-item" href="#ch10">
+                    <span class="toc-num">10</span>
+                    内部環境の整理
+                </a>
+                <a class="toc-item" href="#ch11">
+                    <span class="toc-num">11</span>
+                    有料版への橋渡し
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <!-- CH0 -->
+    <div class="chapter" id="ch0">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <h2>この内部環境編の立ち位置</h2>
+            </div>
+            <div class="connect-banner">
+                <strong>外部環境編との接続：</strong>
+                外部環境編では、世界の医薬品市場が2022年で約200兆円・バイオ等が約4割・特許品市場が年平均9.6%で拡大・日本企業のシェアは6.9%（約11.6兆円）・ADC市場CAGR15.6%・日本2040年売上目標23.0兆円（政策目標）・韓国サムスンバイオロジクス等アジア諸外国が急速に体制強化・4つの構造的課題という外部構造を整理しました。本編ではその前提のもとで「外部の構造がこの産業のプレイヤー・収益・人材にどのような特性として現れているか」を数字と事実で記述します。
+                    
+            </div>
+            <div class="data-box">
+                <div class="box-title">本編でやること／やらないこと</div>
+                <ul>
+                    <li>【やること】第一三共（4568）の売上収益・エンハーツの売上・ADC戦略・設備投資規模を記述する</li>
+                    <li>【やること】富士フイルムHD（4901）のバイオCDMO事業の売上成長・投資規模・2030年目標を整理する</li>
+                    <li>【やること】AGC（5201）のライフサイエンス事業（バイオ医薬品CDMO）の構造と体制を整理する</li>
+                    <li>【やること】クオリプス（iPS細胞由来心筋シート）・住友ファーマ（iPS細胞製品）等の再生医療スタートアップ・事業の現状を記述する</li>
+                    <li>【やること】バイオ医薬品製造・品質管理・臨床開発の人材市場実態を整理する</li>
+                    <li>【やらないこと】特定銘柄の投資推奨・勝ち負けの断定・良し悪しの評価</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート基本方針</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH1 -->
+    <div class="chapter" id="ch1">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <h2>業界内プレイヤー構成</h2>
+            </div>
+            <table class="biz-table">
+                <thead>
+                    <tr>
+                        <th>業態</th>
+                        <th>代表プレイヤー</th>
+                        <th>役割</th>
+                        <th>事業化ステージ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            革新的バイオ医薬品メーカー
+                            <br>
+                            （ADC等次世代モダリティ）
+                        </td>
+                        <td class="acc">第一三共（4568）、中外製薬（4519）、協和キリン（4151）</td>
+                        <td>世界市場向けに高付加価値バイオ医薬品（ADC・バイスペシフィック抗体等）を開発・製造・販売。次世代モダリティで国際競争力を持つ。</td>
+                        <td>商用販売段階（エンハーツ等）</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            バイオCDMO
+                            <br>
+                            （異業種参入型）
+                        </td>
+                        <td class="acc">富士フイルムHD（4901・子会社富士フイルムDiosynth Biotechnologies）、AGC（5201・子会社AGC Biologics）、JSR（子会社JSR Micro）</td>
+                        <td>製薬会社から医薬品の開発・製造を受託するCDMO（Contract Development and Manufacturing Organization）事業。写真・ガラス等の異業種から参入。バイオ製造技術を強みに世界市場で展開。</td>
+                        <td>拡大中（国際商用生産段階）</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            再生医療製品メーカー・
+                            <br>
+                            スタートアップ
+                        </td>
+                        <td class="acc">クオリプス（非上場・キヤノンメディカル・武田薬品出資）、住友ファーマ（4503）、サンバイオ（4592）、ヘリオス（4593）</td>
+                        <td>iPS細胞・幹細胞等を活用した再生医療等製品の開発・製造・販売。承認申請〜初期商業化段階の企業が多い。CDMOへの製造委託も活用。</td>
+                        <td>承認申請〜初期商業化段階</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            創薬スタートアップ
+                            <br>
+                            （シーズ保有）
+                        </td>
+                        <td class="acc">ペプチドリーム（4587）、アクセスバイオ（非上場）等多数</td>
+                        <td>革新的な創薬シーズを持ち、大手製薬企業との提携・ライセンスアウトによる収益モデル。AMED・VCの支援を受けて開発を進める。</td>
+                        <td>早期開発〜臨床段階</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="source-wrap">
+                <span class="source-tag">各社公開情報・日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH2 -->
+    <div class="chapter" id="ch2">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <h2>第一三共——ADC戦略と1兆8,862億円の実態</h2>
+            </div>
+
+            <h3>2025年3月期——売上・利益ともに5期連続過去最高</h3>
+            <p>第一三共（4568）の2025年3月期（2024年度）連結業績（IFRS）は売上収益**1兆8,862億円**（前期比+17.8%）・営業利益3,319億円（+56.9%）・当期純利益2,958億円（+47.3%）と売上・利益ともに5期連続過去最高を更新しました（第一三共 2025年3月期決算短信）。2026年3月期は売上収益**2兆円超**を見込んでいます（2026年3月期第2四半期時点）。</p>
+
+            <h3>エンハーツ——2024年度売上4,638億円・「史上最大の乳がん治療薬を目指す」</h3>
+            <p>ADC「エンハーツ（トラスツズマブ デルクステカン）」の2024年度（2025年3月期）売上収益はアストラゼネカからの共同販促収入を含め**4,638億円**（前期比+38.6%・現地通貨ベース+31.4%）です（第一三共2025年3月期決算短信）。欧米での乳がん一次治療への採用拡大・2025年1月の米国でのHER2低発現・超低発現乳がんへの適応拡大が寄与しています。2025年に中国の医療保険リストに収載されており、ボリューム拡大フェーズに入っています。</p>
+            <p>ピーク時の需要予測は年間5,000万バイアル超（2021年比約1.5倍）に膨れ上がっており（AnswersNews・2025年3月）、国内4工場（小名浜・館林・平塚・小田原）と米国・ドイツ・中国の各拠点でADCへの設備投資を実行中です。2021〜2025年度中計期間でADC向け設備投資は約**6,000億円規模**の見込みです。</p>
+
+            <h3>「5DXd ADCs and Next Wave」戦略——アストラゼネカ・メルクとの超大型提携</h3>
+            <p>第一三共はエンハーツを含む5つのADCを後期開発しています。アストラゼネカとはエンハーツ・Dato-DXd（ダトロウェイ）で総額**3.3兆円**の超大型提携を締結しています。メルクとはHER3-DXd・I-DXd・R-DXdの3つのADCを共同開発しています。研究開発費は2025年3月期で**4,329億円**（前期比+18.8%）と急増しています。2025年1月には2つ目のADC「ダトロウェイ（ダトポタマブ デルクステカン）」が米国で発売されています。</p>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">1兆8,862億円</span>
+                    <span class="stat-unit">（2025年3月期・IFRS）</span>
+                    <span class="stat-label">
+                        第一三共 売上収益
+                        <br>
+                        （5期連続過去最高）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">4,638億円</span>
+                    <span class="stat-unit">（2024年度）</span>
+                    <span class="stat-label">
+                        エンハーツ 売上収益
+                        <br>
+                        （前期比+38.6%）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">約6,000億円</span>
+                    <span class="stat-unit">（2021〜2025年度中計）</span>
+                    <span class="stat-label">ADC向け設備投資規模</span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">3.3兆円</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        アストラゼネカとのADC
+                        <br>
+                        超大型提携総額
+                    </span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">第一三共 2025年3月期決算短信〔IFRS〕（2025年4月25日）</span>
+                <span class="source-tag">AnswersNews「第一三共、5ADC開発の現在地」（2025年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH3 -->
+    <div class="chapter" id="ch3">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <h2>富士フイルム——「バイオ医薬のTSMC」への1兆円投資</h2>
+            </div>
+
+            <h3>バイオCDMO事業——年平均30%成長・2030年に売上5,000億円目標</h3>
+            <p>富士フイルムHD（4901）はバイオCDMO事業（子会社富士フイルムDiosynth Biotechnologies）で、「2030年度に2021年度比3.3倍の売上高5,000億円を目指す」（後藤禎一HD社長・ニュースイッチ）という目標を掲げています。現在のバイオCDMO事業の売上高は年平均**30%**のペースで成長しています（日経・2025年1月）。</p>
+            <p>2024〜2026年度の3年間では、バイオCDMO・半導体材料を含む成長事業に**1.6兆円**を集中投入する計画です（富士フイルムHD説明会資料・2025年9月）。これまでのバイオCDMO分野での累計投資額は**1兆円超**に達しています（日経・2025年1月）。</p>
+
+            <h3>デンマーク拠点——2万Lタンク6基が2024年11月稼働開始</h3>
+            <p>富士フイルムHDは2019年に製薬大手・米バイオジェンのデンマーク製造子会社を買収し、2024年11月から2万リットルの動物細胞培養タンク**6基**の本格稼働を開始しました（日経・2025年1月）。2026年3月期第2四半期（2025年4〜9月）のヘルスケアセグメント売上高は**4,992億円**（前年同期比+3.1%）で、CDMOとワクチン治験薬製造増加が牽引しています（日経バイオテク・2025年11月）。</p>
+            <p>富士フイルムは「バイオ医薬品の製造プロセス移転期間を通常1年から前倒しで達成できる」という速度の優位性を技術差別化のポイントとしています。製造プロセスの速い立ち上げが製薬会社の収益に直結するため、CDMOの競争力として重要な要素です（日経・2025年1月）。</p>
+            <p>富山に初の国内バイオ医薬品CDMO拠点を建設する計画も発表しており（富士フイルムHD説明会資料・2025年9月）、国内CDMO体制の強化が進んでいます。</p>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">年平均30%</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        富士フイルム バイオCDMO
+                        <br>
+                        事業売上高成長率
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">5,000億円</span>
+                    <span class="stat-unit">（2030年度目標）</span>
+                    <span class="stat-label">
+                        富士フイルム バイオCDMO
+                        <br>
+                        売上高目標（2021比3.3倍）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">1兆円超</span>
+                    <span class="stat-unit">（累計）</span>
+                    <span class="stat-label">
+                        富士フイルム バイオCDMO
+                        <br>
+                        累計投資額
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">2万L×6基</span>
+                    <span class="stat-unit">（2024年11月稼働）</span>
+                    <span class="stat-label">
+                        富士フイルム デンマーク拠点
+                        <br>
+                        動物細胞培養タンク
+                    </span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日経「富士フイルム『バイオ医薬のTSMCに』1兆円投資の大勝負」（2025年1月14日）</span>
+                <span class="source-tag">富士フイルムHD 個人投資家向け会社説明会資料（2025年9月25日）</span>
+                <span class="source-tag">日経バイオテク「富士フイルムHD、米国のCDMO拠点で2万Lの培養タンク8基が年内に稼働開始見込み」（2025年11月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH4 -->
+    <div class="chapter" id="ch4">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 04</span>
+                <h2>AGC——日米欧10拠点のバイオCDMO</h2>
+            </div>
+
+            <h3>AGC Biologics——「将来の柱となる戦略事業」</h3>
+            <p>AGC（5201）はバイオ医薬品CDMO（AGC Biologics）を含むライフサイエンス事業を「将来の柱となる戦略事業として育成」と位置づけています（AGC ライフサイエンス事業QA会・2025年9月29日）。日米欧3極・10拠点体制で、化学合成・動物細胞・微生物・pDNA・mRNA・遺伝子細胞治療・エクソソームなど幅広いモダリティ対応能力を持っています（AGC mRNA事業説明資料・2024年4月）。</p>
+
+            <h3>大型SUSから撤退・SUB（シングルユースバイオリアクター）に集中</h3>
+            <p>AGCは2020年に買収した米コロラドのボルダー拠点で大型シングルユーススターラー（SUS）による生産を試みましたが、2025年にこの大型SUSでの生産から撤退し、強みのあるシングルユースバイオリアクター（SUB）技術に集中する方針を決定しました（AGC ライフサイエンス事業QA会・2025年9月29日）。横浜に最大規模の5,000リットルSUBを搭載した新拠点を建設中であり、2年後（2027〜2028年頃）の稼働予定としています。</p>
+            <p>バイオ医薬品CDMO市場全体の成長率は年率**10%程度以上**と見込まれており（AGC推計）、AGCは2025年以降に成長軌道に戻す方針です。2024年にコペンハーゲン拠点の増強設備が稼働開始しており、業績への大きなインパクトは2026年後半〜2027年に出ると想定しています（同QA会）。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">AGC「ライフサイエンス事業の現況に関するQ&A会」（2025年9月29日）</span>
+                <span class="source-tag">AGC「ニューモダリティmRNA医薬品の発展に向けてのAGCの取り組み」（2024年4月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH5 -->
+    <div class="chapter" id="ch5">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 05</span>
+                <h2>再生医療スタートアップ——クオリプス・住友ファーマ</h2>
+            </div>
+
+            <h3>クオリプス——iPS細胞由来心筋シートの承認申請を2024年12月提出</h3>
+            <p>クオリプスはキヤノンメディカルシステムズと武田薬品工業の出資会社（非上場）で、iPS細胞由来心筋シートを開発しています。虚血性心疾患を対象として医師主導治験が完了し、2024年12月2日に承認申請資料（臨床パート）を提出しています（再生医療.net・2025年1月）。当初の26週目データに加えて、改善効果がより顕著な52週目データを追加するために計画変更が行われており、承認申請は段階的に提出されています。承認が得られれば、iPS細胞由来製品として国内初の心筋製品となります。</p>
+
+            <h3>住友ファーマ——iPS細胞由来ドパミン神経前駆細胞・網膜色素上皮細胞</h3>
+            <p>住友ファーマ（4503）はiPS細胞由来ドパミン神経前駆細胞（パーキンソン病向け）およびiPS細胞由来網膜色素上皮細胞（加齢黄斑変性向け）の開発を国内および米国で進めています（再生医療.net・2024年）。京都大学iPS細胞研究所（CiRA）との提携に基づく製品で、他家iPS細胞（ユニバーサルドナー細胞）を活用した量産可能な治療薬を目指しています。</p>
+
+            <h3>経産省CDMO補助金——再生医療・遺伝子治療製造設備に4年間383億円</h3>
+            <p>経済産業省は「再生・細胞医療・遺伝子治療製造設備投資支援事業費補助金」として、国庫債務負担行為含め4年間総額383億円の補助金を2025年7月に採択しました（経産省・2025年7月15日）。再生・細胞医療・遺伝子治療製品を円滑に製造できる能力を国内に確保するため、CDMOの国内受託製造拠点の整備や製造人材育成への支援が対象です。採択企業の詳細は経産省プレスリリースで公表されています。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">再生医療.net「【2024年】再生医療業界のできごとを振り返る」（2025年1月）</span>
+                <span class="source-tag">経産省「再生・細胞医療・遺伝子治療製造設備投資支援事業費補助金採択結果」（2025年7月15日）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH6 -->
+    <div class="chapter" id="ch6">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 06</span>
+                <h2>収益構造の本質</h2>
+            </div>
+
+            <h3>製薬企業の収益——「特許期間中の独占収益を研究開発に再投資」するサイクル</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「製薬企業は、開発した医薬品の特許期間中の収益を研究開発に再投資する収益構造となっていることから、医薬品開発を継続する必要がある」と明示しています。第一三共がエンハーツの高成長を受けて研究開発費を4,329億円（前期比+18.8%）に増加させているのはこの収益サイクルの実例です。</p>
+            <p>逆に言えば、特許期間終了後にブロックバスター候補がなければ業績は急速に悪化します。第一三共はこのリスクに対して「5DXd ADCs and Next Wave」という多層的なパイプライン戦略で対応しています。</p>
+
+            <h3>CDMOの収益——「製造受託実績の積み上げ」という構造</h3>
+            <p>富士フイルムのCDMO事業が示すように、バイオCDMO企業の収益は「製薬会社から受託した案件の製造実績」に依存します。商業規模生産の認可を規制当局から得るには通常2年程度を要し（富士フイルム 2025年2月説明会資料）、一旦稼働すれば長期的な安定収益につながります。「製造プロセス移転スピード」「品質の確実性」「供給安定性」が受注の決め手となり、価格は競合に比べて二次的要因であるとされています（同）。</p>
+
+            <h3>再生医療の収益——「高薬価・少量・長期治療効果」という独特の構造</h3>
+            <p>再生医療等製品は1回の治療で長期または永続的な効果をもたらす（CAR-T細胞治療・遺伝子治療等）ため、1回あたりの薬価が極めて高くなる傾向があります。国内で承認されているCAR-T細胞治療薬の薬価は1コース3,000万円超のものもあります。市場全体の規模は「高薬価×少数患者」という構造のため、現時点では大きくありませんが、将来の適応拡大で急成長する可能性を持ちます。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">富士フイルム「バイオCDMO / ライフサイエンス 事業説明会」（2025年2月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH7 -->
+    <div class="chapter" id="ch7">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 07</span>
+                <h2>人材市場の実態</h2>
+            </div>
+
+            <h3>バイオ医薬品分野の主要職種</h3>
+            <div class="data-box">
+                <div class="box-title">主要職種と必要専門性（2026年04月時点）</div>
+                <ul>
+                    <li>【創薬研究者（抗体・ADC設計）】抗体エンジニアリング・ADCのリンカー設計・ペイロード選択の専門知識。第一三共・中外製薬等の大手製薬企業、および創薬スタートアップが採用中心。博士号保有者が多く、海外学会・企業での経験を持つ「グローバル人材」への需要が高い。</li>
+                    <li>【臨床開発（CRA・CRC・メディカルアフェアーズ）】治験・臨床試験の実施管理・データ収集・規制対応。製薬企業とCRO（医薬品開発業務受託機関）の双方で需要がある。英語力が必須（国際共同治験の増加による）。製薬会社とCROの人材流動性が高い分野。</li>
+                    <li>【GMP製造担当・品質管理（QA/QC）】Good Manufacturing Practice（医薬品製造品質管理基準）に準拠した製造・試験の実施管理。バイオCDMOの拡大で需要が急増。AGC・富士フイルム等のCDMO企業が積極採用中。「グローバルcGMP対応経験者」は特に希少。</li>
+                    <li>【バイオプロセスエンジニア（スケールアップ）】細胞培養・発酵プロセスのラボ→パイロット→商用スケールへの移行を担う。CDMOの競争力を左右する職種。化学工学・バイオ工学の学位とプロセス開発経験が前提。富士フイルムはこの人材の育成にも注力している（AnswersNews・2025年3月）。</li>
+                    <li>【薬事（レギュラトリーアフェアーズ）】医薬品の承認申請・各国規制当局との交渉を担う。国際共同治験・多国同時承認の増加で需要が高まっている。PMDA・FDA・EMAの審査プロセスを熟知した人材が希少。</li>
+                </ul>
+            </div>
+
+            <h3>人材需給の状況——「バイオ人材不足」が政策文書に明示</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「人材：バイオ人材、実用化への橋渡し人材、海外VCなどステークホルダーが不足」と課題として明示しています。国内でバイオ医薬品の製造プロセスを立ち上げられる人材が不足しており、日本の製薬産業がバイオ医薬品の開発に出遅れたことがその背景にあります（経産省 バイオCMO/CDMO強化資料）。</p>
+
+            <div class="note-box">
+                <strong>【注記】</strong>
+                バイオ医薬品分野の具体的な年収水準は職種・企業・経験年数によって大きく異なります。製薬会社の研究職・開発職は製造業一般より高い傾向にありますが、本時点で出典のある確定値がないため年収レンジの記載は省略します。
+                    
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">経産省「バイオCMO/CDMOの強化について」</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH8 -->
+    <div class="chapter" id="ch8">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 08</span>
+                <h2>構造的課題の所在</h2>
+            </div>
+
+            <h3>「日系製薬企業がバイオ医薬品の国内開発に出遅れた」——CDMOの収益を脅かす構造</h3>
+            <p>経産省「バイオCMO/CDMOの強化について」は「日系製薬企業が国内で開発するバイオ医薬品の件数が少ない。小ロットの治験薬の生産を多数受託するよりも大型の商用生産を受注する方が利益につながるが、国内で商用生産となる案件が少ない」と明示しています。富士フイルム・AGCがバイオCDMOで世界展開しているのは、国内市場だけでは規模が不十分なためです。この「海外顧客依存のCDMO事業」は為替リスクと海外規制動向の影響を受けます。</p>
+
+            <h3>「感染症有事と平時の稼働率ギャップ」——製造拠点維持の構造問題</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「感染症危機の備えと平時稼働率とのギャップ」を課題として明示しています。ワクチン等の感染症対応医薬品の製造拠点を安全保障的に維持するためには、平時の稼働率が低くてもコストを負担する仕組みが必要ですが、民間企業が自発的にこれを担うことは難しい構造です。AGCがパンデミック時にはワクチン製造に切り替えできる「デュアルユース仕様」の拠点を整備している（AGC・2024年）のは、この課題への一つの対応です。</p>
+
+            <h3>「新規CDMO拠点の製造実績未確立による受注不確実性」</h3>
+            <p>同資料は「新規製造拠点（CDMO等）の製造実績未確立による受注不確実性、海外への訴求力」を課題として明示しています。バイオ医薬品製造において製薬会社は「実績のある製造拠点」を強く選好するため、新規拠点が最初の商業受注を得るまでの期間（一般的に数年〜5年程度）の収益確保が困難という構造的課題があります。これが再生医療CDMO育成への補助金（経産省・4年間383億円）が必要とされる背景です。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">経産省「バイオCMO/CDMOの強化について」</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH9 -->
+    <div class="chapter" id="ch9">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 09</span>
+                <h2>誤解されやすいポイント</h2>
+            </div>
+            <div class="data-box">
+                <div class="box-title">誤解されやすいポイント（4点）</div>
+                <ul>
+                    <li>【「第一三共のエンハーツ急成長＝日本の製薬産業全体が好調」】エンハーツの成功は第一三共の個別企業の成果です。日本の医薬品産業全体のシェアは世界の6.9%（約11.6兆円）であり、2040年目標の23.0兆円達成には多くの企業の成長が必要です。また第一三共自身も「エンハーツへの依存」というリスクを認識しており、次のブロックバスター候補（Dato-DXd等）の商業化スピードが重要な変数です。</li>
+                    <li>【「富士フイルム・AGCがバイオCDMOで急成長＝国内製造体制が確立」】富士フイルム・AGCのバイオCDMOは主に海外（デンマーク・米国）の拠点での展開が中心です。国内バイオ医薬品製造体制の強化（外部環境編での課題）は別問題であり、国内CDMO拠点は現時点では限定的です。富士フイルムが富山に国内初のバイオ医薬品CDMO拠点を建設予定としているのは、この課題への対応です。</li>
+                    <li>【「クオリプスのiPS細胞由来心筋シートの承認申請提出＝近く承認・販売開始」】2024年12月に承認申請資料（臨床パート）を提出したことは事実ですが、CMC（製造・品質管理）パートの追加提出が必要であり、審査には通常1〜2年程度を要します。承認取得→製造体制確立→保険収載→販売開始という段階があり、実際の販売開始・収益化にはさらに時間を要します。</li>
+                    <li>【「iPS細胞技術で日本が世界をリード＝iPS細胞製品が多数販売中」】山中伸弥教授のiPS細胞技術は世界的に先行していますが、製品化・商業化は依然として開発初期段階が多いです。国内で条件・期限付き承認を受けた再生医療等製品も複数存在しますが、本格的な商業規模での販売・収益化は発展途上です。iPS細胞技術の先行≠商業化の先行という点は就職・投資両方の観点で重要です。</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜8章の総括</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH10 -->
+    <div class="chapter" id="ch10">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 10</span>
+                <h2>内部環境の整理</h2>
+            </div>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>章</th>
+                        <th>指標名</th>
+                        <th>数値・事実</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第2章</td>
+                        <td>第一三共 売上収益</td>
+                        <td>1兆8,862億円（2025年3月期・IFRS・5期連続過去最高）</td>
+                        <td>第一三共 決算短信 2025年4月</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>エンハーツ 売上収益</td>
+                        <td>4,638億円（2024年度・前期比+38.6%）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>第一三共 研究開発費</td>
+                        <td>4,329億円（2025年3月期・前期比+18.8%）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>第一三共 ADC向け設備投資</td>
+                        <td>約6,000億円（2021〜2025年度中計期間）</td>
+                        <td>AnswersNews 2025年3月</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>アストラゼネカとのADC提携総額</td>
+                        <td>3.3兆円</td>
+                        <td>各種報道</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>エンハーツ ピーク時需要予測</td>
+                        <td>年間5,000万バイアル超（2021年比約1.5倍）</td>
+                        <td>AnswersNews 2025年3月</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>富士フイルム バイオCDMO売上成長率</td>
+                        <td>年平均30%（継続中）</td>
+                        <td>日経 2025年1月</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>富士フイルム バイオCDMO 2030年目標</td>
+                        <td>売上高5,000億円（2021比3.3倍）</td>
+                        <td>ニュースイッチ</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>富士フイルム バイオCDMO累計投資</td>
+                        <td>1兆円超</td>
+                        <td>日経 2025年1月</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>富士フイルム デンマーク拠点</td>
+                        <td>2024年11月に2万Lタンク6基稼働開始</td>
+                        <td>日経 2025年1月</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>AGC バイオCDMO市場成長率（推計）</td>
+                        <td>年率10%程度以上</td>
+                        <td>AGC QA会 2025年9月</td>
+                    </tr>
+                    <tr>
+                        <td>第5章</td>
+                        <td>クオリプス 承認申請</td>
+                        <td>iPS細胞由来心筋シートの承認申請資料（臨床パート）を2024年12月2日提出</td>
+                        <td>再生医療.net 2025年1月</td>
+                    </tr>
+                    <tr>
+                        <td>第5章</td>
+                        <td>再生医療CDMO補助金</td>
+                        <td>4年間総額383億円（経産省・2025年7月採択）</td>
+                        <td>経産省 2025年7月</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="data-box">
+                <div class="box-title">構造的に固定されやすい要素</div>
+                <ul>
+                    <li>第一三共がエンハーツ（ADC）で世界的な競争力を確立したという実績は短期では変化しない</li>
+                    <li>富士フイルムが累計1兆円超を投資したバイオCDMO事業（デンマーク・米国等）の競争優位は、設備が稼働している限り続く</li>
+                    <li>AGCの日米欧10拠点体制は急に縮小しない構造的な強み</li>
+                    <li>「日系製薬企業のバイオ医薬品国内開発の件数が少ない」という構造的課題は、国内での開発が増加するまで変化しない</li>
+                    <li>「新規CDMO拠点が商業実績を積み上げるまでに数年かかる」という時間的制約は、業態の本質的特性として変化しない</li>
+                    <li>バイオ医薬品分野の専門人材（GMP製造・ADC設計・臨床開発・薬事）の需給逼迫は、育成に時間がかかるため短期では解消しない</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜9章の集約</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH11 -->
+    <div class="chapter" id="ch11">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 11</span>
+                <h2>有料版への橋渡し</h2>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR CAREER — 就活・転職向け有料版</div>
+                <h3>第一三共・富士フイルム・AGC・住友ファーマ・CRO、どこで関わるか</h3>
+                <ul>
+                    <li>第一三共の研究職・開発職・製造職（ADC設計・GMP製造・臨床開発・薬事）の処遇水準とキャリアパス</li>
+                    <li>富士フイルムDiosynth Biotechnologiesのバイオプロセスエンジニア職——国内・海外（デンマーク・米国）配属の可能性と年収水準</li>
+                    <li>AGC Biologicsのバイオ医薬品CDMO部門——製造担当・品質保証（QA）・グローバルcGMP対応経験者の市場価値</li>
+                    <li>再生医療スタートアップ（クオリプス・住友ファーマ・ヘリオス等）での承認申請・製造立ち上げに関わるキャリアの実態</li>
+                    <li>CRO（医薬品開発業務受託機関）での臨床開発職（CRA・CRC）と製薬会社との人材流動性の実態</li>
+                </ul>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR INVESTMENT — 投資判断向け有料版</div>
+                <h3>第一三共・富士フイルム・AGC、バイオ医薬品セグメントをどう読むか</h3>
+                <ul>
+                    <li>第一三共（4568）——「エンハーツ依存」のリスクと、Dato-DXd等の次世代ADCが2026〜2028年業績にどう反映されるかのタイムライン</li>
+                    <li>富士フイルムHD（4901）——ヘルスケアセグメント（CDMO＋医薬品）の売上・利益の詳細構成と2030年5,000億円目標達成の蓋然性</li>
+                    <li>AGC（5201）——ライフサイエンス事業の「大型SUS撤退→SUB集中」という戦略転換が業績に与える影響と復調タイムライン</li>
+                    <li>中外製薬（4519）——ロシュグループとの関係における「バイスペシフィック抗体」技術の収益化進捗</li>
+                    <li>再生医療CDMO補助金（4年間383億円）の採択企業と、補助金終了後の自立した収益化タイムライン</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <div class="container">
+            <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。医薬品の承認は規制当局の判断によるものであり申請から承認が保証されるものではありません。「政策目標として示されている」と注記した数値は政府が目標として掲げた値であり達成を保証するものではありません。データ基準時点は2026年04月です。</p>
+            <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年04月 産業構造分析レポート ── バイオ医薬品・再生医療等製品等（内部環境編）</p>
+            <p style="margin-top:8px;">
+                <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
