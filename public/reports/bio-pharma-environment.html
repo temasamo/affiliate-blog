@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業界分析｜高市政権「戦略17分野」合成生物学・バイオ バイオ医薬品・再生医療等製品等（外部環境編）</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+    :root {
+        --ink: #0f0f0e;
+        --paper: #f5f2ed;
+        --cream: #ede9e1;
+        --accent: #c84b2f;
+        --muted: #6b6760;
+        --rule: #c9c4bb;
+        --highlight: #fff8e6;
+    }
+
+    *, * ::before, * ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        border-bottom: 3px solid var(--accent);
+    }
+
+    .masthead-right {
+        color: var(--muted);
+    }
+
+    .hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 60px 40px 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200, 75, 47, 0.07) 4px, rgba(200, 75, 47, 0.07) 5px);
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        padding: 4px 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(20px, 3.2vw, 34px);
+        font-weight: 900;
+        line-height: 1.4;
+        max-width: 820px;
+        letter-spacing: 0.02em;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+        color: var(--accent);
+        font-style: normal;
+    }
+
+    .hero-meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+
+    .hero-badge {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 11px;
+        padding: 4px 12px;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.06em;
+    }
+
+    .data-notice {
+        background: rgba(200, 75, 47, 0.15);
+        border-left: 3px solid var(--accent);
+        padding: 10px 16px;
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .toc {
+        background: var(--cream);
+        border-top: 3px solid var(--ink);
+        border-bottom: 1px solid var(--rule);
+        padding: 32px 40px;
+    }
+
+    .toc h2 {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 16px;
+        text-transform: uppercase;
+    }
+
+    .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 6px 28px;
+    }
+
+    .toc-item {
+        font-size: 13px;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 3px 0;
+        border-bottom: 1px dashed var(--rule);
+        display: flex;
+        gap: 8px;
+    }
+
+    .toc-item:hover {
+        color: var(--accent);
+    }
+
+    .toc-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        flex-shrink: 0;
+        padding-top: 2px;
+    }
+
+    .chapter {
+        padding: 48px 40px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .chapter:nth-child(even) {
+        background: var(--cream);
+    }
+
+    .chapter-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .chapter-num {
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .chapter h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.4;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 10px;
+        flex: 1;
+    }
+
+    .chapter h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 24px 0 10px;
+        padding-left: 10px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .chapter p {
+        margin-bottom: 14px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 24px 0;
+    }
+
+    .stat-cell {
+        background: var(--paper);
+        padding: 18px 16px;
+        text-align: center;
+    }
+
+    .chapter:nth-child(even) .stat-cell {
+        background: #f0ece4;
+    }
+
+    .stat-cell .stat-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent);
+        line-height: 1.2;
+        display: block;
+    }
+
+    .stat-cell .stat-unit {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-top: 2px;
+    }
+
+    .stat-cell .stat-label {
+        font-size: 11px;
+        color: var(--ink);
+        display: block;
+        margin-top: 6px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .data-box {
+        background: var(--highlight);
+        border: 1px solid #e0d8c4;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 20px 0;
+    }
+
+    .data-box .box-title {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .data-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .data-box ul li {
+        padding: 5px 0 5px 16px;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+        position: relative;
+    }
+
+    .data-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .data-box ul li:last-child {
+        border-bottom: none;
+    }
+
+    .note-box {
+        background: rgba(200, 75, 47, 0.05);
+        border: 1px dashed var(--accent);
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .note-box strong {
+        color: var(--accent);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13px;
+    }
+
+    .summary-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .summary-table thead th {
+        padding: 10px 14px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+    }
+
+    .summary-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .summary-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .summary-table tbody td {
+        padding: 9px 14px;
+        vertical-align: top;
+    }
+
+    .summary-table td:first-child {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 12px;
+    }
+
+    .compare-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 20px 0;
+    }
+
+    .compare-cell {
+        background: var(--paper);
+        padding: 16px 18px;
+        font-size: 13px;
+    }
+
+    .chapter:nth-child(even) .compare-cell {
+        background: #f0ece4;
+    }
+
+    .compare-cell .cell-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .timeline {
+        margin: 20px 0;
+    }
+
+    .timeline-item {
+        display: flex;
+        gap: 16px;
+        padding: 12px 0;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+    }
+
+    .timeline-item:last-child {
+        border-bottom: none;
+    }
+
+    .timeline-year {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        color: var(--accent);
+        font-weight: 600;
+        flex-shrink: 0;
+        width: 130px;
+        padding-top: 2px;
+    }
+
+    .timeline-text {
+        flex: 1;
+    }
+
+    .next-box {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 28px 32px;
+        margin: 20px 0;
+        border-left: 5px solid var(--accent);
+    }
+
+    .next-box .next-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .next-box h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 17px;
+        margin-bottom: 12px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .next-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .next-box ul li {
+        padding: 4px 0 4px 14px;
+        font-size: 13px;
+        position: relative;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .next-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.06);
+        border: 1px solid var(--rule);
+        padding: 3px 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        color: var(--muted);
+        margin: 2px 3px;
+        letter-spacing: 0.04em;
+    }
+
+    .source-wrap {
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 1px dashed var(--rule);
+    }
+
+    .disclaimer {
+        background: var(--ink);
+        color: rgba(245, 242, 237, 0.5);
+        padding: 24px 40px;
+        font-size: 11px;
+        line-height: 1.7;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.03em;
+    }
+
+    .rule-thick {
+        border: none;
+        border-top: 3px solid var(--ink);
+        margin: 0;
+    }
+
+    .rule-thin {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .masthead {
+            flex-direction: column;
+            gap: 6px;
+            padding: 10px 16px;
+        }
+
+        .hero {
+            padding: 36px 16px 30px;
+        }
+
+        .chapter {
+            padding: 32px 16px;
+        }
+
+        .toc {
+            padding: 24px 16px;
+        }
+
+        .compare-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span>産業構造分析レポート</span>
+        <span class="masthead-right">2026年04月発行 ── 合成生物学・バイオ／バイオ医薬品・再生医療等製品等（外部環境編）</span>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-label">INDUSTRY ANALYSIS REPORT — EXTERNAL ENVIRONMENT</div>
+            <h1>
+                業界分析｜高市政権「戦略17分野」
+                <br>
+                合成生物学・バイオ
+                <br>
+                <em>バイオ医薬品・再生医療等製品等</em>
+                （外部環境編）
+            </h1>
+            <div class="hero-meta">
+                <span class="hero-badge">就職・転職検討者向け</span>
+                <span class="hero-badge">株式投資家向け</span>
+                <span class="hero-badge">数字と事実のみ記載</span>
+            </div>
+            <div class="data-notice">本レポートのデータ基準時点：2026年04月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用</div>
+        </div>
+    </div>
+
+    <hr class="rule-thick">
+
+    <div class="toc">
+        <div class="container">
+            <h2>目次 — TABLE OF CONTENTS</h2>
+            <div class="toc-grid">
+                <a class="toc-item" href="#ch0">
+                    <span class="toc-num">00</span>
+                    このレポートの目的と読み方
+                </a>
+                <a class="toc-item" href="#ch1">
+                    <span class="toc-num">01</span>
+                    市場規模と需要構造
+                </a>
+                <a class="toc-item" href="#ch2">
+                    <span class="toc-num">02</span>
+                    モダリティの変遷——何が伸びているか
+                </a>
+                <a class="toc-item" href="#ch3">
+                    <span class="toc-num">03</span>
+                    制度・政策の枠組み
+                </a>
+                <a class="toc-item" href="#ch4">
+                    <span class="toc-num">04</span>
+                    経済的前提条件
+                </a>
+                <a class="toc-item" href="#ch5">
+                    <span class="toc-num">05</span>
+                    アジア諸外国との競争
+                </a>
+                <a class="toc-item" href="#ch6">
+                    <span class="toc-num">06</span>
+                    技術・DXの位置づけ
+                </a>
+                <a class="toc-item" href="#ch7">
+                    <span class="toc-num">07</span>
+                    経済安全保障との接続
+                </a>
+                <a class="toc-item" href="#ch8">
+                    <span class="toc-num">08</span>
+                    外部環境の整理
+                </a>
+                <a class="toc-item" href="#ch9">
+                    <span class="toc-num">09</span>
+                    内部環境編への橋渡し
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <!-- CH0 -->
+    <div class="chapter" id="ch0">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <h2>このレポートの目的と読み方</h2>
+            </div>
+            <p>本レポートは、高市政権「戦略17分野」合成生物学・バイオの「バイオ医薬品・再生医療等製品等」の外部環境を、就職・転職検討者および株式投資家向けに数字と事実のみで記述します。所管は経済産業省です。</p>
+            <div class="note-box">
+                <strong>【本分野の位置づけ】</strong>
+                「バイオ医薬品・再生医療等製品等」は、「合成生物学・バイオ」分野（経産省所管）と「創薬・先端医療」分野（内閣府・デジタル庁所管）の双方に掲載されているクロスカッティングな分野です。本レポートでは主に合成生物学・バイオ分野の観点（国内製造体制の構築・CDMO）と、創薬・先端医療分野の観点（バイオ医薬品の自国創製・国際競争力）を統合して整理します。
+                    
+            </div>
+            <div class="data-box">
+                <div class="box-title">「バイオ医薬品・再生医療等製品等」とは何か——3行で把握する</div>
+                <ul>
+                    <li>【技術の概要】生物由来の原材料（細胞・タンパク質・遺伝子等）を用いた医薬品・製品の総称。モノクローナル抗体・抗体薬物複合体（ADC）・バイスペシフィック抗体・mRNAワクチン・CAR-T細胞治療・iPS細胞由来製品・遺伝子治療等が含まれる。従来の低分子医薬と異なり、生物が産生する分子を利用するため複雑な製造プロセスと品質管理が必要。</li>
+                    <li>【現状の問題】日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「我が国の医薬品の自給率は低く、製造工程や周辺産業を含め他国依存度が高くなっている」と明示している。世界のバイオ医薬品市場で日本企業のシェアは6.9%（日本企業の売上約11.6兆円）にとどまり、製造の多くを海外に依存している。</li>
+                    <li>【なぜ今か】世界の医薬品市場（2022年で約200兆円規模）はバイオ医薬品・再生・細胞・遺伝子治療等の比率が約4割を占め、特許品の世界市場は年平均9.6%で拡大している（資料2・2026年3月）。日本はiPS細胞・ADC（抗体薬物複合体）等で世界トップレベルの技術基盤を持つが、製造・事業化で海外に後れを取っており、これを逆転する機会として戦略17分野に位置づけられた。</li>
+                </ul>
+            </div>
+            <p>良し悪しの評価・投資推奨・将来予測は行いません。</p>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート基本方針</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH1 -->
+    <div class="chapter" id="ch1">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <h2>市場規模と需要構造</h2>
+            </div>
+
+            <h3>世界の医薬品市場——2022年で約200兆円・バイオが約4割</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「世界の医薬品市場は2022年で約200兆円規模と推計され、バイオ医薬品、再生・細胞・遺伝子治療等の比率は4割を占めている」と明示しています。2022〜2028年のモダリティシェアは低分子医薬が約50%・抗体医薬が約25%・タンパク/ペプチド医薬が約15%で推移すると見込まれています（JST/CRDS「創薬モダリティの潮流と展望」2024年）。</p>
+            <p>バイオ医薬品市場は成長を続けており、2028年には6,940億ドルに達すると予測されています（市場調査レポート2024年版）。日本国内のバイオ関連市場は2025年に6兆7,025億円と推定されており、前年比2.2%増加しています（日経バイオテク独自調査・2025年）。</p>
+
+            <h3>特許品市場は年平均9.6%で拡大——日本企業のシェアは6.9%</h3>
+            <p>同資料は「ファーストインクラス製品・ベストインクラス製品を含む特許品の世界市場は年平均9.6%で拡大している。我が国企業の売上は約11.6兆円（シェア6.9%）」と明示しています。世界の医薬品市場の約6割が集中する日米欧において、日本企業が同時承認を得て市場獲得できるかが課題として示されています。</p>
+
+            <h3>日本の政策目標——2040年に日本企業の売上23.0兆円</h3>
+            <p>日本成長戦略会議 第3回 資料1（2026年3月）は「2040年の我が国企業の売上（合計）目標は23.0兆円」と明示しています（政策目標として示されている）。これは2022年時点の約11.6兆円から2倍超を目指す目標です。達成には「海外で製造されている国内向けバイオ医薬品の国内製造化」「アジアの再生医療等製品等のCDMO市場のシェア獲得」「創薬ベンチャーのグローバル展開」という3本柱が示されています（同）。</p>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">約200兆円</span>
+                    <span class="stat-unit">（2022年・世界）</span>
+                    <span class="stat-label">
+                        世界の医薬品市場規模
+                        <br>
+                        （資料2 2026年3月）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">約4割</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        バイオ医薬品・再生・
+                        <br>
+                        細胞・遺伝子治療等の比率
+                        <br>
+                        （同上）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">約11.6兆円</span>
+                    <span class="stat-unit">（シェア6.9%）</span>
+                    <span class="stat-label">
+                        日本企業の医薬品売上
+                        <br>
+                        （資料2 2026年3月）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">23.0兆円</span>
+                    <span class="stat-unit">（2040年目標）</span>
+                    <span class="stat-label">
+                        日本企業の売上目標
+                        <br>
+                        （資料1 2026年3月・政策目標）
+                    </span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回 資料1「戦略17分野における主要な製品・技術等」（2026年3月）</span>
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">日経バイオテク独自調査「2025年の国内バイオ関連市場規模」（2025年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH2 -->
+    <div class="chapter" id="ch2">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <h2>モダリティの変遷——何が伸びているか</h2>
+            </div>
+
+            <h3>ADC（抗体薬物複合体）——CAGR 13〜16%の急成長市場</h3>
+            <p>ADCとはモノクローナル抗体をリンカーを介して細胞毒性薬と結合させた標的がん治療薬です。健康な組織への損傷を最小限に抑えながら、薬物をがん細胞に選択的に届けます。世界のADC市場規模は2023年に93億3,000万ドル・2024年に約127億ドルと評価されており、2031年に約297億ドル（CAGR 15.6%）ないし2032年に約354億ドル（CAGR 13.94%）に達すると複数の市場調査が示しています。</p>
+            <p>日本では第一三共の「エンハーツ（トラスツズマブ デルクステカン）」が世界的に高い評価を受けており、米国・欧州・アジアで承認を取得しています。ADCの製造には高度なバイオ製造プロセス（抗体生産・リンカー合成・コンジュゲーション・品質管理）が必要であり、製造技術を持つCDMOへの需要が急増しています。</p>
+
+            <h3>次世代抗体医薬品——バイスペシフィック抗体等が急成長</h3>
+            <p>次世代抗体医薬品（ADC・バイスペシフィック抗体等）の市場規模は2025年の164億ドルから2030年に335億ドル（CAGR 15.4%）へ拡大すると予測されています（市場調査レポート・2026年）。中外製薬の「スイッチ抗体」「リサイクリング抗体」等の独自技術を用いた製品が国際的に注目されています。FDAによるバイオ医薬品の承認件数は2022年に低分子医薬品を上回っており（市場調査2024年版）、この傾向は継続しています。</p>
+
+            <h3>CAR-T細胞治療・iPS細胞製品——「臨床から実用化」の段階へ</h3>
+            <p>CAR-T（キメラ抗原受容体T細胞）療法は白血病・悪性リンパ腫・多発性骨髄腫等の血液がんを中心に市場が拡大しており、国内市場は2030年に350億円（2023年比2.0倍）と予測されています（富士経済・2024年）。iPS細胞由来のCAR-T細胞治療薬やNK細胞を用いたCAR-NK細胞治療薬の発売が予定されており、2030年代以降の市場拡大が見込まれています。</p>
+            <p>iPS細胞技術ではクオリプス（キヤノンメディカル・武田薬品の出資会社）が虚血性心疾患を対象とするiPS細胞由来心筋シートの承認申請を2024年12月に提出しました（再生医療.net・2025年1月）。住友ファーマはiPS細胞由来ドパミン神経前駆細胞・iPS細胞由来網膜色素上皮細胞の開発を国内・米国で進めています。</p>
+
+            <h3>mRNAワクチン・遺伝子治療——新型コロナ特需後の調整期</h3>
+            <p>mRNA技術は新型コロナワクチンで実証・普及が急速に進みましたが、2023年は5類移行による需要減少で市場が縮小しました。ただし2025年以降、がん・感染症・希少疾患への適用拡大が期待されており、中長期的な成長モダリティとして位置づけられています（富士経済・2024年）。遺伝子治療では米国で個別化遺伝子治療・遺伝子編集技術を用いた異種移植等が臨床段階に入っています（資料2・2026年3月）。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">JST/CRDS「創薬モダリティの潮流と展望」（2024年）</span>
+                <span class="source-tag">Data Bridge Market Research「世界のADC市場規模」</span>
+                <span class="source-tag">富士経済「再生医療・新医薬モダリティ関連市場の現状と将来展望 2024」</span>
+                <span class="source-tag">市場調査レポート（次世代抗体医薬品・2026年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH3 -->
+    <div class="chapter" id="ch3">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <h2>制度・政策の枠組み</h2>
+            </div>
+
+            <h3>日本の政策目標（2026年3月時点）</h3>
+            <div class="data-box">
+                <div class="box-title">達成すべき戦略的目標（資料2・2026年3月・政策目標として示されている）</div>
+                <ul>
+                    <li>【自給率向上】バイオ医薬品の自国創製・国内製造による他国依存度（供給途絶リスク）を低減する</li>
+                    <li>【市場獲得】VCや製薬企業をはじめとするグローバルステークホルダーとの連携を強化し、資金やノウハウを呼び込み、創薬分野における国際競争力を高める</li>
+                    <li>【新領域対応】新領域（遺伝子治療・異種移植等）における医療技術に関して国産技術や国内製造体制を確立し早期実用化を図る</li>
+                    <li>【CDMO展開】再生医療等製品等におけるCDMO市場のグローバルシェアを拡大する</li>
+                    <li>【産業エコシステム】ベンチャー等の創薬力強化・周辺産業含めた国内製造体制構築・グローバル展開・収益を再投資する産業エコシステムの構築</li>
+                </ul>
+            </div>
+
+            <h3>主要マイルストーン</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-year">2021年</span>
+                    <span class="timeline-text">AMED（日本医療研究開発機構）が創薬スタートアップ支援プログラムを拡充。mRNAワクチン国産化への支援開始。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2024年2月</span>
+                    <span class="timeline-text">経産省「バイオ政策の現状と今後の方向性」を公表。国内CDMOの育成・創薬ベンチャーとのマッチングが課題として明示（再生医療.net・2024年2月）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2024年12月</span>
+                    <span class="timeline-text">クオリプスがiPS細胞由来心筋シートの承認申請資料を提出（治験完了）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2025年7月</span>
+                    <span class="timeline-text">経産省が「再生・細胞医療・遺伝子治療製造設備投資支援事業費補助金」の採択結果を公表。4年間総額383億円の補助でCDMOの国内製造拠点整備を支援（経産省・2025年7月）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2026年3月</span>
+                    <span class="timeline-text">日本成長戦略会議 第3回で「バイオ医薬品・再生医療等製品等」が戦略17分野に明示。2040年日本企業売上目標23.0兆円（政策目標として示されている）。官民投資の具体像は「今夏の日本成長戦略の策定に向けて取りまとめ予定」と記載。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2026年夏（予定）</span>
+                    <span class="timeline-text">日本成長戦略の策定と官民投資ロードマップの取りまとめ。官民投資の具体的金額・時期が明確化される見通し（資料2・2026年3月）。</span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">経産省「再生・細胞医療・遺伝子治療製造設備投資支援事業費補助金採択結果」（2025年7月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH4 -->
+    <div class="chapter" id="ch4">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 04</span>
+                <h2>経済的前提条件</h2>
+            </div>
+
+            <h3>「輸入超過・他国依存」という現状の収益構造</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「製造の海外依存による輸入超過」を主な課題として明示しています。日本国内で使用されているバイオ医薬品の製造の多くは海外CDMO（受託開発・製造）に依存しており、コスト・供給安定性・安全保障上のリスクが発生しています。</p>
+            <p>日本が医薬品を輸入超過に転じた背景には、「国内製薬企業の製造能力投資の不足」「国内CDMOの実績・能力不足」「海外CDMO（Lonza・サムスンバイオロジクス等）との価格競争」があります。</p>
+
+            <h3>「長期・高リスクな投資回収構造」という財務課題</h3>
+            <p>同資料は「ベンチャーの資金不足、長期・高リスクな投資回収構造、物価高や資材高騰によるコスト増」を不確実性の要因として明示しています。バイオ医薬品・再生医療の開発は「創薬研究→前臨床試験→臨床試験（Phase 1〜3）→承認申請→製造承認」という長期プロセスを経るため、投資回収に10〜15年以上かかることが通常です。この投資回収構造がリスクマネーの供給を困難にしています。</p>
+
+            <h3>「平時稼働率とのギャップ」——大規模製造拠点の収益問題</h3>
+            <p>同資料は「大規模製造拠点の維持コストが膨大。随時利用可能なバイオリソース供給体制の不足」「感染症危機の備えと平時稼働率とのギャップ」を課題として明示しています。バイオ医薬品製造設備（バイオリアクター・無菌充填ライン等）は初期投資が極めて大きく（大型施設で数百億〜数千億円規模）、平時に稼働率が低ければ維持コストに対して収益が生まれない構造があります。</p>
+
+            <h3>米国MFN価格政策——グローバル戦略が不透明に</h3>
+            <p>同資料は「米国の最恵国待遇（MFN）価格政策の動きがある中で、米国で医薬品を販売する製薬企業各社のグローバルでの上市戦略が不透明になっている。仮に、製薬会社が我が国への新薬導入に慎重になった場合、我が国で治験が実施されないリスクがある」と明示しています。米国が特定の医薬品について他国と同等以上の低価格を義務付けるMFN政策を導入した場合、製薬企業がグローバル価格体系を見直し日本への上市を抑制する可能性があります。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH5 -->
+    <div class="chapter" id="ch5">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 05</span>
+                <h2>アジア諸外国との競争</h2>
+            </div>
+
+            <h3>「アジア諸外国が急速に体制を強化している」——資料2の明示</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「製造体制強化において先行するアジア諸外国は、バイオ医薬品を国家戦略上の重要な分野に位置づけ、イノベーション、生産、輸出などに焦点を当てて、急速に体制を強化している」と明示しています。</p>
+            <p>特に韓国のサムスンバイオロジクス（Samsung Biologics）は2011年創業ながら世界最大規模のバイオCDMO企業に急成長しており、2024年の売上高は4兆2,368億ウォン（約4,500億円）・総生産能力は約78万4,000リットルに達しています。中国はWuXi Biologics等のCDMOが急拡大しており、低コストの生産能力で市場を獲得しています。</p>
+
+            <div class="compare-grid">
+                <div class="compare-cell">
+                    <span class="cell-label">日本の技術的強み（資料2）</span>
+
+                            世界トップシェアのバイオ医薬品（エンハーツ等ADC）・iPS細胞技術（山中伸弥教授・ノーベル生理学・医学賞）・ノーベル生理学・医学賞受賞数世界2位（2001年以降・自然科学分野）という基礎研究力。ADC・バイスペシフィック抗体等の次世代抗体技術（中外製薬・第一三共）。高品質な治験実施体制。
+                          
+                </div>
+                <div class="compare-cell">
+                    <span class="cell-label">アジア競合の強み</span>
+
+                            韓国：サムスンバイオロジクス（世界最大規模CDMO）・政府主導の積極投資・英語対応力。中国：WuXi Biologics・Lonza等との協力・圧倒的な低コスト生産能力・国内巨大市場。インド：後発品（ジェネリック）製造での世界シェア・製造コスト競争力。
+                          
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">市場調査レポート2024年版「世界のバイオ医薬品受託開発製造企業の現状と将来展望」</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH6 -->
+    <div class="chapter" id="ch6">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 06</span>
+                <h2>技術・DXの位置づけ</h2>
+            </div>
+
+            <h3>「AI創薬」——創薬プロセスの高度化・効率化</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「他分野と同様に、AIを活用した創薬プロセスの高度化・効率化が進展している」と明示しています。候補分子の設計・スクリーニング・前臨床予測・臨床試験デザイン最適化の各段階でAIの活用が進んでおり、従来10〜15年かかっていた創薬期間の大幅短縮が期待されています。Alphabet傘下のIsomorphic Labsが2024年にノバルティス・イーライリリーとAI創薬で大型契約を締結しています。</p>
+
+            <h3>「製造の自動化・DX」——CDMO競争力の鍵</h3>
+            <p>同資料は「大規模製造拠点での安定生産に向けた製造自動化及び国内サプライチェーンの強化」を政策課題として明示しています。バイオ医薬品製造では培養条件の安定化・無菌充填の自動化・品質管理のデジタル化（PAT：Process Analytical Technology）が競争力の源泉となっています。国内AGCが2023年に約200億円を投じて製造施設を拡張しており（市場調査2024年版）、製造能力増強と自動化が並行して進んでいます。</p>
+
+            <h3>iPS細胞・遺伝子編集——次世代治療の基盤技術</h3>
+            <p>同資料は「米国等では個別化遺伝子治療や、遺伝子編集技術を用いた動物の臓器を人に移植する技術（異種移植）が臨床段階に突入するなど、新領域における医療技術も急速に進展している」と明示しています。日本はiPS細胞技術で研究面の先行優位を持っていますが、商業化・製造体制の整備で米国・欧州に後れを取っている状況です。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">市場調査レポート2024年版「世界のバイオ医薬品受託開発製造企業の現状と将来展望」</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH7 -->
+    <div class="chapter" id="ch7">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 07</span>
+                <h2>経済安全保障との接続</h2>
+            </div>
+
+            <h3>「感染症危機や海外情勢に左右されることなく国内供給できる体制の構築」</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「ワクチンを含むバイオ医薬品・再生医療等製品等は、国民の健康や命に直結する、医療・経済安全保障上、極めて重要な分野。他国依存の現状を脱却し、感染症危機や海外情勢に左右されることなく、国内供給できる体制を構築する危機管理投資が必要」と位置づけています。</p>
+            <p>コロナ禍（2020〜2022年）における国産ワクチン不足・海外依存の露呈がこの認識を強化しており、再生医療等製品・遺伝子治療等の新モダリティについても同様の国内製造体制整備が急務とされています。</p>
+
+            <h3>「CDMO」が経済安全保障の要</h3>
+            <p>同資料は「国内製造拠点における製造受託実績獲得に向けた支援」「アジアの再生医療等製品等のCDMO市場のシェア獲得」を勝ち筋として明示しています。CDMO（Contract Development and Manufacturing Organization・医薬品開発製造受託機関）は製薬会社から医薬品の製造を受託する事業です。国内製造体制の確立と同時に、アジア向けCDMOサービス輸出による外貨獲得も狙っています。経産省は再生・細胞医療・遺伝子治療CDMO育成に向けた4年間総額383億円の補助金を2025年7月に採択しています。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">経産省「再生・細胞医療・遺伝子治療製造設備投資支援事業費補助金採択結果」（2025年7月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH8 -->
+    <div class="chapter" id="ch8">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 08</span>
+                <h2>外部環境の整理</h2>
+            </div>
+
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>章</th>
+                        <th>指標名</th>
+                        <th>数値</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第1章</td>
+                        <td>世界の医薬品市場規模</td>
+                        <td>約200兆円（2022年）・バイオ等の比率約4割</td>
+                        <td>資料2 2026年3月</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>特許品の世界市場成長率</td>
+                        <td>年平均9.6%で拡大</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>日本企業の医薬品売上・シェア</td>
+                        <td>約11.6兆円（シェア6.9%）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>日本企業の売上目標（2040年）</td>
+                        <td>23.0兆円（政策目標として示されている）</td>
+                        <td>資料1 2026年3月</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>日本国内バイオ関連市場</td>
+                        <td>6兆7,025億円（2025年・前年比+2.2%）</td>
+                        <td>日経バイオテク独自調査 2025年</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>バイオ医薬品市場（世界）</td>
+                        <td>2028年に6,940億ドルに達すると予測</td>
+                        <td>市場調査レポート2024年版</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>ADC（抗体薬物複合体）世界市場</td>
+                        <td>2023年93億ドル→2031年297億ドル（CAGR 15.6%）</td>
+                        <td>Data Bridge Market Research</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>次世代抗体医薬品市場</td>
+                        <td>2025年164億ドル→2030年335億ドル（CAGR 15.4%）</td>
+                        <td>市場調査レポート 2026年</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>CAR-T細胞治療 国内市場</td>
+                        <td>2023年比2.0倍・2030年に350億円</td>
+                        <td>富士経済 2024年</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>再生医療CDMO補助金</td>
+                        <td>4年間総額383億円（経産省・2025年7月採択）</td>
+                        <td>経産省 2025年7月</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>官民投資の具体的金額</td>
+                        <td>「今夏の日本成長戦略の策定に向けて取りまとめ予定」（未確定）</td>
+                        <td>資料2 2026年3月</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="data-box">
+                <div class="box-title">構造的に固定されやすい要素</div>
+                <ul>
+                    <li>世界の医薬品市場がバイオ・再生・遺伝子治療等の比率を高める方向性は技術の進歩とともに続く</li>
+                    <li>「ADC・バイスペシフィック抗体等の次世代モダリティの高成長」という市場トレンドは、パイプライン充実から短期には変化しない</li>
+                    <li>日本のiPS細胞技術・ADC技術という技術的優位は存在するが、商業化・CDMO化が遅れているという構造的課題は短期では解消しない</li>
+                    <li>「韓国サムスンバイオロジクス・中国WuXi Biologics等の先行するアジアCDMO」という競合構図は短期では逆転しない</li>
+                    <li>大規模製造設備投資の回収に長期間かかるという経済的制約は変化しない</li>
+                    <li>米国MFN価格政策等のグローバルな薬価政策の不確実性は当面続く</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜7章に記載の各統計の集約</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH9 -->
+    <div class="chapter" id="ch9">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 09</span>
+                <h2>内部環境編への橋渡し</h2>
+            </div>
+            <div class="data-box">
+                <div class="box-title">外部環境編の整理（5点）</div>
+                <ul>
+                    <li>世界の医薬品市場は2022年で約200兆円・バイオ等の比率約4割・特許品市場は年平均9.6%で拡大。日本企業のシェアは6.9%（約11.6兆円）で2040年目標は23.0兆円（政策目標として示されている）</li>
+                    <li>ADC（CAGR 15.6%）・バイスペシフィック抗体・CAR-T・iPS細胞由来製品・mRNA等の次世代モダリティが急成長。日本は第一三共「エンハーツ」等のADCと山中教授のiPS細胞技術で世界的優位性を持つ</li>
+                    <li>韓国（サムスンバイオロジクス）・中国（WuXi Biologics）等のアジア諸外国がCDMO能力で先行。日本は「製造の海外依存による輸入超過」「国内CDMO実績不足」という構造的課題を抱えている</li>
+                    <li>コロナ禍で露呈した医薬品の海外依存リスクを受け、経済安全保障の観点から国内製造体制整備が急務。経産省が再生医療CDMO育成に4年間383億円の補助金を採択（2025年7月）</li>
+                    <li>課題は「創薬ベンチャーの資金・人材不足」「長期・高リスクな投資回収構造」「大規模製造拠点の維持コストと平時稼働率のギャップ」「米国MFN価格政策による上市戦略の不透明化」の4点</li>
+                </ul>
+            </div>
+            <div class="next-box">
+                <div class="next-label">NEXT — 内部環境編で整理すること</div>
+                <h3>外圧がプレイヤー構成・収益・人材にどう現れるか</h3>
+                <ul>
+                    <li>第一三共（エンハーツ等ADC）・中外製薬（スイッチ抗体等）・住友ファーマ（iPS細胞製品）・武田薬品等の国内主要製薬企業のバイオ医薬品戦略と財務実態</li>
+                    <li>AGC・富士フイルム・JSR（CDMO事業）等の国内バイオCDMOプレイヤーの生産能力・売上・国際競争力</li>
+                    <li>クオリプス・サンバイオ・ヘリオス等の再生医療スタートアップの事業化進捗と資金調達状況</li>
+                    <li>AMED（日本医療研究開発機構）の支援実態と創薬スタートアップエコシステムの現状</li>
+                    <li>バイオ医薬品製造・品質管理人材（GMP担当・品質保証）・臨床開発人材（CRA・CRC）の市場実態と年収水準</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポートの総括</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <div class="container">
+            <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。市場規模数値は各調査機関の定義・算定方法が異なるため単純比較はできません。「政策目標として示されている」と注記した数値は政府が目標として掲げた値であり達成を保証するものではありません。官民投資の具体的金額は2026年夏の取りまとめ予定であり本時点では未確定です。データ基準時点は2026年04月です。</p>
+            <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年04月 産業構造分析レポート ── バイオ医薬品・再生医療等製品等（外部環境編）</p>
+            <p style="margin-top:8px;">
+                <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
