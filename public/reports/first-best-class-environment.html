@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業界分析｜高市政権「戦略17分野」創薬・先端医療 ファーストインクラス製品・ベストインクラス製品（外部環境編）</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+    :root {
+        --ink: #0f0f0e;
+        --paper: #f5f2ed;
+        --cream: #ede9e1;
+        --accent: #c84b2f;
+        --muted: #6b6760;
+        --rule: #c9c4bb;
+        --highlight: #fff8e6;
+    }
+
+    *, * ::before, * ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        border-bottom: 3px solid var(--accent);
+    }
+
+    .masthead-right {
+        color: var(--muted);
+    }
+
+    .hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 60px 40px 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200, 75, 47, 0.07) 4px, rgba(200, 75, 47, 0.07) 5px);
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        padding: 4px 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(20px, 3.2vw, 34px);
+        font-weight: 900;
+        line-height: 1.4;
+        max-width: 820px;
+        letter-spacing: 0.02em;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+        color: var(--accent);
+        font-style: normal;
+    }
+
+    .hero-meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+
+    .hero-badge {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 11px;
+        padding: 4px 12px;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.06em;
+    }
+
+    .data-notice {
+        background: rgba(200, 75, 47, 0.15);
+        border-left: 3px solid var(--accent);
+        padding: 10px 16px;
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .toc {
+        background: var(--cream);
+        border-top: 3px solid var(--ink);
+        border-bottom: 1px solid var(--rule);
+        padding: 32px 40px;
+    }
+
+    .toc h2 {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 16px;
+        text-transform: uppercase;
+    }
+
+    .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 6px 28px;
+    }
+
+    .toc-item {
+        font-size: 13px;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 3px 0;
+        border-bottom: 1px dashed var(--rule);
+        display: flex;
+        gap: 8px;
+    }
+
+    .toc-item:hover {
+        color: var(--accent);
+    }
+
+    .toc-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        flex-shrink: 0;
+        padding-top: 2px;
+    }
+
+    .chapter {
+        padding: 48px 40px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .chapter:nth-child(even) {
+        background: var(--cream);
+    }
+
+    .chapter-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .chapter-num {
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .chapter h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.4;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 10px;
+        flex: 1;
+    }
+
+    .chapter h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 24px 0 10px;
+        padding-left: 10px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .chapter p {
+        margin-bottom: 14px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 24px 0;
+    }
+
+    .stat-cell {
+        background: var(--paper);
+        padding: 18px 16px;
+        text-align: center;
+    }
+
+    .chapter:nth-child(even) .stat-cell {
+        background: #f0ece4;
+    }
+
+    .stat-cell .stat-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent);
+        line-height: 1.2;
+        display: block;
+    }
+
+    .stat-cell .stat-unit {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-top: 2px;
+    }
+
+    .stat-cell .stat-label {
+        font-size: 11px;
+        color: var(--ink);
+        display: block;
+        margin-top: 6px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .data-box {
+        background: var(--highlight);
+        border: 1px solid #e0d8c4;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 20px 0;
+    }
+
+    .data-box .box-title {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .data-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .data-box ul li {
+        padding: 5px 0 5px 16px;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+        position: relative;
+    }
+
+    .data-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .data-box ul li:last-child {
+        border-bottom: none;
+    }
+
+    .note-box {
+        background: rgba(200, 75, 47, 0.05);
+        border: 1px dashed var(--accent);
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .note-box strong {
+        color: var(--accent);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13px;
+    }
+
+    .summary-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .summary-table thead th {
+        padding: 10px 14px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+    }
+
+    .summary-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .summary-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .summary-table tbody td {
+        padding: 9px 14px;
+        vertical-align: top;
+    }
+
+    .summary-table td:first-child {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 12px;
+    }
+
+    .compare-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 20px 0;
+    }
+
+    .compare-cell {
+        background: var(--paper);
+        padding: 16px 18px;
+        font-size: 13px;
+    }
+
+    .chapter:nth-child(even) .compare-cell {
+        background: #f0ece4;
+    }
+
+    .compare-cell .cell-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .timeline {
+        margin: 20px 0;
+    }
+
+    .timeline-item {
+        display: flex;
+        gap: 16px;
+        padding: 12px 0;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+    }
+
+    .timeline-item:last-child {
+        border-bottom: none;
+    }
+
+    .timeline-year {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        color: var(--accent);
+        font-weight: 600;
+        flex-shrink: 0;
+        width: 130px;
+        padding-top: 2px;
+    }
+
+    .timeline-text {
+        flex: 1;
+    }
+
+    .next-box {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 28px 32px;
+        margin: 20px 0;
+        border-left: 5px solid var(--accent);
+    }
+
+    .next-box .next-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .next-box h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 17px;
+        margin-bottom: 12px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .next-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .next-box ul li {
+        padding: 4px 0 4px 14px;
+        font-size: 13px;
+        position: relative;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .next-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.06);
+        border: 1px solid var(--rule);
+        padding: 3px 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        color: var(--muted);
+        margin: 2px 3px;
+        letter-spacing: 0.04em;
+    }
+
+    .source-wrap {
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 1px dashed var(--rule);
+    }
+
+    .disclaimer {
+        background: var(--ink);
+        color: rgba(245, 242, 237, 0.5);
+        padding: 24px 40px;
+        font-size: 11px;
+        line-height: 1.7;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.03em;
+    }
+
+    .rule-thick {
+        border: none;
+        border-top: 3px solid var(--ink);
+        margin: 0;
+    }
+
+    .rule-thin {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .masthead {
+            flex-direction: column;
+            gap: 6px;
+            padding: 10px 16px;
+        }
+
+        .hero {
+            padding: 36px 16px 30px;
+        }
+
+        .chapter {
+            padding: 32px 16px;
+        }
+
+        .toc {
+            padding: 24px 16px;
+        }
+
+        .compare-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span>産業構造分析レポート</span>
+        <span class="masthead-right">2026年04月発行 ── 創薬・先端医療／ファーストインクラス・ベストインクラス製品（外部環境編）</span>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-label">INDUSTRY ANALYSIS REPORT — EXTERNAL ENVIRONMENT</div>
+            <h1>
+                業界分析｜高市政権「戦略17分野」
+                <br>
+                創薬・先端医療
+                <br>
+                <em>ファーストインクラス製品・ベストインクラス製品</em>
+                （外部環境編）
+            </h1>
+            <div class="hero-meta">
+                <span class="hero-badge">就職・転職検討者向け</span>
+                <span class="hero-badge">株式投資家向け</span>
+                <span class="hero-badge">数字と事実のみ記載</span>
+            </div>
+            <div class="data-notice">本レポートのデータ基準時点：2026年04月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用</div>
+        </div>
+    </div>
+
+    <hr class="rule-thick">
+
+    <div class="toc">
+        <div class="container">
+            <h2>目次 — TABLE OF CONTENTS</h2>
+            <div class="toc-grid">
+                <a class="toc-item" href="#ch0">
+                    <span class="toc-num">00</span>
+                    このレポートの目的と読み方
+                </a>
+                <a class="toc-item" href="#ch1">
+                    <span class="toc-num">01</span>
+                    市場規模と日本の位置
+                </a>
+                <a class="toc-item" href="#ch2">
+                    <span class="toc-num">02</span>
+                    「ドラッグロス」——75%未着手の衝撃
+                </a>
+                <a class="toc-item" href="#ch3">
+                    <span class="toc-num">03</span>
+                    制度・政策の枠組み
+                </a>
+                <a class="toc-item" href="#ch4">
+                    <span class="toc-num">04</span>
+                    経済的前提条件
+                </a>
+                <a class="toc-item" href="#ch5">
+                    <span class="toc-num">05</span>
+                    AI創薬——創薬プロセスの構造変化
+                </a>
+                <a class="toc-item" href="#ch6">
+                    <span class="toc-num">06</span>
+                    米国・欧州の動向——「スタートアップ×製薬企業」モデル
+                </a>
+                <a class="toc-item" href="#ch7">
+                    <span class="toc-num">07</span>
+                    経済安全保障との接続
+                </a>
+                <a class="toc-item" href="#ch8">
+                    <span class="toc-num">08</span>
+                    外部環境の整理
+                </a>
+                <a class="toc-item" href="#ch9">
+                    <span class="toc-num">09</span>
+                    内部環境編への橋渡し
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <!-- CH0 -->
+    <div class="chapter" id="ch0">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <h2>このレポートの目的と読み方</h2>
+            </div>
+            <p>本レポートは、高市政権「戦略17分野」創薬・先端医療の「ファーストインクラス製品・ベストインクラス製品（医薬品、再生医療等製品）」の外部環境を、就職・転職検討者および株式投資家向けに数字と事実のみで記述します。所管は内閣府（健康医療）・デジタル庁です。</p>
+            <div class="note-box">
+                <strong>【用語の定義】</strong>
+                ファーストインクラス製品：全く新しい作用で世界で初めて承認されるもの。ベストインクラス製品：同じ作用の製品の中で有用性が最も優れるもの。両者はともに「革新的新薬」の中核を成し、特許期間中の高い収益を生む。
+
+            </div>
+            <div class="data-box">
+                <div class="box-title">「ファーストインクラス・ベストインクラス製品」とは何か——3行で把握する</div>
+                <ul>
+                    <li>【技術の概要】既存の医薬品では満たされていない医療ニーズ（アンメットメディカルニーズ）に対応する革新的な新薬・再生医療等製品。全く新しい作用機序を持つ「ファーストインクラス」と、既存の同作用薬の中で最も有用性が高い「ベストインクラス」の2種類がある。これらは特許期間中に高い収益をもたらし、製薬企業の研究開発投資の原動力となる。</li>
+                    <li>【現状の問題】日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「米国の最恵国待遇（MFN）価格政策の動きがある中で、米国で医薬品を販売する製薬企業各社のグローバルでの上市戦略が不透明になっている」と明示している。また、グローバルで開発後期段階の新規モダリティ137製品のうち、75%で日本での臨床開発が未着手（ドラッグロス）という深刻な状況がある（2023年7月時点・BCG/EvaluatePharma分析）。</li>
+                    <li>【なぜ今か】日本はノーベル賞受賞数世界2位（2001年以降・自然科学分野）という基礎研究力を持ちながら、その成果を「世界で初めて承認される革新的新薬」に結びつける「創薬力」が低下しつつあるという危機感がある。特許品の世界市場が年平均9.6%で拡大する中で、日本企業のシェアを維持・拡大するには「世界直行型」の開発実現が急務とされている。</li>
+                </ul>
+            </div>
+            <p>良し悪しの評価・投資推奨・将来予測は行いません。</p>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート基本方針</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH1 -->
+    <div class="chapter" id="ch1">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <h2>市場規模と日本の位置</h2>
+            </div>
+
+            <h3>世界の医薬品市場——特許品は年平均9.6%で拡大</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「世界の医薬品市場は2022年時点で約200兆円に達しており、ファーストインクラス製品・ベストインクラス製品を含む特許品の世界市場は、年平均9.6%で拡大している」と明示しています。世界の医薬品市場の約6割が日米欧に集中しており、この3地域での同時承認が市場獲得の鍵となります。</p>
+
+            <h3>日本は「世界有数の新薬創出国」——しかし相対的地位が低下</h3>
+            <p>同資料は「我が国の医薬品産業は、世界有数の新薬創出国の地位を維持してきており、自動車関連産業、素材産業に次ぐ販売金額第3位の基幹産業となっている」と現状を示しています。日本企業の医薬品売上は約11.6兆円（シェア6.9%・2022年時点）です（資料2・2026年3月）。ノーベル賞受賞数世界2位（2001年以降・自然科学分野）という基礎研究力と、国民皆保険をベースとした医療機関の水準の高さによる良質な治験体制が強みです。</p>
+            <p>ただし、このシェアを維持・拡大するには「特許品のグローバル市場の年平均成長率（年平均9.6%）と同水準の成長を実現すること」が政策目標として示されており、現状維持は可能でも成長は厳しいという認識が背景にあります。</p>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">約200兆円</span>
+                    <span class="stat-unit">（2022年・世界）</span>
+                    <span class="stat-label">
+                        世界の医薬品市場規模
+                        <br>
+                        （資料2 2026年3月）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">年平均9.6%</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        特許品の世界市場
+                        <br>
+                        年平均成長率
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">約11.6兆円</span>
+                    <span class="stat-unit">（シェア6.9%）</span>
+                    <span class="stat-label">
+                        日本企業の医薬品売上
+                        <br>
+                        （資料2 2026年3月）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">世界2位</span>
+                    <span class="stat-unit">（2001年以降・自然科学）</span>
+                    <span class="stat-label">
+                        日本のノーベル賞受賞数
+                        <br>
+                        （資料2 2026年3月）
+                    </span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH2 -->
+    <div class="chapter" id="ch2">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <h2>「ドラッグロス」——75%未着手の衝撃</h2>
+            </div>
+
+            <h3>グローバル開発後期の新規モダリティ137製品中75%が日本未着手</h3>
+            <p>BCGとEvaluatePharmaによる分析（2023年7月時点）によると、グローバルで開発後期段階（Phase 3/申請中）にある新規モダリティ137製品のうち、**75%で日本での臨床開発が未着手**という状態でした（国立がん研究センター・がん新薬開発合同シンポジウム資料・2024年12月）。これが「ドラッグロス（日本で使えない薬が増えている問題）」の実態です。残りは「21%が日本でも同タイムラインで開発中」「4%が日本では遅れて開発中（ドラッグラグ）」という内訳でした。</p>
+
+            <h3>ドラッグロスの3つの要因</h3>
+            <div class="data-box">
+                <div class="box-title">ドラッグロス・ドラッグラグの主要因（複数の政策資料より）</div>
+                <ul>
+                    <li>【①日本のアカデミア等の潜在的な有望シーズが掘り起こせていない】基礎研究力は世界トップクラスでも、研究成果を創薬シーズとして実用化につなげる「橋渡し人材」と「リスクマネー」が不足している（資料2・2026年3月；創薬力向上構想会議・2024年5月）。</li>
+                    <li>【②海外スタートアップが日本市場に魅力を感じない】日本の薬価制度（収載後の薬価が下がりやすい）・治験手続きの複雑さ・市場規模の相対的小ささから、海外スタートアップが日本での臨床開発を後回しにするインセンティブが存在する（東京財団政策研究所・2025年1月）。</li>
+                    <li>【③国際共同治験への日本の参加率が低い】現代の医薬品開発の主流は「世界同時に開発を進める国際共同治験」だが、日本特有の運用上の複雑さ・手続きの煩雑さが治験の効率性を損なっている。これが世界同時承認の機会を失わせている（日本製薬工業協会・2025年11月）。</li>
+                </ul>
+            </div>
+
+            <h3>国際共同治験の初回届出数目標——2028年までに2021年比1.5倍（150件）</h3>
+            <p>「創薬力の向上により国民に最新の医薬品を迅速に届けるための構想会議」（2024年5月中間とりまとめ）は、国際共同治験の初回治験届出数を「2028年迄に2021年の1.5倍にあたる**150件**まで増加させること」を政策目標として示しています（政策目標として示されている）。日本製薬工業協会は2025年11月に「治験エコシステム業界宣言2025」を発出し、PMDA（独立行政法人医薬品医療機器総合機構）は2024年度より「治験エコシステム導入推進事業」を開始しています（日本製薬工業協会・2025年11月）。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">国立がん研究センター・がん新薬開発合同シンポジウム資料「我が国の創薬力向上に向けての課題と今後の取り組み」（2024年12月）</span>
+                <span class="source-tag">東京財団政策研究所「日本のドラッグロスとドラッグラグ：現状分析と再生への提案」（2025年1月）</span>
+                <span class="source-tag">日本製薬工業協会「共同ステートメント『治験エコシステム業界宣言2025』の発出について」（2025年11月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH3 -->
+    <div class="chapter" id="ch3">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <h2>制度・政策の枠組み</h2>
+            </div>
+
+            <h3>日本の政策目標（2026年3月時点）</h3>
+            <div class="data-box">
+                <div class="box-title">達成すべき戦略的目標（資料2・2026年3月・政策目標として示されている）</div>
+                <ul>
+                    <li>【市場目標】世界の医薬品市場の約6割が集中する日米欧を対象に、ファーストインクラス製品・ベストインクラス製品の同時承認の獲得を目指す</li>
+                    <li>【成長目標】日本の製薬企業がグローバルで獲得する特許品の市場規模について、特許品のグローバル市場の年平均成長率（年平均9.6%）と同水準の成長を実現する</li>
+                    <li>【戦略的目標】ファーストインクラス製品・ベストインクラス製品の開発・供給体制を確保することを通じて、未だ満たされていない医療ニーズに応える製品（アンメットメディカルニーズ製品）を生み出し、健康医療安全保障を実現する</li>
+                </ul>
+            </div>
+
+            <h3>主要マイルストーン</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-year">2023年12月</span>
+                    <span class="timeline-text">後期段階のグローバル多施設臨床試験に日本のサイトを追加する際に、日本人被験者のフェーズIデータを提供する義務を廃止（理論上、米国・欧州と同時に薬剤を承認できる体制へ）（東京財団・2025年1月）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2024年5月</span>
+                    <span class="timeline-text">「創薬力の向上により国民に最新の医薬品を迅速に届けるための構想会議」が中間とりまとめを公表。国際共同治験届出150件（2028年目標・政策目標として示されている）等を明示。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2024年7月</span>
+                    <span class="timeline-text">政府が中間とりまとめを踏まえた政策目標と工程表を公表。ドラッグロスの解消に向けた2028年までの道筋を提示。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2024年度〜</span>
+                    <span class="timeline-text">PMDA「治験エコシステム導入推進事業」開始。治験の質を維持しつつ効率的な運用を可能にする「治験エコシステム」の構築を目指す（日本製薬工業協会・2025年11月）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2025年〜</span>
+                    <span class="timeline-text">「創薬力向上のための官民協議会」設置。官民協働での創薬力強化の継続的な推進（日本製薬工業協会・2025年11月；経産省・2025年）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2025年11月</span>
+                    <span class="timeline-text">日本製薬工業協会が「治験エコシステム業界宣言2025」を発出。治験環境の国際化・効率化を業界一体で推進する方針を示す。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2026年3月</span>
+                    <span class="timeline-text">日本成長戦略会議 第3回で「ファーストインクラス・ベストインクラス製品」が戦略17分野に明示。官民投資の具体像は「今夏の日本成長戦略の策定に向けて取りまとめ予定」（資料2・2026年3月）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2028年（目標）</span>
+                    <span class="timeline-text">国際共同治験初回届出数150件（2021年比1.5倍）を達成（政策目標として示されている）。FIH（ファーストインヒューマン：最初のヒトへの投与）試験実施施設の国内整備。</span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">創薬力向上のための政策目標と工程表（内閣官房健康・医療戦略室・2024年7月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH4 -->
+    <div class="chapter" id="ch4">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 04</span>
+                <h2>経済的前提条件</h2>
+            </div>
+
+            <h3>「製薬企業は特許期間中の収益を研究開発に再投資する」サイクル</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「製薬企業は、開発した医薬品の特許期間中の収益を研究開発に再投資する収益構造となっていることから、医薬品開発を継続する必要がある」と明示しています。このため、革新的新薬（ファーストインクラス・ベストインクラス）の開発成功と日米欧での同時承認・高薬価での発売が、次の研究開発への原資を生む構造的な好循環の前提となります。</p>
+
+            <h3>「スタートアップの資金不足」——日米格差の実態</h3>
+            <p>同資料は「スタートアップの資金不足、国際共同治験の高コスト化による資金繰りの逼迫」を不確実性の要因として明示しています。2025年の国内未上場創薬ベンチャーの資金調達額は前年比約**25%増**と堅調に成長していますが（新生キャピタルパートナーズ・2026年1月）、米国のバイオテク産業とは依然として規模の差があります。2025年の創薬ベンチャーファイナンスは「全体の資金量は増えた一方で、投資先は絞り込まれている」という状況にあります（同）。</p>
+            <p>AMED「創薬ベンチャーエコシステム強化事業」は認定VCによる出資額の2倍相当の治験費用を補助し、1課題あたり最大**100億円**（補助率2/3）・最長2031年9月まで支援する制度として運用中です（AMED・2025年第10回公募）。</p>
+
+            <h3>「米国MFN価格政策」——グローバル上市戦略への影響</h3>
+            <p>同資料は「米国の最恵国待遇（MFN：Most Favored Nation）価格政策の動きがある中で、米国で医薬品を販売する製薬企業各社のグローバルでの上市戦略が不透明になっている。仮に、製薬会社が我が国への新薬導入に慎重になった場合、我が国で治験が実施されないリスクがある」と明示しています。米国が特定の医薬品について他国最低価格を基準とする薬価を義務付けるMFN政策は、製薬企業が日本での薬価・上市スケジュールを再検討する動機となり得ます。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">新生キャピタルパートナーズ「2025年の創薬ベンチャーファイナンスの全体像」（2026年1月）</span>
+                <span class="source-tag">AMED「創薬ベンチャーエコシステム強化事業（第10回公募）」（2025年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH5 -->
+    <div class="chapter" id="ch5">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 05</span>
+                <h2>AI創薬——創薬プロセスの構造変化</h2>
+            </div>
+
+            <h3>AI創薬市場——2024年の10億ドルから2037年に740億ドルへ（CAGR 38%）</h3>
+            <p>世界のAI創薬市場は2024年に約**10億ドル**と評価され、2037年には約**740億ドル**に達するとの予測があります（CAGR 約38%・市場調査レポート）。また、AI創薬へのグローバル投資額は2024年に約**30億ドル（約4,700億円）**規模に達したとも報じられています（ファーマ経営研究所・2025年7月）。</p>
+
+            <h3>AI創薬が変えること——候補分子設計・スクリーニング・臨床試験設計</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「他分野と同様に、AIを活用した創薬プロセスの高度化・効率化が進展している」と明示しています。AIが変えている具体的な場面は「候補分子の設計（AlphaFold等によるタンパク質構造予測）」「バーチャルスクリーニング（膨大な化合物から有望候補を高速絞り込み）」「臨床試験デザインの最適化（患者選別・適応症特定）」「副作用予測」等です。</p>
+
+            <h3>日本のAI創薬スタートアップ——AMED支援と海外展開</h3>
+            <p>日本でも2024〜2025年にかけてAI創薬スタートアップが相次いで資金調達を実施しています。AMED「創薬ベンチャーエコシステム強化事業」の採択ベンチャーには、京都大学iPS細胞技術を活用したシノビセラピューティクス（2023年米国拠点整備）・低分子化合物の創薬スタートアップで2025年に米国拠点を親会社とした企業等が含まれています（経産省・創薬エコシステム強化事業資料）。同事業はAMED認定VCによる出資を条件とし、最大100億円の補助を提供しています。</p>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">約10億ドル</span>
+                    <span class="stat-unit">→約740億ドル（2037年）</span>
+                    <span class="stat-label">
+                        AI創薬 世界市場
+                        <br>
+                        （CAGR 38%・市場調査）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">約30億ドル</span>
+                    <span class="stat-unit">（約4,700億円）</span>
+                    <span class="stat-label">
+                        AI創薬 世界投資額
+                        <br>
+                        （2024年・ファーマ経営研究所）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">最大100億円</span>
+                    <span class="stat-unit">（補助率2/3）</span>
+                    <span class="stat-label">
+                        AMED創薬ベンチャー
+                        <br>
+                        エコシステム強化事業
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">前年比+25%</span>
+                    <span class="stat-unit">（2025年）</span>
+                    <span class="stat-label">
+                        国内未上場創薬ベンチャー
+                        <br>
+                        資金調達額成長率
+                    </span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">市場調査レポート「創薬における人工知能の市場」（SDKI）</span>
+                <span class="source-tag">ファーマ経営研究所「2025年、創薬AIが爆発する」（2025年7月）</span>
+                <span class="source-tag">経産省「創薬エコシステム強化に向けた取組」</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH6 -->
+    <div class="chapter" id="ch6">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 06</span>
+                <h2>米国・欧州の動向——「スタートアップ×製薬企業」モデル</h2>
+            </div>
+
+            <h3>米国のモデル——スタートアップ×大手製薬企業の連携が主流</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「米国等では、ファーストインクラス製品・ベストインクラス製品の開発に当たり、開発の効率化やリスク分散などの観点から、製品開発・販売で強みを持つ製薬企業が、技術シーズを有するスタートアップと連携するモデルが主流」と明示しています。バイオテクノロジースタートアップが革新的シーズを開発し、大手製薬企業がライセンスアウト・買収・共同開発で商業化するという分業構造が確立しています。</p>
+            <p>米国では「ベンチャーキャピタルが早期から資金を提供→スタートアップがPOC（概念実証）を取得→大手製薬企業が導入・買収→収益を次の研究開発に再投資」という好循環エコシステムが機能しており、日本が目指す「創薬エコシステム」のモデルとなっています。</p>
+
+            <h3>「各国の治験誘致競争の激化」——日本の競争環境</h3>
+            <p>同資料は「各国の治験誘致競争の激化」を不確実性の要因として明示しています。治験実施のコスト・スピード・患者エンロールメントの観点から、アジアでは韓国・シンガポール・中国が治験誘致で積極的な施策を展開しています。日本が国際共同治験の有力な実施地となるためには、運用面での改革（手続きの効率化・英語対応・FIH試験体制整備）が必要です。</p>
+
+            <div class="compare-grid">
+                <div class="compare-cell">
+                    <span class="cell-label">日本の競争力の源泉（資料2）</span>
+
+                            ノーベル賞受賞数世界2位（2001年以降・自然科学）という基礎研究力。国民皆保険をベースとした医療機関の水準の高さによる良質な治験体制。世界有数の新薬創出国の地位。iPS細胞・ADC等の技術的優位性（別分野レポート参照）。
+
+                </div>
+                <div class="compare-cell">
+                    <span class="cell-label">競合の優位・日本の課題</span>
+
+                            米国：豊富なVC資金・大学発スタートアップエコシステムの成熟・英語環境。欧州：EMAの承認ハーモナイゼーション・グローバルへのアクセス容易性。アジア（韓国・シンガポール）：治験コスト競争力・英語対応・政府支援充実。日本：治験手続きの複雑さ・薬価制度・スタートアップへのリスクマネー不足。
+
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH7 -->
+    <div class="chapter" id="ch7">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 07</span>
+                <h2>経済安全保障との接続</h2>
+            </div>
+
+            <h3>「アンメットメディカルニーズ」と健康医療安全保障</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「ファーストインクラス製品・ベストインクラス製品の供給確保を通じて、治療法が未確立の疾病にも対処することは、国民の健康維持、健康医療安全保障の実現に直結する」と位置づけています。革新的新薬の創出は単なる経済的価値にとどまらず、国民が治療を受けられるかどうかに直結する安全保障上の課題です。</p>
+
+            <h3>「優れたシーズを起点に国内外から投資を呼び込む好循環」</h3>
+            <p>同資料の勝ち筋は「基礎研究力や高品質な治験の強みを活かし、実用化を担う人材の育成・流動性向上や、リスクマネーの呼び込み等によるスタートアップや国際共同治験における資金面・制度面の課題解消を図る。その上で、AIの戦略的活用や医療データの利活用推進も含めて、新たな創薬シーズの創出から実用化までを一気通貫で進める環境を整備し、成長が見込まれる海外市場の獲得につなげる『世界直行型』の開発を実現する」です。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH8 -->
+    <div class="chapter" id="ch8">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 08</span>
+                <h2>外部環境の整理</h2>
+            </div>
+
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>章</th>
+                        <th>指標名</th>
+                        <th>数値</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第1章</td>
+                        <td>世界の医薬品市場規模</td>
+                        <td>約200兆円（2022年）</td>
+                        <td>資料2 2026年3月</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>特許品の世界市場成長率</td>
+                        <td>年平均9.6%で拡大</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>日本企業の医薬品売上・シェア</td>
+                        <td>約11.6兆円（シェア6.9%）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>ドラッグロス——日本で臨床開発未着手率</td>
+                        <td>グローバル後期開発品137製品の75%（2023年7月時点）</td>
+                        <td>BCG/EvaluatePharma分析 2024年12月</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>国際共同治験届出数目標</td>
+                        <td>2028年までに150件（2021年比1.5倍・政策目標として示されている）</td>
+                        <td>構想会議中間とりまとめ 2024年5月</td>
+                    </tr>
+                    <tr>
+                        <td>第5章</td>
+                        <td>AI創薬 世界市場</td>
+                        <td>2024年約10億ドル→2037年約740億ドル（CAGR 38%）</td>
+                        <td>市場調査レポート</td>
+                    </tr>
+                    <tr>
+                        <td>第5章</td>
+                        <td>AI創薬 世界投資額</td>
+                        <td>約30億ドル（約4,700億円）（2024年）</td>
+                        <td>ファーマ経営研究所 2025年7月</td>
+                    </tr>
+                    <tr>
+                        <td>第5章</td>
+                        <td>AMED創薬ベンチャーエコシステム強化事業</td>
+                        <td>1課題最大100億円（補助率2/3）・最長2031年9月まで</td>
+                        <td>AMED 2025年</td>
+                    </tr>
+                    <tr>
+                        <td>第5章</td>
+                        <td>国内創薬ベンチャー資金調達</td>
+                        <td>前年比+25%（2025年）</td>
+                        <td>新生キャピタルパートナーズ 2026年1月</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>官民投資の具体的金額</td>
+                        <td>「今夏の日本成長戦略の策定に向けて取りまとめ予定」（未確定）</td>
+                        <td>資料2 2026年3月</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="data-box">
+                <div class="box-title">構造的に固定されやすい要素</div>
+                <ul>
+                    <li>「特許品市場が年平均9.6%で拡大している」というグローバルトレンドは、革新的新薬へのアンメットニーズが続く限り変化しない</li>
+                    <li>「製薬企業は特許収益を研究開発に再投資する」というサイクルは業界の収益構造として固定されている</li>
+                    <li>「AI創薬が創薬プロセスを高速化・効率化する」という方向性は後退しない</li>
+                    <li>「米国でのスタートアップ×大手製薬企業連携モデル」という創薬エコシステムの構造は短期では変化しない</li>
+                    <li>「日本の治験手続きの複雑さ」という構造的課題は、制度改革が浸透するまで変化しない</li>
+                    <li>「ドラッグロス問題（グローバル後期開発品の75%が日本未着手）」は、国際共同治験参加率の改善まで解消しない</li>
+                    <li>「米国MFN価格政策」の不確実性は当面続く</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜7章に記載の各統計の集約</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH9 -->
+    <div class="chapter" id="ch9">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 09</span>
+                <h2>内部環境編への橋渡し</h2>
+            </div>
+            <div class="data-box">
+                <div class="box-title">外部環境編の整理（5点）</div>
+                <ul>
+                    <li>世界の医薬品市場は2022年で約200兆円・特許品市場は年平均9.6%で拡大・日本企業シェア6.9%（約11.6兆円）。日本の政策目標は「特許品の世界市場（年平均9.6%）と同水準の成長を実現」</li>
+                    <li>グローバル後期開発品137製品のうち75%が日本で臨床開発未着手（ドラッグロス）という深刻な状況。要因は「橋渡し人材・リスクマネーの不足」「日本市場への魅力度不足」「国際共同治験参加率の低さ」の3点</li>
+                    <li>AI創薬が創薬プロセスを構造変化させており、世界投資額が2024年に約30億ドル・2037年に市場740億ドル予測（CAGR 38%）。日本でも2025年の創薬ベンチャー資金調達が前年比+25%増と増加中</li>
+                    <li>米国の「スタートアップ×大手製薬企業連携モデル」が主流。日本が目指す「世界直行型」開発の実現には、この構造へのキャッチアップが必要</li>
+                    <li>AMED創薬ベンチャーエコシステム強化事業（1課題最大100億円・最長2031年）・国際共同治験150件目標（2028年・政策目標として示されている）・治験エコシステム導入推進事業等の制度整備が進行中。官民投資の具体的金額は2026年夏の日本成長戦略取りまとめまで未確定</li>
+                </ul>
+            </div>
+            <div class="next-box">
+                <div class="next-label">NEXT — 内部環境編で整理すること</div>
+                <h3>外圧がプレイヤー構成・収益・人材にどう現れるか</h3>
+                <ul>
+                    <li>武田薬品工業・アステラス製薬・エーザイ・小野薬品等の国内主要製薬企業の創薬パイプライン戦略と財務実態</li>
+                    <li>ペプチドリーム・アクセスバイオ・シノビセラピューティクス等の国内創薬スタートアップのシーズ・資金調達状況</li>
+                    <li>AMED（日本医療研究開発機構）の創薬支援の実態と、「認定VC」制度の現状</li>
+                    <li>AlphaFold・Isomorphic Labs（Google DeepMind傘下）等のグローバルAI創薬プラットフォームと日本製薬企業との関係</li>
+                    <li>創薬研究者・規制薬事・臨床開発・AI/データ人材の市場実態と年収水準</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポートの総括</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <div class="container">
+            <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。市場規模数値は各調査機関の定義・算定方法が異なるため単純比較はできません。「政策目標として示されている」と注記した数値は政府が目標として掲げた値であり達成を保証するものではありません。官民投資の具体的金額は2026年夏の取りまとめ予定であり本時点では未確定です。データ基準時点は2026年04月です。</p>
+            <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年04月 産業構造分析レポート ── ファーストインクラス製品・ベストインクラス製品（外部環境編）</p>
+            <p style="margin-top:8px;">
+                <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
