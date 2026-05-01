@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業界分析｜高市政権「戦略17分野」創薬・先端医療 ファーストインクラス製品・ベストインクラス製品（内部環境編）</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+    :root {
+        --ink: #0f0f0e;
+        --paper: #f5f2ed;
+        --cream: #ede9e1;
+        --accent: #c84b2f;
+        --muted: #6b6760;
+        --rule: #c9c4bb;
+        --highlight: #fff8e6;
+    }
+
+    *, * ::before, * ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        border-bottom: 3px solid var(--accent);
+    }
+
+    .masthead-right {
+        color: var(--muted);
+    }
+
+    .hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 60px 40px 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200, 75, 47, 0.07) 4px, rgba(200, 75, 47, 0.07) 5px);
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        padding: 4px 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(20px, 3.2vw, 34px);
+        font-weight: 900;
+        line-height: 1.4;
+        max-width: 820px;
+        letter-spacing: 0.02em;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+        color: var(--accent);
+        font-style: normal;
+    }
+
+    .hero-meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+
+    .hero-badge {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 11px;
+        padding: 4px 12px;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.06em;
+    }
+
+    .data-notice {
+        background: rgba(200, 75, 47, 0.15);
+        border-left: 3px solid var(--accent);
+        padding: 10px 16px;
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .toc {
+        background: var(--cream);
+        border-top: 3px solid var(--ink);
+        border-bottom: 1px solid var(--rule);
+        padding: 32px 40px;
+    }
+
+    .toc h2 {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 16px;
+        text-transform: uppercase;
+    }
+
+    .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 6px 28px;
+    }
+
+    .toc-item {
+        font-size: 13px;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 3px 0;
+        border-bottom: 1px dashed var(--rule);
+        display: flex;
+        gap: 8px;
+    }
+
+    .toc-item:hover {
+        color: var(--accent);
+    }
+
+    .toc-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        flex-shrink: 0;
+        padding-top: 2px;
+    }
+
+    .chapter {
+        padding: 48px 40px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .chapter:nth-child(even) {
+        background: var(--cream);
+    }
+
+    .chapter-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .chapter-num {
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .chapter h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.4;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 10px;
+        flex: 1;
+    }
+
+    .chapter h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 24px 0 10px;
+        padding-left: 10px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .chapter p {
+        margin-bottom: 14px;
+    }
+
+    .connect-banner {
+        background: var(--ink);
+        border-left: 5px solid var(--accent);
+        padding: 16px 20px;
+        margin-bottom: 28px;
+        font-size: 13px;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .connect-banner strong {
+        color: var(--accent);
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 24px 0;
+    }
+
+    .stat-cell {
+        background: var(--paper);
+        padding: 18px 16px;
+        text-align: center;
+    }
+
+    .chapter:nth-child(even) .stat-cell {
+        background: #f0ece4;
+    }
+
+    .stat-cell .stat-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent);
+        line-height: 1.2;
+        display: block;
+    }
+
+    .stat-cell .stat-unit {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-top: 2px;
+    }
+
+    .stat-cell .stat-label {
+        font-size: 11px;
+        color: var(--ink);
+        display: block;
+        margin-top: 6px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .data-box {
+        background: var(--highlight);
+        border: 1px solid #e0d8c4;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 20px 0;
+    }
+
+    .data-box .box-title {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .data-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .data-box ul li {
+        padding: 5px 0 5px 16px;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+        position: relative;
+    }
+
+    .data-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .data-box ul li:last-child {
+        border-bottom: none;
+    }
+
+    .note-box {
+        background: rgba(200, 75, 47, 0.05);
+        border: 1px dashed var(--accent);
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .note-box strong {
+        color: var(--accent);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13px;
+    }
+
+    .summary-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .summary-table thead th {
+        padding: 10px 14px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+    }
+
+    .summary-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .summary-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .summary-table tbody td {
+        padding: 9px 14px;
+        vertical-align: top;
+    }
+
+    .summary-table td:first-child {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 12px;
+    }
+
+    .biz-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 12px;
+    }
+
+    .biz-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .biz-table thead th {
+        padding: 8px 12px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.06em;
+    }
+
+    .biz-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .biz-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .biz-table tbody td {
+        padding: 8px 12px;
+        vertical-align: top;
+        font-size: 12px;
+    }
+
+    .biz-table td:first-child {
+        font-weight: 700;
+    }
+
+    .biz-table .acc {
+        color: var(--accent);
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+    }
+
+    .next-box {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 28px 32px;
+        margin: 20px 0;
+        border-left: 5px solid var(--accent);
+    }
+
+    .next-box .next-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .next-box h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 17px;
+        margin-bottom: 12px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .next-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .next-box ul li {
+        padding: 4px 0 4px 14px;
+        font-size: 13px;
+        position: relative;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .next-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.06);
+        border: 1px solid var(--rule);
+        padding: 3px 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        color: var(--muted);
+        margin: 2px 3px;
+        letter-spacing: 0.04em;
+    }
+
+    .source-wrap {
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 1px dashed var(--rule);
+    }
+
+    .disclaimer {
+        background: var(--ink);
+        color: rgba(245, 242, 237, 0.5);
+        padding: 24px 40px;
+        font-size: 11px;
+        line-height: 1.7;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.03em;
+    }
+
+    .rule-thick {
+        border: none;
+        border-top: 3px solid var(--ink);
+        margin: 0;
+    }
+
+    .rule-thin {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .masthead {
+            flex-direction: column;
+            gap: 6px;
+            padding: 10px 16px;
+        }
+
+        .hero {
+            padding: 36px 16px 30px;
+        }
+
+        .chapter {
+            padding: 32px 16px;
+        }
+
+        .toc {
+            padding: 24px 16px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span>産業構造分析レポート</span>
+        <span class="masthead-right">2026年04月発行 ── 創薬・先端医療／ファーストインクラス・ベストインクラス製品（内部環境編）</span>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-label">INDUSTRY ANALYSIS REPORT — INTERNAL ENVIRONMENT</div>
+            <h1>
+                業界分析｜高市政権「戦略17分野」
+                <br>
+                創薬・先端医療
+                <br>
+                <em>ファーストインクラス製品・ベストインクラス製品</em>
+                （内部環境編）
+            </h1>
+            <div class="hero-meta">
+                <span class="hero-badge">就職・転職検討者向け</span>
+                <span class="hero-badge">株式投資家向け</span>
+                <span class="hero-badge">数字と事実のみ記載</span>
+            </div>
+            <div class="data-notice">本レポートのデータ基準時点：2026年04月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用</div>
+        </div>
+    </div>
+
+    <hr class="rule-thick">
+
+    <div class="toc">
+        <div class="container">
+            <h2>目次 — TABLE OF CONTENTS</h2>
+            <div class="toc-grid">
+                <a class="toc-item" href="#ch0">
+                    <span class="toc-num">00</span>
+                    この内部環境編の立ち位置
+                </a>
+                <a class="toc-item" href="#ch1">
+                    <span class="toc-num">01</span>
+                    業界内プレイヤー構成
+                </a>
+                <a class="toc-item" href="#ch2">
+                    <span class="toc-num">02</span>
+                    武田薬品工業——国内最大手の移行期
+                </a>
+                <a class="toc-item" href="#ch3">
+                    <span class="toc-num">03</span>
+                    アステラス製薬——イクスタンジと次世代への転換
+                </a>
+                <a class="toc-item" href="#ch4">
+                    <span class="toc-num">04</span>
+                    エーザイ——レカネマブが示す「世界初」の実像
+                </a>
+                <a class="toc-item" href="#ch5">
+                    <span class="toc-num">05</span>
+                    中外製薬——ロシュとの連携と高収益体質
+                </a>
+                <a class="toc-item" href="#ch6">
+                    <span class="toc-num">06</span>
+                    創薬スタートアップとAMEDエコシステム
+                </a>
+                <a class="toc-item" href="#ch7">
+                    <span class="toc-num">07</span>
+                    収益構造の本質
+                </a>
+                <a class="toc-item" href="#ch8">
+                    <span class="toc-num">08</span>
+                    人材市場の実態
+                </a>
+                <a class="toc-item" href="#ch9">
+                    <span class="toc-num">09</span>
+                    構造的課題の所在
+                </a>
+                <a class="toc-item" href="#ch10">
+                    <span class="toc-num">10</span>
+                    誤解されやすいポイント
+                </a>
+                <a class="toc-item" href="#ch11">
+                    <span class="toc-num">11</span>
+                    内部環境の整理
+                </a>
+                <a class="toc-item" href="#ch12">
+                    <span class="toc-num">12</span>
+                    有料版への橋渡し
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <!-- CH0 -->
+    <div class="chapter" id="ch0">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <h2>この内部環境編の立ち位置</h2>
+            </div>
+            <div class="connect-banner">
+                <strong>外部環境編との接続：</strong>
+                外部環境編では、世界の医薬品市場が2022年で約200兆円・特許品市場が年平均9.6%で拡大・日本企業シェア6.9%（約11.6兆円）・グローバル後期開発品の75%が日本で臨床開発未着手（ドラッグロス）・AI創薬市場CAGR38%・AMED最大100億円補助・2025年の国内創薬ベンチャー資金調達+25%増という外部構造を整理しました。本編ではその前提のもとで「外部の構造がこの産業のプレイヤー・収益・人材にどのような特性として現れているか」を数字と事実で記述します。
+
+            </div>
+            <div class="data-box">
+                <div class="box-title">本編でやること／やらないこと</div>
+                <ul>
+                    <li>【やること】武田薬品工業（4502）・アステラス製薬（4503）・エーザイ（4523）・中外製薬（4519）の4社について、2025年3月期の売上収益・主力品・研究開発費・海外売上比率を記述する</li>
+                    <li>【やること】AMED「創薬ベンチャーエコシステム強化事業」の採択スタートアップの実態を整理する</li>
+                    <li>【やること】製薬業界の人材市場（研究職・開発職・薬事・MR）の実態を整理する</li>
+                    <li>【やること】「ドラッグロス」という外部課題がプレイヤーの事業にどう影響しているかを記述する</li>
+                    <li>【やらないこと】特定銘柄の投資推奨・勝ち負けの断定・良し悪しの評価</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート基本方針</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH1 -->
+    <div class="chapter" id="ch1">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <h2>業界内プレイヤー構成</h2>
+            </div>
+            <table class="biz-table">
+                <thead>
+                    <tr>
+                        <th>企業</th>
+                        <th>2025年3月期 売上収益</th>
+                        <th>主力品・特徴</th>
+                        <th>研究開発費</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            武田薬品工業
+                            <br>
+                            （4502）
+                        </td>
+                        <td class="acc">
+                            4兆5,816億円
+                            <br>
+                            （国内1位）
+                        </td>
+                        <td>消化器系・希少疾患・血漿分画製剤・オンコロジー・神経精神科領域。アリナミン製剤売却後は研究開発型メガファーマとして再構築中。海外売上比率約89%（国内製薬最高水準）。ビバンセ（ADHD治療薬）の後発品影響で移行期。</td>
+                        <td>
+                            7,302億円
+                            <br>
+                            （国内1位）
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            アステラス製薬
+                            <br>
+                            （4503）
+                        </td>
+                        <td class="acc">
+                            1兆9,123億円
+                            <br>
+                            （+19.2%）
+                        </td>
+                        <td>前立腺がん治療薬「イクスタンジ（エンザルタミド）」が全社売上の48%・9,123億円（+21.6%）を占める。ジーンセラピー（遺伝子治療）事業も展開。海外売上比率86%。</td>
+                        <td>
+                            3,277億円
+                            <br>
+                            （+11.4%）
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            エーザイ
+                            <br>
+                            （4523）
+                        </td>
+                        <td class="acc">
+                            7,894億円
+                            <br>
+                            （+6.4%）
+                        </td>
+                        <td>アルツハイマー病治療薬「レケンビ（レカネマブ）」が前年比10倍超の443億円に急成長。バイオジェン（米国）との共同開発・共同販売。がん免疫療法の開発も進行中。海外売上比率71%。</td>
+                        <td>
+                            非開示（売上の
+                            <br>
+                            約25〜30%水準）
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            中外製薬
+                            <br>
+                            （4519）
+                        </td>
+                        <td class="acc">
+                            1兆1,171億円
+                            <br>
+                            （+5.3%）
+                        </td>
+                        <td>スイス・ロシュの戦略的子会社（ロシュの議決権の過半数保有）。独自の「スイッチ抗体」「リサイクリング抗体」技術（ロシュと共同開発）が強み。業界最高水準の営業利益率。ロシュからのロイヤリティ収入も重要収益源。</td>
+                        <td>
+                            1,853億円
+                            <br>
+                            （+4.4%）
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="note-box">
+                <strong>【注記】</strong>
+                各企業の財務データは2025年3月期（2024年度）のもの。各社の決算は国際財務報告基準（IFRS）または米国会計基準（GAAP）に基づくため、単純比較には会計基準の違いを考慮する必要があります。
+
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">AnswersNews「【2025年版】国内製薬会社ランキング」（2025年5月）</span>
+                <span class="source-tag">AnswersNews「【2025年版】製薬企業なんでもランキング」（2025年11月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH2 -->
+    <div class="chapter" id="ch2">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <h2>武田薬品工業——国内最大手の移行期</h2>
+            </div>
+
+            <h3>国内製薬1位・売上4兆5,816億円・研究開発費7,302億円</h3>
+            <p>武田薬品工業（4502）の2025年3月期（2024年度）の売上収益は**4兆5,816億円**（国内製薬1位）・研究開発費は**7,302億円**（国内製薬1位）です（AnswersNews・2025年5月）。海外売上比率は約**89%**と国内製薬企業で最も高く、グローバルな研究開発型企業として再構築を進めています。</p>
+
+            <h3>「移行期」——ビバンセ後発品の影響とパイプライン再構築</h3>
+            <p>2026年3月期（2025年度）は「移行期」と位置づけられており、主力品のビバンセ（ADHD治療薬）への後発品参入影響で2026年3月期第2四半期の売上収益は前年同期比**▲6.9%**となっています（医薬通信社・2025年10月）。武田薬品は消化器系疾患・希少疾患・血漿分画製剤・オンコロジー・神経精神科の5つの重点領域に注力しており、2025年度はrusfertide（血液疾患）・oveporexton（過眠症）等の新製品の承認申請を予定しています。</p>
+
+            <h3>大型買収（シャイアー）後の財務構造</h3>
+            <p>武田薬品は2019年に英シャイアーを約6.2兆円で買収しており、現在も多額の有利子負債を抱えながら非コア事業の売却（コンシューマーヘルスケア事業等）によって財務体質改善を進めています。ファーストインクラス・ベストインクラス製品の開発という方向性と買収負債の返済を両立させる財務構造の下で事業を運営しています。</p>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">4兆5,816億円</span>
+                    <span class="stat-unit">（2025年3月期）</span>
+                    <span class="stat-label">
+                        武田薬品工業 売上収益
+                        <br>
+                        （国内製薬1位）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">7,302億円</span>
+                    <span class="stat-unit">（2025年3月期）</span>
+                    <span class="stat-label">
+                        武田薬品工業 研究開発費
+                        <br>
+                        （国内製薬1位）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">約89%</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        武田薬品工業 海外売上比率
+                        <br>
+                        （国内製薬最高水準）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">▲6.9%</span>
+                    <span class="stat-unit">（前年同期比）</span>
+                    <span class="stat-label">
+                        武田薬品 2026年3月期
+                        <br>
+                        第2四半期 売上収益成長率
+                    </span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">AnswersNews「【2025年版】国内製薬会社ランキング」（2025年5月）</span>
+                <span class="source-tag">医薬通信社「2026年3月期第2四半期決算は減収・減益」（2025年10月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH3 -->
+    <div class="chapter" id="ch3">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <h2>アステラス製薬——イクスタンジと次世代への転換</h2>
+            </div>
+
+            <h3>売上1兆9,123億円・イクスタンジが全社売上の48%</h3>
+            <p>アステラス製薬（4503）の2025年3月期の売上収益は**1兆9,123億円**（前期比+19.2%）です（AnswersNews・2025年5月）。主力の前立腺がん治療薬「イクスタンジ（エンザルタミド）」は売上収益全体の**48%**にあたる**9,123億円**（+21.6%）を売り上げており、一製品への集中が際立っています。研究開発費は**3,277億円**（+11.4%）で国内製薬3位です。</p>
+
+            <h3>「イクスタンジ後」への戦略転換——遺伝子治療と次世代パイプライン</h3>
+            <p>イクスタンジは前立腺がん治療の標準薬として定着していますが、特許期間の問題や競合品の参入が長期的なリスクです。アステラスはこれを見越して遺伝子治療（ジーンセラピー）事業（買収した米IMSA社等）・免疫系の制御を標的とした新規パイプラインへの投資を進めています。2025年2月にはPMDA（医薬品医療機器総合機構）から細胞培養自動化システム「まほろ」がFDAの先進製造技術指定を取得したことが報じられています（医薬通信社・2025年10月）。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">AnswersNews「【2025年版】国内製薬会社ランキング」（2025年5月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH4 -->
+    <div class="chapter" id="ch4">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 04</span>
+                <h2>エーザイ——レカネマブが示す「世界初」の実像</h2>
+            </div>
+
+            <h3>アルツハイマー病修飾療法薬「レカネマブ（レケンビ）」——世界初の実像</h3>
+            <p>エーザイ（4523）が米バイオジェンと共同開発したレカネマブ（製品名：レケンビ）は、アミロイドβを標的とするモノクローナル抗体で、アルツハイマー病の進行を遅らせる「疾患修飾療法薬」として2023年1月に米国でFDA完全承認を取得しました。アルツハイマー病に対して疾患そのものの進行を抑制するという作用は世界で初めて実証された薬であり、外部環境編が示す「ファーストインクラス製品」の実例です。</p>
+            <p>2024年度（2025年3月期）のレケンビ売上収益はエーザイ単独で**443億円**（前年の10倍超）に急成長しています（AnswersNews・2025年5月）。米国ではバイオジェン（商品名：LEQEMBI）が計上しており、合計すると米国・日本・その他合算では2025年度に売上が急拡大している段階です。</p>
+
+            <h3>「ファーストインクラス」のビジネスモデル——高薬価・限定患者・長期治療</h3>
+            <p>レカネマブは高額な薬価（米国での公定価格は当初1年あたり約2.65万ドル）と、対象患者（軽度認知障害・軽度認知症の段階にある患者）の診断・投与管理の複雑さを持ちます。また投与後の副作用（ARIA：アミロイド関連画像異常）の監視が必要で、専門施設での投与が前提です。「世界初の承認」を達成しながらも、商業的な普及には医療インフラの整備・患者認知の向上・薬価交渉という複数の障壁が存在します。このレカネマブのケースは「ファーストインクラス製品を開発・承認取得することと、商業的な成功の間には大きなギャップがある」という実例として重要です。</p>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">443億円</span>
+                    <span class="stat-unit">（2024年度・前年の10倍超）</span>
+                    <span class="stat-label">エーザイ レケンビ 売上収益</span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">7,894億円</span>
+                    <span class="stat-unit">（+6.4%）</span>
+                    <span class="stat-label">
+                        エーザイ 全社売上収益
+                        <br>
+                        （2025年3月期）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">2023年1月</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        レカネマブ FDA完全承認
+                        <br>
+                        （アルツハイマー病修飾療法・世界初）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">71%</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        エーザイ 海外売上比率
+                        <br>
+                        （2025年3月期）
+                    </span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">AnswersNews「【2025年版】国内製薬会社ランキング」（2025年5月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH5 -->
+    <div class="chapter" id="ch5">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 05</span>
+                <h2>中外製薬——ロシュとの連携と高収益体質</h2>
+            </div>
+
+            <h3>ロシュグループ傘下——「スイッチ抗体」等の技術革新</h3>
+            <p>中外製薬（4519）はスイスのロシュの戦略的子会社として、独自の抗体技術（「スイッチ抗体」「リサイクリング抗体」）の研究開発を進めています。「スイッチ抗体」とは、標的となる抗原の環境変化（pHの変化等）に応じて抗体が抗原から解離し、再び別の抗原に結合できる技術で、投与回数の大幅な減少・効率向上を実現します。この技術はロシュのグローバルパイプラインにも採用されています。</p>
+            <p>中外製薬の2025年3月期売上収益は**1兆1,171億円**（+5.3%）・研究開発費は**1,853億円**（+4.4%）です。業界最高水準の営業利益率を維持しており、ロシュからのロイヤリティ収入が安定収益源となっています。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">AnswersNews「【2025年版】国内製薬会社ランキング」（2025年5月）</span>
+                <span class="source-tag">中外製薬 公式「スイッチ抗体技術について」</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH6 -->
+    <div class="chapter" id="ch6">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 06</span>
+                <h2>創薬スタートアップとAMEDエコシステム</h2>
+            </div>
+
+            <h3>AMED「創薬ベンチャーエコシステム強化事業」——最大100億円・採択事例</h3>
+            <p>AMED（日本医療研究開発機構）の「創薬ベンチャーエコシステム強化事業」は、認定VCによる出資額の2倍相当の治験費用を補助し（補助率2/3）、1課題あたり最大**100億円**を最長2031年9月まで支援します（AMED・2025年第10回公募）。「非臨床試験・第1相・第2相臨床試験段階」の創薬ベンチャーが対象で、「海外市場を含む計画か」「認定VCの支援計画」等が主な評価項目です。</p>
+            <p>採択ベンチャーの中には、京都大学のiPS細胞技術を活用した革新的ながん治療薬開発のシノビセラピューティクス（2023年・2024年採択・米国サンフランシスコに拠点整備）や、大阪大学・京都大学発のTreg細胞による免疫疾患治療のレグセル株式会社（2024年採択・2025年に本社機能を米国カリフォルニアへ）等が含まれています（経産省・創薬エコシステム資料）。「世界直行型」の開発を実現するために米国に拠点を設けるパターンが増えています。</p>
+
+            <h3>2025年の国内創薬ベンチャー資金調達——前年比+25%・資金が絞り込まれる構造</h3>
+            <p>2025年の国内未上場創薬ベンチャーの資金調達額は前年比約**25%増**と堅調でした（新生キャピタルパートナーズ・2026年1月）。ただし「全体の資金量は増えた一方で、投資先は絞り込まれている」状況で、上位5社だけで全体の約4割・上位10社で約6割を占めています（同）。開発フェーズが進んでいて出口（大手製薬企業へのライセンスアウト・買収）の解像度が見え始めた案件にまとまった資金が集まる構造です。</p>
+
+            <div class="data-box">
+                <div class="box-title">AMED「創薬ベンチャーエコシステム強化事業」採択ベンチャーのグローバル展開事例</div>
+                <ul>
+                    <li>【シノビセラピューティクス株式会社】京都大学のiPS細胞技術を活用した革新的ながん治療薬開発。2023年・2024年に本事業に採択。2023年1月に米国（サンフランシスコ）に拠点を整備し、国内外からの投資家支援を拡大してグローバルな医薬品開発を進めている。</li>
+                    <li>【レグセル株式会社】大阪大学・京都大学発のTreg細胞による革新的な免疫疾患治療薬の開発。2024年に本事業に採択。2025年に本社機能を米国（カリフォルニア）に移転し、グローバルな開発体制を構築。</li>
+                </ul>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">経産省「創薬エコシステム強化に向けた取組」（創薬ベンチャーエコシステム強化事業採択ベンチャーのグローバル展開事例）</span>
+                <span class="source-tag">AMED「創薬ベンチャーエコシステム強化事業（第10回公募）」（2025年）</span>
+                <span class="source-tag">新生キャピタルパートナーズ「2025年の創薬ベンチャーファイナンスの全体像」（2026年1月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH7 -->
+    <div class="chapter" id="ch7">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 07</span>
+                <h2>収益構造の本質</h2>
+            </div>
+
+            <h3>「一製品集中リスク」と「特許期間の壁」</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）が示すように「製薬企業は開発した医薬品の特許期間中の収益を研究開発に再投資する収益構造」にあります。アステラス製薬のイクスタンジ（売上の48%）・武田薬品のビバンセ後発品影響・エーザイのレケンビ急成長という各社の状況は、「どのタイミングでファーストインクラス・ベストインクラス製品を市場投入できるか」が企業業績を決定するという構造を示しています。</p>
+
+            <h3>「ライセンスアウト・提携収益」という日本スタートアップの主要収益モデル</h3>
+            <p>日本の創薬スタートアップの主要な収益化経路は「大手製薬企業（国内外）との提携・ライセンスアウト」です。スタートアップがPOC（概念実証）を取得した段階で大手製薬企業がライセンスを取得し、マイルストン（開発成功時の段階払い）と将来のロイヤリティを受け取る構造です。エーザイのレカネマブ（バイオジェンとの共同開発・販売）も広い意味でこのモデルの応用例です。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">AnswersNews「第一三共、がん領域は『予想以上の成長』」（2024年4月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH8 -->
+    <div class="chapter" id="ch8">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 08</span>
+                <h2>人材市場の実態</h2>
+            </div>
+
+            <h3>創薬・製薬業界の主要職種</h3>
+            <div class="data-box">
+                <div class="box-title">主要職種と特徴（2026年04月時点）</div>
+                <ul>
+                    <li>【創薬研究者（基礎・探索研究）】ターゲットの同定・リード化合物の選定・最適化。生化学・有機化学・構造生物学・バイオインフォマティクスのバックグラウンドが必要。博士号保有者が多い。国内では大手製薬企業（武田・アステラス・中外・エーザイ等）と研究機関（大学・RIKEN・産総研等）が主な就職先。AI創薬の台頭でバイオインフォマティクス・機械学習スキルの需要が急増中。</li>
+                    <li>【臨床開発（CRA・CRC・メディカルアフェアーズ）】治験の企画・実施管理・データ収集・規制対応。国際共同治験の増加で英語力が必須。製薬企業とCRO（医薬品開発業務受託機関・アイコン・IQVIA・パレクセル等）の双方で需要が高く、人材流動性が高い分野。</li>
+                    <li>【薬事（レギュラトリーアフェアーズ・RA）】日米欧の規制当局（PMDA・FDA・EMA）への承認申請・対話・国際調和。承認申請書の作成・PMDA相談・FDA Pre-BLA会議等の経験者が希少。製薬企業の成長フェーズでの採用需要が高い。</li>
+                    <li>【MR（医薬情報担当者）】医師・薬剤師・病院薬局等へのプロモーション活動。デジタル化の進展でMR数は縮小傾向にある。製薬企業の外勤営業職として多数の雇用を担っているが、各社がMR数の最適化（削減）を進めている。</li>
+                    <li>【事業開発（BD：Business Development）】海外スタートアップからの新薬候補のライセンスイン・M&Aを担当。科学的評価・法的・財務評価を一体で行う。英語力・創薬サイエンスの理解・財務モデリングの複合スキルが必要で希少。武田薬品・アステラス等のグローバル製薬企業のBD部門に需要が集中。</li>
+                </ul>
+            </div>
+
+            <h3>国内主要製薬企業の平均年収（参考水準）</h3>
+            <p>製薬業界の平均年収は製造業全体と比較して高い傾向にあります。国内大手製薬企業の平均年収は武田薬品工業・中外製薬等が1,400万円台（有価証券報告書ベース）、アステラス製薬・第一三共等が1,200〜1,400万円台とされています（従業員口コミサイト・有価証券報告書等）。ただしこれらは全従業員（MR・管理職・研究職）の平均値であり、職種・等級によって大きく異なります。</p>
+
+            <div class="note-box">
+                <strong>【注記】</strong>
+                上記の年収はOpenWork等の従業員口コミサイトの社員投稿ベースの参考値であり、確定値ではありません。会社が公式に開示した数値ではない点を留意してください。有価証券報告書記載の「平均年間給与」（単体ベース）も参考になりますが、企業規模・構成によって単純比較はできません。
+
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">各社有価証券報告書・AnswersNews「製薬企業なんでもランキング」（2025年11月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH9 -->
+    <div class="chapter" id="ch9">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 09</span>
+                <h2>構造的課題の所在</h2>
+            </div>
+
+            <h3>「ドラッグロスは大手製薬企業の課題ではなく、スタートアップ・制度の課題」という構造</h3>
+            <p>外部環境編で示したドラッグロス問題（グローバル後期開発品の75%が日本で未着手）は、主に「海外スタートアップや中小バイオテク企業が日本での治験参加を後回しにしている」という構造的問題です。大手製薬企業の主力品（武田・アステラス・エーザイ・中外等）は相当程度日本でも開発・販売されていますが、海外スタートアップが開発するニッチ・希少疾患製品が日本に届かないケースが多い状態です。この問題の解決には「個別企業の努力」よりも「制度・規制・薬価の改革」が必要という構造があります。</p>
+
+            <h3>「創薬研究者からMRまで人材需給のミスマッチ」</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「人材：創薬研究、規制薬事、臨床、AI・データ、サプライチェーンなど、実用化に必要な各分野で、人材の量・質ともに不足」と明示しています。一方で各社のMR（医薬情報担当者）は医師の処方パターン変化・デジタル化により余剰感が生じており、「創薬研究・薬事・AI創薬人材の不足」と「MRの過剰・再配置」が同時に起きているミスマッチ構造があります。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH10 -->
+    <div class="chapter" id="ch10">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 10</span>
+                <h2>誤解されやすいポイント</h2>
+            </div>
+            <div class="data-box">
+                <div class="box-title">誤解されやすいポイント（4点）</div>
+                <ul>
+                    <li>【「エーザイのレカネマブが世界初の承認＝アルツハイマー病の治療法が確立された」】レカネマブは「疾患の進行を遅らせる（修飾する）」薬であり、アルツハイマー病を「治す」薬ではありません。対象は軽度認知障害（MCI）・軽度認知症の段階にある患者で、重症患者への効果は確認されていません。また投与後のAMLR（アミロイド関連脳画像異常）という副作用リスクがあり、専門施設での投与・定期的なMRI監視が必要です。「世界初の承認＝完全な治療法の確立」という誤解には注意が必要です。</li>
+                    <li>【「武田薬品工業が国内製薬1位＝純粋な日本企業」】武田薬品工業の海外売上比率は約89%で、組織・パイプラインはほぼグローバル企業です。シャイアー買収後、CEOはクリストフ・ウェバー氏（フランス出身）が2014年から続けており、経営幹部もグローバル化が進んでいます。また「純日本発の革新的新薬」のパイプラインは武田薬品内でも中心ではありません。「国内1位」はあくまでも日本に本社を置く製薬企業の中での売上規模1位という意味です。</li>
+                    <li>【「国内大手製薬企業が研究開発費を多く使っている＝革新的新薬が次々生まれている」】武田薬品7,302億円・第一三共4,329億円・アステラス3,277億円という研究開発費規模は大きいですが、これがそのままファーストインクラス製品の創出に結びつくわけではありません。研究開発費の多くは既存製品の適応拡大・後期開発品の治験費用に使われており、初期段階の革新的シーズ創出は大学・スタートアップに依存する構造がより強くなっています。</li>
+                    <li>【「AMEDの補助金で創薬スタートアップが急増している＝日本の創薬力が復活している」】AMED「創薬ベンチャーエコシステム強化事業」は重要な支援制度ですが、補助対象は「非臨床〜第2相臨床試験段階」であり、最終的な承認・販売までには追加で多額の資金と時間が必要です。また「全体の資金量は増えたが投資先は絞り込まれている」（新生キャピタルパートナーズ・2026年1月）という状況で、資金は一部の有望案件に集中しています。エコシステム構築は進展していますが、グローバルな水準との差は依然として大きい状況です。</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜9章の総括</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH11 -->
+    <div class="chapter" id="ch11">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 11</span>
+                <h2>内部環境の整理</h2>
+            </div>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>章</th>
+                        <th>指標名</th>
+                        <th>数値・事実</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第2章</td>
+                        <td>武田薬品工業 売上収益</td>
+                        <td>4兆5,816億円（2025年3月期・国内1位）</td>
+                        <td>AnswersNews 2025年5月</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>武田薬品工業 研究開発費</td>
+                        <td>7,302億円（国内1位）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>武田薬品工業 海外売上比率</td>
+                        <td>約89%（国内製薬最高水準）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>アステラス製薬 売上収益</td>
+                        <td>1兆9,123億円（+19.2%）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>アステラス製薬 イクスタンジ 売上収益</td>
+                        <td>9,123億円（全社売上の48%・+21.6%）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>アステラス製薬 研究開発費</td>
+                        <td>3,277億円（+11.4%）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>エーザイ 売上収益</td>
+                        <td>7,894億円（+6.4%）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>エーザイ レケンビ 売上収益</td>
+                        <td>443億円（前年の10倍超）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第5章</td>
+                        <td>中外製薬 売上収益</td>
+                        <td>1兆1,171億円（+5.3%）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第5章</td>
+                        <td>中外製薬 研究開発費</td>
+                        <td>1,853億円（+4.4%）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第6章</td>
+                        <td>AMED創薬ベンチャーエコシステム強化事業</td>
+                        <td>1課題最大100億円（補助率2/3）・最長2031年</td>
+                        <td>AMED 2025年</td>
+                    </tr>
+                    <tr>
+                        <td>第6章</td>
+                        <td>国内創薬ベンチャー資金調達（2025年）</td>
+                        <td>前年比+25%（上位5社で全体の約4割）</td>
+                        <td>新生キャピタルパートナーズ 2026年1月</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="data-box">
+                <div class="box-title">構造的に固定されやすい要素</div>
+                <ul>
+                    <li>武田薬品・アステラス・エーザイ・中外製薬という国内大手4社の構図は、買収・合併がない限り短期では変化しない</li>
+                    <li>中外製薬のロシュとの戦略的子会社関係は契約構造上安定しており短期では変化しない</li>
+                    <li>エーザイのレカネマブは「世界初のアルツハイマー病疾患修飾療法薬」という先行者優位を持ち、競合品がFDA承認を取得するまでは相対的競争力が維持される</li>
+                    <li>「製薬企業は特許期間中の収益を研究開発に再投資する」というサイクルは業界の本質的構造として変化しない</li>
+                    <li>「創薬研究・薬事・AI創薬人材の不足」という構造は、育成・流動化に時間がかかるため短期では解消しない</li>
+                    <li>「AMEDが採択した創薬ベンチャーが米国拠点を設けてグローバル展開を進める」というパターンは、2026年以降も継続する見込み</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜10章の集約</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH12 -->
+    <div class="chapter" id="ch12">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 12</span>
+                <h2>有料版への橋渡し</h2>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR CAREER — 就活・転職向け有料版</div>
+                <h3>武田薬品・アステラス・エーザイ・中外・創薬スタートアップ、どこで関わるか</h3>
+                <ul>
+                    <li>武田薬品工業のグローバル化した組織で「日本発の創薬シーズ」に関わるキャリアパスと、日本オフィスの役割</li>
+                    <li>アステラス製薬の「イクスタンジ後」に向けた遺伝子治療・次世代パイプライン部門での採用需要と職種</li>
+                    <li>エーザイのレカネマブ関連部門（メディカルアフェアーズ・市場アクセス・MR）の採用動向と処遇</li>
+                    <li>AMED採択スタートアップ（シノビセラピューティクス・レグセル等）で「米国展開を含む世界直行型開発」に関わるキャリアの実態</li>
+                    <li>AI創薬スタートアップ（ペプチドリーム・その他AMED支援企業）での研究職・事業開発職の年収水準と職種要件</li>
+                    <li>CRO（医薬品開発業務受託機関）でのCRA・CRC職から製薬企業内部への転職パスの実態</li>
+                </ul>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR INVESTMENT — 投資判断向け有料版</div>
+                <h3>「特許収益→研究開発再投資」サイクルをどう読むか</h3>
+                <ul>
+                    <li>武田薬品工業（4502）——ビバンセ後発品影響後の「移行期」から成長回帰への具体的タイムラインと、新製品（rusfertide・oveporexton等）の業績貢献の読み方</li>
+                    <li>アステラス製薬（4503）——イクスタンジ（特許・競合動向）の長期シナリオと、遺伝子治療パイプラインが業績に反映される時期の読み方</li>
+                    <li>エーザイ（4523）——レカネマブの米国・日本・欧州展開でのバイオジェンとのP&L（損益）分担と、エーザイ単独に計上される収益の推計方法</li>
+                    <li>中外製薬（4519）——ロシュとのロイヤリティ契約の構造と、独自パイプライン（スイッチ抗体等）の商業化が業績に反映される時期</li>
+                    <li>AMED「創薬ベンチャーエコシステム強化事業」採択企業の上場・ライセンスアウト・M&Aへの道筋の読み方</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <div class="container">
+            <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。医薬品の承認は規制当局の判断によるものであり申請から承認が保証されるものではありません。年収情報は参考値であり会社が公式に保証するものではありません。「政策目標として示されている」と注記した数値は政府が目標として掲げた値であり達成を保証するものではありません。データ基準時点は2026年04月です。</p>
+            <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年04月 産業構造分析レポート ── ファーストインクラス製品・ベストインクラス製品（内部環境編）</p>
+            <p style="margin-top:8px;">
+                <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
