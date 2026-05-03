@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業界分析｜高市政権「戦略17分野」創薬・先端医療 感染症対応製品（内部環境編）</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+    :root {
+        --ink: #0f0f0e;
+        --paper: #f5f2ed;
+        --cream: #ede9e1;
+        --accent: #c84b2f;
+        --muted: #6b6760;
+        --rule: #c9c4bb;
+        --highlight: #fff8e6;
+    }
+
+    *, * ::before, * ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        border-bottom: 3px solid var(--accent);
+    }
+
+    .masthead-right {
+        color: var(--muted);
+    }
+
+    .hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 60px 40px 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200, 75, 47, 0.07) 4px, rgba(200, 75, 47, 0.07) 5px);
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        padding: 4px 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(20px, 3.2vw, 34px);
+        font-weight: 900;
+        line-height: 1.4;
+        max-width: 820px;
+        letter-spacing: 0.02em;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+        color: var(--accent);
+        font-style: normal;
+    }
+
+    .hero-meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+
+    .hero-badge {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 11px;
+        padding: 4px 12px;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.06em;
+    }
+
+    .data-notice {
+        background: rgba(200, 75, 47, 0.15);
+        border-left: 3px solid var(--accent);
+        padding: 10px 16px;
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .toc {
+        background: var(--cream);
+        border-top: 3px solid var(--ink);
+        border-bottom: 1px solid var(--rule);
+        padding: 32px 40px;
+    }
+
+    .toc h2 {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 16px;
+        text-transform: uppercase;
+    }
+
+    .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 6px 28px;
+    }
+
+    .toc-item {
+        font-size: 13px;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 3px 0;
+        border-bottom: 1px dashed var(--rule);
+        display: flex;
+        gap: 8px;
+    }
+
+    .toc-item:hover {
+        color: var(--accent);
+    }
+
+    .toc-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        flex-shrink: 0;
+        padding-top: 2px;
+    }
+
+    .chapter {
+        padding: 48px 40px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .chapter:nth-child(even) {
+        background: var(--cream);
+    }
+
+    .chapter-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .chapter-num {
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .chapter h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.4;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 10px;
+        flex: 1;
+    }
+
+    .chapter h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 24px 0 10px;
+        padding-left: 10px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .chapter p {
+        margin-bottom: 14px;
+    }
+
+    .connect-banner {
+        background: var(--ink);
+        border-left: 5px solid var(--accent);
+        padding: 16px 20px;
+        margin-bottom: 28px;
+        font-size: 13px;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .connect-banner strong {
+        color: var(--accent);
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 24px 0;
+    }
+
+    .stat-cell {
+        background: var(--paper);
+        padding: 18px 16px;
+        text-align: center;
+    }
+
+    .chapter:nth-child(even) .stat-cell {
+        background: #f0ece4;
+    }
+
+    .stat-cell .stat-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent);
+        line-height: 1.2;
+        display: block;
+    }
+
+    .stat-cell .stat-unit {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-top: 2px;
+    }
+
+    .stat-cell .stat-label {
+        font-size: 11px;
+        color: var(--ink);
+        display: block;
+        margin-top: 6px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .data-box {
+        background: var(--highlight);
+        border: 1px solid #e0d8c4;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 20px 0;
+    }
+
+    .data-box .box-title {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .data-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .data-box ul li {
+        padding: 5px 0 5px 16px;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+        position: relative;
+    }
+
+    .data-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .data-box ul li:last-child {
+        border-bottom: none;
+    }
+
+    .note-box {
+        background: rgba(200, 75, 47, 0.05);
+        border: 1px dashed var(--accent);
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .note-box strong {
+        color: var(--accent);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13px;
+    }
+
+    .summary-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .summary-table thead th {
+        padding: 10px 14px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+    }
+
+    .summary-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .summary-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .summary-table tbody td {
+        padding: 9px 14px;
+        vertical-align: top;
+    }
+
+    .summary-table td:first-child {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 12px;
+    }
+
+    .biz-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 12px;
+    }
+
+    .biz-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .biz-table thead th {
+        padding: 8px 12px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.06em;
+    }
+
+    .biz-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .biz-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .biz-table tbody td {
+        padding: 8px 12px;
+        vertical-align: top;
+        font-size: 12px;
+    }
+
+    .biz-table td:first-child {
+        font-weight: 700;
+    }
+
+    .biz-table .acc {
+        color: var(--accent);
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+    }
+
+    .next-box {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 28px 32px;
+        margin: 20px 0;
+        border-left: 5px solid var(--accent);
+    }
+
+    .next-box .next-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .next-box h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 17px;
+        margin-bottom: 12px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .next-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .next-box ul li {
+        padding: 4px 0 4px 14px;
+        font-size: 13px;
+        position: relative;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .next-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.06);
+        border: 1px solid var(--rule);
+        padding: 3px 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        color: var(--muted);
+        margin: 2px 3px;
+        letter-spacing: 0.04em;
+    }
+
+    .source-wrap {
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 1px dashed var(--rule);
+    }
+
+    .disclaimer {
+        background: var(--ink);
+        color: rgba(245, 242, 237, 0.5);
+        padding: 24px 40px;
+        font-size: 11px;
+        line-height: 1.7;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.03em;
+    }
+
+    .rule-thick {
+        border: none;
+        border-top: 3px solid var(--ink);
+        margin: 0;
+    }
+
+    .rule-thin {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .masthead {
+            flex-direction: column;
+            gap: 6px;
+            padding: 10px 16px;
+        }
+
+        .hero {
+            padding: 36px 16px 30px;
+        }
+
+        .chapter {
+            padding: 32px 16px;
+        }
+
+        .toc {
+            padding: 24px 16px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span>産業構造分析レポート</span>
+        <span class="masthead-right">2026年04月発行 ── 創薬・先端医療／感染症対応製品（内部環境編）</span>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-label">INDUSTRY ANALYSIS REPORT — INTERNAL ENVIRONMENT</div>
+            <h1>
+                業界分析｜高市政権「戦略17分野」
+                <br>
+                創薬・先端医療
+                <br>
+                <em>感染症対応製品</em>
+                （内部環境編）
+            </h1>
+            <div class="hero-meta">
+                <span class="hero-badge">就職・転職検討者向け</span>
+                <span class="hero-badge">株式投資家向け</span>
+                <span class="hero-badge">数字と事実のみ記載</span>
+            </div>
+            <div class="data-notice">本レポートのデータ基準時点：2026年04月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用</div>
+        </div>
+    </div>
+
+    <hr class="rule-thick">
+
+    <div class="toc">
+        <div class="container">
+            <h2>目次 — TABLE OF CONTENTS</h2>
+            <div class="toc-grid">
+                <a class="toc-item" href="#ch0">
+                    <span class="toc-num">00</span>
+                    この内部環境編の立ち位置
+                </a>
+                <a class="toc-item" href="#ch1">
+                    <span class="toc-num">01</span>
+                    業界内プレイヤー構成
+                </a>
+                <a class="toc-item" href="#ch2">
+                    <span class="toc-num">02</span>
+                    塩野義製薬——セフィデロコルと「ポストゾコーバ」戦略
+                </a>
+                <a class="toc-item" href="#ch3">
+                    <span class="toc-num">03</span>
+                    KMバイオロジクス——国内ワクチン供給の要
+                </a>
+                <a class="toc-item" href="#ch4">
+                    <span class="toc-num">04</span>
+                    第一三共——日本初の経鼻インフルエンザワクチン
+                </a>
+                <a class="toc-item" href="#ch5">
+                    <span class="toc-num">05</span>
+                    日本血液製剤機構（JB）——免疫グロブリン自給の担い手
+                </a>
+                <a class="toc-item" href="#ch6">
+                    <span class="toc-num">06</span>
+                    収益構造の本質——「平時低需要・有事急増」の矛盾
+                </a>
+                <a class="toc-item" href="#ch7">
+                    <span class="toc-num">07</span>
+                    人材市場の実態
+                </a>
+                <a class="toc-item" href="#ch8">
+                    <span class="toc-num">08</span>
+                    構造的課題の所在
+                </a>
+                <a class="toc-item" href="#ch9">
+                    <span class="toc-num">09</span>
+                    誤解されやすいポイント
+                </a>
+                <a class="toc-item" href="#ch10">
+                    <span class="toc-num">10</span>
+                    内部環境の整理
+                </a>
+                <a class="toc-item" href="#ch11">
+                    <span class="toc-num">11</span>
+                    有料版への橋渡し
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <!-- CH0 -->
+    <div class="chapter" id="ch0">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <h2>この内部環境編の立ち位置</h2>
+            </div>
+            <div class="connect-banner">
+                <strong>外部環境編との接続：</strong>
+                外部環境編では、世界ワクチン市場が2024年に860億ドル（CAGR10.5%）・世界抗菌薬市場が約472〜518億ドル（CAGR3〜5%）・AMRが年間70万人以上の死亡・感染症有事には数兆円規模の需要が生じる一方で平時は小さい・免疫グロブリンは平時から国内自給できていない・抗菌薬の原薬・原材料が特定国依存・コロナ禍で国産ワクチン不在が露呈という外部構造を整理しました。本編ではその前提のもとで「外部の構造がこの産業のプレイヤー・収益・人材にどのような特性として現れているか」を数字と事実で記述します。
+                    
+            </div>
+            <div class="data-box">
+                <div class="box-title">本編でやること／やらないこと</div>
+                <ul>
+                    <li>【やること】塩野義製薬（4507）の感染症分野（セフィデロコル・ゾコーバ・ゾフルーザ）の財務実態を記述する</li>
+                    <li>【やること】KMバイオロジクス（非上場・田辺三菱製薬子会社）の国内ワクチン供給体制の実態を整理する</li>
+                    <li>【やること】第一三共（4568）の感染症ワクチン事業（日本初の経鼻インフルエンザワクチン等）を記述する</li>
+                    <li>【やること】日本血液製剤機構（JB・一般社団法人）の免疫グロブリン国内自給への取り組みを整理する</li>
+                    <li>【やること】感染症対応製品の製造・品質管理・サプライチェーン人材の市場実態を整理する</li>
+                    <li>【やらないこと】特定銘柄の投資推奨・勝ち負けの断定・良し悪しの評価</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート基本方針</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH1 -->
+    <div class="chapter" id="ch1">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <h2>業界内プレイヤー構成</h2>
+            </div>
+            <table class="biz-table">
+                <thead>
+                    <tr>
+                        <th>業態</th>
+                        <th>代表プレイヤー</th>
+                        <th>感染症分野での役割</th>
+                        <th>事業化ステージ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            感染症治療薬・抗菌薬
+                            <br>
+                            （国内外展開）
+                        </td>
+                        <td class="acc">
+                            塩野義製薬（4507）、
+                            <br>
+                            Meiji Seikaファルマ（非上場）、
+                            <br>
+                            明治HD（2269）
+                        </td>
+                        <td>新規抗菌薬（セフィデロコル等）の開発・製造・グローバル展開。COVID-19・インフルエンザ治療薬の国産化。AMR対応新薬は「サブスクリプション型償還」という新モデルで海外展開。</td>
+                        <td>商用販売段階（セフィデロコル・ゾコーバ等）</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ワクチン製造
+                            <br>
+                            （国内基盤担当）
+                        </td>
+                        <td class="acc">
+                            KMバイオロジクス
+                            <br>
+                            （非上場・田辺三菱製薬子会社）、
+                            <br>
+                            第一三共（4568・インフルエンザワクチン）、
+                            <br>
+                            武田薬品工業（4502）
+                        </td>
+                        <td>インフルエンザ・日本脳炎・DPT等の国内需要の基幹ワクチンの製造。国産mRNAワクチン技術の開発・商用化。コロナ禍を契機に国産ワクチン製造能力の強化が政策課題として浮上。</td>
+                        <td>商用販売〜初期量産段階</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            血漿分画製剤
+                            <br>
+                            （免疫グロブリン）
+                        </td>
+                        <td class="acc">
+                            日本血液製剤機構（JB・一般社団法人）、
+                            <br>
+                            KMバイオロジクス（同上）、
+                            <br>
+                            CSLベーリング（外資系）
+                        </td>
+                        <td>献血由来の血漿を原料とする免疫グロブリン・アルブミン・血液凝固因子等の製造。国内自給率100%という政策目標に向け、献血啓発と製造能力増強を推進。JBが国内の中核機関。</td>
+                        <td>商用販売（国内自給不足が継続）</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            診断薬
+                            <br>
+                            （感染症検出）
+                        </td>
+                        <td class="acc">
+                            富士レビオ（非上場・富士フイルム傘下）、
+                            <br>
+                            デンカ（4061）、
+                            <br>
+                            栄研化学（4549）
+                        </td>
+                        <td>インフルエンザ・COVID-19・RSV等の迅速診断キット・PCR試薬の製造・販売。コロナ禍での需要急増で国内生産能力が注目された。資料2（2026年3月）の「診断薬の国際展開」においても重要な役割を担う。</td>
+                        <td>商用販売（安定段階・需要は感染流行に連動）</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="source-wrap">
+                <span class="source-tag">各社公開情報・日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH2 -->
+    <div class="chapter" id="ch2">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <h2>塩野義製薬——セフィデロコルと「ポストゾコーバ」戦略</h2>
+            </div>
+
+            <h3>2025年3月期——売上4,382億円・3期連続過去最高</h3>
+            <p>塩野義製薬（4507）の2025年3月期（2024年度）連結業績（IFRS）は売上収益**4,382億円**（前期比+0.7%）・営業利益1,566億円（+2.1%）・純利益1,704億円（+5.2%）と3期連続過去最高を更新しました（塩野義製薬 2025年3月期決算・2025年5月12日）。研究開発費は**1,086億円**（前年比+59.7億円）に達しています。</p>
+
+            <h3>セフィデロコル——AMR対応の世界初抗菌薬・「サブスクリプション型償還」モデル</h3>
+            <p>セフィデロコル（製品名：フェトロージャ）は既存の抗生物質が効かない多剤耐性グラム陰性菌感染症に対応する新規抗菌薬です。2024年度の海外売上収益は**59.1億円**（+18.4%）で4期連続で海外事業は過去最高を更新しています（塩野義製薬 2025年3月期決算）。英国・スウェーデン等の欧米20か国以上で「サブスクリプション型償還（定額制・処方量と切り離して国が開発企業に固定報酬を支払う）」モデルを採用しています（塩野義製薬 決算資料・2025年5月）。これは外部環境編が指摘した「抗菌薬開発インセンティブ不足」問題への政策的解決策の実例です。</p>
+
+            <h3>ゾコーバ・ゾフルーザ——「感染流行規模で変動する収益構造」の実例</h3>
+            <p>COVID-19治療薬「ゾコーバ（エンシトレルビル）」とインフルエンザ治療薬「ゾフルーザ」は、感染症の流行規模によって収益が大きく変動します。2025年3月期のCOVID-19関連製品＋インフルエンザ関連製品の合計売上収益は**518億円**（塩野義製薬 2025年3月期決算）です。パンデミックピーク時（2022年度）にはゾコーバの政府買い上げ200万人分が1,047億円の売上を生みましたが、コロナ流行が低調だった年は急減するという「平時低需要・有事急増」の構造的特性を持ちます。</p>
+            <p>2026年3月期（2025年度）は JT医薬事業・鳥居薬品の買収完了（2025年9月完全子会社化）が加わり、売上収益**5,300億円**（過去最高予想・日経・2025年5月）を見込んでいます。</p>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">4,382億円</span>
+                    <span class="stat-unit">（2025年3月期）</span>
+                    <span class="stat-label">
+                        塩野義製薬 売上収益
+                        <br>
+                        （3期連続過去最高）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">59.1億円</span>
+                    <span class="stat-unit">（2024年度・海外）</span>
+                    <span class="stat-label">
+                        セフィデロコル 海外売上収益
+                        <br>
+                        （+18.4%・4期連続最高）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">518億円</span>
+                    <span class="stat-unit">（2025年3月期）</span>
+                    <span class="stat-label">
+                        COVID-19+インフルエンザ
+                        <br>
+                        関連製品 売上合計
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">1,086億円</span>
+                    <span class="stat-unit">（2025年3月期）</span>
+                    <span class="stat-label">塩野義製薬 研究開発費</span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">塩野義製薬 2025年3月期決算短信〔IFRS〕（2025年5月12日）</span>
+                <span class="source-tag">塩野義製薬 2024年度決算説明資料（2025年5月12日）</span>
+                <span class="source-tag">日経「塩野義の26年3月期、純利益6%増 感染症薬伸びる」（2025年5月12日）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH3 -->
+    <div class="chapter" id="ch3">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <h2>KMバイオロジクス——国内ワクチン供給の要</h2>
+            </div>
+
+            <div class="note-box">
+                <strong>【注記】</strong>
+                KMバイオロジクスは田辺三菱製薬の子会社（非上場）のため、詳細な財務情報は非開示です。以下は公開情報に基づきます。
+                    
+            </div>
+
+            <h3>「シングルサプライ製品」が多い——国内唯一・シェア最大の製品を多数保有</h3>
+            <p>KMバイオロジクスは化血研（旧化学及血清療法研究所）の製造事業を承継した会社であり、日本市場で同社のみが製造・または同社が最大シェアを持つ「シングルサプライ製品」を多数保有しています（Wikipedia）。ヒト用A型肝炎ワクチンは日本唯一の製造メーカーとされており、その他のワクチンでも高いシェアを持つ製品が複数あります。この「代替品のない製品が多い」という構造は、「供給途絶時に代替困難」という意味でリスクであると同時に、「公共財的な性格を持つ安定事業基盤」でもあります。</p>
+
+            <h3>2024年11月——WHOがエムポックスの緊急使用ワクチンとして承認</h3>
+            <p>2024年11月19日、世界保健機関（WHO）がコンゴ民主共和国などで広がっているエムポックス（サル痘）の予防薬として、KMバイオロジクス製ワクチンの緊急使用を認めました（Wikipedia・2024年12月14日閲覧）。日本製ワクチンが国際的な感染症対応に採用された事例であり、外部環境編が示す「25か国以上への国際展開」という政策目標の実例として重要です。</p>
+
+            <h3>6種混合ワクチン（KD2-396）の第III相臨床試験開始</h3>
+            <p>KMバイオロジクスは百日せき・ジフテリア・破傷風・不活化ポリオ・Hib・B型肝炎を予防する6種混合ワクチン（KD2-396）の第III相臨床試験を開始しています（KMバイオロジクス公式・2025年）。現在国内で使用されている4種混合ワクチンと単独B型肝炎ワクチンを1本にまとめた製品で、接種回数削減による利便性向上を目指しています。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">Wikipedia「KMバイオロジクス」（2025年3月時点）</span>
+                <span class="source-tag">KMバイオロジクス公式「6種混合ワクチン第III相臨床試験開始」（2025年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH4 -->
+    <div class="chapter" id="ch4">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 04</span>
+                <h2>第一三共——日本初の経鼻インフルエンザワクチン</h2>
+            </div>
+
+            <h3>「フルミスト」——日本初の経鼻投与インフルエンザワクチン、2024年10月供給開始</h3>
+            <p>第一三共（4568）は2023年3月に「フルミスト（経鼻インフルエンザワクチン）」の製造販売承認を取得し、2024年8月に3価（A型2種、B型1種）ワクチンとして一部変更承認を取得しました。2024年10月より今シーズン（2024〜2025年インフルエンザシーズン）から日本初の経鼻投与による季節性インフルエンザワクチンとして供給を開始しています（第一三共 プレスリリース・2024年10月4日）。鼻腔内に噴霧するタイプのため針穿刺が不要であり、自然感染後に誘導される免疫に類似した局所抗体応答・液性免疫・細胞性免疫の誘導が期待されます。</p>
+            <p>第一三共はADCに並ぶ主力事業として感染症ワクチン分野への継続的な投資を進めており、インフルエンザ・RSV・mRNAワクチン技術の開発も続いています。感染症分野では感染症治療薬（ADC・レポート別途）よりも安定的・継続的な需要が見込めるワクチン分野に注力する方向性を持っています。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">第一三共 プレスリリース「フルミスト鼻腔内噴霧剤の供給開始」（2024年10月4日）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH5 -->
+    <div class="chapter" id="ch5">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 05</span>
+                <h2>日本血液製剤機構（JB）——免疫グロブリン自給の担い手</h2>
+            </div>
+
+            <h3>設立趣旨——「善意と医療のかけ橋」・非営利の一般社団法人</h3>
+            <p>日本血液製剤機構（JB）は2012年6月設立・同年10月より事業開始の一般社団法人です（日本赤十字社の血漿分画事業部門と田辺三菱製薬グループのベネシスが統合して発足：Wikipedia）。「血液は商業的に売買されるべきではない」という基本的考え方に基づき、営利を目的としない一般社団法人として発足しています。設立趣旨は「善意の献血血液を安心・安全な形で患者さんへ届けること」（JB公式）であり、「国内自給の達成と安定供給」が基本使命です。</p>
+
+            <h3>千歳工場・京都工場の2工場体制——免疫グロブリン・アルブミン・凝固因子を製造</h3>
+            <p>JBは日本赤十字社の血液センターから届けられる血漿を原料に、千歳工場（北海道）と京都工場の2工場で血漿分画製剤（免疫グロブリン・アルブミン・血液凝固因子等）を製造しています（JB公式）。2025年12月には京都工場でフィブリノゲン製剤等の新棟落成式を開催しており（JB公式・2025年12月15日）、製造能力の増強が進んでいます。</p>
+
+            <h3>「国内血漿分画製剤メーカー3社が連携」して国内自給率向上を目指す体制</h3>
+            <p>JBは国内血漿分画製剤メーカー3社（JB・KMバイオロジクス・もう1社）で連携し、日本赤十字社・厚生労働省医薬局血液対策課と連携のもとで国内自給率向上に取り組んでいます（JB公式・CSR活動）。「少子高齢化社会により献血可能人口が年々減少する中、製造収率の向上に取り組んでいる」と明示しており（JB公式）、献血確保と製造効率化の双方を課題として抱えています。</p>
+            <p>外部環境編が示した「免疫グロブリンは平時から国内自給できていない・政策目標は自給率100%」という状況を踏まえると、JBの事業は「公共財的使命と経営の持続可能性を同時に追求する」という特殊な経営構造にあります。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本血液製剤機構（JB）公式「設立趣旨・CSR活動」</span>
+                <span class="source-tag">Wikipedia「日本血液製剤機構」（2025年12月23日時点）</span>
+                <span class="source-tag">JB公式「2025年12月15日 京都工場フィブリノゲン製剤等新棟落成式の開催」</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH6 -->
+    <div class="chapter" id="ch6">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 06</span>
+                <h2>収益構造の本質——「平時低需要・有事急増」の矛盾</h2>
+            </div>
+
+            <h3>塩野義製薬の感染症薬は「流行の波で変動する収益」</h3>
+            <p>塩野義製薬がゾコーバ（COVID-19治療薬）で2022年度に政府買い上げ1,000億円超の売上を計上した一方、2025年3月期には518億円（COVID-19+インフルエンザ合計）まで落ち着いた事例は、感染症対応製品固有の「流行に連動する収益変動」を示しています。インフルエンザ治療薬「ゾフルーザ」も流行規模によって売上が大きく変動し、2024年冬の流行拡大時には計画通り業績に貢献しています（塩野義製薬 2025年3月期決算）。</p>
+
+            <h3>「サブスクリプション型償還」——AMR抗菌薬の収益を安定化させる新モデル</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「抗菌薬の処方量と切り離し、国が開発企業に対して固定報酬を支払う代わりに、必要なときに抗菌薬を受け取ることができる（サブスクリプション型）」モデルを記載しています。塩野義製薬がセフィデロコルで欧米に先行適用しているこのモデルは、抗菌薬の「使用を抑制するほど収益が下がる」という矛盾を解決します。日本においても厚生労働省が議論を進めており、国内導入が検討されています。</p>
+
+            <h3>免疫グロブリン（JB）の収益——「公益使命と経営持続の両立」</h3>
+            <p>JBは非営利の一般社団法人であり、利益最大化を目的とせず「国内自給達成・安定供給」という公益使命のもとで事業を運営しています。献血は善意の無償提供であり、血漿原料の確保は経済的インセンティブではなく「献血啓発活動と社会的理解」に依存しています。製造工程は高度なGMP（医薬品製造品質管理基準）対応が必要で、新棟整備等の設備投資が継続します。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">塩野義製薬 2025年3月期決算短信（2025年5月12日）</span>
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH7 -->
+    <div class="chapter" id="ch7">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 07</span>
+                <h2>人材市場の実態</h2>
+            </div>
+
+            <h3>感染症対応製品分野の主要職種</h3>
+            <div class="data-box">
+                <div class="box-title">主要職種と必要専門性（2026年04月時点）</div>
+                <ul>
+                    <li>【感染症研究者・ウイルス学者・細菌学者】ウイルス・細菌の性状解析・薬剤耐性メカニズムの研究・新規治療標的の探索。製薬企業の研究部門（塩野義・KMバイオロジクス・第一三共等）と大学・国立感染症研究所・AMED等の研究機関双方で需要がある。博士号保有が多い。</li>
+                    <li>【ワクチン製造プロセスエンジニア】培養・精製・製剤化・無菌充填等の製造プロセスの設計・スケールアップ・安定化。GMP準拠の製造経験が必須。KMバイオロジクス・第一三共・武田薬品等の国内ワクチン製造拠点での需要が継続。コロナ禍以降に国産ワクチン製造拠点整備が進み、採用需要が増加している。</li>
+                    <li>【血漿分画製剤製造担当（JB専門職）】献血血漿からの分離精製プロセス（低温エタノール分画・クロマトグラフィー等）の専門技術者。JB千歳工場・京都工場等での製造を担う。製造技術の伝承が課題とされており（JB公式）、AI・VR等を活用した技術伝承教育を実施中。</li>
+                    <li>【GMP品質管理・薬事担当】製造品質管理（QC・QA）・PMDAへの承認申請・国際規制対応（PIC/S等）。感染症対応製品はGMP適合・国際品質認証が輸出競争力に直結するため、グローバルcGMP対応経験者の需要が高い。</li>
+                    <li>【サプライチェーン管理・調達担当】抗菌薬の原薬・原材料の調達先多角化・備蓄管理・有事対応計画の策定。日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）が明示した「サプライチェーン管理に携わる人材の確保」が課題。特定国依存のリスクを管理する専門職の需要が高まっている。</li>
+                </ul>
+            </div>
+
+            <div class="note-box">
+                <strong>【注記】</strong>
+                感染症対応製品分野の具体的な年収水準は職種・企業・経験年数によって大きく異なります。製薬会社の研究・製造職は製造業一般より高い傾向にありますが、本時点で出典のある確定値がないため年収レンジの記載は省略します。
+                    
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">JB公式「生産体制の充実・強化」（技術伝承への取り組み）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH8 -->
+    <div class="chapter" id="ch8">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 08</span>
+                <h2>構造的課題の所在</h2>
+            </div>
+
+            <h3>「感染症が低調だと売れない」という製品特性と企業経営の矛盾</h3>
+            <p>塩野義製薬の事例（ゾコーバのコロナ特需後の急減）が示すように、感染症治療薬・ワクチンの民間企業による製造・販売は、感染症の流行規模に収益が依存します。「平時に在庫・製造能力を維持しながら売り上げが小さい」という状況は企業経営上の課題であり、日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）が「民間企業が安定的に投資を行える構造の確立が必要」と明示しているのはこの実態を反映しています。</p>
+
+            <h3>「国内のmRNAワクチン製造体制はまだ整備途上」</h3>
+            <p>コロナ禍で明らかになった国産mRNAワクチン不在の問題に対し、第一三共・KMバイオロジクス・武田薬品等が開発を進めていますが、商業規模での国産mRNAワクチン製造体制の整備は現在も進行中です。同資料が「新型コロナ対応等を踏まえ、生産基盤を立て直し、国産化・サプライチェーン強化、有事に対応できる体制づくりが同時に進む移行期フェーズにある」と位置づけているのはこの状況です。</p>
+
+            <h3>「献血可能人口の減少」——免疫グロブリン自給の構造的制約</h3>
+            <p>JBが明示しているように「少子高齢化社会により献血可能人口が年々減少する」という人口動態的制約は、免疫グロブリン国内自給率100%という政策目標達成の構造的なボトルネックです。献血は善意に依存するため、人口動態の変化への処方箋は「製造収率向上（同一血液量からより多くの製品を製造）」と「献血啓発の継続強化」の2点に限られており、根本解決には時間がかかります。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">JB公式「国内自給率の向上、顧客ニーズに対応する製品の供給」</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH9 -->
+    <div class="chapter" id="ch9">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 09</span>
+                <h2>誤解されやすいポイント</h2>
+            </div>
+            <div class="data-box">
+                <div class="box-title">誤解されやすいポイント（4点）</div>
+                <ul>
+                    <li>【「塩野義製薬＝感染症専業企業」】塩野義製薬の2025年3月期売上収益4,382億円のうち、最大の貢献は感染症分野（HIV治療薬ロイヤリティー：2,404億円）ですが、これはViiV社（グラクソ・スミスクライン主導の合弁会社）からのロイヤリティー収入であり、塩野義が国内で製造・販売している感染症製品とは異なります。ゾコーバ・セフィデロコル・ゾフルーザ等の自社感染症製品の売上は518億円（COVID-19+インフルエンザ）です。塩野義は感染症創薬に強みがありますが、HIV・神経精神科・疼痛等の複数領域を持つ中堅総合製薬企業です。</li>
+                    <li>【「KMバイオロジクスが国産ワクチンのほぼ全部を担っている」】KMバイオロジクスは重要なシングルサプライ製品を多く持ちますが、日本のワクチン製造は他にも第一三共・武田薬品・田辺三菱製薬等の複数社が担っています。また輸入ワクチン（ファイザー・モデルナ・GSK等）も国内で使用されており、「KMバイオロジクス＝国産ワクチンの全て」ではありません。</li>
+                    <li>【「免疫グロブリン自給率100%の目標が近く達成される」】日本血液製剤機構（JB）は国内自給率向上に向けた設備投資（2025年12月京都工場新棟落成等）を進めていますが、免疫グロブリンの原料は献血血漿であり、献血可能人口が年々減少する中で自給率100%の達成には献血確保・製造収率向上・製造能力増強の複数課題を同時解決する必要があります。「近く達成」と断定できる段階ではありません。</li>
+                    <li>【「セフィデロコルが日本でもサブスクリプション型で販売されている」】セフィデロコルのサブスクリプション型償還は欧米（英国・スウェーデン等20か国以上）での先行事例です。日本における同型の制度導入は現在検討中段階であり（厚生労働省）、2026年04月時点で日本国内に確立されているわけではありません。</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜8章の総括</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH10 -->
+    <div class="chapter" id="ch10">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 10</span>
+                <h2>内部環境の整理</h2>
+            </div>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>章</th>
+                        <th>指標名</th>
+                        <th>数値・事実</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第2章</td>
+                        <td>塩野義製薬 売上収益</td>
+                        <td>4,382億円（2025年3月期・3期連続過去最高）</td>
+                        <td>塩野義製薬 決算短信 2025年5月</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>塩野義製薬 研究開発費</td>
+                        <td>1,086億円（2025年3月期）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>セフィデロコル 海外売上収益</td>
+                        <td>59.1億円（2024年度・+18.4%・4期連続過去最高）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>ゾコーバ+ゾフルーザ等 感染症薬合計</td>
+                        <td>518億円（2025年3月期・COVID-19+インフルエンザ）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>塩野義製薬 2026年3月期見通し</td>
+                        <td>売上収益5,300億円（過去最高予想・JT医薬事業買収含む）</td>
+                        <td>日経 2025年5月12日</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>KMバイオロジクス 特記事項</td>
+                        <td>2024年11月：WHOがエムポックス予防薬として緊急使用承認</td>
+                        <td>Wikipedia 2024年12月</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>第一三共 フルミスト</td>
+                        <td>日本初の経鼻投与インフルエンザワクチン・2024年10月供給開始</td>
+                        <td>第一三共 PR 2024年10月</td>
+                    </tr>
+                    <tr>
+                        <td>第5章</td>
+                        <td>JB 設立</td>
+                        <td>2012年10月1日設立（一般社団法人・非営利）</td>
+                        <td>JB公式</td>
+                    </tr>
+                    <tr>
+                        <td>第5章</td>
+                        <td>JB 工場体制</td>
+                        <td>千歳工場・京都工場の2工場。2025年12月：京都工場新棟落成</td>
+                        <td>JB公式 2025年12月</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="data-box">
+                <div class="box-title">構造的に固定されやすい要素</div>
+                <ul>
+                    <li>塩野義製薬の「感染症新薬・抗菌薬に経営資源を集中する」という戦略方向性は、セフィデロコルの成功と中期経営計画（STS2030）の方針として固定されている</li>
+                    <li>KMバイオロジクスの「日本市場のシングルサプライ製品が多い」という市場ポジションは、代替企業が参入するまで変化しない</li>
+                    <li>JBの「献血血漿を原料とする非営利の血漿分画製剤製造」という事業構造は、血液法の基本理念に基づくものであり変化しない</li>
+                    <li>「感染症の流行規模によって感染症薬・ワクチンの需要が変動する」という市場特性は変化しない</li>
+                    <li>「献血可能人口が年々減少する」という人口動態的制約は短期では解消しない</li>
+                    <li>「国産mRNAワクチン製造体制が整備途上」という状況は、量産体制の確立までは継続する</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜9章の集約</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH11 -->
+    <div class="chapter" id="ch11">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 11</span>
+                <h2>有料版への橋渡し</h2>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR CAREER — 就活・転職向け有料版</div>
+                <h3>塩野義・KMバイオロジクス・第一三共・JB、どこで関わるか</h3>
+                <ul>
+                    <li>塩野義製薬の感染症分野（セフィデロコル・ゾコーバ・ゾフルーザ）の研究職・製造職・MRのキャリアパスと処遇水準、「STS2030」戦略下での人員体制変化の実態</li>
+                    <li>KMバイオロジクス（田辺三菱製薬子会社）でのワクチン製造エンジニア・品質管理担当のキャリアパスと処遇——非上場企業の実態</li>
+                    <li>第一三共のインフルエンザワクチン（フルミスト）部門・mRNAワクチン開発部門と、ADC事業との人材配置・採用動向の比較</li>
+                    <li>日本血液製剤機構（JB）での血漿分画製剤製造専門職——「非営利・使命型」の働き方の実態と給与水準</li>
+                    <li>国立感染症研究所・AMED感染症分野での研究職——任期付き研究員のキャリアパスと転職実績</li>
+                </ul>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR INVESTMENT — 投資判断向け有料版</div>
+                <h3>感染症という「流行依存ビジネス」をどう読むか</h3>
+                <ul>
+                    <li>塩野義製薬（4507）——セフィデロコルの海外展開加速タイムラインと、ゾコーバのグローバル展開（FDA申請状況）が業績に反映される時期。JT医薬事業・鳥居薬品買収の統合効果の読み方</li>
+                    <li>塩野義製薬（4507）——HIV治療薬ロイヤリティー（ViiV社・2,404億円）が主要収益源である実態と、ViiV社製品の特許期間・競合状況の読み方</li>
+                    <li>塩野義製薬のサブスクリプション型償還モデル——日本国内への導入が実現した場合の業績へのインパクト</li>
+                    <li>第一三共（4568）の感染症ワクチン事業——ADCと感染症ワクチンの売上構成比と、感染症薬の季節変動・流行依存という収益構造の読み方</li>
+                    <li>KMバイオロジクス（田辺三菱製薬4508傘下）——非上場子会社であるKMバイオロジクスの動向が田辺三菱製薬の株価・業績に与える影響の読み方</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <div class="container">
+            <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。KMバイオロジクス・日本血液製剤機構は非上場企業・非営利法人のため財務詳細の開示は限定的です。「政策目標として示されている」と注記した数値は政府が目標として掲げた値であり達成を保証するものではありません。データ基準時点は2026年04月です。</p>
+            <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年04月 産業構造分析レポート ── 感染症対応製品（内部環境編）</p>
+            <p style="margin-top:8px;">
+                <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
