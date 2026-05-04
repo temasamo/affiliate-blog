@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業界分析｜高市政権「戦略17分野」資源・エネルギー安全保障・GX 次世代型太陽電池（ペロブスカイト太陽電池等）（外部環境編）</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+    :root {
+        --ink: #0f0f0e;
+        --paper: #f5f2ed;
+        --cream: #ede9e1;
+        --accent: #c84b2f;
+        --muted: #6b6760;
+        --rule: #c9c4bb;
+        --highlight: #fff8e6;
+    }
+
+    *, * ::before, * ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        border-bottom: 3px solid var(--accent);
+    }
+
+    .masthead-right {
+        color: var(--muted);
+    }
+
+    .hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 60px 40px 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200, 75, 47, 0.07) 4px, rgba(200, 75, 47, 0.07) 5px);
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        padding: 4px 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(20px, 3.2vw, 34px);
+        font-weight: 900;
+        line-height: 1.4;
+        max-width: 820px;
+        letter-spacing: 0.02em;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+        color: var(--accent);
+        font-style: normal;
+    }
+
+    .hero-meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+
+    .hero-badge {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 11px;
+        padding: 4px 12px;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.06em;
+    }
+
+    .data-notice {
+        background: rgba(200, 75, 47, 0.15);
+        border-left: 3px solid var(--accent);
+        padding: 10px 16px;
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .toc {
+        background: var(--cream);
+        border-top: 3px solid var(--ink);
+        border-bottom: 1px solid var(--rule);
+        padding: 32px 40px;
+    }
+
+    .toc h2 {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 16px;
+        text-transform: uppercase;
+    }
+
+    .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 6px 28px;
+    }
+
+    .toc-item {
+        font-size: 13px;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 3px 0;
+        border-bottom: 1px dashed var(--rule);
+        display: flex;
+        gap: 8px;
+    }
+
+    .toc-item:hover {
+        color: var(--accent);
+    }
+
+    .toc-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        flex-shrink: 0;
+        padding-top: 2px;
+    }
+
+    .chapter {
+        padding: 48px 40px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .chapter:nth-child(even) {
+        background: var(--cream);
+    }
+
+    .chapter-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .chapter-num {
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .chapter h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.4;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 10px;
+        flex: 1;
+    }
+
+    .chapter h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 24px 0 10px;
+        padding-left: 10px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .chapter p {
+        margin-bottom: 14px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 24px 0;
+    }
+
+    .stat-cell {
+        background: var(--paper);
+        padding: 18px 16px;
+        text-align: center;
+    }
+
+    .chapter:nth-child(even) .stat-cell {
+        background: #f0ece4;
+    }
+
+    .stat-cell .stat-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent);
+        line-height: 1.2;
+        display: block;
+    }
+
+    .stat-cell .stat-unit {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-top: 2px;
+    }
+
+    .stat-cell .stat-label {
+        font-size: 11px;
+        color: var(--ink);
+        display: block;
+        margin-top: 6px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .data-box {
+        background: var(--highlight);
+        border: 1px solid #e0d8c4;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 20px 0;
+    }
+
+    .data-box .box-title {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .data-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .data-box ul li {
+        padding: 5px 0 5px 16px;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+        position: relative;
+    }
+
+    .data-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .data-box ul li:last-child {
+        border-bottom: none;
+    }
+
+    .note-box {
+        background: rgba(200, 75, 47, 0.05);
+        border: 1px dashed var(--accent);
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .note-box strong {
+        color: var(--accent);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13px;
+    }
+
+    .summary-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .summary-table thead th {
+        padding: 10px 14px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+    }
+
+    .summary-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .summary-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .summary-table tbody td {
+        padding: 9px 14px;
+        vertical-align: top;
+    }
+
+    .summary-table td:first-child {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 12px;
+    }
+
+    .compare-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 20px 0;
+    }
+
+    .compare-cell {
+        background: var(--paper);
+        padding: 16px 18px;
+        font-size: 13px;
+    }
+
+    .chapter:nth-child(even) .compare-cell {
+        background: #f0ece4;
+    }
+
+    .compare-cell .cell-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .timeline {
+        margin: 20px 0;
+    }
+
+    .timeline-item {
+        display: flex;
+        gap: 16px;
+        padding: 12px 0;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+    }
+
+    .timeline-item:last-child {
+        border-bottom: none;
+    }
+
+    .timeline-year {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        color: var(--accent);
+        font-weight: 600;
+        flex-shrink: 0;
+        width: 130px;
+        padding-top: 2px;
+    }
+
+    .timeline-text {
+        flex: 1;
+    }
+
+    .next-box {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 28px 32px;
+        margin: 20px 0;
+        border-left: 5px solid var(--accent);
+    }
+
+    .next-box .next-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .next-box h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 17px;
+        margin-bottom: 12px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .next-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .next-box ul li {
+        padding: 4px 0 4px 14px;
+        font-size: 13px;
+        position: relative;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .next-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.06);
+        border: 1px solid var(--rule);
+        padding: 3px 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        color: var(--muted);
+        margin: 2px 3px;
+        letter-spacing: 0.04em;
+    }
+
+    .source-wrap {
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 1px dashed var(--rule);
+    }
+
+    .disclaimer {
+        background: var(--ink);
+        color: rgba(245, 242, 237, 0.5);
+        padding: 24px 40px;
+        font-size: 11px;
+        line-height: 1.7;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.03em;
+    }
+
+    .rule-thick {
+        border: none;
+        border-top: 3px solid var(--ink);
+        margin: 0;
+    }
+
+    .rule-thin {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .masthead {
+            flex-direction: column;
+            gap: 6px;
+            padding: 10px 16px;
+        }
+
+        .hero {
+            padding: 36px 16px 30px;
+        }
+
+        .chapter {
+            padding: 32px 16px;
+        }
+
+        .toc {
+            padding: 24px 16px;
+        }
+
+        .compare-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span>産業構造分析レポート</span>
+        <span class="masthead-right">2026年04月発行 ── 資源・エネルギー安全保障・GX／次世代型太陽電池（ペロブスカイト太陽電池等）（外部環境編）</span>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-label">INDUSTRY ANALYSIS REPORT — EXTERNAL ENVIRONMENT</div>
+            <h1>
+                業界分析｜高市政権「戦略17分野」
+                <br>
+                資源・エネルギー安全保障・GX
+                <br>
+                <em>次世代型太陽電池（ペロブスカイト太陽電池等）</em>
+                （外部環境編）
+            </h1>
+            <div class="hero-meta">
+                <span class="hero-badge">就職・転職検討者向け</span>
+                <span class="hero-badge">株式投資家向け</span>
+                <span class="hero-badge">数字と事実のみ記載</span>
+            </div>
+            <div class="data-notice">本レポートのデータ基準時点：2026年04月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用</div>
+        </div>
+    </div>
+
+    <hr class="rule-thick">
+
+    <div class="toc">
+        <div class="container">
+            <h2>目次 — TABLE OF CONTENTS</h2>
+            <div class="toc-grid">
+                <a class="toc-item" href="#ch0">
+                    <span class="toc-num">00</span>
+                    このレポートの目的と読み方
+                </a>
+                <a class="toc-item" href="#ch1">
+                    <span class="toc-num">01</span>
+                    市場規模と需要ポテンシャル
+                </a>
+                <a class="toc-item" href="#ch2">
+                    <span class="toc-num">02</span>
+                    3つのタイプ——フィルム型・ガラス型・タンデム型
+                </a>
+                <a class="toc-item" href="#ch3">
+                    <span class="toc-num">03</span>
+                    制度・政策の枠組み
+                </a>
+                <a class="toc-item" href="#ch4">
+                    <span class="toc-num">04</span>
+                    経済的前提条件——コスト低減と量産の課題
+                </a>
+                <a class="toc-item" href="#ch5">
+                    <span class="toc-num">05</span>
+                    中国・欧州・米国の動向
+                </a>
+                <a class="toc-item" href="#ch6">
+                    <span class="toc-num">06</span>
+                    技術・DXの位置づけ
+                </a>
+                <a class="toc-item" href="#ch7">
+                    <span class="toc-num">07</span>
+                    経済安全保障との接続——ヨウ素とシリコン依存
+                </a>
+                <a class="toc-item" href="#ch8">
+                    <span class="toc-num">08</span>
+                    外部環境の整理
+                </a>
+                <a class="toc-item" href="#ch9">
+                    <span class="toc-num">09</span>
+                    内部環境編への橋渡し
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <!-- CH0 -->
+    <div class="chapter" id="ch0">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <h2>このレポートの目的と読み方</h2>
+            </div>
+            <p>本レポートは、高市政権「戦略17分野」資源・エネルギー安全保障・GXの「次世代型太陽電池（ペロブスカイト太陽電池等）」の外部環境を、就職・転職検討者および株式投資家向けに数字と事実のみで記述します。所管は経済産業省です。</p>
+            <div class="data-box">
+                <div class="box-title">「次世代型太陽電池（ペロブスカイト太陽電池等）」とは何か——3行で把握する</div>
+                <ul>
+                    <li>【技術の概要】ペロブスカイト結晶構造を持つ化合物を発電層に使用した次世代太陽電池。従来のシリコン太陽電池と比べて「軽量・柔軟（フィルム型）」「製造温度・エネルギーが低い」「曲面や壁面等への設置が可能」という特徴がある。製造プロセスのノウハウ（温度・湿度管理・封止技術等）を競争力の源泉とする。</li>
+                    <li>【現状の問題】シリコン太陽電池は中国が世界シェアの約8割を握り日本を含む多くの国が完全に依存している。日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「発電コストの低減に資する技術開発の加速」「量産コストの低減に資する量産規模の確保」「民間投資の予見性を確保する初期需要の創出」の3点を主要ボトルネックとして明示している。</li>
+                    <li>【なぜ今か】シリコン太陽電池では巻き返しが困難な中、ペロブスカイト太陽電池は「既存のシリコン系と異なる新市場（壁面・軽量屋根等）」「主原料ヨウ素で日本が世界2位のシェアを持つ」「製造プロセスのノウハウが競争力を決める」という3点から、日本が先行者利益を得られる数少ないエネルギー分野として位置づけられている。</li>
+                </ul>
+            </div>
+            <p>良し悪しの評価・投資推奨・将来予測は行いません。</p>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート基本方針</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH1 -->
+    <div class="chapter" id="ch1">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <h2>市場規模と需要ポテンシャル</h2>
+            </div>
+
+            <h3>ペロブスカイト太陽電池市場——2024年2.6億ドル・CAGR72.18%</h3>
+            <p>世界のペロブスカイト太陽電池市場規模は2024年に**2億6,462万ドル**と評価されており、2025年から2030年にかけて年平均成長率（CAGR）**72.18%**で成長すると予測されています（市場調査レポート・2025年）。ただし現時点では商業生産はまだ初期段階であり、これは研究・実証・初期量産段階を含めた市場の試算値です。</p>
+
+            <div class="note-box">
+                <strong>【注記】</strong>
+                ペロブスカイト太陽電池市場の数値は調査機関・集計方法により異なります。CAGR72%という高成長率は現在の市場規模が小さい（初期段階）ことを反映しており、絶対値・相対値ともに今後の技術・量産進展に左右されます。
+                    
+            </div>
+
+            <h3>国内需要ポテンシャル——フィルム型で約25GW</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「シリコン太陽電池相当の発電コスト（14円/kWh）を前提に、フィルム型では約**25GW**の国内需要が見込まれる」と明示しています。これは野置きのメガソーラーとは異なる、建物の屋根や壁面等への導入需要です。日本の既存の太陽光パネルのシリコン系設置場所（地面・傾斜屋根等）との差別化が前提です。</p>
+
+            <h3>海外導入ポテンシャル——約500GW</h3>
+            <p>同資料は「海外には約**500GW**の導入ポテンシャルが存在する」と明示しています。国内需要以上の海外展開を野心的に目指すとされており、国内での導入実績・データ蓄積・コスト低減・設置施工方法確立が海外展開への基盤となります。</p>
+
+            <h3>タンデム型のリプレース市場——国内既導入約77GW</h3>
+            <p>同資料は「タンデム型では、少なくとも国内での既導入量約**77GW**（2025年3月時点）の将来的なリプレース市場が見込まれる」と明示しています。日本で既設置のシリコン太陽電池パネルが更新時期を迎えた際に、タンデム型に置き換わる市場です。パネルの耐用年数（20〜25年）を考えると、2030年代後半〜2040年代に向けてリプレース需要が本格化していく見込みです。</p>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">約25GW</span>
+                    <span class="stat-unit">（国内・フィルム型）</span>
+                    <span class="stat-label">
+                        ペロブスカイト太陽電池
+                        <br>
+                        国内需要ポテンシャル
+                        <br>
+                        （資料2 2026年3月）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">約500GW</span>
+                    <span class="stat-unit">（海外）</span>
+                    <span class="stat-label">
+                        ペロブスカイト太陽電池
+                        <br>
+                        海外導入ポテンシャル
+                        <br>
+                        （同上）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">約77GW</span>
+                    <span class="stat-unit">（2025年3月時点）</span>
+                    <span class="stat-label">
+                        日本の太陽光発電
+                        <br>
+                        既導入量（タンデム型
+                        <br>
+                        リプレース市場）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">2.6億ドル</span>
+                    <span class="stat-unit">（2024年・CAGR72%）</span>
+                    <span class="stat-label">
+                        ペロブスカイト太陽電池
+                        <br>
+                        世界市場（初期段階）
+                        <br>
+                        （市場調査レポート 2025年）
+                    </span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">市場調査レポート（ペロブスカイト太陽電池の世界市場 2025-2030）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH2 -->
+    <div class="chapter" id="ch2">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <h2>3つのタイプ——フィルム型・ガラス型・タンデム型</h2>
+            </div>
+
+            <p>ペロブスカイト太陽電池は大きく3つのタイプに分類されます。各タイプで競争力の源泉・適用先・開発段階が異なります。</p>
+
+            <div class="data-box">
+                <div class="box-title">3つのタイプの比較（資料2・2026年3月・次世代型太陽電池戦略・2024年11月）</div>
+                <ul>
+                    <li>【①フィルム型（日本の主戦場）】薄くて軽い・曲げられる・ロールtoロールで連続生産が可能。壁面・軽量屋根・バス停・防音壁等の「従来のシリコン系では設置できなかった場所」が市場。日本の強みは「封止技術（水分・酸素による劣化防止）」「耐久性向上技術」「大型化の製造技術」。積水化学・パナソニック・東芝・アイシン等が開発・事業化を進めている。耐久性（現状10年程度）の向上が最大の技術課題。</li>
+                    <li>【②ガラス型（中国が先行）】ガラス基板上に成膜。フィルム型より耐久性が高いが設置場所の自由度が低い。中国のスタートアップ（UtmoLight・DaZheng等）が量産化を先行推進中。中国国内向けに2024年から試験販売が始まっている。</li>
+                    <li>【③タンデム型（最高効率・英国が先行商用化）】ペロブスカイト層とシリコン（または別素材）を積層して高効率を実現。2024年9月にOxford PV（英国）が世界初の商用出荷を開始（24.5%クラスのモジュール）。2025年1月には33.84%という世界最高クラスの変換効率が報告されている（富士経済・2025年）。日本の強みは「ボトムセル（シリコン）の表面加工技術や成膜技術」。住宅用・産業用の高付加価値市場を初期ターゲットとする方向が示されている（資料2・2026年3月）。</li>
+                </ul>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">次世代型太陽電池戦略（経産省・次世代型太陽電池の導入拡大及び産業競争力強化に向けた官民協議会・2024年11月）</span>
+                <span class="source-tag">富士経済「2025年版 新型・次世代太陽電池の開発動向と市場の将来展望」（2025年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH3 -->
+    <div class="chapter" id="ch3">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <h2>制度・政策の枠組み</h2>
+            </div>
+
+            <h3>日本の政策目標（2026年3月時点）</h3>
+            <div class="data-box">
+                <div class="box-title">達成すべき戦略的目標（資料2・2026年3月・政策目標として示されている）</div>
+                <ul>
+                    <li>【導入量目標】2040年までに国内約**20GW**の導入（政策目標として示されている）</li>
+                    <li>【量産体制目標】2030年を待たずに**GW級の量産体制**の構築（政策目標として示されている）</li>
+                    <li>【コスト目標①・フィルム型】**2030年度までに14円/kWh以下**の技術確立（政策目標として示されている）</li>
+                    <li>【コスト目標②・タンデム型】2030年に**12円/kWh以下**という野心的な技術確立（政策目標として示されている）</li>
+                    <li>【経済安全保障目標】ペロブスカイト太陽電池の導入拡大による特定国（中国）への依存低減</li>
+                </ul>
+            </div>
+
+            <h3>主要マイルストーン</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-year">2024年4月</span>
+                    <span class="timeline-text">中国スタートアップ（UtmoLight・極電光能）と業務提携した日本の輸入販売業者がガラス型ペロブスカイト太陽電池の試験販売を国内で開始。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2024年9月</span>
+                    <span class="timeline-text">英国のOxford PVが世界初のペロブスカイト/シリコンタンデム型パネルの商業出荷を開始（24.5%クラスのモジュール）（新電力ネット）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2024年11月</span>
+                    <span class="timeline-text">経産省「次世代型太陽電池の導入拡大及び産業競争力強化に向けた官民協議会」が「次世代型太陽電池戦略」を公表。2040年までに20GW導入・2030年のGW級量産体制構築目標を明示（政策目標として示されている）。単接合ペロブスカイト太陽電池の発電効率が**26.7%**まで向上と報告。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2024年12月</span>
+                    <span class="timeline-text">積水化学工業が2025年の事業化を明言。「積水ソーラーフィルム株式会社」を設立し、2030年のGW級製造ライン構築を目指すと発表（省エネの教科書・2026年1月）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2025年1月</span>
+                    <span class="timeline-text">PSC/結晶シリコンのタンデム型（4端子）太陽電池セルで世界最高クラスとなる**33.84%**の変換効率が実現（富士経済・2025年）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2025年（大阪万博）</span>
+                    <span class="timeline-text">大阪・関西万博（2025年）がペロブスカイト太陽電池の国内最大規模の展示・実証の場となる。バス停屋根への設置・スマートウェアへの搭載等の実用展示を実施。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2025年〜</span>
+                    <span class="timeline-text">GI基金（グリーンイノベーション基金）による研究開発支援（令和3年度より実施）・GXサプライチェーン構築支援事業による設備投資支援（量産のため）が継続。需要家向けの導入補助が令和7年度（2025年度）より開始。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2026年度〜</span>
+                    <span class="timeline-text">GI基金採択事業者の生産品に対する固定資産税の課税特例を3年間重点化。地方公共団体が国庫補助を活用して公共施設等にペロブスカイト太陽電池を導入する事業に地方財政措置を実施予定（資料2・2026年3月）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2026年3月</span>
+                    <span class="timeline-text">日本成長戦略会議 第3回で「次世代型太陽電池（ペロブスカイト太陽電池等）」が戦略17分野に明示。官民投資の具体像・定量的インパクトは「今夏の日本成長戦略の策定に向けて取りまとめ予定」と記載。</span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">次世代型太陽電池戦略（経産省・官民協議会・2024年11月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH4 -->
+    <div class="chapter" id="ch4">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 04</span>
+                <h2>経済的前提条件——コスト低減と量産の課題</h2>
+            </div>
+
+            <h3>「シリコン太陽電池相当のコスト」が商業化の条件</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「シリコン太陽電池相当の発電コスト（14円/kWh）を前提に、フィルム型では約25GWの国内需要が見込まれる」と明示しています。現状ではシリコン太陽電池（中国製）との価格差があり、政策コスト目標である14円/kWh（フィルム型・2030年度）・12円/kWh（タンデム型・2030年）の達成が商業化の前提条件です。</p>
+
+            <h3>「耐久性」が最大の技術課題——現状10年→目標20年以上</h3>
+            <p>ペロブスカイト太陽電池の最大の技術課題は耐久性（湿気・酸素・熱による劣化）です。現状の耐久性は約10年程度とされており（2024年時点）、従来のシリコン太陽電池（25年以上）に比べて短いことが課題です。積水化学工業は2025年までに**20年相当**の耐久性を実現する方針を発表しており（省エネの教科書・2026年1月）、各社が封止技術・材料改質技術で耐久性向上を急いでいます。</p>
+
+            <h3>「サプライチェーン上の中小企業のキャッシュフロー不安定性」</h3>
+            <p>同資料は「財務：サプライチェーン上の中小企業のキャッシュフローの不安定性」を課題として明示しています。大型投資の前に安定した需要見込みが必要ですが、ペロブスカイト太陽電池は現在「技術開発→実証→量産→普及」のサイクルの初期段階にあるため、中小企業が設備投資に踏み切りにくい構造があります。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">省エネの教科書「ペロブスカイト太陽電池 2025年最新動向」（2026年1月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH5 -->
+    <div class="chapter" id="ch5">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 05</span>
+                <h2>中国・欧州・米国の動向</h2>
+            </div>
+
+            <h3>中国——「量産で市場を席巻」を目指すスタートアップ群</h3>
+            <p>中国は2015年頃からペロブスカイト太陽電池スタートアップが複数設立され、国内特許の取得競争が激化しています（次世代型太陽電池戦略・2024年11月）。UtmoLight（極電光能）・DaZheng・GCL Optoelectronics等のスタートアップが2025年までにGW（ギガワット）級の量産ラインを稼働させる計画を次々と発表しており（シスコムネット・2025年）、中国の既存太陽光パネル大手（LONGi・TrinaSolar等）もタンデム型開発で世界記録を更新する動きがあります。「低コスト量産で市場を先行支配する」という中国の戦略は、シリコン太陽電池での成功パターンと同様です。</p>
+
+            <h3>欧州——「商用化と信頼性の両立」でOxford PVが先行</h3>
+            <p>英国のOxford PV（オックスフォード・フォトボルタイクス）は2024年9月に世界初のペロブスカイト/シリコンタンデム型パネルの商業出荷を開始しており（新電力ネット・2025年）、建材一体型（BIPV）や分散発電向けの採用が進んでいます。ポーランドのSaule Technologiesはニッチ市場（電子棚札・IoTデバイス電源）向けに既に製品を市場投入しています。EUは品質と耐久性を軸にした高付加価値市場形成に向けた標準化・認証制度整備を進めています（新電力ネット・2025年）。</p>
+
+            <h3>日本の競争ポジション</h3>
+            <div class="compare-grid">
+                <div class="compare-cell">
+                    <span class="cell-label">日本の技術的強み（資料2・官民協議会）</span>
+
+                            フィルム型の封止技術・耐久性向上技術・大型化技術で世界をリード（次世代型太陽電池戦略・2024年11月）。ヨウ素の世界2位のシェア（約30%：資料2には「約30%」・官民協議会では「世界2位」と表記）。製造プロセスのノウハウ（温度・湿度管理等・製造装置に化体しない部分）での優位性。タンデム型のシリコン表面加工・成膜技術。
+                          
+                </div>
+                <div class="compare-cell">
+                    <span class="cell-label">課題・競合リスク</span>
+
+                            中国が量産スケールで先行する可能性。「技術や人材の流出」リスク（資料2に明示）。量産技術・設置施工技術の開発遅延。「我が国に不利益となる標準化」が進むリスク（資料2に明示）。耐久性の技術的不確実性。サプライチェーン中小企業の資金難。
+                          
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">次世代型太陽電池戦略（経産省・官民協議会・2024年11月）</span>
+                <span class="source-tag">新電力ネット「日本発！次世代ペロブスカイト太陽電池」（2025年）</span>
+                <span class="source-tag">シスコムネット「ペロブスカイト太陽電池 2025年最新情報と展望」（2025年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH6 -->
+    <div class="chapter" id="ch6">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 06</span>
+                <h2>技術・DXの位置づけ</h2>
+            </div>
+
+            <h3>変換効率の急速な向上——単接合26.7%・タンデム型33.84%</h3>
+            <p>ペロブスカイト太陽電池の変換効率は急速に向上しており、2024年11月現在では単接合で**26.7%**まで向上しています（次世代型太陽電池戦略・2024年11月）。タンデム型（PSC/結晶シリコン・4端子）では2025年1月に世界最高クラスとなる**33.84%**の変換効率が実現されています（富士経済・2025年）。一般的な住宅用シリコン太陽電池の最高クラスは約22.5%（2024年時点）であり、タンデム型はすでに従来型を大きく上回っています。</p>
+
+            <h3>「ロールtoロール連続生産」——フィルム型量産の鍵</h3>
+            <p>フィルム型ペロブスカイト太陽電池の量産技術の中核は「ロールtoロール（Roll-to-Roll）連続生産」です。原材料をフィルム状に連続的に塗工・成膜するプロセスで、大量生産時のコスト低減が期待されています。積水化学工業は現在30cm幅のフィルムのロールtoロール連続生産が可能となっており（資源エネルギー庁・2024年5月）、これを1m幅に拡大して量産化を目指しています。</p>
+
+            <h3>「BIPV（建材一体型太陽光発電）」——新市場の開拓</h3>
+            <p>BIPV（Building Integrated Photovoltaics）とは太陽電池を建材（外壁・窓・屋根材等）に一体化した製品です。ペロブスカイト太陽電池の軽量・薄型・色調調整が可能という特性はBIPVに適しており、日本の建物ストック（耐荷重の制約がある既存建物の軽量屋根・オフィスビルの壁面等）への導入を可能にします。2025年4月から羽田イノベーションシティで建材一体型BIPV実証ラボが始まっており（新電力ネット・2025年）、都市型エネルギーとしての活用が本格化しています。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">次世代型太陽電池戦略（経産省・官民協議会・2024年11月）</span>
+                <span class="source-tag">富士経済「2025年版 新型・次世代太陽電池の開発動向と市場の将来展望」（2025年）</span>
+                <span class="source-tag">資源エネルギー庁「次世代型太陽電池に関する国内外の動向等について」（2024年5月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH7 -->
+    <div class="chapter" id="ch7">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 07</span>
+                <h2>経済安全保障との接続——ヨウ素とシリコン依存</h2>
+            </div>
+
+            <h3>シリコン太陽電池の中国8割依存——経済安全保障の問題</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「シリコン太陽電池は、中国が世界のシェアの8割程度を占め、圧倒的な競争力を持つ」と明示しています。日本が使用する太陽光パネルの大部分が中国製に依存しており、「国産エネルギー源（再エネ）の生産設備がそれ自体は特定国依存」という矛盾した状況が続いています。ペロブスカイト太陽電池の国産化はこの依存構造からの脱却手段として位置づけられています。</p>
+
+            <h3>ヨウ素——日本が世界2位のシェア（約30%）</h3>
+            <p>ペロブスカイト太陽電池の主要原材料「ヨウ素（ヨウ化鉛・ヨウ化メチル等）」について、日本は世界シェアの約**30%**（世界2位・資料2）を占めています（チリが1位・日本が2位：次世代型太陽電池戦略・2024年11月）。ヨウ素は国内調達が可能な原材料として、ペロブスカイト太陽電池製造のサプライチェーンを強靭にする重要な要素です。同資料は「主原料であるヨウ素は我が国が世界シェアの約30%を占めていること（自律性に大きく寄与）」と明示しています。</p>
+
+            <h3>「製造プロセスのノウハウ」が競争優位を決める構造</h3>
+            <p>同資料は「ペロブスカイト太陽電池の競争力は、製造プロセス等のノウハウ（製造装置に化体しない複雑な材料加工や成形、温度・湿度の管理など）による部分が大きい」と明示しています。これはシリコン太陽電池（設備投資の規模・量産コストが競争力の中心）とは異なる競争構造です。ノウハウが「製造装置に化体しない」ということは、装置を購入しても技術移転しにくいことを意味しており、日本企業が技術優位を維持しやすい特性があります。ただし同資料は「技術や人材の流出」を課題として明示しており、ノウハウの保護が重要課題です。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">次世代型太陽電池戦略（経産省・官民協議会・2024年11月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH8 -->
+    <div class="chapter" id="ch8">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 08</span>
+                <h2>外部環境の整理</h2>
+            </div>
+
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>章</th>
+                        <th>指標名</th>
+                        <th>数値</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第1章</td>
+                        <td>フィルム型 国内需要ポテンシャル</td>
+                        <td>約25GW（シリコン相当コスト前提）</td>
+                        <td>資料2 2026年3月</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>海外導入ポテンシャル</td>
+                        <td>約500GW</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>タンデム型 リプレース市場（国内）</td>
+                        <td>既導入量約77GW（2025年3月時点）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>ペロブスカイト太陽電池 世界市場</td>
+                        <td>2.6億ドル（2024年）・CAGR 72.18%</td>
+                        <td>市場調査レポート 2025年</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>導入量目標</td>
+                        <td>2040年までに国内約20GW（政策目標として示されている）</td>
+                        <td>資料2・次世代型太陽電池戦略 2024年11月</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>コスト目標（フィルム型）</td>
+                        <td>2030年度までに14円/kWh以下（政策目標として示されている）</td>
+                        <td>資料2 2026年3月</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>コスト目標（タンデム型）</td>
+                        <td>2030年に12円/kWh以下（野心的目標・政策目標として示されている）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>量産体制目標</td>
+                        <td>2030年を待たずにGW級（政策目標として示されている）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第6章</td>
+                        <td>単接合ペロブスカイト変換効率</td>
+                        <td>26.7%（2024年11月時点）</td>
+                        <td>次世代型太陽電池戦略 2024年11月</td>
+                    </tr>
+                    <tr>
+                        <td>第6章</td>
+                        <td>タンデム型最高変換効率</td>
+                        <td>33.84%（2025年1月）</td>
+                        <td>富士経済 2025年</td>
+                    </tr>
+                    <tr>
+                        <td>第7章</td>
+                        <td>シリコン太陽電池の中国世界シェア</td>
+                        <td>約8割</td>
+                        <td>資料2 2026年3月</td>
+                    </tr>
+                    <tr>
+                        <td>第7章</td>
+                        <td>日本のヨウ素世界シェア</td>
+                        <td>約30%（世界2位）</td>
+                        <td>資料2 2026年3月・次世代型太陽電池戦略 2024年11月</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="data-box">
+                <div class="box-title">構造的に固定されやすい要素</div>
+                <ul>
+                    <li>「シリコン太陽電池で中国が世界8割のシェアを持つ」という構造は、ペロブスカイト等の代替技術が普及するまで変化しない</li>
+                    <li>「日本のヨウ素世界2位シェア（約30%）」という資源的強みは地質的なものであり変化しない</li>
+                    <li>「製造プロセスのノウハウが競争力を決める」という産業特性は、技術の成熟度が変化しない限り続く</li>
+                    <li>「軽量・柔軟で従来のシリコンが設置できない場所に設置可能」というフィルム型の差別化優位は構造的</li>
+                    <li>「耐久性がシリコン太陽電池より短い（現状10年程度）」という技術的課題は研究開発の進捗次第</li>
+                    <li>「中国がガラス型・タンデム型でも量産化を急いでいる」という競合リスクは増大傾向</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜7章に記載の各統計の集約</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH9 -->
+    <div class="chapter" id="ch9">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 09</span>
+                <h2>内部環境編への橋渡し</h2>
+            </div>
+            <div class="data-box">
+                <div class="box-title">外部環境編の整理（5点）</div>
+                <ul>
+                    <li>国内需要ポテンシャル約25GW（フィルム型）・海外500GW・タンデム型リプレース市場77GW（国内既導入）。政策目標：2040年に国内約20GW・2030年度にコスト14円/kWh以下・GW級量産体制（政策目標として示されている）</li>
+                    <li>シリコン太陽電池は中国が世界8割支配。ペロブスカイト太陽電池は中国（量産先行・ガラス型）・英国Oxford PV（タンデム型・世界初商用出荷）・日本（フィルム型技術優位）が三つどもえの競争構造</li>
+                    <li>日本の技術的強み：フィルム型の封止技術・耐久性向上技術・大型化製造技術で世界リード（官民協議会・2024年11月）。ヨウ素世界2位シェア（約30%）。「製造プロセスのノウハウが競争力を決める」という構造での優位性</li>
+                    <li>Oxford PVが2024年9月に世界初のタンデム型商用出荷・積水化学が2025年に事業化宣言・タンデム型変換効率33.84%達成（2025年1月）と技術進展が急速</li>
+                    <li>課題は「耐久性（現状10年）の向上」「量産コスト低減」「設置施工技術確立」「技術・人材流出防止」「初期需要の創出（民間投資の予見性確保）」の5点。官民投資の具体金額は2026年夏の取りまとめまで未確定</li>
+                </ul>
+            </div>
+            <div class="next-box">
+                <div class="next-label">NEXT — 内部環境編で整理すること</div>
+                <h3>外圧がプレイヤー構成・収益・人材にどう現れるか</h3>
+                <ul>
+                    <li>積水化学工業（積水ソーラーフィルム）・パナソニック・東芝・アイシン等の国内主要開発企業の開発状況・投資額・事業化タイムライン</li>
+                    <li>エネコートテクノロジーズ（京都大学発）・ペクセル・テクノロジーズ（桐蔭横浜大学発）等の大学発スタートアップの資金調達・技術進捗</li>
+                    <li>GI基金・GXサプライチェーン構築支援事業の採択企業と支援金額の実態</li>
+                    <li>封止材・ヨウ素原料・製造装置等のサプライチェーン上の中小企業の状況</li>
+                    <li>太陽電池研究者・製造プロセスエンジニア・施工技術者の人材市場実態と年収水準</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポートの総括</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <div class="container">
+            <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。市場規模数値は各調査機関の定義・算定方法が異なるため単純比較はできません。「政策目標として示されている」と注記した数値は政府が目標として掲げた値であり達成を保証するものではありません。官民投資の具体的金額は2026年夏の取りまとめ予定であり本時点では未確定です。データ基準時点は2026年04月です。</p>
+            <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年04月 産業構造分析レポート ── 次世代型太陽電池（ペロブスカイト太陽電池等）（外部環境編）</p>
+            <p style="margin-top:8px;">
+                <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
