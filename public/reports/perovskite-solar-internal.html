@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業界分析｜高市政権「戦略17分野」資源・エネルギー安全保障・GX 次世代型太陽電池（ペロブスカイト太陽電池等）（内部環境編）</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+    :root {
+        --ink: #0f0f0e;
+        --paper: #f5f2ed;
+        --cream: #ede9e1;
+        --accent: #c84b2f;
+        --muted: #6b6760;
+        --rule: #c9c4bb;
+        --highlight: #fff8e6;
+    }
+
+    *, * ::before, * ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        border-bottom: 3px solid var(--accent);
+    }
+
+    .masthead-right {
+        color: var(--muted);
+    }
+
+    .hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 60px 40px 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200, 75, 47, 0.07) 4px, rgba(200, 75, 47, 0.07) 5px);
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        padding: 4px 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(20px, 3.2vw, 34px);
+        font-weight: 900;
+        line-height: 1.4;
+        max-width: 820px;
+        letter-spacing: 0.02em;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+        color: var(--accent);
+        font-style: normal;
+    }
+
+    .hero-meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+
+    .hero-badge {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 11px;
+        padding: 4px 12px;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.06em;
+    }
+
+    .data-notice {
+        background: rgba(200, 75, 47, 0.15);
+        border-left: 3px solid var(--accent);
+        padding: 10px 16px;
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .toc {
+        background: var(--cream);
+        border-top: 3px solid var(--ink);
+        border-bottom: 1px solid var(--rule);
+        padding: 32px 40px;
+    }
+
+    .toc h2 {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 16px;
+        text-transform: uppercase;
+    }
+
+    .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 6px 28px;
+    }
+
+    .toc-item {
+        font-size: 13px;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 3px 0;
+        border-bottom: 1px dashed var(--rule);
+        display: flex;
+        gap: 8px;
+    }
+
+    .toc-item:hover {
+        color: var(--accent);
+    }
+
+    .toc-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        flex-shrink: 0;
+        padding-top: 2px;
+    }
+
+    .chapter {
+        padding: 48px 40px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .chapter:nth-child(even) {
+        background: var(--cream);
+    }
+
+    .chapter-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .chapter-num {
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .chapter h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.4;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 10px;
+        flex: 1;
+    }
+
+    .chapter h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 24px 0 10px;
+        padding-left: 10px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .chapter p {
+        margin-bottom: 14px;
+    }
+
+    .connect-banner {
+        background: var(--ink);
+        border-left: 5px solid var(--accent);
+        padding: 16px 20px;
+        margin-bottom: 28px;
+        font-size: 13px;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .connect-banner strong {
+        color: var(--accent);
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 24px 0;
+    }
+
+    .stat-cell {
+        background: var(--paper);
+        padding: 18px 16px;
+        text-align: center;
+    }
+
+    .chapter:nth-child(even) .stat-cell {
+        background: #f0ece4;
+    }
+
+    .stat-cell .stat-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent);
+        line-height: 1.2;
+        display: block;
+    }
+
+    .stat-cell .stat-unit {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-top: 2px;
+    }
+
+    .stat-cell .stat-label {
+        font-size: 11px;
+        color: var(--ink);
+        display: block;
+        margin-top: 6px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .data-box {
+        background: var(--highlight);
+        border: 1px solid #e0d8c4;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 20px 0;
+    }
+
+    .data-box .box-title {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .data-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .data-box ul li {
+        padding: 5px 0 5px 16px;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+        position: relative;
+    }
+
+    .data-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .data-box ul li:last-child {
+        border-bottom: none;
+    }
+
+    .note-box {
+        background: rgba(200, 75, 47, 0.05);
+        border: 1px dashed var(--accent);
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .note-box strong {
+        color: var(--accent);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13px;
+    }
+
+    .summary-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .summary-table thead th {
+        padding: 10px 14px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+    }
+
+    .summary-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .summary-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .summary-table tbody td {
+        padding: 9px 14px;
+        vertical-align: top;
+    }
+
+    .summary-table td:first-child {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 12px;
+    }
+
+    .biz-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 12px;
+    }
+
+    .biz-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .biz-table thead th {
+        padding: 8px 12px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.06em;
+    }
+
+    .biz-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .biz-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .biz-table tbody td {
+        padding: 8px 12px;
+        vertical-align: top;
+        font-size: 12px;
+    }
+
+    .biz-table td:first-child {
+        font-weight: 700;
+    }
+
+    .biz-table .acc {
+        color: var(--accent);
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+    }
+
+    .next-box {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 28px 32px;
+        margin: 20px 0;
+        border-left: 5px solid var(--accent);
+    }
+
+    .next-box .next-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .next-box h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 17px;
+        margin-bottom: 12px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .next-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .next-box ul li {
+        padding: 4px 0 4px 14px;
+        font-size: 13px;
+        position: relative;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .next-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.06);
+        border: 1px solid var(--rule);
+        padding: 3px 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        color: var(--muted);
+        margin: 2px 3px;
+        letter-spacing: 0.04em;
+    }
+
+    .source-wrap {
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 1px dashed var(--rule);
+    }
+
+    .disclaimer {
+        background: var(--ink);
+        color: rgba(245, 242, 237, 0.5);
+        padding: 24px 40px;
+        font-size: 11px;
+        line-height: 1.7;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.03em;
+    }
+
+    .rule-thick {
+        border: none;
+        border-top: 3px solid var(--ink);
+        margin: 0;
+    }
+
+    .rule-thin {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .masthead {
+            flex-direction: column;
+            gap: 6px;
+            padding: 10px 16px;
+        }
+
+        .hero {
+            padding: 36px 16px 30px;
+        }
+
+        .chapter {
+            padding: 32px 16px;
+        }
+
+        .toc {
+            padding: 24px 16px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span>産業構造分析レポート</span>
+        <span class="masthead-right">2026年04月発行 ── 資源・エネルギー安全保障・GX／次世代型太陽電池（ペロブスカイト太陽電池等）（内部環境編）</span>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-label">INDUSTRY ANALYSIS REPORT — INTERNAL ENVIRONMENT</div>
+            <h1>
+                業界分析｜高市政権「戦略17分野」
+                <br>
+                資源・エネルギー安全保障・GX
+                <br>
+                <em>次世代型太陽電池（ペロブスカイト太陽電池等）</em>
+                （内部環境編）
+            </h1>
+            <div class="hero-meta">
+                <span class="hero-badge">就職・転職検討者向け</span>
+                <span class="hero-badge">株式投資家向け</span>
+                <span class="hero-badge">数字と事実のみ記載</span>
+            </div>
+            <div class="data-notice">本レポートのデータ基準時点：2026年04月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用</div>
+        </div>
+    </div>
+
+    <hr class="rule-thick">
+
+    <div class="toc">
+        <div class="container">
+            <h2>目次 — TABLE OF CONTENTS</h2>
+            <div class="toc-grid">
+                <a class="toc-item" href="#ch0">
+                    <span class="toc-num">00</span>
+                    この内部環境編の立ち位置
+                </a>
+                <a class="toc-item" href="#ch1">
+                    <span class="toc-num">01</span>
+                    業界内プレイヤー構成
+                </a>
+                <a class="toc-item" href="#ch2">
+                    <span class="toc-num">02</span>
+                    積水化学工業（積水ソーラーフィルム）——量産化の先陣
+                </a>
+                <a class="toc-item" href="#ch3">
+                    <span class="toc-num">03</span>
+                    アイシン——薄型ガラス基板・2028年テスト販売目標
+                </a>
+                <a class="toc-item" href="#ch4">
+                    <span class="toc-num">04</span>
+                    東芝——国内初タンデム型実証・変換効率世界最高水準
+                </a>
+                <a class="toc-item" href="#ch5">
+                    <span class="toc-num">05</span>
+                    パナソニックHD——変換効率17.9%の世界記録・建材一体型
+                </a>
+                <a class="toc-item" href="#ch6">
+                    <span class="toc-num">06</span>
+                    大学発スタートアップとGI基金エコシステム
+                </a>
+                <a class="toc-item" href="#ch7">
+                    <span class="toc-num">07</span>
+                    収益構造の本質——「初期需要創出」が産業化の鍵
+                </a>
+                <a class="toc-item" href="#ch8">
+                    <span class="toc-num">08</span>
+                    人材市場の実態
+                </a>
+                <a class="toc-item" href="#ch9">
+                    <span class="toc-num">09</span>
+                    構造的課題の所在
+                </a>
+                <a class="toc-item" href="#ch10">
+                    <span class="toc-num">10</span>
+                    誤解されやすいポイント
+                </a>
+                <a class="toc-item" href="#ch11">
+                    <span class="toc-num">11</span>
+                    内部環境の整理
+                </a>
+                <a class="toc-item" href="#ch12">
+                    <span class="toc-num">12</span>
+                    有料版への橋渡し
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <!-- CH0 -->
+    <div class="chapter" id="ch0">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <h2>この内部環境編の立ち位置</h2>
+            </div>
+            <div class="connect-banner">
+                <strong>外部環境編との接続：</strong>
+                外部環境編では、国内需要ポテンシャル約25GW（フィルム型）・海外500GW・タンデム型リプレース市場77GW・政策目標2040年に20GW・2030年度に14円/kWh以下・GW級量産体制・シリコン太陽電池は中国が世界8割・日本のヨウ素世界2位（約30%）・Oxford PVが2024年9月に世界初商用出荷・課題5点（耐久性・コスト・施工・流出・初期需要）という外部構造を整理しました。本編ではその前提のもとで「外部の構造がこの産業のプレイヤー・収益・人材にどのような特性として現れているか」を数字と事実で記述します。
+                    
+            </div>
+            <div class="data-box">
+                <div class="box-title">本編でやること／やらないこと</div>
+                <ul>
+                    <li>【やること】積水化学工業（積水ソーラーフィルム）の量産化決定・投資額・政府補助・事業開始タイムラインを記述する</li>
+                    <li>【やること】アイシン・東芝・パナソニックHDの各社の開発状況・技術スペック・事業化タイムラインを整理する</li>
+                    <li>【やること】エネコートテクノロジーズ等の大学発スタートアップとGI基金エコシステムの実態を整理する</li>
+                    <li>【やること】太陽電池研究者・製造プロセスエンジニア・施工技術者の人材市場実態を整理する</li>
+                    <li>【やること】「初期需要創出」という収益化の構造的課題を記述する</li>
+                    <li>【やらないこと】特定銘柄の投資推奨・勝ち負けの断定・良し悪しの評価</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート基本方針</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH1 -->
+    <div class="chapter" id="ch1">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <h2>業界内プレイヤー構成</h2>
+            </div>
+            <table class="biz-table">
+                <thead>
+                    <tr>
+                        <th>企業</th>
+                        <th>タイプ</th>
+                        <th>開発ステージ（2026年04月時点）</th>
+                        <th>特徴・強み</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            積水化学工業
+                            <br>
+                            （積水ソーラーフィルム）
+                            <br>
+                            （4204）
+                        </td>
+                        <td class="acc">フィルム型（量産先行）</td>
+                        <td>2026年3月27日に「SOLAFIL」ブランドで事業開始。2026年度は現有設備での限定生産。2027年度に100MW製造ライン（堺工場）稼働目標。2030年度にGW級製造ライン構築目標。</td>
+                        <td>GI基金フェーズ3唯一採択。GXサプライチェーン構築支援事業で最大1,572.5億円補助採択。DBJとの合弁（積水ソーラーフィルム）。液晶パネル向け封止材技術を転用した封止・成膜・材料技術が強み。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            アイシン
+                            <br>
+                            （7259）
+                        </td>
+                        <td class="acc">薄型ガラス型（独自基板）</td>
+                        <td>2025年3月から安城工場での社内実証開始（約30kW・国内初の系統連系運用評価）。2028年のテスト販売開始・2030年の本格事業化を目標。NEDOグリーンイノベーション基金最終フェーズに採択（2025年）。</td>
+                        <td>樹脂フィルムとガラスのハイブリッドである「薄型ガラス基板」を採用し軽量・耐久性両立。30cm角モジュールで変換効率13.08%。スプレー工法技術を保有。将来的にEV車載用展開も視野。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            東芝
+                            <br>
+                            （6502）
+                        </td>
+                        <td class="acc">タンデム型（2端子）・フィルム型</td>
+                        <td>2025年から阪神高速との共同研究で国内初のペロブスカイト/シリコン2端子タンデム型の実証実験を開始。高架下・壁面を対象に発電比較を検証中。2030年までの量産開始を予定。</td>
+                        <td>有機薄膜型太陽電池研究の蓄積を転用。タンデム型に注力し高変換効率を目指す。インフラ設備への設置（高架下等）という独自の市場開拓。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            パナソニックHD
+                            <br>
+                            （6752）
+                        </td>
+                        <td class="acc">ガラス型・建材一体型（BIPV）</td>
+                        <td>ガラス基板を使った30cm角のPSCで変換効率17.9%の世界記録。建材一体型・ガラス型の研究開発推進。2026年からの試験販売を予定。2025年にNEDO GI基金採択を受けて量産技術・実証実験を強化。</td>
+                        <td>ガラス基板PSCで世界最高水準の変換効率17.9%。藤沢サスティナブル・スマートタウン内での長期実証実験（ガラス建材一体型・世界初）を実施済み。住宅・建材分野への統合的展開。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            エネコートテクノロジーズ
+                            <br>
+                            （非上場・京大発）
+                        </td>
+                        <td class="acc">フィルム型・IoT機器向け</td>
+                        <td>2025年にNEDO「グリーンイノベーション基金」最終フェーズに採択。量産技術と社会実装に向けたコンソーシアム体制での推進を開始。複数の大学・企業と連携したロールtoロール量産化を目指す。</td>
+                        <td>京都大学の技術基盤をもとにフィルム型PSCを開発。IoT機器・屋内センサー等の小型・特殊用途向けにも展開。大学のアカデミア知見と民間事業化を橋渡しするスタートアップ。</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="source-wrap">
+                <span class="source-tag">各社公開情報・ニュースイッチ「次世代太陽電池の本命…日本発ペロブスカイト、激化する開発競争の現在地」</span>
+                <span class="source-tag">次世代型太陽電池戦略（経産省・官民協議会・2024年11月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH2 -->
+    <div class="chapter" id="ch2">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <h2>積水化学工業（積水ソーラーフィルム）——量産化の先陣</h2>
+            </div>
+
+            <h3>2026年3月27日——「SOLAFIL」ブランドで正式事業開始</h3>
+            <p>積水化学工業（4204）は2026年3月27日、グループ会社の積水ソーラーフィルム株式会社（SSF）とともにフィルム型ペロブスカイト太陽電池「SOLAFIL（ソラフィル）」の事業開始を正式発表しました（積水化学工業 プレスリリース・2026年3月27日）。供給に向けた顧客との具体的な協議を開始し、初期の供給先として環境省の2025年度公募「ペロブスカイト太陽電池の社会実装モデルの創出に向けた導入支援事業」で採択されたさいたま市・滋賀県・西日本高速道路株式会社・福岡県・福岡市と、東京都の「都有施設へのAirソーラー先行導入事業」を挙げています（同）。2026年度は現有設備による限定的な生産量となる見込みです。</p>
+
+            <h3>旧シャープ堺工場取得——投資総額900億円・補助金最大1,572.5億円</h3>
+            <p>積水化学は大阪府堺市のシャープ本社工場の建屋等を約50億円で取得し、新たな生産設備に650億円を投資する計画です（PVeye・2024年）。**投資総額は900億円**です（積水化学工業 事業説明会・2025年1月7日）。2024年12月25日には経済産業省がGXサプライチェーン構築支援事業の第二回公募結果を公表し、積水化学による年産1GW級ペロブスカイト太陽電池事業を採択しました。補助対象期間は2024年11月〜2029年2月末、総事業費**3,145億円**のうち最大**1,572.5億円の補助金**が交付されます（PVeye・2024年）。</p>
+
+            <h3>段階的生産規模拡大計画——2027年100MW→2030年GW級</h3>
+            <div class="data-box">
+                <div class="box-title">積水ソーラーフィルム 生産規模拡大ロードマップ</div>
+                <ul>
+                    <li>【現在（2026年度）】現有設備（滋賀県草津市・積水化学工業研究所）での限定的な生産。変換効率15%・耐久性10年相当・30cm幅ロールtoロール製造。</li>
+                    <li>【2027年度目標】旧シャープ堺工場での**100MW製造ライン稼働**。1m幅ロールtoロール製造設備を導入。耐久性20年相当を目指す。</li>
+                    <li>【2030年度目標】段階的な追加投資を経て**GW（ギガワット）級の製造ライン構築**。政府が目指す「2030年を待たずにGW級の量産体制構築」の中核を担う位置づけ（政策目標として示されている）。</li>
+                </ul>
+            </div>
+
+            <h3>積水ソーラーフィルム株式会社——DBJとの合弁・「オールジャパン体制」</h3>
+            <p>積水ソーラーフィルム株式会社（SSF）は2025年1月6日設立（資本金1億円・積水化学86%・日本政策投資銀行（DBJ）14%）です（SOLAR JOURNAL・2024年）。SSFの代表には積水化学工業の上脇太専務執行役員が就任しています。積水化学が技術開発・ライセンス供与を担い、SSFが製品設計・製造・販売を担う役割分担です。GI基金フェーズ3唯一の採択企業であり（DBJ・2024年12月）、「オールジャパン体制」として他社の出資・協業を受け入れる方針を明示しています（DBJ記事・2024年）。</p>
+
+            <h3>積水化学の技術的強み——液晶パネル封止材技術の転用</h3>
+            <p>積水化学がペロブスカイト太陽電池のフィルム型で先行できた背景には、液晶パネル向け封止材事業で培った「封止技術（水分・酸素の侵入防止）」「成膜技術」「材料技術」の既存事業からの転用があります（DBJ記事・2024年）。ペロブスカイト太陽電池の最大課題である「耐久性（水分・酸素による劣化）」に対応するノウハウをすでに持っていたことが、他社に先行して技術確立できた要因です。</p>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">900億円</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        積水ソーラーフィルム
+                        <br>
+                        堺工場への投資総額
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">最大1,572.5億円</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        GXサプライチェーン構築
+                        <br>
+                        支援事業の補助金額
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">100MW</span>
+                    <span class="stat-unit">（2027年度目標）</span>
+                    <span class="stat-label">
+                        積水ソーラーフィルム
+                        <br>
+                        製造ライン規模
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">GW級</span>
+                    <span class="stat-unit">（2030年度目標）</span>
+                    <span class="stat-label">
+                        積水ソーラーフィルム
+                        <br>
+                        製造ライン規模
+                    </span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">積水化学工業 プレスリリース「フィルム型ペロブスカイト太陽電池『SOLAFIL』事業開始のお知らせ」（2026年3月27日）</span>
+                <span class="source-tag">積水化学工業 ペロブスカイト太陽電池事業説明会資料（2025年1月7日）</span>
+                <span class="source-tag">PVeye「積水化学がフィルム型ペロブスカイト事業を始動」（2024年）</span>
+                <span class="source-tag">DBJ「積水化学工業（株）のフィルム型ペロブスカイト太陽電池事業の社会実装に向けた投融資について」（2024年12月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH3 -->
+    <div class="chapter" id="ch3">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <h2>アイシン——薄型ガラス基板・2028年テスト販売目標</h2>
+            </div>
+
+            <h3>「薄型ガラス基板」——軽量性と耐久性の両立を目指す独自アプローチ</h3>
+            <p>アイシン（7259）のペロブスカイト太陽電池は、一般的なフィルム基板（軽量だが耐久性に課題）でもガラス基板（耐久性は高いが重い）でもなく、「薄型ガラス」という独自の特殊構造を採用しています（LIGARE・2025年7月）。厚さ約2mm・重量900g（シリコン系の約5分の1）という軽量性を実現しながら、ガラス基板の耐久性を確保するアプローチです。30cm角モジュールで変換効率**13.08%**を達成しています。アイシンのNEDOプロジェクトでの目標は変換効率20%台・耐久性20年・発電コスト20円/kWh以下です（LIGARE・2025年7月）。</p>
+
+            <h3>2025年3月——安城工場での社内実証開始（国内初の系統連系運用評価）</h3>
+            <p>アイシンは2025年3月から安城工場（愛知県）敷地内施設の四方壁面や屋根にペロブスカイト太陽電池を順次設置し、システム発電評価・施工性評価・国内初の系統連系による運用評価を実施しています（アイシン プレスリリース・2025年）。2025年9月末には約30kWの発電容量を見込んでいます。将来的にはEV車載用（EV走行距離向上）への展開も視野に入れています（ニュースイッチ）。**2028年のテスト販売開始・2030年の本格事業化**を目標としています（LIGARE・2025年7月）。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">LIGARE「薄く・軽く・曲がるペロブスカイト太陽電池の実用化へ アイシンが開発状況を公開」（2025年7月）</span>
+                <span class="source-tag">アイシン プレスリリース「ペロブスカイト太陽電池の社会実装に向けた安城工場での社内実証を開始」（2025年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH4 -->
+    <div class="chapter" id="ch4">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 04</span>
+                <h2>東芝——国内初タンデム型実証・変換効率世界最高水準</h2>
+            </div>
+
+            <h3>国内初——ペロブスカイト/シリコン2端子型タンデム太陽電池の実証実験</h3>
+            <p>東芝エネルギーシステムズは2025年から、阪神高速との共同研究により国内初となるペロブスカイト/シリコンの2端子型タンデム太陽電池の実証実験を開始しました（省エネの教科書・2026年1月）。高架下や壁面を対象に、タンデム型とシリコン単体の発電比較などを検証しています。タンデム型は積層による高効率性が特徴で、2025年1月には世界最高クラスの**33.84%**の変換効率が実現されています（富士経済・2025年）。</p>
+            <p>東芝は過去に有機薄膜型太陽電池の研究開発を進めていた経緯があり、その際に培った技術・知見をペロブスカイト太陽電池開発に転用しています（ニュースイッチ）。2030年までの量産開始を予定しています。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">省エネの教科書「ペロブスカイト太陽電池 2025年最新動向」（2026年1月）</span>
+                <span class="source-tag">ニュースイッチ「次世代太陽電池の本命…日本発ペロブスカイト、激化する開発競争の現在地」</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH5 -->
+    <div class="chapter" id="ch5">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 05</span>
+                <h2>パナソニックHD——変換効率17.9%の世界記録・建材一体型</h2>
+            </div>
+
+            <h3>ガラス基板使用30cm角PSCで変換効率17.9%——世界記録</h3>
+            <p>パナソニックホールディングス（6752）はガラス基板を使った30cm角のペロブスカイト太陽電池で**変換効率17.9%**の世界記録を保持しています（ニュースイッチ）。これは一般的なフィルム型（積水化学：15%・アイシン：13.08%）と比較して高い効率です。ガラス基板は耐久性に優れ、建材一体型（BIPV：Building Integrated Photovoltaics）への展開を主なターゲットとしています。</p>
+            <p>2023年8月から神奈川県藤沢市の「藤沢サスティナブル・スマートタウン」内でのガラス建材一体型ペロブスカイト太陽電池の長期実証実験（世界初）を実施済みです（関西電力ソリューション記事）。2025年にNEDO GI基金採択を受けて量産技術と実証実験を強化しており、**2026年からの試験販売**を予定しています（シスコムネット・2025年）。小川立夫執行役員グループCTOは2025年6月の説明会で「できるだけ早い時期に事業化のロードマップを公表したい」と発言しています（ニュースイッチ）。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">ニュースイッチ「次世代太陽電池の本命…日本発ペロブスカイト、激化する開発競争の現在地」</span>
+                <span class="source-tag">シスコムネット「ペロブスカイト太陽電池2025年最新情報と展望」（2025年12月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH6 -->
+    <div class="chapter" id="ch6">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 06</span>
+                <h2>大学発スタートアップとGI基金エコシステム</h2>
+            </div>
+
+            <h3>エネコートテクノロジーズ——京都大学発・フィルム型・IoT機器向け</h3>
+            <p>エネコートテクノロジーズは京都大学の研究シーズをもとに設立されたスタートアップです。フィルム型ペロブスカイト太陽電池の開発を中心に、IoT機器・屋内センサー等の小型・特殊用途向けにも展開を進めています。2025年にNEDO「グリーンイノベーション基金」最終フェーズに採択され、量産技術と社会実装に向けたコンソーシアム体制での推進を強化しています（省エネの教科書・2026年1月）。複数の大学・企業と連携したロールtoロール量産化を目指しています。</p>
+
+            <h3>GI基金の次世代型太陽電池開発プロジェクト——総額498億円</h3>
+            <p>GI基金（グリーンイノベーション基金・2兆円のNEDO基金）の「次世代型太陽電池の開発プロジェクト」には総額**498億円**が充てられており（資源エネルギー庁「日本の再エネ拡大の切り札」後編）、積水化学・東芝・アイシン・カネカ・エネコートテクノロジーズ等が産総研・大学と連携しながら採択されています。2030年の社会実装を目指すフェーズ3（量産技術開発・フィールド実証）まで段階的な支援が設計されており、積水化学が唯一フェーズ3に採択されています（DBJ・2024年12月）。</p>
+
+            <h3>カネカ——建材一体型・窓・壁面設置型を視野</h3>
+            <p>カネカは2022年にフィルム型ペロブスカイト太陽電池（10cm角）で20%近い変換効率を実現しています（省エネの教科書・2026年1月）。建材一体型・窓・壁面設置型を視野に入れており、2026年からの実証を目指しています（同）。GI基金事業にも採択されており、積水化学・アイシン等と並ぶ国内開発プレイヤーです。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">省エネの教科書「ペロブスカイト太陽電池 2025年最新動向」（2026年1月）</span>
+                <span class="source-tag">資源エネルギー庁「日本の再エネ拡大の切り札、ペロブスカイト太陽電池とは？（後編）」</span>
+                <span class="source-tag">DBJ「積水化学工業（株）のフィルム型ペロブスカイト太陽電池事業の社会実装に向けた投融資」（2024年12月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH7 -->
+    <div class="chapter" id="ch7">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 07</span>
+                <h2>収益構造の本質——「初期需要創出」が産業化の鍵</h2>
+            </div>
+
+            <h3>「官公需が初期市場」という収益化の構造</h3>
+            <p>積水ソーラーフィルムの「SOLAFIL」の初期供給先が「さいたま市・滋賀県・西日本高速道路・福岡県・福岡市・東京都有施設」という自治体・公共施設であることは偶然ではありません。日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）が「公共施設・インフラ空間等（空港、道路等）への率先導入による需要喚起」を政策手段として明示しており、民間市場が立ち上がる前の「官公需による初期需要創出」が収益化の起点になっています。</p>
+            <p>この「官公需→実績蓄積→コスト低減→民間需要拡大」というモデルは、過去の太陽電池・電気自動車等の普及で共通して見られたパターンです。現時点では「量産体制を整えながら実績を積み上げる移行期」であり、民間の工場・倉庫・ビル等の屋根・壁面への大量普及は2027年以降の課題です。</p>
+
+            <h3>「シリコン太陽電池との価格差」が民間普及の壁</h3>
+            <p>ペロブスカイト太陽電池（フィルム型）の現状コストはシリコン太陽電池（中国製・超低価格）より高く、民間の工場・倉庫でのコスト回収計算が成立しにくい段階です。政策コスト目標である14円/kWh（フィルム型・2030年度）の達成は「量産規模の確保→コスト低減→民間需要拡大」のサイクルが回り始めることが前提です（政策目標として示されている）。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">積水化学工業 プレスリリース（2026年3月27日）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH8 -->
+    <div class="chapter" id="ch8">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 08</span>
+                <h2>人材市場の実態</h2>
+            </div>
+
+            <h3>求められる専門職種——「薄膜・材料」から「施工」まで</h3>
+            <div class="data-box">
+                <div class="box-title">ペロブスカイト太陽電池分野の主要職種（2026年04月時点）</div>
+                <ul>
+                    <li>【薄膜材料研究者・デバイスエンジニア】ペロブスカイト材料の合成・組成最適化・成膜プロセス設計・封止材開発。大学（京都大学・東京大学・桐蔭横浜大学等）・国立研究機関（産総研）・企業の研究部門（積水化学・アイシン・東芝・パナソニック等）が採用の中心。応用化学・材料工学・物理学バックグラウンドが前提。</li>
+                    <li>【製造プロセスエンジニア（ロールtoロール・スプレー工法）】ロールtoロール連続製造装置の設計・調整・スケールアップ。フィルム基板の均一な成膜・品質安定化。積水ソーラーフィルム（堺工場）の2027年稼働に向けて採用需要が増加中。製造装置メーカー（富士フイルム・東京エレクトロン等）との連携経験者も有望。</li>
+                    <li>【施工・設置技術者】耐荷重の低い屋根・壁面へのフィルム型PSCの施工・固定方法の確立。資材の扱いが従来型と異なるため、専門的な施工技術者の育成が課題（資料2・2026年3月が「設置・施工技術の確立」を課題として明示）。建設・施工会社との連携が必要。</li>
+                    <li>【安全管理・鉛規制対応専門職】ペロブスカイト太陽電池は発電層に鉛（Pb）を含む製品が多く、製造・廃棄時の鉛の扱いに関する環境規制・安全管理の専門知識が必要。廃棄・リサイクルスキームの設計にも関わる。</li>
+                </ul>
+            </div>
+
+            <h3>「技術者不足」が明示された課題</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「研究開発・設置施工に関わる人材不足」を課題として明示しています。ペロブスカイト太陽電池の産業化は「基礎研究→量産技術開発→社会実装（施工・設置）」という幅広いフェーズにわたる人材を同時に必要とするため、短期間での大量育成が困難です。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH9 -->
+    <div class="chapter" id="ch9">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 09</span>
+                <h2>構造的課題の所在</h2>
+            </div>
+
+            <h3>「サプライチェーン上の中小企業のキャッシュフロー問題」</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「サプライチェーン上の中小企業のキャッシュフローの不安定性」を課題として明示しています。積水ソーラーフィルム・アイシン・東芝等の大手メーカーが量産投資を進める一方、封止材・透明電極・原料（ヨウ素化合物）等を供給するサプライチェーン上の中小企業は「需要が見え始めるまでは先行投資しにくい」という構造的問題があります。</p>
+
+            <h3>「技術・人材の流出リスク」——製造プロセスノウハウの保護</h3>
+            <p>同資料は「技術や人材の流出」を不確実性要因として明示しています。ペロブスカイト太陽電池の競争力は「製造装置に化体しない複雑な材料加工や成形、温度・湿度の管理などのノウハウ」にありますが（同資料）、このノウハウは人材とともに移転しやすいリスクがあります。中国企業が日本の研究者・技術者へのアプローチを強めているという懸念が政策文書に反映されています。</p>
+
+            <h3>「耐久性の技術的不確実性」——2027年稼働前の最大ハードル</h3>
+            <p>積水ソーラーフィルムの2027年稼働予定の堺工場製品は「1m幅ロールtoロール・耐久性20年相当を目指す」という目標ですが、現時点での製品スペックは変換効率15%・耐久性10年相当・30cm幅です（PVeye・2024年）。2027年稼働までに1m幅の面内均一性・歩留まり改善・耐久性20年の達成が必要であり、技術的課題は残っています（日経BP・2025年1月）。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">日経BP メガソーラービジネス「積水化学が1GWペロブスカイト太陽電池工場、技術者の確保もカギ」（2025年1月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH10 -->
+    <div class="chapter" id="ch10">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 10</span>
+                <h2>誤解されやすいポイント</h2>
+            </div>
+            <div class="data-box">
+                <div class="box-title">誤解されやすいポイント（4点）</div>
+                <ul>
+                    <li>【「SOLAFILの事業開始＝積水ソーラーフィルムが大量生産している」】2026年3月27日の事業開始発表は、現有設備（30cm幅製造）での限定的な生産と、顧客への供給協議の開始を意味します。堺工場での100MW製造ラインの稼働は2027年度目標であり、GW級は2030年度目標です。現時点での供給量は公共施設向けの小規模なものにとどまります。</li>
+                    <li>【「ペロブスカイト太陽電池はシリコン太陽電池の置き換え」】フィルム型ペロブスカイト太陽電池は「シリコン太陽電池では設置できない耐荷重の低い屋根・壁面等」への展開が主な用途です。傾斜屋根やメガソーラーのシリコン太陽電池を直接置き換えるものではありません。タンデム型は将来的にリプレース市場を目指しますが、現時点では研究・実証段階です。</li>
+                    <li>【「パナソニックが変換効率17.9%の世界記録を持つ＝パナソニックが量産に一番近い」】パナソニックHDの17.9%という変換効率は30cm角（小型）の世界記録です。大面積（1m幅以上）での均一な変換効率実現・量産コストの低減は別の課題です。量産化の進捗では現有設備での製造を開始した積水ソーラーフィルムが先行しており、パナソニックは2026年からの試験販売の段階です。</li>
+                    <li>【「GXサプライチェーン構築支援事業の補助金1,572億円が確定した＝投資回収が見込める」】政府補助金は総事業費3,145億円の2分の1に相当する最大1,572.5億円の補助金交付が採択されています。ただし補助金は投資額の半分を補填するものであり、残り半分の投資回収は製品販売による収益に依存します。2030年のGW級量産体制構築が実現し、かつ発電コストが目標値（14円/kWh以下）を達成して民間需要が立ち上がることが投資回収の前提です。</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜9章の総括</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH11 -->
+    <div class="chapter" id="ch11">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 11</span>
+                <h2>内部環境の整理</h2>
+            </div>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>章</th>
+                        <th>指標名</th>
+                        <th>数値・事実</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第2章</td>
+                        <td>積水ソーラーフィルム 事業開始</td>
+                        <td>2026年3月27日「SOLAFIL」ブランドで事業開始。初期供給先：さいたま市・滋賀県・西日本高速道路・福岡県・福岡市・東京都有施設</td>
+                        <td>積水化学工業 PR 2026年3月27日</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>積水ソーラーフィルム 堺工場投資額</td>
+                        <td>投資総額900億円（旧シャープ堺工場取得50億円＋生産設備650億円）</td>
+                        <td>積水化学工業 事業説明会 2025年1月</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>GXサプライチェーン構築支援事業</td>
+                        <td>総事業費3,145億円・補助金最大1,572.5億円（2024年12月25日経産省採択）</td>
+                        <td>経産省・PVeye 2024年</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>積水ソーラーフィルム 量産ロードマップ</td>
+                        <td>2027年度：100MW（堺工場稼働）→2030年度：GW級</td>
+                        <td>積水化学工業 事業説明会 2025年1月</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>積水ソーラーフィルム 現有設備スペック</td>
+                        <td>変換効率15%・耐久性10年相当・30cm幅ロールtoロール</td>
+                        <td>PVeye 2024年</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>アイシン PSC 変換効率・目標</td>
+                        <td>30cm角で13.08%・目標：変換効率20%台・耐久性20年・発電コスト20円/kWh以下</td>
+                        <td>LIGARE 2025年7月</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>アイシン 事業化タイムライン</td>
+                        <td>2028年テスト販売・2030年本格事業化</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第5章</td>
+                        <td>パナソニックHD PSC 変換効率</td>
+                        <td>ガラス基板30cm角で17.9%（世界記録）</td>
+                        <td>ニュースイッチ</td>
+                    </tr>
+                    <tr>
+                        <td>第6章</td>
+                        <td>GI基金 次世代型太陽電池開発プロジェクト</td>
+                        <td>総額498億円（NEDO・積水化学・東芝・アイシン等採択）</td>
+                        <td>資源エネルギー庁</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="data-box">
+                <div class="box-title">構造的に固定されやすい要素</div>
+                <ul>
+                    <li>積水化学工業（積水ソーラーフィルム）がGI基金フェーズ3唯一の採択・GXサプライチェーン構築支援採択という政府支援体制は2029年2月末まで継続する</li>
+                    <li>積水化学の「液晶パネル封止材技術の転用」という技術的優位は、他社が同等の技術蓄積を持つまで変化しない</li>
+                    <li>「官公需（自治体・公共施設）が初期市場」という収益化構造は、民間市場が十分に立ち上がるまで続く</li>
+                    <li>「1m幅での製造均一性・耐久性20年の技術的不確実性」は2027年の堺工場稼働時点まで残る</li>
+                    <li>アイシン・東芝・パナソニックの「フィルム型に対してガラス型・タンデム型というアプローチの違い」は技術選択の観点から変化しにくい</li>
+                    <li>「ペロブスカイト太陽電池の研究者・製造プロセスエンジニア・施工技術者が不足している」という人材構造は短期では解消しない</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜10章の集約</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH12 -->
+    <div class="chapter" id="ch12">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 12</span>
+                <h2>有料版への橋渡し</h2>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR CAREER — 就活・転職向け有料版</div>
+                <h3>積水化学・アイシン・東芝・パナソニック・スタートアップ、どこで関わるか</h3>
+                <ul>
+                    <li>積水ソーラーフィルム（SSF）での製造エンジニア採用——DBJとの合弁新会社で、材料・プロセス・品質管理各職種の採用状況と処遇の実態</li>
+                    <li>アイシン（自動車部品大手）のペロブスカイト太陽電池部門——自動車部品からのキャリア転換者に向けた職種要件と、EV車載用展開への道筋</li>
+                    <li>産総研（産業技術総合研究所）でのペロブスカイト太陽電池研究職——任期付き研究員・GI基金プロジェクト参加型の雇用の実態</li>
+                    <li>エネコートテクノロジーズ等の大学発スタートアップ——IoT向け・屋内向けという特殊用途での事業開発・研究職の処遇と将来性</li>
+                    <li>施工・設置技術者の育成——建設業・電気工事業からの参入パスと資格要件（現在整備中）の動向</li>
+                </ul>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR INVESTMENT — 投資判断向け有料版</div>
+                <h3>積水化学・アイシン・パナソニック、ペロブスカイト事業をどう読むか</h3>
+                <ul>
+                    <li>積水化学工業（4204）——ペロブスカイト太陽電池事業（積水ソーラーフィルム）の売上が全社業績に反映される時期と規模の試算方法。GXサプライチェーン構築支援事業補助金（最大1,572.5億円）の会計処理の読み方</li>
+                    <li>アイシン（7259）——自動車部品大手としての本業と、ペロブスカイト太陽電池事業の位置づけ。2028年テスト販売・2030年本格事業化が連結業績に与えるインパクトの規模感</li>
+                    <li>パナソニックHD（6752）——建材一体型（BIPV）という高付加価値市場を目指す戦略と、住宅・建材事業部門との相乗効果の読み方</li>
+                    <li>GI基金・GXサプライチェーン構築支援事業の受益企業（封止材・透明電極・ヨウ素化合物等サプライチェーン中小企業）の特定方法</li>
+                    <li>「量産コスト低減→民間需要拡大」のサイクルが回り始める時期（2028〜2030年）に向けたポジショニングの考え方</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <div class="container">
+            <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。積水ソーラーフィルム株式会社は積水化学工業の子会社で非上場です。「政策目標として示されている」と注記した数値は政府が目標として掲げた値であり達成を保証するものではありません。補助金採択は事業実施・補助金交付を保証するものではありません。データ基準時点は2026年04月です。</p>
+            <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年04月 産業構造分析レポート ── 次世代型太陽電池（ペロブスカイト太陽電池等）（内部環境編）</p>
+            <p style="margin-top:8px;">
+                <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
