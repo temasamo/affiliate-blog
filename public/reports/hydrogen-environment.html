@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業界分析｜高市政権「戦略17分野」資源・エネルギー安全保障・GX 水素等（外部環境編）</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+    :root {
+        --ink: #0f0f0e;
+        --paper: #f5f2ed;
+        --cream: #ede9e1;
+        --accent: #c84b2f;
+        --muted: #6b6760;
+        --rule: #c9c4bb;
+        --highlight: #fff8e6;
+    }
+
+    *, * ::before, * ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        border-bottom: 3px solid var(--accent);
+    }
+
+    .masthead-right {
+        color: var(--muted);
+    }
+
+    .hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 60px 40px 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200, 75, 47, 0.07) 4px, rgba(200, 75, 47, 0.07) 5px);
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        padding: 4px 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(20px, 3.2vw, 34px);
+        font-weight: 900;
+        line-height: 1.4;
+        max-width: 820px;
+        letter-spacing: 0.02em;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+        color: var(--accent);
+        font-style: normal;
+    }
+
+    .hero-meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+
+    .hero-badge {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 11px;
+        padding: 4px 12px;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.06em;
+    }
+
+    .data-notice {
+        background: rgba(200, 75, 47, 0.15);
+        border-left: 3px solid var(--accent);
+        padding: 10px 16px;
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .toc {
+        background: var(--cream);
+        border-top: 3px solid var(--ink);
+        border-bottom: 1px solid var(--rule);
+        padding: 32px 40px;
+    }
+
+    .toc h2 {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 16px;
+        text-transform: uppercase;
+    }
+
+    .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 6px 28px;
+    }
+
+    .toc-item {
+        font-size: 13px;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 3px 0;
+        border-bottom: 1px dashed var(--rule);
+        display: flex;
+        gap: 8px;
+    }
+
+    .toc-item:hover {
+        color: var(--accent);
+    }
+
+    .toc-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        flex-shrink: 0;
+        padding-top: 2px;
+    }
+
+    .chapter {
+        padding: 48px 40px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .chapter:nth-child(even) {
+        background: var(--cream);
+    }
+
+    .chapter-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .chapter-num {
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .chapter h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.4;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 10px;
+        flex: 1;
+    }
+
+    .chapter h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 24px 0 10px;
+        padding-left: 10px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .chapter p {
+        margin-bottom: 14px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 24px 0;
+    }
+
+    .stat-cell {
+        background: var(--paper);
+        padding: 18px 16px;
+        text-align: center;
+    }
+
+    .chapter:nth-child(even) .stat-cell {
+        background: #f0ece4;
+    }
+
+    .stat-cell .stat-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent);
+        line-height: 1.2;
+        display: block;
+    }
+
+    .stat-cell .stat-unit {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-top: 2px;
+    }
+
+    .stat-cell .stat-label {
+        font-size: 11px;
+        color: var(--ink);
+        display: block;
+        margin-top: 6px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .data-box {
+        background: var(--highlight);
+        border: 1px solid #e0d8c4;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 20px 0;
+    }
+
+    .data-box .box-title {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .data-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .data-box ul li {
+        padding: 5px 0 5px 16px;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+        position: relative;
+    }
+
+    .data-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .data-box ul li:last-child {
+        border-bottom: none;
+    }
+
+    .note-box {
+        background: rgba(200, 75, 47, 0.05);
+        border: 1px dashed var(--accent);
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .note-box strong {
+        color: var(--accent);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13px;
+    }
+
+    .summary-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .summary-table thead th {
+        padding: 10px 14px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+    }
+
+    .summary-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .summary-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .summary-table tbody td {
+        padding: 9px 14px;
+        vertical-align: top;
+    }
+
+    .summary-table td:first-child {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 12px;
+    }
+
+    .compare-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 20px 0;
+    }
+
+    .compare-cell {
+        background: var(--paper);
+        padding: 16px 18px;
+        font-size: 13px;
+    }
+
+    .chapter:nth-child(even) .compare-cell {
+        background: #f0ece4;
+    }
+
+    .compare-cell .cell-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .timeline {
+        margin: 20px 0;
+    }
+
+    .timeline-item {
+        display: flex;
+        gap: 16px;
+        padding: 12px 0;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+    }
+
+    .timeline-item:last-child {
+        border-bottom: none;
+    }
+
+    .timeline-year {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        color: var(--accent);
+        font-weight: 600;
+        flex-shrink: 0;
+        width: 130px;
+        padding-top: 2px;
+    }
+
+    .timeline-text {
+        flex: 1;
+    }
+
+    .next-box {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 28px 32px;
+        margin: 20px 0;
+        border-left: 5px solid var(--accent);
+    }
+
+    .next-box .next-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .next-box h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 17px;
+        margin-bottom: 12px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .next-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .next-box ul li {
+        padding: 4px 0 4px 14px;
+        font-size: 13px;
+        position: relative;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .next-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.06);
+        border: 1px solid var(--rule);
+        padding: 3px 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        color: var(--muted);
+        margin: 2px 3px;
+        letter-spacing: 0.04em;
+    }
+
+    .source-wrap {
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 1px dashed var(--rule);
+    }
+
+    .disclaimer {
+        background: var(--ink);
+        color: rgba(245, 242, 237, 0.5);
+        padding: 24px 40px;
+        font-size: 11px;
+        line-height: 1.7;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.03em;
+    }
+
+    .rule-thick {
+        border: none;
+        border-top: 3px solid var(--ink);
+        margin: 0;
+    }
+
+    .rule-thin {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .masthead {
+            flex-direction: column;
+            gap: 6px;
+            padding: 10px 16px;
+        }
+
+        .hero {
+            padding: 36px 16px 30px;
+        }
+
+        .chapter {
+            padding: 32px 16px;
+        }
+
+        .toc {
+            padding: 24px 16px;
+        }
+
+        .compare-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span>産業構造分析レポート</span>
+        <span class="masthead-right">2026年04月発行 ── 資源・エネルギー安全保障・GX／水素等（外部環境編）</span>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-label">INDUSTRY ANALYSIS REPORT — EXTERNAL ENVIRONMENT</div>
+            <h1>
+                業界分析｜高市政権「戦略17分野」
+                <br>
+                資源・エネルギー安全保障・GX
+                <br>
+                <em>水素等</em>
+                （外部環境編）
+            </h1>
+            <div class="hero-meta">
+                <span class="hero-badge">就職・転職検討者向け</span>
+                <span class="hero-badge">株式投資家向け</span>
+                <span class="hero-badge">数字と事実のみ記載</span>
+            </div>
+            <div class="data-notice">本レポートのデータ基準時点：2026年04月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用</div>
+        </div>
+    </div>
+
+    <hr class="rule-thick">
+
+    <div class="toc">
+        <div class="container">
+            <h2>目次 — TABLE OF CONTENTS</h2>
+            <div class="toc-grid">
+                <a class="toc-item" href="#ch0">
+                    <span class="toc-num">00</span>
+                    このレポートの目的と読み方
+                </a>
+                <a class="toc-item" href="#ch1">
+                    <span class="toc-num">01</span>
+                    市場規模——2050年に30〜40兆円規模
+                </a>
+                <a class="toc-item" href="#ch2">
+                    <span class="toc-num">02</span>
+                    「供給目標と需要目標の4.5倍乖離」という構造問題
+                </a>
+                <a class="toc-item" href="#ch3">
+                    <span class="toc-num">03</span>
+                    制度・政策の枠組み
+                </a>
+                <a class="toc-item" href="#ch4">
+                    <span class="toc-num">04</span>
+                    経済的前提条件——コストと価格差
+                </a>
+                <a class="toc-item" href="#ch5">
+                    <span class="toc-num">05</span>
+                    4つの重点製品と日本の技術優位
+                </a>
+                <a class="toc-item" href="#ch6">
+                    <span class="toc-num">06</span>
+                    米国・欧州・中国の動向
+                </a>
+                <a class="toc-item" href="#ch7">
+                    <span class="toc-num">07</span>
+                    経済安全保障との接続
+                </a>
+                <a class="toc-item" href="#ch8">
+                    <span class="toc-num">08</span>
+                    外部環境の整理
+                </a>
+                <a class="toc-item" href="#ch9">
+                    <span class="toc-num">09</span>
+                    内部環境編への橋渡し
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <!-- CH0 -->
+    <div class="chapter" id="ch0">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <h2>このレポートの目的と読み方</h2>
+            </div>
+            <p>本レポートは、高市政権「戦略17分野」資源・エネルギー安全保障・GXの「水素等」の外部環境を、就職・転職検討者および株式投資家向けに数字と事実のみで記述します。所管は経済産業省です。</p>
+            <div class="note-box">
+                <strong>【「水素等」の定義】</strong>
+                本分野の「水素等」とは水素のみを指すのではなく、アンモニア・合成メタン・合成燃料を含む総称です。本レポートの政策目標・導入量に関するデータは特に断りのない限り「水素換算値（アンモニア等を含む水素等の水素換算）」で示しています。
+                    
+            </div>
+            <div class="data-box">
+                <div class="box-title">「水素等」とは何か——3行で把握する</div>
+                <ul>
+                    <li>【技術の概要】水素・アンモニア・合成メタン・合成燃料等の次世代エネルギーキャリアの総称。脱炭素に加えて国産エネルギーの活用手段として、エネルギー安全保障の観点からも関心が拡大。特に電化が困難な鉄鋼・化学等の「Hard to Abate（CO2排出削減困難）」セクターや、モビリティ分野・発電等での活用が期待される。</li>
+                    <li>【現状の問題】日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「サプライチェーン全体を通じた社会実装に向けた最大の課題は、需要創出と価格低減」と明示している。2023年時点のクリーン水素は全需要の1%未満にとどまる（IEA）。世界の供給目標（4,900万t）と需要目標（1,100万t）の間には4.5倍の乖離がある（IEA・JETRO）。</li>
+                    <li>【なぜ今か】水素・アンモニア関連市場は2050年に世界で30〜40兆円規模に拡大する見込みであり（資料2・2026年3月）、日本は水素アンモニア混焼/専焼タービン・水電解装置・液化水素関連機器・燃料電池の4製品でサプライチェーン全体に技術優位を持つ唯一の国として位置づけられている。「技術で勝ってビジネスでも勝つ」ための商用化・量産化の正念場にある。</li>
+                </ul>
+            </div>
+            <p>良し悪しの評価・投資推奨・将来予測は行いません。</p>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート基本方針</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH1 -->
+    <div class="chapter" id="ch1">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <h2>市場規模——2050年に30〜40兆円規模</h2>
+            </div>
+
+            <h3>世界の水素等市場——2050年に30〜40兆円規模（資料2・2026年3月）</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「水素等の関連市場は堅調に拡大しており、2050年には**30〜40兆円規模**になるとみられる」と明示しています。EPI Consultingの標準シナリオでは2050年の水素等需要が水素換算**3.3億トン**（2020年比3.3倍）に達し、30円/Nm³換算で約**111兆円**の市場と試算されています（EPI・2024年）。PwCは2050年の水素需要が年間1.5億〜5億トン（シナリオによって幅が大きい）としています（PwC 分析）。</p>
+
+            <h3>現在の水素等需要——2023年で9,700万トン超・クリーン水素は1%未満</h3>
+            <p>2023年の世界の水素需要は9,700万トン超で前年比+2.5%の伸びを見せており、IEAは2024年の水素需要が**1億トン超**になると見込んでいます（JETRO・2024年）。ただし現状の水素の大半は化石燃料由来（グレー水素）であり、クリーン水素の需要は2023年に前年比+10%拡大したものの全需要の**1%未満**にとどまっています（IEA「Global Hydrogen Review 2024」）。</p>
+
+            <div class="note-box">
+                <strong>【注記】</strong>
+                水素市場の規模数値は調査機関・想定シナリオ・「水素等」の定義（水素のみか、アンモニア・合成メタン等を含むか）によって大きく異なります。上記の複数数値は単純比較はできません。
+                    
+            </div>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">30〜40兆円</span>
+                    <span class="stat-unit">（2050年・世界）</span>
+                    <span class="stat-label">
+                        水素等関連市場規模予測
+                        <br>
+                        （資料2 2026年3月）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">1億トン超</span>
+                    <span class="stat-unit">（2024年・世界）</span>
+                    <span class="stat-label">
+                        世界の水素需要
+                        <br>
+                        （IEA 2024年推計）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">1%未満</span>
+                    <span class="stat-unit">（2023年）</span>
+                    <span class="stat-cell">
+                        クリーン水素の全需要比率
+                        <br>
+                        （IEA Global Hydrogen Review 2024）
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">520億ドル</span>
+                    <span class="stat-unit">（2030年まで）</span>
+                    <span class="stat-label">
+                        世界の水素関連機器
+                        <br>
+                        投資見込み（経産省参考資料）
+                    </span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">IEA「Global Hydrogen Review 2024」</span>
+                <span class="source-tag">EPI Consulting「世界の水素・アンモニア業界最前線 2024」（2024年1月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH2 -->
+    <div class="chapter" id="ch2">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <h2>「供給目標と需要目標の4.5倍乖離」という構造問題</h2>
+            </div>
+
+            <h3>IEAの指摘——供給目標4,900万t・需要目標1,100万t（2030年）</h3>
+            <p>IEAによると、現時点で世界各国が設定している2030年時点の政策目標の合計は「供給面が**4,900万トン**・需要面が**1,100万トン**」と**4.5倍の開き**があります（JETRO・2024年）。また過去12か月間に発表された公的支援額は「供給面が**620億ドル**・需要面が**400億ドル**」と1.6倍の差があります。「これまでの政策が供給（水素の生産）に重点を置き、需要（新たな消費市場の創出）への支援が不足していた」というIEAの分析は、水素市場の普及が計画より遅れている構造的な原因を示しています（JETRO・2024年）。</p>
+
+            <h3>「市場・産業全体の成長は、一時の高水準の予測からは減速しつつも堅調に推移」</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「市場・産業全体の成長は、一時の高水準の予測からは減速しつつも、堅調に推移」と現状認識を明示しています。2020年代前半に「水素は近い将来に急速に普及する」という楽観的な予測が先行しましたが、コスト・インフラ・需要創出の難しさから実際の進捗は当初予測より緩やかです。</p>
+
+            <h3>川崎重工の液化水素輸送計画見直しの事例</h3>
+            <p>川崎重工は豪州・ビクトリア州での褐炭由来のブルー水素製造計画が2024年に頓挫した結果、海上輸送を予定していた大量の水素調達ができなくなり、2030年に予定していた大型輸送船（16万m³）を4分の1の規模の中型船（4万m³）に変更しています（自然エネルギー財団・2025年5月）。これは「一時の高水準の予測からは減速」という状況を示す具体的な事例です。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">JETRO「クリーン水素プロジェクトは増加するも伸び悩む水素需要」（2024年）</span>
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">自然エネルギー財団「2040年火力の排出実質ゼロは現実的か」（2025年5月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH3 -->
+    <div class="chapter" id="ch3">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <h2>制度・政策の枠組み</h2>
+            </div>
+
+            <h3>日本の政策目標（2026年3月時点）</h3>
+            <div class="data-box">
+                <div class="box-title">日本の水素等導入目標・コスト目標（政策目標として示されている）</div>
+                <ul>
+                    <li>【導入量目標】2030年：最大**300万t/年**、2040年：**1,200万t/年**、2050年：**2,000万t/年**程度（水素換算・アンモニア等含む）</li>
+                    <li>【コスト目標】2030年：**30円/Nm³**、2050年：**20円/Nm³以下**（化石燃料と同等程度の水準）</li>
+                    <li>【水電解装置導入目標】2030年までに日本関連企業の水電解装置導入量：**15GW程度**</li>
+                    <li>【電源構成目標】2030年の電源構成の**1%程度**を水素・アンモニアとすることを目指す</li>
+                </ul>
+            </div>
+
+            <h3>主要マイルストーン</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-year">2017年12月</span>
+                    <span class="timeline-text">日本が世界初の水素基本戦略を策定。その後EU・ドイツ・オランダ等25か国以上が水素国家戦略を策定（資源エネルギー庁）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2022年</span>
+                    <span class="timeline-text">米国インフレ削減法（IRA）が成立。低炭素水素製造に10年間で最大**3ドル/kg**の税額控除を実施（約50兆円規模）。欧州もグリーンディール戦略で水素銀行構想を発表。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2023年</span>
+                    <span class="timeline-text">日本が6年ぶりに水素基本戦略を改定。技術の確立を主としたものから商用段階を見据えた産業戦略・保安戦略を新たに位置づけ。水素等の2040年目標（1,200万t）・2050年目標（2,000万t）を設定。G7広島首脳コミュニケで炭素集約度等に合意。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2024年5月</span>
+                    <span class="timeline-text">水素社会推進法（「脱炭素成長型経済構造への円滑な移行のための低炭素水素等の供給及び利用の促進に関する法律」）が成立。低炭素水素等の導入拡大に向けた規制・支援一体的な制度が整備（資源エネルギー庁）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2024年7月</span>
+                    <span class="timeline-text">JERAと国が実施した石炭火力発電での20%アンモニア混焼の実証試験が成功。2027年からの商業運転を予定（IEEI・2025年2月）。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2024年〜</span>
+                    <span class="timeline-text">水素社会推進法に基づく価格差支援（低炭素水素等の製造・利用コストと化石燃料コストの価格差を国が補填する制度）の運用開始。</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2026年3月</span>
+                    <span class="timeline-text">日本成長戦略会議 第3回で「水素等」が戦略17分野に明示。水素等サプライチェーン4製品（ガスタービン・水電解装置・液化水素関連機器・燃料電池）に係る官民投資の具体像は「今夏の日本成長戦略の策定に向けて取りまとめ予定」と記載（資料2・2026年3月）。</span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">資源エネルギー庁「水素を取り巻く国内外情勢と水素政策の現状について」（2025年7月）</span>
+                <span class="source-tag">資源エネルギー庁「水素社会推進法」（2024年）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH4 -->
+    <div class="chapter" id="ch4">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 04</span>
+                <h2>経済的前提条件——コストと価格差</h2>
+            </div>
+
+            <h3>「グリーン水素が天然ガスと競合力を持つのは日本では2040年中盤」</h3>
+            <p>EPIの標準シナリオによると、グリーン水素が天然ガスと熱量等価ベースで同等のコストになる（クロスポイント）のは、欧州では2030年代前半・米国では2040年前後・日本では**2040年中盤**と見込まれています（EPI・2024年）。日本では再生可能エネルギーのコストが相対的に高いため、補助金なしに水素が自律的に普及するまでには時間を要します。</p>
+
+            <h3>現在の水素コスト水準——政府目標との乖離</h3>
+            <p>日本政府の2030年コスト目標は30円/Nm³ですが、現状の水素供給コストはこれよりも高い状況です。2023年11月のLNG価格とのパリティは21.6円/Nm³-H2（資源エネルギー庁）であり、水素が商業的に競争力を持つには到達していません。水素専焼火力の発電コストは政府のコスト検証（2025年2月）で1kWhあたり**29.9円**とされており、太陽光や風力発電（10円/kWh台）の2〜3倍という高コストです（自然エネルギー財団・2025年5月）。</p>
+
+            <h3>「価格差支援」——水素社会推進法の中核</h3>
+            <p>水素社会推進法に基づく「価格差支援」とは、低炭素水素等の製造・利用コストと化石燃料コストの差を国が補填する制度です（資源エネルギー庁）。この制度により、経済的に採算が合わない現状でも水素等の商用導入を促すことが目的です。ドイツの「H2Global」が同様のダブルオークション方式を採用しており、日本の制度設計の参考になっています。</p>
+
+            <h3>「投資判断に遅れ」——需要側の課題</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「需要側は、大規模水素の輸送技術の未確立や燃料価格高騰の影響もあり、投資判断に遅れが生じている」と明示しています。供給側も「安定した需要が見込めず能増投資に踏み込めない」という状況であり、「需要と供給の両方が動き出すきっかけを誰が作るか」という「鶏と卵問題」が業界全体の課題です。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">EPI Consulting「世界の水素・アンモニア業界最前線 2024」（2024年1月）</span>
+                <span class="source-tag">資源エネルギー庁「水素・アンモニア政策について」（2024年9月・2025年7月）</span>
+                <span class="source-tag">自然エネルギー財団「2040年火力の排出実質ゼロは現実的か」（2025年5月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH5 -->
+    <div class="chapter" id="ch5">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 05</span>
+                <h2>4つの重点製品と日本の技術優位</h2>
+            </div>
+
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は水素サプライチェーンの「鍵となる4製品」として以下を明示しています。</p>
+
+            <div class="data-box">
+                <div class="box-title">水素サプライチェーン4製品——日本の技術優位と課題（資料2・2026年3月）</div>
+                <ul>
+                    <li>【①水素アンモニア混焼/専焼タービン】日本の水素・アンモニア（ready）ガスタービンは産業用途向けの小規模から発電向けの大規模まで世界に先行して商用化。**市場シェアの約4割**を占める（資料2・2026年3月）。課題：供給側は安定した需要が見込めず能増投資に踏み込めない。需要側は大規模水素輸送技術の未確立や燃料価格高騰の影響で投資判断に遅れ。2024年7月にJERAと国が石炭火力でのアンモニア20%混焼の実証試験に成功・2027年から商業運転予定。</li>
+                    <li>【②水電解装置】耐久性・長期的な実証経験・アルカリ型・PEM型・SOEC等の多様な方式での実証・商用化の取組等で優位性。課題：装置の大型化・モジュール化や要素技術の開発・実証、量産体制構築が道半ば。コスト低減と商用規模のプロジェクト実績蓄積が必要。海外では社会実装段階にあるアルカリ型・PEM型の量産支援が既に決定済み。</li>
+                    <li>【③液化水素関連機器】世界初の液化水素運搬船の開発・製造成功等、**世界で唯一サプライチェーン全体で液化水素関連設備の製造が可能**。貯蔵タンク・ローディングアーム・圧縮機等の周辺機器にも競争力。課題：運搬技術に加え受入インフラ（貯蔵・バンカリング）の整備が必要。商用実績が乏しいことから事業投資判断まで至らない。川崎重工の計画見直しの事例（大型16万m³船→中型4万m³船に変更）。</li>
+                    <li>【④燃料電池】燃料電池のコア技術であるセル性能の高さ・高耐久性・長寿命・量産技術に強み。小型かつ高い汎用性で様々な車両・製品への展開が見込まれる。課題：①水素インフラ不足/運営費の高さ、②車両価格の高さ、③水素価格の高さの「3つ巴の課題」から社会実装で急伸する中国に遅れ。中国の量産投資による価格低減が課題。</li>
+                </ul>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH6 -->
+    <div class="chapter" id="ch6">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 06</span>
+                <h2>米国・欧州・中国の動向</h2>
+            </div>
+
+            <h3>米国——IRAによる大規模支援・トランプ政権下での影響</h3>
+            <p>米国のインフレ削減法（IRA・2022年）は低炭素水素製造に10年間で最大**3ドル/kg**の税額控除を実施（水素以外も含む全体で約50兆円規模）（資源エネルギー庁）。トランプ大統領就任後（2025年1月）、米国内エネルギーを解放し化石燃料の生産増を進める方針の下、米国内の水素ハブへの資金拠出は一時停止されています（資源エネルギー庁・2025年7月）。ただし「水素を名指しした批判はないことから、水素・アンモニア政策への影響は限定的」との見方もあります（同）。</p>
+
+            <h3>欧州——「H2Global」ダブルオークション・ドイツとの日本連携</h3>
+            <p>欧州は2025年2月に「H2Global」の第2回固定価格買取入札を開始し、ドイツ連邦政府・オランダ政府から25億ユーロ（約4,100億円）の支援を準備しています（資源エネルギー庁・2025年7月）。グリーン水素は欧州が約半数のプロジェクトを占めており（EPI・2024年）、欧州全土への水素流通インフラ整備が進行中です。日本は2026年3月の「次世代型太陽電池戦略」に続き、液化水素の日独間の協力関係を通じた共同サプライチェーン構築を目指しています（資料2・2026年3月）。</p>
+
+            <h3>中国——政府主導で水素関連技術を加速・燃料電池で急成長</h3>
+            <p>中国は政府支援と組み合わせて着実に底堅い投資を進めています（資料2・2026年3月）。特に燃料電池分野では量産投資による価格低減が進んでおり、FCトラック・バス等の商用車での社会実装で日本に先行しています（同）。グリーン水素・アンモニアについては世界最大規模のプロジェクト（800MW太陽光・風力＋年産3.2万トンのグリーン水素製造・2022年10月開始・総投資1,267億円）が中国内で進行中です（資源エネルギー庁・2025年7月）。</p>
+
+            <div class="compare-grid">
+                <div class="compare-cell">
+                    <span class="cell-label">日本の技術的強み（資料2）</span>
+
+                            ガスタービンの世界シェア約4割。液化水素サプライチェーン全体の製造能力は世界唯一。水電解装置の多様な方式（アルカリ・PEM・SOEC）での実証経験・耐久性優位。燃料電池のセル性能・高耐久・量産技術。2017年に世界初の水素国家戦略を策定した先行者。
+                          
+                </div>
+                <div class="compare-cell">
+                    <span class="cell-label">課題・競合リスク</span>
+
+                            グリーン水素が天然ガスと競合力を持つのは日本では2040年中盤（補助金なし）。燃料電池で中国の量産価格低減が進行中。水電解装置の量産体制で欧米・中国に後れ。液化水素の大規模輸送実証で計画の見直しが発生。需要側の投資判断の遅れ。
+                          
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">資源エネルギー庁「水素を取り巻く国内外情勢と水素政策の現状について」（2025年7月）</span>
+                <span class="source-tag">EPI Consulting「世界の水素・アンモニア業界最前線 2024」（2024年1月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH7 -->
+    <div class="chapter" id="ch7">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 07</span>
+                <h2>経済安全保障との接続</h2>
+            </div>
+
+            <h3>「中東依存9割の石油代替燃料として、供給国の多様化」</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「特に、中東依存9割の石油代替燃料として、供給国の多様化を通じた安定供給に貢献」と明示しています。水素等は再エネや脱炭素技術を活用したブルー/グリーン水素・アンモニアや、将来的な高温ガス炉・天然水素等、製造手法の多様性から従来の化石燃料よりも供給国が多角化する可能性があります。これはエネルギー安全保障上の重要な意義です。</p>
+
+            <h3>「"買わされる側"に回らないための自律性確保」</h3>
+            <p>同資料は「水素技術を自前で確保することは、グローバルに進展するGX市場で、"買わされる側"に回らないために重要な自律性の確保につながる」と明示しています。水素関連機器（ガスタービン・水電解装置・燃料電池等）のサプライチェーンを特定国・企業が握った場合、日本がその製品を購入するしかない状況が生まれるリスクがあります。「技術で勝ってビジネスでも勝つ」という戦略の背景にはこの認識があります。</p>
+
+            <h3>「AZEC（アジア・ゼロエミッション共同体）構想」——アジア連携の枠組み</h3>
+            <p>日本は「アジア・ゼロエミッション共同体（AZEC）」構想等の枠組みを活用したアジア連携を進めています（資源エネルギー庁）。アジア諸国は石炭・化石燃料依存度が高く、水素・アンモニアの混焼技術は既存の発電インフラを活用できる脱炭素手段として需要がある地域です。日本企業がアジアでの水素・アンモニアサプライチェーン構築を主導することで、技術輸出・インフラ輸出の機会を得る構造があります。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">資源エネルギー庁「水素を取り巻く国内外情勢と水素政策の現状について」（2025年7月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH8 -->
+    <div class="chapter" id="ch8">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 08</span>
+                <h2>外部環境の整理</h2>
+            </div>
+
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>章</th>
+                        <th>指標名</th>
+                        <th>数値</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第1章</td>
+                        <td>水素等関連市場規模（2050年・世界）</td>
+                        <td>30〜40兆円規模</td>
+                        <td>資料2 2026年3月</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>世界の水素需要（2024年）</td>
+                        <td>1億トン超（IEA推計）</td>
+                        <td>IEA Global Hydrogen Review 2024</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>クリーン水素の全需要比率（2023年）</td>
+                        <td>1%未満</td>
+                        <td>IEA 2024年</td>
+                    </tr>
+                    <tr>
+                        <td>第1章</td>
+                        <td>水素関連機器の世界投資（2030年まで）</td>
+                        <td>520億ドル</td>
+                        <td>経産省参考資料</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>2030年の供給目標/需要目標の乖離</td>
+                        <td>供給4,900万t・需要1,100万t（4.5倍の開き）</td>
+                        <td>IEA・JETRO 2024年</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>日本の水素等導入目標</td>
+                        <td>2030年300万t・2040年1,200万t・2050年2,000万t（政策目標として示されている）</td>
+                        <td>資料2 2026年3月・水素基本戦略</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>日本の水素コスト目標</td>
+                        <td>2030年30円/Nm³・2050年20円/Nm³以下（政策目標として示されている）</td>
+                        <td>資源エネルギー庁</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>日本の水電解装置導入目標</td>
+                        <td>2030年までに15GW程度（政策目標として示されている）</td>
+                        <td>水素基本戦略 2023年改定</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>グリーン水素が天然ガスと競合力を持つ時期（日本）</td>
+                        <td>2040年中盤（補助金なし・EPI標準シナリオ）</td>
+                        <td>EPI 2024年1月</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>水素専焼火力の発電コスト</td>
+                        <td>29.9円/kWh（政府コスト検証 2025年2月）</td>
+                        <td>経産省 2025年2月</td>
+                    </tr>
+                    <tr>
+                        <td>第5章</td>
+                        <td>日本のガスタービン世界市場シェア</td>
+                        <td>約4割（水素アンモニア対応ガスタービン）</td>
+                        <td>資料2 2026年3月</td>
+                    </tr>
+                    <tr>
+                        <td>第6章</td>
+                        <td>米国IRAの水素関連税額控除</td>
+                        <td>低炭素水素製造に10年間で最大3ドル/kg</td>
+                        <td>資源エネルギー庁</td>
+                    </tr>
+                    <tr>
+                        <td>第6章</td>
+                        <td>欧州H2Global 第2回入札支援額</td>
+                        <td>25億ユーロ（約4,100億円）（ドイツ・オランダ）</td>
+                        <td>資源エネルギー庁 2025年7月</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="data-box">
+                <div class="box-title">構造的に固定されやすい要素</div>
+                <ul>
+                    <li>「2050年に30〜40兆円規模の市場が見込まれる」という長期トレンドは脱炭素の方向性が変わらない限り続く</li>
+                    <li>「日本のガスタービンが世界シェア4割・液化水素サプライチェーン全体製造は世界唯一」という技術優位は短期では変化しない</li>
+                    <li>「グリーン水素が補助金なしに天然ガスと競争力を持つのは日本では2040年中盤」という経済的制約は電力コスト構造が変わるまで続く</li>
+                    <li>「供給目標と需要目標の4.5倍乖離」という需要側の遅れは政策介入（価格差支援・需要義務化等）が進まない限り解消しない</li>
+                    <li>燃料電池分野での中国の量産価格低減という競合圧力は続く</li>
+                    <li>官民投資の具体的金額は2026年夏の日本成長戦略取りまとめまで未確定</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜7章に記載の各統計の集約</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH9 -->
+    <div class="chapter" id="ch9">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 09</span>
+                <h2>内部環境編への橋渡し</h2>
+            </div>
+            <div class="data-box">
+                <div class="box-title">外部環境編の整理（5点）</div>
+                <ul>
+                    <li>水素等市場は2050年に世界で30〜40兆円規模。現時点（2023年）の世界水素需要は9,700万トン超・IEA推計2024年に1億トン超だが、クリーン水素は全需要の1%未満。市場は「一時の高水準の予測からは減速しつつも堅調に推移」という段階</li>
+                    <li>世界の供給目標4,900万t・需要目標1,100万t（4.5倍乖離）という構造的需要側不足が課題。「需要と供給の鶏と卵問題」の解消に政策介入（価格差支援・需要義務化等）が不可欠</li>
+                    <li>日本の技術優位は「水素アンモニア対応ガスタービン：世界シェア4割」「液化水素サプライチェーン全体製造：世界唯一」「水電解装置の多様な方式での実証経験」「燃料電池のコア技術・量産力」の4製品にわたる</li>
+                    <li>コスト問題：グリーン水素が補助金なしに天然ガスと競争力を持つのは日本では2040年中盤（EPI）。水素専焼火力の発電コストは29.9円/kWh（太陽光・風力の2〜3倍）。水素社会推進法（2024年5月）による価格差支援が政策的裏付け</li>
+                    <li>燃料電池で中国の量産による価格低減が急進。米国はIRAで最大3ドル/kg税額控除・欧州は25億ユーロ規模の支援。官民投資の具体的金額は2026年夏取りまとめまで未確定</li>
+                </ul>
+            </div>
+            <div class="next-box">
+                <div class="next-label">NEXT — 内部環境編で整理すること</div>
+                <h3>外圧がプレイヤー構成・収益・人材にどう現れるか</h3>
+                <ul>
+                    <li>三菱重工業（ガスタービン・水素アンモニア混焼/専焼）・川崎重工業（液化水素・水素輸送）・旭化成（水電解装置・Foreneコンソーシアム）・トヨタ自動車（燃料電池・FCEV）の各社の水素事業の財務・開発状況</li>
+                    <li>JERA・東京ガス等のエネルギー事業者のアンモニア混焼・水素発電の事業投資状況</li>
+                    <li>GI基金・水素社会推進法の価格差支援の採択企業と支援金額の実態</li>
+                    <li>AZEC・AZRECを通じたアジア展開のビジネスモデルと先行事例</li>
+                    <li>水素・エネルギー工学・電気化学の専門人材の市場実態と年収水準</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポートの総括</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <div class="container">
+            <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。市場規模数値は各調査機関の定義・想定シナリオが異なるため単純比較はできません。「政策目標として示されている」と注記した数値は政府が目標として掲げた値であり達成を保証するものではありません。官民投資の具体的金額は2026年夏の取りまとめ予定であり本時点では未確定です。データ基準時点は2026年04月です。</p>
+            <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年04月 産業構造分析レポート ── 水素等（外部環境編）</p>
+            <p style="margin-top:8px;">
+                <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
