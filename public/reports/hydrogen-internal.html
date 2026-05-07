@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業界分析｜高市政権「戦略17分野」資源・エネルギー安全保障・GX 水素等（内部環境編）</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+    :root {
+        --ink: #0f0f0e;
+        --paper: #f5f2ed;
+        --cream: #ede9e1;
+        --accent: #c84b2f;
+        --muted: #6b6760;
+        --rule: #c9c4bb;
+        --highlight: #fff8e6;
+    }
+
+    *, * ::before, * ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        border-bottom: 3px solid var(--accent);
+    }
+
+    .masthead-right {
+        color: var(--muted);
+    }
+
+    .hero {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 60px 40px 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200, 75, 47, 0.07) 4px, rgba(200, 75, 47, 0.07) 5px);
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        padding: 4px 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(20px, 3.2vw, 34px);
+        font-weight: 900;
+        line-height: 1.4;
+        max-width: 820px;
+        letter-spacing: 0.02em;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+        color: var(--accent);
+        font-style: normal;
+    }
+
+    .hero-meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+
+    .hero-badge {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 11px;
+        padding: 4px 12px;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.06em;
+    }
+
+    .data-notice {
+        background: rgba(200, 75, 47, 0.15);
+        border-left: 3px solid var(--accent);
+        padding: 10px 16px;
+        margin-top: 24px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .toc {
+        background: var(--cream);
+        border-top: 3px solid var(--ink);
+        border-bottom: 1px solid var(--rule);
+        padding: 32px 40px;
+    }
+
+    .toc h2 {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 16px;
+        text-transform: uppercase;
+    }
+
+    .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 6px 28px;
+    }
+
+    .toc-item {
+        font-size: 13px;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 3px 0;
+        border-bottom: 1px dashed var(--rule);
+        display: flex;
+        gap: 8px;
+    }
+
+    .toc-item:hover {
+        color: var(--accent);
+    }
+
+    .toc-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--accent);
+        flex-shrink: 0;
+        padding-top: 2px;
+    }
+
+    .chapter {
+        padding: 48px 40px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .chapter:nth-child(even) {
+        background: var(--cream);
+    }
+
+    .chapter-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .chapter-num {
+        background: var(--accent);
+        color: #fff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .chapter h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.4;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 10px;
+        flex: 1;
+    }
+
+    .chapter h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 24px 0 10px;
+        padding-left: 10px;
+        border-left: 3px solid var(--accent);
+    }
+
+    .chapter p {
+        margin-bottom: 14px;
+    }
+
+    .connect-banner {
+        background: var(--ink);
+        border-left: 5px solid var(--accent);
+        padding: 16px 20px;
+        margin-bottom: 28px;
+        font-size: 13px;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .connect-banner strong {
+        color: var(--accent);
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin: 24px 0;
+    }
+
+    .stat-cell {
+        background: var(--paper);
+        padding: 18px 16px;
+        text-align: center;
+    }
+
+    .chapter:nth-child(even) .stat-cell {
+        background: #f0ece4;
+    }
+
+    .stat-cell .stat-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent);
+        line-height: 1.2;
+        display: block;
+    }
+
+    .stat-cell .stat-unit {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-top: 2px;
+    }
+
+    .stat-cell .stat-label {
+        font-size: 11px;
+        color: var(--ink);
+        display: block;
+        margin-top: 6px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .data-box {
+        background: var(--highlight);
+        border: 1px solid #e0d8c4;
+        border-left: 4px solid var(--accent);
+        padding: 20px 24px;
+        margin: 20px 0;
+    }
+
+    .data-box .box-title {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .data-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .data-box ul li {
+        padding: 5px 0 5px 16px;
+        border-bottom: 1px dashed var(--rule);
+        font-size: 13px;
+        position: relative;
+    }
+
+    .data-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .data-box ul li:last-child {
+        border-bottom: none;
+    }
+
+    .note-box {
+        background: rgba(200, 75, 47, 0.05);
+        border: 1px dashed var(--accent);
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .note-box strong {
+        color: var(--accent);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13px;
+    }
+
+    .summary-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .summary-table thead th {
+        padding: 10px 14px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+    }
+
+    .summary-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .summary-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .summary-table tbody td {
+        padding: 9px 14px;
+        vertical-align: top;
+    }
+
+    .summary-table td:first-child {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 12px;
+    }
+
+    .biz-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 12px;
+    }
+
+    .biz-table thead tr {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .biz-table thead th {
+        padding: 8px 12px;
+        text-align: left;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.06em;
+    }
+
+    .biz-table tbody tr {
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .biz-table tbody tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .biz-table tbody td {
+        padding: 8px 12px;
+        vertical-align: top;
+        font-size: 12px;
+    }
+
+    .biz-table td:first-child {
+        font-weight: 700;
+    }
+
+    .biz-table .acc {
+        color: var(--accent);
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+    }
+
+    .next-box {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 28px 32px;
+        margin: 20px 0;
+        border-left: 5px solid var(--accent);
+    }
+
+    .next-box .next-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .next-box h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 17px;
+        margin-bottom: 12px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .next-box ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .next-box ul li {
+        padding: 4px 0 4px 14px;
+        font-size: 13px;
+        position: relative;
+        color: rgba(245, 242, 237, 0.85);
+    }
+
+    .next-box ul li::before {
+        content: '▸';
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-size: 11px;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.06);
+        border: 1px solid var(--rule);
+        padding: 3px 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        color: var(--muted);
+        margin: 2px 3px;
+        letter-spacing: 0.04em;
+    }
+
+    .source-wrap {
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 1px dashed var(--rule);
+    }
+
+    .disclaimer {
+        background: var(--ink);
+        color: rgba(245, 242, 237, 0.5);
+        padding: 24px 40px;
+        font-size: 11px;
+        line-height: 1.7;
+        font-family: 'IBM Plex Mono', monospace;
+        letter-spacing: 0.03em;
+    }
+
+    .rule-thick {
+        border: none;
+        border-top: 3px solid var(--ink);
+        margin: 0;
+    }
+
+    .rule-thin {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .masthead {
+            flex-direction: column;
+            gap: 6px;
+            padding: 10px 16px;
+        }
+
+        .hero {
+            padding: 36px 16px 30px;
+        }
+
+        .chapter {
+            padding: 32px 16px;
+        }
+
+        .toc {
+            padding: 24px 16px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span>産業構造分析レポート</span>
+        <span class="masthead-right">2026年04月発行 ── 資源・エネルギー安全保障・GX／水素等（内部環境編）</span>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-label">INDUSTRY ANALYSIS REPORT — INTERNAL ENVIRONMENT</div>
+            <h1>
+                業界分析｜高市政権「戦略17分野」
+                <br>
+                資源・エネルギー安全保障・GX
+                <br>
+                <em>水素等</em>
+                （内部環境編）
+            </h1>
+            <div class="hero-meta">
+                <span class="hero-badge">就職・転職検討者向け</span>
+                <span class="hero-badge">株式投資家向け</span>
+                <span class="hero-badge">数字と事実のみ記載</span>
+            </div>
+            <div class="data-notice">本レポートのデータ基準時点：2026年04月 ／ 各章の統計は最新確定値または推計値（推計と明記）を使用</div>
+        </div>
+    </div>
+
+    <hr class="rule-thick">
+
+    <div class="toc">
+        <div class="container">
+            <h2>目次 — TABLE OF CONTENTS</h2>
+            <div class="toc-grid">
+                <a class="toc-item" href="#ch0">
+                    <span class="toc-num">00</span>
+                    この内部環境編の立ち位置
+                </a>
+                <a class="toc-item" href="#ch1">
+                    <span class="toc-num">01</span>
+                    業界内プレイヤー構成
+                </a>
+                <a class="toc-item" href="#ch2">
+                    <span class="toc-num">02</span>
+                    三菱重工業——ガスタービン累計172台超・HyMACS世界初
+                </a>
+                <a class="toc-item" href="#ch3">
+                    <span class="toc-num">03</span>
+                    川崎重工業——液化水素サプライチェーンと計画変更の実像
+                </a>
+                <a class="toc-item" href="#ch4">
+                    <span class="toc-num">04</span>
+                    旭化成——50年の食塩電解技術を水電解に転用
+                </a>
+                <a class="toc-item" href="#ch5">
+                    <span class="toc-num">05</span>
+                    JERA——アンモニア混焼20%実証成功・2027年商業運転
+                </a>
+                <a class="toc-item" href="#ch6">
+                    <span class="toc-num">06</span>
+                    収益構造の本質——「実証→商用化」の長い道のり
+                </a>
+                <a class="toc-item" href="#ch7">
+                    <span class="toc-num">07</span>
+                    人材市場の実態
+                </a>
+                <a class="toc-item" href="#ch8">
+                    <span class="toc-num">08</span>
+                    構造的課題の所在
+                </a>
+                <a class="toc-item" href="#ch9">
+                    <span class="toc-num">09</span>
+                    誤解されやすいポイント
+                </a>
+                <a class="toc-item" href="#ch10">
+                    <span class="toc-num">10</span>
+                    内部環境の整理
+                </a>
+                <a class="toc-item" href="#ch11">
+                    <span class="toc-num">11</span>
+                    有料版への橋渡し
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <!-- CH0 -->
+    <div class="chapter" id="ch0">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <h2>この内部環境編の立ち位置</h2>
+            </div>
+            <div class="connect-banner">
+                <strong>外部環境編との接続：</strong>
+                外部環境編では、水素等市場が2050年に世界で30〜40兆円規模・現在のクリーン水素は全需要の1%未満・供給目標と需要目標の4.5倍乖離・日本のガスタービンが世界シェア約4割・液化水素サプライチェーン全体製造は世界唯一・グリーン水素が天然ガスと競合するのは日本では2040年中盤・水素専焼火力の発電コスト29.9円/kWh・水素社会推進法（2024年5月成立）という外部構造を整理しました。本編ではその前提のもとで「外部の構造がこの産業のプレイヤー・収益・人材にどのような特性として現れているか」を数字と事実で記述します。
+
+            </div>
+            <div class="data-box">
+                <div class="box-title">本編でやること／やらないこと</div>
+                <ul>
+                    <li>【やること】三菱重工業（7011）のガスタービン実績・高砂水素パークの実証状況・HyMACSの技術的意義を記述する</li>
+                    <li>【やること】川崎重工業（7012）の液化水素サプライチェーン計画・水素事業規模計画・計画変更の実像を整理する</li>
+                    <li>【やること】旭化成（3407）の水電解装置事業化計画・投資額・50年の食塩電解技術転用の構造を記述する</li>
+                    <li>【やること】JERA（非上場・東京電力と中部電力の合弁）のアンモニア混焼実証成功の内容を整理する</li>
+                    <li>【やること】水素等分野の人材市場実態（エネルギー工学・電気化学・プロセスエンジニア）を整理する</li>
+                    <li>【やらないこと】特定銘柄の投資推奨・勝ち負けの断定・良し悪しの評価</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート基本方針</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH1 -->
+    <div class="chapter" id="ch1">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <h2>業界内プレイヤー構成</h2>
+            </div>
+            <table class="biz-table">
+                <thead>
+                    <tr>
+                        <th>企業・機関</th>
+                        <th>水素等での役割</th>
+                        <th>重点製品</th>
+                        <th>事業化ステージ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            三菱重工業
+                            <br>
+                            （7011）
+                        </td>
+                        <td class="acc">ガスタービン（混焼・専焼）・水素製造（SOEC等）・アンモニア分解（HyMACS）</td>
+                        <td>水素アンモニア混焼/専焼タービン。JAC形（45万kW）での30%混焼実証済み・中型H-25形での100%専焼実証済み。2030年に大型100%専焼実用化目標。アンモニア分解システムHyMACSの世界初パイロット実証成功（2025年12月）。</td>
+                        <td>実証→商用化（2030年大型100%専焼目標）</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            川崎重工業
+                            <br>
+                            （7012）
+                        </td>
+                        <td class="acc">液化水素関連機器（運搬船・貯蔵タンク・受入基地）・水素ガスタービン・水電解装置</td>
+                        <td>世界初の液化水素運搬船「すいそふろんてぃあ」建造済み。JSE（日本水素エネルギー）幹事として川崎臨海部に国内受入基地建設着工（2025年5月）。水素事業規模：2030年に3,000億円・2040年に5,000億円計画。</td>
+                        <td>商用化実証段階（大型化・スケールアップ中）</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            旭化成
+                            <br>
+                            （3407）
+                        </td>
+                        <td class="acc">アルカリ水電解装置（システム一式）</td>
+                        <td>1975年からのイオン交換膜法食塩電解技術（50年の蓄積）を水電解に転用。川崎製造所に新工場建設決定（投資約310億円・2028年度稼働）。年間2GW超の水電解生産能力構築目標（食塩電解含め3GW超）。</td>
+                        <td>量産投資決定（2028年稼働予定）</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            JERA
+                            <br>
+                            （非上場・東電・中部電合弁）
+                        </td>
+                        <td class="acc">アンモニア混焼火力発電（需要側）</td>
+                        <td>2024年7月：碧南火力発電所（愛知県）で石炭火力への20%アンモニア混焼実証試験成功。2027年からの商業運転を予定。アンモニア混焼の商業規模実証としては世界最大級。</td>
+                        <td>実証成功→2027年商業運転予定</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            岩谷産業
+                            <br>
+                            （8088）
+                        </td>
+                        <td class="acc">水素ステーション・液化水素供給・水素インフラ整備</td>
+                        <td>国内水素ステーション運営でシェア最大級（イワタニ水素ステーション）。液化水素の製造・供給・貯蔵の一貫事業を展開。川崎重工との連携でHySTRAコンソーシアムに参画。</td>
+                        <td>商用段階（ステーション運営中）</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="source-wrap">
+                <span class="source-tag">各社公開情報・日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH2 -->
+    <div class="chapter" id="ch2">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <h2>三菱重工業——ガスタービン累計172台超・HyMACS世界初</h2>
+            </div>
+
+            <h3>J/JAC形ガスタービン——2025年に累計受注172台超・稼働時間300万時間突破</h3>
+            <p>三菱重工業（7011）のJ/JAC形ガスタービン（最新鋭・タービン入口温度1,650℃級）は2025年に累計受注**172台超**・稼働時間**300万時間突破**という実績に達しています（三菱重工業 ガスタービン事業概要資料・2025年10月）。世界のガスタービン市場の年間発注量は2024年に**57.4GW**（2019〜2020年頃の約40GWから大幅増加）となり、2025年は上半期だけで41.7GWに達し年間では70GW程度になる見込みです（同）。北米では2025年上半期で前年通年の発注量を超えています。</p>
+
+            <h3>高砂水素パーク——製造・貯蔵・発電の一貫実証拠点</h3>
+            <p>三菱重工は高砂製作所（兵庫県高砂市）に「高砂水素パーク」を整備しており、水素の製造・貯蔵・発電（利用）まで一貫して検証できる世界初の拠点として運用しています（三菱重工業 公式）。主な実証の進捗は以下の通りです。JAC形（45万kW級）での**水素30%混焼**：2023年11月に世界初の地域電力網接続状態での大型ガスタービン発電実証に成功。中型H-25形（4万kW級）での**水素100%専焼**：2024年に実証開始。大型JAC形での**100%専焼**は2025年度以降にマルチクラスター燃焼器の開発完了後・**2030年までに実用化**を目標としています（ニュースイッチ・2024年）。</p>
+
+            <h3>HyMACS——蒸気加熱方式による世界初のアンモニア分解システム</h3>
+            <p>三菱重工は2025年12月10日、独自のアンモニア分解システム「HyMACS（ハイマックス）」を用いて、蒸気を加熱源として原料のアンモニアを分解し、純度**99%の水素**を製造することに成功したと発表しました（ITmedia・2025年12月）。同社の調べによれば、蒸気加熱方式によるパイロットスケールでの水素製造は**世界初**です。アンモニアは液化水素（-253℃）と異なり-33℃で液化できるため輸送インフラが既存のケミカルタンカーが使えるメリットがあり、HyMACSはアンモニアから水素を効率的に抽出する手段として位置づけられています。</p>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">172台超</span>
+                    <span class="stat-unit">（累計受注・2025年）</span>
+                    <span class="stat-label">
+                        三菱重工 J/JAC形
+                        <br>
+                        ガスタービン累計受注台数
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">300万時間</span>
+                    <span class="stat-unit">（2025年）</span>
+                    <span class="stat-label">
+                        三菱重工 J/JAC形
+                        <br>
+                        累計稼働時間突破
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">57.4GW</span>
+                    <span class="stat-unit">（2024年・世界）</span>
+                    <span class="stat-label">
+                        ガスタービン市場
+                        <br>
+                        年間発注量
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">2030年</span>
+                    <span class="stat-unit">（目標）</span>
+                    <span class="stat-label">
+                        三菱重工 大型ガスタービン
+                        <br>
+                        水素100%専焼 実用化目標
+                    </span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">三菱重工業「ガスタービン事業概要資料」（2025年10月）</span>
+                <span class="source-tag">三菱重工業 プレスリリース「JAC形ガスタービンによる水素燃料30%混焼運転に成功」（2023年11月）</span>
+                <span class="source-tag">ITmedia「三菱重工が常識を覆すアンモニア分解システム開発」（2025年12月）</span>
+                <span class="source-tag">ニュースイッチ「水素100%専焼、三菱重工が早期社会実装へ実証」</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH3 -->
+    <div class="chapter" id="ch3">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <h2>川崎重工業——液化水素サプライチェーンと計画変更の実像</h2>
+            </div>
+
+            <h3>水素事業規模——2030年に3,000億円・2040年に5,000億円計画</h3>
+            <p>川崎重工業（7012）は世界各国から約50件程度の水素関連プロジェクトの検討依頼を受けており、水素事業規模を**2030年に3,000億円・2040年に5,000億円**に達する計画としています（川崎重工業 サステナビリティボンド IR資料）。川崎重工業の全社売上高は約**2兆1,000億円**（2024年3月期）であり、水素事業は中長期の成長ドライバーと位置づけられています。</p>
+
+            <h3>世界初の液化水素運搬船「すいそふろんてぃあ」——日豪パイロット実証成功</h3>
+            <p>川崎重工業は世界初の液化水素運搬船「すいそふろんてぃあ」を建造し、2022年に日豪間での液化水素国際サプライチェーン実証（日本・オーストラリア間パイロットプロジェクト）を成功させました（川崎重工業 公式・HySTRA）。これは外部環境編で示した「液化水素サプライチェーン全体の製造能力は世界唯一」という技術優位の中核的事例です。</p>
+
+            <h3>川崎臨海部国内基地——2025年5月に建設工事着工</h3>
+            <p>川崎重工業が幹事会社を務める日本水素エネルギー株式会社（JSE）は、2025年5月に液化水素サプライチェーン構築に向けた商用化実証における国内基地（神奈川県川崎市川崎区・JFEスチール東日本製鉄所京浜地区跡地）の建設工事に着工しました（川崎重工業・JSE プレスリリース・2025年5月26日）。GI基金事業の「液化水素サプライチェーンの商用化実証」の一環であり、世界初の商用規模の液化水素受入基地となる計画です。</p>
+
+            <h3>計画変更——大型船（16万m³）→中型船（4万m³）へ</h3>
+            <p>豪州ビクトリア州での褐炭由来のブルー水素製造計画が2024年に頓挫した結果、2030年に予定していた大型輸送船（16万m³）を4分の1の規模の中型船（4万m³）に変更することが明らかになっています（自然エネルギー財団・2025年5月）。この計画変更は「水素コスト低減計画の大きな変更」につながるものであり（同）、外部環境編が示した「一時の高水準の予測からは減速しつつも堅調に推移」という状況の具体例です。川崎重工業は「液化水素船でのグローバルサプライチェーン構築事業は全くトーンダウンすることなく、着実に進めていく」（西村氏・2025年3月）としています（ニュースイッチ・2025年3月）。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">川崎重工業 サステナビリティボンド「当社の水素への取組み」</span>
+                <span class="source-tag">日本水素エネルギー（JSE）・川崎重工業 プレスリリース「液化水素サプライチェーン構築に向けた国内基地建設工事着工」（2025年5月26日）</span>
+                <span class="source-tag">自然エネルギー財団「2040年火力の排出実質ゼロは現実的か」（2025年5月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH4 -->
+    <div class="chapter" id="ch4">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 04</span>
+                <h2>旭化成——50年の食塩電解技術を水電解に転用</h2>
+            </div>
+
+            <h3>川崎製造所新工場——投資約310億円・2028年度稼働・年間2GW超</h3>
+            <p>旭化成（3407）は2025年10月23日、川崎製造所（神奈川県川崎市）においてクリーン水素製造用アルカリ水電解システムの生産能力を拡大するための新工場建設計画を正式に決定しました（旭化成 プレスリリース・2025年10月23日）。投資額は約**310億円**（うち最大1/3はGXサプライチェーン構築支援事業補助金）で、**2028年度の稼働開始**を予定しています。新工場では電解用枠・電解用膜それぞれで年間**2GW超**の生産能力を備え、既存の食塩電解プロセス向け設備と合わせて年間**3GW超**の生産能力を構築します（同）。</p>
+
+            <h3>「50年の食塩電解技術」——水電解への技術転用の強み</h3>
+            <p>旭化成は1975年よりイオン交換膜法食塩電解事業を手掛けており、膜・電解槽・電極・運転技術・モニタリングシステムに至るまで食塩電解に関する幅広い技術を50年にわたり蓄積しています（旭化成 プレスリリース・2025年10月）。食塩電解（塩化ナトリウム水溶液を電気分解して塩素・苛性ソーダ等を製造）の技術は、水電解（水を電気分解して水素・酸素を製造）と原理的に共通部分が多く、イオン交換膜・電解槽・電極の技術を転用できます。「水電解市場においてキープレーヤーとなることを目指している」とし、2025年度から本格的な事業化フェーズへ移行しています（同）。</p>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <span class="stat-num">約310億円</span>
+                    <span class="stat-unit"></span>
+                    <span class="stat-label">
+                        旭化成 川崎製造所
+                        <br>
+                        水電解新工場投資額
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">2028年度</span>
+                    <span class="stat-unit">（稼働予定）</span>
+                    <span class="stat-label">
+                        旭化成 水電解新工場
+                        <br>
+                        稼働開始時期
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">年間2GW超</span>
+                    <span class="stat-unit">（水電解単独）</span>
+                    <span class="stat-label">
+                        旭化成 新工場の
+                        <br>
+                        水電解生産能力
+                    </span>
+                </div>
+                <div class="stat-cell">
+                    <span class="stat-num">年間3GW超</span>
+                    <span class="stat-unit">（食塩電解含む）</span>
+                    <span class="stat-label">
+                        旭化成 川崎製造所
+                        <br>
+                        合計生産能力（稼働後）
+                    </span>
+                </div>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">旭化成「クリーン水素製造用アルカリ水電解システムの生産能力を拡大」（2025年10月23日）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH5 -->
+    <div class="chapter" id="ch5">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 05</span>
+                <h2>JERA——アンモニア混焼20%実証成功・2027年商業運転</h2>
+            </div>
+
+            <h3>2024年7月——石炭火力での20%アンモニア混焼実証試験成功</h3>
+            <p>JERA（東京電力フュエル＆パワーと中部電力の合弁・非上場）は2024年7月、愛知県の碧南火力発電所（100万kW級の石炭火力）で**20%のアンモニア混焼**の実証試験に成功しました（IEEI・2025年2月）。JERAは世界最大規模の石炭火力事業者であり、この実証は「石炭火力にアンモニアを混焼することで、追加的な設備投資を最小限に抑えながらCO2排出量を削減できる」可能性を示す大規模な実証例です。**2027年からの商業運転**を予定しています（同）。</p>
+
+            <h3>アンモニア混焼の意義——既存インフラを活用した脱炭素手段</h3>
+            <p>アンモニア混焼は「化石燃料から完全に脱却する」ことなく、既設の石炭火力をそのまま活用しながら段階的にCO2排出量を削減できる手段です。日本には石炭火力発電の依存度が高いアジア諸国（インドネシア・ベトナム・フィリピン等）へのアンモニア混焼技術の輸出という「経済安全保障×技術輸出」の機会があります。外部環境編で示した「AZEC（アジア・ゼロエミッション共同体）構想」の具体的な技術提供の中核がJERAのアンモニア混焼実証です。</p>
+
+            <div class="note-box">
+                <strong>【注記】</strong>
+                アンモニア混焼については「CO2排出量の削減効果が混焼率20%では限定的」「アンモニア燃焼時にN₂O（一酸化二窒素）が発生し温暖化係数が高い」という指摘があります（自然エネルギー財団・2025年5月）。本レポートは事実と数値のみを記述し、評価は行いません。
+
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">IEEI「水素・アンモニア利用の課題「コスト」をいかに解決するか」（2025年2月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH6 -->
+    <div class="chapter" id="ch6">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 06</span>
+                <h2>収益構造の本質——「実証→商用化」の長い道のり</h2>
+            </div>
+
+            <h3>「需要と供給の鶏と卵」——民間企業の投資判断の難しさ</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は「供給側は安定した需要が見込めず能増投資に踏み込めない」「需要側は大規模水素の輸送技術の未確立や燃料価格高騰の影響もあり、投資判断に遅れが生じている」と明示しています。川崎重工業が水素事業を2030年3,000億円・2040年5,000億円という長期スパンで計画を立てているのは、この「鶏と卵」問題の解消に時間がかかるという認識を反映しています。</p>
+
+            <h3>「政府補助金が民間投資を誘引する」という収益モデルの現状</h3>
+            <p>現時点の水素事業の収益構造は「市場収益」よりも「政府補助金（GI基金・GXサプライチェーン構築支援）＋実証費用」が中心です。旭化成の310億円投資の最大1/3はGXサプライチェーン構築支援補助金で賄われます。川崎臨海部の国内基地建設もGI基金事業として実施されます。水素社会推進法に基づく「価格差支援」（水素コストと化石燃料コストの差の補填）が本格始動することで、民間の商用投資が動き始めるという段階的な構造です。</p>
+
+            <h3>「ガスタービンの現行事業が水素投資の原資」</h3>
+            <p>三菱重工業がガスタービン事業で世界シェア4割・累計受注172台超という安定した事業基盤を持つことは、水素・アンモニア対応ガスタービンへの研究開発投資の原資として機能しています。JAC形ガスタービンが市場活況（2025年上半期の発注量が前年通年を上回るペース）にある状況は、水素対応型への転換需要（既設ガスタービンの燃焼器改造等の更新市場）も同時に生み出します（三菱重工業 ガスタービン事業概要・2025年10月）。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">三菱重工業「ガスタービン事業概要資料」（2025年10月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH7 -->
+    <div class="chapter" id="ch7">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 07</span>
+                <h2>人材市場の実態</h2>
+            </div>
+
+            <h3>水素等分野の主要職種</h3>
+            <div class="data-box">
+                <div class="box-title">主要職種と必要専門性（2026年04月時点）</div>
+                <ul>
+                    <li>【ガスタービン・燃焼エンジニア】水素・アンモニア対応のガスタービン燃焼器設計・実証・商用化。機械工学・熱工学・燃焼工学のバックグラウンドが前提。三菱重工業（高砂製作所・日立工場）・川崎重工業が中心的な採用企業。水素燃焼の独特の難しさ（燃焼速度の速さ・逆火リスク）に対応するマルチクラスター等の新燃焼器設計エンジニアは希少。</li>
+                    <li>【水電解装置エンジニア（電気化学・化学工学）】アルカリ水電解・PEM水電解・SOEC等の水電解装置の開発・スケールアップ・量産化。電気化学・化学工学・材料工学のバックグラウンドが必要。旭化成・三菱重工業・川崎重工業等が採用中。食塩電解のバックグラウンドを持つ人材（旭化成内部）が水電解に転用できる形になっており、旭化成では社内でのキャリアシフトが進行中。</li>
+                    <li>【液化水素・極低温エンジニア】液化水素（-253℃）の貯蔵・輸送・受入インフラの設計・施工・運用。極低温工学・材料工学の専門知識が必要。川崎重工業（液化水素運搬船・液化設備）・岩谷産業（ステーション）等での需要。「国内で液化水素製造・供給実績を保有するのは川崎重工業グループのみ」（川崎重工業 GI基金資料）という状況は、この職種人材の希少性を示しています。</li>
+                    <li>【エネルギーシステム・サプライチェーン企画】水素サプライチェーン全体（製造・輸送・供給・利用）の事業企画・経済性評価・政策対応。エネルギー工学・経済学・法学の複合知識が必要。JERA・電力会社・商社・政策シンクタンク等で需要が増加中。</li>
+                    <li>【安全・規制対応専門職（保安・GHS）】水素・アンモニアの高圧ガス保安・安全性評価・規制対応。高圧ガス保安法・水素社会推進法等の規制知識が必要。資源エネルギー庁・高圧ガス保安協会との協議経験者の需要が高い。</li>
+                </ul>
+            </div>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">各社公開情報</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH8 -->
+    <div class="chapter" id="ch8">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 08</span>
+                <h2>構造的課題の所在</h2>
+            </div>
+
+            <h3>「豪州計画頓挫が示す受入側インフラ整備の難しさ」</h3>
+            <p>川崎重工業の豪州ビクトリア州での褐炭由来ブルー水素製造計画の頓挫（2024年）は、「供給源となる海外プロジェクトの許認可取得・設備建設に必要な時間の長さと不確実性」を示しています（川崎重工業 GI基金説明資料）。液化水素の国際サプライチェーン構築は「製造地（海外）」「運搬」「受入地（日本）」の全ての工程が揃って初めて成立しますが、それぞれが長いリードタイムと高い不確実性を持ちます。川崎臨海部の国内基地が建設着工した一方で、海外の供給側の開発に遅れが生じるという構造問題が明らかになっています。</p>
+
+            <h3>「水電解装置の量産化は2028年稼働が最初の大きな節目」</h3>
+            <p>旭化成の川崎製造所新工場の2028年度稼働は日本の水電解装置量産体制構築の最初の大きなマイルストーンです。ただし「装置の大型化・モジュール化や要素技術の開発・実証、量産体制構築が道半ば。コスト低減が必要」という課題が残っており（資料2・2026年3月）、2028年稼働後もコスト競争力の確立には更なる取り組みが必要です。欧州（ノルウェーのNelやベルギーのJohnCockerill等）・中国（厦門柯勒ガス等）の水電解装置メーカーも量産投資を進めており、競争は継続します。</p>
+
+            <h3>「燃料電池分野での中国との競合」——3つ巴の課題</h3>
+            <p>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）は燃料電池の課題として「①水素インフラ不足/運営費の高さ、②車両価格の高さ、③水素価格の高さの3つ巴の課題から、社会実装で急伸する中国に遅れ」と明示しています。FCバス・FCトラック等の商用燃料電池車分野では中国が補助金と量産による価格低減で市場を拡大しており、日本企業との競争が激しくなっています。</p>
+
+            <div class="source-wrap">
+                <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+                <span class="source-tag">川崎重工業 GI基金説明資料「液化水素サプライチェーンの商用化実証」（2024年9月）</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH9 -->
+    <div class="chapter" id="ch9">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 09</span>
+                <h2>誤解されやすいポイント</h2>
+            </div>
+            <div class="data-box">
+                <div class="box-title">誤解されやすいポイント（4点）</div>
+                <ul>
+                    <li>【「三菱重工が水素100%専焼を実証済み→大型ガスタービンでも2025年に商用化」】三菱重工業が中型H-25形（4万kW級）での100%専焼実証を2024年に実施したことは事実ですが、大型JAC形（45万kW級）での100%専焼はマルチクラスター燃焼器の開発完了後（2025年度以降）に実証が始まり、**商用化は2030年目標**です（ニュースイッチ・2024年）。大型機と中型機では技術課題の難易度が異なります。</li>
+                    <li>【「旭化成がGXサプライチェーン補助金採択→水電解の収益化が近い」】旭化成の新工場は2028年度稼働予定であり、稼働開始後も「商用プロジェクト実績の蓄積」が必要です（資料2・2026年3月）。補助金採択は設備投資の支援であり、水電解装置の市場での収益化（継続的な受注・販売）とは別の問題です。グリーン水素のコスト競争力が確立されない段階では水電解装置への需要も限定的です。</li>
+                    <li>【「JERAのアンモニア混焼実証成功→日本の石炭火力が全てアンモニア混焼に移行する」】碧南火力での20%混焼実証の成功は重要なマイルストーンですが、「商業運転（2027年予定）→他発電所への展開」には、各発電所ごとの設備改造・アンモニア調達コスト・燃焼安定性確認というプロセスが必要です。全石炭火力への展開は長期かつ段階的なプロセスです。また自然エネルギー財団が指摘するN₂O排出の問題も解決が必要です（同・2025年5月）。</li>
+                    <li>【「川崎重工業が世界初の液化水素運搬船を建造→液化水素の国際輸送が商業化済み」】川崎重工業が日豪パイロットプロジェクトでの液化水素国際輸送実証（2022年）に成功したことは事実ですが、これはパイロット規模の実証です。商用規模の液化水素国際サプライチェーン（川崎臨海部国内基地が2025年5月着工した施設）はまだ建設・実証段階であり、豪州供給側の計画頓挫による中型船への計画変更も発生しています。</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜8章の総括</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH10 -->
+    <div class="chapter" id="ch10">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 10</span>
+                <h2>内部環境の整理</h2>
+            </div>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>章</th>
+                        <th>指標名</th>
+                        <th>数値・事実</th>
+                        <th>出典・時点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第2章</td>
+                        <td>三菱重工 J/JAC形ガスタービン累計受注</td>
+                        <td>172台超（2025年）</td>
+                        <td>三菱重工業 ガスタービン事業概要 2025年10月</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>三菱重工 J/JAC形 累計稼働時間</td>
+                        <td>300万時間突破（2025年）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>三菱重工 大型ガスタービン 水素100%専焼 実用化目標</td>
+                        <td>2030年（マルチクラスター燃焼器完成後）</td>
+                        <td>ニュースイッチ</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>三菱重工 HyMACS（アンモニア分解システム）</td>
+                        <td>蒸気加熱方式によるパイロットスケール水素製造・世界初成功（2025年12月）・純度99%</td>
+                        <td>ITmedia 2025年12月</td>
+                    </tr>
+                    <tr>
+                        <td>第2章</td>
+                        <td>ガスタービン市場 年間発注量（2024年）</td>
+                        <td>57.4GW（2024年）・2025年上半期だけで41.7GW</td>
+                        <td>三菱重工業 ガスタービン事業概要 2025年10月</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>川崎重工 水素事業規模計画</td>
+                        <td>2030年3,000億円・2040年5,000億円</td>
+                        <td>川崎重工業 サステナビリティボンド IR資料</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>川崎臨海部 液化水素国内基地 建設工事着工</td>
+                        <td>2025年5月（JSE幹事・GI基金事業）</td>
+                        <td>川崎重工業・JSE PR 2025年5月26日</td>
+                    </tr>
+                    <tr>
+                        <td>第3章</td>
+                        <td>川崎重工 液化水素運搬船 計画変更</td>
+                        <td>大型船（16万m³）→中型船（4万m³）（豪州計画頓挫の影響）</td>
+                        <td>自然エネルギー財団 2025年5月</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>旭化成 水電解新工場 投資額</td>
+                        <td>約310億円（最大1/3はGXサプライチェーン補助金）</td>
+                        <td>旭化成 PR 2025年10月23日</td>
+                    </tr>
+                    <tr>
+                        <td>第4章</td>
+                        <td>旭化成 水電解新工場 稼働予定・生産能力</td>
+                        <td>2028年度稼働・年間2GW超（食塩電解含む3GW超）</td>
+                        <td>同上</td>
+                    </tr>
+                    <tr>
+                        <td>第5章</td>
+                        <td>JERAのアンモニア混焼実証</td>
+                        <td>2024年7月：碧南火力で石炭火力20%アンモニア混焼実証成功・2027年商業運転予定</td>
+                        <td>IEEI 2025年2月</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="data-box">
+                <div class="box-title">構造的に固定されやすい要素</div>
+                <ul>
+                    <li>三菱重工業のJ/JAC形ガスタービンが累計受注172台超・世界シェア約4割という市場地位は、納入後の長期サービス・メンテナンス需要とともに短期では変化しない</li>
+                    <li>川崎重工業が「液化水素サプライチェーン全体の製造能力は世界唯一」という先行者優位を持つことは、韓国・中国が追いつくまで続く</li>
+                    <li>旭化成の「50年の食塩電解技術という参入障壁」は、他社が同等の技術蓄積を持つまで続く競争優位</li>
+                    <li>JERAのアンモニア混焼20%実証→2027年商業運転というタイムラインは、実証結果が覆らない限り固定されている</li>
+                    <li>「補助金が民間投資を誘引する」という水素事業の収益構造は、市場の商用化が成立するまで続く</li>
+                    <li>官民投資の具体的金額は2026年夏の日本成長戦略取りまとめまで未確定</li>
+                </ul>
+            </div>
+            <div class="source-wrap">
+                <span class="source-tag">本レポート第1〜9章の集約</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CH11 -->
+    <div class="chapter" id="ch11">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 11</span>
+                <h2>有料版への橋渡し</h2>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR CAREER — 就活・転職向け有料版</div>
+                <h3>三菱重工・川崎重工・旭化成・JERA、どこで関わるか</h3>
+                <ul>
+                    <li>三菱重工業の高砂製作所（ガスタービン・高砂水素パーク）でのエンジニア職——水素・アンモニア燃焼エンジニアの採用動向と処遇水準</li>
+                    <li>川崎重工業の水素戦略本部・液化水素事業部門での職種——液化水素エンジニア・サプライチェーン企画の実態と年収水準</li>
+                    <li>旭化成の水電解事業部門——食塩電解から水電解へのキャリアシフトの実態と、2028年稼働に向けた採用計画</li>
+                    <li>JERAのアンモニア混焼・水素発電への移行を支える電力会社内の専門職——火力発電エンジニアから水素・アンモニア燃焼専門職へのキャリアパス</li>
+                    <li>岩谷産業の水素ステーション事業——インフラ整備・運営に関わるエンジニア・営業職の実態</li>
+                </ul>
+            </div>
+            <div class="next-box">
+                <div class="next-label">FOR INVESTMENT — 投資判断向け有料版</div>
+                <h3>三菱重工・川崎重工・旭化成、水素事業をどう読むか</h3>
+                <ul>
+                    <li>三菱重工業（7011）——ガスタービン事業の現在の活況（2025年上半期の発注量が前年通年超え）が連結業績に反映される時期と、水素対応型への転換需要（更新市場）が追加的な売上・利益成長につながるシナリオの読み方</li>
+                    <li>川崎重工業（7012）——水素事業（2030年3,000億円計画）の達成蓋然性と、計画変更（大型船→中型船）が業績・資産評価に与える影響の読み方</li>
+                    <li>旭化成（3407）——水電解新工場（2028年稼働・投資310億円）の収益化タイムラインと、グリーン水素需要が立ち上がる時期（EPI：2040年中盤に天然ガスとコスト競合）との時間的ギャップの読み方</li>
+                    <li>岩谷産業（8088）——水素ステーション事業（インフラ整備の先行投資期→稼働率上昇での収益化）のタイムラインと、燃料電池商用車の普及速度との連動性</li>
+                    <li>2026年夏の「日本成長戦略」で官民投資の具体的金額が確定した場合の受益企業の特定方法</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <div class="container">
+            <p>【免責事項】本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。「政策目標として示されている」と注記した数値は政府が目標として掲げた値であり達成を保証するものではありません。JERAは非上場企業のため財務詳細の開示は限定的です。官民投資の具体的金額は2026年夏の取りまとめ予定であり本時点では未確定です。データ基準時点は2026年04月です。</p>
+            <p style="margin-top:10px; color: rgba(245,242,237,0.3);">© 2026年04月 産業構造分析レポート ── 水素等（内部環境編）</p>
+            <p style="margin-top:8px;">
+                <a href="https://www.marketsupporter-ai.com" style="color: rgba(245,242,237,0.4); font-size:11px;">← Market Supporter AI トップへ戻る</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
