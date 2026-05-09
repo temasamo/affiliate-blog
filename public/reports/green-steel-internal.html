@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>業界分析｜高市政権「戦略17分野」資源・エネルギー安全保障・GX グリーン鉄（内部環境編）</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:    #0f0f0e;
+      --paper:  #f5f2ed;
+      --cream:  #ede9e1;
+      --accent: #c84b2f;
+      --accent2: #2563a8;
+      --muted:  #6b6760;
+      --rule:   #c9c4bb;
+      --highlight: #fff8e6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Noto Sans JP", sans-serif;
+      line-height: 1.9;
+      letter-spacing: .02em;
+    }
+    a { color: var(--accent2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .page { max-width: 1120px; margin: 0 auto; padding: 0 22px 64px; }
+    .masthead {
+      border-bottom: 1px solid var(--rule);
+      padding: 18px 0 14px;
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .hero {
+      padding: 56px 0 42px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .hero .label {
+      display: inline-block;
+      padding: 6px 12px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 12px;
+      letter-spacing: .08em;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    h1, h2, h3 {
+      font-family: "Noto Serif JP", serif;
+      line-height: 1.45;
+      margin: 0 0 18px;
+    }
+    h1 { font-size: clamp(30px, 5vw, 52px); font-weight: 700; }
+    h2 { font-size: clamp(24px, 3vw, 34px); }
+    h3 { font-size: 20px; color: var(--accent2); margin-top: 28px; }
+    .lead {
+      max-width: 860px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-top: 26px;
+    }
+    .hero-meta span {
+      border: 1px solid var(--rule);
+      background: var(--cream);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+    .toc {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      margin: 34px 0;
+      padding: 26px;
+      border-radius: 18px;
+    }
+    .toc h2 { font-size: 22px; margin-bottom: 12px; }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 8px 18px;
+      margin-top: 12px;
+    }
+    .toc a {
+      display: block;
+      padding: 8px 0;
+      border-bottom: 1px dotted var(--rule);
+      color: var(--ink);
+      font-size: 14px;
+    }
+    .chapter {
+      padding: 42px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .chapter-num {
+      display: inline-block;
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--accent);
+      font-weight: 500;
+      letter-spacing: .12em;
+      margin-bottom: 12px;
+    }
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin: 24px 0;
+    }
+    .stat-cell {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 16px;
+      padding: 18px;
+      min-height: 116px;
+    }
+    .stat-cell strong {
+      display: block;
+      color: var(--accent);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 24px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .stat-cell span { color: var(--muted); font-size: 13px; }
+    .data-box, .note-box, .next-box {
+      border: 1px solid var(--rule);
+      border-radius: 18px;
+      padding: 22px;
+      margin: 24px 0;
+      background: #fff;
+    }
+    .note-box {
+      background: var(--highlight);
+      border-left: 5px solid var(--accent);
+    }
+    ul { padding-left: 1.3em; }
+    li { margin: 6px 0; }
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border: 1px solid var(--rule);
+    }
+    .summary-table th, .summary-table td {
+      border: 1px solid var(--rule);
+      padding: 12px 14px;
+      vertical-align: top;
+      text-align: left;
+      font-size: 14px;
+    }
+    .summary-table th {
+      background: var(--cream);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .source-tag {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 18px;
+      font-family: "IBM Plex Mono", "Noto Sans JP", sans-serif;
+    }
+    .disclaimer {
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--rule);
+      margin-top: 42px;
+      padding-top: 24px;
+    }
+    .footer-links { margin-top: 28px; display: flex; gap: 16px; flex-wrap: wrap; }
+    @media (max-width: 700px) {
+      .page { padding: 0 16px 48px; }
+      .hero { padding: 38px 0 30px; }
+      .summary-table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      産業構造分析レポート 2026年05月発行 ── 資源・エネルギー安全保障・GX／グリーン鉄（内部環境編）
+    </header>
+
+    <section class="hero">
+      <span class="label">INDUSTRY ANALYSIS REPORT — INTERNAL ENVIRONMENT</span>
+      <h1>業界分析｜高市政権「戦略17分野」<br>資源・エネルギー安全保障・GX<br>グリーン鉄（内部環境編）</h1>
+      <p class="lead">
+        本レポートは、外部環境編で確認した「2050年に約5億トンの市場ポテンシャル」「2030年代前半に年約300万t以上の高品質グリーン鉄市場」「高炉比率約7割」「業界全体で約10兆円規模の脱炭素投資」という前提が、鉄鋼業界内部のプレイヤー構成、収益構造、人材市場、現場負荷にどのような歪みとして現れるかを、数字と事実のみで整理します。
+      </p>
+      <div class="hero-meta">
+        <span>対象：就職・転職検討者</span>
+        <span>対象：株式投資家</span>
+        <span>基準時点：2026年05月</span>
+        <span>判断・推奨なし</span>
+      </div>
+    </section>
+
+    <nav class="toc">
+      <h2>目次 — TABLE OF CONTENTS</h2>
+      <div class="toc-grid">
+        <a href="#ch00">00 エグゼクティブサマリー</a>
+        <a href="#ch01">01 業界プレイヤーの構成と集中度</a>
+        <a href="#ch02">02 バリューチェーンと利益の所在</a>
+        <a href="#ch03">03 収益構造（大手vs中小の格差）</a>
+        <a href="#ch04">04 人件費構造と労働集約性</a>
+        <a href="#ch05">05 人材市場と主要職種</a>
+        <a href="#ch06">06 求人倍率・年収相場</a>
+        <a href="#ch07">07 構造的課題</a>
+        <a href="#ch08">08 本社vs現場の非対称性</a>
+        <a href="#ch09">09 よくある誤解</a>
+        <a href="#ch10">10 内部環境まとめ表</a>
+        <a href="#ch11">11 外部環境編への橋渡し</a>
+      </div>
+    </nav>
+
+    <section id="ch00" class="chapter">
+      <span class="chapter-num">CHAPTER 00</span>
+      <h2>エグゼクティブサマリー</h2>
+      <p>
+        グリーン鉄の内部環境は、一般的な「鉄鋼製品の高付加価値化」だけでは説明できません。
+        外部環境で確認した脱炭素規制、公共調達、GX価値の見える化、高品位スクラップ確保、脱炭素電力・水素・CCSインフラの未整備が、業界内部では設備投資負担、操業コスト上昇、需要家との価格交渉、技術人材不足、現場オペレーションの複雑化として現れます。
+      </p>
+      <div class="stat-grid">
+        <div class="stat-cell"><strong>約5億t</strong><span>2050年のグリーン鉄市場ポテンシャル（政策資料上の見通し）</span></div>
+        <div class="stat-cell"><strong>300万t以上</strong><span>2030年代前半に国内外で獲得を目指す高品質グリーン鉄市場</span></div>
+        <div class="stat-cell"><strong>約10兆円</strong><span>2050年CNに向けた鉄鋼業界全体の研究開発・設備実装投資規模の目安</span></div>
+        <div class="stat-cell"><strong>4,499億円</strong><span>GI基金「製鉄プロセスにおける水素活用」国費負担上限</span></div>
+        <div class="stat-cell"><strong>1.96倍</strong><span>鉄鋼製造オペレーターの有効求人倍率（令和6年度・全国）</span></div>
+        <div class="stat-cell"><strong>8,687億円</strong><span>日本製鉄の大型電炉関連投資額（2025年公表）</span></div>
+      </div>
+      <div class="note-box">
+        本レポートでは「勝ち組・負け組」「投資妙味」「転職推奨」は扱いません。あくまで、外部環境が業界内部でどのような構造的制約・収益圧力・人材負荷として現れるかを整理します。
+      </div>
+      <span class="source-tag">出典：日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）、経済産業省、厚生労働省 job tag、日本製鉄統合報告書2025、JFE GROUP REPORT 2025、神戸製鋼所2025年3月期決算資料</span>
+    </section>
+
+    <section id="ch01" class="chapter">
+      <span class="chapter-num">CHAPTER 01</span>
+      <h2>業界プレイヤーの構成と集中度</h2>
+      <p>
+        グリーン鉄の中心プレイヤーは、既存の高炉・電炉・特殊鋼・リサイクル・商社・需要家の複合体です。
+        新規の単独スタートアップが完成鋼材市場を置き換える構造ではなく、既存高炉メーカーを中心に、電炉、還元鉄、スクラップ、脱炭素電力、需要家認証が接続する構造です。
+      </p>
+      <div class="data-box">
+        <h3>主要プレイヤー</h3>
+        <ul>
+          <li>高炉大手：日本製鉄、JFEスチール、神戸製鋼所</li>
+          <li>電炉・特殊鋼：東京製鐵、大和工業、共英製鋼、合同製鐵、大同特殊鋼、山陽特殊製鋼など</li>
+          <li>資源・スクラップ：鉄スクラップ回収・選別・シュレッダー・商社</li>
+          <li>需要家：自動車、建設、造船、産業機械、公共工事</li>
+          <li>政策主体：経済産業省、国土交通省、自治体、NEDO等</li>
+        </ul>
+      </div>
+      <table class="summary-table">
+        <tr><th>区分</th><th>内部環境上の役割</th><th>構造上の制約</th></tr>
+        <tr><td>高炉大手</td><td>高級鋼材・自動車鋼板・大規模設備投資の中核</td><td>既存高炉資産の減価償却・転換コスト</td></tr>
+        <tr><td>電炉メーカー</td><td>スクラップ活用・低炭素鋼材供給</td><td>高品位スクラップ確保、品質対応、電力コスト</td></tr>
+        <tr><td>スクラップ事業者</td><td>原材料供給・選別・高度リサイクル</td><td>品質ばらつき、回収網、設備投資</td></tr>
+        <tr><td>需要家</td><td>GX価値の価格負担・初期需要形成</td><td>高価格品を採用する合理性の説明</td></tr>
+      </table>
+      <span class="source-tag">出典：日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）、JFE GROUP REPORT 2025、各社開示資料</span>
+    </section>
+
+    <section id="ch02" class="chapter">
+      <span class="chapter-num">CHAPTER 02</span>
+      <h2>バリューチェーンと利益の所在</h2>
+      <p>
+        グリーン鉄のバリューチェーンは、従来の「鉄鉱石・石炭→高炉→転炉→圧延→販売」だけではなく、
+        「高品位スクラップ」「還元鉄」「脱炭素電力」「水素」「CFP算定」「GX価値の認証」が加わります。
+      </p>
+      <div class="data-box">
+        <h3>お金の流れ</h3>
+        <ul>
+          <li>上流：鉄鉱石、原料炭、スクラップ、還元鉄、水素、電力</li>
+          <li>中流：製鉄所、電炉、圧延、熱処理、表面処理</li>
+          <li>下流：自動車、建築、公共工事、造船、産業機械</li>
+          <li>横断：CFP算定、第三者認証、GX価値の表示、公共調達</li>
+        </ul>
+      </div>
+      <p>
+        利益が残るかどうかは、単純な販売数量ではなく、脱炭素コストを価格へ反映できるか、GX価値を需要家が認めるか、高品位スクラップや脱炭素電力を安定確保できるかに左右されます。
+      </p>
+      <div class="note-box">
+        ただし本レポートでは、どの工程が「勝ちポジション」かは断定しません。確認できる事実は、グリーン鉄では製造原価に加えて、認証・電力・原料調達・設備転換のコストが従来より前面に出るという点です。
+      </div>
+      <span class="source-tag">出典：経済産業省「トランジションファイナンス」に関する鉄鋼分野における技術ロードマップ（2025年改訂）、日本成長戦略会議資料</span>
+    </section>
+
+    <section id="ch03" class="chapter">
+      <span class="chapter-num">CHAPTER 03</span>
+      <h2>収益構造（大手vs中小の格差）</h2>
+      <p>
+        鉄鋼業は売上規模が大きい一方、原料・エネルギー・設備償却の影響を受けやすい産業です。
+        グリーン鉄化では、研究開発費と設備投資が先行し、需要家が環境プレミアムを負担する前提が整わない限り、追加コストが収益を圧迫しやすい構造になります。
+      </p>
+      <table class="summary-table">
+        <tr><th>企業・区分</th><th>直近データ</th><th>内部環境上の読み方</th></tr>
+        <tr><td>日本製鉄</td><td>2024年度研究開発費807億円、単独従業員数28,652人、自己都合離職率1.6%</td><td>大規模技術開発・設備転換を内製で抱える構造</td></tr>
+        <tr><td>JFEスチール</td><td>2024年度売上収益33,651億円、従業員41,386人（JFE GROUP REPORT 2025）</td><td>鉄鋼事業単体で大規模投資と操業維持を同時に担う構造</td></tr>
+        <tr><td>神戸製鋼所</td><td>2025年3月期連結売上高25,550億円、経常利益1,571億円、連結社員数39,294人</td><td>鉄鋼アルミ・素形材・機械等の複合ポートフォリオ</td></tr>
+        <tr><td>電炉・リサイクル事業者</td><td>個社差が大きい</td><td>スクラップ価格・電力価格・品質要求の影響が出やすい</td></tr>
+      </table>
+      <p>
+        大手は資本力・研究開発力・需要家接点を持つ一方、既存設備の転換負担も大きくなります。
+        中小・周辺企業は、スクラップ選別、設備更新、品質管理、認証対応などで関与余地がありますが、単独で需要形成や制度設計を動かすことは困難です。
+      </p>
+      <span class="source-tag">出典：日本製鉄統合報告書2025、日本製鉄データブック2025、JFE GROUP REPORT 2025、神戸製鋼所2025年3月期決算短信・財務ハイライト</span>
+    </section>
+
+    <section id="ch04" class="chapter">
+      <span class="chapter-num">CHAPTER 04</span>
+      <h2>人件費構造と労働集約性</h2>
+      <p>
+        鉄鋼業は装置産業であり、売上高に対する人件費率だけで労働集約性を判断しにくい産業です。
+        ただしグリーン鉄では、既存操業に加えて、電炉化、水素還元、スクラップ高度選別、CFP算定、設備保全、データ管理が重なります。
+      </p>
+      <div class="stat-grid">
+        <div class="stat-cell"><strong>28,652人</strong><span>日本製鉄単独従業員数（2025年3月末）</span></div>
+        <div class="stat-cell"><strong>41,386人</strong><span>JFEスチール従業員数（2025年3月末）</span></div>
+        <div class="stat-cell"><strong>39,294人</strong><span>KOBELCO連結社員数（2025年3月末）</span></div>
+        <div class="stat-cell"><strong>1.96倍</strong><span>鉄鋼製造オペレーター有効求人倍率（令和6年度）</span></div>
+      </div>
+      <p>
+        設備自動化が進んでも、現場には炉の操業、品質判定、保全、安全管理、異常時対応が残ります。
+        グリーン鉄化では、製造プロセスの変更そのものが現場・技術・研究・品質保証部門の負荷を増やす要因になります。
+      </p>
+      <span class="source-tag">出典：日本製鉄統合報告書2025、JFE GROUP REPORT 2025、神戸製鋼所「数字で見るKOBELCO」、厚生労働省 job tag「鉄鋼製造オペレーター」</span>
+    </section>
+
+    <section id="ch05" class="chapter">
+      <span class="chapter-num">CHAPTER 05</span>
+      <h2>人材市場と主要職種</h2>
+      <p>
+        グリーン鉄化で必要となる人材は、従来の製鉄オペレーターだけではありません。
+        原料、電炉、水素、電力、CO2、データ、認証、需要家対応が接続するため、職種横断の人材需要が発生します。
+      </p>
+      <div class="data-box">
+        <h3>主要職種</h3>
+        <ul>
+          <li>製鋼・圧延・熱処理オペレーター</li>
+          <li>設備保全・電気計装・プラントエンジニア</li>
+          <li>材料開発・プロセス開発・水素還元技術者</li>
+          <li>電炉操業・スクラップ選別・品質保証</li>
+          <li>CFP算定・LCA・GX認証・サステナビリティ開示</li>
+          <li>需要家対応・自動車鋼板・建材向け技術営業</li>
+        </ul>
+      </div>
+      <p>
+        既存の高炉操業人材に、電炉・水素・スクラップ・データ・認証の知識が重なっていくため、単一職種の採用ではなく、社内育成と部門横断配置が重要になりやすい構造です。
+      </p>
+      <span class="source-tag">出典：厚生労働省 job tag、日本成長戦略会議資料、経済産業省GI基金資料</span>
+    </section>
+
+    <section id="ch06" class="chapter">
+      <span class="chapter-num">CHAPTER 06</span>
+      <h2>求人倍率・年収相場</h2>
+      <p>
+        厚生労働省 job tag によると、鉄鋼製造オペレーターの令和6年度全国有効求人倍率は1.96倍、求人賃金は月額24.2万円です。
+        これは、製造現場職としての人材需給が緩くないことを示す統計です。
+      </p>
+      <table class="summary-table">
+        <tr><th>項目</th><th>数値</th><th>注記</th></tr>
+        <tr><td>鉄鋼製造オペレーター有効求人倍率</td><td>1.96倍</td><td>令和6年度・全国</td></tr>
+        <tr><td>鉄鋼製造オペレーター求人賃金</td><td>月額24.2万円</td><td>令和6年度・全国</td></tr>
+        <tr><td>日本製鉄単独平均年齢</td><td>40.5歳</td><td>2025年3月末</td></tr>
+        <tr><td>日本製鉄単独平均勤続年数</td><td>18.2年</td><td>2025年3月末</td></tr>
+        <tr><td>神戸製鋼所平均給与</td><td>812万円</td><td>2025年3月期・会社概要掲載値</td></tr>
+      </table>
+      <p>
+        グリーン鉄関連では、現場職に加えて、材料・電気・プラント・環境会計・サステナビリティ開示などの複合人材が必要になります。
+        そのため、求人倍率だけではなく、既存社員のリスキリング、研究開発人材の確保、保全人材の維持が内部課題になります。
+      </p>
+      <span class="source-tag">出典：厚生労働省 job tag「鉄鋼製造オペレーター」、日本製鉄統合報告書2025、神戸製鋼所会社概要・財務ハイライト</span>
+    </section>
+
+    <section id="ch07" class="chapter">
+      <span class="chapter-num">CHAPTER 07</span>
+      <h2>構造的課題（スタートアップ・単年度予算等）</h2>
+      <p>
+        グリーン鉄の内部構造で最も大きい歪みは、投資回収の不確実性です。
+        経済産業省の鉄鋼分野技術ロードマップでは、脱炭素プロセスへの入れ替えに伴う資本コストやオペレーションコストは、素材性能や生産性の向上に直接寄与しにくい追加コストであると整理されています。
+      </p>
+      <div class="data-box">
+        <h3>主な構造的課題</h3>
+        <ul>
+          <li>大型革新電炉等への初期投資負担</li>
+          <li>高品位スクラップの安定確保</li>
+          <li>還元鉄・水素・脱炭素電力の価格不確実性</li>
+          <li>GX価値の見える化と国際標準化の途上段階</li>
+          <li>需要家が環境プレミアムを負担するかの不透明さ</li>
+          <li>公共調達・補助金・制度設計への依存</li>
+        </ul>
+      </div>
+      <p>
+        スタートアップが存在感を持ちやすいのは、完成鋼材そのものよりも、スクラップ選別、データ管理、LCA、認証、設備制御などの周辺領域です。
+        ただし、製鉄プロセス本体は巨大設備・安全管理・品質保証が必要なため、既存プレイヤー中心の構造が残ります。
+      </p>
+      <span class="source-tag">出典：日本成長戦略会議資料、経済産業省「トランジションファイナンス」に関する鉄鋼分野技術ロードマップ（2025年改訂）</span>
+    </section>
+
+    <section id="ch08" class="chapter">
+      <span class="chapter-num">CHAPTER 08</span>
+      <h2>本社vs現場の非対称性</h2>
+      <p>
+        グリーン鉄では、本社・経営・政策部門が脱炭素投資、GX価値、需要家説明、補助金、標準化を扱う一方、
+        現場は操業・安全・品質・設備保全を維持しながら新プロセスに対応します。
+      </p>
+      <table class="summary-table">
+        <tr><th>領域</th><th>本社・経営側</th><th>現場・工場側</th></tr>
+        <tr><td>投資判断</td><td>電炉・水素・CCS・補助金・資本配分</td><td>設備更新時の操業制約・保全計画</td></tr>
+        <tr><td>需要家対応</td><td>GX価値、価格説明、認証・CFP</td><td>品質要求、納期、製造条件の維持</td></tr>
+        <tr><td>人材</td><td>研究開発・サステナビリティ・制度対応</td><td>オペレーター、保全、品質、安全</td></tr>
+        <tr><td>評価指標</td><td>CO2削減、投資回収、政策整合</td><td>稼働率、不良率、安全、歩留まり</td></tr>
+      </table>
+      <p>
+        この非対称性により、経営側では「GX投資」として扱われるものが、現場では「設備更新・操業条件変更・品質保証負荷」として現れます。
+      </p>
+      <span class="source-tag">出典：各社統合報告書、経済産業省資料、厚生労働省 job tag</span>
+    </section>
+
+    <section id="ch09" class="chapter">
+      <span class="chapter-num">CHAPTER 09</span>
+      <h2>よくある誤解</h2>
+      <div class="data-box">
+        <h3>誤解1：グリーン鉄は価格を上げれば成立する</h3>
+        <p>
+          実際には、環境プレミアムを需要家が負担する仕組み、公共調達、国際標準、CFP算定、補助制度が接続しないと、単純な価格転嫁だけでは成立しません。
+        </p>
+        <h3>誤解2：電炉にすればすぐ低炭素化できる</h3>
+        <p>
+          電炉化には高品位スクラップ、安価・安定な脱炭素電力、品質対応が必要です。自動車鋼板など高級鋼材では、スクラップ品質と製品品質の管理が内部課題になります。
+        </p>
+        <h3>誤解3：大手ほど有利で歪みが少ない</h3>
+        <p>
+          大手は資本力・技術力を持つ一方、既存高炉資産、長期設備投資、国内外需要家対応、雇用維持を同時に抱えます。
+        </p>
+      </div>
+      <span class="source-tag">出典：日本成長戦略会議資料、経済産業省資料、日本製鉄GX取組み状況資料</span>
+    </section>
+
+    <section id="ch10" class="chapter">
+      <span class="chapter-num">CHAPTER 10</span>
+      <h2>内部環境まとめ表</h2>
+      <table class="summary-table">
+        <tr><th>論点</th><th>内部で現れる歪み</th><th>数値・事実</th></tr>
+        <tr><td>プレイヤー構成</td><td>高炉大手中心だが、電炉・スクラップ・需要家が接続</td><td>主要高炉3社＋電炉・特殊鋼・リサイクル</td></tr>
+        <tr><td>収益構造</td><td>研究開発・設備投資先行、価格転嫁は制度・需要家依存</td><td>業界全体約10兆円規模、GI基金4,499億円</td></tr>
+        <tr><td>人材</td><td>現場操業とGX技術・認証人材が重なる</td><td>鉄鋼製造オペレーター有効求人倍率1.96倍</td></tr>
+        <tr><td>現場負荷</td><td>操業維持と新プロセス実装が同時進行</td><td>電炉・水素還元・スクラップ選別・CFP算定</td></tr>
+        <tr><td>需要</td><td>環境プレミアム負担が不透明</td><td>2030年代前半に年300万t以上を政策目標</td></tr>
+        <tr><td>標準化</td><td>GX価値の表示と国際標準が収益化条件になる</td><td>CFP製品別算定ガイドライン、worldsteel等</td></tr>
+      </table>
+      <span class="source-tag">出典：日本成長戦略会議資料、経済産業省、厚生労働省、各社開示資料</span>
+    </section>
+
+    <section id="ch11" class="chapter">
+      <span class="chapter-num">CHAPTER 11</span>
+      <h2>外部環境編への橋渡し</h2>
+      <p>
+        内部環境編で確認した構造は、外部環境編で整理した制度・市場・マクロ制約と表裏一体です。
+        2050年約5億トンの市場ポテンシャル、2030年代前半の年約300万t以上という政策目標、大型革新電炉・水素還元・高品位スクラップ・公共調達は、企業内部では設備投資、人材配置、収益化タイミング、現場負荷として現れます。
+      </p>
+      <div class="next-box">
+        <h3>外部環境編はこちら</h3>
+        <p>
+          市場規模、政策、CBAM、製造ルート、経済安全保障との接続は、外部環境編で整理しています。
+        </p>
+        <p><a href="/reports/green-steel-environment.html">外部環境編を読む</a></p>
+      </div>
+    </section>
+
+    <section class="disclaimer">
+      <p>
+        【免責事項】本レポートは、就職・転職および投資判断の参考情報として、業界構造を整理したものです。特定の企業への投資、転職、取引を推奨するものではありません。掲載データは各記載出典に基づきますが、数値の正確性・完全性を保証するものではありません。投資判断・転職判断はご自身の責任で行ってください。本レポートの内容は作成時点の情報に基づいており、市場環境・政策変更等により実態が変化する可能性があります。
+      </p>
+      <div class="footer-links">
+        <a href="/">Market Supporter AI トップへ戻る</a>
+        <a href="/category/general-education">一般教養の記事一覧へ</a>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
