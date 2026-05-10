@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>業界分析｜植物工場（外部環境編）</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#0f0f0e;
+  --paper:#f5f2ed;
+  --cream:#ede9e1;
+  --accent:#c84b2f;
+  --accent2:#2563a8;
+  --muted:#6b6760;
+  --rule:#c9c4bb;
+  --highlight:#fff8e6;
+}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Noto Sans JP",sans-serif;
+  line-height:1.9;
+}
+.container{
+  max-width:960px;
+  margin:0 auto;
+  padding:28px 20px;
+}
+.masthead{
+  background:var(--ink);
+  color:white;
+  padding:10px 20px;
+  font-family:"IBM Plex Mono",monospace;
+  font-size:13px;
+  letter-spacing:.08em;
+}
+.hero{
+  background:var(--cream);
+  padding:42px 28px;
+  border-bottom:1px solid var(--rule);
+}
+.hero h1{
+  font-family:"Noto Serif JP",serif;
+  font-size:34px;
+  line-height:1.35;
+  margin:0 0 12px;
+}
+.hero p{
+  margin:8px 0;
+  color:var(--muted);
+}
+.toc{
+  background:white;
+  border:1px solid var(--rule);
+  padding:20px;
+  margin:24px 0;
+}
+.toc a{
+  display:block;
+  color:var(--accent2);
+  text-decoration:none;
+  padding:4px 0;
+}
+.chapter{
+  background:white;
+  border-top:1px solid var(--rule);
+}
+.chapter-header{
+  margin-bottom:20px;
+}
+.chapter-num{
+  display:inline-block;
+  font-family:"IBM Plex Mono",monospace;
+  color:white;
+  background:var(--accent);
+  padding:4px 10px;
+  font-size:12px;
+  letter-spacing:.08em;
+}
+h2{
+  font-family:"Noto Serif JP",serif;
+  font-size:26px;
+  margin:12px 0;
+}
+h3{
+  font-size:19px;
+  margin-top:24px;
+}
+.stat-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:12px;
+  margin:20px 0;
+}
+.stat-cell{
+  background:var(--highlight);
+  border:1px solid var(--rule);
+  padding:16px;
+}
+.stat-num{
+  display:block;
+  font-family:"IBM Plex Mono",monospace;
+  font-size:26px;
+  color:var(--accent);
+  font-weight:500;
+}
+.stat-unit{
+  font-size:13px;
+  color:var(--muted);
+}
+.stat-label{
+  display:block;
+  font-size:13px;
+  margin-top:6px;
+}
+.data-box,.note-box,.next-box{
+  border:1px solid var(--rule);
+  padding:18px;
+  margin:18px 0;
+  background:#fff;
+}
+.note-box{
+  background:var(--highlight);
+}
+.summary-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:20px 0;
+  font-size:14px;
+}
+.summary-table th,.summary-table td{
+  border:1px solid var(--rule);
+  padding:10px;
+  vertical-align:top;
+}
+.summary-table th{
+  background:var(--cream);
+}
+.source-tag{
+  display:inline-block;
+  font-size:12px;
+  background:var(--cream);
+  color:var(--muted);
+  padding:4px 8px;
+  margin:4px 4px 4px 0;
+}
+.disclaimer{
+  background:var(--ink);
+  color:white;
+  padding:24px 20px;
+  font-size:13px;
+}
+ul{
+  padding-left:1.2em;
+}
+</style>
+</head>
+
+<body>
+
+<div class="masthead">
+INDUSTRY ANALYSIS REPORT 2026｜戦略17分野・先行検討技術【23】｜フードテック｜植物工場｜外部環境編
+</div>
+
+<section class="hero">
+  <div class="container">
+    <h1>業界分析｜植物工場（外部環境編）</h1>
+    <p>市場規模・政策・コスト構造・食料安全保障・日本の勝ち筋を、数字と事実中心に整理します。</p>
+    <p>対象読者：就職・転職検討者、個人投資家、事業企画担当者</p>
+  </div>
+</section>
+
+<div class="container">
+  <nav class="toc">
+    <strong>目次</strong>
+    <a href="#ch0">CHAPTER 00｜エグゼクティブサマリー</a>
+    <a href="#ch1">CHAPTER 01｜世界市場規模と成長率</a>
+    <a href="#ch2">CHAPTER 02｜日本市場の位置づけ</a>
+    <a href="#ch3">CHAPTER 03｜政府政策・ロードマップ</a>
+    <a href="#ch4">CHAPTER 04｜コスト構造の急所</a>
+    <a href="#ch5">CHAPTER 05｜競合・プレイヤーマップ</a>
+    <a href="#ch6">CHAPTER 06｜経済安全保障と外資依存</a>
+    <a href="#ch7">CHAPTER 07｜需要ドライバーの変化</a>
+    <a href="#ch8">CHAPTER 08｜技術トレンドと破壊的変化</a>
+    <a href="#ch9">CHAPTER 09｜よくある誤解</a>
+    <a href="#ch10">CHAPTER 10｜外部環境まとめ表</a>
+    <a href="#ch11">CHAPTER 11｜内部環境編への橋渡し</a>
+  </nav>
+</div>
+
+<section class="chapter" id="ch0">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 00</span>
+    <h2>エグゼクティブサマリー</h2>
+  </div>
+
+  <p>
+    植物工場は、単なるスマート農業ではありません。政府資料上は、気候変動の影響を受けにくい
+    「定時・定量・定価格・定品質」の農産物供給システムとして位置づけられています。
+  </p>
+
+  <div class="stat-grid">
+    <div class="stat-cell"><span class="stat-num">1.5</span><span class="stat-unit">兆円</span><span class="stat-label">2025年の植物工場システム世界市場規模予測</span></div>
+    <div class="stat-cell"><span class="stat-num">4.9</span><span class="stat-unit">兆円</span><span class="stat-label">2030年の同市場規模予測</span></div>
+    <div class="stat-cell"><span class="stat-num">55</span><span class="stat-unit">兆円</span><span class="stat-label">2040年の同市場規模予測</span></div>
+    <div class="stat-cell"><span class="stat-num">3</span><span class="stat-unit">割</span><span class="stat-label">政府資料が示す2040年にかけた国内外市場シェア目標</span></div>
+    <div class="stat-cell"><span class="stat-num">6</span><span class="stat-unit">割</span><span class="stat-label">日本の植物工場で赤字とされる比率</span></div>
+  </div>
+
+  <div class="note-box">
+    植物工場の外部環境は、「市場拡大」だけでは説明できません。
+    収益性悪化、光熱費、葉菜類中心の品目制約、施設整備費の回収期間、海外展開時のローカライズが構造的な急所です。
+  </div>
+
+  <span class="source-tag">日本成長戦略会議 第3回 官民投資ロードマップ素案（2026年3月）</span>
+  <span class="source-tag">戦略17分野における主要な製品・技術等</span>
+</div>
+</section>
+
+<section class="chapter" id="ch1">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 01</span>
+    <h2>世界市場規模と成長率</h2>
+  </div>
+
+  <p>
+    政府資料では、植物工場システムの世界市場規模について、2025年1.5兆円、2030年4.9兆円、
+    2040年55兆円という予測値が示されています。これは農産物そのものだけではなく、
+    植物工場プラント、栽培資材、栽培データ、運営ノウハウを含む市場として整理されています。
+  </p>
+
+  <table class="summary-table">
+    <tr><th>年度</th><th>市場規模</th><th>意味</th></tr>
+    <tr><td>2025年</td><td>1.5兆円</td><td>植物工場システム市場の初期拡大段階</td></tr>
+    <tr><td>2030年</td><td>4.9兆円</td><td>商業栽培品目拡充と海外展開が政策上の焦点</td></tr>
+    <tr><td>2040年</td><td>55兆円</td><td>食料安全保障とシステム輸出を含む長期市場</td></tr>
+  </table>
+
+  <p>
+    数字の意味は、市場が大きいことではなく、気候変動下でも農産物を安定供給する産業インフラが
+    世界的に必要とされている点にあります。
+  </p>
+
+  <span class="source-tag">日本成長戦略会議 第3回 官民投資ロードマップ素案（2026年3月）</span>
+</div>
+</section>
+
+<section class="chapter" id="ch2">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 02</span>
+    <h2>日本市場の位置づけ</h2>
+  </div>
+
+  <p>
+    日本の植物工場は、国内農業の代替だけを目的とするものではありません。
+    政府資料では「日本品質の農産物」と「植物工場プラント・生産資材・栽培データ・運営ノウハウ」を組み合わせた
+    植物工場システムとして、国内導入と海外輸出の両方が想定されています。
+  </p>
+
+  <div class="data-box">
+    <ul>
+      <li>国内市場：気候変動、農業人材不足、安定供給への対応</li>
+      <li>海外市場：食料輸入依存度が高い国・地域への展開</li>
+      <li>輸出対象：農産物単体ではなく、プラント・資材・データ・運営ノウハウを含むパッケージ</li>
+      <li>政策目標：2040年にかけて国内外市場のシェア3割</li>
+    </ul>
+  </div>
+
+  <p>
+    つまり日本市場は、単独で完結する市場ではなく、海外展開の実証・運営ノウハウ蓄積の場としての性格を持ちます。
+  </p>
+
+  <span class="source-tag">戦略17分野における主要な製品・技術等</span>
+  <span class="source-tag">日本成長戦略会議 第3回 官民投資ロードマップ素案（2026年3月）</span>
+</div>
+</section>
+
+<section class="chapter" id="ch3">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 03</span>
+    <h2>政府政策・ロードマップ</h2>
+  </div>
+
+  <p>
+    植物工場は、フードテック分野の先行検討技術【23】に位置づけられています。
+    政策上の目的は、国内外の食料安全保障への貢献です。
+  </p>
+
+  <h3>政策上の重点</h3>
+  <div class="data-box">
+    <ul>
+      <li>2030年にかけた商業栽培品目の拡充</li>
+      <li>海外市場展開の拡大</li>
+      <li>日本品質の農産物と植物工場システムのパッケージ展開</li>
+      <li>栽培期間短縮を活かした品種開発の加速</li>
+      <li>作物ごとの最適栽培条件データの農業現場への展開</li>
+    </ul>
+  </div>
+
+  <p>
+    政府資料の中心にあるのは、「農産物を作る」ことではなく、
+    「植物工場を運営・輸出できるシステム産業にする」ことです。
+  </p>
+
+  <span class="source-tag">日本成長戦略会議 第3回 官民投資ロードマップ素案（2026年3月）</span>
+</div>
+</section>
+
+<section class="chapter" id="ch4">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 04</span>
+    <h2>コスト構造の急所</h2>
+  </div>
+
+  <p>
+    植物工場の最大の急所は、成長市場でありながら収益化が難しい点です。
+    政府資料でも、光熱費等のランニングコストの高さ、施設整備費の回収期間、収益性改善が課題として示されています。
+  </p>
+
+  <table class="summary-table">
+    <tr><th>コスト項目</th><th>構造的な意味</th></tr>
+    <tr><td>光熱費</td><td>照明・空調・水循環を常時稼働させるため、電力価格の影響を受けやすい</td></tr>
+    <tr><td>施設整備費</td><td>完全閉鎖型・大規模施設では初期投資が大きく、回収期間が長くなる</td></tr>
+    <tr><td>品目制約</td><td>商業栽培品目は葉菜類等が中心で、果菜類は研究開発段階</td></tr>
+    <tr><td>運営人材</td><td>栽培・設備・データ管理を横断できる人材が必要</td></tr>
+  </table>
+
+  <p>
+    したがって植物工場は、技術があれば成立する産業ではありません。
+    電力、設備、栽培データ、販路、運営ノウハウを同時に管理する必要があります。
+  </p>
+
+  <span class="source-tag">日本成長戦略会議 第3回 官民投資ロードマップ素案（2026年3月）</span>
+</div>
+</section>
+
+<section class="chapter" id="ch5">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 05</span>
+    <h2>競合・プレイヤーマップ</h2>
+  </div>
+
+  <p>
+    植物工場は単一業種ではなく、農業、施設園芸、空調、照明、センサー、建設、IT、物流、小売が交差する複合産業です。
+  </p>
+
+  <table class="summary-table">
+    <tr><th>プレイヤー類型</th><th>役割</th></tr>
+    <tr><td>植物工場運営企業</td><td>葉菜類等の商業栽培、販売、品質管理</td></tr>
+    <tr><td>設備・プラント企業</td><td>建屋、棚、空調、水循環、照明の設計</td></tr>
+    <tr><td>照明・空調メーカー</td><td>LED、温湿度管理、エネルギー効率化</td></tr>
+    <tr><td>IT・センサー企業</td><td>栽培データ、環境制御、画像解析</td></tr>
+    <tr><td>小売・外食企業</td><td>安定調達、ブランド化、販売チャネル</td></tr>
+  </table>
+
+  <p>
+    日本の勝ち筋は、農産物単体ではなく、設備・生産資材・栽培データ・運営ノウハウを組み合わせた
+    パッケージ輸出にあります。
+  </p>
+
+  <span class="source-tag">日本成長戦略会議 第3回 官民投資ロードマップ素案（2026年3月）</span>
+</div>
+</section>
+
+<section class="chapter" id="ch6">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 06</span>
+    <h2>経済安全保障と外資依存</h2>
+  </div>
+
+  <p>
+    植物工場の経済安全保障上の意味は、食料を輸入に頼る国・地域に対して、気候変動の影響を受けにくい
+    生産システムを提供できる点です。
+  </p>
+
+  <div class="data-box">
+    <ul>
+      <li>食料安全保障：気候変動下でも計画的な生産が可能</li>
+      <li>供給網：農産物だけでなく、生産設備・資材・データ・運営ノウハウが輸出対象</li>
+      <li>外資依存：海外展開では現地のエネルギー、建設、物流、小売網への依存が発生</li>
+      <li>自律性：国内外で植物工場を設計・運営できる技術と人材の確保が必要</li>
+    </ul>
+  </div>
+
+  <p>
+    経済安全保障の論点は、種苗や農産物だけではありません。
+    植物工場を支える空調・照明・センサー・制御ソフト・水循環・保守運営体制まで含まれます。
+  </p>
+
+  <span class="source-tag">戦略17分野における主要な製品・技術等</span>
+</div>
+</section>
+
+<section class="chapter" id="ch7">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 07</span>
+    <h2>需要ドライバーの変化</h2>
+  </div>
+
+  <p>
+    植物工場の需要は、単に野菜需要の増加で説明できません。
+    需要の背景には、気候変動、労働力制約、土地制約、世界人口増加、経済発展に伴う食料需要の増加があります。
+  </p>
+
+  <table class="summary-table">
+    <tr><th>需要ドライバー</th><th>植物工場との接続</th></tr>
+    <tr><td>気候変動</td><td>露地栽培の不安定化に対する補完機能</td></tr>
+    <tr><td>労働力不足</td><td>栽培工程の標準化・自動化需要</td></tr>
+    <tr><td>都市化</td><td>消費地近接型の安定供給ニーズ</td></tr>
+    <tr><td>輸入依存</td><td>食料輸入依存度の高い国・地域での導入余地</td></tr>
+    <tr><td>品質安定</td><td>外食・小売向けの定量・定品質供給</td></tr>
+  </table>
+
+  <p>
+    このため、植物工場は農業技術であると同時に、都市インフラ、食品サプライチェーン、気候変動対応技術でもあります。
+  </p>
+
+  <span class="source-tag">日本成長戦略会議 第3回 官民投資ロードマップ素案（2026年3月）</span>
+</div>
+</section>
+
+<section class="chapter" id="ch8">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 08</span>
+    <h2>技術トレンドと破壊的変化</h2>
+  </div>
+
+  <p>
+    技術面では、完全閉鎖型植物工場、モジュール型施設、空調、照明、栽培データ、環境制御が中核になります。
+  </p>
+
+  <div class="data-box">
+    <ul>
+      <li>完全閉鎖型：外部気候の影響を受けにくい</li>
+      <li>モジュール型：現地条件に応じた展開がしやすい</li>
+      <li>空調・照明：電力コストと品質安定を左右する</li>
+      <li>栽培データ：作物ごとの最適条件を蓄積できる</li>
+      <li>運営ノウハウ：ビジネスとして継続するための中核資産</li>
+    </ul>
+  </div>
+
+  <p>
+    ただし、DXやAIで全て解決できるわけではありません。
+    電力コスト、設備投資、販路、栽培品目の制約が残るため、技術は「代替」ではなく「補助・高度化」の位置づけです。
+  </p>
+
+  <span class="source-tag">日本成長戦略会議 第3回 官民投資ロードマップ素案（2026年3月）</span>
+</div>
+</section>
+
+<section class="chapter" id="ch9">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 09</span>
+    <h2>よくある誤解</h2>
+  </div>
+
+  <h3>誤解1：植物工場は市場が伸びるから収益化しやすい</h3>
+  <p>
+    政府資料では、日本でも6割が赤字とされています。
+    市場拡大と個別事業者の収益化は同じではありません。
+  </p>
+
+  <h3>誤解2：どんな作物でも工場化できる</h3>
+  <p>
+    商業栽培品目は葉菜類等に限定され、果菜類は研究開発フェーズとされています。
+    品目拡大は今後の政策・技術課題です。
+  </p>
+
+  <h3>誤解3：植物工場は農産物だけを売る産業である</h3>
+  <p>
+    政府資料では、植物工場プラント、生産資材、栽培データ、運営ノウハウを含めた
+    植物工場システムとして展開する方向性が示されています。
+  </p>
+
+  <span class="source-tag">日本成長戦略会議 第3回 官民投資ロードマップ素案（2026年3月）</span>
+</div>
+</section>
+
+<section class="chapter" id="ch10">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 10</span>
+    <h2>外部環境まとめ表</h2>
+  </div>
+
+  <table class="summary-table">
+    <tr><th>論点</th><th>整理</th></tr>
+    <tr><td>市場規模</td><td>2025年1.5兆円、2030年4.9兆円、2040年55兆円予測</td></tr>
+    <tr><td>政策目標</td><td>2040年にかけて国内外市場シェア3割を目指す</td></tr>
+    <tr><td>国家戦略</td><td>国内外の食料安全保障への貢献</td></tr>
+    <tr><td>日本の勝ち筋</td><td>日本品質の農産物と植物工場システムのパッケージ展開</td></tr>
+    <tr><td>構造的課題</td><td>光熱費、施設整備費回収、葉菜類中心、収益性悪化</td></tr>
+    <tr><td>海外展開</td><td>食料輸入依存度の高い国・地域への案件形成、人材育成、日本食・日系小売との連携</td></tr>
+  </table>
+
+  <p>
+    植物工場の外部環境は、「成長市場」ではなく、
+    「食料安全保障に接続した高コスト・高運営難度のシステム産業」として整理する必要があります。
+  </p>
+
+  <span class="source-tag">戦略17分野における主要な製品・技術等</span>
+  <span class="source-tag">日本成長戦略会議 第3回 官民投資ロードマップ素案（2026年3月）</span>
+</div>
+</section>
+
+<section class="chapter" id="ch11">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 11</span>
+    <h2>内部環境編への橋渡し</h2>
+  </div>
+
+  <p>
+    内部環境編では、外部環境で確認した圧力が、業界内部にどう現れるかを整理します。
+  </p>
+
+  <div class="next-box">
+    <strong>NEXT｜内部環境編で扱う論点</strong>
+    <ul>
+      <li>植物工場運営企業、設備企業、空調・照明・IT企業のプレイヤー構成</li>
+      <li>農産物販売とシステム販売で異なる収益構造</li>
+      <li>光熱費・設備償却・人件費が利益率に与える影響</li>
+      <li>栽培管理、設備保守、データ運用人材の不足</li>
+      <li>「市場成長」と「事業者の黒字化」が一致しない理由</li>
+    </ul>
+  </div>
+
+  <span class="source-tag">本レポート整理</span>
+</div>
+</section>
+
+<div class="disclaimer">
+  <div class="container">
+    本レポートは、業界構造の理解を目的とした情報提供です。特定の投資判断、転職判断、事業参入を推奨するものではありません。
+    記載数値は、日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）、
+    「戦略17分野における主要な製品・技術等」等に基づきます。将来市場規模・市場シェアは政策資料上の目標・予測値であり、達成を保証するものではありません。
+  </div>
+</div>
+
+</body>
+</html>
