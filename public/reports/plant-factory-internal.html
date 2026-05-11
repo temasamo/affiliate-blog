@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>業界分析｜植物工場（内部環境編）</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#0f0f0e;
+  --paper:#f5f2ed;
+  --cream:#ede9e1;
+  --accent:#c84b2f;
+  --accent2:#2563a8;
+  --muted:#6b6760;
+  --rule:#c9c4bb;
+  --highlight:#fff8e6;
+}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Noto Sans JP",sans-serif;
+  line-height:1.9;
+}
+.container{
+  max-width:960px;
+  margin:0 auto;
+  padding:28px 20px;
+}
+.masthead{
+  background:var(--ink);
+  color:white;
+  padding:10px 20px;
+  font-family:"IBM Plex Mono",monospace;
+  font-size:13px;
+  letter-spacing:.08em;
+}
+.hero{
+  background:var(--cream);
+  padding:42px 28px;
+  border-bottom:1px solid var(--rule);
+}
+.hero h1{
+  font-family:"Noto Serif JP",serif;
+  font-size:34px;
+  line-height:1.35;
+  margin:0 0 12px;
+}
+.hero p{
+  margin:8px 0;
+  color:var(--muted);
+}
+.toc{
+  background:white;
+  border:1px solid var(--rule);
+  padding:20px;
+  margin:24px 0;
+}
+.toc a{
+  display:block;
+  color:var(--accent2);
+  text-decoration:none;
+  padding:4px 0;
+}
+.chapter{
+  background:white;
+  border-top:1px solid var(--rule);
+}
+.chapter-header{
+  margin-bottom:20px;
+}
+.chapter-num{
+  display:inline-block;
+  font-family:"IBM Plex Mono",monospace;
+  color:white;
+  background:var(--accent);
+  padding:4px 10px;
+  font-size:12px;
+  letter-spacing:.08em;
+}
+h2{
+  font-family:"Noto Serif JP",serif;
+  font-size:26px;
+  margin:12px 0;
+}
+h3{
+  font-size:19px;
+  margin-top:24px;
+}
+.stat-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:12px;
+  margin:20px 0;
+}
+.stat-cell{
+  background:var(--highlight);
+  border:1px solid var(--rule);
+  padding:16px;
+}
+.stat-num{
+  display:block;
+  font-family:"IBM Plex Mono",monospace;
+  font-size:26px;
+  color:var(--accent);
+  font-weight:500;
+}
+.stat-unit{
+  font-size:13px;
+  color:var(--muted);
+}
+.stat-label{
+  display:block;
+  font-size:13px;
+  margin-top:6px;
+}
+.data-box,.note-box,.next-box{
+  border:1px solid var(--rule);
+  padding:18px;
+  margin:18px 0;
+  background:#fff;
+}
+.note-box{
+  background:var(--highlight);
+}
+.summary-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:20px 0;
+  font-size:14px;
+}
+.summary-table th,.summary-table td{
+  border:1px solid var(--rule);
+  padding:10px;
+  vertical-align:top;
+}
+.summary-table th{
+  background:var(--cream);
+}
+.source-tag{
+  display:inline-block;
+  font-size:12px;
+  background:var(--cream);
+  color:var(--muted);
+  padding:4px 8px;
+  margin:4px 4px 4px 0;
+}
+.disclaimer{
+  background:var(--ink);
+  color:white;
+  padding:24px 20px;
+  font-size:13px;
+}
+ul{
+  padding-left:1.2em;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.masthead {
+  color: var(--paper);
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  border-bottom: 3px solid var(--accent);
+}
+
+.masthead-right {
+  color: var(--muted);
+}
+
+.hero {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 60px 40px 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200, 75, 47, 0.07) 4px, rgba(200, 75, 47, 0.07) 5px);
+}
+
+.hero .container {
+  position: relative;
+}
+
+.hero-label {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  padding: 4px 10px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(20px, 3.2vw, 34px);
+  font-weight: 900;
+  max-width: 820px;
+  letter-spacing: 0.02em;
+  margin-bottom: 24px;
+}
+
+.hero h1 em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+.hero p {
+  max-width: 760px;
+  color: rgba(245, 242, 237, 0.78);
+  margin-bottom: 8px;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.hero-badge {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 11px;
+  padding: 4px 12px;
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0.06em;
+}
+
+.data-notice {
+  background: rgba(200, 75, 47, 0.15);
+  border-left: 3px solid var(--accent);
+  padding: 10px 16px;
+  margin-top: 24px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.container {
+  max-width: 900px;
+  padding: 0 24px;
+}
+
+.toc {
+  background: var(--cream);
+  border: 0;
+  border-top: 3px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding: 32px 40px;
+  margin: 0;
+}
+
+.toc h2 {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin: 0 0 16px;
+  text-transform: uppercase;
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 6px 28px;
+}
+
+.toc-item {
+  font-size: 13px;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 3px 0;
+  border-bottom: 1px dashed var(--rule);
+  display: flex;
+  gap: 8px;
+}
+
+.toc-item:hover {
+  color: var(--accent);
+}
+
+.toc-num {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--accent);
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.chapter {
+  background: transparent;
+  padding: 48px 40px;
+  border-top: 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.chapter:nth-of-type(even) {
+  background: var(--cream);
+}
+
+.chapter-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.chapter-num {
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.chapter h2 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.4;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 10px;
+  flex: 1;
+  margin: 0;
+}
+
+.chapter h3 {
+  font-family: "Noto Serif JP", serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 24px 0 10px;
+  padding-left: 10px;
+  border-left: 3px solid var(--accent);
+}
+
+.chapter p {
+  margin-bottom: 14px;
+}
+
+.stat-grid {
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  margin: 24px 0;
+}
+
+.stat-cell {
+  background: var(--paper);
+  padding: 18px 16px;
+  text-align: center;
+}
+
+.chapter:nth-of-type(even) .stat-cell {
+  background: #f0ece4;
+}
+
+.stat-num {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.stat-unit {
+  font-size: 12px;
+  display: block;
+  margin-top: 2px;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--ink);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.data-box {
+  background: var(--highlight);
+  border: 1px solid #e0d8c4;
+  border-left: 4px solid var(--accent);
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+
+.data-box ul,
+.next-box ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.data-box ul li,
+.next-box ul li {
+  padding: 5px 0 5px 16px;
+  font-size: 13px;
+  position: relative;
+}
+
+.data-box ul li {
+  border-bottom: 1px dashed var(--rule);
+}
+
+.data-box ul li::before,
+.next-box ul li::before {
+  content: '>';
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+  font-size: 11px;
+}
+
+.data-box ul li:last-child {
+  border-bottom: none;
+}
+
+.note-box {
+  background: rgba(200, 75, 47, 0.05);
+  border: 1px dashed var(--accent);
+  padding: 16px 20px;
+  margin: 20px 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.summary-table {
+  font-size: 13px;
+}
+
+.summary-table tr:first-child {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.summary-table th {
+  padding: 10px 14px;
+  text-align: left;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.summary-table tr {
+  border-bottom: 1px solid var(--rule);
+}
+
+.summary-table tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.summary-table td {
+  padding: 9px 14px;
+}
+
+.summary-table td:first-child {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 12px;
+}
+
+.next-box {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 28px 32px;
+  margin: 20px 0;
+  border-left: 5px solid var(--accent);
+}
+
+.next-box strong {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.next-box ul li {
+  color: rgba(245, 242, 237, 0.85);
+}
+
+.source-tag {
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--rule);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+.disclaimer {
+  color: rgba(245, 242, 237, 0.5);
+  padding: 24px 40px;
+  font-size: 11px;
+  line-height: 1.7;
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0.03em;
+}
+
+.rule-thick {
+  border: none;
+  border-top: 3px solid var(--ink);
+  margin: 0;
+}
+
+.rule-thin {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 0;
+}
+
+.toc .toc-item {
+  display: flex;
+  color: var(--ink);
+  padding: 3px 0;
+}
+
+.summary-table th,
+.summary-table td,
+.stat-cell {
+  border: 0;
+}
+
+@media (max-width: 600px) {
+  .masthead {
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px 16px;
+  }
+
+  .hero {
+    padding: 36px 16px 30px;
+  }
+
+  .chapter {
+    padding: 32px 16px;
+  }
+
+  .toc {
+    padding: 24px 16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="masthead">
+  <span>産業構造分析レポート</span>
+  <span class="masthead-right">2026年05月発行 ── フードテック／植物工場（内部環境編）</span>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-label">INDUSTRY ANALYSIS REPORT — INTERNAL ENVIRONMENT</div>
+    <h1>
+      業界分析｜高市政権「戦略17分野」
+      <br>
+      フードテック
+      <br>
+      <em>植物工場</em>
+      （内部環境編）
+    </h1>
+    <p>収益構造・人材市場・投資回収・プレイヤー構造・利益率を、国家戦略と経済安全保障の視点から整理します。</p>
+    <div class="hero-meta">
+      <span class="hero-badge">就職・転職検討者向け</span>
+      <span class="hero-badge">株式投資家向け</span>
+      <span class="hero-badge">事業企画担当者向け</span>
+    </div>
+    <div class="data-notice">本レポートのデータ基準時点：2026年05月 ／ 政府資料・公開統計に基づき内部環境を整理</div>
+  </div>
+</section>
+
+<hr class="rule-thick">
+
+<div class="toc">
+  <div class="container">
+    <h2>目次 — TABLE OF CONTENTS</h2>
+    <div class="toc-grid">
+      <a class="toc-item" href="#ch0"><span class="toc-num">00</span>エグゼクティブサマリー</a>
+      <a class="toc-item" href="#ch1"><span class="toc-num">01</span>内部環境の全体像</a>
+      <a class="toc-item" href="#ch2"><span class="toc-num">02</span>プレイヤー構造</a>
+      <a class="toc-item" href="#ch3"><span class="toc-num">03</span>収益構造</a>
+      <a class="toc-item" href="#ch4"><span class="toc-num">04</span>コスト構造と利益率</a>
+      <a class="toc-item" href="#ch5"><span class="toc-num">05</span>投資回収の歪み</a>
+      <a class="toc-item" href="#ch6"><span class="toc-num">06</span>人材市場と忙しさ</a>
+      <a class="toc-item" href="#ch7"><span class="toc-num">07</span>栽培データと運営ノウハウ</a>
+      <a class="toc-item" href="#ch8"><span class="toc-num">08</span>サプライチェーンと調達リスク</a>
+      <a class="toc-item" href="#ch9"><span class="toc-num">09</span>日本の勝ち筋</a>
+      <a class="toc-item" href="#ch10"><span class="toc-num">10</span>内部環境まとめ表</a>
+      <a class="toc-item" href="#ch11"><span class="toc-num">11</span>次テーマへの橋渡し</a>
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thin">
+
+<section class="chapter" id="ch0">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 00</span>
+    <h2>エグゼクティブサマリー</h2>
+  </div>
+
+  <p>
+    植物工場の内部環境は、農産物を安定生産する事業と、植物工場システムを設計・運営・輸出する事業が重なる構造です。
+    政府資料では、植物工場は気候変動の影響に左右されず、定時・定量・定価格・定品質な農産物の生産が可能な技術として整理されています。
+  </p>
+
+  <div class="stat-grid">
+    <div class="stat-cell"><span class="stat-num">1.5</span><span class="stat-unit">兆円</span><span class="stat-label">2025年の植物工場システム世界市場規模予測</span></div>
+    <div class="stat-cell"><span class="stat-num">4.9</span><span class="stat-unit">兆円</span><span class="stat-label">2030年の同市場規模予測</span></div>
+    <div class="stat-cell"><span class="stat-num">55</span><span class="stat-unit">兆円</span><span class="stat-label">2040年の同市場規模予測</span></div>
+    <div class="stat-cell"><span class="stat-num">3</span><span class="stat-unit">割</span><span class="stat-label">2040年にかけた国内外市場シェア目標</span></div>
+    <div class="stat-cell"><span class="stat-num">6</span><span class="stat-unit">割</span><span class="stat-label">日本の植物工場で赤字とされる比率</span></div>
+  </div>
+
+  <div class="note-box">
+    数字の意味は、市場が大きいことではありません。
+    2040年55兆円という規模は、食料供給を気候変動や輸入依存から切り離すための生産システム市場が拡大するという意味です。
+    そのため政府は、農産物そのものではなく、プラント、生産資材、栽培データ、運営ノウハウを含む植物工場システムの自律性を重視しています。
+  </div>
+
+  <p>
+    内部環境では、外部環境で確認した光熱費、初期投資、品目制約、人材不足が、収益構造・利益率・投資回収・人材市場にどのような歪みとして現れるかを確認します。
+  </p>
+
+  <span class="source-tag">戦略17分野における主要な製品・技術等</span>
+  <span class="source-tag">先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案</span>
+</div>
+</section>
+
+<section class="chapter" id="ch1">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 01</span>
+    <h2>内部環境の全体像</h2>
+  </div>
+
+  <p>
+    植物工場の内部環境は、一般的な農業経営よりも複雑です。
+    収益は農産物販売から生まれますが、固定費は工場設備、照明、空調、水循環、センサー、制御システム、栽培管理人材によって形成されます。
+  </p>
+
+  <table class="summary-table">
+    <tr><th>内部要素</th><th>事業上の意味</th><th>国家戦略との接続</th></tr>
+    <tr><td>栽培設備</td><td>品質・収量・稼働率を決める固定資産</td><td>国内生産基盤と食料供給の自律性</td></tr>
+    <tr><td>照明・空調</td><td>品質安定と電力コストを同時に左右する</td><td>エネルギー価格変動への耐性</td></tr>
+    <tr><td>栽培データ</td><td>作物ごとの最適条件を蓄積する無形資産</td><td>運営ノウハウ輸出と国際競争</td></tr>
+    <tr><td>人材</td><td>農業、工業、データ運用を横断する</td><td>システム運営の自律性</td></tr>
+    <tr><td>販路</td><td>定量・定品質供給を価格に転換する</td><td>安定供給型サプライチェーン</td></tr>
+  </table>
+
+  <p>
+    内部環境の特徴は、工場としての設備稼働率と、農業としての生育リスクを同時に管理する点です。
+    これは、食料安全保障を支える供給網を国内外で構築するための前提になります。
+  </p>
+
+  <span class="source-tag">戦略17分野における主要な製品・技術等</span>
+</div>
+</section>
+
+<section class="chapter" id="ch2">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 02</span>
+    <h2>プレイヤー構造</h2>
+  </div>
+
+  <p>
+    植物工場は単独企業だけで完結しません。
+    運営企業、設備企業、照明・空調メーカー、センサー企業、IT企業、小売・外食、物流企業が組み合わさる複合産業です。
+  </p>
+
+  <table class="summary-table">
+    <tr><th>プレイヤー</th><th>役割</th><th>内部環境上の歪み</th></tr>
+    <tr><td>植物工場運営企業</td><td>栽培、出荷、品質管理、販路対応</td><td>光熱費と人件費の影響を直接受ける</td></tr>
+    <tr><td>設備・プラント企業</td><td>建屋、棚、水循環、制御系の設計</td><td>初期投資負担と顧客の投資回収に影響する</td></tr>
+    <tr><td>照明・空調メーカー</td><td>LED、温湿度制御、空気循環</td><td>省エネ性能が利益率に直結する</td></tr>
+    <tr><td>IT・センサー企業</td><td>環境データ、画像解析、栽培管理</td><td>栽培データの蓄積が差別化要因になる</td></tr>
+    <tr><td>小売・外食・物流</td><td>定量調達、配送、販売</td><td>安定供給を価格に反映できるかが課題</td></tr>
+  </table>
+
+  <p>
+    政策上の焦点は、農産物を作る会社を増やすことだけではありません。
+    国内で設計、施工、運営、保守、データ活用まで担えるプレイヤー層を厚くすることが、サプライチェーン強靭化につながります。
+  </p>
+
+  <span class="source-tag">先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案</span>
+</div>
+</section>
+
+<section class="chapter" id="ch3">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 03</span>
+    <h2>収益構造</h2>
+  </div>
+
+  <p>
+    植物工場の収益構造は、大きく二つに分かれます。
+    一つは農産物販売モデル、もう一つは植物工場システム販売・運営支援モデルです。
+  </p>
+
+  <table class="summary-table">
+    <tr><th>収益モデル</th><th>売上源</th><th>利益率を左右する要素</th><th>政策目標との接続</th></tr>
+    <tr><td>農産物販売</td><td>葉菜類等の販売</td><td>単価、歩留まり、稼働率、光熱費、人件費</td><td>定時・定量・定価格・定品質の供給</td></tr>
+    <tr><td>システム販売</td><td>設備、資材、制御システム</td><td>設計力、標準化、保守契約、導入先の収益性</td><td>国内外市場シェア3割</td></tr>
+    <tr><td>運営支援</td><td>栽培データ、運営ノウハウ、研修</td><td>再現性、現地適応、人材育成</td><td>運営ノウハウ輸出</td></tr>
+  </table>
+
+  <p>
+    農産物販売だけに依存すると、光熱費と人件費の上昇が利益率を圧迫します。
+    そのため、政府資料で重視される「運営ノウハウ等もパッケージにした植物工場システム」は、収益源を農産物単体から設備・データ・運営支援へ広げる意味を持ちます。
+  </p>
+
+  <div class="note-box">
+    6割が赤字という数字は、技術が不要という意味ではありません。
+    むしろ、栽培技術だけではなく、販売単価、電力コスト、設備償却、人材配置、販路設計を同時に管理しなければ黒字化しにくいことを示しています。
+  </div>
+
+  <span class="source-tag">戦略17分野における主要な製品・技術等</span>
+</div>
+</section>
+
+<section class="chapter" id="ch4">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 04</span>
+    <h2>コスト構造と利益率</h2>
+  </div>
+
+  <p>
+    植物工場の利益率を圧迫する主な要素は、電力コスト、初期投資負担、人件費、設備保守費です。
+    施設園芸全体でも、光熱動力費は経営費に占める割合が高く、燃油価格やエネルギー価格の変動を受けやすいとされています。
+  </p>
+
+  <table class="summary-table">
+    <tr><th>コスト項目</th><th>利益率への影響</th><th>経済安全保障上の意味</th></tr>
+    <tr><td>電力コスト</td><td>照明・空調・水循環の稼働で変動費が大きくなる</td><td>エネルギー価格が食料供給コストに波及する</td></tr>
+    <tr><td>初期投資</td><td>建屋、設備、制御系の償却負担が長く続く</td><td>国内生産基盤整備に投資回収リスクが伴う</td></tr>
+    <tr><td>人件費</td><td>栽培、選別、包装、品質管理に人手が必要</td><td>労働力不足が供給網の制約になる</td></tr>
+    <tr><td>保守費</td><td>空調、照明、水循環の故障対応が必要</td><td>設備部材と保守人材の自律性が重要になる</td></tr>
+  </table>
+
+  <p>
+    利益率の低さは、単なる経営努力の問題ではありません。
+    食料供給を工場化するほど、農業のコスト構造に製造業の固定費構造が加わるためです。
+  </p>
+
+  <span class="source-tag">施設園芸をめぐる情勢</span>
+  <span class="source-tag">先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案</span>
+</div>
+</section>
+
+<section class="chapter" id="ch5">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 05</span>
+    <h2>投資回収の歪み</h2>
+  </div>
+
+  <p>
+    植物工場では、初期投資の回収期間が長くなりやすい構造があります。
+    完全閉鎖型やモジュール型の設備は、安定生産に向いている一方、建設費、照明、空調、水循環、制御システムへの投資が先行します。
+  </p>
+
+  <div class="data-box">
+    <ul>
+      <li>売上は日々の農産物販売で積み上がる</li>
+      <li>設備投資は導入時に大きく発生する</li>
+      <li>光熱費は稼働中に継続発生する</li>
+      <li>品目が葉菜類中心の場合、単価上昇余地が限定される</li>
+      <li>稼働率が下がると固定費負担が一気に重くなる</li>
+    </ul>
+  </div>
+
+  <p>
+    これが、2040年55兆円市場という大きな政策目標と、現場の収益化難易度が同時に存在する理由です。
+    国家戦略として重要でも、個別事業者は長期回収構造を背負います。
+  </p>
+
+  <span class="source-tag">戦略17分野における主要な製品・技術等</span>
+</div>
+</section>
+
+<section class="chapter" id="ch6">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 06</span>
+    <h2>人材市場と忙しさ</h2>
+  </div>
+
+  <p>
+    植物工場の人材課題は、単なる農作業人材の不足ではありません。
+    政府資料では、蓄積した栽培データの分析、新たな栽培技術の開発、工場マネジメントに必要な農業と工業の両方の知見、専門人材だけでなくパートを含む幅広い労働力不足が課題とされています。
+  </p>
+
+  <table class="summary-table">
+    <tr><th>人材類型</th><th>必要な知見</th><th>忙しさが発生する場面</th><th>自律性との接続</th></tr>
+    <tr><td>栽培管理人材</td><td>作物生理、環境制御、品質管理</td><td>生育異常、収量低下、出荷調整</td><td>国内で安定生産を担う基盤</td></tr>
+    <tr><td>設備保守人材</td><td>空調、照明、水循環、センサー</td><td>設備停止、温湿度異常、故障対応</td><td>保守の外部依存を減らす</td></tr>
+    <tr><td>データ人材</td><td>栽培データ、画像解析、制御ロジック</td><td>条件最適化、品質ばらつき分析</td><td>運営ノウハウ輸出の中核</td></tr>
+    <tr><td>現場作業人材</td><td>播種、収穫、包装、衛生管理</td><td>出荷ピーク、欠員、品質検査</td><td>定量供給の実行部隊</td></tr>
+  </table>
+
+  <p>
+    忙しさの源泉は、農業と工場運営が同時に発生する点です。
+    生育は止められず、設備も止められません。
+    そのため、現場では品質、出荷、保守、データ確認が重なりやすくなります。
+  </p>
+
+  <span class="source-tag">戦略17分野における主要な製品・技術等の官民投資ロードマップ素案</span>
+</div>
+</section>
+
+<section class="chapter" id="ch7">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 07</span>
+    <h2>栽培データと運営ノウハウ</h2>
+  </div>
+
+  <p>
+    植物工場の内部資産として最も重要なのは、栽培データと運営ノウハウです。
+    同じ設備を導入しても、温度、湿度、光量、養液、風量、作業手順、収穫タイミングの運用が違えば、収量と品質は変わります。
+  </p>
+
+  <table class="summary-table">
+    <tr><th>無形資産</th><th>内容</th><th>競争力への影響</th></tr>
+    <tr><td>栽培レシピ</td><td>作物ごとの環境条件、養液条件、光条件</td><td>品質安定と歩留まり向上</td></tr>
+    <tr><td>異常対応ノウハウ</td><td>生育不良、病害、設備異常への対応</td><td>ロス率低下と稼働率維持</td></tr>
+    <tr><td>作業標準</td><td>播種、移植、収穫、包装、衛生管理</td><td>人材不足時の再現性確保</td></tr>
+    <tr><td>販路対応</td><td>小売・外食の規格、納品量、品質条件</td><td>定時・定量・定価格・定品質の実現</td></tr>
+  </table>
+
+  <p>
+    政府資料が「運営ノウハウ等もパッケージにした植物工場システム」を重視するのは、設備だけを輸出しても安定生産は成立しないためです。
+    国際競争では、設備販売よりも、現地で稼働し続ける仕組みを提供できるかが重要になります。
+  </p>
+
+  <span class="source-tag">戦略17分野における主要な製品・技術等</span>
+</div>
+</section>
+
+<section class="chapter" id="ch8">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 08</span>
+    <h2>サプライチェーンと調達リスク</h2>
+  </div>
+
+  <p>
+    植物工場のサプライチェーンは、農業資材だけでなく、工業部材とエネルギーに依存します。
+    そのため、調達リスクは種苗や包装資材だけではなく、LED、空調、センサー、制御機器、保守部材、電力価格にも及びます。
+  </p>
+
+  <div class="data-box">
+    <ul>
+      <li>LED照明：光条件と電力効率を左右する</li>
+      <li>空調設備：温湿度管理と稼働安定性を左右する</li>
+      <li>水循環・養液設備：品質と衛生管理に直結する</li>
+      <li>センサー・制御機器：栽培データの取得と自動制御に必要</li>
+      <li>包装・物流：小売・外食向けの定量供給に必要</li>
+    </ul>
+  </div>
+
+  <p>
+    経済安全保障上の論点は、農産物だけではありません。
+    植物工場を支える部材、設備、保守、データ運用の供給網を国内外で確保できるかが、自律性の前提になります。
+  </p>
+
+  <span class="source-tag">戦略17分野における主要な製品・技術等</span>
+</div>
+</section>
+
+<section class="chapter" id="ch9">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 09</span>
+    <h2>日本の勝ち筋</h2>
+  </div>
+
+  <p>
+    日本の勝ち筋は、農産物単体の価格競争ではありません。
+    政府資料では、世界初のモジュール型の完全閉鎖型植物工場開発等の技術面での強みを活かし、運営ノウハウ等もパッケージにした植物工場システムを国内導入・輸出する方向性が示されています。
+  </p>
+
+  <table class="summary-table">
+    <tr><th>勝ち筋</th><th>内容</th><th>なぜ重要か</th></tr>
+    <tr><td>技術優位</td><td>モジュール型、完全閉鎖型、環境制御</td><td>展開先の気候に左右されにくい</td></tr>
+    <tr><td>運営ノウハウ</td><td>栽培データ、品質管理、作業標準</td><td>設備導入後の黒字化に関わる</td></tr>
+    <tr><td>品質管理能力</td><td>定時・定量・定価格・定品質</td><td>小売・外食の安定調達に対応できる</td></tr>
+    <tr><td>パッケージ輸出</td><td>プラント、生産資材、データ、人材育成</td><td>海外市場の獲得に必要</td></tr>
+    <tr><td>サプライチェーン優位</td><td>設備、保守、物流、小売との連携</td><td>食料供給網の強靭化につながる</td></tr>
+  </table>
+
+  <p>
+    日本が取りに行こうとしている領域は、野菜の単品輸出ではありません。
+    食料輸入依存度の高い地域に対して、安定生産の仕組みを輸出することです。
+  </p>
+
+  <span class="source-tag">戦略17分野における主要な製品・技術等</span>
+</div>
+</section>
+
+<section class="chapter" id="ch10">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 10</span>
+    <h2>内部環境まとめ表</h2>
+  </div>
+
+  <table class="summary-table">
+    <tr><th>論点</th><th>内部環境での現れ方</th><th>国家戦略との接続</th></tr>
+    <tr><td>収益構造</td><td>農産物販売だけでは光熱費・人件費・償却費の影響を受けやすい</td><td>システム販売・運営支援への拡張が必要</td></tr>
+    <tr><td>利益率</td><td>電力コスト、稼働率、歩留まり、販路単価に左右される</td><td>安定供給のコストを誰が負担するかが課題</td></tr>
+    <tr><td>投資回収</td><td>初期投資が大きく、回収期間が長くなりやすい</td><td>官民投資と政策支援の予見可能性が重要</td></tr>
+    <tr><td>人材市場</td><td>農業、工業、データ、現場作業の複合人材が不足</td><td>運営自律性と輸出可能性に直結</td></tr>
+    <tr><td>忙しさ</td><td>生育管理、設備保守、出荷対応が同時並行で発生</td><td>定時・定量供給の実行力を左右する</td></tr>
+    <tr><td>プレイヤー構造</td><td>農業、設備、IT、物流、小売が重なる</td><td>サプライチェーン強靭化の対象が広い</td></tr>
+  </table>
+
+  <p>
+    植物工場の内部環境は、成長市場でありながら収益化が難しい構造を持ちます。
+    そのため、国家戦略上は重要でも、個別事業者には電力コスト、初期投資、人材不足、長期回収構造というボトルネックが残ります。
+  </p>
+
+  <span class="source-tag">本レポート整理</span>
+</div>
+</section>
+
+<section class="chapter" id="ch11">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 11</span>
+    <h2>次テーマへの橋渡し</h2>
+  </div>
+
+  <p>
+    植物工場では、食料安全保障、気候変動耐性、定時・定量・定価格・定品質、運営ノウハウ輸出が中心論点でした。
+    次に続くフードテック分野では、海洋環境に左右されにくい水産物供給を担う「陸上養殖」が対象になります。
+  </p>
+
+  <div class="next-box">
+    <strong>NEXT｜陸上養殖（外部環境編）で扱う論点</strong>
+    <ul>
+      <li>海洋環境変化と水産物サプライチェーン</li>
+      <li>陸上養殖システムの市場規模と政策目標</li>
+      <li>種苗・飼料・魚種選定における日本の勝ち筋</li>
+      <li>水産物の安定供給と経済安全保障</li>
+      <li>電力・水処理・飼料コストという構造的ボトルネック</li>
+    </ul>
+  </div>
+
+  <span class="source-tag">戦略17分野における主要な製品・技術等</span>
+</div>
+</section>
+
+<div class="disclaimer">
+  <div class="container">
+    本レポートは、業界構造の理解を目的とした情報提供です。特定の投資判断、転職判断、事業参入、キャリア選択を推奨するものではありません。
+    記載数値は、日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」、
+    「戦略17分野における主要な製品・技術等」、農林水産省「施設園芸をめぐる情勢」等に基づきます。
+    将来市場規模・市場シェアは政策資料上の目標・予測値であり、達成を保証するものではありません。
+  </div>
+</div>
+
+</body>
+</html>
