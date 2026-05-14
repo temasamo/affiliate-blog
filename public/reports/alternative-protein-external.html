@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>業界分析｜代替タンパク・培養肉（外部環境編）</title>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+  :root {
+    --ink: #0f0f0e;
+    --paper: #f5f2ed;
+    --cream: #ede9e1;
+    --accent: #c84b2f;
+    --muted: #6b6760;
+    --rule: #c9c4bb;
+    --highlight: #fff8e6;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.8; }
+
+  .masthead { background: var(--ink); color: var(--paper); padding: 10px 40px; display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; border-bottom: 3px solid var(--accent); }
+  .masthead-right { color: var(--muted); }
+
+  .hero { background: var(--ink); color: var(--paper); padding: 60px 40px 50px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(200,75,47,0.07) 4px, rgba(200,75,47,0.07) 5px); }
+  .hero-label { display: inline-block; background: var(--accent); color: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.12em; padding: 4px 10px; margin-bottom: 20px; }
+  .hero h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(20px, 3.2vw, 34px); font-weight: 900; line-height: 1.4; max-width: 820px; letter-spacing: 0.02em; margin-bottom: 24px; }
+  .hero h1 em { color: var(--accent); font-style: normal; }
+  .hero p { max-width: 760px; color: rgba(245,242,237,0.78); margin-bottom: 8px; }
+  .hero-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 16px; }
+  .hero-badge { border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.75); font-size: 11px; padding: 4px 12px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.06em; }
+  .data-notice { background: rgba(200,75,47,0.15); border-left: 3px solid var(--accent); padding: 10px 16px; margin-top: 24px; font-size: 12px; color: rgba(255,255,255,0.8); font-family: 'IBM Plex Mono', monospace; }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  .toc { background: var(--cream); border-top: 3px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 32px 40px; }
+  .toc h2 { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 16px; text-transform: uppercase; }
+  .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 6px 28px; }
+  .toc-item { font-size: 13px; color: var(--ink); text-decoration: none; padding: 3px 0; border-bottom: 1px dashed var(--rule); display: flex; gap: 8px; }
+  .toc-item:hover { color: var(--accent); }
+  .toc-num { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--accent); flex-shrink: 0; padding-top: 2px; }
+
+  .chapter { padding: 48px 40px; border-bottom: 1px solid var(--rule); }
+  .chapter:nth-child(even) { background: var(--cream); }
+  .chapter-num { background: var(--accent); color: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; padding: 4px 10px; display: inline-block; margin-bottom: 14px; }
+  .chapter h2 { font-family: 'Noto Serif JP', serif; font-size: 22px; font-weight: 700; line-height: 1.4; border-bottom: 2px solid var(--ink); padding-bottom: 10px; margin-bottom: 24px; }
+  .chapter h3 { font-family: 'Noto Serif JP', serif; font-size: 16px; font-weight: 700; margin: 24px 0 10px; padding-left: 10px; border-left: 3px solid var(--accent); }
+  .chapter p { margin-bottom: 14px; }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 24px 0; }
+  .stat-cell { background: var(--paper); padding: 18px 16px; text-align: center; }
+  .chapter:nth-child(even) .stat-cell { background: #f0ece4; }
+  .stat-cell .stat-num, .stat-num { font-family: 'IBM Plex Mono', monospace; font-size: 22px; font-weight: 600; color: var(--accent); line-height: 1.2; display: block; }
+
+  .data-box { background: var(--highlight); border: 1px solid #e0d8c4; border-left: 4px solid var(--accent); padding: 20px 24px; margin: 20px 0; }
+  .data-box ul { padding-left: 0; list-style: none; }
+  .data-box ul li { padding: 5px 0 5px 16px; border-bottom: 1px dashed var(--rule); font-size: 13px; position: relative; }
+  .data-box ul li::before { content: '>'; color: var(--accent); position: absolute; left: 0; font-size: 11px; }
+  .data-box ul li:last-child { border-bottom: none; }
+
+  .note-box { background: rgba(200,75,47,0.05); border: 1px dashed var(--accent); padding: 16px 20px; margin: 20px 0; font-size: 13px; color: var(--muted); }
+  .note-box strong { color: var(--accent); }
+
+  .summary-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+  .summary-table tr:first-child { background: var(--ink); color: var(--paper); }
+  .summary-table th { padding: 10px 14px; text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; }
+  .summary-table tr { border-bottom: 1px solid var(--rule); }
+  .summary-table tr:nth-child(even) { background: rgba(0,0,0,0.03); }
+  .summary-table td { padding: 9px 14px; vertical-align: top; }
+  .summary-table td:first-child { font-weight: 700; color: var(--accent); font-size: 12px; }
+
+  .source-tag { display: inline-block; background: rgba(0,0,0,0.06); border: 1px solid var(--rule); padding: 3px 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); margin: 2px 3px; letter-spacing: 0.04em; }
+
+  .disclaimer { background: var(--ink); color: rgba(245,242,237,0.5); padding: 24px 40px; font-size: 11px; line-height: 1.7; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.03em; }
+  .rule-thick { border: none; border-top: 3px solid var(--ink); margin: 0; }
+  .rule-thin { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+  @media (max-width: 600px) {
+    .masthead { flex-direction: column; gap: 6px; padding: 10px 16px; }
+    .hero { padding: 36px 16px 30px; }
+    .chapter { padding: 32px 16px; }
+    .toc { padding: 24px 16px; }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="masthead">
+  <span>産業構造分析レポート</span>
+  <span class="masthead-right">2026年05月発行 ── フードテック／代替タンパク・培養肉（外部環境編）</span>
+</div>
+
+<section class="hero">
+<div class="container">
+  <div class="hero-label">INDUSTRY ANALYSIS REPORT - EXTERNAL ENVIRONMENT</div>
+  <h1>
+    業界分析｜高市政権「戦略17分野」
+    <br>
+    フードテック
+    <br>
+    <em>代替タンパク・培養肉</em>
+    （外部環境編）
+  </h1>
+  <p>食料安全保障、タンパク供給、脱炭素、サプライチェーン自律性の観点から、代替タンパク・培養肉産業の外部環境を整理します。</p>
+  <div class="hero-meta">
+    <span class="hero-badge">就職・転職検討者向け</span>
+    <span class="hero-badge">株式投資家向け</span>
+    <span class="hero-badge">数字と事実中心</span>
+  </div>
+  <div class="data-notice">本レポートのデータ基準時点：2026年05月 ／ 政府資料・公開統計に基づき外部環境を整理</div>
+</div>
+</section>
+
+<hr class="rule-thick">
+
+<div class="toc">
+  <div class="container">
+    <h2>目次 - TABLE OF CONTENTS</h2>
+    <div class="toc-grid">
+      <a class="toc-item" href="#ch0"><span class="toc-num">00</span>エグゼクティブサマリー</a>
+      <a class="toc-item" href="#ch1"><span class="toc-num">01</span>なぜ政府が重点化するのか</a>
+      <a class="toc-item" href="#ch2"><span class="toc-num">02</span>市場構造</a>
+      <a class="toc-item" href="#ch3"><span class="toc-num">03</span>経済安全保障との接続</a>
+      <a class="toc-item" href="#ch4"><span class="toc-num">04</span>日本の勝ち筋</a>
+      <a class="toc-item" href="#ch5"><span class="toc-num">05</span>構造的ボトルネック</a>
+      <a class="toc-item" href="#ch6"><span class="toc-num">06</span>国際競争</a>
+      <a class="toc-item" href="#ch7"><span class="toc-num">07</span>需要ドライバー</a>
+      <a class="toc-item" href="#ch8"><span class="toc-num">08</span>技術トレンド</a>
+      <a class="toc-item" href="#ch9"><span class="toc-num">09</span>よくある誤解</a>
+      <a class="toc-item" href="#ch10"><span class="toc-num">10</span>外部環境まとめ</a>
+      <a class="toc-item" href="#ch11"><span class="toc-num">11</span>内部環境編への橋渡し</a>
+    </div>
+  </div>
+</div>
+
+<hr class="rule-thin">
+
+<section class="chapter" id="ch0">
+<div class="container">
+
+<span class="chapter-num">CHAPTER 00</span>
+<h2>エグゼクティブサマリー</h2>
+
+<p>
+代替タンパク・培養肉は、
+単なる食品トレンドではありません。
+</p>
+
+<p>
+政府が重視する理由は、
+世界人口増加、タンパク需要拡大、
+飼料輸入依存、気候変動、
+食料安全保障と接続するためです。
+</p>
+
+<div class="stat-grid">
+
+<div class="stat-cell">
+<span class="stat-num">2050</span>
+世界人口増加
+</div>
+
+<div class="stat-cell">
+<span class="stat-num">2x</span>
+タンパク需要増加圧力
+</div>
+
+<div class="stat-cell">
+<span class="stat-num">3</span>
+主要論点
+（供給・脱炭素・自律性）
+</div>
+
+<div class="stat-cell">
+<span class="stat-num">24h</span>
+細胞培養設備管理
+</div>
+
+</div>
+
+<div class="note-box">
+数字の意味は、
+「新しい食品市場」ではありません。
+既存畜産だけでは、
+将来的なタンパク供給安定が難しくなることを意味します。
+</div>
+
+</div>
+</section>
+
+<section class="chapter" id="ch1">
+<div class="container">
+
+<span class="chapter-num">CHAPTER 01</span>
+<h2>なぜ政府が重点化するのか</h2>
+
+<p>
+政府が代替タンパク・培養肉を重視する理由は、
+タンパク供給の自律性確保です。
+</p>
+
+<table class="summary-table">
+
+<tr>
+<th>リスク</th>
+<th>国家戦略上の意味</th>
+</tr>
+
+<tr>
+<td>飼料輸入依存</td>
+<td>供給不安定化</td>
+</tr>
+
+<tr>
+<td>気候変動</td>
+<td>畜産コスト上昇</td>
+</tr>
+
+<tr>
+<td>水資源制約</td>
+<td>生産制約</td>
+</tr>
+
+<tr>
+<td>人口増加</td>
+<td>タンパク不足圧力</td>
+</tr>
+
+</table>
+
+<p>
+つまり、
+代替タンパクは「健康食品」ではなく、
+食料安全保障政策と接続する分野です。
+</p>
+
+</div>
+</section>
+
+<section class="chapter" id="ch2">
+<div class="container">
+
+<span class="chapter-num">CHAPTER 02</span>
+<h2>市場構造</h2>
+
+<p>
+市場は単なる食品市場ではありません。
+</p>
+
+<div class="data-box">
+<ul>
+<li>植物由来タンパク</li>
+<li>培養肉</li>
+<li>発酵タンパク</li>
+<li>細胞培養装置</li>
+<li>培地</li>
+<li>バイオリアクター</li>
+<li>食品加工</li>
+<li>ブランド販売</li>
+</ul>
+</div>
+
+<p>
+つまり、
+食品・バイオ・化学・装置産業が重なる構造です。
+</p>
+
+</div>
+</section>
+
+<section class="chapter" id="ch3">
+<div class="container">
+
+<span class="chapter-num">CHAPTER 03</span>
+<h2>経済安全保障との接続</h2>
+
+<p>
+代替タンパクは、
+サプライチェーン強靭化と直結します。
+</p>
+
+<table class="summary-table">
+
+<tr>
+<th>論点</th>
+<th>意味</th>
+</tr>
+
+<tr>
+<td>自律性確保</td>
+<td>輸入飼料依存低減</td>
+</tr>
+
+<tr>
+<td>国内生産基盤</td>
+<td>食料供給維持</td>
+</tr>
+
+<tr>
+<td>脱炭素</td>
+<td>環境負荷低減</td>
+</tr>
+
+<tr>
+<td>同盟国市場</td>
+<td>食品供給協力</td>
+</tr>
+
+</table>
+
+<p>
+政府が重視するのは、
+「国内で安定的にタンパクを供給できるか」です。
+</p>
+
+</div>
+</section>
+
+<section class="chapter" id="ch4">
+<div class="container">
+
+<span class="chapter-num">CHAPTER 04</span>
+<h2>日本の勝ち筋</h2>
+
+<p>
+日本の勝ち筋は、
+大量生産価格競争ではありません。
+</p>
+
+<div class="data-box">
+<ul>
+<li>発酵技術</li>
+<li>食品加工技術</li>
+<li>品質管理能力</li>
+<li>培養制御</li>
+<li>衛生管理</li>
+<li>装置技術</li>
+</ul>
+</div>
+
+<p>
+特に、
+高品質食品製造と細胞制御技術の組み合わせが重要視されています。
+</p>
+
+</div>
+</section>
+
+<section class="chapter" id="ch5">
+<div class="container">
+
+<span class="chapter-num">CHAPTER 05</span>
+<h2>構造的ボトルネック</h2>
+
+<table class="summary-table">
+
+<tr>
+<th>ボトルネック</th>
+<th>内容</th>
+</tr>
+
+<tr>
+<td>商用化の遅さ</td>
+<td>大量培養難易度</td>
+</tr>
+
+<tr>
+<td>電力コスト</td>
+<td>培養設備運営負荷</td>
+</tr>
+
+<tr>
+<td>初期投資</td>
+<td>培養設備負担</td>
+</tr>
+
+<tr>
+<td>認証負担</td>
+<td>食品安全規制</td>
+</tr>
+
+<tr>
+<td>培地コスト</td>
+<td>収益性制約</td>
+</tr>
+
+</table>
+
+<p>
+市場期待は大きい一方、
+商用化難易度も高い分野です。
+</p>
+
+</div>
+</section>
+
+<section class="chapter" id="ch6">
+<div class="container">
+
+<span class="chapter-num">CHAPTER 06</span>
+<h2>国際競争</h2>
+
+<p>
+米国、シンガポール、中東では、
+国家レベル投資が進んでいます。
+</p>
+
+<p>
+特にシンガポールは、
+食料自給率向上を目的に、
+培養食品認証を進めています。
+</p>
+
+<p>
+つまり、
+代替タンパクは国際標準化競争でもあります。
+</p>
+
+</div>
+</section>
+
+<section class="chapter" id="ch7">
+<div class="container">
+
+<span class="chapter-num">CHAPTER 07</span>
+<h2>需要ドライバー</h2>
+
+<div class="data-box">
+<ul>
+<li>人口増加</li>
+<li>タンパク需要増</li>
+<li>ESG調達</li>
+<li>脱炭素要求</li>
+<li>飼料価格高騰</li>
+<li>水資源制約</li>
+</ul>
+</div>
+
+<p>
+需要背景には、
+単なる健康志向ではなく、
+供給安定と環境制約があります。
+</p>
+
+</div>
+</section>
+
+<section class="chapter" id="ch8">
+<div class="container">
+
+<span class="chapter-num">CHAPTER 08</span>
+<h2>技術トレンド</h2>
+
+<table class="summary-table">
+
+<tr>
+<th>技術</th>
+<th>意味</th>
+</tr>
+
+<tr>
+<td>細胞培養</td>
+<td>畜産代替</td>
+</tr>
+
+<tr>
+<td>発酵技術</td>
+<td>高効率タンパク生産</td>
+</tr>
+
+<tr>
+<td>培地開発</td>
+<td>コスト低減</td>
+</tr>
+
+<tr>
+<td>バイオリアクター</td>
+<td>量産化基盤</td>
+</tr>
+
+</table>
+
+<p>
+ただし、
+DXだけで量産化は解決しません。
+培地・エネルギー・設備問題は残ります。
+</p>
+
+</div>
+</section>
+
+<section class="chapter" id="ch9">
+<div class="container">
+
+<span class="chapter-num">CHAPTER 09</span>
+<h2>よくある誤解</h2>
+
+<h3>誤解1｜健康食品市場である</h3>
+<p>
+実際には、
+食料安全保障と接続する産業です。
+</p>
+
+<h3>誤解2｜すぐ商用化する</h3>
+<p>
+量産化と認証に時間が必要です。
+</p>
+
+<h3>誤解3｜畜産を完全代替する</h3>
+<p>
+現時点では補完関係です。
+</p>
+
+</div>
+</section>
+
+<section class="chapter" id="ch10">
+<div class="container">
+
+<span class="chapter-num">CHAPTER 10</span>
+<h2>外部環境まとめ</h2>
+
+<table class="summary-table">
+
+<tr>
+<th>論点</th>
+<th>整理</th>
+</tr>
+
+<tr>
+<td>国家戦略</td>
+<td>タンパク供給自律性</td>
+</tr>
+
+<tr>
+<td>供給網</td>
+<td>飼料依存低減</td>
+</tr>
+
+<tr>
+<td>勝ち筋</td>
+<td>発酵・品質・装置</td>
+</tr>
+
+<tr>
+<td>ボトルネック</td>
+<td>培地・設備・認証</td>
+</tr>
+
+<tr>
+<td>国際競争</td>
+<td>標準化競争</td>
+</tr>
+
+</table>
+
+</div>
+</section>
+
+<section class="chapter" id="ch11">
+<div class="container">
+
+<span class="chapter-num">CHAPTER 11</span>
+<h2>内部環境編への橋渡し</h2>
+
+<p>
+内部環境編では、
+代替タンパク・培養肉企業の
+収益構造、人材市場、設備投資、
+研究開発負担、利益率構造を整理します。
+</p>
+
+<div class="data-box">
+<ul>
+<li>研究開発費</li>
+<li>培地コスト</li>
+<li>設備償却</li>
+<li>量産難易度</li>
+<li>規制対応</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<div class="disclaimer">
+<div class="container">
+本レポートは業界構造理解を目的とした情報提供です。
+投資判断・転職判断・事業参入を推奨するものではありません。
+</div>
+</div>
+
+</body>
+</html>
