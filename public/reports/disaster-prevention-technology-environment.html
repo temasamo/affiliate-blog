@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>業界分析｜防災技術（外部環境編）</title>
+<style>
+:root{
+  --ink:#0f0f0e;
+  --paper:#f5f2ed;
+  --cream:#ede9e1;
+  --accent:#c84b2f;
+  --accent2:#2563a8;
+  --muted:#6b6760;
+  --rule:#c9c4bb;
+  --highlight:#fff8e6;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Noto Sans JP",sans-serif;
+  font-size:15px;
+  line-height:1.85;
+}
+.container{max-width:900px;margin:0 auto;padding:0 24px;}
+.masthead{
+  background:var(--ink);
+  color:var(--paper);
+  padding:10px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-family:monospace;
+  font-size:11px;
+  letter-spacing:.08em;
+  border-bottom:3px solid var(--accent);
+}
+.masthead-right{color:#aaa;}
+.hero{
+  background:var(--ink);
+  color:var(--paper);
+  padding:60px 40px 50px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  top:0;
+  right:0;
+  width:40%;
+  height:100%;
+  background:repeating-linear-gradient(45deg,transparent,transparent 4px,rgba(200,75,47,.08) 4px,rgba(200,75,47,.08) 5px);
+}
+.hero .container{position:relative;}
+.hero-label{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  font-family:monospace;
+  font-size:10px;
+  letter-spacing:.12em;
+  padding:4px 10px;
+  margin-bottom:20px;
+}
+.hero h1{
+  font-family:"Noto Serif JP",serif;
+  font-size:clamp(22px,3.2vw,34px);
+  line-height:1.4;
+  margin:0 0 22px;
+}
+.hero h1 em{color:var(--accent);font-style:normal;}
+.hero p{max-width:760px;color:rgba(245,242,237,.78);}
+.hero-meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;}
+.hero-badge{
+  border:1px solid rgba(255,255,255,.25);
+  color:rgba(255,255,255,.75);
+  font-size:11px;
+  padding:4px 12px;
+  font-family:monospace;
+}
+.data-notice{
+  background:rgba(200,75,47,.15);
+  border-left:3px solid var(--accent);
+  padding:10px 16px;
+  margin-top:24px;
+  font-size:12px;
+  color:rgba(255,255,255,.8);
+}
+.toc{
+  background:var(--cream);
+  border-top:3px solid var(--ink);
+  border-bottom:1px solid var(--rule);
+  padding:32px 40px;
+}
+.toc h2{
+  font-family:monospace;
+  font-size:11px;
+  letter-spacing:.12em;
+  color:var(--muted);
+}
+.toc-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:6px 28px;
+}
+.toc-item{
+  display:flex;
+  gap:8px;
+  color:var(--ink);
+  text-decoration:none;
+  border-bottom:1px dashed var(--rule);
+  font-size:13px;
+}
+.toc-num{font-family:monospace;color:var(--accent);font-size:11px;}
+.chapter{
+  padding:48px 40px;
+  border-bottom:1px solid var(--rule);
+}
+.chapter:nth-of-type(even){background:var(--cream);}
+.chapter-header{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  margin-bottom:28px;
+}
+.chapter-num{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  padding:4px 10px;
+  font-family:monospace;
+  font-size:12px;
+  letter-spacing:.08em;
+  flex-shrink:0;
+}
+.chapter h2{
+  font-family:"Noto Serif JP",serif;
+  font-size:22px;
+  line-height:1.4;
+  border-bottom:2px solid var(--ink);
+  padding-bottom:10px;
+  margin:0;
+  flex:1;
+}
+.chapter h3{
+  font-family:"Noto Serif JP",serif;
+  font-size:16px;
+  border-left:3px solid var(--accent);
+  padding-left:10px;
+  margin-top:24px;
+}
+.stat-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+  gap:1px;
+  background:var(--rule);
+  border:1px solid var(--rule);
+  margin:24px 0;
+}
+.stat-cell{
+  background:var(--paper);
+  padding:18px 16px;
+  text-align:center;
+}
+.stat-num{
+  display:block;
+  font-family:monospace;
+  font-size:20px;
+  color:var(--accent);
+  font-weight:700;
+}
+.stat-unit{display:block;font-size:12px;color:var(--muted);}
+.stat-label{display:block;font-size:11px;font-weight:700;margin-top:6px;}
+.data-box,.note-box,.next-box{
+  border:1px solid var(--rule);
+  padding:18px 22px;
+  margin:20px 0;
+  background:#fff;
+}
+.data-box{
+  background:var(--highlight);
+  border-left:4px solid var(--accent);
+}
+.note-box{
+  background:rgba(200,75,47,.05);
+  border:1px dashed var(--accent);
+  color:var(--muted);
+  font-size:13px;
+}
+.summary-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:20px 0;
+  font-size:13px;
+}
+.summary-table th{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:monospace;
+  font-size:11px;
+  text-align:left;
+}
+.summary-table th,.summary-table td{
+  padding:10px 12px;
+  border:1px solid var(--rule);
+  vertical-align:top;
+}
+.summary-table td:first-child{
+  font-weight:700;
+  color:var(--accent);
+}
+.next-box{
+  background:var(--ink);
+  color:var(--paper);
+  border-left:5px solid var(--accent);
+}
+.next-box strong{
+  color:var(--accent);
+  font-family:monospace;
+  font-size:10px;
+  letter-spacing:.12em;
+}
+.source-tag{
+  display:inline-block;
+  font-size:10px;
+  background:rgba(0,0,0,.06);
+  border:1px solid var(--rule);
+  color:var(--muted);
+  padding:4px 8px;
+  margin:4px 4px 4px 0;
+  font-family:monospace;
+}
+.disclaimer{
+  background:var(--ink);
+  color:rgba(245,242,237,.6);
+  padding:24px 40px;
+  font-size:11px;
+  line-height:1.7;
+  font-family:monospace;
+}
+@media(max-width:600px){
+  .masthead{flex-direction:column;gap:6px;padding:10px 16px;}
+  .hero{padding:36px 16px 30px;}
+  .chapter{padding:32px 16px;}
+  .toc{padding:24px 16px;}
+  .chapter-header{flex-direction:column;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="masthead">
+  <span>産業構造分析レポート</span>
+  <span class="masthead-right">2026年05月発行 ── 防災・国土強靭化／防災技術（外部環境編）</span>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-label">INDUSTRY ANALYSIS REPORT — EXTERNAL ENVIRONMENT</div>
+    <h1>
+      業界分析｜高市政権「戦略17分野」
+      <br>
+      防災・国土強靭化
+      <br>
+      <em>防災技術</em>
+      （外部環境編）
+    </h1>
+    <p>巨大地震、激甚化する気象災害、インフラ老朽化、建設担い手不足を、国家戦略・経済安全保障・サプライチェーンの視点から整理します。</p>
+    <div class="hero-meta">
+      <span class="hero-badge">戦略17分野・先行検討技術【25】</span>
+      <span class="hero-badge">危機管理投資</span>
+      <span class="hero-badge">国土強靭化</span>
+    </div>
+    <div class="data-notice">本レポートのデータ基準時点：2026年05月 ／ 政府資料・公開統計に基づく外部環境整理</div>
+  </div>
+</section>
+
+<div class="toc">
+  <div class="container">
+    <h2>目次 — TABLE OF CONTENTS</h2>
+    <div class="toc-grid">
+      <a class="toc-item" href="#ch0"><span class="toc-num">00</span>エグゼクティブサマリー</a>
+      <a class="toc-item" href="#ch1"><span class="toc-num">01</span>防災技術の立ち位置</a>
+      <a class="toc-item" href="#ch2"><span class="toc-num">02</span>市場規模と需要の実態</a>
+      <a class="toc-item" href="#ch3"><span class="toc-num">03</span>制度・政策との関係性</a>
+      <a class="toc-item" href="#ch4"><span class="toc-num">04</span>経済的前提条件</a>
+      <a class="toc-item" href="#ch5"><span class="toc-num">05</span>社会・人口動態の影響</a>
+      <a class="toc-item" href="#ch6"><span class="toc-num">06</span>技術・DXの位置づけ</a>
+      <a class="toc-item" href="#ch7"><span class="toc-num">07</span>参入・撤退の制約</a>
+      <a class="toc-item" href="#ch8"><span class="toc-num">08</span>経済安全保障との距離</a>
+      <a class="toc-item" href="#ch9"><span class="toc-num">09</span>日本の勝ち筋</a>
+      <a class="toc-item" href="#ch10"><span class="toc-num">10</span>外部環境まとめ表</a>
+      <a class="toc-item" href="#ch11"><span class="toc-num">11</span>次に読むべき論点</a>
+    </div>
+  </div>
+</div>
+
+<section class="chapter" id="ch0">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 00</span>
+    <h2>エグゼクティブサマリー</h2>
+  </div>
+
+  <p>
+    防災技術は、単なる防災用品や災害対応サービスではありません。
+    政府資料では、防災・国土強靭化分野の先行検討技術として位置づけられ、巨大地震、激甚化・頻発化する気象災害、インフラ老朽化、担い手不足に対応する危機管理投資として整理されています。
+  </p>
+
+  <div class="stat-grid">
+    <div class="stat-cell"><span class="stat-num">25</span><span class="stat-unit">番目</span><span class="stat-label">戦略17分野・先行検討技術</span></div>
+    <div class="stat-cell"><span class="stat-num">15.6</span><span class="stat-unit">兆円</span><span class="stat-label">5か年加速化対策の事業規模</span></div>
+    <div class="stat-cell"><span class="stat-num">20</span><span class="stat-unit">兆円強</span><span class="stat-label">第1次国土強靱化実施中期計画の事業規模</span></div>
+    <div class="stat-cell"><span class="stat-num">75</span><span class="stat-unit">%</span><span class="stat-label">2040年に建設後50年以上となる道路橋の割合</span></div>
+    <div class="stat-cell"><span class="stat-num">1.5</span><span class="stat-unit">倍</span><span class="stat-label">温暖化により線状降水帯総数が増加したとの推計</span></div>
+  </div>
+
+  <div class="note-box">
+    数字の意味は、公共事業が増えるという単純な話ではありません。
+    15兆円、20兆円という規模は、災害対応を「発生後の復旧」から「発生前の予防・予測・省人化・遠隔化」へ移すための国家投資です。
+  </div>
+
+  <p>
+    防災技術の外部環境は、災害リスクの上昇、インフラ老朽化、建設人材不足、自治体財政の制約、技術実装の遅さが重なる構造です。
+    このため、政府が重視するのは、技術単体ではなく、自動・遠隔施工、インフラ老朽化対策、災害リスク評価、防災資機材を組み合わせたサプライチェーン強靭化です。
+  </p>
+
+  <span class="source-tag">官民投資ロードマップ素案</span>
+  <span class="source-tag">国土強靱化年次計画2025</span>
+  <span class="source-tag">国土交通省 インフラ老朽化資料</span>
+</div>
+</section>
+
+<section class="chapter" id="ch1">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 01</span>
+    <h2>防災技術の立ち位置</h2>
+  </div>
+
+  <p>
+    防災技術は、防災・国土強靭化分野における「戦略17分野・先行検討技術【25】」です。
+    政府資料では、国土強靭化を「国民の生命・財産・暮らしを守り、強い経済を下支えする重要な危機管理投資」と位置づけています。
+  </p>
+
+  <table class="summary-table">
+    <tr><th>対象領域</th><th>技術の意味</th><th>国家戦略との接続</th></tr>
+    <tr><td>自動・遠隔施工</td><td>危険現場で人が近づかずに施工する技術</td><td>担い手不足と災害復旧の両立</td></tr>
+    <tr><td>インフラ老朽化対策</td><td>橋梁、トンネル、河川、上下水道等の維持管理</td><td>社会基盤の機能維持</td></tr>
+    <tr><td>災害リスク評価</td><td>地震、豪雨、土砂災害、浸水等の予測・可視化</td><td>事前防災と資源配分</td></tr>
+    <tr><td>防災資機材</td><td>避難、救助、通信、電源、水、仮設設備</td><td>有事の国内供給網確保</td></tr>
+  </table>
+
+  <p>
+    この分野で重要なのは、経済安全保障の対象が「半導体」や「エネルギー」だけではない点です。
+    災害時に道路、港湾、通信、水道、電力、物流が止まれば、国内生産基盤そのものが機能しません。
+    その意味で、防災技術は国内サプライチェーン全体の土台です。
+  </p>
+
+  <span class="source-tag">戦略17分野・先行検討技術【25】</span>
+</div>
+</section>
+
+<section class="chapter" id="ch2">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 02</span>
+    <h2>市場規模と需要の実態</h2>
+  </div>
+
+  <p>
+    防災技術の需要は、一般的な民需だけで形成されません。
+    国、自治体、インフラ管理者、建設会社、通信・電力・水道事業者、物流事業者が需要側に立つため、公共投資と民間投資が混在します。
+  </p>
+
+  <p>
+    国土強靱化の5か年加速化対策では、令和6年度補正予算までに約15.6兆円の事業規模が確保されています。
+    これは、防災技術の市場が「災害が起きた時だけ動く市場」ではなく、平時から継続的に形成される政策市場であることを示します。
+  </p>
+
+  <div class="data-box">
+    <p>
+      重要なのは、予算規模そのものではありません。
+      防災技術は、公共投資を起点に実装実績をつくり、商品化、標準化、海外展開へ進む構造を持ちます。
+      政府資料が「技術開発から商品化、実装・需要の創出、更なる技術開発につながる好循環」を重視する理由はここにあります。
+    </p>
+  </div>
+
+  <p>
+    一方で、市場形成には時間がかかります。
+    防災技術は、人命やインフラに関わるため、単に安い技術が採用されるわけではありません。
+    信頼性、実績、保守体制、自治体調達への適合、現場作業との整合性が必要になります。
+  </p>
+
+  <span class="source-tag">国土強靱化5か年加速化対策</span>
+</div>
+</section>
+
+<section class="chapter" id="ch3">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 03</span>
+    <h2>制度・政策との関係性</h2>
+  </div>
+
+  <p>
+    防災技術は、政策依存度が高い分野です。
+    ただし、それは補助金だけに依存するという意味ではありません。
+    国土強靭化、自治体の防災計画、インフラ点検制度、公共調達、災害復旧制度が市場の形を決めます。
+  </p>
+
+  <table class="summary-table">
+    <tr><th>政策領域</th><th>防災技術への影響</th><th>政策目標</th></tr>
+    <tr><td>国土強靱化</td><td>公共投資の継続性を高める</td><td>災害に強い経済社会の構築</td></tr>
+    <tr><td>インフラメンテナンス</td><td>点検・補修・更新需要を生む</td><td>予防保全型への転換</td></tr>
+    <tr><td>建設DX</td><td>自動・遠隔施工の導入を促す</td><td>人手不足下での施工能力維持</td></tr>
+    <tr><td>防災DX</td><td>災害リスク評価・情報共有を高度化</td><td>避難・復旧判断の迅速化</td></tr>
+  </table>
+
+  <p>
+    政府がこの分野を重点化する理由は、気候変動や地震リスクが民間企業だけでは十分に内部化されにくいからです。
+    防災技術は、災害が起きない時には効果が見えにくく、災害が起きた時には導入が遅すぎるという性質を持ちます。
+    そのため、政策目標として先行投資を行う必要があります。
+  </p>
+
+  <span class="source-tag">第1次国土強靱化実施中期計画</span>
+</div>
+</section>
+
+<section class="chapter" id="ch4">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 04</span>
+    <h2>経済的前提条件</h2>
+  </div>
+
+  <p>
+    防災技術の経済的前提は、通常の成長産業とは異なります。
+    需要は「便利だから増える」のではなく、「災害リスク、老朽化、人手不足、財政制約が同時に高まるため、導入しないリスクが増える」ことで発生します。
+  </p>
+
+  <table class="summary-table">
+    <tr><th>外部圧力</th><th>経済的な意味</th><th>技術需要への変換</th></tr>
+    <tr><td>巨大地震リスク</td><td>復旧遅延が経済活動停止に直結</td><td>早期復旧、遠隔施工、備蓄</td></tr>
+    <tr><td>気象災害の激甚化</td><td>豪雨・土砂・浸水対応の頻度上昇</td><td>リスク評価、監視、避難支援</td></tr>
+    <tr><td>インフラ老朽化</td><td>更新・補修費用の増大</td><td>点検ロボット、予防保全、劣化予測</td></tr>
+    <tr><td>担い手不足</td><td>現場施工能力の制約</td><td>自動化、遠隔化、省人化施工</td></tr>
+  </table>
+
+  <p>
+    この構造では、短期的な利益率だけで投資判断をすると導入が遅れます。
+    国家戦略上は、防災技術を「災害時の費用」ではなく、「経済活動を止めないための保険」として扱う必要があります。
+  </p>
+
+  <span class="source-tag">危機管理投資</span>
+</div>
+</section>
+
+<section class="chapter" id="ch5">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 05</span>
+    <h2>社会・人口動態の影響</h2>
+  </div>
+
+  <p>
+    防災技術の需要を押し上げる最大の社会要因は、人口減少と高齢化です。
+    災害対応を担う自治体職員、消防団、建設技能者、インフラ保守人材が減少する一方で、守るべきインフラは老朽化していきます。
+  </p>
+
+  <div class="data-box">
+    <p>
+      国土交通省資料では、建設後50年以上経過する社会資本の割合が今後加速度的に高まると整理されています。
+      2040年には道路橋で75%、トンネルで52%、河川管理施設で64%、下水道管渠で40%、港湾施設で34%、水道管路で64%が建設後50年以上になる見通しです。
+    </p>
+  </div>
+
+  <p>
+    この数字の意味は、老朽化対策が一部施設の問題ではなく、全国の生活基盤そのものの問題になるということです。
+    特に地方部では、人口減少により税収、職員、技術者、施工会社のすべてが制約を受けます。
+    そのため、防災技術は単なる高度化ではなく、少ない人員で広域インフラを維持するための自律性確保の手段になります。
+  </p>
+
+  <span class="source-tag">国土交通省 建設後50年以上経過する社会資本の割合</span>
+</div>
+</section>
+
+<section class="chapter" id="ch6">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 06</span>
+    <h2>技術・DXの位置づけ</h2>
+  </div>
+
+  <p>
+    防災技術におけるDXは、単なるデジタル化ではありません。
+    災害リスク評価、センサー、衛星、ドローン、AI、遠隔施工、点検ロボット、デジタルツインが、意思決定と現場作業をつなぐ役割を持ちます。
+  </p>
+
+  <table class="summary-table">
+    <tr><th>技術</th><th>機能</th><th>国家戦略上の意味</th></tr>
+    <tr><td>AI・リスク評価</td><td>災害発生可能性や被害範囲を推定</td><td>資源配分の高度化</td></tr>
+    <tr><td>ドローン・ロボット</td><td>危険区域の点検・監視</td><td>人命リスクの低減</td></tr>
+    <tr><td>自動・遠隔施工</td><td>災害現場での無人化施工</td><td>復旧能力の自律性確保</td></tr>
+    <tr><td>デジタルツイン</td><td>地形・インフラ・災害情報の統合</td><td>事前防災の精度向上</td></tr>
+    <tr><td>防災資機材</td><td>通信、電源、水、仮設設備</td><td>有事の国内供給網維持</td></tr>
+  </table>
+
+  <p>
+    重要なのは、DXで災害がなくなるわけではないという点です。
+    防災DXの役割は、災害の発生を前提に、被害を小さくし、復旧を早め、人が危険現場に入る時間を減らすことです。
+  </p>
+
+  <span class="source-tag">防災DX</span>
+  <span class="source-tag">自動・遠隔施工</span>
+</div>
+</section>
+
+<section class="chapter" id="ch7">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 07</span>
+    <h2>参入・撤退の制約</h2>
+  </div>
+
+  <p>
+    防災技術は、社会的必要性が高い一方で、民間企業が簡単に参入できる市場ではありません。
+    理由は、公共調達、実証実績、認証、保守体制、自治体との関係、災害時の責任範囲が重いためです。
+  </p>
+
+  <table class="summary-table">
+    <tr><th>制約</th><th>内容</th><th>ボトルネック</th></tr>
+    <tr><td>公共調達</td><td>実績重視で新技術が入りにくい</td><td>商用化の遅さ</td></tr>
+    <tr><td>安全性</td><td>人命・インフラに関わるため失敗許容度が低い</td><td>認証負担</td></tr>
+    <tr><td>初期投資</td><td>ロボット、施工機械、センサー網の導入負担</td><td>長期回収構造</td></tr>
+    <tr><td>人材</td><td>土木、IT、防災、自治体実務を横断する人材が必要</td><td>人材不足</td></tr>
+    <tr><td>需要の不確実性</td><td>災害頻度や自治体予算に左右される</td><td>補助金依存</td></tr>
+  </table>
+
+  <p>
+    したがって、防災技術の構造的ボトルネックは、技術不足だけではありません。
+    収益化難易度、初期投資負担、人材不足、認証負担、補助金依存、商用化の遅さ、長期回収構造が重なります。
+  </p>
+
+  <span class="source-tag">構造的ボトルネック</span>
+</div>
+</section>
+
+<section class="chapter" id="ch8">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 08</span>
+    <h2>経済安全保障との距離</h2>
+  </div>
+
+  <p>
+    防災技術は、経済安全保障との距離が非常に近い分野です。
+    災害時には、道路、港湾、空港、通信、電力、水道、物流が同時に影響を受けます。
+    これらが止まれば、医療、食料、エネルギー、防衛、生産活動にも波及します。
+  </p>
+
+  <div class="data-box">
+    <p>
+      防災技術の経済安全保障上の役割は、国内生産基盤を守ることです。
+      工場があっても、道路や港湾が止まれば出荷できません。
+      電力や水道が止まれば稼働できません。
+      通信が止まれば指揮命令や決済も滞ります。
+    </p>
+  </div>
+
+  <p>
+    このため、防災技術はチョークポイント対策でもあります。
+    災害時に特定地域、特定インフラ、特定資機材が止まると、供給網全体が止まります。
+    自律性確保とは、災害時に海外や一部事業者だけに依存せず、国内で復旧・維持・代替できる能力を持つことです。
+  </p>
+
+  <span class="source-tag">経済安全保障</span>
+  <span class="source-tag">チョークポイント</span>
+  <span class="source-tag">国内生産基盤</span>
+</div>
+</section>
+
+<section class="chapter" id="ch9">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 09</span>
+    <h2>日本の勝ち筋</h2>
+  </div>
+
+  <p>
+    日本の勝ち筋は、災害大国として蓄積したデータ、現場ノウハウ、インフラ運用経験を、防災技術としてパッケージ化することです。
+    政府資料でも、災害大国である我が国で蓄積されたデータ・ノウハウを梃子に、海外市場の獲得につなげる方向性が示されています。
+  </p>
+
+  <table class="summary-table">
+    <tr><th>勝ち筋</th><th>内容</th><th>国際競争上の意味</th></tr>
+    <tr><td>運営ノウハウ</td><td>災害対応、避難、復旧、施工管理の蓄積</td><td>海外に移転可能な実務知</td></tr>
+    <tr><td>品質管理能力</td><td>安全性、耐久性、保守性を重視する設計</td><td>信頼性市場での差別化</td></tr>
+    <tr><td>パッケージ輸出</td><td>技術、訓練、資機材、運用を一体提供</td><td>単品販売から制度輸出へ</td></tr>
+    <tr><td>制度優位</td><td>国土強靱化、点検制度、防災計画との接続</td><td>導入モデルの標準化</td></tr>
+    <tr><td>国際標準化</td><td>災害リスク評価、点検、遠隔施工の手法標準化</td><td>同盟国市場・アジア市場への展開</td></tr>
+  </table>
+
+  <p>
+    ただし、日本の防災技術は、技術を作れば自動的に売れるわけではありません。
+    海外市場では、価格、現地制度、保守人材、施工慣行、気候条件が異なります。
+    そのため、単品輸出ではなく、運営ノウハウ輸出とパッケージ輸出が重要になります。
+  </p>
+
+  <span class="source-tag">運営ノウハウ輸出</span>
+  <span class="source-tag">同盟国市場</span>
+  <span class="source-tag">国際標準化</span>
+</div>
+</section>
+
+<section class="chapter" id="ch10">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 10</span>
+    <h2>外部環境まとめ表</h2>
+  </div>
+
+  <table class="summary-table">
+    <tr><th>論点</th><th>外部環境</th><th>防災技術への影響</th></tr>
+    <tr><td>国家戦略</td><td>国土強靱化が危機管理投資として位置づく</td><td>公共投資を起点に需要形成</td></tr>
+    <tr><td>経済安全保障</td><td>災害で国内供給網が止まるリスク</td><td>復旧・代替・維持能力の自律性確保</td></tr>
+    <tr><td>サプライチェーン</td><td>道路、港湾、電力、水道、通信が基盤</td><td>インフラ停止を防ぐ技術需要</td></tr>
+    <tr><td>社会構造</td><td>人口減少と建設担い手不足</td><td>自動・遠隔施工、省人化需要</td></tr>
+    <tr><td>気候変動耐性</td><td>豪雨、土砂、浸水リスクの上昇</td><td>リスク評価、監視、避難支援</td></tr>
+    <tr><td>国際競争</td><td>世界的に災害リスクが増大</td><td>防災パッケージ輸出の余地</td></tr>
+  </table>
+
+  <p>
+    防災技術の外部環境は、短期的な市場成長だけで評価できません。
+    本質は、災害が増える社会で、国家がどの機能を止めないようにするかという設計問題です。
+  </p>
+
+  <span class="source-tag">外部環境整理</span>
+</div>
+</section>
+
+<section class="chapter" id="ch11">
+<div class="container">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 11</span>
+    <h2>次に読むべき論点</h2>
+  </div>
+
+  <p>
+    次の内部環境編では、外部環境の圧力が、企業の収益構造、人材市場、投資回収、プレイヤー構造、忙しさ、利益率にどう現れるかを整理します。
+  </p>
+
+  <div class="next-box">
+    <strong>NEXT REPORT</strong>
+    <p>防災技術（内部環境編）で扱う主な論点</p>
+    <ul>
+      <li>防災技術企業のプレイヤー構造</li>
+      <li>公共調達依存と収益化難易度</li>
+      <li>自動・遠隔施工の人材構造</li>
+      <li>災害リスク評価ビジネスのデータ資産</li>
+      <li>防災資機材の国内供給網と在庫負担</li>
+    </ul>
+  </div>
+
+  <p>
+    防災技術は、災害対応の周辺産業ではありません。
+    国内生産基盤、物流、自治体機能、生活インフラを止めないための基盤産業です。
+  </p>
+
+  <span class="source-tag">次回：内部環境編</span>
+</div>
+</section>
+
+<div class="disclaimer">
+本レポートは、公開されている政府資料、統計資料、関連公的資料をもとに産業構造を整理したものです。特定企業の株式、債券、金融商品の売買を推奨するものではありません。記載内容は作成時点の情報に基づきます。
+<br><br>
+出典：内閣官房「先行して検討を進めている主要な製品・技術等の官民投資ロードマップ素案」、内閣官房「第1次国土強靱化実施中期計画」、内閣官房「国土強靱化年次計画2025」、国土交通省「建設後50年以上経過する社会資本の割合」、気象庁「気候変動に関する資料」
+</div>
+
+</body>
+</html>
