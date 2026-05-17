@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フィジカルAI｜政策実装・補助金編 Layer2-A</title>
+<style>
+:root {
+  --bg:#e8f5e9;
+  --bg-mid:#dceede;
+  --bg-card:#ffffff;
+  --bg-card2:#f1faf2;
+  --border:#b2d8b6;
+  --border-light:#c8e6c9;
+  --accent:#2e7d32;
+  --accent2:#388e3c;
+  --accent-pale:#a5d6a7;
+  --accent-bright:#1b5e20;
+  --text-main:#1a2e1a;
+  --text-mid:#3a5c3a;
+  --text-dim:#6a8f6a;
+  --red:#c84b2f;
+  --mono:monospace;
+  --serif:serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--text-main);
+  font-family:var(--sans);
+  font-size:15px;
+  line-height:1.85;
+}
+
+.masthead{
+  border-bottom:1px solid var(--border);
+  padding:14px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  background:rgba(232,245,233,0.96);
+  z-index:100;
+}
+.masthead-badge{
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.12em;
+  color:var(--accent);
+  border:1px solid var(--accent2);
+  padding:3px 8px;
+}
+.masthead-title,.masthead-meta{
+  font-family:var(--mono);
+  font-size:10px;
+  color:var(--text-dim);
+}
+
+.hero{
+  padding:80px 40px 64px;
+  max-width:960px;
+  margin:0 auto;
+  border-bottom:1px solid var(--border);
+}
+.hero-series{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.16em;
+  color:var(--accent2);
+  text-transform:uppercase;
+  margin-bottom:24px;
+}
+.hero-title{
+  font-family:var(--serif);
+  font-size:clamp(28px,4vw,44px);
+  font-weight:700;
+  color:#0d1f0d;
+  line-height:1.3;
+  margin-bottom:16px;
+}
+.hero-subtitle{
+  font-size:15px;
+  color:var(--text-mid);
+  margin-bottom:36px;
+  max-width:720px;
+}
+.hero-kpi-row{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  margin-top:40px;
+}
+.hero-kpi{
+  background:var(--bg-card);
+  padding:24px 28px;
+}
+.hero-kpi-label{
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.12em;
+  color:var(--text-dim);
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.hero-kpi-value{
+  font-family:var(--mono);
+  font-size:26px;
+  color:var(--accent-bright);
+  line-height:1;
+  margin-bottom:6px;
+}
+.hero-kpi-note{
+  font-size:11px;
+  color:var(--text-dim);
+}
+
+.toc-wrap{
+  max-width:960px;
+  margin:0 auto;
+  padding:48px 40px;
+  border-bottom:1px solid var(--border);
+}
+.toc-label{
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.16em;
+  color:var(--text-dim);
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+.toc{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2px;
+}
+.toc-item{
+  display:flex;
+  gap:12px;
+  padding:10px 14px;
+  background:var(--bg-card);
+  text-decoration:none;
+  color:var(--text-mid);
+  font-size:13px;
+  border-left:2px solid transparent;
+}
+.toc-item:hover{
+  background:var(--bg-card2);
+  color:var(--accent);
+  border-left-color:var(--accent2);
+}
+.toc-num{
+  font-family:var(--mono);
+  font-size:10px;
+  color:var(--text-dim);
+  min-width:24px;
+}
+
+.chapter{
+  max-width:960px;
+  margin:0 auto;
+  padding:64px 40px;
+  border-bottom:1px solid var(--border);
+}
+.chapter-header{
+  display:flex;
+  align-items:flex-start;
+  gap:20px;
+  margin-bottom:40px;
+}
+.chapter-num{
+  font-family:var(--mono);
+  font-size:11px;
+  color:var(--accent2);
+  letter-spacing:.1em;
+  min-width:90px;
+}
+.chapter-title{
+  font-family:var(--serif);
+  font-size:clamp(18px,2.5vw,26px);
+  font-weight:700;
+  color:#0d1f0d;
+  line-height:1.4;
+}
+.chapter-lead{
+  font-size:14px;
+  color:var(--text-mid);
+  margin-bottom:32px;
+  padding-left:110px;
+}
+
+p{
+  margin-bottom:1.2em;
+  font-size:14px;
+  color:var(--text-main);
+  line-height:1.9;
+}
+
+.stat-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:1px;
+  background:var(--border);
+  margin:32px 0;
+}
+.stat-cell{
+  background:var(--bg-card);
+  padding:24px 20px;
+  text-align:center;
+}
+.stat-value{
+  font-family:var(--mono);
+  font-size:28px;
+  color:var(--accent-bright);
+  line-height:1;
+  margin-bottom:8px;
+}
+.stat-label{
+  font-size:11px;
+  color:var(--text-mid);
+  line-height:1.5;
+}
+.stat-sub{
+  font-family:var(--mono);
+  font-size:9px;
+  color:var(--text-dim);
+  margin-top:6px;
+}
+
+.data-box{
+  background:var(--bg-card2);
+  border-left:3px solid var(--accent);
+  padding:20px 24px;
+  margin:24px 0;
+  font-size:13px;
+  line-height:1.8;
+}
+.data-box-title{
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.12em;
+  color:var(--accent2);
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.note-box{
+  background:#f9fbe7;
+  border:1px solid #c5e1a5;
+  padding:18px 22px;
+  margin:20px 0;
+  font-size:13px;
+  color:var(--text-mid);
+}
+.note-box:before{
+  content:"NOTE";
+  font-family:var(--mono);
+  font-size:9px;
+  letter-spacing:.15em;
+  color:var(--accent2);
+  display:block;
+  margin-bottom:8px;
+}
+
+.warn-box{
+  background:#fff8f6;
+  border-left:3px solid var(--red);
+  padding:18px 22px;
+  margin:20px 0;
+  font-size:13px;
+  color:var(--text-mid);
+}
+.warn-box:before{
+  content:"課題";
+  font-family:var(--mono);
+  font-size:9px;
+  letter-spacing:.15em;
+  color:var(--red);
+  display:block;
+  margin-bottom:8px;
+}
+
+.summary-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:28px 0;
+  font-size:13px;
+}
+.summary-table th{
+  background:var(--bg-mid);
+  color:var(--accent);
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  padding:12px 16px;
+  text-align:left;
+  border-bottom:1px solid var(--border);
+}
+.summary-table td{
+  padding:12px 16px;
+  border-bottom:1px solid var(--border-light);
+  color:var(--text-main);
+  vertical-align:top;
+  background:var(--bg-card);
+}
+.td-mono{
+  font-family:var(--mono);
+  font-size:12px;
+  color:var(--accent2);
+}
+
+.phase-bar{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--border);
+  margin:28px 0;
+}
+.phase-cell{
+  background:var(--bg-card);
+  padding:16px 14px;
+  text-align:center;
+  font-size:12px;
+  color:var(--text-dim);
+}
+.phase-cell.active{
+  background:var(--accent-pale);
+  color:var(--accent-bright);
+}
+.phase-label{
+  font-family:var(--mono);
+  font-size:9px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  display:block;
+  margin-bottom:4px;
+}
+.phase-name{
+  font-weight:500;
+  display:block;
+}
+
+.policy-list{
+  display:flex;
+  flex-direction:column;
+  gap:1px;
+  margin:24px 0;
+}
+.policy-card{
+  background:var(--bg-card);
+  padding:18px 22px;
+  display:grid;
+  grid-template-columns:40px 1fr auto;
+  gap:16px;
+}
+.policy-card-idx{
+  font-family:var(--mono);
+  font-size:18px;
+  color:var(--accent-pale);
+}
+.policy-card-name{
+  font-size:13px;
+  font-weight:700;
+  color:#0d1f0d;
+  margin-bottom:4px;
+}
+.policy-card-desc{
+  font-size:12px;
+  color:var(--text-mid);
+}
+.policy-card-tag{
+  font-family:var(--mono);
+  font-size:9px;
+  letter-spacing:.1em;
+  color:var(--accent);
+  border:1px solid var(--accent-pale);
+  padding:3px 8px;
+  white-space:nowrap;
+  height:fit-content;
+}
+
+.next-box{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  padding:28px 32px;
+  margin-top:48px;
+}
+.next-box-label{
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.16em;
+  color:var(--text-dim);
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+.next-box-title{
+  font-family:var(--serif);
+  font-size:16px;
+  color:#0d1f0d;
+  margin-bottom:8px;
+}
+.next-box-desc{
+  font-size:13px;
+  color:var(--text-mid);
+}
+
+.source-tag{
+  font-family:var(--mono);
+  font-size:9px;
+  color:var(--text-dim);
+  letter-spacing:.06em;
+  margin-top:8px;
+}
+.disclaimer{
+  max-width:960px;
+  margin:0 auto;
+  padding:32px 40px;
+  border-top:1px solid var(--border);
+  font-size:11px;
+  color:var(--text-dim);
+  line-height:1.8;
+}
+.hl{color:var(--accent-bright);font-weight:600;}
+.hl-r{color:var(--red);font-weight:600;}
+
+@media(max-width:680px){
+  .masthead{padding:12px 20px;display:block;}
+  .hero,.chapter,.toc-wrap{padding-left:20px;padding-right:20px;}
+  .hero-kpi-row{grid-template-columns:1fr;}
+  .toc{grid-template-columns:1fr;}
+  .chapter-header{display:block;}
+  .chapter-num{display:block;margin-bottom:8px;}
+  .chapter-lead{padding-left:0;}
+  .phase-bar{grid-template-columns:1fr 1fr;}
+  .policy-card{grid-template-columns:32px 1fr;}
+  .policy-card-tag{display:none;}
+}
+</style>
+</head>
+
+<body>
+
+<header class="masthead">
+  <div>
+    <span class="masthead-badge">Layer 2-A</span>
+    <span class="masthead-title">戦略17分野｜政策実装・補助金編</span>
+  </div>
+  <span class="masthead-meta">データ基準：2026年05月</span>
+</header>
+
+<section class="hero">
+  <p class="hero-series">01 / AI・半導体分野 / フィジカルAI（特にAIロボット）</p>
+  <h1 class="hero-title">フィジカルAI<br>政策実装・補助金編</h1>
+  <p class="hero-subtitle">
+    政府は何に、なぜ、どの段階で資金を投入しようとしているのか。
+    官民投資ロードマップ素案、NEDO公募、経済産業省資料をもとに、フィジカルAIの政策実装フェーズを整理します。
+  </p>
+
+  <div class="hero-kpi-row">
+    <div class="hero-kpi">
+      <div class="hero-kpi-label">AIロボット市場</div>
+      <div class="hero-kpi-value">約60兆円</div>
+      <div class="hero-kpi-note">2040年見込み。官民投資ロードマップ素案で示された市場規模。</div>
+    </div>
+    <div class="hero-kpi">
+      <div class="hero-kpi-label">政府目標</div>
+      <div class="hero-kpi-value">20兆円</div>
+      <div class="hero-kpi-note">2040年に世界シェア3割超を通じた市場獲得を目指す整理。</div>
+    </div>
+    <div class="hero-kpi">
+      <div class="hero-kpi-label">NEDO公募</div>
+      <div class="hero-kpi-value">2026-2030</div>
+      <div class="hero-kpi-note">AIロボット・フィジカルAI向けマルチモーダル基盤モデル開発。</div>
+    </div>
+  </div>
+</section>
+
+<nav class="toc-wrap">
+  <div class="toc-label">Contents</div>
+  <div class="toc">
+    <a class="toc-item" href="#ch00"><span class="toc-num">00</span>政策実装サマリー</a>
+    <a class="toc-item" href="#ch01"><span class="toc-num">01</span>なぜ今、政府が重点化するのか</a>
+    <a class="toc-item" href="#ch02"><span class="toc-num">02</span>政府ロードマップと政策構造</a>
+    <a class="toc-item" href="#ch03"><span class="toc-num">03</span>補助金・基金・官民投資</a>
+    <a class="toc-item" href="#ch04"><span class="toc-num">04</span>実証・量産・商用化の現在地</a>
+    <a class="toc-item" href="#ch05"><span class="toc-num">05</span>政策資金はどこへ流れるのか</a>
+    <a class="toc-item" href="#ch06"><span class="toc-num">06</span>国際競争と同盟国市場</a>
+    <a class="toc-item" href="#ch07"><span class="toc-num">07</span>ボトルネックと政策課題</a>
+    <a class="toc-item" href="#ch08"><span class="toc-num">08</span>今後の政策論点</a>
+    <a class="toc-item" href="#ch09"><span class="toc-num">09</span>政策実装まとめ</a>
+  </div>
+</nav>
+
+<section class="chapter" id="ch00">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 00</span>
+    <h2 class="chapter-title">政策実装サマリー</h2>
+  </div>
+  <p class="chapter-lead">
+    フィジカルAIは、生成AIを「現実世界で動く力」に変える政策領域です。政府はAIロボットを、構造的人手不足と供給制約を緩和する国家戦略技術として位置づけています。
+  </p>
+
+  <p>
+    官民投資ロードマップ素案では、フィジカルAIの実装先としてAIロボットを中心に整理しています。
+    AIロボット市場は2030年頃を境に急拡大し、2040年に約60兆円規模へ成長すると見込まれています。
+    政府は、米中に並ぶ第三極として世界シェア3割超を獲得し、2040年に20兆円の市場獲得を目指すとしています。
+  </p>
+
+  <div class="stat-grid">
+    <div class="stat-cell">
+      <div class="stat-value">約60兆円</div>
+      <div class="stat-label">2040年 AIロボット市場規模</div>
+      <div class="stat-sub">官民投資ロードマップ素案</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-value">20兆円</div>
+      <div class="stat-label">2040年 市場獲得目標</div>
+      <div class="stat-sub">世界シェア3割超</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-value">約7割</div>
+      <div class="stat-label">産業用ロボット世界シェア</div>
+      <div class="stat-sub">政策資料上の現状認識</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-value">1割強</div>
+      <div class="stat-label">サービスロボット市場シェア</div>
+      <div class="stat-sub">政策資料上の現状認識</div>
+    </div>
+  </div>
+
+  <div class="data-box">
+    <div class="data-box-title">この記事の読み方</div>
+    本記事は、Layer1で整理した「なぜ重要か」ではなく、Layer2-Aとして「政策がどこまで実装段階に入ったか」を見る記事です。
+    そのため、補助金・公募・委託研究・官民投資・実証・導入支援を中心に整理します。
+  </div>
+
+  <div class="source-tag">出典：日本成長戦略会議「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」、NEDO公募資料、経済産業省EBPM資料</div>
+</section>
+
+<section class="chapter" id="ch01">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 01</span>
+    <h2 class="chapter-title">なぜ今、政府が重点化するのか</h2>
+  </div>
+  <p class="chapter-lead">
+    フィジカルAIが政策実装フェーズに入った理由は、AI開発競争が「画面の中」から「現場」へ移っているためです。
+  </p>
+
+  <p>
+    これまでの生成AI競争は、主にテキスト、画像、音声、動画といったデジタル空間のデータを対象としていました。
+    しかし、フィジカルAIでは、センサー、カメラ、ロボットアーム、移動機構、制御装置などを通じて、AIが現実世界を理解し、物理的な行動を生成します。
+  </p>
+
+  <p>
+    政府が重視する背景には、構造的人手不足があります。
+    製造、物流、建設、介護、防災などの現場では、人が足りないだけでなく、熟練作業や安全確認を担う人材も不足しています。
+    そのため、AIロボットは単なる省人化機器ではなく、供給ボトルネックを緩和する政策手段として扱われています。
+  </p>
+
+  <div class="note-box">
+    重要なのは、「AIモデルを作る」だけでは政策目的を達成できない点です。
+    政府は、AIモデル、ロボット本体、センサー、マイコン、減速機、モーター、蓄電池、通信、現場データを一体として捉えています。
+  </div>
+
+  <p>
+    これは経済安全保障とも直結します。
+    現場データや制御技術を他国のプラットフォームに依存すれば、製造業や社会インフラの中核データを外部に預けることになります。
+    フィジカルAIの自律性確保とは、日本国内でAIロボットの設計・開発・製造・運用改善を回せる基盤を持つことを意味します。
+  </p>
+</section>
+
+<section class="chapter" id="ch02">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 02</span>
+    <h2 class="chapter-title">政府ロードマップと政策構造</h2>
+  </div>
+  <p class="chapter-lead">
+    官民投資ロードマップ素案では、供給サイドと需要サイドを同時に動かすことが基本戦略とされています。
+  </p>
+
+  <table class="summary-table">
+    <thead>
+      <tr>
+        <th>政策軸</th>
+        <th>内容</th>
+        <th>意味</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="td-mono">供給サイド</td>
+        <td>AIロボット、重要コンポーネント、ロボット基盤モデルの研究開発・設備投資</td>
+        <td>国内で設計・量産・品質保証できる生産基盤をつくる</td>
+      </tr>
+      <tr>
+        <td class="td-mono">需要サイド</td>
+        <td>防災などの官需領域、各産業ドメインでのAIロボット導入投資</td>
+        <td>需要の予見可能性を高め、企業の量産投資を促す</td>
+      </tr>
+      <tr>
+        <td class="td-mono">実証環境</td>
+        <td>導入現場に近いモックアップ環境、テストベッド、Center of Excellence</td>
+        <td>現場データ収集、検証、標準化、人材育成を同時に進める</td>
+      </tr>
+      <tr>
+        <td class="td-mono">国際連携</td>
+        <td>海外トップ研究機関との連携、グローバル水準の研究開発</td>
+        <td>米中との競争に対して研究開発力と市場接続を補完する</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="data-box">
+    <div class="data-box-title">政策構造の本質</div>
+    政府は、補助金で個別ロボットを増やすだけではなく、需要家、OEM、部品メーカー、AIモデル開発者、SIer、研究機関が連動するエコシステム形成を狙っています。
+  </div>
+</section>
+
+<section class="chapter" id="ch03">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 03</span>
+    <h2 class="chapter-title">補助金・基金・官民投資</h2>
+  </div>
+  <p class="chapter-lead">
+    フィジカルAIの補助金・支援策は、一般的な中小企業向け補助金というより、NEDO等を通じた研究開発委託・補助・共同研究が中心です。
+  </p>
+
+  <table class="summary-table">
+    <thead>
+      <tr>
+        <th>支援・公募</th>
+        <th>主体</th>
+        <th>確認できる内容</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>AIロボット・フィジカルAIを見据えたマルチモーダル基盤モデル開発事業</td>
+        <td class="td-mono">NEDO</td>
+        <td>2026年3月24日に公募開始。事業期間は2026年度から2030年度。対象者は企業、大学等。事業分類は研究、委託、共同研究、補助。</td>
+      </tr>
+      <tr>
+        <td>GENIACとの接続</td>
+        <td class="td-mono">NEDO</td>
+        <td>2024年2月から基盤モデル開発に必要な計算資源の提供支援やコミュニティ運営を実施。フィジカルAI向け国産基盤モデル開発につながる基盤。</td>
+      </tr>
+      <tr>
+        <td>経済産業省EBPM資料</td>
+        <td class="td-mono">経産省</td>
+        <td>マルチモーダル基盤モデルについて、フィジカルAI分野の企業モデルや高効率モデル開発の土台と位置づけ。R12目標として支援対象事業者の80％以上が活用することを掲げる。</td>
+      </tr>
+      <tr>
+        <td>官民投資ロードマップ素案</td>
+        <td class="td-mono">日本成長戦略会議</td>
+        <td>官民投資の具体額・時期は、ロードマップ取りまとめまでに提示するとされており、現時点では素案段階。</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="note-box">
+    「補助金編」といっても、フィジカルAIでは、単発の設備補助よりも、研究開発委託、基盤モデル開発、計算資源支援、実証環境整備、官需創出が中心になります。
+  </div>
+</section>
+
+<section class="chapter" id="ch04">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 04</span>
+    <h2 class="chapter-title">実証・量産・商用化の現在地</h2>
+  </div>
+  <p class="chapter-lead">
+    2026年時点では、フィジカルAIは「研究開発から実証へ移る段階」です。量産・本格導入には、需要創出とデータ整備が必要です。
+  </p>
+
+  <div class="phase-bar">
+    <div class="phase-cell">
+      <span class="phase-label">Phase 1</span>
+      <span class="phase-name">研究開発</span>
+    </div>
+    <div class="phase-cell active">
+      <span class="phase-label">Phase 2</span>
+      <span class="phase-name">実証・データ整備</span>
+    </div>
+    <div class="phase-cell">
+      <span class="phase-label">Phase 3</span>
+      <span class="phase-name">量産投資</span>
+    </div>
+    <div class="phase-cell">
+      <span class="phase-label">Phase 4</span>
+      <span class="phase-name">商用化・輸出</span>
+    </div>
+  </div>
+
+  <p>
+    NEDO公募では、AIロボット・フィジカルAIの開発基盤となるマルチモーダルな国産AI基盤モデルを開発し、日本が強みを持つ製造業等の産業競争力強化やGXの実現を目指すと説明されています。
+  </p>
+
+  <p>
+    実証フェーズで重要になるのは、現場データの収集です。
+    フィジカルAIは、実空間の情報、物理特性、画像、動画、音声、センサー情報を統合して認識・推論する必要があります。
+    そのため、単にロボットを導入するだけでなく、データセット、評価手法、安全基準、現場運用の標準化が必要になります。
+  </p>
+
+  <div class="warn-box">
+    量産フェーズに進むには、企業が継続調達を見込める需要が必要です。政府資料では、防災などの官需領域における公共調達を通じた先行需要創出が示されています。
+  </div>
+</section>
+
+<section class="chapter" id="ch05">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 05</span>
+    <h2 class="chapter-title">政策資金はどこへ流れるのか</h2>
+  </div>
+  <p class="chapter-lead">
+    政策資金はロボット本体だけではなく、フィジカルAIを成立させる周辺層に流れます。
+  </p>
+
+  <div class="policy-list">
+    <div class="policy-card">
+      <div class="policy-card-idx">01</div>
+      <div>
+        <div class="policy-card-name">AIモデル・マルチモーダル基盤モデル</div>
+        <div class="policy-card-desc">画像、動画、音声、実空間情報、物理特性を統合的に扱う基盤モデル。</div>
+      </div>
+      <div class="policy-card-tag">AI</div>
+    </div>
+    <div class="policy-card">
+      <div class="policy-card-idx">02</div>
+      <div>
+        <div class="policy-card-name">ロボット本体・OEM</div>
+        <div class="policy-card-desc">多用途ロボットの設計、量産、品質、安全性、サービス提供体制。</div>
+      </div>
+      <div class="policy-card-tag">製造</div>
+    </div>
+    <div class="policy-card">
+      <div class="policy-card-idx">03</div>
+      <div>
+        <div class="policy-card-name">重要コンポーネント</div>
+        <div class="policy-card-desc">アクチュエーター、モーター、減速機、センサー、蓄電池等。</div>
+      </div>
+      <div class="policy-card-tag">部品</div>
+    </div>
+    <div class="policy-card">
+      <div class="policy-card-idx">04</div>
+      <div>
+        <div class="policy-card-name">実証・テストベッド</div>
+        <div class="policy-card-desc">モックアップ環境、検証設備、評価手法、人材育成環境。</div>
+      </div>
+      <div class="policy-card-tag">実証</div>
+    </div>
+  </div>
+</section>
+
+<section class="chapter" id="ch06">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 06</span>
+    <h2 class="chapter-title">国際競争と同盟国市場</h2>
+  </div>
+  <p class="chapter-lead">
+    米中がAIロボットの開発・量産・実装競争を進める中、日本は「現場データ」「品質」「運用力」を勝ち筋にしようとしています。
+  </p>
+
+  <p>
+    政府資料では、フィジカルAIの登場により、AI開発競争はWeb上のデータと計算資源をレバレッジとした「規模」中心の競争から、現場データを取り込みつつ、AIとロボティクスを最適統合し、信頼性と安全性を担保しながら現場実装と改善を継続する「統合力・運用力」の競争に重心が移るとされています。
+  </p>
+
+  <p>
+    日本は、産業用ロボットと主要部品で強みを持つ一方、サービスロボットや汎用AIロボットでは後れがあります。
+    そのため、政策上は、製造業等の現場データ、品質保証、重要部品の設計・製造能力を結びつけ、国内市場創出から海外市場獲得へつなげる構造が想定されています。
+  </p>
+</section>
+
+<section class="chapter" id="ch07">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 07</span>
+    <h2 class="chapter-title">ボトルネックと政策課題</h2>
+  </div>
+  <p class="chapter-lead">
+    フィジカルAI政策の難しさは、研究開発だけでなく、量産、現場導入、データ収集、安全性、需要創出が同時に必要な点にあります。
+  </p>
+
+  <table class="summary-table">
+    <thead>
+      <tr>
+        <th>課題</th>
+        <th>内容</th>
+        <th>政策上の意味</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>人材不足</td>
+        <td>AIとロボティクス双方に詳しい開発・利活用人材が不足</td>
+        <td>研究開発だけでなく現場実装が進みにくい</td>
+      </tr>
+      <tr>
+        <td>需要不確実性</td>
+        <td>供給側が十分な需要を見込めず量産投資に踏み切れない</td>
+        <td>官需や大口需要家による初期需要創出が必要</td>
+      </tr>
+      <tr>
+        <td>導入コスト</td>
+        <td>量産不足により導入コストが高止まりする</td>
+        <td>需要が立ち上がらない悪循環につながる</td>
+      </tr>
+      <tr>
+        <td>安全・認証</td>
+        <td>人と協働するAIロボットには安全性、セキュリティ、規格が必要</td>
+        <td>AISI等と連携した技術要件・基準の整備が重要</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="chapter" id="ch08">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 08</span>
+    <h2 class="chapter-title">今後の政策論点</h2>
+  </div>
+  <p class="chapter-lead">
+    今後の焦点は、ロードマップ素案から、官民投資額、採択、実装先、官需創出へ進むかどうかです。
+  </p>
+
+  <div class="data-box">
+    <div class="data-box-title">今後見るべき論点</div>
+    今後は、NEDO事業の採択結果、マルチモーダル基盤モデルの開発体制、産業別導入ロードマップ、防災等の官需調達、テストベッド・CoEの具体化、安全認証制度の整備が重要になります。
+  </div>
+
+  <p>
+    特に注目すべきは、補助金・委託研究が「研究」で終わるのか、それとも実際の現場導入と量産投資に接続するのかです。
+    フィジカルAIは、基盤モデル、ロボット本体、現場データ、運用ノウハウがそろわなければ商用化が進みません。
+  </p>
+</section>
+
+<section class="chapter" id="ch09">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 09</span>
+    <h2 class="chapter-title">政策実装まとめ</h2>
+  </div>
+  <p class="chapter-lead">
+    フィジカルAIは、単なるロボット政策ではなく、AIを現実世界の生産力に変えるための国家戦略です。
+  </p>
+
+  <p>
+    2026年時点では、政策は実証・基盤モデル開発の段階にあります。
+    NEDO公募によりマルチモーダル基盤モデル開発は動き始めていますが、量産、官需、民需、国際市場獲得まではまだ距離があります。
+  </p>
+
+  <p>
+    その意味で、フィジカルAIの政策実装を見る際は、補助金の有無だけでなく、どの企業・大学・研究機関が採択されるか、どの産業で導入ロードマップが作られるか、どの現場データが集まるかを追う必要があります。
+  </p>
+
+  <div class="next-box">
+    <div class="next-box-label">Next: Layer2-B</div>
+    <div class="next-box-title">フィジカルAI｜関連企業・産業エコシステム編</div>
+    <div class="next-box-desc">
+      次回は、フィジカルAIを支える企業群、部素材、センサー、減速機、モーター、AI基盤、通信、SIer、クラウドなどの産業エコシステムを整理します。
+    </div>
+  </div>
+</section>
+
+<footer class="disclaimer">
+  <p>
+    本レポートは公開情報に基づく産業構造分析を目的として作成しており、投資推奨・投資助言を含みません。
+    数値・政策内容は出典資料の公表時点に基づくものであり、今後の政府方針変更、ロードマップ確定版、予算成立、採択結果により変動する可能性があります。
+  </p>
+  <p style="margin-top:8px;">
+    主要出典：内閣官房・日本成長戦略会議「戦略17分野における主要な製品・技術等」／日本成長戦略会議「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」／NEDO「AIロボット・フィジカルAIを見据えたマルチモーダル基盤モデル開発事業」公募資料／経済産業省EBPM資料
+  </p>
+</footer>
+
+</body>
+</html>
