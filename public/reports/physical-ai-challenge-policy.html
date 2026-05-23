@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フィジカルAI（特にAIロボット）｜課題・政策パッケージ編｜戦略17分野 ①</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-sub: #f7f8f5;
+    --accent: #2d7a3a;
+    --accent-light: #e8f5e9;
+    --accent-mid: #4caf50;
+    --accent-dark: #1b5e20;
+    --gov: #1565c0;
+    --gov-light: #e3f0fc;
+    --priv: #6d4c41;
+    --priv-light: #efebe9;
+    --over: #c62828;
+    --over-light: #ffebee;
+    --warn: #e65100;
+    --warn-light: #fff3e0;
+    --text: #1a1a1a;
+    --text-sub: #555555;
+    --text-muted: #888888;
+    --border: #e0e0e0;
+    --font-serif: 'Noto Serif JP', 'Georgia', serif;
+    --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font-sans); font-size: 15px; line-height: 1.8; }
+
+  .masthead { background: var(--accent-dark); color: #fff; padding: 10px 24px; display: flex; align-items: center; gap: 16px; font-size: 12px; letter-spacing: 0.08em; }
+  .masthead-logo { font-family: var(--font-mono); font-weight: 700; font-size: 13px; color: #a5d6a7; }
+  .masthead-tag { background: var(--warn); color: #fff; padding: 2px 8px; border-radius: 2px; font-size: 11px; font-weight: 700; }
+  .masthead-date { margin-left: auto; color: #a5d6a7; font-family: var(--font-mono); }
+
+  .hero { background: linear-gradient(135deg, #bf360c 0%, #e64a19 50%, #ff7043 100%); color: #fff; padding: 52px 24px 44px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 300px; height: 300px; border: 1px solid rgba(255,255,255,0.08); border-radius: 50%; }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-series { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; color: #ffccbc; margin-bottom: 12px; }
+  .hero-number { font-family: var(--font-mono); font-size: 64px; font-weight: 700; color: rgba(255,255,255,0.1); position: absolute; top: -12px; right: 0; line-height: 1; }
+  .hero-title { font-family: var(--font-serif); font-size: clamp(22px, 5vw, 32px); font-weight: 700; line-height: 1.35; margin-bottom: 8px; }
+  .hero-subtitle { font-size: 13px; color: #ffccbc; margin-bottom: 28px; }
+  .hero-kpi { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+  .kpi-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; padding: 14px 16px; }
+  .kpi-label { font-size: 10px; color: #ffccbc; letter-spacing: 0.1em; margin-bottom: 4px; }
+  .kpi-value { font-family: var(--font-mono); font-size: 22px; font-weight: 700; color: #fff; }
+  .kpi-unit { font-size: 11px; color: #ffccbc; margin-top: 2px; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+
+  .toc { background: var(--bg-sub); border-left: 3px solid var(--warn); padding: 24px 24px 20px; margin: 32px 0; border-radius: 0 6px 6px 0; }
+  .toc-title { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: var(--warn); margin-bottom: 14px; font-family: var(--font-mono); }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin-bottom: 5px; font-size: 13px; }
+  .toc a { color: var(--warn); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .toc .toc-sub { padding-left: 18px; margin-top: 4px; list-style-type: disc; }
+  .toc .toc-sub li { font-size: 12px; color: var(--text-sub); }
+
+  .chapter { margin: 40px 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .chapter-header { background: var(--warn); color: #fff; padding: 16px 24px; display: flex; align-items: baseline; gap: 14px; }
+  .chapter-header.green { background: var(--accent); }
+  .chapter-num { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; background: rgba(255,255,255,0.15); padding: 2px 8px; border-radius: 2px; white-space: nowrap; }
+  .chapter-title { font-family: var(--font-serif); font-size: 18px; font-weight: 700; line-height: 1.35; }
+  .chapter-body { padding: 24px; }
+
+  .section { margin: 28px 0; }
+  .section-title { font-family: var(--font-serif); font-size: 16px; font-weight: 700; color: var(--warn); border-bottom: 1.5px solid var(--warn-light); padding-bottom: 6px; margin-bottom: 14px; }
+  .section-title.green { color: var(--accent-dark); border-bottom-color: var(--accent-light); }
+
+  .sub-section { margin: 18px 0; }
+  .sub-section-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .sub-section-title::before { content: ''; display: inline-block; width: 10px; height: 10px; background: var(--warn); border-radius: 2px; flex-shrink: 0; }
+  .sub-section-title.green::before { background: var(--accent-mid); }
+
+  .roadmap-box { background: var(--accent-light); border-left: 3px solid var(--accent); padding: 14px 16px; margin: 12px 0; border-radius: 0 4px 4px 0; font-size: 13px; }
+  .roadmap-label { font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--accent-dark); margin-bottom: 6px; }
+
+  .bottleneck-box { background: var(--warn-light); border-left: 3px solid var(--warn); padding: 14px 16px; margin: 12px 0; border-radius: 0 4px 4px 0; font-size: 13px; }
+  .bottleneck-label { font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--warn); margin-bottom: 6px; }
+
+  .why-box { background: #fff; border: 1px solid var(--accent-mid); border-radius: 6px; padding: 14px 16px; margin: 10px 0; font-size: 13px; }
+  .why-label { font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 6px; }
+
+  .dual-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  @media (max-width: 600px) { .dual-col { grid-template-columns: 1fr; } }
+
+  .gov-box { background: var(--gov-light); border-left: 3px solid var(--gov); border-radius: 0 4px 4px 0; padding: 12px 14px; font-size: 13px; }
+  .gov-label { font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--gov); letter-spacing: 0.08em; margin-bottom: 6px; }
+  .priv-box { background: var(--priv-light); border-left: 3px solid var(--priv); border-radius: 0 4px 4px 0; padding: 12px 14px; font-size: 13px; }
+  .priv-label { font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--priv); letter-spacing: 0.08em; margin-bottom: 6px; }
+
+  .overseas-box { background: var(--over-light); border-left: 3px solid var(--over); border-radius: 0 4px 4px 0; padding: 12px 14px; margin: 10px 0; font-size: 13px; }
+  .overseas-label { font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--over); letter-spacing: 0.08em; margin-bottom: 6px; }
+  .country-tag { display: inline-block; background: var(--over); color: #fff; font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 2px; margin-right: 4px; }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 16px 0; }
+  .stat-cell { background: var(--bg-sub); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; text-align: center; }
+  .stat-val { font-family: var(--font-mono); font-size: 24px; font-weight: 700; color: var(--warn); line-height: 1; }
+  .stat-unit { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+  .stat-desc { font-size: 11px; color: var(--text-sub); margin-top: 6px; line-height: 1.4; }
+
+  .note-box { background: #fffde7; border: 1px solid #f9a825; border-radius: 6px; padding: 12px 16px; margin: 16px 0; font-size: 13px; color: #5d4037; }
+  .note-box-label { font-weight: 700; color: #f57f17; font-size: 12px; margin-bottom: 4px; font-family: var(--font-mono); }
+
+  .summary-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+  .summary-table th { background: var(--warn); color: #fff; padding: 8px 12px; text-align: left; font-weight: 700; font-size: 12px; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .summary-table tr:nth-child(even) td { background: var(--bg-sub); }
+  .summary-table tr:last-child td { border-bottom: none; }
+
+  .source-tag { display: inline-block; background: #f5f5f5; border: 1px solid var(--border); border-radius: 3px; padding: 2px 7px; font-size: 10px; color: var(--text-muted); font-family: var(--font-mono); margin: 2px; }
+  .next-box { background: var(--accent-dark); color: #fff; border-radius: 8px; padding: 24px 28px; margin: 40px 0; text-align: center; }
+  .next-box-title { font-family: var(--font-serif); font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .next-box-desc { font-size: 13px; color: #c8e6c9; margin-bottom: 16px; }
+  .next-box a { display: inline-block; background: var(--accent-mid); color: #fff; padding: 10px 24px; border-radius: 4px; font-weight: 700; font-size: 14px; text-decoration: none; }
+  .disclaimer { background: var(--bg-sub); border-top: 2px solid var(--border); padding: 24px; margin-top: 40px; font-size: 11px; color: var(--text-muted); line-height: 1.7; }
+  .disclaimer-title { font-weight: 700; color: var(--text-sub); margin-bottom: 6px; font-size: 12px; }
+  .source-list { margin: 0; padding-left: 20px; font-size: 12px; color: var(--text-sub); }
+  .source-list li { margin-bottom: 4px; }
+  p { margin-bottom: 8px; } ul, ol { padding-left: 20px; margin-bottom: 8px; } li { margin-bottom: 4px; }
+  hr.section-rule { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <span class="masthead-logo">MARKET SUPPORTER AI</span>
+  <span>|</span>
+  <span class="masthead-tag">戦略17分野 ①</span>
+  <span>フィジカルAI（特にAIロボット）</span>
+  <span>|</span>
+  <span>課題・政策パッケージ編</span>
+  <span class="masthead-date">2026年05月</span>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-series">JAPAN GROWTH STRATEGY — PHYSICAL AI / AI ROBOTICS — CHALLENGE & POLICY</div>
+    <div class="hero-number">01</div>
+    <div class="hero-title">フィジカルAI（特にAIロボット）<br>課題・政策パッケージ編</div>
+    <div class="hero-subtitle">官民投資ロードマップ素案（3）官民投資促進に向けた課題と政策パッケージ 構造に基づく分析レポート</div>
+    <div class="hero-kpi">
+      <div class="kpi-card">
+        <div class="kpi-label">最大ボトルネック</div>
+        <div class="kpi-value" style="font-size:16px">鶏と卵</div>
+        <div class="kpi-unit">量産投資↔需要立上がりのデッドロック</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">AI・ロボット人材不足（2040年）</div>
+        <div class="kpi-value">326<span style="font-size:14px">万人</span></div>
+        <div class="kpi-unit">経産省 将来試算</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">中国ヒューマノイド単価</div>
+        <div class="kpi-value">1.6<span style="font-size:14px">万ドル</span></div>
+        <div class="kpi-unit">Unitree G1（約240万円）</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">VLAモデル導入比率（2026年）</div>
+        <div class="kpi-value">40<span style="font-size:14px">%</span></div>
+        <div class="kpi-unit">新規ロボット導入全体（SVRC調査）</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<nav class="toc">
+  <div class="toc-title">// TABLE OF CONTENTS</div>
+  <ol>
+    <li><a href="#ch00">CHAPTER 00｜課題・政策パッケージサマリー</a></li>
+    <li><a href="#ch01">CHAPTER 01｜（1）投資促進に向けた課題</a>
+      <ul class="toc-sub">
+        <li>① リソース制約（人材・エコシステム）</li>
+        <li>② 不確実性の要因（技術開発・導入コスト）</li>
+      </ul>
+    </li>
+    <li><a href="#ch02">CHAPTER 02｜（2）講じるべき政策パッケージ</a>
+      <ul class="toc-sub">
+        <li>① 国内投資支援</li>
+        <li>② 需要創出・市場確保・社会実装支援</li>
+        <li>③ 立地競争力強化（CoE・テストベッド）</li>
+        <li>④ 国際連携</li>
+      </ul>
+    </li>
+    <li><a href="#source">出典</a></li>
+  </ol>
+</nav>
+
+<!-- CHAPTER 00 -->
+<section id="ch00" class="chapter">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 00</span>
+    <span class="chapter-title">課題・政策パッケージサマリー（2026年04月〜05月）</span>
+  </div>
+  <div class="chapter-body">
+
+    <div class="note-box">
+      <div class="note-box-label">// ANALYST NOTE</div>
+      フィジカルAIの社会実装が「なぜ進まないのか」には、技術的課題だけでなく、経済構造上の鶏と卵問題、エコシステムの不在、安全規制・標準化の未整備という3層の障壁がある。ロードマップ素案（2026年3月）の政策パッケージは、この3層に対応する形で設計されている。
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="stat-val">326万</div>
+        <div class="stat-unit">人不足（2040年）</div>
+        <div class="stat-desc">AI・ロボット関連人材の不足見込み（経産省試算）</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-val">1割強</div>
+        <div class="stat-unit">世界シェア</div>
+        <div class="stat-desc">サービスロボット市場での日本シェア（現状）</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-val">3重</div>
+        <div class="stat-unit">のデッドロック</div>
+        <div class="stat-desc">データ不足→量産困難→高コスト→導入不進の悪循環</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-val">34%</div>
+        <div class="stat-unit">市場成長率（2026年）</div>
+        <div class="stat-desc">世界ロボット市場 過去10年最高水準（SVRC調査）</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">最大ボトルネックと政策パッケージの対応関係</div>
+      <table class="summary-table">
+        <thead>
+          <tr><th>ボトルネック</th><th>具体的障壁</th><th>政策パッケージ</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>① リソース制約</td>
+            <td>AI×ロボット双方の知見を持つ人材の不在。PoCを超えるエコシステムが存在しない</td>
+            <td>CoE・テストベッド創設、人材育成ハッカソン</td>
+          </tr>
+          <tr>
+            <td>② 技術開発の不確実性</td>
+            <td>技術が未成熟な中で量産投資の踏み切りができない</td>
+            <td>国内投資支援（NEDO補助、計算資源整備）</td>
+          </tr>
+          <tr>
+            <td>③ 鶏と卵（需要・供給）</td>
+            <td>導入コスト高→需要立上がらず→量産できず→コスト下がらず</td>
+            <td>官需創出（防災・介護でアンカーテナンシー）、需要ロードマップ</td>
+          </tr>
+          <tr>
+            <td>④ 安全規制・標準化</td>
+            <td>安全認証制度が未整備で、企業が実装リスクを取れない</td>
+            <td>AISIとの連携、国際標準化・国際連携</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<!-- CHAPTER 01 -->
+<section id="ch01" class="chapter">
+  <div class="chapter-header">
+    <span class="chapter-num">CHAPTER 01</span>
+    <span class="chapter-title">（1）投資促進に向けた課題</span>
+  </div>
+  <div class="chapter-body">
+
+    <!-- ① リソース制約 -->
+    <div class="section">
+      <div class="section-title">① リソース制約</div>
+
+      <div class="sub-section">
+        <div class="sub-section-title">a. 人材：AIとロボット双方の知見を持つ人材の不足</div>
+
+        <div class="roadmap-box">
+          <div class="roadmap-label">// ROADMAP</div>
+          AIとロボット双方の知見を有する開発・利活用人材の不足。
+        </div>
+
+        <div class="bottleneck-box">
+          <div class="bottleneck-label">// BOTTLENECK</div>
+          経産省の将来試算によれば、2040年時点で日本のAI・ロボット関連人材は326万人不足するとされている。しかしこれは「量」の問題にとどまらない。VLA（Vision-Language-Action）モデルの実装には、現場工程知識・センサー設計・強化学習・システム統合を横断する能力が必要であり、日本の大学・大学院にこの領域の体系的な教育課程は現時点で存在しない。中国では毎年40万人超の理工系卒業生がロボティクス分野に流入する構造であり、日本との差は「育成体系の設計」にある。
+        </div>
+
+        <div class="dual-col">
+          <div class="gov-box">
+            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+            <ul>
+              <li>経済財政諮問会議（2026年4月27日）でAI社会実装を前提とした人材力強化資料を提出。ロボット技術（フィジカルAGI）と結び付けた生産性向上策を明記 <span class="source-tag">内閣府 2026.4</span></li>
+              <li>産学官連携ハッカソン・コンペティション等の人材育成検討がロードマップ素案に明記（具体的実施時期は夏取りまとめ後）</li>
+              <li>CHERSI（未来ロボティクスエンジニア育成協議会）の活動が継続中 <span class="source-tag">経産省</span></li>
+            </ul>
+          </div>
+          <div class="priv-box">
+            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+            <ul>
+              <li>AWSジャパン「フィジカルAI開発支援プログラム」（2026年3月〜9月）：採択企業を対象にデータ収集〜モデルデプロイの実践的パイプライン構築を支援。民間主導の人材育成機能も担う <span class="source-tag">AWS Blog</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="overseas-box">
+          <div class="overseas-label">// 海外動向</div>
+          <p><span class="country-tag">中国</span>複数のヒューマノイドスタートアップが大学・研究機関と直接連携したエンジニア採用ルートを整備。AgiBot・Unitreeは各々100〜200名規模のAI・ロボティクス専門エンジニアを抱える。</p>
+          <p><span class="country-tag">米国</span>Stanford University・MITが大学発スタートアップとの産学連携によりフィジカルAI専門課程を急速に整備中。Figure AI・Agility Roboticsへの博士人材の流入が加速している。</p>
+        </div>
+      </div>
+
+      <hr class="section-rule">
+
+      <div class="sub-section">
+        <div class="sub-section-title">b. 研究開発環境：PoCを超えるエコシステムの不在</div>
+
+        <div class="roadmap-box">
+          <div class="roadmap-label">// ROADMAP</div>
+          ティーチングカスタマー・OEM・ユーザーを結び付け、PoCを超えてユースケースを作り込むエコシステムの不在。
+        </div>
+
+        <div class="bottleneck-box">
+          <div class="bottleneck-label">// BOTTLENECK</div>
+          「PoCの墓場」問題は日本のAI導入全般に共通するが、フィジカルAIではさらに深刻だ。AIロボットの性能改善には実機を使った大量の現場データが必要であり、PoCで終わると「データが溜まらない→モデルが改善されない→次のPoCにも使えない」という循環的な停滞が生まれる。中国が「実機を大量に市場に出してデータを回す」戦略で先行しているのとは対照的に、日本の「PoCからスケールへ」の経路が制度・商習慣の両面で整備されていない。
+        </div>
+
+        <div class="dual-col">
+          <div class="gov-box">
+            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+            <ul>
+              <li>AIロボティクス戦略検討会議（経産省、2026年1月〜）にてエコシステム構築の方向性を審議中 <span class="source-tag">経産省 2026.1</span></li>
+              <li>ソフトウェアの垂直統合型からオープン開発環境への移行支援策を検討（経産省AIロボティクス戦略検討会議資料） <span class="source-tag">経産省</span></li>
+            </ul>
+          </div>
+          <div class="priv-box">
+            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+            <ul>
+              <li>大和総研が「フィジカルAIの社会実装に向けた課題」を公表（2026年4月24日）。「開発・検証段階ではシミュレーション基盤と計算資源確保が重要」と整理 <span class="source-tag">大和総研 2026.4</span></li>
+              <li>VLAモデルの採用が全新規ロボット導入の40%に拡大（SVRC調査、2026年）。模倣学習が強化学習を抜いて主要訓練手法に <span class="source-tag">SVRC 2026</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ② 不確実性の要因 -->
+    <div class="section">
+      <div class="section-title">② 不確実性の要因</div>
+
+      <div class="sub-section">
+        <div class="sub-section-title">a. 事業・技術開発の不確実性：量産投資を踏み切れない供給側</div>
+
+        <div class="roadmap-box">
+          <div class="roadmap-label">// ROADMAP</div>
+          技術開発進展への不確実性や競争環境の熾烈化を背景に、供給側が十分な需要が見込めず量産投資に踏み切れない。
+        </div>
+
+        <div class="bottleneck-box">
+          <div class="bottleneck-label">// BOTTLENECK</div>
+          「100%の完成形でなくてもまずは導入してみよう」（日本ロボット工業会・橋本会長、2026年1月）という機運は生まれつつあるが、量産投資の意思決定には至っていない。技術的には、ヒューマノイドの連続稼働時間が産業用途に求められる「8時間シフト」に届かない（最先端機種でも4時間程度）という現実的な制約がある。また、蓄電池・アクチュエーターのコスト構造が量産規模に達するまでは高止まりするという構造的問題が重なる。
+        </div>
+
+        <div class="dual-col">
+          <div class="gov-box">
+            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+            <ul>
+              <li>NEDO「マルチモーダル基盤モデル開発事業」：年次ステージゲート方式で技術不確実性に応じた柔軟な継続可否判断を導入（2026年3月本公募〜） <span class="source-tag">NEDO</span></li>
+              <li>NEDOが補助金終了後も量産・実用化まで伴走支援する方針を公表（2026年2月）。「PoCで終わらせない」仕組みとして機能させる狙い <span class="source-tag">Nikkei 2026.2</span></li>
+            </ul>
+          </div>
+          <div class="priv-box">
+            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+            <ul>
+              <li>日本ロボット工業会：2026年の産業用ロボット受注額を前年比3.2%増の1兆300億円と予測（2026年1月）。「フィジカルAIへの関心が上振れ要因」と言及 <span class="source-tag">Nikkei 2026.1</span></li>
+              <li>蓄電池のロボット用途は2026年時点でも8時間連続稼働を達成できない機種が多数。全固体電池の量産化が量産ロードマップの鍵 <span class="source-tag">業界分析</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="overseas-box">
+          <div class="overseas-label">// 海外動向</div>
+          <p><span class="country-tag">中国</span>広東省の工場が「30分に1台」のペースでヒューマノイドを組み立てているとの報道（2026年5月）。量産段階に入った中国勢と、量産前段階にある日本・米国・欧州の差が拡大中。</p>
+          <p><span class="country-tag">米国</span>Figure AIが年産1.2万台規模の「BotQ」工場を稼働予定。Agility Roboticsがアマゾン向け生産施設を整備中。ただし中国の生産規模には依然大きな差がある。</p>
+        </div>
+      </div>
+
+      <hr class="section-rule">
+
+      <div class="sub-section">
+        <div class="sub-section-title">b. 導入の不確実性：コスト高止まりと需要の鶏と卵</div>
+
+        <div class="roadmap-box">
+          <div class="roadmap-label">// ROADMAP</div>
+          技術的不確実性と量産投資不足による導入コストの高止まりにより、需要が立ち上がらない。
+        </div>
+
+        <div class="bottleneck-box">
+          <div class="bottleneck-label">// BOTTLENECK</div>
+          フィジカルAI固有の3重デッドロック構造：①「現場データは実機大量導入なしに得られない」②「実機を大量導入するには低コストが必要」③「コストを下げるには量産が必要」。さらに、大和総研（2026年4月）は「導入段階では現場ごとの個別最適が実装負荷として顕在化し、横展開が進みにくい」という追加的なボトルネックを指摘している。
+        </div>
+
+        <div class="dual-col">
+          <div class="gov-box">
+            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+            <ul>
+              <li>防災・介護分野での官需創出（アンカーテナンシー）方針がロードマップ素案に明記。複数年度にわたる継続調達の仕組みの検討を継続（日本成長戦略WG）</li>
+            </ul>
+          </div>
+          <div class="priv-box">
+            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+            <ul>
+              <li>データ収集コストが2024年比60%減（遠隔操作ツールと汎用ハードウェアの普及による）と報告されており、エコシステムが整えばコスト構造は急改善しうる（SVRC 2026年調査） <span class="source-tag">SVRC 2026</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CHAPTER 02 -->
+<section id="ch02" class="chapter">
+  <div class="chapter-header chapter-header green">
+    <span class="chapter-num">CHAPTER 02</span>
+    <span class="chapter-title">（2）講じるべき政策パッケージ</span>
+  </div>
+  <div class="chapter-body">
+
+    <!-- ① 国内投資支援 -->
+    <div class="section">
+      <div class="section-title green">① 国内投資支援</div>
+
+      <div class="sub-section">
+        <div class="sub-section-title green">a. 多用途ロボットOEM育成と重要コンポーネント強化</div>
+
+        <div class="roadmap-box">
+          <div class="roadmap-label">// ROADMAP</div>
+          産業用ロボットや自動車産業など、日本の競争力あるサプライチェーンと連携し、多用途ロボットOEMの育成を推進。重要コンポーネント（アクチュエーター・モーター・減速機・蓄電池等）について設計・製造能力の強化に取り組む。
+        </div>
+
+        <div class="why-box">
+          <div class="why-label">// WHY IT MATTERS</div>
+          完成品OEMの育成と重要コンポーネントの強化は、表裏一体の政策だ。ヒューマノイドの量産が世界で始まる今、コンポーネント（特に減速機・精密アクチュエーター）は世界中の完成品メーカーから需要が発生する「水平的ポジション」にある。政策の重心が「完成品OEM」に傾くか「コンポーネント製造能力」に傾くかが、日本の産業ポジションを決定的に左右する。
+        </div>
+
+        <div class="dual-col">
+          <div class="gov-box">
+            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+            <ul>
+              <li>NEDO「ロボット基盤モデル研究開発（GENIAC補助）」実施体制を決定（2026年5月14日）</li>
+              <li>NEDO「マルチモーダル基盤モデル開発事業」本公募中（2026年3月〜）。5年計画、R6補正205億円 <span class="source-tag">NEDO</span></li>
+              <li>製造業データ等のAI-Ready化に関する研究開発（GENIAC）実施体制を2026年5月13日に決定 <span class="source-tag">NEDO</span></li>
+            </ul>
+          </div>
+          <div class="priv-box">
+            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+            <ul>
+              <li>ファナック：Google（Gemini Enterprise）と協業してAI搭載ロボットシステム開発（2026年5月13日） <span class="source-tag">各社IR</span></li>
+              <li>安川電機：米ウィスコンシン州新キャンパス（180百万ドル）を2026年度稼働予定 <span class="source-tag">各社IR</span></li>
+              <li>ソニーセミコンダクタ＋TSMC：次世代イメージセンサー（ロボット知覚系）の基本合意（2026年5月） <span class="source-tag">各社IR</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr class="section-rule">
+
+      <div class="sub-section">
+        <div class="sub-section-title green">b. 国産マルチモーダル基盤モデル開発</div>
+
+        <div class="roadmap-box">
+          <div class="roadmap-label">// ROADMAP</div>
+          ロボット基盤モデル開発を念頭に国産マルチモーダル基盤モデル開発を推進。学習・検証環境を整備した上で、ロボットを活用したデータを収集・加工して構築した高品質なデータセット整備を通じ国産ロボット基盤モデルの開発を推進。
+        </div>
+
+        <div class="why-box">
+          <div class="why-label">// WHY IT MATTERS</div>
+          「国産基盤モデル」の意義は、技術ナショナリズムではなく「製造現場データの主権的管理」にある。工場の生産工程データ・品質検査データが海外クラウドで学習に使われた場合、その知的財産が競合他社に流出するリスクがある。NEDOの205億円は規模としては小さいが、「国内で完結するデータ学習エコシステムの器を作る」という役割は明確だ。
+        </div>
+
+        <div class="overseas-box">
+          <div class="overseas-label">// 海外動向</div>
+          <p><span class="country-tag">中国</span>Alibaba（Qwen LLM）とLeju Roboticsの提携（2026年1月）が「国産AIロボット基盤」の典型例。西側プラットフォームへの依存を排除した垂直統合型エコシステムが稼働中。</p>
+          <p><span class="country-tag">米国</span>Figure AIは独自の「BotQ」でロボット専用モデル（BotQ-1）を開発。Tesla Optimusも自社製造環境で蓄積したデータを基盤モデルの訓練に活用。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ② 需要創出・社会実装支援 -->
+    <div class="section">
+      <div class="section-title green">② 需要創出・市場確保・社会実装支援</div>
+
+      <div class="sub-section">
+        <div class="sub-section-title green">a. 産業別導入ロードマップの策定</div>
+
+        <div class="roadmap-box">
+          <div class="roadmap-label">// ROADMAP</div>
+          重点的に導入に取り組む産業やタスクにおいて、導入ボトルネック（現場環境・運用体制・制度・規格等）を考慮して、各産業・領域ごとに多用途ロボットの定量的な導入目標、短期と中長期の時間軸での導入支援策を整理したロードマップを策定。
+        </div>
+
+        <div class="why-box">
+          <div class="why-label">// WHY IT MATTERS</div>
+          「産業別に導入ロードマップを作る」という方針は、政策設計の精度を上げるための合理的なアプローチだ。工場・物流・介護・防災では導入ボトルネックが全く異なる。工場は「現場データの収集と品質保証」が課題であり、介護は「人との安全な協働」が規制上の課題であり、物流は「多品種小ロットへの対応」が技術上の課題だ。一律の補助金ではなく、領域ごとの「ボトルネック解消型」支援が有効であることをロードマップ素案は正確に認識している。
+        </div>
+
+        <div class="dual-col">
+          <div class="gov-box">
+            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+            <ul>
+              <li>工場・物流・小売・防災・介護・家庭の6領域別導入ロードマップ策定が進行中（日本成長戦略WG）</li>
+              <li>三菱総研が「サービスロボット定着のカギは運用人材」（2026年4月）と指摘。政策設計への反映が期待される <span class="source-tag">MRI 2026.4</span></li>
+            </ul>
+          </div>
+          <div class="priv-box">
+            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+            <ul>
+              <li>三菱総研「AIロボット導入を競争力につなげるサービス変革と政策設計」（2026年4月）。現場ごとの個別対応が実装コストを高止まりさせるという分析を公表 <span class="source-tag">MRI 2026.4</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr class="section-rule">
+
+      <div class="sub-section">
+        <div class="sub-section-title green">b. 官需創出（アンカーテナンシー）と本格導入支援</div>
+
+        <div class="roadmap-box">
+          <div class="roadmap-label">// ROADMAP</div>
+          本格導入フェーズでは、供給側の予見可能性を確保する観点から、需要家側が一定規模の継続的調達をコミットできる形での支援策を検討すると同時に、防災等の官需における調達・実装を活用し、アンカーテナンシーとして需要を確保。
+        </div>
+
+        <div class="why-box">
+          <div class="why-label">// WHY IT MATTERS</div>
+          「アンカーテナンシー」は防衛分野での官需調達と同じメカニズムだ。政府が複数年にわたって大量調達をコミットすることで、民間サプライヤーは「確実な売り先」を前提に量産投資を決断できる。防衛ドローン（⑦小型無人航空機）の政策設計と並行して、フィジカルAI分野でも同様の「官需先行型の需要形成」が検討されていることは政策の一貫性を示している。ただし、日本の単年度予算制度との整合が設計上の課題として残る。
+        </div>
+
+        <div class="overseas-box">
+          <div class="overseas-label">// 海外動向</div>
+          <p><span class="country-tag">米国</span>米国防総省（DoD）は自律システムへの継続的調達コミットメントを行っており、ロボティクス分野のスタートアップへの「官需アンカーテナンシー」として機能。</p>
+          <p><span class="country-tag">中国</span>政府主導のロボット導入補助金（導入台数に応じた直接補助）が量産化の先行トリガーとして機能。国家主導の需要創出が量産コストの低下を先行させている。</p>
+        </div>
+      </div>
+
+      <hr class="section-rule">
+
+      <div class="sub-section">
+        <div class="sub-section-title green">c. 安全性認証制度・安全規制の整備（AISI連携）</div>
+
+        <div class="roadmap-box">
+          <div class="roadmap-label">// ROADMAP</div>
+          プライバシー・セーフティ・セキュリティ確保やロボットと人の協働を両立するため、必要な技術要件・基準の整備、安全性認証制度や安全規制の在り方をAISIと連携しながら検討。
+        </div>
+
+        <div class="why-box">
+          <div class="why-label">// WHY IT MATTERS</div>
+          安全性認証制度の整備は「規制負担の増加」ではなく「導入障壁の解消」として機能する。現在、企業がAIロボットを製造現場に導入しない理由の一つは「何かあったときの責任分界が不明確」という法的リスクだ。認証制度が整備されると、「認証取得済みロボット＝責任分界が明確」という形で導入ハードルが大幅に下がる。AISIとの連携は、ISO/IECでの国際標準化活動に日本が参加するための制度的基盤でもある。
+        </div>
+
+        <div class="dual-col">
+          <div class="gov-box">
+            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+            <ul>
+              <li>大和総研（2026年4月）が「安全・品質・責任分界といった非技術的な点がボトルネックになる」と指摘。政策設計への反映が求められる <span class="source-tag">大和総研 2026.4</span></li>
+              <li>AISIとの連携でロボット安全評価技術の開発が射程に入る（経産省、日本成長戦略WG）</li>
+            </ul>
+          </div>
+          <div class="priv-box">
+            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+            <ul>
+              <li>日本ロボット工業会・橋本会長：「100%完成形でなくても導入してみよう」という機運は企業側に生まれつつあると言及（2026年1月） <span class="source-tag">Nikkei 2026.1</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="overseas-box">
+          <div class="overseas-label">// 海外動向</div>
+          <p><span class="country-tag">欧州</span>EU AI Act（2026年8月施行の透明性義務規定）が高リスクAIシステムとしてのロボットに文書化・リスクアセスメント義務を課す方向。日本がEU基準と整合した安全認証制度を整備できれば、欧州市場への展開における「基準適合の証明コスト」を共通化できる。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ③ 立地競争力強化 -->
+    <div class="section">
+      <div class="section-title green">③ 立地競争力強化（CoE・テストベッド）</div>
+
+      <div class="sub-section">
+        <div class="sub-section-title green">a. AIロボティクスのCenter of ExcellenceとCoEエコシステム</div>
+
+        <div class="roadmap-box">
+          <div class="roadmap-label">// ROADMAP</div>
+          ハード・ソフトの専門家や各産業のティーチングカスタマー・SIer等が参画し、導入現場に近いモックアップ環境で開発・検証・試験設備を活用しながら、ロボットを導入してデータ収集・検証・標準化・人材育成を同時に進める社会実装のハブとなる環境を構築。世界から優秀な人材が集まるAIロボティクスのCenter of ExcellenceやテストベッドをJapan全体として創設。スタートアップへのアーリーからレイターまで切れ目のない資金調達環境を整備。
+        </div>
+
+        <div class="why-box">
+          <div class="why-label">// WHY IT MATTERS</div>
+          CoEの設計で最重要なのは「地理的集積」だ。中国・深圳が強い理由は、ヒューマノイドの完全なサプライチェーンが30分以内の範囲に集積しているからだ。ソフトウェア開発者・ハードウェア設計者・製造設備・ティーチングカスタマー（実証フィールドを提供する企業）が一箇所に集まる「産業クラスター」でなければCoEは機能しない。日本のCoE構想が「既存大学・研究機関の分散配置」にとどまるか、「特定地域への産業集積」として実現するかが問われている。
+        </div>
+
+        <div class="dual-col">
+          <div class="gov-box">
+            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+            <ul>
+              <li>AIロボティクスのCoE・テストベッド創設が2026年夏の日本成長戦略取りまとめで具体化される予定（設置場所・規模・予算は未定） <span class="source-tag">内閣府 2026.3</span></li>
+            </ul>
+          </div>
+          <div class="priv-box">
+            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+            <ul>
+              <li>AWSジャパン「フィジカルAI開発支援プログラム」がCoE的機能を先行代替（2026年3月〜9月）。採択企業がデータパイプライン構築を共同実施 <span class="source-tag">AWS Blog</span></li>
+              <li>ソフトバンクを含む日本企業十数社による「国産基盤モデル開発会社」設立構想が進行中（2025年12月報道）。CoEの民間主体版として機能しうる <span class="source-tag">Nikkei 2025.12</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="overseas-box">
+          <div class="overseas-label">// 海外動向</div>
+          <p><span class="country-tag">米国</span>Figure AIの「BotQ」（年産1.2万台規模）、1X Technologiesのカリフォルニア州Hayward工場（年産1万台対応）。テスト→量産が一体化した施設が標準化。</p>
+          <p><span class="country-tag">欧州</span>Siemens・NVIDIAがドイツ・アーレン工場でAI駆動型製造テストベッドを構築（2026年開始）。BMW Leipzig工場でのヒューマノイド生産統合実証も進行中。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ④ 国際連携 -->
+    <div class="section">
+      <div class="section-title green">④ 国際連携</div>
+
+      <div class="sub-section">
+        <div class="sub-section-title green">a. 海外研究機関連携とグローバル水準の確保</div>
+
+        <div class="roadmap-box">
+          <div class="roadmap-label">// ROADMAP</div>
+          マルチモーダル基盤モデル開発やCoE創設の取組と連動して、海外トップ研究機関等との連携も活用しつつ、グローバル水準の研究開発水準の確保に取り組む。
+        </div>
+
+        <div class="why-box">
+          <div class="why-label">// WHY IT MATTERS</div>
+          「国産基盤モデル戦略」と「米国プラットフォーム活用」が矛盾しながら並走しているのが現状の政策的課題だ。安川電機×NVIDIAおよびファナック×Googleという民間の動きは、日本企業が米国AIスタックを採用する方向で既に進んでいる。この現実と「製造現場データの主権的管理」という政策目標をどう整合させるかは、夏の日本成長戦略取りまとめでの未解決課題として残る。NEDO「ディープテック・スタートアップ支援基金／国際共同研究開発」が継続公募中であり、日米研究協力の制度的基盤は整いつつある。
+        </div>
+
+        <div class="dual-col">
+          <div class="gov-box">
+            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+            <ul>
+              <li>NEDO「ディープテック・スタートアップ支援基金／国際共同研究開発」公募が量子・AI・ロボティクスを対象に継続実施中 <span class="source-tag">NEDO</span></li>
+              <li>日米投資フレームワーク（JBIC・JETRO）がフィジカルAI領域でも活用される見通し</li>
+            </ul>
+          </div>
+          <div class="priv-box">
+            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+            <ul>
+              <li>ファナック（Google）・安川電機（NVIDIA）を通じた米国AI技術スタックの日本製造業への実装が加速。「国産基盤モデル」vs「米国プラットフォーム活用」の整合が政策上の課題として残る</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="overseas-box">
+          <div class="overseas-label">// 海外動向</div>
+          <p><span class="country-tag">中国</span>AgiBot・LimXなど中国ヒューマノイド企業が中東・東南アジアへの展開を2026年から本格化。同盟国市場での先行確保は時間との競争。</p>
+          <p><span class="country-tag">欧州</span>EU AI Act（2026年8月施行）の透明性義務が適用開始。日本が欧州基準と整合した安全認証制度を整備できれば、EU市場での競争優位に。</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="next-box">
+  <div class="next-box-title">📋 政策実装・官民投資編も読む</div>
+  <div class="next-box-desc">「今、政府と民間がどこまで動いているか」を整理した「政策実装・官民投資編」も公開中です。</div>
+  <a href="https://marketsupporter-ai.com/reports/physical-ai-policy-investment.html" target="_blank">▶ 政策実装・官民投資編を読む</a>
+</div>
+
+<section id="source" class="container">
+  <div class="section-title" style="margin-top:32px; color:var(--text-sub); border-bottom-color:var(--border);">出典</div>
+  <ul class="source-list">
+    <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+    <li>経産省「AIロボティクス戦略検討会議 第1回事務局資料」（2026年1月）</li>
+    <li>経産省「AIロボティクス検討会 参考資料」（2025年10月）</li>
+    <li>NEDO「AIロボット・フィジカルAIを見据えたマルチモーダル基盤モデル開発事業」公募（2026年3月〜）</li>
+    <li>NEDO「ロボット基盤モデルの研究開発（GENIAC補助）実施体制の決定」（2026年5月14日）</li>
+    <li>大和総研「フィジカルAIの社会実装に向けた課題」田邉美穂（2026年4月24日）</li>
+    <li>三菱総合研究所「AIロボティクスと共生する未来社会」シリーズ（2026年3〜4月）</li>
+    <li>経済財政諮問会議「AIの社会実装を前提とした人材力の強化に向けて」資料6（2026年4月27日）</li>
+    <li>日本ロボット工業会「2026年産業用ロボット受注見通し」（2026年1月9日）</li>
+    <li>SVRC（Silicon Valley Robotics Center）「State of Robotics 2026」（2026年3月）</li>
+    <li>Nikkei「NEDO、補助金終了後も事業支援 量産・実用化まで指南」（2026年2月17日）</li>
+  </ul>
+</section>
+
+<div class="disclaimer">
+  <div class="disclaimer-title">免責事項</div>
+  <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。掲載情報の正確性・完全性を保証するものではなく、記載の数値・目標・施策は政策の進捗に伴い変更となる場合があります。データ基準時点：2026年04月〜05月。</p>
+</div>
+
+</div>
+</body>
+</html>
