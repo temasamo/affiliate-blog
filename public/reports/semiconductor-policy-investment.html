@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>半導体（フィジカル・インテリジェント・システムの中核を担う半導体）｜政策実装・官民投資編｜戦略17分野 ②</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        font-size: 12px;
+        letter-spacing: .08em;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--accent);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 50%;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #a5d6a7;
+        margin-bottom: 12px;
+    }
+
+    .hero-number {
+        font-family: var(--font-mono);
+        font-size: 64px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, .1);
+        position: absolute;
+        top: -12px;
+        right: 0;
+        line-height: 1;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(20px, 5vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #a5d6a7;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #c8e6c9;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--accent);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--accent-dark);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--accent-dark);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--accent);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        border-bottom: 1.5px solid var(--accent-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--accent-mid);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--accent);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ②</span>
+        <span>フィジカル・インテリジェント・システムの中核を担う半導体</span>
+        <span>|</span>
+        <span>政策実装・官民投資編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — SEMICONDUCTOR / SYSTEM TO SILICON</div>
+            <div class="hero-number">02</div>
+            <div class="hero-title">
+                半導体（フィジカル・インテリジェント・システムの中核を担う半導体）
+                <br>
+                政策実装・官民投資編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（日本成長戦略会議 第3回、2026年3月）構造に基づく政策モニタリングレポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">2030年 国内半導体売上目標</div>
+                    <div class="kpi-value">
+                        15
+                        <span style="font-size:14px">兆円</span>
+                    </div>
+                    <div class="kpi-unit">現状→2030年目標（ロードマップ素案）</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">2040年 国内半導体売上目標</div>
+                    <div class="kpi-value">
+                        40
+                        <span style="font-size:14px">兆円</span>
+                    </div>
+                    <div class="kpi-unit">日本成長戦略 目標値</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">ラピダス追加支援（2026年度）</div>
+                    <div class="kpi-value">
+                        6,315
+                        <span style="font-size:14px">億円</span>
+                    </div>
+                    <div class="kpi-unit">2026年4月11日 経産省発表</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">世界半導体市場（2035年予測）</div>
+                    <div class="kpi-value">
+                        190
+                        <span style="font-size:14px">兆円</span>
+                    </div>
+                    <div class="kpi-unit">日本の現シェアは10%未満</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜政策実装サマリー（2026年04月〜05月）</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜現状認識と目指す姿【目標】</a>
+                    <ul class="toc-sub">
+                        <li>（1）現状：世界シェア50%→10%未満への凋落とSystem to Siliconの台頭</li>
+                        <li>（2）目標：2030年15兆円・2040年40兆円</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜勝ち筋と官民投資の具体像【道筋】</a>
+                    <ul class="toc-sub">
+                        <li>①勝ち筋：3ステップ戦略とSystem to Silicon</li>
+                        <li>②構築すべき機能・官民投資の具体像</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch03">CHAPTER 03｜官民投資促進に向けた課題と政策パッケージ【政策手段】</a>
+                    <ul class="toc-sub">
+                        <li>①国内投資支援</li>
+                        <li>②需要創出・社会実装支援</li>
+                        <li>③立地競争力強化</li>
+                        <li>④国際連携</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">政策実装サマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          半導体は17分野の中で最大の政府支出が集中する分野だ。2026年4月11日のラピダスへの追加支援6,315億円は、2025年度までの累積支援と合わせると公的資金だけで1兆円を超える水準に達した。かつて世界シェア50%を誇った日本が「10%未満」に落ち込んだ今、20年の技術空白を2nm量産で一気に埋めようとするラピダスと、TSMC熊本という二つの軸で政策が動いている。フィジカルAI政策との連動（System to Silicon）が新たな競争軸として明示されたことが、2026年3月ロードマップ素案の最大の論点だ。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">6,315億</div>
+                        <div class="stat-unit">円（2026年度）</div>
+                        <div class="stat-desc">ラピダスへの追加政府支援（2026年4月11日）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">1,600億超</div>
+                        <div class="stat-unit">円</div>
+                        <div class="stat-desc">ラピダス民間出資累計（2026年2月時点、株主30社超）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">2027年度</div>
+                        <div class="stat-unit">後半</div>
+                        <div class="stat-desc">ラピダス 2nm量産目標時期（北海道千歳 IIM-1）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">3nm</div>
+                        <div class="stat-unit">ノード</div>
+                        <div class="stat-desc">TSMC熊本 第2工場（JASM）での検討プロセス</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">直近2ヶ月の重要動向（2026年4〜5月）</div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き</div>
+                            <ul>
+                                <li>
+                                    <strong>2026年4月11日</strong>
+                                    ：経産省がラピダスに2026年度の研究開発委託費として6,315億円の追加支援を発表（北海道千歳 IIM-1工場 開所式） 
+                                    <span class="source-tag">ITmedia 2026.4</span>
+                                </li>
+                                <li>
+                                    2026年3月の外部有識者会議でラピダス追加支援を承認済み。歩留まり改善費用等に投入 
+                                    <span class="source-tag">経産省</span>
+                                </li>
+                                <li>日本成長戦略会議（2026年3月）にてSystem to Silicon戦略をロードマップ素案に明記</li>
+                                <li>AI・半導体WG：夏の日本成長戦略取りまとめに向けた審議継続中</li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き</div>
+                            <ul>
+                                <li>
+                                    ラピダス：IIM-1工場で解析センター・後工程拠点の開所式を2026年4月11日に実施。パイロットライン立上げ段階 
+                                    <span class="source-tag">ITmedia 2026.4</span>
+                                </li>
+                                <li>
+                                    東京エレクトロン：2026年3月期売上高2兆4,435億円を達成。アナリスト予想では2027年3月期に3兆円超を見込む 
+                                    <span class="source-tag">各社IR 2026.4</span>
+                                </li>
+                                <li>
+                                    ルネサスエレクトロニクス：AIデータセンター向けへ事業軸の転換を表明（柴田英利CEO、2026年4月）
+                                    <span class="source-tag">東京エレクトロン社レポート 2026.4</span>
+                                </li>
+                                <li>
+                                    TSMC熊本（JASM）第2工場：3nmライン導入を検討中（C.C. Wei CEO 来日時発言、2026年2月） 
+                                    <span class="source-tag">TEL社レポート 2026.4</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">重要企業群・サプライチェーン対応表</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>機能層</th>
+                                <th>主要企業群</th>
+                                <th>政策対象</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>先端ロジック製造（ファウンドリ）</td>
+                                <td>ラピダス（2nm）、JASM＝TSMC熊本（12nm〜3nm）</td>
+                                <td>国内投資支援（政府補助金・研究委託費）</td>
+                            </tr>
+                            <tr>
+                                <td>アナログ・レガシー半導体</td>
+                                <td>ルネサス（車載MCU）、ロームSiC、東芝デバイス</td>
+                                <td>サプライチェーン強化・System to Silicon</td>
+                            </tr>
+                            <tr>
+                                <td>センサー（知覚系）</td>
+                                <td>ソニーセミコンダクタ（イメージセンサー）、浜松ホトニクス</td>
+                                <td>フィジカルAI連動・System to Silicon</td>
+                            </tr>
+                            <tr>
+                                <td>製造装置</td>
+                                <td>東京エレクトロン（世界3位）、SCREENホールディングス、DISCO</td>
+                                <td>立地競争力強化・国際連携</td>
+                            </tr>
+                            <tr>
+                                <td>部素材</td>
+                                <td>信越化学（シリコンウェーハ）、JSR（フォトレジスト）、AGC（ガラス基板）</td>
+                                <td>サプライチェーン強靱化</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">１．現状認識と目指す姿【目標】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）現状</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 現状：世界シェア50%→10%未満への凋落と20年の技術空白</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      かつて我が国半導体産業は世界シェアの約50%を誇ったが、日米貿易摩擦、日の丸自前主義、産業構造の転換、デジタル化低迷等を背景に凋落し、現在は10%未満。半導体設計は米国、製造は台湾、製造装置は日本・米国・欧州、部素材は日本に強みが存在。AIの発展に伴い市場成長が加速する中、日本はこの成長を十分に取り込めていない。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「製造装置・部素材では世界トップ、製造では20年の空白」という日本の非対称な強みが政策の出発点だ。東京エレクトロン（世界3位）・信越化学・JSRは世界中の半導体工場に不可欠なサプライヤーだが、ファウンドリとして大量生産するTSMCやSamsungとのバリューチェーンの差が大きく、「製造の付加価値」を取り損ねてきた構造がある。ラピダスへの集中投資は、この空白を「2nmで一気に飛び越える」戦略だ。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        経産省・外部有識者会議（2026年3月）がラピダス追加支援を承認。「パイロットライン稼働段階＝1合目」という現状認識を政府も共有 
+                                        <span class="source-tag">ITmedia 2026.4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        ラピダス民間出資：2025年度末に目標を上回る1,600億円超を調達。株主はソフトバンク・ソニーグループ各210億円を含む30社超 
+                                        <span class="source-tag">SOC報告書ラボ 2026.2</span>
+                                    </li>
+                                    <li>
+                                        ルネサス：自動車・産業向け一辺倒からAIデータセンター電源向けへ事業転換を表明 
+                                        <span class="source-tag">TEL社レポート 2026.4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② 取り巻く環境：System to Siliconの台頭とエッジ側需要の爆発</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      フィジカルAIの発展に伴い、AIの機能をエッジ側で実現する「フィジカル・インテリジェント・システム」（ロボット・自動車・ドローン・FA等）での実現が求められる。各アプリケーション（需要側）で求められる機能要件から逆算して半導体を設計・製造し、システムとして最適統合する「System to Silicon」の重要性が増大。センサー技術とアナログ・レガシー半導体の設計開発基盤を有する我が国の強みが顕在化する好機。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「System to Silicon」という概念は、従来の「チップを作って売る」から「アプリケーションの要件からチップを設計する」への競争軸の転換を意味する。日本はセンサー（ソニー）・マイコン（ルネサス）・アナログ半導体（ローム・東芝）で強みを持ち、自動車・ロボット・FAという「フィジカル・インテリジェント・システムの最大需要産業」を国内に抱える。この「需要側産業の内製化＋上流の半導体設計統合」という構造が、日本固有の競争優位の経路だ。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                NVIDIAがCosmos（フィジカルAI基盤モデル）とBlackwellアーキテクチャの統合を加速。データセンター向け先端ロジックから「エッジ向けフィジカルAIチップ」への事業展開が2026年以降の焦点。
+                            </p>
+                            <p>
+                                <span class="country-tag">中国</span>
+                                HuaweiのAscend 910CがNVIDIA H100の代替として国内AI市場に普及中。輸出規制による先端半導体の調達難が中国国産化を加速。
+                            </p>
+                            <p>
+                                <span class="country-tag">欧州</span>
+                                Samsung Texas工場が2026年下半期に限定生産を開始予定。STMicroelectronicsがSiC工場を拡張中。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">③ 経済的・戦略的な重要性：経済安全保障の核心物資</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      経済的重要性：半導体の市場規模は2035年に190兆円規模に成長する見込み。TSMCが進出した熊本県やラピダスが立地した北海道では関連投資誘発により様々な経済効果。戦略的重要性：半導体はスマホ・自動車・医療機器など生活に欠かせない製品の基幹部品であり、フィジカルAIなど今後産業を支える技術にとっても不可欠。経済安全保障上極めて重要な物資。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「経済安全保障上の重要物資」という位置づけが、民間単独では到底負えない規模の政府支援（累計1兆円超）を正当化する論拠だ。TSMC熊本が証明したように、ファウンドリの誘致は半導体工場だけでなく材料・部品・人材・インフラの一体的な集積を生む。熊本では半導体関連の雇用・設備投資の地方波及が急速に進んでいる。
+                                    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）目標</div>
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 国内外で獲得を目指す市場：2030年15兆円・2040年40兆円</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      半導体市場はAI実装拡大に伴い2030年に約140兆円超、2035年に約190兆円規模へ加速度的に成長。AIインフラ市場全体で2040年までに累計約3,000兆円の投資需要が見込まれる。自動車産業など我が国産業に不可欠な半導体やデータセンター・AIロボティクスなど将来の産業競争力強化に不可欠な半導体を中心に、2030年に国内で生産される半導体の売上高15兆円、2040年に40兆円を目指す。
+                                    
+                        </div>
+                        <div class="note-box">
+                            <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                      「2030年15兆円」という目標は、現在の国内半導体売上高から約3倍超の水準であり、TSMC熊本（JASM）・ラピダスの両軸に加え、国内既存メーカー（ルネサス・東芝・ロームなど）の売上も含む。ラピダスが2027年度後半に量産を開始し、パイロット生産から本格量産への移行が2029年頃に実現するシナリオが、この数値目標の前提条件だ。
+                                    
+                        </div>
+                    </div>
+                    <div class="sub-section">
+                        <div class="sub-section-title">② 達成すべき戦略的な目標：先端製造能力の確保とSystem to Siliconの確立</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      AI時代に必要不可欠となる先端・次世代半導体の国内における開発・製造能力を確保する。フィジカルAI政策と連動して、ロボット・自動車・FA等のエッジ側の機能要件から逆算した各種半導体を設計・製造し、システムとして最適統合する設計・製造能力（System to Silicon）を強化し、「フィジカル・インテリジェント・システム」の基盤を確立する。
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">２．勝ち筋の特定と官民投資の具体像【道筋】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）基本戦略</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 勝ち筋：3ステップ戦略とSystem to Siliconへの集中</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      （1）足下必要な半導体製造基盤の構築、（2）次世代に必要な半導体の量産技術開発、（3）将来の革新技術の開発、という3ステップで政策を展開。これまではクラウド（データセンター）側の先端ロジック・メモリ半導体の製造能力確保を重点実施。今後はフィジカルAIの発展によりエッジ側需要が増大する中で「System to Silicon」が競争力強化に必要不可欠。センサー技術とアナログ・レガシー領域の設計開発基盤を有する我が国の強みが顕在化する好機。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「3ステップ」の最大の論点は、ステップ①（基盤構築）と③（革新技術）を同時に走らせているという構造だ。通常の産業育成ではステップを順番に踏むが、半導体では「20年の技術空白を埋めながら、最先端の2nmでも競争する」という非線形な戦略を採らざるを得ない。ラピダスはステップ③を先行させる逆張りであり、TSMC熊本（JASM）はステップ①の安全弁として機能する。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        2026年4月11日：ラピダスに6,315億円追加支援。試作品の性能・歩留まり改善費用に投入。「2027年度後半量産」に向けてアクセル踏み込み 
+                                        <span class="source-tag">ITmedia 2026.4</span>
+                                    </li>
+                                    <li>
+                                        富士通がラピダスに画像半導体の設計・試作を委託（キヤノン・Synopsysとの連携） 
+                                        <span class="source-tag">ITmedia 2026.4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        ラピダス：IIM-1工場で解析センター・後工程拠点を開所（2026年4月11日）。パイロットライン段階で100億トランジスタ集積ICの評価を進行中 
+                                        <span class="source-tag">TEL社レポート 2026.4</span>
+                                    </li>
+                                    <li>
+                                        TSMC熊本（JASM）第2工場：3nmラインの導入を検討。第1工場（22/28nm・16nm FinFET）は2024年12月より稼働中 
+                                        <span class="source-tag">TEL社レポート 2026.4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                Intel Foundry ServicesがGAA（18A）の歩留まり改善を継続。NVIDIA Blackwell（GB200）がデータセンター向けで量産フル稼働中。
+                            </p>
+                            <p>
+                                <span class="country-tag">中国</span>
+                                SMICが7nm相当の半導体を量産中。米輸出規制（EAR）の強化にもかかわらず、設計人材・製造ノウハウの蓄積が進む。
+                            </p>
+                            <p>
+                                <span class="country-tag">欧州</span>
+                                世界の半導体工場投資が活発化（TEL社レポート 2026年5月）。Samsung Texas工場が2026年下半期限定生産開始予定。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② 我が国として構築すべき機能：製造能力と需要側設計開発能力の一体強化</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      自律性と不可欠性の観点から我が国に必要な半導体製造能力と、競争力確保に向けた次世代技術の研究開発能力。半導体需要側産業における半導体設計開発能力。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「需要側産業における設計開発能力」の強化が、System to Siliconの実現に向けた最重要課題だ。トヨタ・ホンダなどの自動車メーカーが「車載チップを内製設計する能力」を持てば、「自動車業界向けに特化したファウンドリ（ラピダス）」という日本固有の産業エコシステムが成立する。現在、この「需要側の設計能力」が最も手薄であり、ここへの政策資源投入が急務だ。
+                                    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）官民投資の具体像</div>
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 投資内容：先端・アナログ・部素材の3層への同時投資</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      データセンター・AIロボティクスなど将来の産業競争力強化に向けた関連半導体・電子部品等の製造基盤強化に向けた研究開発・設備投資。自動車産業など我が国産業にとって不可欠な半導体・電子部品について、製造基盤強化に向けた研究開発・設備投資。各種半導体・電子部品等の設計開発能力強化に向けた製造・設計拠点の整備促進。規模拡大や産業集積に向けて必要となるインフラや人材育成に対する投資。
+                                    
+                        </div>
+                        <div class="note-box">
+                            <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                      定量的インパクト（官民投資による経済波及効果・関連投資誘発効果）は「官民投資ロードマップの取りまとめまでに提示」と明記されており、2026年夏取りまとめで具体化予定。
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH03 -->
+        <section id="ch03" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <span class="chapter-title">３．官民投資促進に向けた課題と政策パッケージ【政策手段】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">① 国内投資支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                我が国に真に必要となる先端・次世代半導体の研究開発力の強化や製造能力確保に向けた支援を引き続き実施。フィジカル・インテリジェント・システム実現の観点から、各アプリケーションに最適化された先端・次世代半導体やアナログ半導体（センサー・マイコン等）及び電子部品等の技術・製造基盤を設計開発能力の強化と一体的に強化するべく、技術開発・設備投資を重点的に支援。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    ラピダスへ6,315億円の追加支援（2026年4月）。累積政府支援は1兆円超の規模へ 
+                                    <span class="source-tag">ITmedia 2026.4</span>
+                                </li>
+                                <li>
+                                    SiC（炭化ケイ素）・GaN（窒化ガリウム）等のワイドバンドギャップ半導体は2026年以降量産段階へ。日本企業（ローム・東芝・三菱電機）のリードポジションを政策支援で維持する方針 
+                                    <span class="source-tag">業界分析</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    東京エレクトロン：2026年3月期売上高2兆4,435億円。アナリスト予想では2027年3月期3兆円超 
+                                    <span class="source-tag">各社IR 2026.4</span>
+                                </li>
+                                <li>
+                                    ソニーセミコンダクタ＋TSMC：次世代イメージセンサーの開発・製造で基本合意（2026年5月）。ロボット知覚系コンポーネントとフィジカルAIを架橋 
+                                    <span class="source-tag">各社IR 2026.5</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">② 需要創出・市場確保・社会実装支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                フィジカルAIなど最先端半導体を活用したデジタル・AIサービスの創出等を通じ、最先端半導体の国内需要創出に繋げる。先端・次世代半導体を中心に、半導体設計開発支援を継続・拡大。System to Siliconを加速させる観点から最先端の半導体研究開発・設計拠点を整備。地政学動向等を踏まえて、非先端領域の半導体や電子部品についてはサプライチェーンの強化・最適化や必要な産業再編に向け取り組む。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「非先端領域の産業再編」という表現は、国内の中堅・準大手半導体メーカーへの再編圧力を示唆している。ルネサスによるIDT・Dialog・Intersil等の買収に見られる「M&Aによる機能統合」が政策的に推奨される方向性だ。自動車の電動化（BEV・PHEV）で需要急拡大するパワー半導体（SiC・GaN）分野では、日本の独自ポジションを確保できる可能性が高い。
+                              
+                    </div>
+                    <div class="overseas-box">
+                        <div class="overseas-label">// 海外動向</div>
+                        <p>
+                            <span class="country-tag">米国</span>
+                            CHIPS and Science Act（527億ドル）が各州への工場誘致を加速。Intel・TSMC Arizona・Samsung Texasの3拠点が2026〜2027年にかけて稼働フェーズへ。
+                        </p>
+                        <p>
+                            <span class="country-tag">欧州</span>
+                            EU CHIPS Act（430億ユーロ）によりSTMicro・Wolfspeed等がSiC・GaNの欧州生産能力を増強。日本のロームにとって競合が強化されるリスク。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">③ 立地競争力強化</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                半導体工場の新設・拡張に必要となる、広大な土地、大量の水・電力に加えて、物流や渋滞などの交通等も含めたインフラ面に関する取組を検討。グローバルに活躍できる高度人材の育成の観点から、国内外企業とも連携してオープンな研究開発拠点を整備。産官学連携で創設した各地域のコンソーシアムの取組等を通じて現場人材も含めた人材育成を強化。環境規制・許認可のスピード等、国際水準に近づける取組を検討。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「環境規制・許認可のスピード等、国際水準に近づける」という表現は、日本の行政手続きの遅さが工場立地を妨げているという業界からの声を政策文書が公式に認めた初めてのケースの一つだ。TSMC Arizona（米国）が工場建設にかかった時間と、熊本JASM（日本）のそれを比べると、日本は着工〜稼働まで比較的スピーディーだったが、許認可・インフラ整備でのボトルネックは依然として課題として残る。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    北海道千歳市（ラピダス IIM-1）：解析センター・後工程拠点が2026年4月11日に開所。道路・電力・水道等のインフラ整備が並行して進行中 
+                                    <span class="source-tag">ITmedia 2026.4</span>
+                                </li>
+                                <li>
+                                    熊本県知事：TSMC第3工場の要請を本社に行ったことを公表。「最先端半導体を活用した産業がなければ意味がない」と述べ需要側産業育成の必要性を言及 
+                                    <span class="source-tag">Nikkei</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    九州（熊本）：ソニー・東京エレクトロン・富士フイルム・三菱電機の拠点が集積。熊本大学との産学連携サイエンスパーク構想が浮上 
+                                    <span class="source-tag">Nikkei</span>
+                                </li>
+                                <li>北海道（千歳）：ラピダスを軸に設計・製造・部素材の産業クラスター形成が進行中</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">④ 国際連携</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                次世代半導体領域における国際共同研究を引き続き推進。同志国等と連携したサプライチェーンの構築・強靱化を推進。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「同志国との連携」とは具体的にはQUAD・G7・日米半導体協定の枠組みを指す。米国の対中輸出規制（EAR）に日本・オランダが協調することで、製造装置（ASML・東京エレクトロン・KLA）の中国向け輸出に制限が加わり、日本の製造装置産業は長期的な中国市場縮小リスクを抱えている。この地政学リスクへの対応として、同志国市場（米・欧・インド等）への供給多様化が重要課題だ。
+                              
+                    </div>
+                    <div class="overseas-box">
+                        <div class="overseas-label">// 海外動向</div>
+                        <p>
+                            <span class="country-tag">米国</span>
+                            バイデン→トランプ政権でもCHIPS and Science Actの骨格は維持。日本との二国間半導体協力（Japan-US Commercial and Industrial Partnership: JUCIP）が継続。
+                        </p>
+                        <p>
+                            <span class="country-tag">中国</span>
+                            SMICの7nm量産・Huaweiのチップ内製化が加速。輸出規制の実効性に疑問符が付き始めており、同志国間での規制強化・調整が継続審議中。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 続編：課題・政策パッケージ編</div>
+            <div class="next-box-desc">「なぜ半導体への投資が進まないのか」「人材・インフラ・地政学リスクの3つのボトルネック」を整理した「課題・政策パッケージ編」も近日公開予定です。</div>
+            <a href="https://marketsupporter-ai.com" target="_blank">▶ marketsupporter-ai.com で読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>ITmedia NEWS「政府、ラピダスに6315億円の追加支援発表 2027年の先端半導体量産化へアクセル」（2026年4月13日）</li>
+                <li>東京エレクトロン社「TELESCOPE magazine サイエンスリポート：2026年日本の半導体工場の最新事情」（2026年4月9日）</li>
+                <li>東京エレクトロン社「TELESCOPE magazine サイエンスリポート：世界の半導体工場、活発な投資へと動く」（2026年5月）</li>
+                <li>東京エレクトロン「2026年3月期 決算短信」（2026年4月30日）</li>
+                <li>SOC報告書ラボ「2026年の半導体業界の再編と日本企業の再興——ラピダス・ルネサスが切り拓く未来」（2026年2月12日）</li>
+                <li>各社IR：ソニーセミコンダクタソリューションズ・TSMC 基本合意（2026年5月）、ルネサスエレクトロニクス 決算報告（2026年4月）</li>
+                <li>Nikkei「熊本県知事、TSMCに第3工場要請」（2025年1月）</li>
+                <li>経産省「AIロボティクス戦略検討会議 第1回事務局資料」（2026年1月）</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。掲載情報の正確性・完全性を保証するものではなく、記載の数値・目標・施策は政策の進捗に伴い変更となる場合があります。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
