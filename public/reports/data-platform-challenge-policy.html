@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>データプラットフォーム｜課題・政策パッケージ編｜戦略17分野 ③</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --warn: #e65100;
+        --warn-light: #fff3e0;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--warn);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #bf360c 0%, #e64a19 50%, #ff7043 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 50%;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #ffccbc;
+        margin-bottom: 12px;
+    }
+
+    .hero-number {
+        font-family: var(--font-mono);
+        font-size: 64px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, .1);
+        position: absolute;
+        top: -12px;
+        right: 0;
+        line-height: 1;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(22px, 5vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #ffccbc;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #ffccbc;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #ffccbc;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--warn);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--warn);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--warn);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--warn);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-header.green {
+        background: var(--accent);
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--warn);
+        border-bottom: 1.5px solid var(--warn-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .section-title.green {
+        color: var(--accent-dark);
+        border-bottom-color: var(--accent-light);
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--warn);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .sub-section-title.green::before {
+        background: var(--accent-mid);
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .bottleneck-box {
+        background: var(--warn-light);
+        border-left: 3px solid var(--warn);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .bottleneck-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--warn);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--warn);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--warn);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ③</span>
+        <span>データプラットフォーム</span>
+        <span>|</span>
+        <span>課題・政策パッケージ編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — DATA PLATFORM — CHALLENGE & POLICY PACKAGE</div>
+            <div class="hero-number">03</div>
+            <div class="hero-title">
+                データプラットフォーム
+                <br>
+                課題・政策パッケージ編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（3）官民投資促進に向けた課題と政策パッケージ 構造に基づく分析レポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック①</div>
+                    <div class="kpi-value">
+                        国内サービス
+                        <br>
+                        の不在
+                    </div>
+                    <div class="kpi-unit">高価な海外製が市場を支配</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック②</div>
+                    <div class="kpi-value">
+                        ユースケース
+                        <br>
+                        未成熟
+                    </div>
+                    <div class="kpi-unit">データ連携でMake Moneyできない</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">中小企業AI活用率</div>
+                    <div class="kpi-value">約35%</div>
+                    <div class="kpi-unit">生成AI活用企業（帝国データバンク 2026年3月）</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">欧州のデータスペース補助金</div>
+                    <div class="kpi-value">
+                        約17億
+                        <br>
+                        ユーロ
+                    </div>
+                    <div class="kpi-unit">2019年〜のEU・各国公的資金投入</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜課題・政策パッケージサマリー</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜（1）投資促進に向けた課題</a>
+                    <ul class="toc-sub">
+                        <li>① リソース制約</li>
+                        <li>a. サービス：安価な国内サービスの不在と外資依存構造</li>
+                        <li>b. 人材：データマネジメント人材の不足</li>
+                        <li>② 不確実性の要因</li>
+                        <li>a. 市場：データ連携のビジネスモデル未成熟</li>
+                        <li>b. 事業・技術：AI-Ready化技術の黎明期と有望サービスの見極め困難</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜（2）講じるべき政策パッケージ</a>
+                    <ul class="toc-sub">
+                        <li>①国内投資支援</li>
+                        <li>②需要創出・市場確保・社会実装支援</li>
+                        <li>③立地競争力強化（データ人材・制度）</li>
+                        <li>④国際連携</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">課題・政策パッケージサマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          データプラットフォームの課題は「外資依存×ユースケース未成熟×人材不足」の3層構造だ。欧州がデータスペースに約17億ユーロを投じてもビジネスモデルの自立化に苦しんでいる現実は、日本にとっての先行事例として重く受け止める必要がある。「補助金によるインフラ構築の支援から、民間による新しいビジネスモデルの確立に転換しなければ同様の破綻が起きる恐れがある」（日経XTECH、2026年4月）という指摘は、日本の政策設計にも直接当てはまる。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">約60%</div>
+                        <div class="stat-unit">AIプロジェクト</div>
+                        <div class="stat-desc">2026年に頓挫するとも言われるAIプロジェクトの割合。主因はデータ不足</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">約35%</div>
+                        <div class="stat-unit">活用企業</div>
+                        <div class="stat-desc">生成AIを業務活用している企業の割合（帝国データバンク、2026年3月調査）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">17億€</div>
+                        <div class="stat-unit">欧州投資額</div>
+                        <div class="stat-desc">2019年〜EUと各国のデータスペースへの公的資金。それでもビジネスモデル自立化は難航</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">2026年度末</div>
+                        <div class="stat-unit">目標</div>
+                        <div class="stat-desc">IPA「Open Data Spaces」OSSとして公開予定（デジタル・サイバーセキュリティWG）</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">2重ボトルネックと政策パッケージの対応関係</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>ボトルネック</th>
+                                <th>具体的障壁</th>
+                                <th>政策パッケージ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>① 国内サービスの不在</td>
+                                <td>データ精製サービスの多くが高価な海外製。産業データが外資クラウドに流出するリスク</td>
+                                <td>国内投資支援（GENIAC・国内プラットフォームサービス育成）</td>
+                            </tr>
+                            <tr>
+                                <td>② データマネジメント人材不足</td>
+                                <td>AI時代のデータマネジメントを実践できる人材が各企業の現場に存在しない</td>
+                                <td>立地競争力強化（新たな試験設置・スキルプラットフォーム）</td>
+                            </tr>
+                            <tr>
+                                <td>③ ユースケース未成熟</td>
+                                <td>データ連携でどう稼ぐかのビジネスモデルが確立しておらず、事業者が投資に踏み切れない</td>
+                                <td>需要創出支援（ユースケース創出・中小企業支援）</td>
+                            </tr>
+                            <tr>
+                                <td>④ 技術・サービスの黎明期</td>
+                                <td>AI-Ready化サービスが乱立しており、どれが有望か見極めが困難</td>
+                                <td>国内投資支援（手法論の確立・標準化支援）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">（1）投資促進に向けた課題</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">① リソース制約</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">a. サービス：安価な国内サービスの不在と外資依存構造</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      データ精製等に関するサービスの多くは高価な海外製であり、産業競争力や経済安全保障に係るデータを安心して処理できる安価な国内サービスが限定的。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      AWSのデータパイプライン製品、Microsoft Azure Data Factory、Databricksなど外資系サービスが日本企業のデータ処理基盤を事実上支配している。価格は大企業には支払い可能だが、中堅・中小製造業には負担が重く、「使えるデータがないのではなく、変換するためのコストが払えない」という構造的な参入障壁になっている。帝国データバンクの2026年3月調査では、生成AIを活用している企業は約35%にとどまり、中小企業では「情報管理・運用ルール整備の実務的支援」が政策上の急務と指摘されている。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        NEDO「製造業データ等のAI-Ready化に関する研究開発（GENIAC）」採択決定（2026年5月14日）。国内AI-Ready化サービスの研究開発を資金面で支援 
+                                        <span class="source-tag">NEDO</span>
+                                    </li>
+                                    <li>
+                                        NEDO「AIエコシステム公募」（2026年3月26日〜）：AI-Ready化含むAIエコシステム形成を支援 
+                                        <span class="source-tag">NEDO</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        ストックマーク：製造業・消費財メーカー16社と「暗黙知AI-Ready化プロジェクト」を発足（2026年5月14日）。国産AI-Ready化サービスの実証的展開を先行 
+                                        <span class="source-tag">AIDiver 2026.5</span>
+                                    </li>
+                                    <li>
+                                        ZEAL DATA TIMES調査（2026年5月）：「AI-Ready化は企業の競争力を測る公式な指標」との認識が経営層に浸透。DX銘柄2026での評価指標化が背景 
+                                        <span class="source-tag">ZEAL 2026.5</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                Databricks・Snowflake・Palantirが企業向けAI-Readyデータ基盤サービスで急成長。日本法人の展開も加速しており、国内競合サービスとの価格・機能差が課題。
+                            </p>
+                            <p>
+                                <span class="country-tag">欧州</span>
+                                Gaia-X参加企業が増加しているが、コスト負担の問題から「補助金がなければ継続困難」な企業が続出。「補助金依存からビジネスモデル自立への転換」が欧州の最大課題（日経XTECH 2026年4月）。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">b. 人材：AI時代のデータマネジメントを実践できる人材の不足</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      各企業の現場でAI時代に即したデータマネジメントを実践できる人材の不足。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      従来の「データサイエンティスト」とは異なる「AIデータマネジメント人材」が必要になっている。これは、AIモデルが学習しやすい形にデータを変換・品質管理するスキルを持つ人材だ。インプレス「生成AI時代のデータマネジメント調査報告書2026」（2026年1月）によれば、データマネジメントの目的が「人間による利用」から「機械（AI）による利用」へとシフトし、求められるスキルセットが根本的に変化しているにもかかわらず、そのスキルを体系的に学べる教育環境が国内に存在しない。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        DX銘柄2026：「自社データを発掘・整理・管理する能力」を評価指標として追加。企業側のデータマネジメント人材育成を間接的に促進 
+                                        <span class="source-tag">経産省・東証</span>
+                                    </li>
+                                    <li>
+                                        デジタルエコシステム官民協議会（2025年6月発足）：トラストサービスの体系整理を通じて、データマネジメント人材が扱う制度環境の整備を推進 
+                                        <span class="source-tag">Nikkei XTECH 2026.4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        インプレス「生成AI時代のデータマネジメント調査報告書2026」（2026年1月）：半数以上の企業がAI-Ready化に着手しているが、実践できる人材の確保が最大障壁と報告 
+                                        <span class="source-tag">インプレス 2026.1</span>
+                                    </li>
+                                    <li>
+                                        帝国データバンク調査（2026年3月）：中小企業に「情報管理や検証手順、ルール整備に関する実務的な支援」が最も必要と指摘 
+                                        <span class="source-tag">TDB 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">② 不確実性の要因</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">a. 市場：データ連携のビジネスモデル未成熟——「Make Money できない」問題</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      市場（データ連携）：ビジネスモデルとして成立するユースケースが未成熟であり、事業者が投資に踏み切りにくい。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      「Make Moneyという点に関しては、企業はアイデアにしてもデータにしても囲い込んで出したがらない。企業の壁をうまく越えて、業界として大きな価値を生み出せるかというのは、なかなか具体的な像が見えない」（事業構想オンライン掲載のRRI有識者発言、2026年5月）——これがデータスペース推進の最前線に立つ実務者の正直な認識だ。欧州では規制対応（化学物質管理・EV電池の脱炭素）という「外圧」がユースケースを生んでいるが、日本では同様の外圧が弱く、「データを連携させても誰が得をするか」の設計が先行する必要がある。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        IPA「Open Data Spaces」（ウラノス・エコシステムのユースケース共通要素を体系化したOSS）：2026年度末に公開予定。民間のデータスペース構築コストを下げ、ユースケース創出の障壁を下げる狙い 
+                                        <span class="source-tag">事業構想オンライン 2026.5</span>
+                                    </li>
+                                    <li>
+                                        デジタル・サイバーセキュリティWG（2026年2月）：データスペース技術の「産業利用の具体事例の組成を促進」を明記 
+                                        <span class="source-tag">デジタル庁・経産省</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        NTTデータ：バッテリートレーサビリティプラットフォーム（EV電池の脱炭素規制対応）を開発・提供開始。欧州規制対応という「外圧型ユースケース」を国内に展開する先行事例 
+                                        <span class="source-tag">NTTデータ</span>
+                                    </li>
+                                    <li>
+                                        データスペースにおけるユースケース拡大の議論がRRI（ロボット革命・産業IoTイニシアティブ）で継続中だが、中長期的な像が見えないとの実務者の声 
+                                        <span class="source-tag">事業構想オンライン 2026.5</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">欧州</span>
+                                データスペースが自立的に機能しているのは「EU規制対応コストを共有する」という外圧型ユースケースのみ。自発的な価値創出型ユースケースはまだ少数。欧州のデジタル庁等からも「補助金継続なしでは運営困難」との声が上がっている（日経XTECH 2026年4月）。
+                            </p>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                データ連携は「プラットフォーム覇権」の形をとる（AWS・Google・Microsoftのエコシステム内での連携）。欧州・日本型の「データ主権型データスペース」とは根本的に異なるアーキテクチャで進化中。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">b. 事業・技術：AI-Ready化サービスの乱立と「有望技術の見極め困難」</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      事業・技術（データ精製）：データのAI-Ready化に関する技術やサービスは現在勃興段階にあり、今後有望な技術・サービスの見極めが難しい。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      AI-Ready化サービスは2025〜2026年に急増しており、RAG（検索拡張生成）基盤、データメッシュ、ベクトルデータベース、合成データ生成など技術トレンドが乱立している。企業のIT部門はどの技術スタックに投資すべきか判断できず、「様子見」の状態が続いている。一方で、2026年は「AIはコストではなく売上に寄与する投資として評価される」転換点とも言われており（Web担当者Forum, 2025年12月）、この判断の先送りが競争劣位に直結するリスクを企業は認識し始めている。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>NEDO「製造業データ等のAI-Ready化（GENIAC）」採択（2026年5月14日）：有望技術の研究開発資金を供給しつつ、採択プロセスを通じて「政府が有望と判断した技術」を市場にシグナリングする機能も担う</li>
+                                    <li>
+                                        経産省・総務省「AI事業者ガイドライン第1.2版」（2026年3月）：技術選択のガバナンス基準を提示 
+                                        <span class="source-tag">経産省</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        インプレス調査（2026年1月）：データメッシュ型分散アーキテクチャへの移行を「次のステップ」として検討する企業が増加。ただし実装事例はまだ少数 
+                                        <span class="source-tag">インプレス 2026.1</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header chapter-header green">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">（2）講じるべき政策パッケージ</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title green">① 国内投資支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                AI学習・利用、データ連携等のために不可欠なデータ精製技術（AI-Ready化）や、データ連携技術であるデータスペースについて、手法論の確立や標準化に係る研究開発・実証を支援する。データ精製・データ連携を中核的に担う安価な国内プラットフォームサービスを育成する。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「安価な国内サービス育成」の鍵は「標準化」だ。AI-Ready化の手法論が標準化されれば、各社が独自にコストをかけて開発する必要がなくなり、共通基盤として利用できる。IPAが推進するOSS「Open Data Spaces」はその「共通基盤の器」を提供しようとする試みであり、2026年度末の公開がマイルストーンになる。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    NEDO「製造業データ等のAI-Ready化（GENIAC）」採択決定（2026年5月14日） 
+                                    <span class="source-tag">NEDO</span>
+                                </li>
+                                <li>
+                                    IPA「Open Data Spaces」開発を推進。2026年度末のOSS公開に向け実装中 
+                                    <span class="source-tag">事業構想オンライン 2026.5</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    ストックマーク×経産省×16社：製造業の暗黙知をLLM学習可能な形に変換する「手法論」の確立を産学官で実証中（2026年5月14日発足） 
+                                    <span class="source-tag">AIDiver 2026.5</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">② 需要創出・市場確保・社会実装支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                データのAI-Ready化に関する標準的な手法等を各産業へ横展開し、データ精製を面的に推進する。産業界の実ニーズに基づいたデータ連携のユースケース創出を推進する。中小企業・小規模事業者等へのデジタル化ツール・AI導入を強力に支援する。各業界等におけるデータセットの構築・データエコシステムの構築等を支援する（AI・半導体WGとの連携）。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「中小企業支援」は量的な最大課題だ。帝国データバンクの調査が示す通り、生成AIを活用できていない65%の企業の多くは中小企業だ。「情報管理や運用ルールの整備に関する実務的な支援」（帝国データバンク 2026年3月）という具体的なニーズに応える、使いやすく安価な国内サービスと伴走支援体制の整備が急務だ。
+                              
+                    </div>
+                    <div class="overseas-box">
+                        <div class="overseas-label">// 海外動向</div>
+                        <p>
+                            <span class="country-tag">欧州</span>
+                            EU規制対応（化学物質管理規則CBAM、電池規則等）が最も確実なユースケース起爆剤になっている。日本でも規制連動型ユースケース（カーボン開示、製品トレーサビリティ等）を政策的に設計することが、データスペース普及の現実的な経路だ。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">③ 立地競争力強化（データ人材・制度整備）</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                データのAI-Ready化などAI時代のデータマネジメントスキルを評価するための新たな試験を設けるなど、データ・AI利活用のスキル習得を促す。AI時代に必要なデータマネジメント等のスキル情報を蓄積・可視化したデジタル人材スキルプラットフォームによりデータマネジメント人材の活躍を推進する。DX銘柄について、企業のDX・AIトランスフォーメーション（AX）の状況を可視化・評価するように制度の見直しを検討。民間企業等による国等が保有するデータの活用を促すような制度の整備など、官民でデータが利活用しやすい環境の整備を進める。国内のデータ連携のためのトラストサービスを体系化する。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「データマネジメントスキルを評価する新たな試験」の設置は、資格制度を通じてスキルの可視化と市場価値付けを行う戦略だ。「AIデータマネジメント検定」のような資格が整備されれば、企業側の採用・育成の判断基準になり、教育機関側のカリキュラム設計にも影響する。ただし「試験の設計」自体が難問であり、技術変化の速度に資格制度が追いつけるかが課題だ。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    DX銘柄2026：「自社データを発掘・整理・管理する能力」を評価指標に追加。制度的なシグナリング機能として機能開始 
+                                    <span class="source-tag">経産省・東証</span>
+                                </li>
+                                <li>
+                                    デジタルエコシステム官民協議会：既存の電子署名法等のトラストサービスを整理・体系化。産業界が広く使える基盤づくりを推進中 
+                                    <span class="source-tag">Nikkei XTECH 2026.4</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    NTTデータグループ：データスペース専門家200名体制（2026年まで）整備完了。電力・ヘルスケア・金融分野のユースケース展開を推進中 
+                                    <span class="source-tag">NTTデータ</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">④ 国際連携</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                データ連携技術（データスペース）に関する国際標準化や国際的な相互運用性の確保等を進める。フィジカルAI等の国際展開と連携することで、国内のデータプラットフォームサービスの海外展開を進める。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「欧州データスペースとの相互運用性」は技術課題であると同時に、ガバナンス・法制度の課題でもある。欧州ではEDC（Eclipse Dataspace Connector）が標準技術として普及しているが、日本ではData-EXなど異なる技術が存在する。富士通がGaia-X認証を取得したこと、NTTが国際テストベッドで日欧間接続を実証したことは、技術的相互運用の先行事例だが、法的・制度的な相互認証の整備は夏の取りまとめ以降の課題として残る。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    IPA「Open Data Spaces」をOSSとして公開（2026年度末予定）：日本発の共通仕様として国際標準化活動への参加を目指す。IDSA・Gaia-Xとの技術協調を想定 
+                                    <span class="source-tag">事業構想オンライン 2026.5</span>
+                                </li>
+                                <li>
+                                    データ連携トラスト基盤フレームワーク：2026年夏を期限に他国との相互認証を検討中 
+                                    <span class="source-tag">デジタル行財政改革会議</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    富士通：Gaia-X認証取得済み。欧州規制対応ユースケース（BPP・CMP対象）の日欧間データ連携実証を展開中 
+                                    <span class="source-tag">Classmethod 2025</span>
+                                </li>
+                                <li>
+                                    NTTデータ：東京大学との国際テストベッドで日欧間データスペース接続の実証継続中 
+                                    <span class="source-tag">NTTデータ</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="overseas-box">
+                        <div class="overseas-label">// 海外動向</div>
+                        <p>
+                            <span class="country-tag">欧州</span>
+                            EU「データスペース支援センター（DSSC）」が9分野のデータスペース間の相互運用ガイドラインを策定中。「補助金から民間ビジネスモデルへ」の移行が欧州全体の政策課題として浮上（日経XTECH 2026年4月）。
+                        </p>
+                        <p>
+                            <span class="country-tag">中国</span>
+                            工業互聯網（Industrial Internet）プラットフォームが製造業向けデータ連携の国内標準として整備中。欧州・日本型「データ主権」モデルとは根本的に異なる「国家管理型データ連携」として拡大中。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 政策実装・官民投資編も読む</div>
+            <div class="next-box-desc">「今、政府と民間がどこまで動いているか」を整理した「政策実装・官民投資編」も公開中です。</div>
+            <a href="https://marketsupporter-ai.com/reports/data-platform-policy-investment.html" target="_blank">▶ 政策実装・官民投資編を読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>デジタル・サイバーセキュリティWG 第1回 事務局参考資料（2026年2月3日）— デジタル庁・経済産業省</li>
+                <li>NEDO GENIACページ「製造業データ等のAI-Ready化に関する研究開発 採択事業者決定」（2026年5月14日）</li>
+                <li>AIDiver「ストックマーク・経産省の暗黙知活用プロジェクトにスズキら16社参画」（2026年5月14日）</li>
+                <li>帝国データバンク「生成AIに関する企業の動向調査（2026年3月）」（2026年5月14日公表）</li>
+                <li>インプレス「生成AI時代のデータマネジメント調査報告書2026」（2026年1月13日）</li>
+                <li>日経XTECH「データスペースを再定義、単なる規制対応からイノベーションを起こす場所へ」（2026年4月）</li>
+                <li>事業構想オンライン「データスペースが産業の在り方を変える！カギを握る『機運醸成』」（2026年5月）</li>
+                <li>ZEAL DATA TIMES「AI-Ready Dataとは？生成AI時代に求められるデータ基盤と整備手順」（2026年5月）</li>
+                <li>内閣官房「データ利活用制度の在り方に関する基本方針」（デジタル行財政改革会議決定、2025年6月13日）</li>
+                <li>NTTデータグループ「国・地域を超えたデータスペース協調と新ビジネス創出に向け、グローバルチームを発足」（2025年3月）</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。掲載情報の正確性・完全性を保証するものではなく、記載の数値・目標・施策は政策の進捗に伴い変更となる場合があります。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
