@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>セキュリティの確保された政府・地方公共団体のDX基盤｜政策実装・官民投資編｜戦略17分野 ④</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--accent);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 50%;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #a5d6a7;
+        margin-bottom: 12px;
+    }
+
+    .hero-number {
+        font-family: var(--font-mono);
+        font-size: 64px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, .1);
+        position: absolute;
+        top: -12px;
+        right: 0;
+        line-height: 1;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(18px, 4vw, 26px);
+        font-weight: 700;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #a5d6a7;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #c8e6c9;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--accent);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--accent-dark);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--accent-dark);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--accent);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        border-bottom: 1.5px solid var(--accent-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--accent-mid);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--accent);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ④</span>
+        <span>セキュリティの確保された政府・地方公共団体のDX基盤</span>
+        <span>|</span>
+        <span>政策実装・官民投資編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — GOV/LOCAL DX INFRASTRUCTURE — POLICY MONITOR</div>
+            <div class="hero-number">04</div>
+            <div class="hero-title">
+                セキュリティの確保された政府・地方公共団体のDX基盤
+                <br>
+                政策実装・官民投資編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（日本成長戦略会議 第3回、2026年3月）構造に基づく政策モニタリングレポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">自治体 20業務 標準移行完了率</div>
+                    <div class="kpi-value">約3.7%</div>
+                    <div class="kpi-unit">2026年4月時点（GCInsight調査）</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">GSS ユーザー数（2025年9月）</div>
+                    <div class="kpi-value">4.5万人</div>
+                    <div class="kpi-unit">目標：2031年度に27万ユーザー</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">自治体運用経費の増加</div>
+                    <div class="kpi-value">1.8倍</div>
+                    <div class="kpi-unit">移行前1,400億円→移行後約2,500億円</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">PQC移行目標</div>
+                    <div class="kpi-value">2035年度</div>
+                    <div class="kpi-unit">政府機関。2026年度に工程表策定</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜政策実装サマリー（2026年04月〜05月）</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜現状認識と目指す姿【目標】</a>
+                    <ul class="toc-sub">
+                        <li>（1）現状：レガシーシステムとクラウド移行の遅れ</li>
+                        <li>（2）目標：GSS 27万ユーザー・基幹20業務標準化・PQC移行</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜勝ち筋と官民投資の具体像【道筋】</a>
+                    <ul class="toc-sub">
+                        <li>①クラウド・データセンター（国内基盤構築）</li>
+                        <li>②データプラットフォーム（認証・データ連携）</li>
+                        <li>③サイバーセキュリティ（PQC・AI活用防御）</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch03">CHAPTER 03｜課題と政策パッケージ【政策手段】</a>
+                    <ul class="toc-sub">
+                        <li>①公共分野の危機管理投資・民の技術力向上機会の付与</li>
+                        <li>②地方における人材育成・DX推進エコシステムの構築</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">政策実装サマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          本分野は「政府・自治体が最大のユーザー」であると同時に「国内IT産業の育成基盤」という二重の役割を持つ。自治体の基幹20業務のガバメントクラウド移行完了率が2026年4月時点で約3.7%にとどまるという現実は、「移行期限の形骸化」として政策上の最大の課題だ。一方でGSSの政府機関導入は着実に進み、さくらインターネットのガバメントクラウド認定（2025年度本格稼働）という「国産クラウドの参入」という構造変化も起きている。
+
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">約3.7%</div>
+                        <div class="stat-unit">移行完了率</div>
+                        <div class="stat-desc">全国1,741自治体のうち20業務すべての標準準拠移行を完了した自治体（2026年4月、GCInsight）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">25.9%</div>
+                        <div class="stat-unit">特定移行支援</div>
+                        <div class="stat-desc">標準化対象3.4万システムのうち令和7年12月末時点で「特定移行支援」が必要なシステムの割合（デジタル庁）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">700億円</div>
+                        <div class="stat-unit">国庫補助</div>
+                        <div class="stat-desc">自治体システム運用最適化支援事業（R7補正予算）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">5社</div>
+                        <div class="stat-unit">認定CSP</div>
+                        <div class="stat-desc">ガバメントクラウド認定CSP（AWS・Azure・GCP・OCI・さくらインターネット）</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">直近2ヶ月の重要動向（2026年4〜5月）</div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き</div>
+                            <ul>
+                                <li>
+                                    デジタル庁が「生成AI利用環境（源内）」を整備済み。
+                                    <strong>2026年度以降</strong>
+                                    に各府省庁への展開を検討中
+                                    <span class="source-tag">GLAVIS 2026</span>
+                                </li>
+                                <li>
+                                    自治体システム運用最適化支援事業（700億円、R7補正）が創設。移行後の運用経費増（1,400億円→2,500億円）への対応策
+                                    <span class="source-tag">デジタル庁 2026.2</span>
+                                </li>
+                                <li>
+                                    内閣官房 国家サイバー統括室：政府機関のPQC（耐量子計算機暗号）移行の工程表を
+                                    <strong>2026年度に策定</strong>
+                                    する方針
+                                    <span class="source-tag">ITmedia 2025.12</span>
+                                </li>
+                                <li>
+                                    ガバメントクラウドの大口割引獲得のための「デジタル行政推進法改正」を踏まえた交渉を推進中
+                                    <span class="source-tag">内閣官房 2025.6</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き</div>
+                            <ul>
+                                <li>
+                                    さくらインターネット：2025年度からガバメントクラウドに本格参入。国産クラウドとして自治体の選択肢が拡大
+                                    <span class="source-tag">GCInsight 2026.4</span>
+                                </li>
+                                <li>
+                                    GSS関連ベンダー（NEC・富士通・日立等）：ゼロトラスト対応・MDM・EDR・クラウドセキュリティのスキル強化が新たな差別化軸に
+                                    <span class="source-tag">BTNコンサルティング 2026.3</span>
+                                </li>
+                                <li>地方発SaaS企業：小規模自治体向けガバメントクラウド対応SaaSの全国展開が政策的に促進される方向性が明確化</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">重要企業群・市場構造</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>機能層</th>
+                                <th>主要企業群</th>
+                                <th>政策対象・変化</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ガバメントクラウド（CSP）</td>
+                                <td>
+                                    AWS・Azure・GCP・OCI（外資4社）
+                                    <br>
+                                    さくらインターネット（国産）
+                                </td>
+                                <td>国産CSPの参入で競争構造が変化</td>
+                            </tr>
+                            <tr>
+                                <td>GSS関連（端末・NW・セキュリティ）</td>
+                                <td>NEC・富士通・日立・富士通JapanほかSIer</td>
+                                <td>個別LAN調達がGSS統合へ移行。ゼロトラスト対応が必須</td>
+                            </tr>
+                            <tr>
+                                <td>自治体向けSaaS</td>
+                                <td>ガバテック・トラストバンク・LGWAN対応SaaS各社</td>
+                                <td>地方発SaaSの全国展開が政策課題に</td>
+                            </tr>
+                            <tr>
+                                <td>PQC・次世代セキュリティ</td>
+                                <td>NRI セキュア・KDDI・IPA関連</td>
+                                <td>2026年度工程表策定後に具体的な調達が本格化</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">１．現状認識と目指す姿【目標】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）現状</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 現状：レガシーシステムの保守困難とクラウド移行の構造的遅れ</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      クラウド・データセンターについては、オンプレからクラウド、個別開発から標準システムの活用へ市場と産業がシフト。また、レガシーシステムは今後保守が難しくなるため、モダン化された効率的なシステムへの移行が必要。クラウドで稼働する最先端の生成AIを効果的に活用するためにも、クラウド移行が必要。地政学的リスクの高まりや高度化・巧妙化するサイバー攻撃への対応、大規模災害に対する強靱性の確保が求められている。
+
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      自治体の基幹20業務のガバメントクラウド移行完了率が約3.7%（2026年4月）という数字は、「移行期限（2026年3月）が形骸化した」という現実を示している。移行後の運用経費が移行前の1.8倍（1,400億円→2,500億円）に増加するという試算は、自治体財政への圧力となり、中小自治体でのデジタル人材・ベンダー確保の困難さと相まって移行を遅らせる構造的要因だ。一方でレガシーシステムの保守に当たれるエンジニアが減少しており、「移行しないリスク」も高まっている。
+
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        デジタル庁：基幹20業務の2026年3月期限は「原則」として残しつつ、特定移行支援システムについて2028年度末まで延長を容認
+                                        <span class="source-tag">ジチタイワークス 2026.3</span>
+                                    </li>
+                                    <li>
+                                        自治体システム運用最適化支援事業（700億円）をR7補正予算で創設。経費増への補助金で自治体の移行継続を促進
+                                        <span class="source-tag">デジタル庁 2026.2</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        真岡市などの先行自治体はガバメントクラウド上で18業務システムを約2年で稼働。全庁合意形成の成功事例として業界に波及
+                                        <span class="source-tag">ジチタイワークス 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                連邦政府の「クラウド・スマート」戦略によりFedRAMP認定クラウドへの移行が進む。AI活用は連邦機関でのCopilot for Government（Microsoft）導入が本格化しており、日本の政府AI（源内）より先行している。
+                            </p>
+                            <p>
+                                <span class="country-tag">欧州</span>
+                                EU加盟国間でのガバメントクラウドの相互運用性を目指す「EUCS（EU Cloud Security Scheme）」が策定段階。セキュリティ要件の国際標準化競争が進行中。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">③ 経済的・戦略的な重要性：官による率先導入が民の技術力向上を生む</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      デジタル財・サービスは、実際に使われ、フィードバックを回すことで高度化する一方、市場は実績を重視。こうした中で、官による率先導入は、活用を通じて民間の技術力を向上させ、国内市場の需要を創出し、国内の製品・サービスの供給、人材の育成を促す観点から重要。
+
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「官が率先して使うことで民が育つ」というロジックは、GSS・ガバメントクラウドの政策設計の根本にある。さくらインターネットのガバメントクラウド参入はその典型例で、政府調達という「安定した大口顧客」が国産クラウドの技術力・信頼性の向上を促した。この好循環を「PQC・AIセキュリティ・地方DX向けSaaS」にも波及させることが政策の目論見だ。
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）目標</div>
+                    <div class="sub-section">
+                        <div class="sub-section-title">定量目標：GSS 27万ユーザー・ガバメントクラウド倍増・PQC 2035年移行</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      GSS：2031年度までに2026年1月比約6倍の27万ユーザーに拡大（現状4.5万人）。ガバメントクラウド：利用システム数を2030年度末までに2倍に。地方自治体基幹20業務の情報システム（約3.4万）の標準準拠（特定移行支援システムは2028年度末までに）と運用の最適化。政府機関におけるPQCへの移行（原則2035年度まで、工程表を2026年度に策定）。
+
+                        </div>
+                        <div class="note-box">
+                            <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                      GSS 27万ユーザー目標は、現状の4.5万人からの6倍拡大であり、残り全府省庁の職員への展開が前提となる。2026年度以降に各府省庁への「源内（生成AI利用環境）」展開が始まれば、この拡大が加速する。ガバメントクラウドのシステム数倍増も、自治体移行の遅れが解消されれば現実的だが、現状では2028年度末が事実上の新たな期限として機能している。
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">２．勝ち筋と官民投資の具体像【道筋】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）基本戦略：3本柱（クラウド・データPF・サイバーセキュリティ）</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① クラウド・データセンター：国内クラウド基盤の構築と自律性向上</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      高いセキュリティ、耐災害性、十分な自律性を備えた国内のクラウド基盤を構築し、利用を拡大する中で投資の増大と民の技術力向上を図る。公共分野のシステムのモダン化、クラウド前提のデータ設計、AI活用を促進し、運用の効率化と機能の高度化を図る。地方公共団体におけるシステムの標準化、SaaS利用等を進める。
+
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「自律性向上」という表現が重要だ。現在のガバメントクラウドは外資4社（AWS・Azure・GCP・OCI）が主体であり、政府データが海外クラウドに依存している。さくらインターネットの参入は「外資依存からの脱却」の第一歩だが、技術力・スケール・価格競争力の面で外資との差は大きい。政府の大口利用というアンカーテナンシーが国産クラウドを育てる、という構造的な政策意図が「自律性向上」に込められている。
+
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        デジタル行政推進法改正を踏まえたガバメントクラウド利用料の大口割引獲得交渉をデジタル庁が推進中
+                                        <span class="source-tag">内閣官房 2025.6</span>
+                                    </li>
+                                    <li>クラウド移行とシステムのモダン化の「加速化計画」の策定・実施が2026年度の重点施策</li>
+                                    <li>
+                                        政府内での国産AI・AIエージェントの活用として生成AI環境「源内」の各府省庁展開を2026年度以降に予定
+                                        <span class="source-tag">GLAVIS 2026</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        さくらインターネット：ガバメントクラウド本格参入（2025年度〜）。「さくらのクラウドを活用したエンジニア支援講座」をRe-スキル講座として経産省が認定
+                                        <span class="source-tag">デジタル庁 2025.6</span>
+                                    </li>
+                                    <li>
+                                        国内データセンター立地促進：AI需要急拡大を受け、各社が国内DC増強を加速
+                                        <span class="source-tag">業界動向</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② データプラットフォーム：安全な認証基盤とシステム間連携</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      安全な認証基盤、データ連携・システム間連携により、より便利で効率的な行政サービスを実現していく。
+
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      認証基盤の整備はDX基盤の「最初のインフラ」だ。行政サービスのオンライン化を進めるためには、「この人が誰であるか」「この組織が正当であるか」を確実に証明できる仕組みが必要だ。マイナンバーカードの普及（2024年末で人口の約73%保有）と、法人トラスト認証の整備が連動することで、「行政→市民→企業」間のデータ連携基盤が初めて機能する。
+
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">③ サイバーセキュリティ：PQC・AI活用防御の率先導入</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      危機管理投資として、セキュリティや耐災害性を高めた公共分野の業務基盤の整備を計画的に進める。官が率先して新たなセキュリティ技術（例：PQC、AI活用の防御）を導入・運用し、技術力向上につなげ、民間市場に波及させる。
+
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      PQC（耐量子計算機暗号）への移行は「今すぐ脅威ではないが、今から準備しなければ間に合わない」問題だ。「HNDL（Harvest Now, Decrypt Later）攻撃」——現在の暗号化データを保存し、量子コンピュータで将来解読する攻撃——のリスクから、機微情報を扱うシステムは今から移行準備が必要だ。2026年度の工程表策定後、政府調達という「先行ユーザー」として官がPQC対応製品・サービスを購入することで、国内セキュリティ産業の技術力向上が促進される。
+
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        内閣官房 国家サイバー統括室：PQC移行工程表を2026年度に策定する方針を決定。原則2035年度までの政府機関移行を目標
+                                        <span class="source-tag">ITmedia 2025.12</span>
+                                    </li>
+                                    <li>
+                                        CRYPTREC（IPA・NICT共同）：「耐量子計算機暗号の研究動向調査報告書」「暗号技術ガイドライン（PQC）」を2024年度末に更改済み
+                                        <span class="source-tag">NRIセキュア</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        金融庁PQC検討会（2024年）報告書で金融機関のPQC移行推奨事項が公表済み。政府のPQC工程表策定後、銀行・保険等の民間移行にも波及予定
+                                        <span class="source-tag">NRIセキュア</span>
+                                    </li>
+                                    <li>
+                                        GSS対応SIer：ゼロトラストアーキテクチャ（ID管理・MDM・EDR・クラウドセキュリティ）が新たな競争軸に
+                                        <span class="source-tag">BTNコンサルティング 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                NISTが2024年8月にPQC標準3規格を正式発布（ML-KEM・ML-DSA・SLH-DSA）。連邦政府は2025年末から主要システムのPQC移行を開始。日本は米国より約2〜3年遅れている。
+                            </p>
+                            <p>
+                                <span class="country-tag">欧州</span>
+                                EU18カ国のサイバー機関が2024年にPQC移行検討を促す共同声明を発表。EU加盟国間での段階的移行ロードマップ調整が進行中。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）官民投資の具体像</div>
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 投資内容：需要側（公共DX基盤）と供給側（DC・システム・デジタル人材）</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      需要面では、政府や地方公共団体におけるセキュリティ・耐災害性の確保された公共DX基盤のための投資。供給面では、民間企業において、データセンター、モダン化されたシステム、製品・サービス、これらを開発・運用するデジタル人材に対する投資。
+
+                        </div>
+                        <div class="note-box">
+                            <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                      定量的インパクト（経済波及効果・関連投資誘発効果）は「官民投資ロードマップ取りまとめまでに提示」と明記。2026年夏の日本成長戦略取りまとめで具体化予定。ただし「複数年度にわたる計画的な危機管理投資」という方針は明示されており、単年度補正予算から中期計画型の予算へ移行する方向性が示されている。
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH03 -->
+        <section id="ch03" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <span class="chapter-title">３．課題と政策パッケージ【政策手段】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">① 公共分野の危機管理投資・民の技術力向上機会の付与</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                公共分野のDX基盤について基本戦略を踏まえた重点領域を定め、複数年度にわたる計画的な危機管理投資を行う。我が国が強みを発揮できる技術や製品について、公共分野における率先導入によって、事業者の技術向上の機会を予見可能な形で提供し、民間需要への波及、自律性向上を図る。【5本柱】①GSSのユーザー拡大・安定的運営体制・セキュリティ・耐災害性向上・国産技術導入、②国内公的クラウド（国内クラウド整備・DC立地促進・モダン化加速・国産AI活用・SaaS拡大）、③地方公共団体の情報システム高度化・刷新、④PQC等新たなセキュリティ技術の導入、⑤個別行政分野のDX基盤投資（出入国管理・在留管理等）。
+
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「複数年度にわたる計画的な危機管理投資」という表現は、従来の「単年度補正予算による整備」からの転換を意図している。自治体のシステム移行が遅れた要因の一つは「複数年度かかる移行に単年度予算しか使えない」という制度的矛盾だった。この「単年度制度の罠」を危機管理投資という枠組みで乗り越えようとする設計は、フィジカルAI分野の「官需アンカーテナンシー」と同じ政策論理だ。
+
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    自治体システム運用最適化支援事業（R7補正 700億円）創設。移行後の経費増に対応する補助金スキーム
+                                    <span class="source-tag">デジタル庁 2026.2</span>
+                                </li>
+                                <li>
+                                    デジタル庁「生成AI利用環境（源内）」：2026年度以降に各府省庁への展開を開始予定
+                                    <span class="source-tag">GLAVIS 2026</span>
+                                </li>
+                                <li>出入国管理・在留管理等の個別行政DX基盤投資が継続実施中</li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    GSS導入機関は2025年9月時点で16機関・4.5万人。国税庁が2025年9月から順次導入開始。残る府省庁も協議進行中
+                                    <span class="source-tag">BTNコンサルティング 2026.3</span>
+                                </li>
+                                <li>
+                                    国内データセンター：AI需要急増を受け、さくら・KDDIが国内DC増強を加速。政府の「国内DC立地促進」方針と連動
+                                    <span class="source-tag">業界動向</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="overseas-box">
+                        <div class="overseas-label">// 海外動向</div>
+                        <p>
+                            <span class="country-tag">米国</span>
+                            連邦政府のゼロトラスト戦略（CISA主導）が本格実施フェーズへ。Microsoft Copilot for Government（M365 GovCloud）が連邦機関に大規模展開中。日本の「源内」との差が拡大している。
+                        </p>
+                        <p>
+                            <span class="country-tag">欧州</span>
+                            EUCS（EUクラウドセキュリティスキーム）の策定が継続中。国産クラウド育成方針はEU全体でも議論が進んでいるが、技術力の差から外資依存が続く状況は日本と同様。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">② 地方における人材育成・DX推進エコシステムの構築</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                開発環境の提供や官民の人材交流を通じて、自治体・ベンダー双方のデジタル人材や中小ベンダー等の育成を図る。特に小規模な地方公共団体でもDXを推進でき、中小の地方公共団体やベンダーであっても、クラウド環境を活用した最適化・標準化を前提とした地方全体のDXを推進できるようなエコシステムを官民連携して確立するとともに、地方発SaaSの全国展開を促進する。
+
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「地方発SaaSの全国展開」は、地方DXの逆輸入モデルだ。人口の少ない地方自治体は大手SIerが参入しにくいためにスタートアップや地域IT企業が先行実装し、そのSaaSが全国標準化できれば「地方発→全国展開」という産業育成の新たな経路が生まれる。これは中央集権型のシステム開発から「地域課題解決型のスタートアップ育成」への政策パラダイム転換でもある。
+
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    デジタル庁・総務省・経産省・厚労省が連携してソフトウェアエンジニアの育成と多様性確保を推進。「さくらのクラウドを活用したエンジニア支援講座」をRe-スキル講座に認定
+                                    <span class="source-tag">内閣官房 2025.6</span>
+                                </li>
+                                <li>
+                                    地方財政措置：標準化移行に伴う恒常的な経費増分約400億円を普通交付税で措置
+                                    <span class="source-tag">デジタル庁 2026.2</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>地方発SaaS（ガバテック・トラストバンク等）：小規模自治体向けのガバメントクラウド対応サービスを拡充中。政策的な全国展開促進の方針が追い風に</li>
+                                <li>地域の中小ITベンダー：従来の個別LAN/NW調達の減少に伴い、GSS関連サービスやSaaS運用支援への転換を模索中</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 続編：課題・政策パッケージ編</div>
+            <div class="next-box-desc">「なぜ自治体のクラウド移行が進まないのか」「単年度予算・人材不足・ベンダー寡占の3重の壁」を整理した「課題・政策パッケージ編」も近日公開予定です。</div>
+            <a href="https://marketsupporter-ai.com" target="_blank">▶ marketsupporter-ai.com で読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>GCInsight「ガバメントクラウドへの移行が完了しているのはなぜ3.7%か」（2026年4月）</li>
+                <li>ジチタイワークスWEB「【2026年3月】自治体システム標準化の移行期限と進捗状況」（2026年3月5日）</li>
+                <li>デジタル庁「地方公共団体情報システムの標準化・ガバメントクラウドについて」（地方財政審議会提出資料、2026年2月13日）</li>
+                <li>内閣官房「自治体情報システムの標準化・ガバメントクラウド移行後の運用経費に係る総合的な対策」（2025年6月13日）</li>
+                <li>GLAVIS「官公庁における基盤システムに求められるもの」（2026年）</li>
+                <li>BTNコンサルティング「GSSとは？ガバメントソリューションサービスの全体像」（2026年3月）</li>
+                <li>ITmedia「日本政府、2035年までに耐量子計算機暗号（PQC）に移行する方針」（2025年12月8日）</li>
+                <li>NRIセキュア「耐量子計算機暗号（PQC）とは？標準化が進む次世代暗号と各国の対応状況を解説」（2025年11月）</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。掲載情報の正確性・完全性を保証するものではなく、記載の数値・目標・施策は政策の進捗に伴い変更となる場合があります。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
