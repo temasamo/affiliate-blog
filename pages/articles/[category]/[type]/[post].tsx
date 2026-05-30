@@ -44,6 +44,22 @@ interface ArticleProps {
   post: string;
 }
 
+function isFutureDate(date?: string): boolean {
+  if (!date) return false;
+  const match = date.trim().replace(/[./]/g, '-').match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
+  if (!match) return false;
+
+  const [, year, month, day] = match;
+  const articleDate = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+  const today = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Tokyo',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(new Date());
+  return articleDate > today;
+}
+
 export default function ArticleDetail({ content, frontMatter, category, type, post, mdxSource, isHotPicks }: ArticleProps) {
   const title = frontMatter.title || '商品比較・ランキング';
   const description = frontMatter.description || `Market Supporter AIが提供する${title}の詳細情報です。`;
@@ -1411,6 +1427,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
           .filter((f) => f.endsWith(".mdx") || f.endsWith(".md"));
 
         files.forEach((file) => {
+          const filePath = path.join(typeDir, file);
+          const fileContents = fs.readFileSync(filePath, "utf8");
+          const { data: frontMatter } = matter(fileContents);
+          const date = typeof frontMatter.date === "string" ? frontMatter.date : String(frontMatter.date || "");
+          if (frontMatter.published === false || frontMatter.draft === true || isFutureDate(date)) {
+            return;
+          }
+
           const post = file.replace(/\.mdx?$/, "");
           paths.push({
             params: { category, type, post },
@@ -1425,6 +1449,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
         .filter((f) => f.endsWith(".mdx") || f.endsWith(".md"));
 
       files.forEach((file) => {
+        const filePath = path.join(categoryDir, file);
+        const fileContents = fs.readFileSync(filePath, "utf8");
+        const { data: frontMatter } = matter(fileContents);
+        const date = typeof frontMatter.date === "string" ? frontMatter.date : String(frontMatter.date || "");
+        if (frontMatter.published === false || frontMatter.draft === true || isFutureDate(date)) {
+          return;
+        }
+
         const post = file.replace(/\.mdx?$/, "");
         paths.push({
           params: { category, type: 'trend', post },
@@ -1475,6 +1507,11 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async ({ params }) =
   try {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data: frontMatter, content } = matter(fileContents);
+    const frontMatterDate = typeof frontMatter.date === 'string' ? frontMatter.date : String(frontMatter.date || '');
+
+    if (frontMatter.published === false || frontMatter.draft === true || isFutureDate(frontMatterDate)) {
+      return { notFound: true };
+    }
 
     // Global Hot Picksかどうかを判定
     const isHotPicks = 

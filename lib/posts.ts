@@ -89,6 +89,29 @@ function safeDateToNumber(d?: string): number {
   return Number.isFinite(t) ? t : -8640000000000000;
 }
 
+function toJapanDateString(date = new Date()): string {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Tokyo",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(date);
+}
+
+function normalizeDateOnly(d?: string): string | null {
+  if (!d) return null;
+  const match = d.trim().replace(/[./]/g, "-").match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
+  if (!match) return null;
+  const [, year, month, day] = match;
+  return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
+}
+
+function isFutureDate(d?: string): boolean {
+  const articleDate = normalizeDateOnly(d);
+  if (!articleDate) return false;
+  return articleDate > toJapanDateString();
+}
+
 function resolveThumbnail(input?: string | null): string | null {
   if (!input || typeof input !== "string") return null;
   if (/^https?:\/\//i.test(input)) return input; // 外部URLは通す
@@ -247,7 +270,7 @@ function loadFromJson(): PostMeta[] {
 export function getAllPosts(): PostMeta[] {
   const mdx = loadFromMdx();
   const json = loadFromJson();
-  const posts = [...mdx, ...json].filter((p) => p.published);
+  const posts = [...mdx, ...json].filter((p) => p.published && !isFutureDate(p.date));
 
   // 重複を除去（slugとcategoryの組み合わせでユニークにする）
   const uniquePosts = posts.filter((post, index, self) => 

@@ -494,6 +494,22 @@ function getCategoryDisplayName(category: string): string {
   return categoryNames[category] || category;
 }
 
+function isFutureDate(date?: string): boolean {
+  if (!date) return false;
+  const match = date.trim().replace(/[./]/g, '-').match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
+  if (!match) return false;
+
+  const [, year, month, day] = match;
+  const articleDate = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+  const today = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Tokyo',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(new Date());
+  return articleDate > today;
+}
+
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   const articlesDirectory = path.join(process.cwd(), 'articles');
   const allArticles: Article[] = [];
@@ -510,6 +526,10 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
         if (frontMatter.published === false) {
           return null;
         }
+        const date = typeof frontMatter.date === 'string' ? frontMatter.date : (frontMatter.date ? String(frontMatter.date) : '2025.07.01');
+        if (frontMatter.draft === true || isFutureDate(date)) {
+          return null;
+        }
         // 完全なslugを保持（サブディレクトリを含む）
         const actualSlug = s;
         // カテゴリを統一（「旅行・観光」→「旅行」、未定義の場合は「旅行」をデフォルトに）
@@ -521,7 +541,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
           slug: actualSlug, 
           subcategory: frontMatter.subcategory || null, 
           category: normalizedCategory,
-          date: typeof frontMatter.date === 'string' ? frontMatter.date : (frontMatter.date ? String(frontMatter.date) : '2025.07.01')
+          date
         };
       } catch (error) {
         console.error(`Error getting travel post for slug ${s}:`, error);
@@ -563,12 +583,17 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
                 const filePath = path.join(trendPath, file);
                 const fileContents = fs.readFileSync(filePath, 'utf8');
                 const { data: frontMatter } = matter(fileContents);
-                
+                const date = typeof frontMatter.date === 'string' ? frontMatter.date : String(frontMatter.date || '2025.07.01');
+
+                if (frontMatter.published === false || frontMatter.draft === true || isFutureDate(date)) {
+                  return;
+                }
+
                 allArticles.push({
                   slug: file.replace(/\.(mdx|md)$/, ''),
                   title: frontMatter.title || '記事タイトル',
                   description: frontMatter.description || '記事の説明',
-                  date: frontMatter.date || '2025.07.01',
+                  date,
                   category: category,
                   type: 'trend'
                 });
@@ -592,9 +617,10 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
                   const filePath = path.join(typePath, file);
                   const fileContents = fs.readFileSync(filePath, 'utf8');
                   const { data: frontMatter } = matter(fileContents);
+                  const date = typeof frontMatter.date === 'string' ? frontMatter.date : String(frontMatter.date || '2025.07.01');
                   
                   // publishedがfalseの場合はスキップ
-                  if (frontMatter.published === false) {
+                  if (frontMatter.published === false || frontMatter.draft === true || isFutureDate(date)) {
                     return;
                   }
                   
@@ -602,7 +628,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
                     slug: frontMatter.slug || file.replace(/\.(md|mdx)$/, ''),
                     title: frontMatter.title || '記事タイトル',
                     description: frontMatter.description || '記事の説明',
-                    date: frontMatter.date || '2025.07.01',
+                    date,
                     category: frontMatter.category || category,
                     type: type
                   });

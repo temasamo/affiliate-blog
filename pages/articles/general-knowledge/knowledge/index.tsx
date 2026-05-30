@@ -19,6 +19,22 @@ interface KnowledgeIndexProps {
   articles: Article[];
 }
 
+function isFutureDate(date?: string): boolean {
+  if (!date) return false;
+  const match = date.trim().replace(/[./]/g, '-').match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
+  if (!match) return false;
+
+  const [, year, month, day] = match;
+  const articleDate = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+  const today = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Tokyo',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(new Date());
+  return articleDate > today;
+}
+
 export default function KnowledgeIndex({ articles }: KnowledgeIndexProps) {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -110,12 +126,17 @@ export const getStaticProps: GetStaticProps<KnowledgeIndexProps> = async () => {
       const filePath = path.join(articlesDirectory, file);
       const fileContents = fs.readFileSync(filePath, 'utf8');
       const { data: frontMatter } = matter(fileContents);
-      
+      const date = typeof frontMatter.date === 'string' ? frontMatter.date : (frontMatter.date ? String(frontMatter.date) : '2025.01.01');
+
+      if (frontMatter.published === false || frontMatter.draft === true || isFutureDate(date)) {
+        return;
+      }
+
       articles.push({
         slug: file.replace(/\.(mdx?)$/, ''),
         title: frontMatter.title || '記事タイトル',
         description: frontMatter.description || '記事の説明',
-        date: typeof frontMatter.date === 'string' ? frontMatter.date : (frontMatter.date ? String(frontMatter.date) : '2025.01.01')
+        date
       });
     });
   }
