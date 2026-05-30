@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全光ネットワーク（APN）｜政策実装・官民投資編｜戦略17分野 ⑤</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--accent);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 50%;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #a5d6a7;
+        margin-bottom: 12px;
+    }
+
+    .hero-number {
+        font-family: var(--font-mono);
+        font-size: 64px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, .1);
+        position: absolute;
+        top: -12px;
+        right: 0;
+        line-height: 1;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(22px, 5vw, 32px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #a5d6a7;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #c8e6c9;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--accent);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--accent-dark);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--accent-dark);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--accent);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        border-bottom: 1.5px solid var(--accent-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--accent-mid);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--accent);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ⑤</span>
+        <span>全光ネットワーク（APN）</span>
+        <span>|</span>
+        <span>政策実装・官民投資編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — ALL-PHOTONICS NETWORK (APN) / IOWN — POLICY MONITOR</div>
+            <div class="hero-number">05</div>
+            <div class="hero-title">
+                全光ネットワーク（APN：All-Photonics Network）
+                <br>
+                政策実装・官民投資編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（日本成長戦略会議 第3回、2026年3月）構造に基づく政策モニタリングレポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">2030年 グローバルシェア目標</div>
+                    <div class="kpi-value">10%</div>
+                    <div class="kpi-unit">現状約5%→2倍</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">光通信関連市場（2030年）</div>
+                    <div class="kpi-value">約53兆円</div>
+                    <div class="kpi-unit">2024年約19兆円から急拡大</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">IOWN 2.0 光電融合スイッチ</div>
+                    <div class="kpi-value">2026年Q4</div>
+                    <div class="kpi-unit">商用出荷予定（NTTグループ）</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">APN投資効果（みずほ銀試算）</div>
+                    <div class="kpi-value">5.8兆円</div>
+                    <div class="kpi-unit">DC消費電力抑制＋投資抑制効果</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜政策実装サマリー（2026年04月〜05月）</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜現状認識と目指す姿【目標】</a>
+                    <ul class="toc-sub">
+                        <li>（1）現状：特許2位・素材シェア1位だが機器グローバルシェアが低い非対称構造</li>
+                        <li>（2）目標：2030年グローバルシェア10%・先進的AIインフラの全国構築</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜勝ち筋と官民投資の具体像【道筋】</a>
+                    <ul class="toc-sub">
+                        <li>①IOWNロードマップとAPNの勝ち筋</li>
+                        <li>②構築すべき機能・官民投資の具体像</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch03">CHAPTER 03｜課題と政策パッケージ【政策手段】</a>
+                    <ul class="toc-sub">
+                        <li>①国内投資支援</li>
+                        <li>②需要創出・社会実装支援</li>
+                        <li>③立地競争力強化</li>
+                        <li>④国際連携</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">政策実装サマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          本分野は「NTTのIOWN戦略＝日本の国家戦略」という特異な構造を持つ。IOWN Global Forumには156組織超が参加し、ITU-T標準化の2026年度承認を目指す。2026年Q4には「IOWN 2.0（光電融合スイッチ）」の商用出荷が予定されており、IOWNロードマップ上で最初の大きな商業的マイルストーンとなる。一方でロードマップ素案が指摘する「機器のグローバルシェアが素材・部品の強みに見合っていない」という構造的課題は依然として未解決であり、北米市場でのシェア拡大が政策上の優先課題として明示されている。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">800Gbps</div>
+                        <div class="stat-unit">最大容量</div>
+                        <div class="stat-desc">APN IOWN 1.0（2024年12月〜）NTT東西が提供中</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">2026年Q4</div>
+                        <div class="stat-unit">商用出荷</div>
+                        <div class="stat-desc">IOWN 2.0 光電融合スイッチ（PEC-2）の出荷予定</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">2026年度</div>
+                        <div class="stat-unit">承認目標</div>
+                        <div class="stat-desc">ITU-T SG13でのAPN国際標準承認目標時期</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">156組織超</div>
+                        <div class="stat-unit">参加</div>
+                        <div class="stat-desc">IOWN Global Forum参加組織数（2026年時点）</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">直近2ヶ月の重要動向（2026年4〜5月）</div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き</div>
+                            <ul>
+                                <li>
+                                    <strong>2026年2月20日</strong>
+                                    ：情報通信成長戦略官民協議会でNTTが「APN基盤の早期面的展開」を提示。公共分野での実証を通じたAPN基盤の先導的整備、ワット・ビット連携による分散DC展開計画を説明 
+                                    <span class="source-tag">総務省 2026.2</span>
+                                </li>
+                                <li>日本成長戦略会議（2026年3月）がAPNをロードマップ素案に明記。光通信関連市場の2024年約19兆円→2030年約53兆円への成長を目標に設定</li>
+                                <li>Beyond 5G推進戦略2.0（総務省）：APN・NTN・RANを戦略分野に位置づけ「2030年頃の国内本格導入と海外展開」を明示（2024年8月）</li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き</div>
+                            <ul>
+                                <li>
+                                    <strong>2026年4月6日</strong>
+                                    ：NTTドコモビジネスとNTTグループが、IOWN APNと60GHz帯無線LANによりコンビナート（石化プラント）の高度化実証に成功。「未来のコンビナート」実現への布石 
+                                    <span class="source-tag">NTT 2026.4</span>
+                                </li>
+                                <li>
+                                    NTTグループと大成建設が、IOWN APNとローカル5Gを活用した複数重機の遠隔操作・自動制御実証に成功。建設現場での人手不足解消ユースケース 
+                                    <span class="source-tag">NTT 2026</span>
+                                </li>
+                                <li>
+                                    古河電工：1万3,824本束ねの超高密度光ファイバーケーブルの量産開始（2026年3月）。2030年度にDC分野売上高を2023年度比3倍に引き上げ計画 
+                                    <span class="source-tag">APN関連株分析 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">重要企業群・IOWNエコシステム構造</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>機能層</th>
+                                <th>主要企業群</th>
+                                <th>政策対象</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>APNサービス・基盤</td>
+                                <td>NTT（主導）、KDDI、NTT東西、NTTドコモビジネス</td>
+                                <td>国内投資支援・公共分野実証</td>
+                            </tr>
+                            <tr>
+                                <td>光電融合デバイス</td>
+                                <td>NTT（PEC-2）、フォトニクスエレクトロニクス融合研究（NTT R&D）</td>
+                                <td>研究開発支援・税制措置</td>
+                            </tr>
+                            <tr>
+                                <td>光通信機器・装置</td>
+                                <td>富士通、NEC、住友電工、古河電工</td>
+                                <td>国際標準化支援・北米展開</td>
+                            </tr>
+                            <tr>
+                                <td>光ファイバー・部素材</td>
+                                <td>古河電工（光ファイバー世界上位）、住友電工、フジクラ</td>
+                                <td>光ファイバー未整備地域への整備支援</td>
+                            </tr>
+                            <tr>
+                                <td>データセンター連携</td>
+                                <td>さくらインターネット、KDDI、NTT Com</td>
+                                <td>ワット・ビット連携・分散DC実証</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">１．現状認識と目指す姿【目標】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）現状</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 現状：特許出願数世界2位・素材シェア1位だが機器グローバルシェアが低い非対称構造</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      APN全体の我が国の特許出願数は世界2位で技術的優位性を有しているほか、サプライチェーン上流の素材や部品の領域においては市場シェア1位で市場競争力も有しているものの、サプライチェーン下流の光通信機器の国内ベンダーはそれらに見合ったグローバルシェアを獲得できていない。国内市場の縮小、グローバルな市場環境の急激な変化に伴う国内ベンダーの開発投資減少、国際競争力低下が起きつつある。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「特許2位・素材1位なのに機器でシェアが低い」という非対称構造は、日本の産業政策における古典的な課題だ。半導体の「製造装置・部素材では強いが完成チップで弱い」構造と同じパターンが光通信にも存在する。この課題を解決するために、APNは「技術優位性を機器販売シェアに転換する」という政策設計が必要であり、そのための梃子が「IOWNエコシステムの国際展開」と「ITU-T標準化の主導」だ。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">欧米</span>
+                                光通信機器市場でNokia・Ciena・Cisco・Huaweiが先行。Cienが北米ハイパースケーラー向けに急拡大中。日本企業がシェアを奪うには長期の取り組みが必要（内部環境編レポート 2026年3月）。
+                            </p>
+                            <p>
+                                <span class="country-tag">中国</span>
+                                Huaweiが5G・光通信を統合した通信機器で世界市場を狙う。輸出規制下でも国内市場での技術蓄積は継続。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② 取り巻く環境：AI需要急増が生む「電力問題」とAPNの解決策</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      ハイパースケーラーをはじめとするAI向けのDC事業者からの需要急増。関東圏等に集中するDCの電力需要への対策として、APNを活用したワット・ビット連携による分散DCの展開が急務。信頼性の高いネットワーク基盤の早期構築が急務である一方、民間資金のみに依存したインフラ整備では限界。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      AIデータセンターの電力需要急増は、APNに「電力問題の解決手段」という新たな政策的文脈を与えた。みずほ銀行産業調査部（2026年3月）試算では、APNとCPO（Co-Packaged Optics）実装の組み合わせで「4.5兆円の先行投資に対して5.8兆円の効果」が期待できる。APN単体のネットワーク技術としての価値に加え、「ワット・ビット連携」によるDCの分散立地という「電力制約の突破口」としての位置づけが、政策優先度を大幅に高めている。
+                                    
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">③ 経済的・戦略的な重要性：インフラの中のインフラ・経済安全保障</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      経済的重要性：光通信関連市場は2024年約19兆円から2030年には約53兆円に急拡大する予測。戦略的重要性：AI社会を支える基幹的なインフラに関する戦略的不可欠性の獲得、国外ベンダーへの過度な依存の解消を通じた経済安全保障の確保、国内重要データの流通管理・活用を支えるセキュアなインフラを国内企業により確立。
+                                    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）目標</div>
+                    <div class="sub-section">
+                        <div class="sub-section-title">定量目標：2030年グローバルシェア10%・先進的AIインフラの全国構築</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      ハイパースケーラー等の需要が顕在化している北米をはじめとして市場シェアを拡大し、2030年までにグローバルシェア10%（現状約5%）を獲得。AIサービスの普及に伴う、国内各地域におけるオール光ネットワークやDCからなる先進的なAIインフラ市場の獲得。APNの特性を活かした社会課題解決に資する新たなサービスを全国各地で創出。
+                                    
+                        </div>
+                        <div class="note-box">
+                            <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                      「2030年グローバルシェア10%」は現状の約2倍だが、Nokia・Ciena・Cisco・Huawei等の大手が参入する市場での達成は簡単ではない。IOWNエコシステムの国際展開と、ITU-T標準化（2026年度承認目標）の成否が目標達成の鍵を握る。北米市場でのハイパースケーラー向けが主戦場として明示されている。
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">２．勝ち筋と官民投資の具体像【道筋】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）基本戦略</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 勝ち筋：IOWNロードマップとハイパースケーラー先読み戦略</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      ハイパースケーラー等の導入先の要求仕様の先読みによる研究開発・標準化や北米をはじめとする営業・サポート体制の構築。急激な市場ニーズ変化に即応した研究開発成果の社会実装・国内外展開と、次なる市場ニーズを見据えた先行研究開発の重層的推進による、全フェーズを網羅した継続的な官民投資の実施。ITU等における国際的議論を主導。APNとDCの分散立地を掛け合わせた「APN×ワット・ビット×AI戦略（仮称）」の戦略的推進。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「ハイパースケーラーの要求仕様を先読みする」という戦略は、AWSやGoogle・Microsoftが次世代データセンターに求める超低遅延・超大容量・省電力のネットワーク要件を、APNが満たせることを証明し、受注につなげる経路だ。IOWNロードマップ（1.0→2.0→3.0→4.0）の各段階が、ハイパースケーラーの設備投資サイクルと連動して設計されている。IOWN 2.0（光電融合スイッチ）の2026年Q4出荷が最初の商業的試金石となる。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        情報通信成長戦略官民協議会（2026年2月20日）：NTTがAPN基盤早期面的展開計画を提示。公共分野実証を通じた「官需アンカーテナンシー」機能の設計方針を表明 
+                                        <span class="source-tag">総務省 2026.2</span>
+                                    </li>
+                                    <li>
+                                        ITU-T SG13：APNのアーキテクチャ等の標準化作業部会が進行中。2026年度承認を目標 
+                                        <span class="source-tag">Beyond 5G新経営戦略センター</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        NTTグループ：「多数対多数のDC接続を動的制御するソフトウェア」を2026年に開発中。DCの稼働状況に合わせたリソース配分（分散DC一体運用）を目指す 
+                                        <span class="source-tag">日経XTECH 2026.1</span>
+                                    </li>
+                                    <li>
+                                        IOWN 2.0（光電融合スイッチPEC-2）の商用出荷を2026年Q4に予定。DC内サーバー間光接続により消費電力・伝送遅延を大幅削減 
+                                        <span class="source-tag">IT Leaders 2025.10</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                Cienがハイパースケーラー（AWS・Azure・Google）向け長距離光通信で急成長中。NTTグループのIOWN Global Forum活動で米国市場での認知度が高まっているが、実機受注はまだ限定的。
+                            </p>
+                            <p>
+                                <span class="country-tag">インド</span>
+                                NTTがインド等でのAPN展開を情報通信成長戦略官民協議会で表明（2026年2月）。グローバルサウス市場への展開が中長期戦略の一部として明示。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② 構築すべき機能：研究開発力・国際連携・社会実装ユースケース・人材</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      他国を牽引する高付加価値な技術を開発する研究開発力。標準化・グローバルエコシステム形成等に向けた国際連携・国際共同研究。多産業への技術適応支援・社会実装によるユースケース創出促進。スタートアップ等の民間企業が研究機関や大学での研究成果を社会実装に結びつけやすい環境。グローバル市場における営業・技術サポート体制の強化・実績拡大。
+                                    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）官民投資の具体像</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                民間企業や研究機関（NICT）、大学を含む官民の適切な役割分担の下、研究開発・国際標準化・社会実装・海外展開の一体的な推進に向けた戦略的投資。APNの活用促進や新たな市場創出・獲得に向けた実証環境整備への戦略的投資。北米をはじめとしたグローバル市場開拓に向けた海外展開支援等の戦略的投資。信頼性が高く広域な情報通信インフラの早期構築のための戦略的投資（量子通信、AI評価基盤）。ワット・ビット連携による分散DCの整備等、先進的なAIインフラ市場での民間投資につながる政府による先行的な投資。
+                              
+                    </div>
+                    <div class="note-box">
+                        <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                定量的インパクト（経済波及効果・関連投資誘発効果）は「官民投資ロードマップ取りまとめまでに提示」と明記。2026年夏の日本成長戦略取りまとめで具体化予定。Beyond 5G基金（総額1,002億円）が主要な官民投資支援スキームとして機能中。
+                              
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH03 -->
+        <section id="ch03" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <span class="chapter-title">３．課題と政策パッケージ【政策手段】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">① 国内投資支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                ハイパースケーラー等の導入先の要求仕様の先読みや、国研や大学・研究機関との連携によるAPN関連技術への研究開発支援、国際標準化支援、そのための人材育成支援や社会実装を強力に支援するための体制の整備。日本企業による北米市場をはじめとした海外市場獲得のための海外展開支援。多くの産業を支える一貫した広域な情報通信インフラ構築に必要となる研究開発支援。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    Beyond 5G基金（総額1,002億円）：APN・NTN・RANを戦略分野として支援継続中 
+                                    <span class="source-tag">総務省・NICT</span>
+                                </li>
+                                <li>
+                                    NTT・KDDI・富士通・NEC・楽天モバイルの5社共同提案がNICT基金事業に採択。複数事業者間APN相互接続の共通基盤技術研究開発が進行中（2024年10月〜） 
+                                    <span class="source-tag">外部環境編レポート</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    NTTグループ：コンビナート実証（2026年4月）・建設現場重機遠隔操作実証（2026年）など産業別ユースケースの実証を加速 
+                                    <span class="source-tag">NTT 2026.4</span>
+                                </li>
+                                <li>
+                                    古河電工：超高密度光ファイバーケーブル（1万3,824本束ね）量産開始（2026年3月）。DC分野売上高を2030年度に2023年度比3倍へ 
+                                    <span class="source-tag">APN関連株分析 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">② 需要創出・市場確保・社会実装支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                スタートアップ等、様々な主体によるAPN関連ビジネスの立ち上げやネットワークを介した高度な協調動作等に必要な技術検証を支援するためのテストベッド（大規模実証環境）の整備等による社会実装支援・ユースケース創出。北米をはじめとする海外における実証・技術検証環境整備、ハイパースケーラー等との関係構築、営業・サポート体制の構築、APNならではのユースケース創出等を支援。APNで接続された分散DCの促進のための全国特定地域における実証事業（「APN×ワット・ビット×AI戦略（仮称）」）。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「APNで接続された分散DC」という概念が、地方経済振興と電力制約の双方を解決する政策的解として浮上している。東京圏・大阪圏への電力需要集中をAPNによる遠隔地分散DCで解消しながら、地方にDCを立地させ地域経済を活性化するというシナリオだ。NTTが2026年2月に情報通信成長戦略官民協議会で提示した「エリアフリーで分散型データセンタの展開が可能となりワットビット構想の実現にも寄与」というビジョンは、このシナリオの実装方針を示している。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>「APN×ワット・ビット×AI戦略（仮称）」の策定が継続中。全国特定地域での分散DC実証事業の設計を進行</li>
+                                <li>将来にわたる信頼できるAIインフラとしての広域量子暗号通信網・量子通信ネットワークのテストベッド整備も射程に（ロードマップ素案）</li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    NTTグループ：複数DC間を「1つのDCとして運用する」多数対多数の動的制御ソフトウェアを2026年に開発中。2035年頃のDC間接続用APNの完成を見据えた段階的実証 
+                                    <span class="source-tag">日経XTECH 2026.1</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">③ 立地競争力強化</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                ファイナンス環境整備のための、基金等を活用した官による中長期的・安定的な研究開発費補助、情報通信分野の優れた研究開発を重点的に支援する税制措置。インフラ整備のための、APNの基盤となる光ファイバーの未整備地域への整備支援。地域における事業環境整備のための、深刻な人口減少に起因する社会課題を解決するためのAPNを活用したソリューションの地域実証やデジタル人材・体制の確保支援。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「光ファイバーの未整備地域への整備支援」は、地方でのAPN利活用とユースケース創出の前提条件だ。NTTが2026年2月の官民協議会で「APNのエリア内ネットワークへの面的展開には大規模な先行投資が必要な一方、需要は限定的なためNTT単独ではスピード感に制約がある」と述べているように、地方のAPN展開には政府の財政支援が不可欠だ。
+                              
+                    </div>
+                    <div class="overseas-box">
+                        <div class="overseas-label">// 海外動向</div>
+                        <p>
+                            <span class="country-tag">欧米</span>
+                            欧米では国家ブロードバンド計画（米国：BEAD Program 420億ドル、欧州：ギガビット社会目標）が光ファイバー整備に大規模投資。日本の未整備地域への整備支援は欧米と競合する資金規模が求められる。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">④ 国際連携</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                APNに関する国際共同研究、国際標準化、サプライチェーンの強靱化、第三国展開等について、同志国等との連携強化。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                ITU-T SG13でのAPN国際標準承認（2026年度目標）は、APNが「世界共通インフラの設計仕様」になるかどうかの分岐点だ。日本（IOWN Global Forum主導）が標準の主要パラメータを設定できれば、日本製の光通信機器・デバイスが規格に有利な設計となり、グローバル市場でのシェア拡大に直結する。この「標準化＝市場設計」という論理が、外交・通商政策と研究開発支援を連動させる政策の核心だ。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    ITU-T SG13作業部会：2026年度での承認を目標に標準化活動が継続中。NTT・KDDI主導でフォーラム標準→ITU-T勧告への転換を推進 
+                                    <span class="source-tag">Beyond 5G新経営戦略センター</span>
+                                </li>
+                                <li>IOWN Global Forum：156組織超が参加する国際エコシステム。NTTが主導し、日米欧の主要通信・IT企業が参画</li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    NTT：インド等でのAPN展開を表明（2026年2月）。NTTモビリティ等、産業別AI基盤の社会実装を牽引する企業の設立・資本参加も進行中 
+                                    <span class="source-tag">総務省 2026.2</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 続編：課題・政策パッケージ編</div>
+            <div class="next-box-desc">「なぜAPN・IOWNの普及が進まないのか」「先行投資の壁・標準化リスク・人材不足の3重課題」を整理した「課題・政策パッケージ編」も近日公開予定です。</div>
+            <a href="https://marketsupporter-ai.com" target="_blank">▶ marketsupporter-ai.com で読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>NTT「情報通信成長戦略官民協議会 説明資料 APN基盤の早期面的展開について」（資料2-3、2026年2月20日）</li>
+                <li>総務省「APN（オール光ネットワーク）の普及・拡大に向けた取組について」（令和7年1月29日）</li>
+                <li>NTTドコモビジネス「IOWN APNと60GHz帯無線LANによりコンビナートの高度化を支える大容量・低遅延通信環境を実証」（2026年4月6日）</li>
+                <li>日経XTECH「IOWN分野で『光電融合スイッチ』が商用化へ」（2026年1月16日）</li>
+                <li>IT Leaders「IOWN 2.0で光電融合スイッチを出荷へ」（2025年10月）</li>
+                <li>みずほ銀行産業調査部「光電融合〜勝ち筋は、三位一体・先進的DC整備・光電融合ならではのサービス開拓」（2026年3月31日）</li>
+                <li>Beyond 5G新経営戦略センター「AI×未来×オール光ネットワーク 標準化・ルール形成ガイドブック」（2025年10月）</li>
+                <li>marketsupporter-ai.com「APN（外部環境編）」（2026年3月）</li>
+                <li>marketsupporter-ai.com「APN（内部環境編）」（2026年3月）</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
