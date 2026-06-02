@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>量子コンピューティング｜課題・政策パッケージ編｜戦略17分野 ⑥</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --warn: #e65100;
+        --warn-light: #fff3e0;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--warn);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #bf360c 0%, #e64a19 50%, #ff7043 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 50%;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #ffccbc;
+        margin-bottom: 12px;
+    }
+
+    .hero-number {
+        font-family: var(--font-mono);
+        font-size: 64px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, .1);
+        position: absolute;
+        top: -12px;
+        right: 0;
+        line-height: 1;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(22px, 5vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #ffccbc;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #ffccbc;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 17px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #ffccbc;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--warn);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--warn);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--warn);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--warn);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-header.green {
+        background: var(--accent);
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--warn);
+        border-bottom: 1.5px solid var(--warn-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .section-title.green {
+        color: var(--accent-dark);
+        border-bottom-color: var(--accent-light);
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--warn);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .sub-section-title.green::before {
+        background: var(--accent-mid);
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .bottleneck-box {
+        background: var(--warn-light);
+        border-left: 3px solid var(--warn);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .bottleneck-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--warn);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--warn);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--warn);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ⑥</span>
+        <span>量子コンピューティング</span>
+        <span>|</span>
+        <span>課題・政策パッケージ編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — QUANTUM COMPUTING — CHALLENGE & POLICY PACKAGE</div>
+            <div class="hero-number">06</div>
+            <div class="hero-title">
+                量子コンピューティング
+                <br>
+                課題・政策パッケージ編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（3）官民投資促進に向けた課題と政策パッケージ 構造に基づく分析レポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック①</div>
+                    <div class="kpi-value">
+                        技術不確実性
+                        <br>
+                        （方式競争）
+                    </div>
+                    <div class="kpi-unit">どの方式が主流になるか不確定</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック②</div>
+                    <div class="kpi-value">
+                        スタートアップ
+                        <br>
+                        資金が薄い
+                    </div>
+                    <div class="kpi-unit">米国と数十倍の差。エルピーダ型リスク</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック③</div>
+                    <div class="kpi-value">
+                        市場形成の
+                        <br>
+                        時期が不透明
+                    </div>
+                    <div class="kpi-unit">FTQC本格実用化は2030年代以降</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">世界VC投資額（2024年）</div>
+                    <div class="kpi-value">約26億ドル</div>
+                    <div class="kpi-unit">うち米国企業が約17億ドルを調達</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜課題・政策パッケージサマリー</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜（1）投資促進に向けた課題</a>
+                    <ul class="toc-sub">
+                        <li>① リソース制約</li>
+                        <li>a. 人材：研究・エンジニアリング・ビジネス人材の3層不足</li>
+                        <li>b. インフラ：計算資源・テストベッド環境へのアクセス不足</li>
+                        <li>② 不確実性の要因</li>
+                        <li>a. 事業・技術：方式競争と製品化・事業化の遅延リスク</li>
+                        <li>b. 市場：市場形成の不確実性と競争環境の激化</li>
+                        <li>c. 財務：資金調達困難・キャッシュフロー不安定・スタートアップのデスバレー</li>
+                        <li>d. 国際環境・政策：地政学リスクと規制変更</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜（2）講じるべき政策パッケージ</a>
+                    <ul class="toc-sub">
+                        <li>①国内投資支援</li>
+                        <li>②需要創出・市場確保・社会実装支援</li>
+                        <li>③立地競争力強化</li>
+                        <li>④国際連携</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">課題・政策パッケージサマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          量子コンピューティングの課題は「技術・人材・資金・市場」の4重構造だ。最も象徴的な問題は、スタートアップへのリスクマネーが圧倒的に少ないことだ。米国のQuantinuumは評価額100億ドル、PsiQuantumは70億ドルを調達しているのに対し、日本最大の量子スタートアップへの調達は2025年で15億円程度（OptQC、シリーズA1）にとどまる（デロイト、2026年1月）。「ハードウェアを作ることはできたが、それを使うエコシステムを育てることができなかった」というエルピーダ型の失敗を量子で繰り返すリスクがある（TheBrief、2026年4月）。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">100億ドル</div>
+                        <div class="stat-unit">評価額（米国）</div>
+                        <div class="stat-desc">Quantinuum（米英）の評価額。日本最大の量子スタートアップとの差は数百倍</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">15億円</div>
+                        <div class="stat-unit">調達（日本最大）</div>
+                        <div class="stat-desc">OptQC シリーズA1（2025年10月）。日本量子スタートアップの厳しい資金環境を示す</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">約26億ドル</div>
+                        <div class="stat-unit">世界VC投資（2024年）</div>
+                        <div class="stat-desc">量子産業への世界VC投資額。うち米国が17億ドルを占め、日本はごく一部</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">2030年代</div>
+                        <div class="stat-unit">FTQC本格実用化</div>
+                        <div class="stat-desc">フォールトトレラント量子コンピューティングの市場形成時期の目安</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">4重ボトルネックと政策パッケージの対応関係</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>ボトルネック</th>
+                                <th>具体的障壁</th>
+                                <th>政策パッケージ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>① 人材の3層不足</td>
+                                <td>研究人材・エンジニアリング人材・ビジネス（マーケティング・投資）人材がそれぞれ不足</td>
+                                <td>立地競争力強化（グローバルハブ・競争力ある待遇・大学院生支援）</td>
+                            </tr>
+                            <tr>
+                                <td>② 技術の不確実性</td>
+                                <td>超伝導・光量子・イオントラップ等の方式競争が未決着。製品化・事業化の遅延リスク</td>
+                                <td>国内投資支援（ステージゲート付き研究開発支援）</td>
+                            </tr>
+                            <tr>
+                                <td>③ スタートアップへのリスクマネー不足</td>
+                                <td>米国と比較して数十倍のVC投資差。大学発研究成果の民間移転経路が細い</td>
+                                <td>立地競争力強化（リスクマネー供給機能強化）</td>
+                            </tr>
+                            <tr>
+                                <td>④ 市場形成の不確実性</td>
+                                <td>FTQC本格実用化は2030年代以降。それまでの「デスバレー」を越えられるか</td>
+                                <td>需要創出支援（SBIR活用・ユースケース実証・公的需要創出）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">（1）投資促進に向けた課題</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">① リソース制約</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">a. 人材：研究・エンジニアリング・ビジネス人材の3層不足</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      基礎研究から研究開発を行う研究人材やエンジニアリング人材、技術からビジネスを生むための経営やマーケティング、投資などに知見のあるビジネス人材。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      量子コンピューティングが必要とする人材は「量子物理×工学×ソフトウェア」という3つの領域を横断する希少職種だ。さらにビジネス層では「量子技術を理解した上で市場機会を評価できる」投資家・マーケターが日本に極めて少ない。米国のQuantinuumやIonQが大学の量子研究者を直接スタートアップに取り込む経路を持つのに対し、日本では大学発の研究成果が民間に移転する経路が細く（TheBrief、2026年4月）、研究が大学に留まり産業化が進まない構造的問題がある。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        統合イノベーション戦略推進会議の下に新たな検討会議を設置（令和7年10月）。ユースケース創出等に向けた官民学連携の活用方策を2026年度中に具体化する方針 
+                                        <span class="source-tag">経産省 2026.3</span>
+                                    </li>
+                                    <li>大学院生への経済的支援などのインセンティブ付与がロードマップ素案に明記。競争力ある待遇の実現も政策課題として明示</li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        富士通：厚木研究所・米国・欧州・インドの研究拠点、理研・大阪大学・デルフト工科大学（オランダ）との共同研究部門を通じて国際的な人材ネットワークを構築。「グローバル研究者の集積」を量子棟の設置と連動して強化 
+                                        <span class="source-tag">富士通note 2025.1</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                DARPA・NSFが量子研究の大学院奨学金を拡充し、スタートアップへの人材流入を促進。Quantinuum・IonQが大学との共同研究を通じて人材を直接採用するモデルが確立している。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">b. インフラ：計算資源・テストベッド環境へのアクセス不足</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      計算資源やテストベッド環境へのアクセス。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      量子コンピュータの開発・実証には、希釈冷凍機（機器単体で数千万〜数億円）・クリーンルーム・制御電子機器等の高額インフラが必要だ。スタートアップがこれらを自前で調達・維持するのは財務的に困難で、研究機関（理研・産総研）のテストベッドへのアクセスが事実上の参入条件になる。テストベッド環境が「利用者に使いやすい形で提供されているかどうか」が、スタートアップの研究開発速度を左右する。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        G-QuAT（産総研）・理研RQCのテストベッド環境拡充がロードマップ素案に明記。「ユーザーフレンドリーな利用体制の構築」を政策目標として設定 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                    <li>
+                                        富士通「Fujitsu Hybrid Quantum Computing Platform」：256量子ビット機を2025年度Q1から企業・研究機関への提供開始。民間テストベッド的な機能も担う 
+                                        <span class="source-tag">富士通 2025.4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        Yaqumo（日本スタートアップ）：NEDO大型補助金事業に採択されつつ7億円の資金調達（2025年8月）。国内量子スタートアップの数少ない資金調達成功事例 
+                                        <span class="source-tag">デロイト 2026.1</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">② 不確実性の要因</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">a. 事業・技術：方式競争の未決着と製品化・事業化の遅延リスク</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      技術の不確実性、製品化・事業化の遅延。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      超伝導・光量子・イオントラップ・中性原子・トポロジカルという複数方式が現在競争中であり、どの方式が将来の主流になるかは確定していない。各方式が「自分たちが主流になる」と主張しており、投資家にとって技術評価が極めて困難だ。2026年はIBMが「量子優位性」を宣言する年だが、これが「特定の狭い計算タスクでの優位性」であり「汎用的なビジネス活用」とは別次元の話であることの理解を投資家・企業が正確に持つことが、無駄な投資を防ぐ上で重要だ。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                MicrosoftがトポロジカルQビットの実現を2025年に発表したが、外部研究者から「主張に誇張がある」との批判が続出。量子の技術発表は「誇張vs現実」の見極めが常に必要な分野だ（量子関連銘柄分析、2026年3月）。
+                            </p>
+                            <p>
+                                <span class="country-tag">各国</span>
+                                Google「Willow」（超伝導）・IBMロードマップ（超伝導）・Quantinuum（イオントラップ）・PsiQuantum（光量子）が異なる方式で競争中。どの方式が2030年代に実用化されるかは現時点で不確実。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">b. 市場：市場形成の不確実性と競争環境の激化</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      市場形成の不確実性、競争環境の激化。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      量子コンピュータの世界市場は「2030年以降2.3〜4.5兆円、2040年以降14〜26兆円」（BCG）と予測されるが、この予測値の信頼性は低い。量子技術市場の予測は過去に何度も大幅に下方修正されてきた歴史がある。加えて、FTQC（フォールトトレラント量子コンピューティング）が実現するまでの間の「NIQ（Noisy Intermediate-Scale Quantum）時代」において、古典コンピュータと量子コンピュータのどちらが有利かというケースが分野ごとに異なり、ビジネスモデルの確立が困難だ。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        自民党「量子産業創出PT」：2026年度中に官民学連携でユースケース活用方策を具体化する方針を決定（令和7年10月検討会議設置）
+                                        <span class="source-tag">経産省 2026.3</span>
+                                    </li>
+                                    <li>創薬・物流・素材開発など具体的なユースケース分野での実証・研究開発支援が政策パッケージに明記</li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        富士通デジタルアニーラ（量子インスパイア）：物流・創薬での実利ある契約を継続中。FTQC実現前の「架け橋」ビジネスモデルとして機能 
+                                        <span class="source-tag">量子関連銘柄分析 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">c. 財務：スタートアップのデスバレーとリスクマネー不足</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      資金調達の困難性、キャッシュフローの不安定性。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      2026年、多くの量子スタートアップが上場から数年を経て手元の現金が底をつき始める「デスバレー」に差し掛かっている（量子関連銘柄分析、2026年3月）。米国では2024年の世界VC投資26億ドルのうち約17億ドルが米国企業向けだったのに対し、日本最大の量子スタートアップの調達は15億円（約1,000万ドル）程度にとどまる（デロイト、2026年1月）。日本のスタートアップへのリスクマネーが圧倒的に少なく、大学発の研究成果が民間に移転する経路が細い（TheBrief、2026年4月）。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>スタートアップへのリスクマネー供給（政府系金融機関等の機能強化を含む）がロードマップ素案に明記。SBIRフェーズ3活用で国研・大学等への実証導入を政府が後押しする方針</li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        OptQC：総額15億円のシリーズA1調達完了（2025年10月）。国内最大規模の量子スタートアップ調達として注目されるが、米国との差は数十〜数百倍 
+                                        <span class="source-tag">デロイト 2026.1</span>
+                                    </li>
+                                    <li>
+                                        Yaqumo：7億円調達とNEDO大型補助金採択（2025年8月）。政府補助金が資金不足を補完するモデルの典型例 
+                                        <span class="source-tag">デロイト 2026.1</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                PsiQuantumが2025年9月に10億ドルの資金調達を完了（シリコン光子方式、百万量子ビット規模を目標）。IQMが3.2億ドル調達（2025年9月）。米国の量子スタートアップは1回の調達で日本の全スタートアップ合計を超える規模を集めている。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">d. 国際環境・政策：地政学リスクと輸出管理の複雑化</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      地政学リスク、規制・制度の変更。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      量子技術は「国家安全保障上の重要技術」として米国・EU・日本が輸出管理を強化している。日本企業が米国の量子コンピュータ関連研究機関と共同研究する際には、輸出管理規制（EAR）の対象となる技術情報の取り扱いが問題になりうる。一方で「有志国との連携なしでは技術競争に負ける」というジレンマも存在する。中国の量子情報に関する厳格な情報管理との非対称性が、オープンサイエンスを前提とした日本の学術文化と緊張関係を生んでいる。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">中国</span>
+                                量子技術の海外への情報流出を厳格に制限。政府主導で実証プラント（BEST、2027年完成目標）を建設中。量子通信衛星「墨子号」の成果を活用した量子通信ネットワークの商用化も先行している。
+                            </p>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                量子関連技術の対中輸出規制（EAR）が強化中。「量子コンピューティング技術」と「量子暗号」は別の規制体系を持ち、日本企業の対応コストが増大している。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header chapter-header green">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">（2）講じるべき政策パッケージ</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title green">① 国内投資支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                国産量子コンピュータシステム実現に向けた国内プレイヤー（国研・民間企業）に対する研究開発支援や、それに必要なテストベッド等の設備投資（研究開発については、適宜ステージゲートによる技術の見極め・絞り込みを実施）。研究開発税制等の税制措置を活用した研究開発を積極的に行う企業に対するインセンティブ措置。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「ステージゲートによる絞り込み」という設計は、量子技術特有の「方式競争の不確実性」に対応した政策だ。全方式に等量の補助を続けると予算が分散し、どの方式も世界で競争できる水準に達しない。定期的な技術評価で「今後5年の可能性が最も高い方式」に集中投資する判断を公的機関が行うことで、民間投資家にも「政府が選んだ方式」というシグナルを送る機能を持つ。ただし選別の設計が不適切な場合、後から有望になった方式の研究者が支援から外れるリスクもある。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    NEDO「量子コンピュータの産業化に向けた開発の加速」事業：富士通を採択済み（2025年8月）。産総研・理研との共同研究として2027年度まで推進 
+                                    <span class="source-tag">富士通 2025.8</span>
+                                </li>
+                                <li>研究開発税制の戦略技術領域型（量子）の活用が各社に促進。「数年後を目途に各取組の技術進捗を踏まえ、速やかに実現を目指すフュージョン発電システムを決定」という設計思想と同様のステージゲート型が採用されている</li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    富士通：256量子ビット機の企業・研究機関向け提供開始（2025年Q1〜）。「ハイブリッド量子コンピューティングプラットフォーム」として量子インスパイアと量子コンピュータの組み合わせサービスを展開中 
+                                    <span class="source-tag">富士通 2025.4</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">② 需要創出・市場確保・社会実装支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                研究開発型の政府調達制度（SBIR等）を活用し、国研・大学等における実証・導入を政府が後押し。標準化（ルール形成）と研究開発税制等のインセンティブで民需の立ち上がりを加速する。国際標準としてオープンにすべき部分と、競争力の源泉として戦略的に保持すべき部分を切り分けた標準化を推進。創薬・物流・素材開発など具体的な分野における量子コンピュータのユースケースの実証や研究開発を支援し、初期需要を創出。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                SBIR（研究開発型政府調達）の活用は、「政府が最初のユーザーになる」という需要創出の政策手段だ。国研・大学が量子コンピュータを調達・使用することで、スタートアップに「最初の実績」が生まれ、次の民間受注につながる好循環の起爆剤になる。ただし日本のSBIRは米国と比較して規模・件数が限られており、この政策ツールの実効性をどう高めるかが課題だ。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    産総研G-QuAT：日本企業初の商用量子コンピュータとして富士通機を受注（2024年5月）。SBIRの事例として機能し、民間への波及が期待される 
+                                    <span class="source-tag">富士通 2025.8</span>
+                                </li>
+                                <li>2026年度中にユースケース活用方策の具体化を官民学で実施。創薬・物流・素材開発等の具体的分野での実証支援が本格化する方針</li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    富士通デジタルアニーラ：FTQCが実現するまでの「架け橋」として、すでに実利を伴う商用展開を世界規模で継続。「いま稼げる量子インスパイア→将来のFTQC」というシームレスな移行戦略が機能している 
+                                    <span class="source-tag">量子関連銘柄分析 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">③ 立地競争力強化</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                理化学研究所や産総研G-QuAT等の国研や大学を中心としたテストベッド環境の拡充やユーザーフレンドリーな利用体制の構築。世界最高峰の人材や技術、設備が集うグローバルハブを構築し、民間企業等の開発コスト低減とプレイヤー間の連携を促進。国が主導する大型研究開発プロジェクトを通じた大学・国研の研究・人材基盤の強化。優秀・多様な人材を確保・定着させるための競争力ある待遇の実現や大学院生への経済的支援などのインセンティブ付与。量子技術を学ぶ環境の整備・充実などによる国内人材の育成・供給機能の強化。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「競争力ある待遇の実現」という表現は、国研・大学の研究者給与が民間（特に米国企業）と競争できる水準にないという現実への直接的な対応だ。海外の量子スタートアップが「ストックオプション＋高給」で日本の量子研究者を引き抜く事例が増えており、「グローバルハブを作っても人材が流出する」という矛盾を解決するには、待遇水準の抜本的な見直しが必要だ。これは量子分野固有の問題ではなく、日本の研究人材政策全体の課題でもある。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    理研RQC-富士通連携センター：設置期間を2025年3月から2029年3月まで延長。長期的研究基盤の維持を確保 
+                                    <span class="source-tag">富士通 2025.4</span>
+                                </li>
+                                <li>
+                                    G-QuAT：量子技術の国際標準化作業部会主査を選出（2025年10月）。グローバルハブとしての認知度が向上しつつある 
+                                    <span class="source-tag">経産省 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    富士通 Fujitsu Technology Park（川崎市）：量子棟建設中（1,000量子ビット機設置予定）。量子研究のワンサイト集積を目指すグローバルハブ構想の民間版として機能 
+                                    <span class="source-tag">富士通note 2025.1</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">④ 国際連携</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                産官学間における多国間会話やMOU等の枠組みを活用した有志国との技術連携や国際共同研究の推進。在外公館やJETRO・NEDO・AIST等の海外事務所、学会等の幅広いネットワークを活用した技術インテリジェンス機能の強化。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                量子技術の国際連携は「技術移転」と「人材交流」の双方向の流れをどう設計するかが核心だ。日本から有志国への技術提供（特に装置・部素材の「チョークポイント」技術）と、有志国から日本への最先端理論・ソフトウェア研究の取り込みという非対称な交換関係をうまく設計できれば、「部素材で不可欠性を持ちながら、ソフトウェア・アルゴリズムでも競争力を持つ」という日本の勝ち筋が実現できる。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    G-QuAT：ISO/IEC JTC 1量子技術分野の国際標準化作業部会主査選出（2025年10月）。国内審議団体Q-STARを設置し国際標準化活動を推進中 
+                                    <span class="source-tag">経産省 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    富士通：デルフト工科大学（オランダ）との共同研究部門を設置。フランス・カナダ等との国際共同研究も並行して推進中 
+                                    <span class="source-tag">富士通note 2025.1</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="overseas-box">
+                        <div class="overseas-label">// 海外動向</div>
+                        <p>
+                            <span class="country-tag">欧州</span>
+                            EU量子フラッグシップ（10億ユーロ規模）が2018年〜進行中。英国・カナダ・オーストラリアも量子戦略を策定済みで、有志国間の量子技術協力の枠組みが整いつつある（日経BP、2026年2月）。日本との二国間MOU締結が進むことで、「日本が外れた有志国ネットワーク」というリスクを回避することが急務だ。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 政策実装・官民投資編も読む</div>
+            <div class="next-box-desc">「今、政府と民間がどこまで動いているか」を整理した「政策実装・官民投資編」も公開中です。</div>
+            <a href="https://marketsupporter-ai.com/reports/quantum-policy-investment.html" target="_blank">▶ 政策実装・官民投資編を読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>経産省「量子コンピュータの産業化に向けた開発の加速及び環境整備事業 効果検証シナリオ（第2版）」（2026年3月31日）</li>
+                <li>デロイト トーマツ「量子スタートアップ資金調達額ランキング－2026年1月」（2026年1月）</li>
+                <li>TheBrief「日本の量子コンピュータ戦略2026 — 政府400億円投資の真価と産業応用の現実」（2026年4月9日）</li>
+                <li>量子関連銘柄分析「2026年最新 量子コンピューター関連株の全貌」（2026年3月26日）</li>
+                <li>富士通「実用的な量子計算の実現に向けて、1万量子ビット超の超伝導量子コンピュータの研究開発を開始」（2025年8月1日）</li>
+                <li>富士通note「富士通に量子棟を建設。2026年度、1,000量子ビットコンピュータを設置・公開します！」（2025年1月30日）</li>
+                <li>Business Wire「PsiQuantum Raises $1 Billion to Build Million-Qubit Scale, Fault-Tolerant Quantum Computers」（2025年9月10日）</li>
+                <li>CNBC「Quantum computing startup IQM raises $320 million」（2025年9月3日）</li>
+                <li>BCG「What Happens When 'If' Turns to 'When' in Quantum Computing?」（2021）</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
