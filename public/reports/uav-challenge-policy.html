@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小型無人航空機（防衛・デュアルユース）｜課題・政策パッケージ編｜戦略17分野 ⑦</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --warn: #e65100;
+        --warn-light: #fff3e0;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--warn);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #bf360c 0%, #e64a19 50%, #ff7043 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 50%;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #ffccbc;
+        margin-bottom: 12px;
+    }
+
+    .hero-number {
+        font-family: var(--font-mono);
+        font-size: 64px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, .1);
+        position: absolute;
+        top: -12px;
+        right: 0;
+        line-height: 1;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(20px, 4.5vw, 28px);
+        font-weight: 700;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #ffccbc;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #ffccbc;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 17px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #ffccbc;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--warn);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--warn);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--warn);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--warn);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-header.green {
+        background: var(--accent);
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--warn);
+        border-bottom: 1.5px solid var(--warn-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .section-title.green {
+        color: var(--accent-dark);
+        border-bottom-color: var(--accent-light);
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--warn);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .sub-section-title.green::before {
+        background: var(--accent-mid);
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .bottleneck-box {
+        background: var(--warn-light);
+        border-left: 3px solid var(--warn);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .bottleneck-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--warn);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--warn);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--warn);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ⑦</span>
+        <span>小型無人航空機（防衛・デュアルユース）</span>
+        <span>|</span>
+        <span>課題・政策パッケージ編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — SMALL UAV / DEFENSE DUAL-USE — CHALLENGE & POLICY PACKAGE</div>
+            <div class="hero-number">07</div>
+            <div class="hero-title">
+                小型無人航空機（防衛・デュアルユース）
+                <br>
+                課題・政策パッケージ編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（3）官民投資促進に向けた課題と政策パッケージ 構造に基づく分析レポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック①</div>
+                    <div class="kpi-value">
+                        中国依存
+                        <br>
+                        サプライチェーン
+                    </div>
+                    <div class="kpi-unit">世界7割・国内産業用9割が中国製</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック②</div>
+                    <div class="kpi-value">
+                        スタートアップの
+                        <br>
+                        調達参入ハードル
+                    </div>
+                    <div class="kpi-unit">年度ベース仕様書型調達が障壁</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック③</div>
+                    <div class="kpi-value">
+                        開発・生産
+                        <br>
+                        リソースの分散
+                    </div>
+                    <div class="kpi-unit">多品種少量生産・伝統産業との連携希薄</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">30年 国内需要予測</div>
+                    <div class="kpi-value">約14万台</div>
+                    <div class="kpi-unit">うち国産目標：約8万台（需要の6割）</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜課題・政策パッケージサマリー</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜（1）投資促進に向けた課題</a>
+                    <ul class="toc-sub">
+                        <li>① リソース制約</li>
+                        <li>a. 中国市場シェアと国内企業の規模の小ささ</li>
+                        <li>b. ソフトウェア人材・基盤の不足</li>
+                        <li>c. スタートアップの防衛調達参入ハードル</li>
+                        <li>② 不確実性の要因</li>
+                        <li>a. 市場：サイバーセキュリティ重視分野の市場未成熟</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜（2）講じるべき政策パッケージ</a>
+                    <ul class="toc-sub">
+                        <li>①生産基盤の強化</li>
+                        <li>②イノベーションの創出</li>
+                        <li>③需要の拡大・市場の獲得</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">課題・政策パッケージサマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          小型無人航空機の課題は「中国依存×リソース分散×市場未成熟」の3重構造だ。中国製が世界市場7割・国内産業用9割という状況は、単なる競争上の問題ではなく「防衛装備品のサプライチェーンに潜在的な安全保障リスクが組み込まれている」という経済安保問題だ。国内企業の規模が小さく開発・生産リソースが分散しているため、単独では量産体制を確立できない。ACSLが「完全国産化より非中国サプライチェーン」を選んだのは、「完全国産化すると機体価格が1.5〜2倍になり市場で負ける」という経済的現実を踏まえた合理的選択だ。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">約14万台</div>
+                        <div class="stat-unit">国内需要（2030年）</div>
+                        <div class="stat-desc">無人機産業基盤強化検討会が推計した2030年時点の国内需要総量</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">約8万台</div>
+                        <div class="stat-unit">国産目標（2030年）</div>
+                        <div class="stat-desc">需要の約6割に相当する国産体制確立目標（政策目標として示されている値）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">1.5〜2倍</div>
+                        <div class="stat-unit">完全国産化コスト増</div>
+                        <div class="stat-desc">バッテリーを含む完全国産化を実現した場合の機体価格増加の試算（ACSL）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">2026年初</div>
+                        <div class="stat-unit">輸入停滞発生</div>
+                        <div class="stat-desc">中国製モーターが「ドローン関連部品」として輸入停滞。サプライチェーンリスクが顕在化</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">3重ボトルネックと政策パッケージの対応関係</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>ボトルネック</th>
+                                <th>具体的障壁</th>
+                                <th>政策パッケージ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>① 中国依存サプライチェーン</td>
+                                <td>バッテリー・一部モーターで中国製への依存が残存。完全国産化はコスト増で競争力を失う</td>
+                                <td>生産基盤強化（経済安保法設備投資支援・非中国サプライチェーン構築）</td>
+                            </tr>
+                            <tr>
+                                <td>② 企業規模の小ささと分散</td>
+                                <td>現在各社が個別に部品開発・生産。多品種少量生産で量産の経済性が出ない</td>
+                                <td>生産基盤強化（企業間協業促進・伝統的防衛産業によるメンター支援制度）</td>
+                            </tr>
+                            <tr>
+                                <td>③ スタートアップの参入ハードル</td>
+                                <td>年度ベース仕様書型調達・長期の認証プロセスがスタートアップの参入を阻む</td>
+                                <td>イノベーション創出（ファストパス調達・スタートアップ向け柔軟研究開発事業）</td>
+                            </tr>
+                            <tr>
+                                <td>④ サイバーセキュリティ市場の未成熟</td>
+                                <td>「国産機体が必要」というニーズが顕在化している分野での調達・市場基準が未整備</td>
+                                <td>需要拡大（サイバーセキュリティガイドライン整備・公共調達での国産優先）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">（1）投資促進に向けた課題</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">① リソース制約</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">a. 中国市場シェアの支配と国内企業の規模・リソースの小ささ</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      特定国が世界市場シェアの7割以上を占めており、国内企業による市場の獲得が進んでおらず、企業の新規参入、設備投資等の投資が進まない。関連企業の規模が小さい上、開発・生産リソースが分散しており、投資の余力が小さい。生産ノウハウに優れた伝統的防衛産業との連携は希薄。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      現在、国内の無人航空機メーカーは各社が個別に部品の開発・生産を実施しており、多品種少量生産の状態にある（無人機産業基盤強化検討会、2025年12月）。量産の経済性が生まれるほど生産規模が大きくない。ACSLのような先行企業でも「手作りから工場での大量生産へ移行できるかどうか」が事業継続の鍵であり（トウシル、2026年4月）、その移行には設備投資資金と受注見通しの両方が必要だ。一方、伝統的防衛産業（三菱重工・川崎重工等）は生産ノウハウを持つが、ドローンのような急速な技術進化分野への対応が遅れており、スタートアップとの連携が進んでいない。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        経産省：安定供給確保支援基金を活用した機体・重要部品の量産設備投資支援を実施中。企業間協業を促す取組・伝統的防衛産業のメンター支援制度の設計が進行中 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                    <li>
+                                        無人機産業基盤強化検討会（2025年12月）：「各社が個別に開発・生産をしているため多品種少量生産で量産経済性が出ない」という構造問題を明示 
+                                        <span class="source-tag">経産省 2025.12</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        ACSL：「今後の株価上昇の最大の鍵は量産の成功による利益率（粗利率）の改善」（トウシル、2026年4月）。手作り段階から工場での大量生産への移行フェーズへの投資が課題 
+                                        <span class="source-tag">トウシル 2026.4</span>
+                                    </li>
+                                    <li>
+                                        ACSLの調達構成：モーターは国内製、センサーは米欧製、バッテリーは中国依存。「完全国産化すると機体価格1.5〜2倍増」という経済的現実から「非中国サプライチェーン構築」を現実解として設定 
+                                        <span class="source-tag">ドローンジャーナル 2026.4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">中国</span>
+                                DJIが商用ドローンの世界市場で圧倒的な技術・価格・量産優位を確立済み。部品サプライチェーン（モーター・ESC・カメラ・バッテリー）も中国国内に集積しており、コスト競争では日本・米国・欧州の国産企業が単純に対抗するのは困難。
+                            </p>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                「中国製ドローンは情報安全保障上のリスク」としてFederal Aviation Administration（FAA）・国防総省が中国製の政府調達を制限。国内産業支援（Skydio・Joby等）が加速。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">b. ソフトウェア人材・開発基盤の不足</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      自律飛行や群制御等の面でソフトウェアが極めて重要であるが、国内のソフトウェア開発は人材・基盤の面で不十分。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      現代のドローンは「飛行するコンピュータ」だ。機体のハードウェア競争力と同等かそれ以上に、飛行制御アルゴリズム・自律ナビゲーション・群制御・AI認識・サイバーセキュリティ実装という「ソフトウェアの深さ」が競争力を決める。ウクライナ戦争で実証されたように、電波妨害（ジャミング）・GPSスプーフィング環境下でも自律飛行できる機体こそが実戦で使える装備品だ。日本はハードウェア製造技術では一定の競争力を持つが、このソフトウェア層での人材・経験値の蓄積が不足している。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        防衛省・経産省が連携し、AI・ソフトウェアを中心に中長期的に競争力の源泉となる研究開発を支援（自律・群制御技術、AI活用による自動化、重要部品の技術革新）をロードマップ素案に明記 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        テラドローン：SLAM自律飛行（GPS遮断環境でも動作）・光ファイバー式通信（電波妨害耐性）という産業用ドローンで蓄積したソフトウェア技術を防衛転用。「民生技術の軍事転用」の成功モデルを先行実証 
+                                        <span class="source-tag">ビジネス+IT 2026.4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">c. スタートアップの防衛調達参入ハードル</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      先端技術を有するスタートアップが防衛調達に参画するハードルが高い。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      従来の防衛調達は「年度ベースの仕様書型調達」が基本で、（1）1〜2年単位の発注では技術進化の速いドローンに対応できない、（2）詳細な仕様書を書いた段階で最新技術が陳腐化する、（3）スタートアップが防衛省の調達要件（経営体力・品質保証体制・セキュリティクリアランス等）を満たすのが困難、という三重の参入障壁があった。ドローントリビューン（2025年11月）が指摘する通り、「民間企業が軍用市場に参入する際の最大の障壁は投資の回収可能性」であり、「調達規模が小さい場合でも事業が成立するような研究開発支援や共同開発の枠組み」が必要だ。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        ファストパス調達：2026年4月10日に説明会開催。年度横断の柔軟な契約制度でスタートアップの技術を迅速取込み。防衛装備庁にスタートアップ活用伴走支援グループを設置 
+                                        <span class="source-tag">ニュースイッチ 2026.4</span>
+                                    </li>
+                                    <li>
+                                        防衛装備庁：2026年2月27日にファストパス調達の説明資料を公開。「技術をヒアリングしてから仕様を決める」というアジャイル型調達プロセスを明示 
+                                        <span class="source-tag">j-defense 2026.2</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        テラドローン：防衛市場参入表明（2026年3月）からわずか2ヶ月で防衛装備庁から300機受注。ファストパス調達の第一号事例に近い速度での受注実現 
+                                        <span class="source-tag">ビジネス+IT 2026.5</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                OT Authority（Other Transaction Authority）：DARPAが活用する柔軟調達制度。通常の調達規則（FAR）を適用せず、スタートアップと直接技術ヒアリング・迅速契約を可能にする。Anduril・Shield AI等がこの制度で成長した。日本のファストパス調達の設計参照モデルとなっている。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">② 不確実性の要因</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">a. 市場：サイバーセキュリティが重視される分野での民生市場が未成熟</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      国産機体へのニーズが大きいサイバーセキュリティが重視される分野での市場拡大が未成熟。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      「中国製ドローンは安価で高機能だが情報漏洩リスクがある」という認識が官公庁・インフラ事業者・自治体等に広がりつつある一方で、「では実際にどのドローンなら使っていいか」を判断するための基準（調達ガイドライン・セキュリティ認定制度）が整備されていない。基準がなければ「念のため中国製を使い続ける」または「購入を見合わせる」という意思決定になる。この「ニーズはあるが基準がないため市場が立ち上がらない」状況が、国産機体を必要とする民生市場の成熟を妨げている。2026年初頭には中国製モーターの輸入停滞という具体的なサプライチェーンリスクが顕在化しており、問題認識は急速に高まっている（ドローンジャーナル、2026年4月）。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        調達時に参照できるサイバーセキュリティのガイドライン整備・普及がロードマップ素案に明記。2026年夏の取りまとめに向けてガイドラインの骨格策定を進行中 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                    <li>
+                                        日本経済新聞報道（2026年4月23日）：小泉進次郎防衛相が「国産化推進」を明言し、国産機体優先調達の方向性を政治的に確認 
+                                        <span class="source-tag">Nikkei 2026.4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        ACSL：「安全保障リスクを排除した非中国サプライチェーンの構築」を公式に戦略として位置づけ。ガイドライン策定後に「非中国サプライチェーン＝ACSLのSOTEN」という等式が市場で成立する可能性 
+                                        <span class="source-tag">ドローンジャーナル 2026.4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                「Blue UAS Framework」：国防総省が承認した「安全な」ドローンリストを公表し、政府機関での調達に使用可能な機体を認定する制度。日本のサイバーセキュリティガイドラインの設計参照モデルとして機能しうる。
+                            </p>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                「Drones for First Responders法（DFR法）」法案（2025年6月提出）：中国製ドローンへの段階的関税（30%→毎年5%増）を国産機購入補助に充てる仕組み。日本の「ガイドライン→国産優先調達」の政策設計に先行する。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header chapter-header green">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">（2）講じるべき政策パッケージ</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title green">① 生産基盤の強化</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                防衛省が国内生産基盤の構築に配慮しつつ小型無人航空機を大量に取得することにより、企業の予見可能性を一定程度確保し、新規参入や研究開発、生産設備の導入等の投資を促進。経済安保法に基づく機体・重要部品の量産体制構築に向けた設備投資への支援により、デュアルユースの生産基盤・技術基盤の強化を支援。開発・生産リソースのより一体的・効率的活用のため、企業間の協業を促す取組や、伝統的防衛産業によるメンター支援を促す制度を導入。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「企業の予見可能性を確保」という表現は、ドローン産業の投資判断を「量産設備に数十億円を投じる経営判断ができる程度の需要見通しがあるかどうか」にかかっている現実を示している。防衛省がSHIELDで大量取得する方針を示したことは、この「予見可能性」を一定程度確保した。しかし令和9年度（2027年度）以降の調達規模が「戦略三文書改定の議論を踏まえて検討」と未確定のため、2028年以降の量産投資判断に必要な中期的見通しが依然として不確実な点が課題だ。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    SHIELD早期構築（令和8年度約1,001億円）：大量取得で予見可能性を確保。ただし「必ずしも国産機体を調達するものでは無い点に留意」という設計 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                                <li>
+                                    安定供給確保支援基金：機体・重要部品の量産設備投資を支援。非中国サプライチェーン構築のための設備投資補助として機能 
+                                    <span class="source-tag">無人機産業基盤強化検討会 2025.12</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    ACSL：累計約14.2億円の防衛省受注達成（2026年3〜4月）。「受注残高が積み上がり数年先の売上見通しが立ちやすい」事業モデルが機能。量産化フェーズへの投資判断に向けた準備が進行中 
+                                    <span class="source-tag">トウシル 2026.4</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">② イノベーションの創出</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                スタートアップ企業等の技術の迅速な導入のため、柔軟な契約制度の活用を促す「ファストパス調達」を推進。スタートアップの特性を踏まえた柔軟な研究開発事業や、スタートアップの財政基盤を踏まえた調達、アカデミアと連携した研究基盤の構築等を、経産省・防衛省が連携して実施。特にAI・ソフトウェアを中心に中長期的に競争力の源泉となる研究開発を支援（自律・群制御技術、AI活用による自動化、重要部品の技術革新など）。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                ファストパス調達の本質的意義は「仕様書なしで技術ヒアリングから始める」というプロセスの逆転にある。従来は「政府が仕様書を書く→企業が仕様に合わせて製品を作る」だったが、「企業が技術を持ち込む→政府がそれを評価して調達に組み込む」という流れに変わる。この変化は、スタートアップが「自分たちの得意技術を政府が使いたい形に変換するコスト」を大幅に削減する。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    ファストパス調達：2026年4月10日に説明会を開催。防衛装備庁にスタートアップ活用伴走支援グループを設置 
+                                    <span class="source-tag">ニュースイッチ 2026.4</span>
+                                </li>
+                                <li>
+                                    防衛省・経産省が連携し、自律・群制御技術・AI活用・重要部品の研究開発を支援する体制を整備中 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    テラドローン：防衛市場参入表明から約2ヶ月で300機受注を達成。「光ファイバー通信・SLAM自律飛行」という民生技術の防衛転用がファストパス型評価で迅速に採用された先行事例 
+                                    <span class="source-tag">ビジネス+IT 2026.5</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">③ 需要の拡大・市場の獲得</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                国産機体へのニーズが大きいサイバーセキュリティが重視される分野での市場拡大に向けた、調達時に参照できるサイバーセキュリティのガイドラインの整備・普及。DICAS、PIPIR、OSA等の枠組みを活用し、同盟国・同志国とのサプライチェーン協力・装備移転を推進。防衛装備移転・海外SCへの参入等を促進する体制の強化。産業界による海外民生市場獲得に向けた取組を促進するための支援。主要市場となる国の無人航空機に関する規制や制度の情報収集と横展開。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「同盟国・同志国とのサプライチェーン協力」は、日本のドローン産業にとって「市場のスケールアウト」の核心だ。国内市場だけでは量産の経済性が出ないため、NATO加盟国・QUAD参加国（インド・オーストラリア）向けの輸出が量産化コストを回収する経路として機能する。テラドローンが2026年度中に米国法人「Terra Defense」を設立するのは、この輸出市場への戦略的な先行投資だ。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    サイバーセキュリティガイドラインの整備・普及が2026年夏取りまとめに向けて進行中。「調達時に参照できる」という設計がポイント——購入決定時の判断基準として機能させる意図 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                                <li>
+                                    DICAS・PIPIR・OSA：同盟国・同志国との装備移転協力の枠組みが継続稼働。日米・日豪・日英の防衛協力を通じた輸出支援体制の強化が進行中 
+                                    <span class="source-tag">防衛省</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    テラドローン：米国法人「Terra Defense」を2026年度中に設立予定。NATO加盟国・アジア地域向けのグローバル展開を視野に入れた海外市場開拓の本格化 
+                                    <span class="source-tag">ビジネス+IT 2026.4</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="overseas-box">
+                        <div class="overseas-label">// 海外動向</div>
+                        <p>
+                            <span class="country-tag">米国</span>
+                            「Blue UAS Framework」による承認ドローンリスト制度（国産・同盟国製の認定）が、日本のサイバーセキュリティガイドライン設計の参照モデル。米国では認定を受けた機体のみが政府調達に使用可能。
+                        </p>
+                        <p>
+                            <span class="country-tag">欧州</span>
+                            ウクライナ向け軍事支援を通じた欧州製ドローンの実戦実証が加速。NATO加盟国間での装備相互運用性（STANAG）の整備が進んでおり、日本の「同志国への装備移転」において技術的互換性が新たな課題として浮上しつつある。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 政策実装・官民投資編も読む</div>
+            <div class="next-box-desc">「今、政府と民間がどこまで動いているか」を整理した「政策実装・官民投資編」も公開中です。</div>
+            <a href="https://marketsupporter-ai.com/reports/uav-policy-investment.html" target="_blank">▶ 政策実装・官民投資編を読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>無人機産業基盤強化検討会「中間取りまとめ」（2025年12月24日）— 経済産業省</li>
+                <li>ニュースイッチ「防衛省、先端装備のスピード開発に乗り出す…スタートアップ向け調達制度」（2026年4月9日）</li>
+                <li>ビジネス+IT「テラドローンが国産ドローンで防衛装備品市場に参入、米国法人も設立」（2026年4月6日）</li>
+                <li>ビジネス+IT「防衛装備庁、テラドローンと1.1億円の契約を締結し国産ドローン300機を導入」（2026年5月）</li>
+                <li>Drone Journal「ACSLが示す国産ドローンの成長戦略、防衛需要とAIで競争力強化」（2026年4月23日）</li>
+                <li>トウシル「なぜ今、防衛ドローンなのか？新防衛銘柄を分析」（2026年4月21日）</li>
+                <li>ドローントリビューン「国産化の議論、再び活発化も 自衛隊ドローンの国産化率は３割」（2025年11月20日）</li>
+                <li>ニュースイッチ「需要の6割量産へ…国産ドローン基盤確保、政府が本腰を入れる」（2026年1月9日）</li>
+                <li>日本成長戦略会議 第1回 防衛産業WG 事務局説明資料（2026年2月）— 経済産業省・防衛省</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
