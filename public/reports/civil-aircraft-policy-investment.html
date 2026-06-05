@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>民間航空機（次期単通路機・次世代航空機）｜政策実装・官民投資編｜戦略17分野 ⑧</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--accent);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 50%;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #a5d6a7;
+        margin-bottom: 12px;
+    }
+
+    .hero-number {
+        font-family: var(--font-mono);
+        font-size: 64px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, .1);
+        position: absolute;
+        top: -12px;
+        right: 0;
+        line-height: 1;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(18px, 4vw, 26px);
+        font-weight: 700;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #a5d6a7;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #c8e6c9;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--accent);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--accent-dark);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--accent-dark);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--accent);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        border-bottom: 1.5px solid var(--accent-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--accent-mid);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--accent);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ⑧</span>
+        <span>民間航空機（次期単通路機・次世代航空機）</span>
+        <span>|</span>
+        <span>政策実装・官民投資編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — COMMERCIAL AIRCRAFT / NEXT-GEN ENGINE — POLICY MONITOR</div>
+            <div class="hero-number">08</div>
+            <div class="hero-title">
+                民間航空機（次期単通路機・次世代航空機）
+                <br>
+                政策実装・官民投資編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（日本成長戦略会議 第3回、2026年3月）構造に基づく政策モニタリングレポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">2050年 市場獲得目標</div>
+                    <div class="kpi-value">約6兆円/年</div>
+                    <div class="kpi-unit">国際連携による完成機事業創出</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">次期単通路機 機体目標</div>
+                    <div class="kpi-value">
+                        2050年までに
+                        <br>
+                        約8,000機製造
+                    </div>
+                    <div class="kpi-unit">上流工程参画から量産まで</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">次期単通路機 エンジン</div>
+                    <div class="kpi-value">
+                        世界シェア
+                        <br>
+                        約40%
+                    </div>
+                    <div class="kpi-unit">IHI・三菱重工が目標</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">IHI MRO能力増強</div>
+                    <div class="kpi-value">2026年度</div>
+                    <div class="kpi-unit">130億円投資・修理棟新設稼働予定</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜政策実装サマリー（2026年04月〜05月）</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜現状認識と目指す姿【目標】</a>
+                    <ul class="toc-sub">
+                        <li>（1）現状：双通路機サプライヤーの実績と単通路機・次世代機での挑戦</li>
+                        <li>（2）目標：2050年 約6兆円/年・次期単通路機8,000機・エンジン世界シェア40%</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜勝ち筋と官民投資の具体像【道筋】</a>
+                    <ul class="toc-sub">
+                        <li>①ボリュームゾーン（次期単通路機）：上流工程参画でシステムインテグレーション能力獲得</li>
+                        <li>②CNの新たな市場（次世代航空機）：環境新技術で主導的立場</li>
+                        <li>③航空機産業成長基盤：部素材・DX・MRO</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch03">CHAPTER 03｜課題と政策パッケージ【政策手段】</a>
+                    <ul class="toc-sub">
+                        <li>①国内投資支援</li>
+                        <li>②需要創出・市場確保・社会実装支援</li>
+                        <li>③立地競争力強化</li>
+                        <li>④国際連携</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">政策実装サマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          本分野は「MSJ（三菱スペースジェット）失敗の反省から再スタートした、慎重かつ長期的な産業復活プロジェクト」だ。2024年3月に経産省が「航空機産業戦略」を公表し、1社単独ではなく複数社参画・国際共同開発という方針を明確にした。直近では三菱重工・IHI・川崎重工が民間機エンジン事業（MRO＋次世代エンジン開発）で大規模投資を進めており、IHIは2026年度稼働予定の130億円投資による修理棟新設が進行中だ。JAXA試験設備の老朽化・不足という基盤課題も浮上しており、「JAXA強靱化」（2026年1月）が明示された。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">2兆円</div>
+                        <div class="stat-unit">2019年時点</div>
+                        <div class="stat-desc">日本の航空機産業の年間売上高（コロナ前最高値）。2030年代に6兆円規模が目標</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">130億円</div>
+                        <div class="stat-unit">投資</div>
+                        <div class="stat-desc">IHI 鶴ケ島工場に修理棟を新設。2026年度稼働予定。30年代初頭に整備能力6倍（年400台）へ</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">2035年頃</div>
+                        <div class="stat-unit">官民開発目標</div>
+                        <div class="stat-desc">経産省「航空機産業戦略」が掲げる官民5兆円投資による次世代国産旅客機の開発目標</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">JAXA強靱化</div>
+                        <div class="stat-unit">2026年1月</div>
+                        <div class="stat-desc">老朽化した試験設備の更新・航空分野との協働強化を「成長投資・危機管理投資」として位置づけ</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">直近2ヶ月の重要動向（2026年4〜5月）</div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き</div>
+                            <ul>
+                                <li>
+                                    航空・宇宙WG 第1回（2026年1月22日）：JAXAの試験設備老朽化問題を「国内での機体開発の技術的・経済的ボトルネックとなりかねない」と明示。「JAXA強靱化」を成長投資・危機管理投資として位置づけ 
+                                    <span class="source-tag">内閣府 2026.1</span>
+                                </li>
+                                <li>経産省「航空機産業戦略」（2024年3月）：MSJ失敗を踏まえ複数社参画・国際共同開発を基本方針として策定。次期単通路機上流工程参画・次世代航空機の主導的開発を明示</li>
+                                <li>
+                                    「次世代エンジン実機レベルの製造・技術実証支援」：次期単通路機搭載を目指した次世代エンジンの実機レベル製造・技術実証を政府が支援中 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き</div>
+                            <ul>
+                                <li>
+                                    <strong>IHI</strong>
+                                    ：130億円を投じて鶴ケ島工場（埼玉県）に航空機エンジン修理棟を新設。2026年度稼働予定。30年代初頭に整備能力を現在の約6倍（年400台）に増強計画 
+                                    <span class="source-tag">Nikkei 2024.12</span>
+                                </li>
+                                <li>
+                                    三菱重工：航空・防衛・宇宙セグメント（2024年4〜6月期）売上高45%増、事業利益2.5倍。防衛＋民間機双方の追い風 
+                                    <span class="source-tag">ニュースイッチ</span>
+                                </li>
+                                <li>
+                                    三菱重工・IHI：MRO（整備・修理・オーバーホール）事業を拡大。航空旅客の回復と単通路機増加に伴う整備需要急増を取り込み中 
+                                    <span class="source-tag">Nikkei 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">重要企業群・バリューチェーン構造</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>機能層</th>
+                                <th>主要企業群</th>
+                                <th>政策対象・直近動向</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>機体主要構造体（OEM連携）</td>
+                                <td>三菱重工（胴体・翼）、川崎重工（前胴・翼）、SUBARU（中央翼・フロアビーム）</td>
+                                <td>ボーイング787向けで実績確立。次期単通路機での「仕様設計・認証」上流参画が政策目標</td>
+                            </tr>
+                            <tr>
+                                <td>航空機エンジン</td>
+                                <td>IHI（日本のエンジンの60〜70%担当）、三菱重工</td>
+                                <td>PW1100G-JM参画・MRO急拡大。次世代エンジンで世界シェア40%目標</td>
+                            </tr>
+                            <tr>
+                                <td>MRO（整備・修理・オーバーホール）</td>
+                                <td>IHI・三菱重工・JAMCO</td>
+                                <td>IHI 130億円投資（2026年度稼働）。世界の整備需要急増を取り込む成長市場</td>
+                            </tr>
+                            <tr>
+                                <td>部素材・精密部品</td>
+                                <td>東レ（炭素繊維）、東海カーボン、三菱ケミカル（CFRP）、住友精密工業</td>
+                                <td>軽量・高強度材料（セラミック複合材・粉末冶金）の量産能力確保が政策急務</td>
+                            </tr>
+                            <tr>
+                                <td>試験・実証インフラ</td>
+                                <td>JAXA（風洞・エンジン試験設備）</td>
+                                <td>老朽化設備の更新が「JAXA強靱化」として政府方針に明示（2026年1月）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">１．現状認識と目指す姿【目標】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）現状</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 現状：双通路機サプライヤーとしての実績と「単通路機・次世代機」での参画不足</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      我が国の航空機産業は、海外OEMとの機体・エンジンの国際共同開発を主軸に着実に成長し、2019年時点では年間売上高2兆円規模に発展。ボーイング社の双通路機の開発を中心にサプライヤーの地位を確立してきた一方で、今後拡大が予想される単通路機市場への参画は限定的。主要構造体開発の実績と品質信頼、地政学的リスクの低さや輸出管理上の信頼性からアジア諸国で高い信頼を獲得。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「双通路機のサプライヤー→単通路機のインテグレーターへ」という飛躍が、日本の航空機産業戦略の核心だ。ボーイング787の胴体・翼を担う三菱重工・川崎重工・SUBARUは世界トップクラスの製造技術を持つが、これらは「指示された仕様を作る」サプライヤーの役割だ。「仕様を自ら設計する・認証を主導する」インテグレーターに昇格しなければ、付加価値の大部分をOEM（エアバス・ボーイング）に取られ続ける。MSJの失敗はこの挑戦が極めて難しいことを示したが、撤退ではなく「複数社連携・国際共同開発」という形で再挑戦している。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">エアバス</span>
+                                A320neo/321neoが単通路機市場で約60%のシェアを占有。受注残高は1万機超で、現在の生産レートではフル生産しても10年以上かかる状況。日本のサプライヤーにとって需要は確実だが、参入にはエアバスとの交渉が必要。
+                            </p>
+                            <p>
+                                <span class="country-tag">ボーイング</span>
+                                737 MAXの品質問題により生産が不安定化。新型単通路機（NMA/797）の開発を検討しているが詳細は未定。次期単通路機開発への日本の上流参画はこの不確実性に影響される。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② 取り巻く環境：単通路機需要の急拡大と航空脱炭素化の要請</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      アジア地域内での旅客需要の増加、LCC利用の拡大等により、単通路機の需要が双通路機より大きく拡大が想定。航空分野における脱炭素化に当たっては、環境新技術（水素、電動化等）の導入が不可欠。航空旅客需要は今後20年間で約2倍に成長が見込まれる。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「単通路機＋脱炭素」という2つの潮流が重なる点に日本の戦略的機会がある。LCCと短〜中距離路線の増加で単通路機（A320クラス）の需要が今後20年で最大となる一方、IATAが掲げる「2050年ネットゼロ」への対応として、次期単通路機には現行機比30〜50%のCO₂削減が求められる。IHI・三菱重工が取り組む水素対応エンジン・超伝導システム・SAF対応エンジン改修が、この需要に直接応える技術だ。
+                                    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）目標</div>
+                    <div class="sub-section">
+                        <div class="sub-section-title">定量目標：2050年 約6兆円/年・次期単通路機約8,000機・エンジン世界シェア40%</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      2050年に約6兆円/年規模以上の市場獲得を狙う。次期単通路機について上流工程からの参画と2050年までに約8,000機製造を目指す。次期単通路機搭載エンジン開発について、上流工程からの参画と世界シェア約40%の獲得を目指す（政策目標として示されている値）。
+                                    
+                        </div>
+                        <div class="note-box">
+                            <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                      2050年目標は約25年先であり、達成には複数世代の航空機開発プロジェクトを成功させる必要がある。現在の2兆円規模から6兆円への3倍達成には、単通路機での上流参画（機体・エンジン）とMRO市場の拡大という複数の収益柱が不可欠だ。エンジン世界シェア40%は現在IHIが参画するCFM・PWなどとの国際共同開発実績を踏まえた目標値で、現在水準（約15〜20%）からの大幅拡大を意味する。
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">２．勝ち筋と官民投資の具体像【道筋】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）基本戦略：2本柱＋産業基盤の三位一体</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① ボリュームゾーン（次期単通路機）：仕様設計・認証への上流参画</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      次期単通路機では、これまで我が国が参画できていない仕様設計や認証等の工程に参画することで、システムインテグレーション能力の獲得を目指す。環境新技術（脱炭素）、製造技術と品質保証、高精度生産と高品質保証を支えるDX技術、強靱なサプライチェーンを強みとして、完成機事業創出に必要な能力をステップバイステップで獲得。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「仕様設計と認証」への参画が日本航空機産業の最重要課題だ。FAA（米国）やEASA（欧州）の航空機認証は世界で最も厳格な製品認証の一つであり、認証プロセスを主導できるエンジニアを育成することが、「サプライヤーからインテグレーターへ」の移行の本質だ。三菱スペースジェットが開発中止に追い込まれた最大の要因も、この認証プロセスへの対応能力の不足だった。政府の「設計人材育成」支援は、この反省を踏まえた政策設計だ。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        次期単通路機搭載エンジンの「実機レベルの製造・技術実証」支援：高温・高圧部へ参入するためのセラミック複合材・粉末冶金の量産能力獲得を政府が支援 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                    <li>
+                                        認証取得人材の育成：国際連携の中で「設計人材」を育成する支援体制の整備が政策パッケージに明記 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        三菱重工：航空・防衛・宇宙セグメントで大幅増益（2024年4〜6月期 売上高45%増）。民間機の増産基調と防衛費拡大の双方向の追い風 
+                                        <span class="source-tag">ニュースイッチ</span>
+                                    </li>
+                                    <li>
+                                        IHI：PW1100G-JMの追加検査プログラムへの対応でMRO能力を増強しつつ、次世代エンジン研究開発への先行投資を継続 
+                                        <span class="source-tag">就活×有報ナビ 2026.4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② CNの新たな市場（次世代航空機）：環境新技術で主導的立場</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      環境新技術を搭載する次世代航空機（小型）の開発を主導することにより、システムインテグレーションのみならず、ビジネスインテグレーション能力の獲得を目指す。我が国の環境新技術（水素、電動化等）が次世代航空機に搭載されることを目指し、インテグレーション領域から要素レベルの研究開発を実施。高効率・高出力の実現が可能となる超電導システム等の社会実装に向けた実証を支援。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「次世代航空機市場（CN等の新市場）」は、ゲームチェンジャー的な参入機会だ。既存の大型単通路機・双通路機はエアバス・ボーイングの独占状態だが、「水素・電動化・SAF対応」という次世代技術が必要な小型機市場では、既存OEMの優位性が低下し新規参入の余地が生まれる。IHIが進める超伝導システム（電動航空機向けの電動モーターを極めて軽量・高効率にする技術）は、まさにこの市場でのゲームチェンジャー技術だ。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">欧州</span>
+                                エアバスが「ZEROe」プロジェクト（水素航空機）を推進中。2035年以降の水素旅客機実現を目標。日本のIHI・三菱重工の水素対応エンジン技術は、このプロジェクトへの国際共同参画の可能性を持つ。
+                            </p>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                GE AerospaceがオープンファンアーキテクチャのCFM RISE（Revolutionary Innovation for Sustainable Engines）を開発中。2030年代後半の単通路機向けを想定。IHIのGE連携が次期エンジン参画の経路として機能。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">③ 航空機産業成長基盤：部素材・DX・MRO・試験インフラ</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      部素材等のサプライチェーンや設計/製造/認証プロセスのDX化、航空機開発に必要な試験・実証インフラ、修理/整備等アフターマーケット市場獲得に向けた設備を含めた「航空機産業成長基盤」の構築。軽量・高強度のセラミック複合材や、世界的に供給能力が不足している粉末冶金等のサプライチェーン強靱化に向けた量産能力獲得への投資を支援。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        JAXA強靱化（2026年1月）：老朽化した風洞・エンジン試験設備の更新を「成長投資・危機管理投資」として位置づけ。産業界からの期待が高い基盤整備を航空・宇宙WGが政策課題として正面から取り上げ 
+                                        <span class="source-tag">内閣府 2026.1</span>
+                                    </li>
+                                    <li>
+                                        「アフターマーケット市場獲得に向けた国際空港周辺の産業集積・立地支援」をロードマップ素案に明記 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        IHI：130億円を投じて鶴ケ島工場に修理棟新設（2026年度稼働予定）。さらに今後3〜5年内に数百億円を追加投資。30年代初頭に年400台への能力増強を目標 
+                                        <span class="source-tag">Nikkei 2024.12、2026.3</span>
+                                    </li>
+                                    <li>
+                                        三菱重工：愛知県拠点で整備能力を倍増。MRO市場の急拡大（航空旅客回復＋機体増加）を収益の柱に位置づけ 
+                                        <span class="source-tag">Nikkei 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）官民投資の具体像</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                ボリュームゾーン市場での次期単通路機向けの技術実証・国際共同開発・量産体制構築への設備投資等を支援。CN等の新たな市場（次世代航空機）での環境新技術の設備投資・国際共同開発実施・国際標準化への取組等を支援。国内の「航空機産業成長基盤」強化に向けた民間・防衛共通のDX・試験実証インフラの整備・部素材サプライチェーン構築強靱化・修理整備等基盤構築投資・認証取得人材育成を支援。完成機事業創出に向けた飛行実証機の開発・実証プロジェクトのプラットフォーム立ち上げ投資。
+                              
+                    </div>
+                    <div class="note-box">
+                        <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                定量的インパクト（経済波及効果・関連投資誘発効果）は「官民投資ロードマップ取りまとめまでに提示」と明記。2026年夏の日本成長戦略取りまとめで具体化予定。経産省「航空機産業戦略」（2024年3月）では官民で5兆円規模の投資が方向性として示されており、この数字の具体的な内訳と時期設定が夏の取りまとめでの最大の注目点だ。
+                              
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH03 -->
+        <section id="ch03" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <span class="chapter-title">３．課題と政策パッケージ【政策手段】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">① 国内投資支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                ボリュームゾーン市場：上流工程参画のための技術実証、国際共同開発フェーズの開発、最終組み立て含む量産体制構築への設備投資等を支援。足下では次期単通路機搭載を目指した次世代エンジンの実機レベルの製造・技術実証を支援。CN等の新たな市場：環境新技術（水素・電動化等）について海外OEMとの国際共同開発時の設備投資等を支援。超電導システム等の社会実装に向けた実証を支援。航空機産業成長基盤：DX・試験実証インフラ整備・部素材サプライチェーン構築強靱化・修理整備等基盤構築への投資を支援。セラミック複合材や粉末冶金等の量産能力獲得への投資を支援。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    セラミック複合材・粉末冶金：次期単通路機エンジンの高温・高圧部への参入を支援。世界的に供給能力が不足している部素材の量産能力獲得を政府が支援 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                                <li>
+                                    JAXA試験設備の老朽化更新：航空・宇宙WGが「成長投資・危機管理投資」として位置づけ。老朽化設備が機体開発のボトルネックになることを公式に認識 
+                                    <span class="source-tag">内閣府 2026.1</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    IHI：PW1100G-JMの追加検査プログラム対応と並行して、次世代エンジン（水素・電動化対応）研究開発に継続投資。「成長・育成事業向けR&D費210億円のうち航空とアンモニアに集中投下」（2026年4月時点） 
+                                    <span class="source-tag">就活×有報ナビ 2026.4</span>
+                                </li>
+                                <li>
+                                    東レ・三菱ケミカル：炭素繊維（CFRP）・セラミック複合材の世界需要拡大に対応した生産能力増強を継続中 
+                                    <span class="source-tag">業界動向</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">② 需要創出・市場確保・社会実装支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                日本企業が持つ優れた環境新技術（水素・電動化等）の技術開発動向を踏まえ、社会実装及びプレゼンス向上に向け、戦略的に国際標準化を進める取組の支援。SAFの製造プロジェクトについて、国際競争力のある価格で安定的にSAFを供給できる体制の構築を支援。認証を見据えた官民の有人機・無人機認証に係るノウハウの共有・蓄積のための取組を支援。日本企業の競争力強化に向けた、ASEAN航空機製造市場におけるシェア獲得の取組を支援。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「ASEAN航空機製造市場でのシェア獲得」は新しい戦略軸だ。ボーイング・エアバスがASEANの成長航空市場（インドネシア・ベトナム・タイ等）にサプライヤーを育成しようとする中、日本企業がASEAN現地企業との協業で生産基盤を構築すれば、「インテグレーター→ティア1→ティア2」というバリューチェーンを地域全体でデザインできる。これは航空機産業の「ASEAN版サプライチェーン」を日本主導で構築する中長期戦略だ。
+                              
+                    </div>
+                    <div class="overseas-box">
+                        <div class="overseas-label">// 海外動向</div>
+                        <p>
+                            <span class="country-tag">米国</span>
+                            CFM International（GE×サフラン）がCFM RISEで2030年代の次期単通路機向けエンジン開発を推進。IHIのGE Aerospace連携が次世代エンジンへの参画経路として機能。
+                        </p>
+                        <p>
+                            <span class="country-tag">欧州</span>
+                            エアバスのZEROe（水素航空機）プロジェクトが2035年以降の商用化を目標に推進中。EU Flightpath 2050の脱炭素目標達成に向け、SAF普及と電動化の両輪が加速。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">③ 立地競争力強化</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                国際的な安定供給に向けた戦略的なサプライチェーン強靱化を支援。開発製造を支える環境（DX、試験・実証インフラ等）の戦略的な整備を支援。アフターマーケット市場において外需獲得に向けた、国際空港周辺における産業集積・立地等に資する取組を支援。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「国際空港周辺への産業集積・立地支援」は、航空MRO産業の立地優位性を政策的に作り出す試みだ。シンガポール・チャンギ空港周辺（ST Engineering等）やドバイ（Emirates Engineering）のように、「空港＋MRO産業クラスター」という立地モデルが世界的に拡大している。日本の成田・羽田周辺での同様のクラスター形成が、MRO市場での「アジアの整備ハブ」としての地位確立につながる。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">④ 国際連携</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                国際連携の中で完成機事業の創出に必要な能力を獲得し、自律的な産業規模の拡大を可能とする産業構造の構築に向け、完成機事業の経験を有する海外OEMと踏み込んだ国際的な体制の構築を実施。国際連携の中で設計の上流過程に参画し、認証取得に不可欠となる「設計人材」の育成を実施。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「海外OEMと踏み込んだ国際体制の構築」という表現に政策の本質がある。MSJの失敗から学んだ最大の教訓は「自国単独で完成機開発する」という戦略の限界だ。エアバス・ボーイングとの「対等なパートナーシップ」——単なる下請けではなく、仕様設計・認証・マーケティングを共同で行える関係——を構築することが、日本が「サプライヤー脱却」を実現する唯一の現実的経路だ。
+                              
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 続編：課題・政策パッケージ編</div>
+            <div class="next-box-desc">「MSJ失敗から10年、なぜ日本の民間航空機産業はインテグレーターになれないのか」「資金・人材・OEM依存・認証の4重課題」を整理した「課題・政策パッケージ編」も近日公開予定です。</div>
+            <a href="https://marketsupporter-ai.com" target="_blank">▶ marketsupporter-ai.com で読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>内閣府 航空・宇宙WG 第1回 資料5「成長投資・危機管理投資としての『JAXA強靱化』（航空・宇宙）」（2026年1月22日）— 文部科学省</li>
+                <li>経産省「航空機産業戦略」（2024年3月27日）</li>
+                <li>日本経済新聞「国産旅客機開発に再挑戦 2035年めど、官民で5兆円投資」（2024年3月27日）</li>
+                <li>日本経済新聞「IHI、航空エンジン修理棟新設 機体増にらみ130億円投資」（2024年12月5日）</li>
+                <li>日本経済新聞「重工各社、航空エンジン整備を拡大 IHIは数百億円を追加投資へ」（2026年3月9日）</li>
+                <li>ニュースイッチ「来年2倍計画完了…IHI、航空機エンジンMROの増強を前倒しする背景事情」</li>
+                <li>ニュースイッチ「三菱重工・川重・IHI…航空関連に追い風、防衛も拡大で大幅増益予想」</li>
+                <li>就活×有報ナビ「IHIの将来性｜航空エンジン黒字転換の強みとリスク」（2026年4月26日）</li>
+                <li>Aviation Wire「経産省、国産旅客機2035年以降実現へ戦略案」（2024年3月27日）</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
