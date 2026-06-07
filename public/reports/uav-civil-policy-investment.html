@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>無人航空機（民生・目視外飛行）｜政策実装・官民投資編｜戦略17分野 ⑨</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--accent);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 50%;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #a5d6a7;
+        margin-bottom: 12px;
+    }
+
+    .hero-number {
+        font-family: var(--font-mono);
+        font-size: 64px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, .1);
+        position: absolute;
+        top: -12px;
+        right: 0;
+        line-height: 1;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(20px, 4.5vw, 28px);
+        font-weight: 700;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #a5d6a7;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 17px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #c8e6c9;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--accent);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--accent-dark);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--accent-dark);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--accent);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        border-bottom: 1.5px solid var(--accent-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--accent-mid);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--accent);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ⑨</span>
+        <span>無人航空機（民生・目視外飛行）</span>
+        <span>|</span>
+        <span>政策実装・官民投資編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — UAV / BEYOND VISUAL LINE OF SIGHT — POLICY MONITOR</div>
+            <div class="hero-number">09</div>
+            <div class="hero-title">
+                無人航空機（民生・目視外飛行）
+                <br>
+                政策実装・官民投資編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（日本成長戦略会議 第3回、2026年3月）構造に基づく政策モニタリングレポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">2030年 機体・重要部品供給目標</div>
+                    <div class="kpi-value">8万台</div>
+                    <div class="kpi-unit">⑦小型無人航空機と共通目標値</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">日本市場 成長予測</div>
+                    <div class="kpi-value">1,100億→2,700億円</div>
+                    <div class="kpi-unit">2024年→2030年（商用ハードウェア）</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">レベル4解禁</div>
+                    <div class="kpi-value">2022年12月</div>
+                    <div class="kpi-unit">改正航空法施行。有人地帯目視外飛行が可能に</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">UTM完成目標</div>
+                    <div class="kpi-value">2026年度以降</div>
+                    <div class="kpi-unit">内閣府協議会ロードマップ（2024年11月）</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜政策実装サマリー（2026年04月〜05月）</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜現状認識と目指す姿【目標】</a>
+                    <ul class="toc-sub">
+                        <li>（1）現状：⑦とは異なる民生用途の軸——レベル4解禁後の実装状況</li>
+                        <li>（2）目標：8万台供給・目視外飛行事業化・防衛生産基盤確立</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜勝ち筋と官民投資の具体像【道筋】</a>
+                    <ul class="toc-sub">
+                        <li>①民生の勝ち筋：日本固有の社会課題が目視外飛行のニーズを生む</li>
+                        <li>②官民投資の具体像：JAXA風洞整備・量産設備・ソフトウェア開発</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch03">CHAPTER 03｜課題と政策パッケージ【政策手段】</a>
+                    <ul class="toc-sub">
+                        <li>①国内投資支援</li>
+                        <li>②需要創出・社会実装支援（UTM・制度整備・ドローン航路）</li>
+                        <li>③国際連携</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">政策実装サマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          ⑨無人航空機は⑦小型無人航空機（防衛・デュアルユース）と同じ市場・企業群を対象としつつ、「民生用途での目視外飛行（BVLOS）事業化」という独自の政策軸を持つ。2022年12月のレベル4解禁・2026年1月の日本初エリアベースレベル4実証完了（Sora-iina社、長崎）・UTMロードマップ公表（2024年11月）・複数機同時運航ガイドライン（2025年3月）という制度整備が着実に進んでいる。ただし「物流ドローンが経済的に成立するかどうか」というビジネスモデルの不確実性は依然として課題だ。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">1,100億円</div>
+                        <div class="stat-unit">日本市場（2024年）</div>
+                        <div class="stat-desc">商用無人航空機ハードウェア市場。2030年に2,700億円に拡大予測（ロードマップ素案）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">2026年1月</div>
+                        <div class="stat-unit">エリアベースL4実証</div>
+                        <div class="stat-desc">Sora-iina（ソライーナ）社が長崎県で日本初のエリアベースレベル4ドローン配送実証を完了</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">約150km</div>
+                        <div class="stat-unit">UASルート設定</div>
+                        <div class="stat-desc">埼玉県秩父地域の電力網上空に設定（2025年3月）。全国展開のロールモデル</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">5機以上</div>
+                        <div class="stat-unit">同時運航</div>
+                        <div class="stat-desc">複数機同時運航ガイドライン（2025年3月公表）で1人パイロットが5機以上同時運航を検討中</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">直近2ヶ月の重要動向（2026年4〜5月）</div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き</div>
+                            <ul>
+                                <li>
+                                    UTM（UAV交通管理）ロードマップ：内閣府協議会が2024年11月に公表。2026年度以降完成目標。複数機同時運航に対応した交通管理システムの整備が進行中 
+                                    <span class="source-tag">内閣府 2024.11</span>
+                                </li>
+                                <li>
+                                    複数機同時運航ガイドライン（第1版）：2025年3月公表。1人パイロットが5機以上を同時運航するための安全運航基準を策定 
+                                    <span class="source-tag">国交省 2025.3</span>
+                                </li>
+                                <li>
+                                    ドローン航路（UASルート）整備：埼玉県秩父地域（電力網上空約150km）・浜松市天竜川水系上空（約30km）のUASルートが2025年3月に設定済み。全国展開のロールモデルとして展開中 
+                                    <span class="source-tag">renue 2026.5</span>
+                                </li>
+                                <li>
+                                    JAXAに「実機環境を模擬できる低速風洞等」の整備を進める方針がロードマップ素案に明記。天候不順に左右されない国内飛行試験環境の構築 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き</div>
+                            <ul>
+                                <li>
+                                    <strong>2026年1月</strong>
+                                    ：Sora-iina（ソライーナ）社が長崎県で日本初のエリアベースレベル4ドローン配送実証を完了。島嶼部・過疎地への物資配送モデルを実証 
+                                    <span class="source-tag">renue 2026.5</span>
+                                </li>
+                                <li>NEXT DELIVERY：2023年12月にレベル3.5飛行の初飛行を実施。山梨県小菅村での継続的なドローン物流事業を展開中</li>
+                                <li>日本郵便：2023年3月にレベル4初飛行許可を取得。離島・山間部への郵便配送での活用を実証中</li>
+                                <li>
+                                    ACSL：防衛受注を機軸に据えながら、点検・農業・インフラ用途での民生展開も継続中 
+                                    <span class="source-tag">ドローンジャーナル 2026.4</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">⑦小型無人航空機（防衛）と⑨無人航空機（民生）の政策軸の違い</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>軸</th>
+                                <th>⑦小型無人航空機（防衛）</th>
+                                <th>⑨無人航空機（民生）</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>主たる政策目標</td>
+                                <td>SHIELD対応・国産防衛機体の量産基盤確立</td>
+                                <td>物流・点検・農業での目視外飛行事業化（BVLOS）</td>
+                            </tr>
+                            <tr>
+                                <td>需要の性質</td>
+                                <td>防衛省による大量調達（消耗品型）</td>
+                                <td>民間事業者のビジネスモデル確立が前提</td>
+                            </tr>
+                            <tr>
+                                <td>中心的課題</td>
+                                <td>中国依存サプライチェーン・スタートアップ参入ハードル</td>
+                                <td>目視外飛行の経済合理性・地域受容性・UTM整備</td>
+                            </tr>
+                            <tr>
+                                <td>制度整備</td>
+                                <td>ファストパス調達・安定供給確保支援基金</td>
+                                <td>レベル4制度化・UTM・ドローン航路・複数機同時運航ガイドライン</td>
+                            </tr>
+                            <tr>
+                                <td>共通部分</td>
+                                <td colspan="2">国産量産体制・非中国サプライチェーン・サイバーセキュリティ・JAXA試験設備</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">１．現状認識と目指す姿【目標】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）現状</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 現状：レベル4解禁後の実装段階——量産体制は未整備・飛行試験環境も不足</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      無人航空機は、既に多数の機体が航空法上の登録を行い、人手不足が深刻化する産業の中で重要なインフラ機能を果たしている。世界市場シェアは単独の国が7割以上を占め、バッテリ等の重要部品についても当該国が大きなシェアを持つ。一方我が国では技術開発は進むものの本格的な量産体制は整っていない。試験設備の能力不足により、機体開発において地上試験で実施可能な内容が限定的で、実際に飛行させての試験への依存度が高い。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「飛行試験への依存度が高い一方、飛行試験できる環境が不足」という逆説が技術開発速度の制約になっている。天候・電波・地形等の制約から、理想的な飛行試験を国内で実施することが難しく、機体開発のイテレーション速度が上がらない。JAXAへの「実機環境を模擬できる低速風洞等」の整備は、この制約を解消する根本的な政策対応だ。
+                                    
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② 取り巻く環境：目視外飛行（BVLOS）が開く新市場と防衛需要の急拡大</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      今後の市場拡大には、ラストワンマイル配送や長距離・広域の自律巡回など目視外飛行（レベル3・4飛行）での新たなビジネスモデルを実現させる必要がある。防衛分野では消耗品としての性質が強いことから、防衛ニーズに応じて増産やアップデートを円滑かつ迅速に実施できることが重要。国際的緊張の高まりから、機体・部品の供給停滞リスクへの対応の重要性が増している。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「目視外飛行（BVLOS）での新市場」という概念が、日本のドローン産業の成長シナリオの核心だ。現在のレベル3・4飛行でのビジネスは「離島配送・農業散布・インフラ点検」という特定の用途に限られているが、UTMが整備され複数機同時運航が可能になれば、「都市部のラストワンマイル配送」という巨大市場が開く。この市場転換を2026〜2030年に実現できるかどうかが、日本のドローン産業が「DJIが席巻する産業用市場」から「日本独自の民生市場」を形成できるかの分岐点だ。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                Wing（Google傘下）がオーストラリア・米国でドローン配送の商用サービスを展開中。Amazon Prime Airが2024年に米国で商業配送を本格化。UTM（Unmanned Traffic Management）のFAA標準化が進行中。
+                            </p>
+                            <p>
+                                <span class="country-tag">欧州</span>
+                                EASAのUAS規制（2021年施行）がEU全体の目視外飛行の基準を統一。欧州UTM（U-Space）が主要都市で実証進行中。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）目標</div>
+                    <div class="sub-section">
+                        <div class="sub-section-title">3本柱の目標：量産8万台・目視外飛行事業化・防衛生産基盤確立</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      2030年時点で8万台の機体・重要部品の供給確保を目指す（政策目標として示されている値）。目視外飛行での事業を持続的に行える機体、運航管理システム、飛行オペレーション、地域受容性の実現を目指す。我が国防衛に必要な小型無人航空機を、タイムリーに十分な量を開発・生産・維持整備できる生産・技術基盤の構築。
+                                    
+                        </div>
+                        <div class="note-box">
+                            <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                      「目視外飛行での事業を持続的に行える」という目標の「持続的」という表現が重要だ。現状のドローン物流事業は補助金や実証実験段階で成立しているが、商業ベースでのコスト競争力は未確立だ。2030年目標は「机の上での実証」ではなく「補助金なしで採算が取れる事業」の実現を意味し、機体コスト・バッテリーコスト・運航管理コストの合計が「トラック配送より安い」水準への到達が前提条件となる。
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">２．勝ち筋と官民投資の具体像【道筋】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）基本戦略</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 民生の勝ち筋：日本固有の社会課題が目視外飛行のニーズを生む</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      我が国では、災害対応、インフラ老朽化、物流人手不足などの社会課題が多数発生し、世界でも突出したこれらの需要が開発を牽引している。目視外飛行が有効となる環境が身近にあることから、目視外飛行での新たなビジネスモデルによる事業化に向け、自動・自律機能などの技術開発と実証・制度整備・国際標準化を進める。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「日本固有の需要が技術開発を牽引する」という戦略は、DJIが低価格・大量生産で圧倒する汎用ドローン市場ではなく、「離島への医薬品配送」「ダム・橋梁の自律点検」「農薬散布の完全無人化」「山間部の物資輸送」という日本特有のハイスペック要件に応える国産機体の差別化軸を示している。このニーズに対応した国産機体は、同様の課題を持つ「少子高齢化が進む先進国・島嶼国」への輸出モデルにもなりうる。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        UASルート設定の全国展開：埼玉県秩父・浜松市天竜川のモデルを横展開する方針。電力網・河川・道路インフラ上空のドローン航路整備を加速 
+                                        <span class="source-tag">renue 2026.5</span>
+                                    </li>
+                                    <li>
+                                        JAXAへの低速風洞等の整備：「実機を用い、実機環境を模擬できる低速風洞等をJAXAに整備することにより、天候不順や自然環境のばらつきにとらわれない国内での飛行試験環境の獲得や開発期間短縮に繋げる」とロードマップ素案に明記 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        Sora-iina社：長崎県で日本初のエリアベースレベル4実証完了（2026年1月）。離島・半島・過疎地への物資配送の商業化に最先行 
+                                        <span class="source-tag">renue 2026.5</span>
+                                    </li>
+                                    <li>
+                                        ACSL：防衛向けに加え点検・農業用途で国産機体を展開。ACSLが示す「防衛→民生への技術転用」モデルが⑦×⑨の相乗効果を示す 
+                                        <span class="source-tag">ドローンジャーナル 2026.4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② 安全保障協力と国産機体の海外市場獲得</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      安全保障協力関係の強化の観点も含め、国際的な協力枠組みの中で無人航空機に係る同盟国・同志国での市場獲得を目指す。ユーザーニーズに沿って海外機体と差別化していくため、国産機体へのニーズが大きいサイバーセキュリティが重視される分野での市場拡大を目指す。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「サイバーセキュリティが重視される分野での市場拡大」は、DJIに対抗できる唯一の差別化軸だ。電力・水道・通信インフラの点検や重要施設の警備・監視というユースケースでは「機体に搭載されたカメラ・センサー・通信モジュールが中国製であることに由来するリスク」が許容されない。このニーズに応える国産機体は、日本国内のみならず同じ懸念を持つ同盟国・同志国（米・英・豪・インド等）でも需要があり、輸出市場の開拓につながる。
+                                    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）官民投資の具体像</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                機体・重要部品の量産体制構築（企業、国）。目視外飛行の事業化やAIなどソフトウェアに関する技術開発・実証（企業、大学、国研、国）。実機を用いて飛行試験の大部分を模擬できる風洞試験設備の整備（JAXA）。
+                              
+                    </div>
+                    <div class="note-box">
+                        <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                「JAXAへの風洞試験設備整備」は⑧民間航空機と⑨無人航空機の双方にまたがる共通インフラ投資として位置づけられている。無人航空機固有の要件（低速・低高度・VTOL型の気流特性）に対応した試験設備の整備は、国内での機体開発イテレーション速度を大幅に上げる効果が期待される。定量的インパクト（投資誘発効果・経済波及効果）は2026年夏の日本成長戦略取りまとめで具体化予定。
+                              
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH03 -->
+        <section id="ch03" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <span class="chapter-title">３．課題と政策パッケージ【政策手段】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">① 国内投資支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                安定供給確保のための機体・重要部品の量産体制構築に向けた設備投資への支援。目視外飛行（レベル3・4飛行）事業化の鍵となる多数機同時運航の実現に向けた、自動化・自律化に向けたソフトウェア、機体・重要部品性能向上、運航管理システムなどの技術開発と実証。中長期的に競争力の源泉となる研究開発への支援（自律・分散制御技術、AI活用による自律化、重要部品の技術革新など）。各国で求められるサイバーセキュリティ水準等に適合させるための機体・部品改良支援。防衛省が国内生産基盤の構築に配慮しつつ小型無人航空機を大量に取得することにより、企業の予見可能性を一定程度確保し新規参入や研究開発、生産設備の導入等の投資を促進。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「多数機同時運航の実現に向けた自動化・自律化ソフトウェア」支援が、⑨分野のユニークな政策焦点だ。現状のドローン物流で採算が取れない最大の理由は「1機＝1名の操縦者」という人件費構造にある。1名が5機以上を同時運航できる自動化技術が確立されれば、人件費コストが1/5以下に下がり商業化の閾値を超えられる。この「自動化ソフトウェア開発支援」は、ビジネスモデルの経済合理性を直接的に改善する政策だ。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>経済安保法に基づく安定供給確保支援基金：機体・重要部品の量産設備投資を支援（⑦と共通スキーム）</li>
+                                <li>
+                                    JAXA低速風洞等の整備：ロードマップ素案に明記。無人航空機専用の飛行試験設備が整備されれば機体開発コスト・期間の大幅短縮が可能 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    ACSL（6232）：防衛省向け受注を量産技術習得の機会として活用しながら、民生向け点検・農業機体のソフトウェア高度化も並行して推進中 
+                                    <span class="source-tag">ドローンジャーナル 2026.4</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">② 需要創出・市場確保・社会実装支援（UTM・制度整備・ドローン航路）</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                国産機体へのニーズが大きいサイバーセキュリティが重視される分野での市場拡大に向けたサイバーセキュリティガイドラインの整備・普及。目視外飛行の事業化促進を図るべく、多数機同時運航の機数拡大、運航管理システム（UTM）による多様な機体の運航支援、VTOL型無人航空機の社会実装の促進、円滑な電波利用の推進等のための制度整備を検討・実施。実証試験の段階から地域の産業界やコミュニティと連携し、サービス事業展開への迅速な移行促進。ドローン航路（UASルート）に係る取組を推進。認証に使用する規格の国際標準化を推進。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「ドローン航路（UASルート）の整備」は、ドローン物流の商業化を可能にするインフラの核心だ。道路・鉄道に「交通法規と道路インフラ」があるように、ドローンには「空のルールと空の航路」が必要だ。秩父・天竜川水系での試験的なUASルート設定（2025年3月）が全国展開されれば、事業者は「このルートを飛べば安全・合法」という前提で事業計画を立てられる。UTMとUASルートの組み合わせが、「誰でも使えるドローン物流インフラ」の基盤となる。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    UTMロードマップ（2024年11月公表）：2026年度以降の完成目標。複数機同時運航・レベル4多機並行のための交通管理システム整備 
+                                    <span class="source-tag">内閣府 2024.11</span>
+                                </li>
+                                <li>
+                                    複数機同時運航ガイドライン（第1版）：2025年3月公表。1パイロット5機以上の同時運航基準を策定 
+                                    <span class="source-tag">国交省 2025.3</span>
+                                </li>
+                                <li>
+                                    UASルート全国展開：秩父・天竜川水系モデルを横展開。全国主要インフラ上空のドローン航路整備を加速中 
+                                    <span class="source-tag">renue 2026.5</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>Sora-iina社（長崎）・NEXT DELIVERY（山梨）・日本郵便：離島・山間部での実証事業から「継続的なサービス事業展開」への移行を推進中。各社の事業継続性の検証が2026年の注目点</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="overseas-box">
+                        <div class="overseas-label">// 海外動向</div>
+                        <p>
+                            <span class="country-tag">米国</span>
+                            Wing社（Google傘下）がオーストラリア・米国でドローン配送の商業化に最先行。Amazonが2024年に米国での商業配送を本格化。UTMのFAA標準化が進行中で日本のUTM設計に影響。
+                        </p>
+                        <p>
+                            <span class="country-tag">欧州</span>
+                            U-Space（欧州版UTM）の実証がフランス・スウェーデン等で進行中。2023年4月に日本発のドローン運航管理システムに関する国際規格が発行されており、日本の国際標準化における存在感を示している（経産省、2023年4月）。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">③ 国際連携</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                PIPIR、OSAなどの枠組みにおける同盟国・同志国との機体供給やサプライチェーン協力に向けた議論の推進。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「PIPIR（防衛装備品・技術移転）」の枠組みを通じた国産機体の同志国への輸出は、ドローン産業の量産スケールを拡大する経路として機能する。日本国内市場だけでは8万台目標の達成が困難な場合でも、NATO加盟国・QUADパートナー国向け輸出が量産コストを下げ、国産機体の競争力向上に貢献できる。日本郵便・ACSL・テラドローンの技術が「サイバーセキュリティ保証された非中国製ドローン」として評価される国際的な文脈が形成されつつある。
+                              
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 続編：課題・政策パッケージ編</div>
+            <div class="next-box-desc">「なぜドローン物流のビジネスモデルが成立しないのか」「UTM整備・地域受容性・経済合理性の3重課題」を整理した「課題・政策パッケージ編」も近日公開予定です。</div>
+            <a href="https://marketsupporter-ai.com" target="_blank">▶ marketsupporter-ai.com で読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>renue「物流業界 ドローン配送・改正航空法レベル4・無人航空機統合AIの全貌：2026年版」（2026年5月）</li>
+                <li>国土交通省「複数機同時運航のための安全運航ガイドライン（第1版）」（2025年3月）</li>
+                <li>内閣府「UTM（UAV交通管理）ロードマップ」（2024年11月）</li>
+                <li>国土交通省「無人航空機（ドローン）を活用した荷物等配送に関するガイドライン Ver.4.0」（2023年3月）</li>
+                <li>Drone Journal「ACSLが示す国産ドローンの成長戦略、防衛需要とAIで競争力強化」（2026年4月23日）</li>
+                <li>経産省「日本発のドローンの運航管理システムに関する国際規格が発行されました」（2023年4月）</li>
+                <li>内閣府「レベル4飛行の実現とその後の制度整備状況について」（小型無人機官民協議会）</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
