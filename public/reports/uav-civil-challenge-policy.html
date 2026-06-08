@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>無人航空機（民生・目視外飛行）｜課題・政策パッケージ編｜戦略17分野 ⑨</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --warn: #e65100;
+        --warn-light: #fff3e0;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--warn);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #bf360c 0%, #e64a19 50%, #ff7043 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 50%;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #ffccbc;
+        margin-bottom: 12px;
+    }
+
+    .hero-number {
+        font-family: var(--font-mono);
+        font-size: 64px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, .1);
+        position: absolute;
+        top: -12px;
+        right: 0;
+        line-height: 1;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(20px, 4.5vw, 28px);
+        font-weight: 700;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #ffccbc;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #ffccbc;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 17px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #ffccbc;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--warn);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--warn);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--warn);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--warn);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-header.green {
+        background: var(--accent);
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--warn);
+        border-bottom: 1.5px solid var(--warn-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .section-title.green {
+        color: var(--accent-dark);
+        border-bottom-color: var(--accent-light);
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--warn);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .sub-section-title.green::before {
+        background: var(--accent-mid);
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .bottleneck-box {
+        background: var(--warn-light);
+        border-left: 3px solid var(--warn);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .bottleneck-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--warn);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--warn);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--warn);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ⑨</span>
+        <span>無人航空機（民生・目視外飛行）</span>
+        <span>|</span>
+        <span>課題・政策パッケージ編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — UAV / BVLOS — CHALLENGE & POLICY PACKAGE</div>
+            <div class="hero-number">09</div>
+            <div class="hero-title">
+                無人航空機（民生・目視外飛行）
+                <br>
+                課題・政策パッケージ編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（3）官民投資促進に向けた課題と政策パッケージ 構造に基づく分析レポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック①</div>
+                    <div class="kpi-value">
+                        目視外飛行の
+                        <br>
+                        経済合理性未確立
+                    </div>
+                    <div class="kpi-unit">補助金なしに採算が取れない現状</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック②</div>
+                    <div class="kpi-value">
+                        国際統一基準
+                        <br>
+                        なし・制度整備途上
+                    </div>
+                    <div class="kpi-unit">UTM・認証・電波利用が各国バラバラ</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック③</div>
+                    <div class="kpi-value">
+                        地域受容性
+                        <br>
+                        の壁
+                    </div>
+                    <div class="kpi-unit">住民理解・騒音・プライバシー</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">スタートアップの資金難</div>
+                    <div class="kpi-value">
+                        制度整備と
+                        <br>
+                        並行での開発
+                    </div>
+                    <div class="kpi-unit">資金調達難・キャッシュフロー不安定</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜課題・政策パッケージサマリー</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜（1）投資促進に向けた課題</a>
+                    <ul class="toc-sub">
+                        <li>① リソース制約：認証・試験・実証人材の不足</li>
+                        <li>② 不確実性の要因</li>
+                        <li>a. 技術・事業：目視外飛行の経済合理性に関する不確実性</li>
+                        <li>b. 市場：国産機体の市場形成・海外機体との競争</li>
+                        <li>c. 財務：スタートアップの資金調達困難・キャッシュフロー不安定</li>
+                        <li>d. 国際環境：重要部品の供給停滞・目視外飛行の国際統一基準なし</li>
+                        <li>e. 社会：地域受容性の壁</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜（2）講じるべき政策パッケージ</a>
+                    <ul class="toc-sub">
+                        <li>①国内投資支援</li>
+                        <li>②需要創出・市場確保・社会実装支援</li>
+                        <li>③国際連携</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">課題・政策パッケージサマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          無人航空機（民生）の課題は「経済合理性・制度・社会受容性」の3層構造だ。レベル4解禁という制度的なゲートが開いても、「補助金なしに採算が取れる事業」が成立するかどうかは別の問題だ。ロードマップ素案がこの分野で特徴的なのは「目視外飛行の経済合理性に関する不確実性」を課題として明示していることだ。これは他の17分野ではあまり見られない「ビジネスモデルの不確実性」を政策上の正式な課題として認識しているということを意味する。地域受容性（住民の理解・騒音・プライバシー）という「技術でも制度でも解決できない社会的障壁」も固有の課題として並列されている。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">1名→5機以上</div>
+                        <div class="stat-unit">採算分岐点</div>
+                        <div class="stat-desc">1人パイロットが5機以上を同時運航できる自動化技術が商業採算の目安（複数機同時運航ガイドライン 2025年3月）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">電波圏外問題</div>
+                        <div class="stat-unit">BVLOS障壁</div>
+                        <div class="stat-desc">広域運用には携帯電話電波が届かない空域での通信確保が課題。衛星通信・専用周波数帯が必要</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">
+                            国際規格
+                            <br>
+                            海外主導
+                        </div>
+                        <div class="stat-unit">認証コスト増</div>
+                        <div class="stat-desc">目視外飛行の認証規格が各国でバラバラ。複数規格への対応コストが事業者の負担に</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">地域受容性</div>
+                        <div class="stat-unit">社会的障壁</div>
+                        <div class="stat-desc">騒音・墜落リスク・プライバシーへの住民不安が事業展開のボトルネックに</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">多重ボトルネックと政策パッケージの対応関係</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>ボトルネック</th>
+                                <th>具体的障壁</th>
+                                <th>政策パッケージ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>① 経済合理性の不確実性</td>
+                                <td>補助金なしで採算が取れる「多数機同時運航」自動化技術が未確立</td>
+                                <td>国内投資支援（自動化・自律化ソフトウェア開発支援）</td>
+                            </tr>
+                            <tr>
+                                <td>② 国際統一基準なし</td>
+                                <td>各国で異なる認証・運航規制への対応コストが事業者の負担に。認証規格が海外主導</td>
+                                <td>需要創出支援（認証ノウハウ共有・国際標準化推進）</td>
+                            </tr>
+                            <tr>
+                                <td>③ 地域受容性の壁</td>
+                                <td>騒音・墜落リスク・プライバシーへの住民不安が事業展開の現場障壁</td>
+                                <td>需要創出支援（実証段階からのコミュニティ連携・地域受容性醸成）</td>
+                            </tr>
+                            <tr>
+                                <td>④ スタートアップの資金難</td>
+                                <td>制度整備と並行した開発で収益化が遅れ、資金調達困難・キャッシュフロー不安定</td>
+                                <td>国内投資支援（設備投資支援・量産体制構築への補助）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">（1）投資促進に向けた課題</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">① リソース制約：認証・試験・実証の知見を有する人材の不足</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                人材：認証取得、試験・実証の知見を有する人材が不足。
+                              
+                    </div>
+                    <div class="bottleneck-box">
+                        <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                無人航空機の「一等型式認証（レベル4向け）」を取得するには、国交省の認証プロセスを熟知した専門人材が必要だが、そのような人材はまだ希少だ。また、「試験・実証」の知見とは、機体が特定の飛行条件（強風・雨・夜間・山間部etc.）で安全に飛行できることを証明するための試験計画の立案・実施・データ解析のスキルを指す。JAXA風洞等の試験設備が整備されても、それを使いこなして認証に必要なデータを取得できる「試験人材」が不足していれば設備が活かせない。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    「機体OEMが認証の取得を見据えて戦略的に設計できるよう、官民が有する有人機・無人機の認証に係るノウハウの共有・蓄積のための取組を支援」がロードマップ素案に明記 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                                <li>
+                                    JAXA：「試験技術を維持向上し企業に提供するための専門人材を継続的に確保」することをロードマップ素案が政策として明示 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    ACSL：レベル4向け一等型式認証の取得経験を社内に蓄積中。防衛向け認証・民生向け認証の双方を通じた「認証ノウハウの組織的蓄積」が競争優位になりつつある 
+                                    <span class="source-tag">ドローンジャーナル 2026.4</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">② 不確実性の要因</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">a. 技術・事業：目視外飛行の経済合理性の不確実性</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      技術・事業：目視外飛行に関する技術・ビジネスモデルの経済合理性に関する不確実性。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      「ドローン物流は便利だが採算が取れない」という問題の本質は「人件費構造」だ。現状では1機につき1名の操縦者が必要で、時給2,000円の操縦者が1時間に1回の配送をすると、人件費だけで1配送あたり2,000円になる。機体コスト・バッテリー劣化・メンテナンス費を加えると1配送あたり数千円となり、「50〜100円の通常宅配」には到底及ばない。ただし「離島で船便の代替」「山間部の緊急医薬品」「大規模災害時の物資」という特定用途では既に経済合理性が成立しており、用途を絞ることでビジネスが成立する段階にある。国交省のドローン配送ガイドライン（2023年3月）が示す通り、「広域運用では電波圏外問題・機体制約」が発生し、ビジネスモデル設計が複雑になる（国交省、2023年3月）。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        複数機同時運航ガイドライン（第1版）：2025年3月に1人パイロット5機以上同時運航の安全基準を策定。採算分岐点の技術的障壁を制度面から低減 
+                                        <span class="source-tag">国交省 2025.3</span>
+                                    </li>
+                                    <li>
+                                        目視外飛行の事業化促進のための制度整備の一環として、円滑な電波利用の推進を政策パッケージに明記 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        Sora-iina社（長崎）・NEXT DELIVERY（山梨）：「離島・山間部という経済合理性が成立する用途」に特化して実証から事業化に移行中。全都市での展開より「特定用途での採算立証」を優先する現実的戦略 
+                                        <span class="source-tag">renue 2026.5</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                Wing（Google傘下）がオーストラリアで商業配送を展開中だが、採算立証には至っていないとされる。Amazon Prime Airも2024年に商業配送開始。ただし「1件あたりコスト」の開示なし。世界的に「経済合理性の証明」は途上。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">b. 市場：国産機体の市場形成の不確実性と海外機体との競争</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      市場：国産機体の市場形成の不確実性、海外機体との競争。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      「サイバーセキュリティガイドラインが整備されれば国産機体が有利になる」という政策シナリオは、ガイドライン整備が前提条件だ。ガイドラインが整備される前は、DJIをはじめとする中国製機体が価格・機能・充実したエコシステムで圧倒的な競争力を持つ。「ガイドライン整備→国産機体の優位性確立→市場形成」という因果関係の最初のステップ（ガイドライン整備）を早期に実現できるかが、国産機体の市場形成タイムラインを決定する。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        サイバーセキュリティガイドラインの整備・普及：2026年夏取りまとめに向けて進行中。「調達時に参照できる」基準として策定し、国産機体優位の市場を創出する設計 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        ACSL：「安全保障リスクを排除した非中国サプライチェーン」を市場差別化軸として確立済み。サイバーセキュリティガイドライン策定後に「国産＝ACSL機体」という等式が市場で成立する可能性 
+                                        <span class="source-tag">ドローンジャーナル 2026.4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">c. 財務：制度整備と並行での開発に伴うスタートアップの資金難</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      財務：制度整備と並行したスタートアップ中心での機体開発に伴う資金調達の困難性、キャッシュフローの不安定性。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      ドローン物流スタートアップが直面する特有の困難は「制度整備の完成を待ってから事業化するか、制度整備と並行してリスクを取って開発を続けるか」というジレンマだ。UTMが整備され複数機同時運航が制度化された後に参入すれば後発となるが、整備される前から資金を燃やし続けるのも危険だ。この「制度整備と事業化のタイミングのずれ」が、スタートアップのキャッシュフロー不安定の構造的原因だ。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        機体・重要部品の量産体制構築に向けた設備投資への支援（経済安保法安定供給確保支援基金）：スタートアップの設備投資負担を軽減 
+                                        <span class="source-tag">無人機産業基盤強化検討会 2025.12</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>NEXT DELIVERY・Sora-iina：補助金や実証実験参加で運転資金を確保しながら、商業化への移行時期を見極めている段階。防衛向け受注（ACSL型）との違いは「安定的な大口顧客」が不在なこと</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">d. 国際環境：重要部品の供給停滞リスクと目視外飛行の国際統一基準なし</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      国際環境・政策：重要部品の供給停滞。目視外飛行に関する国際的な統一基準がなく、諸外国でも制度整備が進行中であり、国内外で対応が異なることによる事業者のコスト増大、認証に使用する国際規格が海外主導。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      ⑦で詳述したバッテリー・部品の中国依存問題に加え、民生用途固有の課題として「国際規格の海外主導」がある。FAA（米国）・EASA（欧州）・CAAC（中国）がそれぞれ異なる認証基準を持ち、「日本で認証を取得した機体が海外で使えない」または「海外展開のために複数の認証を個別に取得しなければならない」というコスト負担が事業者を圧迫する。2023年4月に日本発のドローン運航管理システムに関する国際規格が発行された実績はあるが、機体認証の国際統一はまだ途上だ。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">欧州</span>
+                                EASAのUAS規制（2021年施行）がEU全体の基準を統一。日本とEUの相互認証交渉の進捗が、欧州市場での日本製ドローン展開を左右する。
+                            </p>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                FAA RemoteIDの義務化（2023年9月）・BEYOND（BVLOS）規則制定が進行中。日本の認証規格との整合性が海外展開の前提条件。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">e. 社会：無人航空機の飛行に対する地域受容性の壁</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      社会：無人航空機の飛行に対する地域受容性。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      地域受容性の問題は「技術的に安全」であっても「住民が受け入れない」という社会的障壁だ。具体的には（1）騒音（プロペラ音、特に住宅地での早朝・深夜）、（2）墜落リスクへの恐怖感（人や財産への被害不安）、（3）プライバシー問題（カメラを搭載したドローンが住宅上空を飛ぶことへの不安）、（4）景観への影響という4つの懸念が住民に根強い。「実証試験の段階から地域の産業界やコミュニティと連携し、サービス事業展開への迅速な移行促進」という政策方針は、「技術先行→住民対話後回し」ではなく「住民との対話を実証段階から始める」という順序の転換を促している。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        「実証試験の段階から地域の産業界やコミュニティと連携し、サービス事業展開への迅速な移行促進」をロードマップ素案に明記。コミュニティ連携を政策パッケージの正式要素として位置づけ 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        Sora-iina社（長崎）：離島という「地域の人々が積極的に使いたい」ニーズが高い環境での実証を選択。「技術的に難しい場所より社会的受容性が高い場所から始める」という現実的な戦略が功を奏し、日本初エリアベースL4を実現 
+                                        <span class="source-tag">renue 2026.5</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header chapter-header green">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">（2）講じるべき政策パッケージ</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title green">① 国内投資支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                安定供給確保のための機体・重要部品の量産体制構築に向けた設備投資への支援。目視外飛行（レベル3・4飛行）事業化の鍵となる多数機同時運航の実現に向けた、自動化・自律化に向けたソフトウェア、機体・重要部品性能向上、運航管理システムなどの技術開発と実証。中長期的に競争力の源泉となる研究開発への支援（自律・分散制御技術、AI活用による自律化、重要部品の技術革新など）。各国で求められるサイバーセキュリティ水準等に適合させるための機体・部品改良支援。防衛省が国内生産基盤の構築に配慮しつつ小型無人航空機を大量に取得することにより企業の予見可能性を一定程度確保し、投資を促進。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「防衛省の大量調達が民生用機体開発の資金源となる」という設計が、⑦×⑨の最大のシナジーだ。防衛向けの量産で設備投資を回収し、そのコスト低下が民生向け機体のコスト競争力に転化する。ACSLが体現するこのデュアルユースモデルは、「防衛需要という安定的大口顧客→量産コスト低下→民生市場での採算改善」という好循環を生み出す設計だ。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    経済安保法安定供給確保支援基金：量産設備投資支援（⑦と共通スキーム。民生用途への波及効果も想定） 
+                                    <span class="source-tag">無人機産業基盤強化検討会 2025.12</span>
+                                </li>
+                                <li>
+                                    JAXA低速風洞等の整備：開発期間短縮・費用低減により民生向け機体開発コストを削減。スタートアップの「量産前の試験費用」という資金負担を軽減する効果 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    ACSL：防衛向け受注（累計約14.2億円）を「量産技術習得の機会」として活用しながら、民生向け機体のソフトウェア自律化も並行推進。防衛×民生のデュアルユースモデルを先行実践 
+                                    <span class="source-tag">ドローンジャーナル 2026.4</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">② 需要創出・市場確保・社会実装支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                サイバーセキュリティガイドラインの整備・普及。目視外飛行の事業化促進のための制度整備（多数機同時運航機数拡大・UTMによる多様な機体の運航支援・VTOL型の社会実装促進・円滑な電波利用の推進等）。機体OEMが認証の取得を見据えて戦略的に設計できるよう、認証に係るノウハウの共有・蓄積を支援。認証に使用する規格の国際標準化を推進。実証試験の段階から地域の産業界やコミュニティと連携し、サービス事業展開への迅速な移行促進。安全かつ効率的な目視外飛行を促進するため、ドローン航路に係る取組を推進。JAXA低速風洞等の整備。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「ドローン航路（UASルート）の全国展開」は、道路インフラと同様の「空のインフラ整備」だ。秩父・天竜川水系での試験設定（2025年3月）が全国に広がれば、事業者は「このルートを飛べば安全・合法」という確実な前提でビジネスを設計できる。UASルートの存在がないビジネスは「各フライトごとに空域を確認・申請する」手間が発生し、事業化コストが高くなる。「空のインフラとしてのUASルート」の全国展開が、ドローン物流の採算改善に直結する。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    UTMロードマップ（2024年11月）：2026年度以降完成目標。複数機同時運航・レベル4多機並行対応 
+                                    <span class="source-tag">内閣府 2024.11</span>
+                                </li>
+                                <li>
+                                    UASルート全国展開：秩父・天竜川水系を先行ロールモデルとして横展開中。電力網・河川・道路インフラ上空を活用したドローン航路の全国整備が進行 
+                                    <span class="source-tag">renue 2026.5</span>
+                                </li>
+                                <li>
+                                    国際標準化推進：2023年4月の日本発ドローン運航管理システム国際規格発行を足がかりに、機体認証の国際標準化への関与を強化中 
+                                    <span class="source-tag">経産省 2023.4</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    Sora-iina・NEXT DELIVERY・日本郵便：各社が「離島・山間部」という経済合理性が成立する用途での継続的な事業展開に注力。「実証→商業化」の移行期の最前線 
+                                    <span class="source-tag">renue 2026.5</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">③ 国際連携</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                PIPIR、OSAなどの枠組みにおける同盟国・同志国との機体供給やサプライチェーン協力に向けた議論の推進。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    PIPIR・OSA枠組みを通じた同志国との機体供給・SC協力議論が継続中。「サイバーセキュリティ保証された非中国製ドローン」という価値軸を同志国間で共有する動きが加速 
+                                    <span class="source-tag">防衛省</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    テラドローン：2026年度中に米国法人「Terra Defense」を設立予定。NATO加盟国・アジア向け輸出市場の開拓が進行中。民生技術の海外展開が国際連携の民間側の推進力 
+                                    <span class="source-tag">ビジネス+IT 2026.4</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 政策実装・官民投資編も読む</div>
+            <div class="next-box-desc">「今、政府と民間がどこまで動いているか」を整理した「政策実装・官民投資編」も公開中です。</div>
+            <a href="https://marketsupporter-ai.com/reports/uav-civil-policy-investment.html" target="_blank">▶ 政策実装・官民投資編を読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>renue「物流業界 ドローン配送・改正航空法レベル4・無人航空機統合AIの全貌：2026年版」（2026年5月）</li>
+                <li>国土交通省「複数機同時運航のための安全運航ガイドライン（第1版）」（2025年3月）</li>
+                <li>国土交通省「ドローンを活用した荷物等配送に関するガイドライン Ver.4.0」（2023年3月）</li>
+                <li>経産省「日本発のドローンの運航管理システムに関する国際規格が発行されました」（2023年4月）</li>
+                <li>Drone Journal「ACSLが示す国産ドローンの成長戦略、防衛需要とAIで競争力強化」（2026年4月23日）</li>
+                <li>無人機産業基盤強化検討会「中間取りまとめ」（2025年12月24日）— 経済産業省</li>
+                <li>ビジネス+IT「テラドローンが国産ドローンで防衛装備品市場に参入、米国法人も設立」（2026年4月6日）</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
