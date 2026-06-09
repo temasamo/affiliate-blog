@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>空飛ぶクルマ（eVTOL）｜政策実装・官民投資編｜戦略17分野 ⑩</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--accent);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 50%;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #a5d6a7;
+        margin-bottom: 12px;
+    }
+
+    .hero-number {
+        font-family: var(--font-mono);
+        font-size: 64px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, .1);
+        position: absolute;
+        top: -12px;
+        right: 0;
+        line-height: 1;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(22px, 5vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #a5d6a7;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #c8e6c9;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--accent);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--accent-dark);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--accent-dark);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--accent);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        border-bottom: 1.5px solid var(--accent-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--accent-mid);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--accent);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ⑩</span>
+        <span>空飛ぶクルマ（eVTOL）</span>
+        <span>|</span>
+        <span>政策実装・官民投資編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — FLYING CAR / eVTOL — POLICY MONITOR</div>
+            <div class="hero-number">10</div>
+            <div class="hero-title">
+                空飛ぶクルマ（eVTOL）
+                <br>
+                政策実装・官民投資編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（日本成長戦略会議 第3回、2026年3月）構造に基づく政策モニタリングレポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">2040年 世界市場規模予測</div>
+                    <div class="kpi-value">約1.5兆ドル</div>
+                    <div class="kpi-unit">機体・サービス・インフラ合算</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">2040年 国内外市場目標</div>
+                    <div class="kpi-value">約1,500億円</div>
+                    <div class="kpi-unit">政策目標として示されている値</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">スカイドライブ 型式証明目標</div>
+                    <div class="kpi-value">2026年中</div>
+                    <div class="kpi-unit">早ければ。商用運航は2028年目標（大阪エリア）</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">大阪万博 デモ飛行</div>
+                    <div class="kpi-value">2025年7〜8月</div>
+                    <div class="kpi-unit">SK SD-05型 無人遠隔操縦デモを実施済み</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜政策実装サマリー（2026年04月〜05月）</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜現状認識と目指す姿【目標】</a>
+                    <ul class="toc-sub">
+                        <li>（1）現状：世界的に技術開発段階・機体市場は未成立</li>
+                        <li>（2）目標：2040年 国内外市場1,500億円・部品MROシェア獲得</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜勝ち筋と官民投資の具体像【道筋】</a>
+                    <ul class="toc-sub">
+                        <li>①日本の勝ち筋：都市内短距離路線・東南アジア都市・価格競争力</li>
+                        <li>②官民投資の具体像：JAXA風洞・要素技術・サプライヤー設備</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch03">CHAPTER 03｜課題と政策パッケージ【政策手段】</a>
+                    <ul class="toc-sub">
+                        <li>①国内投資支援</li>
+                        <li>②需要創出・社会実装支援（バーティポート・自律飛行・制度整備）</li>
+                        <li>③国際連携</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">政策実装サマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          空飛ぶクルマ分野は2025〜2026年が「実証から商業化への転換期」だ。スカイドライブが大阪万博（2025年4〜10月）でのデモ飛行を成功させ、2025年1月に国交省と型式証明取得に向けた必要事項を合意し、早ければ2026年中の型式証明取得・2028年大阪エリアでの商用運航開始を目標に設定した。欧米では2024〜2025年に型式証明を取得したメーカーが複数出てきており、日本は「若干の遅れはあるが市場形成前に参入できる段階」という現状認識だ。2040年に約1.5兆ドルと予測される世界市場（機体・サービス・インフラ合算）に対し、日本は「都市内短距離路線・観光・東南アジア都市」という特定ニッチでの参入戦略を採る。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">約1.5兆ドル</div>
+                        <div class="stat-unit">世界市場（2040年）</div>
+                        <div class="stat-desc">機体・サービス・インフラを含むeVTOL産業全体の市場規模予測（ロードマップ素案）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">2026年中</div>
+                        <div class="stat-unit">型式証明目標</div>
+                        <div class="stat-desc">スカイドライブが早ければ2026年中の国内型式証明取得を目標。2028年大阪エリア商用運航へ</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">1/3以下</div>
+                        <div class="stat-unit">騒音比</div>
+                        <div class="stat-desc">スカイドライブSD-05のヘリコプターとの騒音比較。万博視察者から「思ったより静か」との評価</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">2028年</div>
+                        <div class="stat-unit">商用運航目標</div>
+                        <div class="stat-desc">スカイドライブの大阪エリア商用運航開始目標（COBBY、2025年12月）</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">直近2ヶ月の重要動向（2026年4〜5月）</div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き</div>
+                            <ul>
+                                <li>
+                                    国交省航空局：スカイドライブと2025年1月に型式証明取得に向けた必要事項について合意済み。2026年中の取得に向けた審査プロセスが進行中 
+                                    <span class="source-tag">COBBY 2025.12</span>
+                                </li>
+                                <li>
+                                    空飛ぶクルマ官民協議会：制度整備・環境整備を継続推進。バーティポート（離着陸場）整備・普及の促進が政策パッケージに明記 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                                <li>
+                                    JAXAへの低速風洞等の整備：⑨無人航空機と共通の「実機環境を模擬できる試験設備」整備方針が継続。eVTOL専用の低速飛行試験にも対応 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き</div>
+                            <ul>
+                                <li>
+                                    <strong>スカイドライブ</strong>
+                                    ：大阪万博（2025年7月31日〜8月24日）でデモ飛行を実施済み。SD-05型が高度約4〜15mで無人遠隔操縦により飛行。「年内には事業で使えるレベルまで行きたい」（スカイドライブCEO、2025年8月） 
+                                    <span class="source-tag">Nikkei 2025.8</span>
+                                </li>
+                                <li>
+                                    スカイドライブ：Osaka Metro（大阪市高速電気軌道）と「大阪ダイヤモンドルート構想」を発表。新大阪・梅田・森之宮・天王寺・ベイエリアの4エリアを空飛ぶクルマで結ぶ将来像を提示 
+                                    <span class="source-tag">COBBY 2025.12</span>
+                                </li>
+                                <li>
+                                    スカイドライブ：FAA（米国）への型式証明申請を2024年4月29日に受理済み。国内型式証明後に米国での取得を順次予定 
+                                    <span class="source-tag">Impress Watch 2024.6</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">重要プレイヤーと政策対象</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>機能層</th>
+                                <th>主要プレイヤー</th>
+                                <th>政策対象・直近動向</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>機体OEM（国内）</td>
+                                <td>スカイドライブ（SD-05型、マルチコプター型）</td>
+                                <td>2026年中の型式証明取得目標。万博デモ飛行実績あり</td>
+                            </tr>
+                            <tr>
+                                <td>機体OEM（欧米先行）</td>
+                                <td>Joby Aviation（米）、Archer Aviation（米）、Lilium（独、経営再建中）、Wisk（米・Boeing傘下）</td>
+                                <td>日本より先行し型式証明取得・商用化フェーズに移行中</td>
+                            </tr>
+                            <tr>
+                                <td>バーティポート（離着陸場）</td>
+                                <td>地方自治体・空港運営会社・大手不動産</td>
+                                <td>バーティポート整備・普及の促進がロードマップ素案に明記</td>
+                            </tr>
+                            <tr>
+                                <td>部品サプライヤー</td>
+                                <td>航空機部品企業・自動車部品企業（新規参入）</td>
+                                <td>「他産業からの新規参入や既存航空機部品産業の事業拡大」が政策目標</td>
+                            </tr>
+                            <tr>
+                                <td>運航管理・インフラ</td>
+                                <td>通信事業者・UTM関連企業</td>
+                                <td>空飛ぶクルマ専用の運航管理・電波利用政策整備が進行中</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">１．現状認識と目指す姿【目標】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）現状</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 現状：世界的に技術開発段階・欧米が一歩先行・機体市場は未成立</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      空飛ぶクルマは、世界的に技術開発段階にあり、機体・サービス市場は未成立。各国において積極的に開発競争が展開。開発状況では、欧米メーカーが一歩先を歩んでおり、欧米航空当局への機体認証取得に向けた動きも進んでいると見られている。我が国でも、国内のスタートアップを中心に安価かつコンパクトな機体を開発中。試験設備の能力不足により飛行試験への依存度が高い状況。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「機体市場は未成立」という認識は、まだ「最初のユーザー」が誰になるかが決まっていないことを意味する。この段階で「ビジネスモデルを先に確立した者が市場設計権を得る」という競争が起きている。スカイドライブが大阪ルートを発表し、Osaka Metroと組んでいるのは、「大阪という具体的な市場を先に押さえる」という先行者優位の戦略だ。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                Joby Aviationが2024年12月にFAA型式証明取得に大きく前進（G-1認定）。NASA×Jobyの実証飛行も実施中。Archer Aviationが2024年末に商業飛行に向けた準備を加速。
+                            </p>
+                            <p>
+                                <span class="country-tag">欧州</span>
+                                Volocopter（独）がEASAから型式証明取得に近い段階。Lilium（独）は2023年破産申請後、経営再建中。
+                            </p>
+                            <p>
+                                <span class="country-tag">中国</span>
+                                EHang（億航）が2023年に中国当局の型式証明を取得し世界初の商業運航認証。EH216型が2024年から商業サービス開始。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② 取り巻く環境：2040年1.5兆ドル市場への競争と「防衛とのシナジー」</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      経済的重要性：2040年時点での世界市場規模は約1.5兆ドルと予測。開発で先行する欧米メーカーが世界シェアを先行取得する可能性があり、国産機体の早期参入には、OEMや裾野産業における要素技術開発や設備投資が重要。戦略的重要性：機体開発において必要な設備やサプライチェーン、人材等は防衛産業と共通部分も多くシナジー効果が高く安全保障上も重要。
+                                    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）目標</div>
+                    <div class="sub-section">
+                        <div class="sub-section-title">定量目標：2040年 国内外市場1,500億円・部品MROで主たる地位とシェア獲得</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      開発支援を行っている国内機体について、欧米製機体と差別化が可能な路線（都市内運航、観光などの短距離路線）を中心に、国内外市場の獲得を目指す（2040年頃：約1,500億円）（政策目標として示されている値）。国内サプライヤーでは、国内外の部品・MRO市場（特に付加価値の高い分野）において、主たる地位とシェアの獲得を目指す。
+                                    
+                        </div>
+                        <div class="note-box">
+                            <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                      「欧米製機体と差別化が可能な路線に絞る」という戦略の現実性は高い。Joby・Archerが狙う長距離・高速の都市間路線（例：LAX→市街地、100km圏）とスカイドライブが狙う都市内短距離路線（数〜十数km）はそもそも異なる市場だ。「競合しない市場を先に確立する」という棲み分け戦略が、限られたリソースの中で合理的な参入戦略となっている。
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">２．勝ち筋と官民投資の具体像【道筋】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）基本戦略：都市内短距離×東南アジア×価格競争力</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 勝ち筋：マルチコプター型の安価・コンパクトで都市内短距離路線を制する</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      開発支援を行っている国内機体（マルチコプター型）は、都市内運航や観光などの短距離路線で強みを持ち、これらのニーズがある都市及び観光地において価格競争力を活かしながらビジネスモデルを構築し、市場展開する。並行して、公共交通が未発達かつ人口が集中する東南アジア等の都市では、都心部の約十km圏内で長時間にわたる交通渋滞が日常的に発生。こうした短距離移動での混雑を回避したいニーズが高い海外市場も獲得していく。自動・自律飛行の実現により、パイロット費用削減・乗客数増により運航コストが低減する。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「東南アジアの交通渋滞解消」というユースケースは、スカイドライブの国際展開戦略の核心だ。ジャカルタ・バンコク・マニラ・ホーチミンといった東南アジア大都市では、都心10km圏内で1〜2時間の渋滞が日常的に発生する。ヘリコプターより安価で騒音も低いeVTOLが「渋滞をスキップする手段」として受け入れられれば、大都市圏の富裕層・ビジネス客という市場が開く。この市場には欧米の長距離対応機体は過剰スペックであり、コンパクトで安価な国産マルチコプター型が競争力を持ちうる。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        空飛ぶクルマの海外市場開拓に向けて日本企業のイノベーション創出やビジネス展開を支援するための施策がロードマップ素案に明記。展示会・見本市等を通じたビジネスマッチング機会の提供 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        スカイドライブ：Osaka Metroとの「大阪ダイヤモンドルート構想」（新大阪・梅田・森之宮・天王寺・ベイエリアの4エリア連結）が具体的な国内ユースケース設計として注目。2028年商用化目標の基盤を形成 
+                                        <span class="source-tag">COBBY 2025.12</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② 航空機部品・自動車産業からの新規参入：日本の既存産業のノウハウ活用</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      我が国が培ってきた航空機部品・自動車産業といったノウハウを活用することで他産業からの新規参入や既存の航空機部品産業の事業拡大に繋げていく。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      空飛ぶクルマは「航空機でもあり電動車両でもある」という特殊な性質を持つ。航空機の設計・認証ノウハウ（安全設計・耐空性証明）と電気自動車のバッテリー・モーター・パワーエレクトロニクスの技術が融合する領域だ。日本はトヨタ（スカイドライブへの出資）・スズキ（製造協力）という自動車大手と、IHI・三菱重工という航空機大手の双方が関与しており、この「自動車×航空」の融合産業での競争力を活かせる立場にある。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                Toyota（Jobyへの出資）・Stellantis（Archerへの出資）・Delta航空（JobyとArcherの双方に先行購入契約）など、自動車・航空・エアラインの3業界が空飛ぶクルマ産業に参入。スカイドライブのトヨタ・スズキ連携は同様の産業連携モデルだ。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）官民投資の具体像</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                機体開発及び要素技術開発（企業、国）。生産設備の整備（企業、国）。実機を用いて飛行試験の大部分を模擬できる風洞試験設備等の整備（JAXA）。
+                              
+                    </div>
+                    <div class="note-box">
+                        <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                定量的インパクト（投資誘発効果・経済波及効果）は「官民投資ロードマップ取りまとめまでに提示」と明記。2026年夏の日本成長戦略取りまとめで具体化予定。スカイドライブがスズキと製造協力体制を構築し、製造工程に移行していることは、「研究開発補助」から「量産設備投資支援」フェーズへの移行を示している。
+                              
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH03 -->
+        <section id="ch03" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <span class="chapter-title">３．課題と政策パッケージ【政策手段】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">① 国内投資支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                バッテリ性能向上、機体軽量化、動力ハイブリッド化など、機体の性能向上やデュアルユースも想定した研究開発支援。高度な運航（自動・自律飛行・高密度運航等）に関する技術開発支援。国内外メーカーのサプライチェーンへ参入するサプライヤーにおける空飛ぶクルマに特化した部品開発や生産設備の導入支援。JAXA低速風洞等の整備。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「バッテリ性能向上・機体軽量化・動力ハイブリッド化」というロードマップの技術課題は、現在のeVTOLが抱える「航続距離が短い（30〜60分程度）・天候影響を受けやすい」という根本的な限界に対応する研究開発アジェンダだ。自動・自律飛行は「パイロット費用削減→採算改善」のための鍵技術であり、政府の研究開発支援が「ビジネスモデルの採算ライン引き下げ」に直接貢献する設計になっている。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    JAXA低速風洞等の整備：⑨無人航空機と共通スキームで eVTOLの飛行特性（低速・低高度・マルチコプター型の複雑な気流）に対応した試験設備の整備を推進 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    スカイドライブ：スズキとの製造協力体制のもと2024年から製造工程に移行済み。バッテリーや電動モーターの自動車産業ノウハウを機体製造に取り込む試みが進行中 
+                                    <span class="source-tag">Impress Watch 2025.2</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">② 需要創出・市場確保・社会実装支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                都市内運航、駅・空港アクセス等をテーマとした運航や離着陸場におけるオペレーションを通じて、コスト、利便性、安全性等を実証し、ビジネスモデルの検証を行うことによるサービス市場の確立と機体の需要創出。空飛ぶクルマの海外市場開拓に向けて、日本企業のイノベーション創出やビジネス展開を支援。認証取得を促進するため、認証に使用する規格の国際標準化を推進。多様な機体や高度な運航（自動・自律飛行、高密度運航等）に対応した制度整備による社会実装支援。実証試験の段階から地域の産業界やコミュニティと連携し、その後のサービス事業展開への迅速な移行を促進。身近な移動手段となるための十分な数の乗降場所を確保するために、バーティポートの整備・普及を促進。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「バーティポート（離着陸場）の整備・普及」は、空飛ぶクルマのビジネスモデル確立の最大の前提条件だ。タクシーが道路インフラなしには成立しないように、eVTOLは「乗り降りできる場所の密度」がサービス利用率を決定する。現在は実証用の数カ所のバーティポートしか存在しないが、大阪・東京の中心部に数十カ所のバーティポートが整備されれば、利便性が急激に向上してサービス需要が立ち上がる。政府主導のバーティポート整備促進が、民間のサービス事業化の起爆剤となる設計だ。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    バーティポートの整備・普及の促進がロードマップ素案に明記。都市内の乗降インフラ整備を官民連携で推進する方針 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                                <li>
+                                    空の利用拡大の進展段階に応じた電波利用政策の方向性をとりまとめ、必要な環境整備を推進することで、航空分野の電波利用を円滑に拡大 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    スカイドライブ×Osaka Metro：大阪ダイヤモンドルート構想（4エリア連結）を発表。地下鉄との乗り継ぎを想定したバーティポート付きの交通ハブ構想が具体化 
+                                    <span class="source-tag">COBBY 2025.12</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="overseas-box">
+                        <div class="overseas-label">// 海外動向</div>
+                        <p>
+                            <span class="country-tag">米国</span>
+                            Joby Aviationが2024年にNYC・LA・Dubaiでの初期ルートを発表。Delta航空が2億ドルの出資と共に「JFK空港↔マンハッタン」等の路線で優先的サービス提供の合意。バーティポートはHMS Host等の空港施設企業が建設。
+                        </p>
+                        <p>
+                            <span class="country-tag">UAE</span>
+                            ドバイ政府がeVTOL路線の整備に積極的で、Joby・Wisk等が就航計画を発表。政府主導のバーティポート整備が先行している好例。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">③ 国際連携</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                空飛ぶクルマの開発・運航を計画している各国の航空当局との連携。展示会・見本市等を通じた機体メーカーとサプライヤーのビジネスマッチングの機会提供。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「各国の航空当局との連携」が重要な理由は、型式証明の相互認証にある。スカイドライブが国内型式証明を取得した後、FAA（米国）・EASA（欧州）・CAAC（中国）の認証をそれぞれ取得するには多大なコストと時間がかかる。日本の航空当局（JCAB）と各国当局の間での「相互認証協定（Bilateral Aviation Safety Agreement）」の締結が、グローバル展開コストを大幅に削減する。スカイドライブがFAAへの型式証明申請を国交省経由で行ったことは、この相互認証経路を活用しようとする戦略を示している。
+                              
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 続編：課題・政策パッケージ編</div>
+            <div class="next-box-desc">「なぜ空飛ぶクルマの商用化が進まないのか」「市場未成立・キャッシュフロー・社会受容性の3重課題」を整理した「課題・政策パッケージ編」も近日公開予定です。</div>
+            <a href="https://marketsupporter-ai.com" target="_blank">▶ marketsupporter-ai.com で読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>COBBY「SKYDRIVE（SD-05）——大阪・関西万博でデモフライトを実施、商用運航は2028年目標」（2025年12月）</li>
+                <li>日本経済新聞「スカイドライブ、大阪万博で『空飛ぶクルマ』海上飛行を披露」（2025年8月18日）</li>
+                <li>日本経済新聞「スカイドライブ、大阪万博会場で3人乗り『空飛ぶクルマ』試験飛行」（2025年4月9日）</li>
+                <li>Impress Watch「大阪万博の空飛ぶクルマ、スカイドライブがデモ飛行開始」（2025年2月12日）</li>
+                <li>Impress Watch「空飛ぶクルマ、万博での商用飛行断念 スカイドライブ」（2024年6月17日）</li>
+                <li>Drone Journal「大阪・関西万博で飛行！2026年の販売に向けて3人乗りの空飛ぶクルマ『SD-05型』を開発」（2023年）</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
