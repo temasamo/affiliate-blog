@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ロケット・射場｜課題・政策パッケージ編｜戦略17分野 ⑪</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --warn: #e65100;
+        --warn-light: #fff3e0;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--warn);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #bf360c 0%, #e64a19 50%, #ff7043 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #ffccbc;
+        margin-bottom: 12px;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(22px, 5vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #ffccbc;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #ffccbc;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 17px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #ffccbc;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--warn);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--warn);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--warn);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--warn);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-header.green {
+        background: var(--accent);
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--warn);
+        border-bottom: 1.5px solid var(--warn-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .section-title.green {
+        color: var(--accent-dark);
+        border-bottom-color: var(--accent-light);
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--warn);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .sub-section-title.green::before {
+        background: var(--accent-mid);
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .bottleneck-box {
+        background: var(--warn-light);
+        border-left: 3px solid var(--warn);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .bottleneck-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--warn);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--warn);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--warn);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ⑪</span>
+        <span>ロケット・射場</span>
+        <span>|</span>
+        <span>課題・政策パッケージ編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — ROCKET & LAUNCH FACILITY — CHALLENGE & POLICY PACKAGE</div>
+            <div class="hero-title">
+                ロケット・射場
+                <br>
+                課題・政策パッケージ編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（3）官民投資促進に向けた課題と政策パッケージ 構造に基づく分析レポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック①</div>
+                    <div class="kpi-value">
+                        打上げ失敗＝
+                        <br>
+                        事業継続リスク
+                    </div>
+                    <div class="kpi-unit">1回の失敗で原因究明に1〜2年</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック②</div>
+                    <div class="kpi-value">
+                        SpaceXとの
+                        <br>
+                        価格競争
+                    </div>
+                    <div class="kpi-unit">Falcon 9の圧倒的な規模の経済</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック③</div>
+                    <div class="kpi-value">
+                        射場・試験設備
+                        <br>
+                        の不足・老朽化
+                    </div>
+                    <div class="kpi-unit">量産化の前提条件が整っていない</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック④</div>
+                    <div class="kpi-value">
+                        官需依存性が高く
+                        <br>
+                        民需が薄い
+                    </div>
+                    <div class="kpi-unit">国内衛星の海外打上げが半数</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜課題・政策パッケージサマリー</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜（1）投資促進に向けた課題</a>
+                    <ul class="toc-sub">
+                        <li>① リソース制約：人材・射場インフラ・製造能力</li>
+                        <li>② 不確実性の要因</li>
+                        <li>a. 事業・技術：打上げ失敗リスクの事業継続直結</li>
+                        <li>b. 市場：SpaceXとの価格競争・受注競争</li>
+                        <li>c. 財務：大規模先行投資×官需依存×回収長期化</li>
+                        <li>d. 国際環境：安全保障上の顧客制限</li>
+                        <li>e. 社会：失敗への寛容・リスク許容の醸成</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜（2）講じるべき政策パッケージ</a>
+                    <ul class="toc-sub">
+                        <li>①国内投資支援</li>
+                        <li>②需要創出・アンカーテナンシー構築</li>
+                        <li>③立地競争力強化</li>
+                        <li>④国際連携</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">課題・政策パッケージサマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          ロケット産業の課題は「失敗リスク・価格競争・インフラ不足・官需依存」の4重構造だ。特に「打上げ失敗=事業継続リスク」という問題は、スペースワンのカイロスが3号機失敗後に原因究明・対策期間を経なければならない現実に端的に表れている。IHIエアロスペースの競争参加資格停止（2026年）は、この「失敗への脆弱性」がサプライチェーンの品質管理という形でも顕在化したことを示す。一方で「失敗への寛容」という文化的課題も正式な政策課題として明示されており、「失敗をどう社会全体で許容するか」というメンタリティの転換も問われている。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">1〜2年</div>
+                        <div class="stat-unit">失敗後の停滞</div>
+                        <div class="stat-desc">打上げ失敗後の原因究明・対策・次回打上げまでの期間目安。この間の固定費は継続</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">50%以下</div>
+                        <div class="stat-unit">国内打上げ</div>
+                        <div class="stat-desc">国内衛星の国内打上げ比率。残り50%は海外（主にSpaceX）に依存</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">14契約</div>
+                        <div class="stat-unit">IHIエアロ問題</div>
+                        <div class="stat-desc">JAXAがIHIエアロスペースを競争参加資格停止。品質管理の根本的問題が浮上</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">1兆円</div>
+                        <div class="stat-unit">宇宙戦略基金</div>
+                        <div class="stat-desc">失敗リスクを政府が分担する最大の政策ツール。技術開発・打上実証・インフラ整備を支援</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">4重ボトルネックと政策パッケージの対応関係</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>ボトルネック</th>
+                                <th>具体的障壁</th>
+                                <th>政策パッケージ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>① 打上げ失敗=事業継続リスク</td>
+                                <td>失敗後1〜2年の原因究明・対策期間中も固定費が継続。スタートアップには致命的</td>
+                                <td>国内投資支援（宇宙戦略基金・SBIR・打上実証支援でリスク分担）</td>
+                            </tr>
+                            <tr>
+                                <td>② SpaceXとの価格競争</td>
+                                <td>Falcon 9の規模の経済（年160回超）による圧倒的なコスト優位。「即応性・アジア立地」で差別化が必要</td>
+                                <td>需要創出（アンカーテナンシーで国内需要を確保し量産によるコスト低下を促進）</td>
+                            </tr>
+                            <tr>
+                                <td>③ 射場・試験設備の不足・老朽化</td>
+                                <td>種子島の試験設備老朽化。射点・燃焼試験場等が量産化に対応できていない</td>
+                                <td>国内投資支援（JAXA大型試験設備整備・射場設備増強）</td>
+                            </tr>
+                            <tr>
+                                <td>④ 官需依存・民需が薄い</td>
+                                <td>国内衛星の半数が海外打上げ。「国内打上げ原則」がなければ民間ロケット需要が確立しない</td>
+                                <td>需要創出（宇宙戦略基金における国内打上げ原則・海外市場開拓支援）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">（1）投資促進に向けた課題</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">① リソース制約</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">射場・試験設備等の不足・老朽化</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      インフラ等：ロケット製造能力、射場・試験設備等（射点、ロケット・衛星組立棟、燃焼試験場、燃料製造保管設備、追跡管制設備等）の不足・老朽化。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      「現在年3回→2030年30回以上」という10倍化目標を達成するには、種子島宇宙センターの射点数・組立棟数・燃焼試験場のキャパシティが根本的に不足している。SpaceXがフロリダ・カリフォルニア・テキサスの複数射場から同時並行で打上げを実現しているように、日本でも「一つの射点が使えない場合の代替射点」が存在しないと高頻度打上げは成立しない。加えてIHIエアロスペースの競争参加資格停止（2026年）が示すように、製造能力向上と品質管理の両立という課題も深刻だ。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        JAXA大型試験設備の整備・共用がロードマップ素案の「新規」投資として明記。具体的な投資規模・時期は2026年夏取りまとめで確定予定 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                    <li>
+                                        H3-6号機（2026年6月10日予定）：CFT（タンクステージ燃焼試験）を2026年3月14〜15日に実施済み。8号機失敗の対策を確認 
+                                        <span class="source-tag">SPACE CONNECT 2026.4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        IHIエアロスペース：競争参加資格停止（2026年）により固体ロケット系の調達に影響。品質管理体制の根本的な見直しが業界全体に波及する可能性 
+                                        <span class="source-tag">sorae 2026</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">② 不確実性の要因</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">a. 事業・技術：打上げ失敗リスクの事業継続への直結</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      事業・技術：打上げ失敗リスクが事業継続に直結し、開発期間や打上げ再開までの期間が長期化（失敗時の原因究明及び対策等）。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      スペースワンのカイロスは1号機（2024年3月）・3号機（2025年）と失敗を経験し、その都度原因究明と対策のために打上げが停止する。H3も3号機失敗（2023年3月）→4号機成功（2024年2月）まで約1年、8号機失敗（2025年12月）→6号機（対策確認機）2026年6月まで半年以上を要する。この「失敗後の停滞期間」は固定費（人件費・施設維持費）がかかり続けるため、財務基盤が脆弱なスタートアップには致命的なキャッシュフロー危機になりうる。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        宇宙戦略基金・SBIR：失敗後の原因究明・対策期間中の企業継続を支援する補助スキームとして機能。「失敗への寛容」という政策方針と連動 
+                                        <span class="source-tag">内閣府宇宙政策委員会</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        スペースワン：3号機失敗後の「失敗から得た糧」として、「失敗を重ねることで技術の粒度が上がる」という姿勢を対外的に表明（日経ビジネス 2026年4月） 
+                                        <span class="source-tag">日経ビジネス 2026.4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                SpaceXのFalcon 9は2015年の失敗後に対策を完了し、以降の飛行成功率は99%超。「失敗→学習→改善」のサイクルを高速で回す文化が競争力の源泉。「100回失敗してでも成功させる」というシリコンバレー文化が宇宙産業に適用されている。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">b. 市場：米国中心とした打上げ供給の急拡大による価格競争</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      市場：米国中心とした打上げ供給の急拡大による価格競争（SpaceX, Rocket Lab等）。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      SpaceXのFalcon 9の打上げ単価は、第1段再使用と高頻度打上げによる規模の経済で「約6,700万ドル/回」（2024年）まで下がった。日本のH3の目標コストは「約50億円（約3,500万ドル）」（2018年目標）だが、これは1機あたりの目標であり量産化が前提だ。量産化が達成できないうちはH3の実コストはこれを大幅に上回る可能性が高く、SpaceXとの価格競争は「棲み分け（即応性・アジア立地）か量産化の実現」の二択になる。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                Rocket Lab（小型ロケット Electron）が「SpaceXが大型衛星を、Rocket Labが小型衛星を」という棲み分けで成長。日本の新規参入ロケット（カイロス・ZERO等）も同様の「小型衛星特化」で棲み分けを目指している。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">c. 財務：大規模先行投資・官需依存・回収長期化の三重構造</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      財務：大規模な先行投資が必要、回収までの期間が長い、官需依存性が高い。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      日本の民間ロケット企業の売上の大部分は政府（JAXA・内閣府・防衛省）発注に依存している。これは「安定した受注」という意味では有利だが、「民間商業需要が育たない」という産業自立化の妨げになる。国内衛星の50%が海外打上げ（主にSpaceX）という現実は、「日本の政府・民間衛星事業者が国内ロケットを選ばない」という市場の失敗を示しており、この「需要側の自律的選択」を引き出すことが「官需依存からの脱却」の鍵だ。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        宇宙戦略基金における「国内打上げ原則」：政府衛星は原則として国内ロケットで打上げる方針。民間衛星への波及拡大を目指す 
+                                        <span class="source-tag">内閣府宇宙政策委員会</span>
+                                    </li>
+                                    <li>
+                                        アンカーテナンシー構築（新規投資項目）：打上げサービスの計画的調達で民間ロケット企業の設備投資判断を促す設計。具体的スキームを2026年夏取りまとめで確定予定 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        インターステラテクノロジズ：トヨタとの連携で「車部品サプライチェーン活用」による低コスト化（8億円ロケット目標）を目指す。官需依存からの脱却につながる民間事業者への低価格提供モデル 
+                                        <span class="source-tag">日経ビジネス 2026.4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">d. 国際環境：安全保障上の理由等で顧客が制限される可能性</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      国際環境・政策：安全保障上の理由等で顧客が制限される可能性。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      「アジア・中東からの打上げ需要獲得」という市場拡大戦略において、打上げを委託する顧客の衛星が「どの国の衛星か・どんなペイロードか」という安全保障上の審査が必要だ。日本の輸出管理規制（外為法）・宇宙活動法と相手国の安全保障上の懸念が重なると、受注できる顧客が制限される。中国・ロシアが実質的に除外されることは当然として、「友好国とみなせるかどうかが曖昧な国」からの発注の扱いが新たな制度課題として浮上している。
+                                    
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">e. 社会：失敗・リスク許容による打上促進の更なる醸成</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      社会：失敗・リスク許容による打上促進の更なる醸成（実証累積に向けた失敗への寛容）。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      日本社会では「失敗は許されない」という文化的な規範が、ロケット産業の技術蓄積速度を下げている可能性がある。SpaceXが初期のFalcon 1で3連続失敗しながら4号機で成功し、それを「学習の糧」として扱った文化は、米国のスタートアップ文化と密接に結びついている。「ロードマップ素案が『失敗への寛容』を正式な政策課題として明示した」という事実は、日本の宇宙産業政策において極めて珍しい「社会文化的アジェンダの政策化」だ。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                SpaceXは2006〜2008年にFalcon 1で3連続失敗しながら政府・民間の支援で生き残り、4号機で成功。NASAの「Commercial Orbital Transportation Services（COTS）」プログラムが失敗を許容しながら民間ロケット産業を育てた「失敗を許容する政策設計」の成功事例。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header chapter-header green">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">（2）講じるべき政策パッケージ</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title green">① 国内投資支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                ロケットの更なる高度化、高頻度打上げ、信頼性向上に向けた技術開発・実証、打上げ実績蓄積に向けた支援（文部科学省SBIRフェーズ3、宇宙戦略基金、JAXA技術基盤・人的資源強化等）。ロケット部品等の安定供給に向けた経済安保推進法に基づく特定重要物資支援。JAXA大型試験設備の整備・共用等を含む射場・試験設備等の整備。ロケット開発・製造等への投資インセンティブを強化するための研究開発税制・戦略技術領域（宇宙）／大胆な投資促進税制。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「経済安保推進法に基づく特定重要物資支援（ロケット部品等）」は、IHIエアロスペース問題が浮き彫りにした「サプライチェーンの脆弱性」への直接対応だ。ロケット製造に不可欠な部品を「特定重要物資」に指定することで、国内生産の安定性を政府が保証し、品質管理の問題が発生した場合でも代替調達の経路を確保する。JAXA大型試験設備の整備は「量産化の前提条件整備」として最重要のインフラ投資だ。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">② 需要創出・アンカーテナンシー構築</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                国内外の打上げ需要獲得支援（宇宙戦略基金における国内打上げ原則、海外市場開拓支援等）。設備投資に係る予見性向上等に資するアンカーテナンシー構築（打上げサービスの計画的調達等）。宇宙活動法改正含む高頻度打上げに関連する各種制度の整備・改善。JAXAに蓄積されている知見の民間活用（H3ロケットにおける民間事業者役割の拡大、技術移転等）。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「アンカーテナンシー（打上げサービスの計画的調達）」は、ロケット産業の「鶏と卵問題」を政府が解決するための政策ツールだ。民間ロケット企業が「量産設備に100億円を投資する」判断を下すためには、「今後10年で毎年最低X機を政府から受注できる」という確実な需要が必要だ。この「先に需要を見せる」というアンカーテナンシーが整備されれば、民間の設備投資が誘発され量産効果でコストが下がり、さらに民需が育つという好循環が生まれる設計だ。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">③ 立地競争力強化</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                宇宙スキル標準等の整備による人材獲得・人材流動性の向上。地域におけるロケット開発や射場運営等に資するための地域未来戦略との連携や特区制度の活用による規制改革等の推進。
+                              
+                    </div>
+                    <div class="note-box">
+                        <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                「特区制度の活用による規制改革」は、コスモポート串本（スペースワン）等の射場周辺で「打上げ頻度に合わせた柔軟な運用」を可能にするための制度整備を指す。現行の宇宙活動法は打上げごとに申請・審査が必要で、「高頻度打上げ（年30回以上）」への対応には制度改正が不可欠だ。宇宙活動法改正がロードマップ素案の政策パッケージに明記されたことは、この法制度的な壁を政府が正式に課題と認識したことを意味する。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">④ 国際連携</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                宇宙戦略基金における各国宇宙機関の協調による「Co-funded事業推進枠組み」を使用した技術開発。ロケットの更なる高度化等に向けた国際協力による新技術等の獲得（CALLISTOプロジェクト（再使用）等）。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    CALLISTOプロジェクト（JAXA・CNES・DLR）：再使用ロケット実証プロジェクトが継続中。日本の再使用技術習得の主要経路として機能 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>Space BD等：海外衛星の打上げ需要開拓のためのビジネスマッチングを継続中。「アジア・中東から日本への打上げ委託」という需要創出の最前線</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 政策実装・官民投資編も読む</div>
+            <div class="next-box-desc">「今、政府と民間がどこまで動いているか」を整理した「政策実装・官民投資編」も公開中です。</div>
+            <a href="https://marketsupporter-ai.com/reports/rocket-policy-investment.html" target="_blank">▶ 政策実装・官民投資編を読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>JAXA「H3ロケット6号機（30形態試験機）の打上げ」プレスリリース（2026年4月24日）</li>
+                <li>SPACE CONNECT「H3ロケット6号機（30形態試験機）の打上げ日程が決定」（2026年4月25日）</li>
+                <li>sorae「JAXAがIHIエアロスペースを競争参加資格停止に 過去10年間の14契約で不適切請求が発覚」（2026年）</li>
+                <li>日経ビジネス「スペースワン、打ち上げ失敗で得た糧 スペースXも『進化』強調」（2026年4月）</li>
+                <li>日経ビジネス「インターステラ、トヨタ流で8億円ロケット開発へ 車部品の供給網も活用」（2026年4月）</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
