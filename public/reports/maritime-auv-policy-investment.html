@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海洋無人機（海洋ドローン）｜政策実装・官民投資編｜戦略17分野 ⑫</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--accent);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 50%;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #a5d6a7;
+        margin-bottom: 12px;
+    }
+
+    .hero-number {
+        font-family: var(--font-mono);
+        font-size: 64px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, .1);
+        position: absolute;
+        top: -12px;
+        right: 0;
+        line-height: 1;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(22px, 5vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #a5d6a7;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #c8e6c9;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--accent);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--accent-dark);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--accent-dark);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--accent);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        border-bottom: 1.5px solid var(--accent-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--accent-mid);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--accent);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ⑫</span>
+        <span>海洋無人機（海洋ドローン）</span>
+        <span>|</span>
+        <span>政策実装・官民投資編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — MARITIME UAV / AUV / USV — POLICY MONITOR</div>
+            <div class="hero-number">12</div>
+            <div class="hero-title">
+                海洋無人機（海洋ドローン）
+                <br>
+                政策実装・官民投資編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（日本成長戦略会議 第3回、2026年3月）構造に基づく政策モニタリングレポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">世界市場規模（2030年）</div>
+                    <div class="kpi-value">100億ドル超</div>
+                    <div class="kpi-unit">年平均8〜15%成長。現在40〜50億ドル</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">日本の目標世界シェア</div>
+                    <div class="kpi-value">世界3割</div>
+                    <div class="kpi-unit">10年後40〜50億ドル程度（試算値）</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">海自UUV納入</div>
+                    <div class="kpi-value">2026年1月20日</div>
+                    <div class="kpi-unit">国内開発の水中無人機を新たに納入</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">AUV官民PF 第3回</div>
+                    <div class="kpi-value">2026年2月5日</div>
+                    <div class="kpi-unit">内閣府 利用実証成果報告会を兼ねて開催</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜政策実装サマリー（2026年04月〜05月）</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜現状認識と目指す姿【目標】</a>
+                    <ul class="toc-sub">
+                        <li>（1）現状：欧米が先行・日本は深海探査で強みを持ちつつ産業化は途上</li>
+                        <li>（2）目標：世界市場シェア3割・安全保障上の国際優位性確保</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜勝ち筋と官民投資の具体像【道筋】</a>
+                    <ul class="toc-sub">
+                        <li>①勝ち筋：機体×運用サービス×海洋データの「高付加価値パッケージ」</li>
+                        <li>②構築すべき機能・官民投資の具体像</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch03">CHAPTER 03｜課題と政策パッケージ【政策手段】</a>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">政策実装サマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          本分野は「防衛と産業の両面で急速にニーズが拡大している」という点で、17分野の中でもダイナミズムが高い。2026年1月20日の海上自衛隊によるUUV（水中無人機）納入は、防衛側の需要が具体化した象徴的な出来事だ。民生側では、内閣府SIP事業での国産小型AUV実海域実証試験の成功（2025年度）と、AUV官民プラットフォーム第3回全体会議（2026年2月5日）での洋上風力OAMユースケースの深度化が進んでいる。「機体の産業化が先行していない中でシェア3割」という目標の達成難度は高いが、「覇権国が存在しない新興市場」という有利な条件を活かす戦略が功を奏するかが注目点だ。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">40〜50億ドル</div>
+                        <div class="stat-unit">世界市場（現在）</div>
+                        <div class="stat-desc">AUV・USV等を含む海洋無人機の世界市場。2030年に100億ドル超に拡大予測</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">年8〜15%</div>
+                        <div class="stat-unit">市場成長率</div>
+                        <div class="stat-desc">海洋無人機の世界市場の年平均成長率予測（海洋産業研究・振興協会）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">2026年1月</div>
+                        <div class="stat-unit">海自UUV納入</div>
+                        <div class="stat-desc">防衛省・海上自衛隊が国内開発UUVを新たに納入。「無人アセット防衛力整備」の具体化</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">10件程度</div>
+                        <div class="stat-unit">AUV事業モデル目標</div>
+                        <div class="stat-desc">2027年度までに洋上風力等の実ビジネスでAUV事業モデルを構築（内閣府AUV戦略）</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">直近2ヶ月の重要動向（2026年4〜5月）</div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き</div>
+                            <ul>
+                                <li>
+                                    <strong>2026年2月5日</strong>
+                                    ：内閣府 AUV官民プラットフォーム第3回全体会議を開催。利用実証事業の成果報告（洋上風力点検・沿岸環境モニタリング・パイプライン調査等）を実施 
+                                    <span class="source-tag">内閣府 2026.2</span>
+                                </li>
+                                <li>
+                                    <strong>2026年1月20日</strong>
+                                    ：防衛省・海上自衛隊が国内開発UUV（水中防衛用小型UUV）を新たに納入。「無人アセットを含む防衛力整備を着実に進め、抑止力・対処力の向上に努める」と公式コメント 
+                                    <span class="source-tag">Newsweek Japan 2026.1</span>
+                                </li>
+                                <li>
+                                    内閣府SIP第3期「海洋課題」：国産小型AUVの実海域実証試験成功（2025年度）。JAMSTECが深海巡航型AUV「うらしま8000」の研究開発を継続中 
+                                    <span class="source-tag">AUV官民PF 第3回 2026.2</span>
+                                </li>
+                                <li>
+                                    2023年12月策定「AUVの社会実装に向けた戦略」：2030年目標として国内AUV産業の育成と海外展開を設定 
+                                    <span class="source-tag">内閣府 2023.12</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き</div>
+                            <ul>
+                                <li>
+                                    <strong>IHI</strong>
+                                    ：洋上風力発電設備（スパー型浮体）のAUV完全自動周回点検に成功。2026年までにスパー型浮体点検システム完成・2030年に水中部保守点検サービス事業化を目標 
+                                    <span class="source-tag">内閣府 AUV利用実証 2026.2</span>
+                                </li>
+                                <li>
+                                    <strong>Fulldepth（スタートアップ）</strong>
+                                    ：内閣府SIP事業で「国産小型AUV」の実海域実証試験に成功。洋上風力OAMを支援する水中ドローン技術を展開中 
+                                    <span class="source-tag">AUV官民PF 第3回 2026.2</span>
+                                </li>
+                                <li>
+                                    JAMSTEC：「しんりゅう6000」によるパイプライン調査（新潟県岩船沖）、航行型AUVの協調群制御実証試験を実施。「うらしま8000」（世界最高水準の深海巡航型）の研究開発継続 
+                                    <span class="source-tag">AUV官民PF 第3回 2026.2</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">重要プレイヤーマップ</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>機能・分野</th>
+                                <th>主要プレイヤー</th>
+                                <th>政策対象・直近動向</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AUV（水中自律型）研究開発</td>
+                                <td>JAMSTEC・海上技術安全研究所（産業技術総合研究所）・IHI</td>
+                                <td>SIP第3期・内閣府利用実証事業。「うらしま8000」が深海探査の世界水準機として機能</td>
+                            </tr>
+                            <tr>
+                                <td>AUV産業化（スタートアップ）</td>
+                                <td>Fulldepth・YST・GABER・東京海洋大学発ベンチャー等</td>
+                                <td>内閣府SIP・SBIR活用。洋上風力OAMの事業化が主戦場</td>
+                            </tr>
+                            <tr>
+                                <td>USV（水上無人機）</td>
+                                <td>三井E&S・新来島HD・国内造船スタートアップ</td>
+                                <td>IMO MASSコード議論が進行中。沿岸警備・環境モニタリング用途で実証段階</td>
+                            </tr>
+                            <tr>
+                                <td>防衛（UUV）</td>
+                                <td>三菱重工・IHI・防衛専門スタートアップ</td>
+                                <td>2026年1月 海自UUV納入。「海底戦争」対応の無人アセット強化が急務</td>
+                            </tr>
+                            <tr>
+                                <td>洋上風力OAM（運用・保守）</td>
+                                <td>IHI・川崎重工・Fulldepth・MODEC</td>
+                                <td>AUVによる自動点検サービスの事業化が2027〜2030年の主要ターゲット</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">１．現状認識と目指す姿【目標】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）現状</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 現状：欧米が石油・ガス×安全保障で先行・日本は深海探査で世界水準の強みを持つ</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      海洋無人機（海洋ドローン）は、欧米を中心に、石油・ガス開発、安全保障等の分野で豊富な資金力を背景に産業化が先行。世界のAUV、USV等の海洋無人機の市場は40〜50億ドル。日本は、造船技術等を背景に、科学調査・技術開発等の分野を中心に技術基盤を発展させ、特に深海探査等の分野で強みを生かし世界をリードする取組を展開。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「日本が深海探査で世界をリード」という現状は、JAMSTECの「しんかい6500」「うらしま」シリーズで実証されてきた技術力が基盤にある。ただし「科学調査・研究用」の深海探査機と「産業利用・安全保障用」のAUV/USVは、用途・設計思想・事業モデルが根本的に異なる。欧米は「石油・ガス開発という大きな需要」を起爆剤に商業用AUVの産業化を先行させたが、日本にはその規模の石油・ガス開発需要がなかった。今後の「洋上風力×防衛」という新たな需要が、日本のAUV産業化の起爆剤になれるかが問われている。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                Teledyne Marine・Kongsberg（ノルウェー）・Saab（スウェーデン）・ECA Group（仏）が商業用AUVの世界市場を寡占。石油・ガス開発での豊富な実績が競争優位の源泉。防衛分野でもDARPAが大型無人潜水艦（Orca）開発を推進。
+                            </p>
+                            <p>
+                                <span class="country-tag">中国</span>
+                                中国船舶科学研究センター（CSSRC）が深海AUV・軍用UUVを開発中。南シナ海での利用を念頭に置いた技術開発が加速。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② 取り巻く環境：デュアルユース需要の急拡大と「群制御」技術の登場</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      AI・センシング・情報処理技術の劇的な進化に伴い、海洋無人機の無人化・高性能化技術が大きく発展。衛星との連携や水中無線通信技術の進展により機体単体ではなく、複数の機体・機種を「群」として一体的に制御する新たな運用技術等が出現し、活用可能性が飛躍的に拡大。安全保障や石油・ガス開発等の既存産業のみならず、洋上風力など新たな産業の出現も含め、適用の機運が高まっている。近年、安全保障分野での無人アセットの重要性は格段に増大し、その強化が喫緊の課題。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「群制御（複数機体の一体制御）」技術は、海洋無人機の産業的・防衛的価値を飛躍的に拡大する。洋上風力発電設備の保守では、複数のAUVが協調して同時に複数箇所を点検できれば、作業時間とコストが大幅に下がる。防衛分野では、複数のUUVが協調して機雷捜索・機雷処分を行う「群機雷掃海」が次世代の海底戦争における核心技術だ。JAMSTECが2025年度に航行型AUVの協調群制御実証試験を実施したことは、この技術分野での日本の先行を示している。
+                                    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）目標</div>
+                    <div class="sub-section">
+                        <div class="sub-section-title">定量目標：世界市場シェア3割（10年後40〜50億ドル程度）・安全保障上の国際優位性確保</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      2030年頃には100億ドルを超えると見込まれる海洋無人機市場において、世界市場で3割のシェア獲得を目指す（10年後、40〜50億ドル程度：一定の仮定の下での試算値）（政策目標として示されている値）。海洋無人機の製造・販売に加え、それらにより取得されるデータ・情報等を加味し、高付加価値モデルとして海外に展開。
+                                    
+                        </div>
+                        <div class="note-box">
+                            <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                      「世界市場シェア3割」という目標は17分野の中でも野心的な部類だ。現在の海洋無人機市場における日本企業のシェアは1%程度と推定されており、10倍超の拡大が必要となる。ただしロードマップ素案が「覇権国は存在しないことから、高付加価値サービスにより国際競争力の獲得が可能」と指摘している通り、「先行者が固定していない新興市場」という有利な条件が存在する。
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">２．勝ち筋と官民投資の具体像【道筋】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）基本戦略：機体（ハード）×運用サービス×海洋データ（ソフト）のパッケージ高付加価値化</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 勝ち筋：「ハード単体の競争」ではなく「データ・運用サービスまで含めたパッケージ」で戦う</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      機体単体（ハード）の省人化や高性能化等の技術開発を継続するとともに、複数の機体・機種の「群」としての利用や周辺技術と併せ、一体的に連動させる運用サービスや取得する海洋データの利活用の方法（ソフト）も含めたパッケージ全体で高付加価値モデルを展開する。我が国の強みである重工業・造船業との連携や革新的技術を有するスタートアップへの支援等により高品質かつ安定的な供給を実現する。デュアルユース技術として、戦略的な技術開発や取得データ、情報の高付加価値化等を狙った高効率な投資戦略の下、国際優位性を確立する。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「機体の競争ではなくパッケージの競争」という戦略は、欧米の既存ハードウェアプレイヤー（Teledyne・Kongsberg等）と正面から戦わない棲み分け戦略だ。海洋探査・点検で「取得したデータをAIで分析して事業者の意思決定に活用できる」という「海洋データビジネス」は、機体単体より付加価値が高く、日本のAIデータ分析技術と海洋調査の実績を組み合わせることで独自の競争優位を形成できる。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        AUV官民プラットフォーム（内閣府）：洋上風力点検・海洋安全保障・海洋環境保全等の利用実証を通じて「データを含むパッケージモデル」の検証を継続中 
+                                        <span class="source-tag">内閣府 2026.2</span>
+                                    </li>
+                                    <li>
+                                        内閣府SIP第3期「海洋課題」：機体のみならず群制御・周辺技術との統合・データ利活用までを対象とした研究開発支援を継続 
+                                        <span class="source-tag">AUV官民PF 第3回 2026.2</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        IHI：洋上風力スパー型浮体のAUV完全自動周回点検成功（2025年度）→2026年 スパー型点検システム完成→2027〜 ケーブル等の点検システム開発→2030年 水中部保守点検サービス事業化というロードマップを実行中 
+                                        <span class="source-tag">内閣府 AUV利用実証 2026.2</span>
+                                    </li>
+                                    <li>
+                                        JAMSTEC：協調群制御実証試験・「うらしま8000」深海AUV開発など、研究機関としての技術開発を継続。民間への技術移転経路が政策課題 
+                                        <span class="source-tag">AUV官民PF 第3回 2026.2</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">欧州</span>
+                                Subsea 7・Saipem等の海洋工事会社がAUVを「機体単体ではなく調査・工事サービス」として顧客に提供。日本が目指す「パッケージモデル」の先行事例として機能している。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）官民投資の具体像</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                海洋無人アセットの獲得・強化。利用用途の拡張性、波及効果、国際競争力等の点から高収益性が期待される領域への重点投資。不確実性を低減させるための先行投資。新規開拓・裾野拡大への寄与が期待されるリーディングプレイヤー・取組への重点投資。実証フィールドなど、実証環境・海域の確保。
+                              
+                    </div>
+                    <div class="note-box">
+                        <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                定量的インパクト（投資誘発効果・経済波及効果）は「官民投資ロードマップ取りまとめまでに提示」と明記。2026年夏の日本成長戦略取りまとめで具体化予定。「実証フィールドの確保」が官民投資の核心的課題として明示されている点は、海洋分野固有の制約（実海域での試験は陸上・空のテストベッドより格段に難しい）を反映している。
+                              
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH03 -->
+        <section id="ch03" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <span class="chapter-title">３．課題と政策パッケージ【政策手段】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">① 国内投資支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                官民協調による利用規模等の「見える化」を図る。官が主導して工程の共有を図り、関連動向等に応じて適時に更新する。民間投資を促す、戦略的なプロトタイプ投資を実現する。取得データ・情報の高付加価値化等を狙った、戦略的な技術開発に対する支援を充実する。デュアルユース技術としての戦略的な方針の下、サプライチェーンの強靭化を図りつつ、国力を増強する。複数の機体・機種の「群」としての利用を促進する実証環境を構築する。先端的な施設・設備等を有する国立研究機関の機能強化等を通じた産官学の取組を強化する。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「官民協調による利用規模等の見える化」は、海洋無人機特有の投資阻害要因への対応だ。洋上風力OAMの市場規模が「将来いつ・どれだけ立ち上がるか」が見えないと、AUVメーカーが設備投資を決断できない。政府が「2030年に洋上風力設備○GW分の点検市場が生まれる」という「見える化」を行うことで、民間の設備投資判断の確実性が上がる。これは⑪ロケット分野のアンカーテナンシーと同じ政策論理だ。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    内閣府SIP第3期「海洋課題」：国産小型AUVの実海域実証成功（2025年度）。JAMSTECが「うらしま8000」を開発中。群制御技術の実証が前進 
+                                    <span class="source-tag">AUV官民PF 第3回 2026.2</span>
+                                </li>
+                                <li>
+                                    防衛省：国内開発UUV納入（2026年1月20日）。「無人アセット防衛力整備」の具体化が予算・調達の実績として積み上がりつつある 
+                                    <span class="source-tag">Newsweek Japan 2026.1</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    Fulldepth：国産小型AUVの実海域実証成功。洋上風力OAMへの水中ドローン適用でスタートアップとして最先行 
+                                    <span class="source-tag">AUV官民PF 第3回 2026.2</span>
+                                </li>
+                                <li>
+                                    IHI：AUV完全自動周回点検成功→2026年 スパー型点検システム完成→2030年 事業化というロードマップを実行中 
+                                    <span class="source-tag">内閣府 AUV利用実証 2026.2</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">② 需要創出・市場確保・社会実装支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                社会実装に向けた実証的取組の実施、実証フィールドの確保を進める。SBIR等を活用したスタートアップ支援を充実する。国際市場開拓に対する支援を強化する。公共調達との連動、府省横断的な取組を進める。規制上の運用の明確化、複数回手続の一括申請など環境整備を進める。導入効果等の向上のための積極的な情報発信、成果の普及を進める。極域などの極限環境や特殊条件下で作動するものの開発や他分野への展開を図る。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    AUV利用実証事業 成果報告会（2026年2月5日）：洋上風力・海洋安全保障・パイプライン調査等の実証成果を公表。「導入効果の向上のための情報発信」の政策実践 
+                                    <span class="source-tag">内閣府 2026.2</span>
+                                </li>
+                                <li>
+                                    2027年度目標：洋上風力発電等の実ビジネスで10件程度のAUV事業モデル構築（AUV社会実装戦略、2023年12月）が継続目標として機能 
+                                    <span class="source-tag">内閣府 2023.12</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    USV（水上無人機）：JET-Robotics調査（2026年4月）によれば、洋上風力の保守・点検・沿岸警備・環境モニタリングを中心に実証から業務運用への移行が進んでいる 
+                                    <span class="source-tag">JET-Robotics 2026.4</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">③ 国際連携</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                我が国が強みを有する技術基盤を生かした、関係国との協調によるバリューチェーンの形成。同志国・グローバルサウス等への市場展開を視野に入れた、運用サービスや取得する海洋データの利活用の方法（ソフト）も含めたパッケージ全体としての展開等による協力関係の構築。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「グローバルサウスへのパッケージ展開」は、海洋無人機分野での日本のグローバル戦略の核心だ。東南アジア・アフリカ・太平洋島嶼国等では、沿岸域の環境モニタリング・漁業資源調査・海底インフラ点検という需要があるが、欧米の高価な商業AUVには手が届かない。日本のJAMSTECが蓄積した「科学調査×現地技術者育成」のODA的な展開モデルと、産業用AUVの提供を組み合わせれば、「技術外交×市場開拓」の双方を実現できる。
+                              
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 続編：課題・政策パッケージ編</div>
+            <div class="next-box-desc">「なぜ日本の海洋無人機産業化が進まないのか」「実証フィールド確保・事業モデル不透明・欧米との規模差の3重課題」を整理した「課題・政策パッケージ編」も近日公開予定です。</div>
+            <a href="https://marketsupporter-ai.com" target="_blank">▶ marketsupporter-ai.com で読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>内閣府総合海洋政策推進事務局「令和7年度 AUV官民プラットフォーム 第3回全体会議 資料2-3」（2026年2月5日）</li>
+                <li>内閣府「利用実証事業について：海洋政策」（AUV利用実証事業成果報告会 2026年2月5日）</li>
+                <li>内閣府総合海洋政策推進事務局「AUVの社会実装に向けた戦略」（2023年12月）</li>
+                <li>Newsweek Japan「海上自衛隊が水中無人機（UUV）を導入 中国の海軍拡張に新たな対抗手段」（2026年1月23日）</li>
+                <li>IHI「次世代の海洋産業をリードするIHIのAUV技術」— IHI技術情報</li>
+                <li>JET-Robotics「【2026年最新】USV（無人水上艇）とは？特徴や選び方、おすすめメーカーを解説」（2026年4月30日）</li>
+                <li>一般社団法人海洋産業研究・振興協会「海洋無人機の市場規模動向」</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
