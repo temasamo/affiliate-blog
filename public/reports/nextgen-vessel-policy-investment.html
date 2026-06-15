@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>次世代船舶（ゼロエミッション船）｜政策実装・官民投資編｜戦略17分野 ⑬</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--accent);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 50%;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #a5d6a7;
+        margin-bottom: 12px;
+    }
+
+    .hero-number {
+        font-family: var(--font-mono);
+        font-size: 64px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, .1);
+        position: absolute;
+        top: -12px;
+        right: 0;
+        line-height: 1;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(20px, 4.5vw, 28px);
+        font-weight: 700;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #a5d6a7;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #c8e6c9;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--accent);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--accent-dark);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--accent-dark);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--accent);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        border-bottom: 1.5px solid var(--accent-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--accent-mid);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--accent);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ⑬</span>
+        <span>次世代船舶（ゼロエミッション船）</span>
+        <span>|</span>
+        <span>政策実装・官民投資編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — NEXT-GENERATION VESSELS / ZERO EMISSION SHIPS — POLICY MONITOR</div>
+            <div class="hero-number">13</div>
+            <div class="hero-title">
+                次世代船舶（ゼロエミッション船）
+                <br>
+                政策実装・官民投資編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（日本成長戦略会議 第3回、2026年3月）構造に基づく政策モニタリングレポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">2035年 建造量目標</div>
+                    <div class="kpi-value">1,800万総トン</div>
+                    <div class="kpi-unit">市場規模約5兆円（2024年比倍増）</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">官民投資規模（2035年まで）</div>
+                    <div class="kpi-value">1兆円規模</div>
+                    <div class="kpi-unit">グリーン投資2,800億円＋建造能力向上7,300億円</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">NYK アンモニア燃料輸送船</div>
+                    <div class="kpi-value">2026年11月</div>
+                    <div class="kpi-unit">AFMGC 竣工予定。2026年中に外航商業運航達成目標</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">GI基金 次世代船舶</div>
+                    <div class="kpi-value">393.4億円</div>
+                    <div class="kpi-unit">アンモニア燃料船・水素燃料船・メタンスリップ削減</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜政策実装サマリー（2026年04月〜05月）</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜現状認識と目指す姿【目標】</a>
+                    <ul class="toc-sub">
+                        <li>（1）現状：建造量減少傾向・韓国・中国との厳しい競争・ゼロエミッション化というゲームチェンジ</li>
+                        <li>（2）目標：2035年 1,800万総トン・国際社会における不可欠な役割確立</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜勝ち筋と官民投資の具体像【道筋】</a>
+                    <ul class="toc-sub">
+                        <li>①ゼロエミッション船先行者利益戦略：アンモニア→水素→合成燃料の段階的展開</li>
+                        <li>②官民1兆円投資の具体像</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch03">CHAPTER 03｜課題と政策パッケージ【政策手段】</a>
+                    <ul class="toc-sub">
+                        <li>①船舶建造体制の強靱化</li>
+                        <li>②造船人材の確保・育成</li>
+                        <li>③脱炭素化等を通じたゲームチェンジ（IMO国際ルール主導）</li>
+                        <li>④安定的な需要の確保</li>
+                        <li>⑤同志国・グローバルサウスとの連携</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">政策実装サマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          本分野は「2026年が世界最初のアンモニア燃料大型外航船の商業運航元年」という歴史的転換点に立っている。日本郵船（NYK）のアンモニア燃料アンモニア輸送船（AFMGC）が2026年11月竣工・2026年中に外航商業運航達成を目標としており、GI基金プロジェクト（393.4億円）の最初の商業的マイルストーンだ。世界初の商用アンモニア燃料タグボートは2024年8月竣工・同年11月実証航海完了でGHG90%以上削減を達成済み。「ゼロエミッション化による大幅なコスト上昇」と「中韓との競争」という二重の課題の中で、「世界最初の実績を積み上げた者が標準を設定する」という先行者利益戦略が機能し始めている。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">2026年11月</div>
+                        <div class="stat-unit">AFMGC竣工</div>
+                        <div class="stat-desc">NYK アンモニア燃料アンモニア輸送船（AFMGC）竣工予定。2026年中の外航商業運航達成目標</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">GHG90%超</div>
+                        <div class="stat-unit">削減達成済み</div>
+                        <div class="stat-desc">世界初の商用アンモニア燃料タグボートの実証航海（2024年11月）で達成した温室効果ガス削減率</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">900万総トン</div>
+                        <div class="stat-unit">日本の建造量（2024年）</div>
+                        <div class="stat-desc">2019年1,600万総トンから急減。2035年目標1,800万総トンへの回復が急務</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">6割</div>
+                        <div class="stat-unit">ZE船比率（2035年）</div>
+                        <div class="stat-desc">ゼロエミッション船等の建造需要が2035年には建造需要全体の6割程度に達する見込み</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">直近2ヶ月の重要動向（2026年4〜5月）</div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き</div>
+                            <ul>
+                                <li>
+                                    GI基金「次世代船舶の開発」プロジェクト（393.4億円）：アンモニア燃料船・水素燃料船・LNGメタンスリップ削減の3テーマが進行中。アンモニア燃料船は「2026年より実証運航開始、2028年までに商業運航実現」がマイルストーン 
+                                    <span class="source-tag">国土交通省・NEDO</span>
+                                </li>
+                                <li>
+                                    LNG燃料船のメタンスリップ削減率60%以上の実現：2026年目標として技術開発が進行中。2026年4月時点で「2026年頃のエンジン搭載船と同レベル」の進捗と報告 
+                                    <span class="source-tag">GI基金2025年WG報告 2025.8</span>
+                                </li>
+                                <li>
+                                    IMO（国際海事機関）：2050年カーボンニュートラル目標に向けた国際ルール策定を日本が主導。GHG削減に関する中長期戦略が継続交渉中 
+                                    <span class="source-tag">国土交通省</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き</div>
+                            <ul>
+                                <li>
+                                    <strong>2026年11月竣工予定</strong>
+                                    ：NYK（日本郵船）・日本シップヤード・ジャパンエンジンコーポレーション（J-ENG）・IHI原動機が共同開発するアンモニア燃料アンモニア輸送船（AFMGC）が2026年中の外航商業運航達成を目標 
+                                    <span class="source-tag">GI基金WG報告 2025.8</span>
+                                </li>
+                                <li>
+                                    NYK：世界初の商用アンモニア燃料タグボート竣工（2024年8月）・実証航海完了（2024年11月）で90%以上のGHG削減を達成済み 
+                                    <span class="source-tag">GI基金WG報告 2025.8</span>
+                                </li>
+                                <li>
+                                    IPS（今治造船）：アンモニア燃料タグボート搭載用主機関（28ADF）の開発完了。国際燃焼機関会議CIMAC2025で発表済み 
+                                    <span class="source-tag">GI基金WG報告 2025.8</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">重要プレイヤーマップ</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>役割</th>
+                                <th>主要プレイヤー</th>
+                                <th>政策対象・直近動向</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>造船所（大手）</td>
+                                <td>今治造船・ジャパンマリンユナイテッド（JMU）・三菱造船・川崎重工・大島造船所</td>
+                                <td>ゼロエミッション船の建造体制整備が急務。GI基金・GX経済移行債が設備投資を支援</td>
+                            </tr>
+                            <tr>
+                                <td>舶用エンジンメーカー</td>
+                                <td>ジャパンエンジンコーポレーション（J-ENG）・三菱重工・IHI原動機</td>
+                                <td>アンモニア・水素燃料エンジンの開発が最重要。J-ENGがAFMGCのエンジンを担当</td>
+                            </tr>
+                            <tr>
+                                <td>海運会社（アンカー顧客）</td>
+                                <td>日本郵船（NYK）・商船三井・川崎汽船（K Line）</td>
+                                <td>ゼロエミッション船の最初の発注者として「初期需要創出」を担う。NYKがAFMGCを発注済み</td>
+                            </tr>
+                            <tr>
+                                <td>バンカリング（燃料供給）</td>
+                                <td>ENEOS・岩谷産業・住友商事</td>
+                                <td>アンモニア燃料の港湾での燃料供給体制整備が2026〜2028年の重要課題</td>
+                            </tr>
+                            <tr>
+                                <td>国際標準化・ルール形成</td>
+                                <td>日本海事協会（ClassNK）・国土交通省・国際海事機関（IMO）</td>
+                                <td>ClassNKがアンモニア燃料船ガイドラインを策定済み。IMOでの国際ルール主導が継続中</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">１．現状認識と目指す姿【目標】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）現状</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 現状：建造量2024年900万総トン（2019年比44%減）・ゼロエミッション化がゲームチェンジの機会</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      近年、我が国造船業の建造量は減少傾向が継続（2019年1,600万総トン→2024年900万総トン）。足下では、我が国船主の1年間の造船需要を下回り、海外の造船所に頼らざるを得ない状況。ゼロエミッション船等の建造需要は増大し、2035年には建造需要の6割程度に達すると見込まれており、造船市場におけるゲームチェンジの機会になる。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「ゼロエミッション化がゲームチェンジ」という判断の核心は、「既存技術（重油燃料船）では中国・韓国に価格で勝てないが、新技術（アンモニア・水素・合成燃料）では全社が新規参入者として競争している」という構造の転換だ。日本の造船業は省エネ技術・品質・技術力で優位を持っており、新燃料対応という新しい技術課題において「先に高品質な実績を積み上げた者が国際標準を設定できる」という先行者利益戦略が成立する。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">中国</span>
+                                中国造船所が世界シェア約50%を占め低コスト量産で圧倒。ただしゼロエミッション船の技術開発は遅れており「重油燃料船での競争力→ゼロエミッション船での技術的遅れ」というパターンの可能性がある。
+                            </p>
+                            <p>
+                                <span class="country-tag">韓国</span>
+                                HD現代（旧現代重工業）・サムスン重工業・韓進重工業が大型LNGタンカー・コンテナ船で高シェア。メタノール燃料船での受注も積み上げ中。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）目標</div>
+                    <div class="sub-section">
+                        <div class="sub-section-title">定量目標：2035年 1,800万総トン（市場規模約5兆円）・国際社会における不可欠な役割確立</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      アンモニア燃料船をはじめとしたゼロエミッション船等の次世代船舶建造技術で世界を主導する。次世代船舶に係る技術を梃子に、我が国において1,800万総トン（市場規模約5兆円）を建造する（2035年）（政策目標として示されている値）。中国・韓国の造船業に負けない国際競争力を確保。我が国の安全保障を支える体制（日本の船は日本で造る）を実現。
+                                    
+                        </div>
+                        <div class="note-box">
+                            <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                      「1,800万総トン（2035年目標）」は2024年900万総トンの約2倍という難度の高い目標だ。実現には①ゼロエミッション船での先行者利益獲得、②AI・ロボット活用による生産性向上、③設備投資による建造能力拡大の3つが同時進行で必要だ。2035年まで約9年という時間軸の中で官民1兆円規模の投資（グリーン投資2,800億円＋建造能力向上7,300億円）が計画されている。
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">２．勝ち筋と官民投資の具体像【道筋】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）基本戦略</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 勝ち筋：アンモニア→水素→合成燃料の段階的技術リードと省エネ技術の維持</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      将来、船舶の大半がLNG、メタノール、アンモニア、水素等の新燃料に移行する想定の下、次世代船舶の技術開発・生産体制整備・国際ルールの策定の主導・導入支援策を通じた初期需要の創出等により、中国や韓国に対する優位性を確立し、先行者利益とシェアを獲得する。加えて、日本が優位性を持つ省エネ技術の開発を継続し、ライフサイクルでのコスト（船価＋燃料費）での優位性を維持する。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「ライフサイクルコスト（船価＋燃料費）での優位性」という概念が重要だ。ゼロエミッション船は船価が高くても燃料費（脱炭素燃料の価格低下傾向）を含めた総コストで従来船に勝てれば採用される。日本の省エネ技術（推進効率・熱効率の高いエンジン・船型）は「少ない燃料で多く運ぶ」という強みであり、燃料コスト低減を通じてライフサイクルコストで競争優位を持てる。GI基金でのメタンスリップ削減技術（LNG船の実質GHG排出削減）も同じ論理だ。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        GI基金「次世代船舶の開発」（393.4億円）：アンモニア燃料船（2028年商業運航目標）・水素燃料船（2030年商業運航目標）・LNGメタンスリップ削減（2026年60%以上削減目標）の3テーマが並走 
+                                        <span class="source-tag">国土交通省・NEDO</span>
+                                    </li>
+                                    <li>
+                                        IMO 国際ルール主導：2050年カーボンニュートラルに向けた中長期戦略での技術基準設定において日本が主導的役割を継続 
+                                        <span class="source-tag">国土交通省</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        NYK・日本シップヤード・J-ENG：AFMGC（アンモニア燃料アンモニア輸送船）2026年11月竣工・2026年中に外航商業運航達成を目標。乗組員教育・安全ガイドライン整備も並行して進行 
+                                        <span class="source-tag">GI基金WG報告 2025.8</span>
+                                    </li>
+                                    <li>
+                                        今治造船グループ（IPS）：アンモニア燃料タグボート搭載用主機関（28ADF）の開発完了。CIMAC2025で国際発表済み 
+                                        <span class="source-tag">GI基金WG報告 2025.8</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">欧州</span>
+                                デンマーク（AP Møller-Maersk）・ノルウェー（Equinor）が2024年からメタノール燃料コンテナ船を商業運航中。欧州のCPRS（炭素価格設定制度）が欧州域内航路での脱炭素化インセンティブとして機能。
+                            </p>
+                            <p>
+                                <span class="country-tag">韓国</span>
+                                サムスン重工業・HD現代がメタノール燃料コンテナ船・LNGタンカーで受注拡大。アンモニア燃料船でも開発を加速しており、日本との先行競争が激化。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② DX・AI・次世代造船ロボット：生産性向上で競争優位を確固たるものに</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      日本の造船業の強みである高い生産性について、DX、AI、ロボット等の導入によって更なる向上を図り、競争優位性を確固たるものにする。また、需要変動やロット発注等に対して柔軟な体制を構築するとともに、連続建造等による生産性向上・低コスト化を図る。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「次世代型造船ロボット（AIを活用した自律移動溶接ロボット等）」の研究開発は、造船という労働集約型産業の人手不足という根本課題への対応だ。ゼロエミッション船は従来船より複雑な工程（新燃料タンク・燃料配管・除害システム等）が追加されるため、技能者の絶対数が不足するリスクが高い。ロボットによる自動溶接・AI設計支援・AR/VRによる技能者育成の組み合わせが、2035年1,800万総トン目標の「生産能力確保」の鍵を握る。
+                                    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）官民投資の具体像</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                ①非価格競争力向上のためのグリーン投資（官民：2,800億円規模）。②次世代船舶の建造を含む造船能力の抜本的向上（官民：7,300億円規模）。2035年までに官民で1兆円規模の投資を想定。
+                              
+                    </div>
+                    <div class="note-box">
+                        <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                「2035年まで官民1兆円」という投資規模は、年換算約1,100億円の規模感だ。GI基金393.4億円（国費）＋GX経済移行債を活用したゼロエミッション船導入支援（需要創出）＋民間造船所の設備投資の合算として設計されている。2025〜2050年の総投資額は25〜30兆円と推計されており（日本船主協会）、1兆円はその出発点だ。
+                              
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH03 -->
+        <section id="ch03" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <span class="chapter-title">３．課題と政策パッケージ【政策手段】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">① 船舶建造体制の強靱化</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                ゼロエミッション船等の国内生産体制を整備するため、生産設備の整備を支援する。AIを活用した次世代型造船ロボットの研究開発を支援する。造船所の建造能力を向上する生産設備の整備を支援する。ブロック製造の連携・協業等、造船・舶用サプライチェーンを含めた生産能力向上に係る整備の支援を検討する。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    GX経済移行債：ゼロエミッション船の建造を含む造船能力向上への設備投資支援（官民7,300億円規模）が継続中 
+                                    <span class="source-tag">経産省・国交省</span>
+                                </li>
+                                <li>
+                                    次世代型造船ロボット研究開発支援：AIを活用した自律移動溶接ロボット等の研究開発支援がロードマップ素案の政策パッケージに明記 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>今治造船・JMU等の大手造船所：ゼロエミッション船建造に向けた設備投資・建造体制整備が継続。「ゼロエミッション船は従来船より複雑で工数が多い」という技術的負荷の高さへの対応が最大課題</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">② 造船人材の確保・育成</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                造船人材（技術者及び技能者）の確保に向けて、魅力ある職場づくりの在り方を検討するとともに、造船業の魅力発信を推進する。造船人材の育成のため、大学等における次世代船舶の建造に貢献する教育体制の強化、地域における教育体制の充実や大学・高校・企業間の連携・ネットワーク強化の在り方を検討する。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「造船人材不足」は分野固有の深刻な課題だ。造船所は地方（今治・長崎・佐世保・呉・神戸・横浜等）に立地しており、若者の都市集中により採用が困難になっている。さらにゼロエミッション船は従来の重油船より設計の複雑度が高く（アンモニア・水素の毒性・引火性への対応設計等）、技術力の高い設計者が必要になる。「造船業の魅力発信」という政策課題は、「地方に立地する製造業」への若者誘導という産業構造上の困難さを反映している。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">③ 脱炭素化等を通じたゲームチェンジ（IMO国際ルール主導）</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                国際海事機関（IMO）における国際ルールの策定を主導する。GI基金を通じて、ゼロエミッション船関連の技術開発・実証を支援する。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「IMOでの国際ルール主導」は、「技術開発の投資回収を国際標準で守る」という戦略だ。日本がアンモニア燃料船の安全基準・排出測定方法・燃料供給設備規格をIMOで先に設定できれば、日本企業が開発した技術・設備が「デファクトスタンダード」となり、世界の競合他社は日本の仕様に対応した製品を開発せざるを得なくなる。ClassNKのアンモニア燃料船ガイドライン策定は、この「標準化先行」戦略の民間側の実践だ。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">④ 安定的な需要の確保</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                GX経済移行債の活用や、海運税制を通じて、ゼロエミッション船等の導入を支援することで、早期に建造実績を積み重ねる。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「GX経済移行債による導入支援」は、ゼロエミッション船が従来船より高価であるという価格障壁への政策的対応だ。海運会社がゼロエミッション船を発注するためには「新燃料の価格や供給安定性」「従来船との価格差の補填」という二つの問題を解決する必要がある。政府の資金支援で「最初の100隻」の発注を生み出せれば、量産効果でコストが下がり、その後の普及が自走し始めるという「ティッピングポイント戦略」だ。
+                              
+                    </div>
+                    <div class="overseas-box">
+                        <div class="overseas-label">// 海外動向</div>
+                        <p>
+                            <span class="country-tag">欧州</span>
+                            EU-ETS（欧州排出権取引制度）が2024年から海上輸送に適用開始。CO2に価格を付けることでゼロエミッション船の経済合理性を高める制度設計が先行。日本の「GX経済移行債による導入支援」と政策設計の思想が異なるが、「ゼロエミッション船の需要創出」という目的は共通。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">⑤ 同志国・グローバルサウスとの連携</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                建造能力拡大に向けた同志国・グローバルサウス等との協力・人材環流及び海外展開について検討する。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「人材環流」という表現に注目だ。フィリピン・インドネシア・ベトナム等のアジア諸国から造船所への技能者受け入れを「人材環流」として戦略的に位置づけている。これは「日本の造船技術を学んだ技能者が自国に帰国した際に日本式の技術・品質標準を普及する」という長期的な技術外交の側面も持つ。グローバルサウスへの日本製ゼロエミッション船の輸出と、技能者の受け入れを連動させる「経済安全保障的な人材戦略」だ。
+                              
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 続編：課題・政策パッケージ編</div>
+            <div class="next-box-desc">「なぜ日本の造船業の建造量が回復しないのか」「高コスト・人手不足・中韓競争・バンカリング未整備の4重課題」を整理した「課題・政策パッケージ編」も近日公開予定です。</div>
+            <a href="https://marketsupporter-ai.com" target="_blank">▶ marketsupporter-ai.com で読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>国土交通省・NEDO「グリーンイノベーション基金事業 次世代船舶の開発」プロジェクト概要</li>
+                <li>産業構造審議会 グリーンイノベーションプロジェクト部会「次世代船舶の開発 2025年度WG報告資料」（2025年8月1日）— 経済産業省</li>
+                <li>日本シップヤード・ジャパンエンジンコーポレーション・IHI原動機「GI基金事業の取組み状況について」（2025年8月）</li>
+                <li>NEDO「次世代船舶向け2ストロークエンジン、世界初のアンモニア混焼試験などを開始」</li>
+                <li>脱炭素技術センター「ゼロエミッション船とは」</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
