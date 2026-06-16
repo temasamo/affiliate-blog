@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>次世代船舶（ゼロエミッション船）｜課題・政策パッケージ編｜戦略17分野 ⑬</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --warn: #e65100;
+        --warn-light: #fff3e0;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--warn);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #bf360c 0%, #e64a19 50%, #ff7043 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #ffccbc;
+        margin-bottom: 12px;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(20px, 4.5vw, 28px);
+        font-weight: 700;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #ffccbc;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #ffccbc;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 17px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #ffccbc;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--warn);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--warn);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--warn);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--warn);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-header.green {
+        background: var(--accent);
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--warn);
+        border-bottom: 1.5px solid var(--warn-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .section-title.green {
+        color: var(--accent-dark);
+        border-bottom-color: var(--accent-light);
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--warn);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .sub-section-title.green::before {
+        background: var(--accent-mid);
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .bottleneck-box {
+        background: var(--warn-light);
+        border-left: 3px solid var(--warn);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .bottleneck-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--warn);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--warn);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--warn);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ⑬</span>
+        <span>次世代船舶（ゼロエミッション船）</span>
+        <span>|</span>
+        <span>課題・政策パッケージ編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — NEXT-GENERATION VESSELS — CHALLENGE & POLICY PACKAGE</div>
+            <div class="hero-title">
+                次世代船舶（ゼロエミッション船）
+                <br>
+                課題・政策パッケージ編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（3）官民投資促進に向けた課題と政策パッケージ 構造に基づく分析レポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック①</div>
+                    <div class="kpi-value">
+                        受注〜竣工
+                        <br>
+                        3〜4年ラグ
+                    </div>
+                    <div class="kpi-unit">受注時確定の船価で材料費7割調達</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック②</div>
+                    <div class="kpi-value">
+                        ゼロエミ化
+                        <br>
+                        コスト上昇
+                    </div>
+                    <div class="kpi-unit">1隻約100億円。年100隻で年1兆円超</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック③</div>
+                    <div class="kpi-value">
+                        設計・技能者
+                        <br>
+                        人材不足
+                    </div>
+                    <div class="kpi-unit">次世代船は従来船より複雑・工数増</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック④</div>
+                    <div class="kpi-value">
+                        バンカリング
+                        <br>
+                        インフラ未整備
+                    </div>
+                    <div class="kpi-unit">アンモニア・水素の港湾供給体制が課題</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜課題・政策パッケージサマリー</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜（1）投資促進に向けた課題</a>
+                    <ul class="toc-sub">
+                        <li>① リソース制約：規模の小ささ・設備不足・人材不足</li>
+                        <li>② 不確実性の要因</li>
+                        <li>a. 事業：受注〜竣工3〜4年ラグと鋼材費7割構造</li>
+                        <li>b. 市場：日中韓9割超の国際競争とゼロエミッション需要の不確実性</li>
+                        <li>c. バンカリング：アンモニア・水素の燃料供給インフラ未整備</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜（2）講じるべき政策パッケージ</a>
+                    <ul class="toc-sub">
+                        <li>①船舶建造体制の強靱化</li>
+                        <li>②造船人材の確保・育成</li>
+                        <li>③脱炭素化等を通じたゲームチェンジ</li>
+                        <li>④安定的な需要の確保</li>
+                        <li>⑤同志国・グローバルサウスとの連携</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">課題・政策パッケージサマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          次世代船舶の課題は「コスト・人材・需要・インフラ」の4重構造だ。ゼロエミッション船は1隻あたり約100億円（従来の重油燃料船の1.5〜2倍）という大幅なコスト上昇が見込まれており、「誰が最初にゼロエミッション船を発注するか」という需要創出の問題が最大の投資阻害要因となっている。GX経済移行債による導入支援は、この「最初の100隻」の発注を生み出すための政策手段だ。「バンカリング（港湾での燃料供給体制）未整備」という海洋インフラの問題も、アンモニア・水素燃料船の普及の前提条件として重要な課題だ。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">約100億円</div>
+                        <div class="stat-unit">ZE船1隻の建造費</div>
+                        <div class="stat-desc">ゼロエミッション船を年間100隻建造すると年約1兆円。2025〜2050年の総投資額は25〜30兆円推計（日本船主協会）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">約7割</div>
+                        <div class="stat-unit">材料費の船価比率</div>
+                        <div class="stat-desc">鋼材・舶用機器等が船価の約7割を占める。受注後に調達するため物価上昇が利益を直撃する構造</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">3〜4年</div>
+                        <div class="stat-unit">受注〜竣工ラグ</div>
+                        <div class="stat-desc">近年の受注から竣工までの期間。受注時に確定した船価が将来の材料価格変動に晒される</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">9割以上</div>
+                        <div class="stat-unit">日中韓シェア</div>
+                        <div class="stat-desc">世界の造船市場を日中韓で占有する寡占構造。その中で日本は価格で中韓に劣後</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">4重ボトルネックと政策パッケージの対応関係</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>ボトルネック</th>
+                                <th>具体的障壁</th>
+                                <th>政策パッケージ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>① 受注〜竣工3〜4年ラグ×材料費7割構造</td>
+                                <td>受注時の価格確定後に調達するため、物価上昇局面で利益が圧迫される構造的リスク</td>
+                                <td>需要確保（GX経済移行債・海運税制による導入支援で安定的な発注量を確保）</td>
+                            </tr>
+                            <tr>
+                                <td>② ゼロエミッション化コスト上昇</td>
+                                <td>ZE船は従来船の1.5〜2倍の建造費。海運会社が発注に踏み切れない価格障壁</td>
+                                <td>需要確保（GX経済移行債・長期低利融資で価格差を補填）</td>
+                            </tr>
+                            <tr>
+                                <td>③ 人材不足×技術的複雑化</td>
+                                <td>設計・技能者不足が深刻。ZE船は従来船より複雑で工数が多く人材需要が増大</td>
+                                <td>人材育成（大学・高校・企業連携・魅力ある職場づくり）</td>
+                            </tr>
+                            <tr>
+                                <td>④ バンカリングインフラ未整備</td>
+                                <td>アンモニア・水素の港湾での燃料供給体制が未整備。ZE船が就航しても燃料補給できない</td>
+                                <td>GI基金（舶用バンカリング船の開発・燃料供給体制の構築）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">（1）投資促進に向けた課題</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">① リソース制約</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">規模の小ささ・設備不足・人材不足の三重制約</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      韓国・中国の造船所と比べ、事業所あたりの人数・敷地面積・生産量などの規模が小さい。鋼材・資材の高騰を背景に船価が高く、中国・韓国造船業との厳しい競争の中で建造能力を縮小。ドック、クレーンを始めとした大規模な施設・設備やAI・ロボティクスを活用した自動化設備が必要。建造能力拡大には長期間・多額の設備投資が必要。設計や現場において人材不足が深刻化。特に、次世代船舶は、従来の船舶より複雑で工数が多いため、技術力が高い設計者や技能者が必要となる。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      日本の造船所は「一事業所あたりの生産量」が韓国・中国と比較して小さく、「規模の経済」が働きにくい。韓国のHD現代・サムスン重工業は超大型ドックで万トン単位のコンテナ船を複数同時建造する「工場型」の生産体制を持つが、日本の多くの造船所はそのスケールを持っていない。加えて「ゼロエミッション船は従来船より複雑で工数が多い」という技術的負荷の増大が、既に逼迫している人材・設備のリソースをさらに圧迫する。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        次世代型造船ロボット研究開発支援：AIを活用した自律移動溶接ロボット等の研究開発を支援。「人手不足×技術的複雑化」を技術で突破する設計 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                    <li>
+                                        GX経済移行債：造船能力の抜本的向上のための設備投資支援（官民7,300億円規模）が継続中 
+                                        <span class="source-tag">経産省・国交省</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>今治造船グループ：今治・西条等の愛媛県の造船クラスターが国内最大規模の造船拠点として機能。「連続建造」による生産効率化を推進中</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">② 不確実性の要因</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">a. 事業：受注〜竣工3〜4年ラグ×材料費7割×物価上昇の三重リスク</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      船舶の受注と竣工の期間が長い（近年は3〜4年）。船価の約7割を材料費（鋼材、舶用機器等）が占め、船舶受注後（船価確定後）に材料を調達するため、物価の上昇局面で利益が圧迫される傾向。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      造船業固有のリスク構造は「価格固定後の期間が長すぎる」という問題だ。2021〜2023年のような鋼材・舶用機器の急激な価格上昇局面では、「受注時に確定した船価で3〜4年後に竣工する」という構造が、造船所の利益を直撃する。一方でゼロエミッション船への技術移行という追加の不確実性（アンモニア・水素の燃料コスト・新規部品の価格動向）が、この構造リスクをさらに複雑にしている。
+                                    
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">b. 市場：ゼロエミッション化によるコスト上昇と早急な需要創出の矛盾</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      造船業は世界単一市場で厳しい国際競争（日中韓で9割以上）があり、次世代船舶についても、コスト面での国際競争が厳しい。ゼロエミッション化による大幅なコスト上昇が起きる見込みであることを踏まえ、早急な需要の創出が必要。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      「ゼロエミッション化によるコスト上昇」と「早急な需要創出の必要性」という二つの要請は表面上矛盾する。コストが高いから需要が立ち上がらない、需要が立ち上がらないから量産効果でコストが下がらない。この「鶏と卵」を断ち切るのが政府による「GX経済移行債を活用したゼロエミッション船等の導入支援」という政策だ。ゼロエミッション船を年間100隻建造するための費用は1隻あたり約100億円・年計約1兆円という規模であり、2025〜2050年の総投資額は25〜30兆円と推計される（日本船主協会）。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">欧州</span>
+                                EU-ETS（排出権取引制度）が2024年から海上輸送に適用され、CO2に価格（トンあたり数万円）が付くことでゼロエミッション船の経済合理性を高める制度設計が先行。市場メカニズムによる需要創出という点で日本のGX経済移行債（補助金型）と異なるアプローチ。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">c. バンカリング：アンモニア・水素の港湾燃料供給インフラ未整備</div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      「アンモニア燃料船が竣工しても、寄港する港湾にアンモニア燃料補給設備がなければ商業運航できない」というバンカリング問題は、ゼロエミッション船普及の物理的な前提条件だ。アンモニアは毒性・腐食性が強く、特殊な保管・移送・バンカリング設備が必要だ。水素はさらに沸点が低く（−253℃）、専用の液化水素タンクや断熱設備が必要となる。GI基金では「舶用アンモニア燃料供給体制の構築（バンカリング船開発）」が明示的な研究開発テーマとして含まれている。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        GI基金「舶用アンモニア燃料供給体制の構築」：バンカリング船の開発がGI基金アンモニアテーマの一部として進行中 
+                                        <span class="source-tag">国土交通省・NEDO</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>NYK・ENEOS・岩谷産業等：アンモニア燃料サプライチェーンの構築に向けた取組が進行中。バンカリングインフラの整備は造船所・海運・エネルギー会社の横断的な協力が必要</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header chapter-header green">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">（2）講じるべき政策パッケージ</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title green">① 船舶建造体制の強靱化</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                ゼロエミッション船等の国内生産体制を整備するため、生産設備の整備を支援する。AIを活用した次世代型造船ロボットの研究開発を支援する。造船所の建造能力を向上する生産設備の整備を支援する。ブロック製造の連携・協業等、造船・舶用サプライチェーンを含めた生産能力向上に係る整備の支援を検討する。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    GX経済移行債：造船能力向上への官民7,300億円規模の投資支援が継続。ドック・クレーン・自動化設備への設備投資を補助 
+                                    <span class="source-tag">経産省・国交省</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>大手造船所：設備更新・自動化投資が継続。「次世代型造船ロボット」の研究開発が政府支援を受けて進行中</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">② 造船人材の確保・育成</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                造船人材（技術者及び技能者）の確保に向けて、魅力ある職場づくりの在り方を検討するとともに、造船業の魅力発信を推進する。大学等における次世代船舶の建造に貢献する教育体制の強化、地域における教育体制の充実や大学・高校・企業間の連携・ネットワーク強化の在り方を検討する。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「造船業の魅力発信」という政策課題は日本の製造業全般が直面する「地方立地・3Kイメージ」という採用難の構造問題への対応だ。今治（愛媛）・長崎・佐世保等の造船業の集積地では、地方若者の流出と高齢化による技能者不足が深刻化している。「次世代船舶の建造という最先端の仕事」という魅力の再定義と、大学・高校との連携による早期接触が鍵となる。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">③ 脱炭素化等を通じたゲームチェンジ</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                国際海事機関（IMO）における国際ルールの策定を主導する。GI基金を通じて、ゼロエミッション船関連の技術開発・実証を支援する。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    IMO：2050年カーボンニュートラル目標に向けた国際ルール策定で日本が主導的役割を継続。「早期の建造実績→標準設定権」という先行者利益戦略の実践 
+                                    <span class="source-tag">国土交通省</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    ClassNK（日本海事協会）：アンモニア燃料船ガイドラインを策定済み。設計基準の先行整備が「日本の設計思想がグローバル標準になる」経路として機能 
+                                    <span class="source-tag">ClassNK</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">④ 安定的な需要の確保</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                GX経済移行債の活用や、海運税制を通じて、ゼロエミッション船等の導入を支援することで、早期に建造実績を積み重ねる。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「GX経済移行債による導入支援」の設計は「最初の発注者に対する価格差補填」だ。ゼロエミッション船が重油燃料船より高価な間は、海運会社が自発的に発注することは難しい。政府が価格差を補填することで「最初の100隻」の発注を生み出し、量産効果でコストが下がれば補助金なしでの自走が始まる。この「ティッピングポイントまでの架け橋」としてのGX経済移行債活用という政策設計は、半導体（ラピダス支援）や⑨無人航空機（複数機同時運航支援）と同じ論理構造を持つ。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">⑤ 同志国・グローバルサウスとの連携</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                建造能力拡大に向けた同志国・グローバルサウス等との協力・人材環流及び海外展開について検討する。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    フィリピン・インドネシア・ベトナム等との技能者受け入れ・人材環流の検討が継続中。「造船技術を学んだ技能者が自国に帰国した際に日本式品質標準を普及する」技術外交的側面も含む 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>大手造船所：フィリピン等からの技能実習生・特定技能外国人の受け入れを継続。「人材の国際流動性」を造船業の人手不足対策として活用</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 政策実装・官民投資編も読む</div>
+            <div class="next-box-desc">「今、政府と民間がどこまで動いているか」を整理した「政策実装・官民投資編」も公開中です。</div>
+            <a href="https://marketsupporter-ai.com/reports/nextgen-vessel-policy-investment.html" target="_blank">▶ 政策実装・官民投資編を読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>産業構造審議会 グリーンイノベーションプロジェクト部会「次世代船舶の開発 2025年度WG報告資料」（2025年8月1日）</li>
+                <li>国土交通省・NEDO「グリーンイノベーション基金事業 次世代船舶の開発」プロジェクト概要</li>
+                <li>脱炭素技術センター「ゼロエミッション船とは」</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
