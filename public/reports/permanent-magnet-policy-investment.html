@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>永久磁石（レアアース磁石）｜政策実装・官民投資編｜戦略17分野 ⑭</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--accent);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 50%;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #a5d6a7;
+        margin-bottom: 12px;
+    }
+
+    .hero-number {
+        font-family: var(--font-mono);
+        font-size: 64px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, .1);
+        position: absolute;
+        top: -12px;
+        right: 0;
+        line-height: 1;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(20px, 4.5vw, 28px);
+        font-weight: 700;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #a5d6a7;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #c8e6c9;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--accent);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--accent-dark);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--accent-dark);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--accent);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        border-bottom: 1.5px solid var(--accent-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--accent-mid);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--accent);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ⑭</span>
+        <span>永久磁石（レアアース磁石）</span>
+        <span>|</span>
+        <span>政策実装・官民投資編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — PERMANENT MAGNETS / RARE EARTH — POLICY MONITOR</div>
+            <div class="hero-number">14</div>
+            <div class="hero-title">
+                永久磁石（レアアース磁石）
+                <br>
+                政策実装・官民投資編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（日本成長戦略会議 第3回、2026年3月）構造に基づく政策モニタリングレポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">2030年目標①</div>
+                    <div class="kpi-value">
+                        国内需要量に対し
+                        <br>
+                        生産能力確保
+                    </div>
+                    <div class="kpi-unit">日系自動車産業等に必要な磁石の確保</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">2030年目標②</div>
+                    <div class="kpi-value">
+                        省レアアース/
+                        <br>
+                        レアアースフリー磁石
+                    </div>
+                    <div class="kpi-unit">量産技術の確立（早いもので2028年度開発終了）</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">中国対日輸出規制</div>
+                    <div class="kpi-value">2026年1月強化</div>
+                    <div class="kpi-unit">サマリウム・ジスプロシウム・テルビウム等が影響大</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">南鳥島沖試掘開始</div>
+                    <div class="kpi-value">2026年1月11日</div>
+                    <div class="kpi-unit">JAMSTEC「ちきゅう」が世界初の深海レアアース泥試掘</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜政策実装サマリー（2026年04月〜05月）</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜現状認識と目指す姿【目標】</a>
+                    <ul class="toc-sub">
+                        <li>（1）現状：「特定国以外で高性能磁石を供給できるのは事実上日本のみ」という不可欠性</li>
+                        <li>（2）目標：2030年 生産能力確保・省レアアース磁石量産技術確立・リサイクル率向上</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜勝ち筋と官民投資の具体像【道筋】</a>
+                    <ul class="toc-sub">
+                        <li>①勝ち筋：調達源複線化×省レアアース化×リサイクル率向上の三位一体</li>
+                        <li>②構築すべき機能・官民投資の具体像</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch03">CHAPTER 03｜課題と政策パッケージ【政策手段】</a>
+                    <ul class="toc-sub">
+                        <li>①国内投資支援</li>
+                        <li>②需要創出・市場確保</li>
+                        <li>③立地競争力強化</li>
+                        <li>④国際連携</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">政策実装サマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          本分野は2026年1月、外圧によって戦略の緊急性が一気に高まった。中国が対日レアアース輸出規制を強化（2026年1月7日）し、永久磁石の製造に使われるサマリウム・ジスプロシウム・テルビウム等への影響が懸念された。野村総合研究所の試算では、レアアース輸入の3ヶ月停止で約6,600億円、1年間で2.6兆円の経済損失が見込まれる（2010年の中国レアアース規制時の経験を踏まえた試算）。これに対応する形で、2026年1月11日にJAMSTEC探査船「ちきゅう」が南鳥島沖での世界初の深海レアアース泥試掘を開始した。「外圧が構造改革の触媒となる」（JRIFE、2026年1月）という指摘通り、ロードマップ素案の政策パッケージが現実の供給リスクと直結する形で実装段階に入っている。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">事実上日本のみ</div>
+                        <div class="stat-unit">特定国以外の供給能力</div>
+                        <div class="stat-desc">特定国以外で高性能磁石の供給能力を有するのは事実上日本のみ（ロードマップ素案）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">2.6兆円</div>
+                        <div class="stat-unit">想定経済損失（年間）</div>
+                        <div class="stat-desc">レアアース輸入1年間停止の経済損失試算（野村総合研究所、2010年規制時の経験を踏まえる）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">2026年1月7日</div>
+                        <div class="stat-unit">対日輸出規制強化</div>
+                        <div class="stat-desc">中国がデュアルユース品目の対日輸出管理を強化。サマリウム・ジスプロシウム・テルビウムが影響</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">最大65%</div>
+                        <div class="stat-unit">レイナス社供給比率</div>
+                        <div class="stat-desc">マレーシアのレイナス社が重希土類（ジスプロシウム・テルビウム）の最大65%を日本向けに供給する契約（2023年3月）</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">直近2ヶ月の重要動向（2026年4〜5月）</div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き</div>
+                            <ul>
+                                <li>
+                                    <strong>2026年1月11日</strong>
+                                    ：JAMSTEC探査船「ちきゅう」が南鳥島沖EEZ海域で世界初となる深海レアアース泥の試掘を開始。2013年の東京大学・JAMSTEC共同調査で確認された海底資源の本格的な開発着手 
+                                    <span class="source-tag">JRIFE 2026.1</span>
+                                </li>
+                                <li>
+                                    2026年1月8日：中国がデュアルユース品目の対日輸出管理を強化。永久磁石製造に使われるサマリウム・ジスプロシウム・テルビウム等が対象に 
+                                    <span class="source-tag">ジェトロ 2026.1</span>
+                                </li>
+                                <li>
+                                    NEDO「経済安全保障重要技術育成プログラム」：重希土フリー磁石・レアアースフリー磁石開発と次世代磁石に適したモータの設計開発に着手済み（2024年7月） 
+                                    <span class="source-tag">NEDO 2024.7</span>
+                                </li>
+                                <li>
+                                    経産省・JOGMEC：フランスのカレマグ社へのレアアース精錬支援（1億ユーロ、2024年5月決定）。日仏連携での重レアアースプロジェクト支援を推進 
+                                    <span class="source-tag">経産省 2025.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き</div>
+                            <ul>
+                                <li>
+                                    三菱マテリアル等：使用済みモーター・電子機器からのレアアース回収技術の商業化を推進中。リサイクルスキームの構築が中期的課題として位置づけ 
+                                    <span class="source-tag">JRIFE 2026.1</span>
+                                </li>
+                                <li>
+                                    岩谷産業：JOGMECと共同でカレマグ社に最大1億1,000万ユーロの出融資枠を設定（2025年3月）。重希土類（ジスプロシウム・テルビウム）について将来日本需要の20%相当の供給を見込む 
+                                    <span class="source-tag">SPF 2026</span>
+                                </li>
+                                <li>
+                                    レイナス社（マレーシア）：双日・JOGMECが2011年に出資、2023年3月に約180億円規模で追加出融資。重希土類の最大65%を日本向けに供給する契約を締結済み 
+                                    <span class="source-tag">SPF 2026</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">永久磁石サプライチェーンマップ</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>工程</th>
+                                <th>主要プレイヤー</th>
+                                <th>政策対象・直近動向</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>原材料調達（多角化）</td>
+                                <td>レイナス社（マレーシア・豪）、カレマグ社（仏）、JOGMEC、双日、岩谷産業</td>
+                                <td>重希土類の供給源複線化が進行中。2026年1月の中国規制強化で緊急性が上昇</td>
+                            </tr>
+                            <tr>
+                                <td>新規資源開発</td>
+                                <td>JAMSTEC（南鳥島沖深海レアアース泥）</td>
+                                <td>2026年1月11日に「ちきゅう」による世界初の深海レアアース泥試掘開始</td>
+                            </tr>
+                            <tr>
+                                <td>磁石製造（高性能磁石）</td>
+                                <td>TDK、信越化学工業、日立金属（プロテリアル）、大同特殊鋼</td>
+                                <td>「特定国以外で高性能磁石を供給できるのは事実上日本のみ」という不可欠性の中核企業群</td>
+                            </tr>
+                            <tr>
+                                <td>省レアアース/レアアースフリー磁石技術開発</td>
+                                <td>NEDO・産総研・大学・磁石メーカー各社</td>
+                                <td>「経済安全保障重要技術育成プログラム」で開発推進中。早いもので2028年度開発終了目標</td>
+                            </tr>
+                            <tr>
+                                <td>リサイクル（回収・分離精製）</td>
+                                <td>三菱マテリアル、磁石メーカー各社</td>
+                                <td>使用済みモーター・電子機器からのレアアース回収技術の商業化が中期的課題</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">１．現状認識と目指す姿【目標】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）現状</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 現状：「特定国以外で高性能磁石を供給できるのは事実上日本のみ」という戦略的不可欠性</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      永久磁石は、EV駆動モーターや風力発電、産業機械など、幅広い産業に活用。今後、EVの普及等に伴い、世界需要は増加することが見込まれる中、日本磁石メーカーの自律性・不可欠性確保を図るためには、重レアアース等の原材料の安定的な確保、需要増に対する磁石生産能力の確保などが課題。永久磁石は、自動車・産業機械等の基幹産業における生産活動に必須。足下で、特定国以外で高性能磁石の供給能力を有するのは事実上我が国のみであるなど、我が国磁石企業の不可欠性の向上を図る絶好の機会。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「特定国以外で高性能磁石を供給できるのは事実上日本のみ」という記述は、永久磁石が「日本の不可欠性戦略」のモデルケースであることを示している。⑥量子コンピューティングの「装置・部素材の不可欠性戦略」と同じ構造だが、永久磁石はすでに不可欠性を「持っている」点が異なる。問題は「持っている不可欠性が、原材料（レアアース）を中国に依存しているために脆弱である」ことだ。2026年1月の中国対日輸出規制強化は、この脆弱性が現実のリスクとして顕在化した象徴的な出来事だった。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">中国</span>
+                                世界のレアアース採掘・精製のほとんどを占める。2025年4月にサマリウム・ジスプロシウム等7種のレアアース輸出管理を強化（商務部・海関総署公告2025年第18号）。2025年12月1日からは「中国産技術を用いて中国国外で生産されたレアアース関連品目」も規制対象に拡大（商務部公告2025年第61号）。
+                            </p>
+                            <p>
+                                <span class="country-tag">米国・EU</span>
+                                磁石の安定供給確保に向けた国内生産支援を実施中。一部の下流企業は日本製磁石からの調達も検討中（ロードマップ素案）。米国はMP Materials社への国防総省出資等で国内サプライチェーン構築を加速。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② 取り巻く環境：EVシフト×地政学リスクの二重圧力と省レアアース技術の進展</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      世界的なEVシフト、再エネ拡大により、今後、高性能磁石の需要が急増する見込み。加えて、地政学リスクの高まりにより、レアアースの安定確保が国家戦略上の課題となっている状況。国内では省レアアース/レアアースフリー磁石（重レアアースフリーネオジム磁石や完全レアアースフリー磁石等）の技術開発を並行的に実施中であり、早いものでは2028年度頃を目標に開発終了予定。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「需要急増」と「供給リスク増大」が同時進行するという二重圧力が、永久磁石分野の政策的緊急性を高めている。EVモーター用ネオジム磁石の世界需要は2030年に向けて大幅な増加が見込まれる一方、その原材料の重希土類（ジスプロシウム・テルビウム）は中国が世界の精製の9割以上を握る。「省レアアース/レアアースフリー磁石」の技術開発が2028年度頃に完了すれば、この依存構造そのものを変える「ゲームチェンジ技術」になりうる。
+                                    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）目標</div>
+                    <div class="sub-section">
+                        <div class="sub-section-title">3つの定量目標：生産能力確保・省レアアース磁石量産技術確立・リサイクル率向上</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      国内外の電動車（EVの駆動用モーター等）や風力発電、産業機械等向けの高性能磁石市場におけるシェア拡大を目指す。2030年時点の需要量に対して生産能力確保（日系自動車産業等に必要な磁石の確保）。2030年までに省レアアース/レアアースフリー磁石の量産技術の確立。2030年までに永久磁石（ネオジム磁石）におけるレアアースリサイクル率（回収されたレアアース量/年間レアアース使用量）を○％以上に引上げ（政策目標として示されている値）。
+                                    
+                        </div>
+                        <div class="note-box">
+                            <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                      リサイクル率の具体的な数値目標（○％）は2026年3月版ロードマップ素案では未確定だが、「回収されたレアアース量/年間レアアース使用量」という算定式は明示されている。「2030年までに」という時間軸は、省レアアース磁石の量産技術確立（2028年度頃開発終了予定）と整合的に設計されており、「省レアアース化による需要量自体の削減」と「リサイクルによる供給量の増加」の両面から2030年の需給バランス改善を目指す設計だ。
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">２．勝ち筋と官民投資の具体像【道筋】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）基本戦略：調達多角化×省レアアース化×リサイクルの三位一体</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 勝ち筋：調達源複線化×省レアアース化×リサイクル率向上の三位一体</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      サプライチェーンの強靱化を各国の製造業が図っていく中で、原材料の調達源を複線化した我が国メーカーによる高性能磁石を安定的に供給し、国内外市場を獲得する。省レアアース/レアアースフリー磁石の技術開発を進め、レアアース使用量削減による高性能磁石の低コスト化を図る。レアアースリサイクル率の向上及び低コスト化・設備投資促進により、原材料となるレアアースの国内自給率を高めていく。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「調達源複線化×省レアアース化×リサイクル」という三位一体の戦略は、それぞれが異なる時間軸で効果を発揮する補完的な施策だ。調達源複線化（レイナス社・カレマグ社等）は短期的に効果を発揮する。省レアアース/レアアースフリー磁石技術（2028年度開発終了予定）は中期的に需要構造そのものを変える。リサイクル（2030年目標）は長期的な国内循環を確立する。この3つを並行して進めることで「短期のショック耐性」と「長期の自律性」の両方を確保する設計だ。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        JAMSTEC「ちきゅう」南鳥島沖深海レアアース泥試掘（2026年1月11日開始）：新たな国産資源開発として「調達源複線化」の選択肢を拡大 
+                                        <span class="source-tag">JRIFE 2026.1</span>
+                                    </li>
+                                    <li>
+                                        NEDO経済安全保障重要技術育成プログラム：重希土フリー磁石・レアアースフリー磁石開発と次世代磁石に適したモータの設計開発が進行中（2024年7月着手）
+                                        <span class="source-tag">NEDO 2024.7</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        レイナス社（マレーシア）：重希土類（ジスプロシウム・テルビウム）の最大65%を日本向け供給する契約を実施中（双日・JOGMEC出資）
+                                        <span class="source-tag">SPF 2026</span>
+                                    </li>
+                                    <li>
+                                        岩谷産業×JOGMEC：カレマグ社（仏）への最大1億1,000万ユーロ出融資枠設定（2025年3月）。重希土類で日本需要の20%相当の供給を見込む 
+                                        <span class="source-tag">SPF 2026</span>
+                                    </li>
+                                    <li>
+                                        三菱マテリアル等：使用済みモーター・電子機器からのレアアース回収技術の商業化を推進中 
+                                        <span class="source-tag">JRIFE 2026.1</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                MP Materials社（カリフォルニア州マウンテンパス鉱山）への国防総省出資・契約締結により、米国内でのレアアース精製・磁石製造のサプライチェーン構築を加速。2025年に複数の大型契約が成立し「西側のレアアースサプライチェーン」構築競争が激化。
+                            </p>
+                            <p>
+                                <span class="country-tag">EU</span>
+                                Critical Raw Materials Act（CRMA）に基づき、域内でのレアアース精製能力を2030年までに大幅拡大する目標を設定。フランスのカレマグ社への日本の出資はこのEU戦略との連携の一環でもある。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）我が国として構築すべき機能・官民投資の具体像</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                産官学連携による安価な省レアアース/レアアースフリー磁石の量産技術確立。産官学連携による使用済み磁石の回収、選別、取出、分離・精製のスキーム整備及び低コスト化技術の確立。同志国からの使用済み最終製品から回収した磁石/レアアースの輸入。【投資内容】省レアアース/レアアースフリー磁石の技術開発（重レアアースフリーネオジム磁石、完全レアアースフリー磁石等）。リサイクル設備（回収、選別、取出、分離・精製）の低コスト化技術開発、設備投資。省レアアース/レアアースフリー磁石を含む国内磁石生産ラインの増強・自動化。
+                              
+                    </div>
+                    <div class="note-box">
+                        <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                定量的インパクト（投資誘発効果・経済波及効果）は「官民投資ロードマップ取りまとめまでに提示」と明記。2026年夏の日本成長戦略取りまとめで具体化予定。「同志国からの使用済み最終製品から回収した磁石/レアアースの輸入」という表現は、廃棄されたEV・家電製品から磁石を回収するという「都市鉱山」概念の国際版だ。日本国内だけでなく同志国の廃製品からもレアアースを回収するネットワークの構築が想定されている。
+                              
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH03 -->
+        <section id="ch03" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <span class="chapter-title">３．課題と政策パッケージ【政策手段】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">① 国内投資支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                省レアアース/レアアースフリー磁石の技術開発支援。リサイクル設備（回収、選別、取出、分離・精製）の低コスト化技術開発、設備投資への支援。省レアアース/レアアースフリー磁石を含む国内磁石生産ラインの増強・自動化にかかる設備投資補助金。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    NEDO経済安全保障重要技術育成プログラム：重希土フリー磁石・次世代磁石適合モータ設計開発を支援中（2024年7月着手・継続）
+                                    <span class="source-tag">NEDO 2024.7</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>磁石メーカー各社：省レアアース/レアアースフリー磁石の技術開発を継続中。2028年度頃の開発終了に向けた研究開発投資が進行</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">② 需要創出・市場確保</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                国内製造業（自動車や産業機械等）における国産磁石への切替え支援。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「国産磁石への切替え支援」は、需要側（自動車・産業機械メーカー）の調達戦略を変える政策だ。中国製磁石が安価でも、2026年1月のような輸出規制リスクを考慮すれば「多少高くても国産磁石」という調達方針への転換が経済合理的になる。政府が切替えコストを補助することで、この転換を加速する設計だ。2026年1月の中国対日輸出規制強化は、まさにこの「切替えの経済合理性」を実証する出来事になった。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">③ 立地競争力強化</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                我が国が強みとする技術が海外に流出しないよう官民による技術管理を徹底。使用済み磁石の回収、選別、取出、分離・精製のスキーム整備。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「技術管理の徹底」は、永久磁石分野が経済安全保障上の機微技術として扱われていることを示す。日本の高性能磁石製造技術（特に重希土類フリー化技術）が中国に流出すれば、日本の「不可欠性」という戦略的優位が消失する。外為法に基づく技術輸出管理・対内直接投資審査の厳格化が、この技術管理の制度的基盤となっている。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">④ 国際連携</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                同志国との国際的な磁石リサイクルネットワーク構築。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「同志国との磁石リサイクルネットワーク」は、レイナス社（マレーシア・豪）・カレマグ社（仏）との原材料調達連携を、リサイクル段階にも拡張する構想だ。EV・家電の普及が進んだ先進国では今後大量の使用済み磁石が発生する。この使用済み磁石を「同志国間で循環させる」ネットワークが構築できれば、中国に依存しない「西側レアアース循環経済」が形成される。
+                              
+                    </div>
+                    <div class="overseas-box">
+                        <div class="overseas-label">// 海外動向</div>
+                        <p>
+                            <span class="country-tag">米国・EU</span>
+                            「Critical Raw Materials Club」構想（G7・EU主導）が、同志国間でのレアアース・重要鉱物のサプライチェーン協力枠組みとして議論されている。日本の「同志国との磁石リサイクルネットワーク」はこの構想と連動する可能性が高い。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 続編：課題・政策パッケージ編</div>
+            <div class="next-box-desc">「なぜレアアース依存からの脱却が困難なのか」「リサイクル網未整備・原材料価格変動リスク・技術不確実性・不当廉売の4重課題」を整理した「課題・政策パッケージ編」も近日公開予定です。</div>
+            <a href="https://marketsupporter-ai.com" target="_blank">▶ marketsupporter-ai.com で読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>ジェトロ「中国のレアアース輸出管理（1）日本への磁石輸出に大きな影響」— 海外ビジネス情報（2026年）</li>
+                <li>ジェトロ「中国、レアアース輸出管理の関連規制を強化」ビジネス短信（2025年）</li>
+                <li>JRIFE「中国の対日レアアース輸出規制」（2026年1月7日）</li>
+                <li>笹川平和財団「中国レアアース輸出規制と各国の対応～経済安全保障の主戦場をめぐる攻防」SPF China Observer</li>
+                <li>NEDO「『経済安全保障重要技術育成プログラム』で重希土フリー磁石／レアアースフリー磁石開発と次世代磁石に適したモータの設計開発に着手」（2024年7月25日）</li>
+                <li>経済産業省「日仏両政府が連携し、フランス共和国内の重レアアースプロジェクトを支援します」（2025年3月17日）</li>
+                <li>貿易ドットコム「【2026年版】レアアース輸出規制の基礎と各国の最新動向」</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
