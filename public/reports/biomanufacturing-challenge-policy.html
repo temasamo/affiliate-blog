@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>バイオものづくり｜課題・政策パッケージ編｜戦略17分野 ⑮</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --warn: #e65100;
+        --warn-light: #fff3e0;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--warn);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #bf360c 0%, #e64a19 50%, #ff7043 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #ffccbc;
+        margin-bottom: 12px;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(22px, 5vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #ffccbc;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #ffccbc;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 17px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #ffccbc;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--warn);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--warn);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--warn);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--warn);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-header.green {
+        background: var(--accent);
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--warn);
+        border-bottom: 1.5px solid var(--warn-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .section-title.green {
+        color: var(--accent-dark);
+        border-bottom-color: var(--accent-light);
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--warn);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .sub-section-title.green::before {
+        background: var(--accent-mid);
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .bottleneck-box {
+        background: var(--warn-light);
+        border-left: 3px solid var(--warn);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .bottleneck-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--warn);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--warn);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--warn);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ⑮</span>
+        <span>バイオものづくり</span>
+        <span>|</span>
+        <span>課題・政策パッケージ編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — BIO-MANUFACTURING — CHALLENGE & POLICY PACKAGE</div>
+            <div class="hero-title">
+                バイオものづくり
+                <br>
+                課題・政策パッケージ編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（3）官民投資促進に向けた課題と政策パッケージ 構造に基づく分析レポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック①</div>
+                    <div class="kpi-value">
+                        4種複合人材
+                        <br>
+                        の不足
+                    </div>
+                    <div class="kpi-unit">ウェット技術×スケールアップ×AI×経営管理</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック②</div>
+                    <div class="kpi-value">
+                        スケールアップ
+                        <br>
+                        過程の設備投資リスク
+                    </div>
+                    <div class="kpi-unit">パイロット→デモ→商用の各段階で巨額投資</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック③</div>
+                    <div class="kpi-value">
+                        既存製品との
+                        <br>
+                        価格差・受容性不安定
+                    </div>
+                    <div class="kpi-unit">石油由来製品との競争で安定需要が見えない</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜課題・政策パッケージサマリー</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜（1）投資促進に向けた課題</a>
+                    <ul class="toc-sub">
+                        <li>① リソース制約：4種複合人材の不足とインフラ投資の困難さ</li>
+                        <li>② 不確実性の要因</li>
+                        <li>a. 事業・技術：需要不十分・コスト増・技術/データの分散</li>
+                        <li>b. 市場：規制・ルール・価格差・消費者受容性</li>
+                        <li>c. 財務：他分野投資による資金調達難</li>
+                        <li>d. 国際環境・政策：脱炭素トランジションの遅滞</li>
+                        <li>e.「主導権を握られたら手遅れ」というプラットフォーム競争のリスク</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜（2）講じるべき政策パッケージ</a>
+                    <ul class="toc-sub">
+                        <li>①国内投資支援</li>
+                        <li>②需要創出・市場確保・社会実装支援</li>
+                        <li>③立地競争力強化</li>
+                        <li>④国際連携</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">課題・政策パッケージサマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          バイオものづくりの課題は「人材・設備投資・市場」の3層構造に加え、「主導権を握られたら手遅れ」というプラットフォーム競争のリスクが重なる。最も深刻なのは人材で、「ウェット技術・スケールアップ産業化・AI/デジタル素養・経営管理」という4種の能力を併せ持つ人材は産業界全体で稀少だ。「国内バイオファウンドリの利用希望は増大」しているにもかかわらず人材育成プログラムが追いつかないという需給ギャップ（経産省、2024年）は、設備（ハード）は政策投資で増やせても、人材（ソフト）の育成には時間がかかるという非対称性を示している。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">4種複合</div>
+                        <div class="stat-unit">必要な人材スキル</div>
+                        <div class="stat-desc">ウェット技術（育種改良培養）・スケールアップ産業化・AI/デジタル素養・経営管理の全てを持つ人材が不足</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">追いつかず</div>
+                        <div class="stat-unit">人材育成プログラム</div>
+                        <div class="stat-desc">国内バイオファウンドリの利用希望は増大するも、培養槽研修等の人材育成プログラムは受講希望者に追いついていない</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">3段階</div>
+                        <div class="stat-unit">スケールアップリスク</div>
+                        <div class="stat-desc">パイロット（〜30L）→デモ（〜3kL）→商用（数十〜数百kL）の各段階で投資回収不能リスクが発生</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">2026年度</div>
+                        <div class="stat-unit">NEDOプロジェクト最終年</div>
+                        <div class="stat-desc">「カーボンリサイクル実現を加速するバイオ由来製品生産技術の開発」（2020〜2026年度）が最終年度を迎える</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">課題と政策パッケージの対応関係</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>ボトルネック</th>
+                                <th>具体的障壁</th>
+                                <th>政策パッケージ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>① 4種複合人材の不足×インフラ投資困難</td>
+                                <td>ウェット×スケールアップ×AI×経営管理の全てを持つ人材が稀少。大規模生産設備への投資も難しい</td>
+                                <td>立地競争力強化（人材エコシステム確立・大学高専教育のバックキャスト）</td>
+                            </tr>
+                            <tr>
+                                <td>② 事業・技術の不確実性（需要不十分・コスト増・データ分散）</td>
+                                <td>技術・ノウハウ・データが分散し生産効率が低い。需要見通しも不十分</td>
+                                <td>国内投資支援（バイオ製造技術プラットフォーム高度化・設備投資リスク低減）</td>
+                            </tr>
+                            <tr>
+                                <td>③ 市場の不確実性（規制・価格差・消費者受容性）</td>
+                                <td>既存（石油由来）製品との厳しい価格競争。消費者受容性が不安定</td>
+                                <td>需要創出支援（消費者認知拡大・初期需要喚起・迅速な許認可）</td>
+                            </tr>
+                            <tr>
+                                <td>④ 財務の不確実性（他分野投資による資金調達難）</td>
+                                <td>他の有望分野（半導体・AI等）への投資が優先され、バイオへの資金調達が難しい</td>
+                                <td>国内投資支援（CAPEX・OPEX支援・公的受託ファウンドリ）</td>
+                            </tr>
+                            <tr>
+                                <td>⑤ プラットフォーム競争のリスク（主導権を握られたら手遅れ）</td>
+                                <td>米中のバイオファウンドリプラットフォームが標準を握れば日本は利用者の立場に固定される</td>
+                                <td>国際連携（標準化推進・知財活用・国際エコシステム連携）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">（1）投資促進に向けた課題</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">① リソース制約：4種複合人材の不足とインフラ投資の困難さ</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                人材：ウェット技術（特に育種改良培養）、スケールアップによる産業化、AI・デジタル技術への素養、経営管理といったバイオものづくり産業を牽引するために必要な能力を持った人材の不足。インフラ：スケールに応じた機器設備および大規模生産設備への投資が行いにくい。
+                                
+                        <br>
+                        <br>
+
+                                ※「ウェット」領域：バイオ製造技術において、設計・解析・シミュレーションなどの「ドライ」領域に対し、実際の実験・製造現場を担う領域を指す。微生物や細胞を培養・発酵させ、条件調整や装置運転を通じて、目的物質を安定的・大量に生産するための知見や技能を含む。
+                              
+                    </div>
+                    <div class="bottleneck-box">
+                        <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                ロードマップ素案が列挙する「育種改良培養（ウェット技術）」「スケールアップ産業化」「AI・デジタル技術への素養」「経営管理」という4つの能力は、それぞれ異なるキャリアパスで育成されることが多い。研究者は育種改良培養を学ぶが経営管理は学ばない。経営人材はバイオの専門知識を持たない。この「4種複合人材」は産業界全体で極めて稀少であり、「国内バイオファウンドリの利用希望は増大」しているにもかかわらず人材育成プログラムが受講希望者に追いついていない（経産省、2024年4月）という状況の根本原因だ。「社内に設備が無く、識者もいないので人材育成ができない」という企業側の声は、設備（ハード）への投資だけでは人材（ソフト）のボトルネックは解消しないことを示している。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    「バイオものづくり人材エコシステムの確立（例：産官学人材交流・人材流動、産業からバックキャストした大学・高専教育）」がロードマップ素案の政策パッケージに明記 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                                <li>
+                                    Greater Tokyo Biocommunity（GTB）：人材交流・人材流動のネットワーク基盤として機能。「産官学」の連携拠点として人材育成も担う構想 
+                                    <span class="source-tag">NEDO</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    NEDOバイオファウンドリ拠点（関西30L・関東3kL）：企業との共同開発を通じてエンジニアリング技術・データの蓄積及び人材育成の拠点化を図るが、「毎回受講希望者に追いついていない」状況が続く 
+                                    <span class="source-tag">経産省 2024.4</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">② 不確実性の要因</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">a. 事業・技術：需要不十分・コスト増・技術/ノウハウ/データの分散</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      事業・技術：需要不十分、コスト増、生産効率の低さ（技術・ノウハウ・データの分散等）。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      「技術・ノウハウ・データの分散」は、バイオものづくり特有の問題だ。各企業・研究機関が独自にスマートセルの設計データ・培養条件・スケールアップ知見を蓄積しているが、これらは秘密情報として企業間で共有されない。半導体産業のように「標準化された設計フロー・製造プロセス」が存在しないため、各社が個別に最適化を繰り返すという非効率が生じる。NEDOバイオファウンドリ拠点での「企業との共同開発を通じたデータの蓄積」は、この分散を一定程度集約する試みだが、競合企業間のデータ共有には限界がある。
+                                    
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">b. 市場：規制・ルール・既存製品との価格差・消費者受容性の不安定</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      市場：規制・ルール、既存製品との価格差、消費者受容性が不安定。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      バイオものづくり製品（例：バイオプラスチック・人工ゴム・代替タンパク質等）は、既存の石油由来製品・天然由来製品と比較してコスト高な場合が多い。消費者が「環境に良いから」という理由で割高な価格を受け入れるかどうかは、製品カテゴリ・国・世代によって大きく異なり「不安定」だ。規制・ルール面でも、新規バイオ由来成分の食品添加物・化粧品成分としての承認には時間がかかり、「市場投入のタイミングが読めない」という不確実性が事業計画を難しくする。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国・EU</span>
+                                新技術に合わせた規制の更新や承認の迅速化に向けた新組織の設置及び大胆な制度改正が並行して実施されている（ロードマップ素案）。日本がこの「規制の迅速化」競争に遅れれば、技術があっても市場投入が遅れるリスクがある。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">c. 財務：他分野投資による資金調達難</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      財務：他分野投資による資金調達難。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      「他分野投資による資金調達難」とは、半導体・AI・量子等の他分野が政策的に高い優先度で巨額の投資を集める中、バイオものづくりへの資金（特にVC・銀行融資）が相対的に手薄になるという問題だ。バイオものづくりは「研究開発期間が長い（数年〜10年規模）」「商用化までの不確実性が高い」という性質上、短期的なリターンを求める投資家にとって相対的に魅力が低く見えることがある。公的な受託ファウンドリ・CAPEX/OPEX支援は、この「民間資金が集まりにくい」構造を補う直接的な政策対応だ。
+                                    
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">d. 国際環境・政策：脱炭素トランジションの遅滞</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      国際環境・政策：脱炭素トランジションの遅滞。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      バイオものづくり製品の多くは「脱炭素」という環境価値を競争優位の一部としているが、化石燃料への依存度が依然として高い経済構造の中では、この環境価値が市場価格に十分反映されない。カーボンプライシング（炭素税・排出権取引）が本格的に導入されれば石油由来製品のコストが上昇しバイオ由来製品の相対的競争力が高まるが、その制度導入が「遅滞」すれば、バイオものづくり製品の価格競争力向上も遅れる。「脱炭素トランジションの遅滞」は日本固有の問題ではなく国際的な政策動向に依存する外部要因だ。
+                                    
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">e. 「主導権を他国に握られたら国内産業化の余地が急速に失われる」というプラットフォーム競争のリスク</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      米中をはじめとする技術開発競争の中で、主導権を他国に握られた場合、国内で産業化・事業化する余地は急速に失われる恐れがある。米国や中国では技術開発を一元的に担うプラットフォームが台頭し、競争が熾烈化している。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      このリスクは半導体産業の歴史と類似する。台湾TSMCのファウンドリが世界の半導体製造を寡占したように、米国Ginkgo Bioworksのような「合成生物学のプラットフォーム企業」が「スマートセル設計→製造委託→製品化」の全工程を標準化された形で提供すれば、世界中の企業が「自社で育種・培養設備を持たずプラットフォームを利用する」という構造が定着する可能性がある。一度この構造が定着すると、日本企業が後から「自社のバイオファウンドリで一から開発する」というモデルへの転換は、コスト・速度の両面でプラットフォーム利用に劣後し、極めて困難になる。「主導権を握られたら手遅れ」という表現は、この「ロックイン効果」の不可逆性を強く示唆している。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                Ginkgo Bioworksは製薬・農業・素材分野の企業に「設計・テスト・学習」サイクルを自動化したバイオファウンドリプラットフォームを提供。複数企業がこのプラットフォームに依存する形で開発を進めており、「合成生物学のOS」としての地位を確立しつつある。
+                            </p>
+                            <p>
+                                <span class="country-tag">中国</span>
+                                国家主導の合成生物学投資が加速しており、大規模生産能力を背景にアミノ酸・有機酸等のバイオ製品で世界シェアを拡大中。技術開発を一元的に担う国家プラットフォームの構築が進行している。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header chapter-header green">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">（2）講じるべき政策パッケージ</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title green">① 国内投資支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                バイオ製造技術プラットフォームの高度化（例：AI・デジタル技術活用、革新的な基盤技術の創出に向けた研究開発）。バイオ製造にかかる設備投資リスク低減（例：CAPEX・OPEX支援、公的な受託ファウンドリ設置）。新たな価値提供が可能な製品開発支援（例：人工ゴム・綿の生産）。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「バイオ製造技術プラットフォームの高度化」は、e項で論じたプラットフォーム競争への対応でもある。日本独自のバイオファウンドリプラットフォーム（NEDO拠点を中核とする）を高度化することで、Ginkgo Bioworks等の海外プラットフォームへの依存を避け、国内に「設計・製造・データ蓄積」のサイクルを保持する。「公的な受託ファウンドリ設置」は、中小企業・スタートアップでも国内プラットフォームを利用できる環境を整え、海外プラットフォームへの流出を防ぐ防波堤としての機能を持つ。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    NEDO「カーボンリサイクル実現を加速するバイオ由来製品生産技術の開発」（2020〜2026年度）：最終年度に向けた成果実装が本格化。統合解析システムの開発によりプラットフォームの高度化を推進 
+                                    <span class="source-tag">NEDO・JBA</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    RITE：オミクスデータを活用した産業用スマートセル創出技術を開発中。国内データ蓄積の中核として機能 
+                                    <span class="source-tag">RITE</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">② 需要創出・市場確保・社会実装支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                消費者の認知拡大・文化創造に向けた環境整備（例：消費者・学校教育、マーケティング・広報）。初期需要喚起（例：グリーン調達、製造・販売・購入規制）。迅速な許認可体制の構築（例：規制サンドボックスや特区活用等によるワンストップ許認可制度の新設）。国産バイオ製造関連技術・製品の展開促進（例：機器設備の海外展開、標準化の推進、知財活用）。社会実装を見据えた支援（例：実証事業）。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    規制サンドボックス・特区活用によるワンストップ許認可制度の検討が継続中。市場の不確実性（b項）の主要因である「承認タイミングの読めなさ」への対応 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    スマートセル由来リコピン：「天然由来・環境配慮」という付加価値訴求を通じて消費者受容性の安定化を図る先行事例。2026年度内の商用展開で市場の反応が試される 
+                                    <span class="source-tag">NEDO 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">③ 立地競争力強化</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                原料の安定調達・コスト低減（例：糖価調整制度における工業原料糖の除外、森林管理の促進、未利用資源・廃棄物の循環促進、工場や農地での原料栽培促進）。迅速な許認可体制の構築（再掲）。バイオものづくり人材エコシステムの確立（例：産官学人材交流・人材流動、産業からバックキャストした大学・高専教育）。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「産業からバックキャストした大学・高専教育」は、a項で論じた「4種複合人材」不足への根本的な解だ。現在の大学教育は「生物学」「化学工学」「情報科学」「経営学」が別々の学部で教えられており、バイオものづくり産業が必要とする「複合人材」を体系的に育成するカリキュラムが存在しない。「産業からバックキャスト」とは、産業界が必要とする人材像から逆算してカリキュラムを設計するという方法論で、これが実現すれば「育成プログラムが受講希望者に追いつかない」という現状の構造的解決につながる。ただしカリキュラム改革には数年単位の時間がかかり、即効性のある施策ではない。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">④ 国際連携</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                戦略的なルールの形成・活用（例：国際認証制度との連携強化、LCAガイドライン策定、標準化の推進、知財活用）。国際エコシステムとの連携（例：研究開発・人材育成・サプライチェーン協力の推進、バイオセキュリティ確保）。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「標準化の推進・知財活用」は、e項のプラットフォーム競争リスクへの最も直接的な対応だ。Ginkgo Bioworks型のプラットフォームが「事実上の標準」として定着する前に、日本が「スマートセル設計・LCA測定・国際認証」等の領域で独自の標準を提案し国際的に採用されれば、「主導権を握られる」リスクを回避できる。GI基金参画企業がすでに「CO2吸収等の評価・測定方法、LCA、国際標準化」を協調領域として企業間連携を開始している（経産省、2024年）ことは、この標準化競争への参画準備として位置づけられる。「バイオセキュリティ確保」は、合成生物学技術の悪用防止（バイオテロ対策等）という安全保障的側面も含む。
+                              
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 政策実装・官民投資編も読む</div>
+            <div class="next-box-desc">「今、政府と民間がどこまで動いているか」を整理した「政策実装・官民投資編」も公開中です。</div>
+            <a href="https://marketsupporter-ai.com/reports/biomanufacturing-policy-investment.html" target="_blank">▶ 政策実装・官民投資編を読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>経済産業省「バイオ政策の方向性について（前回議論を踏まえたアップデート）」産業構造審議会 商務・サービスグループ 生物化学産業課（2024年4月16日）</li>
+                <li>NEDO「スマートセルによる『リコピン』の大量生産技術を開発しました」（2026年3月12日）</li>
+                <li>NEDO「カーボンリサイクル実現を加速するバイオ由来製品生産技術の開発」事業概要</li>
+                <li>RITE（地球環境産業技術研究機構）「NEDOバイオものづくり（最先端バイオファウンドリ）」</li>
+                <li>JBA（バイオインダストリー協会）「カーボンリサイクル実現を加速するバイオ由来製品生産技術の開発」事業概要</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>

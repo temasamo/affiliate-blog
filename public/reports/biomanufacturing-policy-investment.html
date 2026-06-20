@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>バイオものづくり｜政策実装・官民投資編｜戦略17分野 ⑮</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--accent);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 50%;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #a5d6a7;
+        margin-bottom: 12px;
+    }
+
+    .hero-number {
+        font-family: var(--font-mono);
+        font-size: 64px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, .1);
+        position: absolute;
+        top: -12px;
+        right: 0;
+        line-height: 1;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(22px, 5vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #a5d6a7;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #c8e6c9;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--accent);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--accent-dark);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--accent-dark);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--accent);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        border-bottom: 1.5px solid var(--accent-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--accent-mid);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--accent);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ⑮</span>
+        <span>バイオものづくり</span>
+        <span>|</span>
+        <span>政策実装・官民投資編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — BIO-MANUFACTURING / SYNTHETIC BIOLOGY — POLICY MONITOR</div>
+            <div class="hero-number">15</div>
+            <div class="hero-title">
+                バイオものづくり
+                <br>
+                政策実装・官民投資編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（日本成長戦略会議 第3回、2026年3月）構造に基づく政策モニタリングレポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">2040年 売上目標</div>
+                    <div class="kpi-value">11.9兆円</div>
+                    <div class="kpi-unit">我が国企業の売上合計（政策目標として示されている値）</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">バイオ産業 経済効果</div>
+                    <div class="kpi-value">約165兆円</div>
+                    <div class="kpi-unit">2030〜2040年見込み（ホワイトバイオ分野のみ、経産省試算）</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">世界バイオ市場</div>
+                    <div class="kpi-value">約200兆円</div>
+                    <div class="kpi-unit">2030年予測（OECD）。ものづくり分野での成長見込み</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">スマートセル・リコピン</div>
+                    <div class="kpi-value">2026年度内</div>
+                    <div class="kpi-unit">商用スケール培養実証完了。一貫製造体制構築・商用展開開始予定</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜政策実装サマリー（2026年04月〜05月）</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜現状認識と目指す姿【目標】</a>
+                    <ul class="toc-sub">
+                        <li>（1）現状：米欧中の先行と「ウェット」領域の競争力決定要因</li>
+                        <li>（2）目標：2040年売上11.9兆円・国内バイオ製造設備の増加</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜勝ち筋と官民投資の具体像【道筋】</a>
+                    <ul class="toc-sub">
+                        <li>①勝ち筋：「ウェット」の強み×「ドライ」のAI・データ融合</li>
+                        <li>②構築すべき機能・官民投資の具体像</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch03">CHAPTER 03｜課題と政策パッケージ【政策手段】</a>
+                    <ul class="toc-sub">
+                        <li>①国内投資支援</li>
+                        <li>②需要創出・市場確保・社会実装支援</li>
+                        <li>③立地競争力強化</li>
+                        <li>④国際連携</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">政策実装サマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          バイオものづくりは「『ウェット』領域（実際の培養・発酵・生産プロセス）の成熟度が国際競争力を決定する」という認識のもと、NEDOが関西圏・関東圏に複数のバイオファウンドリ拠点を整備してきた成果が実装段階に入りつつある。象徴的な事例が「スマートセルによるリコピン大量生産技術」で、すでに商用スケールでの培養実証を完了し、2026年度内に一貫製造体制を構築・商用展開を開始する計画だ。一方で「国内バイオファウンドリの利用希望は増大」しており、人材育成プログラムが「毎回受講希望者に追いついていない」という需要超過の状況も明らかになっている（経産省、2024年）。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">11.9兆円</div>
+                        <div class="stat-unit">2040年売上目標</div>
+                        <div class="stat-desc">バイオものづくり分野における我が国企業の売上（合計）目標（政策目標として示されている値）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">2026年度内</div>
+                        <div class="stat-unit">リコピン商用展開</div>
+                        <div class="stat-desc">スマートセルを用いたリコピンの一貫製造体制構築・商用展開開始計画（NEDO）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">
+                            関西30L
+                            <br>
+                            関東3kL
+                        </div>
+                        <div class="stat-unit">バイオファウンドリ規模</div>
+                        <div class="stat-desc">関西圏拠点：スマートセル開発〜小規模（〜30L）。関東圏拠点：中規模スケール（〜3kL）の生産実証・プロセス開発</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">利用希望増大</div>
+                        <div class="stat-unit">人材育成が追いつかず</div>
+                        <div class="stat-desc">国内バイオファウンドリの利用希望は増大。小型・パイロット培養槽の人材育成プログラムも受講希望者に追いついていない</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">直近2ヶ月の重要動向（2026年4〜5月）</div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き</div>
+                            <ul>
+                                <li>
+                                    NEDO「カーボンリサイクル実現を加速するバイオ由来製品生産技術の開発」（バイオものづくりプロジェクト、2020〜2026年度）：最終年度（2026年度）に向けた成果の社会実装が本格化 
+                                    <span class="source-tag">NEDO・JBA</span>
+                                </li>
+                                <li>
+                                    NEDO「スマートセルによるリコピンの大量生産技術を開発」：商用スケール培養実証完了を発表（2026年3月）。化粧品・サプリメント・食品分野での需要拡大に対応 
+                                    <span class="source-tag">NEDO 2026.3</span>
+                                </li>
+                                <li>
+                                    Greater Tokyo Biocommunity（GTB）協議会：JBAが事務局となり、東京都心から100km圏内（川崎・横浜・千葉・つくば等）の拠点をネットワーク化する国際的バイオコミュニティ形成を推進 
+                                    <span class="source-tag">NEDO</span>
+                                </li>
+                                <li>
+                                    NEDO・JBA：バイオものづくり技術を保有する企業と関心ある企業間のマッチング機会を創出する場の立ち上げを推進中 
+                                    <span class="source-tag">経産省 2024</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き</div>
+                            <ul>
+                                <li>
+                                    RITE（地球環境産業技術研究機構）：スマートセルプロジェクトから継続して産業用スマートセル創出技術を開発中。カテコール（芳香族化合物）の生産技術開発を通じて各技術の実証検討を実施 
+                                    <span class="source-tag">RITE</span>
+                                </li>
+                                <li>
+                                    GI基金参画企業：CO2吸収等の評価・測定方法、ガス発酵に関する安全基準、LCA、国際標準化、ブランディング手法、菌株・データ等の協調領域で企業間連携を開始 
+                                    <span class="source-tag">経産省 2024</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">重要プレイヤー・拠点マップ</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>機能・地域</th>
+                                <th>主要プレイヤー</th>
+                                <th>政策対象・直近動向</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>関西圏バイオファウンドリ</td>
+                                <td>NEDO拠点、複数大学・企業</td>
+                                <td>スマートセル開発〜小規模（〜30L）。スマートセルプロジェクトの中核</td>
+                            </tr>
+                            <tr>
+                                <td>関東圏バイオファウンドリ</td>
+                                <td>NEDO拠点（川崎・横浜・千葉・つくば等）</td>
+                                <td>中規模スケール（〜3kL）の生産実証・プロセス開発。Greater Tokyo Biocommunity構想の中核</td>
+                            </tr>
+                            <tr>
+                                <td>研究機関</td>
+                                <td>RITE、産総研、大学（東大・京大等）</td>
+                                <td>スマートセル創出技術・オミクスデータ蓄積による育種改良の研究を継続</td>
+                            </tr>
+                            <tr>
+                                <td>国際バイオコミュニティ</td>
+                                <td>JBA（バイオインダストリー協会）</td>
+                                <td>Greater Tokyo Biocommunity（GTB）協議会の事務局として国際連携を推進</td>
+                            </tr>
+                            <tr>
+                                <td>応用先（高付加価値製品）</td>
+                                <td>化粧品・サプリメント・食品メーカー（リコピン等）</td>
+                                <td>スマートセル由来リコピンの2026年度内商用展開が先行事例</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">１．現状認識と目指す姿【目標】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）現状</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 現状：バイオ医薬品にとどまらない適用拡大と米欧中の競争激化</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      バイオ製造技術の急速な発展を背景に、先行するバイオ医薬品等にとどまらない、幅広い分野への適用の可能性が拡大。新産業の創出・技術優位性獲得に向けた各国の競争が激化。バイオものづくりの社会実装には、原料から技術・生産インフラ、市場ルールまで大きな転換が必要。米・欧・中など諸外国が研究開発や生産基盤の構築への投資を進めている。安価な糖原料と労働力にアクセス可能な地域において、一部商用化が先行（米：トウモロコシ、南米：サトウキビ、中：大規模生産能力）。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「米はトウモロコシ、南米はサトウキビ、中国は大規模生産能力で先行」という現状認識は、「安価な糖原料」が商用化の前提条件になっていることを示す。日本にはトウモロコシ・サトウキビのような安価な糖原料の大規模供給基盤がない。この「原料コストでのハンデ」を、「ウェット領域の技術成熟度」と「AI・データ活用によるドライ領域の高度化」という技術的優位性で補うのが日本の戦略の核心だ。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                トウモロコシを原料としたバイオエタノール・バイオプラスチック生産で大規模な商用化が進展。Ginkgo Bioworks等のバイオファウンドリ企業が技術開発を一元的に担うプラットフォームとして台頭。
+                            </p>
+                            <p>
+                                <span class="country-tag">中国</span>
+                                大規模生産能力を背景にアミノ酸・有機酸等のバイオ製品で世界シェアを拡大中。国家主導の合成生物学投資が加速。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② 経済的・戦略的重要性：165兆円の経済効果と「主導権を握られたら手遅れ」というリスク</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      経済的重要性：バイオ産業がもたらす経済効果は約165兆円（2030〜2040年）と見込まれる（2020 McKinsey Global Institute Analysisの数値を元に1ドル150円で経済産業省が計算。ホワイトバイオ分野のみ）。戦略的重要性：バイオものづくりは国内資源（再生可能なバイオマス資源、廃棄物などの未利用資源）を有効活用し、我が国技術により国内で生産・高付加価値化させることが可能。なお米中をはじめとする技術開発競争の中で、主導権を他国に握られた場合、国内で産業化・事業化する余地は急速に失われる恐れがある。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「主導権を他国に握られた場合、国内で産業化・事業化する余地は急速に失われる」という強い表現は、バイオものづくりが「規格・標準・知財を握った者が圧倒的優位を持つ」プラットフォーム型産業であることを示す。半導体産業における「ファウンドリの寡占」と同じ構造的リスクが、バイオファウンドリ・スマートセル設計プラットフォームでも生じうる。米国のGinkgo Bioworksのような「合成生物学のプラットフォーマー」が世界標準を握れば、日本企業は技術があっても「プラットフォーム利用者」の立場に固定される。
+                                    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）目標</div>
+                    <div class="sub-section">
+                        <div class="sub-section-title">2040年売上11.9兆円・国内資源活用拡大・国内バイオ製造設備の増加</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      基盤となるバイオ製造技術の優位性の確保及び高付加価値領域（高機能成分・素材等）を中心とするグローバルでの市場獲得を目指す。併せて、経済安全保障確保、脱炭素等の観点から国内生産が肝要となる製品領域について、輸入製品に代わりバイオものづくりによる国内生産品の市場拡大を目指す。2040年の我が国企業の売上（合計）目標は、11.9兆円（政策目標として示されている値）。技術開発基盤の拡充と生産インフラの整備及び人材・ノウハウ・データの結集・高度化による、バイオ製造技術の高効率化。国内資源の活用拡大及び国内バイオ製造設備の増加。
+                                    
+                        </div>
+                        <div class="note-box">
+                            <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                      「11.9兆円」という目標値は、165兆円という市場全体の経済効果見込みのうち約7%に相当する。「高付加価値領域（高機能成分・素材等）を中心とするグローバル市場獲得」と「経済安全保障・脱炭素の観点から国内生産が肝要な製品領域（バイオエタノール等）の国内生産品市場拡大」という2つの異なる目標が並存している点に注目したい。前者は「攻め」、後者は「守り（経済安全保障）」の戦略であり、両方を同時並行で進める設計だ。
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">２．勝ち筋と官民投資の具体像【道筋】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）基本戦略：「ウェット」の強み×「ドライ」のAI・データ融合</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 勝ち筋：発酵産業の蓄積×エンジニアリング×AI・データ活用</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      バイオ製造技術の優位性獲得をめぐる各国間競争においては、特に「ウェット」領域の成熟度が競争力の律速要因となっている。我が国は、発酵産業の蓄積やエンジニアリング・機器分野における強みを背景に、「ウェット」領域において優位性を発揮し得る可能性。AI・データの活用により「ドライ」領域を強化し、これを「ウェット」の強みと融合させることで、バイオ製造技術の高効率化を推進し、国際競争力の獲得を目指す。経済安全保障や脱炭素の観点から国内生産基盤の構築が肝要となる領域（バイオエタノール等）における需要創出及び供給能力拡充を進め、中長期的な外部依存リスクの低減と経済の自律性確保を図る。
+                                      
+                            <br>
+                            <br>
+
+                                      ※「ウェット」領域：バイオ製造技術において、設計・解析・シミュレーションなどの「ドライ」領域に対し、実際の実験・製造現場を担う領域を指す。微生物や細胞を培養・発酵させ、条件調整や装置運転を通じて、目的物質を安定的・大量に生産するための知見や技能を含む。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「発酵産業の蓄積」とは、日本酒・味噌・醤油・納豆等の伝統的発酵食品産業から、アミノ酸・抗生物質発酵（味の素・協和発酵キリン等）まで、100年以上にわたり蓄積されてきた微生物培養・発酵プロセスの知見を指す。この「ウェット領域の暗黙知」は、AIで完全に代替できるものではなく、長年の経験を持つ技能者・研究者の存在自体が競争優位だ。「AI・データでドライ領域を強化し、ウェットの強みと融合」という戦略は、この暗黙知をデジタル化・形式知化することで、スケールアップと再現性を両立させる試みだ。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        NEDOバイオファウンドリ拠点（関西30L・関東3kL）：「ウェット」領域の生産プロセス開発・スケールアップ実証・人材育成を一体的に実施。企業との共同開発を通じてエンジニアリング技術・データの蓄積を拠点化 
+                                        <span class="source-tag">経産省 2024</span>
+                                    </li>
+                                    <li>
+                                        RITE：オミクスデータ（メタボローム・トランスクリプトーム・プロテオーム）を活用した産業用スマートセル創出技術を開発中。「ドライ」領域（データ解析）の蓄積が進行 
+                                        <span class="source-tag">RITE</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        スマートセル・リコピン事業：商用スケール培養実証完了→2026年度内に一貫製造体制構築・商用展開開始という、研究開発から事業化への移行が進行中の最先行事例 
+                                        <span class="source-tag">NEDO 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                Ginkgo Bioworksは「設計・テスト・学習」のサイクルを自動化したバイオファウンドリプラットフォームを構築し、製薬・農業・素材分野の企業に「合成生物学のOS」として技術を提供。日本のバイオファウンドリ拠点との競合・連携の両面の関係になりうる。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）我が国として構築すべき機能・官民投資の具体像</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                AI・データの活用や「ウェット」領域の技術の結集等による高効率なバイオ製造技術。人材・知見が循環し適材適所で活用されるエコシステム。技術・生産プロセス開発段階における過大な設備投資リスクを分散・低減させる仕組み。既存製品との価値の差別化や事業者の予見性確保に資する市場環境。【投資内容】バイオ製造技術の開発・高度化のための投資。生産拠点整備（パイロット・デモ規模、商用規模）のための投資。バイオ人材の獲得・育成。投資主体は、国、事業会社、金融機関（銀行・VC等）。
+                              
+                    </div>
+                    <div class="note-box">
+                        <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                定量的インパクト（経済波及効果・関連投資誘発効果）は「官民投資ロードマップ取りまとめまでに提示」と明記。2026年夏の日本成長戦略取りまとめで具体化予定。「過大な設備投資リスクを分散・低減させる仕組み」という表現は、バイオものづくり特有の「パイロット規模（数十L）→デモ規模（数kL）→商用規模（数十〜数百kL）」というスケールアップの各段階で巨額の設備投資が必要になり、途中で失敗すれば投資が回収不能になるリスクへの対応を示唆する。NEDOバイオファウンドリ拠点（30L〜3kL）が、この「パイロット〜デモ規模」のリスク分散インフラとして機能している。
+                              
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH03 -->
+        <section id="ch03" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <span class="chapter-title">３．課題と政策パッケージ【政策手段】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">① 国内投資支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                バイオ製造技術プラットフォームの高度化（例：AI・デジタル技術活用、革新的な基盤技術の創出に向けた研究開発）。バイオ製造にかかる設備投資リスク低減（例：CAPEX・OPEX支援、公的な受託ファウンドリ設置）。新たな価値提供が可能な製品開発支援（例：人工ゴム・綿の生産）。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「公的な受託ファウンドリ設置」は、民間企業が自前でバイオファウンドリ設備（数十億円規模）を持たなくても、政府が整備した共用施設で生産プロセス開発・スケールアップ実証ができる仕組みだ。NEDOの関西圏（〜30L）・関東圏（〜3kL）拠点はこの「公的受託ファウンドリ」の先行実装であり、「国内バイオファウンドリの利用希望は増大」という需要超過の状況は、この政策の有効性と同時に「拠点数・規模の不足」という新たな課題も示している。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    NEDO「カーボンリサイクル実現を加速するバイオ由来製品生産技術の開発」（2020〜2026年度）：バイオファウンドリ基盤技術開発・統合解析システム開発を継続中。最終年度に向けた成果実装が焦点 
+                                    <span class="source-tag">NEDO・JBA</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    「社内に設備が無く、識者もいないので人材育成ができない。国内のバイオ人材育成が喫緊の課題」という企業側の声が経産省審議会資料で報告（2024年）。公的ファウンドリへの依存度の高さを示す 
+                                    <span class="source-tag">経産省 2024</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">② 需要創出・市場確保・社会実装支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                消費者の認知拡大・文化創造に向けた環境整備（例：消費者・学校教育、マーケティング・広報）。初期需要喚起（例：グリーン調達、製造・販売・購入規制）。迅速な許認可体制の構築（例：規制サンドボックスや特区活用等によるワンストップ許認可制度の新設）。国産バイオ製造関連技術・製品の展開促進（例：機器設備の海外展開、標準化の推進、知財活用）。社会実装を見据えた支援（例：実証事業）。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「消費者の認知拡大・文化創造」という政策パッケージの第一項目は、バイオものづくり製品が「石油由来製品との価格競争」だけでなく「消費者が選びたくなる価値」を持つ必要があることを示す。スマートセル由来リコピン（化粧品・サプリメント・食品向け）が「天然由来・環境配慮」という付加価値訴求で市場に投入されるのは、この戦略の実践だ。「グリーン調達」による初期需要喚起は、価格競争力が確立する前の段階で公共調達を通じた需要を創出する設計だ。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    規制サンドボックス・特区活用によるワンストップ許認可制度の検討が継続中。バイオものづくり製品（食品添加物・化粧品成分等）の承認プロセス迅速化が焦点 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    スマートセル由来リコピン：化粧品・サプリメント・食品分野での需要拡大を背景に、植物抽出法・石油由来合成法に代わる「環境配慮型」の選択肢として商用展開準備が進行 
+                                    <span class="source-tag">NEDO 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">③ 立地競争力強化</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                原料の安定調達・コスト低減（例：糖価調整制度における工業原料糖の除外、森林管理の促進、未利用資源・廃棄物の循環促進、工場や農地での原料栽培促進）。迅速な許認可体制の構築（再掲）。バイオものづくり人材エコシステムの確立（例：産官学人材交流・人材流動、産業からバックキャストした大学・高専教育）。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「糖価調整制度における工業原料糖の除外」は、日本固有の制度的課題への対応だ。日本の糖価調整制度は食用糖の国内生産者保護を目的としており、バイオものづくりの原料として使う糖（工業原料糖）にも食用糖と同様の高い価格水準が適用されると、米国（トウモロコシ）・南米（サトウキビ）と比較した原料コストのハンデがさらに拡大する。この制度の見直しは、「原料コストでの不利」を緩和する直接的な政策手段だ。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    未利用資源・廃棄物の循環促進：国内のバイオマス資源（農業残渣・林地残材・食品廃棄物等）を原料とする生産プロセスの開発支援が継続中 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    Greater Tokyo Biocommunity（GTB）：産官学人材交流・人材流動のネットワーク基盤として機能。「バイオものづくり人材エコシステムの確立」の具体的実装 
+                                    <span class="source-tag">NEDO</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">④ 国際連携</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                戦略的なルールの形成・活用（例：国際認証制度との連携強化、LCAガイドライン策定、標準化の推進、知財活用）。国際エコシステムとの連携（例：研究開発・人材育成・サプライチェーン協力の推進、バイオセキュリティ確保）。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「LCAガイドライン策定」「標準化の推進」は、「バイオものづくり製品の環境価値（CO2削減効果等）をどう測定・認証するか」という国際ルール形成への参画を意味する。GI基金参画企業がすでに「CO2吸収等の評価・測定方法」「LCA」「国際標準化」を協調領域として企業間連携を開始している（経産省、2024年）ことは、この国際ルール形成への日本の参画準備が進んでいることを示す。標準化を主導できれば、日本のバイオものづくり製品が国際的な「環境配慮認証」を取得しやすくなり、グリーン調達市場での競争優位につながる。
+                              
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 続編：課題・政策パッケージ編</div>
+            <div class="next-box-desc">「なぜバイオものづくりの社会実装が進まないのか」「人材不足・設備投資リスク・既存製品との価格差・脱炭素トランジションの遅滞という4重課題」を整理した「課題・政策パッケージ編」も近日公開予定です。</div>
+            <a href="https://marketsupporter-ai.com" target="_blank">▶ marketsupporter-ai.com で読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>経済産業省「バイオ政策の方向性について（前回議論を踏まえたアップデート）」産業構造審議会 商務・サービスグループ 生物化学産業課（2024年4月16日）</li>
+                <li>NEDO「スマートセルによる『リコピン』の大量生産技術を開発しました」（2026年3月12日）</li>
+                <li>NEDO「カーボンリサイクル実現を加速するバイオ由来製品生産技術の開発」事業概要</li>
+                <li>NEDO「関東圏に微生物機能を活用したバイオ生産の実証拠点を形成」</li>
+                <li>RITE（地球環境産業技術研究機構）「NEDOバイオものづくり（最先端バイオファウンドリ）」</li>
+                <li>JBA（バイオインダストリー協会）「カーボンリサイクル実現を加速するバイオ由来製品生産技術の開発」事業概要</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
