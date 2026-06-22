@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>バイオ医薬品・再生医療等製品等｜課題・政策パッケージ編｜戦略17分野 ⑯</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --warn: #e65100;
+        --warn-light: #fff3e0;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--warn);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #bf360c 0%, #e64a19 50%, #ff7043 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #ffccbc;
+        margin-bottom: 12px;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(20px, 4.5vw, 28px);
+        font-weight: 700;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #ffccbc;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #ffccbc;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 17px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #ffccbc;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--warn);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--warn);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--warn);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--warn);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-header.green {
+        background: var(--accent);
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--warn);
+        border-bottom: 1.5px solid var(--warn-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .section-title.green {
+        color: var(--accent-dark);
+        border-bottom-color: var(--accent-light);
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--warn);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .sub-section-title.green::before {
+        background: var(--accent-mid);
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .bottleneck-box {
+        background: var(--warn-light);
+        border-left: 3px solid var(--warn);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .bottleneck-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--warn);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--warn);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--warn);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ⑯</span>
+        <span>バイオ医薬品・再生医療等製品等</span>
+        <span>|</span>
+        <span>課題・政策パッケージ編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — BIOPHARMACEUTICALS & REGENERATIVE MEDICINE — CHALLENGE & POLICY PACKAGE</div>
+            <div class="hero-title">
+                バイオ医薬品・再生医療等製品等
+                <br>
+                課題・政策パッケージ編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（3）官民投資促進に向けた課題と政策パッケージ 構造に基づく分析レポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック①</div>
+                    <div class="kpi-value">
+                        バイオ人材・
+                        <br>
+                        橋渡し人材・海外VC不足
+                    </div>
+                    <div class="kpi-unit">3種の人材リソースが同時に不足</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック②</div>
+                    <div class="kpi-value">
+                        CDMO製造実績
+                        <br>
+                        未確立の悪循環
+                    </div>
+                    <div class="kpi-unit">実績がないから受注できず実績が積めない</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック③</div>
+                    <div class="kpi-value">
+                        感染症有事と平時
+                        <br>
+                        稼働率のギャップ
+                    </div>
+                    <div class="kpi-unit">需要急変に耐える生産能力の維持コスト</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック④</div>
+                    <div class="kpi-value">
+                        米国MFN価格政策・
+                        <br>
+                        米中対立
+                    </div>
+                    <div class="kpi-unit">国際環境がもたらす市況の不確実性</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜課題・政策パッケージサマリー</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜（1）投資促進に向けた課題</a>
+                    <ul class="toc-sub">
+                        <li>① リソース制約：バイオ人材・橋渡し人材・海外VCの不足</li>
+                        <li>② 不確実性の要因</li>
+                        <li>a. 事業・技術：新規CDMO製造実績未確立による受注不確実性</li>
+                        <li>b. 市場：感染症危機の備えと平時稼働率のギャップ・希少疾病治療薬市場の限定性</li>
+                        <li>c. 財務：ベンチャー資金不足・長期高リスク投資回収構造</li>
+                        <li>d. 国際環境・政策：米国市況・米中対立・各国施策</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜（2）講じるべき政策パッケージ</a>
+                    <ul class="toc-sub">
+                        <li>①国内投資支援</li>
+                        <li>②需要創出・市場確保・社会実装支援</li>
+                        <li>③立地競争力強化</li>
+                        <li>④国際連携</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">課題・政策パッケージサマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          バイオ医薬品・再生医療等製品等の課題は「リソース不足・事業不確実性・市場特殊性・国際環境」の4層構造だ。中でも「新規製造拠点（CDMO等）の製造実績未確立による受注不確実性」は最も構造的な課題で、「実績がないから受注できず、受注がないから実績が積めない」という悪循環を生んでいる。富士フイルムのような既に大規模な実績を持つ企業は好循環に入れるが、新規参入企業はこの悪循環の突破が最初の関門となる。さらに「感染症危機の備えと平時稼働率とのギャップ」という課題は、本質的に「儲からないが必要な投資」という政策的ジレンマを抱えている。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">膨大</div>
+                        <div class="stat-unit">大規模製造拠点維持コスト</div>
+                        <div class="stat-desc">大規模製造拠点の維持コストが膨大。常時利用可能なバイオリソース供給体制も不足</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">数兆円規模</div>
+                        <div class="stat-unit">感染症有事の需要急変</div>
+                        <div class="stat-desc">⑱感染症対応製品分野でも共通する課題だが、平時の需要は限定的</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">未承認</div>
+                        <div class="stat-unit">条件・期限付き承認の本承認移行</div>
+                        <div class="stat-desc">「リハート」「アムシェプリ」は条件・期限付き承認。リアルワールドデータ蓄積を経て本承認へ</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">不透明</div>
+                        <div class="stat-unit">米国MFN価格政策の影響</div>
+                        <div class="stat-desc">米国の最恵国待遇価格政策の動きで製薬企業のグローバル上市戦略が不透明化</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">4つのボトルネックと政策パッケージの対応関係</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>ボトルネック</th>
+                                <th>具体的障壁</th>
+                                <th>政策パッケージ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>① バイオ人材・橋渡し人材・海外VC不足</td>
+                                <td>研究・製造・資金調達の各段階で専門人材が同時に不足</td>
+                                <td>立地競争力強化（継続的人材育成・グローバルステークホルダー誘致）</td>
+                            </tr>
+                            <tr>
+                                <td>② CDMO製造実績未確立の悪循環</td>
+                                <td>実績がないから受注できず、受注がないから実績が積めない構造的ジレンマ</td>
+                                <td>国内投資支援（製造受託実績獲得支援・革新的基盤技術開発支援）</td>
+                            </tr>
+                            <tr>
+                                <td>③ 感染症有事×平時稼働率ギャップ・希少疾病市場限定性</td>
+                                <td>有事の需要急変に備えた生産能力は平時には過剰投資になる。希少疾病薬は市場規模が小さい</td>
+                                <td>需要創出（薬価評価・薬事制度の柔軟運用・国内製造品使用奨励）</td>
+                            </tr>
+                            <tr>
+                                <td>④ 米国市況×米中対立×各国施策の不確実性</td>
+                                <td>米国MFN価格政策により製薬企業のグローバル戦略・日本市場への投資判断が不透明化</td>
+                                <td>国際連携（海外エコシステム連携・規制当局との連携）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">（1）投資促進に向けた課題</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">① リソース制約：バイオ人材・橋渡し人材・海外VC等のステークホルダー不足</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                人材：バイオ人材、実用化への橋渡し人材、海外VCなどステークホルダーが不足。インフラ：大規模製造拠点の維持コストが膨大。随時利用可能なバイオリソース供給体制の不足。
+                              
+                    </div>
+                    <div class="bottleneck-box">
+                        <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                「バイオ人材」「実用化への橋渡し人材」「海外VC」という3種類のリソース不足は、それぞれ異なる段階で産業化を阻害する。バイオ人材（研究者・製造技術者）の不足は基礎研究・製造現場で。橋渡し人材（基礎研究の成果を製品化に導くトランスレーショナルリサーチ人材）の不足は研究→事業化の移行段階で。海外VCの不足は資金調達段階で、それぞれボトルネックを生む。「米国VC等からのFDA承認、知財戦略、法制度のノウハウが得にくい」（経産省、2024年）という指摘は、海外VC不足が単なる資金不足以上に「グローバル展開のノウハウ不足」を意味することを示している。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    「再生医療等製品装置市場だけでも2,400億円規模のグローバル市場になる」という見通しのもと、周辺産業（製造装置・原材料細胞等）の実用化研究開発を令和8年度より支援予定 
+                                    <span class="source-tag">内閣府 2026.2</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    京都大学発ベンチャーが2023年に本社を米国に移転し社名変更した事例（サイアス→Synthekine）：米国VC環境を求めて拠点移転する創薬ベンチャーの典型例として継続的に注目される 
+                                    <span class="source-tag">経産省 2024</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">② 不確実性の要因</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">a. 事業・技術：新規製造拠点（CDMO等）の製造実績未確立による受注不確実性、海外への訴求力</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      事業・技術：新規製造拠点（CDMO等）の製造実績未確立による受注不確実性、海外への訴求力。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      製薬企業がCDMOに製造を委託する際、最も重視するのは「過去の製造実績」だ。新規参入のCDMOは実績がないため受注できず、受注できないため実績が積めないという悪循環に陥る。富士フイルムが2011年の米メルク子会社買収を皮切りに10年以上かけて実績を積み上げてきたように、CDMO事業の確立には長期間の投資継続が必要だ。この「実績の壁」を乗り越えるための初期受注獲得支援が政策的に重要になる。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        再生医療等製品CDMO企業リスト（FIRM・経産省、2025年4月公開・2ヶ月ごと更新）：各CDMOのモダリティ別受託実績・承認申請サポート経験等を可視化し、創薬ベンチャーとのマッチングを促進 
+                                        <span class="source-tag">経産省 2025.4</span>
+                                    </li>
+                                    <li>
+                                        ステップアップリスト：「ヒト細胞加工物製品」「ex vivo遺伝子治療」「in vivo遺伝子治療」用の3シートで製造ギャップ解消とCDMO連携を支援 
+                                        <span class="source-tag">内閣府 2026.2</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        富士フイルム：富山CDMO拠点（2026年度稼働予定）が「デュアルユース」設備として、新規参入の実績獲得を加速する設計 
+                                        <span class="source-tag">METI Journal</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">b. 市場：感染症危機の備えと平時稼働率とのギャップ、希少疾病治療薬市場の限定性</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      市場：感染症危機の備えと平時稼働率とのギャップ、希少疾病治療薬市場の限定性。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      このボトルネックは⑱感染症対応製品分野とも共通する構造的なジレンマだ。「いつ来るかわからないパンデミックに備えて巨大な製造能力を維持する」という投資は、平時には稼働率が低く採算が悪化する。富士フイルムの富山CDMO拠点が「デュアルユース」（平時：抗体医薬品、有事：ワクチン）として設計されたのは、この稼働率ギャップを解消する直接的な工夫だ。希少疾病治療薬は患者数が少なく市場規模が限定的なため、通常の医薬品開発の投資回収モデルが成立しにくいという別の課題も抱える。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                オーファンドラッグ（希少疾病用医薬品）指定制度により税制優遇・市場独占期間延長等のインセンティブを提供し、希少疾病治療薬への投資を促進している。日本のオーファンドラッグ制度との比較・連携余地がある。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">c. 財務：ベンチャーの資金不足、長期・高リスクな投資回収構造、物価高や資材高騰によるコスト増</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      財務：ベンチャーの資金不足、長期・高リスクな投資回収構造、物価高や資材高騰によるコスト増。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      創薬ベンチャーの投資回収構造は、医療機器・IT等の他分野よりも特に長期・高リスクだ。基礎研究から臨床試験（フェーズI〜III）を経て承認まで通常10年以上、成功確率は極めて低い。「米国進出時と比較し開発スピードが遅くなり、Exit時のバリューが相対的に低くなる可能性」（経産省、2024年）という指摘は、日本国内での資金調達環境が米国と比較して見劣りすることを示している。「国内創薬ベンチャーによる小型IPO後の資金調達については困難を極める」という経産省資料の記述も、IPO後の継続的な資金調達という別の構造問題を浮き彫りにする。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        産業革新投資機構（JIC）：ダイレクト・セカンダリー戦略とアフターマーケット戦略を掲げ、IPO後のスタートアップ等の成長を支援するオポチュニティファンドを400億円で組成（2023年7月、継続運用中）
+                                        <span class="source-tag">経産省 2024</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">d. 国際環境・政策：米国市況（関税、米中対立）、各国施策（承認等の規制、薬価、国内支援）</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      国際環境・政策：米国市況（関税、米中対立）、各国施策（承認等の規制、薬価、国内支援）。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      ⑰ファーストインクラス製品・ベストインクラス製品分野とも共通するが、米国のMFN（最恵国待遇）価格政策の動向は、製薬企業が「世界最大市場である米国でどう薬価を設定するか」という戦略を不透明にし、結果として「日本市場への新薬導入判断」にも波及するリスクがある。米中対立による関税・サプライチェーン分断のリスクも、原材料調達・国際展開戦略の両面で不確実性を高めている。
+                                    
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header chapter-header green">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">（2）講じるべき政策パッケージ</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title green">① 国内投資支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                バイオ医薬品・再生医療等製品等の製造に向けた革新的な基盤技術開発、製造・供給体制整備支援。国内製造拠点における製造受託実績獲得に向けた支援。創薬ベンチャーの開発支援。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「国内製造拠点における製造受託実績獲得に向けた支援」は、b項で論じた「実績の壁」への直接対応だ。CDMOリストの整備（経産省・FIRM）は、新規参入企業の存在を創薬ベンチャーに可視化することで初期受注機会を作り出す仕組みとして機能している。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    経産省「再生・細胞医療・遺伝子治療製造設備投資支援事業費補助金」（4年間総額383億円）：CDMO国内拠点整備・製造人材育成を支援継続中 
+                                    <span class="source-tag">経産省 2025.7</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    富士フイルム：富山CDMO拠点を含むCDMO事業に約2,000億円投資。「デュアルユース」設計で平時・有事双方の実績構築を進める 
+                                    <span class="source-tag">METI Journal</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">② 需要創出・市場確保・社会実装支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                バイオ医薬品の国内製造品使用奨励の検討。再生医療等製品等の海外への訴求（インバウンド・アウトバウンドの促進）。医薬品市場の魅力度向上による患者アクセスの改善に向けた、革新的新薬のイノベーションの更なる評価の検討。再生医療などのモダリティ（治療手法）ライフサイクルに配慮した薬事制度の柔軟な運用。創薬ベンチャーのグローバル展開支援。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「モダリティライフサイクルに配慮した薬事制度の柔軟な運用」は、c項の希少疾病治療薬市場の限定性への対応でもある。条件・期限付き承認制度（「リハート」「アムシェプリ」に適用）は、この柔軟な運用の代表例だ。市販後にリアルワールドデータを収集しながら本承認へ移行するプロセスにより、従来の厳格な承認プロセスでは投資回収が見込めなかった治療法にも開発機会が生まれる。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">③ 立地競争力強化</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                継続的なバイオ人材育成。大規模製造拠点での安定生産に向けた製造自動化及び国内サプライチェーンの強化。インバウンド・アウトバウンドの促進による日本の再生医療等製品等の知名度向上。グローバルステークホルダーを呼び込んだ事業開発拠点強化。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「グローバルステークホルダーを呼び込んだ事業開発拠点強化」は、a項の「海外VC不足」への対応だ。かながわ再生・細胞医療産業化ネットワーク（RINK）のような地域クラスターが、海外投資家・グローバル製薬企業を呼び込む「窓口」として機能することで、国内創薬ベンチャーが米国移転せずとも国際的な資金・ノウハウにアクセスできる環境整備を目指している。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">④ 国際連携</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                海外エコシステム、ベンチャー企業・規制当局等との連携。再生医療等に対する信頼の確保。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「海外規制当局との連携」は、d項の米国市況不確実性への部分的な緩和策だ。日米欧の規制当局間で承認情報・安全性データを共有する枠組みが強化されれば、日本企業の海外展開における承認プロセスの予見可能性が高まる。これは⑰ファーストインクラス製品・ベストインクラス製品分野が掲げる「薬事規制の国際調和・リライアンス」とも連動する政策だ。
+                              
+                    </div>
+                    <div class="overseas-box">
+                        <div class="overseas-label">// 海外動向</div>
+                        <p>
+                            <span class="country-tag">国際</span>
+                            WHOはリライアンス（他国の審査結果の活用）を推進しており、日米欧の承認情報を参照して迅速審査を行う国が増加している。日本がこの国際的な規制協調の枠組みで存在感を高めることが、国際展開支援の実効性を左右する。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 政策実装・官民投資編も読む</div>
+            <div class="next-box-desc">「今、政府と民間がどこまで動いているか」を整理した「政策実装・官民投資編」も公開中です。</div>
+            <a href="https://marketsupporter-ai.com/reports/biopharma-regenmed-policy-investment.html" target="_blank">▶ 政策実装・官民投資編を読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>内閣府「バイオ医薬品及び再生医療等製品の製造体制の強化に向けた取組」（2026年2月26日）— 経済産業省</li>
+                <li>経済産業省「再生医療等製品CDMO企業リストを公表しました」（2025年4月1日）</li>
+                <li>経済産業省「バイオ政策の現状と今後の方向性について」産業構造審議会資料（2024年2月22日）</li>
+                <li>一般社団法人再生医療イノベーションフォーラム（FIRM）「再生医療産業によるバイオ産業の発展について」日本成長戦略④合成生物学・バイオWG資料22（2026年2月3日）</li>
+                <li>METI Journal ONLINE「『製薬大国』復活へ。日本はバイオで逆襲する」</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
