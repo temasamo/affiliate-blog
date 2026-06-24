@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ファーストインクラス製品・ベストインクラス製品｜課題・政策パッケージ編｜戦略17分野 ⑰</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --warn: #e65100;
+        --warn-light: #fff3e0;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--warn);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #bf360c 0%, #e64a19 50%, #ff7043 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #ffccbc;
+        margin-bottom: 12px;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(18px, 4vw, 26px);
+        font-weight: 700;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #ffccbc;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #ffccbc;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 16px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #ffccbc;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--warn);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--warn);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--warn);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--warn);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-header.green {
+        background: var(--accent);
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--warn);
+        border-bottom: 1.5px solid var(--warn-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .section-title.green {
+        color: var(--accent-dark);
+        border-bottom-color: var(--accent-light);
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--warn);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .sub-section-title.green::before {
+        background: var(--accent-mid);
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .bottleneck-box {
+        background: var(--warn-light);
+        border-left: 3px solid var(--warn);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .bottleneck-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--warn);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--warn);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--warn);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ⑰</span>
+        <span>ファーストインクラス製品・ベストインクラス製品</span>
+        <span>|</span>
+        <span>課題・政策パッケージ編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — FIRST-IN-CLASS / BEST-IN-CLASS PRODUCTS — CHALLENGE & POLICY PACKAGE</div>
+            <div class="hero-title">
+                ファーストインクラス製品・ベストインクラス製品
+                <br>
+                課題・政策パッケージ編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（3）官民投資促進に向けた課題と政策パッケージ 構造に基づく分析レポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック①</div>
+                    <div class="kpi-value">
+                        5分野での
+                        <br>
+                        人材の量・質不足
+                    </div>
+                    <div class="kpi-unit">創薬・規制薬事・臨床・AI/データ・SC</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック②</div>
+                    <div class="kpi-value">
+                        資金不足×
+                        <br>
+                        国際共同治験の高コスト化
+                    </div>
+                    <div class="kpi-unit">資金繰りが二重に圧迫される構造</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック③</div>
+                    <div class="kpi-value">
+                        治験誘致競争×
+                        <br>
+                        米国MFN政策
+                    </div>
+                    <div class="kpi-unit">日本上市判断に影響する二重の国際リスク</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック④</div>
+                    <div class="kpi-value">
+                        医療データ利活用の
+                        <br>
+                        社会的受容性不足
+                    </div>
+                    <div class="kpi-unit">治験参加への理解促進も課題</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜課題・政策パッケージサマリー</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜（1）投資促進に向けた課題</a>
+                    <ul class="toc-sub">
+                        <li>① リソース制約：5分野での人材不足・データ環境の未整備</li>
+                        <li>② 不確実性の要因</li>
+                        <li>a. 財務：スタートアップ資金不足×国際共同治験の高コスト化</li>
+                        <li>b. 国際環境・政策：治験誘致競争激化×米国MFN政策</li>
+                        <li>c. 社会：医療データ利活用・治験参加への社会的受容性不足</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜（2）講じるべき政策パッケージ</a>
+                    <ul class="toc-sub">
+                        <li>①実用化人材・インフラの確保</li>
+                        <li>②資金基盤・データ利用基盤の確保</li>
+                        <li>③基礎研究力・治験体制の更なる強化</li>
+                        <li>④国際展開</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">課題・政策パッケージサマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          ファーストインクラス/ベストインクラス製品分野の課題は「人材・資金・国際環境・社会的受容性」の4層構造だ。中でも「米国MFN政策による日本上市への影響」という国際環境要因は、日本単独の政策努力だけでは解決できない外生的リスクとして際立つ。一方で「医療データ利活用や治験参加に対する社会的受容性の不足」は、技術や資金の問題ではなく日本社会の意識の問題であり、長期的な啓発活動が必要な課題だ。これらの課題に対し、政策パッケージは「実用化人材」「資金・データ基盤」「基礎研究力・治験体制」「国際展開」の4本柱で多面的にアプローチしている。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">5分野</div>
+                        <div class="stat-unit">人材不足の領域</div>
+                        <div class="stat-desc">創薬研究、規制薬事、臨床、AI・データ、サプライチェーンの各分野で人材の量・質ともに不足</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">100→150件</div>
+                        <div class="stat-unit">国際共同治験 目標</div>
+                        <div class="stat-desc">初回治験計画届件数を2021年100件から2028年150件に拡大する目標（内閣官房）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">2倍</div>
+                        <div class="stat-unit">創薬スタートアップ投資目標</div>
+                        <div class="stat-desc">創薬スタートアップに対する民間投資額を2023年比で2028年までに2倍にする目標</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">不透明</div>
+                        <div class="stat-unit">米国MFN政策の影響</div>
+                        <div class="stat-desc">最恵国待遇価格政策により製薬企業のグローバル上市戦略・日本治験実施判断が不透明化</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">課題と政策パッケージの対応関係</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>ボトルネック</th>
+                                <th>具体的障壁</th>
+                                <th>政策パッケージ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>① 5分野での人材・インフラ不足</td>
+                                <td>創薬研究・規制薬事・臨床・AI/データ・SC人材が同時に不足。治験基盤・データ環境も未整備</td>
+                                <td>実用化人材・インフラの確保（人材流動化・海外人材呼び込み・創薬クラスター整備）</td>
+                            </tr>
+                            <tr>
+                                <td>② スタートアップ資金不足×治験高コスト化</td>
+                                <td>研究開発資金が不足する一方、国際共同治験のコストは増加し続け資金繰りが二重に逼迫</td>
+                                <td>資金基盤・データ利用基盤の確保（リスクマネー供給・実用化支援基金）</td>
+                            </tr>
+                            <tr>
+                                <td>③ 治験誘致競争×米国MFN政策</td>
+                                <td>各国が治験誘致を競う中で日本の相対的魅力が低下。米国MFN政策が日本上市判断にも波及</td>
+                                <td>基礎研究力・治験体制強化＋国際展開（リライアンス推進）</td>
+                            </tr>
+                            <tr>
+                                <td>④ 医療データ利活用・治験参加の社会的受容性不足</td>
+                                <td>データ提供・治験参加への国民の理解・心理的ハードルが高い</td>
+                                <td>基礎研究力・治験体制強化（治験に対する患者・医療従事者を含む理解促進）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">（1）投資促進に向けた課題</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">① リソース制約：5分野での人材不足とデータ環境の未整備</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                人材：創薬研究、規制薬事、臨床、AI・データ、サプライチェーンなど、実用化に必要な各分野で、人材の量・質ともに不足。インフラ等：治験実施基盤、AI活用のためのデータ環境や医療データの利活用環境が不十分。
+                              
+                    </div>
+                    <div class="bottleneck-box">
+                        <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                「創薬研究・規制薬事・臨床・AI/データ・サプライチェーン」という5分野は、創薬の一連のバリューチェーンを構成する全工程に対応する。つまり「研究はできるが薬事申請のノウハウがない」「薬は作れるが臨床試験を回せる人材がいない」というように、どこか一つの工程で人材不足が生じると、バリューチェーン全体が滞る。この「全工程で同時に人材が不足している」という状況が、「世界直行型」開発という野心的な目標の実現を難しくしている。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    「製薬企業等の兼業・副業を活用した人材流動化の向上」がロードマップ素案の政策パッケージ第一に明記。人材不足を「流動性向上」で補う設計 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    製薬企業：AI・データ人材の獲得競争が激化。「ハイブリッド人材」（専門的判断力×AI活用能力）の育成投資が始まっている（PwC、2026年）
+                                    <span class="source-tag">PwC 2026.4</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">② 不確実性の要因</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">a. 財務：スタートアップの資金不足、国際共同治験の高コスト化による資金繰りの逼迫</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      財務：スタートアップの資金不足、国際共同治験の高コスト化による資金繰りの逼迫。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      創薬スタートアップは「研究開発資金の不足」と「国際共同治験コストの上昇」という二重の財務圧力に晒される。⑯バイオ医薬品・再生医療等製品等分野とも共通するが、「米国進出時と比較し開発スピードが遅くなり、Exit時のバリューが相対的に低くなる可能性」（経産省、2024年）という指摘は、日本国内での資金調達環境が国際共同治験のコスト増に対応しきれていない実情を示す。「国内創薬ベンチャーによる小型IPO後の資金調達については困難を極める」という別の課題も、資金繰りの逼迫を悪化させる要因だ。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        創薬スタートアップに対する民間投資額を2023年比で2倍にする目標（2028年）に向けた施策を継続中。産業革新投資機構（JIC）のオポチュニティファンド（400億円）がIPO後の資金調達難に対応 
+                                        <span class="source-tag">内閣官房 2024.7</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">b. 国際環境・政策：各国の治験誘致競争の激化、米国MFN政策による日本上市への影響</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      国際環境・政策：各国の治験誘致競争の激化、米国MFN政策による日本上市への影響。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      世界各国が「自国で治験を実施してもらう」ための誘致競争を繰り広げている。治験実施国としての魅力（治験実施スピード・規制の柔軟性・市場規模・薬価水準等）で他国に劣後すれば、製薬企業は日本での治験実施を後回しにする。これに加えて米国MFN政策の不確実性が重なり、日本市場での新薬上市判断がさらに不透明になるという「二重の国際リスク」が生じている。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">中国・韓国</span>
+                                アジア諸国も治験実施国としての魅力向上に注力しており、規制の迅速化・コスト競争力を武器に国際共同治験の誘致を強化している。日本が「治験実施スピード」「規制の柔軟性」で競争優位を確立できるかが焦点。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">c. 社会：医療データ利活用や治験参加に対する社会的受容性の不足</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      社会：医療データ利活用や治験参加に対する社会的受容性の不足。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      このボトルネックは、技術や資金の問題ではなく日本社会の意識の問題だ。「AIの戦略的活用や医療データの利活用の推進による研究開発プロセスの高度化・効率化」という勝ち筋を実現するためには、患者・国民が自身の医療データの研究利用に同意する必要がある。プライバシーへの懸念から、欧米と比較して医療データの研究活用への抵抗感が強いとされる日本の社会的特性が、AI創薬の基盤となるデータ環境整備の制約になっている。治験参加についても「新しい薬を試すことへの不安」という心理的ハードルが、国際共同治験での被験者リクルートを難しくしている。
+                                    
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header chapter-header green">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">（2）講じるべき政策パッケージ</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title green">① 実用化人材・インフラの確保</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                製薬企業等の兼業・副業を活用した人材流動化の向上。「創薬力向上のための官民協議会」（以下「官民協議会」）を通じた海外人材の呼び込み。継続的に革新的新薬を生み出すための創薬クラスターの整備。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「兼業・副業を活用した人材流動化」は、5分野すべてで人材が不足する状況に対し「専門人材の絶対数を増やす」のではなく「既存人材の稼働効率を上げる」という現実的なアプローチだ。規制薬事・臨床等の専門人材は育成に長期間を要するため、即効性のある対応として人材の流動性向上が重視されている。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">② 資金基盤・データ利用基盤の確保</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                医薬品市場の魅力度向上による患者アクセスの改善に向けた、革新的新薬のイノベーションの更なる評価の検討。革新的医薬品等実用化支援基金による海外からも投資を呼び込める魅力あるシーズの創出や製造開発を含む実用化推進。スタートアップに対するリスクマネーの供給（政府系金融機関等の機能強化を含む）。官民協議会を通じた海外投資の呼び込み、研究開発税制の戦略技術領域型の活用。AMED等による海外ステークホルダーとのパートナリング・ネットワーキングの推進。AIを活用した研究開発の推進、医療データ利活用に向けた仕組み･環境整備、バイオバンク利活用推進。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「医療データ利活用に向けた仕組み・環境整備」は、c項の社会的受容性不足への直接対応だ。データの匿名化・セキュリティ強化等の技術的措置に加え、「データ提供がどのように新薬開発に貢献するか」という分かりやすい啓発活動が、国民の理解促進には不可欠だ。バイオバンク利活用推進も、既存の同意済みデータをより有効に活用することで、新規同意取得のハードルを部分的に回避する設計といえる。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">③ 基礎研究力・治験体制の更なる強化</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                次世代の創薬シーズ創出に向けた免疫・再生医療等の強みとなる基礎研究の更なる充実・AMEDの大学等と製薬企業との橋渡し等による実用化の推進。先端医療や臨床試験を実施する大学病院等の研究開発力の向上に向けた環境整備の推進。国際水準の治験実施体制整備（多施設共同治験での単一の治験審査委員会での審査の原則化、難易度が高い最初の人への投与（FIH）試験実施施設の整備、国際共同治験支援ワンストップ窓口活用推進、円滑な治験運営のための適切かつ柔軟性のある規制ガイダンス（GCP）の実装、治験の国際拠点・ネットワークの整備）、治験実施体制の効率化（分散型治験（DCT）を活用した治験実施推進）。難病、希少疾患領域のレイターフェーズを含めた治験・臨床試験支援。治験に対する患者・医療従事者を含む理解促進。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「治験に対する患者・医療従事者を含む理解促進」は、c項の治験参加への社会的受容性不足への直接対応だ。「国際共同治験支援ワンストップ窓口」「分散型治験（DCT）」は、b項の治験誘致競争激化への対応でもある。DCTは患者が病院に通院せず自宅で治験参加できる仕組みで、被験者の負担を下げることで「治験参加への心理的ハードル」も同時に下げる一石二鳥の施策だ。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">④ 国際展開</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                薬事規制の国際調和・リライアンス※の推進。PMDA海外事務所の活用。※WHOはリライアンス（他国の審査結果の活用）を推進しており、日米欧の承認情報を参照して迅速審査を行う国が増加している。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「薬事規制の国際調和・リライアンス」は、b項の米国MFN政策による不確実性を制度的に緩和する数少ない手段だ。日米欧の承認審査結果を相互参照する仕組みが強化されれば、米国市場での価格政策がどう動いても、日本の審査プロセス自体は独立して機能し続けることができる。PMDA海外事務所は、現地の規制動向・治験誘致競争の実情を早期に把握し、日本の政策対応に反映させる「アンテナ」としての機能を持つ。
+                              
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 政策実装・官民投資編も読む</div>
+            <div class="next-box-desc">「今、政府と民間がどこまで動いているか」を整理した「政策実装・官民投資編」も公開中です。</div>
+            <a href="https://marketsupporter-ai.com/reports/first-best-in-class-policy-investment.html" target="_blank">▶ 政策実装・官民投資編を読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>内閣官房健康・医療戦略室「創薬力の向上により国民に最新の医薬品を迅速に届けるための構想会議 中間とりまとめを踏まえた政策目標と工程表」（令和6年7月）</li>
+                <li>株探ニュース「メガファーマ攻勢で躍動、次世代医療の主役『AI創薬』有望株リスト」（2026年4月9日）— Yahoo!ファイナンス</li>
+                <li>PwC Japanグループ「スケールで起こるブレークスルー——医薬品産業の未来」（2026年4月21日）</li>
+                <li>経済産業省「バイオ政策の現状と今後の方向性について」産業構造審議会資料（2024年2月22日）</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
