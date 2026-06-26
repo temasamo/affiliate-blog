@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>感染症対応製品｜課題・政策パッケージ編｜戦略17分野 ⑱</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --warn: #e65100;
+        --warn-light: #fff3e0;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--warn);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #bf360c 0%, #e64a19 50%, #ff7043 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #ffccbc;
+        margin-bottom: 12px;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(22px, 5vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #ffccbc;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #ffccbc;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 17px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #ffccbc;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--warn);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--warn);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--warn);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--warn);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-header.green {
+        background: var(--accent);
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--warn);
+        border-bottom: 1.5px solid var(--warn-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .section-title.green {
+        color: var(--accent-dark);
+        border-bottom-color: var(--accent-light);
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--warn);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .sub-section-title.green::before {
+        background: var(--accent-mid);
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .bottleneck-box {
+        background: var(--warn-light);
+        border-left: 3px solid var(--warn);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .bottleneck-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--warn);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--warn);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--warn);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ⑱</span>
+        <span>感染症対応製品</span>
+        <span>|</span>
+        <span>課題・政策パッケージ編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — INFECTIOUS DISEASE COUNTERMEASURE PRODUCTS — CHALLENGE & POLICY PACKAGE</div>
+            <div class="hero-title">
+                感染症対応製品
+                <br>
+                課題・政策パッケージ編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（3）官民投資促進に向けた課題と政策パッケージ 構造に基づく分析レポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック①</div>
+                    <div class="kpi-value">
+                        製造・品質管理
+                        <br>
+                        人材の確保難
+                    </div>
+                    <div class="kpi-unit">専門人材の確保が継続的な課題</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック②</div>
+                    <div class="kpi-value">
+                        需要の上下変動×
+                        <br>
+                        安定収益モデル困難
+                    </div>
+                    <div class="kpi-unit">平時と有事の落差が大きすぎる</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック③</div>
+                    <div class="kpi-value">
+                        物価高騰×
+                        <br>
+                        建設費・機器費増加
+                    </div>
+                    <div class="kpi-unit">製造施設整備の投資判断を圧迫</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック④</div>
+                    <div class="kpi-value">
+                        原材料調達の
+                        <br>
+                        特定国偏在
+                    </div>
+                    <div class="kpi-unit">国際情勢次第で供給途絶リスク</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜課題・政策パッケージサマリー</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜（1）投資促進に向けた課題</a>
+                    <ul class="toc-sub">
+                        <li>① リソース制約：製造・品質管理・サプライチェーン管理人材の確保</li>
+                        <li>② 不確実性の要因</li>
+                        <li>a. 市場：需要の上下変動による安定収益モデル構築の困難</li>
+                        <li>b. 財務：物価高騰に伴う建設費・機器費の増加</li>
+                        <li>c. 国際環境・政策：原材料調達の特定国偏在</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜（2）講じるべき政策パッケージ</a>
+                    <ul class="toc-sub">
+                        <li>①国内投資支援</li>
+                        <li>②需要創出・市場確保・社会実装支援</li>
+                        <li>③競争力強化</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">課題・政策パッケージサマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          感染症対応製品の課題は、ロードマップ素案では他分野と比べてシンプルな3分類（リソース制約・不確実性の要因（市場/財務/国際環境）・政策パッケージ3本柱）で整理されている。これは課題の少なさを意味するのではなく、「需要急変への対応」という単一の根本課題が、人材・市場・財務・国際環境のあらゆる側面に波及している構造を反映している。2026年3月にワクチン4団体が提起した「廃棄リスク」「供給リードタイム1年以上」という具体的な数字は、ロードマップ素案が抽象的に記す「市場：需要の上下変動により安定収益モデルの構築が困難」という課題を、業界の現場感覚として裏付けるものだ。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">1年以上</div>
+                        <div class="stat-unit">ワクチン供給リードタイム</div>
+                        <div class="stat-desc">国内・国外製造を問わず1年以上を要し、急な増産は難しい（ワクチン4団体、2026年3月）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">廃棄リスク</div>
+                        <div class="stat-unit">増産後の流行終息</div>
+                        <div class="stat-desc">需要予測の難しさと供給リードタイムの長さにより、増産には廃棄リスクが伴う</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">数兆円規模</div>
+                        <div class="stat-unit">有事の需要急変</div>
+                        <div class="stat-desc">平時の需要は限られる一方、有事には感染拡大に応じて数兆円規模の需要が生じる</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">極端に依存</div>
+                        <div class="stat-unit">抗菌薬原材料の特定国偏在</div>
+                        <div class="stat-desc">抗菌薬は原材料・原薬の調達が特定国に極端に依存する品目があり、国際情勢次第で供給途絶リスク</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">4つのボトルネックと政策パッケージの対応関係</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>ボトルネック</th>
+                                <th>具体的障壁</th>
+                                <th>政策パッケージ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>① 製造・品質管理人材の確保難</td>
+                                <td>専門人材の絶対数が不足。有事の急な増産に対応できる人材層が薄い</td>
+                                <td>競争力強化（実生産設備を利用した実践的研修プログラム）</td>
+                            </tr>
+                            <tr>
+                                <td>② 需要の上下変動×安定収益モデル構築困難</td>
+                                <td>平時の需要は小さく有事は数兆円規模。廃棄リスクと供給リードタイムの長さが採算を圧迫</td>
+                                <td>需要創出・市場確保（買上げ・備蓄等による事業予見性確保）</td>
+                            </tr>
+                            <tr>
+                                <td>③ 物価高騰×建設費・機器費増加</td>
+                                <td>製造施設の新設・拡張コストが上昇し、投資判断のハードルが上がる</td>
+                                <td>国内投資支援（製造施設整備支援・経済安保法特定重要物資指定）</td>
+                            </tr>
+                            <tr>
+                                <td>④ 原材料調達の特定国偏在</td>
+                                <td>抗菌薬の原薬・原材料が特定国に依存。国際情勢次第で供給途絶リスク</td>
+                                <td>国内投資支援（原材料・原薬供給ルートの多角化措置）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">（1）投資促進に向けた課題</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">① リソース制約：製造・品質管理・サプライチェーン管理人材の確保</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                人材：製造・品質管理、サプライチェーン管理に携わる人材の確保。
+                              
+                    </div>
+                    <div class="bottleneck-box">
+                        <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                感染症対応製品の製造・品質管理は、平時には限定的な生産量で稼働するため、専門人材を常時フル稼働で雇用する経済合理性が低い。しかし有事には急激な増産対応が必要になり、平時の人員体制では対応しきれない。この「平時は人材を遊ばせておけない、しかし有事には人材が圧倒的に不足する」という需給ギャップが、感染症対応製品分野の人材確保を特に難しくしている。サプライチェーン管理人材の不足も、原材料の特定国偏在という別の課題（c項）と連動し、複雑な国際調達網を管理できる専門性の確保を難しくしている。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    「実生産設備を利用した実践的な研修プログラム」が政策パッケージの競争力強化策として明記。座学ではなく実際の製造現場での研修を重視 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>ワクチン製造企業：平時の生産体制を維持しながら有事対応力を高めるための人材育成投資を継続。具体的な実施規模は企業ごとに異なる</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">② 不確実性の要因</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">a. 市場：需要の上下変動により安定収益モデルの構築が困難</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      市場：感染症の流行・収束による需要の上下変動により安定収益モデルの構築が困難。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      この課題は2026年3月にワクチン4団体が具体的な数字で裏付けた。「成人・任意接種ワクチンでは感染症のアウトブレイクによる需要増は予測できず、急な増産は難しい」「増産後の流行終息による廃棄リスクが生じやすい」という指摘は、「需要が読めない×増産しても無駄になるリスク」という二重の不確実性を示す。通常の製造業であれば需要予測に基づいて生産計画を立てるが、感染症対応製品は「いつ・どの感染症が・どの規模で流行するか」という予測不可能性が事業計画の根幹を揺るがす。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        厚生科学審議会予防接種・ワクチン分科会（2026年3月30日）：業界からの問題提起を受け、買上げ・備蓄制度の改善に向けた議論が進行中 
+                                        <span class="source-tag">厚労省 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        ワクチン4団体：供給リードタイムの長さ・需要予測の困難性という構造課題を正式に提起し、制度改善を要望 
+                                        <span class="source-tag">厚労省 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">b. 財務：物価高騰に伴う建設費・機器費の増加</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      財務：物価高騰に伴う建設費・機器費の増加。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      感染症対応製品の製造施設は、無菌操作・高度な品質管理・有事対応の拡張性確保等、一般的な製造施設より建設コストが高い。近年の資材価格・人件費の高騰により、新規製造施設整備や既存施設の拡張投資のハードルがさらに上がっている。⑬次世代船舶分野で論じた「船価の約7割を材料費が占め、受注後に調達するため物価上昇局面で利益が圧迫される」という構造とも類似するが、感染症対応製品の場合は「平時の需要が小さい中での高額投資」という点でリスクがより深刻だ。
+                                    
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">c. 国際環境・政策：原材料調達の特定国偏在</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      国際環境・政策：原材料調達の特定国偏在。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      抗菌薬の原薬・原材料（抗生物質の中間体等）の多くは中国・インド等の特定国での生産に集中している。これは⑭永久磁石分野のレアアース依存と同じ構造的リスクで、「国際情勢次第で供給が途絶するリスクがある」というロードマップ素案の表現が、この脆弱性の深刻さを物語る。原薬・原材料の備蓄（6か月分目標）は、この供給途絶リスクへの直接的な緩衝材として位置づけられている。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国・EU</span>
+                                抗生物質原薬の中国依存からの脱却を目指し、自国内・同盟国内での生産能力強化策を進めている。日本の「原材料及び原薬供給ルートの多角化」もこの国際的な潮流と軌を一にする。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header chapter-header green">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">（2）講じるべき政策パッケージ</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title green">① 国内投資支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                自動化やフロー合成・連続生産などによる生産効率向上、我が国の技術力を生かせるPAT分析（ラマン分光法）等による製造・品質管理に係る新技術の活用を推進する。新型コロナワクチンを始めとした健康危機管理上必要な感染症対応医薬品等生産体制を構築・維持する。献血の啓発や献血ルームの整備などの原料血漿確保体制の強化と併せ、免疫グロブリンの製造施設の更なる整備促進を図る。最新の医療環境やサプライチェーンの状況、国内製造状況等も踏まえ、抗菌薬等の感染症対応医薬品について、経済安保法の特定重要物資への追加の検討を行う。原材料及び原薬供給ルートの多角化を図る製品について、安定供給に資する更なる措置を検討する。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「自動化やフロー合成・連続生産」は、b項の物価高騰による建設費・機器費増加への対応でもある。自動化により製造に必要な人員・面積を削減できれば、施設整備コストの上昇を一定程度相殺できる。「経済安保法の特定重要物資への追加の検討」は、c項の原材料調達特定国偏在への直接対応で、⑭永久磁石分野と同じ政策手法だ。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">② 需要創出・市場確保・社会実装支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                感染症有事の発生に備えるため、感染症危機対応医薬品等（ワクチン、治療薬、診断薬等）開発・生産体制強化戦略の策定により、研究開発から、事業予見性の確保につながる買上げ・備蓄等の一連の取組を推進する。さらに、その他有事に備えた医薬品備蓄を推進する。製薬企業による国産抗菌薬の原薬・原材料の6か月分の備蓄を支援する。新技術の導入に関し、規制要件を整理するとともに、査察当局の協力枠組みであるPIC/Sや医薬品規制調和国際会議（ICH）等の活動を通じた国際規制調和を進める。アジアへの規制理解を進めるPMDAアジア医薬品・医療機器トレーニングセンターにより国際規制調和の成果の普及を図る。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「事業予見性の確保につながる買上げ・備蓄等」は、a項の需要変動による安定収益モデル構築困難への直接対応だ。ワクチン4団体が指摘した「廃棄リスク」は、政府が一定量を確実に買上げることで、企業側の在庫処分リスクを軽減する制度設計によって緩和されうる。2026年3月の業界提起を受け、買上げ・備蓄制度の精緻化に向けた議論が進行中だ。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">③ 競争力強化</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                実生産設備を利用した実践的な研修プログラムなどを通じて、製造人材を育成し確保する。後発医薬品の品目統合による業界再編を促進する。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「後発医薬品の品目統合による業界再編」は、①リソース制約で論じた人材確保難への間接的対応でもある。乱立する中小後発品メーカーを統合することで、限られた専門人材を少数の大規模製造拠点に集約でき、有事の増産対応力（人員・設備双方）を高める効果が期待される。
+                              
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 政策実装・官民投資編も読む</div>
+            <div class="next-box-desc">「今、政府と民間がどこまで動いているか」を整理した「政策実装・官民投資編」も公開中です。</div>
+            <a href="https://marketsupporter-ai.com/reports/infectious-disease-policy-investment.html" target="_blank">▶ 政策実装・官民投資編を読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>厚生科学審議会予防接種・ワクチン分科会 研究開発及び生産・流通部会「ワクチン安定供給への取り組み」（2026年3月30日）— 日本製薬工業協会・日本ワクチン産業協会・PhRMA・EFPIA</li>
+                <li>内閣府健康・医療戦略推進事務局「ワクチン開発・生産体制強化戦略に基づくワクチン研究開発等の推進状況について」（令和7年4月）</li>
+                <li>「ワクチン開発・生産体制強化戦略」（令和3年6月1日閣議決定）</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
