@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>次世代型太陽電池（ペロブスカイト太陽電池等）｜課題・政策パッケージ編｜戦略17分野 ⑲</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --warn: #e65100;
+        --warn-light: #fff3e0;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--warn);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #bf360c 0%, #e64a19 50%, #ff7043 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #ffccbc;
+        margin-bottom: 12px;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(18px, 4vw, 26px);
+        font-weight: 700;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #ffccbc;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #ffccbc;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 16px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #ffccbc;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--warn);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--warn);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--warn);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--warn);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-header.green {
+        background: var(--accent);
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--warn);
+        border-bottom: 1.5px solid var(--warn-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .section-title.green {
+        color: var(--accent-dark);
+        border-bottom-color: var(--accent-light);
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--warn);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .sub-section-title.green::before {
+        background: var(--accent-mid);
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .bottleneck-box {
+        background: var(--warn-light);
+        border-left: 3px solid var(--warn);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .bottleneck-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--warn);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--warn);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--warn);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ⑲</span>
+        <span>次世代型太陽電池（ペロブスカイト太陽電池等）</span>
+        <span>|</span>
+        <span>課題・政策パッケージ編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — NEXT-GEN SOLAR / PEROVSKITE — CHALLENGE & POLICY PACKAGE</div>
+            <div class="hero-title">
+                次世代型太陽電池（ペロブスカイト太陽電池等）
+                <br>
+                課題・政策パッケージ編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（3）官民投資促進に向けた課題と政策パッケージ 構造に基づく分析レポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック①</div>
+                    <div class="kpi-value">
+                        研究開発・設置施工
+                        <br>
+                        人材の不足
+                    </div>
+                    <div class="kpi-unit">新分野固有の専門人材が希少</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック②</div>
+                    <div class="kpi-value">
+                        量産技術・施工技術の
+                        <br>
+                        開発遅延リスク
+                    </div>
+                    <div class="kpi-unit">技術や人材の流出も懸念</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック③</div>
+                    <div class="kpi-value">
+                        中小サプライヤーの
+                        <br>
+                        キャッシュフロー不安定性
+                    </div>
+                    <div class="kpi-unit">量産体制立ち上がり前の資金リスク</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック④</div>
+                    <div class="kpi-value">
+                        多様な設置形態への
+                        <br>
+                        過剰規制リスク
+                    </div>
+                    <div class="kpi-unit">社会的受容性×建築基準との整合</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜課題・政策パッケージサマリー</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜（1）投資促進に向けた課題</a>
+                    <ul class="toc-sub">
+                        <li>① リソース制約：研究開発・設置施工人材の不足</li>
+                        <li>② 不確実性の要因</li>
+                        <li>a. 事業・技術：量産技術・施工技術の開発遅延・技術/人材流出</li>
+                        <li>b. 市場：海外企業の事業化動向・量産体制立ち上がりの遅延</li>
+                        <li>c. 財務：中小サプライヤーのキャッシュフロー不安定性</li>
+                        <li>d. 国際環境：不利な標準化・分断マーケット</li>
+                        <li>e. 社会：多様な設置形態への過剰規制リスク</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜（2）講じるべき政策パッケージ</a>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">課題・政策パッケージサマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          ペロブスカイト太陽電池の課題は「技術・市場・財務・国際環境・社会」の5層構造だ。最も注意すべきは「事業・技術」ボトルネックの二面性——①技術の開発遅延リスク（量産技術・施工技術）と②技術や人材の流出リスクだ。中国GCL傘下がタンデム型で2026年7月に日本市場参入を予定していることは、「市場：海外企業の事業化動向」というリスクが既に現実化していることを示す。「財務：中小サプライヤーのキャッシュフロー不安定性」は、量産体制が立ち上がる前の売上が限定的な段階でも部材・製造装置等のサプライチェーン企業が投資を継続するための資金支援が政策課題として明示されている点が本分野固有だ。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">2026年7月</div>
+                        <div class="stat-unit">中国GCL日本参入予定</div>
+                        <div class="stat-desc">GCLペロブスカイト（GCL傘下）がタンデム型量産販売を日本でも開始予定。日本勢カネカは2028年度計画</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">2025年度</div>
+                        <div class="stat-unit">耐久性試験状況</div>
+                        <div class="stat-desc">各社とも高温・高湿度環境下の耐湿熱試験は劣化率約1%/年をクリア。ただし光照射加わると加速する事例あり</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">2029年3月</div>
+                        <div class="stat-unit">壁面施工工法 開発期限</div>
+                        <div class="stat-desc">積水化学・日軽エンジニアリング等4社が壁面設置改良工法を開発中（2025年10月〜2029年3月）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">過剰規制リスク</div>
+                        <div class="stat-unit">多様な設置形態への規制</div>
+                        <div class="stat-desc">道路・橋梁・防音壁等インフラへの設置では既存規制との整合が課題。安全性確保と普及促進の両立が必要</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">5つのボトルネックと政策パッケージの対応関係</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>ボトルネック</th>
+                                <th>具体的障壁</th>
+                                <th>政策パッケージ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>① 研究開発・設置施工人材の不足</td>
+                                <td>新技術分野固有の研究者・施工士が希少</td>
+                                <td>国内投資支援（GI基金による大学等研究開発支援）</td>
+                            </tr>
+                            <tr>
+                                <td>② 量産技術・施工技術開発遅延・技術/人材流出</td>
+                                <td>耐久性・大型化・低コスト量産という複数技術課題が並走。中国等への流出リスク</td>
+                                <td>国内投資支援（GI基金・設備投資補助）＋国際連携（国際標準化・知財管理）</td>
+                            </tr>
+                            <tr>
+                                <td>③ 中小サプライヤーのキャッシュフロー不安定性</td>
+                                <td>量産体制立ち上がり前の売上限定期における部材・装置メーカーの資金繰り難</td>
+                                <td>立地競争力強化（官民金融機関と連携したリスクマネー供給）</td>
+                            </tr>
+                            <tr>
+                                <td>④ 不利な標準化・分断マーケット</td>
+                                <td>中国主導の国際標準が設定されると日本製品の競争力が低下するリスク</td>
+                                <td>国際連携（有志国と連携した公正な競争を確保する国際標準策定）</td>
+                            </tr>
+                            <tr>
+                                <td>⑤ 多様な設置形態への過剰規制リスク</td>
+                                <td>道路・インフラ・農地等への設置で既存規制が壁になり普及が阻まれるリスク</td>
+                                <td>需要創出支援（設置・施工ガイドライン公表・規制整備）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">（1）投資促進に向けた課題</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">① リソース制約：研究開発・設置施工に関わる人材の不足</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                人材：研究開発・設置施工に関わる人材不足。
+                              
+                    </div>
+                    <div class="bottleneck-box">
+                        <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                ペロブスカイト太陽電池は「材料化学×薄膜プロセス×電気工学×施工技術」という複合領域の専門知識を必要とする。既存のシリコン太陽電池の研究者・施工士とは異なる専門性が必要で、「ペロブスカイト専門の人材プール」はまだ日本では極めて小さい。施工技術面では、フィルム型の壁面設置・インフラ設置という新しい施工パターンに対応できる施工士の育成が急務だ。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    GI基金：積水化学・パナソニック・東芝・エネコートテクノロジーズ等への研究開発支援を継続。産総研との産学官連携での知見共有も推進 
+                                    <span class="source-tag">経産省 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    積水化学・日軽エンジニアリング等4社：壁面設置改良工法を共同開発中（2025年10月〜2029年3月）。施工技術者の育成を並行して推進 
+                                    <span class="source-tag">積水化学 2025.10</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">② 不確実性の要因</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">a. 事業・技術：量産技術・施工技術の開発遅延、技術や人材の流出</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      事業・技術：量産技術、設置・施工技術の開発遅延、技術や人材の流出。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      量産技術面では「高温・高湿度に強い日射が加わると劣化が加速する」という屋外耐久性課題が2025年度の実証試験で明らかになっており（どこでも発電所、2026年4月）、耐久性の完全確立がGW級量産体制構築の前提条件となっている。大面積化でも均一な発電層の形成という技術課題が残る。技術・人材流出については、中国GCLの日本市場参入が示す通り、日本の技術・研究成果が競合への流出リスクをはらんでいる。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        「性能や耐久性が正当に評価されるように、有志国と連携し公正な競争を確保する国際標準を策定」がロードマップ素案の政策パッケージに明記。技術・人材流出対策の一環として知財戦略も重要 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        積水化学（積水ソーラーフィルム）：「液晶パネル向けのシール技術を応用した封止技術で約10年相当の耐久性を実現」という先行実績を持つ。耐光性の確保が次の技術課題 
+                                        <span class="source-tag">どこでも発電所 2026.4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">中国</span>
+                                GCLペロブスカイトが2026年7月をめどにタンデム型の量産販売を日本でも開始する予定。フィルム型でも追い上げてくる可能性が高く、「量産速度での競争」という新たなリスクフェーズに入っている。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">b. 市場：海外企業の事業化動向・国内外需要を満たす量産体制立ち上がりの遅延</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      市場：海外企業の事業化動向、国内外需要を満たす量産体制の立ち上がりの遅延。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      「海外企業の事業化動向」リスクが2026年内に現実化した。中国GCLペロブスカイトのタンデム型量産参入（2026年7月予定）により、「タンデム型では中国勢が先行」という状況が生まれている。量産体制立ち上がりの遅延については、積水化学が2027年度の100MW稼働・2030年GW級構築を目標としているが、耐久性確立・施工方法確立・コスト低減の3つを同時に進める難しさが「遅延リスク」の実体だ。
+                                    
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">c. 財務：サプライチェーン上の中小企業のキャッシュフローの不安定性</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      財務：サプライチェーン上の中小企業のキャッシュフローの不安定性。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      ペロブスカイト太陽電池のサプライチェーンには、封止材・電極材・製造装置等を供給する中小企業が多数存在する。大手（積水化学等）の量産ラインが2027年度以降に本格稼働するまでの間、これら中小サプライヤーは研究開発・設備投資に継続して投資しながら、売上が限定的な状況に耐える必要がある。このキャッシュフローの不安定性が、サプライチェーン全体の投資継続を難しくする。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        「官民金融機関と連携したリスクマネー供給、ファイナンスや保険業界への情報提供」が政策パッケージの立地競争力強化策として明記 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">d. 国際環境・政策：我が国に不利益となる標準化・分断マーケット</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      国際環境・政策：我が国に不利益となる標準化、特定国と分断されたマーケットでの市場の確立。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      太陽電池の国際標準（IEC規格等）で中国が主導権を握ると、日本製品の性能評価方法が不利になる可能性がある。「日本の封止技術による耐久性」が正当に評価されない評価基準が設定されれば、技術的に優れていても国際市場での競争力が損なわれる。「特定国と分断されたマーケット」という表現は、地政学的リスクにより市場が二分化（西側市場vs中国市場）する状況を指しており、日本は「西側市場」での確固たる地位確立を目指す戦略的判断を迫られている。
+                                    
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">e. 社会：環境影響・多様な設置形態に対する過剰規制</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      社会：環境影響：多様な設置形態に対する過剰規制。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      ペロブスカイト太陽電池の一部製品は鉛を含有しており、環境規制（RoHS指令等）への対応が必要だ。また道路防音壁・農地（農業振興地域の農地法）・河川堤防（河川法）・鉄道施設（鉄道事業法）等への設置では、各省庁の許認可が必要になり「フィルム型の軽量・柔軟という強みを活かせる設置場所」で規制が壁になるリスクがある。「安全性を考慮した設置・施工ガイドラインを令和7年度中に公表」という政策対応が始まっているが、多様な設置形態に対応したガイドラインの整備は継続課題だ。
+                                    
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header chapter-header green">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">（2）講じるべき政策パッケージ</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title green">① 国内投資支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                GI基金による事業者や大学等への研究開発支援を令和3年度より実施。GXサプライチェーン構築支援事業による事業者の量産のための設備投資支援を実施。需要家向けの導入支援を令和7年度より実施。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                GI基金648億円という規模感は、量産体制立ち上がり前のc項（中小サプライヤーのキャッシュフロー）を支える「公的バッファー」として機能する。GXサプライチェーン構築支援事業（積水化学の堺工場への半額補助）は、b項の量産体制立ち上がり遅延リスクに対し「大手が先行して量産規模を確立する」ことを後押しする設計だ。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">② 需要創出・市場確保・社会実装支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                （国内展開）需要家向けの導入補助、建物単位での導入計画補助、令和9年度からの省エネ法定期報告書での屋根面積等報告義務化（「ペロブスカイトReady」な社会構築）、公共施設・インフラ実証強化。固定資産税課税特例・地方財政措置。FIT/FIP制度の新区分（中長期）。施工ガイドラインの公表・アップデート。（海外展開）海外実証（米国等）、有志国との国際標準策定、タンデム型の量産後の海外試験販売。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「令和9年度からの省エネ法定期報告書での屋根面積・積載荷重の報告義務化」は、e項の過剰規制リスクへの間接対応でもある。設置可能な建物を事前にデータベース化することで、「設置してみたが規制で使えなかった」というリスクを下げる。「施工ガイドラインの公表」は、多様な設置形態での「何が許可されるか」を明確化することで過剰規制の防止と安全確保を両立する設計だ。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">③ 立地競争力強化</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                官民金融機関と連携したリスクマネー供給、ファイナンスや保険業界への情報提供。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「保険業界への情報提供」という表現が興味深い。ペロブスカイト太陽電池は新技術のため、保険会社が製品保証・施工不具合等のリスク評価ができず、保険料が高止まりするリスクがある。⑫海洋無人機分野で論じた「保険負担の高止まり」と同じ構造だ。政府が保険業界に技術・耐久性に関する情報を提供することで、合理的な保険料設定を促し、エンドユーザーの導入コストを下げる効果が期待される。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">④ 国際連携</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                国際標準化の策定に向けた、高度研究機関を有する同志国との連携。非価格価値の具体化、特定国の影響を受けにくいマーケットの構築。タンデム型量産に向けた同志国とのサプライチェーン連携。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「タンデム型量産に向けた同志国とのサプライチェーン連携」は、b項（タンデム型での中国先行）とd項（国際標準化リスク）の両方への対応だ。中国が先行する中でも「日本製タンデム型は同志国のサプライチェーンと統合されており、安全保障上の信頼性がある」という付加価値を確立することが、「非価格価値の具体化」の実践となる。
+                              
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 政策実装・官民投資編も読む</div>
+            <div class="next-box-desc">「今、政府と民間がどこまで動いているか」を整理した「政策実装・官民投資編」も公開中です。</div>
+            <a href="https://marketsupporter-ai.com/reports/perovskite-solar-policy-investment.html" target="_blank">▶ 政策実装・官民投資編を読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>環境省「政府部門におけるペロブスカイト太陽電池の率先導入について」（2026年3月30日）</li>
+                <li>積水ソーラーフィルム株式会社「フィルム型ペロブスカイト太陽電池の事業進捗について」GX専門家ワーキンググループ資料5（2026年2月5日）</li>
+                <li>株式会社JGC「ペロブスカイト太陽電池とは？実用化の時期・課題を施工会社が基礎から解説」どこでも発電所（2026年4月3日）</li>
+                <li>ニュースイッチ「タンデム型ペロブスカイト太陽電池、中国企業が量産化…7月日本投入」（2026年4月）</li>
+                <li>次世代型太陽電池の導入拡大及び産業競争力強化に向けた官民協議会 事務局「次世代型太陽電池に関わる動向について」（2025年5月）</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
