@@ -1,0 +1,1029 @@
+-<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水素等｜政策実装・官民投資編｜戦略17分野 ⑳</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--accent);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 50%;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #a5d6a7;
+        margin-bottom: 12px;
+    }
+
+    .hero-number {
+        font-family: var(--font-mono);
+        font-size: 60px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, .1);
+        position: absolute;
+        top: -12px;
+        right: 0;
+        line-height: 1;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(22px, 5vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #a5d6a7;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #c8e6c9;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--accent);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--accent-dark);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--accent-dark);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--accent);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        border-bottom: 1.5px solid var(--accent-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--accent-mid);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--accent);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ⑳</span>
+        <span>水素等</span>
+        <span>|</span>
+        <span>政策実装・官民投資編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — HYDROGEN / AMMONIA — POLICY MONITOR</div>
+            <div class="hero-number">20</div>
+            <div class="hero-title">
+                水素等
+                <br>
+                政策実装・官民投資編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（日本成長戦略会議 第3回、2026年3月）構造に基づく政策モニタリングレポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">官民投資目標（10年累計）</div>
+                    <div class="kpi-value">7兆円以上</div>
+                    <div class="kpi-unit">公的支援約4兆円以上を呼び水に民間投資を誘発</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">水素等 導入目標</div>
+                    <div class="kpi-value">300万t→1,200万t→2,000万t</div>
+                    <div class="kpi-unit">2030年→2040年→2050年（政策目標として示されている値）</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">世界水素市場規模</div>
+                    <div class="kpi-value">30〜40兆円</div>
+                    <div class="kpi-unit">2050年見込み。日本が狙う4製品が鍵</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">
+                        長期脱炭素電源オークション
+                        <br>
+                        水素換算需要（第1・2回合計）
+                    </div>
+                    <div class="kpi-value">約25万t</div>
+                    <div class="kpi-unit">火力発電での水素・アンモニア需要創出が先行</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜政策実装サマリー（2026年04月〜05月）</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜現状認識と目指す姿【目標】</a>
+                    <ul class="toc-sub">
+                        <li>（1）現状：「技術で勝って、ビジネスでも勝つ」という課題と4製品の技術優位</li>
+                        <li>（2）目標：2050年 世界市場30〜40兆円で不可欠性確立・官民累計7兆円投資</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜勝ち筋と官民投資の具体像【道筋】</a>
+                    <ul class="toc-sub">
+                        <li>①ガスタービン（水素・アンモニア混焼/専焼）</li>
+                        <li>②水電解装置</li>
+                        <li>③液化水素関連機器</li>
+                        <li>④燃料電池</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch03">CHAPTER 03｜課題と政策パッケージ【政策手段】</a>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">政策実装サマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          2026年3月27日、資源エネルギー庁が「水素・アンモニア社会実装に向けた当面取り組むべき課題」資料を公表し、官民合わせて今後10年間で「累計7兆円以上」の投資を目指す方針が改めて示された。水素社会推進法に基づく価格差支援・長期脱炭素電源オークション（第1・2回で水素換算約25万トンの需要が創出）という制度的な需要創出の基盤が整いつつある。4製品（ガスタービン・水電解装置・液化水素関連機器・燃料電池）それぞれのロードマップが明確化され、特に水電解装置ではGXサプライチェーン構築支援事業による量産投資支援が本格化している。みずほ銀行の分析（2026年3月25日）では、「停滞シナリオ（水素価格の下落が起きず炭素価格もEU水準を50%下回る水準に低迷）では水素等需要は100万トンに満たない」という条件依存性の高さも示されている。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">約4兆円以上</div>
+                        <div class="stat-unit">公的投資支援（10年）</div>
+                        <div class="stat-desc">GI基金・水素社会推進法に基づく価格差支援・拠点整備支援等の合計。民間投資を引き出す呼び水</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">約25万t</div>
+                        <div class="stat-unit">長期脱炭素電源オークション水素換算需要</div>
+                        <div class="stat-desc">第1・2回の長期脱炭素電源オークションで落札した電源の運転に必要な水素換算需要（みずほ銀行、2026年3月）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">15GW程度</div>
+                        <div class="stat-unit">水電解装置 2030年導入目標</div>
+                        <div class="stat-desc">2030年までに国内外における日本関連企業の水電解装置の導入目標（政策目標として示されている値）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">約市場シェア4割</div>
+                        <div class="stat-unit">ガスタービン</div>
+                        <div class="stat-desc">我が国のガスタービンが占める世界市場シェア。水素アンモニア対応タービンで先行的優位を活かす</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">直近2ヶ月の重要動向（2026年4〜5月）</div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き</div>
+                            <ul>
+                                <li>
+                                    <strong>2026年3月27日</strong>
+                                    ：資源エネルギー庁「水素・アンモニア社会実装に向けた当面取り組むべき課題」を公表。4製品の課題整理と政策パッケージを提示 
+                                    <span class="source-tag">資源エネルギー庁 2026.3</span>
+                                </li>
+                                <li>
+                                    水素社会推進法（2024年施行）：価格差に着目した支援・拠点整備支援・高圧ガス保安法の特例等を実施中 
+                                    <span class="source-tag">資源エネルギー庁</span>
+                                </li>
+                                <li>
+                                    長期脱炭素電源オークション：第1・2回で水素換算約25万トンの需要が創出。水素・アンモニア火力の段階的導入が開始 
+                                    <span class="source-tag">みずほ銀行 2026.3</span>
+                                </li>
+                                <li>
+                                    燃料電池重点地域：「燃料電池商用車を集中的に導入する重点地域」の指定により、FCVトラックの普及を加速する需要喚起策を推進 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き</div>
+                            <ul>
+                                <li>
+                                    ガスタービン（三菱重工・川崎重工等）：水素・アンモニア混焼/専焼タービンで世界を先行。産業用小規模から発電向け大規模まで商用化済み。世界市場シェア約4割を維持 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                                <li>
+                                    水電解装置各社：GXサプライチェーン構築支援事業による量産投資支援を受け、大型化・モジュール化の技術開発と量産体制構築が進行中 
+                                    <span class="source-tag">資源エネルギー庁 2026.3</span>
+                                </li>
+                                <li>
+                                    液化水素（川崎重工・HySTRA）：世界初の液化水素運搬船（「すいそふろんてぃあ」後継の大型化）を推進中。世界唯一、サプライチェーン全体で液化水素関連設備の製造能力を保持 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                                <li>
+                                    燃料電池（トヨタ・本田等）：FC商用車（FCトラック）の普及に向けた実証・量産投資を継続。水素ステーションの大型化・マルチ化も推進 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">4製品×役割分担マップ</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>製品</th>
+                                <th>日本の強み</th>
+                                <th>主要プレイヤー</th>
+                                <th>直近動向</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>①水素アンモニア混焼/専焼タービン</td>
+                                <td>世界市場シェア約4割。産業用〜発電用まで商用化先行</td>
+                                <td>三菱重工、川崎重工、IHI</td>
+                                <td>長期脱炭素電源オークションで需要創出開始。新設・更新・転用市場を視野</td>
+                            </tr>
+                            <tr>
+                                <td>②水電解装置</td>
+                                <td>耐久性・多様方式（アルカリ/PEM/SOEC）での実証経験</td>
+                                <td>旭化成・NEL・住友商事・川崎重工等</td>
+                                <td>GXサプライチェーン構築支援事業で量産投資支援中。2030年15GW導入目標</td>
+                            </tr>
+                            <tr>
+                                <td>③液化水素関連機器</td>
+                                <td>世界唯一のサプライチェーン全体製造能力。運搬船・ローディングアーム・圧縮機等</td>
+                                <td>川崎重工・HySTRA・岩谷産業等</td>
+                                <td>GI基金で商用実装を推進中。日独連携による液化水素サプライチェーン共同構築</td>
+                            </tr>
+                            <tr>
+                                <td>④燃料電池</td>
+                                <td>セル性能の高さ・高耐久性・長寿命・小型・汎用性</td>
+                                <td>トヨタ、本田、パナソニック、村田製作所等</td>
+                                <td>FC商用車重点地域指定による需要喚起。水素ステーション大型化・マルチ化推進</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">１．現状認識と目指す姿【目標】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）現状</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 現状：「技術で勝って、ビジネスでも勝つ」という課題——技術優位を商用化段階の勝機につなげられるか</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      水素・アンモニアは、脱炭素に加えて、国産エネルギーの活用手段として、エネルギー安全保障の観点からも関心が拡大。市場・産業全体の成長は、一時の高水準の予測からは減速しつつも、堅調に推移。政府支援と組み合わせて、（脱炭素電源コストが相対的に安い）中国・欧州・インド等を中心に着実に底堅い投資が進行。我が国は、諸外国に先駆けて水素関連技術開発の開発・実証を推進。ⅰ)水素アンモニア混焼/専焼タービン、ⅱ)水電解装置、ⅲ)液化水素関連機器、ⅳ)燃料電池をはじめ、サプライチェーン全体を通じて技術優位を有する技術・製品を保持。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「一時の高水準の予測からは減速しつつも堅調に推移」という現状認識は、水素市場への過剰な期待が一部修正された現実を示す。2020年前後には「2050年に水素が世界のエネルギー供給の18〜20%を担う」という楽観的予測が多くあったが、実際のコスト低減・インフラ整備は遅れている。この「期待の調整」の中で日本が「技術優位を持つ4製品で先行して市場を握る」戦略は、「水素全体の夢」に乗るのではなく「技術優位のある特定領域での実需獲得」という現実的アプローチだ。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                インフレ削減法（IRA）により、低炭素水素製造に10年間で最大3ドル/kgの税額控除を実施予定（約50兆円規模。水素以外も含む）。大規模な政策支援が水素産業育成の鍵となっている。
+                            </p>
+                            <p>
+                                <span class="country-tag">欧州</span>
+                                グリーンディール産業計画でグリーン投資基金の設立や水素銀行構想を発表。英国は国内低炭素水素製造案件について15年間の値差支援や拠点整備支援を実施予定（第一弾として約5,400億円規模）。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）目標</div>
+                    <div class="sub-section">
+                        <div class="sub-section-title">2050年 世界市場30〜40兆円での不可欠性確立・官民累計7兆円投資・水素等導入2,000万t/年</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      2030年に最大300万t/年、2040年に1,200万t/年、2050年に2,000万t/年程度の水素等の導入を目指す（政策目標として示されている値）。2050年 30〜40兆円規模への拡大が見込まれる水素サプライチェーン全体で「技術で勝って、ビジネスでも勝つ」ことを目指す。水素等の活用を通じて、我が国の自律性/不可欠性の向上、エネルギー安定供給/安全保障の確保を図る。
+                                    
+                        </div>
+                        <div class="note-box">
+                            <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                      「累計7兆円以上の官民投資」（公的支援約4兆円以上を呼び水に民間投資を誘発）という数字は、水素分野への政策の本気度を示す。ただし、みずほ銀行の分析（2026年3月25日）が指摘する「停滞シナリオでは100万トン未満」というリスクシナリオは、水素等の需要創出と価格低減という根本課題への依存を示している。2030年300万トンを達成できるかどうかは「炭素価格の水準」「再エネコストの低下スピード」「各国の政策継続性」という3つの外部要因に大きく依存する。
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">２．勝ち筋と官民投資の具体像【道筋】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">4製品の勝ち筋と直近進捗</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 水素アンモニア混焼/専焼ガスタービン——世界市場シェア4割を足がかりに新設・転用・更新市場へ</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      我が国の水素・アンモニア（ready）ガスタービンは、産業用途向けの小規模から発電向けの大規模まで、世界に先行して商用化。市場シェアの約4割を占める我が国のポジションを最大限活用しつつ、新設需要にとどまらず、タービン交換等による転用・更新市場も視野に入れつつ、堅調に伸びる天然ガスタービン市場におけるシェア獲得からの展開を目指す。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「転用・更新市場」という視点が重要だ。世界には既存の天然ガスタービン（重油・天然ガス燃料）が大量に稼働しており、これらを水素・アンモニア対応に改修（レトロフィット）する市場は新設市場の数倍の規模になりうる。「現在稼働している天然ガスタービンを日本製に交換するだけでCO2排出を削減できる」という価値提案は、新規投資の決定に比べて容易な商談になる可能性が高い。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        長期脱炭素電源オークション（第1・2回）：水素・アンモニア火力の段階的導入により、水素換算約25万トンの需要が創出。国内での実績積み上げが進行中 
+                                        <span class="source-tag">みずほ銀行 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        三菱重工・川崎重工・IHI：水素・アンモニア対応タービンの商用実績を積み上げ中。国内での長期脱炭素電源オークション参画が海外展開への実績証明として機能 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② 水電解装置——耐久性×多様方式での実証経験を活かした欧州市場獲得</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      耐久性や長期的な実証経験、アルカリ型・PEM型・SOEC等の多様な方式での実証・商用化の取組等の我が国の強みを生かし、欧州はじめ世界の市場で多様化するニーズを幅広く獲得する。生産設備の量産投資支援により、技術力の高さを活かしつつコストダウンを進め、部素材も含めて、立ち上がり段階にある水電解市場でのシェア拡大を目指す。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        GXサプライチェーン構築支援事業：水電解装置メーカーの量産体制確立に向けた投資を促進中 
+                                        <span class="source-tag">資源エネルギー庁 2026.3</span>
+                                    </li>
+                                    <li>
+                                        日欧間の経済安保観点での制度連携：特定国に過度に依存しない国際標準における耐久性評価項目を整備 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        水電解装置各社：大型化・モジュール化・要素技術の開発が進行中。GI基金プロジェクトが進展 
+                                        <span class="source-tag">資源エネルギー庁 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">③ 液化水素関連機器——世界唯一のサプライチェーン全体製造能力×日独連携</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      我が国は、世界初の液化水素運搬船の開発・製造成功等、世界で唯一サプライチェーン全体で液化水素関連設備の製造が可能。貯蔵タンクやローディングアーム、圧縮機等の周辺機器にも競争力を有し、GI基金事業により、いち早く商用実装を推し進める。日独間の協力関係を通じ、上流から需要開拓まで液化水素サプライチェーンを共同構築し、市場拡大。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「世界で唯一サプライチェーン全体で製造可能」という優位性は、⑯バイオ医薬品分野の「特定国以外で高性能磁石を供給できるのは事実上日本のみ」と同様の「不可欠性」戦略だ。液化水素（LH2）の国際輸送には、液化基地・運搬船・受入基地・バンカリング設備という連鎖したインフラが必要で、その全体を製造できる国が日本だけであれば、いずれかの部品を日本から調達しなければ液化水素サプライチェーンが成立しない。
+                                    
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">④ 燃料電池——FC商用車重点地域指定で「3つ巴の課題」を突破する</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      我が国は、燃料電池のコア技術であるセル性能の高さ、高耐久性・長寿命、量産技術に強み。さらに、小型かつ高い汎用性を持ち、様々な車両・製品への展開が見込まれ、欧州・米国・中国において市場シェア拡大を目指す。大規模な商用FCVの需要を創出し、水素ステーションの自立化を促すため、「燃料電池商用車を集中的に導入する重点地域」の指定（燃料費を含む集中支援によるインフラ・車両・荷主の3者の状況を踏まえた需要喚起）。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「インフラ不足・車両価格の高さ・水素価格の高さの3つ巴の課題」からの脱出が、燃料電池分野での最大の政策課題だ。「重点地域」の指定は、この3つを「一箇所に集中させる」ことで解決しようとするアプローチだ。重点地域に水素ステーション・FCトラック・需要側の荷主（配送センター等）を集中配置することで、インフラと車両の相互依存問題を地理的に解決する。⑦無人航空機（民生）分野の「レベル4指定エリア」と同じ政策論理だ。
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH03 -->
+        <section id="ch03" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <span class="chapter-title">３．課題と政策パッケージ【政策手段】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">4製品の課題と政策パッケージ</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP（サマリー）</div>
+
+                                サプライチェーン全体を通じた社会実装に向けた最大の課題は、需要創出と価格低減。各製品・技術の政策パッケージは：ⅰ)ガスタービン：水素社会推進法に基づく価格差支援・長期脱炭素電源オークション活用。ⅱ)水電解装置：GI基金（大型化・要素技術）＋GXサプライチェーン構築支援（量産体制）＋需要国連携（国際標準・規格）。ⅲ)液化水素関連機器：GI基金（技術確立）＋液化水素の国際標準化＋需要国連携。ⅳ)燃料電池：GXサプライチェーン構築支援（量産体制）＋FC商用車重点地域指定（需要喚起）。
+                              
+                    </div>
+                    <div class="note-box">
+                        <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                定量的インパクト（投資額・経済波及効果・関連投資誘発効果）は「官民投資ロードマップの取りまとめまでに提示」と明記。2026年夏の日本成長戦略取りまとめで具体化予定。「供給側は安定した需要が見込めないと投資に踏み込めず、需要側は安定・安価な供給が見込めないと購入契約に踏み込めないというジレンマ」（各種資料）を、政府の公的支援（約4兆円以上）で突破することが本質的な政策設計だ。
+                              
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 続編：課題・政策パッケージ編</div>
+            <div class="next-box-desc">「なぜ水素の需要創出と価格低減が進まないのか」「供給・需要双方の投資判断の鶏と卵・水素価格の高さ・インフラ整備の困難・GX市場での競争激化」を整理した「課題・政策パッケージ編」も近日公開予定です。</div>
+            <a href="https://marketsupporter-ai.com" target="_blank">▶ marketsupporter-ai.com で読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>資源エネルギー庁省エネルギー・新エネルギー部水素・アンモニア課「水素・アンモニア社会実装に向けた当面取り組むべき課題」（2026年3月27日）</li>
+                <li>みずほ銀行産業調査部「日本における水素市場創造への方策 ～水素等の需要予測からの視座～」（2026年3月25日）</li>
+                <li>資源エネルギー庁「脱炭素成長型経済構造への円滑な移行のための低炭素水素等の供給及び利用の促進に関する法律（水素社会推進法）」</li>
+                <li>ITmedia スマートジャパン「核となる"水素大動脈構想"とは？ 水素・アンモニアの社会実装とロードマップ案」（2026年4月28日）</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
