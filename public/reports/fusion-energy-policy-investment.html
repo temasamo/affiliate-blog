@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フュージョンエネルギー｜政策実装・官民投資編｜戦略17分野 ㉒</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--accent);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #0d47a1 0%, #1565c0 50%, #1976d2 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 50%;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #90caf9;
+        margin-bottom: 12px;
+    }
+
+    .hero-number {
+        font-family: var(--font-mono);
+        font-size: 60px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, .1);
+        position: absolute;
+        top: -12px;
+        right: 0;
+        line-height: 1;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(22px, 5vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #90caf9;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #90caf9;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #bbdefb;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--accent);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--accent-dark);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--accent-dark);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--accent);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        border-bottom: 1.5px solid var(--accent-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--accent-mid);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--accent);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ㉒</span>
+        <span>フュージョンエネルギー</span>
+        <span>|</span>
+        <span>政策実装・官民投資編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — FUSION ENERGY — POLICY MONITOR</div>
+            <div class="hero-number">22</div>
+            <div class="hero-title">
+                フュージョンエネルギー
+                <br>
+                政策実装・官民投資編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（日本成長戦略会議 第3回、2026年3月）構造に基づく政策モニタリングレポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">JT-60SA 統合試験運転</div>
+                    <div class="kpi-value">2026年3月11日</div>
+                    <div class="kpi-unit">プラズマ加熱実験に向けた統合試験運転が開始。世界最大のトカマク型装置として本格始動</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">QST×NTT共同開発</div>
+                    <div class="kpi-value">2026年3月18日</div>
+                    <div class="kpi-unit">核融合炉プラズマ制御用の高頻度リアルタイム通信技術を世界初実現</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">IAEAのGDP押し上げ試算</div>
+                    <div class="kpi-value">最大約700兆円超</div>
+                    <div class="kpi-unit">長期的な全世界へのフュージョンエネルギーによる経済効果</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">発電実証目標</div>
+                    <div class="kpi-value">2030年代</div>
+                    <div class="kpi-unit">世界に先駆けた発電実証を目指す（政策目標として示されている値）</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜政策実装サマリー（2026年04月〜05月）</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜現状認識と目指す姿【目標】</a>
+                    <ul class="toc-sub">
+                        <li>（1）現状：研究開発段階だが日本は世界トップレベルの技術力——チョークポイントを握る</li>
+                        <li>（2）目標：2030年代の発電実証・世界シェア獲得・主要コンポーネント100%シェア</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜勝ち筋と官民投資の具体像【道筋】</a>
+                    <ul class="toc-sub">
+                        <li>①勝ち筋：チョークポイント技術（プラズマ対向機器・加熱装置）でシステム輸出を制す</li>
+                        <li>②２フェーズ戦略：研究開発フェーズ（今後5年）→発電実証フェーズ（2030年代）</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch03">CHAPTER 03｜課題と政策パッケージ【政策手段】</a>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">政策実装サマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          2026年3月に日本のフュージョンエネルギー分野で2つの重要な出来事があった。3月11日、JT-60SA（世界最大級のトカマク型超伝導プラズマ実験装置、茨城県那珂市）がプラズマ加熱実験に向けた統合試験運転を開始した（QST）。3月18日にはQSTとNTTが核融合炉のプラズマ予測・制御のための高頻度リアルタイム通信技術を世界初実現したと発表した。2025年6月には「フュージョンエネルギー・イノベーション戦略」が改定され、研究開発にとどまらず実証・産業化までを一体で支援する新たな国家方針が示された。令和7年度補正予算ではQST・NIFS・ILEの3拠点にスタートアップ等への供用も可能な実規模試験設備整備のために95億円が計上された。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">2026年3月11日</div>
+                        <div class="stat-unit">JT-60SA統合試験運転開始</div>
+                        <div class="stat-desc">プラズマ加熱実験に向けた統合試験運転が開始。世界最大のトカマク型装置として本格始動（QST）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">世界初</div>
+                        <div class="stat-unit">QST×NTT 通信技術</div>
+                        <div class="stat-desc">核融合炉のプラズマ予測・制御のための高頻度リアルタイム通信の実現（2026年3月18日）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">95億円</div>
+                        <div class="stat-unit">令和7年度補正予算</div>
+                        <div class="stat-desc">QST・NIFS・ILEの3拠点に、スタートアップ等への供用も可能な実規模技術開発試験設備群を整備</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">2025年6月</div>
+                        <div class="stat-unit">イノベーション戦略改定</div>
+                        <div class="stat-desc">「フュージョンエネルギー・イノベーション戦略」改定。研究開発から実証・産業化までを一体支援する国家方針</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">直近2ヶ月の重要動向（2026年4〜5月）</div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き</div>
+                            <ul>
+                                <li>
+                                    <strong>2026年3月11日</strong>
+                                    ：QST、JT-60SA統合試験運転を開始。世界最大のトカマク型超伝導プラズマ実験装置として2026年からの本格実験に向けた試験が始動 
+                                    <span class="source-tag">QST 2026.3</span>
+                                </li>
+                                <li>
+                                    「フュージョンエネルギー・イノベーション戦略」（2025年6月改定）：2030年代の発電実証を目指し、実施主体の在り方やサイト選定の進め方など社会実装を促進する取組の在り方について検討 
+                                    <span class="source-tag">内閣府 2025.6</span>
+                                </li>
+                                <li>
+                                    令和7年度補正予算（95億円）：QST（那珂市）・NIFS（土岐市）・ILE（大阪大学・吹田市）の3拠点に実規模技術開発のための試験設備群を整備。スタートアップへの供用も可能な体制 
+                                    <span class="source-tag">内閣府 2026.2</span>
+                                </li>
+                                <li>
+                                    第1回フュージョンエネルギーWG（2026年2月12日）：文部科学省・経産省・内閣府が連携し、発電実証に向けた工学設計や社会実装促進策の検討を開始 
+                                    <span class="source-tag">内閣府 2026.2</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き</div>
+                            <ul>
+                                <li>
+                                    <strong>2026年3月18日</strong>
+                                    ：QST・NTTが核融合炉のプラズマ予測・制御のための高頻度リアルタイム通信技術を世界初実現。フュージョン発電実用化を支える通信技術を共創 
+                                    <span class="source-tag">QST 2026.3</span>
+                                </li>
+                                <li>
+                                    JT-60SA：高速プラズマ位置制御コイル（FPPC）2体が完成（2026年3月）。プラズマを安定して維持するための重要部品が揃い、加熱実験の準備が整う 
+                                    <span class="source-tag">Yahoo!ニュース 2026.3</span>
+                                </li>
+                                <li>
+                                    国内スタートアップ：大学等における研究開発成果をベースに複数のスタートアップが設立。SBIRフェーズ3基金（中小企業イノベーション創出推進基金）を通じた社会実装支援が進む 
+                                    <span class="source-tag">内閣府</span>
+                                </li>
+                                <li>
+                                    中国BEST（DT反応実証プラント）：2027年完成を目指して建設中。ITERのDT運転（2039年）開始前に世界で唯一のDT運転が可能なプラントとなりうる 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">日本の主要研究拠点マップ</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>拠点</th>
+                                <th>機関</th>
+                                <th>役割</th>
+                                <th>直近動向</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>JT-60SA（那珂市）</td>
+                                <td>QST（日）+EUROfusion（欧）</td>
+                                <td>世界最大のトカマク型超伝導プラズマ実験装置。ITERの支援研究・原型炉に向けた補完研究</td>
+                                <td>2026年3月11日、統合試験運転開始。プラズマ加熱実験フェーズへ移行中</td>
+                            </tr>
+                            <tr>
+                                <td>核融合科学研究所（NIFS、土岐市）</td>
+                                <td>国立大学法人人間文化研究機構</td>
+                                <td>ヘリカル型装置LHDによるプラズマ研究。人材育成プログラムの中核</td>
+                                <td>イノベーション拠点化に向けた設備整備（令和7年度補正予算95億円に含む）</td>
+                            </tr>
+                            <tr>
+                                <td>大阪大学レーザー科学研究所（ILE）</td>
+                                <td>大阪大学</td>
+                                <td>レーザー型（慣性核融合）フュージョンの研究開発</td>
+                                <td>3拠点連携の一角として実規模設備整備中</td>
+                            </tr>
+                            <tr>
+                                <td>六ヶ所村（BA活動サイト）</td>
+                                <td>QST＋欧州</td>
+                                <td>BA活動（幅広いアプローチ）の実施拠点。材料照射・計算機シミュレーション等</td>
+                                <td>欧州研究者の来日受け入れ（将来的に延べ200人以上/年）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">１．現状認識と目指す姿【目標】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）現状</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 現状：研究開発段階だが「チョークポイントを握る」技術力——プラズマ対向機器・加熱装置</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      フュージョンエネルギーは、①カーボンニュートラル、②豊富な燃料（重水素は海水中に豊富）、③安全性（燃料供給や電源停止により反応が停止）、④環境保全性（放射性廃棄物は低レベルのみ）の特徴を有し、エネルギー問題と地球環境問題を同時に解決し得る次世代のエネルギーであるが、世界的にも未だ発電は実現されておらず、研究開発段階。我が国は、ITER計画やJT-60SAなど国立研究機関や大学において長年にわたり研究開発を進めてきており、プラズマ対向機器や加熱装置等を含め世界的にトップレベルの技術力を有している。現状、海外の野心的な計画においても、例えば、プラズマ対向機器（超高温下でも耐えられるタングステンモノブロックを用いたダイバータ等）や、高出力・高信頼性を誇る加熱装置など我が国がチョークポイントを握る重要技術が多数存在する。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「チョークポイントを握る」という表現が重要だ。フュージョンエネルギーは世界的に研究開発段階で、どの国も発電実現に至っていない。しかし、米国のスタートアップが大規模な実証プラント建設を進める際にも「日本製の超伝導線材などが多数使われている」（ロードマップ素案）という現実は、「発電の実現より前に、重要部品で日本が不可欠な役割を担う」という戦略が既に成立しつつあることを示す。これは⑰の「ファーストインクラス」と同様に、技術の完成より前に「なくてはならない存在」を確立する戦略だ。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                多くのスタートアップが設立され、一部は多額の投資を集め実証プラントの建設を進めている（ロードマップ素案）。Commonwealth Fusion Systems（CFS）は2021年に2,200億円以上を調達し実証炉建設を進める。
+                            </p>
+                            <p>
+                                <span class="country-tag">中国</span>
+                                政府主導でDT反応を行う実証プラント（BEST）を2027年完成を目指して建設中。ITERのDT運転（2039年）開始までの間に世界で唯一のDT運転を行うプラントとなりうる。
+                            </p>
+                            <p>
+                                <span class="country-tag">英国</span>
+                                政府主導で発電実証に向けた取組を進めているが未だ設計段階（ロードマップ素案、2026年3月）。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）目標</div>
+                    <div class="sub-section">
+                        <div class="sub-section-title">2030年代の発電実証・世界フュージョン市場の一定シェア・主要コンポーネント100%シェア</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      中長期的には、全世界のフュージョンエネルギー市場の約○割。日本企業が海外においてもフュージョン発電所の建設を受注：シェア○割。主要コンポーネントのいくつか：シェア100%。世界に先駆けた2030年代の発電実証の実現（政策目標として示されている値）。
+                                    
+                        </div>
+                        <div class="note-box">
+                            <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                      「世界シェア○割」という数値が未確定（【P】は「提示予定」の意）なのは、フュージョン市場全体の規模が未だ見通し段階にあるためだ。「主要コンポーネントのいくつかでシェア100%」という目標は、「チョークポイントを握る技術での不可欠性確立」を定量的に表現したものだ。2030年代の発電実証という目標は、中国BESTが2027年にDT運転を開始した場合、「世界に先駆けて」という表現が成立しなくなる可能性もあり、発電実証のスピードが重要課題になっている。
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">２．勝ち筋と官民投資の具体像【道筋】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）基本戦略：チョークポイント技術でのシステム輸出と２フェーズ推進</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 勝ち筋：チョークポイント技術を起点にシステム全体の設計・建設・運用能力へ</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      現状、海外の野心的な計画においても、例えば、プラズマ対向機器や加熱装置など我が国がチョークポイントを握る重要技術が多数存在するなど、我が国の技術は世界トップレベル。こうした技術力をベースに、今後さらに技術開発・実証を加速することにより、競争力のある（低コストな）フュージョンエネルギー発電システムを世界に先駆けて確立する。これにより、新たなエネルギー源として環境問題の解決や、エネルギー安全保障の強化を実現するとともに、システム輸出及び主要コンポーネント輸出を通じて海外市場を獲得する。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「コンポーネント輸出からシステム輸出へ」という戦略は⑪ロケット分野の「H3ロケットの射場から宇宙サービス全体へ」と同じ論理だ。現在は超伝導線材等のコンポーネントで「チョークポイントを握る」段階だが、将来は「フュージョン発電所をシステムとして設計・建設・運用できる企業」として海外から受注する段階を目指す。そのためには「フュージョンエネルギー発電所を設計・建設・運用できる企業」と「それを支えるコンポーネントや材料等の強固なサプライチェーン」の2層を同時に構築する必要がある。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        「フュージョンエネルギー・イノベーション戦略」（2025年6月改定）：産業化・サイト選定・実施主体の在り方を含む社会実装促進策の検討を進める 
+                                        <span class="source-tag">内閣府 2025.6</span>
+                                    </li>
+                                    <li>
+                                        令和7年度補正予算（95億円）：QST・NIFS・ILEに実規模技術開発のための試験設備群を整備。スタートアップも利用可能な「フュージョン産業エコシステム」の基盤構築 
+                                        <span class="source-tag">内閣府 2026.2</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        QST×NTT：核融合炉のプラズマ予測・制御のための高頻度リアルタイム通信技術を世界初実現（2026年3月18日）。フュージョン発電実用化を支えるICT技術での産学連携 
+                                        <span class="source-tag">QST 2026.3</span>
+                                    </li>
+                                    <li>
+                                        国内スタートアップ：SBIRフェーズ3基金（中小企業イノベーション創出推進基金）を活用した社会実装が進む。トカマク型・ヘリカル型・レーザー型など多様な方式の挑戦を促す体制 
+                                        <span class="source-tag">内閣府</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② ２フェーズ戦略：研究開発フェーズ（今後5年）→発電実証フェーズ（2030年代）</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP（研究開発フェーズ・今後5年）</div>
+
+                                      国が中心となって要素技術の研究開発を推進。どの方式の実現にも共通的に必要な要素技術の開発を強力に推進するとともに、実現可能性があると考えられるフュージョン発電システムの技術開発を広く支援（QSTが中心となって進める実績のある方法で実現を目指す技術開発、スタートアップ等が進める様々な野心的な技術開発）。数年後を目途に、各取組の技術開発の進捗、民間を含めた体制整備の状況及び海外の動向を踏まえ、我が国として速やかに実現を目指すフュージョン発電システムを決定。
+                                    
+                        </div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP（発電実証フェーズ・2030年代）</div>
+
+                                      官民連携で発電実証プロジェクトを推進。官民の連携により人材・資金を集中的に投下することにより、競争力のある（低コストな）フュージョンエネルギー発電システムの発電実証を世界に先駆けて実現し、速やかに実用化する。サイト関連や燃料物質関連についても、国が自治体とも連携して支援。並行して、安全規制も整備。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「数年後を目途に実現を目指すフュージョン発電システムを決定」という表現は、現時点では「トカマク型・ヘリカル型・レーザー型のどれで発電実証を行うか」が確定していないことを示す。27分野の中でも、政策方針の重要部分がまだ決定されていない最も前段階の分野の一つだ。この「決定の延期」は技術の不確実性への対処であると同時に、「各方式の可能性を早期に排除しない」という複線アプローチの表れでもある。
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH03 -->
+        <section id="ch03" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <span class="chapter-title">３．課題と政策パッケージ【政策手段】</span>
+            </div>
+            <div class="chapter-body">
+                <div class="section">
+                    <div class="section-title">フェーズ別の課題と政策パッケージ</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">研究開発フェーズ（今後5年間）の課題</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      不確実性の要因：技術の不確実性が最大の課題。多額の研究開発費を要する上に、現時点ではリターンの見通しを得ることは困難で民間投資が進みづらい。トリチウムの扱いなど、民間企業では研究開発が困難な課題も存在。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「民間企業では研究開発が困難な課題」としてトリチウム（三重水素）が挙げられているのは、核融合のDT反応（重水素とトリチウムの融合）に必要なトリチウムが放射性物質であり、その取り扱いに特殊な設備・安全管理・規制対応が必要なためだ。QST・NIFS・ILEの3拠点への95億円整備は、この「民間企業単独では困難な課題」を国立研究機関が担い、スタートアップに開放するという設計だ。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        国による要素技術の研究開発推進：ITER計画・BA活動・JT-60SAを軸とした長年の実績を活かし、共通的な要素技術の開発を強力に支援 
+                                        <span class="source-tag">文科省 2026.2</span>
+                                    </li>
+                                    <li>
+                                        「他国に劣らない資金供給量を確保」という方針（令和7年6月改定版イノベーション戦略）：米国が大規模な民間資金を集める中で、日本が資金面で不利にならないための方針 
+                                        <span class="source-tag">内閣府 2025.6</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        国内フュージョンスタートアップ：大学等における研究開発成果をベースに設立が進む。ただし、米国CFS（累計2,200億円以上調達）等と比較して資金規模で大きな差がある 
+                                        <span class="source-tag">各種資料</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">発電実証フェーズ（2030年代）の課題</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      ①リソース制約：多額の費用、多くの人材が必要。用地、燃料物質の確保。②不確実性の要因：リターンの不確実性。安全規制の不確実性。地域理解。バックエンド・デコミッショニングの必要性。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「地域理解」という課題は、⑪ロケット分野の「射場用地確保」や⑱感染症対応製品の「献血の啓発」と同様の「技術・資金以外の社会的要因」だ。フュージョン発電実証プラントの建設には広大な用地と放射性物質（トリチウム）の取り扱いが伴うため、建設予定地の地域住民の理解・同意が必要になる。「バックエンド・デコミッショニング」は、発電実証後の廃止措置（解体・放射性廃棄物処理）の計画を事前に示す必要があるという課題だ。
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 続編：課題・政策パッケージ編</div>
+            <div class="next-box-desc">「なぜ民間投資が進みにくいのか」「技術の不確実性・トリチウム取扱いの困難・地域理解・安全規制の整備という4つのボトルネック」を整理した「課題・政策パッケージ編」も近日公開予定です。</div>
+            <a href="https://marketsupporter-ai.com" target="_blank">▶ marketsupporter-ai.com で読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>量子科学技術研究開発機構（QST）「プラズマ加熱実験に向けたJT-60SA統合試験運転の開始」（2026年3月11日）</li>
+                <li>量子科学技術研究開発機構（QST）・日本電信電話株式会社（NTT）「世界初、核融合炉のプラズマ予測・制御のための高頻度リアルタイム通信の実現」（2026年3月18日）</li>
+                <li>内閣府科学技術・イノベーション推進事務局「フュージョンエネルギーの早期実現に向けた検討状況について」（令和8年2月）</li>
+                <li>文部科学省研究開発局「文部科学省におけるフュージョンエネルギーに関する取組」第1回フュージョンエネルギーWG資料2-2（2026年2月12日）</li>
+                <li>「フュージョンエネルギー・イノベーション戦略」（令和7年6月4日改定）</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
