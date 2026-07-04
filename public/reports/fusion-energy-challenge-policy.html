@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フュージョンエネルギー｜課題・政策パッケージ編｜戦略17分野 ㉒</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --warn: #e65100;
+        --warn-light: #fff3e0;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--warn);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #bf360c 0%, #e64a19 50%, #ff7043 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #ffccbc;
+        margin-bottom: 12px;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(22px, 5vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #ffccbc;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #ffccbc;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 17px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #ffccbc;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--warn);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--warn);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--warn);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--warn);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-header.green {
+        background: var(--accent);
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--warn);
+        border-bottom: 1.5px solid var(--warn-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .section-title.green {
+        color: var(--accent-dark);
+        border-bottom-color: var(--accent-light);
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--warn);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .sub-section-title.green::before {
+        background: var(--accent-mid);
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .bottleneck-box {
+        background: var(--warn-light);
+        border-left: 3px solid var(--warn);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .bottleneck-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--warn);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--warn);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--warn);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ㉒</span>
+        <span>フュージョンエネルギー</span>
+        <span>|</span>
+        <span>課題・政策パッケージ編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — FUSION ENERGY — CHALLENGE & POLICY PACKAGE</div>
+            <div class="hero-title">
+                フュージョンエネルギー
+                <br>
+                課題・政策パッケージ編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（3）官民投資促進に向けた課題と政策パッケージ 構造に基づく分析レポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">研究開発フェーズの最大課題</div>
+                    <div class="kpi-value">技術の不確実性</div>
+                    <div class="kpi-unit">現時点ではリターンの見通しが困難で民間投資が進みにくい</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">民間企業では困難な課題</div>
+                    <div class="kpi-value">トリチウムの取扱い</div>
+                    <div class="kpi-unit">国立研究機関の役割を規定する放射性物質取扱いの特殊性</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">発電実証フェーズの課題</div>
+                    <div class="kpi-value">
+                        地域理解×安全規制×
+                        <br>
+                        デコミッショニング
+                    </div>
+                    <div class="kpi-unit">技術・資金以外の社会的要因が壁に</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">資金規模の差（参考）</div>
+                    <div class="kpi-value">米CFS：2,200億円超</div>
+                    <div class="kpi-unit">vs 令和7年度補正予算95億円（3拠点整備）</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜課題・政策パッケージサマリー</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜（1）投資促進に向けた課題</a>
+                    <ul class="toc-sub">
+                        <li>＜研究開発フェーズ＞ 技術的不確実性・トリチウム取扱い・民間投資の難しさ</li>
+                        <li>＜発電実証フェーズ＞ 多額費用・人材・用地・燃料物質確保、安全規制、地域理解、バックエンド</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜（2）講じるべき政策パッケージ</a>
+                    <ul class="toc-sub">
+                        <li>研究開発フェーズ（今後5年）の政策</li>
+                        <li>発電実証フェーズ（2030年代）の政策</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">課題・政策パッケージサマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          フュージョンエネルギーの課題は「研究開発フェーズ」と「発電実証フェーズ」という２つの段階で異なる性質を持つ。研究開発フェーズでの最大課題は「技術の不確実性」と「民間投資が進みにくい」という投資環境の問題だ。発電実証フェーズでは「多額の費用と人材・用地確保」「安全規制の整備」「地域理解」「バックエンド・デコミッショニングの計画」という社会的・制度的な課題が加わる。27分野の中でもフュージョンエネルギーは最も開発初期段階にある分野であり、「現時点ではリターンの見通しを得ることは困難」という正直な記述がロードマップ素案に含まれているのは、この段階の現実を反映している。政策パッケージは「今後5年の研究開発フェーズで技術・方式を絞り込み、その後の2030年代に発電実証へ集中投資する」という２段階設計だ。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">技術的不確実性</div>
+                        <div class="stat-unit">研究開発フェーズの最大課題</div>
+                        <div class="stat-desc">「技術の不確実性が最大の課題。現時点ではリターンの見通しを得ることは困難で民間投資が進みにくい」（ロードマップ素案）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">民間では困難</div>
+                        <div class="stat-unit">トリチウム取扱い</div>
+                        <div class="stat-desc">トリチウムの扱いなど民間企業では研究開発が困難な課題が存在。国立研究機関の役割を規定</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">数年後を目途</div>
+                        <div class="stat-unit">発電システム決定のタイムライン</div>
+                        <div class="stat-desc">各取組の進捗・民間体制整備・海外動向を踏まえ「我が国として速やかに実現を目指すフュージョン発電システムを決定」</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">2,200億円超</div>
+                        <div class="stat-unit">米CFS 累計調達（参考）</div>
+                        <div class="stat-desc">Commonwealth Fusion Systems（米）の2021年時点での累計調達。日本の令和7年度補正95億円（3拠点整備）と比較して大きな差がある</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">課題と政策パッケージの対応関係</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>フェーズ</th>
+                                <th>課題</th>
+                                <th>政策パッケージ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">研究開発フェーズ（今後5年）</td>
+                                <td>技術的不確実性・民間投資が進みにくい・リターン見通し困難</td>
+                                <td>国が中心となって要素技術の研究開発を推進。QST等がイノベーション拠点となりスタートアップに施設供用</td>
+                            </tr>
+                            <tr>
+                                <td>トリチウム取扱い等、民間企業では困難な課題</td>
+                                <td>QST・NIFS・ILEの3拠点に実規模技術開発のための試験設備群を整備（95億円）</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">発電実証フェーズ（2030年代）</td>
+                                <td>多額の費用・多くの人材・用地・燃料物質の確保。リターンの不確実性</td>
+                                <td>官民連携で発電実証プロジェクトを推進。人材・資金を集中的に投下</td>
+                            </tr>
+                            <tr>
+                                <td>安全規制の不確実性・地域理解・バックエンド・デコミッショニング</td>
+                                <td>安全規制の整備（並行して進める）。サイト関連・燃料物質関連は国が自治体とも連携して支援</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">（1）投資促進に向けた課題</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">＜研究開発フェーズ（今後5年間程度）＞ 不確実性の要因</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                不確実性の要因：技術の不確実性が最大の課題。多額の研究開発費を要する上に、現時点ではリターンの見通しを得ることは困難で民間投資が進みづらい。トリチウムの扱いなど、民間企業では研究開発が困難な課題も存在。
+                              
+                    </div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 技術的不確実性と民間投資の難しさ</div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      フュージョンエネルギーは「世界的にも未だ発電は実現されておらず、研究開発段階」という現実の中で、投資家に「いつ・どれだけのリターンが見込めるか」を示すことが現時点では困難だ。⑳水素等分野では「需要と供給の鶏と卵」が問題だったが、フュージョンエネルギーでは「技術が実現するかどうか自体の不確実性」というより根本的な問題がある。これが「民間投資が進みにくい」最大の理由だ。米国では民間VCが大規模に投資しているが（CFS累計2,200億円以上）、これは「技術的不確実性をリスクテイクして投資する」米国のVC文化と、「確実性が高い案件に投資する」日本の投資文化の差も反映している。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                多くのスタートアップが設立され民間資金を集めている（ロードマップ素案）。CFSは2025年に核融合実験炉の稼働を目指して建設を進める。Helion Energy（マイクロソフトと電力購入契約）等も大規模な民間資金を集めている。「技術的不確実性の高いステージでの大規模民間投資」という米国独自の投資文化が競争優位を生んでいる。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② トリチウムの取扱い——民間企業では研究開発が困難な課題</div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      核融合のDT反応（重水素とトリチウムの融合）に必要なトリチウム（三重水素）は放射性物質（半減期約12.3年）であり、その研究開発には放射性物質の取り扱い施設・安全管理体制・規制当局との協議が必要だ。民間企業がこれらのインフラを独自に整備するのは困難で、QSTのような国立研究機関が「共通インフラ」として整備し、スタートアップに開放するという設計が合理的だ。これが令和7年度補正予算95億円でQST・NIFS・ILEの3拠点に実規模試験設備群を整備する理由だ。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        令和7年度補正予算（95億円）：QST・NIFS・ILEの3拠点に、スタートアップ等への供用も可能な実規模技術開発のための試験設備群を整備。トリチウム取扱い等の共通インフラを国が整備 
+                                        <span class="source-tag">内閣府 2026.2</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">＜発電実証フェーズ（2030年代）＞ リソース制約と不確実性の要因</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                ①リソース制約：多額の費用、多くの人材が必要。用地、燃料物質の確保。②不確実性の要因：リターンの不確実性。安全規制の不確実性。地域理解。バックエンド・デコミッショニングの必要性。
+                              
+                    </div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">③ 多額の費用・用地確保・燃料物質確保</div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      フュージョン発電実証プラントの建設は、数千億円〜数兆円規模の資金が必要とされる。加えて、プラント建設には広大な用地が必要だが、放射性物質の取り扱いを伴うため立地の制約も大きい。燃料物質（トリチウム）は自然界での存在量が極めて少なく、核融合炉自体が増殖する「増殖ブランケット」技術の確立が必要だ。
+                                    
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">④ 安全規制の不確実性・地域理解・バックエンド・デコミッショニング</div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      「安全規制の不確実性」は、フュージョン発電所に適用される安全規制の枠組みが現時点で未確立であることを指す。核融合は従来の核分裂（原子力発電）とは異なる技術だが、放射性物質（トリチウム）を扱うため何らかの規制が必要だ。「地域理解」は建設予定地の住民の同意確保の問題で、原子力発電所と同様に「放射性物質を扱う大型施設」への地域住民の懸念が想定される。「バックエンド・デコミッショニング」は、実証プラントの運転終了後の廃炉・放射性廃棄物処理の計画を事前に示すことへのニーズだ。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「地域理解」「安全規制の不確実性」「バックエンド・デコミッショニング」は、フュージョンエネルギーが⑱感染症対応製品の「献血の啓発」と同様に「技術・資金以外の社会的要因」に依存することを示す。「発電の原理的可能性」が証明されても、「実証プラントを建設できる場所」「建設を認める安全規制の枠組み」「地域住民の同意」という社会的な条件が揃わなければ発電実証が実現しない。
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header chapter-header green">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">（2）講じるべき政策パッケージ</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title green">研究開発フェーズ（今後5年間程度）の政策パッケージ</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                国が中心となって要素技術の研究開発を推進。どの方式の実現にも共通的に必要な要素技術の開発を強力に推進するとともに、実現可能性があると考えられるフュージョン発電システムの技術開発を広く支援（QSTが中心となって進める実績のある方法で実現を目指す技術開発、スタートアップ等が進める様々な野心的な技術開発）。数年後を目途に、各取組の技術開発の進捗、民間を含めた体制整備の状況及び海外の動向を踏まえ、我が国として速やかに実現を目指すフュージョン発電システムを決定。その発電システムの実現に向けた研究開発を集中的に推進し、発電実証に向けた技術を確立するとともに実施主体を決定。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「数年後を目途に発電システムを決定」というデシジョンゲート設計は、⑳水素等分野の「3技術の複線アプローチ」と同様の戦略だ。「トカマク型・ヘリカル型・レーザー型のどれで発電実証を行うか」を今決定せず、数年後の技術進捗・海外動向・民間体制を確認してから決定することで、「早まった選択による資源の無駄遣い」を避ける合理的な設計だ。ただし「数年後に何も決まらない」というリスクもあり、デシジョンゲートの機能をどう担保するかが政策実装上の課題になる。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    QST・NIFS・ILEの3拠点への95億円整備：研究開発フェーズを支える「共通インフラ」として、スタートアップも含めた参加者が利用可能な実規模試験設備群を整備中 
+                                    <span class="source-tag">内閣府 2026.2</span>
+                                </li>
+                                <li>
+                                    「他国に劣らない資金供給量の確保」（イノベーション戦略2025年改定）：米国の大規模民間資金に対応するための国内の資金環境整備方針 
+                                    <span class="source-tag">内閣府 2025.6</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    国内スタートアップ：SBIRフェーズ3基金（中小企業イノベーション創出推進基金）を活用した社会実装が進む。トカマク型・ヘリカル型・レーザー型など多様な方式の挑戦が行われている 
+                                    <span class="source-tag">内閣府</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">発電実証フェーズ（2030年代）の政策パッケージ</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                官民連携で発電実証プロジェクトを推進。官民の連携により人材・資金を集中的に投下することにより、競争力のある（低コストな）フュージョンエネルギー発電システムの発電実証を世界に先駆けて実現し、速やかに実用化する。サイト関連や燃料物質関連についても、国が自治体とも連携して支援。並行して、安全規制も整備。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「国が自治体とも連携してサイト関連を支援」という表現は、用地確保・地域理解という課題への対応を示す。フュージョン発電実証プラントのサイト選定は、技術的条件（広大な用地・電力インフラ・冷却水確保）と社会的条件（地域住民の理解・自治体の支持）の両方を満たす必要がある。「国が自治体とも連携して」という表現が、「国と自治体が協力して地域住民への説明・合意形成を行う」という体制を示唆している。
+                              
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 政策実装・官民投資編も読む</div>
+            <div class="next-box-desc">「今、政府と民間がどこまで動いているか」を整理した「政策実装・官民投資編」も公開中です。</div>
+            <a href="https://marketsupporter-ai.com/reports/fusion-energy-policy-investment.html" target="_blank">▶ 政策実装・官民投資編を読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>内閣府科学技術・イノベーション推進事務局「フュージョンエネルギーの早期実現に向けた検討状況について」（令和8年2月）</li>
+                <li>文部科学省研究開発局「文部科学省におけるフュージョンエネルギーに関する取組」第1回フュージョンエネルギーWG資料2-2（2026年2月12日）</li>
+                <li>「フュージョンエネルギー・イノベーション戦略」（令和7年6月4日改定）</li>
+                <li>量子科学技術研究開発機構（QST）新着情報（2026年3月18日）</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
