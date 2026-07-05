@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>植物工場｜政策実装・官民投資編｜戦略17分野 ㉓</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--accent);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #43a047 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 50%;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #a5d6a7;
+        margin-bottom: 12px;
+    }
+
+    .hero-number {
+        font-family: var(--font-mono);
+        font-size: 60px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, .1);
+        position: absolute;
+        top: -12px;
+        right: 0;
+        line-height: 1;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(22px, 5vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #a5d6a7;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #c8e6c9;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--accent);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--accent-dark);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--accent-dark);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--accent);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        border-bottom: 1.5px solid var(--accent-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--accent-mid);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--accent);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ㉓</span>
+        <span>植物工場</span>
+        <span>|</span>
+        <span>政策実装・官民投資編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — PLANT FACTORY / CONTROLLED ENVIRONMENT AGRICULTURE — POLICY MONITOR</div>
+            <div class="hero-number">23</div>
+            <div class="hero-title">
+                植物工場
+                <br>
+                政策実装・官民投資編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（日本成長戦略会議 第3回、2026年3月）構造に基づく政策モニタリングレポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">世界市場規模（2040年予測）</div>
+                    <div class="kpi-value">55兆円</div>
+                    <div class="kpi-unit">2025年1.5兆円→2030年4.9兆円→2040年55兆円（Precedence Research）</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">国内外市場シェア目標</div>
+                    <div class="kpi-value">3割</div>
+                    <div class="kpi-unit">2040年にかけて国内外市場のシェア3割を目指す（政策目標として示されている値）</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">国内施設数（令和5年度末）</div>
+                    <div class="kpi-value">432施設</div>
+                    <div class="kpi-unit">太陽光利用型194＋完全人工光型195＋併用43。完全人工光型は10年で約2倍</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">完全人工光型 黒字率</div>
+                    <div class="kpi-value">43%</div>
+                    <div class="kpi-unit">黒字・収支均衡の割合。太陽光利用型は73%、全体は59%（日本施設園芸協会 令和5年度調査）</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜政策実装サマリー（2026年04月〜05月）</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜現状認識と目指す姿【目標】</a>
+                    <ul class="toc-sub">
+                        <li>（1）現状：欧米で大規模倒産・日本でも6割赤字の中での技術優位</li>
+                        <li>（2）目標：2040年 世界市場シェア3割・食料安全保障への貢献</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜勝ち筋と官民投資の具体像【道筋】</a>
+                    <ul class="toc-sub">
+                        <li>①勝ち筋：「農産物で稼ぐ」×「システムで稼ぐ」の二本柱</li>
+                        <li>②構築すべき機能（製造機能・イノベーションハブ・データPF・海外展開）</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch03">CHAPTER 03｜課題と政策パッケージ【政策手段】</a>
+                    <ul class="toc-sub">
+                        <li>①国内投資支援</li>
+                        <li>②需要創出・市場確保・社会実装支援</li>
+                        <li>③立地競争力強化</li>
+                        <li>④国際連携</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">政策実装サマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          植物工場は「世界市場は2025年1.5兆円→2040年55兆円と約37倍成長するポテンシャル」と「現在は日本の完全人工光型の57%が赤字」という厳しい現実が同居する分野だ。欧米では大規模事業者（AeroFarms等）が相次いで倒産する中、日本では令和5年度末現在432施設が稼働しており、完全人工光型だけで見ると10年で約2倍に拡大した（日本施設園芸協会、令和5年度調査）。収益性の差は「電力コスト」が分かれ目で、完全人工光型は電力コストが年間売上の20〜35%を占めるとされる。日本の競争優位は「世界初のモジュールタイプの完全閉鎖型植物工場」「大規模植物工場をビジネスとして継続させてきた実績」「空調・照明等の先端技術（施設園芸×工業の融合）」という3つにある。ロードマップ素案が示す「植物工場システム（農産物＋設備・ノウハウ）のパッケージ展開」は、単なる農産物輸出ではなく「システム輸出+ロイヤルティ」という収益モデルへの転換を意味する。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">432施設</div>
+                        <div class="stat-unit">国内植物工場（令和5年度末）</div>
+                        <div class="stat-desc">太陽光利用型194＋完全人工光型195＋併用43。完全人工光型は2012年106施設→2023年195施設と10年でほぼ2倍（日本施設園芸協会 令和5年度調査）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">43%</div>
+                        <div class="stat-unit">完全人工光型 黒字・収支均衡率</div>
+                        <div class="stat-desc">太陽光利用型は73%、全体は59%。電力コストが年間売上の20〜35%を占めることが収益の分かれ目（同上）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">55兆円</div>
+                        <div class="stat-unit">世界市場規模（2040年予測）</div>
+                        <div class="stat-desc">2025年1.5兆円→2030年4.9兆円→2040年55兆円。ロードマップ素案はPrecedence Researchデータを引用</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">65%</div>
+                        <div class="stat-unit">完全人工光型の主要品目比率</div>
+                        <div class="stat-desc">レタス類・ベビーリーフが65%と圧倒的多数。近年いちご・機能性野菜への多様化も進む（同上）</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">直近2ヶ月の重要動向（2026年4〜5月）</div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き</div>
+                            <ul>
+                                <li>
+                                    農研機構が中核となる研究開発イノベーションハブ機能の整備が進行中。品種・栽培技術を開発する分散型研究拠点として機能 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                                <li>
+                                    農林水産省委託「令和5年度 大規模施設園芸・植物工場実態調査」（日本施設園芸協会）の結果公表（2026年4月）。国内432施設・収益性データを公開 
+                                    <span class="source-tag">先端農業マガジン 2026.4</span>
+                                </li>
+                                <li>
+                                    自動化等に向けた複数年の実証支援・データプラットフォームの整備・特定生産物向上設備等投資促進税制が継続中 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き</div>
+                            <ul>
+                                <li>
+                                    大企業参入の継続：NTT西日本（ICT活用いちご工場「N.BERRY」）・デンソー（AgriD・自動化トマト工場）・JR東日本（PUTFARM・省エネ屋内農場）等が商業運営を継続 
+                                    <span class="source-tag">先端農業マガジン 2026</span>
+                                </li>
+                                <li>
+                                    ファームシップ：「富士山グリーンファーム」（世界最大級の完全人工光型植物工場）を運営。新規参入支援コンサルティングも展開 
+                                    <span class="source-tag">先端農業マガジン 2026</span>
+                                </li>
+                                <li>
+                                    果菜類への品目拡大：いちご（NTT西日本・N.BERRY）等、完全人工光型でも葉菜類以外への商業栽培拡大の動きが継続 
+                                    <span class="source-tag">先端農業マガジン 2026</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">主要プレイヤーマップ</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>区分</th>
+                                <th>主要プレイヤー</th>
+                                <th>直近動向</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>大規模・統合型</td>
+                                <td>ファームシップ（富士山グリーンファーム）</td>
+                                <td>世界最大級の完全人工光型を運営。新規参入支援コンサルティングも展開</td>
+                            </tr>
+                            <tr>
+                                <td>大企業参入（ICT・自動化）</td>
+                                <td>NTT西日本（N.BERRY）、デンソー（AgriD）、JR東日本（PUTFARM）、パナソニック（石垣島）</td>
+                                <td>各社の既存技術（ICT・自動車製造・鉄道・電機）を農業に応用した植物工場を継続運営</td>
+                            </tr>
+                            <tr>
+                                <td>高生産性装置</td>
+                                <td>PlantX（カルチャーマシン）</td>
+                                <td>従来比3〜5倍の生産性を実現する高生産性栽培装置を提供</td>
+                            </tr>
+                            <tr>
+                                <td>研究・イノベーション拠点</td>
+                                <td>農研機構・各大学農学部</td>
+                                <td>品種・栽培技術の研究開発・データプラットフォームの中核機能を担う</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">１．現状認識と目指す姿【目標】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）現状</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 現状：欧米で大規模倒産・日本でも6割が赤字、しかし世界初技術を保有</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      光熱費の増大等に伴う収益性の悪化により、欧米では大規模事業者が相次ぎ倒産。日本でも６割が赤字。商業栽培品目（事業化フェーズ）は葉菜類に限定され、果菜類は研究開発フェーズ。日本では、生産性が飛躍的に向上した世界初のモジュールタイプの完全閉鎖型植物工場を開発するなど、世界で優位に立てるポテンシャルのある技術を保有しているほか、大規模植物工場の商業運営を続け、ビジネスとして成り立たせてきた実績。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「日本でも6割が赤字」という現状認識とロードマップ素案のデータ（令和5年度末：完全人工光型の57%が赤字・収支均衡以下）は概ね一致する。重要なのは「欧米の大規模事業者が倒産した」という対比だ。米国Gotham Greens・AeroFarmsなどの大規模スタートアップが資金難で破綻または大幅縮小した一方、日本の植物工場は規模は小さくても「商業運営を続けてきた実績」がある。「経営を継続させてきた実績」という、財務的に持続可能なビジネスモデルの蓄積が日本の最大の競争優位だ。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">欧米</span>
+                                光熱費の増大により大規模事業者が相次ぎ倒産（ロードマップ素案）。AeroFarmsは2023年に破産申請し、米国の大規模植物工場ブームが急速に冷却した。一方で、水不足・日照不足の島しょ国・砂漠地域・高緯度地域では需要が根強く、日本のシステム輸出の潜在市場となっている。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② 経済的・戦略的重要性：「４定」＋食料安全保障＋システム輸出ロイヤルティ</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      経済的重要性：定時・定量・定価格・定品質（４定）での農産物の提供が可能。機能性成分や医薬品原料成分を含む農産物の生産による健康・医療など幅広い産業への貢献の期待。生産技術等の知財を適切に保護できる国・地域へのシステム輸出によるロイヤルティ収入の向上。戦略的重要性：輸入依存が高く高付加価値の農産物の安定供給のほか、植物工場において開発された高温に強い品種等や得られたデータ（作物ごとの最適な栽培条件）の農業現場への展開により、国内外の食料安全保障に貢献。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「ロイヤルティ収入の向上」という目標は、植物工場ビジネスを「農産物を売る」だけでなく「技術・ノウハウを売る」モデルに転換する戦略を示す。食品工場・外食チェーンが隣接植物工場で原料を生産するBtoB需要と、海外の水・土地不足地域への「システム輸出+ランニングロイヤルティ」モデルの両方が収益化の柱となる。
+                                    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）目標</div>
+                    <div class="sub-section">
+                        <div class="sub-section-title">2040年 国内外市場シェア3割・食料安全保障への貢献</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      2030年にかけて、市場ニーズに応じた商業栽培品目を拡充するとともに、海外市場展開を拡大。日本品質の農産物及び植物工場プラントと運営ノウハウを併せた植物工場システムをパッケージ展開し、2040年にかけて国内外市場のシェア3割を目指す（政策目標として示されている値）。国内外の食料安全保障の確保への貢献。
+                                    
+                        </div>
+                        <div class="note-box">
+                            <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                      「2040年 世界市場シェア3割」という目標は、世界市場55兆円の3割＝約16.5兆円を日本が獲得することを意味する。現在の日本の植物工場産業規模（完全人工光型市場約450億円/2026年予測）との比較では野心的な数字だが、「農産物+システム（プラント+運営ノウハウ）」の複合収益と「ロイヤルティ収入」を含めた計算であることを踏まえると、「システム輸出で稼ぐ」というビジネスモデル転換の必要性がわかる。
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">２．勝ち筋と官民投資の具体像【道筋】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）基本戦略：「農産物で稼ぐ」×「システムで稼ぐ」の二本柱</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 勝ち筋１：植物工場システムの販売で稼ぐ</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      施設園芸及び工業（空調、照明等）の優れた技術や、大規模植物工場をビジネスとして継続させてきたノウハウ等の強みを活かし栽培データ利用を含めパッケージ化した植物工場システムを確立し、国内外へ展開。海外向けには、水不足、日照不足で生鮮野菜が不足する島しょ国や砂漠地域、高緯度地域や、機能性成分を多く含む食品の摂取等日常の食生活改善で健康維持する動きがみられる欧米等の国に社会課題のソリューションとして植物工場システムを販売。生産資機材や栽培技術の提供により継続して海外から稼ぐ。国内向けには、食品メーカーや外食チェーンが植物工場を運営、原料を生産することで４定を実現。食品工場や外食店舗に隣接して設置することで輸送費を削減。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「生産資機材や栽培技術の提供により継続して海外から稼ぐ」という表現が重要だ。植物工場システムを1回売り切りにするのではなく、「設備設置後もランニングコスト（種苗・培養液・LED交換部品・AIシステムのライセンス料等）で継続的に収益を得る」サブスクリプション型ビジネスモデルへの転換を示唆している。これは⑦無人航空機（ドローン）分野での「機体販売→点検・測量サービス」への転換と同じ「製品からサービスへ」のビジネスモデルシフトだ。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        海外市場開拓に対する支援（販路開拓・金融支援等）：事業会社の基盤強化に向けた出融資、設備投資の税制優遇、リスク軽減のための債務保証等、海外での市場調査・展示実証を推進 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                    <li>
+                                        食料輸入依存度の高い国・地域への二国間協力の枠組みを基礎とした案件形成の推進 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        デンソー（AgriD）：自動車部品で培った自動化技術を農業分野に応用。浅井農園との合弁会社で大規模施設園芸を運営 
+                                        <span class="source-tag">先端農業マガジン 2026</span>
+                                    </li>
+                                    <li>
+                                        PlantX（カルチャーマシン）：従来比3〜5倍の生産性を実現する高生産性栽培装置「カルチャーマシン」を開発・販売 
+                                        <span class="source-tag">先端農業マガジン 2026</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② 勝ち筋２：植物工場で生産する農産物で稼ぐ——品目拡大と高付加価値化</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      レタス等の葉菜類以外の農産物（果菜類等）についても省力化や効率化等の技術を開発、生産拡大。また、輸入依存が高い高付加価値な農産物（漢方原料等）を生産し、輸入品シェアの奪還や国内供給を拡大。栽培環境を適切に制御することで、有用物質（花粉症等を和らげる薬やサイトカイン等）を多く含む農産物（稲等）の品種開発と大量・効率的な生産が可能。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「漢方原料等」「花粉症等を和らげる薬やサイトカイン等を多く含む農産物」という記述は、植物工場が「食品工場」から「機能性農産物製造施設」「医薬品前駆体製造施設」へと用途を拡大する方向性を示す。通常の農業では「薬効成分の含有量を均一に管理する」ことが困難だが、植物工場の「環境制御」を活用すれば「特定の薬効成分を高濃度で安定的に含む農産物」の量産が可能になる。これは農業と医薬品製造の中間に位置する「ファーマファーミング」という新市場を開拓する可能性を持つ。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        品種・栽培技術の研究開発支援：農研機構が中核となるイノベーションハブ機能を通じ、果菜類等の新品目・機能性農産物の生産技術を開発 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        NTT西日本（N.BERRY）：ICT活用閉鎖型植物工場でいちごの生産を実施。葉菜類を超えた品目拡大の先行事例 
+                                        <span class="source-tag">先端農業マガジン 2026</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）構築すべき機能</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                国内で構築すべき機能：製造機能（既存産業の強みを生かす量産体制）、植物工場に係る研究開発のイノベーションハブ機能（農研機構が中核となり、分散型で品種・栽培技術を開発する研究拠点）、植物工場に係るデータプラットフォーム機能（AIによる栽培等のビッグデータ集約・解析・活用）。有志国等と連携して構築すべき機能：海外の市場開拓機能、現地での部品等調達機能、生鮮野菜の供給拠点機能。
+                              
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH03 -->
+        <section id="ch03" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <span class="chapter-title">３．課題と政策パッケージ【政策手段】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">政策パッケージ4本柱の概要</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP（概要）</div>
+
+                                ①国内投資支援：自動化等に向けた複数年の実証支援、フィージビリティスタディの実証、品種・栽培技術の研究開発/生産拠点の整備、データプラットフォームの整備、特定生産物向上設備等投資促進税制、研究開発税制、各種補助金・制度資金・保証保険等によるファイナンス支援、省力化に向けた環境整備。②需要創出・市場確保・社会実装支援：国・自治体等による調達、スタートアップの育成（大規模実証の支援・スタートアップと企業の事業連携コーディネーター確保等）、海外市場開拓に対する支援（販路開拓・金融支援等）、企業間連携等の促進。③立地競争力強化：用地の確保と利用調整等。④国際連携：食料輸入依存度の高い国・地域への二国間協力の枠組みを基礎とした案件形成の推進、海外展開に当たっての調査・実証支援、相手先国で植物工場を運営・管理できる人材の育成、日本食や日系小売・外食企業と連携したサプライチェーンの構築。
+                              
+                    </div>
+                    <div class="note-box">
+                        <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                定量的インパクト（投資額・経済波及効果）は「官民投資ロードマップの取りまとめまでに提示」と明記。2026年夏の日本成長戦略取りまとめで具体化予定。「スタートアップと企業の事業連携コーディネーターの確保」という施策は、⑮バイオものづくりの「橋渡し人材」と同じ発想で、研究段階（大学・スタートアップ）から事業化段階（大企業・外食チェーン）への移行を「仲介者」が促進する設計だ。
+                              
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 続編：課題・政策パッケージ編</div>
+            <div class="next-box-desc">「なぜ植物工場の6割が赤字から抜け出せないのか」「人材不足・高エネルギーコスト・固定費先行の資金調達困難・需要の停滞という4つのボトルネック」を整理した「課題・政策パッケージ編」も近日公開予定です。</div>
+            <a href="https://marketsupporter-ai.com" target="_blank">▶ marketsupporter-ai.com で読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>日本施設園芸協会「令和5年度 大規模施設園芸・植物工場 実態調査」（農水省委託）</li>
+                <li>先端農業マガジン「日本の植物工場の統計｜432施設、人工光型は10年で2倍、黒字事業者59%」（2026年4月22日）</li>
+                <li>先端農業マガジン「【2026年版】植物工場の成功事例6選」（2026年5月28日）</li>
+                <li>Precedence Research「Vertical Farming Market Size, Share, and Trends 2026 to 2035」</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
