@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>植物工場｜課題・政策パッケージ編｜戦略17分野 ㉓</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --warn: #e65100;
+        --warn-light: #fff3e0;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--warn);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #bf360c 0%, #e64a19 50%, #ff7043 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #ffccbc;
+        margin-bottom: 12px;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(22px, 5vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #ffccbc;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #ffccbc;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 17px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #ffccbc;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--warn);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--warn);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--warn);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--warn);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-header.green {
+        background: var(--accent);
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--warn);
+        border-bottom: 1.5px solid var(--warn-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .section-title.green {
+        color: var(--accent-dark);
+        border-bottom-color: var(--accent-light);
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--warn);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .sub-section-title.green::before {
+        background: var(--accent-mid);
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .bottleneck-box {
+        background: var(--warn-light);
+        border-left: 3px solid var(--warn);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .bottleneck-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--warn);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--warn);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--warn);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ㉓</span>
+        <span>植物工場</span>
+        <span>|</span>
+        <span>課題・政策パッケージ編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — PLANT FACTORY — CHALLENGE & POLICY PACKAGE</div>
+            <div class="hero-title">
+                植物工場
+                <br>
+                課題・政策パッケージ編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（3）官民投資促進に向けた課題と政策パッケージ 構造に基づく分析レポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック①</div>
+                    <div class="kpi-value">
+                        農業×工業の
+                        <br>
+                        複合人材不足
+                    </div>
+                    <div class="kpi-unit">データ分析・工場マネジメント・幅広い労働力が同時に不足</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック②</div>
+                    <div class="kpi-value">
+                        エネルギーコスト高×
+                        <br>
+                        新品目生産技術未確立
+                    </div>
+                    <div class="kpi-unit">電力コストが売上の20〜35%。果菜類は研究開発フェーズ</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック③</div>
+                    <div class="kpi-value">
+                        固定費先行×
+                        <br>
+                        資金調達困難
+                    </div>
+                    <div class="kpi-unit">設備投資費が高く投資回収期間が長い</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック④</div>
+                    <div class="kpi-value">
+                        需要の停滞×
+                        <br>
+                        葉菜類単品依存
+                    </div>
+                    <div class="kpi-unit">商業品目が葉菜類に限定され価格競争に巻き込まれやすい</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜課題・政策パッケージサマリー</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜（1）投資促進に向けた課題</a>
+                    <ul class="toc-sub">
+                        <li>①リソース制約：農業×工業の複合人材不足・電力・水・サプライチェーン</li>
+                        <li>②不確実性の要因（事業技術・市場・財務）</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜（2）講じるべき政策パッケージ</a>
+                    <ul class="toc-sub">
+                        <li>①国内投資支援</li>
+                        <li>②需要創出・市場確保・社会実装支援</li>
+                        <li>③立地競争力強化</li>
+                        <li>④国際連携</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">課題・政策パッケージサマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          植物工場の課題は「人材・技術・財務・需要」の4層構造だが、根底にあるのは「電力コストの高さ」という単一の経済的制約だ。電力コストが年間売上の20〜35%を占める構造では、設備費の回収が長期化し、資金調達が困難になり、結果として投資が抑制される。一方で「価格が下がらない→規模が拡大しない→価格が下がらない」という悪循環が生まれる。政策パッケージは「国内投資支援（自動化・省エネ化）」と「需要創出（公共調達・スタートアップ育成・海外展開）」を両輪として、この悪循環を突破する設計だ。特に「農業と工業の両方の知見を有する人材」の不足は、他の分野にない植物工場固有の課題で、「農業の専門家」でも「工業の専門家」でもない「植物工場マネジャー」という新しい職種の育成が急務となっている。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">20〜35%</div>
+                        <div class="stat-unit">電力コストの売上比率</div>
+                        <div class="stat-desc">完全人工光型植物工場における電力コストが年間売上に占める割合。収益性の最大の障壁</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">葉菜類65%</div>
+                        <div class="stat-unit">完全人工光型の品目集中</div>
+                        <div class="stat-desc">レタス類・ベビーリーフが65%と圧倒的多数。品目の限定が価格競争の激化を招く</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">長期化</div>
+                        <div class="stat-unit">投資回収期間</div>
+                        <div class="stat-desc">固定費先行で投資回収期間が長く、資金調達の困難性がボトルネック</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">停滞</div>
+                        <div class="stat-unit">植物工場農産物への需要</div>
+                        <div class="stat-desc">「新鮮野菜・健康高栄養食・環境低負荷型農産物等」への需要が停滞（ロードマップ素案）</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">課題と政策パッケージの対応関係</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>ボトルネック</th>
+                                <th>具体的障壁</th>
+                                <th>政策パッケージ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>①農業×工業の複合人材不足</td>
+                                <td>栽培データ分析・新技術開発・工場マネジメントに農業と工業の両方の知見が必要。パートを含む幅広い労働力も不足</td>
+                                <td>国内投資支援（専門人材育成環境整備・省力化向け環境整備）</td>
+                            </tr>
+                            <tr>
+                                <td>②エネルギーコスト高・新品目技術未確立</td>
+                                <td>電力コストが売上の20〜35%。果菜類等の効率生産技術・安定生産技術が研究開発フェーズ</td>
+                                <td>国内投資支援（自動化実証支援・品種栽培技術の研究開発）</td>
+                            </tr>
+                            <tr>
+                                <td>③固定費先行・資金調達困難</td>
+                                <td>設備整備費・初期コストが高く、投資回収期間が長い。CF不安定化で資金調達が困難</td>
+                                <td>国内投資支援（ファイナンス支援・投資促進税制）</td>
+                            </tr>
+                            <tr>
+                                <td>④需要の停滞・葉菜類単品依存</td>
+                                <td>植物工場産農産物への需要が停滞。商業品目が葉菜類に限定され価格競争に巻き込まれやすい</td>
+                                <td>需要創出支援（公共調達・スタートアップ育成・海外展開支援）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">（1）投資促進に向けた課題</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">①リソース制約：農業×工業の複合人材・電力・水・サプライチェーン</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                人材：蓄積した栽培データ等の分析や新たな栽培技術の開発に不可欠な人材、工場のマネジメントに不可欠な農業と工業の両方の知見を有する人材、専門人材だけでなく、パートも含む幅広い人材層における労働力の不足。インフラ：電力・水の確保、集約的に大量生産された作物のサプライチェーンの構築。
+                              
+                    </div>
+                    <div class="bottleneck-box">
+                        <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                「農業と工業の両方の知見を有する人材」という要件は、農業の専門家（作物学・植物生理学）でも工業の専門家（設備工学・生産管理・品質管理）でもない「植物工場マネジャー」という新しい職種の育成を意味する。従来の農学部卒業者は工場設備の知識が不足し、工学部卒業者は作物の生理・品種の知識が不足する。「データ分析×栽培技術×設備管理」を統合できる人材の育成には時間がかかる。「パートも含む幅広い人材層における労働力の不足」という記述は、植物工場が農業と製造業の中間的な性質を持ち、どちらの人材プールからも採用しにくいという現実を示す。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">②不確実性の要因</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">a. 事業・技術：新品目の効率生産技術・安定生産技術の向上が課題</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      事業・技術：新たな品目の効率生産技術、安定生産技術の向上（デジタル化、自動化、品種開発等）。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      「商業栽培品目（事業化フェーズ）は葉菜類に限定され、果菜類は研究開発フェーズ」（ロードマップ素案）という現状は、植物工場の収益拡大の最大の制約だ。葉菜類（レタス・ホウレンソウ等）は生育期間が短く収穫量を最大化しやすいが、価格が低くかつ競合が多い。果菜類（トマト・いちご・メロン等）は単価が高いが、生育期間が長くエネルギーコストも高い。「完全人工光型の品目の65%がレタス類・ベビーリーフ」（日本施設園芸協会 令和5年度調査）という現状を変えるには、果菜類の効率生産技術の確立が不可欠だ。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        農研機構が中核となるイノベーションハブ機能（分散型品種・栽培技術研究拠点）が整備進行中。果菜類等の新品目・機能性農産物の生産技術開発を推進 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        NTT西日本（N.BERRY）：ICT活用でいちごの完全人工光型栽培を商業化。葉菜類を超えた品目拡大の先行事例として継続中 
+                                        <span class="source-tag">先端農業マガジン 2026</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">b. 市場：植物工場で生産された農産物の需要の停滞</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      市場：植物工場で生産された農産物の需要の停滞（新鮮野菜、健康・高栄養食、環境低負荷型農産物等）。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      「植物工場産レタス」が「露地栽培レタス」より高い価格で売れるためには「無農薬・安全・安定品質」という付加価値への需要者の認識と購買行動が必要だ。しかし「少し高くても植物工場産を選ぶ」という消費者行動は日本ではまだ限定的だ。一方で食品工場・外食チェーンにとっては「4定（定時・定量・定価格・定品質）」という機能的価値の方が、消費者向けの「プレミアム感」よりも意思決定に直結しやすい。この「BtoCよりBtoBへの訴求」が市場開拓の現実的なアプローチだ。
+                                    
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">c. 財務：資機材・エネルギーのコスト上昇によるCF不安定化・固定費先行の資金調達困難</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      財務：資機材やエネルギーのコスト上昇によるC/Fの不安定化、固定費先行で投資回収期間が長いことによる資金調達の困難性。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      植物工場は設備産業の特性（高い固定費・長い投資回収期間）と農業の特性（天候等による収益変動・低い資産担保力）を組み合わせた「最も資金調達が難しい」業態の一つだ。「植物工場の設置コストは施設生産の約17倍」（農水省・経産省報告書）という数字は、この固定費の高さを示す。近年の光熱費・資材価格の上昇により、既存事業者のCFも一層不安定化している。金融機関から見ると「農業」として見れば担保が農地・設備だが農業経営の不安定性があり、「製造業」として見れば固定費が高く市場が小さい——という板挟みが資金調達の困難につながる。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        各種補助金・制度資金・保証保険等によるファイナンス支援が継続中。特定生産物向上設備等投資促進税制も活用可能 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header chapter-header green">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">（2）講じるべき政策パッケージ</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title green">① 国内投資支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                自動化等に向けた複数年の実証支援、フィージビリティスタディの実証、マーケット調査、事業性の評価、品種・栽培技術の研究開発/生産拠点の整備、データプラットフォームの整備、特定生産物向上設備等投資促進税制、研究開発税制、各種補助金・制度資金・保証保険等によるファイナンス支援、企業・研究機関による専門人材育成に係る環境整備、省力化に向けた環境整備。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「自動化等に向けた複数年の実証支援」は①人材不足と②エネルギーコスト高への同時対応だ。自動化が進めば「パートを含む幅広い人材層の労働力不足」が一部緩和され、かつ省人化によるコスト削減も実現できる。「データプラットフォームの整備」は、AIによる栽培等のビッグデータ集約・解析・活用を可能にし、「農業と工業の両方の知見を有する人材」の不足を部分的にAIで補う設計だ。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">② 需要創出・市場確保・社会実装支援</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                国・自治体等による調達（品種開発用インフラとして公的研究機関で調達）。スタートアップの育成（大規模実証の支援・スタートアップと企業の事業連携コーディネーター確保・自治体や大学等との連携を通じた地域の経済社会を担うスタートアップの創出・重要分野の最先端技術の事業化支援）。海外市場開拓に対する支援（販路開拓・金融支援等）。企業間連携等の促進（官民が連携したプラットフォームの活用）。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「スタートアップと企業の事業連携コーディネーターの確保」は、「植物工場の技術を持つスタートアップ」と「農産物の安定調達ニーズを持つ食品メーカー・外食チェーン」をマッチングする機能だ。「国・自治体等による調達（品種開発用インフラとして公的研究機関で調達）」は、植物工場が「農産物の生産施設」だけでなく「品種開発のインフラ」として位置づけられることで、公的資金の正当性を確保する設計だ。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">③ 立地競争力強化</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                用地の確保と利用調整等。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「用地の確保と利用調整等」という簡潔な記述は、植物工場が「農地以外への設置が多い（人工光型の約9割が非農地設置）」という現実への対応を示す。農地法上の制約により農地への設置が難しいため、工業地・廃工場・廃校等への転用がメインになるが、用途変更の手続きが複雑なことが立地選択の制約になっている。「用地の確保と利用調整等」の政策化により、廃施設等を植物工場に転用しやすくする環境整備が進む。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">④ 国際連携</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                食料輸入依存度の高い国・地域への二国間協力の枠組みを基礎とした案件形成の推進。海外展開に当たっての調査・実証支援（国際共同研究を含む）。相手先国で植物工場を運営・管理できる人材の育成。日本食や日系小売・外食企業と連携したサプライチェーンの構築。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「日本食や日系小売・外食企業と連携したサプライチェーンの構築」は、海外展開の「出口戦略」として重要だ。日本の植物工場システムを海外（砂漠地域・島しょ国等）に設置しても、生産した農産物の販路がなければビジネスが成立しない。海外に展開する日系コンビニ・ファミリーレストラン・スーパーマーケット等が「地元で植物工場産の日本品質野菜を調達する」という需要を作り出すことで、「システム販売+農産物販売」の複合収益モデルが成立する。
+                              
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 政策実装・官民投資編も読む</div>
+            <div class="next-box-desc">「今、政府と民間がどこまで動いているか」を整理した「政策実装・官民投資編」も公開中です。</div>
+            <a href="https://marketsupporter-ai.com/reports/plant-factory-policy-investment.html" target="_blank">▶ 政策実装・官民投資編を読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>日本施設園芸協会「令和5年度 大規模施設園芸・植物工場 実態調査」（農水省委託）</li>
+                <li>先端農業マガジン「日本の植物工場の統計｜432施設、人工光型は10年で2倍、黒字事業者59%」（2026年4月22日）</li>
+                <li>先端農業マガジン「【2026年版】植物工場の成功事例6選」（2026年5月28日）</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
