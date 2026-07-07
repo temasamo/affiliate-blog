@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陸上養殖｜政策実装・官民投資編｜戦略17分野 ㉔</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--accent);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #01579b 0%, #0277bd 50%, #0288d1 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 50%;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #90caf9;
+        margin-bottom: 12px;
+    }
+
+    .hero-number {
+        font-family: var(--font-mono);
+        font-size: 60px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, .1);
+        position: absolute;
+        top: -12px;
+        right: 0;
+        line-height: 1;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(22px, 5vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #90caf9;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #90caf9;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #bbdefb;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--accent);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--accent-dark);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--accent-dark);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--accent);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        border-bottom: 1.5px solid var(--accent-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--accent-mid);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--accent);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ㉔</span>
+        <span>陸上養殖</span>
+        <span>|</span>
+        <span>政策実装・官民投資編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — LAND-BASED AQUACULTURE / RAS — POLICY MONITOR</div>
+            <div class="hero-number">24</div>
+            <div class="hero-title">
+                陸上養殖
+                <br>
+                政策実装・官民投資編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（日本成長戦略会議 第3回、2026年3月）構造に基づく政策モニタリングレポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">世界市場規模（2040年予測）</div>
+                    <div class="kpi-value">31兆円</div>
+                    <div class="kpi-unit">2025年0.35兆円→2030年2.4兆円→2040年31兆円</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">国内外市場シェア目標（2040年）</div>
+                    <div class="kpi-value">3割</div>
+                    <div class="kpi-unit">水産物＋陸上養殖システムによる市場（政策目標として示されている値）</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">FRDジャパン 商業プラント</div>
+                    <div class="kpi-value">3,500t/年</div>
+                    <div class="kpi-unit">千葉・富津市、2026年操業開始予定。サーモン陸上養殖初の大規模商業化</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">2026年現在</div>
+                    <div class="kpi-value">大転換期</div>
+                    <div class="kpi-unit">「実証フェーズ」から「超大型商業化」×「異業種多角化」の2つの波が同時進行</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜政策実装サマリー（2026年04月〜05月）</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜現状認識と目指す姿【目標】</a>
+                    <ul class="toc-sub">
+                        <li>（1）現状：RASは国際的に実証フェーズ、日本は水処理・完全養殖・ゲノム関連技術で優位</li>
+                        <li>（2）目標：2040年 世界市場シェア3割・食料安全保障への貢献</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜勝ち筋と官民投資の具体像【道筋】</a>
+                    <ul class="toc-sub">
+                        <li>①水産物で稼ぐ（国内・海外）</li>
+                        <li>②陸上養殖システムを販売して稼ぐ（モジュール輸出）</li>
+                        <li>③種苗・飼料を内製化してライセンスで稼ぐ（チョークポイント化）</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch03">CHAPTER 03｜課題と政策パッケージ【政策手段】</a>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">政策実装サマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          2026年現在、日本の陸上養殖は「実験フェーズを抜け出し、『超大型の商業化』と『異業種・中小による多角化』の2つの波が同時に押し寄せる大転換期」（各種報道）にある。FRDジャパンが千葉・富津市に建設中の年間3,500トンの商業プラントは2026年に操業開始し2027年に出荷開始予定で、「サーモンの陸上養殖の初の収益事例をつくる」節目となりうる。また三菱商事・マルハニチロの共同事業（年間2,500トン規模）、ピュアサーモンジャパン（三重・津市、世界最大級）なども並行して建設・計画が進んでいる。種苗面ではSmoltが2026年5月に「高温耐性サクラマス種苗×電気分解式ろ過システム」の組み合わせでカビ臭ゼロ・高成長を両立した実証結果を公表し、RASの商業化の鍵となる技術課題解消の見通しが示された。23分野の植物工場と同様に「水産物+陸上養殖システムのパッケージ展開」が戦略の核心だ。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">2026年</div>
+                        <div class="stat-unit">FRDジャパン商業プラント操業開始</div>
+                        <div class="stat-desc">千葉・富津市、年間3,500トン。2027年出荷開始予定。サーモン陸上養殖初の大規模商業化の節目</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">2,500トン</div>
+                        <div class="stat-unit">三菱商事・マルハニチロ 共同事業</div>
+                        <div class="stat-desc">年間2,500トン規模の陸上養殖サーモン施設建設計画。大手商社・水産企業の連携による大規模参入</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">6世代</div>
+                        <div class="stat-unit">Smolt 選抜育種</div>
+                        <div class="stat-desc">6世代以上の選抜育種で開発した高温耐性サクラマス種苗。2026年5月にカビ臭ゼロ・高成長を実証</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">31兆円</div>
+                        <div class="stat-unit">世界市場規模（2040年予測）</div>
+                        <div class="stat-desc">2025年0.35兆円→2030年2.4兆円→2040年31兆円の急成長予測。植物工場（55兆円）と並ぶ巨大市場</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">直近2ヶ月の重要動向（2026年4〜5月）</div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き</div>
+                            <ul>
+                                <li>
+                                    水産庁：令和5年4月より「内水面漁業の振興に関する法律」に基づき、塩水使用や閉鎖循環式等の陸上養殖について届出制を開始。制度的な枠組みの整備が進行 
+                                    <span class="source-tag">水産庁</span>
+                                </li>
+                                <li>
+                                    モジュール化に向けた複数年の実証支援・種苗・飼料の研究開発/生産拠点の整備・ファイナンス支援等が継続中 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                                <li>
+                                    「養殖業成長産業化総合戦略（令和3年7月）」：新魚種・新養殖システムの推進として陸上養殖の研究開発を支援継続 
+                                    <span class="source-tag">水産庁 2021.7</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き</div>
+                            <ul>
+                                <li>
+                                    <strong>FRDジャパン（千葉・富津市）：</strong>
+                                    2026年操業開始目標の年間3,500トン商業プラントを建設中。「陸上養殖初の収益事例をつくる」節目。実証プラント（30トン/年）ではASC認証取得済み 
+                                    <span class="source-tag">J-Net21 2024.12</span>
+                                </li>
+                                <li>
+                                    <strong>Smolt（スタートアップ）：</strong>
+                                    6世代以上の選抜育種で開発した高温耐性サクラマス種苗×電気分解式ろ過システムを組み合わせた実証でカビ臭ゼロ・高成長を両立（2026年5月公表）
+                                    <span class="source-tag">Smolt 2026.5</span>
+                                </li>
+                                <li>
+                                    三菱商事・マルハニチロ：年間2,500トン規模の陸上養殖サーモン施設建設計画を発表 
+                                    <span class="source-tag">各種報道</span>
+                                </li>
+                                <li>
+                                    異業種参入の波：製紙会社・鉄道会社・電力会社等が自社の遊休資産（地下水・排熱・廃工場）を活用した「かけ流し式」陸上養殖に参入する事例が急増 
+                                    <span class="source-tag">各種報道 2026</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">主要プレイヤーマップ</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>方式・魚種</th>
+                                <th>主要プレイヤー</th>
+                                <th>直近動向</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>RAS大規模（サーモン）</td>
+                                <td>FRDジャパン、ピュアサーモンジャパン、三菱商事・マルハニチロ</td>
+                                <td>2026年に複数の商業プラントが操業開始・建設着工フェーズへ移行</td>
+                            </tr>
+                            <tr>
+                                <td>RAS種苗・技術（スタートアップ）</td>
+                                <td>Smolt（高温耐性種苗）、リージョナルフィッシュ（ゲノム編集）</td>
+                                <td>Smolt：高温耐性サクラマス×電気分解式ろ過の実証成功（2026年5月）</td>
+                            </tr>
+                            <tr>
+                                <td>かけ流し式（異業種・中小）</td>
+                                <td>製紙会社・鉄道会社・電力会社等による地域ブランド養殖</td>
+                                <td>遊休資産（地下水・排熱）活用による低コスト参入が急増。全国100以上の地域ブランドが誕生</td>
+                            </tr>
+                            <tr>
+                                <td>ウナギ陸上養殖</td>
+                                <td>水産研究・教育機構（NFRDI）等</td>
+                                <td>完全養殖技術の実用化を継続研究。稚魚（シラスウナギ）の人工採卵・孵化・育成の完全化が鍵</td>
+                            </tr>
+                            <tr>
+                                <td>ゲノム編集魚種</td>
+                                <td>リージョナルフィッシュ（京都大学発）</td>
+                                <td>筋肉量増大のトラフグ・マダイの実用化を進める。RAS環境では外来種・育種魚の飼育も可能</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">１．現状認識と目指す姿【目標】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）現状</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 現状：RASは国際的に実証フェーズ——日本は水処理・完全養殖・ゲノム関連技術で独自優位</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      閉鎖循環式陸上養殖（RAS）は、国際的に様々な技術開発が進行しているが、安定生産が実現しておらず総じて実証フェーズ。我が国では、水処理・浄化技術等の強みを有する技術や、最先端のゲノム関連技術を用いた品種開発、人工種苗の生産技術やこれを含めた完全養殖技術等の実証・商業化に向けた事業が展開中。また、豊富な水資源やIT活用等により、魚種や立地特性に合わせた多様な陸上養殖が展開。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「安定生産が実現しておらず総じて実証フェーズ」という現状認識は、FRDジャパンの2026年商業プラント操業開始という出来事が「世界的な転換点」であることを示す。ロードマップ素案作成時点（2026年3月）と2026年現在で状況が変わりつつある。日本固有の強みは「水処理・浄化技術（工業的な精密管理技術）」「完全養殖技術（親魚→卵→稚魚→成魚を全て陸上管理）」「ゲノム関連技術（選抜育種・ゲノム編集）」の3つで、欧米のRAS先行事業者が持っていない要素だ。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">ノルウェー・デンマーク</span>
+                                欧州ではSalMar（ノルウェー）等の大型RAS事業者が資金難・技術課題で苦戦しており、「大規模RASは採算が取れない」という懸念が広がっている。これは日本の陸上養殖技術（特に水処理・省エネ技術）の差別化ポイントを際立たせる。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② 経済的・戦略的重要性：「チョークポイント化」という明確な目標</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      先端技術を活用した生産性の高い日本産の品種や飼料の開発と供給で日本の陸上養殖技術をチョークポイント化。国内外のマーケットが求めるmade in/by Japanの水産物の安定供給による市場シェアの拡大。生産技術等の知財を適切に保護できる国・地域への展開によるロイヤルティ収入の向上。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「陸上養殖技術をチョークポイント化」という表現は、㉒フュージョンエネルギーの「チョークポイントを握る重要技術」と同じ戦略論理だ。特に「種苗と飼料の内製化」というアプローチは重要で、現在は「種苗や飼料の多くが天然資源や輸入に依存」している弱点を、ゲノム関連技術（高品質種苗）と藻類発酵技術（代替飼料）で自給自足に切り替えることで、「日本の種苗・飼料なしでは世界の陸上養殖が回らない」という不可欠性を確立する戦略だ。
+                                    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）目標</div>
+                    <div class="sub-section">
+                        <div class="sub-section-title">2040年 国内外市場シェア3割・輸入依存水産物の自給化・食料安全保障への貢献</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      2030年にかけて、日本ならではの多様な魚種での用途に応じた陸上養殖を国内展開。こうした国内展開を進めつつ、海外市場に対しモジュール化したシステムを展開することで日本ならではの魚種での海外での新たな水産物市場を創出し、2040年にかけて国内外市場のシェア3割を目指す（政策目標として示されている値）。輸入依存度が高い水産物の海外依存度の低下（鮮魚、加工原料）。
+                                    
+                        </div>
+                        <div class="note-box">
+                            <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                      定量的インパクト（投資額・経済波及効果）は「官民投資ロードマップの取りまとめまでに提示」と明記。2026年夏の日本成長戦略取りまとめで具体化予定。「モジュール化したシステムを展開」という目標は㉓植物工場の「植物工場システムのパッケージ展開」と全く同じ設計で、「農産物+システム」を「水産物+陸上養殖システム」に置き換えた戦略だ。
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">２．勝ち筋と官民投資の具体像【道筋】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">三本柱の収益モデル</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 水産物で稼ぐ——国内BtoB×海外日本食マーケット</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      国内向けには、食品メーカーや外食チェーンが植物工場を運営、原料を生産することで４定を実現（食品工場や外食店舗に隣接して設置することで輸送費を削減）。海外向けには、日本食や加工技術といった強みも生かして、陸上養殖の水産物を商品として販売・提供する企業間で連携し、世界の水産物市場を獲得。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        「日本食や日系小売・外食企業と連携したサプライチェーンの構築」が国際連携政策パッケージに明記 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        FRDジャパン：年間3,500トンの商業プラントが2026年操業開始・2027年出荷開始予定。「リーズナブルな価格で売れる陸上養殖サーモン初の収益事例」を目指す 
+                                        <span class="source-tag">J-Net21 2024.12</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② モジュール化したシステムを販売して稼ぐ——社会課題ソリューション輸出</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      国内の成功を踏まえ、安定生産できるモジュールを世界各地の社会課題解決のソリューションとして売り込み、国外に展開。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「まず国内で成功モデルを確立し、それをモジュール化して海外展開」という戦略は、㉓植物工場の「まず国内で商業運営の実績を積み、システムをパッケージ化して海外販売」と全く同じ論理だ。FRDジャパンの商業プラントが「初の収益事例」となれば、そのシステム設計・水処理技術・オペレーションノウハウをモジュール化して海外に販売できる「実績の担保」が生まれる。ターゲット市場は水不足・漁業資源枯渇・食料安全保障に課題を抱える島しょ国・中東・アフリカ等だ。
+                                    
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">③ 種苗・飼料の内製化とライセンス収入——「チョークポイント化」の核心</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      最先端ゲノム関連技術により種苗を、藻類発酵技術等により飼料を内製化し、国内外に展開。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「種苗と飼料の内製化」は陸上養殖の「チョークポイント化」に直結する最重要戦略だ。現在、陸上養殖の事業コストの大部分は「種苗（稚魚）」と「飼料（エサ）」が占める。種苗は一部が輸入に依存し、飼料の主原料（魚粉・大豆）も特定国からの輸入に依存している。ゲノム関連技術で「成長が速く陸上環境に強い品種の種苗」を日本で生産し、藻類発酵技術で「魚粉・大豆不要の代替飼料」を日本で製造できれば、「日本の種苗・飼料なしでは世界の陸上養殖が成立しない」という不可欠性が確立できる。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        種苗・飼料の研究開発/生産拠点の整備支援が継続中。藻類発酵技術等による代替飼料開発への支援も含む 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        Smolt（2026年5月）：6世代以上の選抜育種による「高温耐性サクラマス種苗」の実証成功。従来18℃以下が必要なサーモンを20℃前後でも安定成長させる革新的品種 
+                                        <span class="source-tag">Smolt 2026.5</span>
+                                    </li>
+                                    <li>
+                                        リージョナルフィッシュ（京都大学発スタートアップ）：ゲノム編集による筋肉量増大のトラフグ・マダイの実用化を推進 
+                                        <span class="source-tag">各種報道</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH03 -->
+        <section id="ch03" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <span class="chapter-title">３．課題と政策パッケージ【政策手段】</span>
+            </div>
+            <div class="chapter-body">
+                <div class="section">
+                    <div class="section-title">政策パッケージ4本柱の概要</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP（概要）</div>
+
+                                ①国内投資支援：モジュール化に向けた複数年の実証支援、フィージビリティの検証、マーケット調査、事業性の評価、種苗・飼料の研究開発/生産拠点の整備、飼料価格高騰時のセーフティネット、特定生産性向上設備等投資促進税制、研究開発税制、各種補助金・制度資金・保証・損害保険等によるファイナンス支援、企業・研究機関による専門人材育成にかかる環境整備。②需要創出・市場確保・社会実装支援：サプライチェーンの構築支援、スタートアップの育成、データプラットフォームの構築支援、海外市場開拓に対する支援、企業間連携等の促進。③立地競争力強化：専門人材の育成・確保（水質管理など設備保全・魚の生理・生態・データ分析等）、ファイナンス環境の整備（民間リスクマネーの供給機能強化）、用地の確保と利用調整等、事業再編の促進等。④国際連携：水産物を海外に依存している国・地域へのパッケージ展開支援、経済連携協定と国際案件形成の連動による途上国へのプラント展開の支援、相手先国で陸上養殖を運営・管理できる人材の育成、日本食や日系小売・外食企業と連携したサプライチェーンの構築。
+                              
+                    </div>
+                    <div class="note-box">
+                        <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                「飼料価格高騰時のセーフティネット」という政策は陸上養殖固有の重要な支援だ。飼料は陸上養殖の事業コストの大部分を占め、国際相場変動のリスクが高い。特に魚粉（主原料）の価格高騰は事業採算を直撃するため、一種の「農業版の農業保険」的なリスクヘッジが必要だ。「データプラットフォームの構築支援（プラットフォーム構築能力のあるITベンダーとの連携）」は、㉓植物工場の「AIによる栽培等のビッグデータ集約・解析・活用」と全く同じアプローチで、「水産版の精密農業」を実現する基盤となる。
+                              
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 続編：課題・政策パッケージ編</div>
+            <div class="next-box-desc">「なぜ陸上養殖の商業化が困難なのか」「安定生産の不確実性・へい死リスク・出荷までの長期間・輸入水産物との価格競争・飼料の特定国依存という5つのボトルネック」を整理した「課題・政策パッケージ編」も近日公開予定です。</div>
+            <a href="https://marketsupporter-ai.com" target="_blank">▶ marketsupporter-ai.com で読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>株式会社Smolt「育種×電気分解式ろ過の組み合わせで、カビ臭ゼロ・高成長を両立した次世代型サーモン陸上養殖を実証」プレスリリース（2026年5月11日）— PR TIMES</li>
+                <li>J-Net21「新鮮な国産サーモンを食卓に 日本での陸上養殖を事業化【株式会社FRDジャパン】」（2024年12月2日）</li>
+                <li>FRDジャパン公式ウェブサイト「事業」（2026年1月30日更新）</li>
+                <li>各種報道「日本の陸上養殖 2026年現在の動向」</li>
+                <li>東京水産振興会水産振興コラム「日本における陸上養殖の現状」（生田和正）</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
