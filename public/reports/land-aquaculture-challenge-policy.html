@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陸上養殖｜課題・政策パッケージ編｜戦略17分野 ㉔</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --warn: #e65100;
+        --warn-light: #fff3e0;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--warn);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #bf360c 0%, #e64a19 50%, #ff7043 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #ffccbc;
+        margin-bottom: 12px;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(22px, 5vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #ffccbc;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #ffccbc;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 17px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #ffccbc;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--warn);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-header.green {
+        background: var(--accent);
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 24px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--warn);
+        border-bottom: 1.5px solid var(--warn-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .section-title.green {
+        color: var(--accent-dark);
+        border-bottom-color: var(--accent-light);
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .bottleneck-box {
+        background: var(--warn-light);
+        border-left: 3px solid var(--warn);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .bottleneck-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--warn);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--warn);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ㉔</span>
+        <span>陸上養殖</span>
+        <span>|</span>
+        <span>課題・政策パッケージ編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — LAND-BASED AQUACULTURE — CHALLENGE & POLICY PACKAGE</div>
+            <div class="hero-title">
+                陸上養殖
+                <br>
+                課題・政策パッケージ編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（3）官民投資促進に向けた課題と政策パッケージ 構造に基づく分析レポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック①</div>
+                    <div class="kpi-value">安定生産の不確実性×へい死リスク</div>
+                    <div class="kpi-unit">カビ臭・水質異常・疾病で大量へい死が発生しうる</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック②</div>
+                    <div class="kpi-value">出荷まで数ヶ月〜1年以上</div>
+                    <div class="kpi-unit">植物工場にはない「資金の寝かせ時間」という固有課題</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック③</div>
+                    <div class="kpi-value">輸入水産物との価格競争</div>
+                    <div class="kpi-unit">ノルウェー産サーモン等の輸入品との価格差が課題</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック④</div>
+                    <div class="kpi-value">飼料原料の特定国依存×電力依存30〜40%</div>
+                    <div class="kpi-unit">コスト構造の二重の脆弱性</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <section id="ch00" class="chapter" style="margin-top:32px;">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">課題・政策パッケージサマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          陸上養殖の課題は㉓植物工場と類似した「人材・技術・財務・需要・国際環境・社会」の多層構造だが、「安定生産の不確実性・へい死リスク」という植物工場にはない固有のリスクがある点が決定的に異なる。植物工場では電力さえ確保できれば「作物が突然全滅する」リスクは低いが、陸上養殖では「水質悪化・疾病・設備故障」等により魚が大量へい死するリスクが常に存在する。この「高い初期投資×長い育成期間×へい死リスク」という三重のリスク構造が、陸上養殖への投資を特に困難にしている。
+                        
+                </div>
+
+                <div class="section">
+                    <div class="section-title">課題と政策パッケージの対応関係</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>ボトルネック</th>
+                                <th>具体的障壁</th>
+                                <th>政策パッケージ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>①安定生産の不確実性・へい死リスク</td>
+                                <td>水質異常・疾病・設備故障による大量へい死。カビ臭（オフフレーバー）問題</td>
+                                <td>国内投資支援（複数年の実証支援・損害保険等のファイナンス支援）</td>
+                            </tr>
+                            <tr>
+                                <td>②出荷まで長時間・固定費先行</td>
+                                <td>数ヶ月〜1年以上の育成期間中、飼料費・電力費が積み上がる。回転率が植物工場より低い</td>
+                                <td>国内投資支援（ファイナンス支援・投資促進税制）</td>
+                            </tr>
+                            <tr>
+                                <td>③輸入水産物との価格競争</td>
+                                <td>輸入サーモン等との価格差を「鮮度・安全性」の付加価値で埋める必要</td>
+                                <td>需要創出支援（サプライチェーン構築・スタートアップ育成）</td>
+                            </tr>
+                            <tr>
+                                <td>④飼料原料の特定国依存×電力依存</td>
+                                <td>魚粉・大豆の価格変動が採算を直撃。電力コストがランニングコストの30〜40%</td>
+                                <td>国内投資支援（飼料価格高騰時セーフティネット）＋種苗・飼料の内製化研究開発</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">（1）投資促進に向けた課題</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">①リソース制約：水質管理×魚の生理生態の知見を持つ人材不足</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                人材：生産技術の開発に不可欠な人材、システムのマネジメント・オペレーションに不可欠な水質管理と魚の生理・生態等の知見を有する人材の不足。インフラ：水・種苗・飼料・電力の確保、加工流通等サプライチェーンの確保。
+                              
+                    </div>
+                    <div class="bottleneck-box">
+                        <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                「水質管理と魚の生理・生態等の知見を有する人材」という要件は㉓植物工場の「農業と工業の両方の知見を有する人材」と同様の「複合型人材」だ。陸上養殖では水産学（魚の生物学・生理学・病理学）と工学（水処理・循環システム・IoT制御）の両方の専門知識が必要で、一方向の専門家では対応できない。特に「生物ろ過（バクテリアを活用した水質浄化）」の管理は高度な専門知識が必要で、この技術者の不足が安定生産の最大のボトルネックの一つになっている。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">②不確実性の要因</div>
+
+                    <div>
+                        <div style="font-weight:700;margin-bottom:8px;">a. 事業・技術：安定生産の不確実性・へい死・種苗の健全性低下</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      事業・技術：安定生産の不確実性、へい死の発生、事業化の遅延、遺伝的多様性の減少による種苗の健全性の低下（デジタル化、自動化、品種開発等）。魚の生育特性上、収益化（出荷）までに長時間を要する。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      「カビ臭（オフフレーバー）がRAS商業化の大きなボトルネックとなってきた」（Smolt、2026年5月）という指摘は、安定生産の不確実性の中でも特に重大な品質課題を示す。RASでは閉鎖水系内にカビ臭物質（ジオスミン・2-MIB）が蓄積しやすく、魚の身にカビ臭が移ると商品価値が大幅に損なわれる。Smoltが2026年5月に「電気分解式ろ過システム×高温耐性種苗」でカビ臭ゼロを実証したことは、この課題解消への大きな前進だ。「遺伝的多様性の減少による種苗の健全性の低下」という課題は、閉鎖環境での繁殖継続により遺伝的多様性が失われ、免疫力低下・奇形増加等のリスクが高まる問題を指す。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        種苗の研究開発/生産拠点の整備支援継続。遺伝的多様性確保に向けた品種管理の研究開発支援 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        Smolt（2026年5月）：カビ臭ゼロ・高成長の実証成功。換水なし（足し水のみ）でオフフレーバー完全抑制を確認 
+                                        <span class="source-tag">Smolt 2026.5</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div>
+                        <div style="font-weight:700;margin-bottom:8px;">b. 市場：陸上養殖水産物の市場形成の不確実性・輸入水産物との価格競争</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      市場：陸上養殖で生産された水産物の市場形成の不確実性、輸入水産物との価格競争の激化（為替レートの変動を含む）。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      日本で消費されるサーモンの大半はノルウェー・チリからの輸入で、「ノルウェー産サーモンが日本市場を席巻」（東京水産振興会コラム）という現実がある。陸上養殖サーモンが「少し高くても買ってもらえる」ためには「圧倒的な鮮度（水揚げ当日納品）・安全性（アニサキスゼロ・抗生物質不使用）」という付加価値の認知が必要だ。ただし近年の中東情勢緊迫化による航空便運賃高騰（輸入サーモン値上がり）が「陸上産の方が安定して安くて新鮮という逆転現象が起き始めている」という報告もある（各種報道、2026年）。
+                                    
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div>
+                        <div style="font-weight:700;margin-bottom:8px;">c. 財務：養殖資材・エネルギーのコスト上昇によるCF不安定化</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      財務：養殖資材やエネルギーのコスト上昇によるC/Fの不安定化、固定費先行で投資回収期間が長いことによる資金調達の困難性。
+                                    
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div>
+                        <div style="font-weight:700;margin-bottom:8px;">d. 国際環境・政策：飼料原料の多くを特定国からの輸入に依存</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      国際環境・政策：飼料原料の多くを特定国からの輸入に依存。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      この課題は⑭永久磁石のレアアース依存・⑱感染症対応製品の抗菌薬原材料特定国依存と同じ「経済安全保障上の脆弱性」だ。魚粉（南米・欧州産）や大豆（主に米国・ブラジル産）は国際市況変動が大きく、為替変動とも相まって陸上養殖の採算に直結する。「最先端ゲノム関連技術により種苗を、藻類発酵技術等により飼料を内製化」（ロードマップ素案）という戦略は、この脆弱性からの脱却手段でもある。
+                                    
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div>
+                        <div style="font-weight:700;margin-bottom:8px;">e. 社会：社会的受容性の欠如・電力依存の高さ</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      社会：社会的受容性の欠如、電力依存の高さ。
+                                    
+                        </div>
+                        <div class="bottleneck-box">
+                            <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                      「電力依存の高さ」は電力コストがランニングコストの30〜40%を占めるという財務課題でもあり、かつ「電力を大量に消費する食品生産」という環境面の社会的受容性問題でもある。「社会的受容性の欠如」には、ゲノム編集魚への消費者懸念や、大規模養殖施設の用地・排水をめぐる地域住民との摩擦も含まれる（水産庁が令和5年に届出制を導入した背景には、陸上養殖業者が塩水を無断排水し周辺農地に塩害が発生した事例がある）。
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ch02" class="chapter">
+            <div class="chapter-header chapter-header green">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">（2）講じるべき政策パッケージ</span>
+            </div>
+            <div class="chapter-body">
+                <div class="section">
+                    <div class="section-title green">政策パッケージ4本柱の要点</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP（概要）</div>
+
+                                ①国内投資支援：モジュール化に向けた複数年の実証支援、種苗・飼料の研究開発/生産拠点の整備、飼料価格高騰時のセーフティネット、各種補助金・損害保険等によるファイナンス支援。②需要創出・市場確保・社会実装支援：サプライチェーンの構築支援、スタートアップの育成、データプラットフォームの構築支援（IT企業との連携による省人化・自動化）、海外市場開拓支援。③立地競争力強化：専門人材の育成・確保（水質管理・魚の生理生態・データ分析等）、ファイナンス環境整備、用地確保と利用調整等。④国際連携：水産物を海外に依存している国・地域へのパッケージ展開支援、相手先国で陸上養殖を運営・管理できる人材育成、日本食・日系小売外食企業と連携したサプライチェーン構築。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「飼料価格高騰時のセーフティネット」と「損害保険等によるファイナンス支援」は陸上養殖固有の重要施策だ。植物工場と違い、陸上養殖には「飼料コストの急変リスク」と「へい死による全損リスク」という2種類の特有リスクがある。セーフティネット（飼料）と損害保険（へい死）はそれぞれのリスクに対応するリスクヘッジ制度として機能する。「データプラットフォームの構築支援（ITベンダーとの連携による省人化・自動化・再現性向上）」は、専門人材不足の解消と安定生産実現の両方に対応する。
+                              
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 政策実装・官民投資編も読む</div>
+            <div class="next-box-desc">「今、政府と民間がどこまで動いているか」を整理した「政策実装・官民投資編」も公開中です。</div>
+            <a href="https://marketsupporter-ai.com/reports/land-aquaculture-policy-investment.html" target="_blank">▶ 政策実装・官民投資編を読む</a>
+        </div>
+
+        <div class="container">
+            <div style="margin-top:32px;font-family:var(--font-serif);font-size:16px;font-weight:700;color:var(--text-sub);border-bottom:1px solid var(--border);padding-bottom:6px;margin-bottom:12px;">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>株式会社Smolt「育種×電気分解式ろ過の組み合わせで、カビ臭ゼロ・高成長を両立した次世代型サーモン陸上養殖を実証」（2026年5月11日）— PR TIMES</li>
+                <li>東京水産振興会水産振興コラム「日本における陸上養殖の現状」（生田和正）</li>
+                <li>各種報道「日本の陸上養殖 2026年現在の動向」</li>
+            </ul>
+        </div>
+
+        <div class="disclaimer">
+            <p>本レポートは情報提供目的。投資助言ではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
