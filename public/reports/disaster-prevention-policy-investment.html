@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防災技術｜政策実装・官民投資編｜戦略17分野 ㉕</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--accent);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 50%, #7b1fa2 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 50%;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #ce93d8;
+        margin-bottom: 12px;
+    }
+
+    .hero-number {
+        font-family: var(--font-mono);
+        font-size: 60px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, .1);
+        position: absolute;
+        top: -12px;
+        right: 0;
+        line-height: 1;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(22px, 5vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #ce93d8;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #ce93d8;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #e1bee7;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--accent);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--accent-dark);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--accent-dark);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--accent);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        border-bottom: 1.5px solid var(--accent-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--accent-mid);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--accent);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ㉕</span>
+        <span>防災技術</span>
+        <span>|</span>
+        <span>政策実装・官民投資編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — DISASTER PREVENTION TECHNOLOGY — POLICY MONITOR</div>
+            <div class="hero-number">25</div>
+            <div class="hero-title">
+                防災技術
+                <br>
+                政策実装・官民投資編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（日本成長戦略会議 第3回、2026年3月）構造に基づく政策モニタリングレポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">防災庁設置目標</div>
+                    <div class="kpi-value">2026年秋</div>
+                    <div class="kpi-unit">2025年12月閣議決定。2026年通常国会に法案提出。首相官邸周辺に本庁設置</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">防災分野 海外売上目標</div>
+                    <div class="kpi-value">2兆円</div>
+                    <div class="kpi-unit">2024年約1兆円→2030年約2兆円（政策目標として示されている値）</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">南海トラフ巨大地震 被害想定</div>
+                    <div class="kpi-value">最大約29.8万人</div>
+                    <div class="kpi-unit">死者。直接被害約224.9兆円、サービス低下含む被害約270.3兆円</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">世界の自然災害管理システム</div>
+                    <div class="kpi-value">約19.4兆円</div>
+                    <div class="kpi-unit">2030年予測（2024年9.6兆円。150円/米ドル換算）</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜政策実装サマリー（2026年04月〜05月）</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜現状認識と目指す姿【目標】</a>
+                    <ul class="toc-sub">
+                        <li>（1）現状：切迫する巨大地震・激甚化する気象災害・インフラ老朽化という三重の課題</li>
+                        <li>（2）目標：防災産業の振興と2030年海外売上2兆円</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜勝ち筋と官民投資の具体像【道筋】</a>
+                    <ul class="toc-sub">
+                        <li>①「危機管理投資」×「成長投資」の二本柱</li>
+                        <li>②技術開発→商品化→実装→海外展開の好循環</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch03">CHAPTER 03｜課題と政策パッケージ【政策手段】</a>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">政策実装サマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          ㉕防災技術は、27分野の中で唯一「防災庁設置」という新たな省庁の創設が政策実装の基盤になっている分野だ。政府は2025年12月26日の閣議で防災庁設置の基本方針を決定し、2026年通常国会に関連法案を提出、2026年秋（11月ごろ）の設置を目指している。首相を組織の長とし、防災相を配置、各府省庁への勧告権を持つ内閣直下の強力な組織となる。また第1次国土強靱化実施中期計画が令和7年6月6日に閣議決定され、防災に係る官民投資の枠組みが明確化されている。G20南アフリカサミット（2025年）首脳宣言にも「災害強靱性・対応の強化」として防災への事前投資が明記された。他の成長分野との違いとして、防災技術は「市場規模が小さく民間の自発的な投資が難しい」という構造的課題を抱えつつも、「世界の自然災害管理システム市場が2024年9.6兆円から2030年約19.4兆円へ2倍成長」という市場の追い風もある。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">2025年12月26日</div>
+                        <div class="stat-unit">防災庁設置基本方針 閣議決定</div>
+                        <div class="stat-desc">2026年通常国会に法案提出、2026年秋（11月ごろ）設置目標。首相官邸周辺に本庁、2027年度以降に防災局2カ所</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">令和7年6月6日</div>
+                        <div class="stat-unit">第1次国土強靱化実施中期計画 閣議決定</div>
+                        <div class="stat-desc">防災・国土強靱化の取組に係る官民投資の枠組みが明確化。電力・通信・交通・医療の強靱化など民間部門の取組を含む</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">約1兆円→約2兆円</div>
+                        <div class="stat-unit">防災分野 日本企業の海外売上目標</div>
+                        <div class="stat-desc">2024年約1兆円→2030年約2兆円。政策目標として示されている値</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">96%</div>
+                        <div class="stat-unit">世界の災害対応資金（発災後配分）</div>
+                        <div class="stat-desc">世界の災害対応関連資金（保険・財政）の96%が発災後の緊急対応・復旧に投入。事前投資への転換が国際的課題</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">直近2ヶ月の重要動向（2026年4〜5月）</div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き</div>
+                            <ul>
+                                <li>
+                                    <strong>2025年12月26日</strong>
+                                    ：防災庁設置基本方針を閣議決定。首相を長とし、他府省庁への勧告権を持つ内閣直下組織として2026年秋（11月ごろ）設置目標 
+                                    <span class="source-tag">日経 2025.12</span>
+                                </li>
+                                <li>
+                                    2026年通常国会：防災庁設置関連法案を提出・審議中。2027年度以降に地方「防災局」2カ所設置を計画 
+                                    <span class="source-tag">公明党 2026.2</span>
+                                </li>
+                                <li>
+                                    第1次国土強靱化実施中期計画（令和7年6月6日閣議決定）：防災・国土強靱化に係る重点投資の枠組みが確定。電力・通信・交通・医療の強靱化を民間部門も含めて推進 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                                <li>
+                                    防災DX官民共創協議会・インフラメンテナンス国民会議・気象ビジネス推進コンソーシアム：産官学民連携プラットフォームが継続稼働中 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き</div>
+                            <ul>
+                                <li>
+                                    自動施工・遠隔施工技術：建設機械の自動化・遠隔操作技術が国内実証から海外展開へ。担い手不足と安全性向上を同時実現する技術として注目 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                                <li>
+                                    インフラ点検技術（ドローン・AI）：⑦無人航空機分野と連携した橋梁・トンネル・ダム等の非破壊点検技術の商用展開が拡大 
+                                    <span class="source-tag">各種報道</span>
+                                </li>
+                                <li>
+                                    衛星・AI活用の被災状況把握：SAR（合成開口レーダー）衛星×AIによる災害発生後の広域被害状況の迅速把握技術の実証・商用化が進行中 
+                                    <span class="source-tag">各種報道</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">日本の強みのある防災技術カテゴリー</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>カテゴリー</th>
+                                <th>具体的技術・製品</th>
+                                <th>市場・競合状況</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>自動施工・遠隔施工</td>
+                                <td>建設機械の遠隔操作・自律施工、災害現場への無人アクセス技術</td>
+                                <td>担い手不足対応として国内需要強い。海外でも導入が見込まれる有望技術（ロードマップ素案）</td>
+                            </tr>
+                            <tr>
+                                <td>インフラ老朽化対策技術</td>
+                                <td>ドローン・AI点検、センサー内蔵インフラ、非破壊検査技術</td>
+                                <td>⑦無人航空機分野と連携。高度経済成長期インフラの老朽化が国内外で深刻化</td>
+                            </tr>
+                            <tr>
+                                <td>災害リスク関連技術</td>
+                                <td>地震・水害等の観測・早期警戒システム、衛星・AI活用の被災状況把握、気象予測</td>
+                                <td>日本気象協会等が気象ビジネスで海外展開推進。UNDRR（国連防災機関）からも高い期待</td>
+                            </tr>
+                            <tr>
+                                <td>防災資機材</td>
+                                <td>仮設住宅・防災備蓄資機材・避難支援機器等</td>
+                                <td>フェーズフリー（平時・有事両用）製品として民間需要も創出可能</td>
+                            </tr>
+                            <tr>
+                                <td>事前防災・インフラ整備</td>
+                                <td>堤防・防潮堤・地盤改良技術等</td>
+                                <td>ODAを通じた途上国への技術・資金の両面でのパッケージ展開が有望</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">１．現状認識と目指す姿【目標】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）現状</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 切迫する巨大地震・激甚化する気象災害・インフラ老朽化という三重の課題</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      切迫する巨大地震や、激甚化・頻発化する気象災害など大規模自然災害への対策や、高度経済成長期に整備されたインフラの老朽化対策などの事前投資の取組が急務。世界的にも、気候変動、都市化により災害が激甚化・頻発化。人口減少・少子高齢化の中、防災・国土強靱化の担い手が将来的に不足。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      大規模地震の被害想定が防災投資の緊迫性を示す数字だ。南海トラフ巨大地震では死者最大約29.8万人・生産サービス低下含む被害約270.3兆円、首都直下地震では死者最大約1.8万人・被害約82.6兆円と推計されている（ロードマップ素案）。これらの「被害を事前投資で抑制できる」という発想が防災産業の「市場の根拠」となる。被害想定270兆円に対して、数兆円規模の事前投資は費用対効果として十分正当化できる。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">国際</span>
+                                G20南アフリカサミット（2025年）首脳宣言：「持続可能な強靱性の構築への投資、予防の優先及び先行的行動の重要性を強調する」「事前の防災と備えを強化するため、負担可能で包摂的で事前取決型資金調達メカニズムの拡大と更なる活用を含み得る」が盛り込まれた（ロードマップ素案）。世界的に「発災後の緊急対応・復旧」から「事前防災」への投資シフトが政治的議題になっている。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② 日本の強み：「災害大国」として蓄積したデータ・ノウハウと防災技術</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      世界的にも災害が頻発化・激甚化する中で、災害大国である日本が蓄積してきた防災技術・製品について、国連防災機関（UNDRR）からも高い期待。日本は国際的な防災の取組指針である「仙台防災枠組」の策定を主導するなど、国際社会の「防災の主流化」をリード。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「災害大国」という日本の弱点が競争優位に転換する構造を示している。日本が長年の地震・台風・豪雨対策で蓄積した「体験データ×技術ノウハウ」は、他国が短期間で模倣できない差別化要素だ。「仙台防災枠組」という国際標準の策定を主導した実績は、防災技術の「国際標準」においても日本が主導権を持てる可能性を示す。
+                                    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）目標</div>
+                    <div class="sub-section">
+                        <div class="sub-section-title">防災産業の振興と2030年海外売上2兆円・第1次国土強靱化実施中期計画の推進</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      危機管理投資として、国土強靱化基本法に基づき、まずは第１次国土強靱化実施中期計画に基づく取組を推進。防災・国土強靱化の取組を加速化させるとともに、日本の強みである自動・遠隔施工やインフラ老朽化対策、災害リスク評価、防災資機材等の防災技術について、技術開発から商品化、実装・需要の創出や、更なる技術開発につながる好循環を創出し、防災産業を振興する。日本企業の防災分野の海外売上総額を2024年の約１兆円から、2030年に約２兆円にすることを目標とする（政策目標として示されている値）。
+                                    
+                        </div>
+                        <div class="note-box">
+                            <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                      「2030年に約2兆円」という目標は、現在の2倍だが世界の自然災害管理システム市場（2030年約19.4兆円）に対してシェア約10%という水準だ。「まずは第1次国土強靱化実施中期計画の推進」という表現は、防災技術の展開が国内での事前投資実績の積み上げを基盤とすることを示す。防災庁設置（2026年秋）は、この「国内実装基盤の強化」を担う司令塔機能として、防災産業振興の最重要な構造変化だ。
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">２．勝ち筋と官民投資の具体像【道筋】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）「危機管理投資」×「成長投資」の二本柱</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 危機管理投資：第1次国土強靱化実施中期計画に基づく集中的な取組推進</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      危機管理投資として、第１次国土強靱化実施中期計画に基づく取組を集中的に推進。官のみならず、電力・通信・交通・医療の強靱化など民間部門の取組を進める。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「危機管理投資」と「成長投資」を同じ防災分野で同時に追うことが、この分野の政策設計の特徴だ。危機管理投資は「被害を最小化するための必要経費」として政府の責任で実施するもの。成長投資は「防災技術を産業として振興し、海外に売る」という成長戦略的側面だ。両者は「国内での実装実績（危機管理投資の産物）が海外での信頼性（成長投資の基盤）になる」という連鎖によって相互強化される。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        第1次国土強靱化実施中期計画（令和7年6月6日閣議決定）：電力・通信・交通・医療の強靱化を官民連携で推進。計画期間・重点分野・投資規模が明確化 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② 成長投資：デジタル等新技術活用の防災技術で好循環を生み出す</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      防災・国土強靱化の取組を加速化させるとともに、国内に限らず海外でも普及、活用・進展が進んでいる我が国の強みのあるデジタル等新技術を活用した防災技術について、技術開発、商品化／サービス提供、実装／需要の創出のサイクルで好循環を生み出し、防災産業を振興する。こうしたことにより、災害大国である我が国で蓄積されたデータ・ノウハウ等を梃子に海外市場の獲得にもつなげる。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「デジタル等新技術を活用した防災技術」という表現が重要だ。自動施工技術はPhysical AI（⑪ロケット分野の遠隔操作）と連携し、インフラ点検は⑦無人航空機と連携し、被災状況把握は⑫海洋無人機や⑦無人航空機と連携する。防災技術は「独立した一分野」ではなく、他の16分野の先端技術が「防災用途」で統合されるプラットフォームとして機能する。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        防災庁設置（2026年秋目標）：被災者支援体制の強化、防災DX、防災技術研究開発・実装、国際展開等を一元的に推進する司令塔機能として設置準備中 
+                                        <span class="source-tag">内閣府 2026</span>
+                                    </li>
+                                    <li>
+                                        防災DX官民共創協議会・インフラメンテナンス国民会議・気象ビジネス推進コンソーシアムが継続稼働 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        インフラ点検ドローン・AI：コマツ・大林組等の建設機械大手が自動施工・遠隔施工の商用展開を推進。ドローン×AIを活用したインフラ点検サービスも複数の企業が展開中 
+                                        <span class="source-tag">各種報道</span>
+                                    </li>
+                                    <li>
+                                        気象・防災情報サービス：民間気象会社が気象データ×AIによる精度の高い早期警戒情報を商業展開。海外向けサービスも拡大 
+                                        <span class="source-tag">各種報道</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向</div>
+                            <p>
+                                <span class="country-tag">アジア・アフリカ</span>
+                                日本の防災技術・ODAを通じた途上国への防災インフラ整備が継続中。JICAによる技術協力・円借款を通じた堤防・早期警戒システム等の展開実績が「海外での信頼性」の基盤となっている。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）技術開発→商品化→実装→海外展開の好循環モデル</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                ①防災技術開発：ニーズ・シーズを踏まえた必要性の高い研究テーマの設定、研究開発への支援、公募による技術開発。②商品化/サービス提供：実用化への支援、ニーズを反映した機能要求水準の提供、データ連携の促進。③実装：製品のカタログ化、登録・認証制度・規格化、マッチング推進、中小企業支援、補助や公共調達による需要創出。④海外展開：ターゲット国等の明確化、官民一体となったPR活動、日本の防災技術のブランド化、ODA活用、国際標準化による市場拡大。
+                              
+                    </div>
+                    <div class="note-box">
+                        <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                この「4ステップの好循環」は、⑲ペロブスカイト太陽電池の「需要創出→量産」や㉑グリーン鉄の「公共調達→市場創出」と同じ政策論理の応用だ。特に「公共調達による需要創出（③実装）」は、防災庁設置後に政府自身が防災技術の「最初の顧客」となることで、民間への展開に必要な「国内実装実績」を作り出す設計だ。定量的インパクト（投資額・経済波及効果）は「官民投資ロードマップの取りまとめまでに提示」と明記。2026年夏の日本成長戦略取りまとめで具体化予定。
+                              
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH03 -->
+        <section id="ch03" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <span class="chapter-title">３．課題と政策パッケージ【政策手段】</span>
+            </div>
+            <div class="chapter-body">
+                <div class="section">
+                    <div class="section-title">好循環4ステップ別の課題と政策</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP（課題と政策のまとめ）</div>
+
+                                ①防災技術開発の課題：分野横断的なニーズが整理されていない。新たな防災技術を生み出す研究開発に投資が必要。→政策：国の計画等への位置付け、ニーズ・シーズを踏まえた研究テーマの設定、研究開発への支援。②商品化/サービス提供の課題：現場で求められる機能要求水準が明らかでない。防災に活用可能な他分野の技術の活用可能性が明らかでない。→政策：実用化への支援、ニーズを反映した機能要求水準の提供。③実装の課題：有望な製品・技術やその品質・実績がユーザーに知られていない。市場が小さく民間の自発的な投資が難しい。中小企業における防災技術の導入資金の確保が課題。全国で具備されるべき技術が徹底されていない。→政策：製品のカタログ化、認証制度、公共調達による需要創出、中小企業支援。④海外展開の課題：官民一体となった海外展開の取組が不十分。世界の災害対応関連資金の96%が発災後の緊急対応・復旧に投入（事前投資が少ない）。→政策：ターゲット国の明確化、官民一体PR、ODA活用、国際標準化による市場拡大。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS（③実装課題の重要性）</div>
+
+                                「市場が小さく、民間の自発的な投資が難しい分野がある」という③実装課題が、防災技術分野の最大の構造的問題だ。防災技術は「災害が発生するまで需要が顕在化しない」という特性を持つ。橋梁点検用ドローンや早期警戒システムに毎年多額の投資をしても、「今年は災害がなかった」という年には「無駄な投資」に見えてしまう。公共調達・政府の率先調達が「市場を作る」という役割を担う理由がここにある。防災庁設置はこの「政府が最初の顧客」になる機能の制度的強化でもある。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    防災庁設置準備（2026年秋目標）：防災技術の研究開発・実装・国際展開を一元的に推進する司令塔機能。設置後は防災DXや技術実装のための環境整備を強化 
+                                    <span class="source-tag">内閣府 2026</span>
+                                </li>
+                                <li>
+                                    税制優遇・規制緩和・PPP/PFI・金融投資の活性化等が政策パッケージとして明記 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    フェーズフリー/デュアルユース製品：平時の日常利用でも価値を発揮し、有事には防災資機材として機能する製品の開発・販売が拡大。日常市場での販売が防災技術の「市場が小さい」という課題を克服する可能性 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 続編：課題・政策パッケージ編</div>
+            <div class="next-box-desc">「なぜ防災技術の実装・海外展開が進まないのか」「分野横断ニーズの整理困難・技術実績の可視化不足・市場の小ささ・世界の96%が発災後投資という国際環境」を整理した「課題・政策パッケージ編」も近日公開予定です。</div>
+            <a href="https://marketsupporter-ai.com" target="_blank">▶ marketsupporter-ai.com で読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>日本経済新聞「防災庁を26年設置 地方機関も検討、基本方針決定 政府」（2025年12月26日）</li>
+                <li>内閣府「防災の動き」令和7年度広報誌「ぼうさい」第113号（令和8年度（2026年度）中の防災庁設置）</li>
+                <li>公明党「防災庁 2026年秋に発足へ」（2026年2月26日）</li>
+                <li>内閣官房国土強靱化推進室「防災・国土強靱化分野の成長戦略の検討について」（令和8年2月19日）</li>
+                <li>第1次国土強靱化実施中期計画（令和7年6月6日閣議決定）</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
