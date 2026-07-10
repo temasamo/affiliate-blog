@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防災技術｜課題・政策パッケージ編｜戦略17分野 ㉕</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --warn: #e65100;
+        --warn-light: #fff3e0;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--warn);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #bf360c 0%, #e64a19 50%, #ff7043 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #ffccbc;
+        margin-bottom: 12px;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(22px, 5vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #ffccbc;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #ffccbc;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 17px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #ffccbc;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--warn);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-header.green {
+        background: var(--accent);
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 24px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--warn);
+        border-bottom: 1.5px solid var(--warn-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .section-title.green {
+        color: var(--accent-dark);
+        border-bottom-color: var(--accent-light);
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .bottleneck-box {
+        background: var(--warn-light);
+        border-left: 3px solid var(--warn);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .bottleneck-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--warn);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--warn);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ㉕</span>
+        <span>防災技術</span>
+        <span>|</span>
+        <span>課題・政策パッケージ編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — DISASTER PREVENTION TECHNOLOGY — CHALLENGE & POLICY PACKAGE</div>
+            <div class="hero-title">
+                防災技術
+                <br>
+                課題・政策パッケージ編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（3）官民投資促進に向けた課題と政策パッケージ 構造に基づく分析レポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">①技術開発の課題</div>
+                    <div class="kpi-value">分野横断ニーズ未整理</div>
+                    <div class="kpi-unit">何を開発すべきか優先順位が不明確</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">②商品化の課題</div>
+                    <div class="kpi-value">機能要求水準が不明</div>
+                    <div class="kpi-unit">「何を買えばよいか」の基準が存在しない</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">③実装の課題</div>
+                    <div class="kpi-value">市場小×技術不認知</div>
+                    <div class="kpi-unit">民間の自発的投資が難しい構造</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">④海外展開の課題</div>
+                    <div class="kpi-value">世界の96%が発災後投資</div>
+                    <div class="kpi-unit">事前防災技術の市場が国際的に小さい</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <section id="ch00" class="chapter" style="margin-top:32px;">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">課題・政策パッケージサマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          防災技術の課題は「技術開発→商品化→実装→海外展開」という好循環4ステップの各段階に異なる障壁が存在する「分断の連鎖」という構造を持つ。特に③実装段階の「市場が小さく民間の自発的な投資が難しい」という課題は、防災技術に固有の本質的問題だ。「災害が起きなければ需要が顕在化しない」という防災技術の特性上、平時の民間投資を促進するためには公共調達・政府の率先採用という外部からの需要創出が不可欠となる。防災庁設置（2026年秋目標）はまさにこの③実装課題への制度的対応として最大の政策的意義を持つ。
+                        
+                </div>
+                <div class="section">
+                    <div class="section-title">4ステップ別課題と政策パッケージの対応関係</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>ステップ</th>
+                                <th>主要課題</th>
+                                <th>政策パッケージ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>①防災技術開発</td>
+                                <td>分野横断的なニーズが整理されていない。研究開発への投資が必要</td>
+                                <td>国の計画等への位置付け、効果検証・事後評価制度、ニーズ・シーズを踏まえた研究テーマ設定</td>
+                            </tr>
+                            <tr>
+                                <td>②商品化/サービス提供</td>
+                                <td>現場で求められる機能要求水準が明らかでない。他分野技術の防災活用可能性が不明</td>
+                                <td>実用化への支援、機能要求水準の提供、データ連携の促進</td>
+                            </tr>
+                            <tr>
+                                <td>③実装</td>
+                                <td>有望技術がユーザーに知られていない。市場が小さく民間投資が難しい。中小企業の導入資金確保が課題</td>
+                                <td>製品カタログ化・認証制度・公共調達による需要創出・中小企業支援・広報</td>
+                            </tr>
+                            <tr>
+                                <td>④海外展開</td>
+                                <td>官民一体の取組が不十分。世界の96%が発災後投資で事前防災技術の市場が小さい</td>
+                                <td>ターゲット国の明確化、官民一体PR、ODA活用、国際標準化による市場拡大</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">（1）投資促進に向けた課題</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">①技術開発：分野横断的なニーズが整理されていない</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+                        分野横断的なニーズが整理されていない。新たな防災技術を生み出す研究開発に投資が必要。
+                    </div>
+                    <div class="bottleneck-box">
+                        <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                地震・洪水・土砂崩れ・高潮・インフラ老朽化という異なる災害・課題に対応する技術ニーズが、所管省庁（国交省・農水省・気象庁・内閣府等）の縦割りで整理されている。「何の技術を研究開発すれば最も多くの命と財産を守れるか」という横断的な優先順位が明確でないため、企業や研究機関が研究開発の方向性を定めにくい。防災庁設置後に「分野横断的なニーズ整理」の機能が強化される期待がある。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">②商品化：機能要求水準が不明・他分野技術の活用可能性が不明</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+                        現場で求められる機能要求水準が明らかでない。防災に活用可能な他分野の技術、防災技術の他分野への活用可能性が明らかでない。
+                    </div>
+                    <div class="bottleneck-box">
+                        <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                「どれくらいの精度の早期警戒システムがあれば避難時間が確保できるか」「ドローンによるインフラ点検でどの程度の画像分解能が必要か」といった「機能要求水準」が自治体・インフラ管理者側で整理されていない。この基準がないと、企業が「何を作ればよいか」がわからず、自治体が「何を買えばよいか」もわからない。「防災に活用可能な他分野の技術の活用可能性が不明」は、⑦無人航空機・AI・衛星等の防災への横展開が遅れている現状を示す。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">③実装：技術不認知・市場の小ささ・中小企業の導入資金・技術徹底の不足</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+                        有望な製品・技術やその品質・実績がユーザーに知られていない。市場が小さく、民間の自発的な投資が難しい分野がある。中小企業における防災技術の導入資金の確保が課題。全国で具備されるべき技術等が徹底されていない。
+                    </div>
+                    <div class="bottleneck-box">
+                        <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                「市場が小さく民間の自発的な投資が難しい」という課題は防災技術分野の根本的な構造問題だ。自動施工技術・インフラ点検ドローン・早期警戒システムに毎年多額の投資をしても、「今年は災害がなかった」という年には「無駄な投資」に見えてしまう。「全国で具備されるべき技術が徹底されていない」という課題は、先進的な自治体・企業では導入が進んでいる技術が、中小企業・地方自治体では予算・人材不足で導入できていない「地域間格差」の問題だ。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    防災庁設置（2026年秋目標）：政府が「最初の顧客」として防災技術を率先調達する機能の強化。公共調達による需要創出が市場形成の鍵 
+                                    <span class="source-tag">内閣府 2026</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    フェーズフリー/デュアルユース製品：平時でも価値を発揮し有事には防災資機材として機能する製品開発が拡大。日常市場での販売により「市場が小さい」問題を克服するアプローチ 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">④海外展開：官民一体の取組不十分・世界の96%が発災後投資</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+                        官民一体となった海外展開の取組が不十分。世界において、災害対応関連資金（保険・財政）の96%が発災後の緊急対応・復旧に投入。
+                    </div>
+                    <div class="bottleneck-box">
+                        <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                「世界の96%が発災後投資」という構造は、日本の防災技術の海外展開の最大の障壁だ。事前防災（堤防・早期警戒システム・インフラ強靱化）への国際的な資金が少ない状況では、日本の優れた事前防災技術を売り込む市場が限定的だ。G20南アフリカサミット（2025年）首脳宣言で「事前防災への投資促進」が盛り込まれたことは、この構造を変えようとする国際的な動きの始まりだ。「官民一体の取組が不十分」は、政府（外務省・JICA・国土交通省等）と民間企業が別々に海外展開を試みており、連携したブランド化・プロモーションができていないことを指す。
+                              
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ch02" class="chapter">
+            <div class="chapter-header chapter-header green">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">（2）講じるべき政策パッケージ</span>
+            </div>
+            <div class="chapter-body">
+                <div class="section">
+                    <div class="section-title green">政策パッケージ：体制・人材育成・投資等</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP（体制・人材育成・投資の3要素）</div>
+
+                                ○体制：産官学民金の連携。防災DX官民共創協議会・インフラメンテナンス国民会議・気象ビジネス推進コンソーシアム。データのプラットフォーム構築等。○人材育成：アドバイザー制度、専門家派遣、講習会の実施等。○投資等：国土強靱化実施中期計画。税制優遇、規制緩和、研究開発等。PPP/PFI。金融投資の活性化等。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title green">好循環を生み出す上で必要な横断的観点</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+
+                                フェーズフリー/デュアルユースの取組、スタートアップ支援、防災利用のための技術の補填、他の成長分野との技術の連携・活用（AI、衛星、その他シーズ）、グリーンインフラ、女性活躍、自立分散、民間事業者間の連携、防災教育・訓練、防災立国の推進に向けた基本方針。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS</div>
+
+                                「他の成長分野との技術の連携・活用（AI、衛星、その他シーズ）」という記述は、防災技術分野が「独立した一分野」ではなく「他の16分野の先端技術が防災用途で統合されるプラットフォーム」として機能することを示す。⑦無人航空機のインフラ点検活用、①Physical AIの自動施工、⑤APNの防災通信、②半導体の気象観測センサー等、各成長分野の技術が防災に応用されることで、防災技術の「革新の速度」が加速する。「フェーズフリー/デュアルユース」は③実装の「市場が小さい」問題への最も実践的な突破口だ。
+                              
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 政策実装・官民投資編も読む</div>
+            <div class="next-box-desc">「今、政府と民間がどこまで動いているか」を整理した「政策実装・官民投資編」も公開中です。</div>
+            <a href="https://marketsupporter-ai.com/reports/disaster-prevention-policy-investment.html" target="_blank">▶ 政策実装・官民投資編を読む</a>
+        </div>
+
+        <div class="container">
+            <div style="margin-top:32px;font-family:var(--font-serif);font-size:16px;font-weight:700;color:var(--text-sub);border-bottom:1px solid var(--border);padding-bottom:6px;margin-bottom:12px;">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>日本経済新聞「防災庁を26年設置 地方機関も検討、基本方針決定 政府」（2025年12月26日）</li>
+                <li>内閣府「防災の動き」令和7年度広報誌「ぼうさい」第113号</li>
+                <li>第1次国土強靱化実施中期計画（令和7年6月6日閣議決定）</li>
+            </ul>
+        </div>
+
+        <div class="disclaimer">
+            <p>本レポートは情報提供目的。投資助言ではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
