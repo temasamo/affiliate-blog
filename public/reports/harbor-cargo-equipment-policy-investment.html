@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>港湾荷役機械｜政策実装・官民投資編｜戦略17分野 ㉖</title>
+    <style>
+    :root {
+        --bg: #ffffff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --over: #c62828;
+        --over-light: #ffebee;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', 'Georgia', serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--accent);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+        color: #fff;
+        padding: 52px 24px 44px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 50%;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #a5d6a7;
+        margin-bottom: 12px;
+    }
+
+    .hero-number {
+        font-family: var(--font-mono);
+        font-size: 60px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, .1);
+        position: absolute;
+        top: -12px;
+        right: 0;
+        line-height: 1;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(22px, 5vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #a5d6a7;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #c8e6c9;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .toc {
+        background: var(--bg-sub);
+        border-left: 3px solid var(--accent);
+        padding: 24px 24px 20px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .toc-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        color: var(--accent-dark);
+        margin-bottom: 14px;
+        font-family: var(--font-mono);
+    }
+
+    .toc ol {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .toc a {
+        color: var(--accent-dark);
+        text-decoration: none;
+    }
+
+    .toc .toc-sub {
+        padding-left: 18px;
+        margin-top: 4px;
+        list-style-type: disc;
+    }
+
+    .toc .toc-sub li {
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--accent);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 28px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        border-bottom: 1.5px solid var(--accent-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .sub-section {
+        margin: 18px 0;
+    }
+
+    .sub-section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sub-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: var(--accent-mid);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .overseas-box {
+        background: var(--over-light);
+        border-left: 3px solid var(--over);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .overseas-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--over);
+        letter-spacing: .08em;
+        margin-bottom: 6px;
+    }
+
+    .country-tag {
+        display: inline-block;
+        background: var(--over);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .stat-cell {
+        background: var(--bg-sub);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-val {
+        font-family: var(--font-mono);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        line-height: 1;
+    }
+
+    .stat-unit {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .stat-desc {
+        font-size: 11px;
+        color: var(--text-sub);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--accent);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--text-sub);
+        margin-bottom: 6px;
+        font-size: 12px;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr.section-rule {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ㉖</span>
+        <span>港湾荷役機械</span>
+        <span>|</span>
+        <span>政策実装・官民投資編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — PORT CARGO HANDLING EQUIPMENT — POLICY MONITOR</div>
+            <div class="hero-number">26</div>
+            <div class="hero-title">
+                港湾荷役機械
+                <br>
+                政策実装・官民投資編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（日本成長戦略会議 第3回、2026年3月）構造に基づく政策モニタリングレポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">米STSクレーン 中国製比率</div>
+                    <div class="kpi-value">約8割</div>
+                    <div class="kpi-unit">米主要港のSTSクレーン559基のうち43%がZPMC製。サイバーリスク問題が深刻化</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">米国 国内製造復活支援</div>
+                    <div class="kpi-value">200億ドル</div>
+                    <div class="kpi-unit">バイデン政権が中国製クレーン代替のため打ち出した産業政策規模</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">日本の海外市場拡大目標</div>
+                    <div class="kpi-value">200〜300億円/年</div>
+                    <div class="kpi-unit">国外市場拡大目標。2040年頃に米国市場シェア3割を目指す（政策目標として示されている値）</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">生産ボトルネック</div>
+                    <div class="kpi-value">通常の約1.5倍</div>
+                    <div class="kpi-unit">生産能力不足により製造に通常の約1.5倍の期間を要し、受注控えの機会損失が生じている</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <nav class="toc">
+            <div class="toc-title">// TABLE OF CONTENTS</div>
+            <ol>
+                <li>
+                    <a href="#ch00">CHAPTER 00｜政策実装サマリー（2026年04月〜05月）</a>
+                </li>
+                <li>
+                    <a href="#ch01">CHAPTER 01｜現状認識と目指す姿【目標】</a>
+                    <ul class="toc-sub">
+                        <li>（1）現状：中国ZPMC依存への懸念と日本製STSクレーンの信頼性優位</li>
+                        <li>（2）目標：2040年 米国市場シェア3割・ISO国際標準化での優位確立</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch02">CHAPTER 02｜勝ち筋と官民投資の具体像【道筋】</a>
+                    <ul class="toc-sub">
+                        <li>①「港湾インフラのファーウェイ」問題が生んだ日本製品への需要急増</li>
+                        <li>②自動化・遠隔操作化による国内港湾の生産性向上</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ch03">CHAPTER 03｜課題と政策パッケージ【政策手段】</a>
+                </li>
+                <li>
+                    <a href="#source">出典</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- CH00 -->
+        <section id="ch00" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">政策実装サマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          港湾荷役機械は27分野の中でも「地政学的変化が最も直接的にビジネスチャンスをもたらした分野」だ。米港湾施設で使用されるSTSクレーン（船上のコンテナを港に移す大型クレーン）の8割が中国製（上海振華重工ZPMC）であり、サイバーリスクへの懸念から「港湾インフラのファーウェイ」と呼ばれるようになった（丸紅ワシントン報告、2024年）。バイデン政権は2024年、中国製STSクレーンからのサイバーリスク対策と国内製造基盤復活に向けた200億ドルの産業政策を打ち出した。日本の主要プレイヤー（三菱重工機械システム、住友重機械搬送システム等）は地震多発国ならではの耐震性能等の独自の強みを持ち、現在「生産能力を上回る需要」に対して製造に通常の約1.5倍の期間を要している状況だ（ロードマップ素案、2026年3月）。ISOにおける自動化コンテナターミナルの国際標準化の議論も進行中で、日本が主導権を持てるかどうかが中長期の競争力を左右する。
+                        
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-cell">
+                        <div class="stat-val">約8割</div>
+                        <div class="stat-unit">米STSクレーンの中国製比率</div>
+                        <div class="stat-desc">米港湾施設のSTSクレーンの8割が中国製（主にZPMC）。主要港の559基のうち43%がZPMC製（丸紅ワシントン報告、2024年）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">200億ドル</div>
+                        <div class="stat-unit">米国 STSクレーン産業政策</div>
+                        <div class="stat-desc">バイデン政権が打ち出した中国製クレーン代替・国内製造基盤復活に向けた支援規模（丸紅ワシントン報告、2024年）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">×1.5倍</div>
+                        <div class="stat-unit">日本製造の生産期間延長</div>
+                        <div class="stat-desc">生産能力不足により製造に通常の約1.5倍の期間を要し、受注控えの機会損失が生じている（ロードマップ素案、2026年3月）</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-val">99.6%</div>
+                        <div class="stat-unit">日本の貿易量（港湾扱い）</div>
+                        <div class="stat-desc">日本の港湾は貿易量の99.6%を扱う。港湾荷役機械は我が国の経済活動を支える基幹インフラ（ロードマップ素案、2026年3月）</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">直近2ヶ月の重要動向（2026年4〜5月）</div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き</div>
+                            <ul>
+                                <li>
+                                    港湾荷役機械の生産に必要な設備投資への支援（港湾技術開発制度による研究開発支援、生産ライン・出荷岸壁・製品運搬船等の設備投資支援）が継続中 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                                <li>
+                                    自動化・遠隔操作化等荷役機械の導入補助、モデル運用規程整備、無利子資金の貸付制度等の需要創出支援を実施中 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                                <li>
+                                    ISO自動化コンテナターミナル国際標準化：同盟国・同志国と連携しながら日本企業の強みを活かした標準化に向けた対応が進行中 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                                <li>
+                                    国際コンテナ戦略港湾政策（集貨・創貨・競争力強化）の一層の推進。大規模コンテナターミナルの早期整備を推進 
+                                    <span class="source-tag">国土交通省</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き</div>
+                            <ul>
+                                <li>
+                                    三菱重工機械システム：STSクレーン（ガントリークレーン）・RTG（ゴムタイヤ式門型クレーン）等の港湾荷役機械を製造・販売。地震多発国ならではの耐震性能等の独自の強みを有している 
+                                    <span class="source-tag">三菱重工</span>
+                                </li>
+                                <li>
+                                    住友重機械搬送システム：RTGクレーンの遠隔操作化・自動化技術を商用展開中。「RTG運転者の労働環境を改善し、安全で安定したコンテナ荷役の実現に貢献」 
+                                    <span class="source-tag">住友重機械搬送システム</span>
+                                </li>
+                                <li>
+                                    港湾労働者不足への対応：自動化・遠隔操作化による省人化ニーズが高まる中、日本メーカーの技術開発・受注が積み上がりつつある 
+                                    <span class="source-tag">各種報道</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">主要プレイヤーマップ</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>企業</th>
+                                <th>主要製品・強み</th>
+                                <th>直近動向</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>三菱重工機械システム（三菱重工グループ）</td>
+                                <td>STSクレーン（ガントリークレーン）、RTG等。耐震性能・信頼性・品質が強み</td>
+                                <td>海外新規需要・国内更新需要で受注積み上がり中。生産能力増強が課題</td>
+                            </tr>
+                            <tr>
+                                <td>住友重機械搬送システム（住友重機械工業グループ）</td>
+                                <td>RTGクレーンの遠隔操作化・自動化技術。90年以上の歴史と約300台の製作実績</td>
+                                <td>遠隔操作化技術の商用展開を継続。コンテナターミナルの省人化ニーズに対応</td>
+                            </tr>
+                            <tr>
+                                <td>競合（中国：ZPMC）</td>
+                                <td>世界最大の港湾荷役機械メーカー。低コスト・大量供給。米国主要港の43%がZPMC製</td>
+                                <td>米国市場でサイバーリスク問題が浮上。200億ドルの産業政策により代替需要が生まれつつある</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH01 -->
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">１．現状認識と目指す姿【目標】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）現状</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 現状：中国ZPMC依存への国際的懸念と日本製STSクレーンの「信頼性」優位</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      海外港湾における新規需要や国内港湾における更新需要などにより、国内外において、我が国企業の生産能力を上回る需要がある一方、生産能力不足により、製造に通常の約1.5倍程度の期間を要しており、受注控えなどの機会損失も生じている。米国では、海外製のSTSクレーンへの依存度が極めて高く、サイバーリスクへの懸念から、港湾のサイバーセキュリティ対策強化と、STSクレーンの国内製造基盤の復活に向けた政策を推進。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「港湾インフラのファーウェイ」（下院中国特別委員会委員長、2023年）という表現が、米国における中国製STSクレーン問題の深刻さを示す。コンテナターミナルは軍事物資の輸送にも使用される重要インフラであり、中国製クレーンの制御ソフトによるデータ収集・遠隔操作のリスクへの懸念が、政治的議題になっている。これは「安全保障上の信頼性」が「価格」より重要視されるという市場環境の変化であり、「地震多発国ならではの耐震性能等の独自の強みを有する」日本製品にとって最大のビジネスチャンスだ。
+                                    
+                        </div>
+                        <div class="overseas-box">
+                            <div class="overseas-label">// 海外動向（米国政策）</div>
+                            <p>
+                                <span class="country-tag">米国</span>
+                                バイデン政権は2024年2月、中国製STSクレーンに伴うサイバーリスク対策と国内製造基盤復活に向けた200億ドルの産業政策を発表。米港湾施設のSTSクレーン559基のうち243基（43%）がZPMC製で、主要港では8割が中国製という状況に対する安全保障上の対応（丸紅ワシントン報告、2024年）。
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② 経済的・戦略的な重要性：国産技術による港湾ロジスティクス強化と経済安全保障</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      日本製の港湾荷役機械は、世界に通じる技術力を有しており、その競争力強化は、国産技術による我が国の港湾ロジスティクスの強化への貢献のみならず、同盟国・同志国における特定国依存の状況を解消し、我が国を含む経済安全保障を実現する上で重要。また、港湾の労働者不足が懸念され、我が国港湾の競争力が相対的に低下する中、将来にわたって我が国のサプライチェーンを維持するためには、我が国港湾における港湾荷役機械の自動化・遠隔操作化等が重要。
+                                    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">（2）目標</div>
+                    <div class="sub-section">
+                        <div class="sub-section-title">2040年 米国市場シェア3割・国内外市場200〜300億円/年・ISO国際標準化での優位確立</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      国内市場を引き続き維持しつつ、米国やアジア太平洋地域を視野に国外市場の拡大（約200〜300億円/年）を目指す。これにより、2040年頃を目途に、米国市場の３割程度のシェア獲得を狙う（政策目標として示されている値）。ISOにおける自動化コンテナターミナルの国際標準化に向けた動向に対して、同盟国・同志国との連携を図りつつ、日本企業の強みを活かした標準化を図る。我が国港湾における自動化・遠隔操作化等荷役機械の導入を推進することで、労働環境の改善や生産性の向上を行い、将来的にわたって強靱かつ持続的なサプライチェーンの維持を図る。
+                                    
+                        </div>
+                        <div class="note-box">
+                            <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                      定量的インパクト（投資額・経済波及効果）は「官民投資ロードマップの取りまとめまでに提示」と明記。2026年夏の日本成長戦略取りまとめで具体化予定。「米国市場シェア3割」という目標は野心的だが、200億ドルの米国産業政策による代替需要と、日本製品の信頼性・耐震性能という差別化優位があれば実現可能性のある数字だ。「日本の生産能力を上回る需要がある」という現状が、最大の障壁を「需要の創出」ではなく「生産能力の拡大」に特定している点が特徴的だ。
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH02 -->
+        <section id="ch02" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">２．勝ち筋と官民投資の具体像【道筋】</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">（1）「港湾インフラのファーウェイ」問題が生んだ日本製品への需要急増</div>
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">① 安全保障需要の取り込み：「信頼性」という非価格価値で中国製に対抗</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      特定国依存によるサイバーリスクや物流機能停止リスクへの対応として、同盟国・同志国を含む国内外の市場に信頼性の高い港湾荷役機械を供給する。日本企業の生産能力・供給体制を強化するとともに、ISOにおける自動化コンテナターミナルの国際標準化の議論を優位に進めることで、日本製港湾荷役機械の優位性、不可欠性を高め、国際競争力を強化する。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「信頼性の高い港湾荷役機械」という表現は、単なる性能の高さではなく「サイバーセキュリティが担保されている」「中国の影響を受けない」という経済安全保障上の信頼性を指す。⑭永久磁石の「中国依存からの脱却」、⑱感染症対応製品の「特定国依存の解消」と同じ論理が、港湾荷役機械にも適用されている。日本製品は「中国製より高価」でも、「安全保障上の信頼性」という付加価値で選ばれるという市場環境が米国で生まれつつある。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        ISO自動化コンテナターミナル国際標準化：同盟国・同志国との連携を図りながら日本企業の強みを活かした標準化対応が継続中 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                    <li>
+                                        港湾荷役機械の海外展開支援（ODA等）：途上国を含む海外市場への日本製品の展開を支援 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        三菱重工機械システム・住友重機械搬送システム等：米国をはじめとする同盟国・同志国からの受注が増加傾向。生産能力拡大が急務 
+                                        <span class="source-tag">ロードマップ素案 2026.3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="section-rule">
+
+                    <div class="sub-section">
+                        <div class="sub-section-title">② 国内港湾の自動化・遠隔操作化——「港湾労働者不足」への対応と生産性向上</div>
+                        <div class="roadmap-box">
+                            <div class="roadmap-label">// ROADMAP</div>
+
+                                      港湾荷役機械は、港湾ロジスティクスに必要不可欠な製品であり、港湾労働者不足による物流サービス低下・機能停止のリスクへの対応として、港湾荷役機械の更新を機に、自動化・遠隔操作化等の導入や港湾荷役機械の生産性向上を図る。
+                                    
+                        </div>
+                        <div class="why-box">
+                            <div class="why-label">// WHY IT MATTERS</div>
+
+                                      「港湾荷役機械の更新を機に」という表現が重要だ。国内港湾の荷役機械は更新時期を迎えているものが多い。この「更新のタイミング」に自動化・遠隔操作化を組み込むことで、「いずれ必要な更新投資」に「省人化という付加価値」を乗せて正当化できる。㉑グリーン鉄の「高炉改修時期に革新電炉を選択する」と同じ「物理的な更新タイムリミットが投資判断を後押しする」論理だ。
+                                    
+                        </div>
+                        <div class="dual-col">
+                            <div class="gov-box">
+                                <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        自動化・遠隔操作化等荷役機械の導入補助・モデル運用規程整備・無利子資金貸付制度等が継続実施中 
+                                        <span class="source-tag">国土交通省</span>
+                                    </li>
+                                    <li>
+                                        国際コンテナ戦略港湾（阪神港・京浜港）の大規模コンテナターミナル早期整備を推進 
+                                        <span class="source-tag">国土交通省</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="priv-box">
+                                <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                                <ul>
+                                    <li>
+                                        住友重機械搬送システム：RTGクレーンの遠隔操作化技術を継続商用展開。「RTG運転者の労働環境を改善し、安全で安定したコンテナ荷役の実現に貢献」という価値提案 
+                                        <span class="source-tag">住友重機械搬送システム</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CH03 -->
+        <section id="ch03" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <span class="chapter-title">３．課題と政策パッケージ【政策手段】</span>
+            </div>
+            <div class="chapter-body">
+                <div class="section">
+                    <div class="section-title">政策パッケージ4本柱の概要</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP（概要）</div>
+
+                                ①国内投資支援：港湾荷役機械の生産に必要な設備投資への支援（研究開発支援・生産ライン・出荷岸壁・製品運搬船等の設備投資支援）。②需要創出・市場確保・社会実装支援：自動化・遠隔操作化等の需要見通し提示、導入補助、モデル運用規程整備、無利子資金貸付制度等の導入支援。港湾運送事業の担い手確保、取引適正化。③立地競争力強化：国際コンテナ戦略港湾の機能強化、コンテナターミナルの自動化・遠隔操作化等による利便性向上、大規模コンテナターミナルの早期整備。④国際連携：海外展開への支援（ODA等）、ISO自動化コンテナターミナル国際標準化への対応（同志国・日本企業等との連携）。
+                              
+                    </div>
+                    <div class="note-box">
+                        <div class="note-box-label">// POLICY MONITOR NOTE</div>
+
+                                この分野の最大の政策課題は「需要の不足」ではなく「生産能力の不足」だという点が、他の26分野と大きく異なる。多くの分野は「市場が小さく民間投資が難しい」という需要側の問題を抱えているが、港湾荷役機械は「需要が生産能力を上回っている」という供給側の問題だ。①国内投資支援（設備投資支援）は、この「生産能力不足という機会損失」を解消するための政策だ。
+                              
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 続編：課題・政策パッケージ編</div>
+            <div class="next-box-desc">「なぜ日本の港湾荷役機械の生産能力が需要に追いつかないのか」「生産基盤インフラの制約・国内自動化の遅れ・国際標準化のリスク」を整理した「課題・政策パッケージ編」も近日公開予定です。</div>
+            <a href="https://marketsupporter-ai.com" target="_blank">▶ marketsupporter-ai.com で読む</a>
+        </div>
+
+        <section id="source" class="container">
+            <div class="section-title" style="margin-top:32px;color:var(--text-sub);border-bottom-color:var(--border);">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>丸紅ワシントン事務所・上原聡「中国製港湾荷役クレーンに伴うサイバーリスクを根拠とした200億ドルの産業政策」（2024年）</li>
+                <li>三菱重工機械システム「港湾荷役機械」製品情報</li>
+                <li>住友重機械搬送システム「製品紹介｜搬送システム」</li>
+                <li>国立研究開発法人海上・港湾・航空技術研究所「世界の自動化コンテナターミナルの動向分析」（港湾空港技術研究所報告）</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <div class="disclaimer-title">免責事項</div>
+            <p>本レポートは、公開されている政府資料・報道・企業IRをもとに編集した情報提供を目的としたものであり、投資助言・投資推奨を目的とするものではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+
+    </div>
+</body>
+</html>
