@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>港湾荷役機械｜課題・政策パッケージ編｜戦略17分野 ㉖</title>
+    <style>
+    :root {
+        --bg: #fff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --warn: #e65100;
+        --warn-light: #fff3e0;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', Georgia, serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--warn);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #bf360c, #e64a19, #ff7043);
+        color: #fff;
+        padding: 52px 24px 44px;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #ffccbc;
+        margin-bottom: 12px;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(22px, 5vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #ffccbc;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #ffccbc;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 17px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #ffccbc;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--warn);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-header.green {
+        background: var(--accent);
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 24px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--warn);
+        border-bottom: 1.5px solid var(--warn-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .section-title.green {
+        color: var(--accent-dark);
+        border-bottom-color: var(--accent-light);
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .bottleneck-box {
+        background: var(--warn-light);
+        border-left: 3px solid var(--warn);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .bottleneck-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--warn);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        margin-bottom: 6px;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--warn);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ㉖</span>
+        <span>港湾荷役機械</span>
+        <span>|</span>
+        <span>課題・政策パッケージ編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — PORT CARGO HANDLING EQUIPMENT — CHALLENGE & POLICY PACKAGE</div>
+            <div class="hero-title">
+                港湾荷役機械
+                <br>
+                課題・政策パッケージ編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（3）官民投資促進に向けた課題と政策パッケージ 構造に基づく分析レポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック①</div>
+                    <div class="kpi-value">生産基盤インフラの制約</div>
+                    <div class="kpi-unit">出荷岸壁・製品運搬船等の整備が生産能力拡大の鍵</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック②</div>
+                    <div class="kpi-value">生産能力不足×受注機会損失</div>
+                    <div class="kpi-unit">需要が生産能力を上回り1.5倍の製造期間を要する</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック③</div>
+                    <div class="kpi-value">国内自動化市場形成の不確実性</div>
+                    <div class="kpi-unit">コンテナ取扱量横ばいで投資判断しにくい環境</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">最大ボトルネック④</div>
+                    <div class="kpi-value">ISO国際標準化リスク</div>
+                    <div class="kpi-unit">中国主導の標準が確立すると日本製品の優位が損なわれる恐れ</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <section id="ch00" class="chapter" style="margin-top:32px;">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">課題・政策パッケージサマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          港湾荷役機械の課題は「需要が生産能力を上回る」という27分野で唯一の「供給側のボトルネック」という特異な構造を持つ。他の26分野が「市場が小さく民間投資が難しい」という需要側の問題を抱える一方、この分野は「需要は既にある——生産が追いつかないことが問題」だ。政策パッケージの重心は「需要創出」ではなく「生産能力の拡大支援」（①国内投資支援）に置かれている。一方で「国内自動化市場形成の不確実性」という需要側の課題もあり、「海外で需要が爆発しているのに、国内では投資判断が進まない」という二面的な状況が特徴だ。
+                        
+                </div>
+                <div class="section">
+                    <div class="section-title">課題と政策パッケージの対応関係</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>ボトルネック</th>
+                                <th>具体的障壁</th>
+                                <th>政策パッケージ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>①生産基盤インフラの制約</td>
+                                <td>出荷岸壁・製品運搬船等の物流インフラが生産能力拡大の物理的ボトルネック</td>
+                                <td>国内投資支援（出荷岸壁・製品運搬船等の設備投資支援）</td>
+                            </tr>
+                            <tr>
+                                <td>②生産能力不足×受注機会損失</td>
+                                <td>製造に通常の1.5倍の期間を要し、受注控えが発生</td>
+                                <td>国内投資支援（製造ライン設備投資支援・研究開発支援）</td>
+                            </tr>
+                            <tr>
+                                <td>③国内自動化市場形成の不確実性</td>
+                                <td>コンテナ取扱量横ばいで大規模投資・自動化に踏み切りにくい。海外主要港より自動化に遅れ</td>
+                                <td>需要創出支援（需要見通し提示・導入補助・無利子貸付・立地競争力強化）</td>
+                            </tr>
+                            <tr>
+                                <td>④ISO国際標準化リスク</td>
+                                <td>中国主導の標準が確立すれば日本製品の耐震性能・信頼性という差別化優位が評価されない恐れ</td>
+                                <td>国際連携（同志国との連携・日本企業の強みを活かした標準化対応）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">（1）投資促進に向けた課題</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">①リソース制約：生産機能（出荷岸壁・製品運搬船等）の不足</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+                        生産基盤インフラ等：港湾荷役機械の生産機能（製造ライン、出荷岸壁や製品運搬船等）。
+                    </div>
+                    <div class="bottleneck-box">
+                        <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                STSクレーン（ガントリークレーン）は全長60〜90m・重量数百トンという巨大設備で、工場製造後に専用の出荷岸壁から大型船（製品運搬船）で海上輸送する必要がある。「製造ライン」の拡張だけでなく「出荷岸壁」と「製品運搬船」という物流インフラも同時に整備しなければ生産量を増やせない。これらの整備には数年単位の時間と巨額の資本が必要で、「需要があっても今すぐ供給を増やせない」という物理的な制約を形成している。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">②事業・技術：生産能力不足による生産の遅れ・受注機会の損失</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+                        事業・技術：生産能力不足による生産の遅れ、受注機会の損失。
+                    </div>
+                    <div class="bottleneck-box">
+                        <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                製造に通常の約1.5倍の期間を要するという状況は、顧客（港湾運営会社・港湾局）からすれば「発注してから設備が納品されるまでの期間が想定より長くなる」ことを意味する。港湾インフラの計画は「既存設備の耐用年数・更新タイムライン」に基づいており、製造期間の延長は計画の見直しを迫る。これが「受注控え」——すなわち「日本製を注文したかったが、納期が合わないので他の選択肢（中国製等）を検討せざるをえない」という機会損失を生んでいる。
+                              
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">③市場・財務・国際環境：国内自動化の遅れ・国際標準化リスク</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+                        市場：自動化・遠隔操作化等に対する国内市場形成の不確実性、他国企業との競争環境の激化。財務：生産機能強化に必要な資金調達の困難性。国際環境・政策：日本のコンテナ取扱量はほぼ横ばいであり、大規模な投資（更新含む）や自動化・遠隔操作化等に踏み切りづらい環境。日本の港湾では海外主要港と比較して港湾荷役機械の自動化・遠隔操作化等に遅れ。ISOにおいて、自動化コンテナターミナルの標準化を含む港湾分野の国際標準化を図る動き。
+                    </div>
+                    <div class="bottleneck-box">
+                        <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                「コンテナ取扱量がほぼ横ばい」という国際環境の課題は、国内港湾運営事業者が「自動化投資をしても採算が取れるか不確実」という投資判断の困難性につながる。またISOの国際標準化リスクは、⑲ペロブスカイト太陽電池の「GX価値の国際標準への反映」と同じ構造の問題だ。中国ZPMC等が主導した技術仕様が国際標準として確立すれば、日本製の耐震性能・信頼性・サイバーセキュリティという差別化ポイントが標準の評価軸に含まれない恐れがある。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    自動化・遠隔操作化等の需要見通しの提示と導入支援（補助・モデル運用規程・無利子貸付）が継続中 
+                                    <span class="source-tag">国土交通省</span>
+                                </li>
+                                <li>
+                                    ISO自動化コンテナターミナル国際標準化：同盟国・同志国との連携を図りながら日本企業の強みを活かした標準化対応が継続中 
+                                    <span class="source-tag">ロードマップ素案 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ch02" class="chapter">
+            <div class="chapter-header chapter-header green">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">（2）講じるべき政策パッケージ</span>
+            </div>
+            <div class="chapter-body">
+                <div class="section">
+                    <div class="section-title green">政策パッケージ4本柱</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP（概要）</div>
+
+                                ①国内投資支援：港湾荷役機械の生産に必要な設備投資への支援（港湾技術開発制度による研究開発支援、生産ライン・出荷岸壁・製品運搬船等の設備投資支援）。②需要創出・市場確保・社会実装支援：自動化・遠隔操作化等に関する需要見通しの提示、導入補助、モデル運用規程整備、無利子資金貸付制度等の導入支援。港湾運送事業の担い手確保、取引適正化。③立地競争力強化：国際コンテナ戦略港湾の機能強化を通じた需要の創出、コンテナターミナルの自動化・遠隔操作化等による利便性向上、大規模コンテナターミナルの早期整備。④国際連携：港湾荷役機械の海外展開への支援（ODA等）、ISO自動化コンテナターミナル国際標準化への対応（同志国や日本企業等との連携）。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS（①国内投資支援の意義）</div>
+
+                                「出荷岸壁や製品運搬船等の設備投資支援」という政策は、他分野の「製品の製造・研究開発支援」とは異なる「物流インフラ整備支援」だ。港湾荷役機械メーカーが生産量を増やすためには、製品を輸出するための岸壁と運搬船が必要で、これらは民間企業単独で投資するには規模が大きすぎる。「生産を増やすための物流インフラ」への公的支援という設計が、この分野固有の政策の核心だ。
+                              
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 政策実装・官民投資編も読む</div>
+            <div class="next-box-desc">「今、政府と民間がどこまで動いているか」を整理した「政策実装・官民投資編」も公開中です。</div>
+            <a href="https://marketsupporter-ai.com/reports/harbor-cargo-equipment-policy-investment.html" target="_blank">▶ 政策実装・官民投資編を読む</a>
+        </div>
+
+        <div class="container">
+            <div style="margin-top:32px;font-family:var(--font-serif);font-size:16px;font-weight:700;color:var(--text-sub);border-bottom:1px solid var(--border);padding-bottom:6px;margin-bottom:12px;">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>丸紅ワシントン事務所・上原聡「中国製港湾荷役クレーンに伴うサイバーリスクを根拠とした200億ドルの産業政策」（2024年）</li>
+            </ul>
+        </div>
+
+        <div class="disclaimer">
+            <p>本レポートは情報提供目的。投資助言ではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+    </div>
+</body>
+</html>
