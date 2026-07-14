@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゲーム・コンテンツ｜課題・政策パッケージ編｜戦略17分野 ㉗</title>
+    <style>
+    :root {
+        --bg: #fff;
+        --bg-sub: #f7f8f5;
+        --accent: #2d7a3a;
+        --accent-light: #e8f5e9;
+        --accent-mid: #4caf50;
+        --accent-dark: #1b5e20;
+        --gov: #1565c0;
+        --gov-light: #e3f0fc;
+        --priv: #6d4c41;
+        --priv-light: #efebe9;
+        --warn: #e65100;
+        --warn-light: #fff3e0;
+        --text: #1a1a1a;
+        --text-sub: #555;
+        --text-muted: #888;
+        --border: #e0e0e0;
+        --font-serif: 'Noto Serif JP', Georgia, serif;
+        --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .masthead {
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 12px;
+        flex-wrap: wrap;
+    }
+
+    .masthead-logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 13px;
+        color: #a5d6a7;
+    }
+
+    .masthead-tag {
+        background: var(--warn);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .masthead-date {
+        margin-left: auto;
+        color: #a5d6a7;
+        font-family: var(--font-mono);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #bf360c, #e64a19, #ff7043);
+        color: #fff;
+        padding: 52px 24px 44px;
+    }
+
+    .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+    }
+
+    .hero-series {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: .14em;
+        color: #ffccbc;
+        margin-bottom: 12px;
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(22px, 5vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: #ffccbc;
+        margin-bottom: 28px;
+    }
+
+    .hero-kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        background: rgba(255, 255, 255, .1);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 6px;
+        padding: 14px 16px;
+    }
+
+    .kpi-label {
+        font-size: 10px;
+        color: #ffccbc;
+        letter-spacing: .1em;
+        margin-bottom: 4px;
+    }
+
+    .kpi-value {
+        font-family: var(--font-mono);
+        font-size: 17px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+    }
+
+    .kpi-unit {
+        font-size: 11px;
+        color: #ffccbc;
+        margin-top: 2px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .chapter {
+        margin: 40px 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .chapter-header {
+        background: var(--warn);
+        color: #fff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+    }
+
+    .chapter-header.green {
+        background: var(--accent);
+    }
+
+    .chapter-num {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        background: rgba(255, 255, 255, .15);
+        padding: 2px 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+
+    .chapter-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .chapter-body {
+        padding: 24px;
+    }
+
+    .section {
+        margin: 24px 0;
+    }
+
+    .section-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--warn);
+        border-bottom: 1.5px solid var(--warn-light);
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+    }
+
+    .section-title.green {
+        color: var(--accent-dark);
+        border-bottom-color: var(--accent-light);
+    }
+
+    .roadmap-box {
+        background: var(--accent-light);
+        border-left: 3px solid var(--accent);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .roadmap-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--accent-dark);
+        margin-bottom: 6px;
+    }
+
+    .bottleneck-box {
+        background: var(--warn-light);
+        border-left: 3px solid var(--warn);
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 13px;
+    }
+
+    .bottleneck-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--warn);
+        margin-bottom: 6px;
+    }
+
+    .why-box {
+        background: #fff;
+        border: 1px solid var(--accent-mid);
+        border-radius: 6px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        font-size: 13px;
+    }
+
+    .why-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .dual-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    @media (max-width: 600px) {
+        .dual-col {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gov-box {
+        background: var(--gov-light);
+        border-left: 3px solid var(--gov);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gov-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--gov);
+        margin-bottom: 6px;
+    }
+
+    .priv-box {
+        background: var(--priv-light);
+        border-left: 3px solid var(--priv);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .priv-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--priv);
+        margin-bottom: 6px;
+    }
+
+    .note-box {
+        background: #fffde7;
+        border: 1px solid #f9a825;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin: 16px 0;
+        font-size: 13px;
+        color: #5d4037;
+    }
+
+    .note-box-label {
+        font-weight: 700;
+        color: #f57f17;
+        font-size: 12px;
+        margin-bottom: 4px;
+        font-family: var(--font-mono);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .summary-table th {
+        background: var(--warn);
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .summary-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+
+    .summary-table tr:nth-child(even) td {
+        background: var(--bg-sub);
+    }
+
+    .source-tag {
+        display: inline-block;
+        background: #f5f5f5;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 2px 7px;
+        font-size: 10px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        margin: 2px;
+    }
+
+    .next-box {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .next-box-title {
+        font-family: var(--font-serif);
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .next-box-desc {
+        font-size: 13px;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+    }
+
+    .next-box a {
+        display: inline-block;
+        background: var(--accent-mid);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .disclaimer {
+        background: var(--bg-sub);
+        border-top: 2px solid var(--border);
+        padding: 24px;
+        margin-top: 40px;
+        font-size: 11px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .source-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 12px;
+        color: var(--text-sub);
+    }
+
+    .source-list li {
+        margin-bottom: 4px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="masthead">
+        <span class="masthead-logo">MARKET SUPPORTER AI</span>
+        <span>|</span>
+        <span class="masthead-tag">戦略17分野 ㉗</span>
+        <span>ゲーム・コンテンツ</span>
+        <span>|</span>
+        <span>課題・政策パッケージ編</span>
+        <span class="masthead-date">2026年05月</span>
+    </div>
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-series">JAPAN GROWTH STRATEGY — GAME / CONTENT — CHALLENGE & POLICY PACKAGE</div>
+            <div class="hero-title">
+                ゲーム・コンテンツ
+                <br>
+                課題・政策パッケージ編
+            </div>
+            <div class="hero-subtitle">官民投資ロードマップ素案（3）官民投資促進に向けた課題と政策パッケージ 構造に基づく分析レポート</div>
+            <div class="hero-kpi">
+                <div class="kpi-card">
+                    <div class="kpi-label">リソース制約①</div>
+                    <div class="kpi-value">高度な開発・ビジネス人材の不足</div>
+                    <div class="kpi-unit">コンサル・SIerに人材が流れる処遇格差</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">リソース制約②</div>
+                    <div class="kpi-value">開発PF・流通PFの欠如</div>
+                    <div class="kpi-unit">米国エンジン・米国プラットフォームの二重依存</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">不確実性①</div>
+                    <div class="kpi-value">開発費・広告費の高騰</div>
+                    <div class="kpi-unit">大作続編に傾注せざるを得ない保守化</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">不確実性②</div>
+                    <div class="kpi-value">中国市場の総量規制</div>
+                    <div class="kpi-unit">世界第2位市場への参入が制限</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <section id="ch00" class="chapter" style="margin-top:32px;">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <span class="chapter-title">課題・政策パッケージサマリー（2026年04月〜05月）</span>
+            </div>
+            <div class="chapter-body">
+                <div class="note-box">
+                    <div class="note-box-label">// ANALYST NOTE</div>
+
+                          ゲーム・コンテンツの課題は「リソース制約（人材・PF・収益源・情報）」と「不確実性（開発費高騰・中国規制・AI/XR・PF依存）」という二層構造だ。中心にある問題は「開発費・広告宣伝費の高騰によりリスク許容が低下→大作続編に傾注→新規IPが生まれない→次世代のヒット作がない」という悪循環と、「人材がコンサル・SIerに流れる→ゲーム産業の人材基盤が弱体化」という人材の流出圧力だ。「ゲーム開発は不確実性が高く、民間だけでは過少投資に陥るため、政府の支援を通じ、民間投資を喚起し、収益力向上を図る」（ロードマップ素案）というのが、この分野への政策介入の正当化根拠だ。
+                        
+                </div>
+                <div class="section">
+                    <div class="section-title">課題と政策パッケージの対応関係</div>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>課題</th>
+                                <th>具体的障壁</th>
+                                <th>政策パッケージ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>①高度人材の不足</td>
+                                <td>コンサル・SIerより低い賃金。独創的なインディー開発者が事業化できず離脱</td>
+                                <td>人材支援（若手クリエイター発掘・育成・スタートアップ支援・グローバルビジネス人材育成）</td>
+                            </tr>
+                            <tr>
+                                <td>②開発PF・流通PFの欠如</td>
+                                <td>ゲームエンジン米国製63%・モバイルPFは米国企業支配。手数料と規制の変更リスク</td>
+                                <td>製作支援（開発PF構築支援強化【中〜長期】・スマホ法の運用）</td>
+                            </tr>
+                            <tr>
+                                <td>③グッズ等の収益源不足</td>
+                                <td>IP360度展開のための元手が積み上がっていない</td>
+                                <td>海外展開支援（流通PF拡大・IPエコシステム支援）</td>
+                            </tr>
+                            <tr>
+                                <td>④開発費・広告費の高騰</td>
+                                <td>大作続編に傾注し新規IPへの挑戦が減少。保守化の悪循環</td>
+                                <td>製作支援（大規模作品製作支援・新規IP企画製作支援）</td>
+                            </tr>
+                            <tr>
+                                <td>⑤中国市場の総量規制</td>
+                                <td>世界第2位市場への参入が政府規制で制限</td>
+                                <td>海外展開支援（重点国多角化：米国・英国・インドネシア・インド）</td>
+                            </tr>
+                            <tr>
+                                <td>⑥海外PF依存の脆弱性</td>
+                                <td>手数料・規制の変更が一方的に収益を圧迫</td>
+                                <td>全体施策（スマホ法の運用・国産PF育成【長期】）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="ch01" class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <span class="chapter-title">（1）投資促進に向けた課題</span>
+            </div>
+            <div class="chapter-body">
+
+                <div class="section">
+                    <div class="section-title">①リソース制約</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+                        リソース制約：高度な開発・ビジネス人材の不足。開発PFやモバイル・PCゲームの流通PFの欠如。ゲーム投資に充てるグッズ等の収益源の不足。海外の文化や規制、市場、取引先等に関する専門情報の散逸。
+                    </div>
+                    <div class="bottleneck-box">
+                        <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                「ゲーム産業では、約8万人の雇用を抱え、賃金・就労環境においてコンテンツ他産業と比べて高水準を維持しているが、競合するコンサルやSIerよりは低い」（ロードマップ素案）という表現が、人材流出の構造を示す。高度な技術力・創造性を持つ人材が「ゲーム会社よりコンサル・SIerの方が報酬が高い」という理由で流れる。CESA（2026年2月提言）でも「次世代のゲームクリエイターを育成するために、機会創出から独り立ちまでのサポートを行う施設のような拠点が必要」と指摘されている。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    IP360補助金でプリプロダクション支援（新規IP企画製作支援）を実施。インディーゲーム開発スタートアップ支援も継続 
+                                    <span class="source-tag">経産省 2026.6</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    CESA提言（2026年2月）：ゲームジャム等による機会創出、ヒット経験クリエイターによる伴走型アクセラレーションを要望 
+                                    <span class="source-tag">CESA 2026.2</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">②不確実性の要因</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP</div>
+                        不確実性の要因：開発費・広告宣伝費の高騰。外国市場の総量規制。AIやXRの発達。国別のレイティング（対象年齢に関する規制）への対応。海外資本の開発PFや流通PFへの依存に伴う、手数料や規制等の変更に対する脆弱性。
+                    </div>
+                    <div class="bottleneck-box">
+                        <div class="bottleneck-label">// BOTTLENECK</div>
+
+                                「開発費・広告宣伝費の高騰」と「外国市場の総量規制（中国）」という不確実性は相互に悪影響を与える。開発費が高騰しても世界第2位の中国市場で販売できない（版号取得困難）ということは、回収先市場が制限されることを意味し、投資判断をさらに保守化させる。「諸外国と比べて海外消費者へのアウトリーチが不十分」（ロードマップ素案）という指摘も、中国規制で最大市場が事実上閉じられている現実と無縁ではない。「AIやXRの発達」という不確実性は、「既存のゲーム開発PFが陳腐化し、新しいPFへの投資が必要になる」という技術的な不確実性を指す。
+                              
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ch02" class="chapter">
+            <div class="chapter-header chapter-header green">
+                <span class="chapter-num">CHAPTER 02</span>
+                <span class="chapter-title">（2）講じるべき政策パッケージ</span>
+            </div>
+            <div class="chapter-body">
+                <div class="section">
+                    <div class="section-title green">政策パッケージ4本柱</div>
+                    <div class="roadmap-box">
+                        <div class="roadmap-label">// ROADMAP（概要）</div>
+
+                                ①人材支援：高度人材供給エコシステムの構築【短〜中期】（独創的な若手クリエイターの発掘・育成、インディーゲーム開発スタートアップ支援、グローバルビジネス人材の育成）。②製作支援：大規模作品製作支援【短〜中期】（モバイル・PCゲーム市場攻略の促進）。新規IP企画製作支援【中期】。開発PF構築支援強化【中〜長期】（AIも活用したゲームエンジンや翻訳・監修システム、XR開発基盤等）。③海外展開支援：ローカライズ支援【短期】（ゲームのローカライズ支援を拡充、海賊版対策）。IPエコシステム支援【短期】。流通PF拡大支援【中期】。④全体：複数年の支援も含む大規模・長期・戦略的な官民投資。大胆な投資促進税制・研究開発税制の活用促進（オンラインゲーム、開発ツール、スタジオ等）。JETROの海外拠点強化。スマホ法の運用等を通じた公正かつ自由な競争環境の整備。
+                              
+                    </div>
+                    <div class="why-box">
+                        <div class="why-label">// WHY IT MATTERS（④全体施策の「スマホ法」）</div>
+
+                                「スマートフォン・ソフトウェア競争促進法（スマホ法）の運用等を通じた公正かつ自由な競争環境の整備」という施策は、AppStore・Google Playというモバイルゲームの流通プラットフォームを支配する米国企業への規制的なアプローチだ。スマホ法は、アプリストアの独占的な手数料や規制に対して公正競争を促す内容で、「海外資本の流通PFへの依存に伴う手数料や規制等の変更に対する脆弱性」という課題への制度的な対応だ。②の流通PF欠如という長期課題に対して、法的な競争環境整備で短・中期に対応する政策設計だ。
+                              
+                    </div>
+                    <div class="dual-col">
+                        <div class="gov-box">
+                            <div class="gov-label">// 官の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    IP360補助金第2回公募（2026年6月30日〜7月21日）：ゲームのローカライズ・プロモーション支援。重点国：米国・英国・インドネシア・インドを加点評価 
+                                    <span class="source-tag">経産省 2026.6</span>
+                                </li>
+                                <li>
+                                    第18回エンタメ・クリエイティブ産業政策研究会（2026年3月27日）：審査基準をクリエイティブ評価から定量指標中心に変更方針 
+                                    <span class="source-tag">経産省 2026.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="priv-box">
+                            <div class="priv-label">// 民の動き（直近2ヶ月）</div>
+                            <ul>
+                                <li>
+                                    デジタルハーツ「ella」：AI翻訳で費用75%削減・時間5割以上短縮。③ローカライズ支援施策と相乗効果 
+                                    <span class="source-tag">日経 2025.9</span>
+                                </li>
+                                <li>
+                                    CESA：ローカライズ費用支援枠拡大・ゲーム特化AI翻訳エンジンの開発支援を要望。海外拠点でのサポート基盤を韓国KOCCAをベンチマークとして計画 
+                                    <span class="source-tag">CESA 2026.2</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="next-box">
+            <div class="next-box-title">📋 政策実装・官民投資編も読む</div>
+            <div class="next-box-desc">「今、政府と民間がどこまで動いているか」を整理した「政策実装・官民投資編」も公開中です。</div>
+            <a href="https://marketsupporter-ai.com/reports/game-content-policy-investment.html" target="_blank">▶ 政策実装・官民投資編を読む</a>
+        </div>
+
+        <div class="container">
+            <div style="margin-top:32px;font-family:var(--font-serif);font-size:16px;font-weight:700;color:var(--text-sub);border-bottom:1px solid var(--border);padding-bottom:6px;margin-bottom:12px;">出典</div>
+            <ul class="source-list">
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）— 内閣府・経済産業省</li>
+                <li>経済産業省「第18回エンタメ・クリエイティブ産業政策研究会 事務局資料3」（2026年3月27日）</li>
+                <li>一般社団法人コンピュータエンターテインメント協会（CESA）「ゲーム産業の課題・提言について」（2026年2月4日）</li>
+                <li>経済産業省「コンテンツ産業支援メニュー（IP360補助金）」（2026年6月30日）</li>
+                <li>日本経済新聞「ゲーム翻訳に生成AI活用 国際化で需要、作業時間半減も」（2025年9月27日）</li>
+            </ul>
+        </div>
+
+        <div class="disclaimer">
+            <p>本レポートは情報提供目的。投資助言ではありません。データ基準時点：2026年04月〜05月。</p>
+        </div>
+    </div>
+</body>
+</html>
