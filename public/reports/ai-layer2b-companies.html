@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フィジカルAI｜企業動向・サプライチェーン編 — 官民投資10.5兆円の流れる先</title>
+<style>
+  :root{
+    --bg: #e8f5e9;
+    --card: #ffffff;
+    --ink: #1a2b20;
+    --ink-soft: #46584c;
+    --accent: #00695c;
+    --accent-soft: #e0f2f1;
+    --line: #c5d6c8;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+    --serif: 'Noto Serif JP', serif;
+    --sans: 'Noto Sans JP', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.9;font-size:16px;}
+  .container{max-width:860px;margin:0 auto;padding:0 24px;}
+
+  /* MASTHEAD */
+  .masthead{border-bottom:1px solid var(--line);padding:14px 0;background:var(--card);}
+  .masthead .container{display:flex;justify-content:space-between;align-items:center;}
+  .masthead-brand{font-family:var(--mono);font-size:12px;letter-spacing:2px;color:var(--accent);}
+  .masthead-label{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--ink-soft);}
+
+  /* HERO */
+  .hero{padding:72px 0 56px;background:linear-gradient(180deg, var(--card) 0%, var(--bg) 100%);border-bottom:1px solid var(--line);}
+  .hero-eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--accent);margin-bottom:18px;}
+  .hero h1{font-family:var(--serif);font-size:34px;line-height:1.5;font-weight:700;margin-bottom:20px;}
+  .hero-lead{color:var(--ink-soft);font-size:15px;max-width:640px;margin-bottom:36px;}
+  .hero-meta{font-family:var(--mono);font-size:12px;color:var(--ink-soft);}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:36px 0 0;}
+  .stat-cell{background:var(--card);padding:22px 18px;}
+  .stat-num{font-family:var(--mono);font-size:26px;font-weight:700;color:var(--accent);line-height:1.2;}
+  .stat-label{font-size:12px;color:var(--ink-soft);margin-top:8px;line-height:1.6;}
+
+  /* TOC */
+  .toc{background:var(--card);border:1px solid var(--line);margin:48px auto;padding:32px;max-width:860px;}
+  .toc-title{font-family:var(--mono);font-size:12px;letter-spacing:2px;color:var(--accent);margin-bottom:18px;}
+  .toc ol{list-style:none;counter-reset:toc;}
+  .toc li{counter-increment:toc;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14px;}
+  .toc li::before{content:counter(toc,decimal-leading-zero);font-family:var(--mono);color:var(--accent);margin-right:14px;font-size:12px;}
+  .toc a{color:var(--ink);text-decoration:none;}
+  .toc a:hover{color:var(--accent);}
+
+  /* CHAPTER */
+  .chapter{padding:56px 0;border-bottom:1px solid var(--line);}
+  .chapter-header{margin-bottom:28px;}
+  .chapter-num{font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--accent);display:block;margin-bottom:10px;}
+  .chapter h2{font-family:var(--serif);font-size:26px;font-weight:700;line-height:1.5;}
+  .chapter h3{font-family:var(--serif);font-size:19px;font-weight:700;margin:32px 0 14px;padding-left:12px;border-left:4px solid var(--accent);}
+  .chapter p{margin-bottom:18px;}
+  .chapter ul{margin:0 0 18px 22px;}
+  .chapter li{margin-bottom:8px;}
+
+  .data-box{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);padding:22px 24px;margin:24px 0;}
+  .data-box-title{font-family:var(--mono);font-size:12px;letter-spacing:1.5px;color:var(--accent);margin-bottom:12px;}
+  .note-box{background:var(--accent-soft);border:1px solid var(--line);padding:18px 22px;margin:24px 0;font-size:14px;color:var(--ink-soft);}
+
+  .summary-table{width:100%;border-collapse:collapse;margin:24px 0;background:var(--card);font-size:14px;}
+  .summary-table th{background:var(--accent);color:#fff;padding:12px 14px;text-align:left;font-weight:600;font-size:13px;}
+  .summary-table td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+  .summary-table tr:last-child td{border-bottom:none;}
+
+  .layer-band{background:var(--card);border:1px solid var(--line);margin:14px 0;padding:20px 24px;}
+  .layer-band .band-label{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--accent);display:block;margin-bottom:8px;}
+  .layer-band .band-title{font-family:var(--serif);font-weight:700;font-size:17px;margin-bottom:6px;}
+  .layer-band p{font-size:14px;color:var(--ink-soft);margin-bottom:0;}
+
+  .source-tag{font-family:var(--mono);font-size:11px;color:var(--ink-soft);background:var(--card);border:1px solid var(--line);display:inline-block;padding:4px 10px;margin-top:12px;}
+
+  .next-box{background:var(--card);border:2px solid var(--accent);padding:28px;margin:28px 0;}
+  .next-label{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--accent);margin-bottom:12px;}
+  .next-box h3{border:none;padding:0;margin:0 0 12px;}
+
+  .disclaimer{background:var(--ink);color:rgba(245,242,237,0.75);padding:40px 0;font-size:12px;line-height:1.9;}
+
+  @media (max-width:640px){
+    .hero h1{font-size:26px;}
+    .chapter h2{font-size:22px;}
+    .stat-num{font-size:22px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="container">
+    <div class="masthead-brand">MARKET SUPPORTER AI</div>
+    <div class="masthead-label">LAYER 2-B｜企業動向・サプライチェーン編</div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">戦略17分野 先行検討技術① — AI・半導体分野</div>
+    <h1>フィジカルAI（特にAIロボット）<br>官民投資10.5兆円の流れる先を、企業と供給網で読む</h1>
+    <p class="hero-lead">2026年6月24日、政府は「戦略17分野における『主要な製品・技術等』の官民投資ロードマップ（案）」を経済財政諮問会議・日本成長戦略会議の合同会議に提示しました。本レポートは、フィジカルAI分野の政策資金がどのサプライチェーン層に向かうのかを、政府一次資料と企業公表資料に基づく事実と数値のみで整理します。</p>
+    <div class="hero-meta">データ基準時点：2026年7月｜作成：2026-07-16</div>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="stat-num">10.5兆円</div>
+        <div class="stat-label">官民投資額（2040年度まで）<br>2026年6月24日提示</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">144.4兆円</div>
+        <div class="stat-label">経済波及効果<br>（政府試算）</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">約60兆円</div>
+        <div class="stat-label">AIロボット世界市場<br>2040年見込み（政府資料）</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">3割超</div>
+        <div class="stat-label">2040年 世界シェア目標<br>（政策目標として示されている値）</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-title">CONTENTS</div>
+  <ol>
+    <li><a href="#ch00">サマリー — 6月24日決定で何が変わったか</a></li>
+    <li><a href="#ch01">なぜ国家戦略として重点化されたか（要約）</a></li>
+    <li><a href="#ch02">サプライチェーン3層マップ</a></li>
+    <li><a href="#ch03">政府一次資料に登場する企業・機関</a></li>
+    <li><a href="#ch04">プレイヤー類型別整理</a></li>
+    <li><a href="#ch05">主要企業の開示情報</a></li>
+    <li><a href="#ch06">採択・政策支援の実績</a></li>
+    <li><a href="#ch07">海外プレイヤーとの競争構造</a></li>
+    <li><a href="#ch08">中長期で追うべき政策・事業マイルストーン</a></li>
+    <li><a href="#ch09">リスク要因・不確実性</a></li>
+    <li><a href="#ch10">まとめと出典一覧</a></li>
+  </ol>
+</div>
+
+<!-- CH00 -->
+<div class="chapter" id="ch00">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 00</span>
+      <h2>サマリー — 6月24日決定で何が変わったか</h2>
+    </div>
+    <p>2026年3月に「素案」として示されていたフィジカルAIの官民投資ロードマップは、2026年6月24日の経済財政諮問会議・日本成長戦略会議合同会議で、投資額・経済波及効果の数値を伴う「ロードマップ（案）」として提示されました。素案段階で「取りまとめまでに提示」とされていた投資額が、官民合計10.5兆円（2040年度まで）、経済波及効果144.4兆円として明示された点が最大の変化です。</p>
+    <p>政府目標は「2040年に米中に並ぶ第三極として世界シェア3割超の獲得を通じ、20兆円の市場を獲得」です。これは政策目標として示されている値であり、企業による実行が確定した投資額ではありません。政府負担と民間負担の内訳も現時点では公表されていません。</p>
+    <div class="note-box">本レポートでは、政策資金が「どの企業に」ではなく「どのサプライチェーン層に」向かう設計になっているかをまず整理し、その上で政府一次資料・企業公表資料に実名で登場する企業を、出典とともに記載します。個別企業の評価・推奨は一切行いません。</div>
+    <span class="source-tag">出典：内閣府 資料１・資料３（2026年6月24日）</span>
+  </div>
+</div>
+
+<!-- CH01 -->
+<div class="chapter" id="ch01">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 01</span>
+      <h2>なぜ国家戦略として重点化されたか（要約）</h2>
+    </div>
+    <p>政府資料が挙げる理由は3点に集約されます。第一に市場の急拡大です。AIロボット市場は2030年頃を境に急拡大し、2040年に約60兆円規模へ成長すると見込まれています。第二に日本の既存優位です。日本は産業用ロボット市場（約0.8兆円）で世界シェア約7割を持ち、モーター・減速機等の主要コンポーネントでも高い競争力を有します。第三に構造的人手不足への対応と経済安全保障です。フィジカルAIのサプライチェーンを国内で確保することが経済安全保障上重要と位置づけられています。</p>
+    <p>一方で弱点も政府自身が明記しています。サービスロボット市場（約2.8兆円）での日本の世界シェアは1割強にとどまります。「産業用では強いが、サービス用・自律型では弱い」という非対称が、この政策の出発点です。</p>
+    <p>産業構造の詳細な分析はLayer1（外部環境編・内部環境編）で整理済みです。本編では実装と企業動向に焦点を絞ります。</p>
+    <span class="source-tag">出典：官民投資ロードマップ素案 p.2-6（2026年3月）／同（案）（2026年6月24日）</span>
+  </div>
+</div>
+
+<!-- CH02 -->
+<div class="chapter" id="ch02">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 02</span>
+      <h2>サプライチェーン3層マップ</h2>
+    </div>
+    <p>政府資料は投資対象を「供給サイド」と「需要サイド」に分けて記載しています。これをサプライチェーンの3層構造に対応させると、政策資金の設計が見えやすくなります。</p>
+
+    <div class="layer-band">
+      <span class="band-label">UPSTREAM — 上流</span>
+      <div class="band-title">重要コンポーネント・部素材層</div>
+      <p>減速機、モーター（アクチュエータ）、各種センサー、蓄電池、ロジック半導体・マイコン。政府資料は「重要コンポーネントサプライヤーの研究開発・設備投資」を投資内容として明記しています。半導体は別項目「フィジカル・インテリジェント・システムの中核を担う半導体」（官民投資68兆円）として独立のロードマップを持ち、フィジカルAI政策と連動する設計です。</p>
+    </div>
+
+    <div class="layer-band">
+      <span class="band-label">MIDSTREAM — 中流</span>
+      <div class="band-title">ロボット本体（OEM）・基盤モデル層</div>
+      <p>AIロボットの研究開発・設備投資、多用途ロボットOEMの育成、国産マルチモーダル基盤モデル（ロボットの頭脳にあたるAI）の開発。政府資料は産業構造が「密結合型」から用途に応じてモジュールを組み合わせる「疎結合型」へ転換すると見込んでおり、ハードとソフトの分業が進む前提で設計されています。</p>
+    </div>
+
+    <div class="layer-band">
+      <span class="band-label">DOWNSTREAM — 下流</span>
+      <div class="band-title">SIer・導入現場・運用保守層</div>
+      <p>需要サイドの投資として、防災等の官需領域における公共調達（アンカーテナンシーとしての需要確保）、各産業ドメインでの導入投資が挙げられています。導入現場から実機データを収集しモデルを改善する「エコシステム機能」の構築が政策上の柱であり、下流は単なる販売先ではなくデータ供給源として位置づけられています。</p>
+    </div>
+
+    <div class="note-box">投資の力点は「本体メーカーへの直接支援」だけではありません。上流の部素材、中流の基盤モデル、下流のデータ収集エコシステムまで、層をまたいだ一体設計になっている点が本ロードマップの特徴です。</div>
+    <span class="source-tag">出典：官民投資ロードマップ素案 p.4-5「官民投資の具体像」「政策パッケージ」</span>
+  </div>
+</div>
+
+<!-- CH03 -->
+<div class="chapter" id="ch03">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 03</span>
+      <h2>政府一次資料に登場する企業・機関</h2>
+    </div>
+    <p>2026年5〜7月の直近2ヶ月間に、政府発表・企業公表資料に実名で登場した主な企業・機関は以下の通りです。</p>
+
+    <table class="summary-table">
+      <tr><th>企業・機関</th><th>内容</th><th>公表日・出典</th></tr>
+      <tr>
+        <td>Noetra株式会社<br>産業技術総合研究所</td>
+        <td>NEDO「AIロボット・フィジカルAIを見据えたマルチモーダル基盤モデル開発事業」（2026〜2030年度、予算規模3,873億円）に採択</td>
+        <td>2026年6月30日<br>経済産業省プレスリリース</td>
+      </tr>
+      <tr>
+        <td>日本航空<br>JALグランドサービス<br>GMO AI＆ロボティクス商事</td>
+        <td>羽田空港グランドハンドリング業務へのヒューマノイドロボット導入実証（国内初と発表）。2026〜2028年の3年計画。使用機体はUnitree G1、UBTECH Walker E</td>
+        <td>2026年4月<br>3社共同発表</td>
+      </tr>
+      <tr>
+        <td>日立製作所</td>
+        <td>東京駅直結拠点にフィジカルAI体験スタジオを開設。次世代AI群「HMAX」を核とした社会実装を推進と発表</td>
+        <td>2026年4月<br>同社発表</td>
+      </tr>
+    </table>
+
+    <div class="note-box">羽田実証の使用機体がUnitree（中国）・UBTECH（中国）製である点は、ヒューマノイド本体における国内サプライチェーンの現在地を示す事実です。政府資料が「ロボットOEMの育成」を政策パッケージに掲げる背景と整合します。</div>
+    <span class="source-tag">出典：経済産業省（2026年6月30日）／各社公表資料（2026年4月）</span>
+  </div>
+</div>
+
+<!-- CH04 -->
+<div class="chapter" id="ch04">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 04</span>
+      <h2>プレイヤー類型別整理</h2>
+    </div>
+    <p>サプライチェーン3層に対応する既存プレイヤーの構造を、業界団体公表値・各社IR資料に基づいて整理します。以下は「この分野に関係する事業を営む」という事実の記載であり、投資対象としての評価ではありません。</p>
+
+    <h3>本体メーカー層（中流）</h3>
+    <p>産業用ロボットでは、ファナック、安川電機、ABB（スイス）、KUKA（ドイツ・美的集団傘下）のいわゆる「世界4強」に上位シェアが集中する寡占構造です。日本勢2社がこのうち2枠を占めることが、政府資料の言う「産業用ロボット市場で世界シェア約7割」の中核を構成しています。</p>
+
+    <h3>重要コンポーネント層（上流）</h3>
+    <p>政府資料が名指しする重要コンポーネントは「アクチュエーター、モーター、減速機、蓄電池等」です。精密減速機ではナブテスコ、ハーモニック・ドライブ・システムズが主要プレイヤーとして業界内で位置づけられています。センサー分野ではキーエンスをはじめとするFAセンサーメーカーが関連領域を持ちます。ロジック半導体・マイコンは別ロードマップ（半導体、68兆円）の対象であり、両分野は政策上も連動しています。</p>
+
+    <h3>SIer・導入層（下流）</h3>
+    <p>国内のロボットシステムインテグレーターは、FA・ロボットシステムインテグレータ協会の正会員159社（2025年末時点）に加え、非加盟の中小SIerが多数存在する分散構造です。本体メーカーの寡占とは対照的な構造であり、AIロボットの多様な現場への導入拡大は、この層の役割の変化を伴う可能性が政府資料の「エコシステム構築」の文脈で示されています。</p>
+
+    <h3>新興・AIレイヤー</h3>
+    <p>NEDO採択のNoetra株式会社のように、基盤モデル開発を担う新興企業が政府事業の実施主体として登場し始めています。政府資料はスタートアップについて「アーリーからレイターまで切れ目なく資金調達が可能となる環境整備」を政策パッケージに含めています。</p>
+    <span class="source-tag">出典：FA・ロボットシステムインテグレータ協会公表値（2025年末）／各社IR資料／官民投資ロードマップ素案 p.5</span>
+  </div>
+</div>
+
+<!-- CH05 -->
+<div class="chapter" id="ch05">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 05</span>
+      <h2>主要企業の開示情報</h2>
+    </div>
+    <p>Layer1（内部環境編）で整理した財務構造のうち、本編に関係する開示情報を再掲します。数値は各社決算資料に基づく2024年度（2025年3月期）確定値です。</p>
+    <div class="data-box">
+      <div class="data-box-title">FANUC — 決算資料より</div>
+      <p>ファナックの経常利益率は約24.7％、自己資本比率は89％（2024年度）。ロボット本体メーカー層における高利益率・無借金経営に近い財務構造の代表例として、業界の収益構造を示す参考値です。</p>
+    </div>
+    <p>その他の関連各社（安川電機、ナブテスコ、ハーモニック・ドライブ・システムズ、キーエンス、日立製作所等）のセグメント別売上・利益率は、各社の会計基準（IFRS／日本GAAP）と決算期を統一して比較する必要があるため、次回更新時に比較表として追加予定です。財務数値を参照する際は、必ず各社の最新の有価証券報告書・決算説明資料をご確認ください。</p>
+    <span class="source-tag">出典：ファナック 2025年3月期決算資料</span>
+  </div>
+</div>
+
+<!-- CH06 -->
+<div class="chapter" id="ch06">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 06</span>
+      <h2>採択・政策支援の実績</h2>
+    </div>
+    <p>2026年上半期時点で確認できる政策実装の実績は以下の通りです。</p>
+    <ul>
+      <li><strong>2026年6月30日</strong>：経済産業省がNEDO公募の採択を発表。Noetra株式会社・産業技術総合研究所による「AIロボット・フィジカルAIを見据えたマルチモーダル基盤モデル開発事業」が始動（2026〜2030年度、予算規模3,873億円）。</li>
+      <li><strong>2026年6月</strong>:経済産業省が半導体・デジタル産業戦略を改定し、フィジカルAIを最重点分野に位置づけ。AI・半導体分野全体では2040年度までに101.6兆円の官民投資が想定されています。</li>
+      <li><strong>2026年6月24日</strong>：官民投資ロードマップ（案）提示。高市首相は同日、官民投資を実行する枠組みとして「『強く豊かな日本』投資枠」の創設を表明。基金等を活用した複数年度支出を基本とする方向が示されました。</li>
+    </ul>
+    <div class="note-box">政府資料は「官民投資の進捗を四半期ごとに確認し、行程表を見直す」方針を示しています。採択・調達の発表は今後も継続的に行われる見込みであり、どの層のどの企業が公的事業の実施主体となるかは、一次資料（NEDO・経産省の公募/採択情報）で追跡可能です。</div>
+    <span class="source-tag">出典：経済産業省プレスリリース（2026年6月30日）／内閣府資料（2026年6月24日）／日刊工業新聞（2026年6月24日）</span>
+  </div>
+</div>
+
+<!-- CH07 -->
+<div class="chapter" id="ch07">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 07</span>
+      <h2>海外プレイヤーとの競争構造</h2>
+    </div>
+    <p>政府資料は「米中を中心に開発・量産・実装競争が激化している」と現状を認識しています。直近の海外動向として、米テスラは2026年、ヒューマノイドロボット「Optimus」の自社工場での量産投入を開始したと報じられています。中国勢では、羽田実証で採用されたUnitree、UBTECHがヒューマノイド機体の商用供給で先行しています。</p>
+    <p>この構造の中で政府が定義する日本の勝ち筋は、機体そのものの先行ではなく、「ハードとソフトの統合力」と「導入後の運用力」です。工場等の現場データ・ノウハウ、高い品質・信頼性という産業活動の蓄積を、基盤モデル開発とデータ収集エコシステムに接続する設計になっています。上流コンポーネント（減速機・モーター・センサー）の既存競争力を、新市場でも維持できるかが供給網上の焦点です。</p>
+    <span class="source-tag">出典：官民投資ロードマップ素案 p.3-4／各種報道（2026年6月）</span>
+  </div>
+</div>
+
+<!-- CH08 -->
+<div class="chapter" id="ch08">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 08</span>
+      <h2>中長期で追うべき政策・事業マイルストーン</h2>
+    </div>
+    <p>今後の展開を事実として追跡するためのチェックポイントを整理します。</p>
+    <table class="summary-table">
+      <tr><th>時期</th><th>マイルストーン</th><th>確認先</th></tr>
+      <tr><td>2026年夏</td><td>「日本成長戦略」策定（官民投資ロードマップの反映）</td><td>内閣官房・内閣府</td></tr>
+      <tr><td>今後随時</td><td>産業別・タスク別の導入ロードマップ策定（重点導入産業の特定）</td><td>経産省・内閣府（科技）</td></tr>
+      <tr><td>今後随時</td><td>AI動作の安全性認証制度・安全規制の検討（AISIと連携）</td><td>AISI・経産省</td></tr>
+      <tr><td>四半期ごと</td><td>官民投資の進捗確認・行程表見直し</td><td>日本成長戦略会議</td></tr>
+      <tr><td>2026〜2030年度</td><td>マルチモーダル基盤モデル開発事業の進捗（採択体制の拡大有無）</td><td>NEDO公募・採択情報</td></tr>
+      <tr><td>2026〜2028年</td><td>羽田空港ヒューマノイド実証の結果公表</td><td>3社発表</td></tr>
+      <tr><td>年末</td><td>「強く豊かな日本」投資枠を含む予算編成（フィジカルAI関連予算額の確定）</td><td>財務省・内閣府</td></tr>
+    </table>
+    <span class="source-tag">出典：官民投資ロードマップ（案）／首相官邸発表（2026年6月24日）</span>
+  </div>
+</div>
+
+<!-- CH09 -->
+<div class="chapter" id="ch09">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 09</span>
+      <h2>リスク要因・不確実性</h2>
+    </div>
+    <p>政府資料自身が明記している課題・ボトルネックは以下の通りです。</p>
+    <ul>
+      <li><strong>人材制約</strong>：AIとロボット双方の知見を有する開発・利活用人材の不足。</li>
+      <li><strong>エコシステム未形成</strong>：PoC（概念実証）を超えてユースケースを量産まで持ち込む体制の不在。</li>
+      <li><strong>量産投資の停滞リスク</strong>：供給側が十分な需要を見込めず量産投資に踏み切れない構造。導入コストの高止まりが需要立ち上がりを抑制する悪循環の可能性。</li>
+      <li><strong>安全認証の未整備</strong>：AI動作の安全性認証制度・安全規制が検討段階であり、実装スピードを左右する要因。</li>
+    </ul>
+    <p>加えて、本レポートの前提となる投資額そのものにも不確実性があります。官民投資10.5兆円は政府予算として確保された金額ではなく、ヒアリングと市場予測に基づく試算です。予算編成・PDCAサイクルを通じて精査・改定されると政府資料に明記されています。海外プレイヤーの技術進展、為替、各国の産業政策の変化も、前提を変える外部要因です。</p>
+    <span class="source-tag">出典：官民投資ロードマップ素案 p.5「投資促進に向けた課題」／内閣府資料１（2026年6月24日）</span>
+  </div>
+</div>
+
+<!-- CH10 -->
+<div class="chapter" id="ch10">
+  <div class="container">
+    <div class="chapter-header">
+      <span class="chapter-num">CHAPTER 10</span>
+      <h2>まとめと出典一覧</h2>
+    </div>
+    <p>フィジカルAIの官民投資ロードマップは、2026年6月24日に投資額10.5兆円・経済波及効果144.4兆円という数値を伴って提示されました。政策資金の設計は本体メーカーへの直接支援にとどまらず、上流の重要コンポーネント、中流の基盤モデル開発、下流のデータ収集エコシステムまで、サプライチェーン全層に及びます。政府一次資料に実名で登場する企業は現時点で限られていますが、NEDO採択・公共調達・実証事業の発表を通じて今後増えていく構造であり、その追跡は一次資料で可能です。</p>
+
+    <div class="next-box">
+      <div class="next-label">NEXT REPORT</div>
+      <h3>次回：フィジカル・インテリジェント・システムの中核を担う半導体｜企業動向・サプライチェーン編</h3>
+      <p>官民投資68兆円と、62項目中最大の投資対象である半導体分野について、同じ枠組みで企業とサプライチェーン構造を整理します。</p>
+    </div>
+
+    <h3>出典一覧</h3>
+    <ul>
+      <li>内閣府「戦略17分野における『主要な製品・技術等』の官民投資ロードマップ（案）」資料３（2026年6月24日）</li>
+      <li>内閣府「戦略17分野の『主要な製品・技術等』における官民投資額」資料１（2026年6月24日）</li>
+      <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</li>
+      <li>首相官邸「経済財政諮問会議・日本成長戦略会議合同会議」（2026年6月24日）</li>
+      <li>経済産業省プレスリリース（2026年6月30日）：NEDO採択発表</li>
+      <li>日本航空・JALグランドサービス・GMO AI＆ロボティクス商事 共同発表（2026年4月）</li>
+      <li>日立製作所 発表資料（2026年4月）</li>
+      <li>ファナック 2025年3月期決算資料</li>
+      <li>FA・ロボットシステムインテグレータ協会 公表値（2025年末）</li>
+      <li>日本経済新聞・読売新聞・日刊工業新聞ほか各種報道（2026年6月）</li>
+    </ul>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <div class="container">
+    <p>【免責事項】本レポートは産業構造および政策動向の理解を目的とした情報提供であり、特定銘柄の売買を推奨するものではありません。個別企業に関する投資推奨・評価的判断は一切含みません。掲載データは各記載出典に基づきますが、数値の正確性・完全性を保証するものではありません。官民投資額は政府による試算であり、政府予算として確保された金額でも、企業による実行が確定した投資額でもありません。本レポートの内容は作成時点（2026年7月）の情報に基づいており、予算編成・政策変更・市場環境の変化等により実態が変化する可能性があります。投資判断はご自身の責任において行ってください。</p>
+    <p style="margin-top:10px; color: rgba(245,242,237,0.35);">© 2026 marketsupporter-ai.com ── フィジカルAI（企業動向・サプライチェーン編）</p>
+  </div>
+</div>
+
+</body>
+</html>
