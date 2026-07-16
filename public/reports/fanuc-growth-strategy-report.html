@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜ファナック（6954） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{
+    background:var(--navy);
+    color:#fff;
+    padding:56px 0 40px;
+  }
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{
+    display:flex;justify-content:space-between;
+    font-size:12px;letter-spacing:.12em;color:var(--brass-soft);
+    margin-bottom:22px;text-transform:uppercase;
+  }
+  h1.title{
+    font-family:'Shippori Mincho',serif;
+    font-size:34px;line-height:1.5;font-weight:700;
+    margin-bottom:16px;
+  }
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:rgba(255,255,255,.15);margin-top:32px;
+    border:1px solid rgba(255,255,255,.15);
+  }
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+
+  nav.toc{
+    background:var(--paper-deep);
+    border-bottom:1px solid #DCD6C3;
+    padding:16px 0;
+  }
+  nav.toc ol{
+    max-width:840px;margin:0 auto;padding:0 24px;
+    display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;
+  }
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{
+    font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);
+    font-weight:700;line-height:1;min-width:50px;
+  }
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{
+    background:#fff;border-left:3px solid var(--brass);
+    padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);
+  }
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{
+    background:var(--navy);color:#fff;text-align:left;
+    padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;
+  }
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{
+    font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);
+    color:var(--navy);border-radius:2px;background:#fff;font-weight:500;
+  }
+
+  .verdict-box{
+    background:var(--navy-deep);color:#fff;
+    padding:34px 32px;margin-top:20px;
+  }
+  .verdict-box h4{
+    font-family:'Shippori Mincho',serif;
+    color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;
+  }
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編</span>
+      <span>2026年7月17日号</span>
+    </div>
+    <h1 class="title">ファナック（6954）<br>フィジカルAI時代の「中立インフラ」戦略が拓く成長シナリオ</h1>
+    <p class="subtitle">官民投資10.5兆円のフィジカルAIロードマップ、NVIDIA・Googleとの相次ぐ協業、過去最高益の決算。人型ロボットには深入りせず「壊れないハードウェア」を軸に据えるファナック独自の勝ち筋を、市場規模・政策・コスト構造の3軸から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">7.0<small>兆円</small></span><span class="lbl">時価総額（2026年7月10日時点）</span></div>
+      <div><span class="num">8,578<small>億円</small></span><span class="lbl">26/3期 売上高 <span class="sign">+7.6%</span></span></div>
+      <div><span class="num">1,838<small>億円</small></span><span class="lbl">26/3期 営業利益 <span class="sign">+15.7%</span></span></div>
+      <div><span class="num">7,579<small>円</small></span><span class="lbl">アナリスト平均目標株価</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― フィジカルAI・官民投資が拓く新市場</h2>
+    </div>
+  </div>
+  <p class="lede">ファナックの成長シナリオの土台にあるのは、AIロボット（フィジカルAI）市場の急拡大と、日本が既に握る産業用ロボットでの優位性である。</p>
+
+  <h3 class="sub">AIロボット市場の急拡大</h3>
+  <p>政府資料によれば、AIロボット市場は2030年頃を境に急拡大し、2040年には約60兆円規模へ成長すると見込まれている。日本は現状、産業用ロボット市場（約0.8兆円）で世界シェア約7割を握るが、サービスロボット市場（約2.8兆円）でのシェアは1割強にとどまる。「産業用では強いが、サービス用・自律型では弱い」という非対称の構造が、ファナックを含む日本勢が今後攻略すべき領域を規定している。</p>
+
+  <h3 class="sub">官民投資ロードマップとファナックの位置づけ</h3>
+  <p>2026年6月24日、政府はフィジカルAI分野の官民投資ロードマップ（案）を提示し、投資額は2040年度まで官民合計10.5兆円、経済波及効果144.4兆円という数値を示した。政府目標は「2040年に世界シェア3割超・20兆円市場の獲得」である。投資設計は上流（重要コンポーネント）・中流（ロボット本体・基盤モデル）・下流（導入・データ収集）の全層に及び、産業用ロボット「世界4強」の一角であるファナックは中流の中核プレイヤーとして位置づけられる。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">60<small>兆円</small></div><div class="k">2040年 AIロボット世界市場見込み（政府試算）</div></div>
+    <div class="stat"><div class="v">10.5<small>兆円</small></div><div class="k">官民投資額（2040年度まで）</div></div>
+    <div class="stat"><div class="v">約7<small>割</small></div><div class="k">産業用ロボット市場での日本の世界シェア</div></div>
+  </div>
+  <p style="font-size:12px;color:var(--ink-soft);">出典：内閣府「戦略17分野における官民投資ロードマップ（案）」（2026年6月24日）</p>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― 高市政権の戦略17分野とロボット産業</h2>
+    </div>
+  </div>
+  <p class="lede">ファナックの事業領域は、高市政権が掲げる戦略分野・先行品目のうち「フィジカルAI」に直接該当し、政策的な追い風の中心に位置する。</p>
+
+  <h3 class="sub">半導体ロードマップとの連動</h3>
+  <p>フィジカルAI政策は、別途独立したロードマップを持つ半導体分野（官民投資68兆円）とも連動する設計になっている。ファナックのロボット・CNC製品はロジック半導体・マイコンを内蔵するため、両ロードマップの結節点にある企業の一つといえる。</p>
+
+  <h3 class="sub">産業構造の「疎結合化」という政策の前提</h3>
+  <p>政府資料は、フィジカルAI分野の産業構造が「密結合型」から用途に応じてモジュールを組み合わせる「疎結合型」へ転換すると見込んでいる。ファナックがNVIDIA・Googleといった外部AIプラットフォームとの協業を積極化させている動きは、この政策的な想定と方向性が一致する。</p>
+
+  <div class="tag-row">
+    <span class="tag">官民投資10.5兆円（フィジカルAI）</span>
+    <span class="tag">半導体ロードマップ68兆円と連動</span>
+    <span class="tag">高市政権 戦略17分野・先行品目</span>
+    <span class="tag">経済波及効果144.4兆円（政府試算）</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― セグメント別の収益とロボット部門の牽引力</h2>
+    </div>
+  </div>
+  <p class="lede">2026年3月期は、ロボット部門の大幅増収を中心に、売上高・営業利益・経常利益・純利益のいずれも過去最高を更新した。</p>
+
+  <h3 class="sub">セグメント別の売上構成</h3>
+  <table>
+    <thead><tr><th>セグメント</th><th>売上高（26/3期）</th><th>前期比</th><th>構成比</th></tr></thead>
+    <tbody>
+      <tr><td>ロボット部門</td><td>3,786億円</td><td>+14.9%</td><td>44.1%</td></tr>
+      <tr><td>FA部門（CNC等）</td><td>2,085億円</td><td>+7.0%</td><td>24.3%</td></tr>
+      <tr><td>ロボマシン部門</td><td>1,296億円</td><td>▲5.8%</td><td>15.1%</td></tr>
+      <tr><td>サービス部門ほか</td><td>1,412億円（差引）</td><td>―</td><td>16.5%</td></tr>
+    </tbody>
+  </table>
+  <p>ロボット部門は中国でのEV関連向け・一般産業向け需要が大きく伸び、全社の増収増益を牽引した。一方でロボマシン部門は、中国以外のアジア・国内での小型切削加工機需要が振るわず減収となっている。</p>
+
+  <h3 class="sub">利益率と財務健全性</h3>
+  <p>26/3期の営業利益率は21.4%（前期19.9%）へ改善。自己資本比率は89.2%と極めて高く、無借金経営に近い財務構造を維持している。好調な業績を背景に、上限500億円の自己株式取得も決定した。</p>
+
+  <div class="callout">
+    <span class="callabel">投資の方向性</span>
+    2027年末までに約9,000万ドル（約143億円）を投じ、米国に新工場を建設する計画を表明。フィジカルAI需要の拡大を見据えた生産能力増強と位置づけられている。
+  </div>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― NVIDIA・Googleとの協業、人型ロボットとの距離感</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">NVIDIAとの協業：フィジカルAIのオープンプラットフォーム化</h3>
+  <p>2025年12月、ファナックはNVIDIAとの協業を発表。ロボット制御用組み込みコンピュータ「Jetson」シリーズをエッジ側に搭載し、リアルタイムAI推論を可能にした。自社ロボット向けのROS 2対応ドライバをオープンソースで公開したほか、Pythonでの制御スクリプト対応も進め、シミュレーションソフト「ROBOGUIDE」とNVIDIA「Isaac Sim」を完全密結合させ、実機と同一の制御アルゴリズムをバーチャル空間で再現する体制を整えた。</p>
+
+  <h3 class="sub">Googleとの協業：AIエージェントによる操作</h3>
+  <p>2026年5月13日には、Googleとの協業も発表。Gemini Enterpriseを活用したAIエージェントがロボットを操作する仕組みの構築を進めている。クラウド側の大局判断（Google）とエッジ側の高速な物理インタラクション（NVIDIA）という役割分担により、特定プラットフォームに依存しない「フィジカルAIの器」としての立ち位置を志向している。</p>
+
+  <h3 class="sub">人型ロボットには「静観」、コア部品供給で間接関与</h3>
+  <p>ブームが続くヒューマノイド（人型ロボット）分野について、ファナックは自社での直接参入を見送り、現場の自動化ニーズに即した産業用・協働ロボットに軸足を置く戦略をとっている。ロボット開発を統括する幹部は、フィジカルAIの普及後もロボットシステムインテグレーター（SIer）の役割は縮小せず、むしろSIerが手薄な地域・分野の拡張と人材不足の補完に資すると説明している。なお中国では、関節制御・サーボドライバ・CNCといったコア部品の供給者として、ヒューマノイド開発企業とも間接的に関わりを持つ構造にある。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">2025<small>年12月</small></div><div class="k">NVIDIAとの協業発表・iREX2025で実演</div></div>
+    <div class="stat"><div class="v">2026<small>年5月</small></div><div class="k">Googleとの協業発表（Gemini Enterprise活用）</div></div>
+    <div class="stat"><div class="v">143<small>億円</small></div><div class="k">米国新工場投資額（2027年末稼働目標）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― 過去最高益とアナリストの見方</h2>
+    </div>
+  </div>
+  <p class="lede">2026年3月期決算はロボット部門の好調を主因に市場予想を上回り、過去最高益を更新した。株価はトランプ関税ショックからの回復局面にある。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>26/3期 売上高</td><td>8,578億円（前期比+7.6%、過去最高）</td></tr>
+      <tr><td>26/3期 営業利益</td><td>1,838億円（前期比+15.7%）</td></tr>
+      <tr><td>26/3期 営業利益率</td><td>21.4%（前期19.9%）</td></tr>
+      <tr><td>27/3期（会社計画）</td><td>売上9,096億円・営業利益2,122億円（各+6.0%／+15.5%）</td></tr>
+      <tr><td>時価総額</td><td>約7.0兆円</td></tr>
+      <tr><td>PBR（実績）</td><td>3.6倍前後</td></tr>
+      <tr><td>ROE（予想）</td><td>9.90%</td></tr>
+      <tr><td>アナリスト平均目標株価</td><td>7,579円（レーティング「やや強気」、13人）</td></tr>
+      <tr><td>年初来高値／安値</td><td>8,880円（5/14）／5,252円（3/30）</td></tr>
+    </tbody>
+  </table>
+  <p>2025年4月のトランプ関税ショックで株価は一時5,000円台前半まで下落したが、27/3期予想の上方修正が相次ぎ発表されたことで回復基調に転じた。米系大手証券は7月、レーティングを「強気」から「中立」へ引き下げる一方、目標株価は7,000円から7,500円へ引き上げるなど、業績の底堅さと株価水準の妥当性を巡る評価が分かれている。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① 中国での国産化・現地メーカー台頭</span>
+    中国のロボット市場における外資系（ファナック・安川電機・ABB・KUKA）のシェアは、2015年の約75%から2026年には約48%まで低下し、ローカル勢が初めて過半を握ったとされる。中国政府の「中国製造2025」「新質生産力」政策の下、汇川技術（INOVANCE）などの現地メーカーが低価格帯を中心にシェアを拡大しており、ファナックの中国シェアも中長期的な侵食リスクを抱える。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② 米国関税の影響</span>
+    トランプ政権による関税は対米売上比率が高いファナックに直接影響する。会社方針は価格転嫁（サーチャージ）での対応だが、顧客が競合の欧米メーカーへ切り替える動きが広がれば、シェア侵食につながる可能性がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ ロボマシン部門の需要低迷</span>
+    ロボマシン部門（ロボドリル・ロボショット・ロボカット）は26/3期に前期比5.8%の減収となった。中国以外のアジア・国内での小型切削加工機需要の弱さが続けば、全社成長の重荷となる可能性がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ 人型ロボット競争からの距離</span>
+    中国ではUnitree・Agibotなどが国家主導で人型ロボットの量産段階に入りつつある。ファナックは直接参入せずコア部品供給という立場を取っているが、仮に人型ロボットが自動化市場の主戦場となった場合、「静観」戦略が機会損失につながるリスクも指摘されている。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ 為替変動</span>
+    27/3期の会社計画は1ドル=150円、1ユーロ=170円を前提としている。想定より円高に振れた場合、輸出比率の高い同社の業績予想には下振れ圧力がかかる。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">ファナックの成長ストーリーは、「フィジカルAI時代の中立インフラプロバイダー」という立ち位置に集約される。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>NVIDIA・Googleとの協業を通じてソフトウェア領域を強化しつつ、自社は「壊れない、正確に動くハードウェアと制御」というコアコンピタンスに徹し、特定プラットフォームへのロックインを避ける戦略を取っている。人型ロボットには直接参入しない一方、官民投資10.5兆円のフィジカルAIロードマップにおいては、中流（ロボット本体）と上流（コア部品）の双方に関わる中核プレイヤーとして位置づけられる。</p>
+    <ul class="watchlist">
+      <li>27/3期会社計画（売上9,096億円・営業利益2,122億円）の進捗と、米国関税の価格転嫁の浸透度</li>
+      <li>中国における外資シェアの侵食ペースと、汇川技術等ローカル勢の追い上げ状況</li>
+      <li>NVIDIA・Googleとの協業から生まれる具体的な新規アプリケーション・受注への波及</li>
+      <li>ロボマシン部門の需要回復の有無</li>
+      <li>官民投資ロードマップの四半期ごとの進捗確認・行程表見直しの内容</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年7月時点で確認可能な公開情報に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>
