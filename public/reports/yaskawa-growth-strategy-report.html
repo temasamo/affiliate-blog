@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜安川電機（6506） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+  .ticker .sign.neg{color:#E39A8C;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編</span>
+      <span>2026年7月18日号</span>
+    </div>
+    <h1 class="title">安川電機（6506）<br>「Dash 35」が賭けるフィジカルAI市場開拓と、営業利益2.1倍の勝算</h1>
+    <p class="subtitle">ソフトバンクとのAI-RAN協業、ヒト型ロボット新興・東京ロボティクスの買収、そして4年間で1,200億円を投じる戦略投資枠。新中期経営計画「Dash 35」が描くフィジカルAI市場開拓のシナリオと、前回中計未達という重い実績を、市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">約2.0<small>兆円</small></span><span class="lbl">時価総額（2026年7月時点）</span></div>
+      <div><span class="num">5,800<small>億円</small></span><span class="lbl">27/2期 会社計画 売上収益 <span class="sign">+7.0%</span></span></div>
+      <div><span class="num">1,000<small>億円</small></span><span class="lbl">30/2期目標 営業利益（2.1倍）</span></div>
+      <div><span class="num">6,859<small>円</small></span><span class="lbl">アナリスト平均目標株価</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― フィジカルAIが拓く「非定型作業」市場</h2>
+    </div>
+  </div>
+  <p class="lede">安川電機の成長シナリオは、従来自動化が困難とされてきた非定型・不確実性の高い作業領域を、フィジカルAIによって切り開くという構想に集約される。</p>
+
+  <h3 class="sub">「教示作業のコスト」という参入障壁の解消</h3>
+  <p>製造現場において不定形な物体のハンドリングや不確実性を伴う複雑な工程は、教示作業（ティーチング）のコストやセンサー処理の限界から、これまで自動化が困難とされてきた。安川電機は自社のロボット・モーション制御技術とフィジカルAIを統合することで、このボトルネックを突破し、新たな用途を具現化する狙いを掲げている。</p>
+
+  <h3 class="sub">半導体・データセンター需要という足元の追い風</h3>
+  <p>2027年2月期第1四半期（2026年3〜5月）は、AI関連投資に伴う半導体製造装置・データセンター向けの精密モーター・インバーター需要が大きく伸び、売上収益は前年同期比10.6%増となった。モーションコントロール事業の営業利益・受注はともに前年同期比5割増と、AI投資の裾野拡大が既に業績に表れ始めている。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">+10.6<small>%</small></div><div class="k">27/2期Q1 売上収益（前年同期比）</div></div>
+    <div class="stat"><div class="v">+50<small>%</small></div><div class="k">モーションコントロール事業 営業利益・受注（前年同期比）</div></div>
+    <div class="stat"><div class="v">+30<small>%</small></div><div class="k">27/2期Q1 受注高（前年同期比）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― 高市政権の戦略分野とロボット産業</h2>
+    </div>
+  </div>
+  <p class="lede">安川電機の事業領域は、産業用ロボット「世界4強」の一角として、高市政権が掲げる戦略分野・先行品目「フィジカルAI」の中核に位置づけられる。</p>
+
+  <h3 class="sub">官民投資ロードマップにおける中流プレイヤー</h3>
+  <p>政府が2026年6月24日に提示したフィジカルAI官民投資ロードマップ（案）は、2040年度まで官民合計10.5兆円、経済波及効果144.4兆円という規模を示している。産業用ロボット市場（約0.8兆円）で日本が握る世界シェア約7割の一角を占める安川電機は、ロードマップが定義する中流（ロボット本体・基盤モデル）の主要プレイヤーである。</p>
+
+  <h3 class="sub">国産フィジカルAIインフラという文脈</h3>
+  <p>安川電機とソフトバンクの協業は、通信インフラと国内データを軸にした「日本発のフィジカルAI基盤」構築という文脈でも語られている。海外の生成AI企業が苦手とする「現場のデータ・すり合わせ技術」を強みに、国内で完結するフィジカルAIエコシステムを志向する政策的な方向性とも一致する。</p>
+
+  <div class="tag-row">
+    <span class="tag">官民投資10.5兆円（フィジカルAI）</span>
+    <span class="tag">産業用ロボット世界シェア7割（日本）</span>
+    <span class="tag">高市政権 戦略分野・先行品目</span>
+    <span class="tag">経済波及効果144.4兆円（政府試算）</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― 「Dash 35」が描く投資配分</h2>
+    </div>
+  </div>
+  <p class="lede">2026年5月22日発表の新中期経営計画「Dash 35」（2026〜2029年度）は、営業利益を4年間で2.1倍に引き上げる意欲的な目標を掲げている。</p>
+
+  <h3 class="sub">中計目標と投資配分</h3>
+  <table>
+    <thead><tr><th>指標</th><th>26/2期実績</th><th>30/2期目標（Dash 35）</th></tr></thead>
+    <tbody>
+      <tr><td>売上収益</td><td>5,421億円</td><td>6,500億円（+20%）</td></tr>
+      <tr><td>営業利益</td><td>473億円</td><td>1,000億円（2.1倍）</td></tr>
+      <tr><td>営業利益率</td><td>8.7%</td><td>15.4%</td></tr>
+      <tr><td>ROE目標</td><td>7.71%（実績）</td><td>12%以上</td></tr>
+    </tbody>
+  </table>
+  <p>4年間の累計投資額2,500億円のうち、1,200億円をM&A・資本提携中心の「戦略投資」に、1,300億円を設備投資に充てる計画。戦略投資の具体的な使途は現時点で非公表だが、フィジカルAI関連技術・人材の外部獲得が主眼とみられる。</p>
+
+  <div class="callout">
+    <span class="callabel">直近四半期の実態</span>
+    27/2期第1四半期（3〜5月）は、基幹システムの移行影響と欧州での事業構造改革費用により、営業利益は前年同期比19.2%減の85億円にとどまった。会社側は「生産体制は回復しつつあり、6〜8月期には正常稼働に戻る見通し」としており、通期計画（営業利益600億円、+26.8%）は据え置いている。
+  </div>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― ソフトバンクとの協業、ヒト型ロボットへの直接参入</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">ソフトバンクとのフィジカルAI協業</h3>
+  <p>2025年12月1日、安川電機はソフトバンクとフィジカルAI領域での協業に合意し、覚書（MOU）を締結した。ソフトバンクの「AI-RAN」（無線アクセスネットワークとAI処理を統合する基盤）と、安川電機のAIロボティクスを組み合わせ、ロボットが対応できる作業領域の拡張を目指す。第一弾として、次世代ビル管理システムと連携したオフィス向けフィジカルAIロボットのユースケースを共同開発し、2025年12月の国際ロボット展（iREX2025）で公開した。ロボット1台が複数の役割をこなす「多能工化」が特徴である。</p>
+
+  <h3 class="sub">ヒト型ロボットへの直接参入：東京ロボティクス買収</h3>
+  <p>2025年、安川電機は早稲田大学発のヒト型ロボット開発スタートアップ「東京ロボティクス」の全株式を取得した。同社は車輪移動型で2本の腕を持つヒト型ロボットなどを開発しており、安川電機にとって初のヒト型ロボットメーカー買収となった。小川昌寛社長は「ヒト型ロボは2〜3年後にはニッチなところで事業価値が生まれてくる」との見方を示している。産業用ロボット4強の一角であるファナックが人型ロボットに直接参入しない「静観」の立場を取るのに対し、安川電機は買収による直接関与という対照的な戦略を選んでいる。</p>
+
+  <h3 class="sub">NVIDIA・富士通との協業、自律型ロボット「MOTOMAN NEXT」</h3>
+  <p>安川電機は2023年の国際ロボット展の段階でNVIDIAのロボティクス・パートナーに名を連ね、2025年10月には富士通・NVIDIAとの3社協業を発表した。GPU搭載の次世代自律型ロボット「MOTOMAN NEXT」の展開を加速させており、AIが環境変化をリアルタイムに認識し自律的に動作を最適化することで、事前の綿密なプログラミングという制約からの解放を目指している。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">2025<small>年12月</small></div><div class="k">ソフトバンクとMOU締結・iREX2025でデモ公開</div></div>
+    <div class="stat"><div class="v">2025<small>年</small></div><div class="k">東京ロボティクス買収（ヒト型ロボ、初の直接参入）</div></div>
+    <div class="stat"><div class="v">1,200<small>億円</small></div><div class="k">Dash 35における戦略投資枠（4年間）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― 中計発表後の株価上昇とアナリスト評価の分散</h2>
+    </div>
+  </div>
+  <p class="lede">「Dash 35」発表直後の2026年5月25日、株価は大幅続伸。市場予想（30/2期営業利益960億円程度）に対しても強気な目標値がポジティブに受け止められた。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>26/2期 売上収益</td><td>5,421億円（前期比+0.83%）</td></tr>
+      <tr><td>26/2期 営業利益</td><td>473億円（前期比▲5.7%、営業利益率8.7%）</td></tr>
+      <tr><td>27/2期（会社計画）</td><td>売上収益5,800億円・営業利益600億円（各+7.0%／+26.8%）</td></tr>
+      <tr><td>27/2期Q1（3〜5月実績）</td><td>売上収益1,389億円（+10.6%）・営業利益85億円（▲19.2%）</td></tr>
+      <tr><td>時価総額</td><td>約2.0兆円</td></tr>
+      <tr><td>PBR（実績）</td><td>4.0倍前後</td></tr>
+      <tr><td>PER（予）</td><td>41倍前後</td></tr>
+      <tr><td>ROE（実績）</td><td>7.71%</td></tr>
+      <tr><td>アナリスト平均目標株価</td><td>6,859円（レーティング「買い」、強気買い8人・買い3人・中立6人）</td></tr>
+    </tbody>
+  </table>
+  <p>2026年7月には米系大手証券が目標株価を6,500円から7,300円、別の証券も7,500円へ引き上げるなど上方修正が相次ぐ一方、7月3日には前日比+7.74%の急伸後、7月7日には-7.37%の急反落となるなど、フィジカルAI関連の材料消化を巡って短期的な値動きの振れが大きい局面が続いている。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① 前回中期経営計画の未達実績</span>
+    安川電機自身が、2023〜2025年度の前回中計「Realize 25」について「全社業績・財務目標は未達」と総括している。売上収益6,500億円・営業利益1,000億円・営業利益率15.4%という目標は、実際には26/2期営業利益473億円にとどまり大きく下回った。「Dash 35」はほぼ同じ目標値を4年先送りした形であり、達成確度については市場の見方が分かれる。ROE・ROIC目標も前回の15%以上から12%以上・11%以上へ引き下げられている。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② 中国での競合台頭</span>
+    中国のロボット市場では現地メーカーの台頭が続いており、安川電機を含む外資系メーカーは競争激化に直面しているとされる。中国需要の減速と現地勢の価格競争力向上が、収益性に影響を与える可能性がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ 欧州ロボット事業の落ち込み</span>
+    27/2期第1四半期は、自動車関連の多い欧州などが伸び悩み、ロボット事業の営業利益が前年同期比82%減となった。欧州での事業構造改革費用も発生しており、収益改善のペースが焦点となる。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ 戦略投資1,200億円の使途非開示</span>
+    「Dash 35」で新設された戦略投資枠（M&A・資本提携中心）の具体的な内容は現時点で非公表であり、投資効果を外部から検証しにくい。フィジカルAI領域の開発競争が激しさを増す中、投資の実行スピードと成果が問われる。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ 基幹システム移行の一時的な混乱</span>
+    2026年5月に切り替えた生産・販売管理システムの移行に伴い、供給網が一時的に混乱し、27/2期Q1の営業利益を約25億円押し下げた。6〜8月期に正常化する見通しとされるが、遅延した場合は通期計画に影響しうる。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">安川電機の成長ストーリーは、「フィジカルAI市場の開拓」を新中期経営計画の基本方針の筆頭に掲げ、ソフトバンクとの協業とヒト型ロボット買収という2つの布石で具体化しようとしている点に特徴がある。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>ファナックが人型ロボットに直接参入しない「中立インフラ」戦略を取るのに対し、安川電機は東京ロボティクス買収による直接関与という対照的な道を選んでいる。半導体・データセンター向け需要を追い風にモーションコントロール事業が好調な一方、ロボット事業は欧州の弱さと基幹システム移行の影響で苦戦しており、足元の業績と中期目標との間にはまだ距離がある。</p>
+    <ul class="watchlist">
+      <li>27/2期通期計画（売上5,800億円・営業利益600億円）の達成と、6〜8月期の生産体制正常化の進捗</li>
+      <li>1,200億円の戦略投資枠の具体的な使途・M&A案件の発表</li>
+      <li>ソフトバンクとの協業から生まれる商用ユースケースの拡大状況</li>
+      <li>「Dash 35」における30/2期目標（営業利益1,000億円）に対する進捗と、前回未達を踏まえた達成確度の市場評価</li>
+      <li>中国・欧州における競争環境の変化</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年7月時点で確認可能な公開情報に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>
