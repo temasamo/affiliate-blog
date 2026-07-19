@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜日立製作所（6501） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編</span>
+      <span>2026年7月19日号</span>
+    </div>
+    <h1 class="title">日立製作所（6501）<br>「カスタマーゼロ」戦略とNVIDIA協業深化が描くフィジカルAIの勝ち筋</h1>
+    <p class="subtitle">社会インフラ知能基盤モデル「IWIM」とNVIDIA「Cosmos」の接続、鉄道・電力・製造業での自社先行実装。「フィジカルAI世界トップクラスの使い手」を掲げる日立の戦略を、過去最高益の決算とともに市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">約21<small>兆円</small></span><span class="lbl">時価総額（2026年7月時点）</span></div>
+      <div><span class="num">10.6<small>兆円</small></span><span class="lbl">26/3期 売上収益 <span class="sign">+8.2%</span></span></div>
+      <div><span class="num">1.20<small>兆円</small></span><span class="lbl">26/3期 調整後営業利益 <span class="sign">+23.4%</span></span></div>
+      <div><span class="num">5,908<small>円</small></span><span class="lbl">アナリスト目標株価コンセンサス</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― 「社会インフラ全体」を対象とするフィジカルAI市場</h2>
+    </div>
+  </div>
+  <p class="lede">日立の成長シナリオは、単体のロボットではなく、鉄道・電力・製造現場といった社会インフラ全体をフィジカルAIで自律化するという、ファナックや安川電機とは異なるスケールの市場設定にある。</p>
+
+  <h3 class="sub">官民投資ロードマップにおける立ち位置</h3>
+  <p>政府が2026年6月24日に提示したフィジカルAI官民投資ロードマップ（案）は、2040年度まで官民合計10.5兆円、経済波及効果144.4兆円という規模を示している。日立はロードマップが定義する下流（導入現場・データ収集エコシステム）を主戦場としつつ、社会インフラ知能基盤モデル「IWIM」を通じて中流（基盤モデル）にも関与する、複数層にまたがるプレイヤーである。</p>
+
+  <h3 class="sub">労働力不足という国内需要の起点</h3>
+  <p>2026年時点で国内の社会インフラ・製造現場は深刻な労働力不足に直面しており、AIが現実世界で判断し行動するフィジカルAIへの期待が高まっている。日立はこの課題を、自社が長年蓄積してきたOT（Operational Technology）ナレッジとITの融合によって解決する立場を志向している。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">10.5<small>兆円</small></div><div class="k">官民投資額（フィジカルAI、2040年度まで）</div></div>
+    <div class="stat"><div class="v">88,000<small>人+</small></div><div class="k">Lumada Innovation Hub Tokyo 利用者数（2021年開所以来）</div></div>
+    <div class="stat"><div class="v">10<small>周年</small></div><div class="k">Lumada事業の立ち上げからの節目（2026年）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― 「Lumada 3.0」とフィジカルAI経営方針</h2>
+    </div>
+  </div>
+  <p class="lede">日立は2026年1月29日、フィジカルAIを通じたLumada 3.0成長を推進する経営方針を発表し、「フィジカルAI世界トップクラスの使い手」を目指す姿勢を明確にした。</p>
+
+  <h3 class="sub">Inspire 2027組織再編とHMAXの正式発表</h3>
+  <p>同方針にあわせて「Inspire 2027」と呼ばれる組織再編を実施。2026年1月のCES 2026では、AIで社会インフラを革新する次世代ソリューション群「HMAX」を正式発表した。HMAXはフィジカル・デジタル両方のアセットから得られるデータを、先進的なAIと深いドメインナレッジで統合し、顧客・社会に価値を提供するというコンセプトである。</p>
+
+  <h3 class="sub">高市政権の戦略分野との整合</h3>
+  <p>日立の事業領域（電力網・鉄道・製造インフラ）は、高市政権が掲げる戦略分野・先行品目「フィジカルAI」の下流（導入・データ収集エコシステム）に位置づけられる。政府資料が強調する「導入現場から実機データを収集しモデルを改善するエコシステム機能」は、日立が展開する「カスタマーゼロ」戦略（顧客に先んじて自社インフラで実装し知見を得る手法）と方向性が一致する。</p>
+
+  <div class="tag-row">
+    <span class="tag">官民投資10.5兆円（フィジカルAI）</span>
+    <span class="tag">Lumada 3.0成長方針（2026年1月）</span>
+    <span class="tag">HMAX（CES 2026で正式発表）</span>
+    <span class="tag">Inspire 2027 組織再編</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― 過去最高益とエナジー主導の収益改善</h2>
+    </div>
+  </div>
+  <p class="lede">2026年3月期は、エナジー・デジタルシステム＆サービスの収益性向上とLumada事業拡大を背景に、売上・利益ともに過去最高水準を記録した。</p>
+
+  <table>
+    <thead><tr><th>指標</th><th>26/3期実績</th><th>前期比</th></tr></thead>
+    <tbody>
+      <tr><td>売上収益</td><td>10兆5,867億円</td><td>+8.2%</td></tr>
+      <tr><td>調整後営業利益</td><td>1兆1,992億円</td><td>+23.4%</td></tr>
+      <tr><td>税引前当期利益</td><td>1兆2,731億円</td><td>―</td></tr>
+      <tr><td>親会社株主帰属 当期利益</td><td>8,023億円</td><td>+30.3%</td></tr>
+      <tr><td>調整後営業利益率</td><td>12.9%</td><td>改善</td></tr>
+      <tr><td>年間配当</td><td>50円</td><td>前期43円から増配</td></tr>
+    </tbody>
+  </table>
+  <p>デジタルシステム＆サービス、エナジー、モビリティ、コネクティブインダストリーズの4セグメント全てが増収増益となった。特に世界的な電力網（パワーグリッド）需要の拡大と、企業のDX投資に支えられたLumada事業の成長が牽引した。</p>
+
+  <h3 class="sub">財務戦略：自社株買いと事業ポートフォリオ再編</h3>
+  <p>上限5,000億円（発行済株式総数の3.56%、1.6億株）の自己株式取得を決議したほか、家電事業を手がける日立GLSの株式をノジマとの新会社設立を通じて譲渡すると発表。「モノ売り」から「サービス提供型ビジネス」への転換を進め、IT・エネルギー・鉄道インフラへ経営資源を集中させる方針である。</p>
+
+  <div class="callout">
+    <span class="callabel">27/3期の会社計画</span>
+    売上収益11兆1,000億円（+4.8%）、調整後営業利益1兆3,150億円（+9.6%）、純利益8,500億円（+5.9%）を計画。為替前提は1ドル=150円、1ユーロ=175円。前期の2桁成長から一桁成長へ鈍化する見通しで、高成長から安定成長への移行局面にあるとの見方もある。
+  </div>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― フィジカルAI体験スタジオとNVIDIAとの協業深化</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">フィジカルAI体験スタジオ：「カスタマーゼロ」の実践拠点</h3>
+  <p>2026年4月1日、東京駅直結の協創施設「Lumada Innovation Hub Tokyo」内に「フィジカルAI体験スタジオ」を開設した。エッジAI（Google CloudのGemini Enterpriseを活用）、自律学習型ロボット、デジタルツインの3アプローチを体験できる拠点で、日立AI CoE HMAX＆AI推進センター本部長は「顧客より先に自身でフィジカルAIを実装した上でソリューションとして展開する」という"カスタマーゼロ"の考え方を説明している。既に鉄道、電力、製造業向けで順次展開が進んでいる。2026年5月20日には「Hitachi Physical AI Day」も東京で開催した。</p>
+
+  <h3 class="sub">NVIDIAとの協業深化：IWIM×Cosmosによる異種設備の統合制御</h3>
+  <p>2026年7月16日、日立はNVIDIAとの協業拡大を発表。2025年11月に発表した社会インフラ知能基盤モデル「IWIM」と、NVIDIAの世界基盤モデル「Cosmos」を接続し、デジタルツイン上で高精度・安全な設備制御を事前検証する仕組みを構築する。最大の特徴は、日立製以外のメーカーの設備・機器も対象に含めた「マルチエージェント・オーケストレーション・プラットフォーム」の開発で、ベンダーフリーで現場全体を統合的に連動・制御することを目指す。データ・技術の主権を自社で保持する「ソブリン性」を担保する設計も特徴とされる。あわせて、ロボット・モビリティ・エネルギー・産業設備業界のパートナーと共同検証を行う「Physical AI FDE（Forward Deployed Engineer）」による社会実装支援も進める。</p>
+
+  <h3 class="sub">Microsoft・GlobalLogicとの連携</h3>
+  <p>日立傘下のデジタルエンジニアリング企業GlobalLogicがHMAXのソフトウェア開発を担うほか、日立エナジーはMicrosoftとAIエージェント協業を進め、グローバルでのユースケース拡充を図っている。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">2026<small>年4月</small></div><div class="k">フィジカルAI体験スタジオ開設（東京駅直結）</div></div>
+    <div class="stat"><div class="v">2026<small>年7月16日</small></div><div class="k">NVIDIAとの協業拡大発表（IWIM×Cosmos）</div></div>
+    <div class="stat"><div class="v">2025<small>年11月</small></div><div class="k">社会インフラ知能基盤モデル「IWIM」発表</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― 過去最高益と成長期待の織り込み</h2>
+    </div>
+  </div>
+  <p class="lede">過去最高益の決算を受け、株価は堅調に推移。一方でPERは25倍を超える水準にあり、フィジカルAIを含む成長期待が既に織り込まれているとの見方もある。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>26/3期 売上収益</td><td>10兆5,867億円（前期比+8.2%）</td></tr>
+      <tr><td>26/3期 調整後営業利益</td><td>1兆1,992億円（前期比+23.4%、利益率12.9%）</td></tr>
+      <tr><td>27/3期（会社計画）</td><td>売上収益11兆1,000億円・調整後営業利益1兆3,150億円（各+4.8%／+9.6%）</td></tr>
+      <tr><td>時価総額</td><td>約21兆円</td></tr>
+      <tr><td>PER（予）</td><td>25倍前後</td></tr>
+      <tr><td>PBR（実）</td><td>3.2倍前後</td></tr>
+      <tr><td>ROE（予）</td><td>12.90%</td></tr>
+      <tr><td>アナリスト目標株価コンセンサス</td><td>5,908円（株価かい離率+23.67%）</td></tr>
+      <tr><td>年初来高値／安値</td><td>6,039円（2/10）／4,388円（3/30）</td></tr>
+    </tbody>
+  </table>
+  <p>2026年7月には、日立とNVIDIAの協業拡大や、国産AI開発を目指す44社連合へのNVIDIAトップの関心表明など、フィジカルAI関連のニュースフローが続いており、材料が相次ぐ局面にある。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① のれんの高さ・減損リスク</span>
+    総資産に占めるのれんの比率は40%超とやや高く、M&Aを重ねてきた事業構造ゆえの減損リスクや買収依存体質には注意が必要とされる。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② エナジー偏重の成長構造</span>
+    直近の増益は電力網（パワーグリッド）需要の拡大を主因とするエナジーセグメントへの依存度が高く、成長ドライバーに事業ポートフォリオ上の偏りがあるとの指摘がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ 高PER水準と期待未達リスク</span>
+    PERは25〜30倍前後で推移しており、フィジカルAIやLumada事業の成長期待が既に織り込まれた水準といえる。今後の決算で期待に届かない場合、株価の下落リスクがある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ 成長率の鈍化</span>
+    27/3期は増収増益を計画するものの、成長率は一桁台まで鈍化する見通しで、税引前利益は減益予想となっている。前期の高成長から安定成長へ移行する局面にあるとの見方がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ フィジカルAI領域での競争激化</span>
+    独シーメンスは2026年1月にNVIDIAとの産業用AI OS構築で提携を拡大、三菱電機は同月AIスタートアップ「燈」に50億円出資、仏シュナイダーエレクトリックは2026年6月にAIソフト企業コグナイトを約5,000億円で買収するなど、内外の競合が同時多発的に布石を打っており、フィジカルAI分野での主導権争いが激化している。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑥ 為替変動</span>
+    27/3期の会社計画は1ドル=150円、1ユーロ=175円を前提としている。想定より円高に振れた場合、海外売上比率の高い同社の業績予想には下振れ圧力がかかる。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">日立の成長ストーリーは、単体のロボットや設備ではなく「社会インフラ全体の自律化」を志向する点で、ファナック・安川電機とは異なるレイヤーのフィジカルAI戦略といえる。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>「カスタマーゼロ」戦略により自社の鉄道・電力・製造インフラで先行実装した知見を、HMAXという形でグローバルに外販するモデルを構築しつつある。NVIDIAとの協業深化（IWIM×Cosmos）は、自社製品にとどまらず他社設備も含めたベンダーフリーの統合制御プラットフォームを志向する点で野心的だが、シーメンス・三菱電機・シュナイダーエレクトリックなど競合も同時に布石を打っており、主導権争いの帰趨は今後の実装スピードにかかっている。</p>
+    <ul class="watchlist">
+      <li>27/3期会社計画（売上11兆1,000億円・調整後営業利益1兆3,150億円）の進捗と、成長率鈍化の実態</li>
+      <li>NVIDIAとの協業（マルチエージェント・オーケストレーション・プラットフォーム）の具体的な商用化・受注状況</li>
+      <li>フィジカルAI体験スタジオでの実証事例が、鉄道・電力・製造業向けの具体的な受注にどうつながるか</li>
+      <li>のれん減損リスクとエナジーセグメント偏重の是正状況</li>
+      <li>シーメンス・三菱電機・シュナイダーエレクトリックなど競合のフィジカルAI戦略との比較優位性</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年7月時点で確認可能な公開情報に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>
