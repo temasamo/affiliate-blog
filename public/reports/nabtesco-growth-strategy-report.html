@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜ナブテスコ（6268） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編</span>
+      <span>2026年7月20日号</span>
+    </div>
+    <h1 class="title">ナブテスコ（6268）<br>ロボットの「関節」を握る寡占企業に、ヒューマノイド需要は追い風となるか</h1>
+    <p class="subtitle">世界の産業用ロボットの約6割に搭載される精密減速機。ハーモニック・ドライブと合わせ世界シェア約95%を寡占する「黒子」企業に、ヒューマノイド向け小型減速機という新たな成長機会が生まれている。中期経営計画「再興と進化」の高いハードルとあわせ、市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">約6,000<small>億円</small></span><span class="lbl">時価総額（2026年7月時点）</span></div>
+      <div><span class="num">3,079<small>億円</small></span><span class="lbl">25/12期 売上高</span></div>
+      <div><span class="num">207<small>億円</small></span><span class="lbl">25/12期 営業利益（大幅増益）</span></div>
+      <div><span class="num">約6<small>割</small></span><span class="lbl">産業用ロボットにおける自社製精密減速機の搭載比率</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― ロボットの「関節」を独占する上流コンポーネント層</h2>
+    </div>
+  </div>
+  <p class="lede">ナブテスコの成長シナリオは、ロボット本体メーカーではなく、その関節を構成する精密減速機という上流コンポーネントの独占的地位に根ざしている。</p>
+
+  <h3 class="sub">世界シェア約6割、実質独占の精密減速機</h3>
+  <p>産業用ロボットの関節に使われる精密減速機（RV減速機）は、世界の産業用ロボットの約6割に同社製が搭載されている。6軸ロボットの第1関節（腰）から第4関節（肘）まで、高い負荷がかかる関節にはナブテスコ製が、残りの軽負荷な手首関節にはハーモニック・ドライブ・システムズ製の波動歯車が使われることが多く、この2社だけで精密減速機の世界シェア約95%を寡占する構造にある。RV減速機の累計出荷台数は1,200万台を超える。</p>
+
+  <h3 class="sub">ヒューマノイドという新たな需要層</h3>
+  <p>従来の主戦場である産業用ロボットに加え、協働ロボット・ヒューマノイド（人型ロボット）向けの小型減速機需要が新たに立ち上がりつつある。2026年は「フィジカルAI元年」とも称され、人型ロボットへの期待が先行する市場環境にある。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">約6<small>割</small></div><div class="k">産業用ロボットにおける同社製精密減速機の搭載比率</div></div>
+    <div class="stat"><div class="v">約95<small>%</small></div><div class="k">ナブテスコ・ハーモニックドライブ2社の精密減速機世界シェア</div></div>
+    <div class="stat"><div class="v">1,200<small>万台+</small></div><div class="k">RV減速機 累計出荷台数</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― 官民投資ロードマップにおける上流サプライヤー</h2>
+    </div>
+  </div>
+  <p class="lede">ナブテスコは、高市政権が掲げるフィジカルAI官民投資ロードマップにおいて、上流（重要コンポーネント・部素材層）の主要プレイヤーとして名指しされている。</p>
+
+  <h3 class="sub">「重要コンポーネントサプライヤー」としての位置づけ</h3>
+  <p>2026年6月24日に政府が提示した官民投資ロードマップ（案）は、投資対象として「重要コンポーネントサプライヤーの研究開発・設備投資」を明記しており、精密減速機ではナブテスコとハーモニック・ドライブ・システムズが業界内の主要プレイヤーとして位置づけられている。官民投資は2040年度まで10.5兆円、経済波及効果144.4兆円という規模が示されている。</p>
+
+  <h3 class="sub">中国市場の構造変化という外部環境</h3>
+  <p>産業用ロボット需要は中国が世界シェア50%超を維持しており、2024年の底打ちから2025〜2027年にかけて加速フェーズに入りつつあるとされる一方、中国では現地の精密減速機メーカー（緑的諧波＝Leaderdriveなど）が台頭しており、ナブテスコの牙城にも競争圧力がかかっている。</p>
+
+  <div class="tag-row">
+    <span class="tag">官民投資10.5兆円（フィジカルAI）</span>
+    <span class="tag">重要コンポーネントサプライヤー（政府資料明記）</span>
+    <span class="tag">中国ロボット需要 世界シェア50%超</span>
+    <span class="tag">2026年＝フィジカルAI元年</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― 「Project 10」による収益改善と高い中計目標</h2>
+    </div>
+  </div>
+  <p class="lede">ナブテスコは12月決算。2025年12月期は収益性改善活動「Project 10」の効果が本格的に表れ、大幅な増益を達成した。</p>
+
+  <table>
+    <thead><tr><th>指標</th><th>25/12期実績</th><th>備考</th></tr></thead>
+    <tbody>
+      <tr><td>売上高</td><td>3,079億円</td><td>事業整理（油圧機器の非継続事業分類等）の影響あり</td></tr>
+      <tr><td>営業利益</td><td>207億円</td><td>前期から大幅増益、営業利益率6.7%</td></tr>
+      <tr><td>親会社所有者帰属当期利益</td><td>157億円</td><td>大幅増益</td></tr>
+    </tbody>
+  </table>
+  <p>事業セグメントは3つ。コンポーネントソリューション（CMP：精密減速機・油圧機器）が主力で、産業用ロボット向けの在庫調整一巡により受注が動き出し、前年比17%超の増収となった。トランスポートソリューション（TRS：鉄道用ブレーキ・航空機器・舶用機器）、アクセシビリティソリューション（ACB：自動ドア・プラットホームドア）が続く。</p>
+
+  <h3 class="sub">2026年12月期第1四半期は全セグメントで大幅増収増益</h3>
+  <p>2026年12月期第1四半期（1〜3月）は全セグメントで増収増益となり、売上高は前年同期比16.9%増、営業利益は同68.3%増と好調だった。精密減速機の需要回復に加え、自動ドア・舶用機器の需要増加も寄与し、通期業績予想も上方修正された。純利益は投資益の上振れもあり、通期で前期比19%増の見通しが示されている。</p>
+
+  <div class="callout">
+    <span class="callabel">中期経営計画「再興と進化」の高いハードル</span>
+    2027年12月期に売上高4,000億円・営業利益420億円（営業利益率10.5%）・ROIC10%以上を目標として掲げる。2024年実績の営業利益率4.6%・ROIC3.4%からこの水準まで引き上げるには、3年間で相当な構造改革の実現が必要となる。
+  </div>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― ヒューマノイド向け小型減速機の拡充</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">小型精密減速機のラインアップ拡充</h3>
+  <p>ナブテスコの精機カンパニーは、協働ロボットやヒューマノイド市場の拡大を受けて、小型の精密減速機2製品を新たにラインアップに追加すると発表した。従来強みを持ってきた産業用ロボットの大型・高負荷関節向けだけでなく、人型ロボットに適した小型・軽量の製品群を拡充する動きである。</p>
+
+  <h3 class="sub">2026年12月期下期からの本格拡販計画</h3>
+  <p>今後の焦点は、この小型製品を軸としたヒューマノイド向け需要の開拓にある。2026年12月期の下期から本格的な拡販を目指しており、売上への寄与が確認できれば、ヒューマノイド関連銘柄としての市場評価が一段と高まる可能性がある。事業整理の完了とヒューマノイド向け製品の立ち上がりが重なれば、株価の見直しが進むとの見方もある。</p>
+
+  <h3 class="sub">競合との差別化：ハーモニック・ドライブとの補完関係</h3>
+  <p>精密減速機市場では、大型・高負荷関節向けのRV減速機を得意とするナブテスコと、軽負荷・小型関節向けの波動歯車装置を得意とするハーモニック・ドライブ・システムズが、用途に応じて補完的にシェアを分け合う構造にある。ヒューマノイドという新市場では、両社がそれぞれの強みを生かした製品展開で競争することになる。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">2025<small>年12月</small></div><div class="k">小型精密減速機2製品を発表（協働ロボ・ヒューマノイド向け）</div></div>
+    <div class="stat"><div class="v">2026<small>年下期</small></div><div class="k">ヒューマノイド向け小型製品の本格拡販開始予定</div></div>
+    <div class="stat"><div class="v">+68.3<small>%</small></div><div class="k">26/12期Q1 営業利益（前年同期比）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― 期待先行と、決算をめぐる値動きの大きさ</h2>
+    </div>
+  </div>
+  <p class="lede">2026年に入り、フィジカルAI・ヒューマノイド関連銘柄としての期待先行から、株価は年初来で大きく上下する展開となっている。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>25/12期 売上高</td><td>3,079億円</td></tr>
+      <tr><td>25/12期 営業利益</td><td>207億円（営業利益率6.7%）</td></tr>
+      <tr><td>26/12期Q1（1〜3月）</td><td>売上高+16.9%・営業利益+68.3%（全セグメント増収増益）</td></tr>
+      <tr><td>時価総額</td><td>約6,000億円</td></tr>
+      <tr><td>PER（予）</td><td>32〜34倍</td></tr>
+      <tr><td>PBR（実）</td><td>2.2倍前後</td></tr>
+      <tr><td>ROE（実）</td><td>5.79%</td></tr>
+      <tr><td>アナリスト目標株価平均</td><td>5,300円前後（一部アナリストは6,300円の強気予想も）</td></tr>
+      <tr><td>年初来高値／安値</td><td>6,113円（5/14）／3,756円（3/31）</td></tr>
+    </tbody>
+  </table>
+  <p>次回の中間決算は2026年7月31日発表予定。ヒューマノイド向け小型減速機の受注動向や、中期経営計画目標に対する進捗が焦点となる。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① 中国ローカルメーカーの台頭</span>
+    中国では現地の精密減速機メーカー（緑的諧波＝Leaderdriveなど）が製品ベンチマークを重ねて台頭しており、ナブテスコが握ってきた市場シェアへの中長期的な侵食リスクがある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② 中期経営計画目標の達成難度</span>
+    「再興と進化」が掲げる2027年12月期の営業利益率10.5%・ROIC10%以上という目標は、2024年実績（営業利益率4.6%・ROIC3.4%）から見て非常に高いハードルであり、3年間での達成には相当な構造改革の実現が前提となる。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ 事業整理に伴う会計上のノイズ</span>
+    油圧機器事業の非継続事業分類など、事業ポートフォリオ再編に伴う一時的な会計影響が、決算数値の期間比較を分かりにくくしている面がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ ヒューマノイド需要の不確実性</span>
+    ヒューマノイド向け小型減速機の本格拡販は2026年12月期下期からの計画であり、現時点では売上への寄与はまだ限定的である。人型ロボット市場自体の立ち上がりペースにも不確実性が残る。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ 高PER水準と期待の剥落リスク</span>
+    PERは32〜34倍前後とフィジカルAI・ヒューマノイド関連としての成長期待を織り込んだ水準にあり、決算発表後に「期待先行の剥落」と受け止められ株価が大きく下落する場面も見られる。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">ナブテスコの成長ストーリーは、産業用ロボットの関節で築いた寡占的地位を土台に、ヒューマノイドという新市場へ小型製品で参入する「既存の堀を新市場へ広げる」戦略に集約される。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>「Project 10」による収益性改善は着実に進んでおり、2026年12月期第1四半期も全セグメントで大幅な増収増益となった。一方で中期経営計画「再興と進化」が掲げる営業利益率10.5%・ROIC10%以上という目標は依然として高いハードルであり、ヒューマノイド向け小型減速機の拡販が2026年下期からどこまで実際の売上に結びつくかが、株価評価の分水嶺となる。</p>
+    <ul class="watchlist">
+      <li>2026年7月31日発表予定の中間決算における、ヒューマノイド向け小型減速機の受注状況</li>
+      <li>中期経営計画「再興と進化」（27/12期 営業利益率10.5%・ROIC10%以上）に対する進捗</li>
+      <li>中国ローカルメーカーとの競争環境の変化</li>
+      <li>油圧機器事業など非中核事業の整理の完了状況</li>
+      <li>ハーモニック・ドライブ・システムズなど競合とのヒューマノイド向け製品競争の行方</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年7月時点で確認可能な公開情報に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>
