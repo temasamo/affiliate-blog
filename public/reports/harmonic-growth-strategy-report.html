@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜ハーモニック・ドライブ・システムズ（6324） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+  .ticker .sign.neg{color:#E39A8C;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編</span>
+      <span>2026年7月21日号</span>
+    </div>
+    <h1 class="title">ハーモニック・ドライブ・システムズ（6324）<br>波動歯車の発明企業に立ちはだかる、中国勢の急追という現実</h1>
+    <p class="subtitle">バックラッシほぼゼロの波動歯車装置でロボットの精密関節を支える技術のパイオニア。V字回復の決算と新中期経営計画が描く成長シナリオの一方、中国competitor「緑的諧波」の純利益2倍超という急成長が株価の重荷となっている。市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">約6,900<small>億円</small></span><span class="lbl">時価総額（2026年7月時点）</span></div>
+      <div><span class="num">596<small>億円</small></span><span class="lbl">26/3期 売上高 <span class="sign">+7.0%</span></span></div>
+      <div><span class="num">25.7<small>億円</small></span><span class="lbl">26/3期 営業利益（前期6百万円からV字回復）</span></div>
+      <div><span class="num">152<small>倍</small></span><span class="lbl">PER（予）</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― 波動歯車という「発明」から生まれた寡占市場</h2>
+    </div>
+  </div>
+  <p class="lede">ハーモニック・ドライブ・システムズの成長シナリオは、1955年に米国で発明され、1970年に同社が日本で世界初めて商業化した波動歯車装置（ストレインウェーブ・ギア）という基幹技術の独自性に根ざしている。</p>
+
+  <h3 class="sub">バックラッシほぼゼロという技術的優位性</h3>
+  <p>波動歯車装置は、1ステージで高い減速比（数十〜数百倍）を実現しながら、歯車間の遊び（バックラッシ）がほぼゼロという特徴を持つ。この精度の高さから、産業用ロボットの「精密関節」向け減速機として世界トップシェアを握っており、用途はモビリティ・航空宇宙、協働ロボット・サービスロボット、先進医療機器、FPD製造装置、半導体製造装置、産業用ロボット、工作機械など多岐にわたる。ナブテスコが大型・高負荷関節向けRV減速機で強みを持つのに対し、同社は軽負荷・小型の精密関節向けで補完的な地位を築いてきた。</p>
+
+  <h3 class="sub">ヒューマノイドという新たな追い風</h3>
+  <p>2026年は「フィジカルAI元年」とされ、ヒューマノイド（人型ロボット）市場の立ち上がりが、軽量・小型の波動歯車装置にとって新たな需要層となりつつある。中国では人型ロボットの生産台数が2026年に10万台を超える見通しが示されており、市場全体の拡大が期待される一方、同じ技術領域で中国の現地メーカーの追い上げも急速に進んでいる。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">1970<small>年</small></div><div class="k">日本国内での波動歯車装置 商業化</div></div>
+    <div class="stat"><div class="v">4<small>地域</small></div><div class="k">報告セグメント（日本・中国・北米・欧州）</div></div>
+    <div class="stat"><div class="v">10<small>万台+</small></div><div class="k">中国 人型ロボット生産台数見通し（2026年）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― 官民投資ロードマップにおける上流サプライヤー</h2>
+    </div>
+  </div>
+  <p class="lede">同社は、高市政権が掲げるフィジカルAI官民投資ロードマップにおいて、ナブテスコと並ぶ精密減速機の主要プレイヤーとして位置づけられている。</p>
+
+  <h3 class="sub">「重要コンポーネントサプライヤー」としての位置づけ</h3>
+  <p>2026年6月24日に政府が提示した官民投資ロードマップ（案）は、投資対象として「重要コンポーネントサプライヤーの研究開発・設備投資」を明記しており、精密減速機分野ではハーモニック・ドライブ・システムズとナブテスコが業界内の主要プレイヤーとして位置づけられている。官民投資は2040年度まで10.5兆円、経済波及効果144.4兆円という規模が示されている。</p>
+
+  <h3 class="sub">中国の国家主導によるヒューマノイド生産拡大</h3>
+  <p>中国工業情報化部は、同国の人型ロボット生産台数が2026年に10万台を超えるとの見通しを示している。国家主導での量産拡大は、現地の精密減速機メーカーにとって強い追い風となっており、日本勢との競争構造にも影響を与えている。</p>
+
+  <div class="tag-row">
+    <span class="tag">官民投資10.5兆円（フィジカルAI）</span>
+    <span class="tag">重要コンポーネントサプライヤー（政府資料明記）</span>
+    <span class="tag">中国 人型ロボット生産10万台超（2026年見通し）</span>
+    <span class="tag">2026年＝フィジカルAI元年</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― V字回復の決算と大幅増益予想</h2>
+    </div>
+  </div>
+  <p class="lede">2026年3月期は、産業用ロボットや半導体製造装置向けの需要増加を受けて、営業利益が前期のほぼゼロ水準から大きくV字回復した。</p>
+
+  <table>
+    <thead><tr><th>指標</th><th>26/3期実績</th><th>前期比</th></tr></thead>
+    <tbody>
+      <tr><td>売上高</td><td>595億円</td><td>+7.0%</td></tr>
+      <tr><td>営業利益</td><td>25.7億円</td><td>前期6百万円から大幅改善（営業利益率4.3%）</td></tr>
+      <tr><td>経常利益</td><td>25.4億円</td><td>―</td></tr>
+      <tr><td>親会社株主帰属 当期純利益</td><td>16.1億円</td><td>▲53.7%（特別損失計上の影響）</td></tr>
+    </tbody>
+  </table>
+  <p>純利益が減益となった背景には、製造設備の減損損失（約1.3億円）と、急激な受注変動に伴う棚卸資産評価損（約2.9億円）という特別損失の計上がある。セグメント別では日本セグメントが売上266億円（+22.5%）、セグメント利益37億円（+66.1%）と大幅増益となり、全社の収益改善を牽引した。財務基盤は総資産1,114億円、自己資本比率72.2%と健全性が高い。</p>
+
+  <div class="callout">
+    <span class="callabel">27/3期の会社計画</span>
+    売上高680億円（+14.2%）、営業利益62億円（+141.5%）、純利益45億円（+179.7%）と、大幅な増益を見込む。自動化投資の拡大、データセンター投資・生成AI普及に伴う先端半導体需要の増加を追い風とする一方、地政学リスクや資源・原材料価格上昇、為替変動などの不透明要因も会社側が挙げている。配当は前期の20円から42.1円へ大幅増配を予定している。
+  </div>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― 新中期経営計画：AIロボット・航空宇宙・eモビリティへの重点シフト</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">新中期経営計画（2026年度〜2030年度）</h3>
+  <p>2026年5月13日の取締役会で、2026年度を初年度とする新中期経営計画が決議された。同計画では、AIロボット、航空・宇宙・防衛、eモビリティの3分野を重点開拓分野に位置づけている。従来の産業用ロボット・半導体製造装置向けに加え、フィジカルAI時代の新市場開拓を明確に打ち出した内容である。</p>
+
+  <h3 class="sub">メカトロニクス製品による付加価値化</h3>
+  <p>減速装置単体だけでなく、モーター・センサー・コントローラを統合した「メカトロニクス製品」を、半導体製造装置・FA装置・医療機器・宇宙機器向けに展開しており、コンポーネント単体販売からシステム販売への付加価値シフトを進めている。</p>
+
+  <h3 class="sub">日本セグメントの牽引力</h3>
+  <p>直近の増益は日本セグメントが牽引しており、産業用ロボットや半導体製造装置向けの需要増加が寄与した。今後はヒューマノイド関連の需要開拓が、中国・北米・欧州セグメントを含めた成長ドライバーとして期待される。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">2026<small>年5月13日</small></div><div class="k">新中期経営計画（2026-2030年度）決議</div></div>
+    <div class="stat"><div class="v">+22.5<small>%</small></div><div class="k">日本セグメント売上高（前期比、26/3期）</div></div>
+    <div class="stat"><div class="v">3<small>分野</small></div><div class="k">重点開拓分野（AIロボット・航空宇宙防衛・eモビリティ）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― 極めて高いPERと荒い値動き</h2>
+    </div>
+  </div>
+  <p class="lede">フィジカルAI・ヒューマノイド関連の代表銘柄として物色される一方、利益水準に対して株価評価は極めて高く、値動きも荒い。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>26/3期 売上高</td><td>595億円（前期比+7.0%）</td></tr>
+      <tr><td>26/3期 営業利益</td><td>25.7億円（前期6百万円からV字回復）</td></tr>
+      <tr><td>27/3期（会社計画）</td><td>売上高680億円・営業利益62億円（各+14.2%／+141.5%）</td></tr>
+      <tr><td>時価総額</td><td>約6,900億円</td></tr>
+      <tr><td>PER（予）</td><td>152倍前後</td></tr>
+      <tr><td>PBR（実）</td><td>8.5倍前後</td></tr>
+      <tr><td>ROE（予）</td><td>5.60%</td></tr>
+      <tr><td>アナリスト目標株価平均</td><td>6,800円（現在株価が既に上回る水準）</td></tr>
+      <tr><td>年初来高値／安値</td><td>9,150円（7/6）／3,275円（2/2）</td></tr>
+    </tbody>
+  </table>
+  <p>決算発表後の2026年5月14日には株価が一時7.75%下落したが、その後数日で反発。7月3日には中国競合との競争激化への懸念から株価が反落するなど、フィジカルAI関連のニュースフローに敏感に反応する値動きが続いている。次回決算発表は2026年8月7日を予定している。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① 中国競合「緑的諧波」の急成長</span>
+    中国の波動歯車大手「緑的諧波（Leaderdrive）」は、ヒューマノイド向け需要を追い風に純利益が2倍超に拡大するなど急成長している。2026年7月3日には、この競争激化への懸念を材料に同社株価が反落する場面があり、中国勢の技術・価格競争力向上は中長期的な脅威となっている。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② 極めて高いPER水準</span>
+    PERは150倍を超える水準にあり、フィジカルAI・ヒューマノイド関連としての将来の成長期待を極端に織り込んだバリュエーションといえる。今後の決算で期待に届かない場合、株価の下落リスクは他銘柄と比べても大きい。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ 純利益の急減と特別損失</span>
+    26/3期は営業利益がV字回復した一方、製造設備の減損損失や急激な受注変動に伴う棚卸資産評価損という特別損失により、純利益は前期比53.7%減となった。受注変動への対応力が引き続き問われる。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ 株価のボラティリティの高さ</span>
+    年初来高値9,150円・安値3,275円と値幅が非常に大きく、短期的な思惑やニュースフローで株価が大きく振れやすい銘柄である。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ 地政学・為替リスク</span>
+    会社側も27/3期予想の前提として、地政学リスクや資源・原材料価格上昇、為替変動による不透明感を挙げている。海外売上比率の高い事業構造ゆえ、これらの変動が業績に与える影響は大きい。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">ハーモニック・ドライブ・システムズの成長ストーリーは、波動歯車という発明技術の独自性を土台に、新中期経営計画でAIロボット・航空宇宙・eモビリティへ重点シフトする点に集約される。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>26/3期は営業利益がV字回復し、27/3期は大幅増益を計画するなど業績モメンタムは強い。一方でPERは150倍を超える水準まで買われており、中国競合「緑的諧波」の急成長という具体的な脅威も顕在化している。フィジカルAI関連としての物色が続く中、実際の業績がどこまで市場の高い期待に追いつけるかが、株価の持続性を左右する。</p>
+    <ul class="watchlist">
+      <li>2026年8月7日発表予定の決算における、27/3期計画（売上680億円・営業利益62億円）の進捗</li>
+      <li>新中期経営計画（AIロボット・航空宇宙防衛・eモビリティ）における具体的な受注獲得状況</li>
+      <li>中国「緑的諧波」など現地競合との価格・技術競争の行方</li>
+      <li>受注変動に対する在庫・生産計画のコントロール改善状況</li>
+      <li>ヒューマノイド市場自体の立ち上がりペースと、同社製品の採用実績</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年7月時点で確認可能な公開情報に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>
