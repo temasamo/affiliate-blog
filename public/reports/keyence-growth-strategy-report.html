@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜キーエンス（6861） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編</span>
+      <span>2026年7月22日号</span>
+    </div>
+    <h1 class="title">キーエンス（6861）<br>フィジカルAIの「目」を担う、営業利益率50%超のセンサー王者</h1>
+    <p class="subtitle">旗艦プラットフォームを持たないが、フィジカルAIが現実世界を認識するために不可欠な「測る・見る」レイヤーを長年の主戦場としてきたセンサー・マシンビジョンの巨人。5期連続過去最高益の決算とあわせ、市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">約19<small>兆円</small></span><span class="lbl">時価総額（2026年7月時点）</span></div>
+      <div><span class="num">1.17<small>兆円</small></span><span class="lbl">26/3期 売上高 <span class="sign">+10.4%</span></span></div>
+      <div><span class="num">5,958<small>億円</small></span><span class="lbl">26/3期 営業利益 <span class="sign">+8.4%</span></span></div>
+      <div><span class="num">50<small>%超</small></span><span class="lbl">営業利益率</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― フィジカルAIの「目」となるセンシング市場</h2>
+    </div>
+  </div>
+  <p class="lede">キーエンスの成長シナリオは、特定のロボットや基盤モデルではなく、フィジカルAIが現実世界を認識するために不可欠な「測る・見る」というレイヤーの独占的な強さに根ざしている。</p>
+
+  <h3 class="sub">「脳」ではなく「目と神経」を担う立ち位置</h3>
+  <p>生成AIが文章や画像を生み出すのに対し、フィジカルAIは検査・計測・制御といった物理世界の作業に踏み込む。ロボットや自動化設備がどれだけ賢くなっても、現場の状況を正確に認識できなければ動けない。キーエンスの画像処理機器（マシンビジョン）やセンサは、この認識の入り口にあたる「目」と「神経」の役割を担っており、フィジカルAIの普及局面でボトルネックになりやすい高精度なセンシングと1次データ取得を、長年の主戦場としてきた。</p>
+
+  <h3 class="sub">3Dセンサー技術という具体的な強み</h3>
+  <p>フィジカルAIの「目」となるセンサー技術としては、キーエンスが持つ3次元（3D）センサーが専門家から評価されている。精密な作業に不可欠な力加減や指先の動きの調整はハーモニック・ドライブ・システムズにしかできない技術とされる一方、その動きを「見る」側の技術ではキーエンスが強みを持つという、日本の関連銘柄群の中での役割分担が意識されている。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">50<small>%超</small></div><div class="k">営業利益率（FA用センサー・画像処理機器）</div></div>
+    <div class="stat"><div class="v">6400<small>万画素</small></div><div class="k">ロボットビジョンシステム用カメラの最大解像度</div></div>
+    <div class="stat"><div class="v">94.6<small>%</small></div><div class="k">自己資本比率（実質無借金経営）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― 官民投資ロードマップにおけるセンサー領域の位置づけ</h2>
+    </div>
+  </div>
+  <p class="lede">キーエンスは、高市政権が掲げるフィジカルAI官民投資ロードマップにおいて、上流のセンサー領域を担う企業として位置づけられている。</p>
+
+  <h3 class="sub">「重要コンポーネント」としてのセンサー</h3>
+  <p>2026年6月24日に政府が提示した官民投資ロードマップ（案）は、重要コンポーネントとして「アクチュエーター、モーター、減速機、蓄電池等」を明記しているが、これらのハードウェアがフィジカルAIとして機能するためには、現場を認識するセンサー技術が不可欠である。センサー分野ではキーエンスをはじめとするFAセンサーメーカーが関連領域を持つとされ、官民投資10.5兆円（2040年度まで）・経済波及効果144.4兆円というロードマップの周辺に位置する。</p>
+
+  <h3 class="sub">顧客基盤の強さという政策非依存の競争優位</h3>
+  <p>キーエンスは製造業など産業用途の顧客基盤が非常に強固であり、顧客が工場にAIロボットを導入しようとする際、センサー技術やソリューション提案力が強みを発揮するとの見方がある。政策動向にかかわらず、フィジカルAI実装の現場で選ばれる立場を既に築いている点が特徴である。</p>
+
+  <div class="tag-row">
+    <span class="tag">官民投資10.5兆円（フィジカルAI）</span>
+    <span class="tag">フィジカルAIの「目」＝センシング領域</span>
+    <span class="tag">3Dセンサー技術</span>
+    <span class="tag">ファブレス・直販体制</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― 5期連続過去最高益、驚異の営業利益率</h2>
+    </div>
+  </div>
+  <p class="lede">2026年3月期は5期連続で過去最高益を更新し、6期連続増益。営業利益率50%超という製造業では異例の収益力を維持している。</p>
+
+  <table>
+    <thead><tr><th>指標</th><th>26/3期実績</th><th>前期比</th></tr></thead>
+    <tbody>
+      <tr><td>売上高</td><td>1兆1,692億円</td><td>+10.4%</td></tr>
+      <tr><td>営業利益</td><td>5,958億円</td><td>+8.4%</td></tr>
+      <tr><td>経常利益</td><td>6,358億円</td><td>+13.3%</td></tr>
+      <tr><td>親会社株主帰属 当期純利益</td><td>4,452億円</td><td>+11.7%</td></tr>
+    </tbody>
+  </table>
+  <p>地域別では、国内が新商品投入効果もあり3,900億円（+4.6%）と堅調。海外は北中南米が+13.3%、アジアが+16.7%と特に好調で、欧州は慎重さが残る中でも+8.4%となり、海外全体で7,792億円（+13.5%）と成長を牽引した。業種別売上構成比は自動車・輸送が25%と最大で、その他30%、電機・精密15%、半導体液晶・金属工作機械・食品薬品が各10%という分散した顧客基盤を持つ。</p>
+
+  <div class="callout">
+    <span class="callabel">27/3期の業績見通しは非開示</span>
+    キーエンスは伝統的に翌期の業績予想を開示しない方針を取っている。市場のアナリストコンセンサス（QUICK）では、売上高1兆2,761億円（+9%）、営業利益6,584億円、純利益4,818億円（+8%）と、6年連続の最高益が見込まれている。決算短信では、自動化・品質向上・省エネルギー需要の拡大期待が述べられる一方、地政学リスクを背景とした景気後退懸念などの不確実性も継続すると記載されている。
+  </div>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― AI×画像処理と、ロボットビジョンの拡充</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">AI×光学ズーム搭載ビジョンシステム「VSシリーズ」</h3>
+  <p>画像検査機でのデータ活用には従来、専門知識やプログラミングが必要とされてきたが、AIと光学ズームを搭載した新型ビジョンシステム「VSシリーズ」により、直感操作での見える化・分析を可能にしている。専門知識がなくても高精度な検査・計測を実現できる点が、製造現場への導入障壁を下げている。</p>
+
+  <h3 class="sub">ロボットビジョンによる自動化ソリューション</h3>
+  <p>31万画素から6400万画素までのロボットビジョンシステム用カメラをラインアップし、位置合わせ・搬送と外観検査を同時に行うことを可能にしている。数多くのロボットメーカーに対応し直結接続ができるため、既存の生産ラインにも導入しやすい設計である。産業用ロボットの生産性を左右する位置決め能力とキャリブレーションを支える技術として、自動車・自動車部品業界をはじめ幅広い業種で活用が進んでいる。</p>
+
+  <h3 class="sub">「黒子」としての強固な顧客基盤</h3>
+  <p>キーエンスは特定のフィジカルAIブランドを掲げるのではなく、既存の強固な直販体制とソリューション提案力を通じて、顧客企業のAIロボット導入を支援する立場を取っている。この「黒子」的なポジションが、特定プラットフォームの成否に左右されにくい収益構造を支えている。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">VS<small>シリーズ</small></div><div class="k">AI×光学ズーム搭載ビジョンシステム</div></div>
+    <div class="stat"><div class="v">31万〜6400万<small>画素</small></div><div class="k">ロボットビジョン用カメララインアップ</div></div>
+    <div class="stat"><div class="v">+16.7<small>%</small></div><div class="k">アジア地域売上（前期比、26/3期）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― 高いバリュエーションを支える収益の安定性</h2>
+    </div>
+  </div>
+  <p class="lede">アナリストの評価は総じて強気で、割安と判断する分析も見られる。次回決算は2026年7月下旬に予定されている。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>26/3期 売上高</td><td>1兆1,692億円（前期比+10.4%）</td></tr>
+      <tr><td>26/3期 営業利益</td><td>5,958億円（前期比+8.4%、5期連続最高益）</td></tr>
+      <tr><td>27/3期（アナリストコンセンサス）</td><td>売上高1兆2,761億円・純利益4,818億円（各+9%／+8%）</td></tr>
+      <tr><td>時価総額</td><td>約19兆円</td></tr>
+      <tr><td>PBR（実）</td><td>5倍台</td></tr>
+      <tr><td>ROE（実）</td><td>13.53%</td></tr>
+      <tr><td>自己資本比率</td><td>94.6%</td></tr>
+      <tr><td>アナリスト目標株価平均</td><td>83,000〜87,000円程度（買い推奨が大勢）</td></tr>
+      <tr><td>52週高値／安値</td><td>84,170円／51,510円</td></tr>
+    </tbody>
+  </table>
+  <p>2026年5月には「収益成長だけでなく自社株買い期待も浮上」として株価が高値圏で推移する場面が報じられた。フィジカルAI関連銘柄としての物色に加え、株主還元期待も株価を支える材料となっている。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① 業績見通し非開示という情報の不確実性</span>
+    キーエンスは翌期の業績予想を開示しない方針を続けており、投資家は市場コンセンサスに依拠せざるを得ない。この情報の非対称性が、決算発表時の株価変動を大きくする一因となっている。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② 高収益率の持続性への疑問</span>
+    営業利益率50%超という水準を維持し続けられるかが株価評価の前提となっている。地政学リスクを背景とした景気後退懸念など、会社側も不確実性の継続を認めている。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ 自動車・輸送セグメントへの依存</span>
+    業種別売上構成比で自動車・輸送は25%と最大セグメントであり、自動車業界の設備投資動向に業績が左右されやすい面がある。直近下期には国内の自動車・輸送向け売上が前年同期比5%減となる場面も見られた。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ 欧州の伸び悩み</span>
+    欧州事業は他の海外地域と比べて伸び率が低く（+8.4%）、慎重な設備投資姿勢が続いているとされる。欧州経済の回復ペースが業績に影響を与える可能性がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ 為替変動リスク</span>
+    海外売上高が国内の約2倍（7,792億円 対 3,900億円）に達しており、為替変動が業績に与える影響は大きい。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">キーエンスの成長ストーリーは、ロボットや基盤モデルという「脳」ではなく、フィジカルAIが現場を認識するための「目と神経」を担うという、他のフィジカルAI関連銘柄とは異なるレイヤーでの強みに集約される。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>特定のヒューマノイドやプラットフォームの成否に左右されにくい「黒子」的なポジションと、営業利益率50%超という圧倒的な収益力が、同社の株価評価を支えている。一方で業績見通しを開示しない会社方針ゆえ、市場の期待と実際の決算内容とのギャップが株価変動の材料になりやすい点には注意が必要である。</p>
+    <ul class="watchlist">
+      <li>2026年7月下旬発表予定の決算における、市場コンセンサス（売上高1兆2,761億円等）との比較</li>
+      <li>AI×画像処理「VSシリーズ」など新製品のロボットビジョン市場での採用拡大状況</li>
+      <li>自動車・輸送セグメントおよび欧州事業の回復ペース</li>
+      <li>自社株買いなど株主還元策の具体化</li>
+      <li>フィジカルAI実装が広がる中での、センシング領域における競合動向</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年7月時点で確認可能な公開情報に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>
