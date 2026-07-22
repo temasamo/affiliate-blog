@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜日本航空（9201） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+  .ticker .sign.neg{color:#E39A8C;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編</span>
+      <span>2026年7月23日号</span>
+    </div>
+    <h1 class="title">日本航空（9201）<br>過去最高益の航空会社が、羽田空港でヒューマノイドロボットに賭ける理由</h1>
+    <p class="subtitle">再上場後最高収益・過去最高益という決算の裏で、グランドハンドリング人材不足という構造課題に直面するJAL。JALグランドサービスとGMO AI＆ロボティクス商事による国内初の空港ヒューマノイド実証実験が描く2028年度実用化への道筋を、市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">約1.4<small>兆円</small></span><span class="lbl">時価総額（2026年7月時点）</span></div>
+      <div><span class="num">2.01<small>兆円</small></span><span class="lbl">26/3期 売上収益 <span class="sign">+9.1%</span></span></div>
+      <div><span class="num">2,180<small>億円</small></span><span class="lbl">26/3期 EBIT（過去最高益） <span class="sign">+26.4%</span></span></div>
+      <div><span class="num">10.2<small>倍</small></span><span class="lbl">PER（予）</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― グランドハンドリング人材不足という「需要サイド」の課題</h2>
+    </div>
+  </div>
+  <p class="lede">JALのフィジカルAI戦略は、他の製造業銘柄とは異なり、自社の労働集約的なオペレーション課題を解決する「実装先」としての立ち位置にある。</p>
+
+  <h3 class="sub">インバウンド増加と人手不足の同時進行</h3>
+  <p>航空業界では、インバウンド需要の拡大により旅客数が増加する一方、生産年齢人口の減少によってグランドハンドリング（地上支援業務）の担い手が不足している。機体の誘導、手荷物の搭降載、機内清掃など、高度なスキルと体力を同時に要求する重労働が、構造的な人手不足に直面している。</p>
+
+  <h3 class="sub">官民投資ロードマップが定義する「下流」としての空港現場</h3>
+  <p>政府が2026年6月24日に提示したフィジカルAI官民投資ロードマップ（案）は、需要サイドの投資として、防災等の官需領域における公共調達や、各産業ドメインでの導入投資を挙げている。空港のグランドハンドリング業務は、この「下流」（導入現場・データ収集エコシステム）の具体的な実装事例の一つに位置づけられる。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">国内初<small></small></div><div class="k">空港でのヒューマノイドロボット活用実証実験</div></div>
+    <div class="stat"><div class="v">2026<small>年5月〜2028年</small></div><div class="k">実証実験の実施期間</div></div>
+    <div class="stat"><div class="v">2028<small>年度</small></div><div class="k">実用化視野の目標時期</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― 官民投資ロードマップにおける実装事例としての羽田実証</h2>
+    </div>
+  </div>
+  <p class="lede">JALグループの羽田空港での取り組みは、政府一次資料にも実名で登場する数少ないフィジカルAI実装事例の一つである。</p>
+
+  <h3 class="sub">政府資料にも記載される羽田実証</h3>
+  <p>2026年4月、日本航空・JALグランドサービス・GMO AI＆ロボティクス商事の3社が発表した羽田空港でのヒューマノイドロボット実証実験は、政府のフィジカルAI関連資料でも取り上げられる代表事例となっている。国内初の空港でのヒューマノイド活用実証という点が、政策的な注目度を高めている。</p>
+
+  <h3 class="sub">中長期・段階的な検証プロセス</h3>
+  <p>本プロジェクトは2026年5月から2028年にかけて実施され、中長期的かつ段階的に検証が進められる。初期段階では空港現場の業務を可視化・分析してヒューマノイドロボットが安全に作業できる領域を特定し、その後は実際の環境を想定した動作検証を重ねる計画である。</p>
+
+  <div class="tag-row">
+    <span class="tag">官民投資10.5兆円（フィジカルAI）</span>
+    <span class="tag">国内初：空港ヒューマノイド実証実験</span>
+    <span class="tag">JGS×GMO AIR 共同プロジェクト</span>
+    <span class="tag">2028年度実用化視野</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― 再上場後最高収益と、27/3期の減益計画</h2>
+    </div>
+  </div>
+  <p class="lede">2026年3月期は、航空・非航空両事業が前年を上回り、再上場後の最高収益と過去最高益を同時に達成した。</p>
+
+  <table>
+    <thead><tr><th>指標</th><th>26/3期実績</th><th>前期比</th></tr></thead>
+    <tbody>
+      <tr><td>売上収益</td><td>2兆125億円</td><td>+9.1%（再上場後最高収益）</td></tr>
+      <tr><td>EBIT</td><td>2,180億円</td><td>+26.4%（過去最高益）</td></tr>
+      <tr><td>純利益</td><td>1,376億円</td><td>+28.6%</td></tr>
+      <tr><td>EBITマージン</td><td>10.8%</td><td>―</td></tr>
+      <tr><td>ROIC</td><td>9.5%</td><td>―</td></tr>
+    </tbody>
+  </table>
+  <p>2021〜2025年度中期経営計画の最終年度財務目標（EBITマージン10%、ROIC9%、EPS290円）を全て達成した。期末配当は50円、年間配当は96円（配当性向31.3%）とし、経営ビジョン2035の成長投資資金として社債型種類株式2,000億円の発行も決定している。</p>
+
+  <h3 class="sub">グランドハンドリング受託事業の伸び</h3>
+  <p>ヒューマノイド実証を含むグランドハンドリング受託事業は、26/3期第3四半期累計で売上収益1,920億円（+3.5%）、EBIT119億円（+62.2%）と、受託件数の増加により大幅増益となった。人手不足という課題を抱えつつも、事業自体は堅調に拡大している。</p>
+
+  <div class="callout">
+    <span class="callabel">27/3期の会社計画</span>
+    純利益は前期比20%減の1,100億円を見込む。国際線の増機・機材大型化とマイル・ライフ事業への戦略投資強化を進める一方、原油価格高騰など外部環境の不確実性を前提とした減益計画としている。市場のアナリストコンセンサスも、経常利益予想が前年比31.1%減益から35%減益へと下方修正が進んでいる。
+  </div>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― 羽田空港ヒューマノイド実証実験の中身</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">JGSとGMO AIRの役割分担</h3>
+  <p>2026年4月27日、JALグループでグランドハンドリングを担うJALグランドサービス（JGS）とGMO AI＆ロボティクス商事（GMO AIR）は、羽田空港でのヒューマノイドロボット活用実証実験を5月から開始すると発表した。役割分担として、JGSは空港現場の知見提供・業務要件の定義・安全基準への適合性評価を担い、GMO AIRはヒューマノイドロボットの提供と動作プログラムの開発・最適化を担当する。GMO AIRは2026年4月7日に渋谷で開設したフィジカルAI研究開発拠点「GMOヒューマノイド・ラボ 渋谷ショーケース」も活用していく方針である。</p>
+
+  <h3 class="sub">段階的な動作開発プロセス</h3>
+  <p>検証では、まず各業務をロボットに個別に教え、その後一連の動作として作業できるように開発を進める。ドーリーのストッパーを解除して貨物コンテナを回転させる作業や、ドーリーからハイリフトローダーへコンテナを押して動かす作業など、動作ごとに開発を重ね、2027年下期ごろから各動作をつなげて実際の作業の流れを実現させる計画である。ヒューマノイドロボットは人型のため、現行の施設や機体を大幅に改修せずに導入可能という利点があり、将来的には手荷物の積み込みや機内清掃、GSE（地上支援機材）操作など、多岐にわたる業務への汎用的な活用が期待されている。</p>
+
+  <h3 class="sub">「まずやってみる」という現実的なスタンス</h3>
+  <p>実証で使用する機体を巡っては中国製ロボットへの懸念も一部で指摘されているが、JALグループ側は「まずやってみる」という現実的なスタンスで検証を進めている。2028年度の実用化を視野に入れており、構造的な人手不足という待ったなしの課題への対応策として位置づけられている。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">2026<small>年4月27日</small></div><div class="k">羽田空港ヒューマノイド実証実験を発表</div></div>
+    <div class="stat"><div class="v">2027<small>年下期</small></div><div class="k">各動作をつなげ実際の作業フロー実現目標</div></div>
+    <div class="stat"><div class="v">+62.2<small>%</small></div><div class="k">グランドハンドリング受託事業 EBIT（Q3累計、前年比）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― 過去最高益にもかかわらず慎重な市場コンセンサス</h2>
+    </div>
+  </div>
+  <p class="lede">27/3期の減益計画を受け、市場の評価は総じて慎重ながら、7月中旬にはフィジカルAIテーマの物色や燃料価格リスク後退を受けてレーティング格上げが相次いだ。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>26/3期 売上収益</td><td>2兆125億円（前期比+9.1%）</td></tr>
+      <tr><td>26/3期 EBIT</td><td>2,180億円（前期比+26.4%、過去最高益）</td></tr>
+      <tr><td>27/3期（会社計画）</td><td>純利益1,100億円（前期比▲20%）</td></tr>
+      <tr><td>時価総額</td><td>約1.4兆円</td></tr>
+      <tr><td>PER（予）</td><td>10.2倍</td></tr>
+      <tr><td>アナリスト目標株価平均</td><td>3,027〜3,182円</td></tr>
+      <tr><td>アナリスト評価</td><td>買い7人、売り0人（Investing.com）</td></tr>
+      <tr><td>52週高値／安値</td><td>3,272円／2,406.5円</td></tr>
+    </tbody>
+  </table>
+  <p>2026年7月には、燃料価格上昇リスクの後退を材料に国内証券がJAL株を格上げする動きが見られ、7月13〜17日の週にはレーティングが2段階格上げされる場面もあった。一方で6月時点では、経常利益予想コンセンサスが下方修正され、目標株価を3,550円から3,250円に引き下げる証券もあるなど、評価は一様ではない。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① 27/3期の減益計画</span>
+    純利益は前期比20%減の1,100億円を見込んでおり、過去最高益だった26/3期の反動という側面がある。原油価格高騰など外部環境の不確実性も前提とされている。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② アナリストコンセンサスの下方修正</span>
+    経常利益予想コンセンサスが前年比31.1%減益から35%減益へと下方修正されるなど、市場の見方は慎重さを増している局面がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ ヒューマノイド実証はまだ初期段階</span>
+    実用化目標は2028年度、動作の連結すら2027年下期からという長期計画であり、足元の業績への直接的な寄与はまだ発生していない。実証実験が計画通り進むかどうかも不確実である。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ 燃料費・為替変動リスク</span>
+    航空事業は燃料費や為替変動の影響を受けやすい構造的なコスト特性を持つ。原油価格や為替の急激な変動は、業績計画に直接的な影響を与える。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ インバウンド需要への依存</span>
+    好調な業績は訪日外国人需要の拡大に支えられている面が大きく、地政学リスクや世界景気の減速による需要腰折れの影響を受けやすい。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑥ 実証機体の調達を巡る懸念</span>
+    ヒューマノイド実証で使用する機体の選定を巡っては、中国製ロボットへの依存に対する懸念も一部で指摘されている。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">JALの成長ストーリーは、ロボットや半導体を作る側ではなく、フィジカルAIを「使う側」として自社の構造的課題を解決する実装事例である点で、他のフィジカルAI関連銘柄とは一線を画す。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>過去最高益という強い決算の一方、27/3期は減益計画であり、市場の評価は慎重さと期待が交錯している。羽田空港でのヒューマノイド実証は国内初の事例として政策的な注目度も高いが、実用化はまだ2028年度という長期の取り組みであり、足元の株価材料としてはグランドハンドリング事業の受託拡大や燃料価格・為替動向の方が直接的な影響を持つ。</p>
+    <ul class="watchlist">
+      <li>27/3期会社計画（純利益1,100億円、▲20%）の進捗と、燃料価格・為替動向</li>
+      <li>羽田空港ヒューマノイド実証実験の2027年下期に向けた動作連結の進捗</li>
+      <li>グランドハンドリング受託事業の受託件数拡大と収益性改善の持続性</li>
+      <li>インバウンド需要の動向と、地政学リスクによる旅客需要への影響</li>
+      <li>経営ビジョン2035の成長投資（社債型種類株式2,000億円）の具体的な使途</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年7月時点で確認可能な公開情報に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>
