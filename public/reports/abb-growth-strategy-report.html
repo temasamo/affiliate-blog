@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜ABB（ABBN） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+  .callout.pivotal{border-left-color:#2E6E5E;background:#F0F5F1;}
+  .callout.pivotal .callabel{color:#2E6E5E;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編（海外）</span>
+      <span>2026年7月24日号</span>
+    </div>
+    <h1 class="title">ABB（ABBN）<br>「世界4強」からの離脱 ― ロボット事業をソフトバンクへ売却し、電化・自動化に集中する理由</h1>
+    <p class="subtitle">産業用ロボット「世界4強」の一角として先行28品目のフィジカルAI記事にも登場したABB。しかし2025年10月、同社はロボティクス事業をソフトバンクグループへ売却する契約を締結しており、2026年後半の取引完了に向けて手続きが進行中である。「ロボットを作る側」から退場する決断の背景と、その資金で進める英ロトルク買収という新戦略を、市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">約1,500<small>億CHF</small></span><span class="lbl">時価総額（2026年7月時点）</span></div>
+      <div><span class="num">53.75<small>億ドル</small></span><span class="lbl">ロボティクス事業 売却額（対ソフトバンク）</span></div>
+      <div><span class="num">120<small>億ドル</small></span><span class="lbl">26年Q2 受注高（四半期として過去最高）</span></div>
+      <div><span class="num">55<small>億ドル</small></span><span class="lbl">英ロトルク買収額</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<div class="callout pivotal">
+  <span class="callabel">本レポートの前提について</span>
+  ABBは日本の官民投資ロードマップ関連の報道において、産業用ロボット「世界4強」（ファナック・安川電機・ABB・KUKA）の一角として言及されることが多い企業である。しかし2026年7月時点の最新事実として、ABBは2025年10月にロボティクス事業をソフトバンクグループへ売却する契約を締結しており、取引完了（2026年半ば〜後半予定）後は同事業がABBから切り離される。本レポートは、この事業構造の転換を前提に、ABBの現在地と今後の成長戦略を整理する。
+</div>
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― ロボティクスから電化・自動化へのポートフォリオ転換</h2>
+    </div>
+  </div>
+  <p class="lede">ABBの成長シナリオは、もはや産業用ロボット市場の拡大そのものではなく、電力インフラ・データセンター・ビル向け電化と自動化という、より大きな構造的成長市場への集中に置き換わっている。</p>
+
+  <h3 class="sub">ロボティクス事業の苦戦という背景</h3>
+  <p>ABBロボティクス事業は2024年に23億ドルの売上高（ABB全体の約7%）、営業EBITDAマージン12.1%を計上したが、2023年から2025年前半にかけて受注・売上が大きく落ち込んでいた。競争激化と限られた事業シナジーを背景に、ABBは2026年4月の決算説明会で独立上場（スピンオフ）の検討を表明していたが、最終的にはソフトバンクグループへの売却という道を選んだ。</p>
+
+  <h3 class="sub">電化・自動化という新たな主戦場</h3>
+  <p>ABBの売上の約40%は電力会社・ビル・データセンターという3つの最終需要から生まれており、これらはグリッドの近代化・電化・エネルギー効率化という数十年単位の構造的な成長テーマに支えられている。ロボティクス事業売却で得る資金を、この分野の強化に再配分する戦略が明確になっている。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">約40<small>%</small></div><div class="k">電力会社・ビル・データセンター向け売上比率</div></div>
+    <div class="stat"><div class="v">23<small>億ドル</small></div><div class="k">ロボティクス事業 2024年売上高（全体の約7%）</div></div>
+    <div class="stat"><div class="v">50<small>%超</small></div><div class="k">短サイクル事業が占める売上比率</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― フィジカルAIの主導権はソフトバンク側へ</h2>
+    </div>
+  </div>
+  <p class="lede">日本の官民投資ロードマップにおいて「世界4強」の一角として位置づけられてきたABBだが、フィジカルAI政策における役割は今後、買収主体であるソフトバンクグループを通じて発揮される構図に変わる。</p>
+
+  <h3 class="sub">ソフトバンクが掲げる「フィジカルAI」構想</h3>
+  <p>ソフトバンクグループの孫正義会長兼社長は、ロボティクス事業買収の発表にあたり「フィジカルAIはソフトバンクの次のフロンティア」と述べ、「ABBロボティクスと共に、世界クラスの技術と人材を結集し、人工超知能（ASI）とロボティクスを融合させる、画期的な進化を推進する」とコメントしている。ソフトバンクは既にNVIDIAやT-Mobileなど大手テック企業に出資しており、AI領域における戦略的な成長計画の一環としてロボティクス事業を位置づけている。</p>
+
+  <h3 class="sub">規制当局の承認という残されたハードル</h3>
+  <p>この取引は、EU・中国・米国を含む規制当局の承認や、その他の通常のクロージング条件の充足が前提となっており、2026年半ばから後半にかけての完了が見込まれている。地政学的な緊張が高まる中、各国当局の審査の行方が焦点となる。</p>
+
+  <div class="tag-row">
+    <span class="tag">ロボティクス事業売却契約締結（2025年10月8日）</span>
+    <span class="tag">売却額 53.75億ドル（企業価値ベース）</span>
+    <span class="tag">ソフトバンク「フィジカルAIは次のフロンティア」</span>
+    <span class="tag">取引完了は2026年半ば〜後半予定</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― 過去最高の受注高と、売却益の使い道</h2>
+    </div>
+  </div>
+  <p class="lede">2026年第2四半期決算は、受注・利益ともに好調な内容となり、ロボティクス事業売却によって得る資金の使途も同時に明らかになった。</p>
+
+  <table>
+    <thead><tr><th>指標</th><th>26年Q2実績</th><th>前年同期比</th></tr></thead>
+    <tbody>
+      <tr><td>比較可能売上高成長率</td><td>+12%</td><td>―</td></tr>
+      <tr><td>営業EBITAマージン</td><td>20.2%</td><td>+90bps</td></tr>
+      <tr><td>営業EBITA</td><td>―</td><td>+20%</td></tr>
+      <tr><td>EPS</td><td>―</td><td>+8%</td></tr>
+      <tr><td>受注高</td><td>120億ドル</td><td>有機ベース+26%（四半期として過去最高）</td></tr>
+    </tbody>
+  </table>
+  <p>財務基盤は極めて健全で、第2四半期末時点の純有利子負債はわずか23億ドル、ネットデット／EBITDA倍率は0.3倍にとどまる。この健全なバランスシートと、ロボティクス事業売却で見込まれる手取り現金収益約48億ドルを原資に、英ロトルク社の買収資金を賄う計画である。</p>
+
+  <div class="callout pivotal">
+    <span class="callabel">ロボティクス事業売却の財務インパクト</span>
+    取引完了時には、税引前で約24億ドルの非事業的な帳簿上の利益、手取りキャッシュ約53億ドルを見込む。分離費用は約2億ドル、現地事業の切り出しに伴う税務コストは4〜5億ドルと見積もられている。2025年第4四半期以降、ロボティクス事業は非継続事業として会計上区分されている。
+  </div>
+
+  <h3 class="sub">通期・来期ガイダンス</h3>
+  <p>2026年第3四半期は比較可能売上高で低〜中程度の二桁成長を見込み、営業EBITAマージンは第2四半期から順次改善する見通し。通期2026年でも、比較可能売上高は低い二桁台から中程度の二桁台の成長、マージンは前年比で改善するとの見通しを示しており、2四半期連続でガイダンスが上方修正されている。</p>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― 英ロトルク買収という「選択と集中」</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">ABB史上最大級の買収：ロトルク（Rotork）</h3>
+  <p>2026年7月16日、第2四半期決算発表と同時に、ABBは英国の産業用バルブ・アクチュエーターメーカーであるロトルク社を、1株503ペンス・総額約55億ドルの現金で買収すると発表した。ロトルク取締役会は本買収を推奨しており、ABBの営業EBITAマージンには即座にプラスの影響を与え、統合完了後2年目にはEPS押し上げ効果も見込まれる。ロトルクはオートメーション事業領域内の新たな独立部門として運営される予定で、同事業領域の2025年売上高に12%を上乗せし、プロフォーマベースでの営業EBITAマージンを14.0%から15.2%へ引き上げる効果が見込まれている。</p>
+
+  <h3 class="sub">事業セグメント再編</h3>
+  <p>ロボティクス事業の売却に伴い、ABBは事業構造を3つの事業領域に再編する。従来ロボティクス事業と組んでいたマシンオートメーション事業は、プロセスオートメーション事業領域に統合される。この再編により、ABBは電化と自動化という2つの柱に経営資源を集中させる体制へと移行する。</p>
+
+  <h3 class="sub">株主還元の余地も拡大</h3>
+  <p>強固なバランスシートを背景に、上限20億ドルの自社株買いプログラムの活用余地も残されており、ロトルク買収資金を賄いながら、追加のM&Aや株主還元を実施できる財務的な柔軟性を維持している。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">2026<small>年7月16日</small></div><div class="k">ロトルク買収発表（約55億ドル）</div></div>
+    <div class="stat"><div class="v">14.0<small>%→15.2%</small></div><div class="k">オートメーション事業 営業EBITAマージン（プロフォーマ）</div></div>
+    <div class="stat"><div class="v">20<small>億ドル</small></div><div class="k">自社株買いプログラム上限</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― 1年で8割超上昇も、目標株価は「中立」評価</h2>
+    </div>
+  </div>
+  <p class="lede">株価はこの1年で大きく上昇したが、アナリストの評価は総じて「中立」にとどまっており、既に相当の期待が織り込まれているとの見方もある。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>株価</td><td>80〜83CHF前後</td></tr>
+      <tr><td>時価総額</td><td>約1,500億CHF（1年で+80%超上昇）</td></tr>
+      <tr><td>52週高値／安値</td><td>89.14CHF／47〜50CHF</td></tr>
+      <tr><td>アナリスト目標株価コンセンサス</td><td>75〜78CHF（現在株価をやや下回る水準）</td></tr>
+      <tr><td>アナリスト評価</td><td>「中立」が大勢（買い5人・売り2人・中立21人）</td></tr>
+      <tr><td>配当利回り</td><td>1.13%</td></tr>
+    </tbody>
+  </table>
+  <p>2026年第2四半期決算は「印象的な内容」と評価され、受注高26%増という記録的な結果を受けて通期ガイダンスが2四半期連続で上方修正された。一方でアナリストの目標株価コンセンサスは現在株価をやや下回る水準にあり、レーティングも「中立」が多数を占めるなど、既に株価に相当な期待が織り込まれているとの慎重な見方も根強い。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① フィジカルAI（ロボティクス）エクスポージャーの消失</span>
+    ABB株主にとって、ロボティクス事業を通じたフィジカルAIへの直接的なエクスポージャーは、取引完了後に失われる。今後フィジカルAIというテーマの恩恵を求める投資家にとって、ABB株はもはやその直接的な受け皿ではなく、買収主体であるソフトバンクグループ株を通じたエクスポージャーへと置き換わる点に注意が必要である。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② 規制当局の承認リスク</span>
+    取引はEU・中国・米国など複数の規制当局の承認が前提となっており、地政学的な緊張や独占禁止法審査の動向次第では、完了時期の遅延や取引内容の変更が生じる可能性がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ ロトルク買収の統合リスク</span>
+    約55億ドルという同社史上最大級の買収であり、EPS押し上げ効果の実現には統合完了後2年という時間を要する計画である。大型買収に伴う統合コストやシナジー実現の不確実性は残る。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ 短サイクル事業比率の上昇による業績の見通しにくさ</span>
+    短サイクル事業が売上の50%超を占めるようになっており、従来受注残高が提供してきた業績の先行き可視性が低下しているとの指摘がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ バリュエーションの妥当性</span>
+    株価はこの1年で8割超上昇しており、アナリスト目標株価コンセンサスは現在株価をやや下回る水準にある。好調な決算にもかかわらずレーティングが「中立」に集中している点は、期待の織り込み度合いに対する市場の慎重な見方を反映している。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">ABBの成長ストーリーは、「産業用ロボット世界4強」から退場し、電化・自動化という構造的な成長市場に経営資源を集中させる「選択と集中」に集約される。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>ロボティクス事業のソフトバンクへの売却は、ABBにとって競争が激化し収益性が伸び悩んでいた事業からの計画的な撤退であり、その資金を電力インフラ・データセンター向けの構造的な成長機会（ロトルク買収）に再配分する、明確な経営判断といえる。フィジカルAI関連銘柄としてABBを見る投資家にとっては、今後の直接的なテーマ性はソフトバンクグループ側に移る点を踏まえた上での評価が必要になる。</p>
+    <ul class="watchlist">
+      <li>ロボティクス事業売却の完了時期（2026年半ば〜後半予定）と、規制当局の承認状況</li>
+      <li>ロトルク買収の統合プロセスと、営業EBITAマージンへの寄与の実現状況</li>
+      <li>電力インフラ・データセンター向け需要の持続性と、通期ガイダンス（比較可能売上高成長率）の達成状況</li>
+      <li>売却資金を活用した追加M&Aや自社株買いの実行状況</li>
+      <li>ソフトバンクグループ側でのロボティクス事業統合の進捗と、フィジカルAI戦略の具体化</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年7月時点で確認可能な公開情報に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>
