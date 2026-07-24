@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜テスラ（TSLA） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+  .callout.note{border-left-color:#5B7CA8;background:#EFF3F8;}
+  .callout.note .callabel{color:#3D5C82;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編（海外）</span>
+      <span>2026年7月25日号</span>
+    </div>
+    <h1 class="title">テスラ（TSLA）<br>Optimusとロボタクシーへの野心と、繰り返される未達という現実</h1>
+    <p class="subtitle">四半期として過去最高の納車台数を記録する一方、ヒューマノイドロボット「Optimus」とロボタクシー事業は当初計画から大幅に遅延を重ねている。株主の質問の論調も「壮大なビジョン」から「なぜ短期目標が未達なのか」へと変化しつつある。市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">約1.43<small>兆ドル</small></span><span class="lbl">時価総額（2026年7月時点）</span></div>
+      <div><span class="num">48万<small>台超</small></span><span class="lbl">26年Q2 納車台数（四半期として過去最高）</span></div>
+      <div><span class="num">300<small>倍超</small></span><span class="lbl">PER（実績ベース）</span></div>
+      <div><span class="num">数百<small>台</small></span><span class="lbl">2025年 Optimus実績納品台数（当初目標5,000台）</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<div class="callout note">
+  <span class="callabel">データ基準についての注記</span>
+  テスラの2026年第2四半期決算は2026年7月22日（米国時間）に発表予定。本レポート作成時点で確定している最新の四半期実績は2026年第1四半期（発表済み）であり、第2四半期については既に公表済みの生産・納車速報値を使用し、収益・利益に関する数値はアナリスト予想として明記した上で記載している。
+</div>
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― 自動車会社から「フィジカルAI企業」への再定義</h2>
+    </div>
+  </div>
+  <p class="lede">テスラの株価評価は、もはや電気自動車の販売台数だけで説明できるものではなく、ヒューマノイドロボット「Optimus」とロボタクシーという2つの未来事業への期待に大きく依存している。</p>
+
+  <h3 class="sub">Optimusという「史上最大の製品」構想</h3>
+  <p>イーロン・マスクCEOは、ヒューマノイドロボット「Optimus」について「史上最大の製品になる可能性がある」と繰り返し発言している。将来的には年間生産能力100万台規模のラインをフリーモント工場に構築する計画を掲げ、消費者向け価格帯は2万〜3万ドルを目標としている。自動車事業で培った量産・AI・バッテリー技術を、ロボット事業に転用する構想である。</p>
+
+  <h3 class="sub">垂直統合という高いハードル</h3>
+  <p>マスクCEOは、Optimusには約1万点のユニークな部品が使われており、確立されたヒューマノイドロボット向けサプライチェーンが存在しないため、多くの部品を自社で内製する垂直統合型の生産体制を構築する必要があると説明している。この複雑性が、量産化のペースを規定する最大の制約となっている。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">100<small>万台</small></div><div class="k">目標年間生産能力（フリーモント工場）</div></div>
+    <div class="stat"><div class="v">約1万<small>点</small></div><div class="k">Optimusのユニーク部品点数</div></div>
+    <div class="stat"><div class="v">2〜3<small>万ドル</small></div><div class="k">消費者向け目標価格帯（2027年末までの提供目標）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― 自動運転・ロボットを巡る規制環境</h2>
+    </div>
+  </div>
+  <p class="lede">テスラのフィジカルAI事業は、自動運転車の安全性を巡る規制当局の監視強化という向かい風の中で進んでいる。</p>
+
+  <h3 class="sub">ロボタクシー拡大を巡る規制の壁</h3>
+  <p>2026年7月には、米ニュージャージー州でロボタクシーを事実上禁止する可能性のある法律の制定が報じられるなど、州レベルでの規制強化の動きが出ている。ロボタクシー事業はテキサス州オースティンでの限定的な展開から始まり、都市展開を進めているが、当局の安全性審査や地域ごとの規制対応が拡大ペースを左右する構造にある。</p>
+
+  <h3 class="sub">品質・安全性を巡る当局対応</h3>
+  <p>2026年には、米運輸当局（NHTSA）がヘッドライトの規制適合に関するテスラの免除申請を却下し、Model 3・Model Y約2万台のリコールを命じる事例も発生している。自動運転技術だけでなく、既存の自動車製品においても規制当局との緊張関係が続いている。</p>
+
+  <div class="tag-row">
+    <span class="tag">ロボタクシー規制（州単位で対応が分岐）</span>
+    <span class="tag">NHTSA リコール命令（2026年）</span>
+    <span class="tag">Optimus 外部販売は2027年目標</span>
+    <span class="tag">米国発フィジカルAI企業</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― 過去最高の納車台数と、収益性の課題</h2>
+    </div>
+  </div>
+  <p class="lede">2026年第1四半期（確定値）は増収増益となり、粗利益率・営業利益率ともに改善した。第2四半期は納車台数で四半期として過去最高を記録している。</p>
+
+  <table>
+    <thead><tr><th>指標</th><th>26年Q1実績（確定）</th><th>前年同期比</th></tr></thead>
+    <tbody>
+      <tr><td>総収益</td><td>223.87億ドル</td><td>+16%</td></tr>
+      <tr><td>総粗利益率</td><td>21.1%</td><td>+478bp</td></tr>
+      <tr><td>営業利益</td><td>9.41億ドル</td><td>+136%</td></tr>
+      <tr><td>営業利益率</td><td>4.2%</td><td>+214bp</td></tr>
+      <tr><td>調整後EBITDA</td><td>36.68億ドル</td><td>+30%</td></tr>
+      <tr><td>GAAP純利益</td><td>4.77億ドル</td><td>+17%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout note">
+    <span class="callabel">26年Q2の速報値（2026年7月2日発表済み）</span>
+    生産台数45.2万台、納車台数48.0万台（四半期として過去最高）、エネルギー貯蔵展開量13.5GWh。Model 3／Yが納車全体の約97.4%を占める。市場のアナリスト予想（コンセンサス）では、Q2売上高は253億〜264億ドル（前年比+12〜17%）、EPSは0.50〜0.54ドル程度が見込まれているが、これらは2026年7月22日発表の正式決算で確定する。
+  </div>
+
+  <h3 class="sub">エネルギー事業の重要性の高まり</h3>
+  <p>電力網の再生可能エネルギー転換を背景に、産業・公益事業向け大型蓄電システム「メガパック」の需要が拡大しており、エネルギー貯蔵・発電事業は自動車事業と比べて資本集約度が低く利益率も高いことから、EV販売の伸び鈍化を補う成長ドライバーとして重要性を増している。</p>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― Optimus Gen 3とロボタクシーの進捗</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">Optimus Gen 3：フリーモント工場での自律稼働テスト</h3>
+  <p>Optimusの最新世代「Gen 3」のハンド（手部）は、フリーモント工場において24時間365日の自律稼働による産業シフトのテストに入った段階にある。従来Model S・Model Xを生産していたフリーモントのラインは2026年に生産を終了し、Optimus生産ラインへの転換が進行中である。AI訓練用スーパーコンピュータ「Cortex 2.0」も2026年半ばにフル稼働（500MW規模）を目指しており、ロボットの学習基盤の拡充も並行して進めている。</p>
+
+  <h3 class="sub">量産目標と実績のギャップ</h3>
+  <p>Optimusは2025年に「数百台」規模の納品にとどまり、当初目標としていた5,000台を大幅に下回った。2026年の生産目標は5万〜10万台とされているが、外部の商用顧客への初回販売は2026年後半（10万ドル超のB2B価格帯）を目標としており、依然として量産の入り口段階にある。マスクCEO自身も、Optimusの量産ペースについて「気が遠くなるほど遅い」と表現し、ほぼすべての部品が新規開発であることをその理由として挙げている。</p>
+
+  <h3 class="sub">ロボタクシーも同様の遅延パターン</h3>
+  <p>自動運転タクシー事業も、2025年末までに米国の50%をカバーするという目標や、2026年上半期に7都市へ展開するという目標を相次いで未達成としており、直近3四半期連続でガイダンスを下回る結果となっている。フロリダ州マイアミでの展開はWaymoに後れを取っているとの指摘もある。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">24時間<small>365日</small></div><div class="k">Optimus Gen 3ハンドの自律稼働テスト（フリーモント工場）</div></div>
+    <div class="stat"><div class="v">5万〜10万<small>台</small></div><div class="k">2026年 Optimus生産目標</div></div>
+    <div class="stat"><div class="v">3四半期<small>連続</small></div><div class="k">ロボタクシー ガイダンス未達</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― 伝統的指標では説明できない水準</h2>
+    </div>
+  </div>
+  <p class="lede">株価は将来のロボタクシー・Optimus収益化を強く織り込んだ水準で取引されており、伝統的なバリュエーション指標を大きく上回っている。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>株価</td><td>380〜391ドル前後</td></tr>
+      <tr><td>時価総額</td><td>約1.43兆ドル（世界11位規模）</td></tr>
+      <tr><td>52週高値／安値</td><td>498.83ドル／297.82ドル</td></tr>
+      <tr><td>PER（実績）</td><td>350〜384倍</td></tr>
+      <tr><td>PER（予想）</td><td>175倍前後</td></tr>
+      <tr><td>PEGレシオ</td><td>4.11</td></tr>
+      <tr><td>EV/EBITDA</td><td>131倍</td></tr>
+      <tr><td>アナリスト目標株価平均</td><td>425.49ドル（レーティング「買い」）</td></tr>
+      <tr><td>ベータ値</td><td>1.80（市場平均より高いボラティリティ）</td></tr>
+    </tbody>
+  </table>
+  <p>次回決算は2026年7月22日発表予定で、オプション市場は決算発表後に5〜8%程度の株価変動を織り込んでいる。モルガン・スタンレーは目標株価を417ドルへ引き上げつつレーティングは「イコールウェイト」を維持するなど、強気の業績期待と慎重な投資判断が併存する状況にある。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① Optimus量産の度重なる遅延</span>
+    2023年の当初計画発表以来、Optimusの量産スケジュールは繰り返し後ろ倒しされてきた。2025年の実績納品台数は当初目標（5,000台）を大幅に下回る「数百台」規模にとどまっており、2026年目標（5万〜10万台）の達成にも不確実性が残る。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② ロボタクシーの目標未達の常態化</span>
+    米国カバレッジ目標、都市展開目標など、直近3四半期連続でガイダンスを下回る結果となっている。競合Waymoとの比較でも展開の遅れが指摘されている。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ 極めて高いバリュエーション</span>
+    PER350倍超、PEGレシオ4.11、EV/EBITDA131倍など、既存事業の収益力だけでは正当化が難しい水準にある。ロボタクシー・Optimusの将来収益化が期待通りに進まない場合、大幅な株価調整のリスクがある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ 株主の信頼低下</span>
+    株主向け決算Q&Aプラットフォームでの質問内容が、長期ビジョンへの期待から「なぜ短期目標が未達なのか」を問う論調に変化しており、投資家の忍耐が試される局面にあることを示唆している。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ 規制・安全性を巡る逆風</span>
+    自動運転車の安全性に対する規制当局の監視強化、州レベルでのロボタクシー規制の動き、リコール命令など、フィジカルAI事業の実装スピードを左右する規制環境の不確実性が続いている。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑥ 中国等での競争激化</span>
+    電気自動車・ヒューマノイド双方の分野で中国メーカーの追い上げが加速しており、グローバルでのシェア防衛が課題となっている。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">テスラの成長ストーリーは、Optimusとロボタクシーという2つの野心的なフィジカルAI事業に集約されるが、いずれも当初計画からの遅延が常態化しており、株主の期待と実績の間には大きなギャップが存在する。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>自動車本業は納車台数で過去最高を記録するなど底堅く推移している一方、株価評価の中心はもはやEV販売実績ではなく、Optimus・ロボタクシーの将来収益化にある。2026年7月22日発表の決算・株主Q&Aでは、Optimus Gen 3の自律稼働の実態や、2027年に向けた外部販売計画の具体性が焦点となる。「気が遠くなるほど遅い」と自ら認める量産ペースが、いつ実際の収益に転化するかが、株価の持続性を左右する最大の変数である。</p>
+    <ul class="watchlist">
+      <li>2026年7月22日発表の第2四半期決算における、Optimus・ロボタクシーの進捗説明の具体性</li>
+      <li>Optimus Gen 3の24時間自律稼働テストが、実際の生産的作業として検証可能な形で進んでいるか</li>
+      <li>2026年生産目標（5万〜10万台）に対する達成状況</li>
+      <li>2026年後半に予定される外部商用顧客への初回販売の実現可否</li>
+      <li>ロボタクシー事業の都市展開ペースと、規制当局・競合との関係</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年7月時点で確認可能な公開情報に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>
