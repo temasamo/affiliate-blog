@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フィジカル・インテリジェント・システムの中核を担う半導体｜企業動向・サプライチェーン編 — 官民投資68兆円の流れる先</title>
+    <style>
+    :root {
+        --bg: #e8f5e9;
+        --card: #ffffff;
+        --ink: #1a2b20;
+        --ink-soft: #46584c;
+        --accent: #00695c;
+        --accent-soft: #e0f2f1;
+        --line: #c5d6c8;
+        --mono: 'IBM Plex Mono', 'Courier New', monospace;
+        --serif: 'Noto Serif JP', serif;
+        --sans: 'Noto Sans JP', sans-serif;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--sans);
+        line-height: 1.9;
+        font-size: 16px;
+    }
+
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .masthead {
+        border-bottom: 1px solid var(--line);
+        padding: 14px 0;
+        background: var(--card);
+    }
+
+    .masthead .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .masthead-brand {
+        font-family: var(--mono);
+        font-size: 12px;
+        letter-spacing: 2px;
+        color: var(--accent);
+    }
+
+    .masthead-label {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        color: var(--ink-soft);
+    }
+
+    .hero {
+        padding: 72px 0 56px;
+        background: linear-gradient(180deg, var(--card) 0%, var(--bg) 100%);
+        border-bottom: 1px solid var(--line);
+    }
+
+    .hero-eyebrow {
+        font-family: var(--mono);
+        font-size: 12px;
+        letter-spacing: 3px;
+        color: var(--accent);
+        margin-bottom: 18px;
+    }
+
+    .hero h1 {
+        font-family: var(--serif);
+        font-size: 32px;
+        line-height: 1.5;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .hero-lead {
+        color: var(--ink-soft);
+        font-size: 15px;
+        max-width: 640px;
+        margin-bottom: 36px;
+    }
+
+    .hero-meta {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--ink-soft);
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+        margin: 36px 0 0;
+    }
+
+    .stat-cell {
+        background: var(--card);
+        padding: 22px 18px;
+    }
+
+    .stat-num {
+        font-family: var(--mono);
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--accent);
+        line-height: 1.2;
+    }
+
+    .stat-label {
+        font-size: 12px;
+        color: var(--ink-soft);
+        margin-top: 8px;
+        line-height: 1.6;
+    }
+
+    .toc {
+        background: var(--card);
+        border: 1px solid var(--line);
+        margin: 48px auto;
+        padding: 32px;
+        max-width: 860px;
+    }
+
+    .toc-title {
+        font-family: var(--mono);
+        font-size: 12px;
+        letter-spacing: 2px;
+        color: var(--accent);
+        margin-bottom: 18px;
+    }
+
+    .toc ol {
+        list-style: none;
+        counter-reset: toc;
+    }
+
+    .toc li {
+        counter-increment: toc;
+        padding: 9px 0;
+        border-bottom: 1px dashed var(--line);
+        font-size: 14px;
+    }
+
+    .toc li::before {
+        content: counter(toc, decimal-leading-zero);
+        font-family: var(--mono);
+        color: var(--accent);
+        margin-right: 14px;
+        font-size: 12px;
+    }
+
+    .toc a {
+        color: var(--ink);
+        text-decoration: none;
+    }
+
+    .toc a:hover {
+        color: var(--accent);
+    }
+
+    .chapter {
+        padding: 56px 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .chapter-header {
+        margin-bottom: 28px;
+    }
+
+    .chapter-num {
+        font-family: var(--mono);
+        font-size: 12px;
+        letter-spacing: 3px;
+        color: var(--accent);
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .chapter h2 {
+        font-family: var(--serif);
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+
+    .chapter h3 {
+        font-family: var(--serif);
+        font-size: 19px;
+        font-weight: 700;
+        margin: 32px 0 14px;
+        padding-left: 12px;
+        border-left: 4px solid var(--accent);
+    }
+
+    .chapter p {
+        margin-bottom: 18px;
+    }
+
+    .chapter ul {
+        margin: 0 0 18px 22px;
+    }
+
+    .chapter li {
+        margin-bottom: 8px;
+    }
+
+    .data-box {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--accent);
+        padding: 22px 24px;
+        margin: 24px 0;
+    }
+
+    .data-box-title {
+        font-family: var(--mono);
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        color: var(--accent);
+        margin-bottom: 12px;
+    }
+
+    .note-box {
+        background: var(--accent-soft);
+        border: 1px solid var(--line);
+        padding: 18px 22px;
+        margin: 24px 0;
+        font-size: 14px;
+        color: var(--ink-soft);
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 24px 0;
+        background: var(--card);
+        font-size: 14px;
+    }
+
+    .summary-table th {
+        background: var(--accent);
+        color: #fff;
+        padding: 12px 14px;
+        text-align: left;
+        font-weight: 600;
+        font-size: 13px;
+    }
+
+    .summary-table td {
+        padding: 12px 14px;
+        border-bottom: 1px solid var(--line);
+        vertical-align: top;
+    }
+
+    .summary-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .layer-band {
+        background: var(--card);
+        border: 1px solid var(--line);
+        margin: 14px 0;
+        padding: 20px 24px;
+    }
+
+    .layer-band .band-label {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 2px;
+        color: var(--accent);
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .layer-band .band-title {
+        font-family: var(--serif);
+        font-weight: 700;
+        font-size: 17px;
+        margin-bottom: 6px;
+    }
+
+    .layer-band p {
+        font-size: 14px;
+        color: var(--ink-soft);
+        margin-bottom: 0;
+    }
+
+    .source-tag {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--ink-soft);
+        background: var(--card);
+        border: 1px solid var(--line);
+        display: inline-block;
+        padding: 4px 10px;
+        margin-top: 12px;
+    }
+
+    .next-box {
+        background: var(--card);
+        border: 2px solid var(--accent);
+        padding: 28px;
+        margin: 28px 0;
+    }
+
+    .next-label {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 2px;
+        color: var(--accent);
+        margin-bottom: 12px;
+    }
+
+    .next-box h3 {
+        border: none;
+        padding: 0;
+        margin: 0 0 12px;
+    }
+
+    .disclaimer {
+        background: var(--ink);
+        color: rgba(245, 242, 237, 0.75);
+        padding: 40px 0;
+        font-size: 12px;
+        line-height: 1.9;
+    }
+
+    @media (max-width: 640px) {
+        .hero h1 {
+            font-size: 24px;
+        }
+
+        .chapter h2 {
+            font-size: 22px;
+        }
+
+        .stat-num {
+            font-size: 22px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <div class="container">
+            <div class="masthead-brand">MARKET SUPPORTER AI</div>
+            <div class="masthead-label">LAYER 2-B｜企業動向・サプライチェーン編</div>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-eyebrow">戦略17分野 先行検討技術② — AI・半導体分野</div>
+            <h1>
+                フィジカル・インテリジェント・システムの中核を担う半導体
+                <br>
+                官民投資68兆円 — 62項目で最大の投資先を、企業と供給網で読む
+            </h1>
+            <p class="hero-lead">2026年6月24日に提示された官民投資ロードマップ（案）の全62項目のうち、単独で最大の投資額68兆円が割り当てられたのが本分野です。本レポートは、政策資金がどのサプライチェーン層に向かうのかを、政府一次資料と企業公表資料に基づく事実と数値のみで整理します。</p>
+            <div class="hero-meta">データ基準時点：2026年7月｜作成：2026-07-26</div>
+
+            <div class="stat-grid">
+                <div class="stat-cell">
+                    <div class="stat-num">68兆円</div>
+                    <div class="stat-label">
+                        官民投資額（2040年度まで）
+                        <br>
+                        62項目中最大
+                    </div>
+                </div>
+                <div class="stat-cell">
+                    <div class="stat-num">443.3兆円</div>
+                    <div class="stat-label">
+                        経済波及効果
+                        <br>
+                        （政府試算）
+                    </div>
+                </div>
+                <div class="stat-cell">
+                    <div class="stat-num">約190兆円</div>
+                    <div class="stat-label">
+                        世界半導体市場
+                        <br>
+                        2035年見込み（政府資料）
+                    </div>
+                </div>
+                <div class="stat-cell">
+                    <div class="stat-num">40兆円</div>
+                    <div class="stat-label">
+                        2040年 国内生産売上高目標
+                        <br>
+                        （政策目標として示されている値）
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toc">
+        <div class="toc-title">CONTENTS</div>
+        <ol>
+            <li><a href="#ch00">サマリー — 62項目中最大の投資先</a></li>
+            <li><a href="#ch01">なぜ国家戦略として重点化されたか（要約）</a></li>
+            <li><a href="#ch02">サプライチェーンマップ — 4機能×製造工程</a></li>
+            <li><a href="#ch03">政府一次資料・企業公表に登場する企業・機関</a></li>
+            <li><a href="#ch04">プレイヤー類型別整理</a></li>
+            <li><a href="#ch05">主要企業の開示情報</a></li>
+            <li><a href="#ch06">採択・政策支援の実績</a></li>
+            <li><a href="#ch07">海外プレイヤーとの競争構造</a></li>
+            <li><a href="#ch08">中長期で追うべき政策・事業マイルストーン</a></li>
+            <li><a href="#ch09">リスク要因・不確実性</a></li>
+            <li><a href="#ch10">まとめと出典一覧</a></li>
+        </ol>
+    </div>
+
+    <div class="chapter" id="ch00">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 00</span>
+                <h2>サマリー — 62項目中最大の投資先</h2>
+            </div>
+            <p>2026年6月24日の経済財政諮問会議・日本成長戦略会議合同会議で提示された官民投資ロードマップ（案）において、本分野には2040年度までに官民合計68兆円の投資、443.3兆円の経済波及効果が示されました。全62項目のうち単独で最大の投資額です。AI・半導体分野全体（フィジカルAI、半導体、バーティカルAIの3項目）では101.6兆円となり、370兆円超の全体のうち約27％をこの3項目が占めます。</p>
+            <p>政府目標は「2030年に国内で生産される半導体の売上高15兆円、2040年に40兆円」です。これは政策目標として示されている値であり、政府負担と民間負担の内訳は現時点で公表されていません。68兆円も政府予算として確保された金額ではなく、ヒアリングと市場予測に基づく試算です。</p>
+            <div class="note-box">本分野の名称にある「フィジカル・インテリジェント・システム」とは、フィジカルAIの機能をエッジ側（ロボット・自動車・ドローン・FA等の機器側）で実現するための、コンピューティング（ロジック半導体等）・制御系（マイコン等）・駆動系（アクチュエータ）・知覚系（各種センサー）を統合したシステムを指す政府資料上の概念です。つまり本ロードマップは「先端ロジックの国産化」だけでなく、センサー・マイコンを含む半導体群全体を対象としています。</div>
+            <span class="source-tag">出典：内閣府 資料１・資料３（2026年6月24日）／官民投資ロードマップ素案 p.7-11</span>
+        </div>
+    </div>
+
+    <div class="chapter" id="ch01">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 01</span>
+                <h2>なぜ国家戦略として重点化されたか（要約）</h2>
+            </div>
+            <p>政府資料の現状認識は明確です。かつて世界シェア約50％を誇った日本の半導体産業は、日米貿易摩擦、自前主義、デジタル化低迷等を背景に凋落し、現在は10％未満。一方で世界の半導体市場は、AIの実装拡大に伴い2030年までに約140兆円超、2035年には約190兆円規模へ成長する見込みです。さらにデータセンターを中心とするAIインフラ市場全体では、2040年までに累計約3,000兆円の投資需要が生じると見込まれています。</p>
+            <p>その上で政府が示す勝ち筋が「System to Silicon」です。実装先アプリケーション（ロボット・自動車・FA等）の需要側で求められる機能から逆算して各種半導体を設計・製造し、システムとして最適統合する。半導体設計は米国、製造は台湾に強みがある一方、製造装置は日本・米国・欧州、部素材は日本に強みが存在し、センサー技術とアナログ・レガシー半導体の設計開発基盤という日本の既存優位が顕在化する領域だと位置づけられています。</p>
+            <p>産業構造の詳細な分析はLayer1（外部環境編・内部環境編）で整理済みです。本編では直近の企業動向とサプライチェーンに焦点を絞ります。</p>
+            <span class="source-tag">出典：官民投資ロードマップ素案 p.8-11（2026年3月）／同（案）（2026年6月24日）</span>
+        </div>
+    </div>
+
+    <div class="chapter" id="ch02">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 02</span>
+                <h2>サプライチェーンマップ — 4機能×製造工程</h2>
+            </div>
+            <p>本分野のサプライチェーンは、「フィジカル・インテリジェント・システムの4機能」という需要側の軸と、「装置・部素材→前工程→後工程」という製造工程の軸が交差する構造です。</p>
+
+            <div class="layer-band">
+                <span class="band-label">FUNCTION 1 — コンピューティング（頭脳）</span>
+                <div class="band-title">先端・次世代ロジック半導体</div>
+                <p>AI処理の中核。国内ではラピダスが2nm世代の量産化を目指す位置にあり、政府の3ステップ戦略（足下の製造基盤構築→次世代量産技術→将来の革新技術）の第2段階を担います。</p>
+            </div>
+
+            <div class="layer-band">
+                <span class="band-label">FUNCTION 2 — 制御系（神経）</span>
+                <div class="band-title">マイコン（MCU）・アナログ半導体</div>
+                <p>機器の各部を制御する半導体。政府資料は「アナログ・レガシー半導体の設計開発基盤」を日本の強みとして明記しています。車載マイコンで培われた技術のロボット制御への転用が、企業側からも成長シナリオとして語られ始めています（CH03参照）。</p>
+            </div>
+
+            <div class="layer-band">
+                <span class="band-label">FUNCTION 3 — 知覚系（感覚器）</span>
+                <div class="band-title">各種センサー（イメージセンサー等）</div>
+                <p>現実世界の情報を取り込む半導体。CMOSイメージセンサーは日本企業が世界上位シェアを持つとされる領域であり、フィジカルAIの「眼」として政府資料・企業IRの双方で位置づけが高まっています。</p>
+            </div>
+
+            <div class="layer-band">
+                <span class="band-label">FOUNDATION — 製造基盤</span>
+                <div class="band-title">製造装置・部素材（全機能を支える土台）</div>
+                <p>政府資料は「製造装置は日本・米国・欧州、部素材は日本に強み」と明記しています。前工程・後工程を問わず、どの機能の半導体が伸びても需要が発生する、供給網の土台にあたる層です。</p>
+            </div>
+
+            <div class="note-box">駆動系（アクチュエータ）は前回レポート（①フィジカルAI）で整理した重要コンポーネント層と重なります。両ロードマップは政策上も連動して設計されており、投資の境界は明確に分かれていません。</div>
+            <span class="source-tag">出典：官民投資ロードマップ素案 p.8「取り巻く環境と構造変化」</span>
+        </div>
+    </div>
+
+    <div class="chapter" id="ch03">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 03</span>
+                <h2>政府一次資料・企業公表に登場する企業・機関</h2>
+            </div>
+            <p>2026年5〜7月の直近2ヶ月とその前後に、政府発表・企業公表資料に実名で登場した主な企業・機関は以下の通りです。</p>
+
+            <table class="summary-table">
+                <tr>
+                    <th>企業・機関</th>
+                    <th>内容</th>
+                    <th>公表日・出典</th>
+                </tr>
+                <tr>
+                    <td>NVIDIA<br>Noetra</td>
+                    <td>ソフトバンク主導のNoetraと協力し、Rubin GPU約2万7,500基・Vera CPU約1万3,750基を搭載した140MW級の「Vera Rubin AIファクトリー」を構築すると発表。トヨタ、富士通、ソニーグループ等とのフィジカルAI実装連携の拡大も示された</td>
+                    <td>2026年7月16日<br>NVIDIA発表・各種報道</td>
+                </tr>
+                <tr>
+                    <td>TSMC</td>
+                    <td>2026年4〜6月期決算で売上高・純利益ともに四半期過去最高を更新。CEOが熊本第2工場（JASM）の2028年量産開始に向けた建設加速を示唆。第2工場には3nmラインの導入が発表済み（2026年2月）</td>
+                    <td>2026年7月中旬<br>同社決算・各種報道</td>
+                </tr>
+                <tr>
+                    <td>タワー<br>セミコンダクター</td>
+                    <td>富山・新潟でシリコンフォトニクスとSiGe（シリコンゲルマニウム）の生産能力を拡大する約6,000億円の投資を発表。経産省は最大約1,600億円の助成を決定</td>
+                    <td>2026年7月<br>同社発表・経産省</td>
+                </tr>
+                <tr>
+                    <td>ルネサス<br>エレクトロニクス</td>
+                    <td>投資家向け説明会「Capital Market Day 2026」で、AIを軸にした3段階の成長戦略を提示。2030年以降の成長エンジンをフィジカルAI・SDVと位置づけ、車載マイコン技術のロボット適用を「大きな成長の切り口」と説明。フィジカルAI/SDVの市場機会は2025年比で2030年に5倍、2035年に15倍とのTAM拡大イメージを提示</td>
+                    <td>2026年6月25日<br>同社説明会・各種報道</td>
+                </tr>
+                <tr>
+                    <td>ソニーグループ</td>
+                    <td>定時株主総会で十時CEOがフィジカルAIを次の技術トレンドとし、同社イメージセンサーに商機があるとの見方を提示</td>
+                    <td>2026年6月23日<br>各種報道</td>
+                </tr>
+                <tr>
+                    <td>ソニーグループ<br>TSMC</td>
+                    <td>次世代イメージセンサーを開発・生産する合弁会社設立へ基本合意したと発表。熊本県のソニー工場への開発・生産ライン構築を検討。ソニーの画像センサーの2024年世界シェアは50％超（米オムディア調べ）</td>
+                    <td>2026年5月8日<br>両社発表・日本経済新聞</td>
+                </tr>
+                <tr>
+                    <td>ラピダス</td>
+                    <td>政府（IPA）1,000億円・民間1,676億円、計2,676億円の出資実行が完了（2月27日）。2026年度予算で6,315億円の追加支援決定（4月）により政府の累計支援額は1兆7,000億円超に。後工程パイロットライン（千歳）が稼働開始し、600mm角ガラスパネルによるパッケージング実証を発表（4月）。富士通が委託する1.4nm級半導体の開発も報道。2027年の量産開始を目指す</td>
+                    <td>2026年2〜4月<br>経産省小委員会資料・同社発表</td>
+                </tr>
+                <tr>
+                    <td>キヤノン</td>
+                    <td>国内大手として初めてラピダスへ2nm半導体（画像処理用）の試作委託を発表</td>
+                    <td>2026年4月16日<br>同社発表</td>
+                </tr>
+            </table>
+
+            <div class="note-box">6月23日のソニー、6月24日の官民投資ロードマップ提示、6月25日のルネサスは同じ週に集中し、政策と企業IRが「フィジカルAI」という同じ言葉で市場を語り始めました。さらに7月16日のNVIDIA×Noetra発表は、フィジカルAI①のレポートで整理したNEDO基盤モデル開発事業（Noetra・産総研採択）と、本分野のAIインフラ投資が同一の実施主体で接続されたことを意味します。ただし各社の発言・計画は自社の見通しであり、その実現を保証するものではありません。</div>
+            <span class="source-tag">出典：各社公表資料・説明会資料（2026年2〜6月）／経産省 次世代半導体等小委員会資料（2026年4月3日）</span>
+        </div>
+    </div>
+
+    <div class="chapter" id="ch04">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 04</span>
+                <h2>プレイヤー類型別整理</h2>
+            </div>
+            <p>CH02の4機能マップに対応する国内プレイヤーの構造を、政府資料・各社IR資料・業界公表値に基づいて整理します。以下は「この分野に関係する事業を営む」という事実の記載であり、投資対象としての評価ではありません。</p>
+
+            <h3>先端ロジック（コンピューティング）</h3>
+            <p>ラピダスが2nm世代の国産量産化を担う位置にあります。また熊本県ではTSMCの子会社JASMが稼働しており、政府資料自身が「TSMCが進出した熊本県やラピダスが立地した北海道では関連投資誘発により様々な経済効果が表れており、地方創生にも貢献」と記載しています。JASMにはソニーセミコンダクタソリューションズ、デンソー、トヨタ自動車が出資しています。</p>
+
+            <h3>制御系（マイコン・アナログ）</h3>
+            <p>ルネサスエレクトロニクスが車載マイコンで世界有数のシェアを持つ企業の一つとして位置づけられています。同社は6月25日の説明会で、フィジカルAI/SDVを2030年以降の成長エンジンと明示しました。政府資料の言う「アナログ・レガシー半導体の設計開発基盤」の中核に位置する類型です。</p>
+
+            <h3>知覚系（センサー）</h3>
+            <p>ソニーグループ（ソニーセミコンダクタソリューションズ）がCMOSイメージセンサーで世界上位シェアを持つとされます。5月のTSMCとの提携基本合意は、車載・ロボティクス向け次世代センサーを視野に入れたものと発表されています。FA用センサー・画像処理ではキーエンス等が関連領域を持ちます。</p>
+
+            <h3>製造装置・部素材（土台）</h3>
+            <p>政府資料は「製造装置は日本・米国・欧州、部素材は日本に強み」と明記しています。国内では東京エレクトロン（製造装置）、信越化学工業（シリコンウェーハ等の部素材）などが代表的なプレイヤーであり、前工程・後工程投資の拡大局面で需要が発生する層です。個社の詳細な事業構成はLayer1（内部環境編）で整理済みです。</p>
+            <span class="source-tag">出典：官民投資ロードマップ素案 p.8／各社IR資料・公表資料</span>
+        </div>
+    </div>
+
+    <div class="chapter" id="ch05">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 05</span>
+                <h2>主要企業の開示情報</h2>
+            </div>
+            <p>直近の決算・説明会で開示された、本分野に関係する主な数値・方針は以下の通りです。</p>
+            <div class="data-box">
+                <div class="data-box-title">RENESAS — Capital Market Day 2026（2026年6月25日）より</div>
+                <p>2019年から2026年にかけて売上高2.1倍、EBITDA3.0倍（同社発表）。今後3〜4年はAI・ITインフラが成長をけん引し、順調にいけば全社売上の約4割を占める見込みと説明。2030年以降はフィジカルAI・SDVを成長エンジンと位置づけ。いずれも同社の見通しであり、通期業績予想として開示された数値ではない点に留意が必要です。</p>
+            </div>
+            <p>その他の関連各社（ソニーグループ、東京エレクトロン、信越化学工業等）のセグメント別売上・利益率は、各社の会計基準（IFRS／日本GAAP）と決算期を統一して比較する必要があるため、次回更新時に比較表として追加予定です。財務数値を参照する際は、必ず各社の最新の有価証券報告書・決算説明資料をご確認ください。</p>
+            <span class="source-tag">出典：ルネサスエレクトロニクス Capital Market Day 2026 発表資料・各種報道</span>
+        </div>
+    </div>
+
+    <div class="chapter" id="ch06">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 06</span>
+                <h2>採択・政策支援の実績</h2>
+            </div>
+            <p>2026年上半期時点で確認できる政策実装の実績は以下の通りです。</p>
+            <ul>
+                <li><strong>2026年2月27日</strong>：ラピダスへの出資実行が完了。政府（IPA）1,000億円、民間1,676億円の計2,676億円（経産省・次世代半導体等小委員会資料で4月3日に確認）。</li>
+                <li><strong>2026年4月13日</strong>：2026年度予算でラピダスに6,315億円の追加支援を決定。</li>
+                <li><strong>2026年6月</strong>：経済産業省が半導体・デジタル産業戦略を改定（2021年策定、2023年改定に続く再改定）。フィジカルAI実装に向けた「フィジカル・インテリジェント・システム」構築を軸に、先端半導体とアナログ半導体（センサー・マイコン等)を一体強化する方針を明記。</li>
+                <li><strong>2026年6月24日</strong>：官民投資ロードマップ（案）提示。同日、高市首相が「『強く豊かな日本』投資枠」の創設を表明。経済安全保障上特に重要な分野は「つなぎ国債」発行で当面の原資を確保し特別会計で管理する方向。</li>
+                <li><strong>2026年7月</strong>：タワーセミコンダクターの富山・新潟における約6,000億円投資（シリコンフォトニクス／SiGe）に対し、経産省が最大約1,600億円の助成を決定。ロードマップ提示後、最初期の大型助成案件の一つ。</li>
+            </ul>
+            <div class="note-box">政策の3ステップ（①足下必要な半導体製造基盤の構築、②次世代に必要な半導体の量産技術開発、③将来の革新技術の開発）のうち、支援実績が積み上がっているのは主に①②です。非先端領域（アナログ・レガシー）については「サプライチェーンの強化・最適化や必要な産業再編に向け取り組む」と記載されており、産業再編を含む政策展開が示唆されている点は本分野特有の記述です。</div>
+            <span class="source-tag">出典：経産省 次世代半導体等小委員会資料（2026年4月3日）／半導体・デジタル産業戦略（2026年6月改定）／内閣府資料（2026年6月24日）</span>
+        </div>
+    </div>
+
+    <div class="chapter" id="ch07">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 07</span>
+                <h2>海外プレイヤーとの競争構造</h2>
+            </div>
+            <p>政府資料の整理では、半導体設計は米国、製造は台湾（TSMC等）に強みが集中しています。AIの「頭脳」にあたる先端GPU・ロジックの設計では米国勢が主導権を握り、日本が正面から競う構図にはありません。</p>
+            <p>一方で政府が勝ち筋とする制御系・知覚系にも競争は存在します。車載マイコンではNXPセミコンダクターズ（オランダ）、インフィニオン・テクノロジーズ（ドイツ）が主要競合であり、イメージセンサーでは中国勢の追い上げが業界内で指摘されています。また、各国政府による大規模な産業政策と、米中対立を中心とする地政学リスクが、政府資料自身によって不確実性要因として明記されています。</p>
+            <p>ソニーとTSMCの提携（5月8日基本合意発表）は、「日本の知覚系×台湾の製造」という国際分業を国内立地（熊本）で実現する試みとして、政府資料の言う「同志国等と連携したサプライチェーンの構築・強靱化」の方向性と整合する動きです。</p>
+            <p>一方、2026年7月には、中国によるインジウムリン（InP：光通信・センサー向け化合物半導体材料）関連の輸出規制や、NVIDIA製AI半導体の対中輸出管理をめぐる問題が報じられており、輸出管理・材料調達の両面で地政学リスクが顕在化しつつあります。政府資料が課題として挙げる「米中対立に伴う地政学リスク」は、既に現在進行形の変数です。</p>
+            <span class="source-tag">出典：官民投資ロードマップ素案 p.10／両社発表（2026年5月）／各種報道</span>
+        </div>
+    </div>
+
+    <div class="chapter" id="ch08">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 08</span>
+                <h2>中長期で追うべき政策・事業マイルストーン</h2>
+            </div>
+            <p>今後の展開を事実として追跡するためのチェックポイントを整理します。</p>
+            <table class="summary-table">
+                <tr>
+                    <th>時期</th>
+                    <th>マイルストーン</th>
+                    <th>確認先</th>
+                </tr>
+                <tr>
+                    <td>2026年後半</td>
+                    <td>ラピダス量産顧客の正式発表（60社超と商談中と説明）</td>
+                    <td>同社発表</td>
+                </tr>
+                <tr>
+                    <td>2027年</td>
+                    <td>ラピダス2nm量産開始（目標）</td>
+                    <td>同社発表・経産省</td>
+                </tr>
+                <tr>
+                    <td>2028年</td>
+                    <td>JASM熊本第2工場の量産開始（3nmライン導入発表済み、建設加速を示唆）</td>
+                    <td>TSMC発表</td>
+                </tr>
+                <tr>
+                    <td>2026年夏</td>
+                    <td>「日本成長戦略」策定（官民投資ロードマップの反映）</td>
+                    <td>内閣官房・内閣府</td>
+                </tr>
+                <tr>
+                    <td>今後随時</td>
+                    <td>ソニー×TSMC提携の正式契約・合弁会社設立の有無</td>
+                    <td>両社発表</td>
+                </tr>
+                <tr>
+                    <td>今後随時</td>
+                    <td>非先端領域（アナログ・レガシー）の産業再編に関する政策展開</td>
+                    <td>経産省</td>
+                </tr>
+                <tr>
+                    <td>四半期ごと</td>
+                    <td>官民投資の進捗確認・行程表見直し</td>
+                    <td>日本成長戦略会議</td>
+                </tr>
+                <tr>
+                    <td>年末</td>
+                    <td>「強く豊かな日本」投資枠を含む予算編成（半導体関連予算額の確定）</td>
+                    <td>財務省・内閣府</td>
+                </tr>
+                <tr>
+                    <td>2030年／2040年</td>
+                    <td>国内生産売上高15兆円／40兆円目標に対する進捗</td>
+                    <td>政府統計・経産省</td>
+                </tr>
+            </table>
+            <span class="source-tag">出典：官民投資ロードマップ（案）／首相官邸発表（2026年6月24日）／各社発表</span>
+        </div>
+    </div>
+
+    <div class="chapter" id="ch09">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 09</span>
+                <h2>リスク要因・不確実性</h2>
+            </div>
+            <p>政府資料自身が明記している課題・ボトルネックは以下の通りです。</p>
+            <ul>
+                <li><strong>人材制約</strong>：研究開発人材・現場人材の不足。特に半導体設計人材の不足は「喫緊の課題」と明記。</li>
+                <li><strong>インフラ制約</strong>：産業用地、電力、水、物流・交通。半導体工場の新設・拡張の前提条件そのものが制約要因。</li>
+                <li><strong>制度</strong>：国際水準より厳しい環境規制・許認可に時間がかかる構造。</li>
+                <li><strong>市場・地政学</strong>：中国企業の競争力向上に伴う中国向け市場の縮小、各国の大規模産業政策、米中対立に伴う地政学リスク。2026年7月には中国のInP関連輸出規制やAI半導体の対中輸出管理をめぐる問題が報じられ、材料調達・輸出管理の両面でリスクが顕在化。</li>
+                <li><strong>財務</strong>：投資額高騰に伴う資金調達の困難性。</li>
+            </ul>
+            <p>加えて、本レポートの前提となる投資額68兆円は政府予算として確保された金額ではなく、試算値です。半導体産業には需給サイクル（シリコンサイクル）が存在し、市場規模190兆円という2035年見込みも将来予測である点、企業の成長戦略発言はいずれも自社見通しである点に留意が必要です。</p>
+            <span class="source-tag">出典：官民投資ロードマップ素案 p.10「投資促進に向けた課題」／内閣府資料１（2026年6月24日）</span>
+        </div>
+    </div>
+
+    <div class="chapter" id="ch10">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-num">CHAPTER 10</span>
+                <h2>まとめと出典一覧</h2>
+            </div>
+            <p>官民投資68兆円という62項目中最大の資金が想定される本分野の設計思想は、「頭脳（先端ロジック）の国産化」と「神経・感覚器（マイコン・センサー）の強み拡張」の二本立てです。2026年6月には政府のロードマップ提示（6/24）、産業戦略改定（6月）、ルネサスの成長戦略発表（6/25）、ソニーのCEO発言（6/23）が同時期に重なり、7月にはNVIDIA×NoetraのAIファクトリー発表（7/16）、TSMC熊本第2工場の建設加速、タワーセミコンダクターへの経産省助成決定と、実装・投資フェーズの動きが一気に表面化しました。今後は、ラピダスの量産顧客発表と2027年量産開始、ソニー×TSMC合弁の具体化、非先端領域の産業再編、そして輸出管理リスクの帰趨が、事実として追跡すべき焦点です。</p>
+
+            <div class="next-box">
+                <div class="next-label">NEXT REPORT</div>
+                <h3>次回：データプラットフォーム｜企業動向・サプライチェーン編</h3>
+                <p>官民投資0.9兆円（〜2035年度）。AI-Ready化・データ連携という新市場の企業とエコシステム構造を同じ枠組みで整理します。</p>
+            </div>
+
+            <h3>出典一覧</h3>
+            <ul>
+                <li>内閣府「戦略17分野における『主要な製品・技術等』の官民投資ロードマップ（案）」資料３（2026年6月24日）</li>
+                <li>内閣府「戦略17分野の『主要な製品・技術等』における官民投資額」資料１（2026年6月24日）</li>
+                <li>日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</li>
+                <li>経済産業省「半導体・デジタル産業戦略」（2026年6月改定）</li>
+                <li>経済産業省 次世代半導体等小委員会資料（2026年4月3日）</li>
+                <li>NVIDIA発表・各種報道（2026年7月16日）：Vera Rubin AIファクトリー</li>
+                <li>TSMC 2026年4〜6月期決算・各種報道（2026年7月中旬）</li>
+                <li>タワーセミコンダクター発表・経産省助成決定（2026年7月）</li>
+                <li>ルネサスエレクトロニクス「Capital Market Day 2026」発表資料（2026年6月25日）</li>
+                <li>ソニーグループ 定時株主総会（2026年6月23日）に関する各種報道</li>
+                <li>ソニーグループ・TSMC 合弁会社設立に向けた基本合意発表（2026年5月8日）・日本経済新聞</li>
+                <li>ラピダス・キヤノン・富士通に関する各社発表・報道（2026年2〜4月）</li>
+                <li>日本経済新聞・Bloomberg・東洋経済・マイナビTECH+ほか各種報道（2026年5〜7月）</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <div class="container">
+            <p>【免責事項】本レポートは産業構造および政策動向の理解を目的とした情報提供であり、特定銘柄の売買を推奨するものではありません。個別企業に関する投資推奨・評価的判断は一切含みません。掲載データは各記載出典に基づきますが、数値の正確性・完全性を保証するものではありません。官民投資額は政府による試算であり、政府予算として確保された金額でも、企業による実行が確定した投資額でもありません。企業の成長戦略・市場見通しに関する記載は各社の発表に基づく見通しであり、その実現を保証するものではありません。本レポートの内容は作成時点（2026年7月）の情報に基づいており、予算編成・政策変更・市場環境の変化等により実態が変化する可能性があります。投資判断はご自身の責任において行ってください。</p>
+            <p style="margin-top:10px; color: rgba(245,242,237,0.35);">© 2026 marketsupporter-ai.com ── フィジカル・インテリジェント・システムの中核を担う半導体（企業動向・サプライチェーン編）</p>
+        </div>
+    </div>
+
+</body>
+</html>
