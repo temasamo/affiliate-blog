@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜UBTECH（9880.HK） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+  .ticker .sign.neg{color:#E39A8C;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編（海外）</span>
+      <span>2026年7月25日号</span>
+    </div>
+    <h1 class="title">UBTECH（9880.HK）<br>売上世界一を掲げる中国ヒューマノイド企業が直面する、シェア低下と株価急落</h1>
+    <p class="subtitle">羽田実証にも機体を提供したUBTECHは、ヒト型ロボット売上で世界最大を標榜する一方、出荷台数ベースでは競合Unitree・Agibotに大きく水をあけられている。コンシューマー向け新製品「U1」への多角化が新たな成長機会である一方、規制強化・価格競争という逆風の中、株価は年初来で大幅下落している。市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">約55<small>億ドル</small></span><span class="lbl">時価総額（2026年7月時点）</span></div>
+      <div><span class="num">20.01<small>億元</small></span><span class="lbl">2025年通期 売上高 <span class="sign">+53.3%</span></span></div>
+      <div><span class="num">7.5<small>%</small></span><span class="lbl">2025年 世界ヒト型ロボット出荷シェア</span></div>
+      <div><span class="num">▲37<small>%</small></span><span class="lbl">株価 年初来騰落率</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― 「売上世界一」の裏にある出荷台数シェアの現実</h2>
+    </div>
+  </div>
+  <p class="lede">UBTECHは2025年度の決算発表で、ヒト型ロボットの売上高ベースで世界最大のメーカーになったと発表した。しかし、出荷台数という別の指標で見ると、中国国内の競合に大きく水をあけられているという、もう一つの現実がある。</p>
+
+  <h3 class="sub">出荷台数では競合の後塵を拝する構造</h3>
+  <p>調査会社Omdiaのデータによれば、2025年の世界ヒト型ロボット出荷台数の上位は、Agibot（5,168台）、Unitree（4,200台）、UBTECH（約1,000台）の順であり、UBTECHの世界シェアはわずか7.5%で、上位2社に20ポイント以上の差をつけられている。調査会社TrendForceは、2026年には中国国内出荷台数の約8割をUnitreeとAgibotの2社で占めると予測しており、シェアの縮小傾向が続く可能性がある。</p>
+
+  <h3 class="sub">売上高の急拡大という強み</h3>
+  <p>一方で売上高の面では、Walker S2の量産開始により、フルサイズヒト型ロボット事業の売上高が前年比2203.7%（22倍超）という驚異的な伸びを記録し、全社売上の41.1%を占める最大セグメントとなった。台数は少ないながらも、単価の高い産業用途への展開が売上高の急拡大を牽引している構図である。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">7.5<small>%</small></div><div class="k">2025年 世界ヒト型ロボット出荷台数シェア（UBTECH）</div></div>
+    <div class="stat"><div class="v">約80<small>%</small></div><div class="k">2026年 Unitree＋Agibot 中国国内シェア予測（TrendForce）</div></div>
+    <div class="stat"><div class="v">+2203.7<small>%</small></div><div class="k">フルサイズヒト型ロボット売上高 前年比（2025年）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― 中国の擬人化AI新規制という逆風</h2>
+    </div>
+  </div>
+  <p class="lede">UBTECHは羽田空港のヒューマノイド実証にも機体を提供するなど国際的な実装事例を持つが、中国国内では新たな規制動向がコンシューマー事業の戦略に影響を与え始めている。</p>
+
+  <h3 class="sub">擬人化AI製品への表示義務化</h3>
+  <p>2026年半ばから、擬人化されたAI製品に「人間ではない」旨の免責表示を義務付ける中国の新規制が導入される見通しとなっている。これは、UBTECHがコンシューマー向け新製品「U1」シリーズで打ち出している「感情的なつながり」というマーケティング戦略に、直接的な逆風となる可能性がある。</p>
+
+  <h3 class="sub">国家的なヒューマノイド量産推進の文脈</h3>
+  <p>中国は現在、世界のヒューマノイドロボット出荷の約8割を占めるとされ、2025年には世界全体で約1.6万台が展開され、2026年には出荷が前年比約94%増加すると予測されている。国家主導での量産推進という大きな追い風の中で、UBTECHは競合との差別化を迫られている。</p>
+
+  <div class="tag-row">
+    <span class="tag">中国 擬人化AI新規制（2026年半ば施行見通し）</span>
+    <span class="tag">中国が世界出荷の約8割を占有</span>
+    <span class="tag">羽田空港実証にも機体提供</span>
+    <span class="tag">日立中国と工場ソリューション共同検証</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― 急拡大する売上と、なお続く赤字</h2>
+    </div>
+  </div>
+  <p class="lede">2025年度は売上高が大幅に伸びる一方、純損失は依然として大きく、成長率も2026年に入り急速に鈍化している。</p>
+
+  <table>
+    <thead><tr><th>指標</th><th>2025年度実績</th><th>前期比</th></tr></thead>
+    <tbody>
+      <tr><td>総収益</td><td>20.01億元</td><td>+53.3%</td></tr>
+      <tr><td>粗利益</td><td>7.5億元</td><td>+101.5%</td></tr>
+      <tr><td>ヒト型ロボット事業売上</td><td>8.2億元</td><td>+2203.7%（全体の41.1%）</td></tr>
+      <tr><td>純損失</td><td>約7.9億元</td><td>前期から約3割改善</td></tr>
+    </tbody>
+  </table>
+  <p>過去6年間の累計損失は約56億元に達しており、営業キャッシュフローもマイナスが続いている。上場以来、複数回にわたり株式市場からの追加資金調達を実施してきた。会社側は2026年の粗利益率について40〜43%のレンジまで改善する見通しを示している。</p>
+
+  <div class="callout risk">
+    <span class="callabel">成長率の急減速</span>
+    2026年第1四半期の売上高は4.23億元（約6,230万ドル）となったが、前年同期比の成長率は68.49%にとどまり、2025年通期の332.64%から大幅に鈍化した。低いベースからの反動増だった面が大きかったことが示唆される。
+  </div>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― Walker S2の量産進展と、コンシューマー市場への挑戦</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">Walker S2：産業用途での実装拡大</h3>
+  <p>第3世代の産業用ヒト型ロボット「Walker S2」は2025年末から量産・出荷が始まり、自動車、3C電子、新エネルギー電池といった製造現場でのマテリアルハンドリング・仕分け・品質検査を中核タスクとして展開している。独自の身体化AI基盤モデル「Thinker」を搭載し、積み付け作業の自律判断や、狭小空間でのハンドリングなどが可能とされる。2025年末時点の年間生産能力は6,000台超に達している。大口顧客として、航空機大手エアバスがWalker S2を購入し、航空機工場での活用を進めていることも明らかになっている（財務詳細は非開示）。</p>
+
+  <h3 class="sub">日立中国との提携検証</h3>
+  <p>2026年5月から、UBTECHは日立中国とインテリジェント工場ソリューションの共同開発に向けた検証フェーズに入っている。日本企業との協業事例として注目される。</p>
+
+  <h3 class="sub">コンシューマー市場への大胆な挑戦：「U1」シリーズ</h3>
+  <p>UBTECHは家庭向けの超写実的なヒューマノイド「UWORLD U1」シリーズを投入し、コンシューマー市場への多角化を進めている。価格帯は基本モデルの11.98万元から、最上位モデル「U1 Ultra」の99万元まで幅広い。発表時点で1万3,000件を超える予約獲得を公表したが、予約の信頼性や、感情的な「コンパニオン」というコンセプトが実際の購買力に見合っているかについて、中国メディアからも懐疑的な声が上がっている。2026年の生産能力目標は、産業用・案内用ロボットと合わせて計2万台としている。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">6,000<small>台超</small></div><div class="k">Walker S2 年間生産能力（2025年末時点）</div></div>
+    <div class="stat"><div class="v">13,000<small>件超</small></div><div class="k">「U1」シリーズ予約件数（発表ベース）</div></div>
+    <div class="stat"><div class="v">2万<small>台</small></div><div class="k">2026年 生産能力目標（産業用・コンシューマー合計）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― 年初来急落も、アナリストは強気を維持</h2>
+    </div>
+  </div>
+  <p class="lede">株価は2026年1月の高値から大幅に下落しているが、アナリストの目標株価コンセンサスは依然として現在株価を大きく上回る水準にある。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>株価</td><td>HK$83〜90前後</td></tr>
+      <tr><td>52週高値／安値</td><td>HK$161.00／HK$75.35</td></tr>
+      <tr><td>年初来騰落率</td><td>約▲37%</td></tr>
+      <tr><td>時価総額</td><td>約400億〜430億香港ドル（約55億〜57億米ドル）</td></tr>
+      <tr><td>アナリスト目標株価コンセンサス</td><td>HK$150〜160程度</td></tr>
+      <tr><td>アナリスト評価</td><td>「Strong Buy」が大勢（買い推奨が多数、売り推奨なし）</td></tr>
+      <tr><td>次回決算発表</td><td>2026年8月27日予定</td></tr>
+    </tbody>
+  </table>
+  <p>直近30日間の年率換算ボラティリティは80%を超える水準にあり、コンシューマー事業を巡るニュースフローに株価が敏感に反応する展開が続いている。競合Unitreeの上場承認（調達額約42億元、上場後評価額は1,000億元超との見方）も、UBTECHの相対的な株価評価に影響を与える材料となっている。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① 出荷台数シェアの急速な低下</span>
+    2025年の世界シェアはわずか7.5%で、Unitree・Agibotに20ポイント以上の差をつけられている。TrendForceの予測では、2026年にはこの差がさらに拡大する見通しである。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② Unitree上場という新たな競争圧力</span>
+    UnitreeはSTAR市場でのIPO承認を取得し、上場後評価額は1,000億元を超えるとの見方もある。Unitreeは2025年に5,500台超を出荷し黒字化も達成しており、UBTECHが未達成のマイルストーンを既にクリアしている。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ コンシューマー事業の規制リスク</span>
+    2026年半ばから施行見通しの擬人化AI新規制は、UBTECHが目指す「感情的なつながり」というU1のマーケティング戦略に直接的な逆風となる可能性がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ 価格競争の激化</span>
+    ヘルステック企業がわずか1.5万元という破格の価格でコンパニオンロボットを投入するなど、コンシューマー市場での価格競争が急速に激化しており、UBTECHのU1シリーズ（11.98万元〜）との価格差が際立っている。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ 継続的な赤字と資金調達依存</span>
+    過去6年間の累計損失は約56億元に達し、営業キャッシュフローもマイナスが続いている。上場以来、複数回の追加資金調達を実施してきており、今後も同様の資金調達が必要になる可能性がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑥ 成長率の急減速</span>
+    2026年第1四半期の売上高成長率は68.49%と、2025年通期の332.64%から大幅に鈍化しており、今後の成長ペースの持続性が問われる。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">UBTECHの成長ストーリーは、「ヒト型ロボット売上世界一」という強みと、「出荷台数シェアで競合に大きく劣後する」という弱みが同居する、二面性のある局面にある。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>Walker S2の量産進展とエアバス等の大口顧客獲得は、産業用ヒューマノイドとしての実装力の証といえる。一方でUnitree・Agibotとの出荷台数の差は拡大傾向にあり、コンシューマー向け「U1」シリーズへの多角化も規制・価格競争という新たな逆風に直面している。株価は年初来で大幅下落したが、アナリストの目標株価は依然として強気であり、市場の評価が今後どちらに振れるかが注目される。</p>
+    <ul class="watchlist">
+      <li>2026年8月27日発表予定の決算における、Walker S2の出荷実績と粗利益率の改善状況</li>
+      <li>「U1」シリーズの実際の受注確定・出荷実績と、擬人化AI新規制への対応</li>
+      <li>Unitree上場後の株価・資金調達動向と、UBTECHとの相対評価の変化</li>
+      <li>日立中国との工場ソリューション共同開発の進捗</li>
+      <li>累計損失縮小のペースと、追加資金調達の必要性</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年7月時点で確認可能な公開情報に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>
