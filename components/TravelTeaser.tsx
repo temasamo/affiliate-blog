@@ -15,22 +15,26 @@ export default function TravelTeaser({ posts = [] }: Props) {
         <Link href="/travel" className="text-sm underline">もっと見る</Link>
       </div>
 
-                   {/* 背景画像ベースのデザイン */}
-             <div className="relative overflow-hidden rounded-3xl border shadow-sm
-                             min-h-[260px] sm:min-h-[320px] lg:min-h-[380px]">
+      {/* 背景動画ベースのデザイン */}
+      <div className="relative overflow-hidden rounded-3xl border shadow-sm
+                      min-h-[260px] sm:min-h-[320px] lg:min-h-[380px]">
 
-               {/* BG Image */}
-               <div aria-hidden className="absolute inset-0">
-                 <img
-                   src="/media/travel-teaser-winter.jpg"
-                   alt="Travel background"
-                   className="h-full w-full object-cover"
-                 />
-                 {/* 画像用のオーバーレイ */}
-                 <div className="absolute inset-0 bg-black/30" />
-                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32
-                                 bg-gradient-to-t from-black/50 to-transparent" />
-               </div>
+        {/* BG Video */}
+        <div aria-hidden className="absolute inset-0">
+          <video
+            className="h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/media/travel-teaser.jpg"
+          >
+            <source src="/media/travel-teaser.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/30" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32
+                          bg-gradient-to-t from-black/50 to-transparent" />
+        </div>
 
         {/* コンテンツ層 */}
         <div className="relative h-full p-4 sm:p-6 lg:p-8">

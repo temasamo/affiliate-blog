@@ -9,6 +9,7 @@ import Footer from '../components/Footer';
 import CategoryImage from '../components/CategoryImage';
 import CategoryCard from '../components/CategoryCard';
 import TravelTeaser from '../components/TravelTeaser';
+import GeneralKnowledgeTeaser from '../components/GeneralKnowledgeTeaser';
 import LatestPosts from '../components/LatestPosts';
 import { getTravelSlugs, getTravelPostBySlug } from '@/lib/mdx';
 import { getLatestPosts } from '@/lib/posts';
@@ -72,7 +73,7 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
         </section>
 
         {/* メッセージとコンテンツ一覧ボタンセクション */}
-        <section className="mx-auto max-w-6xl px-4 md:px-6 mb-4 sm:mb-6">
+        <section className="hidden">
           <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 sm:p-5 md:p-6 text-center">
             <p className="text-xs sm:text-sm md:text-base text-gray-700 max-w-3xl mx-auto leading-relaxed mb-4">
               AIを活用して、みなさんの「知りたい」「選びたい」「買いたい」をサポート。情報を整理し、購入時の判断と生活の向上をサポートします。
@@ -98,11 +99,14 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
           <LatestPosts items={latest.slice(0, 5)} />
         </div>
 
+        {/* 一般教養の新着記事 */}
+        <GeneralKnowledgeTeaser posts={latest} />
+
         {/* 旅行の新着記事 */}
         <TravelTeaser posts={travelPosts} />
 
         {/* AIアプリ情報セクション */}
-        <section className="mb-12 sm:mb-16">
+        <section className="hidden">
           <div className="relative rounded-2xl overflow-hidden shadow-lg">
             {/* 背景動画 */}
             <div className="absolute inset-0">
@@ -232,7 +236,7 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
         </section>
 
         {/* 枕診断AIシリーズ特集 */}
-        <section className="mb-12">
+        <section className="hidden">
           <div className="relative bg-gradient-to-r from-blue-200 to-indigo-200 border border-blue-400 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
             {/* 背景画像 */}
             <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -289,17 +293,17 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
 
         {/* カテゴリセクション */}
         <section className="mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">カテゴリ別商品比較</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">カテゴリから探す</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             <CategoryCard
-              title="睡眠・健康"
-              description="枕・マットレス・睡眠改善情報"
-              href="/sleep-health"
-              bgImage="https://images.unsplash.com/photo-1505693314120-0d443867891c?w=400&h=300&fit=crop&crop=center"
+              title="旅行"
+              description="旅先・観光・おすすめ情報"
+              href="/travel"
+              bgImage="/images/categories/overseas-trend-bg.jpg"
               overlayColor="bg-black/40"
             />
             <CategoryCard
-              title="日本茶関連"
+              title="日本茶"
               description="緑茶・抹茶・お茶文化の紹介"
               href="/japanese-tea"
               bgImage="/images/macha-kyusu.jpg"
@@ -329,46 +333,17 @@ export default function Home({ latestArticles, travelPosts, latest }: HomeProps)
               overlayColor="bg-black/40"
             />
             <CategoryCard
-              title="イベント"
-              description="季節のイベント・おすすめ情報"
-              href="/events"
-              bgImage="https://images.unsplash.com/photo-1511578314322-379afb476865?w=400&h=300&fit=crop&crop=center"
-              overlayColor="bg-black/40"
-            />
-            <CategoryCard
               title="一般教養"
               description="知識・教養・時事解説"
               href="/articles/general-knowledge/knowledge"
               bgImage="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop&crop=center"
               overlayColor="bg-black/40"
             />
-            <CategoryCard
-              title="海外トレンド"
-              subtitle="Deep-Dive Overseas Trend"
-              description="海外で話題の商品を日本で"
-              href="/overseas-trend"
-              bgImage="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400&h=300&fit=crop&crop=center"
-              overlayColor="bg-black/40"
-            />
-            <CategoryCard
-              title="人気の日本商品"
-              description="国内で注目のアイテム"
-              href="/japan-popular"
-              bgImage="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400&h=300&fit=crop&crop=center"
-              overlayColor="bg-black/40"
-            />
-            <CategoryCard
-              title="Global Hot Picks"
-              description="海外で急上昇中の商品"
-              href="/global-hot-picks"
-              bgImage="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop&crop=center"
-              overlayColor="bg-black/40"
-            />
           </div>
         </section>
 
         {/* おすすめランキングセクション */}
-        <section className="mb-12 sm:mb-16">
+        <section className="hidden">
           <div className="flex items-center mb-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">おすすめランキング</h2>
             <span className="ml-3 bg-red-500 text-white text-xs px-3 py-1 rounded-full font-medium">HOT</span>

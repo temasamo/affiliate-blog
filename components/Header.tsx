@@ -91,20 +91,11 @@ export default function Header({ title = "Market Supporter AI", description = "A
 
             {/* デスクトップナビゲーション */}
             <nav className="hidden md:flex space-x-8">
-              <Link href="/sleep-health" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
-                睡眠・健康
-              </Link>
               <Link href="/travel" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
                 旅行
               </Link>
               <Link href="/japanese-tea" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
                 日本茶
-              </Link>
-              <Link href="/overseas-trend" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
-                海外トレンド
-              </Link>
-              <Link href="/events" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
-                イベント
               </Link>
               {/* お酒ドロップダウンメニュー */}
               <div className="relative" ref={alcoholMenuRef}>
@@ -152,16 +143,6 @@ export default function Header({ title = "Market Supporter AI", description = "A
               <Link href="/articles/general-knowledge/knowledge" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
                 一般教養
               </Link>
-              <Link href="/japan-popular" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
-                人気の日本商品
-              </Link>
-              <div className="border-l border-gray-300 h-6 mx-4"></div>
-              <Link href="/diagnostic-ai" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-700">
-                診断AI
-              </Link>
-              <Link href="/education" className="text-purple-600 hover:text-purple-700 font-bold transition-colors">
-                教育
-              </Link>
             </nav>
 
             {/* モバイルメニューボタン */}
@@ -202,20 +183,11 @@ export default function Header({ title = "Market Supporter AI", description = "A
           {isMenuOpen && (
             <div className="md:hidden border-t border-gray-100 py-4">
               <nav className="flex flex-col space-y-3">
-                <Link href="/sleep-health" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
-                  睡眠・健康
-                </Link>
                 <Link href="/travel" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
                   旅行
                 </Link>
                 <Link href="/japanese-tea" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
                   日本茶
-                </Link>
-                <Link href="/overseas-trend" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
-                  海外トレンド
-                </Link>
-                <Link href="/events" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
-                  イベント
                 </Link>
                 {/* お酒セクション */}
                 <div className="px-2 py-1">
@@ -234,13 +206,6 @@ export default function Header({ title = "Market Supporter AI", description = "A
                 </Link>
                 <Link href="/articles/general-knowledge/knowledge" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
                   一般教養
-                </Link>
-                <Link href="/japan-popular" className="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-blue-50">
-                  人気の日本商品
-                </Link>
-                <div className="border-t border-gray-200 my-2"></div>
-                <Link href="/education" className="text-purple-600 hover:text-purple-700 font-bold transition-colors px-2 py-1 rounded-lg hover:bg-purple-50">
-                  教育
                 </Link>
               </nav>
             </div>
