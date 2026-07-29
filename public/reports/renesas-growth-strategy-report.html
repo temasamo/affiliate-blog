@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜ルネサスエレクトロニクス（6723） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+  .ticker .sign.neg{color:#E39A8C;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編</span>
+      <span>2026年7月27日号</span>
+    </div>
+    <h1 class="title">ルネサスエレクトロニクス（6723）<br>「3段ロケット」戦略が見据える、車載マイコンからフィジカルAIへの転用</h1>
+    <p class="subtitle">AIインフラ→フィジカルAI/SDV→エッジインテリジェンスという3段階の成長シナリオを掲げ、Capital Market Dayで株価が急伸したルネサス。車載マイコンで培った制御技術のロボット領域への転用という成長ストーリーと、前期の6年ぶり赤字という現実を、市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">約8.4<small>兆円</small></span><span class="lbl">時価総額（2026年5月末時点）</span></div>
+      <div><span class="num">3,723<small>億円</small></span><span class="lbl">26年Q1 売上高 <span class="sign">+20.6%</span></span></div>
+      <div><span class="num">31.3<small>%</small></span><span class="lbl">26年上半期見通し 営業利益率</span></div>
+      <div><span class="num">5,300<small>円</small></span><span class="lbl">野村證券 目標株価（引き上げ後）</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― AIインフラからフィジカルAIへ、3段階の市場シナリオ</h2>
+    </div>
+  </div>
+  <p class="lede">ルネサスの成長シナリオは、直近のAIインフラ需要から、2030年以降のフィジカルAI/SDV、その先のエッジインテリジェンスへと続く、時間軸を明確にした3段階の市場拡大に根ざしている。</p>
+
+  <h3 class="sub">「フィジカル・インテリジェント・システム」における制御系の担い手</h3>
+  <p>政府が2026年6月24日に提示した官民投資ロードマップ（案）は、フィジカル・インテリジェント・システムを構成する機能として、コンピューティング（ロジック半導体）、制御系（マイコン等）、知覚系（センサー）を挙げている。ルネサスは車載マイコンで世界有数のシェアを持つ企業として、この制御系（神経）の中核を担う位置づけにある。官民投資68兆円（2040年度まで）というロードマップの中でも、政府資料が「日本の強み」と明記する「アナログ・レガシー半導体の設計開発基盤」に該当する類型である。</p>
+
+  <h3 class="sub">直近はAIインフラ、2030年以降はフィジカルAI</h3>
+  <p>Capital Market Day 2026で示された成長戦略によれば、今後3〜4年はAIインフラとコンピュートが成長のけん引役となり、順調に進めば全社売上の約4割を占める見込みとされる。GPU需要に加えてASIC・CPU需要がそれ以上の勢いで伸び、デジタルパワー市場を超える成長が期待されるという。その先、2030年以降は社会実装が進む「フィジカルAI」とソフトウェア定義車両（SDV）が成長の核になるとの見通しが示されている。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">4割<small>程度</small></div><div class="k">AIインフラ関連が占める見込み売上比率（3〜4年後）</div></div>
+    <div class="stat"><div class="v">2030<small>年以降</small></div><div class="k">フィジカルAI/SDVが成長の核になる見通し時期</div></div>
+    <div class="stat"><div class="v">3<small>段階</small></div><div class="k">成長ドライバーの時間軸（AIインフラ→フィジカルAI/SDV→エッジ）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― 官民投資68兆円ロードマップとの接続</h2>
+    </div>
+  </div>
+  <p class="lede">ルネサスの成長戦略は、政府のフィジカル・インテリジェント・システム関連の政策方針と時期・方向性の両面で符合する。</p>
+
+  <h3 class="sub">半導体・デジタル産業戦略との整合</h3>
+  <p>2026年6月に改定された経済産業省の半導体・デジタル産業戦略は、フィジカルAI実装に向けた「フィジカル・インテリジェント・システム」構築を軸に、先端半導体とアナログ半導体（センサー・マイコン等）を一体強化する方針を明記している。ルネサスが強みとする車載・産業向けマイコンは、この一体強化の対象領域に含まれる。</p>
+
+  <h3 class="sub">6月に集中した政策・企業発信</h3>
+  <p>政府のロードマップ提示（6月24日）の前日にあたる6月25日、ルネサスはCapital Market Day 2026を開催し、フィジカルAIを2030年以降の成長エンジンと位置づける方針を発表した。同じ週にはソニーグループのCEOもフィジカルAIを次の技術トレンドと言及しており、政策と企業IRが同じ言葉で市場を語り始めた時期と重なる。</p>
+
+  <div class="tag-row">
+    <span class="tag">官民投資68兆円（半導体、2040年度まで）</span>
+    <span class="tag">半導体・デジタル産業戦略改定（2026年6月）</span>
+    <span class="tag">Capital Market Day 2026（6月25日）</span>
+    <span class="tag">車載マイコン世界有数シェア</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― 6年ぶり赤字からの急回復</h2>
+    </div>
+  </div>
+  <p class="lede">2025年12月期は特別損失により6年ぶりの最終赤字となったが、本業の収益力は堅調で、2026年第1四半期は急回復を見せた。</p>
+
+  <table>
+    <thead><tr><th>指標</th><th>数値</th><th>備考</th></tr></thead>
+    <tbody>
+      <tr><td>2025年12月期 純損益</td><td>▲517億円</td><td>2019年以来6年ぶりの最終赤字</td></tr>
+      <tr><td>同 本業の営業利益</td><td>2,011億円（黒字）</td><td>特別損失を除けば収益基盤は健全</td></tr>
+      <tr><td>26年Q1 売上高（Non-GAAP）</td><td>3,723億円</td><td>前年同期比+20.6%、3期ぶり四半期最高売上</td></tr>
+      <tr><td>26年Q1 営業利益（Non-GAAP）</td><td>1,254億円</td><td>前年同期比+416億円</td></tr>
+      <tr><td>26年上半期累計見通し</td><td>売上高7,528億〜7,678億円</td><td>営業利益率31.3%（+3.6pt）</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout risk">
+    <span class="callabel">2025年12月期赤字の主因</span>
+    協業先であった米ウルフスピードの経営破綻に伴い、2,366億円の損失を一括計上したことが最終赤字の主因である。本業の営業利益は2,011億円の黒字を維持しており、事業基盤そのものが崩れたわけではないと分析されている。
+  </div>
+
+  <h3 class="sub">セグメント別の牽引役：産業・インフラ・IoT向け</h3>
+  <p>26年第1四半期はセグメント別に見ると、自動車向け売上高が前年同期比10.6%増の1,717億円だったのに対し、産業・インフラ・IoT向けは同32.0%増の1,990億円と、AI・データセンター需要を追い風に大きく伸びた。一方、産業向けでは供給面の制約により伸びが一部抑制された面もあるという。なお、2026年2月に米SiTimeへ売却したタイミングデバイス事業の影響を除いた実質ベースでも、営業利益率33.5%（+2.5pt）と収益性の改善傾向は継続している。</p>
+
+  <h3 class="sub">通期業績予想は非開示方針</h3>
+  <p>ルネサスは2026年通期の具体的な業績予想を開示せず、四半期ごとのレンジ形式での開示方針を採っている。柴田CEOは「突発的なトラブルがなければ、今年は強い展開が期待できる」との見通しを示している。</p>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― 車載マイコンのロボット領域への転用</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">「3倍」「25%」「Top3」という7年間の実績</h3>
+  <p>柴田英利社長兼CEOは、Capital Market Day 2026の冒頭で、就任以来7年間の実績を「3倍」「25%」「Top3」というキーワードで総括した。2019年のCEO就任時から2026年にかけて、売上高は2.1倍、EBITDAは3.0倍、時価総額は8.7倍（就任前日と2026年6月19日時点の比較）に成長したという。</p>
+
+  <h3 class="sub">車載マイコン技術のロボット適用という成長の切り口</h3>
+  <p>ルネサスは、車載マイコンで培った制御技術をロボット領域に応用することを、フィジカルAI時代における成長の切り口として説明している。フィジカルAI/SDVの市場機会（TAM）は、2025年比で2030年に5倍、2035年に15倍に拡大するとのイメージが示されている。成長ドライバーの時間軸は、AIインフラ、フィジカルAI、ヒューマノイドロボットの順で捉えられており、証券アナリストからも方向性の明確化として評価されている。</p>
+
+  <h3 class="sub">Embedded Processing & Digitalization戦略</h3>
+  <p>Capital Market Dayの後半では、独自の開発高度化フレームワーク「Renesas 365」による組み込み半導体開発の効率化に加え、エッジAIやフィジカルAI分野における成長機会、データセンター等のAIインフラ向け戦略についても説明が行われた。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">2.1<small>倍</small></div><div class="k">売上高成長（CEO就任時2019年→2026年）</div></div>
+    <div class="stat"><div class="v">5倍<small>→15倍</small></div><div class="k">フィジカルAI/SDV市場機会拡大イメージ（2030年→2035年）</div></div>
+    <div class="stat"><div class="v">+32.0<small>%</small></div><div class="k">産業・インフラ・IoT向け売上（26年Q1、前年同期比）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― Capital Market Day後の目標株価引き上げラッシュ</h2>
+    </div>
+  </div>
+  <p class="lede">Capital Market Dayでの成長戦略の明確化を受け、証券各社が相次いで目標株価を引き上げた。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>時価総額</td><td>約8.4兆円（5月29日時点）</td></tr>
+      <tr><td>PBR</td><td>3.21倍</td></tr>
+      <tr><td>配当利回り</td><td>0.62%</td></tr>
+      <tr><td>52週高値／安値</td><td>3,365円／1,656.5円</td></tr>
+      <tr><td>野村證券 目標株価</td><td>4,100円→5,300円に引き上げ（6月26日）</td></tr>
+      <tr><td>米系大手証券 目標株価</td><td>4,900円→5,700円に引き上げ（6月26日）</td></tr>
+      <tr><td>Capital Market Day前のコンセンサス目標株価</td><td>3,975円</td></tr>
+    </tbody>
+  </table>
+  <p>2026年6月26日、Capital Market Dayを受けてルネサス株は大幅続伸した。野村證券は「AIインフラ→フィジカルAI→ヒューマノイドロボット」という成長ドライバーの時間軸の明確化を評価し目標株価を引き上げ、米系大手証券も同様に強気の評価を示した。いずれもCapital Market Day前のコンセンサス目標株価3,975円を大きく上回る水準であり、市場の期待が急速に切り上がった局面といえる。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① 協業先破綻による特別損失リスクの再発可能性</span>
+    2025年12月期の6年ぶり赤字は、協業先だった米ウルフスピードの経営破綻に伴う2,366億円の一括損失計上が主因だった。今後も外部パートナーとの協業関係に伴うリスクが完全に排除されたわけではない。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② 通期業績予想の非開示</span>
+    会社側が2026年通期の具体的な数値開示を避け、四半期ごとのレンジ形式での開示にとどめているため、投資家にとっての先行き判断材料が限定的である。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ 為替・コスト増加による利益率圧迫</span>
+    会社側自身が、第2四半期以降は為替の逆風とコスト増加により粗利益率・営業利益率の低下を予想している。価格改定での対応を計画しているが、顧客の受容度によっては需要への影響も懸念される。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ 産業向け事業の供給制約</span>
+    26年第1四半期は、産業向けで供給面の問題により伸びが一部抑制された面があるとされ、需要の強さに供給が追いつかない状況が生じている可能性がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ フィジカルAI収益化までの長い時間軸</span>
+    会社の成長戦略上、フィジカルAI/SDVが成長の核になるのは2030年以降とされており、直近の株価評価が先行して織り込んだ期待に対し、実際の収益化までには数年単位の時間差がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑥ 材料株的な株価変動</span>
+    Capital Market Day後に株価が急伸するなど、イベントドリブンな値動きが見られており、期待の織り込みが急速に進んでいる面がある。目標株価の引き上げが相次いだ後の株価調整リスクにも留意が必要である。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">ルネサスの成長ストーリーは、「AIインフラ→フィジカルAI/SDV→エッジインテリジェンス」という時間軸を明確にした3段階シナリオに集約される。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>直近はAIインフラ・データセンター向け半導体需要が業績を牽引しており、車載マイコンで培った制御技術をロボット領域に転用するという成長ストーリーが、Capital Market Dayでの市場評価向上につながった。ただし2025年12月期は協業先ウルフスピードの経営破綻により6年ぶりの最終赤字を計上しており、本業の収益力と特別損失リスクの両面を注視する必要がある。フィジカルAIでの本格的な収益化は2030年以降という長期の時間軸であり、直近の株価上昇が先行指標としてどこまで妥当かも今後問われる。</p>
+    <ul class="watchlist">
+      <li>2026年上半期累計業績（売上高7,528億〜7,678億円、営業利益率31.3%）の達成状況</li>
+      <li>為替・コスト増加圧力に対する価格改定の浸透度と、粗利益率の推移</li>
+      <li>産業向け事業の供給制約の解消状況</li>
+      <li>フィジカルAI/SDV分野における具体的な受注・提携の進捗</li>
+      <li>Capital Market Day後に引き上げられた目標株価（野村5,300円、米系大手証券5,700円）に対する株価の実際の推移</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年7月時点で確認可能な公開情報に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>

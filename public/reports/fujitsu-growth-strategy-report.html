@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜富士通（6702） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+  .ticker .sign.neg{color:#E39A8C;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編</span>
+      <span>2026年7月30日号</span>
+    </div>
+    <h1 class="title">富士通（6702）<br>純国産AI半導体とロボット4社協業、2つの布石が描くフィジカルAI戦略</h1>
+    <p class="subtitle">ラピダスへの1.4nm世代AI半導体の製造委託、そしてファナック・安川電機・川崎重工業とNVIDIAを交えたロボット協調制御基盤の構築。ハードウェア企業からUvanceを軸とするサービス企業へ転換を進める富士通の最新の布石を、市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">3,199<small>円</small></span><span class="lbl">株価（6月26日時点）</span></div>
+      <div><span class="num">3兆5,029<small>億円</small></span><span class="lbl">26年3月期 売上収益 <span class="sign neg">▲1%</span></span></div>
+      <div><span class="num">3,483<small>億円</small></span><span class="lbl">26年3月期 営業利益 <span class="sign">+31.4%</span></span></div>
+      <div><span class="num">4社<small>協業</small></span><span class="lbl">フィジカルAI協業（富士通・ファナック・安川電機・川崎重工＋NVIDIA）</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― CPU・ソフトウェアからフィジカルAIの「基盤」へ</h2>
+    </div>
+  </div>
+  <p class="lede">富士通の成長シナリオは、単体のロボットや半導体チップの製造ではなく、AI半導体の国産化と、異なるメーカーのロボットを横断的に制御するソフトウェア基盤という、2つの「基盤」レイヤーへの関与に特徴がある。</p>
+
+  <h3 class="sub">AIデータセンターの電力課題という国内ニーズ</h3>
+  <p>富士通が開発する回路線幅1.4ナノメートルの純国産AI半導体（NPU）は、スーパーコンピュータ「富岳」の開発で培った省電力技術を応用し、膨大な電力を消費するAIデータセンターの課題解決を狙うものである。既存のGPUに比べて消費電力を大幅に抑える設計を採用しており、AIインフラ拡大に伴う電力制約という、国内外で共通する課題に対応する製品として位置づけられる。</p>
+
+  <h3 class="sub">異なるロボットメーカーを横断する協調制御基盤</h3>
+  <p>2026年7月16日に発表されたファナック・安川電機・川崎重工業との協業は、異なるメーカーのロボットを標準化された環境で協調制御するオープンな基盤の構築を目指すものである。特定のロボット本体メーカーに依存しない、業界横断的なソフトウェア・CPU供給という立場は、単体のハードウェアメーカーとは異なる市場機会を開拓する試みといえる。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">1.4<small>nm</small></div><div class="k">富士通開発AI半導体（NPU）の回路線幅</div></div>
+    <div class="stat"><div class="v">3<small>分野</small></div><div class="k">フィジカルAI協業の適用分野（製造・小売流通・ヘルスケア）</div></div>
+    <div class="stat"><div class="v">4<small>社</small></div><div class="k">フィジカルAI協業参加企業（富士通・ファナック・安川電機・川崎重工）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― 官民投資68兆円ロードマップと経済安全保障</h2>
+    </div>
+  </div>
+  <p class="lede">富士通のAI半導体開発は、経済安全保障を背景に自国主導でAI技術を確立しようとする政府の方向性と直接的に連動している。</p>
+
+  <h3 class="sub">ラピダスへの補助金拡大と歩調を合わせた発表</h3>
+  <p>2026年4月11日、経済産業省はラピダスの2026年度追加補助金として6,315億円（前工程5,141億円・後工程1,174億円）を承認したのと同日に、富士通のAI半導体製造委託が正式に明らかになった。国からラピダスへの補助金総額は、この追加決定により累計2兆3,000億円を超えている。富士通の開発費は総額約580億円で、このうち約2/3を新エネルギー・産業技術総合開発機構（NEDO）の補助金で賄う計画である。経済産業省は別途、富士通・IBMなど大口顧客候補に対しラピダスの顧客開拓支援として900億円の補助も行っている。</p>
+
+  <h3 class="sub">官民投資ロードマップにおける複層的な位置づけ</h3>
+  <p>2026年6月24日に政府が提示した官民投資ロードマップ（案）は、半導体分野に2040年度まで68兆円の投資を想定している。富士通は、先端ロジック半導体（コンピューティング機能）の需要側企業として、またフィジカルAI協業を通じた実装企業として、複数のレイヤーに関与する立場にある。</p>
+
+  <div class="tag-row">
+    <span class="tag">官民投資68兆円（半導体、2040年度まで）</span>
+    <span class="tag">ラピダスへNPU製造委託（2026年4月11日）</span>
+    <span class="tag">フィジカルAI4社協業（2026年7月16日）</span>
+    <span class="tag">経済安全保障・国産AI半導体</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― 減収増益の裏にある事業売却益</h2>
+    </div>
+  </div>
+  <p class="lede">2026年3月期は減収ながら大幅増益となったが、純利益の大幅な伸びは一過性の事業売却益の寄与が大きく、27年3月期はその反動で減益を見込んでいる。</p>
+
+  <table>
+    <thead><tr><th>指標</th><th>26年3月期実績</th><th>27年3月期予想</th></tr></thead>
+    <tbody>
+      <tr><td>売上収益</td><td>3兆5,029億円（▲1%）</td><td>3兆5,100億円（+0.2%）</td></tr>
+      <tr><td>営業利益</td><td>3,483億円（+31.4%）</td><td>―</td></tr>
+      <tr><td>調整後営業利益</td><td>3,905億円（+27%）</td><td>4,250億円（+9%）</td></tr>
+      <tr><td>親会社株主帰属当期純利益</td><td>4,494億円（+104.5%）</td><td>3,100億円（▲31.0%）</td></tr>
+    </tbody>
+  </table>
+  <p>2026年3月期の純利益倍増は、本業の収益性向上に加え、新光電気工業やゼネラル（旧富士通ゼネラル）などの事業売却益が寄与したものである。27年3月期はこの一過性要因の反動により、大幅な最終減益を計画している。年間配当は前期比5円増配の55円とし、株主還元は拡大している。</p>
+
+  <h3 class="sub">セグメント別：サービスソリューションが牽引</h3>
+  <p>主力の「サービスソリューション」セグメントは増収増益となり、売上収益2兆3,469億円（+4%）、調整後営業利益3,614億円（+25%、過去最高）を記録した。中でも成長事業と位置づける「Fujitsu Uvance」事業は売上収益7,093億円（+47%）となり、前中期経営計画で掲げたUvance売上収益7,000億円、サービスソリューションに占める比率30%という目標を達成した。時田隆仁社長CEOは「人月ビジネスであるシステムインテグレーション事業の収益構造から、価値や成果ベースの収益構造へ変革する手応えを実感している」と述べている。</p>
+
+  <div class="callout risk">
+    <span class="callabel">NECとの逆転</span>
+    2026年3月期決算では、売上収益・営業利益ともにNECが富士通を上回った。NECの売上収益は3兆5,827億円（+5%）、営業利益は3,599億円（+40%）で、富士通との差は約800億円に達した。ただし純利益では、事業売却益の寄与もあり富士通がNECを上回っている。
+  </div>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― 2つの布石：純国産AI半導体とロボット協調制御</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">純国産1.4nm AI半導体の開発</h3>
+  <p>富士通はサーバー等に搭載するAI推論処理特化型の専用半導体（NPU）を開発し、北海道千歳市で工場を建設中のラピダスに製造を委託する。回路線幅1.4ナノメートルという最先端品で、設計から製造まで国内企業のみで完結させる純国産プロジェクトである。開発費は総額約580億円、うち約2/3をNEDOの補助金で賄う。ラピダスは2027年度から2nm世代の量産を開始し、その後1.4nm世代へ移行するロードマップを描いており、富士通からの製造委託はラピダスにとって量産体制確立に不可欠な大口顧客の確保にもつながる。</p>
+
+  <h3 class="sub">ファナック・安川電機・川崎重工との4社協業</h3>
+  <p>2026年7月16日、富士通はファナック・安川電機・川崎重工業のロボット大手3社、そしてNVIDIAの技術支援を交え、フィジカルAI分野での事業検討開始を発表した。役割分担として、NVIDIAがAI技術基盤を、富士通がCPUとソフトウェアを供給する。適用分野は、ファナックとは製造業、安川電機とは小売業・流通業、川崎重工とはヘルスケア分野と、それぞれ異なる産業領域を担当する体制である。発表会にはNVIDIAのジェンスン・ファンCEO、富士通の時田隆仁社長、ファナックの山口賢治社長、安川電機の小川昌寛副会長執行役員、川崎重工の橋本康彦社長が登壇した。</p>
+
+  <h3 class="sub">検討段階にとどまる商用化の詳細</h3>
+  <p>この協業は事業検討の段階であり、標準仕様・収益分配・商用化時期はいずれも未確定である。異なるメーカーのロボットを横断的に制御するオープン基盤という構想は野心的だが、実際の実装・収益化にはなお時間を要する見通しである。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">約580<small>億円</small></div><div class="k">AI半導体（NPU）開発費（うち2/3をNEDO補助）</div></div>
+    <div class="stat"><div class="v">2027<small>年度</small></div><div class="k">ラピダス 2nm世代量産開始目標</div></div>
+    <div class="stat"><div class="v">2026<small>年7月16日</small></div><div class="k">フィジカルAI4社協業発表</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― フィジカルAIテーマ株としての注目</h2>
+    </div>
+  </div>
+  <p class="lede">フィジカルAI協業の発表以降、富士通はテーマ株としての注目度を高めている。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>株価</td><td>3,199円（6月26日時点）</td></tr>
+      <tr><td>26年3月期 売上収益</td><td>3兆5,029億円（前期比▲1%）</td></tr>
+      <tr><td>26年3月期 営業利益</td><td>3,483億円（前期比+31.4%）</td></tr>
+      <tr><td>27年3月期 純利益予想</td><td>3,100億円（前期比▲31.0%、事業売却益の反動）</td></tr>
+      <tr><td>年間配当</td><td>55円（前期比+5円増配）</td></tr>
+      <tr><td>次回決算発表</td><td>2026年7月下旬（第1四半期）</td></tr>
+    </tbody>
+  </table>
+  <p>2026年7月16日のフィジカルAI4社協業発表後、富士通はフィジカルAI関連銘柄として市場の注目を集めている。同時期には安川電機の株価が続伸するなど、関連銘柄群への物色が広がる場面も見られた。ただし富士通単体の株価評価としては、27年3月期の減益予想を踏まえた本業の実質的な成長性の見極めが焦点となる。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① 両プロジェクトともに事業検討・開発段階</span>
+    ラピダスへのAI半導体製造委託、フィジカルAI4社協業のいずれも、具体的な収益化時期・規模はまだ確定していない。標準仕様・収益分配・商用化時期が未確定なフィジカルAI協業は、特にその実現までの不確実性が大きい。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② 27年3月期の大幅減益予想</span>
+    純利益は前期比31%減の見通しである。前期の大幅増益は事業売却益という一過性要因によるところが大きく、本業の実力を見誤らないよう注意が必要である。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ NECなど競合との競争激化</span>
+    2026年3月期は売上収益・営業利益ともにNECに逆転された。サービス事業への構造転換の途上にあり、競合との競争環境も厳しさを増している。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ 大型システム案件の採算リスク</span>
+    大型システム案件の採算悪化やサービス人材不足が、収益拡大を遅らせる要因になりうる。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ ハードウェア・ユビキタス事業の減収減益基調</span>
+    成長の柱がUvance・サービスソリューションに偏っており、非成長事業の縮小傾向が続いている。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">富士通の成長ストーリーは、ハードウェア中心の事業構造からサービス企業への転換を進める中で、AI半導体の国産化とロボット協調制御基盤という2つのフィジカルAI関連の布石を同時に打っている点に集約される。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>経済安全保障の文脈での純国産AI半導体開発と、異なるロボットメーカーの機体を横断的に制御するオープン基盤構築という、いずれも野心的な取り組みだが、双方とも事業検討・開発段階であり、具体的な収益化にはなお時間を要する。足元の業績は本業の収益性改善が着実に進む一方、27年3月期は前期の特殊要因の反動で大幅減益予想となっている点に注意が必要である。</p>
+    <ul class="watchlist">
+      <li>2026年7月下旬発表予定の第1四半期決算における、27年3月期計画の進捗</li>
+      <li>フィジカルAI4社協業の標準仕様・収益分配・商用化時期の具体化</li>
+      <li>ラピダスへのAI半導体製造委託の開発進捗と、2027年度の2nm量産開始に向けた動向</li>
+      <li>Fujitsu Uvance事業の成長持続性と、サービスソリューションセグメントの収益性</li>
+      <li>NECなど競合との競争環境の変化</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年7月時点で確認可能な公開情報に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>

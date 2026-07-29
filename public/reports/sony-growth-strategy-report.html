@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜ソニーグループ（6758） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+  .ticker .sign.neg{color:#E39A8C;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編</span>
+      <span>2026年7月28日号</span>
+    </div>
+    <h1 class="title">ソニーグループ（6758）<br>イメージセンサー世界シェア50%超が描く、フィジカルAIの「眼」戦略</h1>
+    <p class="subtitle">CEOがフィジカルAIを次の技術トレンドと位置づけ、TSMCとの次世代センサー開発合弁も基本合意。一方で稼ぎ頭のイメージセンサー事業は2026年度、メモリ市況の不透明感から一時的な減収を見込む。全社は過去最高益更新を計画する中、市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">約46<small>兆円</small></span><span class="lbl">時価総額目安（アナリスト目標株価ベース試算）</span></div>
+      <div><span class="num">1兆<small>6,000億円</small></span><span class="lbl">26年度 営業利益見通し <span class="sign">+11%</span></span></div>
+      <div><span class="num">50<small>%超</small></span><span class="lbl">画像センサー 2024年世界シェア</span></div>
+      <div><span class="num">4,687<small>円</small></span><span class="lbl">アナリスト平均目標株価</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― フィジカルAIの「眼」となるイメージセンサー市場</h2>
+    </div>
+  </div>
+  <p class="lede">ソニーグループの成長シナリオの中核には、画像センサーで世界シェア50%超を握るイメージング&センシング・ソリューション（I&SS）事業が位置づけられる。</p>
+
+  <h3 class="sub">スマートフォンからロボット・車載へ広がる用途</h3>
+  <p>ソニーのCMOSイメージセンサーは、これまでスマートフォン向けを主戦場としてきたが、フィジカルAIの普及により、ロボットや車載など「現実世界を認識するセンサー」としての新たな需要が生まれつつある。政府資料が定義する「フィジカル・インテリジェント・システム」の4機能のうち、知覚系（感覚器）を担う中核企業の一つである。</p>
+
+  <h3 class="sub">2025年度は過去最高益、しかし2026年度は踊り場</h3>
+  <p>I&SS事業は2025年度（2025年4月〜2026年3月）に売上高2兆1,515億円（+20%）、営業利益3,573億円（+37%）と過去最高益を更新した。モバイル向けイメージセンサーの製品ミックス改善と販売数量増加が牽引した。一方で2026年度は、メモリ市況の不透明感を背景に売上高2兆700億円（前年比▲4%）の減収を見込んでおり、成長が一時的に足踏みする局面にある。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">50<small>%超</small></div><div class="k">画像センサー 2024年世界シェア（オムディア調べ）</div></div>
+    <div class="stat"><div class="v">2兆1,515<small>億円</small></div><div class="k">I&amp;SS事業 25年度売上高（+20%、過去最高）</div></div>
+    <div class="stat"><div class="v">▲4<small>%</small></div><div class="k">I&amp;SS事業 26年度売上高見通し（前年比）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― 官民投資68兆円ロードマップにおける知覚系の担い手</h2>
+    </div>
+  </div>
+  <p class="lede">ソニーグループは、高市政権が掲げる半導体分野の官民投資ロードマップにおいて、知覚系（センサー）の中核企業として位置づけられる。</p>
+
+  <h3 class="sub">「System to Silicon」における知覚系の強み</h3>
+  <p>政府が2026年6月に改定した半導体・デジタル産業戦略は、実装先アプリケーションの需要から逆算して各種半導体を設計・製造する「System to Silicon」という考え方を掲げている。センサー技術は日本の既存優位が顕在化する領域として位置づけられており、ソニーのCMOSイメージセンサーはその代表格である。官民投資68兆円（2040年度まで、半導体分野）というロードマップの中でも、政策と企業戦略が同じ方向性を共有する数少ない事例といえる。</p>
+
+  <h3 class="sub">CEOが語る「次の技術トレンド」</h3>
+  <p>2026年6月23日の定時株主総会で、十時裕樹CEOはフィジカルAIを次の技術トレンドと位置づけ、同社イメージセンサーに商機があるとの見方を示した。政府のロードマップ提示（6月24日）の前日にあたり、政策と企業IRが同じ言葉で市場を語り始めた時期と重なる。</p>
+
+  <div class="tag-row">
+    <span class="tag">官民投資68兆円（半導体、2040年度まで）</span>
+    <span class="tag">「System to Silicon」戦略</span>
+    <span class="tag">十時CEO フィジカルAI言及（6月23日）</span>
+    <span class="tag">画像センサー世界シェア50%超</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― 過去最高益更新の裏にある特殊要因</h2>
+    </div>
+  </div>
+  <p class="lede">2025年度は営業利益で過去最高益を更新したが、純利益は特殊要因により減益となった。2026年度は全社として更なる最高益更新を計画している。</p>
+
+  <table>
+    <thead><tr><th>指標</th><th>25年度実績</th><th>26年度見通し</th></tr></thead>
+    <tbody>
+      <tr><td>売上高</td><td>12兆4,796億円（+4%）</td><td>12兆3,000億円（▲1%）</td></tr>
+      <tr><td>営業利益</td><td>1兆4,475億円（+13%、過去最高）</td><td>1兆6,000億円（+11%、最高益更新見通し）</td></tr>
+      <tr><td>税引前利益</td><td>1兆4,224億円（+6%）</td><td>1兆6,150億円（+14%）</td></tr>
+      <tr><td>純利益</td><td>1兆309億円（▲3%）</td><td>1兆1,600億円（+13%）</td></tr>
+    </tbody>
+  </table>
+  <p>2025年度の純利益減益は、EV（電気自動車）事業関連の損失に加え、Sony Semiconductor Israelの持分売却に伴う損失199億円、ディスプレイデバイス事業に関連する固定資産の一部減損165億円といった特殊要因が影響したもので、本業の収益力自体は堅調である。</p>
+
+  <div class="callout">
+    <span class="callabel">第五次中期経営計画（2024〜2026年度）の進捗</span>
+    継続事業ベースで営業利益年平均成長率10%以上、3年間累計営業利益率19%以上を財務目標として掲げている。2026年度見通しから逆算した営業利益年平均成長率は16%と、成長率目標は上回るペースで推移している。3年間累計営業キャッシュフローの見通しも、当初計画の4兆8,000億円から5兆7,000億円へ上方修正された。
+  </div>
+
+  <h3 class="sub">I&SS事業：2026年度は「体制整備の年」</h3>
+  <p>I&SS事業のCFOは、2026年度の事業運営について「固定費コントロールや歩留まり改善など、事業の効率性により注力していく」と説明している。次期中期経営計画の時間軸では、センサーの大判化再加速によって同事業の売上が成長軌道に戻ると見込んでおり、2026年度はそれに向けた体制整備の年と位置づけられている。工場稼働率は、2026年度第1四半期（4〜6月）で月産15.4万枚（設営ベース）を見込む。</p>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― TSMCとの次世代センサー合弁と、フィジカルAIへの布石</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">TSMCとの次世代イメージセンサー合弁</h3>
+  <p>2026年5月8日、ソニーグループとTSMCは、次世代イメージセンサーを開発・生産する合弁会社設立へ基本合意したと発表した。熊本県のソニー工場への開発・生産ライン構築が検討されている。「日本の知覚系×台湾の製造」という国際分業を国内立地で実現する試みであり、車載・ロボティクス向けの次世代センサーを見据えたものとされる。</p>
+
+  <h3 class="sub">好調セグメントに支えられる全社業績</h3>
+  <p>2025年度第3四半期時点では、売上高9兆4,432億円（+2.3%）、営業利益1兆2,839億円（+21.0%）と増収増益を達成しており、I&SS分野の大幅増益に加え、ゲーム&ネットワークサービス分野も好調に推移した。エンタテインメント・テクノロジー&サービス分野は、メモリ価格の高騰などの影響もあり減益となっている。多角化されたエンタメ・エレクトロニクス・金融（分離済み）・半導体のポートフォリオが、I&SSの一時的な踊り場を補う構造にある。</p>
+
+  <h3 class="sub">フィジカルAI関連の中長期布石</h3>
+  <p>十時CEOのフィジカルAI言及、TSMCとの合弁基本合意は、いずれもソニーが次の成長サイクルに向けて布石を打ち始めている段階を示す。ただし合弁は基本合意段階であり、正式契約や量産化までにはなお時間を要する見通しである。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">2026<small>年5月8日</small></div><div class="k">TSMCとの次世代センサー合弁 基本合意発表</div></div>
+    <div class="stat"><div class="v">15.4<small>万枚/月</small></div><div class="k">26年度Q1 工場稼働率見込み（設営ベース）</div></div>
+    <div class="stat"><div class="v">5.7<small>兆円</small></div><div class="k">中計3年間累計営業キャッシュフロー見通し（上方修正後）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― アナリストは総じて強気</h2>
+    </div>
+  </div>
+  <p class="lede">アナリストの評価は「強気買い」が大勢を占め、目標株価は現在株価から大幅な上昇余地を示す水準にある。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>株価</td><td>3,000円前後で推移</td></tr>
+      <tr><td>アナリスト平均目標株価</td><td>4,687円（上昇余地+37.45%）</td></tr>
+      <tr><td>アナリスト評価</td><td>「強気買い」が大勢（強気買い16人・買い5人・中立2人）</td></tr>
+      <tr><td>26年度 営業利益見通し</td><td>1兆6,000億円（+11%、過去最高益更新見通し）</td></tr>
+      <tr><td>26年度 純利益見通し</td><td>1兆1,600億円（+13%）</td></tr>
+    </tbody>
+  </table>
+  <p>2026年7月24日には、レーティングが「最上位を継続」した上で目標株価が増額される動きも報じられており、I&SS事業の一時的な減収見通しにもかかわらず、全社としての収益力・成長性への評価は総じて高い水準を維持している。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① I&SS事業の2026年度減収見込み</span>
+    メモリ市況の不透明感を背景に、稼ぎ頭のイメージセンサー事業は前年比4%の減収を見込んでいる。フィジカルAIへの期待とは裏腹に、足元は踊り場の局面にある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② センサー大判化再加速の実現時期の不確実性</span>
+    会社側は「次期中計の時間軸」での成長回帰を見込んでいるが、2026年度は準備の年と位置づけられており、フィジカルAI関連の本格的な収益貢献はまだ先の話である。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ TSMCとの合弁の具体化リスク</span>
+    次世代イメージセンサー開発の合弁は基本合意の段階にとどまっており、正式契約や実際の量産化までには時間を要する。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ 特殊要因による純利益変動</span>
+    2025年度はEV事業関連損失や資産売却損、減損など複数の特殊要因により純利益が減益となった。今後も一時的な特殊要因が業績に影響を与える可能性がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ 為替変動リスク</span>
+    2025年度は為替のマイナス影響が150億円あったとされ、グローバル展開する同社の業績は為替感応度が高い。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑥ メモリ価格高騰の他事業への波及</span>
+    メモリ価格の高騰は、エンタテインメント・テクノロジー&サービス分野など他のセグメントの収益にも影響を及ぼしている。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">ソニーグループの成長ストーリーは、画像センサー世界シェア50%超という圧倒的な地位を土台に、フィジカルAI時代の「眼」としての新たな需要開拓を目指す点に集約される。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>2025年度に過去最高益を更新したI&SS事業は、2026年度にメモリ市況の影響で一時的な減収を見込んでいるが、会社側は「次期中計」でのセンサー大判化再加速による成長回帰を見込んでいる。TSMCとの次世代センサー合弁基本合意や、CEOのフィジカルAI言及は、次の成長サイクルへの布石といえる。ただし全社としては多角化されたポートフォリオにより、2026年度も過去最高益更新を計画するなど、収益基盤全体としては強固である。</p>
+    <ul class="watchlist">
+      <li>26年度通期業績（売上高12兆3,000億円・営業利益1兆6,000億円）の進捗、特にI&SS事業の減収の実態</li>
+      <li>TSMCとの合弁の正式契約・熊本での開発生産ライン構築の具体化状況</li>
+      <li>センサー大判化再加速に向けた「次期中計」の内容と発表時期</li>
+      <li>フィジカルAI関連の具体的な受注・採用事例の拡大</li>
+      <li>メモリ市況の動向と、他セグメントへの波及の程度</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年7月時点で確認可能な公開情報に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>

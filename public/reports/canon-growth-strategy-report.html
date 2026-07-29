@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜キヤノン（7751） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+  .ticker .sign.neg{color:#E39A8C;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編</span>
+      <span>2026年7月29日号</span>
+    </div>
+    <h1 class="title">キヤノン（7751）<br>「隠れた半導体企業」の二面性 ― 製造装置の強みと、メモリ高騰という逆風</h1>
+    <p class="subtitle">カメラ・複合機メーカーのイメージの裏で、半導体製造装置（露光装置）分野の隠れた強者でもあるキヤノン。ラピダスへの2nm試作委託という直接的な布石を打つ一方、AIブームによるメモリ価格上昇は、半導体を「使う側」の同社にとってコスト増という逆風にもなっている。市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">約5.6<small>兆円</small></span><span class="lbl">時価総額目安（株価4,273円ベース試算）</span></div>
+      <div><span class="num">4兆7,650<small>億円</small></span><span class="lbl">26年12月期 会社計画 売上高 <span class="sign">+3.0%</span></span></div>
+      <div><span class="num">▲26.1<small>%</small></span><span class="lbl">26年Q1 営業利益（前年同期比）</span></div>
+      <div><span class="num">4,777<small>円</small></span><span class="lbl">アナリスト平均目標株価</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― カメラ企業の顔の裏にある、半導体製造装置市場</h2>
+    </div>
+  </div>
+  <p class="lede">キヤノンは1970年代から半導体分野に着手しており、一部の半導体製造装置（露光装置）分野では世界トップシェアを誇るまでに成長している、「隠れた半導体企業」である。</p>
+
+  <h3 class="sub">後工程市場で「業界標準」の強み</h3>
+  <p>半導体露光装置の分野では、最先端プロセス向けEUV（極端紫外線）露光機をオランダのASMLが独占供給する一方、後工程市場ではキヤノンのKrF（フッ化クリプトン）露光装置が業界標準としての強みを発揮しているとされる。EUV露光装置は1台あたり数百億円という高価格に加え、稼働に莫大な電力を消費するという課題を抱えており、この点でキヤノンが2023年に発売した新技術「ナノインプリントリソグラフィ（NIL）」は、従来の10分の1の電力消費で先端半導体を製造できるとして、米国の半導体コンソーシアム（TIE）などで試験運用が進められている。</p>
+
+  <h3 class="sub">2026年9月、宇都宮に新工場稼働</h3>
+  <p>2026年9月には宇都宮にある半導体製造装置の新工場が稼働を開始する予定であり、既存ラインナップも含めて2021年比で約2倍となる、年間販売台数300台超を目指す生産体制が構築されている。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">1970<small>年代</small></div><div class="k">半導体分野への着手時期</div></div>
+    <div class="stat"><div class="v">1/10<small></small></div><div class="k">NIL技術の消費電力（従来比、会社発表）</div></div>
+    <div class="stat"><div class="v">2倍<small>超</small></div><div class="k">新工場稼働後の年間販売台数目標（2021年比）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― ラピダスへの2nm試作委託という布石</h2>
+    </div>
+  </div>
+  <p class="lede">キヤノンは、高市政権が掲げる半導体分野の官民投資ロードマップにおいて、製造装置の代表的プレイヤーとして位置づけられている。</p>
+
+  <h3 class="sub">国内大手として初のラピダス2nm試作委託</h3>
+  <p>2026年4月16日、キヤノンは国内大手として初めて、次世代半導体メーカーのラピダスへ2nm半導体（画像処理用）の試作を委託すると発表した。ラピダスはパイロットラインの初期設計においてEUV露光機の導入に着手しているが、キヤノンの出資は単なる財務的投資ではなく、NIL技術によるコスト・電力面での代替可能性という、製造プロセスへの戦略的な布石という側面も持つ。</p>
+
+  <h3 class="sub">官民投資68兆円ロードマップとの接続</h3>
+  <p>2026年6月24日に政府が提示した官民投資ロードマップ（案）は、半導体分野に2040年度まで68兆円の投資を想定しており、「製造装置は日本・米国・欧州に強み」と明記している。キヤノンは、この製造装置層における日本の強みを体現する企業の一つである。</p>
+
+  <div class="tag-row">
+    <span class="tag">官民投資68兆円（半導体、2040年度まで）</span>
+    <span class="tag">ラピダス2nm試作委託（2026年4月16日）</span>
+    <span class="tag">ナノインプリントリソグラフィ（NIL）技術</span>
+    <span class="tag">後工程露光装置「業界標準」</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― 増収減益の第1四半期と、通期の増収増益計画</h2>
+    </div>
+  </div>
+  <p class="lede">2026年12月期第1四半期は増収ながら大幅減益となり、通期での挽回が焦点となっている。</p>
+
+  <table>
+    <thead><tr><th>指標</th><th>26年Q1実績</th><th>前年同期比</th></tr></thead>
+    <tbody>
+      <tr><td>売上高</td><td>1兆936億円</td><td>+3.3%</td></tr>
+      <tr><td>営業利益</td><td>713億円</td><td>▲26.1%</td></tr>
+      <tr><td>純利益</td><td>483億円</td><td>▲33.1%</td></tr>
+    </tbody>
+  </table>
+  <p>減益の主因は、プリンティングセグメントの利益減少と営業費用の増加である。会社側は通期では増収増益を予想しており、下半期での業績回復が焦点となる。</p>
+
+  <div class="callout risk">
+    <span class="callabel">メモリ価格上昇という「AIブームの逆風」</span>
+    キヤノンが製造するカメラ・オフィス複合機・医療用画像診断機器・ネットワークカメラは、いずれも半導体メモリを「消費する側」の製品である。AIサーバー向けHBM（広帯域メモリ）などに生産ラインが奪われる中、汎用メモリの価格も押し上げられており、2026年通期見通しの前提条件として「メモリは今年の必要量をほぼ確保するものの価格上昇は約500億円」の影響が織り込まれている。これは年間営業利益見通し4,790億円の約1割強に相当する規模である。
+  </div>
+
+  <h3 class="sub">2026年12月期通期予想</h3>
+  <p>売上高4兆7,650億円（+3.0%、過去最高目指す）、営業利益4,790億円（+5.2%、営業利益率10%超）を計画している。イメージング事業はカメラ増産・ネットワークカメラ拡販により売上高1兆1,372億円（+7.8%）を見込み、インダストリアル事業ではメモリ投資の好影響を受けKrF露光装置の販売台数増加と、構造改革効果も見込んでいる。</p>
+
+  <h3 class="sub">米国関税の影響</h3>
+  <p>米国の追加関税の影響も業績を圧迫している。第1四半期の関税コストは191億円に対し、値上げによる回収は175億円にとどまり、差し引き16億円の損失が発生した。</p>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― 半導体露光機セグメントの位置づけ</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">光学機器事業（半導体露光機）の売上動向</h3>
+  <p>半導体露光機を含む光学機器事業の2026年通期売上予想は2,566億円（前年比+0.1%）とほぼ横ばいであり、EUV露光機の販売増を背景に前年比+15.6%の増収となった蘭ASML（2026年通期見通しは+4.1〜13.3%）と比べると、成長ペースでは見劣りする面がある。一方、精機事業の巻き返しを図るニコン（同▲18.3%見通し）と比べれば相対的に安定した水準を維持している。</p>
+
+  <h3 class="sub">後工程市場での競争構造</h3>
+  <p>半導体の前工程・後工程双方で、次世代プロセスへの対応が今後の課題となっている。日本勢の得意分野である後工程市場では、キヤノンが業界標準としての強みを発揮してきたが、ASMLが後工程向け製品を初めて出荷するなど、今後はニコンを含めた三つ巴の競争構造に移行していく可能性がある。</p>
+
+  <h3 class="sub">カメラ・複合機事業の堅調さ</h3>
+  <p>半導体以外の主力事業では、カメラの需要が強く、半導体露光装置もメモリ向けの投資意欲が急速に回復しているとされる。イメージング事業の増産・拡販計画が、通期の増収シナリオを支える柱の一つとなっている。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">2,566<small>億円</small></div><div class="k">半導体露光機（光学機器事業）26年通期売上予想</div></div>
+    <div class="stat"><div class="v">1兆1,372<small>億円</small></div><div class="k">イメージング事業 26年通期売上予想（+7.8%）</div></div>
+    <div class="stat"><div class="v">約500<small>億円</small></div><div class="k">メモリ価格上昇による26年通期コスト増加影響</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― アナリスト評価は「中立」が大勢</h2>
+    </div>
+  </div>
+  <p class="lede">株価は目標株価をやや下回る水準で推移しており、アナリストの評価も総じて保守的である。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>株価</td><td>4,273円前後（6月時点）</td></tr>
+      <tr><td>アナリスト平均目標株価</td><td>4,777円（上昇余地+6.96%）</td></tr>
+      <tr><td>アナリスト評価</td><td>「中立」が大勢（強気買い1人・買い2人・中立8人）</td></tr>
+      <tr><td>米系大手証券 目標株価</td><td>4,100円→4,300円に引き上げ（7月14日、レーティング中立据え置き）</td></tr>
+      <tr><td>経常利益予想コンセンサス</td><td>4,689億円（会社予想4,830円をやや下回る水準）</td></tr>
+      <tr><td>次回決算発表</td><td>2026年7月下旬（中間決算）</td></tr>
+    </tbody>
+  </table>
+  <p>2026年7月14日には米系大手証券が目標株価を4,100円から4,300円へ引き上げつつ、レーティングは「中立」を据え置いた。同日、26年12月期の経常利益予想コンセンサスが前週比0.8%上昇したことも伝わり、直近の株価持ち直しと重なる形で評価修正が行われている。市場は業績の下半期回復を見極めたい姿勢がうかがえる。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① メモリ価格上昇によるコスト増</span>
+    AIブームによるAIサーバー向けHBM需要の拡大が、汎用メモリ価格の上昇を通じてキヤノンの調達コストを押し上げている。2026年通期で約500億円という、営業利益見通しの1割強に相当する影響が見込まれている。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② 米国関税政策の影響</span>
+    第1四半期時点で関税コストが値上げによる回収額を上回り、差し引き16億円の損失が発生した。会社側も2026年通期を通じて関税政策・地政学リスクによる不透明感が継続すると想定している。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ 第1四半期の大幅減益</span>
+    増収にもかかわらず、営業利益は26.1%減、純利益は33.1%減となった。プリンティングセグメントの利益減少が主因であり、通期の増収増益計画の達成には下半期の挽回が前提となる。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ 半導体露光機セグメントの成長ペースの鈍さ</span>
+    2026年通期の売上予想はほぼ横ばい（+0.1%）にとどまり、EUV販売が伸びるASMLと比べると成長スピードで見劣りする面がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ 市場評価の慎重さ</span>
+    アナリスト評価は「中立」が大勢を占め、強気買いはわずか1人にとどまる。経常利益予想コンセンサスも会社計画をやや下回る水準で推移しており、市場は業績の不確実性を織り込んでいる。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">キヤノンの成長ストーリーは、半導体製造装置の「作る側」としての強みと、半導体メモリの「使う側」としての逆風という、二面性のある立ち位置に集約される。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>ラピダスへの2nm試作委託やNIL技術の実用化は、フィジカルAI時代の半導体製造基盤における同社の存在感を示す布石といえる。一方で、AIブームによるメモリ価格上昇は、カメラ・複合機・医療機器メーカーとしての本業にはコスト増という逆風として作用しており、この二面性をどうバランスさせるかが今後の焦点となる。</p>
+    <ul class="watchlist">
+      <li>2026年7月下旬発表予定の中間決算における、下半期業績回復の兆し</li>
+      <li>メモリ価格動向と、約500億円と見積もられたコスト増加影響の実際の推移</li>
+      <li>NIL技術の商用化進捗と、ラピダス向け2nm試作の結果</li>
+      <li>半導体露光機セグメントの販売動向とASML・ニコンとの競争構造の変化</li>
+      <li>米国関税政策の動向と、値上げによるコスト転嫁の進捗</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年7月時点で確認可能な公開情報に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>
