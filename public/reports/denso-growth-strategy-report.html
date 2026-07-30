@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜デンソー（6902） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+  .ticker .sign.neg{color:#E39A8C;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編</span>
+      <span>2026年7月31日号</span>
+    </div>
+    <h1 class="title">デンソー（6902）<br>車載半導体の内製力と、チューリングとのフィジカル基盤モデル開発</h1>
+    <p class="subtitle">JASMへの出資による車載半導体の安定調達網構築と、自動運転スタートアップ・チューリングとのフィジカル基盤モデル共同研究。自動車部品最大手デンソーが進める「ハード」と「ソフト」両面の布石を、過去最高益の決算とあわせ、市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">約5.6<small>兆円</small></span><span class="lbl">時価総額（2026年7月10日時点）</span></div>
+      <div><span class="num">7兆5,399<small>億円</small></span><span class="lbl">26年3月期 売上収益 <span class="sign">+5.3%</span></span></div>
+      <div><span class="num">4,437<small>億円</small></span><span class="lbl">26年3月期 親会社帰属当期利益（過去最高） <span class="sign">+5.9%</span></span></div>
+      <div><span class="num">2,134<small>円</small></span><span class="lbl">アナリスト平均目標株価</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― 車載半導体という「クルマの頭脳」市場</h2>
+    </div>
+  </div>
+  <p class="lede">デンソーの成長シナリオは、自動車部品最大手としての立場を土台に、車載半導体という「クルマの頭脳」を内製・供給する強みに根ざしている。</p>
+
+  <h3 class="sub">車載半導体85兆円市場という将来予測</h3>
+  <p>車載半導体は、エンジン制御から安全装置、通信機能まで、あらゆる車載システムの中枢として機能する。富士キメラ総研の予測によれば、車載電装市場は2035年に85兆円規模へ拡大し、ADAS（先進運転支援システム）は2.2倍、コックピット関連は3.3倍に成長する見込みとされる。自動運転・電動化が進むほど、車載半導体の重要性は増していく構造にある。</p>
+
+  <h3 class="sub">1968年からの半導体内製の歴史</h3>
+  <p>デンソーの半導体事業は、1968年設立のIC研究室にルーツを持つ。先進デバイス事業（パワーカード・メカ系製品含む）の売上高は、直近開示ベースで前年度比17%増の4,240億円に達しており、半導体製品の約50%が半導体センサー、残りはASICとパワーモジュールがほぼ半々という構成である。ASIC・パワーモジュールは主に社内向けだが、センサーはOEMへの直接供給も多い。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">85<small>兆円</small></div><div class="k">車載電装市場 2035年予測（富士キメラ総研）</div></div>
+    <div class="stat"><div class="v">2.2<small>倍</small></div><div class="k">ADAS市場 成長倍率（2035年予測）</div></div>
+    <div class="stat"><div class="v">1968<small>年</small></div><div class="k">半導体内製の起点（IC研究室設立）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― JASM出資と経済産業省GENIAC事業</h2>
+    </div>
+  </div>
+  <p class="lede">デンソーは、官民投資ロードマップの半導体分野において、車載半導体の需要側企業として、また政策事業の実施主体として複数の形で関与している。</p>
+
+  <h3 class="sub">TSMC熊本工場（JASM）への出資</h3>
+  <p>デンソーは、TSMC・ソニーセミコンダクタソリューションズとともに、TSMC熊本工場の運営会社JASM（Japan Advanced Semiconductor Manufacturing）へ約3.5億米ドル（約400億円）の少数持分出資を行い、JASMの10%超の株式を取得している。狙いは、自動運転・電動化というモビリティ技術の進化の中でますます重要になる車載半導体の中長期的な安定調達である。</p>
+
+  <h3 class="sub">経産省・NEDOのGENIAC事業への参画</h3>
+  <p>2026年6月4日、デンソーは自動運転スタートアップのチューリング、SUBARUとともに、車載E2E自動運転システムおよびフィジカル基盤モデルの共同研究開始を発表した。この取り組みは、経済産業省および新エネルギー・産業技術総合開発機構（NEDO）が推進する「ポスト5G情報通信システム基盤強化研究開発事業／競争力ある生成AI基盤モデルの開発（GENIAC）」の一環として実施される。</p>
+
+  <div class="tag-row">
+    <span class="tag">官民投資68兆円（半導体、2040年度まで）</span>
+    <span class="tag">JASM出資（10%超株式取得）</span>
+    <span class="tag">経産省・NEDO「GENIAC」事業</span>
+    <span class="tag">自動車用先端SoC技術研究組合（ASRA）参画</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― 過去最高益と、来期の減益予想</h2>
+    </div>
+  </div>
+  <p class="lede">2026年3月期は車両販売の増加を追い風に、売上収益・利益ともに過去最高を更新した。一方で27年3月期は将来投資強化により減益を計画している。</p>
+
+  <table>
+    <thead><tr><th>指標</th><th>26年3月期実績</th><th>前期比</th></tr></thead>
+    <tbody>
+      <tr><td>売上収益</td><td>7兆5,399億円</td><td>+5.3%（過去最高）</td></tr>
+      <tr><td>営業利益</td><td>5,525億円</td><td>+6.5%</td></tr>
+      <tr><td>税引前利益</td><td>6,173億円</td><td>+6.8%</td></tr>
+      <tr><td>親会社所有者帰属当期利益</td><td>4,437億円</td><td>+5.9%（過去最高）</td></tr>
+    </tbody>
+  </table>
+  <p>増収の主因は車両販売の増加である。米国関税や部材費高騰、人への投資増加といった逆風要因があったものの、合理化努力と操業度の良化により利益を確保した。</p>
+
+  <div class="callout risk">
+    <span class="callabel">27年3月期は将来投資強化により減益予想</span>
+    デンソーグループの27年3月期は、売上増加を見込むものの、将来投資の強化等により減益予想としている。過去最高益を更新した直後だけに、成長投資と足元収益のバランスが今後の焦点となる。
+  </div>
+
+  <h3 class="sub">政策保有株式の売却進行</h3>
+  <p>2026年7月には、トヨタ・デンソーなど政策保有株式（持ち合い株式）の売却が進み、総額9,300億円規模に達すると報じられている。東証が求めるガバナンス改善の流れの中で、グループ内の資本関係にも変化が生じつつある。</p>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― チューリングとのフィジカル基盤モデル開発</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">スバル・チューリングとの3社共同研究</h3>
+  <p>2026年6月4日、自動運転システムを手がけるチューリングは、SUBARU・デンソーとの共同研究開始を発表した。この共同研究は2つの柱で構成される。チューリングとSUBARUは車載E2E（エンド・ツー・エンド）自動運転システムの技術確立に向けた研究を、チューリングとデンソーはフィジカル基盤モデルの開発を、それぞれ担当する。チューリングは各社の知見を結集し、AIモデルの研究開発から実車両への実装までを一気通貫で推進する体制の構築を目指している。</p>
+
+  <h3 class="sub">カメラセンサーのみから時空間的理解を獲得する技術</h3>
+  <p>デンソーとの取り組みでは、自動運転に適したフィジカル基盤モデルの開発と、実際の車両への適合を進める。視覚言語モデル・視覚状態空間モデルをベースとして、カメラセンサのみから言語的・時空間的理解を獲得するための技術開発に取り組んでいる。完全自動運転の実用化には、大量の走行データから高レベルな認識・判断を行うフィジカル基盤モデルの開発が欠かせず、さらにそれを実車両に適合させる開発体制も求められる。この技術は自動運転にとどまらず、AIロボットを見据えたマルチモーダル基盤モデルなど、幅広い領域への応用も視野に入れている。</p>
+
+  <h3 class="sub">自社工場でのロボット実装：カチャカプロ導入</h3>
+  <p>2026年5月29日には、デンソー高棚製作所が小型自律搬送ロボット「カチャカプロ」を4ラインに導入し、運搬作業をゼロにしたことも明らかになっている。フィジカルAI技術の自社実装を通じて、現場からの知見蓄積を進めている。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">2026<small>年6月4日</small></div><div class="k">チューリング・SUBARU・デンソー3社共同研究発表</div></div>
+    <div class="stat"><div class="v">4,240<small>億円</small></div><div class="k">先進デバイス事業売上高（直近開示、+17%）</div></div>
+    <div class="stat"><div class="v">4<small>ライン</small></div><div class="k">自律搬送ロボ「カチャカプロ」導入ライン数（高棚製作所）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― 評価が短期間で交錯する展開</h2>
+    </div>
+  </div>
+  <p class="lede">アナリスト評価は総じて「買い」が優勢だが、4月末から5月にかけて強気・慎重双方の見方が交錯する場面も見られた。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>株価</td><td>1,934円（7月9〜10日時点）</td></tr>
+      <tr><td>時価総額</td><td>約5兆6,298億円</td></tr>
+      <tr><td>PER（予）</td><td>13.63倍</td></tr>
+      <tr><td>PBR</td><td>0.95倍</td></tr>
+      <tr><td>配当利回り（予）</td><td>3.83%</td></tr>
+      <tr><td>アナリスト平均目標株価</td><td>2,134円〜2,222円（上昇余地+10〜18%）</td></tr>
+      <tr><td>52週高値／安値</td><td>2,373円／1,801円</td></tr>
+    </tbody>
+  </table>
+  <p>2026年4月30日には強気の目標株価2,500円への引き上げが報じられたが、5月13日には米系大手証券がレーティングを中立へ引き下げ、目標株価も1,900円へ引き下げるなど、短期間で評価が交錯する展開となった。7月には「レーティング最上位を継続、目標株価増額」との報道も見られ、市場の評価は依然として振れ幅を伴っている。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① 27年3月期の減益予想</span>
+    過去最高益を更新した直後にもかかわらず、将来投資強化により27年3月期は減益を計画している。成長投資が将来の収益にどうつながるかが問われる。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② 米国関税・部材費高騰の継続的な影響</span>
+    26年3月期も影響を受けており、今後も外部環境要因によるコスト圧迫が続く可能性がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ フィジカルAI関連取り組みの初期段階</span>
+    チューリングとの共同研究は基盤モデル開発という上流工程であり、実車両への実装・商用化にはなお時間を要する。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ アナリスト評価の振れ幅の大きさ</span>
+    4月末の強気目標株価（2,500円）から5月には慎重な目標株価（1,900円）へと、短期間で評価が大きく変動しており、業績・戦略の市場評価が定まりきっていない。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ 政策保有株式売却によるガバナンス変化</span>
+    トヨタとの相互株式保有解消の動きが進んでおり、グループ内での位置づけに変化が生じる可能性がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑥ PBR1倍割れ水準</span>
+    株価純資産倍率は0.95倍と、市場からの評価は依然として割安圏にとどまっている。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">デンソーの成長ストーリーは、車載半導体の内製・供給網強化という「ハード」の布石と、チューリングとのフィジカル基盤モデル開発という「ソフト」の布石を、自動車部品最大手としての立場から同時に進める点に集約される。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>JASM出資による車載半導体の安定調達網構築、ASRA参画によるチップレット技術の研究開発、そしてチューリングとのフィジカル基盤モデル開発という複数の布石が、自動運転・フィジカルAI時代に向けた同社のポジショニングを形作っている。2026年3月期は過去最高益を更新したが、27年3月期は将来投資強化により減益を計画しており、この投資が実を結ぶタイミングが今後の焦点となる。</p>
+    <ul class="watchlist">
+      <li>27年3月期の減益計画の実態と、将来投資の具体的な内訳</li>
+      <li>チューリングとのフィジカル基盤モデル開発の進捗と、実車両への適合状況</li>
+      <li>JASM第2工場（2027年末稼働目標）の稼働状況と、車載半導体の安定調達への寄与</li>
+      <li>ASRAによるチップレット技術研究の進捗（2028年技術完成目標）</li>
+      <li>政策保有株式売却の進展と、トヨタグループ内での資本関係の変化</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年7月時点で確認可能な公開情報に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>
