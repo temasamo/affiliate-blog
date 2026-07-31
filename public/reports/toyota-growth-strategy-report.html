@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜トヨタ自動車（7203） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+  .ticker .sign.neg{color:#E39A8C;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編</span>
+      <span>2026年8月1日号</span>
+    </div>
+    <h1 class="title">トヨタ自動車（7203）<br>NVIDIA協業拡大が描く、「クルマを作る会社」から「都市をデザインする会社」への転換</h1>
+    <p class="subtitle">ウーブン・シティの交通AI支援を含む、NVIDIAとのフィジカルAI協業拡大。自動車・ロボティクス・工場・スマートシティを横断する野心的な布石の一方、2026年3月期は大幅減益、株価も年初来で大きく下落している。市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">約43<small>兆円</small></span><span class="lbl">時価総額（2026年7月時点）</span></div>
+      <div><span class="num">50兆6,849<small>億円</small></span><span class="lbl">26年3月期 営業収益 <span class="sign">+5.5%</span></span></div>
+      <div><span class="num">3兆7,662<small>億円</small></span><span class="lbl">26年3月期 営業利益 <span class="sign neg">▲21.5%</span></span></div>
+      <div><span class="num">3,697<small>円</small></span><span class="lbl">アナリスト平均目標株価</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― 自動車・工場・都市を横断するフィジカルAI市場</h2>
+    </div>
+  </div>
+  <p class="lede">トヨタの成長シナリオは、自動車の製造・販売にとどまらず、工場のロボット制御や都市の交通AIまでを含む、フィジカルAI市場全体を視野に入れている点に特徴がある。</p>
+
+  <h3 class="sub">「クルマを作る会社」から「社会システムをデザインする会社」へ</h3>
+  <p>2017年の自動運転技術協業を出発点に、トヨタとNVIDIAの関係は着実に拡大してきた。2019年の協業範囲拡大、2025年CESでの車載SoC・OS採用発表を経て、2026年7月には車載ソフトウェア開発、工場のデジタルツイン、都市交通AI、そしてウーブン・シティの開発支援へと広がっている。この提携拡大は、トヨタが「クルマを作る会社」から「モビリティと都市を含めた社会システムをデザインする会社」への転換を進めていることを象徴する動きと位置づけられる。</p>
+
+  <h3 class="sub">ウーブン・シティという実証都市</h3>
+  <p>ウーブン・シティは、トヨタが実際の都市規模でAIやモビリティ技術を実証する独自のプロジェクトであり、他の関連銘柄にはない強みとなっている。NVIDIAという世界最先端のAI・半導体企業との連携により、都市規模でのAI実証という他社が容易には追随できない領域での存在感強化を狙う。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">2017<small>年</small></div><div class="k">NVIDIAとの自動運転協業 開始</div></div>
+    <div class="stat"><div class="v">959万5千<small>台</small></div><div class="k">26年3月期 自動車販売台数（+2.5%）</div></div>
+    <div class="stat"><div class="v">500万<small>台超</small></div><div class="k">電動車両（HEV・BEV等） 初の年間販売台数突破</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― 官民投資ロードマップにおける需要側企業としての厚み</h2>
+    </div>
+  </div>
+  <p class="lede">トヨタは、高市政権が掲げる半導体分野の官民投資ロードマップにおいて、車載半導体の最大級の需要側企業として複数の形で関与している。</p>
+
+  <h3 class="sub">JASM出資と1桁ナノ世代への布石</h3>
+  <p>トヨタは、TSMC熊本第2工場を建設する合弁会社JASMへの出資を決めている。第2工場では6ナノメートル世代の量産も計画されており、「レベル3」以降の自動運転技術に不可欠な1桁ナノ世代の半導体を巡り、自動車メーカーとしての開発・調達体制づくりを進めている。2023年12月には、ホンダなど自動車メーカー5社にデンソー・ルネサス・ソシオネクストなどが加わった計12社で「自動車用先端SoC技術研究組合」（ASRA）を設立し、チップレット技術を応用した車載SoCの研究開発に取り組んでいる。ASRAは2028年までにチップレット技術を完成させ、2030年以降の量産車搭載を目指すロードマップを描いている。</p>
+
+  <h3 class="sub">NVIDIAとの協業深化という政策整合</h3>
+  <p>2026年7月16日に発表されたNVIDIAとの協業拡大は、政府が掲げる「フィジカルAI」政策とも方向性が一致する。NVIDIAはトヨタに対し、次世代車に搭載する半導体だけでなく、製造現場でロボットを動かすAIの開発に必要なソフトウエアの基盤技術も供給する計画である。</p>
+
+  <div class="tag-row">
+    <span class="tag">JASM出資（TSMC熊本第2工場、6nm世代）</span>
+    <span class="tag">ASRA参画（チップレット技術、2028年完成目標）</span>
+    <span class="tag">NVIDIA協業拡大（2026年7月16日）</span>
+    <span class="tag">ウーブン・シティ フィジカルAI実証</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― 過去最高収益の裏での大幅減益</h2>
+    </div>
+  </div>
+  <p class="lede">2026年3月期は営業収益で過去最高を更新したが、営業利益は諸経費増加や為替変動の影響で大幅減益となった。</p>
+
+  <table>
+    <thead><tr><th>指標</th><th>26年3月期実績</th><th>前期比</th></tr></thead>
+    <tbody>
+      <tr><td>営業収益</td><td>50兆6,849億円</td><td>+5.5%（過去最高）</td></tr>
+      <tr><td>営業利益</td><td>3兆7,662億円</td><td>▲21.5%</td></tr>
+      <tr><td>親会社所有者帰属当期利益</td><td>3兆8,480億円</td><td>▲19.2%</td></tr>
+      <tr><td>営業利益率</td><td>7.4%</td><td>―</td></tr>
+    </tbody>
+  </table>
+  <p>自動車販売台数は959万5千台（+2.5%）と増加し、HEV・BEVなど電動車両の販売は初めて年間500万台を超えた。一方で、諸経費の増加や為替変動の影響が減益要因となった。財務基盤は極めて健全で、総資産は105兆5,223億円（+12.7%）、現金及び現金同等物は12兆6,596億円（+40.9%）に達している。</p>
+
+  <div class="callout risk">
+    <span class="callabel">27年3月期は大幅減益を計画</span>
+    27年3月期の見通しは、営業収益51兆円、営業利益3兆円と、利益は前期比で大きく減少する計画である。為替前提は1ドル=150円、1ユーロ=180円。固定費見直しと原価改善・生産性向上により、収益の積み増しを目指す方針としている。市場からは、17兆円に達する潤沢な現預金の活用とROE向上を求める声もあり、資本効率の改善が課題として指摘されている。
+  </div>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― NVIDIAとのフィジカルAI協業拡大の中身</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">車両開発・工場・都市の3層にわたる連携</h3>
+  <p>2026年7月16日、NVIDIAとトヨタは、自動車・ロボティクス・工場・スマートシティの各分野における協業を拡大し、フィジカルAIの推進を強化すると発表した。具体的には、車載コンピューター基盤「NVIDIA DRIVE AGX」を用いた次世代車両の開発、オープンモデル「NVIDIA Nemotron」を利用したソフトウエアエンジニアリング、そしてシミュレーション環境「Omniverse」による製造現場の最適化という3つの柱で構成される。</p>
+
+  <h3 class="sub">工場のデジタルツインとロボット学習</h3>
+  <p>トヨタは、NVIDIA Isaac Simを含むNVIDIA Omniverseのライブラリを活用し、工場およびロボティクスのワークフロー、ロボットの動作シミュレーション、製造業務を最大化するための広範なデジタルツイン環境を、生産準備・製造現場に役立てている。「現実工場をOmniverse上に再現し、Isaacでロボットを学習させ、実工場へ反映する」という、NVIDIAが推進するインダストリアルAIの手法を実装しているとみられる。</p>
+
+  <h3 class="sub">Woven by Toyotaのマルチモーダルモデル</h3>
+  <p>トヨタの子会社であるWoven by Toyotaは、NVIDIA H100 Tensorコア GPUとMegatron-Coreを活用し、マルチモーダルビジョン言語モデルを構築している。このモデルは現実世界の状況を解釈し、次に起こる事象を予測する機能を持ち、モビリティ社会の実現を支援するよう設計されている。ウーブン・シティの交通AI支援も、この協業拡大の対象に含まれる。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">2026<small>年7月16日</small></div><div class="k">NVIDIAとのフィジカルAI協業拡大発表</div></div>
+    <div class="stat"><div class="v">3<small>分野</small></div><div class="k">協業の柱（車両開発・ソフトウエア・製造現場最適化）</div></div>
+    <div class="stat"><div class="v">Woven<small>by Toyota</small></div><div class="k">マルチモーダルビジョン言語モデル開発主体</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― 年初来で大きく下落も、アナリストは「やや強気」</h2>
+    </div>
+  </div>
+  <p class="lede">株価は年初来で大きく下落し、6月には日本の時価総額トップの座を明け渡す場面もあったが、アナリストの評価は総じて「やや強気」を維持している。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>株価</td><td>2,768円（6月26日時点）</td></tr>
+      <tr><td>時価総額</td><td>約42〜44兆円</td></tr>
+      <tr><td>PER（予）</td><td>12.26倍</td></tr>
+      <tr><td>PBR</td><td>0.85〜0.92倍</td></tr>
+      <tr><td>配当利回り（予）</td><td>3.54%</td></tr>
+      <tr><td>年初来高値／安値</td><td>4,000円（2/9）／2,686円（6/24）</td></tr>
+      <tr><td>アナリスト平均目標株価</td><td>3,697円（Investing.com、18人集計）</td></tr>
+      <tr><td>次回決算発表</td><td>2026年8月上旬（第1四半期）</td></tr>
+    </tbody>
+  </table>
+  <p>2026年5月8日の決算発表後、一部の証券会社は目標株価を3,700円から3,400円に引き下げたが、レーティングは「強気買い」を継続しており、目標株価が現在の株価を上回る状態が続いている。6月時点のレーティングコンセンサスは「やや強気」（13人集計でスコア4.46）で推移しており、長期的な競争力と財務体力への信頼は専門家の間でも根強い。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① 27年3月期の大幅減益予想</span>
+    営業利益3兆円という前期比大幅減の計画であり、固定費見直し・原価改善・生産性向上という収益改善策が実を結ぶかが焦点となる。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② 株価の大幅下落</span>
+    年初来高値4,000円から安値2,686円まで大きく下落しており、市場の評価は慎重化している。6月には日本の時価総額トップの座を明け渡す場面もあった。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ 現預金活用への市場圧力</span>
+    17兆円に達する現預金の活用とROE向上を市場が求めているが、具体策の実行は道半ばである。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ フィジカルAI協業の商用化時期の不透明感</span>
+    NVIDIAとの協業拡大は野心的だが、ウーブン・シティを含む具体的な収益化時期は明確になっていない。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ 為替変動リスク</span>
+    27年3月期は1ドル=150円を前提としており、想定より円高が進行した場合、業績には下振れ圧力がかかる。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑥ 豊田自動織機非公開化に伴う資金負担</span>
+    豊田自動織機の非公開化に向けた公開買付けが進行中であり、取得予定額が財務に一定の影響を与える。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">トヨタの成長ストーリーは、NVIDIAとの協業拡大により、自動車製造だけでなくロボティクス・工場・都市インフラを含む「フィジカルAI」全般への関与を強めている点に集約される。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>ウーブン・シティというリアルな都市実証プロジェクトを持つ点は、他のフィジカルAI関連銘柄にはない独自の強みである。一方で27年3月期は大幅減益を計画しており、株価も年初来で大きく下落するなど、伝統的な自動車事業の収益性圧迫という現実的な課題にも同時に直面している。フィジカルAIという成長ストーリーと、足元の収益性回復という両輪をどう両立させるかが、今後の株価評価を左右する。</p>
+    <ul class="watchlist">
+      <li>2026年8月上旬発表予定の第1四半期決算における、27年3月期計画の進捗</li>
+      <li>NVIDIAとの協業拡大に基づく、工場・ロボティクス分野での具体的な導入事例の拡大</li>
+      <li>ウーブン・シティにおける都市交通AI実証の進捗</li>
+      <li>現預金17兆円の活用策とROE向上に向けた具体的な取り組み</li>
+      <li>JASM第2工場・ASRAを通じた車載半導体の安定調達体制の構築状況</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年7月時点で確認可能な公開情報に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>
