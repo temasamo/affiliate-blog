@@ -1,0 +1,10 @@
+<!DOCTYPE html>" in s:
+                    text = s
+    if text:
+        break
+    time.sleep(0.5)
+
+if not text:
+    raise SystemExit("transcript content not found")
+
+parts = list(re.finditer(r"<!DOCTYPE html>.*?</html>
