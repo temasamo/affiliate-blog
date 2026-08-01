@@ -1,10 +1,317 @@
-<!DOCTYPE html>" in s:
-                    text = s
-    if text:
-        break
-    time.sleep(0.5)
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜東京エレクトロン（8035） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
 
-if not text:
-    raise SystemExit("transcript content not found")
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
 
-parts = list(re.finditer(r"<!DOCTYPE html>.*?</html>
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+  .ticker .sign.neg{color:#E39A8C;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編</span>
+      <span>2026年8月2日号</span>
+    </div>
+    <h1 class="title">東京エレクトロン（8035）<br>AIサーバー需要が押し上げる、半導体製造装置世界3位の成長軌道</h1>
+    <p class="subtitle">AI学習・推論用GPUクラスターに搭載される先端ロジック半導体やHBM製造需要の急拡大を受け、2027年3月期に総収入3兆円という中期経営計画目標が視野に入る東京エレクトロン。過去最高益の裏にある研究開発投資の積み増しと、中国依存という構造的課題を、市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">約30.5<small>兆円</small></span><span class="lbl">時価総額（2026年7月時点）</span></div>
+      <div><span class="num">2兆4,435<small>億円</small></span><span class="lbl">26年3月期 売上高（過去最高） <span class="sign">+0.5%</span></span></div>
+      <div><span class="num">6,249<small>億円</small></span><span class="lbl">26年3月期 営業利益 <span class="sign neg">▲10.4%</span></span></div>
+      <div><span class="num">73,745<small>円</small></span><span class="lbl">アナリスト平均目標株価</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― AIサーバー向け半導体製造装置という成長市場</h2>
+    </div>
+  </div>
+  <p class="lede">東京エレクトロンの成長シナリオは、AIの学習・推論に使われるGPUクラスターに搭載される先端ロジック半導体や、高帯域幅メモリ（HBM）の製造需要急拡大という、フィジカルAIの土台を支える半導体製造装置市場の拡大に根ざしている。</p>
+
+  <h3 class="sub">世界3位の半導体製造装置メーカー</h3>
+  <p>東京エレクトロンは、蘭ASMLホールディング、米アプライドマテリアルズに次ぐ世界3位の半導体製造装置メーカーであり、米ラムリサーチとともに業界の一角を占める。1963年に東京放送（現TBSホールディングス）の出資により「東京エレクトロン研究所」として設立され、1978年に現社名に変更した。成膜装置・洗浄装置・ALD・コータ/デベロッパ・ドライエッチング装置・CVD・酸化拡散・ウェーハプローバなど、複数の製品カテゴリで高い世界シェアを持つ。</p>
+
+  <h3 class="sub">受注残高が積み上がる強気の需要環境</h3>
+  <p>AIサーバー向け需要は過去最高水準に達しているとされ、GPUクラスターに搭載される先端ロジック半導体やHBMの製造需要が急拡大している。これらを製造するための装置が続々と受注されており、受注残高（バックオーダー）が積み上がっている状態にあるため、今後数四半期にわたって売上が安定的に計上される見込みとなっている。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">世界<small>3位</small></div><div class="k">半導体製造装置メーカーとしての世界順位</div></div>
+    <div class="stat"><div class="v">59<small>%</small></div><div class="k">非メモリ（ロジック・ファウンドリ等）の新規装置売上構成比</div></div>
+    <div class="stat"><div class="v">31<small>%</small></div><div class="k">DRAM（HBM向け含む）の新規装置売上構成比</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― 官民投資68兆円ロードマップにおける製造装置の中核</h2>
+    </div>
+  </div>
+  <p class="lede">東京エレクトロンは、高市政権が掲げる半導体分野の官民投資ロードマップにおいて、「製造装置は日本・米国・欧州に強み」と明記される領域の中核企業として位置づけられる。</p>
+
+  <h3 class="sub">宮城・熊本への新拠点整備</h3>
+  <p>研究開発投資の一環として、宮城県と熊本県に新たな拠点を整備するなど、国内での開発・生産体制強化を進めている。2026年3月期の研究開発費は前期比11.1%増の2,778億円に達しており、将来の成長を見据えた積極投資が続いている。</p>
+
+  <h3 class="sub">地政学リスクを反映した地域別売上構成の変化</h3>
+  <p>2026年3月期第4四半期の地域別売上高構成は、中国のシェアが前年同期の47.4%から26.8%へ大幅に低下する一方、韓国が24.3%に拡大、台湾が22%のシェアを維持するなど、大きな変化を見せた。この地域的なリバランスは、地政学的動向と主要半導体製造地域全体での生産能力拡張パターンの両方を反映しているとされる。</p>
+
+  <div class="tag-row">
+    <span class="tag">官民投資68兆円（半導体、2040年度まで）</span>
+    <span class="tag">世界シェア上位（複数製品カテゴリ）</span>
+    <span class="tag">宮城・熊本 新拠点整備</span>
+    <span class="tag">AIサーバー向け需要急拡大</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― 過去最高収益の裏での投資積み増し</h2>
+    </div>
+  </div>
+  <p class="lede">2026年3月期は売上高・純利益で過去最高を更新した一方、積極的な研究開発投資などにより営業利益は減益となった。</p>
+
+  <table>
+    <thead><tr><th>指標</th><th>26年3月期実績</th><th>前期比</th></tr></thead>
+    <tbody>
+      <tr><td>売上高</td><td>2兆4,435億円</td><td>+0.5%（過去最高）</td></tr>
+      <tr><td>営業利益</td><td>6,249億円</td><td>▲10.4%</td></tr>
+      <tr><td>純利益</td><td>5,744億円</td><td>+5.6%（過去最高）</td></tr>
+      <tr><td>研究開発費</td><td>2,778億円</td><td>+11.1%</td></tr>
+    </tbody>
+  </table>
+  <p>営業利益の減益要因は、研究開発投資の増加に加え、部材価格の高騰、将来の成長に備えたサービスエンジニアの増員による固定費増である。一方、純利益は政策保有株式の売却による1,154億円の特別利益計上により過去最高を記録した。第4四半期（1〜3月期）単体では、出荷タイミングの関係で一時的に落ち込んだ第3四半期から大きく回復し、売上高7,118億円（+8.6%）、営業利益2,056億円（+11.9%）と極めて好調な推移を見せた。</p>
+
+  <div class="callout">
+    <span class="callabel">27年3月期上期の力強い見通し</span>
+    2027年3月期上期（4〜9月）の連結業績予想は、売上高1兆5,700億円（前年同期比+33.1%）、営業利益4,310億円（同+42.2%）、純利益3,280億円（同+35.7%）と、力強い成長を見込んでいる。会社側は「市場が急成長しているため変動要因が多い」として通期予想は公表しておらず、9月の中間決算発表時に開示する予定である。アナリストコンセンサスでは、27年3月期通期の売上高が3兆523億円、営業利益が8,886億円と、中期経営計画で掲げた総収入3兆円以上という目標達成が視野に入る水準が見込まれている。
+  </div>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― フィールドソリューション事業の堅調な拡大</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">新規装置事業：AIサーバー向けが牽引</h3>
+  <p>新規装置（SPE）のアプリケーション別売上構成を見ると、AIサーバー向けの最先端設備投資が非常に活発であったことから、ロジック・ファウンドリ等の「非メモリ」分野が59%を占め、前期に続き1兆円を上回る規模となった。DRAM分野はHBM向けなどの先端投資が継続し構成比31%を維持したほか、不揮発性メモリ分野も顧客の工場稼働率改善に伴い投資が回復基調に転じ、構成比10%と増加傾向にある。</p>
+
+  <h3 class="sub">フィールドソリューション事業の成長</h3>
+  <p>部品、サービス、装置改造を含むフィールドソリューション事業は、売上高6,260億円（+16.3%）と堅調な成長を示した。この部門は顧客施設全体でのファブ稼働率改善の恩恵を受けており、新規装置販売とは異なる安定的な収益源として存在感を強めている。</p>
+
+  <h3 class="sub">中期経営計画の総収入3兆円目標</h3>
+  <p>東京エレクトロンは5年間の中期経営計画において、2027年3月期に総収入3兆円以上という目標を掲げている。AIブームを背景とした需要拡大への強い自信を背景に、この目標達成への期待がアナリストコンセンサスにも反映されている。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">6,260<small>億円</small></div><div class="k">フィールドソリューション事業売上高（+16.3%）</div></div>
+    <div class="stat"><div class="v">3<small>兆円</small></div><div class="k">中期経営計画 27年3月期総収入目標</div></div>
+    <div class="stat"><div class="v">約31<small>%</small></div><div class="k">27年3月期 ROE予想</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― 高PERを支える強気の成長期待</h2>
+    </div>
+  </div>
+  <p class="lede">AI関連の成長期待を強く織り込んだ高PER水準で取引されており、アナリストの評価は総じて強気である。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>株価</td><td>75,340円（6月25日時点）</td></tr>
+      <tr><td>時価総額</td><td>約30.5兆円</td></tr>
+      <tr><td>PER</td><td>約47〜51倍</td></tr>
+      <tr><td>ROE予想（27年3月期）</td><td>約31%</td></tr>
+      <tr><td>アナリスト平均目標株価</td><td>73,745円（上昇余地+17.69%）</td></tr>
+      <tr><td>アナリスト評価</td><td>「買い」が大勢（強気買い12人・買い5人・中立5人）</td></tr>
+      <tr><td>次回決算発表</td><td>2026年7月下旬（第1四半期）</td></tr>
+    </tbody>
+  </table>
+  <p>ROE予想は約31%と、日本株平均（8〜10%程度）を大幅に上回り、資本効率の高さが機関投資家から評価されている。楽天証券は6〜12カ月の目標株価を5万1,000円から6万5,000円へ引き上げるなど、強気の見方が広がっている。ただし2026年7月17日にはセクター要因で株価が急落する場面もあり、AI関連銘柄全体のセンチメントに左右されやすい面がある。なお、2026年10月1日付で株式分割が予定されており、株価水準が5分の1に変わる点には注意が必要である。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① 中国依存度の高さ</span>
+    総収入の3〜4割を占めるとされる中国市場は、地場メーカーの成長により今後の伸びが見込みにくい状況にある。地政学リスクや輸出規制の影響も受けやすい。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② AIブームの持続可能性への懸念</span>
+    AI関連需要への依存度が高いため、AIブームの持続性に疑問が強まった場合、投資家心理の悪化が株価に下落圧力をかける可能性がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ 26年3月期の営業減益</span>
+    研究開発投資の増加、部材価格の高騰、固定費増により、本業の利益は圧迫された。過去最高収益の裏にあるコスト構造には注意が必要である。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ 通期業績予想の非開示</span>
+    27年3月期通期予想は、市場の変動要因の多さを理由に本決算時点で非公表としており、9月の中間決算発表まで不透明感が残る。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ 高PER水準</span>
+    PER47〜51倍という水準は、成長期待を強く織り込んでおり、業績が期待に届かない場合の株価調整リスクが相対的に大きい。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">東京エレクトロンの成長ストーリーは、AIサーバー向け半導体製造装置需要の急拡大を背景に、中期経営計画で掲げる総収入3兆円という目標達成が視野に入っている点に集約される。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>政府の官民投資ロードマップにおいても、製造装置という日本の強みを体現する中核企業の一つとして位置づけられる。一方で中国市場への依存、AIブームの持続可能性、そして高いバリュエーション水準など、成長期待の反動リスクにも留意が必要である。2026年7月下旬の決算発表と、9月の中間決算での通期予想開示が、今後の株価評価を左右する重要な材料となる。</p>
+    <ul class="watchlist">
+      <li>2026年7月下旬発表予定の第1四半期決算における、AIサーバー向け需要の実態</li>
+      <li>9月の中間決算発表時に開示される27年3月期通期業績予想の内容</li>
+      <li>中国向け売上比率の推移と、地政学リスクへの対応状況</li>
+      <li>2026年10月1日付の株式分割後の株価動向</li>
+      <li>中期経営計画で掲げる総収入3兆円目標の達成状況</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年7月時点で確認可能な公開情報に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>
