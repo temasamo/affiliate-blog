@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜信越化学工業（4063） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+  .ticker .sign.neg{color:#E39A8C;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編</span>
+      <span>2026年8月3日号</span>
+    </div>
+    <h1 class="title">信越化学工業（4063）<br>半導体シリコンウエハー世界1位が握る、フィジカルAIの「最上流」</h1>
+    <p class="subtitle">半導体シリコンウエハー世界シェア約30%と、米国PVC生産能力世界1位という、景気サイクルの異なる2つの世界トップシェア製品を持つ「最強の分散ポートフォリオ」企業。塩ビ市況低迷による26年3月期の減益から、AI半導体需要による27年3月期の増益転換を、市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">約13.3<small>兆円</small></span><span class="lbl">時価総額（決算発表後、7月24日時点）</span></div>
+      <div><span class="num">約30<small>%</small></span><span class="lbl">半導体シリコンウエハー 世界シェア（世界1位）</span></div>
+      <div><span class="num">5,250<small>億円</small></span><span class="lbl">27年3月期 純利益計画 <span class="sign">+11%</span></span></div>
+      <div><span class="num">24.7<small>%</small></span><span class="lbl">26年3月期 売上高営業利益率</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― 半導体の「最上流」を支える世界トップシェア</h2>
+    </div>
+  </div>
+  <p class="lede">信越化学工業の成長シナリオは、半導体シリコンウエハーという、フィジカルAIを支えるあらゆる半導体の出発点にあたる部素材で世界トップシェアを握る強みに根ざしている。</p>
+
+  <h3 class="sub">半導体シリコンウエハー世界シェア約30%</h3>
+  <p>信越化学工業は、半導体シリコンウエハー分野で世界シェア約30〜32%を握る世界1位企業であり、主力ブランド「信越半導体（SEH）」のもと、群馬・福島・岡山など日本国内に加え、米国・台湾・マレーシアにも生産拠点を展開している。競合はSUMCO（日本）、GlobalWafers（台湾）、Siltronic（独）、SK Siltron（韓国）である。金属シリコンを原料に、トリクロロシラン精製、多結晶シリコン析出、チョクラルスキー法（CZ法）による単結晶インゴット引き上げという、超高純度化と精密加工の連続工程を経て製造される。</p>
+
+  <h3 class="sub">景気サイクルが異なる2つの世界1位という分散ポートフォリオ</h3>
+  <p>信越化学の特徴は、ハイテク用の半導体シリコンウエハーと、住宅インフラ用の塩化ビニル樹脂（米国PVC生産能力世界1位、362万トン/年）という、景気サイクルが全く異なる2つの世界1位製品を同時に持つ点にある。この分散構造により、一方の事業が市況低迷に見舞われても、もう一方の成長が業績を下支えする体制を築いている。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">約30<small>%</small></div><div class="k">半導体シリコンウエハー 世界シェア（世界1位）</div></div>
+    <div class="stat"><div class="v">362万<small>トン/年</small></div><div class="k">米国PVC生産能力（世界1位）</div></div>
+    <div class="stat"><div class="v">4<small>拠点</small></div><div class="k">シリコンウエハー海外生産拠点（米国・台湾・マレーシア等）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― 官民投資68兆円ロードマップにおける「部素材」の強み</h2>
+    </div>
+  </div>
+  <p class="lede">信越化学工業は、高市政権が掲げる半導体分野の官民投資ロードマップにおいて、「部素材は日本に強み」と明記される領域の代表的企業として位置づけられる。</p>
+
+  <h3 class="sub">「System to Silicon」戦略の土台を支える部素材</h3>
+  <p>政府が2026年6月に改定した半導体・デジタル産業戦略が掲げる「System to Silicon」という考え方は、実装先の需要から逆算して半導体を設計・製造するというものだが、その大前提となるのが、高純度なシリコンウエハーという基礎部素材の安定供給である。信越化学工業は、この最上流工程で世界トップシェアを握ることで、AI半導体・先端ロジックを問わず、あらゆる半導体メーカーにとって欠かせない供給者となっている。</p>
+
+  <h3 class="sub">フォトレジスト・マスクブランクスでも存在感</h3>
+  <p>半導体市場ではAI関連の需要が堅調に推移しており、シリコンウエハーだけでなく、フォトレジストやマスクブランクスといった半導体材料でも売上を伸ばしている。これらは半導体製造プロセスに不可欠な材料であり、東京エレクトロンなどの製造装置と組み合わせて使用される。</p>
+
+  <div class="tag-row">
+    <span class="tag">官民投資68兆円（半導体、2040年度まで）</span>
+    <span class="tag">半導体シリコンウエハー世界1位</span>
+    <span class="tag">「System to Silicon」戦略の土台</span>
+    <span class="tag">フォトレジスト・マスクブランクスも展開</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― 塩ビ市況低迷からAI半導体需要への転換点</h2>
+    </div>
+  </div>
+  <p class="lede">2026年3月期は塩化ビニル市況の低迷により減益となったが、2027年3月期はAI半導体向けシリコンウエハー需要の拡大により増益転換を計画している。</p>
+
+  <table>
+    <thead><tr><th>指標</th><th>26年3月期実績</th><th>27年3月期会社計画</th></tr></thead>
+    <tbody>
+      <tr><td>経常利益</td><td>約7,084億円（会社計画からの逆算値）</td><td>7,700億円（+8.7%）</td></tr>
+      <tr><td>純利益</td><td>約4,730億円（同）</td><td>5,250億円（+11%、2期ぶり最終増益）</td></tr>
+      <tr><td>売上高営業利益率</td><td>24.7%</td><td>―</td></tr>
+      <tr><td>年間配当</td><td>106円</td><td>116円（10円増配）</td></tr>
+    </tbody>
+  </table>
+  <p>26年3月期は、売上高が微増にとどまる一方、営業利益・経常利益・純利益はいずれも減益となった。減益の主因は、生活環境基盤材料事業（塩化ビニル）における市況の弱含みと海外での価格低迷、加えて中東情勢に起因するエネルギー・基礎資材の供給制約と価格変動である。それでも売上高営業利益率は24.7%と、一般的な総合化学メーカー（5〜8%程度）を大幅に上回る、圧倒的な収益性を維持した。自己資本比率は78.7%と極めて高い財務健全性を誇る。</p>
+
+  <div class="callout">
+    <span class="callabel">27年3月期第1四半期（4〜6月、確定）</span>
+    売上高6,624億円（前年同期比+5.4%）、営業利益1,738億円（同+4.2%）、経常利益1,921億円（同+5.8%）と増収増益を達成した。AI需要を追い風に電子材料事業が大幅増益となった一方、生活環境基盤材料事業の市況悪化が全体の利益成長を抑制する構図が続いている。市場が警戒していた大幅減益は回避され、堅調な滑り出しとなった。
+  </div>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― AI半導体需要と価格交渉という焦点</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">AI半導体向けシリコンウエハーの好調な出荷</h3>
+  <p>2026年7月24日に発表された27年3月期通期見通しでは、AI半導体向けを中心に関連材料のシリコンウエハーで好調な出荷が続くとされている。生成AI向けデータセンター投資や先端半導体需要の拡大が、中長期的な成長材料として注目されている。</p>
+
+  <h3 class="sub">顧客との価格交渉が焦点に</h3>
+  <p>顧客との契約更新を控え、価格交渉が今後の焦点になるとされている。AI半導体向け需要拡大の恩恵をどこまで販売価格に反映できるかが、27年3月期以降の収益性を左右する重要な要素である。</p>
+
+  <h3 class="sub">生活環境基盤材料事業の底打ち待ち</h3>
+  <p>一方、塩化ビニル樹脂を中心とする生活環境基盤材料事業は、北米のインフラ投資が一服したことによる価格低迷が続いている。2026年6月の塩ビ樹脂出荷は前年比5%減となり、輸出向けの回復が遅れている状況である。この事業の底打ちタイミングが、全社的な増益ペースに影響を与える。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">2026<small>年7月24日</small></div><div class="k">27年3月期 通期見通し発表</div></div>
+    <div class="stat"><div class="v">▲5<small>%</small></div><div class="k">塩ビ樹脂 6月出荷（前年比、輸出向け回復遅れ）</div></div>
+    <div class="stat"><div class="v">2期ぶり<small></small></div><div class="k">27年3月期 純利益 最終増益見込み</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― 決算発表後に株価調整も、アナリストは強気</h2>
+    </div>
+  </div>
+  <p class="lede">27年3月期第1四半期決算・通期見通し発表後、株価は一時調整したが、アナリストの目標株価コンセンサスは現在株価を上回る水準にある。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>株価</td><td>6,702円（7月24日、決算発表後▲3.85%）</td></tr>
+      <tr><td>時価総額</td><td>約13.3兆円（決算発表後）</td></tr>
+      <tr><td>PER（予）</td><td>23.7倍</td></tr>
+      <tr><td>PBR（実）</td><td>2.7〜3.2倍</td></tr>
+      <tr><td>ROE（実）</td><td>10.41%</td></tr>
+      <tr><td>配当利回り（予）</td><td>1.73%</td></tr>
+      <tr><td>年初来高値／安値</td><td>7,953円（6/4）／5,552円（1/15）</td></tr>
+      <tr><td>アナリスト平均目標株価</td><td>8,075〜8,441円（上昇余地+16.7〜25.9%）</td></tr>
+      <tr><td>アナリスト評価</td><td>「買い」が大勢（強気買い10人・買い3人・中立4人）</td></tr>
+    </tbody>
+  </table>
+  <p>2026年7月24日の決算発表では、純利益計画（5,250億円）が市場予想平均（QUICKコンセンサス5,594億円）をやや下回ったことなどから、株価は同日▲3.85%の調整となった。一方で、想定していたほどの減益は回避されたとして、決算内容を前向きに評価する声もあり、中長期的な成長期待とのバランスの中で株価が形成されている。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① 生活環境基盤材料事業（塩ビ）の市況低迷継続</span>
+    北米インフラ投資の一服による価格低迷が続いており、6月の塩ビ樹脂出荷も前年比5%減と、輸出向けの回復が遅れている。この事業の底打ち時期は依然として不透明である。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② 中東情勢によるエネルギー・基礎資材の供給制約</span>
+    中東情勢に起因するエネルギーや基礎資材の供給制約・価格変動が、事業環境の不確実性を高めている。27年3月期通期予想についても、この要因を踏まえ当初「合理的な予想が困難」として一旦開示を見送った経緯がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ 純利益計画が市場予想を下回る</span>
+    会社側の27年3月期純利益計画（5,250億円）は、市場予想平均（QUICKコンセンサス5,594億円）を下回っており、決算発表後に株価調整の材料となった。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ 顧客との価格交渉リスク</span>
+    AI半導体向け需要拡大の恩恵を、顧客との契約更新でどこまで価格に反映できるかが焦点であり、交渉の行方次第では収益性に影響が及ぶ可能性がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ 半導体・化学品双方の需給サイクル</span>
+    シリコンウエハー事業・塩ビ事業のいずれも、業界特有の需給サイクルの影響を受けやすい構造にあり、両事業が同時に下降局面を迎えるリスクもゼロではない。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">信越化学工業の成長ストーリーは、半導体シリコンウエハーという「フィジカルAI／半導体」の最上流部素材で世界トップシェアを握りながら、非連動の別サイクル事業（塩ビ）を併せ持つ、稀有な分散ポートフォリオ企業である点に集約される。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>2026年3月期は塩ビ市況低迷により減益となったが、2027年3月期はAI半導体向けシリコンウエハー需要の拡大により増益転換を計画しており、直近の第1四半期実績も市場の減益懸念を払拭する堅調な内容だった。売上高営業利益率24.7%という圧倒的な収益性は、他社が容易に模倣できない市場地位の証といえる。次のメガサイクルにおける存在感の強化が期待される一方、塩ビ事業の底打ちタイミングと、顧客との価格交渉の行方が当面の焦点となる。</p>
+    <ul class="watchlist">
+      <li>27年3月期通期計画（経常利益7,700億円・純利益5,250億円）の進捗</li>
+      <li>顧客との価格交渉の結果と、電子材料事業の利益率の推移</li>
+      <li>塩化ビニル樹脂市況の底打ちタイミングと、輸出向け需要の回復状況</li>
+      <li>中東情勢に起因するエネルギー・基礎資材コストの動向</li>
+      <li>AI半導体向けシリコンウエハー需要の中長期的な拡大ペース</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年7月時点で確認可能な公開情報に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>
