@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜NVIDIA（NVDA） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+  .ticker .sign.neg{color:#E39A8C;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+  .callout.note{border-left-color:#5B7CA8;background:#EFF3F8;}
+  .callout.note .callabel{color:#3D5C82;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編（海外）</span>
+      <span>2026年8月4日号</span>
+    </div>
+    <h1 class="title">NVIDIA（NVDA）<br>データセンターの次は「フィジカルAI」― 年間100億ドル事業が描く1,000億ドルへの道筋</h1>
+    <p class="subtitle">時価総額世界2位、データセンター向けAIチップで圧倒的な収益力を誇るNVIDIAが、2026年7月に集中発表したトヨタ・日立・富士通・ソフトバンク系Noetraとの協業。ロボット・自動運転・具現化AIを含む「フィジカルAI」事業は年間約100億ドル規模に到達し、ジェンスン・ファンCEOは1,000億ドルへの成長パスを描く。市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">約4.8<small>兆ドル</small></span><span class="lbl">時価総額（2026年7月末時点、世界2位）</span></div>
+      <div><span class="num">130.5<small>億ドル</small></span><span class="lbl">FY26通期 売上高（過去最高） <span class="sign">+114%</span></span></div>
+      <div><span class="num">約100<small>億ドル</small></span><span class="lbl">フィジカルAI事業 年間売上高</span></div>
+      <div><span class="num">約85<small>%</small></span><span class="lbl">GPU市場シェア</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<div class="callout note">
+  <span class="callabel">データ基準についての注記</span>
+  NVIDIAの2027会計年度第2四半期（2026年5〜7月期）決算は2026年8月26日発表予定。本レポート作成時点で確定している最新の四半期実績は第1四半期（発表済み）であり、第2四半期については会社発表済みのガイダンスとして記載している。
+</div>
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― データセンターの次に見据える「フィジカルAI」市場</h2>
+    </div>
+  </div>
+  <p class="lede">NVIDIAの成長シナリオは、生成AIの学習・推論を支えるデータセンター向けGPU事業を主軸としつつ、ロボットや自動運転車など現実世界で動作する「フィジカルAI」を次の巨大市場と位置づける点に特徴がある。</p>
+
+  <h3 class="sub">年間100億ドルから1,000億ドルへの成長パス</h3>
+  <p>ジェンスン・ファンCEOによれば、ロボット・自動運転車・具現化システムを含むNVIDIAのフィジカルAI事業は、既に年間約100億ドルの売上規模に到達しているという。データセンター事業が四半期だけで750億ドル超を売り上げる規模と比べればまだ小さいが、ファンCEOは将来的に1,000億ドル規模への成長パスがあるとの見方を示している。</p>
+
+  <h3 class="sub">AIインフラ投資は2030年に年間3〜4兆ドル規模へ</h3>
+  <p>NVIDIAは、AIインフラへの投資が2030年までに年間3兆〜4兆ドル規模に達すると予測している。Alphabet・Microsoft・Amazon・Metaの4大ハイパースケーラーだけで、2026年のAIインフラ投資額は合計約7,300億ドルに達する見込みとされ、この巨大な設備投資需要がNVIDIAの半導体売上に直結する構造にある。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">約100<small>億ドル</small></div><div class="k">フィジカルAI事業 年間売上高</div></div>
+    <div class="stat"><div class="v">約1,000<small>億ドル</small></div><div class="k">ファンCEOが見込む将来の成長目標</div></div>
+    <div class="stat"><div class="v">3〜4<small>兆ドル</small></div><div class="k">2030年 年間AIインフラ投資見込み額</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― 日本のフィジカルAI政策に食い込む協業ラッシュ</h2>
+    </div>
+  </div>
+  <p class="lede">NVIDIAは、日本政府が掲げるフィジカルAI官民投資ロードマップの主要プレイヤーと、2026年7月に集中的な協業発表を行っている。</p>
+
+  <h3 class="sub">7月16日に集中した4件の大型協業発表</h3>
+  <p>2026年7月16日、NVIDIAはソフトバンク主導のNoetraと協力し、Rubin GPU約2万7,500基・Vera CPU約1万3,750基を搭載した140MW級の「Vera Rubin AIファクトリー」を構築すると発表した。同日、トヨタとは自動車・ロボティクス・工場・スマートシティの各分野で協業を拡大すると発表し、日立とは社会インフラ知能基盤モデル「IWIM」とNVIDIA「Cosmos」を接続する取り組みを発表。さらに富士通・ファナック・安川電機・川崎重工業の4社とも、ロボット協調制御のオープン基盤構築に向けた事業検討を発表するなど、単一日に日本のフィジカルAI関連企業との連携が集中した。</p>
+
+  <h3 class="sub">米国の輸出管理政策という不確実性</h3>
+  <p>一方でNVIDIAの事業展開は、米国の対中輸出管理政策の影響を強く受ける。2022年の対中輸出規制開始以降、H20チップの開発・禁輸・H200への輸出許可切り替えなど、政策が繰り返し変化してきた経緯があり、次世代のBlackwell B200・Rubinアーキテクチャは国内投入から少なくとも18〜24カ月間、対中輸出が禁止される方針が示されている。</p>
+
+  <div class="tag-row">
+    <span class="tag">Vera Rubin AIファクトリー（ソフトバンク系Noetra、7月16日）</span>
+    <span class="tag">トヨタ協業拡大（7月16日）</span>
+    <span class="tag">日立協業拡大（IWIM×Cosmos、7月16日）</span>
+    <span class="tag">富士通・ファナック・安川電機・川崎重工4社協業（7月16日）</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― データセンター事業が支える圧倒的な収益力</h2>
+    </div>
+  </div>
+  <p class="lede">FY2026（2025年2月〜2026年1月期）は売上高が過去最高を更新し、データセンター事業が全社の成長を牽引した。</p>
+
+  <table>
+    <thead><tr><th>指標</th><th>FY26通期実績</th><th>前期比</th></tr></thead>
+    <tbody>
+      <tr><td>売上高</td><td>130.5億ドル</td><td>+114%（過去最高）</td></tr>
+      <tr><td>FY26 Q4 売上高</td><td>39.3億ドル</td><td>+78%</td></tr>
+      <tr><td>FY26 Q4 データセンター売上</td><td>35.6億ドル</td><td>+93%</td></tr>
+      <tr><td>FY26 Q4 EPS</td><td>0.89ドル</td><td>+82%</td></tr>
+    </tbody>
+  </table>
+  <p>セグメント別では、データセンターが圧倒的な牽引役となる一方、自動車セグメントも前年比103%増と大幅な成長を見せている。ゲーム&AI PCセグメントはやや減収となった。</p>
+
+  <div class="callout note">
+    <span class="callabel">FY2027 Q1実績（2026年4月26日締め、確定）とQ2ガイダンス</span>
+    データセンター売上高は75.2億ドルと前年同期比でほぼ倍増し、全社売上の92%を占めるまでになった。株主還元は自社株買いと配当を合わせて約200億ドルと過去最高水準に達している。決算は市場予想を上回ったが、株価は決算発表後に下落し、4四半期連続の「決算後下落」というパターンが続いた。会社側が示すFY2027第2四半期（2026年5〜7月期）のガイダンスは、売上高910億ドル（前年比+95%）。決算発表は2026年8月26日を予定している。
+    </div>
+
+  <h3 class="sub">粗利益率・収益性の高さ</h3>
+  <p>直近12カ月ベースの粗利益率は74.15%、純利益率は62.97%、ROEは114.29%と、いずれも極めて高い水準にある。この圧倒的な収益性が、高いバリュエーションを正当化する根拠として評価されている。</p>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― Vera RubinプラットフォームとフィジカルAIの実装</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">次世代プラットフォーム「Vera Rubin」</h3>
+  <p>現行のBlackwellアーキテクチャ（GB300は初代AI GPU「H100」比で最大50倍の性能を実現）に続く次世代製品として、Rubin GPU・Vera CPU・NVLink 6データセンタースイッチを含む「Vera Rubin」プラットフォームの投入が予定されている。ファンCEOは株主向け説明会で、Vera Rubinが売上・性能の両面でBlackwellを上回る可能性について強気の見通しを示した。</p>
+
+  <h3 class="sub">Omniverse・Isaac Simによる工場デジタルツイン</h3>
+  <p>トヨタや日立など、日本の主要企業との協業では、シミュレーション環境「NVIDIA Omniverse」と、その中に含まれる「Isaac Sim」ライブラリを活用した工場・ロボティクスのデジタルツイン構築が共通のテーマとなっている。「現実の工場をOmniverse上に再現し、Isaacでロボットを学習させ、実工場へ反映する」というインダストリアルAIの手法が、複数の協業で採用されている。</p>
+
+  <h3 class="sub">ソフトバンクを通じたロボティクス事業への関与</h3>
+  <p>2025年10月、ABBがロボティクス事業をソフトバンクグループへ売却する契約を締結した際、ソフトバンクの孫正義会長兼社長は「フィジカルAIはソフトバンクの次のフロンティア」と述べている。NVIDIAは既にソフトバンク主導のNoetraとAIファクトリー構築で協業しており、ABBロボティクス事業の統合が進めば、NVIDIAの技術がこの事業とも接続される可能性がある。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">Vera<small>Rubin</small></div><div class="k">Blackwellに続く次世代プラットフォーム</div></div>
+    <div class="stat"><div class="v">50<small>倍</small></div><div class="k">Blackwell GB300のH100比性能向上</div></div>
+    <div class="stat"><div class="v">2026<small>年7月16日</small></div><div class="k">日本4件の協業発表が集中した日</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― 高収益にもかかわらず歴史的には割安な水準</h2>
+    </div>
+  </div>
+  <p class="lede">時価総額は世界2位の規模にあるが、PERは過去10年平均と比較すると歴史的に見て低い水準で取引されている。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月末時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>株価</td><td>195〜199ドル前後</td></tr>
+      <tr><td>時価総額</td><td>約4.7〜4.9兆ドル（世界2位）</td></tr>
+      <tr><td>52週高値／安値</td><td>236.54ドル／164.07ドル</td></tr>
+      <tr><td>PER（実績、TTM）</td><td>31〜33倍（10年平均61.7倍から約5割ディスカウント）</td></tr>
+      <tr><td>Forward P/E</td><td>20〜24倍</td></tr>
+      <tr><td>粗利益率（TTM）</td><td>74.15%</td></tr>
+      <tr><td>ROE（TTM）</td><td>114.29%</td></tr>
+      <tr><td>ベータ値</td><td>2.23（市場平均より高いボラティリティ）</td></tr>
+      <tr><td>次回決算発表</td><td>2026年8月26日（FY2027 Q2）</td></tr>
+    </tbody>
+  </table>
+  <p>ビッグテック各社の設備投資額とフィラデルフィア半導体指数の30日相関係数は、2026年4月時点の+0.78から年央にはほぼゼロまで低下したとされる。投資家は、受注してすぐ売上に計上されるNVIDIAのような企業と、投資回収に年単位を要する企業とを区別し始めているとの分析がある。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① 中国輸出規制を巡る政策の不透明感</span>
+    2022年の対中輸出規制開始以降、H20の禁輸、H200への切り替え許可など、米国の対中半導体輸出政策は繰り返し変化してきた。次世代のBlackwell B200・Rubinアーキテクチャは、国内投入から少なくとも18〜24カ月間、対中輸出が禁止される方針が示されている。ある証券アナリストは、中国が完全にH20を禁輸した場合、年間200億ドル超の中国売上がリスクにさらされると指摘している。米議会でも半導体輸出ライセンスに議会拒否権を導入する法案が審議されるなど、供給網の不確実性は継続している。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② ハイパースケーラー投資と半導体株の相関低下</span>
+    ビッグテック各社の設備投資額と半導体株の連動性が薄れつつあり、投資家が「確実な売上」と「将来の期待」を選別し始めている兆候がある。今後の株価は、実際の受注・売上の伸びにより敏感に反応する可能性がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ 決算後の株価下落基調</span>
+    FY2027 Q1決算は市場予想を上回る内容だったにもかかわらず、株価は決算発表後に下落し、4四半期連続で同様のパターンが続いている。好決算がそのまま株価上昇につながらない状況が続けば、市場の期待値の高さそのものがリスクとなりうる。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ フィジカルAI事業はまだ全体のごく一部</span>
+    年間約100億ドルというフィジカルAI事業の規模は、データセンター事業（四半期だけで750億ドル超）と比べればまだ小さく、1,000億ドル規模への成長は長期的な見通しにとどまる。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ 高いベータ値によるボラティリティ</span>
+    ベータ値2.23と市場平均より高いボラティリティを持ち、AI関連銘柄全体のセンチメント変化の影響を受けやすい。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑥ 主要顧客の依存度低減インセンティブ</span>
+    NVIDIAの主要顧客である大手テック企業各社は、独自チップ開発などを通じて長期的にNVIDIAへの依存度を引き下げる動機を持っている。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">NVIDIAの成長ストーリーは、データセンター向けAIチップという圧倒的な収益源を土台に、「フィジカルAI」という次のフロンティアへ布石を打つ点に集約される。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>2026年7月16日に集中したトヨタ・日立・富士通・ソフトバンク系Noetraとの協業発表は、日本のフィジカルAI政策・企業群とNVIDIAとの結びつきの深さを示している。年間約100億ドルというフィジカルAI事業の規模はまだ小さいが、ファンCEOが描く1,000億ドルへの成長パスが現実味を帯びるかどうかが、今後数年間の重要な注目点となる。一方で中国輸出規制を巡る政策の不透明感は、短期的な業績変動要因として引き続き重い。</p>
+    <ul class="watchlist">
+      <li>2026年8月26日発表予定のFY2027第2四半期決算における、ガイダンス（売上高910億ドル）の達成状況</li>
+      <li>フィジカルAI事業の売上規模の推移と、1,000億ドルへの成長パスの具体化</li>
+      <li>Vera Rubinプラットフォームの投入時期と、市場の受注状況</li>
+      <li>対中輸出規制の政策動向と、中国売上への影響</li>
+      <li>トヨタ・日立・富士通など日本企業との協業の商用化進捗</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年7月時点で確認可能な公開情報に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>
