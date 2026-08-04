@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜TSMC（TSM） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編（海外）</span>
+      <span>2026年8月5日号</span>
+    </div>
+    <h1 class="title">TSMC（TSM）<br>「非常に大きい」需給ギャップ ― 5四半期連続最高益が示すAI半導体需要の強さ</h1>
+    <p class="subtitle">世界の先端ファウンドリ市場で約7割のシェアを握るTSMC。2026年第2四半期は5四半期連続で過去最高益を更新し、通期売上高成長率ガイダンスを40%超へ上方修正、アリゾナへの追加投資も発表した。熊本工場を含む日本展開の重要性とあわせ、市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">約1.9<small>兆ドル</small></span><span class="lbl">時価総額（2026年7月時点、世界6位規模）</span></div>
+      <div><span class="num">402<small>億ドル</small></span><span class="lbl">26年Q2 売上高（5四半期連続最高） <span class="sign">+36%</span></span></div>
+      <div><span class="num">67.7<small>%</small></span><span class="lbl">26年Q2 粗利益率</span></div>
+      <div><span class="num">約7<small>割</small></span><span class="lbl">先端ファウンドリ市場 世界シェア</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― コンピューティング・自動車・ロボティクスへ広がるAI半導体需要</h2>
+    </div>
+  </div>
+  <p class="lede">TSMCの成長シナリオは、AI半導体の需給ギャップという極めて強い需要環境と、それがコンピューティングにとどまらず自動車・ロボティクスへ広がりつつあるという構造変化に根ざしている。</p>
+
+  <h3 class="sub">「非常に大きい」需給ギャップは2029〜2030年まで続く可能性</h3>
+  <p>C.C.魏（ウェイ）会長兼CEOは、2026年第2四半期決算説明会で、AI半導体の需給ギャップについて「非常に大きい」と表現し、このギャップが2029年から2030年まで続く可能性があるとの見方を示した。同氏は、AI市場がコンピューティングだけでなく、自動車やロボティクスにまで広範な影響を及ぼす新しい産業になりつつあると説明している。</p>
+
+  <h3 class="sub">HPC（AIチップ）が売上の3分の2を占める構造</h3>
+  <p>2026年第2四半期の売上構成を見ると、AIデータセンター向けアクセラレータを含む高性能コンピューティング（HPC）分野が売上の約66%を占め、前四半期比で20%増加した。スマートフォン向けは約22%とかつての主力から比重を下げており、TSMCの事業構造そのものがAI半導体中心へと転換していることを示している。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">約66<small>%</small></div><div class="k">HPC（AIチップ含む）の売上構成比（26年Q2）</div></div>
+    <div class="stat"><div class="v">77<small>%</small></div><div class="k">7nm以下の先端ノードが占める売上比率</div></div>
+    <div class="stat"><div class="v">2029〜30<small>年</small></div><div class="k">需給ギャップが続く可能性のある期間（CEO言及）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― 熊本工場と官民投資68兆円ロードマップとの接続</h2>
+    </div>
+  </div>
+  <p class="lede">TSMCは、高市政権が掲げる半導体分野の官民投資ロードマップにおいて、日本国内での製造拠点を持つ数少ない海外先端ファウンドリとして特別な位置づけにある。</p>
+
+  <h3 class="sub">熊本第2工場と日本企業の出資</h3>
+  <p>TSMCの熊本工場を運営する合弁会社JASM（Japan Advanced Semiconductor Manufacturing）には、ソニーセミコンダクタソリューションズ、デンソー、トヨタ自動車が出資している。第2工場では3ナノメートル世代のラインが導入される計画で、2028年の量産開始が目標とされている。2026年7月には、C.C.魏CEOが熊本第2工場の建設加速を示唆する場面もあった。</p>
+
+  <h3 class="sub">米国アリゾナへの追加投資</h3>
+  <p>2026年7月16日の決算発表と同時に、TSMCはアリゾナ州での生産能力拡張に向けて追加で1,000億ドルを投資すると発表した。これによりアリゾナ州への累計投資コミットメントは2,650億ドルに達し、台湾・日本と並ぶ主要な海外拠点としての位置づけが一段と強まっている。</p>
+
+  <div class="tag-row">
+    <span class="tag">官民投資68兆円（半導体、2040年度まで）</span>
+    <span class="tag">JASM熊本第2工場（2028年量産目標）</span>
+    <span class="tag">アリゾナ追加投資1,000億ドル</span>
+    <span class="tag">先端ファウンドリ世界シェア約7割</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― 5四半期連続の過去最高益</h2>
+    </div>
+  </div>
+  <p class="lede">2026年第2四半期は、売上高・純利益ともに5四半期連続で過去最高を更新する、極めて力強い決算内容となった。</p>
+
+  <table>
+    <thead><tr><th>指標</th><th>26年Q2実績</th><th>前年同期比</th></tr></thead>
+    <tbody>
+      <tr><td>売上高</td><td>402億ドル（NT$1兆2,703.8億）</td><td>+36%（5四半期連続最高）</td></tr>
+      <tr><td>純利益</td><td>約220億ドル（NT$7,065.6億）</td><td>+77.4%（5四半期連続最高）</td></tr>
+      <tr><td>粗利益率</td><td>67.7%</td><td>会社ガイダンス上限を上回る</td></tr>
+      <tr><td>EPS（ADR当たり）</td><td>4.31ドル</td><td>+77%超</td></tr>
+    </tbody>
+  </table>
+  <p>2026年6月単月の売上高は過去最高となるNT$442.68億（前年比+67.9%）を記録した。会社側は2026年通期の売上高成長率ガイダンスを40%超（米ドルベース）へ上方修正し、設備投資計画も従来の520億〜560億ドルから600億〜640億ドル（中央値620億ドル）へ引き上げた。</p>
+
+  <div class="callout">
+    <span class="callabel">2026年第3四半期の会社ガイダンス</span>
+    売上高は446億〜458億ドル（中央値452億ドル、前年比+37%）、営業利益率は56〜58%を見込む。ウェンデル・ホアンCFOは、先端プロセス技術への強い需要が業績を下支えすると説明している。
+  </div>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― 2nmプロセスの商業化開始</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">N2（2nm）プロセスが商業収益に貢献開始</h3>
+  <p>2026年第2四半期は、TSMCの2ナノメートルプロセス（N2）が、エンジニアリングサンプル段階から量産段階への移行を完了し、初めて意味のある商業収益に貢献した四半期となった。四半期のウェハ収入に占める割合はまだ3%にとどまるが、N2はTSMCのこれまでの全プロセスノードとは根本的に異なるアーキテクチャの転換点とされ、今後の成長プラットフォームとして期待されている。</p>
+
+  <h3 class="sub">5nm・3nmが先端プロセスの中核を維持</h3>
+  <p>ノード別の売上構成では、5ナノメートルが全体の33%と最大シェアを占め、3ナノメートルが30%とこれに続く。7ナノメートル以下の先端ノード全体では売上の77%に達しており、TSMCの技術的優位性が収益構造にも色濃く反映されている。</p>
+
+  <h3 class="sub">エージェンティックAIによる新たな需要創出</h3>
+  <p>需要拡大の背景には、生成AIからエージェンティックAI（自律的にタスクを遂行するAI）への移行があるとされる。この移行がハイパースケールデータセンター全体の計算需要を押し上げており、GPUだけでなくCPU需要の増分にもつながっているという。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">3<small>%</small></div><div class="k">N2（2nm）プロセスのウェハ収入構成比（26年Q2、初計上）</div></div>
+    <div class="stat"><div class="v">33<small>%</small></div><div class="k">5nmプロセスの売上構成比（最大シェア）</div></div>
+    <div class="stat"><div class="v">620<small>億ドル</small></div><div class="k">2026年設備投資計画（中央値、上方修正後）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― アナリストは総じて「強気買い」</h2>
+    </div>
+  </div>
+  <p class="lede">好決算を受け、アナリストの評価は総じて強気であり、目標株価の引き上げが相次いでいる。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>株価</td><td>434ドル前後</td></tr>
+      <tr><td>時価総額</td><td>約1.83〜2.09兆ドル（世界6位規模）</td></tr>
+      <tr><td>PER（実績、TTM）</td><td>26.21倍</td></tr>
+      <tr><td>Forward PER</td><td>18.35倍</td></tr>
+      <tr><td>ROE</td><td>39.97%</td></tr>
+      <tr><td>ROIC</td><td>54.61%</td></tr>
+      <tr><td>52週株価騰落率</td><td>+59.74%</td></tr>
+      <tr><td>アナリスト評価</td><td>「Strong Buy」（19人、平均目標株価537.43ドル、上昇余地+32.53%）</td></tr>
+    </tbody>
+  </table>
+  <p>Needham証券のアナリストは、目標株価を480ドルから530ドルへ引き上げ、買い推奨を継続した。一方で市場全体としては、半導体セクターが2026年に大幅なアウトパフォームを見せた反動から、7月には利益確定売りやバリュエーションへの懸念による調整局面も見られている。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① 地政学リスク（台湾海峡情勢）</span>
+    生産拠点が台湾に集中しているため、中台関係の緊張が経営環境に直接的な影響を及ぼしうる。米国・日本への生産拠点分散が進んでいるが、依然として台湾への依存度は高い。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② 競争激化と価格圧力</span>
+    各プロセス世代は成熟するにつれてコモディティ化が進み、価格圧力にさらされる構造的な課題を抱える。競合他社による新技術開発の報道も、市場の警戒感を高める材料となっている。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ 巨額の設備投資負担</span>
+    2026年の設備投資は600億〜640億ドルに達する見通しであり、投資回収の確実性が問われる。アリゾナ・熊本など海外拠点の立ち上げコストも、粗利益率を圧迫する要因となりうる。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ 需給ギャップ持続性への疑問</span>
+    CEOは需給ギャップが2029〜2030年まで続く可能性を示唆しているが、AI投資サイクルが減速した場合、稼働率低下による収益性悪化のリスクがある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ 顧客集中リスク</span>
+    NVIDIAをはじめとする大口顧客への売上依存度が高く、特定顧客の需要変動の影響を受けやすい構造にある。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">TSMCの成長ストーリーは、AI半導体需要という「非常に大きい」需給ギャップを背景に、5四半期連続の過去最高益を更新し続けている点に集約される。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>2nmプロセスの商業化開始、アリゾナへの追加投資、通期ガイダンスの上方修正と、攻めの経営姿勢が続いている。日本の熊本工場を含む海外拠点の拡大は、フィジカルAI・半導体政策の重要な結節点として、政府の官民投資ロードマップとも密接に関わる。一方で地政学リスクや巨額投資の回収確実性など、構造的な課題も抱えている。</p>
+    <ul class="watchlist">
+      <li>2026年第3四半期決算（会社ガイダンス：売上高446億〜458億ドル）の進捗</li>
+      <li>N2（2nm）プロセスの量産拡大ペースと、収益への寄与度</li>
+      <li>熊本第2工場の建設進捗と、2028年量産開始目標の達成可能性</li>
+      <li>アリゾナ工場拡張の進捗と、海外拠点立ち上げコストの粗利益率への影響</li>
+      <li>台湾海峡情勢を含む地政学リスクの動向</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年7月時点で確認可能な公開情報に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>
