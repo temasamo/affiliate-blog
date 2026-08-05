@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜タワーセミコンダクター（TSEM） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+  .callout.note{border-left-color:#5B7CA8;background:#EFF3F8;}
+  .callout.note .callabel{color:#3D5C82;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編（海外）</span>
+      <span>2026年8月6日号</span>
+    </div>
+    <h1 class="title">タワーセミコンダクター（TSEM）<br>過去最高収益・過去最高益 ― AIデータセンターの「光配線」を握る成長株</h1>
+    <p class="subtitle">AIデータセンター向け光接続で急成長するイスラエル発のアナログ半導体ファウンドリ。2026年8月4日発表の第2四半期決算は、売上高・粗利益・営業利益・純利益のいずれもが過去最高を記録した。日本(富山・新潟)への30億ドル投資拡大も発表され、株価は12ヶ月で570%近く上昇した。市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">約70<small>億ドル超</small></span><span class="lbl">時価総額目安（株価$264ベース試算）</span></div>
+      <div><span class="num">4.60<small>億ドル</small></span><span class="lbl">26年Q2 売上高（過去最高） <span class="sign">+24%</span></span></div>
+      <div><span class="num">5.20<small>億ドル</small></span><span class="lbl">26年Q3 会社ガイダンス（過去最高更新見込み）</span></div>
+      <div><span class="num">+569.83<small>%</small></span><span class="lbl">株価 12ヶ月騰落率</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― AIデータセンターの「光配線」というボトルネック市場</h2>
+    </div>
+  </div>
+  <p class="lede">タワーセミコンダクターの成長シナリオは、AIクラスターが必要とするのは先端ロジック半導体だけではなく、加速器・スイッチ・メモリ間でデータを移動させる「光接続」も不可欠だという、あまり目立たないボトルネック市場への集中に根ざしている。</p>
+
+  <h3 class="sub">シリコンフォトニクスが年間換算6.8億ドル規模に</h3>
+  <p>タワーセミコンダクターはイスラエル発のアナログ半導体特化型ファウンドリで、シリコンフォトニクス（SiPho）とシリコンゲルマニウム（SiGe）を中核プラットフォームとしている。2026年8月4日発表の第2四半期決算によれば、AIデータセンター需要を追い風にシリコンフォトニクス事業は年間換算売上高（アニュアルランレート）で6.8億ドル規模に達した。会社側は2026年第4四半期に年間換算10億ドルの水準を超え、2027年も大幅な成長が続くとの見通しを示している。同社とマーベルは、高帯域幅・省電力なデータセンター接続を実現するコヒーレント光集積回路（PIC）を、累計500万個超出荷している。</p>
+
+  <h3 class="sub">2028年目標を売上高36億ドルへ上方修正</h3>
+  <p>エルワンガーCEOは決算発表にあわせ、2028年の長期財務目標を売上高36億ドル・純利益12億ドルへ上方修正したことを明らかにした。同氏は、この新目標が「顧客によって完全に裏付けられている」、すなわち既存の戦略的顧客との深い関係に基づく確度の高い数字であると説明している。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">6.8<small>億ドル</small></div><div class="k">シリコンフォトニクス 年間換算売上高（26年Q2時点）</div></div>
+    <div class="stat"><div class="v">500<small>万個超</small></div><div class="k">Marvellと共同出荷したコヒーレント光集積回路の累計数</div></div>
+    <div class="stat"><div class="v">36<small>億ドル</small></div><div class="k">2028年 売上高目標（上方修正後）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― METI支援による日本(富山・新潟)への30億ドル投資</h2>
+    </div>
+  </div>
+  <p class="lede">タワーセミコンダクターは、日本の経済産業省（METI）から直接支援を受け、富山・新潟両県での生産能力拡大を発表した数少ない海外ファウンドリの一つである。</p>
+
+  <h3 class="sub">METI認定と同日発表された大型投資</h3>
+  <p>2026年7月14日、タワーセミコンダクターは日本政府の支援のもと、300mmシリコンフォトニクス・SiGe・先端パッケージング能力の「デュアルトラック」拡大を発表した。投資規模は約30億ドル(日本円ベースで約6,000億円)で、うち日本政府の補助金は最大10億ドル(約1,600億円)に達する。トラック1では、新潟県妙高市の荒井施設（旧Fab 6）を300mmシリコンフォトニクス・先端パッケージング向けに転用し、富山県魚津市のFab 7の300mm生産能力も最大化する計画で、2027年第4四半期の完全生産体制を目指す。</p>
+
+  <h3 class="sub">TPSCoを通じた日本での事業基盤</h3>
+  <p>タワーセミコンダクターは、旧パナソニック半導体製造事業であるTPSCoを通じて日本で事業を展開しており、同社が過半数株主となっている。富山・新潟両県との長年の関係と、魚津・荒井両施設への継続的な投資を基盤に、地域サプライチェーン能力の拡大や人材育成にも取り組む方針である。</p>
+
+  <div class="tag-row">
+    <span class="tag">官民投資68兆円（半導体、2040年度まで）</span>
+    <span class="tag">METI支援 最大1,600億円（2026年7月14日）</span>
+    <span class="tag">富山・新潟 デュアルトラック拡張</span>
+    <span class="tag">2027年Q4 完全生産体制目標</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― 過去最高収益・過去最高益を更新</h2>
+    </div>
+  </div>
+  <p class="lede">2026年8月4日発表の第2四半期決算は、売上高・粗利益・営業利益・純利益のいずれもが過去最高を記録する、極めて力強い内容となった。</p>
+
+  <table>
+    <thead><tr><th>指標</th><th>26年Q2実績</th><th>前年同期比</th></tr></thead>
+    <tbody>
+      <tr><td>売上高</td><td>4.60億ドル</td><td>+24%（過去最高、前四半期比+11%）</td></tr>
+      <tr><td>粗利益</td><td>1.38億ドル</td><td>+72%（過去最高、粗利益率30%）</td></tr>
+      <tr><td>営業利益</td><td>0.90億ドル</td><td>2.3倍（非経常項目除き過去最高）</td></tr>
+      <tr><td>純利益</td><td>0.91億ドル</td><td>+95%（非経常項目除き過去最高、純利益率20%）</td></tr>
+      <tr><td>EPS（調整後）</td><td>0.88ドル</td><td>市場予想0.77ドルを上回る</td></tr>
+    </tbody>
+  </table>
+  <p>26年第1四半期実績（売上高4.14億ドル）と比較しても、第2四半期は売上高で11%の増収となり、成長が加速している。ラッセル・エルワンガーCEOは「タワーの主要事業全体で力強い需要モメンタムが続く中、記録的な売上高と収益性を達成すると同時に、技術的リーダーシップの強化と製造能力の大幅な拡張を2026年を通じて同時に進めている」とコメントしている。</p>
+
+  <div class="callout">
+    <span class="callabel">26年Q3ガイダンス：さらなる過去最高を計画</span>
+    会社側は2026年第3四半期の売上高を5.20億ドル（±5%、会社記録となる見通し）と見込んでおり、前年同期比+31%、前四半期比+13%に相当する。2026年を通じて四半期ごとの増収・マージン改善を目指す方針を継続しており、Q2実績はその計画を上回るペースで進んでいる。
+  </div>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― 次世代AIハードウェア基盤への投資</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">光回路スイッチと先端パッケージング技術</h3>
+  <p>タワーセミコンダクターは、シリコンフォトニクス・SiGeの生産能力拡大に加え、次世代AIハードウェアアーキテクチャに向けた技術投資も進めている。低遅延ネットワーク向けの光回路スイッチや、先端チップパッケージング向けのハイブリッド集積技術などが含まれる。</p>
+
+  <h3 class="sub">IQEとのインジウムリン供給契約</h3>
+  <p>タワーセミコンダクターは、化合物半導体材料メーカーのIQE社と、インジウムリン（InP）エピウェーハの複数年供給契約を締結した。最低購入・供給コミットメントを含む契約であり、タワーからIQEへの世界規模でロイヤリティフリーの特許ライセンス供与も行われ、従来の知的財産紛争も解決した。</p>
+
+  <h3 class="sub">生産拠点の多様化</h3>
+  <p>タワーセミコンダクターは、イスラエル・米国・日本に加え、イタリアの300mm共有ファブでも生産を行っており、生産拠点の地理的分散が進んでいる。日本のTPSCoは、高度な技術を量産に移行させる能力に定評があるとされる。</p>
+
+  <h3 class="sub">事業セグメント別の明暗</h3>
+  <p>26年第2四半期の事業別内訳では、成長を牽引するシリコンフォトニクスの一方、300mm RF SOI（シリコン・オン・インシュレータ）製品は、製造移行と生産統合の影響で前年比14%の減収となった。ただしエルワンガーCEOは、プレミアムスマートフォン向けで設計受注（デザインウィン）の勢いを確保しており、2027年半ばまでに300mm RF SOIのウェハースタート数が26年第2四半期出荷水準の3倍になる見通しだと説明している。パワーマネジメント事業は売上の14%を占め、200mm・300mm BCD製品への需要に牽引され前年比で増収。センサーディスプレイは売上の12%、イメージセンサー事業はほぼ横ばいだが、半導体・EVバッテリー検査用の高解像度マシンビジョンセンサー需要は増加している。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">▲14<small>%</small></div><div class="k">300mm RF SOI製品 売上（前年比、26年Q2）</div></div>
+    <div class="stat"><div class="v">4<small>拠点</small></div><div class="k">生産拠点（イスラエル・米国・日本・イタリア）</div></div>
+    <div class="stat"><div class="v">36億ドル<small>/12億ドル</small></div><div class="k">2028年目標（売上高／純利益、上方修正後）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― 12ヶ月で570%近い急騰</h2>
+    </div>
+  </div>
+  <p class="lede">株価はこの1年で驚異的な上昇を遂げており、アナリストの目標株価も大幅な引き上げが相次いでいる。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年8月時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>株価</td><td>264ドル前後（1日で+19.6%の場面も）</td></tr>
+      <tr><td>株価 12ヶ月騰落率</td><td>+569.83%</td></tr>
+      <tr><td>アナリスト評価</td><td>「Strong Buy」（複数証券が買い推奨）</td></tr>
+      <tr><td>アナリスト平均目標株価</td><td>276.75〜325.00ドル（上昇余地+約17〜23%）</td></tr>
+      <tr><td>ベンチマーク証券 目標株価</td><td>325.00ドル</td></tr>
+      <tr><td>Susquehanna証券 目標株価</td><td>330.00ドル</td></tr>
+      <tr><td>直近決算発表</td><td>2026年8月4日（Q2 2026実績・Q3ガイダンスともに発表済み）</td></tr>
+    </tbody>
+  </table>
+  <p>2026年7月14日の日本投資拡大発表を受け、株価は同日12.9%、翌日にも15.4%上昇するなど、材料に対して極めて敏感に反応する値動きが続いていた。8月4日の第2四半期決算は、売上高こそ市場予想をわずかに下回ったものの、EPSは予想を上回り、過去最高収益・過去最高益という内容そのものは好感された。一方でテクニカル指標ではかねて「買われ過ぎ」のシグナルも出ており、急騰後の調整リスクには引き続き注意が必要である。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① インジウムリン（InP）原材料の供給制約</span>
+    経営陣は、統合レーザー・変調器のランプアップに影響しうる懸念材料として、インジウムリンという出発材料の供給制約を挙げている。IQEとの供給契約で対応を進めているが、最先端フォトニクス製品にとってのボトルネックとなる可能性は残る。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② ファブ稼働率のばらつき</span>
+    Fab 2の稼働率は、SiPho・SiGeの認証プロセスが継続中であることから約60%程度にとどまっており、Fab 3も新プロセス導入に伴い一部制約を受けている。これらの認証関連要因が一時的に生産効率を押し下げている。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ 需要集中リスク</span>
+    急拡大するシリコンフォトニクス事業（26年Q2時点で年間換算6.8億ドル規模）は、少数の大口顧客への集中度が高いとみられ、長期的なファブ稼働率の確実性という観点では懸念材料となりうる。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ 補助金の条件・コベナンツによる不確実性</span>
+    日本政府からの補助金について、会社側自身が、条件やコベナンツにより一部または全額がリスクにさらされる可能性があると注意喚起している。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ 急騰後の株価調整リスク</span>
+    株価は12ヶ月で570%近い上昇を遂げており、期待の織り込みが相当進んでいる。配当を出していない点や高いPER水準を、プレミアムバリュエーションとして警戒する見方もアナリストの間にある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑥ 300mm RF SOI事業の減収</span>
+    26年第2四半期、300mm RF SOI製品の売上は製造移行・生産統合の影響で前年比14%減となった。プレミアムスマートフォン向けの新規受注は確保しているが、実際の売上への転化は2027年半ば以降とされており、成長を牽引するシリコンフォトニクス事業とは対照的な状況が当面続く見通しである。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">タワーセミコンダクターの成長ストーリーは、AIデータセンターの「光配線」という目立たないが不可欠な市場で、シリコンフォトニクス事業を軸に驚異的な成長を遂げている点に集約される。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>2026年8月4日発表の第2四半期決算で過去最高収益・過去最高益を確認し、2028年の売上高目標も36億ドルへ上方修正するなど、成長ストーリーは実績によって裏付けられつつある。一方で株価は既に12ヶ月で570%近い急騰を遂げており、期待の織り込み度合いや、300mm RF SOI事業の減収、ファブ稼働率のばらつきといった足元の制約要因も踏まえたバランスの取れた評価が必要である。</p>
+    <ul class="watchlist">
+      <li>2026年第3四半期決算（会社ガイダンス：売上高5.20億ドル）の進捗、発表時期は26年11月前後の見込み</li>
+      <li>日本(富山・新潟)拡張計画の具体的な進捗と、2027年第4四半期の完全生産体制目標の達成可能性</li>
+      <li>2027年に向けたシリコンフォトニクス契約の追加積み増し状況と、新規顧客の獲得</li>
+      <li>300mm RF SOI事業の減収からの回復ペースと、プレミアムスマートフォン向け新規受注の実際の売上転化</li>
+      <li>インジウムリン供給の安定化状況</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年8月時点で確認可能な公開情報（2026年8月4日発表の第2四半期決算を含む）に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>
