@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜NXPセミコンダクターズ（NXPI） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+  .ticker .sign.neg{color:#E39A8C;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編（海外）</span>
+      <span>2026年8月7日号</span>
+    </div>
+    <h1 class="title">NXPセミコンダクターズ（NXPI）<br>「ニューラル・アクシス」が描く、車載マイコン大手のフィジカルAI戦略</h1>
+    <p class="subtitle">過去最高売上を更新した2026年第2四半期決算。フィジカルAI設計案件は15億ドル規模に達し、データセンター売上も年間5億ドル超えを見込む。一方、好決算にもかかわらず株価は発表後に下落し、複数のアナリストが目標株価を引き下げた。市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">約594<small>億ドル</small></span><span class="lbl">時価総額（2026年7月31日時点）</span></div>
+      <div><span class="num">35.0<small>億ドル</small></span><span class="lbl">26年Q2 売上高（過去最高） <span class="sign">+19%</span></span></div>
+      <div><span class="num">15<small>億ドル</small></span><span class="lbl">フィジカルAI設計案件（デザインファネル）</span></div>
+      <div><span class="num">5<small>億ドル超</small></span><span class="lbl">2026年通期 データセンター売上見込み</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― クラウドからエッジへ広がるフィジカルAI市場</h2>
+    </div>
+  </div>
+  <p class="lede">NXPの成長シナリオは、AIがクラウドコンピューティングを超えて、車両・産業オートメーション・ロボティクスといったエッジコンピューティング領域へ広がるという構造変化に根ざしている。</p>
+
+  <h3 class="sub">「反射・低遅延・信頼性」を重視する新アーキテクチャ</h3>
+  <p>エッジでのAI活用は、クラウド型AIとは異なる要件を必要とする。安全性が問われる自動車・産業機器・ロボットの現場では、瞬時の判断（反射）、低遅延、そして高い信頼性が不可欠であり、これがNXPの提唱する「ニューラル・アクシス（neural axis）」という生物学に着想を得たアプローチの背景にある。この手法は、自動車・ヘルスケア・製造業といった分野で、安全かつ信頼性の高いロボティクスを実現することを狙いとしている。</p>
+
+  <h3 class="sub">フィジカルAI設計案件は15億ドル規模に</h3>
+  <p>ラファエル・ソトマヨール社長兼CEOは、2026年第2四半期決算説明会で、AIがクラウドコンピューティングを超えて車両・産業オートメーション・ロボティクスなどのエッジコンピューティング応用に拡大していると説明した。NXPのフィジカルAI関連の設計案件（デザインファネル）は、既に15億ドル規模に達している。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">15<small>億ドル</small></div><div class="k">フィジカルAI設計案件（デザインファネル）規模</div></div>
+    <div class="stat"><div class="v">5<small>億ドル超</small></div><div class="k">2026年通期 データセンター売上見込み</div></div>
+    <div class="stat"><div class="v">約1/3<small></small></div><div class="k">会社固有の成長ドライバーが占める四半期売上比率</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― 車載マイコンにおける世界的プレイヤー</h2>
+    </div>
+  </div>
+  <p class="lede">NXPは、日本の官民投資ロードマップにおいてルネサスエレクトロニクスの主要競合として位置づけられる、車載マイコン分野の世界的プレイヤーである。</p>
+
+  <h3 class="sub">ソフトウェア定義車両（SDV）という共通テーマ</h3>
+  <p>NXPの自動車事業は、ソフトウェア定義車両・電動化・コネクティビティ製品によって支えられており、車両処理プラットフォーム「S32N」「S32K」で設計受注を継続的に獲得している。これは、ルネサスが掲げる「車載マイコン技術のロボット適用」という成長戦略とも重なる、フィジカルAI時代における車載マイコンメーカー共通の方向性である。</p>
+
+  <h3 class="sub">オランダ・アイントホーフェン拠点のグローバル企業</h3>
+  <p>NXPはオランダのアイントホーフェンに本社を置くグローバル半導体企業であり、自動車・産業&IoT・モバイル・通信インフラの4事業セグメントを展開している。日本の官民投資ロードマップが掲げる「制御系（マイコン等）」という機能分類において、ルネサスと並ぶ世界的な競合企業として位置づけられる。</p>
+
+  <div class="tag-row">
+    <span class="tag">車載マイコン世界的プレイヤー</span>
+    <span class="tag">「ニューラル・アクシス」アプローチ</span>
+    <span class="tag">S32N・S32K車両処理プラットフォーム</span>
+    <span class="tag">フィジカルAI設計案件15億ドル</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― 過去最高売上と、全セグメント増収</h2>
+    </div>
+  </div>
+  <p class="lede">2026年第2四半期は、全ての事業セグメント・地域で成長を達成し、過去最高の売上を記録した。</p>
+
+  <table>
+    <thead><tr><th>セグメント</th><th>26年Q2売上高</th><th>前年同期比</th></tr></thead>
+    <tbody>
+      <tr><td>Automotive（自動車）</td><td>19.4億ドル</td><td>+12%（MEMS事業売却影響除くと+17%）</td></tr>
+      <tr><td>Industrial &amp; IoT（産業・IoT）</td><td>7.6億ドル</td><td>+38%</td></tr>
+      <tr><td>Mobile（モバイル）</td><td>3.5億ドル</td><td>+6%</td></tr>
+      <tr><td>Communications Infrastructure &amp; Other（通信インフラ他）</td><td>4.5億ドル</td><td>+41%</td></tr>
+    </tbody>
+  </table>
+  <p>全社売上高は35.0億ドル（前年比+19%、前四半期比+10%）と過去最高を更新。GAAP粗利益率は57.3%（前年53.4%から改善）、GAAP営業利益率は30.6%（前年23.5%から改善）と、収益性も大きく向上した。Non-GAAP営業利益率は35.1%に達している。</p>
+
+  <div class="callout">
+    <span class="callabel">MEMSセンサー事業の売却完了</span>
+    2026年2月2日、NXPはMEMSセンサー事業の売却を完了し、現金8.78億ドルを受領（追加のアーンアウト最大5,000万ドルも見込む）。この取引で6.27億ドルの売却益を計上した。自動車事業の増収率は、この事業売却の影響を除くと12%から17%へ上振れする。
+  </div>
+
+  <h3 class="sub">Q3 2026ガイダンス</h3>
+  <p>会社側は2026年第3四半期の売上高を36.5億〜38.5億ドル（中央値37.5億ドル、前年比+15〜21%）と見込んでいる。受注残高（バックオーダー）は改善しており、Book-to-Bill比率も1倍を上回るなど、2026年後半から2027年前半にかけての視界も良好だとしている。</p>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― 産業・IoT分野の急成長とデータセンター参入</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">Industrial & IoT分野の38%増収</h3>
+  <p>4つのセグメントの中で最も高い伸びを示したのは、産業用エッジ処理・インフラを含むIndustrial & IoT分野で、前年同期比38%増の7.55億ドルとなった。エッジでのAI活用が加速する中、NXPは自動車・産業・ロボティクス市場でのリーダーシップを強めているとされる。</p>
+
+  <h3 class="sub">データセンター事業への参入</h3>
+  <p>NXPは2026年通期でデータセンター関連売上が5億ドルを超える見通しを示している。従来は車載・産業向けが主力だったNXPにとって、データセンターのコントロールプレーン（制御機能）分野は新たな成長領域として位置づけられている。</p>
+
+  <h3 class="sub">長期成長目標（2024〜2027年）</h3>
+  <p>NXPは、全社売上高を2024年の126億ドルから2027年に約160億ドル（CAGR 6〜10%）へ拡大する計画を掲げている。自動車事業は72億ドルから約95億ドルへ、産業&IoT事業は23億ドルから約31億ドルへの成長を見込む。戦略的成長事業が全社売上に占める比率は、2024年の27%から2027年に38%へ高まる計画である。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">+38<small>%</small></div><div class="k">Industrial &amp; IoT分野 売上成長率（26年Q2、前年比）</div></div>
+    <div class="stat"><div class="v">126→160<small>億ドル</small></div><div class="k">全社売上高目標（2024年→2027年）</div></div>
+    <div class="stat"><div class="v">27%→38<small>%</small></div><div class="k">戦略的成長事業の売上構成比目標（2024年→2027年）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― 好決算にもかかわらず「セル・ザ・ニュース」の反応</h2>
+    </div>
+  </div>
+  <p class="lede">市場予想を上回る決算内容だったにもかかわらず、株価は決算発表後に下落し、アナリストの評価も一部で慎重化する動きが見られた。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月末時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>株価</td><td>235.40ドル（7月31日終値）</td></tr>
+      <tr><td>時価総額</td><td>約594億ドル</td></tr>
+      <tr><td>PER（実績）</td><td>約23〜25倍</td></tr>
+      <tr><td>配当利回り</td><td>1.68%</td></tr>
+      <tr><td>年初来騰落率</td><td>+19%（7月31日時点）</td></tr>
+      <tr><td>アナリスト評価</td><td>「Buy」が大勢（30人中、Strong Buy 22人・Moderate Buy 2人・Hold 6人）</td></tr>
+      <tr><td>アナリスト平均目標株価</td><td>259〜311ドル程度（決算後に修正相次ぐ）</td></tr>
+    </tbody>
+  </table>
+  <p>2026年7月29日の決算発表では、売上・EPSともにガイダンス中央値を上回ったものの、株価は当日5%程度下落した。決算後、TD Cowenは目標株価を340ドルから290ドルへ、BofAも310ドルから300ドルへとそれぞれ引き下げた一方、Cantor Fitzgeraldは400ドルへの引き上げを維持するなど、アナリストの間でも評価が分かれている。「堅調だが際立ってはいない（solid but unspectacular）」との評価も見られ、自動車事業の本格回復を見極めたいという市場の姿勢がうかがえる。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① 好決算にもかかわらない株価下落</span>
+    予想を上回る決算内容にもかかわらず株価が下落したことは、市場が既に高い期待を織り込んでいたことを示唆する。今後も好決算が必ずしも株価上昇につながらない可能性がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② 自動車事業の本格回復への疑問</span>
+    自動車事業の増収率12%（事業売却影響除くと17%）は他セグメントと比べて相対的に緩やかであり、アナリストは自動車市場全体の回復ペースを見極めたい姿勢を示している。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ フィジカルAI関連の収益化はまだ初期段階</span>
+    15億ドル規模のデザインファネルは将来の受注機会を示すものであり、実際の売上への転化にはなお時間を要する。データセンター売上5億ドル超えという規模も、全社売上（四半期35億ドル）と比べればまだ小さい。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ アナリスト評価の分裂</span>
+    決算後、目標株価を引き下げる証券と引き上げを維持する証券が混在しており、市場のコンセンサスが定まりきっていない状況にある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ 車載マイコン市場での競争激化</span>
+    ルネサスをはじめとする競合他社も車載マイコン・フィジカルAI領域への参入を強めており、市場シェアを巡る競争が激化する可能性がある。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">NXPの成長ストーリーは、「ニューラル・アクシス」という独自のエッジAIアプローチを軸に、車載マイコン大手からフィジカルAI時代の中核サプライヤーへの転換を図る点に集約される。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>過去最高売上を更新し、全セグメントで増収を達成した2026年第2四半期決算は、事業基盤の底堅さを示している。フィジカルAI設計案件15億ドル、データセンター売上5億ドル超えという新領域も着実に育ちつつあるが、好決算にもかかわらず株価が下落した点は、市場が既に高い期待を織り込んでいたことの表れともいえる。自動車事業の本格回復ペースと、フィジカルAI関連受注の実売上への転化速度が、今後の株価評価を左右する。</p>
+    <ul class="watchlist">
+      <li>2026年第3四半期決算（会社ガイダンス：売上高36.5億〜38.5億ドル）の進捗</li>
+      <li>フィジカルAI設計案件（15億ドル）の実際の受注確定・売上転化ペース</li>
+      <li>データセンター事業の売上拡大ペースと、新規顧客の獲得状況</li>
+      <li>自動車事業（S32N・S32K）における設計受注の積み上げ状況</li>
+      <li>ルネサスなど競合他社との車載マイコン・フィジカルAI市場での競争環境</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年7月時点で確認可能な公開情報に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>
