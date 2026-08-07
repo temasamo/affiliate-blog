@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成長戦略レポート｜インフィニオン・テクノロジーズ（IFX） - Market Supporter AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --brass:#B08D57;
+    --brass-soft:#D8BE8E;
+    --paper:#F7F4EC;
+    --paper-deep:#EFEAD9;
+    --ink:#20222A;
+    --ink-soft:#5B5F6B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  header.masthead{background:var(--navy);color:#fff;padding:56px 0 40px;}
+  .masthead-inner{max-width:840px;margin:0 auto;padding:0 24px;}
+  .eyebrow-row{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;color:var(--brass-soft);margin-bottom:22px;text-transform:uppercase;}
+  h1.title{font-family:'Shippori Mincho',serif;font-size:34px;line-height:1.5;font-weight:700;margin-bottom:16px;}
+  .subtitle{color:#C8CCD6;font-size:14.5px;max-width:680px;line-height:1.9;}
+  .ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:32px;border:1px solid rgba(255,255,255,.15);}
+  .ticker>div{background:var(--navy-deep);padding:18px 16px;}
+  .ticker .num{display:block;font-family:'Shippori Mincho',serif;font-size:22px;color:#fff;font-weight:700;}
+  .ticker .num small{font-size:12px;color:var(--brass-soft);margin-left:2px;}
+  .ticker .lbl{display:block;font-size:11.5px;color:#9BA0AE;margin-top:6px;}
+  .ticker .sign{color:#8FD19E;}
+
+  nav.toc{background:var(--paper-deep);border-bottom:1px solid #DCD6C3;padding:16px 0;}
+  nav.toc ol{max-width:840px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;}
+  nav.toc li{font-size:12.5px;color:var(--ink-soft);display:flex;gap:6px;}
+  nav.toc .n{color:var(--brass);font-weight:700;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;}
+  nav.toc a:hover{color:var(--navy);}
+
+  main.wrap{padding:44px 24px 20px;}
+  section.chapter{margin-bottom:52px;}
+  .chap-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px;}
+  .chap-no{font-family:'Shippori Mincho',serif;font-size:44px;color:var(--brass-soft);font-weight:700;line-height:1;min-width:50px;}
+  .chap-eyebrow{font-size:11px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase;margin-bottom:4px;}
+  h2.chap-title{font-family:'Shippori Mincho',serif;font-size:22px;color:var(--navy);font-weight:700;}
+  p.lede{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px;}
+  h3.sub{font-family:'Shippori Mincho',serif;font-size:16.5px;color:var(--navy);margin:22px 0 10px;font-weight:700;}
+  section.chapter p{margin-bottom:14px;font-size:14.8px;}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0;}
+  .stat{background:#fff;border:1px solid #E2DCC8;padding:18px 14px;text-align:center;}
+  .stat .v{font-family:'Shippori Mincho',serif;font-size:24px;color:var(--navy);font-weight:700;}
+  .stat .v small{font-size:12px;color:var(--brass);margin-left:2px;}
+  .stat .k{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+
+  .callout{background:#fff;border-left:3px solid var(--brass);padding:18px 20px;margin:18px 0;font-size:14.3px;color:var(--ink-soft);}
+  .callout .callabel{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:6px;}
+  .callout.risk{border-left-color:#A24B3F;}
+  .callout.risk .callabel{color:#A24B3F;}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.6px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;letter-spacing:.02em;}
+  tbody td{padding:10px 12px;border-bottom:1px solid #E2DCC8;}
+  tbody tr:nth-child(even){background:var(--paper-deep);}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
+  .tag{font-size:11.5px;padding:5px 12px;border:1px solid var(--brass);color:var(--navy);border-radius:2px;background:#fff;font-weight:500;}
+
+  .verdict-box{background:var(--navy-deep);color:#fff;padding:34px 32px;margin-top:20px;}
+  .verdict-box h4{font-family:'Shippori Mincho',serif;color:var(--brass-soft);font-size:15px;margin:0 0 12px;letter-spacing:.06em;}
+  .verdict-box p{color:#E7E4D9;font-size:15px;}
+  .watchlist{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);}
+  .watchlist li{color:#D8D3C4;font-size:14px;margin-bottom:8px;}
+
+  footer{padding:40px 0 60px;font-size:12px;color:var(--ink-soft);}
+  footer .disclaimer{border-top:2px solid var(--navy-deep);padding-top:18px;margin-top:10px;line-height:1.9;}
+  a{color:inherit;}
+  @media (max-width:680px){
+    h1.title{font-size:26px;}
+    .ticker{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .chap-no{font-size:36px;min-width:42px;}
+    nav.toc ol{gap:6px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow-row">
+      <span>成長戦略レポート ／ 個別銘柄編（海外）</span>
+      <span>2026年8月8日号</span>
+    </div>
+    <h1 class="title">インフィニオン・テクノロジーズ（IFX）<br>2年半ぶりに売上40億ユーロ超え ― AIデータセンター電源事業が牽引する過去最高収益</h1>
+    <p class="subtitle">2026年8月5日発表の第3四半期決算は、売上高41.72億ユーロと過去最高を記録し、約2年半ぶりに40億ユーロの大台を回復した。AI電源供給向けの複数年容量予約契約を主要顧客10社以上と締結し、FY2027のAI関連売上目標も大幅に上方修正した。車載半導体6年連続世界首位という既存の強みとあわせ、市場規模・政策・コスト構造・リスク要因から読み解く。</p>
+    <div class="ticker">
+      <div><span class="num">約950<small>億ユーロ</small></span><span class="lbl">時価総額目安（株価$73.96ベース試算）</span></div>
+      <div><span class="num">41.72<small>億ユーロ</small></span><span class="lbl">FY26 Q3 売上高（過去最高） <span class="sign">+13%</span></span></div>
+      <div><span class="num">19.1<small>%</small></span><span class="lbl">FY26 Q3 セグメント利益率（前四半期17.1%から改善）</span></div>
+      <div><span class="num">16億超<small>ユーロ</small></span><span class="lbl">AI電源供給売上見込み（FY26、上方修正後）</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><span class="n">01</span><a href="#c1">市場規模</a></li>
+    <li><span class="n">02</span><a href="#c2">政策・制度</a></li>
+    <li><span class="n">03</span><a href="#c3">コスト構造・収益構造</a></li>
+    <li><span class="n">04</span><a href="#c4">事業別動向</a></li>
+    <li><span class="n">05</span><a href="#c5">株価・市場評価</a></li>
+    <li><span class="n">06</span><a href="#c6">リスク要因</a></li>
+    <li><span class="n">07</span><a href="#c7">総括</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section class="chapter" id="c1">
+  <div class="chap-head">
+    <div class="chap-no">01</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">MARKET SIZE</div>
+      <h2 class="chap-title">市場規模 ― 車載半導体からAIデータセンター電源へ広がる市場</h2>
+    </div>
+  </div>
+  <p class="lede">インフィニオンの成長シナリオは、6年連続で世界首位を維持する車載半導体という牙城を守りながら、AIデータセンターの電源供給という全く新しい成長市場を開拓する、二正面の展開に特徴がある。</p>
+
+  <h3 class="sub">車載マイコン世界シェア32%→36%に拡大</h3>
+  <p>インフィニオンは車載半導体分野で6年連続の世界首位を維持しており、車載マイコンの世界シェアは前年の32%から36%へ拡大した。ソフトウェア定義車両（SDV）へのシフトが進む中、車両あたりの半導体搭載量（コンテンツ）増加が、シェア拡大を後押ししている。</p>
+
+  <h3 class="sub">「1kWあたり175ドル」というAI電源市場の物差し、需要は供給を上回る</h3>
+  <p>AIデータセンターの電源供給分野では、設置容量1kWあたりの半導体コンテンツ価値が平均175ドル（レンジ100〜250ドル）とされており、AIサーバーの電力需要拡大がそのままインフィニオンの半導体需要に転化する構造にある。2026年8月5日発表の第3四半期決算で、会社側はAI電源供給関連の売上見通しをFY2026で16億ユーロ超（従来15億ユーロから上方修正）へ引き上げた。ハンネベックCEOは、AIデータセンター向け電源ソリューションの需要が供給を上回る状況が続いていると説明している。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">6年<small>連続</small></div><div class="k">車載半導体 世界首位を維持</div></div>
+    <div class="stat"><div class="v">$175<small></small></div><div class="k">1kWあたりの半導体コンテンツ価値（平均）</div></div>
+    <div class="stat"><div class="v">16億超<small>ユーロ</small></div><div class="k">AI電源供給売上見込み（FY26、上方修正後）</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c2">
+  <div class="chap-head">
+    <div class="chap-no">02</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">POLICY</div>
+      <h2 class="chap-title">政策・制度 ― 欧州最大級の新工場とGartnerの評価</h2>
+    </div>
+  </div>
+  <p class="lede">インフィニオンは、日本の官民投資ロードマップにおいて車載マイコンの世界的競合として位置づけられる一方、欧州における独自の製造基盤強化を進めている。</p>
+
+  <h3 class="sub">ドレスデン「スマートパワーファブ」の開所</h3>
+  <p>2026年7月3日、インフィニオンはドイツ・ドレスデンに世界最大級のパワー半導体・アナログ/ミックスドシグナル技術工場を開所した。投資額は50億ユーロ規模で、1,000人の雇用創出も見込まれる。ドイツ・欧州、そして世界にとっての「起爆剤」と位置づけられている。</p>
+
+  <h3 class="sub">Gartnerが「打倒すべき企業」に選出</h3>
+  <p>2026年5月18日、調査会社ガートナーはインフィニオンを「AIデータセンターパワー半導体分野で打倒すべき企業（Company to Beat）」に選出した。この評価は、AI電源供給市場における同社の先行者優位を裏付けるものとして市場から注目されている。</p>
+
+  <div class="tag-row">
+    <span class="tag">車載半導体世界首位（6年連続）</span>
+    <span class="tag">ドレスデン新工場開所（2026年7月3日）</span>
+    <span class="tag">Gartner「Company to Beat」選出</span>
+    <span class="tag">主要顧客10社超と複数年容量予約契約</span>
+  </div>
+</section>
+
+<section class="chapter" id="c3">
+  <div class="chap-head">
+    <div class="chap-no">03</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">COST STRUCTURE</div>
+      <h2 class="chap-title">コスト構造・収益構造 ― 2年半ぶりに売上40億ユーロ超え</h2>
+    </div>
+  </div>
+  <p class="lede">2026年8月5日発表の第3四半期（2026年4〜6月期）決算は、売上高が約2年半ぶりに40億ユーロの大台を回復し、過去最高を更新した。</p>
+
+  <table>
+    <thead><tr><th>指標</th><th>FY26 Q3実績</th><th>前四半期比</th></tr></thead>
+    <tbody>
+      <tr><td>売上高</td><td>41.72億ユーロ</td><td>+9%（過去最高、前年比+13%）</td></tr>
+      <tr><td>セグメント利益</td><td>7.97億ユーロ</td><td>Q2の6.53億ユーロから増加</td></tr>
+      <tr><td>セグメント利益率</td><td>19.1%</td><td>Q2の17.1%から改善</td></tr>
+      <tr><td>調整後粗利益率</td><td>42.8%</td><td>Q2の41.0%から改善</td></tr>
+      <tr><td>フリーキャッシュフロー</td><td>5.99億ユーロ</td><td>Q2のマイナス0.63億ユーロから大幅改善</td></tr>
+    </tbody>
+  </table>
+  <p>ヨッヘン・ハンネベックCEOは「インフィニオンは2026年度第3四半期を過去最高の売上高で終え、成長軌道を継続している。対象市場の多くでプラスの傾向が見られており、AIデータセンター向け電源供給ソリューションは非常に高い需要が続き、依然として最も重要な成長ドライバーとなっている」とコメントしている。パワー&センサーシステム事業と自動車事業が、成長の主要な牽引役となった。</p>
+
+  <div class="callout">
+    <span class="callabel">Q4 FY2026ガイダンスとFY2026通期の再上方修正</span>
+    第4四半期の売上高は前四半期比で13%程度増加し約47億ユーロを見込み、セグメント利益率は約23%を想定している。FY2026通期の売上高見通しは約163億ユーロ（従来の「160億ユーロ超」からさらに上方修正）、調整後粗利益率は40%台前半、セグメント利益率は約20%を維持する計画。調整後フリーキャッシュフローは約18.5億ユーロ（従来16.5億ユーロから再上方修正）へ引き上げられた。ただしアイドル（未稼働）設備コストが約6.5億ユーロ発生する見通しも示されている。
+  </div>
+</section>
+
+<section class="chapter" id="c4">
+  <div class="chap-head">
+    <div class="chap-no">04</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">BUSINESS SEGMENTS</div>
+      <h2 class="chap-title">事業別動向 ― シーメンス・LS ELECTRICとのAI電源協業</h2>
+    </div>
+  </div>
+
+  <h3 class="sub">シリコンカーバイド技術によるデータセンター保護</h3>
+  <p>2026年6月18日、インフィニオンはシーメンスと協業し、シリコンカーバイド（SiC）技術を活用してデータセンターや工場における電気保護技術を進化させる取り組みを発表した。シリコンカーバイドの成長率は低〜二桁%が見込まれており、AI電源供給分野における中核技術の一つに位置づけられている。</p>
+
+  <h3 class="sub">LS ELECTRICとの高効率直流電源開発</h3>
+  <p>インフィニオンはLS ELECTRICとも協業し、AIデータセンター向けの高効率直流（DC）電源ソリューションの開発を進めている。AIサーバーの電力需要拡大に対応する電源インフラ技術の開発が、複数の協業を通じて加速している。</p>
+
+  <h3 class="sub">GaN特許訴訟での勝訴と競争環境の変化</h3>
+  <p>2026年7月13日、米国国際貿易委員会（ITC）は、Innoscience社の窒化ガリウム（GaN）製品がインフィニオンの特許を侵害しているとの判断を確定し、同社製品の米国市場からの締め出しを決定した。この判断は、次世代パワー半導体材料であるGaN分野におけるインフィニオンの競争環境にプラスに働くと見られている。</p>
+
+  <h3 class="sub">主要顧客10社超との複数年容量予約契約</h3>
+  <p>2026年8月5日の決算発表で、インフィニオンはAIデータセンター・エコシステムの主要顧客10社超と、複数年にわたる容量予約契約（CRA：Capacity Reservation Agreement）を締結済み、または交渉中であることを明らかにした。累計の売上高規模は「一桁台後半の10億ユーロ」に達するとされ、将来の設備投資リスクを軽減する効果があるという。同社はAI関連の電力変換の全段階、すなわち「グリッドからコアまで」をカバーし、コントローラー・ドライバー・スイッチ・パワーステージ・モジュールを提供できる点を競争優位として強調している。</p>
+
+  <h3 class="sub">ams OSRAMのセンサー部門買収完了</h3>
+  <p>2026年2月3日に発表されたams OSRAMのセンサー部門買収が、2026年7月に完了した。買収した事業は2026暦年で約2.3億ユーロの売上高、従業員約230人（うち150人が研究開発職）を有する。ファブレス資産取引として構成されており、初日からEPS押し上げ効果を持つとされる。この買収により、自動車・産業向けのセンサー分野でのリーダーシップが強化されるとともに、高付加価値の医療分野への展開も拡大する。</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="v">10社超<small></small></div><div class="k">AIデータセンター向け複数年容量予約契約（CRA）締結・交渉先</div></div>
+    <div class="stat"><div class="v">一桁台後半<small>10億ユーロ規模</small></div><div class="k">CRA累計売上高規模</div></div>
+    <div class="stat"><div class="v">2.3<small>億ユーロ</small></div><div class="k">ams OSRAM買収事業の2026暦年売上高</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="c5">
+  <div class="chap-head">
+    <div class="chap-no">05</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">VALUATION</div>
+      <h2 class="chap-title">株価・市場評価 ― 1年で110%超上昇、アナリストは強気を維持</h2>
+    </div>
+  </div>
+  <p class="lede">株価はこの1年で倍以上に上昇し、アナリストの目標株価も相次いで引き上げられている。2026年8月5日の第3四半期決算発表後は、好決算を好感した反応が見られた。</p>
+
+  <table>
+    <thead><tr><th>指標（2026年7月末〜8月上旬時点）</th><th>数値</th></tr></thead>
+    <tbody>
+      <tr><td>株価</td><td>63.53ユーロ（7月31日）</td></tr>
+      <tr><td>時価総額</td><td>約915億ユーロ</td></tr>
+      <tr><td>52週高値／安値</td><td>88.83ユーロ／30.82ユーロ（米ADRベースでは103.28ドル）</td></tr>
+      <tr><td>株価 1年間騰落率</td><td>+110.88%</td></tr>
+      <tr><td>アナリスト評価</td><td>「Buy」が大勢（19人買い推奨・1人売り推奨）</td></tr>
+      <tr><td>アナリスト平均目標株価</td><td>82〜87ユーロ程度（上昇余地+約30〜36%）</td></tr>
+      <tr><td>配当利回り</td><td>0.46%</td></tr>
+    </tbody>
+  </table>
+  <p>決算内容や通期ガイダンス上方修正を受け、証券各社が相次いで目標株価を引き上げている。ベレンベルグ証券は目標株価を70ユーロから100ユーロへ、JPモルガンは74ユーロから96ユーロへ、サスケハナ証券は70ユーロから100ユーロへ、それぞれ引き上げた。JPモルガンは、生産能力の制約が価格決定力を支えているとの見方を示している。2026年8月5日の第3四半期決算発表後、米国OTC市場のADR（IFNNY）は前日比3.88%高の73.96ドルで取引を終えたが、52週高値（103.28ドル）にはなお距離がある水準にとどまっている。決算内容について、市場関係者からは「劇的なサプライズというより、堅調な事業モメンタムの表れ」との評価も聞かれた。</p>
+</section>
+
+<section class="chapter" id="c6">
+  <div class="chap-head">
+    <div class="chap-no">06</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">RISK FACTORS</div>
+      <h2 class="chap-title">リスク要因</h2>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <span class="callabel">① 電動化（EV）普及の減速</span>
+    経営陣は、電気自動車の普及が予想よりも緩やかに進んでいることを認めており、一部の車載パワー半導体市場で数量・価格の軟化につながっている。これが特定用途における自動車事業の短期的な成長を抑制する要因となっている。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">② 為替変動リスク</span>
+    Q4ガイダンスの前提となる為替レートは1ユーロ=1.15ドルに設定されている（Q2発表時点の前提1.17ドルから変更）。実際のレートがこれと乖離した場合、業績に影響が及ぶ可能性がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">③ アイドル設備コストの発生</span>
+    FY2026通期でアイドル（未稼働）設備コストが約6.5億ユーロ発生する見通しが示されている。AI関連の積極投資を進める一方、需要と供給能力のミスマッチが一時的にコスト増となる可能性がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">④ 高い期待の織り込み</span>
+    株価は1年で110%を超える上昇を遂げており、既に相当な成長期待を織り込んだ水準にある。目標株価の引き上げが相次いでいるが、期待通りの実績が伴わない場合、株価調整のリスクがある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑤ 車載マイコン市場での競争激化、中国勢の攻勢</span>
+    NXP・ルネサスなど車載マイコン大手との競争が続く中、ハンネベックCEOは決算説明会で、中国の競合他社がパワー半導体分野でより積極的な姿勢を強めていると言及している。シリコンカーバイド・GaNといった次世代パワー半導体材料分野でも、新興企業との競争が激化する可能性がある。
+  </div>
+  <div class="callout risk">
+    <span class="callabel">⑥ 複数年容量予約契約（CRA）の実行リスク</span>
+    主要顧客10社超との複数年容量予約契約は「一桁台後半の10億ユーロ規模」という将来の成長機会を示す一方、実際の生産・納入体制がこの規模に着実に追いつけるかどうかが今後の課題となる。
+  </div>
+</section>
+
+<section class="chapter" id="c7">
+  <div class="chap-head">
+    <div class="chap-no">07</div>
+    <div class="chap-titles">
+      <div class="chap-eyebrow">SUMMARY</div>
+      <h2 class="chap-title">総括</h2>
+    </div>
+  </div>
+  <p class="lede">インフィニオンの成長ストーリーは、車載半導体という既存の牙城を守りながら、AIデータセンター電源供給という新たな成長市場を同時に開拓する、二正面戦略に集約される。</p>
+
+  <div class="verdict-box">
+    <h4>WHAT TO WATCH ― 今後の確認ポイント</h4>
+    <p>2026年8月5日発表の第3四半期決算は、約2年半ぶりの売上高40億ユーロ超え・過去最高収益という形で、この二正面戦略の成果を裏付けた。主要顧客10社超との複数年容量予約契約、ams OSRAMセンサー部門買収の完了など、AI電源供給・センサー両分野での布石も着実に進んでいる。一方でEV普及の減速という自動車事業の逆風、中国勢の攻勢、株価急騰後の調整リスクには引き続き注意が必要である。</p>
+    <ul class="watchlist">
+      <li>2026年11月頃に予定される第4四半期・通期決算での、FY2027 AI電源供給売上目標（現行25億ユーロから上方修正見込み）の具体的な数値</li>
+      <li>Q4 FY2026ガイダンス（売上高約47億ユーロ、セグメント利益率約23%）の達成状況</li>
+      <li>電動化（EV）普及ペースの回復動向と、自動車事業への影響</li>
+      <li>複数年容量予約契約（CRA）の実際の生産・納入への転化ペース</li>
+      <li>ams OSRAMセンサー部門買収による自動車・産業・医療分野への展開状況</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="disclaimer">
+    本レポートは公開情報の整理・分析を目的として作成したものであり、特定銘柄の売買を推奨するものではありません。数値は2026年8月時点で確認可能な公開情報（2026年8月5日発表の第3四半期決算を含む）に基づいており、今後の決算・市場動向により変動します。投資判断は必ずご自身の責任において行ってください。作成：Market Supporter AI 編集部
+  </div>
+</footer>
+
+</body>
+</html>
