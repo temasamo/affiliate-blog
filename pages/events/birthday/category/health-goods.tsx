@@ -68,19 +68,19 @@ const HealthGoodsPage: React.FC = () => {
               {/* モールボタン */}
               <div className="flex flex-wrap gap-4">
                 <Link 
-                  href="https://search.rakuten.co.jp/search/mall/健康グッズ+母の日/"
+                  href="https://af.moshimo.com/af/c/click?a_id=5122395&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E5%81%A5%E5%BA%B7%E3%82%B0%E3%83%83%E3%82%BA%2B%E6%AF%8D%E3%81%AE%E6%97%A5%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsearch%2Fmall%2F%E5%81%A5%E5%BA%B7%E3%82%B0%E3%83%83%E3%82%BA%2B%E6%AF%8D%E3%81%AE%E6%97%A5%2F"
                   className="flex-1 min-w-[120px] px-6 py-3 bg-red-600 text-white text-center rounded-lg hover:bg-red-700 transition-colors font-medium"
                 >
                   楽天
                 </Link>
                 <Link 
-                  href="https://www.amazon.co.jp/s?k=健康グッズ+母の日"
+                  href="https://www.amazon.co.jp/s?k=健康グッズ+母の日&tag=temasamo1220d-22"
                   className="flex-1 min-w-[120px] px-6 py-3 bg-orange-500 text-white text-center rounded-lg hover:bg-orange-600 transition-colors font-medium"
                 >
                   Amazon
                 </Link>
                 <Link 
-                  href="https://shopping.yahoo.co.jp/search?p=健康グッズ+母の日"
+                  href="https://shopping.yahoo.co.jp/search?p=健康グッズ+母の日&sc_e=afvc_shp_3751180"
                   className="flex-1 min-w-[120px] px-6 py-3 bg-red-500 text-white text-center rounded-lg hover:bg-red-600 transition-colors font-medium"
                 >
                   Yahoo

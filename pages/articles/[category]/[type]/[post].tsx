@@ -265,7 +265,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
                     楽天市場
                   </a>
                   <a
-                    href="https://www.amazon.co.jp/dp/B0F38FFGYT"
+                    href="https://www.amazon.co.jp/dp/B0F38FFGYT?tag=temasamo1220d-22"
                     target="_blank"
                     rel="nofollow noopener noreferrer"
                     className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -291,7 +291,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
       product={{
         name: "Samsung Galaxy Z Fold 7",
         image: "https://thumbnail.image.rakuten.co.jp/@0_mall/samsung-official/cabinet/galaxy-z-fold7.jpg?_ex=300x300",
-        amazonUrl: "https://www.amazon.co.jp/dp/B0FGNSPX1P",
+        amazonUrl: "https://www.amazon.co.jp/dp/B0FGNSPX1P?tag=temasamo1220d-22",
         rakutenUrl: "https://item.rakuten.co.jp/samsung-official/galaxy-z-fold7/",
         yahooUrl: "https://store.shopping.yahoo.co.jp/samsung/galaxy-z-fold7.html",
         officialUrl: "https://www.samsung.com/jp/smartphones/galaxy-z-fold7/"
@@ -314,7 +314,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
       product={{
         name: "COSRX アドバンスド スネイル 96 ムチン パワー エッセンス",
         image: "//thumbnail.image.rakuten.co.jp/@0_mall/roseroseshop/cabinet/09833634/imgrc0110390981.jpg?_ex=300x300",
-        amazonUrl: "https://www.amazon.co.jp/dp/B00PBX3L7K",
+        amazonUrl: "https://www.amazon.co.jp/dp/B00PBX3L7K?tag=temasamo1220d-22",
         rakutenUrl: "https://item.rakuten.co.jp/roseroseshop/cosrx_007/",
         yahooUrl: "https://store.shopping.yahoo.co.jp/roseroseshop/cosrx-snail-mucin.html",
         officialUrl: "https://cosrx.com"
@@ -355,7 +355,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
             </a>
             {/* Yahoo!ショッピング: △ なので表示 */}
             <a 
-              href="https://shopping.yahoo.co.jp/search?p=Insta360+Ace+Pro" 
+              href="https://shopping.yahoo.co.jp/search?p=Insta360+Ace+Pro&sc_e=afvc_shp_3751180" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -363,7 +363,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               Yahoo!ショッピングで探す
             </a>
             <a 
-              href="https://www.amazon.co.jp/s?k=Insta360+Ace+Pro" 
+              href="https://www.amazon.co.jp/s?k=Insta360+Ace+Pro&tag=temasamo1220d-22" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -398,7 +398,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               楽天市場で探す
             </a>
             <a 
-              href="https://shopping.yahoo.co.jp/search?p=Alpha+Space" 
+              href="https://shopping.yahoo.co.jp/search?p=Alpha+Space&sc_e=afvc_shp_3751180" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -406,7 +406,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               Yahoo!ショッピングで探す
             </a>
             <a 
-              href="https://www.amazon.co.jp/s?k=Alpha+Space" 
+              href="https://www.amazon.co.jp/s?k=Alpha+Space&tag=temasamo1220d-22" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -441,7 +441,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               楽天市場で探す
             </a>
             <a 
-              href="https://shopping.yahoo.co.jp/search?p=Yinai" 
+              href="https://shopping.yahoo.co.jp/search?p=Yinai&sc_e=afvc_shp_3751180" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -449,7 +449,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               Yahoo!ショッピングで探す
             </a>
             <a 
-              href="https://www.amazon.co.jp/s?k=Yinai" 
+              href="https://www.amazon.co.jp/s?k=Yinai&tag=temasamo1220d-22" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -495,7 +495,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
             </a>
             {/* Yahoo!ショッピング: × なので非表示 */}
             <a 
-              href="https://www.amazon.co.jp/s?k=Anker+SOLIX+C1000" 
+              href="https://www.amazon.co.jp/s?k=Anker+SOLIX+C1000&tag=temasamo1220d-22" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -532,7 +532,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
             </a>
             {/* Yahoo!ショッピング: △ なので表示 */}
             <a 
-              href="https://shopping.yahoo.co.jp/search?p=Theragun+Relief" 
+              href="https://shopping.yahoo.co.jp/search?p=Theragun+Relief&sc_e=afvc_shp_3751180" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -541,7 +541,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
             </a>
             {/* Amazon: ◯ なので表示 */}
             <a 
-              href="https://www.amazon.co.jp/s?k=Theragun+Relief" 
+              href="https://www.amazon.co.jp/s?k=Theragun+Relief&tag=temasamo1220d-22" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -578,7 +578,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
             </a>
             {/* Yahoo!ショッピング: ◯ なので表示 */}
             <a 
-              href="https://shopping.yahoo.co.jp/search?p=Etude+Glow+Fixing+Tint" 
+              href="https://shopping.yahoo.co.jp/search?p=Etude+Glow+Fixing+Tint&sc_e=afvc_shp_3751180" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -623,7 +623,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               楽天市場で探す
             </a>
             <a 
-              href="https://shopping.yahoo.co.jp/search?p=Insta360+X4" 
+              href="https://shopping.yahoo.co.jp/search?p=Insta360+X4&sc_e=afvc_shp_3751180" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -631,7 +631,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               Yahoo!ショッピングで探す
             </a>
             <a 
-              href="https://www.amazon.co.jp/s?k=Insta360+X4" 
+              href="https://www.amazon.co.jp/s?k=Insta360+X4&tag=temasamo1220d-22" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -666,7 +666,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               楽天市場で探す
             </a>
             <a 
-              href="https://shopping.yahoo.co.jp/search?p=Alpha+Space" 
+              href="https://shopping.yahoo.co.jp/search?p=Alpha+Space&sc_e=afvc_shp_3751180" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -674,7 +674,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               Yahoo!ショッピングで探す
             </a>
             <a 
-              href="https://www.amazon.co.jp/s?k=Alpha+Space" 
+              href="https://www.amazon.co.jp/s?k=Alpha+Space&tag=temasamo1220d-22" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -709,7 +709,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               楽天市場で探す
             </a>
             <a 
-              href="https://shopping.yahoo.co.jp/search?p=The+Beauty+Club" 
+              href="https://shopping.yahoo.co.jp/search?p=The+Beauty+Club&sc_e=afvc_shp_3751180" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -717,7 +717,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               Yahoo!ショッピングで探す
             </a>
             <a 
-              href="https://www.amazon.co.jp/s?k=The+Beauty+Club" 
+              href="https://www.amazon.co.jp/s?k=The+Beauty+Club&tag=temasamo1220d-22" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -753,7 +753,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
           <p className="text-sm text-gray-600 mb-4">睡眠・回復を指輪で可視化するウェアラブル健康管理デバイス</p>
           <div className="grid grid-cols-1 sm:grid-cols-1 gap-3">
             <a 
-              href="https://www.amazon.co.jp/s?k=Oura+Ring+Gen3" 
+              href="https://www.amazon.co.jp/s?k=Oura+Ring+Gen3&tag=temasamo1220d-22" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -780,7 +780,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
           <p className="text-sm text-gray-600 mb-4">LED×温熱×振動×パーカッションを1台に集約したリカバリーガジェット</p>
           <div className="grid grid-cols-1 sm:grid-cols-1 gap-3">
             <a 
-              href="https://www.amazon.co.jp/s?k=Theragun+PRO+Plus" 
+              href="https://www.amazon.co.jp/s?k=Theragun+PRO+Plus&tag=temasamo1220d-22" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -807,7 +807,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
           <p className="text-sm text-gray-600 mb-4">心血管＆体組成スキャン体重計、医療グレード体組成計</p>
           <div className="grid grid-cols-1 sm:grid-cols-1 gap-3">
             <a 
-              href="https://www.amazon.co.jp/s?k=Withings+Body+Scan" 
+              href="https://www.amazon.co.jp/s?k=Withings+Body+Scan&tag=temasamo1220d-22" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -843,7 +843,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
           <p className="text-sm text-gray-600 mb-4">ポケットサイズ4Kジンバルカメラ、1インチセンサー搭載</p>
           <div className="grid grid-cols-1 sm:grid-cols-1 gap-3">
             <a 
-              href="https://www.amazon.co.jp/s?k=DJI+Pocket+3" 
+              href="https://www.amazon.co.jp/s?k=DJI+Pocket+3&tag=temasamo1220d-22" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -870,7 +870,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
           <p className="text-sm text-gray-600 mb-4">高火力グリルプレート、6.6mmクラッドプレートで正確な温度制御</p>
           <div className="grid grid-cols-1 sm:grid-cols-1 gap-3">
             <a 
-              href="https://www.amazon.co.jp/s?k=BALMUDA+The+Plate+Pro" 
+              href="https://www.amazon.co.jp/s?k=BALMUDA+The+Plate+Pro&tag=temasamo1220d-22" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -897,7 +897,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
           <p className="text-sm text-gray-600 mb-4">レトロカメラ形状の3in1セット、カメラ・TV・ビデオカメラに変形</p>
           <div className="grid grid-cols-1 sm:grid-cols-1 gap-3">
             <a 
-              href="https://www.amazon.co.jp/s?k=LEGO+Creator+Retro+Camera" 
+              href="https://www.amazon.co.jp/s?k=LEGO+Creator+Retro+Camera&tag=temasamo1220d-22" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -941,7 +941,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               楽天市場で探す
             </a>
             <a 
-              href="https://www.amazon.co.jp/s?k=Fujifilm+X100VI" 
+              href="https://www.amazon.co.jp/s?k=Fujifilm+X100VI&tag=temasamo1220d-22" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -976,7 +976,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               楽天市場で探す
             </a>
             <a 
-              href="https://www.amazon.co.jp/s?k=SodaStream+E-TERRA" 
+              href="https://www.amazon.co.jp/s?k=SodaStream+E-TERRA&tag=temasamo1220d-22" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -1004,7 +1004,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
           <p className="text-sm text-gray-600 mb-4">テスラのCybertruckを1/10スケールで再現した公式RCカー。操縦性もディテールも本格仕様。</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <a 
-              href="https://www.amazon.co.jp/s?k=Hot+Wheels+RC+Tesla+Cybertruck" 
+              href="https://www.amazon.co.jp/s?k=Hot+Wheels+RC+Tesla+Cybertruck&tag=temasamo1220d-22" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
@@ -1012,7 +1012,7 @@ export default function ArticleDetail({ content, frontMatter, category, type, po
               Amazonで探す
             </a>
             <a 
-              href="https://shopping.yahoo.co.jp/search?p=Hot+Wheels+RC+Tesla+Cybertruck" 
+              href="https://shopping.yahoo.co.jp/search?p=Hot+Wheels+RC+Tesla+Cybertruck&sc_e=afvc_shp_3751180" 
               target="_blank" 
               rel="nofollow noopener noreferrer"
               className="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"

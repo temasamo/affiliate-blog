@@ -47,7 +47,11 @@ export default function GlobalHotPicksAffiliate({ product }: GlobalHotPicksAffil
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
           <a
-            href={product.amazonUrl}
+            href={
+              product.amazonUrl.includes("amazon.co.jp") && !/[?&]tag=/.test(product.amazonUrl)
+                ? `${product.amazonUrl}${product.amazonUrl.includes("?") ? "&" : "?"}tag=temasamo1220d-22`
+                : product.amazonUrl
+            }
             target="_blank"
             rel="nofollow noopener noreferrer"
             className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
