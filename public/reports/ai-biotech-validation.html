@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI創薬は本当に効いているのか｜Market Supporter AI</title>
+<style>
+  :root{
+    --ink:#0d1b2a;
+    --ink-soft:#3d4f60;
+    --paper:#f7f9fa;
+    --line:#dde5ea;
+    --accent:#0e7c86;
+    --accent-deep:#075a63;
+    --accent-wash:#e6f2f3;
+    --amber:#b8791a;
+    --amber-wash:#fdf6e8;
+    --pass:#1f7a4d;
+    --pass-wash:#eaf5ef;
+    --fail:#a83a3a;
+    --fail-wash:#faeded;
+    --hold:#6b6f76;
+    --hold-wash:#f0f1f3;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.9;font-size:16px;
+  }
+  .wrap{max-width:860px;margin:0 auto;background:#fff;}
+  header.masthead{
+    background:linear-gradient(135deg,var(--accent-deep) 0%,var(--accent) 100%);
+    color:#fff;padding:44px 32px 36px;
+  }
+  .brand{font-size:12px;letter-spacing:.22em;text-transform:uppercase;opacity:.85;margin-bottom:18px;}
+  .series-tag{
+    display:inline-block;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    padding:4px 12px;border-radius:3px;font-size:12px;letter-spacing:.08em;margin-bottom:14px;
+  }
+  header.masthead h1{font-size:29px;line-height:1.5;margin:0 0 12px;font-weight:700;}
+  header.masthead .sub{font-size:15px;opacity:.9;margin:0;}
+  .issue{
+    margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.28);
+    font-size:13px;opacity:.85;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  main{padding:36px 32px 8px;}
+  .lede{
+    font-size:16.5px;background:var(--accent-wash);
+    border-left:4px solid var(--accent);padding:20px 22px;margin:0 0 36px;
+  }
+  h2{
+    font-size:20px;margin:48px 0 18px;padding-bottom:10px;
+    border-bottom:2px solid var(--accent);display:flex;align-items:baseline;gap:12px;
+  }
+  h2 .num{color:var(--accent);font-size:24px;font-weight:700;font-family:Georgia,serif;}
+  h3{font-size:16.5px;margin:30px 0 10px;color:var(--accent-deep);border-left:3px solid var(--accent);padding-left:11px;}
+  p{margin:0 0 16px;}
+  table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:14.5px;}
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:var(--accent-wash);font-weight:700;color:var(--accent-deep);}
+  tbody tr:nth-child(even){background:#fbfdfd;}
+  .case{border:1px solid var(--line);border-radius:2px;margin:24px 0;overflow:hidden;}
+  .case .head{padding:14px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .case .verdict{
+    font-size:11.5px;font-weight:700;letter-spacing:.1em;
+    padding:3px 10px;border-radius:2px;white-space:nowrap;
+  }
+  .case.pass .head{background:var(--pass-wash);}
+  .case.pass .verdict{background:var(--pass);color:#fff;}
+  .case.fail .head{background:var(--fail-wash);}
+  .case.fail .verdict{background:var(--fail);color:#fff;}
+  .case.hold .head{background:var(--hold-wash);}
+  .case.hold .verdict{background:var(--hold);color:#fff;}
+  .case .head .ttl{font-weight:700;font-size:16px;}
+  .case .body{padding:16px 18px 6px;}
+  .case dl{margin:0 0 10px;font-size:14.5px;}
+  .case dt{font-weight:700;color:var(--accent-deep);margin-top:10px;}
+  .case dd{margin:2px 0 0;}
+  .callout{
+    background:var(--amber-wash);border:1px solid #f0dfbc;
+    padding:16px 18px;margin:22px 0;font-size:14.5px;border-radius:2px;
+  }
+  .callout .ttl{font-weight:700;color:var(--amber);margin-bottom:6px;font-size:14px;}
+  .funnel{margin:24px 0 28px;}
+  .funnel .row{
+    display:flex;align-items:center;gap:14px;margin-bottom:8px;font-size:14.5px;
+  }
+  .funnel .bar{
+    background:var(--accent);height:30px;border-radius:2px;
+    color:#fff;font-size:13px;display:flex;align-items:center;
+    padding:0 10px;white-space:nowrap;min-width:52px;
+  }
+  .funnel .lbl{width:118px;flex-shrink:0;font-weight:700;color:var(--accent-deep);font-size:14px;}
+  .watch{background:var(--ink);color:#e8eef2;padding:26px 26px 20px;margin:44px 0 0;}
+  .watch h2{color:#fff;border-bottom-color:rgba(255,255,255,.4);margin-top:0;}
+  .watch h2 .num{color:#6fd4dc;}
+  .watch ul{padding-left:20px;margin:0;}
+  .watch li{margin-bottom:12px;font-size:15px;}
+  .watch strong{color:#6fd4dc;}
+  .series-nav{background:var(--accent-wash);padding:20px 22px;margin:34px 0 0;font-size:14.5px;border-radius:2px;}
+  .series-nav .ttl{font-weight:700;color:var(--accent-deep);margin-bottom:10px;}
+  .series-nav ol{margin:0;padding-left:20px;}
+  .series-nav li{margin-bottom:6px;}
+  footer{padding:26px 32px 40px;font-size:12.5px;color:var(--ink-soft);border-top:1px solid var(--line);margin-top:36px;}
+  .disclaimer{background:var(--paper);border:1px solid var(--line);padding:14px 16px;border-radius:2px;line-height:1.75;}
+  @media(max-width:640px){
+    header.masthead{padding:32px 20px 28px;}
+    header.masthead h1{font-size:23px;}
+    main{padding:26px 20px 8px;}
+    footer{padding:22px 20px 32px;}
+    .watch{padding:22px 20px 16px;}
+    table{font-size:13.5px;}
+    th,td{padding:8px 9px;}
+    .funnel .lbl{width:96px;font-size:13px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">Market Supporter AI</div>
+  <div class="series-tag">AI×製薬×バイオ 中編</div>
+  <h1>AI創薬は本当に効いているのか<br>―― 4つの臨床ケースで検証する</h1>
+  <p class="sub">成功1件、失敗3件、判定保留2件。実際の臨床データだけを材料に、AI創薬の現在地を測る</p>
+  <div class="issue">
+    <span>2026年8月10日号</span>
+    <span>米国株シリーズ／技術検証レポート</span>
+  </div>
+</header>
+
+<main>
+
+<p class="lede">
+前編では、米国AIバイオ産業を4つのレイヤーに分けて整理しました。本稿ではその中核であるレイヤー3、すなわちAI創薬プラットフォームについて、「実際に臨床で成果が出ているのか」を検証します。企業の主張やプレスリリースの表現ではなく、公表された臨床データと開発の中止・継続という結果のみを材料とします。結論を先に述べると、<strong>成功例は存在するが、まだ1件です。</strong>そしてその1件は、上場米国株では買えません。
+</p>
+
+<h2><span class="num">①</span>検証の枠組み ―― 何をもって「効いた」とするか</h2>
+
+<p>AI創薬の議論が混乱しやすいのは、「成功」の定義が話者によって異なるためです。本稿では以下の4段階に分け、どの段階まで到達したかで評価します。</p>
+
+<table>
+  <thead>
+    <tr><th>段階</th><th>到達内容</th><th>投資判断上の意味</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>レベル1</td><td>AIが候補化合物を設計した</td><td>技術デモ。ほぼ全社が達成済みで差別化にならない</td></tr>
+    <tr><td>レベル2</td><td>治験入り（第I相の投与開始）</td><td>安全性のみ。有効性の情報はゼロ</td></tr>
+    <tr><td>レベル3</td><td>第II相で有効性シグナルを確認</td><td><strong>ここが最初の実質的な関門</strong></td></tr>
+    <tr><td>レベル4</td><td>第III相成功・承認取得</td><td>2026年時点で到達例なし</td></tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <div class="ttl">よくある誤読</div>
+  ニュース記事の「AI創薬の候補が15分子、臨床に到達」という表現は、ほぼすべてレベル2（IND申請または第I相投与開始）を指します。IND申請から承認・上市までは平均7〜10年を要するため、レベル2の到達は投資判断の材料としては極めて弱い情報です。
+</div>
+
+<h2><span class="num">②</span>ケース検証 ―― 唯一の成功例</h2>
+
+<div class="case pass">
+  <div class="head">
+    <span class="verdict">レベル3 到達</span>
+    <span class="ttl">Rentosertib（Insilico Medicine／HKEX:3696）</span>
+  </div>
+  <div class="body">
+    <dl>
+      <dt>何をAIがやったか</dt>
+      <dd>創薬標的（TNIK）の同定と分子構造の設計の両方。標的自体がAIによって新規に見出された点が、他社事例との決定的な違いです。探索から治験入りまで3年未満。</dd>
+      <dt>臨床データ</dt>
+      <dd>特発性肺線維症（IPF）を対象とした第IIa相試験（GENESIS-IPF、中国22施設・71例、二重盲検プラセボ対照12週間）。60mg1日1回投与群で努力肺活量（FVC）が平均+98.4mL改善したのに対し、プラセボ群は-20.3mLの低下。用量依存的な肺機能改善が確認されました。</dd>
+      <dt>その後の進展</dt>
+      <dd>結果はNature Medicineに掲載され、ATS 2025で発表。2026年4月には吸入製剤がCDEからIND承認を取得（同社13本目のIND）。<strong>2026年7月には第III相試験を開始しています。</strong></dd>
+      <dt>評価</dt>
+      <dd>「AIが標的を見つけ、AIが分子を設計した医薬品」が、ヒトで有効性シグナルを示した最初の公表例です。AI創薬の概念実証（proof of concept）としては現時点で唯一の事例といえます。</dd>
+    </dl>
+  </div>
+</div>
+
+<div class="callout">
+  <div class="ttl">投資家にとっての最大の論点</div>
+  この唯一の成功例を持つInsilico Medicineは、<strong>香港証券取引所上場（HKEX:3696）であり、米国株としては買えません。</strong>前編で指摘した「技術的トップランナーに米国市場から直接投資できない」という構造が、最も端的に表れているのがこのケースです。また、第IIa相が中国国内の71例のみで実施されている点、FDA向けの規制パスがまだ確立していない点も、評価を割り引く要素になります。
+</div>
+
+<h2><span class="num">③</span>ケース検証 ―― 失敗事例</h2>
+
+<div class="case fail">
+  <div class="head">
+    <span class="verdict">レベル3 未達</span>
+    <span class="ttl">Recursion Pharmaceuticals（NASDAQ:RXRX）</span>
+  </div>
+  <div class="body">
+    <dl>
+      <dt>何が起きたか</dt>
+      <dd>2025年5月、第1四半期決算とあわせて臨床3プログラムの中止、1件の一時停止、前臨床1件の中止を発表。Exscientia統合後の再編の一環でした。発表当日、株価は5.49ドルから4.76ドルへ13.4%下落しています。</dd>
+      <dt>中止された3件</dt>
+      <dd><strong>REC-994</strong>（脳海綿状血管腫）：第II相62例。主要評価項目は達成し安全性はプラセボ同等だったが、臨床的な有益性を示せず。長期継続投与でも初期に見られたシグナルは確認されなかった。<br>
+      <strong>REC-2282</strong>（神経線維腫症2型）：第II/III相。40mg群は無益性の閾値を通過したものの、60mg群と併合解析では通過せず。腫瘍縮小・臨床活性ともに限定的。<br>
+      <strong>REC-3964</strong>（C.difficile感染症）：第II相。導出（アウトライセンス）の検討へ。</dd>
+      <dt>会社の説明</dt>
+      <dd>いずれも「データの総体が試験中止を支持する」との表現で、有効性不足を理由に挙げています。</dd>
+      <dt>評価</dt>
+      <dd>この産業で最も多くの計算資源とデータを持つ企業が、AI由来ではない導入品も含めて後期臨床で成果を出せなかった事例です。<strong>「大量のデータと計算力があれば臨床成功率が上がる」という仮説に対する、現時点で最も重い反証</strong>といえます。</dd>
+    </dl>
+  </div>
+</div>
+
+<div class="case fail">
+  <div class="head">
+    <span class="verdict">開発終了</span>
+    <span class="ttl">BenevolentAI／BergenBio ほか</span>
+  </div>
+  <div class="body">
+    <p style="font-size:14.5px;margin:0 0 10px;">BenevolentAIがAIで同定した皮膚疾患治療薬は第Ib相で失敗し、主力プログラムが中止となりました。BergenBioも同様に主力プログラムを打ち切っています。AI創薬の初期を牽引した企業が、実際の臨床データで脱落した典型例です。</p>
+    <p style="font-size:14.5px;margin:0 0 10px;">また、世界初のAI設計分子として治験入りしたExscientiaのDSP-1181（強迫性障害）については、2026年時点でも第I相の有効性データが公表されておらず、現状は不明です。なおDSP-1181の標的は既知のセロトニン受容体であり、標的そのものをAIが発見したRentosertibとは技術的な意味合いが異なります。</p>
+  </div>
+</div>
+
+<h2><span class="num">④</span>ケース検証 ―― 判定保留</h2>
+
+<div class="case hold">
+  <div class="head">
+    <span class="verdict">レベル2 到達</span>
+    <span class="ttl">Absci（NASDAQ:ABSI）</span>
+  </div>
+  <div class="body">
+    <dl>
+      <dt>進捗</dt>
+      <dd>2025年5月、生成AIで設計した抗TL1A抗体ABS-101（炎症性腸疾患）の第I相投与を開始し、臨床段階企業へ移行。2026年6月には抗プロラクチン受容体抗体ABS-201の第I相中間データを公表しました。</dd>
+      <dt>ABS-201の中間データ</dt>
+      <dd>健常成人32例、150mg／450mg／900mg／1800mgの単回漸増投与4コホート。全用量で忍容性は良好、推定半減期は65日以上で、6か月間に2〜3回投与という設計が成立する可能性が示されました。</dd>
+      <dt>なぜ判定保留か</dt>
+      <dd>半減期の長さは抗体設計技術の優秀さを示す指標ではありますが、<strong>これは有効性のデータではありません。</strong>男性型脱毛症を対象とした概念実証の中間データが2026年後半、完全版が2027年初頭の予定であり、レベル3の判定はそこまで持ち越しです。子宮内膜症を対象とした第II相も2026年中の開始が予定されています。</dd>
+    </dl>
+  </div>
+</div>
+
+<div class="case hold">
+  <div class="head">
+    <span class="verdict">帰属が論点</span>
+    <span class="ttl">Schrödinger（NASDAQ:SDGR）／zasocitinib</span>
+  </div>
+  <div class="body">
+    <dl>
+      <dt>臨床結果</dt>
+      <dd>経口TYK2阻害薬zasocitinib（TAK-279）は、中等症〜重症の尋常性乾癬を対象とした2本の第III相試験（LATITUDE-PsO-3001／3002）で、16週時点で約70%の患者が「皮膚がほぼクリア」（sPGA 0/1）を達成。PASI 75についても4週という早い段階からプラセボを有意に上回りました。2026年3月のAAD年次総会で発表され、7月には頭皮・爪・掌蹠といった難治部位でも一貫した効果が示されています。</dd>
+      <dt>なぜ判定保留か</dt>
+      <dd>これはAI関連としては現時点で最も進んだ後期臨床の成功事例です。ただし開発主体は武田薬品であり、Schrödingerの物理ベース計算プラットフォームは分子設計段階で用いられた技術の一つという位置づけです。<strong>「AI創薬の成功」として計上すべきか、「計算化学を活用した従来型創薬の成功」とすべきかは、定義次第で結論が変わります。</strong></dd>
+    </dl>
+  </div>
+</div>
+
+<h2><span class="num">⑤</span>全体の数字 ―― 業界レベルでの通過率</h2>
+
+<p>個別事例ではなく母集団で見ると、状況はより厳しく見えます。2026年のASCOで発表された分析によれば、臨床試験入りしたAI関連の治療用資産は63社・117件。その内訳は以下の通りです。</p>
+
+<div class="funnel">
+  <div class="row"><span class="lbl">臨床入り</span><span class="bar" style="width:100%;">117件（100%）</span></div>
+  <div class="row"><span class="lbl">第I相完了</span><span class="bar" style="width:51%;">60件（51.3%）</span></div>
+  <div class="row"><span class="lbl">第II相完了</span><span class="bar" style="width:7%;">8件</span><span style="font-size:13.5px;color:var(--ink-soft);">（6.8%）</span></div>
+  <div class="row"><span class="lbl">承認取得</span><span class="bar" style="width:2%;background:#c9d3d8;"></span><span style="font-size:13.5px;color:var(--ink-soft);">0件</span></div>
+</div>
+
+<p>別の集計では、2026年初頭時点で臨床開発中のAI設計プログラムは173件超、累積投資額は約600億ドルとされます。2026年中に15〜20件が後期試験（第III相）入りする見込みです。</p>
+
+<h3>この数字をどう読むか</h3>
+<p>第II相完了が6.8%にとどまるという事実は、AI創薬の失敗を意味するとは限りません。この分野が本格化したのはここ数年であり、パイプラインの年齢構成が若いだけ、という解釈も成立します。<strong>重要なのは、「まだ判定できる段階に達していない」という点です。</strong>強気論も弱気論も、現時点では十分な証拠を持っていません。</p>
+
+<h2><span class="num">⑥</span>定義の問題 ―― 「AI由来」とは何か</h2>
+
+<p>検証を難しくしている構造的な要因が3つあります。</p>
+
+<h3>1. 帰属の曖昧さ</h3>
+<p>「AIが発見した」とされる化合物の多くに、相当程度の人間の介入が含まれています。標的の同定にAIを使ったのか、分子設計に使ったのか、単に候補の絞り込みに使ったのかで、技術的な意味はまったく異なります。zasocitinibのケースがその典型です。</p>
+
+<h3>2. 公的な集計が存在しない</h3>
+<p>FDAの承認記録は、探索段階でAIを使ったかどうかで製品を分類していません。ClinicalTrials.govにも「AI由来」という登録区分はありません。したがって「AI創薬の第1号承認」といった主張は、すべて集計者独自の定義に依存します。</p>
+
+<h3>3. 企業側の情報開示インセンティブ</h3>
+<p>プラットフォーム型企業にとって、AI活用の強調は資金調達と提携獲得に直結します。成功はAIの成果として発信され、失敗は「導入品だった」「対象疾患が難しかった」と説明される非対称性が生じやすい構造です。</p>
+
+<h2><span class="num">⑦</span>検証の暫定結論</h2>
+
+<p>2026年8月時点で、公表データから言えることは以下に集約されます。</p>
+
+<table>
+  <thead>
+    <tr><th>論点</th><th>現時点の評価</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>AIは探索段階を効率化するか</td><td><strong>おおむね支持される。</strong>Rentosertibは標的同定から治験入りまで3年未満</td></tr>
+    <tr><td>AI由来薬はヒトで効くか</td><td><strong>1例のみ支持。</strong>Rentosertibの第IIa相。母集団としてはデータ不足</td></tr>
+    <tr><td>AIは臨床成功率を高めるか</td><td><strong>証拠なし。</strong>Recursionの3件中止は逆方向の証拠</td></tr>
+    <tr><td>データ量と計算力が競争優位か</td><td><strong>否定的な証拠あり。</strong>最大規模の計算資源を持つ企業が後期臨床で複数失敗</td></tr>
+    <tr><td>承認取得の実績</td><td><strong>ゼロ。</strong>第1号は2027〜2028年、保守的には2028〜2030年の見方</td></tr>
+  </tbody>
+</table>
+
+<p>投資判断への含意は明確です。<strong>レイヤー3（AI創薬プラットフォーム）は、2026年時点では「投資テーマ」ではなく「観察対象」の段階にあります。</strong>技術の優劣が臨床成績の優劣として現れるかどうかは、これから数年の第II相・第III相データで初めて判明します。</p>
+
+<p>一方で、この結論は前編で示したレイヤー構造の妥当性を裏づけるものでもあります。レイヤー2（データ・診断インフラ）は、AI創薬が成功しようと失敗しようと検査需要とデータ需要が存在するため、この検証の結果に左右されません。後編では、この非対称性を踏まえて具体的な評価手法を扱います。</p>
+
+<div class="watch">
+  <h2><span class="num">◆</span>WHAT TO WATCH</h2>
+  <ul>
+    <li><strong>Rentosertibの第III相デザインと登録地域</strong>：2026年7月開始。中国中心の試験設計のままか、国際共同試験へ広げるか。FDA向けパスの成否がAI創薬全体の規制先例になる</li>
+    <li><strong>AbsciのABS-201概念実証データ</strong>：2026年後半に中間、2027年初頭に完全版。生成AI設計抗体が初めて有効性で評価される場面</li>
+    <li><strong>Recursionの残存パイプライン</strong>：REC-4881（家族性大腸腺腫症、第Ib/II相TUPELO）とREC-1245（固形腫瘍・リンパ腫、第I/II相DAHLIA）。中止3件の後に何を示せるか</li>
+    <li><strong>第II相完了件数の推移</strong>：現在8件。ここが20件、30件と積み上がったとき初めて、AI創薬の成功率を統計的に議論できるようになる</li>
+    <li><strong>「AI由来」の定義をめぐる規制側の動き</strong>：FDAが承認記録にAI使用の区分を設けるかどうか。設けられれば集計の恣意性が大きく減る</li>
+    <li><strong>失敗の開示姿勢</strong>：成功だけをAIの成果として発信し、失敗を別要因に帰する企業がないか。開示の一貫性は経営の信頼性の指標になる</li>
+  </ul>
+</div>
+
+<div class="series-nav">
+  <div class="ttl">AI×製薬×バイオ シリーズ構成</div>
+  <ol>
+    <li>前編：産業地図 ―― 誰がどのレイヤーにいるのか</li>
+    <li><strong>中編：技術検証編（本稿）</strong>　AI創薬は実際に成果を出しているのか</li>
+    <li>後編：投資判断編 ―― 赤字先行企業をどう評価するか</li>
+  </ol>
+  <p style="margin:12px 0 0;font-size:13.5px;">この後、レイヤー3（AI創薬プラットフォーム）およびレイヤー2（データ・診断インフラ）の個別企業レポート、ならびにAI×バイオ中小型株編を順次公開予定です。</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="disclaimer">
+    <strong>【免責事項】</strong><br>
+    本レポートは情報提供を目的としたものであり、特定の有価証券の購入・売却を推奨するものではありません。記載内容は作成時点で信頼できると判断した情報に基づいていますが、その正確性・完全性を保証するものではありません。臨床試験の結果は将来の承認可能性を保証するものではなく、開発段階の医薬品は中止・失敗のリスクを常に伴います。投資に関する最終的な決定は、ご自身の判断と責任において行っていただきますようお願いいたします。
+  </div>
+  <p style="margin-top:18px;">Market Supporter AI ／ 2026年8月10日</p>
+</footer>
+
+</div>
+</body>
+</html>
