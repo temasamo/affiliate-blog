@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>赤字先行企業をどう評価するか｜Market Supporter AI</title>
+<style>
+  :root{
+    --ink:#0d1b2a;
+    --ink-soft:#3d4f60;
+    --paper:#f7f9fa;
+    --line:#dde5ea;
+    --accent:#0e7c86;
+    --accent-deep:#075a63;
+    --accent-wash:#e6f2f3;
+    --amber:#b8791a;
+    --amber-wash:#fdf6e8;
+    --good:#1f7a4d;
+    --mid:#b8791a;
+    --bad:#a83a3a;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.9;font-size:16px;
+  }
+  .wrap{max-width:860px;margin:0 auto;background:#fff;}
+  header.masthead{
+    background:linear-gradient(135deg,var(--accent-deep) 0%,var(--accent) 100%);
+    color:#fff;padding:44px 32px 36px;
+  }
+  .brand{font-size:12px;letter-spacing:.22em;text-transform:uppercase;opacity:.85;margin-bottom:18px;}
+  .series-tag{
+    display:inline-block;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    padding:4px 12px;border-radius:3px;font-size:12px;letter-spacing:.08em;margin-bottom:14px;
+  }
+  header.masthead h1{font-size:29px;line-height:1.5;margin:0 0 12px;font-weight:700;}
+  header.masthead .sub{font-size:15px;opacity:.9;margin:0;}
+  .issue{
+    margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.28);
+    font-size:13px;opacity:.85;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  main{padding:36px 32px 8px;}
+  .lede{
+    font-size:16.5px;background:var(--accent-wash);
+    border-left:4px solid var(--accent);padding:20px 22px;margin:0 0 36px;
+  }
+  h2{
+    font-size:20px;margin:48px 0 18px;padding-bottom:10px;
+    border-bottom:2px solid var(--accent);display:flex;align-items:baseline;gap:12px;
+  }
+  h2 .num{color:var(--accent);font-size:24px;font-weight:700;font-family:Georgia,serif;}
+  h3{font-size:16.5px;margin:30px 0 10px;color:var(--accent-deep);border-left:3px solid var(--accent);padding-left:11px;}
+  p{margin:0 0 16px;}
+  a{color:var(--accent-deep);}
+  table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:14.5px;}
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:var(--accent-wash);font-weight:700;color:var(--accent-deep);}
+  tbody tr:nth-child(even){background:#fbfdfd;}
+  .metric{
+    border:1px solid var(--line);border-top:4px solid var(--accent);
+    padding:18px 20px 6px;margin:24px 0;border-radius:2px;background:#fff;
+  }
+  .metric .kicker{
+    font-size:11.5px;letter-spacing:.14em;color:var(--accent);font-weight:700;margin-bottom:5px;
+  }
+  .metric .name{font-size:17px;font-weight:700;margin-bottom:4px;}
+  .metric .formula{
+    font-family:Georgia,serif;font-size:14px;color:var(--ink-soft);
+    background:var(--paper);padding:9px 12px;border-radius:2px;margin-bottom:12px;
+  }
+  .callout{
+    background:var(--amber-wash);border:1px solid #f0dfbc;
+    padding:16px 18px;margin:22px 0;font-size:14.5px;border-radius:2px;
+  }
+  .callout .ttl{font-weight:700;color:var(--amber);margin-bottom:6px;font-size:14px;}
+  .score{font-weight:700;white-space:nowrap;}
+  .score.g{color:var(--good);}
+  .score.m{color:var(--mid);}
+  .score.b{color:var(--bad);}
+  .watch{background:var(--ink);color:#e8eef2;padding:26px 26px 20px;margin:44px 0 0;}
+  .watch h2{color:#fff;border-bottom-color:rgba(255,255,255,.4);margin-top:0;}
+  .watch h2 .num{color:#6fd4dc;}
+  .watch ul{padding-left:20px;margin:0;}
+  .watch li{margin-bottom:12px;font-size:15px;}
+  .watch strong{color:#6fd4dc;}
+  .series-nav{background:var(--accent-wash);padding:20px 22px;margin:34px 0 0;font-size:14.5px;border-radius:2px;}
+  .series-nav .ttl{font-weight:700;color:var(--accent-deep);margin-bottom:10px;}
+  .series-nav ol{margin:0;padding-left:20px;}
+  .series-nav li{margin-bottom:6px;}
+  .series-nav a{color:var(--accent-deep);font-weight:600;}
+  footer{padding:26px 32px 40px;font-size:12.5px;color:var(--ink-soft);border-top:1px solid var(--line);margin-top:36px;}
+  .disclaimer{background:var(--paper);border:1px solid var(--line);padding:14px 16px;border-radius:2px;line-height:1.75;}
+  @media(max-width:640px){
+    header.masthead{padding:32px 20px 28px;}
+    header.masthead h1{font-size:23px;}
+    main{padding:26px 20px 8px;}
+    footer{padding:22px 20px 32px;}
+    .watch{padding:22px 20px 16px;}
+    table{font-size:13.5px;}
+    th,td{padding:8px 9px;}
+    .metric{padding:16px 16px 4px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">Market Supporter AI</div>
+  <div class="series-tag">AI×製薬×バイオ 後編</div>
+  <h1>赤字先行企業をどう評価するか<br>―― PERが使えない銘柄の4つの物差し</h1>
+  <p class="sub">キャッシュランウェイ、収益の質、一時金比率、希薄化コスト。2026年第2四半期の実数で3社を採点する</p>
+  <div class="issue">
+    <span>2026年8月11日号</span>
+    <span>米国株シリーズ／投資判断レポート</span>
+  </div>
+</header>
+
+<main>
+
+<p class="lede">
+<a href="/reports/ai-biotech-industry-map.html">前編</a>で産業構造を整理し、<a href="/reports/ai-biotech-validation.html">中編</a>で「AI創薬はまだ判定できる段階にない」という結論に至りました。では、判定できないものに投資判断を下すにはどうすればよいのか。本稿の立場は明確です。<strong>臨床の成否を予測するのではなく、臨床の答えが出るまで生き残れるかどうかを測る。</strong>この観点から4つの評価指標を提示し、2026年第2四半期の実数で3社を採点します。
+</p>
+
+<h2><span class="num">①</span>なぜPERが使えないのか</h2>
+
+<p>AI創薬プラットフォーム企業の大半は赤字です。PERは分母がマイナスになるため計算できません。PSR（株価売上高倍率）も機能しません。売上そのものが提携マイルストーンの計上タイミングに左右され、四半期ごとに数倍動くためです。</p>
+
+<p>実例を挙げます。Recursionの2026年第2四半期売上高は767万ドルで、前年同期の1,922万ドルから大幅に減少し、市場予想を約37%下回りました。第1四半期も647万ドルで予想を約59%下回っています。この数字からPSRを計算しても、企業価値の判断材料にはなりません。<strong>売上が減ったのは事業が悪化したからではなく、提携先のマイルストーン達成が当該四半期に発生しなかったからです。</strong></p>
+
+<div class="callout">
+  <div class="ttl">発想の転換</div>
+  この領域では、「いくら稼いでいるか」を測る指標が機能しません。代わりに測るべきは、<strong>「答えが出るまでの時間を買えているか」</strong>です。臨床データという判定材料が出るのは数年後であり、それまで倒れずに立っていられるかが第一の条件になります。
+</div>
+
+<h2><span class="num">②</span>指標1：キャッシュランウェイ ―― 生存できる期間</h2>
+
+<div class="metric">
+  <div class="kicker">METRIC 1</div>
+  <div class="name">キャッシュランウェイ</div>
+  <div class="formula">手元資金 ÷ 年間現金消費額 ＝ 追加調達なしで存続できる期間</div>
+  <p style="font-size:14.5px;">最も基本的で、最も軽視されやすい指標です。判断基準はシンプルで、<strong>「次の重要な臨床データが出る時期より、ランウェイが長いか」</strong>の一点に尽きます。データより先に資金が尽きれば、どれほど技術が優れていても不利な条件での資金調達を強いられます。</p>
+</div>
+
+<table>
+  <thead>
+    <tr><th>企業</th><th>手元資金（2026年Q2時点）</th><th>会社公表ランウェイ</th><th>次の主要データ</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Recursion（RXRX）</strong></td>
+      <td>5億5,680万ドル</td>
+      <td>2028年初頭まで</td>
+      <td>REC-4881 第II相追加データ：2026年11月</td>
+    </tr>
+    <tr>
+      <td><strong>Absci（ABSI）</strong></td>
+      <td>1億2,570万ドル＋公募1億ドル</td>
+      <td>2028年上期まで</td>
+      <td>ABS-201 概念実証中間：2026年後半</td>
+    </tr>
+    <tr>
+      <td><strong>Schrödinger（SDGR）</strong></td>
+      <td>―（黒字転換により該当せず）</td>
+      <td>―</td>
+      <td>ソフトウェア事業が資金を供給</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>RecursionとAbsciはいずれも、次の重要データが出るタイミングよりランウェイが長い状態にあります。この点では両社とも当面の生存条件を満たしています。ただしRecursionは2026年の現金営業費用ガイダンスを3億9,000万ドルから3億7,500万ドルへ引き下げており、<strong>ランウェイの延長がコスト削減によって実現されている</strong>点は留意が必要です。研究開発の規模縮小と引き換えに得た時間である可能性があります。</p>
+
+<h2><span class="num">③</span>指標2：収益の質 ―― 繰り返すか、一度きりか</h2>
+
+<div class="metric">
+  <div class="kicker">METRIC 2</div>
+  <div class="name">反復収益の比率</div>
+  <div class="formula">ACV等の継続収益 ÷ 総収益 ＝ 予測可能性の高さ</div>
+  <p style="font-size:14.5px;">同じ「AI創薬企業」でも、収益の質はまったく異なります。マイルストーン収入は一度きりで、発生時期を企業側がコントロールできません。一方、ソフトウェアの年間契約額（ACV）は毎年繰り返し発生し、成長率を追跡できます。</p>
+</div>
+
+<h3>対照的な2社</h3>
+
+<p><strong>Schrödinger</strong>の2026年第2四半期は、ACVが2,960万ドルで前年同期比27%増。上期累計では5,800万ドル（19%増）、直近4四半期のACVは2億800万ドルに達しました。通期ACVガイダンスは2億1,800万〜2億2,800万ドル（10〜15%成長）を維持しています。同四半期は純利益600万ドルを計上し、前年同期の4,320万ドルの赤字から黒字転換しました。</p>
+
+<p><strong>Recursion</strong>の同四半期売上高は767万ドル。純損失は1億3,101万ドル、1株当たり損失は0.25ドルでした。</p>
+
+<div class="callout">
+  <div class="ttl">同じセクター、異なるビジネス</div>
+  両社はともに「AI創薬」に分類されますが、Schrödingerは<strong>ソフトウェアを売る会社が創薬もやっている</strong>構造、Recursionは<strong>創薬に全額を賭けている</strong>構造です。前者は臨床が失敗してもソフトウェア事業が残りますが、後者にその受け皿はありません。この違いは、同じ株価下落局面での回復力にそのまま反映されます。
+</div>
+
+<h3>ただしACVにも罠がある</h3>
+<p>Schrödingerはホスト型ライセンスへの移行を進めており、第2四半期のソフトウェア売上に占めるホスト型の比率は47%、2028年までに75%を目標としています。この移行は会計処理上、<strong>短期的には報告売上を意図的に減少させます。</strong>第1四半期のソフトウェア売上は3,560万ドルで21%の減少でしたが、これは事業の悪化ではなく移行に伴うものです。ACVと報告売上のどちらを見るかで、まったく逆の印象を受ける典型例です。</p>
+
+<h2><span class="num">④</span>指標3：一時金比率 ―― 提携相手の本気度</h2>
+
+<div class="metric">
+  <div class="kicker">METRIC 3</div>
+  <div class="name">一時金 ÷ 公表マイルストーン総額</div>
+  <div class="formula">upfront ÷ total biobucks ＝ 提携相手が実際に払った金額の割合</div>
+  <p style="font-size:14.5px;">プレスリリースの見出しは常に「最大○○億ドル規模の提携」です。しかし業界全体では、公表される総額と実際の一時金の比率は<strong>およそ50対1</strong>。つまり見出しの金額の98%は、条件を満たさなければ1ドルも支払われません。</p>
+</div>
+
+<table>
+  <thead>
+    <tr><th>提携</th><th>一時金</th><th>公表最大額</th><th>比率</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Recursion ― Roche/Genentech</td><td>1億5,000万ドル</td><td>120億ドル</td><td>約1.3%</td></tr>
+    <tr><td>Isomorphic Labs ― Eli Lilly</td><td>4,500万ドル</td><td>17億ドル</td><td>約2.6%</td></tr>
+    <tr><td>Isomorphic Labs ― Novartis</td><td>3,750万ドル</td><td>12億ドル</td><td>約3.1%</td></tr>
+  </tbody>
+</table>
+
+<p>この比率が高いほど、提携相手が技術を本気で評価している証拠になります。逆に比率が極端に低い提携は、製薬企業側が「安価なオプション」として押さえただけの可能性があります。</p>
+
+<p>また、実際にいくら入金されたかも重要です。Recursionは提携から累計5億ドル超の実現インフローがあったと説明しています。公表額ではなく実現額を追うと、技術の商業的評価がより正確に見えます。</p>
+
+<h2><span class="num">⑤</span>指標4：希薄化コスト ―― 誰が、いくらで買ったか</h2>
+
+<div class="metric">
+  <div class="kicker">METRIC 4</div>
+  <div class="name">増資の価格と引受先</div>
+  <div class="formula">発行価格の水準 ＋ 参加投資家の顔ぶれ ＝ 資金調達の質</div>
+  <p style="font-size:14.5px;">赤字企業にとって増資は宿命です。問題は「増資したかどうか」ではなく、<strong>「どの株価水準で、誰に売れたか」</strong>です。株価低迷時の安値増資は既存株主の持分を大きく毀損しますが、好材料後の高値増資で事業会社が参加していれば、意味はまったく異なります。</p>
+</div>
+
+<h3>好例としてのAbsci</h3>
+<p>Absciは2026年6月24日、1株7.41ドルで1,349万5,277株、総額1億ドルの公募増資を実施しました。注目すべきは引受先で、<strong>Eli Lilly、Adage、BVF Partners、Columbia Threadneedle、Invus、Redmileといった機関投資家が参加</strong>しています。とりわけEli Lillyという事業会社の参加は、単なる資金調達以上の意味を持ちます。</p>
+
+<p>タイミングも重要です。この増資はABS-201の第I相中間データ公表（6月24日）と同日であり、株価が3月末比で大幅に上昇した局面で実施されました。結果としてランウェイは2028年上期まで延長されています。</p>
+
+<div class="callout">
+  <div class="ttl">この事例から読み取るべきこと</div>
+  同じ1億ドルの調達でも、株価3ドルで実施するのと7.41ドルで実施するのとでは、希薄化率が倍以上違います。<strong>「良いニュースが出た直後に増資する」経営判断は、既存株主にとって望ましい行動です。</strong>逆に、資金が尽きかけてから増資する企業は、最も不利な条件を飲まざるを得なくなります。増資の有無だけを見て否定的に評価するのは、この領域では誤りです。
+</div>
+
+<h2><span class="num">⑥</span>4指標によるスコアカード</h2>
+
+<p>以上の4指標で、レイヤー3の代表3社を採点します。これは投資推奨ではなく、評価軸を実際に当てはめるとどう見えるかの例示です。</p>
+
+<table>
+  <thead>
+    <tr><th>指標</th><th>Schrödinger<br>(SDGR)</th><th>Absci<br>(ABSI)</th><th>Recursion<br>(RXRX)</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. 生存性</strong></td>
+      <td><span class="score g">高</span><br>黒字転換済み。資金調達依存なし</td>
+      <td><span class="score g">高</span><br>2028年上期まで。データ時期より長い</td>
+      <td><span class="score m">中</span><br>2028年初頭まで。ただしコスト削減による延長</td>
+    </tr>
+    <tr>
+      <td><strong>2. 収益の質</strong></td>
+      <td><span class="score g">高</span><br>ACV +27%、直近4Qで2.08億ドル</td>
+      <td><span class="score b">低</span><br>四半期売上20万ドル。実質的に売上なし</td>
+      <td><span class="score b">低</span><br>マイルストーン依存。2四半期連続で大幅未達</td>
+    </tr>
+    <tr>
+      <td><strong>3. 一時金比率</strong></td>
+      <td><span class="score m">中</span><br>Ajax等からマイルストーン計上</td>
+      <td><span class="score m">中</span><br>提携より自社開発が主軸</td>
+      <td><span class="score m">中</span><br>実現インフロー5億ドル超は評価点</td>
+    </tr>
+    <tr>
+      <td><strong>4. 希薄化コスト</strong></td>
+      <td><span class="score g">高</span><br>増資不要</td>
+      <td><span class="score g">高</span><br>好材料同日に7.41ドルで実施。Lilly参加</td>
+      <td><span class="score m">中</span><br>現時点で追加調達なし。将来は不透明</td>
+    </tr>
+    <tr>
+      <td><strong>臨床の上振れ余地</strong></td>
+      <td><span class="score m">中</span><br>創薬は副次的。株価弾力性は小さい</td>
+      <td><span class="score g">大</span><br>ABS-201の結果に全面依存</td>
+      <td><span class="score g">大</span><br>複数プログラム。ただし中止の前歴あり</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>スコアカードが示す構図</h3>
+<p>この表から読み取れるのは、<strong>生存性・収益の質と、臨床の上振れ余地がトレードオフの関係にある</strong>という点です。Schrödingerは倒れにくいが大きく跳ねにくく、AbsciとRecursionはその逆です。どちらが優れているかという問いには答えがなく、投資家が引き受けたいリスクの種類によって答えが変わります。</p>
+
+<p>ただし一点だけ、リスクの種類とは無関係に評価できる項目があります。指標4（希薄化コスト）です。<strong>資金調達の巧拙は経営の質そのものであり、どの投資スタンスから見ても加点・減点の対象になります。</strong></p>
+
+<h2><span class="num">⑦</span>まとめ ―― 3部作の結論</h2>
+
+<p>前編・中編・後編を通じた結論を整理します。</p>
+
+<table>
+  <thead>
+    <tr><th></th><th>問い</th><th>結論</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>前編</td><td>誰がどこにいるのか</td><td>4層構造。収益の確実性はレイヤー1〜2、上振れ余地はレイヤー3に集中。技術的トップランナーの多くは非上場</td></tr>
+    <tr><td>中編</td><td>AI創薬は効いているのか</td><td>成功例は1件のみ（Rentosertib、香港上場）。母集団としては判定不能。承認実績はゼロ</td></tr>
+    <tr><td>後編</td><td>どう評価するのか</td><td>臨床の成否を当てにいかず、答えが出るまでの生存性と資金調達の質で測る</td></tr>
+  </tbody>
+</table>
+
+<p>実務的な含意は次の通りです。AI創薬というテーマに投資したい場合、選択肢は大きく3つあります。第一に、レイヤー2のデータ・診断インフラを選ぶこと。AI創薬の成否にかかわらず検査需要とデータ需要は存在し、すでに黒字化事例があります。第二に、レイヤー3のうちソフトウェア事業という受け皿を持つ企業を選ぶこと。第三に、レイヤー3の純粋なプラットフォーム企業に、臨床データが出るまでの数年を許容する前提で投じることです。</p>
+
+<p><strong>避けるべきは、第三の選択肢を第一の選択肢だと思って持つことです。</strong>これらは同じ「AIバイオ銘柄」というラベルの下にありながら、まったく異なるリスク特性を持っています。</p>
+
+<div class="watch">
+  <h2><span class="num">◆</span>WHAT TO WATCH</h2>
+  <ul>
+    <li><strong>Recursionのコスト削減の中身</strong>：現金営業費用ガイダンスを3.75億ドルへ引き下げ。ランウェイ延長が研究開発の縮小によるものなら、時間を買った代償として将来の候補品が減る</li>
+    <li><strong>SchrödingerのQ4 ACV</strong>：第4四半期は通常、年間ACVの半分以上を占める最大の四半期。通期ガイダンス2.18〜2.28億ドルの達否がここで決まる</li>
+    <li><strong>Bunsenの採用状況</strong>：2026年7月に早期アクセス開始したエージェント型AI。Bristol Myers Squibbが導入済み。ACV成長の次の駆動源になるか</li>
+    <li><strong>AbsciのABS-201概念実証</strong>：2026年後半に中間データ。結果次第で資金調達環境が一変する、事実上の単一イベントリスク</li>
+    <li><strong>提携の一時金比率の推移</strong>：業界平均50対1が改善に向かうか。製薬企業がAIを「安価なオプション」から「本命」へ格上げする転換点になる</li>
+    <li><strong>増資のタイミングと価格</strong>：株価下落局面で増資に追い込まれる企業が出るか。この局面での経営判断が、企業間の優劣を最も鮮明に分ける</li>
+  </ul>
+</div>
+
+<div class="series-nav">
+  <div class="ttl">AI×製薬×バイオ シリーズ構成（完結）</div>
+  <ol>
+    <li><a href="/reports/ai-biotech-industry-map.html">前編：産業地図</a> ―― 誰がどのレイヤーにいるのか</li>
+    <li><a href="/reports/ai-biotech-validation.html">中編：技術検証編</a> ―― AI創薬は実際に成果を出しているのか</li>
+    <li><strong>後編：投資判断編（本稿）</strong>　赤字先行企業をどう評価するか</li>
+  </ol>
+  <p style="margin:12px 0 0;font-size:13.5px;">この後、レイヤー3（AI創薬プラットフォーム）およびレイヤー2（データ・診断インフラ）の個別企業レポート、ならびにAI×バイオ中小型株編を順次公開予定です。</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="disclaimer">
+    <strong>【免責事項】</strong><br>
+    本レポートは情報提供を目的としたものであり、特定の有価証券の購入・売却を推奨するものではありません。本稿に掲載したスコアカードは評価軸の適用例であり、投資推奨や格付けではありません。記載内容は作成時点で信頼できると判断した情報に基づいていますが、その正確性・完全性を保証するものではありません。臨床試験の結果は将来の承認可能性を保証するものではなく、開発段階の医薬品は中止・失敗のリスクを常に伴います。また、赤字先行企業は追加の資金調達により既存株主の持分が希薄化するリスクを有します。投資に関する最終的な決定は、ご自身の判断と責任において行っていただきますようお願いいたします。
+  </div>
+  <p style="margin-top:18px;">Market Supporter AI ／ 2026年8月11日</p>
+</footer>
+
+</div>
+</body>
+</html>
