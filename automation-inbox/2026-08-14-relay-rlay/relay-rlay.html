@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relay Therapeutics（NASDAQ:RLAY）徹底分析｜増資で買った第III相 - Market Supporter AI</title>
+<meta name="description" content="AI創薬プラットフォームRelay Therapeutics（RLAY）を7章構成で分析。2026年Q2決算実績、売上が営業費用の0.4%という構造、増資価格の推移、ATM枠4.63億ドル、zovegalisib第III相の現在地を解説します。">
+<style>
+:root{
+  --accent:#9f1239;
+  --accent-dark:#701a32;
+  --accent-mid:#be123c;
+  --accent-light:#fff1f2;
+  --accent-border:#fecdd3;
+  --ink:#25161b;
+  --ink-sub:#57474c;
+  --line:#eee2e5;
+  --bg:#ffffff;
+  --bg-soft:#faf6f7;
+  --warn:#a16207;
+  --warn-bg:#fefce8;
+  --pos:#15803d;
+  --neg:#b91c1c;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.85;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px 80px;}
+
+header.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 58%,var(--accent-mid) 100%);
+  color:#fff;
+  padding:52px 20px 46px;
+}
+.hero-inner{max-width:860px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;font-size:12px;letter-spacing:.14em;
+  background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);
+  padding:5px 13px;border-radius:999px;margin-bottom:18px;
+}
+h1{font-size:29px;line-height:1.45;margin:0 0 16px;font-weight:700;letter-spacing:.01em;}
+.hero-sub{font-size:15.5px;opacity:.94;margin:0 0 22px;line-height:1.8;}
+.meta{font-size:13px;opacity:.86;border-top:1px solid rgba(255,255,255,.25);padding-top:14px;}
+.tags{margin-top:12px;}
+.tag{display:inline-block;font-size:11.5px;background:rgba(255,255,255,.14);padding:4px 10px;border-radius:4px;margin:0 6px 6px 0;}
+
+.toc{background:var(--accent-light);border:1px solid var(--accent-border);border-radius:10px;padding:22px 24px;margin:36px 0 44px;}
+.toc h2{font-size:15px;margin:0 0 12px;color:var(--accent-dark);letter-spacing:.06em;}
+.toc ol{margin:0;padding-left:1.3em;}
+.toc li{margin:7px 0;font-size:14.5px;}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--accent-mid);}
+.toc a:hover{color:var(--accent);}
+
+section{margin:0 0 52px;scroll-margin-top:20px;}
+h2.chapter{font-size:21px;margin:0 0 20px;padding:0 0 12px 0;border-bottom:3px solid var(--accent);line-height:1.5;font-weight:700;}
+h2.chapter .num{display:inline-block;color:var(--accent);font-size:19px;margin-right:8px;}
+h3{font-size:17px;margin:32px 0 12px;padding-left:12px;border-left:4px solid var(--accent-mid);line-height:1.6;}
+p{margin:0 0 16px;}
+ul,ol{margin:0 0 18px;padding-left:1.4em;}
+li{margin:7px 0;}
+strong{color:var(--accent-dark);font-weight:700;}
+
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0 24px;}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:480px;}
+th,td{border:1px solid var(--line);padding:11px 12px;text-align:left;vertical-align:top;}
+th{background:var(--accent-light);color:var(--accent-dark);font-weight:700;white-space:nowrap;}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+tbody tr:nth-child(even){background:var(--bg-soft);}
+.tbl-note{font-size:12.5px;color:var(--ink-sub);margin:-14px 0 24px;}
+
+.callout{background:var(--bg-soft);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:18px 20px;margin:24px 0;font-size:15px;}
+.callout .label{display:block;font-size:12px;letter-spacing:.1em;color:var(--accent);font-weight:700;margin-bottom:8px;}
+.warn{background:var(--warn-bg);border-left:4px solid var(--warn);}
+.warn .label{color:var(--warn);}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:24px 0 28px;}
+.kpi{background:var(--bg-soft);border:1px solid var(--line);border-radius:9px;padding:15px 16px;}
+.kpi .k-label{font-size:12px;color:var(--ink-sub);margin-bottom:6px;line-height:1.5;}
+.kpi .k-value{font-size:21px;font-weight:700;color:var(--accent-dark);line-height:1.3;font-variant-numeric:tabular-nums;}
+.kpi .k-sub{font-size:11.5px;color:var(--ink-sub);margin-top:5px;line-height:1.5;}
+
+.pos{color:var(--pos);font-weight:700;}
+.neg{color:var(--neg);font-weight:700;}
+
+.crosslink{border:1px solid var(--accent-border);border-radius:10px;padding:18px 20px;margin:30px 0;background:#fff;}
+.crosslink h4{margin:0 0 10px;font-size:14px;color:var(--accent-dark);letter-spacing:.05em;}
+.crosslink ul{margin:0;padding-left:1.2em;font-size:14px;}
+.crosslink a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-border);}
+
+.watch{background:linear-gradient(150deg,var(--accent-dark) 0%,#43101f 100%);color:#fff;border-radius:14px;padding:36px 28px;margin:56px 0 40px;}
+.watch h2{font-size:20px;margin:0 0 8px;letter-spacing:.08em;color:#fff;border:none;padding:0;}
+.watch .w-sub{font-size:13.5px;opacity:.82;margin:0 0 24px;}
+.watch ol{padding-left:0;list-style:none;margin:0;counter-reset:w;}
+.watch li{counter-increment:w;position:relative;padding-left:44px;margin:0 0 20px;font-size:14.8px;line-height:1.8;}
+.watch li::before{
+  content:counter(w,decimal-leading-zero);
+  position:absolute;left:0;top:2px;font-size:13px;font-weight:700;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
+  width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+}
+.watch li b{color:#fecdd3;}
+
+.disclaimer{background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:22px 24px;font-size:13px;color:var(--ink-sub);line-height:1.85;}
+.disclaimer h3{font-size:14px;margin:0 0 10px;padding:0;border:none;color:var(--ink);}
+.disclaimer ul{padding-left:1.3em;margin:0;}
+
+footer.site{text-align:center;font-size:12.5px;color:var(--ink-sub);margin-top:44px;padding-top:22px;border-top:1px solid var(--line);}
+
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  header.hero{padding:38px 18px 34px;}
+  h1{font-size:22px;line-height:1.5;}
+  .hero-sub{font-size:14.5px;}
+  .wrap{padding:0 16px 60px;}
+  h2.chapter{font-size:18.5px;}
+  h3{font-size:16px;}
+  .watch{padding:28px 20px;border-radius:10px;}
+  .watch li{padding-left:38px;font-size:14.2px;}
+  .watch li::before{width:26px;height:26px;font-size:12px;}
+  .kpi .k-value{font-size:19px;}
+  table{font-size:13.2px;}
+  th,td{padding:9px 10px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">AI × 製薬 × バイオ シリーズ ／ 個別企業編 ③</span>
+    <h1>Relay Therapeutics（NASDAQ:RLAY）徹底分析<br>― 増資で買った第III相、売上は営業費用の0.4%</h1>
+    <p class="hero-sub">
+      レイヤー3の3社を並べると、市場が最も高く評価しているのは、
+      プラットフォーム収益を最も持たない会社でした。
+      売上35万ドルに対し営業費用9,117万ドル。それでも実質事業価値は約29億ドル。
+      2026年8月6日発表のQ2決算実績から、この非対称を検証します。
+    </p>
+    <div class="meta">
+      公開日：2026年8月14日 ／ 分析基準日：2026年8月上旬 ／ Market Supporter AI 編集部
+      <div class="tags">
+        <span class="tag">#RLAY</span>
+        <span class="tag">#AI創薬</span>
+        <span class="tag">#米国株</span>
+        <span class="tag">#レイヤー3</span>
+        <span class="tag">#PI3Kα</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="toc">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#ch1">市場規模 ― 31万人という患者数の根拠</a></li>
+      <li><a href="#ch2">政策・規制環境 ― 2026年末に3つの規制イベントが重なる</a></li>
+      <li><a href="#ch3">コスト・収益構造 ― 研究を削り、開発を積む</a></li>
+      <li><a href="#ch4">事業セグメント動向 ― zovegalisib一本に集約された会社</a></li>
+      <li><a href="#ch5">株式バリュエーション ― 増資の履歴がすべてを語る</a></li>
+      <li><a href="#ch6">リスク要因 ― 単一資産と構造化された希薄化</a></li>
+      <li><a href="#ch7">まとめ ― レイヤー3の3社を並べて見えるもの</a></li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <span class="label">この記事の位置づけ</span>
+    「AI×製薬×バイオ」3部作で提示した4レイヤー分類における<strong>レイヤー3（AI創薬プラットフォーム）</strong>の個別企業分析、第3回です。
+    第1回のRecursion（RXRX）は反復収益ゼロ・希薄化+52%、第2回のSchrödinger（SDGR）は反復収益58%・希薄化+1.5%でした。
+    Relayは3社目として、この振れ幅の意味を確定させる材料になります。
+  </div>
+
+  <!-- ① -->
+  <section id="ch1">
+    <h2 class="chapter"><span class="num">①</span>市場規模 ― 31万人という患者数の根拠</h2>
+
+    <p>
+      Relay Therapeuticsは2016年設立、米マサチューセッツ州ケンブリッジ拠点の臨床段階企業です。
+      <strong>Dynamo®プラットフォーム</strong>と呼ぶ計算科学と実験技術を組み合わせた基盤で、
+      従来は創薬が困難とされてきたタンパク質標的に取り組んでいます。
+    </p>
+    <p>
+      前2社と決定的に違うのは、<strong>プラットフォームを外部に売っていない</strong>点です。
+      Schrödingerのようなソフトウェアライセンス収益もなく、
+      Recursionのような大手製薬との探索提携マイルストーンもほぼありません。
+      Dynamoは自社の創薬にのみ使われています。
+    </p>
+
+    <h3>主力資産zovegalisibが狙う患者数</h3>
+    <p>
+      同社の企業価値のほぼ全部を担うのが<strong>zovegalisib</strong>（開発コード RLY-2608）です。
+      PI3Kαのアロステリック部位に作用し、変異型を選択的に阻害する薬剤で、
+      同社は「初の汎変異型・アイソフォーム選択的PI3Kα阻害剤」と位置づけています。
+    </p>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="k-label">PI3Kα変異を持つ<br>HR+/HER2- 乳がん患者</div>
+        <div class="k-value">約14万人</div>
+        <div class="k-sub">米国。会社公表値</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">PI3Kα変異による<br>血管異常の患者</div>
+        <div class="k-value">約17万人/年</div>
+        <div class="k-sub">米国。会社公表値</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">合計対象患者数</div>
+        <div class="k-value">約31万人</div>
+        <div class="k-sub">同社は精密医療として最大級の患者集団と説明</div>
+      </div>
+    </div>
+    <p>
+      PI3Kαは<strong>全がん種のなかで最も高頻度に変異するキナーゼ</strong>であり、
+      同時に全血管異常においても最も高頻度に変異する標的です。
+      つまり、標的として見たときの市場の広さは疑いようがありません。
+    </p>
+
+    <h3>なぜ今まで薬にならなかったのか</h3>
+    <p>
+      これまでのPI3Kα阻害剤開発は、活性部位（オルソステリック部位）を狙うのが主流でした。
+      その結果、<strong>変異型と野生型を区別できず、他のPI3Kアイソフォームにも作用する</strong>という問題を抱えました。
+      野生型阻害に伴う毒性（高血糖や皮疹など）のため、投与量を下げるか投与を中止するケースが頻発し、
+      結果として変異型を十分に阻害できないという構造的なジレンマがありました。
+    </p>
+    <p>
+      Relayはこれに対し、PI3Kα全長のクライオ電子顕微鏡構造を解き、
+      野生型と変異型の立体構造の違いを長時間スケールの分子動力学シミュレーションで解析。
+      その知見をもとにzovegalisibを設計したと説明しています。
+      <strong>これがDynamoプラットフォームの中核的な成功主張です。</strong>
+    </p>
+
+    <div class="callout warn">
+      <span class="label">市場規模の読み方</span>
+      「31万人」は<strong>疾患を持つ患者数であり、投薬対象になる患者数ではありません</strong>。
+      実際に処方が発生するには、変異検査の実施率、承認された適応（何次治療か）、
+      価格、競合薬の存在、投与継続率といった要素が全て掛かります。
+      また既承認の非選択的PI3Kα阻害剤が乳がんと血管異常の両方に存在するため、
+      zovegalisibは「新市場の創造」ではなく「既存治療からの置き換え」を伴う競争になります。
+    </div>
+  </section>
+
+  <!-- ② -->
+  <section id="ch2">
+    <h2 class="chapter"><span class="num">②</span>政策・規制環境 ― 2026年末に3つの規制イベントが重なる</h2>
+
+    <p>
+      3部作の中編で確認したとおり、<strong>2026年時点でAI創薬由来のFDA承認薬はゼロ</strong>です。
+      臨床入りした117件中、第II相完了は8件にとどまります。
+      その意味で、<strong>第III相を実際に走らせているRelayは、レイヤー3のなかで最も先に進んだ企業</strong>です。
+    </p>
+    <p>
+      同時に、これは規制リスクの露出が最も大きいということでもあります。
+      SchrödingerはパイプラインがなくてもACVが減りませんが、
+      Relayはzovegalisibが止まれば企業価値の大半が失われます。
+    </p>
+
+    <h3>2026年末までに予定されている3つの規制・臨床アップデート</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>対象</th><th>内容</th><th>時期</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>二次治療（2L）乳がん</td>
+            <td>第III相ReDiscover-2試験の登録状況アップデート</td>
+            <td>2026年末まで</td>
+          </tr>
+          <tr>
+            <td>一次治療（1L）乳がん</td>
+            <td>内分泌療法感受性患者を対象とした第III相の<strong>試験デザイン確定</strong>（規制当局との協議結果）</td>
+            <td>2026年末まで</td>
+          </tr>
+          <tr>
+            <td>血管異常</td>
+            <td>データおよび規制アップデート</td>
+            <td>2026年末まで</td>
+          </tr>
+          <tr>
+            <td>三剤併用</td>
+            <td>第1/2相の追加データ</td>
+            <td>2027年上期</td>
+          </tr>
+          <tr>
+            <td>1L第III相</td>
+            <td>試験開始（規制当局のフィードバックが前提）</td>
+            <td>2027年初頭見込み</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：Relay Therapeutics 2026年第2四半期決算リリース（2026年8月6日）。</p>
+
+    <p>
+      注目すべきは、1L第III相の開始が<strong>「規制当局のフィードバック次第（subject to regulatory feedback）」</strong>という条件付きで語られている点です。
+      これは会社側が試験デザインをまだFDAと合意していないことを意味します。
+      2026年末のデザイン確定アップデートが遅れれば、2027年初頭の開始も後ろにずれます。
+    </p>
+
+    <h3>血管異常という第二の軸</h3>
+    <p>
+      血管異常（vascular anomalies）は遺伝性疾患領域であり、がんとは規制の性質が異なります。
+      評価項目が病変の体積変化や症状改善であるため、<strong>比較的短期間で結果が見えやすい</strong>のが特徴です。
+    </p>
+    <p>
+      2026年のISSVA世界大会で発表された第1/2相ReInspire試験の初期データでは、
+      12歳以上の成人・青年を対象とした用量ランダム化パートにおいて、
+      <strong>最も早い評価時点である12週で60%の患者が体積反応を達成</strong>しました。
+      また12週時点でほぼ全ての患者に症状改善が見られ、
+      安全性・忍容性プロファイルは慢性投与の可能性を示すものだったとされています。
+    </p>
+    <p>
+      血管異常は<strong>生涯にわたって投薬が続く疾患</strong>であるため、
+      承認されれば収益の持続性は高くなります。慢性投与に耐える安全性プロファイルは、
+      この観点から重要な指標です。
+    </p>
+  </section>
+
+  <!-- ③ -->
+  <section id="ch3">
+    <h2 class="chapter"><span class="num">③</span>コスト・収益構造 ― 研究を削り、開発を積む</h2>
+
+    <h3>2026年第2四半期の実績（2026年8月6日発表）</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>項目（千ドル）</th><th>2026年Q2</th><th>2025年Q2</th><th>2026年上半期</th><th>2025年上半期</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>売上高（ライセンス等）</td><td class="num">350</td><td class="num">677</td><td class="num">3,350</td><td class="num">8,355</td></tr>
+          <tr><td>研究開発費</td><td class="num">76,483</td><td class="num">63,897</td><td class="num">147,046</td><td class="num">137,706</td></tr>
+          <tr><td>一般管理費</td><td class="num">14,691</td><td class="num">13,627</td><td class="num">25,718</td><td class="num">32,366</td></tr>
+          <tr><td><strong>営業費用合計</strong></td><td class="num"><strong>91,174</strong></td><td class="num">77,524</td><td class="num"><strong>172,764</strong></td><td class="num">170,072</td></tr>
+          <tr><td>営業損失</td><td class="num neg">▲90,824</td><td class="num">▲76,847</td><td class="num neg">▲169,414</td><td class="num">▲161,717</td></tr>
+          <tr><td>受取利息</td><td class="num">7,115</td><td class="num">7,105</td><td class="num">12,467</td><td class="num">14,918</td></tr>
+          <tr><td><strong>純損失</strong></td><td class="num neg"><strong>▲83,707</strong></td><td class="num">▲70,375</td><td class="num neg"><strong>▲156,998</strong></td><td class="num">▲147,440</td></tr>
+          <tr><td>1株当たり純損失</td><td class="num">▲0.41ドル</td><td class="num">▲0.41ドル</td><td class="num">▲0.82ドル</td><td class="num">▲0.87ドル</td></tr>
+          <tr><td>加重平均株式数</td><td class="num">202,849,466</td><td class="num">171,264,622</td><td class="num">191,412,839</td><td class="num">170,254,500</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：Relay Therapeutics 2026年第2四半期決算リリース（2026年8月6日）。</p>
+
+    <div class="callout warn">
+      <span class="label">この記事で最も重要な比率</span>
+      Q2の売上高35万ドルを営業費用9,117万ドルで割ると、<strong>約0.4%</strong>です。
+      売上が費用の0.4%しかカバーしていない。
+      前回のRecursionは767万ドルの売上で、費用の一部を賄っていました。
+      Schrödingerは5,889万ドルの売上がありました。
+      <strong>Relayは3社のなかで最も、収益で事業を支えていない企業です。</strong>
+    </div>
+
+    <p>
+      しかも、この35万ドルの売上はすべて<strong>Elevar Therapeuticsとの独占ライセンス契約</strong>から生じたものです。
+      自社の創薬活動が生み出した継続的な収益ではありません（第④章で詳述）。
+    </p>
+
+    <h3>研究開発費の内訳が示す方向転換</h3>
+    <p>
+      Q2の研究開発費は7,648万ドルで、前年同期から1,258万ドル増えました。
+      会社側の説明はこうです。<strong>zovegalisibの各臨床試験の費用増加が主因で、
+      2026年より前に実施した研究組織の合理化による削減効果で一部相殺された</strong>、と。
+    </p>
+    <p>
+      この一文には重要な情報が含まれています。
+      「研究（research）組織の合理化」と「開発（development）費用の増加」が同時に起きているということは、
+      <strong>Dynamoプラットフォームで新しい標的を探す活動を縮小し、
+      すでに見つけた1剤を臨床で押し上げることに資源を集中させている</strong>ということです。
+    </p>
+    <p>
+      プラットフォーム企業としてのRelayは縮小し、
+      単一資産の臨床開発企業としてのRelayが拡大している。
+      これは資金効率の観点では合理的な判断ですが、
+      「プラットフォームが継続的に新薬を生む」という投資仮説とは方向が逆です。
+    </p>
+
+    <h3>一般管理費の推移に注意</h3>
+    <p>
+      一般管理費はQ2単独では1,469万ドルへ増えましたが（法務費用の増加が主因、従業員報酬・株式報酬の減少で一部相殺）、
+      上半期では2,572万ドルと前年同期の3,237万ドルから減少しています。
+      つまり<strong>2026年第1四半期に大きな削減があった</strong>計算になります。
+      コスト構造は研究側と管理側の両方で絞られており、
+      増えているのは臨床試験費用のみという構図です。
+    </p>
+
+    <h3>受取利息が損失を埋める構造</h3>
+    <p>
+      Q2の純損失8,371万ドルは、営業損失9,082万ドルから受取利息712万ドルを差し引いた数字です。
+      現金9億ドル超を保有しているため、<strong>利息収入が四半期あたり700万ドル前後発生</strong>しています。
+      これは営業費用の約8%に相当します。
+      裏を返せば、金利が下がれば、あるいは現金が減れば、この緩衝材も薄くなります。
+    </p>
+  </section>
+
+  <!-- ④ -->
+  <section id="ch4">
+    <h2 class="chapter"><span class="num">④</span>事業セグメント動向 ― zovegalisib一本に集約された会社</h2>
+
+    <p>
+      Relayは会計上のセグメント分割を行っていません。
+      実態としても、<strong>zovegalisibの3つの適応</strong>が事業のほぼ全部です。
+    </p>
+
+    <h3>① 二次治療（2L）乳がん ― 第III相ReDiscover-2</h3>
+    <p>
+      PI3Kα変異を持ち、CDK4/6阻害剤による前治療歴のあるHR+/HER2-進行乳がん患者を対象に、
+      zovegalisib + フルベストラントの第III相試験ReDiscover-2が進行中です。
+    </p>
+    <p>
+      根拠となる第1/2相データは、2025年6月のASCOで報告されたものです。
+      600mg1日2回投与＋フルベストラント群において、
+      二次治療の患者で<strong>無増悪生存期間（PFS）の中央値11.0か月</strong>を示しました
+      （追跡期間中央値12.5か月）。これは2024年12月のSABCSで報告された11.4か月と整合する数値です。
+      全用量にわたる118例において、忍容性は概ね良好で、
+      治療関連有害事象の大半が低グレードかつ管理可能・可逆的だったとされています。
+    </p>
+
+    <h3>② 一次治療（1L）乳がん ― 三剤併用</h3>
+    <p>
+      2026年Q2の最大のニュースが、この領域です。
+      Relayはzovegalisib + <strong>atirmociclib</strong>（PfizerのCDK4選択的阻害剤）+ 内分泌療法の
+      三剤併用を、1L乳がんに向けた<strong>go-forwardレジメンとして選定</strong>しました。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td>対象</td><td>PI3Kα変異を持つHR+/HER2-転移性乳がん、治療歴中央値3ライン、CDK4/6阻害剤の経験あり</td></tr>
+          <tr><td>客観的奏効率（ORR）</td><td><strong>44%</strong>（用量未最適化の段階で）</td></tr>
+          <tr><td>変異型による差</td><td>キナーゼ領域変異・非キナーゼ領域変異のいずれでもORRは同程度</td></tr>
+          <tr><td>安全性</td><td>各薬剤で既報の有害事象と整合</td></tr>
+          <tr><td>Pfizerとの取り決め</td><td><strong>臨床用薬剤の供給契約のみ</strong>。試験薬群のatirmociclibと対照群のパルボシクリブを供給。zovegalisibのグローバル権利はRelayが全て保持</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      <strong>Pfizerとの契約が「供給契約」であることは重要です。</strong>
+      経済的な提携ではないため、一時金もマイルストーンも発生しません。
+      Relayは開発費を自社で負担し、その代わりに権利を100%保持する。
+      上振れした場合のリターンは大きいが、資金負担も全て自社という構造です。
+    </p>
+
+    <h3>③ 血管異常 ― 第1/2相ReInspire</h3>
+    <ul>
+      <li>成人・12歳以上の青年を対象とした用量ランダム化パート（Part 1）で、12週時点で<strong>60%が体積反応</strong>を達成</li>
+      <li>12週時点でほぼ全患者に症状改善。慢性投与の可能性を示す安全性・忍容性プロファイル</li>
+      <li>成人・青年の拡大コホートを開始。6〜11歳の小児では用量漸増を継続中</li>
+      <li>データおよび規制アップデートを2026年末までに予定</li>
+    </ul>
+
+    <h3>④ その他のパイプライン</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>プログラム</th><th>標的／適応</th><th>状況</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>RLY-8161</strong></td>
+            <td>NRAS選択的阻害 ／ NRAS変異メラノーマ等の固形がん</td>
+            <td>第1/2相を継続中。<strong>有効性・安全性データは開示されていない</strong></td>
+          </tr>
+          <tr>
+            <td>ファブリー病プログラム</td>
+            <td>遺伝性疾患</td>
+            <td>会社概要に記載。臨床段階の情報は開示なし</td>
+          </tr>
+          <tr>
+            <td>lirafugratinib（RLY-4008）</td>
+            <td>FGFR2 ／ 胆道がん等</td>
+            <td><strong>2024年12月にElevar Therapeuticsへ独占ライセンス供与</strong>。以後の開発・商業化はElevarが担当</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <span class="label">lirafugratinibを手放した意味</span>
+      lirafugratinibは、Relayがかつて主力の一つとしていた資産です。
+      FGFR2融合胆道がんの前治療なし患者において、
+      推奨用量で高い奏効率を示したデータが2022年に報告され、
+      登録試験への道筋も示されていました。
+      それを<strong>2024年末に他社へライセンスアウトした</strong>という事実は、
+      Relayが複数資産を並走させる路線を捨て、zovegalisibに集中する選択をしたことを示しています。
+      本記事の第⑤章で見るとおり、この判断が実現率の数字に直結しています。
+    </div>
+  </section>
+
+  <!-- ⑤ -->
+  <section id="ch5">
+    <h2 class="chapter"><span class="num">⑤</span>株式バリュエーション ― 増資の履歴がすべてを語る</h2>
+
+    <p>
+      Relayは直近12か月で3億ドル前後の純損失を計上しており、PERは計算できません。
+      売上が営業費用の0.4%しかない以上、PSRも意味を持ちません。
+      3部作の4指標で見ていきます。
+    </p>
+
+    <h3>指標1：キャッシュランウェイ</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>数値</th></tr></thead>
+        <tbody>
+          <tr><td>現金・現金同等物・投資有価証券（2026年6月30日）</td><td class="num">9億1,093万ドル</td></tr>
+          <tr><td>同（2026年3月31日）</td><td class="num">6億4,210万ドル</td></tr>
+          <tr><td>同（2025年12月31日）</td><td class="num">5億5,452万ドル</td></tr>
+          <tr><td>運転資本</td><td class="num">8億7,728万ドル</td></tr>
+          <tr><td>負債合計</td><td class="num">7,745万ドル</td></tr>
+          <tr><td>会社想定ランウェイ</td><td class="num">2029年まで</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      上半期の純損失1億5,700万ドルを単純年換算すると年間約3.14億ドル。
+      現金9億1,093万ドルを割ると<strong>約2.9年分</strong>となり、会社想定の「2029年まで」と整合します。
+      絶対額としては、レイヤー3の3社のなかで最も潤沢です。
+    </p>
+    <p>
+      ただし重要なのは<strong>増加の内訳</strong>です。
+      現金は2025年末から3億5,642万ドル増えていますが、これは事業が稼いだ結果ではありません。
+      2026年5月の公募増資による資金調達がほぼ全額です。
+      <strong>ランウェイは事業ではなく株式で買ったもの</strong>だという理解が必要です。
+    </p>
+
+    <h3>指標2：反復収益比率</h3>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="k-label">Q2 売上高</div>
+        <div class="k-value">35万ドル</div>
+        <div class="k-sub">全額がElevar契約由来</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">Q2 営業費用</div>
+        <div class="k-value">9,117万ドル</div>
+        <div class="k-sub">うち研究開発費7,648万ドル</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">売上／営業費用</div>
+        <div class="k-value">約0.4%</div>
+        <div class="k-sub">編集部計算</div>
+      </div>
+    </div>
+    <p>
+      反復収益はゼロです。それどころか、収益そのものがほぼ存在しません。
+      2025年通期の売上高は1,536万ドル、純損失は2億7,648万ドルでした。
+    </p>
+    <p>
+      3部作では「収益の確実性はレイヤー1〜2に集中する」と整理しました。
+      Relayはその対極にあります。<strong>収益の確実性という軸では、評価できる材料が何もない企業</strong>です。
+      評価はすべて臨床データと規制判断に依存します。
+    </p>
+
+    <h3>指標3：一時金 ÷ 公表総額（実現率）</h3>
+    <p>
+      Relayの提携は実質的にElevar契約1本です。この1本を分解すると、
+      レイヤー3企業の契約構造がきわめて明瞭に見えます。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>金額</th><th>内訳</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>公表された受領ポテンシャル総額</td>
+            <td class="num">最大5億ドル</td>
+            <td>一時金・規制マイルストーン・商業マイルストーンの合計。加えて売上に対する2桁台のロイヤルティ</td>
+          </tr>
+          <tr>
+            <td>うち一時金＋規制マイルストーン部分</td>
+            <td class="num">7,500万ドル</td>
+            <td>2024年12月契約時の公表</td>
+          </tr>
+          <tr>
+            <td><strong>2026年6月30日時点の実受領累計</strong></td>
+            <td class="num"><strong>1,870万ドル</strong></td>
+            <td>契約締結時500万ドル＋原薬等の移管時370万ドル＋マイルストーン1,000万ドル</td>
+          </tr>
+          <tr>
+            <td><strong>実現率（編集部試算）</strong></td>
+            <td class="num"><strong>約3.7%</strong></td>
+            <td>1,870万ドル ÷ 5億ドル</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：Relay Therapeutics 2026年6月期 Form 10-Q、および2024年12月3日の契約発表リリース。</p>
+    <p>
+      <strong>約3.7%。</strong>前回のRecursionが約2.5%でしたから、ほぼ同じ水準です。
+      契約から1年半で、公表総額の3〜4%に届く。これがレイヤー3企業の提携の実相です。
+    </p>
+    <p>
+      なお一時金＋規制マイルストーン部分（7,500万ドル）に対する実現率は約25%です。
+      分母をどう取るかで数字は大きく変わるため、
+      <strong>「最大○億ドル」という見出し金額と、実際に受け取った金額を必ず分けて見る</strong>必要があります。
+    </p>
+
+    <h3>指標4：増資の価格と引受先</h3>
+    <p>
+      Relayにおいて、この指標は他の3つを合わせたより多くを語ります。
+      過去の公募増資の価格を並べます。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>時期</th><th>発行価格</th><th>株数</th><th>調達額（総額）</th></tr></thead>
+        <tbody>
+          <tr><td>2022年9月</td><td class="num">26.50ドル</td><td class="num">11,320,755株</td><td class="num">約3.00億ドル</td></tr>
+          <tr><td>2024年9月</td><td class="num">7.00ドル</td><td class="num">28,571,429株</td><td class="num">約2.00億ドル</td></tr>
+          <tr><td>2026年5月</td><td class="num">12.00ドル</td><td class="num">26,354,167株</td><td class="num">約3.16億ドル</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">2026年5月分は当初22,916,667株、オーバーアロットメント3,437,500株が全額行使された結果の合計。</p>
+    <p>
+      2022年に26.50ドルで売った株を、2024年には7.00ドルで売り、2026年に12.00ドルで売っている。
+      <strong>同じ資金額を調達するために必要な株数が、時期によって2.5倍以上変動している</strong>ということです。
+    </p>
+    <p>
+      2026年5月の増資について、注目すべき点が3つあります。
+    </p>
+    <ol>
+      <li><strong>当初計画1億7,500万ドルから2億7,500万ドルへ増額</strong>され、さらにオーバーアロットメントが全額行使されて約3億1,600万ドルになった。需要が強かったことを示します</li>
+      <li>発行価格12.00ドルは<strong>前日終値13.02ドルに対するディスカウント</strong></li>
+      <li>引受はJefferies、TD Cowen、Goldman Sachs、Guggenheim Securitiesが共同ブックランナー、Raymond Jamesがリードマネージャー。<strong>戦略投資家（製薬企業）の名前は公表されていません</strong></li>
+    </ol>
+    <p>
+      3点目は重要です。前回のAbsci（8月に別途記事化予定）の増資にはEli Lillyが参加しており、
+      「事業を理解する当事者が出資した」というシグナルがありました。
+      Relayの増資は機関投資家中心の一般的な公募であり、そうしたシグナルは読み取れません。
+    </p>
+
+    <h3>ATM枠の拡大 ― 継続的な希薄化の仕組み</h3>
+    <p>
+      Q2決算と同日（2026年8月6日）に提出された8-Kで、より重要な事実が開示されました。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td>ATM（市場価格による随時売出）プログラム</td><td>TD Securitiesとの契約を修正</td></tr>
+          <tr><td>枠の総額</td><td>2億5,000万ドル → <strong>4億6,297万8,049ドル</strong>へ拡大</td></tr>
+          <tr><td>新規目論見書補遺の対象</td><td>最大2億1,297万8,049ドル分の追加株式</td></tr>
+          <tr><td>既に売却済みの金額</td><td>約1億6,297万8,049ドル</td></tr>
+          <tr><td>手数料</td><td>TD Cowenに対し総調達額の最大3.0%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      ATMは公募増資と違い、<strong>市場で少しずつ株式を売却する仕組み</strong>です。
+      発表時の株価インパクトは小さいものの、継続的に株式数が増えます。
+      加えて2026年6月の年次株主総会では授権株式数の拡大が承認されています。
+    </p>
+    <p>
+      加重平均株式数は前年同期の1億7,126万株から<strong>2億285万株へ、約18%増加</strong>しました。
+      Recursionの年+52%ほどではありませんが、Schrödingerの半年+1.5%とは明らかに性質が違います。
+      <strong>Relayは希薄化を制度として組み込んだ資金調達を行っている</strong>企業です。
+    </p>
+
+    <h3>時価総額とEVの分解（編集部試算）</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>金額</th></tr></thead>
+        <tbody>
+          <tr><td>株価</td><td class="num">18.56ドル（2026年6月26日終値）</td></tr>
+          <tr><td>時価総額</td><td class="num">約37.8億ドル（2026年7月7日時点）</td></tr>
+          <tr><td>▲ 現金・投資有価証券</td><td class="num">▲9億1,093万ドル</td></tr>
+          <tr><td><strong>実質的な事業価値（EV）</strong></td><td class="num"><strong>約28.7億ドル</strong></td></tr>
+          <tr><td>アナリスト平均目標株価</td><td class="num">24.82ドル（12名）</td></tr>
+          <tr><td>2021年1月の最高終値</td><td class="num">61.53ドル</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">株価・時価総額はQ2決算発表（2026年8月6日）前の水準であり、記載日付時点の値です。市場データは日々変動します。ATMによる株式数の増加が反映されるまで時間差が生じる点にもご留意ください。有利子負債はないものとして計算しています。</p>
+
+    <div class="callout">
+      <span class="label">3社比較で見えること</span>
+      EVから現金を差し引いた「事業に付いている値段」を並べると、こうなります。
+      <div class="table-scroll" style="margin-top:14px;">
+        <table>
+          <thead><tr><th>企業</th><th>EV（編集部試算）</th><th>反復収益</th><th>臨床段階資産</th></tr></thead>
+          <tbody>
+            <tr><td>Relay（RLAY）</td><td class="num">約28.7億ドル</td><td>ほぼゼロ（売上／費用 0.4%）</td><td>実質1剤（第III相）</td></tr>
+            <tr><td>Recursion（RXRX）</td><td class="num">約12億ドル</td><td>ゼロ</td><td>5本＋IND1本</td></tr>
+            <tr><td>Schrödinger（SDGR）</td><td class="num">約8.7億ドル</td><td>約58%（ACV 2.08億ドル）</td><td>2本（提携先模索中）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      市場が最も高く評価しているのは、<strong>反復収益が最も少なく、パイプラインの本数も最も少ない企業</strong>です。
+      評価軸が「プラットフォームの収益力」ではなく<strong>「特定の1剤がどこまで臨床で進んだか」</strong>にあることを示しています。
+    </div>
+  </section>
+
+  <!-- ⑥ -->
+  <section id="ch6">
+    <h2 class="chapter"><span class="num">⑥</span>リスク要因 ― 単一資産と構造化された希薄化</h2>
+
+    <h3>1. 単一資産依存</h3>
+    <p>
+      企業価値のほぼ全部がzovegalisibに依存しています。
+      RLY-8161は有効性・安全性データが開示されておらず、ファブリー病プログラムも詳細不明。
+      lirafugratinibは既にライセンスアウト済みです。
+      <strong>zovegalisibの第III相が失敗した場合、代替となる価値の受け皿がありません。</strong>
+    </p>
+
+    <h3>2. 第III相の失敗リスク</h3>
+    <p>
+      根拠データであるPFS中央値11.0か月は、第1/2相の単群データです。
+      第III相は対照群との比較であり、<strong>対照群のPFSがどこに着地するかによって
+      統計的有意差が出るかどうかが決まります</strong>。
+      第1/2相で良好だった薬剤が第III相で有意差を示せないケースは、腫瘍領域では珍しくありません。
+    </p>
+
+    <h3>3. 1L第III相の開始が条件付き</h3>
+    <p>
+      1L第III相は「規制当局のフィードバック次第」で2027年初頭開始とされています。
+      三剤併用の44%というORRは<strong>用量未最適化の段階、かつ治療歴中央値3ラインの重い患者集団</strong>で得られたものです。
+      1L（前治療なし）での有効性・安全性が同様に成立するかは別問題であり、
+      FDAが要求する試験規模やエンドポイントによっては、想定より大幅にコストが膨らむ可能性があります。
+    </p>
+
+    <h3>4. 構造化された希薄化</h3>
+    <p>
+      ATM枠は4億6,298万ドルに拡大され、既に約1億6,298万ドルが消化されています。
+      授権株式数も2026年6月に拡大されました。
+      <strong>会社は今後も株式を売り続ける前提で制度を整えている</strong>と読むのが妥当です。
+      過去の発行価格が26.50ドル→7.00ドル→12.00ドルと推移していることを踏まえると、
+      株価が下がった局面での調達が既存株主に与える影響は大きくなります。
+    </p>
+
+    <h3>5. Pfizerへの供給依存</h3>
+    <p>
+      1L三剤併用の中核であるatirmociclibはPfizerの化合物です。
+      現在の取り決めは臨床用薬剤の供給契約であり、経済的な提携ではありません。
+      <strong>Pfizerがatirmociclibの開発方針を変更した場合、
+      Relayの1L戦略は前提から見直しになります。</strong>
+      権利を100%保持しているという利点の裏側にあるリスクです。
+    </p>
+
+    <h3>6. 実現率3.7%という提携の現実</h3>
+    <p>
+      Elevar契約は最大5億ドルの受領ポテンシャルに対し、実受領は1,870万ドル。
+      lirafugratinibが承認・上市されなければ、残りの大半は発生しません。
+      <strong>Relayにとってのライセンスアウトは、資金調達手段としては極めて限定的</strong>だったことになります。
+      今後zovegalisibの一部権利を売却して資金を得る選択をする場合も、
+      受け取れる一時金は公表総額のごく一部にとどまる可能性を織り込む必要があります。
+    </p>
+
+    <h3>7. 金利低下による利息収入の減少</h3>
+    <p>
+      Q2の受取利息712万ドルは営業費用の約8%を埋めていました。
+      上半期では1,247万ドルで、前年同期の1,492万ドルから減少しています。
+      現金残高は増えたのに利息収入が減っているのは金利環境の変化を示しており、
+      <strong>この緩衝材は今後さらに薄くなる可能性があります。</strong>
+    </p>
+  </section>
+
+  <!-- ⑦ -->
+  <section id="ch7">
+    <h2 class="chapter"><span class="num">⑦</span>まとめ ― レイヤー3の3社を並べて見えるもの</h2>
+
+    <p>
+      レイヤー3の3社を分析して、3部作で立てた仮説の一部が修正を必要とすることが分かりました。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>4指標</th><th>Relay（RLAY）</th><th>Recursion（RXRX）</th><th>Schrödinger（SDGR）</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>キャッシュランウェイ</td>
+            <td>9.11億ドル／2029年まで。増資で調達</td>
+            <td>5.57億ドル／2028年初頭</td>
+            <td>4.19億ドル／2028年末に黒字化目標</td>
+          </tr>
+          <tr>
+            <td>反復収益比率</td>
+            <td><strong>ほぼゼロ</strong>（売上／営業費用 0.4%）</td>
+            <td>ゼロ</td>
+            <td>約58%（ACV 2.08億ドル）</td>
+          </tr>
+          <tr>
+            <td>実現率</td>
+            <td><strong>約3.7%</strong>（1,870万／5億ドル）</td>
+            <td>約2.5%（5億／200億ドル超）</td>
+            <td>公表総額を示さず、累計現金創出7.5億ドル超</td>
+          </tr>
+          <tr>
+            <td>希薄化</td>
+            <td>1年で約+18%。ATM枠4.63億ドル</td>
+            <td>1年で約+52%</td>
+            <td>半年で+1.5%（増資なし）</td>
+          </tr>
+          <tr>
+            <td>臨床の最先端</td>
+            <td><strong>第III相（2L乳がん）</strong></td>
+            <td>第2相（FAP）</td>
+            <td>第1相（2本）</td>
+          </tr>
+          <tr>
+            <td>EV（編集部試算）</td>
+            <td><strong>約28.7億ドル</strong></td>
+            <td>約12億ドル</td>
+            <td>約8.7億ドル</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      表を上から下へ読むと、<strong>4指標の成績とEVの順位が逆相関している</strong>ことに気づきます。
+      財務の健全性が最も高いSchrödingerのEVが最も小さく、
+      財務指標が最も脆弱なRelayのEVが最も大きい。
+    </p>
+    <p>
+      3部作では「株価の上振れ余地はレイヤー3に集中する」と整理しました。
+      それは正しかった。しかしレイヤー3の内部では、
+      <strong>上振れ余地の大きさを決めているのはプラットフォームの品質ではなく、
+      特定の1剤が臨床でどこまで進んだかでした。</strong>
+    </p>
+    <p>
+      これは市場が不合理だという指摘ではありません。
+      承認薬が1つ生まれた場合の価値は数十億ドル規模になりうるのに対し、
+      ソフトウェア事業のACV 2億ドルから生まれる企業価値には上限があります。
+      期待値の計算として、市場の評価は一貫しています。
+    </p>
+    <p>
+      ただし、それは<strong>Relayへの投資が「Dynamoプラットフォームへの投資」ではなく
+      「zovegalisibの第III相成功への賭け」である</strong>ということを意味します。
+      研究組織を縮小して臨床開発に資源を集中させ、
+      lirafugratinibを手放し、ATMで株式を売り続けながら第III相を走らせる。
+      これは<strong>プラットフォーム企業の姿ではなく、単一資産バイオテックの姿</strong>です。
+    </p>
+    <p>
+      本記事の立場は、強気でも弱気でもありません。
+      zovegalisibのPFS 11.0か月や血管異常での60%体積反応は、明確に良好なデータです。
+      同時に、第III相の結果は出ていません。1L第III相のデザインもまだFDAと合意していません。
+      <strong>2026年末の3つの規制・臨床アップデートが出るまでは、判定できる段階にない</strong>と考えるのが妥当です。
+      投資判断を下すのであれば、
+      「売上は営業費用の0.4%」「実現率3.7%」「ATM枠4.63億ドル」という
+      3つの事実を織り込んだうえで行う必要があります。
+    </p>
+
+    <div class="crosslink">
+      <h4>関連レポート</h4>
+      <ul>
+        <li><a href="/reports/ai-biotech-industry-map.html">前編：産業地図 ― AI×バイオを4レイヤーで整理する</a></li>
+        <li><a href="/reports/ai-biotech-validation.html">中編：技術検証編 ― AI創薬は本当に効いているのか</a></li>
+        <li><a href="/reports/ai-biotech-valuation.html">後編：投資判断編 ― 赤字先行企業を4指標で評価する</a></li>
+        <li><a href="/reports/recursion-rxrx.html">個別企業編①：Recursion Pharmaceuticals（RXRX）― 実現率2.5%問題</a></li>
+        <li><a href="/reports/schrodinger-sdgr.html">個別企業編②：Schrödinger（SDGR）― 反復収益を持つ例外的なレイヤー3企業</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHAT TO WATCH -->
+  <div class="watch">
+    <h2>WHAT TO WATCH</h2>
+    <p class="w-sub">Relay Therapeutics（RLAY）― 今後の注目点</p>
+    <ol>
+      <li><b>2026年末：1L第III相の試験デザイン確定。</b>「規制当局のフィードバック次第」という条件が外れるかどうか。デザインが確定すれば試験規模とコストが見積もれるようになり、2029年までのランウェイが十分かどうかも判定できる。ここが最大の分岐点。</li>
+      <li><b>2026年末：血管異常のデータ・規制アップデート。</b>12週で60%体積反応という初期データが拡大コホートで再現されるか。生涯投薬となる疾患であり、承認されれば収益の持続性はがん適応より高い。小児（6〜11歳）の用量漸増の進捗も併せて確認する。</li>
+      <li><b>2026年末：第III相ReDiscover-2の登録状況。</b>登録ペースが遅れれば、データ読み出しの時期がそのまま後ろにずれる。競合試験との患者獲得競争の影響も現れる。</li>
+      <li><b>ATM枠の消化ペースと発行価格。</b>枠4億6,298万ドルのうち約1億6,298万ドルが消化済み。四半期ごとの株式数の増加ペースと、その時点の株価水準を並べて追う。株価が下がった局面での消化は既存株主への影響が大きい。</li>
+      <li><b>研究開発費の内訳（研究 vs 開発）。</b>2026年より前の研究組織合理化がQ2の費用増を一部相殺していた。臨床試験が第III相2本体制に向かうなかで、研究側をさらに削るのか、それとも新規標的の探索を再開するのか。プラットフォーム企業としての性格が残るかどうかがここに出る。</li>
+      <li><b>2027年上期：三剤併用の追加データ。</b>治療歴中央値3ラインで44%だったORRが、用量最適化後にどう変わるか。またキナーゼ・非キナーゼ両変異型で同等だったという特徴が、より多くの症例で維持されるか。1L第III相の成否を先読みする最良の材料になる。</li>
+    </ol>
+  </div>
+
+  <!-- 免責 -->
+  <div class="disclaimer">
+    <h3>免責事項</h3>
+    <ul>
+      <li>本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資に関する最終的な判断は、ご自身の責任において行ってください。</li>
+      <li>本記事に記載された数値・事実は、2026年8月上旬時点で公開されている企業のIR資料、決算リリース、SEC提出書類、および報道等に基づいています。株価・時価総額等の市場データは日々変動し、本記事の株価関連数値はQ2決算発表前の水準です。</li>
+      <li>「編集部試算」「編集部計算」と明記した数値は、公開情報に基づく推計であり、企業が公表した値ではありません。</li>
+      <li>企業が公表する対象患者数・市場機会・マイルストーン総額等の見積もりは、一定の前提や上限値に基づくものであり、実現を保証するものではありません。</li>
+      <li>臨床試験の結果は将来の承認を保証するものではなく、開発は中止される可能性があります。初期段階・単群のデータは、対照群を伴う後期試験で再現されない場合があります。</li>
+      <li>本記事の内容には誤りが含まれる可能性があります。投資判断にあたっては、必ず一次情報（企業のIR資料、SEC提出書類等）をご確認ください。</li>
+    </ul>
+  </div>
+
+  <footer class="site">
+    Market Supporter AI ／ marketsupporter-ai.com<br>
+    AI×製薬×バイオ シリーズ 個別企業編 ③（2026年8月14日公開）
+  </footer>
+
+</div>
+</body>
+</html>
