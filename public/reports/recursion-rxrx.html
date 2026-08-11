@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recursion Pharmaceuticals（NASDAQ:RXRX）徹底分析｜AI創薬プラットフォームの「実現率2.5%」問題 - Market Supporter AI</title>
+<meta name="description" content="AI創薬の代表格Recursion Pharmaceuticals（RXRX）を7章構成で分析。2026年Q2決算実績、キャッシュランウェイ、反復収益比率、一時金÷公表総額、増資条件の4指標で赤字先行企業を評価します。">
+<style>
+:root{
+  --accent:#4338ca;
+  --accent-dark:#312e81;
+  --accent-mid:#6366f1;
+  --accent-light:#eef2ff;
+  --accent-border:#c7d2fe;
+  --ink:#1e1b34;
+  --ink-sub:#4b4a63;
+  --line:#e3e2ee;
+  --bg:#ffffff;
+  --bg-soft:#f7f7fc;
+  --warn:#b45309;
+  --warn-bg:#fffbeb;
+  --pos:#0f766e;
+  --neg:#b91c1c;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.85;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px 80px;}
+
+/* ===== Header ===== */
+header.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 55%,var(--accent-mid) 100%);
+  color:#fff;
+  padding:52px 20px 46px;
+}
+.hero-inner{max-width:860px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;
+  font-size:12px;
+  letter-spacing:.14em;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.32);
+  padding:5px 13px;
+  border-radius:999px;
+  margin-bottom:18px;
+}
+h1{
+  font-size:29px;
+  line-height:1.45;
+  margin:0 0 16px;
+  font-weight:700;
+  letter-spacing:.01em;
+}
+.hero-sub{
+  font-size:15.5px;
+  opacity:.93;
+  margin:0 0 22px;
+  line-height:1.8;
+}
+.meta{
+  font-size:13px;
+  opacity:.85;
+  border-top:1px solid rgba(255,255,255,.25);
+  padding-top:14px;
+}
+.tags{margin-top:12px;}
+.tag{
+  display:inline-block;
+  font-size:11.5px;
+  background:rgba(255,255,255,.14);
+  padding:4px 10px;
+  border-radius:4px;
+  margin:0 6px 6px 0;
+}
+
+/* ===== TOC ===== */
+.toc{
+  background:var(--accent-light);
+  border:1px solid var(--accent-border);
+  border-radius:10px;
+  padding:22px 24px;
+  margin:36px 0 44px;
+}
+.toc h2{
+  font-size:15px;
+  margin:0 0 12px;
+  color:var(--accent-dark);
+  letter-spacing:.06em;
+}
+.toc ol{margin:0;padding-left:1.3em;}
+.toc li{margin:7px 0;font-size:14.5px;}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--accent-mid);}
+.toc a:hover{color:var(--accent);}
+
+/* ===== Sections ===== */
+section{margin:0 0 52px;scroll-margin-top:20px;}
+h2.chapter{
+  font-size:21px;
+  margin:0 0 20px;
+  padding:0 0 12px 0;
+  border-bottom:3px solid var(--accent);
+  line-height:1.5;
+  font-weight:700;
+}
+h2.chapter .num{
+  display:inline-block;
+  color:var(--accent);
+  font-size:19px;
+  margin-right:8px;
+}
+h3{
+  font-size:17px;
+  margin:32px 0 12px;
+  padding-left:12px;
+  border-left:4px solid var(--accent-mid);
+  line-height:1.6;
+}
+p{margin:0 0 16px;}
+ul,ol{margin:0 0 18px;padding-left:1.4em;}
+li{margin:7px 0;}
+strong{color:var(--accent-dark);font-weight:700;}
+
+/* ===== Tables ===== */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0 24px;}
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:14px;
+  min-width:480px;
+}
+th,td{
+  border:1px solid var(--line);
+  padding:11px 12px;
+  text-align:left;
+  vertical-align:top;
+}
+th{
+  background:var(--accent-light);
+  color:var(--accent-dark);
+  font-weight:700;
+  white-space:nowrap;
+}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+tbody tr:nth-child(even){background:var(--bg-soft);}
+.tbl-note{font-size:12.5px;color:var(--ink-sub);margin:-14px 0 24px;}
+
+/* ===== Callouts ===== */
+.callout{
+  background:var(--bg-soft);
+  border-left:4px solid var(--accent);
+  border-radius:0 8px 8px 0;
+  padding:18px 20px;
+  margin:24px 0;
+  font-size:15px;
+}
+.callout .label{
+  display:block;
+  font-size:12px;
+  letter-spacing:.1em;
+  color:var(--accent);
+  font-weight:700;
+  margin-bottom:8px;
+}
+.warn{
+  background:var(--warn-bg);
+  border-left:4px solid var(--warn);
+}
+.warn .label{color:var(--warn);}
+
+.kpi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:12px;
+  margin:24px 0 28px;
+}
+.kpi{
+  background:var(--bg-soft);
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:15px 16px;
+}
+.kpi .k-label{font-size:12px;color:var(--ink-sub);margin-bottom:6px;line-height:1.5;}
+.kpi .k-value{font-size:21px;font-weight:700;color:var(--accent-dark);line-height:1.3;font-variant-numeric:tabular-nums;}
+.kpi .k-sub{font-size:11.5px;color:var(--ink-sub);margin-top:5px;line-height:1.5;}
+
+.pos{color:var(--pos);font-weight:700;}
+.neg{color:var(--neg);font-weight:700;}
+
+/* ===== Cross links ===== */
+.crosslink{
+  border:1px solid var(--accent-border);
+  border-radius:10px;
+  padding:18px 20px;
+  margin:30px 0;
+  background:#fff;
+}
+.crosslink h4{
+  margin:0 0 10px;
+  font-size:14px;
+  color:var(--accent-dark);
+  letter-spacing:.05em;
+}
+.crosslink ul{margin:0;padding-left:1.2em;font-size:14px;}
+.crosslink a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-border);}
+
+/* ===== What to watch ===== */
+.watch{
+  background:linear-gradient(150deg,var(--accent-dark) 0%,#252268 100%);
+  color:#fff;
+  border-radius:14px;
+  padding:36px 28px;
+  margin:56px 0 40px;
+}
+.watch h2{
+  font-size:20px;
+  margin:0 0 8px;
+  letter-spacing:.08em;
+  color:#fff;
+  border:none;
+  padding:0;
+}
+.watch .w-sub{font-size:13.5px;opacity:.82;margin:0 0 24px;}
+.watch ol{padding-left:0;list-style:none;margin:0;counter-reset:w;}
+.watch li{
+  counter-increment:w;
+  position:relative;
+  padding-left:44px;
+  margin:0 0 20px;
+  font-size:14.8px;
+  line-height:1.8;
+}
+.watch li::before{
+  content:counter(w,decimal-leading-zero);
+  position:absolute;
+  left:0;
+  top:2px;
+  font-size:13px;
+  font-weight:700;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.3);
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.watch li b{color:#c7d2fe;}
+
+/* ===== Disclaimer ===== */
+.disclaimer{
+  background:var(--bg-soft);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:22px 24px;
+  font-size:13px;
+  color:var(--ink-sub);
+  line-height:1.85;
+}
+.disclaimer h3{
+  font-size:14px;
+  margin:0 0 10px;
+  padding:0;
+  border:none;
+  color:var(--ink);
+}
+.disclaimer ul{padding-left:1.3em;margin:0;}
+
+footer.site{
+  text-align:center;
+  font-size:12.5px;
+  color:var(--ink-sub);
+  margin-top:44px;
+  padding-top:22px;
+  border-top:1px solid var(--line);
+}
+
+/* ===== Responsive ===== */
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  header.hero{padding:38px 18px 34px;}
+  h1{font-size:22px;line-height:1.5;}
+  .hero-sub{font-size:14.5px;}
+  .wrap{padding:0 16px 60px;}
+  h2.chapter{font-size:18.5px;}
+  h3{font-size:16px;}
+  .watch{padding:28px 20px;border-radius:10px;}
+  .watch li{padding-left:38px;font-size:14.2px;}
+  .watch li::before{width:26px;height:26px;font-size:12px;}
+  .kpi .k-value{font-size:19px;}
+  table{font-size:13.2px;}
+  th,td{padding:9px 10px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">AI × 製薬 × バイオ シリーズ ／ 個別企業編 ①</span>
+    <h1>Recursion Pharmaceuticals（NASDAQ:RXRX）徹底分析<br>― AI創薬プラットフォームの「実現率2.5%」問題</h1>
+    <p class="hero-sub">
+      累計200億ドル超の提携マイルストーンを公表しながら、実際に受け取った金額は5億ドル超。
+      レイヤー3（AI創薬プラットフォーム）の代表格を、赤字先行企業向けの4指標で解剖します。
+      2026年8月5日発表の第2四半期決算実績を反映。
+    </p>
+    <div class="meta">
+      公開日：2026年8月12日 ／ 分析基準日：2026年8月上旬 ／ Market Supporter AI 編集部
+      <div class="tags">
+        <span class="tag">#RXRX</span>
+        <span class="tag">#AI創薬</span>
+        <span class="tag">#米国株</span>
+        <span class="tag">#レイヤー3</span>
+        <span class="tag">#TechBio</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="toc">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#ch1">市場規模 ― 「AI創薬市場」ではなく「製薬R&amp;Dの外部化予算」で測る</a></li>
+      <li><a href="#ch2">政策・規制環境 ― FDAはAI由来であることを評価しない</a></li>
+      <li><a href="#ch3">コスト・収益構造 ― 固定費40%削減と、収益の極端なブレ</a></li>
+      <li><a href="#ch4">事業セグメント動向 ― 自社パイプラインと提携プログラム</a></li>
+      <li><a href="#ch5">株式バリュエーション ― PER/PSRが機能しない企業の4指標</a></li>
+      <li><a href="#ch6">リスク要因 ― 希薄化、集中、そして「証明されていない」こと</a></li>
+      <li><a href="#ch7">まとめ ― まだ判定できる段階にない、を前提に置く</a></li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <span class="label">この記事の位置づけ</span>
+    本記事は「AI×製薬×バイオ」3部作で提示した産業4レイヤー分類のうち、<strong>レイヤー3（AI創薬プラットフォーム）</strong>の個別企業分析です。
+    3部作の結論であった「収益の確実性はレイヤー1〜2に、株価の上振れ余地はレイヤー3に集中する」という構図を、
+    Recursionという具体的な1社に当てはめて検証します。
+  </div>
+
+  <!-- ===================== ① ===================== -->
+  <section id="ch1">
+    <h2 class="chapter"><span class="num">①</span>市場規模 ― 「AI創薬市場」ではなく「製薬R&amp;Dの外部化予算」で測る</h2>
+
+    <p>
+      AI創薬の市場規模については、調査会社ごとに数十億ドルから数百億ドルまで推計値が大きく振れます。
+      定義（ソフトウェア売上のみか、創薬サービス全体か、成果報酬を含むか）が統一されていないためで、
+      個別企業の分析にはほとんど使えません。
+    </p>
+    <p>
+      レイヤー3企業の実質的な市場規模は、<strong>大手製薬企業が「外部のAI企業に払ってもよい」と考えている探索研究予算</strong>です。
+      そしてこれは、提携契約の公表金額という形で観測できます。
+    </p>
+
+    <h3>Recursionが公表している契約規模</h3>
+    <p>
+      Recursionは2024年11月に英Exscientiaとの経営統合を完了し、両社の提携ポートフォリオを引き継ぎました。
+      統合発表時点で、Roche・Genentech、Sanofi、Bayer、Merck KGaAといった提携先を合わせ、
+      <strong>ロイヤルティ控除前で200億ドル超のマイルストーン受領ポテンシャル</strong>があると説明されています。
+    </p>
+    <p>
+      最大の提携であるRoche・Genentechとの契約では、Recursionは一時金1億5,000万ドルを受領済みで、
+      両社は最大40プログラムを開始でき、各プログラムが開発・商業化・売上マイルストーンとして
+      3億ドル超をもたらしうる、という建て付けになっています。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>提携先</th><th>領域</th><th>ステータス（2026年8月時点）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Roche / Genentech</td><td>神経科学、消化器がん</td><td>累計2億1,600万ドル超を受領。2026年Q2にGenentechが神経科学領域の初の標的をオプション行使し、初期探索プログラムへ移行</td></tr>
+          <tr><td>Sanofi</td><td>免疫、がん</td><td>第5マイルストーン（400万ドル、がん領域リードシリーズ）を2026年Q1に達成</td></tr>
+          <tr><td>Bayer</td><td>難標的がん</td><td>精密腫瘍学プログラムで継続</td></tr>
+          <tr><td>Merck KGaA</td><td>がん、免疫</td><td>Exscientia由来の提携を継続</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：Recursion社IR資料・決算リリース（2024年8月統合発表、2026年5月Q1、2026年8月Q2）を基に編集部作成。</p>
+
+    <h3>自社パイプラインが狙う疾患市場</h3>
+    <p>
+      Recursionの最先行資産であるREC-4881は、家族性大腸腺腫症（FAP）を対象としています。
+      同社は、FAPが米国とEU主要5カ国で5万人超の診断患者を抱え、
+      <strong>100億ドル超の総市場機会</strong>にあたると説明しています。
+      これは会社側の見積もりであり、現時点でFAPには承認薬が1つも存在しないため、
+      価格・浸透率の前提は検証されていない点に注意が必要です。
+    </p>
+
+    <div class="callout warn">
+      <span class="label">読み方の注意</span>
+      「200億ドル超」も「100億ドル超」も、<strong>すべてが実現した場合の上限値</strong>です。
+      レイヤー3企業の分析では、この公表総額そのものではなく、
+      <strong>公表総額に対して実際にいくら受け取れたか（実現率）</strong>を見る必要があります。第⑤章で数値化します。
+    </div>
+  </section>
+
+  <!-- ===================== ② ===================== -->
+  <section id="ch2">
+    <h2 class="chapter"><span class="num">②</span>政策・規制環境 ― FDAはAI由来であることを評価しない</h2>
+
+    <p>
+      3部作の中編（技術検証編）で確認したとおり、<strong>2026年時点でAI創薬由来のFDA承認薬はゼロ</strong>です。
+      臨床入りした117件のうち第II相を完了したのは8件にとどまり、
+      唯一の明確な成功例とされるRentosertib（Insilico Medicine）は香港上場のため米国株投資家は直接保有できません。
+    </p>
+    <p>
+      重要なのは、<strong>FDAの審査基準に「AIで見つけた化合物だから」という加点項目は存在しない</strong>ことです。
+      承認の可否は、あくまで臨床試験で示された安全性と有効性で決まります。
+      AI創薬企業にとって規制環境が有利に働く場面があるとすれば、それは希少疾患制度の側です。
+    </p>
+
+    <h3>REC-4881に適用されている制度</h3>
+    <ul>
+      <li><strong>希少疾病用医薬品指定（Orphan Drug Designation）</strong>：FAP対象で取得済み。承認後の独占期間や税制優遇の対象となる</li>
+      <li><strong>ファストトラック指定（Fast Track Designation）</strong>：FDAとの協議機会が増え、審査の迅速化が期待される</li>
+    </ul>
+    <p>
+      ただしこれらは<strong>承認を保証する制度ではありません</strong>。あくまで審査プロセス上の便宜であり、
+      有効性データが不十分であれば通りません。
+    </p>
+
+    <h3>2026年下期の最大の規制イベント</h3>
+    <p>
+      Recursionは2026年上期にFDAとの協議を開始し、
+      REC-4881の<strong>登録試験（registrational study）の道筋を定義する更新を2026年下期に予定</strong>しています。
+      FAPには規制上の前例がないため、自然史データ、適切な患者集団の特定、用量設定、
+      そして「臨床的に意味のあるエンドポイントとは何か」の合意形成が論点になります。
+    </p>
+    <p>
+      ポリープ量の減少という代替エンドポイントが承認の根拠として受け入れられるかどうかが、
+      同社にとって最も重要な規制上の分岐点です。ここが決まらない限り、
+      REC-4881の上市時期も収益貢献も試算できません。
+    </p>
+  </section>
+
+  <!-- ===================== ③ ===================== -->
+  <section id="ch3">
+    <h2 class="chapter"><span class="num">③</span>コスト・収益構造 ― 固定費40%削減と、収益の極端なブレ</h2>
+
+    <h3>2026年第2四半期の実績（2026年8月5日発表）</h3>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="k-label">Q2 2026 売上高</div>
+        <div class="k-value">767万ドル</div>
+        <div class="k-sub">前年同期 1,922万ドル（<span class="neg">▲60%</span>）</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">Q2 2026 純損失</div>
+        <div class="k-value">1億3,101万ドル</div>
+        <div class="k-sub">EPS ▲0.25ドル（前年同期 ▲0.41ドル）</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">現金・現金同等物等<br>（2026年6月30日）</div>
+        <div class="k-value">5億5,680万ドル</div>
+        <div class="k-sub">2025年末 7億5,390万ドルから減少</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">2026年通期<br>キャッシュ営業費用ガイダンス</div>
+        <div class="k-value">3.75億ドル未満</div>
+        <div class="k-sub">従来3.90億ドル未満から下方修正</div>
+      </div>
+    </div>
+
+    <p>
+      売上高767万ドルは市場予想を大きく下回りました。ただし、この「未達」の意味は
+      一般的な事業会社の売上未達とは異なります。<strong>Recursionの売上のほぼ全額が提携契約からの収益</strong>であり、
+      その計上時期はマイルストーン達成のタイミングに左右されるためです。
+    </p>
+
+    <h3>収益のブレ幅を四半期で並べると</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>期間</th><th>売上高</th><th>主な内訳・背景</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2024年通期</td><td class="num">5,880万ドル</td><td>Exscientia統合は11月完了のため部分反映</td></tr>
+          <tr><td>2025年Q4</td><td class="num">3,550万ドル</td><td>Roche向け第2フェノマップの3,000万ドルマイルストーン等</td></tr>
+          <tr><td>2025年通期</td><td class="num">7,470万ドル</td><td>Exscientia通年寄与＋Sanofi提携収益増</td></tr>
+          <tr><td>2026年Q1</td><td class="num">650万ドル</td><td>Sanofi第5マイルストーン400万ドル</td></tr>
+          <tr><td>2026年Q2</td><td class="num">767万ドル</td><td>大型マイルストーンの計上なし</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：Recursion社決算リリース（2026年2月FY2025、2026年5月Q1、2026年8月Q2）。</p>
+
+    <p>
+      1四半期で3,550万ドル、次の四半期で650万ドル。<strong>5倍以上の振れ幅</strong>があります。
+      これは業績が悪化しているのではなく、<strong>そもそも四半期売上が経営実態を表す指標として機能していない</strong>ということです。
+      レイヤー3企業を四半期売上の前年比で追いかけても、ほとんど情報を得られません。
+    </p>
+
+    <h3>コスト側 ― 「約40%削減」の中身</h3>
+    <p>
+      経営陣は2026年通期のキャッシュ営業費用ガイダンスを3億9,000万ドル未満から
+      <strong>3億7,500万ドル未満へ引き下げ</strong>、これは2024年のプロフォーマ費用比で約40%の削減にあたると説明しています。
+      同社はこれを「成果ベースの、目的に適合した組織」への転換と位置づけ、
+      投じた資金がどの成果につながったかを追跡する社内システムの再構築を進めているとしています。
+    </p>
+    <p>
+      コスト構造で見落とせないのが<strong>データ調達費用</strong>です。
+      Recursionは Tempus AI からの臨床記録購入を行っており、その購入タイミングがプラットフォームコストを上下させます。
+      2025年Q1には、がん領域のマルチモーダルデータ利用に関して2,710万ドルの非現金費用が計上されていました。
+      レイヤー3企業のコストは人件費と計算資源だけでなく、<strong>レイヤー2企業への支払い</strong>を含む点は、
+      4レイヤー構造を理解するうえで重要です。
+    </p>
+
+    <div class="callout">
+      <span class="label">構造の要点</span>
+      Recursionの損益は「売上－費用」で読むものではありません。
+      <strong>費用は自社でコントロールでき、売上は提携先のオプション行使判断に依存する</strong>という非対称構造です。
+      したがって注目すべきは利益率ではなく、<strong>費用の絶対額（バーンレート）と、残りキャッシュで買える時間</strong>です。
+    </div>
+  </section>
+
+  <!-- ===================== ④ ===================== -->
+  <section id="ch4">
+    <h2 class="chapter"><span class="num">④</span>事業セグメント動向 ― 自社パイプラインと提携プログラム</h2>
+
+    <p>
+      Recursionの事業は、会計上のセグメント分割はされていませんが、
+      実質的には<strong>①自社開発パイプライン ②提携ディスカバリー ③プラットフォーム／AIモデル</strong>の3層で理解できます。
+    </p>
+
+    <h3>① 自社開発パイプライン（臨床段階5本）</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>コード</th><th>標的／適応</th><th>段階</th><th>次のデータ</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>REC-4881</strong></td>
+            <td>MEK1/2 ／ 家族性大腸腺腫症（FAP）</td>
+            <td>第2相（TUPELO試験）</td>
+            <td>2026年11月、遺伝性消化器がん領域の年次学会Presidential Plenaryで追加第2相データを発表予定</td>
+          </tr>
+          <tr>
+            <td><strong>REC-1245</strong></td>
+            <td>RBM39分解誘導 ／ 固形がん・リンパ腫</td>
+            <td>第1相用量漸増</td>
+            <td>2026年下期に追加データ（初期16例でDLT報告なし）</td>
+          </tr>
+          <tr>
+            <td><strong>REC-617</strong></td>
+            <td>CDK7 ／ 進行固形がん</td>
+            <td>第1相</td>
+            <td>2027年上期に併用療法の初期安全性・PKデータ</td>
+          </tr>
+          <tr>
+            <td><strong>REC-3565</strong></td>
+            <td>MALT1 ／ B細胞悪性腫瘍</td>
+            <td>第1相</td>
+            <td>2027年上期に単剤の初期安全性・PKデータ</td>
+          </tr>
+          <tr>
+            <td><strong>REC-4539</strong></td>
+            <td>LSD1 ／ 固形がん・AML</td>
+            <td>第1相</td>
+            <td>2027年下期に単剤の初期安全性・PKデータ</td>
+          </tr>
+          <tr>
+            <td><strong>REC-7735</strong></td>
+            <td>PI3Kα H1047R変異選択的阻害</td>
+            <td>IND取得済み</td>
+            <td>2026年下期にZINNIA第1/2相を開始、初回データは2028年上期見込み</td>
+          </tr>
+          <tr>
+            <td><strong>REC-102</strong></td>
+            <td>ENPP1 ／ 低ホスファターゼ症</td>
+            <td>IND準備段階</td>
+            <td>IND-enabling試験を継続中</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：Recursion社 2026年第2四半期決算リリース（2026年8月5日）。</p>
+
+    <h3>REC-4881の第2相データをどう評価するか</h3>
+    <p>
+      2025年12月に公表された第1b/2相（TUPELO）の結果では、
+      4mg1日1回投与群で<strong>ポリープ量が13週時点で中央値43%減少</strong>し、
+      休薬期間を挟んだ<strong>25週時点では53%減少へ深化</strong>しました。
+      またSpigelman分類（十二指腸ポリポーシスの重症度分類）が改善した患者が40%に上りました。
+      安全性は概ねMEK1/2阻害剤に典型的なもので、
+      治療関連有害事象の大半がGrade 1〜2、Grade 3が15.8%、Grade 4以上の報告はありませんでした。
+    </p>
+    <p>
+      Recursionはこれを<strong>Recursion OSの初の臨床的検証</strong>と位置づけています。
+      APC機能喪失に対するMEK1/2の救済という仮説は、フェノタイプ観察から導かれたものだ、というのが同社の主張です。
+    </p>
+    <div class="callout warn">
+      <span class="label">評価上の留保</span>
+      これは単群・非盲検を含む初期段階のデータであり、対照群との比較で有効性が確立したわけではありません。
+      また、ポリープ量の減少が長期的な発がん抑制や生存に結びつくかは未証明です。
+      「AIで見つけた薬が効いた」と評価するには、まだ2段階ほど早い段階です。
+    </div>
+
+    <h3>② 提携ディスカバリー ― 2026年Q2の進展</h3>
+    <p>
+      2026年第2四半期の最大のニュースは、<strong>Genentechが神経科学領域で初めて標的をオプション行使</strong>し、
+      共同初期探索プログラムへ移行させたことです。
+      Recursionは同提携において、社内製造した1兆細胞規模のiPSC由来神経細胞から
+      全ゲノムCRISPRノックアウトマップを構築しており（2024年に3,000万ドルのマイルストーンを受領）、
+      今回のオプション行使はそのマップが実際に標的発見に使われたことを意味します。
+    </p>
+    <p>
+      Roche・Genentech提携からの累計受領額は<strong>2億1,600万ドル超</strong>、
+      全提携合計の累計受領額は<strong>5億ドル超</strong>とされています。
+    </p>
+
+    <h3>③ プラットフォーム／AIモデル</h3>
+    <ul>
+      <li><strong>Recursion OS</strong>：生物学・化学・自動化・データサイエンス・臨床開発を統合したAIネイティブ創薬基盤</li>
+      <li><strong>BioHive-2</strong>：NVIDIA DGX H100を用いた自社所有スーパーコンピュータ</li>
+      <li><strong>Boltz-2</strong>：MIT・NVIDIAとの協業で開発されたオープンソースの生体分子共フォールディングモデル。タンパク質の立体構造と結合親和性を同時予測し、物理ベースの自由エネルギー摂動法に近い精度を大幅に高速に実現するとされる</li>
+      <li><strong>エージェント型AI</strong>：Target Discovery Agentにより、独自マップからの知見抽出を数週間単位から数時間単位へ短縮したと同社は説明</li>
+    </ul>
+    <p>
+      Boltz-2をオープンソース公開している点は、投資家にとって両義的です。
+      業界標準としての影響力は高まる一方、<strong>そのモデル自体は競合も無償で使える</strong>ため、
+      直接の収益源にも参入障壁にもなりません。
+      Recursionの参入障壁は、モデルではなく<strong>自社の湿式実験で生成した独自データセット</strong>の側にあります。
+    </p>
+  </section>
+
+  <!-- ===================== ⑤ ===================== -->
+  <section id="ch5">
+    <h2 class="chapter"><span class="num">⑤</span>株式バリュエーション ― PER/PSRが機能しない企業の4指標</h2>
+
+    <p>
+      Recursionは直近12カ月で約5.6億ドルの純損失を計上しており、PERは計算できません。
+      PSRは算出可能ですが、売上がマイルストーンのタイミングで5倍振れる以上、
+      <strong>PSRは分母がランダムに動く比率</strong>にすぎません。
+      3部作の後編で提示した、赤字先行企業向けの4指標で見ていきます。
+    </p>
+
+    <h3>指標1：キャッシュランウェイ</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>数値</th></tr></thead>
+        <tbody>
+          <tr><td>現金・現金同等物・制限付現金（2026年6月30日）</td><td class="num">5億5,680万ドル</td></tr>
+          <tr><td>同（2025年12月31日）</td><td class="num">7億5,390万ドル</td></tr>
+          <tr><td>上半期の減少額</td><td class="num">▲1億9,710万ドル</td></tr>
+          <tr><td>2026年キャッシュ営業費用ガイダンス</td><td class="num">3億7,500万ドル未満</td></tr>
+          <tr><td>会社想定ランウェイ</td><td class="num">2028年初頭まで</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      上半期の減少ペース（半年で約1.97億ドル）を単純年換算すると年間約3.94億ドルとなり、
+      会社ガイダンスの3.75億ドル未満とおおむね整合します。
+      <strong>追加調達なしで残り約1年半</strong>という計算です。
+    </p>
+    <p>
+      これは「当面は資金繰りに窮しない」水準であると同時に、
+      <strong>2027年中には次の資金調達を検討せざるを得ない</strong>水準でもあります。
+      REC-4881の登録試験を自社で回すとなれば、費用はさらに増えます。
+    </p>
+
+    <h3>指標2：反復収益比率</h3>
+    <p>
+      Recursionの売上は、その定義上ほぼ全額が非反復です。
+      一時金、マイルストーン、研究資金拠出であり、
+      <strong>SaaS的な意味での反復収益（ARR）は事実上ゼロ</strong>と考えるのが妥当です。
+    </p>
+    <p>
+      これはレイヤー2企業との決定的な違いです。
+      3部作でVeevaやIQVIAをレイヤー2に置いたのは、彼らが契約更新ベースの反復収益を持つためでした。
+      <strong>Recursionには、支払いを止められない構造の収益が存在しません。</strong>
+      提携先が「オプションを行使しない」と決めれば、その年の収益はゼロに近づきます。
+    </p>
+
+    <h3>指標3：一時金 ÷ 公表総額（実現率）</h3>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="k-label">公表マイルストーン総額<br>（ロイヤルティ控除前）</div>
+        <div class="k-value">200億ドル超</div>
+        <div class="k-sub">2024年8月のExscientia統合発表時点</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">累計実受領額<br>（全提携合計）</div>
+        <div class="k-value">5億ドル超</div>
+        <div class="k-sub">2026年8月時点、10件超のマイルストーン達成</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">実現率（編集部試算）</div>
+        <div class="k-value">約2.5%</div>
+        <div class="k-sub">5億ドル ÷ 200億ドル。5年超の提携期間を経ての水準</div>
+      </div>
+    </div>
+    <p>
+      <strong>この2.5%という数字が、本記事で最も重要な数値です。</strong>
+      Roche提携が2021年開始であることを考えると、5年以上を費やして公表総額の40分の1に届いた計算になります。
+      残る97.5%は、後期臨床の成功と上市を前提にした条件付き支払いであり、
+      その大半は<strong>提携先の判断とデータ次第で永久に発生しない可能性があります</strong>。
+    </p>
+    <p>
+      ただし公平を期すなら、この比率は上昇し得ます。マイルストーンは後期ほど金額が大きくなる設計だからです。
+      重要なのは、200億ドルという数字を「潜在的な企業価値」として読まないこと、
+      そして<strong>実現率の推移そのものを四半期ごとに追跡すること</strong>です。
+    </p>
+
+    <h3>指標4：増資の価格と引受先</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>数値・状況</th></tr></thead>
+        <tbody>
+          <tr><td>発行済株式数</td><td class="num">約5.3億株</td></tr>
+          <tr><td>過去1年の株式数増加率</td><td class="num">約+52%</td></tr>
+          <tr><td>2021年4月のIPO価格</td><td class="num">31.30ドル</td></tr>
+          <tr><td>直近株価水準</td><td class="num">3ドル台半ば</td></tr>
+          <tr><td>時価総額</td><td class="num">約18億ドル前後</td></tr>
+          <tr><td>空売り残高</td><td class="num">発行済株式の約35%</td></tr>
+        </tbody>
+      </table>
+      </div>
+    <p class="tbl-note">株式数・空売り残高は2026年7月時点の集計、株価・時価総額は2026年8月上旬の水準。株価は日々変動します。</p>
+    <p>
+      過去1年で株式数が約5割増えている点は、既存株主にとって重い事実です。
+      増加の主因はExscientia統合に伴う株式発行と、その後の資金調達・報酬性発行です。
+      <strong>Recursionは自社の株式を通貨として使ってきた企業</strong>であり、
+      仮に2027年に追加調達が必要になれば、株価3ドル台での調達は
+      IPO時の10分の1の価格で資本を売ることを意味します。
+    </p>
+    <p>
+      空売り残高が発行済株式の約35%に達している点も特徴的です。
+      これは<strong>市場に強い懐疑が存在する</strong>ことを示す一方、
+      ポジティブなニュースが出た際の急騰要因にもなります。
+      2026年8月5日の決算発表後、売上未達にもかかわらず株価が二桁上昇したのは、
+      コスト削減とGenentechのオプション行使が評価されたことに加え、
+      この需給構造も一因と考えられます。
+    </p>
+
+    <div class="callout">
+      <span class="label">4指標のまとめ</span>
+      <ul style="margin-bottom:0;">
+        <li><strong>ランウェイ</strong>：2028年初頭まで。当面の資金繰り懸念は小さいが、2027年に調達判断</li>
+        <li><strong>反復収益比率</strong>：実質ゼロ。収益の下限が構造的に存在しない</li>
+        <li><strong>実現率</strong>：約2.5%。公表総額と実績の乖離が極めて大きい</li>
+        <li><strong>希薄化</strong>：1年で株式数+約52%。株価は IPO 価格の約1割</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== ⑥ ===================== -->
+  <section id="ch6">
+    <h2 class="chapter"><span class="num">⑥</span>リスク要因 ― 希薄化、集中、そして「証明されていない」こと</h2>
+
+    <h3>1. 最大のリスクは「プラットフォームの価値が未証明」であること</h3>
+    <p>
+      Recursionの企業価値の大半は、Recursion OSが将来にわたって
+      「良い薬を、速く、安く」生み出し続けるという前提に依存しています。
+      しかし<strong>2026年8月時点で、Recursionの技術に由来する承認薬は存在しません</strong>。
+      最先行のREC-4881ですら、登録試験の設計がまだ確定していない段階です。
+    </p>
+    <p>
+      プラットフォームの価値が証明されるのは、
+      「AI由来の化合物が、AI由来でない化合物より高い確率で臨床を通過する」ことが
+      統計的に示されたときです。1剤の成功では足りません。そこまでには最短でも数年を要します。
+    </p>
+
+    <h3>2. 提携先集中リスク</h3>
+    <p>
+      累計受領額5億ドル超のうち、2億1,600万ドル超がRoche・Genentech由来です。
+      <strong>収益の4割強が単一の提携関係に依存</strong>している計算になります。
+      大手製薬企業がAI創薬への投資方針を見直した場合、あるいは特定のフェノマップから
+      有望な標的が出てこなかった場合、収益は急速に細ります。
+      提携契約は通常、提携先側に広い解約・不行使の裁量を残しています。
+    </p>
+
+    <h3>3. 希薄化リスク</h3>
+    <p>
+      前章のとおり、株式数は1年で約5割増加しました。
+      ランウェイが2028年初頭までである以上、<strong>2027年中の追加調達は現実的なシナリオ</strong>です。
+      株価が低位にあるまま調達すれば、希薄化率は一段と高まります。
+      希薄化を避けようとすればパイプラインの絞り込みや提携先への権利売却が必要となり、
+      いずれも将来の上振れ余地を削る選択になります。
+    </p>
+
+    <h3>4. 臨床試験の失敗リスク</h3>
+    <p>
+      第1相段階の資産（REC-617、REC-3565、REC-4539）は、
+      いずれも2027年に初期データが出るまで有効性が分かりません。
+      腫瘍領域の第1相から承認までの成功確率は歴史的に1割前後とされ、
+      <strong>複数本が同時に脱落するシナリオは十分に現実的</strong>です。
+    </p>
+
+    <h3>5. 規制上の前例不在リスク</h3>
+    <p>
+      FAPには承認薬がなく、規制上の前例もありません。
+      ポリープ量減少という代替エンドポイントがFDAに受け入れられなければ、
+      REC-4881は臨床的アウトカム（がん発症率や手術回避率など）での立証を求められ、
+      試験期間とコストが大幅に膨らみます。この場合、現在のランウェイでは足りません。
+    </p>
+
+    <h3>6. 需給・センチメントリスク</h3>
+    <p>
+      空売り比率が約35%という状態は、株価の変動を両方向に増幅させます。
+      決算やデータ発表のたびに二桁の値動きが生じうるため、
+      <strong>ファンダメンタルズの変化と株価の変化が対応しない場面</strong>が頻繁に発生します。
+    </p>
+  </section>
+
+  <!-- ===================== ⑦ ===================== -->
+  <section id="ch7">
+    <h2 class="chapter"><span class="num">⑦</span>まとめ ― まだ判定できる段階にない、を前提に置く</h2>
+
+    <p>
+      Recursion Pharmaceuticalsは、AI創薬というカテゴリーにおいて
+      最も資金力があり、最も提携ポートフォリオが厚く、最も臨床段階資産が多い企業の一つです。
+      臨床段階5本、IND取得済み1本という体制は、レイヤー3企業としては例外的に充実しています。
+    </p>
+    <p>
+      同時に、本記事で確認した数値はいずれも<strong>「まだ何も証明されていない」</strong>ことを指しています。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>論点</th><th>強気側の見方</th><th>弱気側の見方</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>REC-4881</td>
+            <td>承認薬ゼロの疾患で25週53%のポリープ減少。ODD＋Fast Track取得済み</td>
+            <td>対照群比較なし。代替エンドポイントの規制上の受容が未確定</td>
+          </tr>
+          <tr>
+            <td>提携</td>
+            <td>Genentechが神経科学標的をオプション行使。マップが機能した証左</td>
+            <td>累計受領額は公表総額の約2.5%。5年でこの水準</td>
+          </tr>
+          <tr>
+            <td>財務</td>
+            <td>費用を約40%削減。ランウェイ2028年初頭まで確保</td>
+            <td>反復収益ゼロ。1年で株式数+約52%の希薄化実績</td>
+          </tr>
+          <tr>
+            <td>プラットフォーム</td>
+            <td>Boltz-2で業界標準化。独自データセットは模倣困難</td>
+            <td>オープンソース化により直接収益化されず、AI由来の優位性は統計的に未証明</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      3部作の後編で述べたとおり、レイヤー3への投資は<strong>「事業の評価」ではなく「仮説へのオプション購入」</strong>です。
+      時価総額約18億ドルのうち、現金が約5.6億ドルを占めます。
+      差し引き約12億ドルが、プラットフォームと7本のパイプラインに対して市場が付けている値段です。
+    </p>
+    <p>
+      この12億ドルが高いか安いかは、REC-4881が承認に至るか、
+      提携からの実現率が今後どう推移するかに完全に依存します。
+      そしてその答えは、<strong>2026年11月の追加第2相データと、2026年下期のFDA協議結果</strong>まで出ません。
+    </p>
+    <p>
+      本記事の立場は、強気でも弱気でもありません。
+      <strong>判定に必要なデータがまだ揃っていない</strong>という認識を前提に置き、
+      次の材料が出るまで結論を保留する、というものです。
+      投資判断を下すのであれば、少なくとも
+      「実現率2.5%」「反復収益ゼロ」「1年で株式数+52%」という3つの事実を
+      織り込んだうえで行う必要があります。
+    </p>
+
+    <div class="crosslink">
+      <h4>関連レポート ― AI×製薬×バイオ 3部作</h4>
+      <ul>
+        <li><a href="/reports/ai-biotech-industry-map.html">前編：産業地図 ― AI×バイオを4レイヤーで整理する</a></li>
+        <li><a href="/reports/ai-biotech-validation.html">中編：技術検証編 ― AI創薬は本当に効いているのか</a></li>
+        <li><a href="/reports/ai-biotech-valuation.html">後編：投資判断編 ― 赤字先行企業を4指標で評価する</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== WHAT TO WATCH ===================== -->
+  <div class="watch">
+    <h2>WHAT TO WATCH</h2>
+    <p class="w-sub">Recursion Pharmaceuticals（RXRX）― 今後の注目点</p>
+    <ol>
+      <li><b>2026年11月：REC-4881の追加第2相データ。</b>遺伝性消化器がん領域の年次学会Presidential Plenaryセッションで発表予定。25週時点で53%だったポリープ減少がより長期でも維持されるか、また18歳以上へ拡大した集団や代替用法コホートで同様の結果が出るかが焦点。</li>
+      <li><b>2026年下期：FDAとの登録試験パス確定。</b>ポリープ量減少という代替エンドポイントが登録試験の主要評価項目として受け入れられるかどうか。ここが決まらなければ上市時期の試算そのものが成立しない。</li>
+      <li><b>提携実現率（累計受領額÷公表総額）の推移。</b>現在約2.5%。四半期ごとの受領額を積み上げ、この比率が上向くのか横ばいのままかを追う。単発の大型マイルストーンより、発生頻度の変化を見る。</li>
+      <li><b>2026年下期：REC-1245の追加第1相用量漸増データ。</b>初期16例でDLT報告なしという結果に続き、有効性シグナルが出るか。RBM39分解誘導という新規機序の臨床的妥当性が問われる。</li>
+      <li><b>2027年の資金調達の有無と条件。</b>ランウェイは2028年初頭まで。調達を行う場合、①発行価格、②引受先が大手製薬・戦略投資家か市場消化か、③ATM形式か公募か。株式数はすでに1年で約52%増えている。</li>
+      <li><b>キャッシュ営業費用が3.75億ドル未満に着地するか。</b>ガイダンスを2度引き下げた経営規律が実際の支出に反映されるか。REC-7735のZINNIA試験開始で臨床費用が増えるなか、削減目標を維持できるかが試される。</li>
+    </ol>
+  </div>
+
+  <!-- ===================== 免責 ===================== -->
+  <div class="disclaimer">
+    <h3>免責事項</h3>
+    <ul>
+      <li>本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資に関する最終的な判断は、ご自身の責任において行ってください。</li>
+      <li>本記事に記載された数値・事実は、2026年8月上旬時点で公開されている企業のIR資料、決算リリース、および報道等に基づいています。株価・時価総額等の市場データは日々変動します。</li>
+      <li>「編集部試算」と明記した数値は、公開情報に基づく推計であり、企業が公表した値ではありません。</li>
+      <li>企業が公表する市場機会・マイルストーン総額等の見積もりは、すべての条件が達成された場合の上限値であり、実現を保証するものではありません。</li>
+      <li>臨床試験の結果は将来の承認を保証するものではなく、開発は中止される可能性があります。</li>
+      <li>本記事の内容には誤りが含まれる可能性があります。投資判断にあたっては、必ず一次情報（企業のIR資料、SEC提出書類等）をご確認ください。</li>
+    </ul>
+  </div>
+
+  <footer class="site">
+    Market Supporter AI ／ marketsupporter-ai.com<br>
+    AI×製薬×バイオ シリーズ 個別企業編 ①（2026年8月12日公開）
+  </footer>
+
+</div>
+</body>
+</html>
