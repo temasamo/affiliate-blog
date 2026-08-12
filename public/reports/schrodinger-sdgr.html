@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schrödinger（NASDAQ:SDGR）徹底分析｜反復収益を持つ唯一のレイヤー3企業 - Market Supporter AI</title>
+<meta name="description" content="AI創薬プラットフォームSchrödinger（SDGR）を7章構成で分析。2026年Q2決算実績、ACV 2,960万ドル（+27%）、黒字転換の中身、ホスト型移行の影響、4指標評価を解説します。">
+<style>
+:root{
+  --accent:#b45309;
+  --accent-dark:#78350f;
+  --accent-mid:#d97706;
+  --accent-light:#fffbeb;
+  --accent-border:#fcd34d;
+  --ink:#2a1f14;
+  --ink-sub:#5c5044;
+  --line:#eae3d9;
+  --bg:#ffffff;
+  --bg-soft:#faf7f2;
+  --warn:#9f1239;
+  --warn-bg:#fff1f2;
+  --pos:#15803d;
+  --neg:#b91c1c;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.85;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px 80px;}
+
+header.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 58%,var(--accent-mid) 100%);
+  color:#fff;
+  padding:52px 20px 46px;
+}
+.hero-inner{max-width:860px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;
+  font-size:12px;
+  letter-spacing:.14em;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.32);
+  padding:5px 13px;
+  border-radius:999px;
+  margin-bottom:18px;
+}
+h1{font-size:29px;line-height:1.45;margin:0 0 16px;font-weight:700;letter-spacing:.01em;}
+.hero-sub{font-size:15.5px;opacity:.94;margin:0 0 22px;line-height:1.8;}
+.meta{font-size:13px;opacity:.86;border-top:1px solid rgba(255,255,255,.25);padding-top:14px;}
+.tags{margin-top:12px;}
+.tag{display:inline-block;font-size:11.5px;background:rgba(255,255,255,.14);padding:4px 10px;border-radius:4px;margin:0 6px 6px 0;}
+
+.toc{
+  background:var(--accent-light);
+  border:1px solid var(--accent-border);
+  border-radius:10px;
+  padding:22px 24px;
+  margin:36px 0 44px;
+}
+.toc h2{font-size:15px;margin:0 0 12px;color:var(--accent-dark);letter-spacing:.06em;}
+.toc ol{margin:0;padding-left:1.3em;}
+.toc li{margin:7px 0;font-size:14.5px;}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--accent-mid);}
+.toc a:hover{color:var(--accent);}
+
+section{margin:0 0 52px;scroll-margin-top:20px;}
+h2.chapter{
+  font-size:21px;margin:0 0 20px;padding:0 0 12px 0;
+  border-bottom:3px solid var(--accent);line-height:1.5;font-weight:700;
+}
+h2.chapter .num{display:inline-block;color:var(--accent);font-size:19px;margin-right:8px;}
+h3{font-size:17px;margin:32px 0 12px;padding-left:12px;border-left:4px solid var(--accent-mid);line-height:1.6;}
+p{margin:0 0 16px;}
+ul,ol{margin:0 0 18px;padding-left:1.4em;}
+li{margin:7px 0;}
+strong{color:var(--accent-dark);font-weight:700;}
+
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0 24px;}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:480px;}
+th,td{border:1px solid var(--line);padding:11px 12px;text-align:left;vertical-align:top;}
+th{background:var(--accent-light);color:var(--accent-dark);font-weight:700;white-space:nowrap;}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+tbody tr:nth-child(even){background:var(--bg-soft);}
+.tbl-note{font-size:12.5px;color:var(--ink-sub);margin:-14px 0 24px;}
+
+.callout{
+  background:var(--bg-soft);
+  border-left:4px solid var(--accent);
+  border-radius:0 8px 8px 0;
+  padding:18px 20px;margin:24px 0;font-size:15px;
+}
+.callout .label{display:block;font-size:12px;letter-spacing:.1em;color:var(--accent);font-weight:700;margin-bottom:8px;}
+.warn{background:var(--warn-bg);border-left:4px solid var(--warn);}
+.warn .label{color:var(--warn);}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:24px 0 28px;}
+.kpi{background:var(--bg-soft);border:1px solid var(--line);border-radius:9px;padding:15px 16px;}
+.kpi .k-label{font-size:12px;color:var(--ink-sub);margin-bottom:6px;line-height:1.5;}
+.kpi .k-value{font-size:21px;font-weight:700;color:var(--accent-dark);line-height:1.3;font-variant-numeric:tabular-nums;}
+.kpi .k-sub{font-size:11.5px;color:var(--ink-sub);margin-top:5px;line-height:1.5;}
+
+.pos{color:var(--pos);font-weight:700;}
+.neg{color:var(--neg);font-weight:700;}
+
+.crosslink{border:1px solid var(--accent-border);border-radius:10px;padding:18px 20px;margin:30px 0;background:#fff;}
+.crosslink h4{margin:0 0 10px;font-size:14px;color:var(--accent-dark);letter-spacing:.05em;}
+.crosslink ul{margin:0;padding-left:1.2em;font-size:14px;}
+.crosslink a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-border);}
+
+.watch{
+  background:linear-gradient(150deg,var(--accent-dark) 0%,#4a2109 100%);
+  color:#fff;border-radius:14px;padding:36px 28px;margin:56px 0 40px;
+}
+.watch h2{font-size:20px;margin:0 0 8px;letter-spacing:.08em;color:#fff;border:none;padding:0;}
+.watch .w-sub{font-size:13.5px;opacity:.82;margin:0 0 24px;}
+.watch ol{padding-left:0;list-style:none;margin:0;counter-reset:w;}
+.watch li{counter-increment:w;position:relative;padding-left:44px;margin:0 0 20px;font-size:14.8px;line-height:1.8;}
+.watch li::before{
+  content:counter(w,decimal-leading-zero);
+  position:absolute;left:0;top:2px;font-size:13px;font-weight:700;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
+  width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+}
+.watch li b{color:#fcd34d;}
+
+.disclaimer{
+  background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;
+  padding:22px 24px;font-size:13px;color:var(--ink-sub);line-height:1.85;
+}
+.disclaimer h3{font-size:14px;margin:0 0 10px;padding:0;border:none;color:var(--ink);}
+.disclaimer ul{padding-left:1.3em;margin:0;}
+
+footer.site{text-align:center;font-size:12.5px;color:var(--ink-sub);margin-top:44px;padding-top:22px;border-top:1px solid var(--line);}
+
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  header.hero{padding:38px 18px 34px;}
+  h1{font-size:22px;line-height:1.5;}
+  .hero-sub{font-size:14.5px;}
+  .wrap{padding:0 16px 60px;}
+  h2.chapter{font-size:18.5px;}
+  h3{font-size:16px;}
+  .watch{padding:28px 20px;border-radius:10px;}
+  .watch li{padding-left:38px;font-size:14.2px;}
+  .watch li::before{width:26px;height:26px;font-size:12px;}
+  .kpi .k-value{font-size:19px;}
+  table{font-size:13.2px;}
+  th,td{padding:9px 10px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">AI × 製薬 × バイオ シリーズ ／ 個別企業編 ②</span>
+    <h1>Schrödinger（NASDAQ:SDGR）徹底分析<br>― 反復収益を持つ、例外的なレイヤー3企業</h1>
+    <p class="hero-sub">
+      前回のRecursionは「反復収益ゼロ・1年で株式数+52%」でした。同じレイヤー3でも、
+      Schrödingerは年間契約額2億800万ドルのソフトウェア事業を持ち、半年間の希薄化は1.5%にとどまります。
+      同じ枠に入れてよい企業なのか。2026年8月5日発表のQ2決算実績から検証します。
+    </p>
+    <div class="meta">
+      公開日：2026年8月13日 ／ 分析基準日：2026年8月上旬 ／ Market Supporter AI 編集部
+      <div class="tags">
+        <span class="tag">#SDGR</span>
+        <span class="tag">#AI創薬</span>
+        <span class="tag">#米国株</span>
+        <span class="tag">#レイヤー3</span>
+        <span class="tag">#計算科学</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="toc">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#ch1">市場規模 ― 「製薬企業の計算科学ソフト予算」をACVで測る</a></li>
+      <li><a href="#ch2">政策・規制環境 ― 規制リスクの所在が他のレイヤー3と違う</a></li>
+      <li><a href="#ch3">コスト・収益構造 ― 黒字転換の中身と、ホスト型移行という自傷</a></li>
+      <li><a href="#ch4">事業セグメント動向 ― ソフトウェアと創薬、2つの顔</a></li>
+      <li><a href="#ch5">株式バリュエーション ― 4指標で見ると別の企業に見える</a></li>
+      <li><a href="#ch6">リスク要因 ― 営業赤字はまだ続く</a></li>
+      <li><a href="#ch7">まとめ ― レイヤー2.5として読むべき企業</a></li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <span class="label">この記事の位置づけ</span>
+    「AI×製薬×バイオ」3部作で提示した4レイヤー分類における<strong>レイヤー3（AI創薬プラットフォーム）</strong>の個別企業分析、第2回です。
+    3部作では「収益の確実性はレイヤー1〜2、株価の上振れ余地はレイヤー3」と整理しました。
+    Schrödingerはこの境界線上に位置する企業であり、その意味で分類そのものを検証する材料になります。
+  </div>
+
+  <!-- ① -->
+  <section id="ch1">
+    <h2 class="chapter"><span class="num">①</span>市場規模 ― 「製薬企業の計算科学ソフト予算」をACVで測る</h2>
+
+    <p>
+      Schrödingerは1990年設立、30年以上にわたって物理ベースの分子シミュレーションソフトウェアを開発してきた企業です。
+      Maestro（分子モデリング）、Glide（ドッキング）、Jaguar（量子化学計算）、FEP+（自由エネルギー摂動法）といった
+      製品群が、製薬・バイオテク・素材メーカー・大学に対してライセンス販売されています。
+    </p>
+    <p>
+      つまりレイヤー3企業でありながら、<strong>売っているものがソフトウェアという点で異質</strong>です。
+      Recursionのようにマイルストーンの発生を待つのではなく、契約更新という形で毎年収益が積み上がります。
+    </p>
+
+    <h3>ACV（年間契約額）という指標</h3>
+    <p>
+      同社は売上高とは別に<strong>ACV（Annual Contract Value）</strong>を主要な運営指標として開示しています。
+      これは契約の請求ベースの年換算額で、収益認識のタイミング差の影響を受けにくい指標です。
+      裏を返せば、ACVがこの企業の実質的な市場規模の測定値になります。
+    </p>
+
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="k-label">Q2 2026 ACV</div>
+        <div class="k-value">2,960万ドル</div>
+        <div class="k-sub">前年同期比 <span class="pos">+27%</span></div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">直近4四半期 ACV</div>
+        <div class="k-value">2億800万ドル</div>
+        <div class="k-sub">拠出金分を除くと1億9,600万ドル</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">2026年通期 ACV ガイダンス</div>
+        <div class="k-value">2.18〜2.28億ドル</div>
+        <div class="k-sub">2025年比 +10〜15%</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">Q3 2026 ACV ガイダンス</div>
+        <div class="k-value">4,100〜4,500万ドル</div>
+        <div class="k-sub">拠出金分を除く。前年同期3,830万ドル</div>
+      </div>
+    </div>
+
+    <p>
+      Q2のACVは2,960万ドル、Q3ガイダンスは4,100〜4,500万ドル。
+      四半期ごとに大きく差があるのは、<strong>ソフトウェア契約の更新時期が特定の四半期に集中している</strong>ためです。
+      したがって単一四半期のACVで前年比を語るより、直近4四半期の累計（2億800万ドル）で見るほうが実態に近くなります。
+    </p>
+
+    <h3>市場の広がり方 ― Bunsenが狙うもの</h3>
+    <p>
+      2026年7月、同社は<strong>Bunsen</strong>という「エージェント型AI副操縦士」の早期アクセス版を公開しました。
+      汎用のAIエージェントとは異なり、Schrödinger自身の検証済み物理ベース計算基盤を実行することに最適化されており、
+      複雑な分子探索ワークフローの立案・実行・結果解釈を担うとされています。
+    </p>
+    <p>
+      投資家として注目すべきは、同社がBunsenの意義を
+      <strong>「計算化学の専門家でない創薬研究者にも高度な計算手法を使えるようにする」</strong>点に置いていることです。
+      これは既存顧客への単価上昇ではなく、<strong>顧客企業内のユーザー数そのものを増やす</strong>戦略です。
+      ソフトウェア事業の市場規模を、計算化学者の人数から創薬研究者全体の人数へ広げようとしている、と読めます。
+    </p>
+    <p>
+      この動きを裏付けるのが、Bristol Myers Squibb（BMS）との戦略的ソフトウェア契約です。
+      BMSの研究組織内でBunsenを展開し、プラットフォームの利用規模を大幅に拡大するとされています。
+      またBunsenの想定処理量増大に対応するため、長年の協業先であるNVIDIAとGoogle Cloudが
+      AIプラットフォームとインフラ、NVIDIA BioNeMo Agent Toolkitへのアクセスを提供します。
+    </p>
+
+    <div class="callout warn">
+      <span class="label">評価の留保</span>
+      Bunsenは2026年7月に<strong>早期アクセス版が出たばかり</strong>です。
+      BMS契約もSimcere社との創薬提携も、ACVや売上への実際の寄与額はまだ開示されていません。
+      「AIエージェントで市場が広がる」という筋書きは合理的ですが、
+      現時点で数字として確認できるのはACV +27%という結果までであり、その主因がBunsenであるとは言えません。
+    </div>
+  </section>
+
+  <!-- ② -->
+  <section id="ch2">
+    <h2 class="chapter"><span class="num">②</span>政策・規制環境 ― 規制リスクの所在が他のレイヤー3と違う</h2>
+
+    <p>
+      3部作で確認したとおり、<strong>2026年時点でAI創薬由来のFDA承認薬はゼロ</strong>であり、
+      FDAの審査基準に「AIで設計された分子だから」という加点はありません。
+      この前提はSchrödingerにも等しく当てはまります。
+    </p>
+    <p>
+      ただし同社の場合、規制リスクの重みが他のレイヤー3企業とは異なります。
+      収益の過半がソフトウェアライセンスであるため、<strong>臨床試験が失敗しても収益基盤は直接には毀損しない</strong>からです。
+      製薬企業は自社の創薬プログラムを進める限りソフトウェアを使い続けます。
+    </p>
+
+    <h3>自社パイプラインに関する規制イベント</h3>
+    <ul>
+      <li>
+        <strong>SGR-1505（MALT1阻害剤）</strong>：再発・難治性B細胞悪性腫瘍を対象とした第1相。
+        FDAより、BTK阻害剤を含む2ライン以上の治療歴があるワルデンストレーム・マクログロブリン血症（WM）成人患者に対する
+        <strong>ファストトラック指定</strong>と、WMに対する<strong>希少疾病用医薬品指定</strong>を取得済み。
+      </li>
+      <li>
+        <strong>SGR-3515（Wee1/Myt1二重阻害剤）</strong>：進行固形がんを対象とした第1相。
+        2026年4月のAACR年次総会で予備的データを発表。
+      </li>
+      <li>
+        <strong>SGR-2921（CDC7阻害剤）</strong>：<strong>2025年8月に開発中止</strong>。
+        2例の患者死亡との関連が報じられ、これにより臨床段階資産は2本に減少しました。
+      </li>
+    </ul>
+    <p>
+      SGR-2921の中止は、規制環境というより<strong>安全性リスクが現実化した事例</strong>として記憶されるべきものです。
+      「AIで設計された分子は安全性プロファイルも優れている」という業界の一般的な語り口に対する、
+      直接的な反証データの一つになっています。
+    </p>
+
+    <div class="callout">
+      <span class="label">構造の要点</span>
+      Schrödingerの規制リスクは、<strong>収益の毀損ではなく、株価の上振れ余地の毀損</strong>という形で現れます。
+      パイプラインが失敗してもACVは減りません。しかし「創薬企業としての将来価値」という
+      バリュエーションの一部は失われます。SGR-2921中止時に株価が13%下落したのは、まさにこの構造の表れでした。
+    </div>
+  </section>
+
+  <!-- ③ -->
+  <section id="ch3">
+    <h2 class="chapter"><span class="num">③</span>コスト・収益構造 ― 黒字転換の中身と、ホスト型移行という自傷</h2>
+
+    <h3>2026年第2四半期の実績（2026年8月5日発表）</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>項目（千ドル）</th><th>2026年Q2</th><th>2025年Q2</th><th>増減</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>ソフトウェア売上</td><td class="num">32,544</td><td class="num">36,031</td><td class="num neg">▲10%</td></tr>
+          <tr><td>創薬売上</td><td class="num">22,986</td><td class="num">13,940</td><td class="num pos">+65%</td></tr>
+          <tr><td>拠出金収益</td><td class="num">3,359</td><td class="num">4,788</td><td class="num neg">▲30%</td></tr>
+          <tr><td><strong>売上高合計</strong></td><td class="num"><strong>58,889</strong></td><td class="num">54,759</td><td class="num pos">+8%</td></tr>
+          <tr><td>売上総利益</td><td class="num">32,432</td><td class="num">26,158</td><td class="num pos">+24%</td></tr>
+          <tr><td>研究開発費</td><td class="num">40,998</td><td class="num">43,138</td><td class="num">▲5%</td></tr>
+          <tr><td>販売費・一般管理費</td><td class="num">32,981</td><td class="num">35,923</td><td class="num">▲8%</td></tr>
+          <tr><td><strong>営業損失</strong></td><td class="num neg"><strong>▲41,547</strong></td><td class="num">▲52,903</td><td class="num">改善</td></tr>
+          <tr><td>その他収益（株式投資評価益等）</td><td class="num">48,894</td><td class="num">10,017</td><td class="num">―</td></tr>
+          <tr><td><strong>純損益</strong></td><td class="num pos"><strong>+5,975</strong></td><td class="num neg">▲43,173</td><td class="num">黒字転換</td></tr>
+          <tr><td>希薄化後EPS</td><td class="num">+0.08ドル</td><td class="num">▲0.59ドル</td><td class="num">―</td></tr>
+          <tr><td>調整後EBITDA</td><td class="num neg">▲30,986</td><td class="num">▲38,685</td><td class="num">改善</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：Schrödinger社 2026年第2四半期決算リリース（2026年8月5日）。販売費・一般管理費は販売マーケティング費10,266千ドルと一般管理費22,715千ドルの合計（編集部計算）。</p>
+
+    <div class="callout warn">
+      <span class="label">最重要の注意点</span>
+      Q2の純利益598万ドルは、<strong>営業利益ではありません</strong>。
+      営業損失は依然として▲4,155万ドルです。黒字化の主因は、
+      Eli LillyによるAjax Therapeutics買収完了に伴う<strong>株式投資の評価益4,587万ドル（非現金）</strong>でした。
+      「Schrödingerが黒字化した」という見出しだけを読むと、実態を誤認します。
+      本業の収益性を示す調整後EBITDAは▲3,099万ドルの赤字が続いています。
+    </div>
+
+    <h3>ソフトウェア売上が10%減った理由</h3>
+    <p>
+      ACVが+27%なのにソフトウェア売上が▲10%という、一見矛盾する数字が出ています。
+      原因は<strong>ホスト型（クラウド）ライセンスへの移行を意図的に加速している</strong>ことです。
+    </p>
+    <p>
+      従来のオンプレミス型ライセンスは契約時に売上の多くを一括計上できますが、
+      ホスト型は契約期間にわたって按分計上されます。
+      同じ契約額でも、ホスト型に移行するほど当期の計上額は小さくなる。
+      <strong>契約は増えているのに、会計上の売上は減る</strong>という状態です。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>指標</th><th>2026年Q2</th><th>備考</th></tr></thead>
+        <tbody>
+          <tr><td>ホスト型がソフトウェア売上に占める比率</td><td class="num">47%</td><td>直近4四半期ベースでは30%</td></tr>
+          <tr><td>前年同期の同比率</td><td class="num">31%</td><td>1年で16ポイント上昇</td></tr>
+          <tr><td>ソフトウェア売上総利益率</td><td class="num">71%</td><td>前年同期は76%</td></tr>
+          <tr><td>2028年末までの目標ホスト型比率</td><td class="num">75%</td><td>会社目標</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      粗利率が76%→71%に低下しているのも同じ理由です。ホスト型はクラウドインフラ費用が原価に乗ります。
+      同社は2028年までに粗利率を70%台後半へ戻す目標を掲げています。
+    </p>
+    <p>
+      この移行は、<strong>短期の見栄えを犠牲にして収益の質を上げる</strong>選択です。
+      SaaS企業の移行期に典型的に起きる現象であり、意図的なものである限り悪材料とは限りません。
+      ただし投資家は、移行期間中は<strong>売上高ではなくACVを見る</strong>必要があります。
+    </p>
+
+    <h3>キャッシュフローの動き</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目（千ドル）</th><th>2026年上半期</th><th>2025年上半期</th></tr></thead>
+        <tbody>
+          <tr><td>営業キャッシュフロー</td><td class="num neg">▲48,904</td><td class="num pos">+91,865</td></tr>
+          <tr><td>投資キャッシュフロー</td><td class="num">+103,216</td><td class="num">▲24,969</td></tr>
+          <tr><td>（うち株式投資の売却収入）</td><td class="num">+66,976</td><td class="num">―</td></tr>
+          <tr><td>財務キャッシュフロー</td><td class="num">+1,219</td><td class="num">+2,427</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      2025年上半期の営業CFが+9,187万ドルだったのに対し、2026年上半期は▲4,890万ドル。
+      大きく見えますが、主因は<strong>売掛金の回収タイミング</strong>です。
+      2025年上半期は売掛金が2億2,562万ドル減少（＝回収）したのに対し、2026年上半期は6,165万ドルの減少にとどまりました。
+      更新契約が集中する第4四半期の請求サイクルの影響であり、事業悪化を示すものではありません。
+    </p>
+    <p>
+      注目すべきは、それでも<strong>現金・有価証券の残高が上半期に増えている</strong>ことです。
+      2025年末の4億233万ドルから2026年6月末には4億1,880万ドルへ。
+      これは株式投資の売却で6,698万ドルを回収したことによるもので、
+      <strong>Schrödingerが保有株式をキャッシュ源として使える構造</strong>を持つことを示しています。
+    </p>
+  </section>
+
+  <!-- ④ -->
+  <section id="ch4">
+    <h2 class="chapter"><span class="num">④</span>事業セグメント動向 ― ソフトウェアと創薬、2つの顔</h2>
+
+    <p>
+      Schrödingerは<strong>ソフトウェア</strong>と<strong>創薬</strong>の2つを報告セグメントとしています。
+      これはレイヤー3企業としては珍しく、投資家が事業の性質を分けて評価できる構造です。
+    </p>
+
+    <h3>セグメント① ソフトウェア</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>2026年Q2</th><th>2026年上半期</th></tr></thead>
+        <tbody>
+          <tr><td>売上高</td><td class="num">3,254万ドル</td><td class="num">6,810万ドル</td></tr>
+          <tr><td>前年同期比</td><td class="num neg">▲10%</td><td class="num neg">▲16%</td></tr>
+          <tr><td>売上総利益率</td><td class="num">71%</td><td class="num">―</td></tr>
+          <tr><td>ACV</td><td class="num">2,960万ドル（+27%）</td><td class="num">―</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      顧客層は製薬・バイオテク・素材メーカー・大学・政府研究機関に及びます。
+      2026年に入ってからの動きとして、BMSとの戦略的ソフトウェア契約（Bunsen展開）が最大の案件です。
+      同契約では、Bunsenに加えてAI駆動の合成経路設計プラットフォームRetroSynthについても
+      BMSの科学者と共同で新機能を開発するとされています。
+    </p>
+    <p>
+      科学的な裏付けの面では、2026年に2本の論文が
+      <em>Journal of Chemical Information and Modeling</em> に掲載されています。
+      1本はFEP+の枠組みをマクロ環状化合物・環状ペプチドの結合親和性予測に適用したもので、
+      5つの難標的にわたる230超の化合物を評価。
+      もう1本は混合溶媒分子動力学と自社ソフトSiteMapを組み合わせ、
+      65標的サイトのデータセットで隠れた結合ポケット（クリプティックサイト）を
+      約8割のケースで上位予測に含めることに成功したというものです。
+    </p>
+
+    <h3>セグメント② 創薬</h3>
+    <p>
+      創薬セグメントは、さらに3つの収益源に分解できます。
+    </p>
+    <ol>
+      <li><strong>提携創薬プログラム</strong>：製薬企業と共同で分子設計を行い、研究資金・マイルストーン・ロイヤルティを受け取る</li>
+      <li><strong>共同創業企業への株式保有</strong>：Nimbus Therapeutics、Structure Therapeuticsなどの株式を保有し、売却・買収時に現金化</li>
+      <li><strong>マイルストーン・ロイヤルティ契約</strong>：上記に紐づく成功報酬</li>
+    </ol>
+    <p>
+      同社は2020年以降、この創薬戦略から<strong>累計7億5,000万ドル超の現金を生み出した</strong>と説明しています（会社公表値）。
+      2025年の創薬売上は5,600万ドルで、2018年以降の提携先は21社に及びます。
+    </p>
+    <p>
+      2026年Q2に起きたAjax Therapeuticsの事例は、このモデルの典型例です。
+      Eli LillyによるAjax買収の完了に伴い、Schrödingerは
+      <strong>1,000万ドルの提携マイルストーンと、4,587万ドルの株式評価益</strong>を得ました。
+      これを受けて通期の創薬売上ガイダンスは5,500〜6,500万ドルから<strong>6,500〜7,500万ドル</strong>へ引き上げられています。
+    </p>
+    <p>
+      2026年Q2にはさらに、中国のSimcere Pharmaceutical Group（先声薬業）との
+      グローバル創薬・開発提携が発表されました。Schrödingerが共同研究段階の分子設計・最適化を主導し、
+      Simcereがその後の前臨床・臨床開発を担う構造です。
+      Schrödingerは探索・開発・商業化のマイルストーンと、売上に応じた段階的ロイヤルティを受け取る権利を持ちます。
+    </p>
+
+    <h3>自社パイプラインの現在地</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>コード</th><th>標的／適応</th><th>段階</th><th>最新の状況</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>SGR-1505</strong></td>
+            <td>MALT1 ／ B細胞悪性腫瘍</td>
+            <td>第1相</td>
+            <td>2025年6月のEHAで、B細胞悪性腫瘍45例において奏効率22%を報告。WMではファストトラック・希少疾病用医薬品の両指定を取得。中後期開発の提携先を模索中</td>
+          </tr>
+          <tr>
+            <td><strong>SGR-3515</strong></td>
+            <td>Wee1/Myt1 ／ 進行固形がん</td>
+            <td>第1相</td>
+            <td>2026年4月のAACRで予備データ。間欠投与スケジュールで概ね忍容性良好、100mg以上の用量で評価可能例の病勢コントロール率65%。同じく提携先を模索中</td>
+          </tr>
+          <tr>
+            <td>SGR-2921</td>
+            <td>CDC7 ／ AML・骨髄異形成症候群</td>
+            <td><strong>開発中止</strong></td>
+            <td>2025年8月に中止。2例の患者死亡との関連が報じられた</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout warn">
+      <span class="label">見落とすべきでない事実</span>
+      2026年Q2の決算リリースの「最近のハイライト」欄には、
+      <strong>自社臨床パイプラインへの言及が一切ありません</strong>。
+      挙げられているのはBunsen、BMS契約、Simcere提携、そして2本の論文です。
+      同社は2026年の戦略優先事項としてSGR-1505とSGR-3515の開発パートナー確保を掲げており、
+      <strong>自社で後期臨床を回す路線から、パートナーに渡す路線へ重心が移っている</strong>と読むのが自然です。
+      これは資金効率の面では合理的ですが、
+      「創薬企業としての上振れ余地」を期待する投資家にとっては前提の変更にあたります。
+    </div>
+  </section>
+
+  <!-- ⑤ -->
+  <section id="ch5">
+    <h2 class="chapter"><span class="num">⑤</span>株式バリュエーション ― 4指標で見ると別の企業に見える</h2>
+
+    <p>
+      3部作の後編で提示した、赤字先行企業向けの4指標を当てはめます。
+      前回のRecursionと並べると、同じレイヤー3でも profile がまったく異なることが分かります。
+    </p>
+
+    <h3>指標1：キャッシュランウェイ</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>数値</th></tr></thead>
+        <tbody>
+          <tr><td>現金・現金同等物・制限付現金・有価証券（2026年6月30日）</td><td class="num">4億1,880万ドル</td></tr>
+          <tr><td>同（2025年12月31日）</td><td class="num">4億233万ドル</td></tr>
+          <tr><td>上半期の増減</td><td class="num pos">+1,647万ドル</td></tr>
+          <tr><td>株式投資の簿価（2026年6月30日）</td><td class="num">3,905万ドル</td></tr>
+          <tr><td>Q2 調整後EBITDA</td><td class="num neg">▲3,099万ドル</td></tr>
+          <tr><td>有利子負債</td><td class="num">なし</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      調整後EBITDAの赤字を単純年換算すると年間約1.2億ドル。
+      現金・有価証券4億1,880万ドルに対して、<strong>形式的には3年以上のランウェイ</strong>があります。
+      加えて上半期は保有株式の売却で6,698万ドルを回収し、現金残高はむしろ増加しました。
+    </p>
+    <p>
+      同社は<strong>2028年末までに調整後EBITDAの黒字化</strong>を目標として掲げています。
+      これが達成されれば、そもそもランウェイという概念が不要になります。
+      Recursionが「2028年初頭までに次の判断」だったのに対し、
+      Schrödingerは「2028年末に黒字化」を目指すという時間軸の違いは重要です。
+    </p>
+
+    <h3>指標2：反復収益比率</h3>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="k-label">2026年上半期<br>ソフトウェア売上比率</div>
+        <div class="k-value">58%</div>
+        <div class="k-sub">6,810万ドル ÷ 1億1,748万ドル（編集部計算）</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">直近4四半期 ACV</div>
+        <div class="k-value">2億800万ドル</div>
+        <div class="k-sub">契約更新ベースの反復性を持つ</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">ホスト型比率</div>
+        <div class="k-value">47%</div>
+        <div class="k-sub">Q2実績。1年前は31%</div>
+      </div>
+    </div>
+    <p>
+      これが<strong>Recursionとの最大の違い</strong>です。
+      Recursionの反復収益比率は実質ゼロでした。Schrödingerは売上の約6割が
+      ソフトウェアライセンスであり、しかもホスト型移行によって
+      その反復性・予測可能性はさらに高まりつつあります。
+    </p>
+    <p>
+      3部作では「収益の確実性はレイヤー1〜2に集中する」と整理しました。
+      Schrödingerはこの整理を部分的に裏切る存在です。
+      レイヤー3に分類される企業でありながら、収益構造の半分以上がレイヤー2的なのです。
+    </p>
+
+    <h3>指標3：一時金 ÷ 公表総額（実現率）</h3>
+    <p>
+      この指標はSchrödingerには当てはめ方が異なります。
+      同社は「総額○○億ドルのマイルストーンポテンシャル」という<strong>上限値の公表をほとんど行いません</strong>。
+      代わりに開示しているのは、<strong>実際に現金化した累計額</strong>です。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>金額</th><th>性質</th></tr></thead>
+        <tbody>
+          <tr><td>2020年以降の創薬戦略からの累計現金創出</td><td class="num">7億5,000万ドル超</td><td>会社公表。株式売却・提携収入・マイルストーンの合計</td></tr>
+          <tr><td>2025年の創薬売上</td><td class="num">5,600万ドル</td><td>2018年以降の提携先21社から</td></tr>
+          <tr><td>Ajax関連（2026年Q2）</td><td class="num">1,000万ドル＋4,587万ドル</td><td>マイルストーン＋株式評価益</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Recursionが「公表総額200億ドル超・実受領5億ドル超（実現率約2.5%）」だったのに対し、
+      Schrödingerは分母となる公表総額を示さず、分子だけを示す。
+      <strong>これは開示姿勢の違いであると同時に、ビジネスモデルの違いでもあります。</strong>
+      株式保有という形で価値を受け取るため、そもそも「マイルストーン総額」という概念が中心に来ないのです。
+    </p>
+    <p>
+      投資家にとっては、この方が検証しやすい開示です。
+      ただし裏側にリスクもあります。株式評価益は<strong>買収や上場という外部イベントに依存し、非現金かつ非反復</strong>です。
+      Q2の黒字化がまさにそれによるものだったことは、前章で見たとおりです。
+    </p>
+
+    <h3>指標4：増資の価格と引受先</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>2026年6月30日</th><th>2025年12月31日</th></tr></thead>
+        <tbody>
+          <tr><td>普通株式</td><td class="num">65,615,117株</td><td class="num">64,515,380株</td></tr>
+          <tr><td>限定議決権普通株式</td><td class="num">9,164,193株</td><td class="num">9,164,193株</td></tr>
+          <tr><td><strong>合計</strong></td><td class="num"><strong>74,779,310株</strong></td><td class="num"><strong>73,679,573株</strong></td></tr>
+          <tr><td>半年間の増加率</td><td class="num pos">+1.5%</td><td class="num">―</td></tr>
+          <tr><td>上半期の財務CF</td><td class="num">+122万ドル</td><td class="num">―</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      <strong>上半期に公募増資はありませんでした。</strong>
+      財務キャッシュフローの+122万ドルはストックオプション行使に伴う入金のみで、
+      株式数の増加1.5%も同じ要因によるものです。
+    </p>
+    <p>
+      Recursionが1年で約52%希薄化したのと比べると、対照的です。
+      Schrödingerは<strong>反復収益と株式売却で資金需要を賄えている</strong>ため、
+      株主資本の希薄化を避けられている。これは4指標のなかで最も明確な優位点です。
+    </p>
+
+    <h3>時価総額とEVの分解（編集部試算）</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>金額</th></tr></thead>
+        <tbody>
+          <tr><td>株価（2026年8月6日終値）</td><td class="num">17.81ドル</td></tr>
+          <tr><td>52週レンジ</td><td class="num">10.95〜23.00ドル</td></tr>
+          <tr><td>発行済株式数</td><td class="num">約7,478万株</td></tr>
+          <tr><td>時価総額</td><td class="num">約13.3億ドル</td></tr>
+          <tr><td>▲ 現金・有価証券</td><td class="num">▲4億1,880万ドル</td></tr>
+          <tr><td>▲ 株式投資（簿価）</td><td class="num">▲3,905万ドル</td></tr>
+          <tr><td><strong>実質的な事業価値（EV）</strong></td><td class="num"><strong>約8.7億ドル</strong></td></tr>
+          <tr><td>EV ÷ 直近4四半期ACV（2億800万ドル）</td><td class="num">約4.2倍</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">株価・株式数から編集部が算出した推計値です。有利子負債はないものとして計算しています。株価は日々変動します。</p>
+    <p>
+      EV÷ACVで約4.2倍。純粋なSaaS企業の水準からすれば高くありませんが、
+      ACVの成長率が年10〜15%であること、営業赤字が続いていること、
+      そして<strong>この8.7億ドルにはパイプラインと株式保有の将来価値も含まれている</strong>ことを考えると、
+      「割安」と断ずるには材料が足りません。
+    </p>
+  </section>
+
+  <!-- ⑥ -->
+  <section id="ch6">
+    <h2 class="chapter"><span class="num">⑥</span>リスク要因 ― 営業赤字はまだ続く</h2>
+
+    <h3>1. 本業はまだ赤字である</h3>
+    <p>
+      Q2の営業損失は▲4,155万ドル、上半期では▲9,034万ドル。
+      調整後EBITDAも▲3,099万ドルの赤字です。
+      黒字化目標は<strong>2028年末</strong>であり、あと2年半、赤字が続く前提で計画されています。
+      その間に外部環境が悪化した場合、目標は後ろにずれます。
+    </p>
+
+    <h3>2. ホスト型移行が長引くリスク</h3>
+    <p>
+      ホスト型比率を2028年末までに75%へ引き上げる計画ですが、Q2実績は47%（直近4四半期では30%）。
+      移行期間中は売上と粗利率が押し下げられ続けます。
+      <strong>顧客がオンプレミス型を望んだ場合</strong>、移行は計画より遅れ、
+      「売上は伸びず粗利率も戻らない」という中途半端な状態が長期化する可能性があります。
+    </p>
+
+    <h3>3. 創薬売上の変動リスク</h3>
+    <p>
+      通期ガイダンスを6,500〜7,500万ドルへ引き上げた要因は、Ajax関連の1,000万ドルマイルストーンでした。
+      裏を返せば、<strong>創薬セグメントは単一イベントでガイダンスが1,000万ドル動く規模感</strong>です。
+      買収や上場といった外部イベントが起きなければ、この収益は発生しません。
+      株式評価益も同様で、保有先の企業価値が下落すれば逆に評価損となります。
+      実際、株式投資の簿価は2025年末の7,365万ドルから2026年6月末には3,905万ドルへ減少しています
+      （売却による減少を含む）。
+    </p>
+
+    <h3>4. 顧客集中と業界環境</h3>
+    <p>
+      顧客は製薬・バイオテク企業に集中しており、<strong>バイオテク業界の資金調達環境に業績が連動</strong>します。
+      同社は2026年に入りバイオテクのIPO活動が回復し顧客の資金難が緩和したと説明していますが、
+      これは裏返せば、資金環境が悪化すればソフトウェア予算が真っ先に削られるということでもあります。
+    </p>
+
+    <h3>5. 自社パイプラインの縮小</h3>
+    <p>
+      SGR-2921の中止により臨床資産は2本に減少し、残る2本も提携先を模索中です。
+      <strong>提携先が見つからなければ、自社で後期臨床を回す資金負担を抱えるか、開発を止めるかの二択</strong>になります。
+      どちらの場合も、株価に織り込まれていた創薬企業としての上振れ余地は縮みます。
+    </p>
+
+    <h3>6. AI競合の台頭</h3>
+    <p>
+      Schrödingerの強みは30年以上蓄積した物理ベースのシミュレーション精度です。
+      しかし深層学習ベースの構造予測・親和性予測モデルが精度と速度で追いついてきた場合、
+      <strong>「物理ベースだから正確」という差別化が相対的に弱まる</strong>可能性があります。
+      同社自身、物理ベースとAIの統合を打ち出しているのは、この競争を認識しているからです。
+      前回取り上げたRecursionがBoltz-2をオープンソース公開していることも、
+      この文脈では競争環境の変化を示す事例と言えます。
+    </p>
+  </section>
+
+  <!-- ⑦ -->
+  <section id="ch7">
+    <h2 class="chapter"><span class="num">⑦</span>まとめ ― レイヤー2.5として読むべき企業</h2>
+
+    <p>
+      冒頭の問いに戻ります。SchrödingerはRecursionと同じ枠に入れてよい企業なのか。
+      4指標を並べると、答えは明確に「否」です。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>指標</th><th>Schrödinger（SDGR）</th><th>Recursion（RXRX）</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>キャッシュランウェイ</td>
+            <td>現金・有価証券4.19億ドル。上半期に増加。2028年末に調整後EBITDA黒字化目標</td>
+            <td>現金5.57億ドル。2028年初頭まで。2027年に調達判断</td>
+          </tr>
+          <tr>
+            <td>反復収益比率</td>
+            <td><strong>約58%（上半期ソフトウェア売上比率）</strong>。ACV 2.08億ドル</td>
+            <td>実質ゼロ</td>
+          </tr>
+          <tr>
+            <td>一時金÷公表総額</td>
+            <td>公表総額を示さず、累計現金創出7.5億ドル超を開示</td>
+            <td>公表総額200億ドル超に対し実受領5億ドル超（約2.5%）</td>
+          </tr>
+          <tr>
+            <td>増資の価格と引受先</td>
+            <td><strong>上半期に増資なし。株式数+1.5%（オプション行使）</strong></td>
+            <td>1年で株式数+約52%</td>
+          </tr>
+          <tr>
+            <td>臨床段階資産</td>
+            <td>2本（いずれも提携先を模索中）</td>
+            <td>5本＋IND取得済み1本</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Schrödingerは、<strong>4レイヤー分類でいえばレイヤー2とレイヤー3の中間</strong>に置くのが実態に近い企業です。
+      収益の確実性という点ではレイヤー2の性質を持ち、
+      パイプラインと株式保有という点でレイヤー3の性質を持つ。
+      3部作で「収益の確実性はレイヤー1〜2、上振れ余地はレイヤー3」と整理しましたが、
+      Schrödingerはその両方を薄く持っている、という理解が正確です。
+    </p>
+    <p>
+      ただし「両方を持っている」は「両方で勝てる」を意味しません。
+      ソフトウェア事業のACV成長率は年10〜15%であり、
+      高成長SaaSと呼べる水準ではありません。
+      創薬側は臨床資産が2本まで減り、その2本も自社では回さない方向です。
+      <strong>どちらの軸でも、突き抜けた強さを示す数字はまだ出ていない</strong>というのが現時点の評価です。
+    </p>
+    <p>
+      本記事の立場は、強気でも弱気でもありません。
+      Q2の黒字転換は非現金の株式評価益によるものであり、本業は▲3,099万ドルの調整後EBITDA赤字が続いています。
+      <strong>本業の黒字化目標である2028年末までは、判定材料が揃わない</strong>と考えるのが妥当です。
+      投資判断を下すのであれば、
+      「営業赤字は継続中」「ACV成長率は年10〜15%」「臨床資産は2本で提携先未定」という
+      3つの事実を織り込んだうえで行う必要があります。
+    </p>
+
+    <div class="crosslink">
+      <h4>関連レポート</h4>
+      <ul>
+        <li><a href="/reports/ai-biotech-industry-map.html">前編：産業地図 ― AI×バイオを4レイヤーで整理する</a></li>
+        <li><a href="/reports/ai-biotech-validation.html">中編：技術検証編 ― AI創薬は本当に効いているのか</a></li>
+        <li><a href="/reports/ai-biotech-valuation.html">後編：投資判断編 ― 赤字先行企業を4指標で評価する</a></li>
+        <li><a href="/reports/recursion-rxrx.html">個別企業編①：Recursion Pharmaceuticals（RXRX）― 実現率2.5%問題</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHAT TO WATCH -->
+  <div class="watch">
+    <h2>WHAT TO WATCH</h2>
+    <p class="w-sub">Schrödinger（SDGR）― 今後の注目点</p>
+    <ol>
+      <li><b>Q3 2026のACVが4,100〜4,500万ドルのレンジに入るか。</b>前年同期は3,830万ドル（うち拠出金ACV 220万ドル）。ガイダンスは拠出金を除くベースであり、実質的な成長率が10〜15%のレンジを維持できるかを確認する。</li>
+      <li><b>Bunsenの早期アクセスから有償契約への転換。</b>2026年7月に公開されたばかりで、ACVへの寄与額は未開示。BMS契約の規模がいつ、どの形で数字に現れるかが、市場拡大シナリオの検証点になる。</li>
+      <li><b>ホスト型比率の推移と粗利率の底打ち。</b>Q2は47%（直近4四半期30%）、粗利率71%。2028年末の目標は比率75%・粗利率70%台後半。移行が計画通り進めば粗利率は反転するはずで、その転換点がいつ来るか。</li>
+      <li><b>SGR-1505とSGR-3515の開発パートナー確保。</b>2026年の戦略優先事項に掲げられている。提携が成立すれば一時金と開発費負担の軽減が同時に得られる。逆に年内に決まらなければ、自社継続か中止かの判断を迫られる。</li>
+      <li><b>創薬売上ガイダンス6,500〜7,500万ドルの達成。</b>Ajaxマイルストーン1,000万ドルの計上で引き上げられた数値。追加の買収・上場イベントがなくてもレンジ内に着地できるかどうかで、このセグメントの基礎体力が測れる。</li>
+      <li><b>2028年末の調整後EBITDA黒字化目標の維持。</b>現在Q2ベースで▲3,099万ドル。四半期ごとの赤字縮小ペースが目標達成の軌道に乗っているか。営業費用を2025年比で減らすというガイダンスが守られるかも併せて確認する。</li>
+    </ol>
+  </div>
+
+  <!-- 免責 -->
+  <div class="disclaimer">
+    <h3>免責事項</h3>
+    <ul>
+      <li>本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資に関する最終的な判断は、ご自身の責任において行ってください。</li>
+      <li>本記事に記載された数値・事実は、2026年8月上旬時点で公開されている企業のIR資料、決算リリース、および報道等に基づいています。株価・時価総額等の市場データは日々変動します。</li>
+      <li>「編集部試算」「編集部計算」と明記した数値は、公開情報に基づく推計であり、企業が公表した値ではありません。</li>
+      <li>調整後EBITDAは非GAAP指標であり、企業ごとに算出方法が異なります。GAAPの純損益に代わるものではありません。</li>
+      <li>臨床試験の結果は将来の承認を保証するものではなく、開発は中止される可能性があります。</li>
+      <li>本記事の内容には誤りが含まれる可能性があります。投資判断にあたっては、必ず一次情報（企業のIR資料、SEC提出書類等）をご確認ください。</li>
+    </ul>
+  </div>
+
+  <footer class="site">
+    Market Supporter AI ／ marketsupporter-ai.com<br>
+    AI×製薬×バイオ シリーズ 個別企業編 ②（2026年8月13日公開）
+  </footer>
+
+</div>
+</body>
+</html>
