@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Absci（NASDAQ:ABSI）徹底分析｜Eli Lillyが4,000万ドルを出した理由 - Market Supporter AI</title>
+<meta name="description" content="生成AI創薬企業Absci（ABSI）を7章構成で分析。2026年Q2決算実績、Eli Lillyの4,000万ドル戦略出資の条件、ABS-201の半減期65日、レイヤー3の4社比較を解説します。">
+<style>
+:root{
+  --accent:#047857;
+  --accent-dark:#064e3b;
+  --accent-mid:#059669;
+  --accent-light:#ecfdf5;
+  --accent-border:#a7f3d0;
+  --ink:#14251f;
+  --ink-sub:#47574f;
+  --line:#e0eae5;
+  --bg:#ffffff;
+  --bg-soft:#f6faf8;
+  --warn:#b45309;
+  --warn-bg:#fffbeb;
+  --pos:#047857;
+  --neg:#b91c1c;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.85;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px 80px;}
+
+header.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 58%,var(--accent-mid) 100%);
+  color:#fff;padding:52px 20px 46px;
+}
+.hero-inner{max-width:860px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;font-size:12px;letter-spacing:.14em;
+  background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);
+  padding:5px 13px;border-radius:999px;margin-bottom:18px;
+}
+h1{font-size:29px;line-height:1.45;margin:0 0 16px;font-weight:700;letter-spacing:.01em;}
+.hero-sub{font-size:15.5px;opacity:.94;margin:0 0 22px;line-height:1.8;}
+.meta{font-size:13px;opacity:.86;border-top:1px solid rgba(255,255,255,.25);padding-top:14px;}
+.tags{margin-top:12px;}
+.tag{display:inline-block;font-size:11.5px;background:rgba(255,255,255,.14);padding:4px 10px;border-radius:4px;margin:0 6px 6px 0;}
+
+.toc{background:var(--accent-light);border:1px solid var(--accent-border);border-radius:10px;padding:22px 24px;margin:36px 0 44px;}
+.toc h2{font-size:15px;margin:0 0 12px;color:var(--accent-dark);letter-spacing:.06em;}
+.toc ol{margin:0;padding-left:1.3em;}
+.toc li{margin:7px 0;font-size:14.5px;}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--accent-mid);}
+.toc a:hover{color:var(--accent);}
+
+section{margin:0 0 52px;scroll-margin-top:20px;}
+h2.chapter{font-size:21px;margin:0 0 20px;padding:0 0 12px 0;border-bottom:3px solid var(--accent);line-height:1.5;font-weight:700;}
+h2.chapter .num{display:inline-block;color:var(--accent);font-size:19px;margin-right:8px;}
+h3{font-size:17px;margin:32px 0 12px;padding-left:12px;border-left:4px solid var(--accent-mid);line-height:1.6;}
+p{margin:0 0 16px;}
+ul,ol{margin:0 0 18px;padding-left:1.4em;}
+li{margin:7px 0;}
+strong{color:var(--accent-dark);font-weight:700;}
+
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0 24px;}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:480px;}
+th,td{border:1px solid var(--line);padding:11px 12px;text-align:left;vertical-align:top;}
+th{background:var(--accent-light);color:var(--accent-dark);font-weight:700;white-space:nowrap;}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+tbody tr:nth-child(even){background:var(--bg-soft);}
+.tbl-note{font-size:12.5px;color:var(--ink-sub);margin:-14px 0 24px;}
+
+.callout{background:var(--bg-soft);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:18px 20px;margin:24px 0;font-size:15px;}
+.callout .label{display:block;font-size:12px;letter-spacing:.1em;color:var(--accent);font-weight:700;margin-bottom:8px;}
+.warn{background:var(--warn-bg);border-left:4px solid var(--warn);}
+.warn .label{color:var(--warn);}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:24px 0 28px;}
+.kpi{background:var(--bg-soft);border:1px solid var(--line);border-radius:9px;padding:15px 16px;}
+.kpi .k-label{font-size:12px;color:var(--ink-sub);margin-bottom:6px;line-height:1.5;}
+.kpi .k-value{font-size:21px;font-weight:700;color:var(--accent-dark);line-height:1.3;font-variant-numeric:tabular-nums;}
+.kpi .k-sub{font-size:11.5px;color:var(--ink-sub);margin-top:5px;line-height:1.5;}
+
+.pos{color:var(--pos);font-weight:700;}
+.neg{color:var(--neg);font-weight:700;}
+
+.crosslink{border:1px solid var(--accent-border);border-radius:10px;padding:18px 20px;margin:30px 0;background:#fff;}
+.crosslink h4{margin:0 0 10px;font-size:14px;color:var(--accent-dark);letter-spacing:.05em;}
+.crosslink ul{margin:0;padding-left:1.2em;font-size:14px;}
+.crosslink a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-border);}
+
+.watch{background:linear-gradient(150deg,var(--accent-dark) 0%,#032f24 100%);color:#fff;border-radius:14px;padding:36px 28px;margin:56px 0 40px;}
+.watch h2{font-size:20px;margin:0 0 8px;letter-spacing:.08em;color:#fff;border:none;padding:0;}
+.watch .w-sub{font-size:13.5px;opacity:.82;margin:0 0 24px;}
+.watch ol{padding-left:0;list-style:none;margin:0;counter-reset:w;}
+.watch li{counter-increment:w;position:relative;padding-left:44px;margin:0 0 20px;font-size:14.8px;line-height:1.8;}
+.watch li::before{
+  content:counter(w,decimal-leading-zero);
+  position:absolute;left:0;top:2px;font-size:13px;font-weight:700;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
+  width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+}
+.watch li b{color:#a7f3d0;}
+
+.disclaimer{background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:22px 24px;font-size:13px;color:var(--ink-sub);line-height:1.85;}
+.disclaimer h3{font-size:14px;margin:0 0 10px;padding:0;border:none;color:var(--ink);}
+.disclaimer ul{padding-left:1.3em;margin:0;}
+
+footer.site{text-align:center;font-size:12.5px;color:var(--ink-sub);margin-top:44px;padding-top:22px;border-top:1px solid var(--line);}
+
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  header.hero{padding:38px 18px 34px;}
+  h1{font-size:22px;line-height:1.5;}
+  .hero-sub{font-size:14.5px;}
+  .wrap{padding:0 16px 60px;}
+  h2.chapter{font-size:18.5px;}
+  h3{font-size:16px;}
+  .watch{padding:28px 20px;border-radius:10px;}
+  .watch li{padding-left:38px;font-size:14.2px;}
+  .watch li::before{width:26px;height:26px;font-size:12px;}
+  .kpi .k-value{font-size:19px;}
+  table{font-size:13.2px;}
+  th,td{padding:9px 10px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">AI × 製薬 × バイオ シリーズ ／ 個別企業編 ④</span>
+    <h1>Absci（NASDAQ:ABSI）徹底分析<br>― Eli Lillyが4,000万ドルを出し、権利を1つも取らなかった理由</h1>
+    <p class="hero-sub">
+      レイヤー3の4指標のうち「増資の価格と引受先」が、これほど明瞭に読める企業は他にありません。
+      大手製薬が出資しながら、プログラム権利を一切取得しない。
+      この一点にAbsciという企業の性格が凝縮されています。
+      2026年8月11日発表のQ2決算実績から検証します。
+    </p>
+    <div class="meta">
+      公開日：2026年8月15日 ／ 分析基準日：2026年8月中旬 ／ Market Supporter AI 編集部
+      <div class="tags">
+        <span class="tag">#ABSI</span>
+        <span class="tag">#生成AI創薬</span>
+        <span class="tag">#米国株</span>
+        <span class="tag">#レイヤー3</span>
+        <span class="tag">#抗体医薬</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="toc">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#ch1">市場規模 ― 250億ドルという数字の前提条件</a></li>
+      <li><a href="#ch2">政策・規制環境 ― 「第1/2a相から第III相へ直行」という賭け</a></li>
+      <li><a href="#ch3">コスト・収益構造 ― 提携収益が消えていく過程</a></li>
+      <li><a href="#ch4">事業セグメント動向 ― プロラクチン受容体という一点集中</a></li>
+      <li><a href="#ch5">株式バリュエーション ― 4指標とレイヤー3の4社比較</a></li>
+      <li><a href="#ch6">リスク要因 ― 盲検データと単一標的</a></li>
+      <li><a href="#ch7">まとめ ― レイヤー3の総括</a></li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <span class="label">この記事の位置づけ</span>
+    「AI×製薬×バイオ」3部作で提示した4レイヤー分類における<strong>レイヤー3（AI創薬プラットフォーム）</strong>の個別企業分析、第4回にして最終回です。
+    Recursion（実現率2.5%）、Schrödinger（反復収益58%）、Relay（売上／営業費用0.4%）に続き、
+    Absciを加えることでレイヤー3の全体像が確定します。
+  </div>
+
+  <!-- ① -->
+  <section id="ch1">
+    <h2 class="chapter"><span class="num">①</span>市場規模 ― 250億ドルという数字の前提条件</h2>
+
+    <p>
+      Absciは2011年設立、米ワシントン州バンクーバー拠点の臨床段階バイオ医薬品企業です。
+      ニューヨークとセルビアにAI研究拠点、スイスにイノベーションセンターを持ちます。
+      自社を<strong>「生成AIで設計された医薬品を進める企業」</strong>と位置づけています。
+    </p>
+    <p>
+      技術の中核は<strong>Integrated Drug Creation™</strong>プラットフォームです。
+      AIモデルと合成生物学のデータエンジンを組み合わせ、
+      <strong>AIアルゴリズムと湿式実験の検証を継続的にフィードバックさせる</strong>構造を持ちます。
+      サイクルを回すたびにデータが増え、モデルの精度が上がるという設計です。
+    </p>
+    <p>
+      レイヤー3の他3社と比べたときの特徴は、対象が<strong>抗体医薬（バイオロジクス）</strong>である点です。
+      Recursion、Schrödinger、Relayはいずれも低分子化合物が主戦場でした。
+      抗体設計はタンパク質の配列空間を扱うため、生成AIとの相性が構造的に良いとされています。
+    </p>
+
+    <h3>ABS-201が狙う2つの市場</h3>
+    <p>
+      同社の企業価値の大半を担うのが<strong>ABS-201</strong>、
+      プロラクチン受容体（PRLR）を標的とするAI設計抗体です。2つの適応で開発が進んでいます。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>適応</th><th>市場の規模感</th><th>現在の標準治療</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>パターン脱毛症（PHL）</strong><br>＝男性型・女性型脱毛症</td>
+            <td>経営陣は米国の総潜在市場を<strong>250億ドル</strong>と説明</td>
+            <td>ミノキシジル、フィナステリド等。受容体拮抗が中心で、毛包幹細胞の再生には作用しないとされる</td>
+          </tr>
+          <tr>
+            <td><strong>子宮内膜症</strong></td>
+            <td>世界の女性の最大10%が罹患。<strong>米国で推定900万人</strong></td>
+            <td><strong>FDA承認の疾患修飾療法は存在しない</strong>。対症療法が中心</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：Absci社 2026年第2四半期決算リリース（2026年8月11日）および同日の決算説明会。</p>
+
+    <div class="callout warn">
+      <span class="label">250億ドルの前提条件</span>
+      経営陣が示した米国250億ドルという数字には、明示された前提があります。
+      <strong>「発毛の効果量が高用量経口ミノキシジルとおおむね同等である場合」</strong>という条件です。
+      つまりこの市場規模は、まだ得られていない有効性データを前提に置いた試算です。
+      加えて会社側は、将来の実際の対象市場が試算と大きく異なりうる要因として、
+      規制当局の承認可否、最終的に認められる添付文書の内容、競争環境の変化を挙げています。
+      <strong>「250億ドル市場」という見出しだけを企業価値に読み替えると、判断を誤ります。</strong>
+    </div>
+
+    <h3>子宮内膜症の位置づけ</h3>
+    <p>
+      投資家として注目すべきは、むしろ子宮内膜症の側かもしれません。
+      <strong>FDA承認の疾患修飾療法が1つも存在しない</strong>領域であり、
+      ABS-201は性ステロイドホルモンに依存しない新規機序として、
+      疼痛と病変の増殖の両方に作用し、安全性プロファイルも改善しうる可能性があると同社は説明しています。
+    </p>
+    <p>
+      承認薬がゼロの疾患という点は、前回のRecursionのREC-4881（家族性大腸腺腫症）と同じ構図です。
+      規制上の前例がないため承認のハードルは読みにくい一方、
+      成功した場合の価格決定力は高くなります。
+    </p>
+  </section>
+
+  <!-- ② -->
+  <section id="ch2">
+    <h2 class="chapter"><span class="num">②</span>政策・規制環境 ― 「第1/2a相から第III相へ直行」という賭け</h2>
+
+    <p>
+      3部作の中編で確認したとおり、<strong>2026年時点でAI創薬由来のFDA承認薬はゼロ</strong>です。
+      FDAの審査基準に「生成AIで設計された抗体だから」という加点項目はありません。
+    </p>
+
+    <h3>Absciが検討している開発パス</h3>
+    <p>
+      同社の決算リリースの将来見通しに関する記述には、注目すべき一文があります。
+      <strong>「第1/2a相から第III相へ直接進む可能性を含む、迅速化された開発経路の可能性」</strong>
+      および<strong>「開発戦略に関するFDAとの協議の予定」</strong>が挙げられているのです。
+    </p>
+    <p>
+      通常、第II相を経ずに第III相へ進むことは稀です。これが可能になるとすれば、
+      第1/2a相の概念実証データが極めて明瞭で、かつ用量設定に迷いがない場合に限られます。
+      <strong>会社側が期待を示しているだけであり、FDAが同意したという事実はまだありません。</strong>
+    </p>
+    <p>
+      仮に実現すれば、開発期間を1〜2年短縮できる可能性があります。
+      逆にFDAが第II相の実施を求めた場合、
+      上市時期は後ろにずれ、追加の資金需要が発生します。
+      <strong>この分岐は、2028年後半までとされるランウェイの十分性に直結します。</strong>
+    </p>
+
+    <h3>脱毛症という適応の規制上の特性</h3>
+    <p>
+      パターン脱毛症は生命に関わる疾患ではありません。
+      このため、<strong>安全性に対する要求水準が腫瘍領域より格段に高くなります</strong>。
+      健康な人が長期間投与する薬であり、わずかな副作用シグナルでも開発の障害になりえます。
+    </p>
+    <p>
+      同時に、これは商業的な性格も規定します。
+      多くの場合、脱毛症治療は保険償還の対象外か限定的であり、
+      <strong>自費診療市場</strong>としての性格が強くなります。
+      250億ドルという市場規模の試算も、この価格設定の前提に依存します。
+    </p>
+
+    <h3>2026年下期以降の規制・臨床スケジュール</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>時期</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td>2026年下期</td><td>パターン脱毛症における<strong>中間概念実証データ</strong>の報告</td></tr>
+          <tr><td>2026年第4四半期</td><td>子宮内膜症を対象とした<strong>第2相試験の開始</strong></td></tr>
+          <tr><td>2027年初頭</td><td>パターン脱毛症の<strong>26週完全データ</strong>の読み出し</td></tr>
+          <tr><td>2027年下期</td><td>子宮内膜症の概念実証データ（可能性）</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ③ -->
+  <section id="ch3">
+    <h2 class="chapter"><span class="num">③</span>コスト・収益構造 ― 提携収益が消えていく過程</h2>
+
+    <h3>2026年第2四半期の実績（2026年8月11日発表）</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>項目（千ドル）</th><th>2026年Q2</th><th>2025年Q2</th><th>2026年上半期</th><th>2025年上半期</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>パートナープログラム収益</td><td class="num">318</td><td class="num">593</td><td class="num">533</td><td class="num">1,772</td></tr>
+          <tr><td>研究開発費</td><td class="num">22,616</td><td class="num">20,458</td><td class="num">41,891</td><td class="num">36,822</td></tr>
+          <tr><td>販売費・一般管理費</td><td class="num">9,164</td><td class="num">8,528</td><td class="num">18,222</td><td class="num">18,000</td></tr>
+          <tr><td>減価償却費</td><td class="num">2,696</td><td class="num">3,000</td><td class="num">5,424</td><td class="num">6,072</td></tr>
+          <tr><td><strong>営業費用合計</strong></td><td class="num"><strong>34,476</strong></td><td class="num">31,986</td><td class="num"><strong>65,537</strong></td><td class="num">60,894</td></tr>
+          <tr><td>営業損失</td><td class="num neg">▲34,158</td><td class="num">▲31,393</td><td class="num neg">▲65,004</td><td class="num">▲59,122</td></tr>
+          <tr><td>その他収益（純額）</td><td class="num">988</td><td class="num">955</td><td class="num">2,253</td><td class="num">2,334</td></tr>
+          <tr><td><strong>純損失</strong></td><td class="num neg"><strong>▲33,210</strong></td><td class="num">▲30,569</td><td class="num neg"><strong>▲62,809</strong></td><td class="num">▲56,915</td></tr>
+          <tr><td>1株当たり純損失</td><td class="num">▲0.21ドル</td><td class="num">▲0.24ドル</td><td class="num">▲0.40ドル</td><td class="num">▲0.45ドル</td></tr>
+          <tr><td>加重平均株式数</td><td class="num">157,471,712</td><td class="num">127,592,948</td><td class="num">155,217,585</td><td class="num">126,035,844</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：Absci社 2026年第2四半期決算リリース（2026年8月11日、SEC Form 8-K Exhibit 99.1）。</p>
+
+    <h3>収益の消滅が示すもの</h3>
+    <p>
+      最も注目すべき数字は、<strong>上半期の収益が177万ドルから53万ドルへ、70%減少している</strong>ことです。
+      Q2単独でも59万ドルから32万ドルへ減っています。
+    </p>
+    <p>
+      Absciの収益は「パートナープログラム収益」の一項目のみです。
+      これは製薬企業との共同創薬プログラムから得られる収益で、
+      かつては同社のビジネスモデルの中核でした。
+      その収益が四半期あたり30万ドル台まで縮小したということは、
+      <strong>提携ビジネスから自社パイプライン開発へ、事業の重心が完全に移った</strong>ことを意味します。
+    </p>
+    <div class="callout">
+      <span class="label">3社との比較</span>
+      Q2の売上高を営業費用で割ると、<strong>Absciは約0.9%</strong>（32万ドル÷3,448万ドル）です。
+      前回のRelayが約0.4%、Recursionは提携収益で費用の8%程度をカバーしていました。
+      Schrödingerは売上5,889万ドルで営業費用の8割近くを賄っています。
+      <strong>Absciはレイヤー3のなかで、Relayに次いで収益で事業を支えていない企業</strong>です。
+    </div>
+
+    <h3>費用構造の中身</h3>
+    <p>
+      Q2の研究開発費2,262万ドルは前年同期から216万ドル増えました。
+      会社側の説明は<strong>「ABS-201の外部前臨床・臨床開発に伴う直接費用を含む自社プログラムの進展が主因で、
+      人件費関連の減少で一部相殺された」</strong>というものです。
+    </p>
+    <p>
+      前回のRelayとまったく同じ構造です。
+      <strong>人を減らし、臨床試験の外部費用を増やす。</strong>
+      レイヤー3企業が臨床段階に進むときに共通して起きる転換であり、
+      「プラットフォームで探索する企業」から「1剤を臨床で押し上げる企業」への移行を示しています。
+    </p>
+    <p>
+      販売費・一般管理費916万ドルの増加要因は株式報酬費用と管理費です。
+      減価償却費は270万ドルで前年同期から減少しており、
+      設備投資の一巡が見て取れます。
+    </p>
+
+    <h3>営業費用の絶対額が小さいという特徴</h3>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="k-label">Absci Q2 営業費用</div>
+        <div class="k-value">3,448万ドル</div>
+        <div class="k-sub">年換算で約1.38億ドル</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">Relay Q2 営業費用</div>
+        <div class="k-value">9,117万ドル</div>
+        <div class="k-sub">Absciの約2.6倍</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">Recursion Q2 費用規模</div>
+        <div class="k-value">通期3.75億ドル未満</div>
+        <div class="k-sub">ガイダンスベース</div>
+      </div>
+    </div>
+    <p>
+      Absciのバーンレートはレイヤー3の4社で最も小さい水準です。
+      臨床試験が第1/2a相の段階にとどまっていることが主因ですが、
+      これは<strong>同じ現金額でより長い時間を買える</strong>ことを意味します。
+      第⑤章のランウェイ評価に直結する特徴です。
+    </p>
+  </section>
+
+  <!-- ④ -->
+  <section id="ch4">
+    <h2 class="chapter"><span class="num">④</span>事業セグメント動向 ― プロラクチン受容体という一点集中</h2>
+
+    <p>
+      Absciは会計上のセグメント分割を行っていません。
+      実態としては<strong>プロラクチン受容体（PRLR）フランチャイズ</strong>が事業のほぼ全部です。
+    </p>
+
+    <h3>ABS-201（抗PRLR抗体）― パターン脱毛症</h3>
+    <p>
+      2026年6月に発表された第1相HEADLINE試験の中間データが、現時点で最も重要な材料です。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td>試験デザイン</td><td>第1/2a相。単回漸増用量（SAD）4コホート＋反復漸増用量（MAD）パート</td></tr>
+          <tr><td>安全性・忍容性</td><td><strong>盲検下の集計中間データ</strong>で、忍容性良好かつ良好な安全性プロファイルを示唆</td></tr>
+          <tr><td>薬物動態</td><td>SAD全4コホートの中間PKデータに基づき、<strong>半減期は少なくとも65日と推定</strong></td></tr>
+          <tr><td>投与間隔の含意</td><td>6か月間に2〜3回の投与で足りる可能性。全コホートの追跡継続による確認が前提</td></tr>
+          <tr><td>現在の進捗</td><td>パターン脱毛症の被験者に対しMADパートで投与を継続中</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout warn">
+      <span class="label">「盲検下の集計データ」の意味</span>
+      安全性データが<strong>盲検（blinded）かつ集計（aggregate）</strong>で報告されている点は、
+      解釈上きわめて重要です。
+      これは実薬群とプラセボ群を区別せずにまとめた数字であり、
+      <strong>実薬群だけの安全性プロファイルは、この時点では分かりません</strong>。
+      早期段階では標準的な報告方法であり、それ自体が問題ではありません。
+      ただし「忍容性良好」という表現を、実薬の安全性が確認されたと読み替えるのは誤りです。
+      また、この中間データには<strong>有効性（発毛効果）のデータは含まれていません</strong>。
+    </div>
+
+    <p>
+      有効性については、2026年下期の中間概念実証データが初めての材料になります。
+      同社はABS-201の差別化要因を<strong>「受容体を拮抗するだけでなく、毛包幹細胞を回復させる再生機序」</strong>
+      に置いており、学会発表の演題名にも
+      「毛包の成長と幹細胞・前駆細胞の増加を促す」という趣旨の記載が見られます。
+    </p>
+
+    <h3>ABS-201 ― 子宮内膜症</h3>
+    <p>
+      HEADLINE試験で得られた安全性・忍容性・PKデータをもとに、
+      <strong>2026年第4四半期に第2相試験を開始</strong>する予定です。
+      概念実証データは2027年下期の可能性があるとされています。
+    </p>
+    <p>
+      前述のとおり、この領域にはFDA承認の疾患修飾療法が存在しません。
+      性ステロイドホルモンに依存しない機序であることが、既存の対症療法との差別化点になります。
+    </p>
+
+    <h3>その他のパイプライン</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>プログラム</th><th>標的／適応</th><th>段階</th></tr></thead>
+        <tbody>
+          <tr><td><strong>ABS-202</strong></td><td>抗PRLR抗体 ／ 非開示の炎症・免疫（I&amp;I）適応</td><td>前臨床</td></tr>
+          <tr><td>ABS-101</td><td>炎症性腸疾患</td><td>第1相</td></tr>
+          <tr><td>ABS-301</td><td>免疫腫瘍</td><td>前臨床</td></tr>
+          <tr><td>ABS-501</td><td>腫瘍</td><td>前臨床</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      ABS-201とABS-202がいずれも抗PRLR抗体である点に注意が必要です。
+      <strong>プロラクチン受容体という単一標的への依存度が高い</strong>構造になっています。
+      仮にPRLR阻害という機序そのものに問題が生じた場合、2つのプログラムが同時に影響を受けます。
+    </p>
+
+    <h3>プラットフォームの進化 ― ATLASとOrigin</h3>
+    <ul>
+      <li><strong>ATLAS</strong>：エージェント型の探索エンジン。決算説明会では、プロラクチン経路と脱毛症・子宮内膜症を結びつける遺伝的証拠を、このエンジンが独立に再発見したと説明されました</li>
+      <li><strong>Origin-1</strong>：新規エピトープに対する de novo 抗体設計のための生成AIプラットフォーム。2026年夏のRosettaConで発表</li>
+      <li>経営陣は、Originモデルの改良により<strong>高品質リードの同定に必要なライブラリ規模を1,000分の1に削減できる</strong>と説明しています</li>
+    </ul>
+    <p>
+      ATLASが既知の関連を「独立に再発見した」という主張は、
+      プラットフォームの妥当性を示す一つの証拠ではあります。
+      ただし、<strong>既に知られている関係を再発見することと、未知の標的を発見することは別の能力</strong>です。
+      前者は検証、後者は創出であり、企業価値に直結するのは後者です。
+    </p>
+
+    <h3>提携の現状</h3>
+    <p>
+      会社は共同創薬の提携プログラムを継続しつつ、
+      各種の前臨床・臨床段階にある他の自社プログラムについて提携交渉を進めているとしています。
+      提携先としてPrecisionLife、Memorial Sloan Kettering Cancer Center、Twist Bioscience、
+      Owkin、Oracle、AMDなどが挙げられています。
+    </p>
+    <p>
+      ただし第③章で見たとおり、<strong>これらの提携から生じる収益は四半期あたり30万ドル台</strong>です。
+      提携の存在は技術的な信頼性の証左にはなりますが、
+      現時点で財務的な意味はほとんどありません。
+    </p>
+  </section>
+
+  <!-- ⑤ -->
+  <section id="ch5">
+    <h2 class="chapter"><span class="num">⑤</span>株式バリュエーション ― 4指標とレイヤー3の4社比較</h2>
+
+    <h3>指標1：キャッシュランウェイ</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>2026年6月30日</th><th>2026年3月31日</th><th>2025年12月31日</th></tr></thead>
+        <tbody>
+          <tr><td>現金・現金同等物</td><td class="num">1億786万ドル</td><td class="num">―</td><td class="num">2,003万ドル</td></tr>
+          <tr><td>市場性のある有価証券</td><td class="num">9,328万ドル</td><td class="num">―</td><td class="num">1億2,427万ドル</td></tr>
+          <tr><td><strong>合計</strong></td><td class="num"><strong>2億110万ドル</strong></td><td class="num">1億2,570万ドル</td><td class="num">1億4,429万ドル</td></tr>
+          <tr><td>総負債</td><td class="num">2,279万ドル</td><td class="num">―</td><td class="num">2,685万ドル</td></tr>
+          <tr><td>会社想定ランウェイ</td><td class="num" colspan="3"><strong>2028年下半期まで</strong>（従来は2028年上半期まで）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      上半期の純損失6,281万ドルを年換算すると約1.26億ドル。
+      現金・有価証券2億110万ドルを割ると<strong>約1.6年分</strong>となります。
+      会社想定の「2028年下半期まで」は、これよりやや長い前提です。
+    </p>
+    <p>
+      注目すべきは、<strong>Q1決算時点でのランウェイ想定が「2028年上半期まで」だった</strong>ことです。
+      6月の増資により、想定が半年分延びました。
+      バーンレートが四半期3,000万ドル台と小さいため、
+      1億ドルの調達が半年以上の時間に換算されています。
+    </p>
+
+    <h3>指標2：反復収益比率</h3>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="k-label">Q2 収益</div>
+        <div class="k-value">32万ドル</div>
+        <div class="k-sub">前年同期59万ドル（▲46%）</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">上半期 収益</div>
+        <div class="k-value">53万ドル</div>
+        <div class="k-sub">前年同期177万ドル（<span class="neg">▲70%</span>）</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">収益／営業費用</div>
+        <div class="k-value">約0.9%</div>
+        <div class="k-sub">編集部計算（Q2ベース）</div>
+      </div>
+    </div>
+    <p>
+      反復収益はゼロです。しかも収益そのものが<strong>減少傾向にある</strong>点が、
+      RecursionやSchrödingerとの違いです。
+      Recursionは提携マイルストーンの発生タイミングで振れましたが、
+      Absciのパートナープログラム収益は一貫して縮小しています。
+    </p>
+    <p>
+      これは事業の失敗ではなく、<strong>意図的な転換の結果</strong>と読むべきです。
+      同社は提携中心のモデルから自社パイプライン中心のモデルへ移行しました。
+      ただし投資家にとっての意味は明確です。
+      <strong>収益の下限が構造的に存在せず、評価はすべてABS-201の臨床データに依存します。</strong>
+    </p>
+
+    <h3>指標3：一時金 ÷ 公表総額（実現率）</h3>
+    <p>
+      この指標は、Absciには適用できません。理由が2つあります。
+    </p>
+    <ol>
+      <li>
+        現在の提携プログラムについて、<strong>「総額○億ドルのマイルストーンポテンシャル」という形での開示がなされていません</strong>。
+        分母が存在しないため、実現率を計算できません。
+      </li>
+      <li>
+        より重要な点として、<strong>Eli Lillyとの新しい関係にはマイルストーン条項そのものが存在しません</strong>。
+        次の指標4で詳述します。
+      </li>
+    </ol>
+    <p>
+      Recursionが約2.5%、Relayが約3.7%という実現率を示したのに対し、
+      Absciには測る対象がない。これは開示不足というより、
+      <strong>ビジネスモデルが提携型から自社開発型へ移行したことの表れ</strong>です。
+    </p>
+
+    <h3>指標4：増資の価格と引受先 ― 本記事の中心論点</h3>
+    <p>
+      Absciにおいて、この指標は他の3つを合わせたより多くを語ります。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td>実施時期</td><td>2026年6月24日プライシング、6月25日クローズ</td></tr>
+          <tr><td>発行株数</td><td>13,495,277株</td></tr>
+          <tr><td>発行価格</td><td><strong>1株7.41ドル</strong></td></tr>
+          <tr><td>総調達額</td><td>約1億ドル（手取り9,360万ドル）</td></tr>
+          <tr><td><strong>Eli Lillyの出資額</strong></td><td><strong>4,000万ドル（戦略的持分投資）</strong></td></tr>
+          <tr><td>その他の参加者</td><td>Adage、BVF Partners、Columbia Threadneedle、Invus、Redmile、および大手運用会社</td></tr>
+          <tr><td>ブックランナー</td><td>Jefferies、J.P. Morgan、TD Cowen、Guggenheim Securities</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <span class="label">Eli Lillyは何を取り、何を取らなかったか</span>
+      決算リリースには、通常なら書かれない一文が明記されています。
+      <strong>「Eli Lillyとの新しいパートナーシップはABS-201の臨床開発戦略を中心に構成されており、
+      Eli Lillyにいかなるプログラム権利も付与しない」</strong>。
+      <div style="margin-top:14px;">
+        <strong>Eli Lillyが得たもの：</strong>
+        <ul style="margin-bottom:10px;">
+          <li>Absci株式（4,000万ドル分、1株7.41ドル）</li>
+          <li>Absciの子宮内膜症アドバイザリーボードへの参加（Lillyの臨床研究担当SVPが着任）</li>
+        </ul>
+        <strong>Eli Lillyが得なかったもの：</strong>
+        <ul style="margin-bottom:0;">
+          <li>ABS-201のライセンス権</li>
+          <li>オプション権</li>
+          <li>優先交渉権</li>
+          <li>共同開発・共同販売の権利</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      この構造をどう読むかで、評価が分かれます。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th></th><th>肯定的な読み方</th><th>慎重な読み方</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Lillyの動機</td>
+            <td>純粋な財務投資として株価上昇を期待している。権利を取らないのは、Absciが自社で価値を最大化できると判断したから</td>
+            <td>4,000万ドルは大手製薬にとって小さい金額。将来の選択肢を安く確保するための「観察ポジション」にすぎない可能性</td>
+          </tr>
+          <tr>
+            <td>Absciにとっての意味</td>
+            <td>権利を渡さずに資金を得た。成功時のリターンを100%保持できる</td>
+            <td>Lillyが権利を欲しがるほどの確信を持たなかった、とも読める</td>
+          </tr>
+          <tr>
+            <td>アドバイザリーボード参加</td>
+            <td>子宮内膜症領域の知見が開発戦略に反映される</td>
+            <td>拘束力のない助言役であり、Lillyに開発義務はない</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      比較材料として、前回のRelayの2026年5月増資（約3.16億ドル、1株12.00ドル）には
+      <strong>戦略投資家の名前が一切公表されていません</strong>でした。
+      その意味で、Absciの増資には「事業を理解する当事者が出資した」というシグナルが確かに存在します。
+      ただしそのシグナルの強さを、権利取得を伴う本格的な提携と同等に評価するのは行き過ぎです。
+    </p>
+
+    <h3>希薄化の実績</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>数値</th></tr></thead>
+        <tbody>
+          <tr><td>加重平均株式数（2026年Q2）</td><td class="num">157,471,712株</td></tr>
+          <tr><td>同（2025年Q2）</td><td class="num">127,592,948株</td></tr>
+          <tr><td><strong>前年同期比</strong></td><td class="num"><strong>約+23%</strong></td></tr>
+          <tr><td>払込資本金（2026年6月30日）</td><td class="num">9億3,356万ドル</td></tr>
+          <tr><td>同（2025年12月31日）</td><td class="num">8億1,363万ドル</td></tr>
+          <tr><td>累積欠損金</td><td class="num">▲6億8,759万ドル</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      1年で株式数が約23%増加。Recursionの約52%、Relayの約18%と比べると中間的な水準です。
+      注目すべきは<strong>払込資本金9億3,356万ドルに対し、累積欠損金が6億8,759万ドル</strong>という関係です。
+      調達した資本の約74%が既に費消されています。
+    </p>
+
+    <h3>時価総額とEVの分解（編集部試算）</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>金額</th></tr></thead>
+        <tbody>
+          <tr><td>株価（2026年8月10日時点）</td><td class="num">9.01ドル</td></tr>
+          <tr><td>増資価格（2026年6月24日）</td><td class="num">7.41ドル</td></tr>
+          <tr><td>時価総額</td><td class="num">約16〜17億ドル</td></tr>
+          <tr><td>▲ 現金・有価証券</td><td class="num">▲2億110万ドル</td></tr>
+          <tr><td><strong>実質的な事業価値（EV）</strong></td><td class="num"><strong>約14〜15億ドル</strong></td></tr>
+          <tr><td>アナリスト平均目標株価</td><td class="num">13.78ドル（10名）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">株価は2026年8月10日時点、時価総額は2026年6月下旬の水準（約16〜17億ドル）を基にした編集部試算です。増資による株式数増加が各データソースに反映されるタイミングに差があるため、幅を持たせています。市場データは日々変動します。</p>
+
+    <div class="callout">
+      <span class="label">レイヤー3の4社比較 ― EVと4指標</span>
+      <div class="table-scroll" style="margin-top:14px;">
+        <table>
+          <thead><tr><th>企業</th><th>EV（試算）</th><th>収益／営業費用</th><th>希薄化</th><th>臨床の最先端</th></tr></thead>
+          <tbody>
+            <tr><td>Relay（RLAY）</td><td class="num">約28.7億ドル</td><td class="num">約0.4%</td><td class="num">1年 約+18%</td><td>第III相</td></tr>
+            <tr><td><strong>Absci（ABSI）</strong></td><td class="num"><strong>約14〜15億ドル</strong></td><td class="num"><strong>約0.9%</strong></td><td class="num"><strong>1年 約+23%</strong></td><td><strong>第1/2a相</strong></td></tr>
+            <tr><td>Recursion（RXRX）</td><td class="num">約12億ドル</td><td class="num">約8%</td><td class="num">1年 約+52%</td><td>第2相</td></tr>
+            <tr><td>Schrödinger（SDGR）</td><td class="num">約8.7億ドル</td><td class="num">約80%</td><td class="num">半年 +1.5%</td><td>第1相</td></tr>
+          </tbody>
+        </table>
+      </div>
+      Absciは臨床段階が最も早い（第1/2a相）にもかかわらず、EVは4社中2位です。
+      前回導いた「臨床の進捗がEVを決める」という仮説だけでは説明がつきません。
+      <strong>Absciの評価には、対象市場の大きさ（250億ドル試算）と、
+      Eli Lillyの出資というシグナルが上乗せされている</strong>と考えるのが自然です。
+    </div>
+  </section>
+
+  <!-- ⑥ -->
+  <section id="ch6">
+    <h2 class="chapter"><span class="num">⑥</span>リスク要因 ― 盲検データと単一標的</h2>
+
+    <h3>1. 有効性データがまだ存在しない</h3>
+    <p>
+      これが最大のリスクです。2026年6月に発表された中間データは<strong>安全性・忍容性とPKのみ</strong>であり、
+      発毛効果を示すデータは含まれていません。
+      安全性が良好でも有効性が示されなければ、開発は前に進みません。
+      有効性の初回材料は2026年下期の中間概念実証データです。
+    </p>
+
+    <h3>2. 盲検・集計データの解釈リスク</h3>
+    <p>
+      「忍容性良好」という中間報告は、実薬群とプラセボ群を区別しない集計値に基づいています。
+      <strong>盲検が解除された際に、実薬群に特有の有害事象が明らかになる可能性は排除できません。</strong>
+      健康な人が長期投与する脱毛症治療薬という性質上、安全性の要求水準は高くなります。
+    </p>
+
+    <h3>3. 単一標的（PRLR）への集中</h3>
+    <p>
+      ABS-201とABS-202はいずれも抗PRLR抗体です。
+      プロラクチン受容体の阻害という機序自体に問題が生じた場合、
+      <strong>2つのプログラムが同時に影響を受けます</strong>。
+      プロラクチンは授乳や生殖機能に関わるホルモンであり、
+      長期阻害の影響が完全に解明されているとは言えません。
+    </p>
+
+    <h3>4. 市場規模試算の前提依存</h3>
+    <p>
+      250億ドルという米国総潜在市場の試算は、
+      <strong>「高用量経口ミノキシジルとおおむね同等の発毛効果」</strong>を前提としています。
+      効果量がそれを下回れば、市場規模の前提そのものが崩れます。
+      また会社側も、承認可否・添付文書の内容・競争環境によって実際の対象市場が
+      試算と大きく異なりうると明記しています。
+    </p>
+
+    <h3>5. 開発パスの不確実性</h3>
+    <p>
+      第1/2a相から第III相への直行は、あくまで<strong>可能性として言及されているにすぎません</strong>。
+      FDAとの協議はこれから行われます。
+      第II相の実施を求められた場合、開発期間の延長と追加の資金需要が生じ、
+      2028年下半期までのランウェイでは足りなくなる可能性があります。
+    </p>
+
+    <h3>6. 提携収益の継続的な減少</h3>
+    <p>
+      パートナープログラム収益は上半期で前年同期比70%減。
+      自社開発への転換は戦略的な選択ですが、
+      <strong>提携収益が消えた分、資金調達への依存度が高まります</strong>。
+      新規の提携が成立しない限り、次の資金源は再び株式市場です。
+    </p>
+
+    <h3>7. 希薄化の継続</h3>
+    <p>
+      1年で株式数が約23%増加し、払込資本金の約74%が既に費消されています。
+      2028年下半期までのランウェイがあるとはいえ、
+      <strong>第2相・第III相へ進めば費用は現在の水準を大きく超えます</strong>。
+      子宮内膜症の第2相が2026年第4四半期に開始されれば、
+      バーンレートは上昇に転じるはずです。
+    </p>
+  </section>
+
+  <!-- ⑦ -->
+  <section id="ch7">
+    <h2 class="chapter"><span class="num">⑦</span>まとめ ― レイヤー3の総括</h2>
+
+    <p>
+      Absciをもってレイヤー3の4社が揃いました。4指標を並べます。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>4指標</th><th>Absci（ABSI）</th><th>Relay（RLAY）</th><th>Recursion（RXRX）</th><th>Schrödinger（SDGR）</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>キャッシュランウェイ</td>
+            <td>2.01億ドル／2028年下半期</td>
+            <td>9.11億ドル／2029年</td>
+            <td>5.57億ドル／2028年初頭</td>
+            <td>4.19億ドル／2028年末黒字化目標</td>
+          </tr>
+          <tr>
+            <td>反復収益比率</td>
+            <td>ゼロ（収益／費用 0.9%、かつ減少中）</td>
+            <td>ゼロ（0.4%）</td>
+            <td>ゼロ</td>
+            <td>約58%</td>
+          </tr>
+          <tr>
+            <td>実現率</td>
+            <td><strong>算出不能</strong>（公表総額なし。Lilly出資にマイルストーン条項なし）</td>
+            <td>約3.7%</td>
+            <td>約2.5%</td>
+            <td>総額非公表・累計7.5億ドル超</td>
+          </tr>
+          <tr>
+            <td>増資の価格と引受先</td>
+            <td><strong>7.41ドル。Eli Lillyが4,000万ドル出資（権利取得なし）</strong></td>
+            <td>12.00ドル。戦略投資家の名前は非公表</td>
+            <td>希薄化1年+52%</td>
+            <td>増資なし（半年+1.5%）</td>
+          </tr>
+          <tr>
+            <td>臨床の最先端</td>
+            <td>第1/2a相</td>
+            <td>第III相</td>
+            <td>第2相</td>
+            <td>第1相</td>
+          </tr>
+          <tr>
+            <td>EV（編集部試算）</td>
+            <td>約14〜15億ドル</td>
+            <td>約28.7億ドル</td>
+            <td>約12億ドル</td>
+            <td>約8.7億ドル</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>レイヤー3の4社から見えた3つのこと</h3>
+    <p>
+      <strong>第一に、「AI創薬プラットフォーム」という括りは、実態としてほとんど機能していません。</strong>
+      Schrödingerはソフトウェア企業、Relayは単一資産バイオテック、
+      Recursionは提携型探索企業、Absciは抗体設計から自社開発へ移行中の企業。
+      共通するのは「AIを使う」という点だけで、収益構造も資金調達も評価軸も異なります。
+    </p>
+    <p>
+      <strong>第二に、市場が評価しているのは、プラットフォームの品質ではありません。</strong>
+      4社のEVの順位は、反復収益の多さとも希薄化の少なさとも一致しませんでした。
+      最も相関が見えるのは<strong>「特定の1剤がどこまで進んだか」と「その1剤が狙う市場の大きさ」</strong>です。
+      Relayは第III相、Absciは250億ドル試算とLilly出資という上乗せ要因を持ちます。
+    </p>
+    <p>
+      <strong>第三に、4指標のうち最も情報量が多いのは「増資の価格と引受先」でした。</strong>
+      Recursionの1年+52%、Relayの26.50→7.00→12.00ドルという推移、
+      Schrödingerの増資ゼロ、そしてAbsciのLilly出資（権利取得なし）。
+      いずれも、その企業が資本市場からどう見られているかを最も正直に表しています。
+    </p>
+
+    <h3>Absciについての現時点の評価</h3>
+    <p>
+      本記事の立場は、強気でも弱気でもありません。
+      半減期65日という推定値は、6か月で2〜3回という投与間隔を可能にしうる数字であり、
+      毎日服用する既存治療に対する明確な差別化要因になりえます。
+      Eli Lillyの4,000万ドル出資も、機序への一定の関心を示すシグナルです。
+    </p>
+    <p>
+      同時に、<strong>有効性のデータは1つも出ていません</strong>。
+      安全性データは盲検・集計ベースです。250億ドルという市場規模は
+      「高用量経口ミノキシジル同等の効果」という未検証の前提に立っています。
+      Lillyは権利を1つも取っていません。
+    </p>
+    <p>
+      <strong>2026年下期の中間概念実証データが出るまでは、判定できる段階にない</strong>と考えるのが妥当です。
+      投資判断を下すのであれば、
+      「有効性データ未取得」「安全性は盲検・集計ベース」「Lillyに権利付与なし」という
+      3つの事実を織り込んだうえで行う必要があります。
+    </p>
+
+    <div class="crosslink">
+      <h4>関連レポート ― レイヤー3 全4社</h4>
+      <ul>
+        <li><a href="/reports/ai-biotech-industry-map.html">前編：産業地図 ― AI×バイオを4レイヤーで整理する</a></li>
+        <li><a href="/reports/ai-biotech-validation.html">中編：技術検証編 ― AI創薬は本当に効いているのか</a></li>
+        <li><a href="/reports/ai-biotech-valuation.html">後編：投資判断編 ― 赤字先行企業を4指標で評価する</a></li>
+        <li><a href="/reports/recursion-rxrx.html">個別企業編①：Recursion Pharmaceuticals（RXRX）― 実現率2.5%問題</a></li>
+        <li><a href="/reports/schrodinger-sdgr.html">個別企業編②：Schrödinger（SDGR）― 反復収益を持つ例外的なレイヤー3企業</a></li>
+        <li><a href="/reports/relay-rlay.html">個別企業編③：Relay Therapeutics（RLAY）― 増資で買った第III相</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHAT TO WATCH -->
+  <div class="watch">
+    <h2>WHAT TO WATCH</h2>
+    <p class="w-sub">Absci（ABSI）― 今後の注目点</p>
+    <ol>
+      <li><b>2026年下期：パターン脱毛症の中間概念実証データ。</b>本記事で繰り返し述べたとおり、これがAbsciにとって初めての有効性データになる。発毛の効果量が、市場規模試算の前提である「高用量経口ミノキシジル同等」に届くかどうかが焦点。</li>
+      <li><b>盲検解除後の安全性プロファイル。</b>現在の「忍容性良好」は盲検下の集計値。実薬群を区別したデータで、健康な人への長期投与に耐える安全性が確認されるか。脱毛症という適応では、この基準が腫瘍領域より格段に高い。</li>
+      <li><b>2026年第4四半期：子宮内膜症 第2相の開始。</b>予定どおり開始されるか。FDA承認の疾患修飾療法がない領域であり、成功時の価格決定力は高い。ただし開始に伴いバーンレートは上昇に転じるはずで、2028年下半期までのランウェイ想定が維持されるかも併せて確認する。</li>
+      <li><b>FDAとの開発戦略協議の結果。</b>「第1/2a相から第III相へ直行」が認められるか、第II相を求められるか。後者の場合、開発期間の延長と追加の資金需要が生じ、現在のランウェイでは足りなくなる可能性がある。</li>
+      <li><b>Eli Lillyとの関係の変化。</b>現在は株式保有とアドバイザリーボード参加のみで、プログラム権利は付与されていない。今後ライセンス契約やオプション権を伴う本格的な提携へ発展するか、あるいは出資のまま推移するか。前者に転じれば、機序に対するLillyの評価が上がった証左になる。</li>
+      <li><b>パートナープログラム収益の底打ち。</b>上半期で前年同期比70%減。自社開発への転換は戦略的な選択だが、新規提携が成立しなければ次の資金源は再び株式市場になる。四半期収益が30万ドル台からさらに減るか、反転するかを追う。</li>
+    </ol>
+  </div>
+
+  <!-- 免責 -->
+  <div class="disclaimer">
+    <h3>免責事項</h3>
+    <ul>
+      <li>本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資に関する最終的な判断は、ご自身の責任において行ってください。</li>
+      <li>本記事に記載された数値・事実は、2026年8月中旬時点で公開されている企業のIR資料、決算リリース、SEC提出書類、および報道等に基づいています。株価・時価総額等の市場データは日々変動します。</li>
+      <li>「編集部試算」「編集部計算」と明記した数値は、公開情報に基づく推計であり、企業が公表した値ではありません。時価総額およびEVは、データソース間で株式数の反映時期に差があるため幅を持たせて記載しています。</li>
+      <li>企業が公表する市場機会・対象患者数の見積もりは、一定の前提（本記事の場合は発毛効果量、規制当局の承認、最終的な添付文書の内容、競争環境等）に依存するものであり、実現を保証するものではありません。</li>
+      <li>臨床試験の結果は将来の承認を保証するものではなく、開発は中止される可能性があります。本記事で言及した安全性データは盲検下の集計値であり、盲検解除後に異なる結果が示される可能性があります。中間データは、追跡の継続や最終解析により変動する場合があります。</li>
+      <li>本記事の内容には誤りが含まれる可能性があります。投資判断にあたっては、必ず一次情報（企業のIR資料、SEC提出書類等）をご確認ください。</li>
+    </ul>
+  </div>
+
+  <footer class="site">
+    Market Supporter AI ／ marketsupporter-ai.com<br>
+    AI×製薬×バイオ シリーズ 個別企業編 ④（2026年8月15日公開）／ レイヤー3 完結
+  </footer>
+
+</div>
+</body>
+</html>
