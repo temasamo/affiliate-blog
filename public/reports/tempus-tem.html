@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tempus AI（NASDAQ:TEM）徹底分析｜黒字転換の中身と、レイヤー2の評価軸 - Market Supporter AI</title>
+<meta name="description" content="AI精密医療のTempus AI（TEM）を7章構成で分析。2026年Q2決算実績、GAAP純利益560万ドルの内訳、NRR126%とTCV11億ドル超、Personalis買収、レイヤー2固有の4指標を解説します。">
+<style>
+:root{
+  --accent:#334155;
+  --accent-dark:#1e293b;
+  --accent-mid:#475569;
+  --accent-light:#f1f5f9;
+  --accent-border:#cbd5e1;
+  --ink:#1a1f2b;
+  --ink-sub:#4b5563;
+  --line:#e2e8f0;
+  --bg:#ffffff;
+  --bg-soft:#f8fafc;
+  --warn:#b45309;
+  --warn-bg:#fffbeb;
+  --pos:#15803d;
+  --neg:#b91c1c;
+  --hl:#0369a1;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);background:var(--bg);line-height:1.85;font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px 80px;}
+
+header.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 55%,#3f5876 100%);
+  color:#fff;padding:52px 20px 46px;
+}
+.hero-inner{max-width:860px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;font-size:12px;letter-spacing:.14em;
+  background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);
+  padding:5px 13px;border-radius:999px;margin-bottom:18px;
+}
+h1{font-size:29px;line-height:1.45;margin:0 0 16px;font-weight:700;letter-spacing:.01em;}
+.hero-sub{font-size:15.5px;opacity:.94;margin:0 0 22px;line-height:1.8;}
+.meta{font-size:13px;opacity:.86;border-top:1px solid rgba(255,255,255,.25);padding-top:14px;}
+.tags{margin-top:12px;}
+.tag{display:inline-block;font-size:11.5px;background:rgba(255,255,255,.14);padding:4px 10px;border-radius:4px;margin:0 6px 6px 0;}
+
+.toc{background:var(--accent-light);border:1px solid var(--accent-border);border-radius:10px;padding:22px 24px;margin:36px 0 44px;}
+.toc h2{font-size:15px;margin:0 0 12px;color:var(--accent-dark);letter-spacing:.06em;}
+.toc ol{margin:0;padding-left:1.3em;}
+.toc li{margin:7px 0;font-size:14.5px;}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--accent-mid);}
+.toc a:hover{color:var(--hl);}
+
+section{margin:0 0 52px;scroll-margin-top:20px;}
+h2.chapter{font-size:21px;margin:0 0 20px;padding:0 0 12px 0;border-bottom:3px solid var(--accent);line-height:1.5;font-weight:700;}
+h2.chapter .num{display:inline-block;color:var(--accent);font-size:19px;margin-right:8px;}
+h3{font-size:17px;margin:32px 0 12px;padding-left:12px;border-left:4px solid var(--accent-mid);line-height:1.6;}
+p{margin:0 0 16px;}
+ul,ol{margin:0 0 18px;padding-left:1.4em;}
+li{margin:7px 0;}
+strong{color:var(--accent-dark);font-weight:700;}
+
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0 24px;}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:480px;}
+th,td{border:1px solid var(--line);padding:11px 12px;text-align:left;vertical-align:top;}
+th{background:var(--accent-light);color:var(--accent-dark);font-weight:700;white-space:nowrap;}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+tbody tr:nth-child(even){background:var(--bg-soft);}
+.tbl-note{font-size:12.5px;color:var(--ink-sub);margin:-14px 0 24px;}
+
+.callout{background:var(--bg-soft);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:18px 20px;margin:24px 0;font-size:15px;}
+.callout .label{display:block;font-size:12px;letter-spacing:.1em;color:var(--accent);font-weight:700;margin-bottom:8px;}
+.warn{background:var(--warn-bg);border-left:4px solid var(--warn);}
+.warn .label{color:var(--warn);}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:24px 0 28px;}
+.kpi{background:var(--bg-soft);border:1px solid var(--line);border-radius:9px;padding:15px 16px;}
+.kpi .k-label{font-size:12px;color:var(--ink-sub);margin-bottom:6px;line-height:1.5;}
+.kpi .k-value{font-size:21px;font-weight:700;color:var(--accent-dark);line-height:1.3;font-variant-numeric:tabular-nums;}
+.kpi .k-sub{font-size:11.5px;color:var(--ink-sub);margin-top:5px;line-height:1.5;}
+
+.pos{color:var(--pos);font-weight:700;}
+.neg{color:var(--neg);font-weight:700;}
+
+.crosslink{border:1px solid var(--accent-border);border-radius:10px;padding:18px 20px;margin:30px 0;background:#fff;}
+.crosslink h4{margin:0 0 10px;font-size:14px;color:var(--accent-dark);letter-spacing:.05em;}
+.crosslink ul{margin:0;padding-left:1.2em;font-size:14px;}
+.crosslink a{color:var(--hl);text-decoration:none;border-bottom:1px solid var(--accent-border);}
+
+.watch{background:linear-gradient(150deg,var(--accent-dark) 0%,#0f172a 100%);color:#fff;border-radius:14px;padding:36px 28px;margin:56px 0 40px;}
+.watch h2{font-size:20px;margin:0 0 8px;letter-spacing:.08em;color:#fff;border:none;padding:0;}
+.watch .w-sub{font-size:13.5px;opacity:.82;margin:0 0 24px;}
+.watch ol{padding-left:0;list-style:none;margin:0;counter-reset:w;}
+.watch li{counter-increment:w;position:relative;padding-left:44px;margin:0 0 20px;font-size:14.8px;line-height:1.8;}
+.watch li::before{
+  content:counter(w,decimal-leading-zero);
+  position:absolute;left:0;top:2px;font-size:13px;font-weight:700;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
+  width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+}
+.watch li b{color:#bae6fd;}
+
+.disclaimer{background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:22px 24px;font-size:13px;color:var(--ink-sub);line-height:1.85;}
+.disclaimer h3{font-size:14px;margin:0 0 10px;padding:0;border:none;color:var(--ink);}
+.disclaimer ul{padding-left:1.3em;margin:0;}
+
+footer.site{text-align:center;font-size:12.5px;color:var(--ink-sub);margin-top:44px;padding-top:22px;border-top:1px solid var(--line);}
+
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  header.hero{padding:38px 18px 34px;}
+  h1{font-size:22px;line-height:1.5;}
+  .hero-sub{font-size:14.5px;}
+  .wrap{padding:0 16px 60px;}
+  h2.chapter{font-size:18.5px;}
+  h3{font-size:16px;}
+  .watch{padding:28px 20px;border-radius:10px;}
+  .watch li{padding-left:38px;font-size:14.2px;}
+  .watch li::before{width:26px;height:26px;font-size:12px;}
+  .kpi .k-value{font-size:19px;}
+  table{font-size:13.2px;}
+  th,td{padding:9px 10px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">AI × 製薬 × バイオ シリーズ ／ 個別企業編 ⑤ ／ レイヤー2 第1回</span>
+    <h1>Tempus AI（NASDAQ:TEM）徹底分析<br>― 黒字転換の中身と、レイヤー2で変わる評価軸</h1>
+    <p class="hero-sub">
+      四半期売上3億8,249万ドル、前年同期比+22%。GAAP純利益560万ドルで黒字転換。
+      レイヤー3の4社とは桁が違います。ただし営業損失は▲7,591万ドルのまま。
+      3部作の4指標がここでどう変質するのか、2026年7月30日発表のQ2決算実績から検証します。
+    </p>
+    <div class="meta">
+      公開日：2026年8月16日 ／ 分析基準日：2026年8月中旬 ／ Market Supporter AI 編集部
+      <div class="tags">
+        <span class="tag">#TEM</span>
+        <span class="tag">#精密医療</span>
+        <span class="tag">#米国株</span>
+        <span class="tag">#レイヤー2</span>
+        <span class="tag">#ゲノム診断</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="toc">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#ch1">市場規模 ― 診断とデータ、2つの異なる市場</a></li>
+      <li><a href="#ch2">政策・規制環境 ― FDA承認が価格に直結する構造</a></li>
+      <li><a href="#ch3">コスト・収益構造 ― 黒字転換の中身を分解する</a></li>
+      <li><a href="#ch4">事業セグメント動向 ― 診断・データ・そしてPersonalis買収</a></li>
+      <li><a href="#ch5">株式バリュエーション ― レイヤー2で4指標はこう変わる</a></li>
+      <li><a href="#ch6">リスク要因 ― 負債19億ドルと希薄化の別の形</a></li>
+      <li><a href="#ch7">まとめ ― レイヤー2とレイヤー3の断層</a></li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <span class="label">この記事の位置づけ</span>
+    「AI×製薬×バイオ」3部作の4レイヤー分類における<strong>レイヤー2（データ・診断インフラ）</strong>の第1回です。
+    レイヤー3の4社（Recursion、Schrödinger、Relay、Absci）を分析した結果、
+    「収益の確実性はレイヤー1〜2に集中する」という3部作の仮説を、
+    ここから検証する段階に入ります。
+    <strong>4指標のうち「実現率」の重要度が下がり、「反復収益比率」の中身が主役になります。</strong>
+  </div>
+
+  <!-- ① -->
+  <section id="ch1">
+    <h2 class="chapter"><span class="num">①</span>市場規模 ― 診断とデータ、2つの異なる市場</h2>
+
+    <p>
+      Tempus AIは2015年設立、米シカゴ拠点。創業者Eric Lefkofskyが、
+      妻の乳がん診断をきっかけに立ち上げた企業です。2024年6月にNasdaq上場しました。
+    </p>
+    <p>
+      レイヤー3の企業が「薬を作る」のに対し、Tempusは<strong>「薬を作るための材料を売る」</strong>企業です。
+      臨床データと分子データを大量に収集し、それを2つの形で収益化しています。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>セグメント</th><th>Q2 2026売上</th><th>前年比</th><th>顧客</th><th>収益の性格</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Diagnostics（診断）</strong></td>
+            <td class="num">2億8,933万ドル</td>
+            <td class="num pos">+20%</td>
+            <td>医療機関・医師</td>
+            <td>検査ごとの出来高。保険償還に依存</td>
+          </tr>
+          <tr>
+            <td><strong>Data and Applications<br>（データ・アプリ）</strong></td>
+            <td class="num">9,315万ドル</td>
+            <td class="num pos">+28%</td>
+            <td>製薬・バイオテク企業</td>
+            <td>複数年のライセンス契約。反復性が高い</td>
+          </tr>
+          <tr><td><strong>合計</strong></td><td class="num"><strong>3億8,249万ドル</strong></td><td class="num pos">+22%</td><td>―</td><td>―</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：Tempus AI 2026年第2四半期決算リリース（2026年7月30日）。</p>
+
+    <h3>診断市場の広がり方 ― 検査数で測る</h3>
+    <p>
+      診断セグメントの市場規模は、検査数の伸びで測るのが実態に近くなります。
+    </p>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="k-label">腫瘍領域の検査数<br>前年同期比</div>
+        <div class="k-value">+31%</div>
+        <div class="k-sub">前四半期は+28%。加速している</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">MRD検査数（Q2）</div>
+        <div class="k-value">約9,000件</div>
+        <div class="k-sub">前四半期約6,500件から+38%</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">遺伝性疾患検査<br>売上成長率</div>
+        <div class="k-value">+5%</div>
+        <div class="k-sub">腫瘍領域と対照的に鈍化</div>
+      </div>
+    </div>
+    <p>
+      検査数+31%に対し、診断売上は+20%。<strong>数量の伸びが単価の伸びを上回っている</strong>ことを示します。
+      これは第②章で扱う保険償還の問題に直結します。
+    </p>
+    <p>
+      なお、遺伝性疾患検査（Hereditary）の+5%は明確に鈍い数字です。
+      2025年に買収したAmbry Genetics由来の事業と考えられ、
+      <strong>買収した事業の成長率が本体を下回っている</strong>状態です。
+    </p>
+
+    <h3>データ市場 ― 契約総額で測る</h3>
+    <p>
+      データセグメントの市場規模は、製薬企業が「データに払ってもよい」と考える予算総額です。
+      これはTCV（Total Contract Value、契約総額）という形で観測できます。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>指標</th><th>数値</th><th>時点</th></tr></thead>
+        <tbody>
+          <tr><td>Total Contract Value（TCV）</td><td class="num">11億ドル超</td><td>2025年12月31日時点、過去最高</td></tr>
+          <tr><td>Q2 2026の新規署名額</td><td class="num">約2億ドル</td><td>BioNTech、第一三共、Level Set Bio、Incyte等</td></tr>
+          <tr><td>2025年のデータ契約締結企業数</td><td class="num">70社超</td><td>AstraZeneca、GSK、BMS、Pfizer、Novartis、Merck、AbbVie、Eli Lilly等</td></tr>
+          <tr><td>2025年のNet Revenue Retention</td><td class="num">約126%</td><td>既存顧客の支出が年26%増えた計算</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout warn">
+      <span class="label">TCVの読み方 ― レイヤー3と同じ注意が必要</span>
+      TempusのTCV定義は<strong>「署名済み契約の潜在総額であり、すべての契約オプションの行使、
+      すべての任意オプトインを前提とし、早期解約はないものとする」</strong>というものです。
+      これはレイヤー3企業の「公表マイルストーン総額」と<strong>同じ性格の上限値</strong>です。
+      RecursionやRelayで見たとおり、公表総額と実現額の差は極めて大きくなりえます。
+      <strong>ただし決定的な違いが1つあります。</strong>
+      レイヤー3のマイルストーンは臨床試験の成否という制御不能な要因に依存しますが、
+      Tempusの契約はデータの引き渡しという履行可能な行為に依存します。
+      この違いが、NRR 126%という数字に表れています（第⑤章で詳述）。
+    </div>
+  </section>
+
+  <!-- ② -->
+  <section id="ch2">
+    <h2 class="chapter"><span class="num">②</span>政策・規制環境 ― FDA承認が価格に直結する構造</h2>
+
+    <p>
+      レイヤー3企業にとってFDAは「薬を承認するかどうか」の関門でした。
+      レイヤー2の診断企業にとって、FDAは<strong>「いくらで請求できるか」を決める機関</strong>です。
+      規制の意味がまったく異なります。
+    </p>
+
+    <h3>xT Tumor Only のFDA承認とADLT価格</h3>
+    <p>
+      2026年Q2の最大の規制イベントは、<strong>xT CDx（tumor-only版）のFDA承認</strong>です。
+      これによりTempusは、<strong>tumor-only と tumor-normal の両方の包括的ゲノムプロファイリングで
+      FDAコンパニオン診断（CDx）承認を保有する初の検査室</strong>となりました。
+    </p>
+    <p>
+      投資家にとっての意味は、会社の説明にある一文に集約されています。
+      <strong>「組織検査をADLT価格へ移行させる」</strong>。
+    </p>
+    <p>
+      ADLT（Advanced Diagnostic Laboratory Test）は、
+      米国のメディケア制度における先進的診断検査の区分です。
+      この区分に該当すると、通常の検査より高い償還価格が設定されます。
+      つまりFDA承認が、<strong>検査1件あたりの平均販売価格（ASP）を直接引き上げる</strong>構造です。
+    </p>
+
+    <div class="callout">
+      <span class="label">レイヤー3との構造的な違い</span>
+      レイヤー3企業にとって、FDA承認は<strong>ゼロがイチになる</strong>イベントでした。
+      承認されなければ売上はゼロです。
+      レイヤー2の診断企業にとって、FDA承認は<strong>既にある売上の単価が上がる</strong>イベントです。
+      失敗しても既存の収益は消えません。
+      これが「収益の確実性はレイヤー1〜2に集中する」という3部作の仮説の、具体的な中身です。
+    </div>
+
+    <h3>償還経済性という論点</h3>
+    <p>
+      決算説明会では、償還の経済性について踏み込んだやり取りがありました。
+      CFOのJames Rogers氏は、<strong>保険適用される適応が増えればASPが時間とともに上昇し、
+      商業保険のアクセスが広がれば数量も拡大する</strong>と説明しています。
+    </p>
+    <p>
+      さらに注目すべきはCEOのEric Lefkofsky氏の発言です。
+      <strong>「マージンがマイナスの間に数量を最大化するのではなく、
+      ASPが損益分岐点に近づいた段階で販売を加速する計画である」</strong>と述べています。
+    </p>
+    <p>
+      これはMRD（微小残存病変）検査についての文脈で語られたものです。
+      MRD検査数はQ2に約9,000件へ38%増加しましたが、
+      <strong>販売部隊のうち約10%しかこの検査を販売していない</strong>とされています。
+      意図的に販売を抑えているということです。
+    </p>
+    <p>
+      裏を返せば、<strong>現時点でMRD検査は売れば売るほど赤字が増える</strong>状態にある、
+      と読むのが自然です。償還価格が改善するまで、この構造は続きます。
+    </p>
+
+    <h3>その他の規制・提携動向</h3>
+    <ul>
+      <li>デジタル病理のオープンソースコンソーシアム（IMS）を、Yale New Haven HospitalおよびMemorial Sloan Kettering Cancer Centerと立ち上げ</li>
+      <li>USCケック医学校との戦略提携。年間150万件超の患者受診にAIプラットフォーム・分子診断・臨床試験マッチングを統合</li>
+      <li>Tempus Previewを導入。組織受領から約24時間以内に主要バイオマーカーの暫定結果を提供</li>
+    </ul>
+  </section>
+
+  <!-- ③ -->
+  <section id="ch3">
+    <h2 class="chapter"><span class="num">③</span>コスト・収益構造 ― 黒字転換の中身を分解する</h2>
+
+    <h3>2026年第2四半期の実績（2026年7月30日発表）</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>項目（千ドル）</th><th>2026年Q2</th><th>2025年Q2</th><th>2026年上半期</th><th>2025年上半期</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>診断売上</td><td class="num">289,333</td><td class="num">241,843</td><td class="num">550,431</td><td class="num">435,647</td></tr>
+          <tr><td>データ・アプリ売上</td><td class="num">93,153</td><td class="num">72,792</td><td class="num">180,171</td><td class="num">134,725</td></tr>
+          <tr><td><strong>売上高合計</strong></td><td class="num"><strong>382,486</strong></td><td class="num">314,635</td><td class="num"><strong>730,602</strong></td><td class="num">570,372</td></tr>
+          <tr><td>売上原価（診断）</td><td class="num">108,233</td><td class="num">99,756</td><td class="num">209,193</td><td class="num">184,539</td></tr>
+          <tr><td>売上原価（データ・アプリ）</td><td class="num">27,755</td><td class="num">19,840</td><td class="num">52,870</td><td class="num">35,591</td></tr>
+          <tr><td>技術研究開発費</td><td class="num">43,929</td><td class="num">34,482</td><td class="num">89,850</td><td class="num">67,873</td></tr>
+          <tr><td>研究開発費</td><td class="num">52,637</td><td class="num">41,619</td><td class="num">100,874</td><td class="num">77,493</td></tr>
+          <tr><td>販売費・一般管理費</td><td class="num">225,845</td><td class="num">180,712</td><td class="num">438,439</td><td class="num">335,339</td></tr>
+          <tr><td><strong>営業損失</strong></td><td class="num neg"><strong>▲75,913</strong></td><td class="num">▲61,774</td><td class="num neg"><strong>▲160,624</strong></td><td class="num">▲130,463</td></tr>
+          <tr><td>受取利息</td><td class="num">3,897</td><td class="num">1,093</td><td class="num">7,763</td><td class="num">2,906</td></tr>
+          <tr><td>支払利息</td><td class="num">▲10,283</td><td class="num">▲21,579</td><td class="num">▲24,624</td><td class="num">▲39,582</td></tr>
+          <tr><td>債務消滅損</td><td class="num">▲11,643</td><td class="num">—</td><td class="num">▲11,643</td><td class="num">—</td></tr>
+          <tr><td><strong>その他収益（純額）</strong></td><td class="num"><strong>102,757</strong></td><td class="num">41,729</td><td class="num">75,048</td><td class="num">14,274</td></tr>
+          <tr><td>持分法投資損失</td><td class="num">▲2,864</td><td class="num">▲2,100</td><td class="num">▲5,950</td><td class="num">▲3,983</td></tr>
+          <tr><td><strong>純損益</strong></td><td class="num pos"><strong>+5,642</strong></td><td class="num neg">▲42,843</td><td class="num neg"><strong>▲120,277</strong></td><td class="num">▲110,880</td></tr>
+          <tr><td>1株当たり損益（基本）</td><td class="num">+0.03ドル</td><td class="num">▲0.25ドル</td><td class="num">▲0.67ドル</td><td class="num">▲0.64ドル</td></tr>
+          <tr><td>調整後EBITDA</td><td class="num pos">+8,044</td><td class="num neg">▲5,580</td><td class="num">―</td><td class="num">―</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：Tempus AI 2026年第2四半期決算リリース（2026年7月30日）。</p>
+
+    <div class="callout warn">
+      <span class="label">黒字転換の中身 ― Schrödingerと同じ構図</span>
+      Q2のGAAP純利益560万ドルは、<strong>営業利益ではありません</strong>。
+      営業損失は▲7,591万ドルで、前年同期の▲6,177万ドルから<strong>むしろ23%拡大</strong>しています。
+      <div style="margin-top:12px;">
+        黒字化の主因は<strong>その他収益1億276万ドル</strong>で、
+        この中に<strong>市場性のある株式の未実現評価益9,850万ドル（非現金）</strong>が含まれます。
+        会社側も純利益の説明で、株式報酬費用と関連雇用者給与税5,560万ドル、
+        および未実現評価益9,850万ドルを含む数字であると明記しています。
+      </div>
+      <div style="margin-top:12px;">
+        第2回で扱ったSchrödingerも、Ajax買収に伴う非現金の株式評価益で黒字転換していました。
+        <strong>「AI×バイオ企業が黒字化」という見出しは、その中身を確認する必要があります。</strong>
+      </div>
+    </div>
+
+    <h3>では、本業の収益性はどう見るべきか</h3>
+    <p>
+      GAAP純利益が使えないなら、他の指標で見ます。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>指標</th><th>2026年Q2</th><th>2025年Q2</th><th>意味</th></tr></thead>
+        <tbody>
+          <tr><td>売上総利益</td><td class="num">2億4,650万ドル</td><td class="num">1億9,504万ドル</td><td class="num pos">+26%（売上+22%を上回る）</td></tr>
+          <tr><td>売上総利益率</td><td class="num">64.4%</td><td class="num">62.0%</td><td>編集部計算。改善</td></tr>
+          <tr><td>営業損失</td><td class="num neg">▲7,591万ドル</td><td class="num">▲6,177万ドル</td><td class="num neg">悪化（+23%）</td></tr>
+          <tr><td>Non-GAAP営業損失</td><td class="num">▲271万ドル</td><td class="num">▲1,704万ドル</td><td class="num pos">84%改善。損益分岐点近傍</td></tr>
+          <tr><td>調整後EBITDA</td><td class="num pos">+804万ドル</td><td class="num neg">▲558万ドル</td><td class="num pos">黒字転換</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      GAAP営業損失が拡大している一方、Non-GAAP営業損失は▲271万ドルまで縮小しています。
+      この差の正体は<strong>株式報酬費用</strong>です。
+      上半期のキャッシュフロー計算書では、株式報酬が<strong>1億683万ドル</strong>計上されており、
+      前年同期の4,543万ドルから2.4倍に増えています。
+    </p>
+    <p>
+      株式報酬は現金支出を伴いませんが、<strong>株式数の増加という形で既存株主の持分を薄めます</strong>。
+      「非現金だから無視してよい」というものではありません。第⑤章と⑥章で扱います。
+    </p>
+
+    <h3>営業キャッシュフローは依然マイナス</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目（千ドル）</th><th>2026年上半期</th><th>2025年上半期</th></tr></thead>
+        <tbody>
+          <tr><td>営業キャッシュフロー</td><td class="num neg">▲80,802</td><td class="num neg">▲61,460</td></tr>
+          <tr><td>投資キャッシュフロー</td><td class="num">▲21,159</td><td class="num">▲385,329</td></tr>
+          <tr><td>財務キャッシュフロー</td><td class="num">+96,850</td><td class="num">+293,042</td></tr>
+          <tr><td>現金等の純増減</td><td class="num">▲5,113</td><td class="num">▲153,784</td></tr>
+          <tr><td>（参考）売掛金の増加</td><td class="num">▲50,565</td><td class="num">▲49,155</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      営業CFは▲8,080万ドルで、前年同期の▲6,146万ドルから悪化しています。
+      主因の一つが売掛金の増加5,057万ドルで、
+      これは<strong>売上が伸びるほど回収前の債権が積み上がる</strong>診断ビジネスの特性によるものです。
+      貸借対照表上、売掛金は3億6,092万ドル（2025年末3億1,117万ドル）へ増えています。
+    </p>
+    <p>
+      経営陣は<strong>2026年末までにフリーキャッシュフローの黒字化</strong>を目標として掲げています。
+      その根拠の一つが、後述する借り換えによる年間3,000万ドル超の支払利息削減です。
+    </p>
+  </section>
+
+  <!-- ④ -->
+  <section id="ch4">
+    <h2 class="chapter"><span class="num">④</span>事業セグメント動向 ― 診断・データ・そしてPersonalis買収</h2>
+
+    <h3>セグメント① Diagnostics（診断）</h3>
+    <p>
+      Q2売上2億8,933万ドル、前年同期比+20%。売上全体の76%を占めます。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>領域</th><th>状況</th></tr></thead>
+        <tbody>
+          <tr><td>腫瘍（Oncology）</td><td>検査数+31%（前四半期+28%から加速）。売上は+29%。成長の主エンジン</td></tr>
+          <tr><td>MRD（微小残存病変）</td><td>Q2で約9,000件、前四半期比+38%。ただし販売部隊の約10%しか販売していない</td></tr>
+          <tr><td>遺伝性疾患（Hereditary）</td><td>売上+5%。明確に鈍い</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      診断セグメントの売上総利益率は、売上原価1億823万ドルから逆算すると約62.6%（編集部計算）。
+      前年同期は約58.8%だったため、改善が続いています。
+    </p>
+
+    <h3>セグメント② Data and Applications（データ・アプリ）</h3>
+    <p>
+      Q2売上9,315万ドル、前年同期比+28%。<strong>うちInsights（データライセンス）は+36%</strong>と、
+      さらに高い成長率を示しています。
+    </p>
+    <p>
+      CEOはこの事業を「絶好調」と表現し、
+      過去数年で最良の3〜4四半期が続いていると述べています。
+      重要なのは、顧客が単にデータをライセンスするだけでなく、
+      <strong>Lensという製品を使って自らデータをアップロードしモデルを構築している</strong>という点です。
+      これは顧客の乗り換えコストを高める、いわゆるスティッキネスの要因になります。
+    </p>
+    <p>
+      2026年Q2の主な動きは以下です。
+    </p>
+    <ul>
+      <li><strong>AstraZeneca向けに腫瘍領域の基盤モデル初版を納入。</strong>臨床試験でのテストにおいて性能基準を満たしたとされる</li>
+      <li>BioNTech、第一三共、Level Set Bio、Incyte Pharmaceuticalsと大型契約を締結。四半期の総署名額は約2億ドル</li>
+      <li>Microsoftの研究者と共同開発したマルチモーダル病理基盤モデルPRISM2の研究結果を発表</li>
+    </ul>
+    <p>
+      注意点として、データ・アプリ売上には<strong>関連当事者売上が含まれます</strong>。
+      Q2は2,198万ドル（前年同期1,591万ドル）、上半期は4,366万ドル（前年同期1,654万ドル）。
+      <strong>データ・アプリ売上の約24%が関連当事者との取引</strong>という計算です（編集部計算）。
+      これはSB Tempus（ソフトバンクとの合弁）等との取引と考えられ、
+      第三者との純粋な市場取引とは性格が異なる点に留意が必要です。
+    </p>
+
+    <h3>Personalis買収 ― 15億ドルの賭け</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td>発表日</td><td>2026年7月20日</td></tr>
+          <tr><td>買収価格</td><td>1株16.25ドル（企業価値ベースで約15億ドル）</td></tr>
+          <tr><td>対象</td><td>Personalis（腫瘍情報に基づくMRD領域のリーダー）</td></tr>
+          <tr><td>技術</td><td>超高感度MRD技術「NeXT Personal®」</td></tr>
+          <tr><td>クロージング見込み</td><td>2026年第4四半期後半または2027年初頭</td></tr>
+          <tr><td>ガイダンスへの反映</td><td><strong>なし</strong>（2026年通期ガイダンスは買収の影響を含まない前提）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      TempusとPersonalisは既に協業関係にあり、
+      Tempusの販売網でPersonalisの検査を販売していました。
+      Q2のMRD検査約9,000件は、この協業によるものです。
+    </p>
+    <p>
+      買収の狙いは明確です。<strong>販売網は既にある。技術を内製化して利益率を取りに行く。</strong>
+      ただし前述のとおり、MRD検査は現時点でマージンがマイナスとみられる状態にあります。
+      <strong>15億ドルを投じて買うのは、まだ黒字化していない事業です。</strong>
+    </p>
+
+    <div class="callout warn">
+      <span class="label">買収の評価に必要な留保</span>
+      Tempusはこれまでも買収を重ねてきました。Ambry Genetics、Paige AI、Deep 6 AI。
+      貸借対照表上、<strong>のれんが4億7,017万ドル、無形資産が3億1,246万ドル</strong>計上されています。
+      合計7億8,263万ドルで、これは総資産23億6,591万ドルの約33%にあたります（編集部計算）。
+      買収した事業の一つである遺伝性疾患検査は+5%成長にとどまっており、
+      <strong>買収の成果は一様ではありません</strong>。
+      Personalis買収がクロージングすれば、のれんはさらに膨らみます。
+    </div>
+  </section>
+
+  <!-- ⑤ -->
+  <section id="ch5">
+    <h2 class="chapter"><span class="num">⑤</span>株式バリュエーション ― レイヤー2で4指標はこう変わる</h2>
+
+    <p>
+      3部作で提示した4指標は、赤字先行のレイヤー3企業向けに設計されたものでした。
+      Tempusに適用すると、<strong>各指標の重要度が明確に入れ替わります</strong>。
+    </p>
+
+    <h3>指標1：キャッシュランウェイ ― 重要度は下がるが、消えない</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>2026年6月30日</th><th>2025年12月31日</th></tr></thead>
+        <tbody>
+          <tr><td>現金・現金同等物</td><td class="num">5億9,961万ドル</td><td class="num">6億479万ドル</td></tr>
+          <tr><td>市場性のある株式</td><td class="num">2億1,638万ドル</td><td class="num">1億5,021万ドル</td></tr>
+          <tr><td><strong>現金・市場性証券合計</strong></td><td class="num"><strong>8億2,070万ドル</strong></td><td class="num">―</td></tr>
+          <tr><td>総資産</td><td class="num">23億6,591万ドル</td><td class="num">22億7,484万ドル</td></tr>
+          <tr><td><strong>総負債</strong></td><td class="num neg"><strong>19億2,098万ドル</strong></td><td class="num">17億8,351万ドル</td></tr>
+          <tr><td>株主資本</td><td class="num">4億4,493万ドル</td><td class="num">4億9,133万ドル</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      現金8億2,070万ドルに対し、上半期の営業CFは▲8,080万ドル。
+      年換算▲1.6億ドルで割ると形式上5年分ですが、
+      <strong>2026年末にFCF黒字化を目指しているため、ランウェイという概念自体が薄れます</strong>。
+    </p>
+    <p>
+      ただし見過ごせないのは<strong>総負債19億2,098万ドル</strong>です。
+      株主資本4億4,493万ドルの4.3倍にあたります。
+      レイヤー3の4社はいずれも実質無借金でしたから、これは質的な違いです。
+    </p>
+
+    <h3>指標2：反復収益比率 ― ここが主役になる</h3>
+    <p>
+      レイヤー3では「反復収益ゼロ」で終わっていた指標が、
+      レイヤー2では最も情報量の多い指標に変わります。
+    </p>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="k-label">Net Revenue Retention<br>（2025年）</div>
+        <div class="k-value">約126%</div>
+        <div class="k-sub">既存顧客の支出が年26%増加</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">Total Contract Value</div>
+        <div class="k-value">11億ドル超</div>
+        <div class="k-sub">2025年末時点、過去最高</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">Q2 新規署名額</div>
+        <div class="k-value">約2億ドル</div>
+        <div class="k-sub">複数四半期連続で1億ドル超</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">データ・アプリ<br>売上比率</div>
+        <div class="k-value">24.4%</div>
+        <div class="k-sub">編集部計算。残る76%は診断</div>
+      </div>
+    </div>
+    <p>
+      <strong>NRR 126%が意味すること</strong>を確認します。
+      これは「ある年にInsights製品を購入した全顧客が、翌年に支払った金額の比率」です。
+      126%ということは、<strong>顧客が1社も増えなくても、既存顧客からの収益が年26%伸びる</strong>計算になります。
+    </p>
+    <p>
+      この数字を、レイヤー3の実現率と並べると構造の違いが鮮明になります。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>企業</th><th>収益の予測可能性を示す指標</th><th>意味</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Tempus（レイヤー2）</strong></td><td><strong>NRR 約126%</strong></td><td>既存顧客だけで年26%成長</td></tr>
+          <tr><td>Schrödinger（レイヤー2.5）</td><td>ACV 2.08億ドル、反復収益比率58%</td><td>契約更新ベース</td></tr>
+          <tr><td>Recursion（レイヤー3）</td><td>実現率 約2.5%</td><td>公表総額の40分の1が5年で実現</td></tr>
+          <tr><td>Relay（レイヤー3）</td><td>実現率 約3.7%</td><td>収益／営業費用 0.4%</td></tr>
+          <tr><td>Absci（レイヤー3）</td><td>算出不能</td><td>公表総額の開示なし</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      さらにCEOは、<strong>2026年の成長の大部分が既に契約済みである</strong>と述べており、
+      2026年・2027年の成長率について高い可視性があるとしています。
+      長期的には30%近い成長を目指すとも言及しています。
+    </p>
+
+    <h3>指標3：一時金÷公表総額（実現率）― 形を変えて残る</h3>
+    <p>
+      レイヤー3では最重要だったこの指標は、Tempusでは直接適用できません。
+      ただし<strong>TCVという上限値が存在する</strong>以上、同じ注意が必要です。
+    </p>
+    <p>
+      TCV 11億ドルは「すべてのオプションが行使され、早期解約がない場合」の数字です。
+      2025年通期のデータ・アプリ売上は約3億1,600万ドルでしたから、
+      <strong>TCVの約3.5年分が年間売上に相当する</strong>計算になります（編集部計算）。
+      これはレイヤー3の実現率2〜4%とは桁が違いますが、
+      <strong>TCVがそのまま将来売上になると読むのは誤り</strong>である点は同じです。
+    </p>
+
+    <h3>指標4：増資の価格と引受先 ― 転換社債という別の形</h3>
+    <p>
+      Tempusはレイヤー3企業のような公募増資を行っていません。
+      代わりに<strong>転換社債</strong>を使っています。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td>Q2に実施した調達</td><td><strong>4億6,000万ドルの転換社債（2032年満期）</strong></td></tr>
+          <tr><td>クーポン</td><td><strong>0.0%</strong></td></tr>
+          <tr><td>資金使途</td><td>既存債務の借り換え（長期債務2億777万ドル返済、リボルビング1億ドル返済）</td></tr>
+          <tr><td>付随コスト</td><td>期限前弁済プレミアム643万ドル、キャップドコール購入3,123万ドル、債務消滅損1,164万ドル</td></tr>
+          <tr><td>効果</td><td>年間支払利息を<strong>3,000万ドル超削減</strong>、2026年末までのFCF黒字化を可能にすると説明</td></tr>
+          <tr><td>貸借対照表への影響</td><td>転換社債残高 7億2,808万ドル → <strong>11億7,278万ドル</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      クーポン0.0%の転換社債は、<strong>利息を払わない代わりに、
+      株価が転換価格を超えたときに株式で返す</strong>仕組みです。
+      キャップドコールを3,123万ドルで購入しているのは、この希薄化を一定範囲に抑えるためです。
+    </p>
+    <p>
+      Q2の支払利息は1,028万ドルで、前年同期の2,158万ドルから半減しています。
+      借り換えの効果は既に数字に表れています。
+    </p>
+
+    <h3>株式数の増加 ― 株式報酬という経路</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>2026年6月30日</th><th>2025年12月31日</th></tr></thead>
+        <tbody>
+          <tr><td>Class A普通株式</td><td class="num">175,200,077株</td><td class="num">173,235,428株</td></tr>
+          <tr><td>Class B普通株式</td><td class="num">5,043,789株</td><td class="num">5,043,789株</td></tr>
+          <tr><td>加重平均株式数（Q2、基本）</td><td class="num">179,917千株</td><td class="num">173,381千株（前年同期）</td></tr>
+          <tr><td>前年同期比</td><td class="num">約+3.8%</td><td class="num">―</td></tr>
+          <tr><td>上半期の株式報酬費用</td><td class="num">1億683万ドル</td><td class="num">4,543万ドル（前年同期）</td></tr>
+          <tr><td>累積欠損金</td><td class="num neg">▲25億1,614万ドル</td><td class="num">▲23億9,586万ドル</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      株式数の増加率は年+3.8%。Recursionの+52%、Absciの+23%、Relayの+18%と比べれば穏当です。
+      ただし<strong>株式報酬費用が1年で2.4倍に膨らんでいる</strong>点は注視が必要です。
+      これは将来の株式数増加を予約している状態にあたります。
+    </p>
+
+    <h3>バリュエーションの水準</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>数値</th></tr></thead>
+        <tbody>
+          <tr><td>株価（2026年8月14日終値）</td><td class="num">54.29ドル</td></tr>
+          <tr><td>2026年通期売上ガイダンス</td><td class="num">15億9,500万〜16億500万ドル（+約25%）</td></tr>
+          <tr><td>2026年通期調整後EBITDAガイダンス</td><td class="num">約6,500万ドル</td></tr>
+          <tr><td>アナリスト平均目標株価</td><td class="num">62.64ドル（16名）</td></tr>
+          <tr><td>直近の目標株価改定</td><td>Piper Sandler 58→56ドル、BofA 64→52ドル、Stifel 60→50ドル（いずれもQ2決算後）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">株価は2026年8月14日終値。時価総額は株式数の集計時点によって差が生じるため、本記事では明示していません。市場データは日々変動します。</p>
+    <p>
+      注目すべきは、<strong>Q2決算が売上・利益ともに市場予想を上回ったにもかかわらず、
+      複数のアナリストが目標株価を引き下げている</strong>ことです。
+      BofAは64→52ドル、Stifelは60→50ドルと、いずれも2桁の下方修正です。
+      決算の内容と株価目標の方向が一致していない点は、
+      市場がこの企業をどう評価しあぐねているかを示しています。
+    </p>
+  </section>
+
+  <!-- ⑥ -->
+  <section id="ch6">
+    <h2 class="chapter"><span class="num">⑥</span>リスク要因 ― 負債19億ドルと希薄化の別の形</h2>
+
+    <h3>1. GAAP営業損失は拡大している</h3>
+    <p>
+      Q2の営業損失は▲7,591万ドルで、前年同期から23%拡大。
+      上半期では▲1億6,062万ドルです。
+      調整後EBITDAは黒字ですが、<strong>その差の大半は株式報酬費用</strong>であり、
+      現金は出なくとも株主価値は希薄化します。
+    </p>
+
+    <h3>2. 総負債19億ドル</h3>
+    <p>
+      総負債19億2,098万ドルに対し、株主資本は4億4,493万ドル。
+      転換社債残高は11億7,278万ドルに達しています。
+      レイヤー3の4社が実質無借金だったのと対照的です。
+      <strong>クーポン0%であっても元本は返済または株式転換が必要</strong>であり、
+      株価が転換価格を下回ったまま満期を迎えれば、現金での返済圧力が生じます。
+    </p>
+
+    <h3>3. MRD事業のマージン</h3>
+    <p>
+      CEOが「マージンがマイナスの間は数量を最大化しない」と述べたとおり、
+      MRD検査は現時点で採算が取れていないとみられます。
+      その事業に<strong>15億ドルを投じてPersonalisを買収</strong>する判断です。
+      償還環境が想定どおり改善しなければ、
+      買収したのれんの減損リスクが生じます。
+    </p>
+
+    <h3>4. のれん・無形資産の比率</h3>
+    <p>
+      のれん4億7,017万ドルと無形資産3億1,246万ドルの合計は、
+      総資産の約33%（編集部計算）。
+      買収した遺伝性疾患事業の成長率が+5%にとどまっている事実は、
+      <strong>買収の成果が一様ではない</strong>ことを示しています。
+    </p>
+
+    <h3>5. 関連当事者取引の比率</h3>
+    <p>
+      データ・アプリ売上の約24%が関連当事者との取引です（Q2、編集部計算）。
+      前年同期は約22%でしたから、比率は上昇しています。
+      <strong>第三者との市場取引ではない収益の比率が高い</strong>ことは、
+      成長の質を評価するうえで割り引いて見る必要があります。
+    </p>
+
+    <h3>6. 売掛金の増加と営業CF</h3>
+    <p>
+      売掛金は3億6,092万ドルまで増加し、上半期だけで5,057万ドル積み上がりました。
+      営業CFは▲8,080万ドルで前年同期から悪化しています。
+      <strong>2026年末のFCF黒字化目標は、この回収サイクルの改善を前提としています。</strong>
+      保険償還の遅延や査定が増えれば、目標達成は難しくなります。
+    </p>
+
+    <h3>7. 遺伝性疾患セグメントの減速</h3>
+    <p>
+      +5%成長は、腫瘍領域の+29%と比べて明確に鈍い数字です。
+      このセグメントが停滞したままであれば、
+      全社成長率25%というガイダンスの達成は腫瘍領域とデータ事業への依存度を高めます。
+    </p>
+  </section>
+
+  <!-- ⑦ -->
+  <section id="ch7">
+    <h2 class="chapter"><span class="num">⑦</span>まとめ ― レイヤー2とレイヤー3の断層</h2>
+
+    <p>
+      レイヤー3の4社を分析した後にTempusを見ると、
+      <strong>3部作の仮説が概ね正しかったことが確認できます</strong>。ただし単純な優劣ではありません。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>観点</th><th>Tempus（レイヤー2）</th><th>レイヤー3の4社</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>売上規模（四半期）</td>
+            <td><strong>3億8,249万ドル</strong></td>
+            <td>32万〜5,889万ドル</td>
+          </tr>
+          <tr>
+            <td>収益の予測可能性</td>
+            <td><strong>NRR 126%、成長の大部分が契約済み</strong></td>
+            <td>実現率2.5〜3.7%、または算出不能</td>
+          </tr>
+          <tr>
+            <td>FDAの意味</td>
+            <td>承認＝単価上昇（既存収益は消えない）</td>
+            <td>承認＝ゼロがイチになる（失敗すれば価値消滅）</td>
+          </tr>
+          <tr>
+            <td>資金調達</td>
+            <td>転換社債（クーポン0%）。株式数+3.8%/年</td>
+            <td>公募増資・ATM。株式数+18〜52%/年</td>
+          </tr>
+          <tr>
+            <td>負債</td>
+            <td><strong>総負債19億2,098万ドル</strong></td>
+            <td>実質無借金</td>
+          </tr>
+          <tr>
+            <td>本業の収益性</td>
+            <td>営業損失▲7,591万ドル（拡大中）／調整後EBITDA黒字</td>
+            <td>いずれも営業赤字</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>「収益の確実性」の正体</h3>
+    <p>
+      3部作では「収益の確実性はレイヤー1〜2に集中する」と述べました。
+      Tempusを見て、その確実性の正体が具体的に分かりました。
+      <strong>顧客が製薬企業であり、彼らが薬を開発し続ける限り、データと診断への支出は続く</strong>ということです。
+    </p>
+    <p>
+      レイヤー3企業の収益は、自社の臨床試験が成功するかどうかに依存しました。
+      Tempusの収益は、<strong>顧客である製薬企業の研究開発活動そのもの</strong>に依存します。
+      個別の薬の成否とは切り離されています。
+      これがNRR 126%という数字を生む構造です。
+    </p>
+
+    <h3>ただし「確実」は「割安」を意味しない</h3>
+    <p>
+      重要なのは、収益の確実性が高いことと、株価が魅力的であることは別だという点です。
+    </p>
+    <ul>
+      <li>GAAP営業損失は拡大しており、黒字転換は非現金の株式評価益によるもの</li>
+      <li>総負債19億ドル、株主資本の4.3倍</li>
+      <li>のれん・無形資産が総資産の約33%</li>
+      <li>データ・アプリ売上の約24%が関連当事者取引</li>
+      <li>Q2決算が予想を上回ったのに、複数アナリストが目標株価を2桁引き下げ</li>
+    </ul>
+    <p>
+      本記事の立場は、強気でも弱気でもありません。
+      NRR 126%、TCV 11億ドル超、腫瘍検査+31%という数字は、
+      レイヤー3のどの企業も持たない事業基盤の厚みを示しています。
+      同時に、<strong>本業の営業赤字は拡大しており、負債は積み上がり、
+      15億ドルの買収はまだクロージングしていません</strong>。
+    </p>
+    <p>
+      <strong>2026年末のFCF黒字化目標が達成されるかどうかが、最初の判定材料になります。</strong>
+      投資判断を下すのであれば、
+      「営業損失は拡大中」「総負債19億ドル」「黒字転換は非現金益」という
+      3つの事実を織り込んだうえで行う必要があります。
+    </p>
+
+    <div class="crosslink">
+      <h4>関連レポート</h4>
+      <ul>
+        <li><a href="/reports/ai-biotech-industry-map.html">前編：産業地図 ― AI×バイオを4レイヤーで整理する</a></li>
+        <li><a href="/reports/ai-biotech-validation.html">中編：技術検証編 ― AI創薬は本当に効いているのか</a></li>
+        <li><a href="/reports/ai-biotech-valuation.html">後編：投資判断編 ― 赤字先行企業を4指標で評価する</a></li>
+        <li><a href="/reports/recursion-rxrx.html">個別企業編①：Recursion（RXRX）― 実現率2.5%問題</a></li>
+        <li><a href="/reports/schrodinger-sdgr.html">個別企業編②：Schrödinger（SDGR）― 反復収益を持つ例外的なレイヤー3企業</a></li>
+        <li><a href="/reports/relay-rlay.html">個別企業編③：Relay Therapeutics（RLAY）― 増資で買った第III相</a></li>
+        <li><a href="/reports/absci-absi.html">個別企業編④：Absci（ABSI）― Eli Lillyが権利を取らなかった理由</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHAT TO WATCH -->
+  <div class="watch">
+    <h2>WHAT TO WATCH</h2>
+    <p class="w-sub">Tempus AI（TEM）― 今後の注目点</p>
+    <ol>
+      <li><b>2026年末：フリーキャッシュフローの黒字化。</b>経営陣が明言した目標。上半期の営業CFは▲8,080万ドルで前年同期から悪化しており、売掛金の回収サイクル改善が前提になる。借り換えによる年3,000万ドル超の利息削減がどこまで効くかも含め、この1点が最大の検証項目。</li>
+      <li><b>xT Tumor OnlyのADLT価格移行が実際のASPに反映される時期。</b>FDA承認は取得済みだが、償還価格への反映には時間差がある。診断売上の成長率（現在+20%）が検査数の伸び（+31%）に近づいてくれば、単価が上がった証左になる。</li>
+      <li><b>MRD事業のマージン改善と販売加速の判断。</b>現在は販売部隊の約10%しか販売していない。CEOが「ASPが損益分岐点に近づいたら加速する」と述べた基準に到達するかどうか。ここが動けば検査数は一段と伸びるが、逆にマージンが改善しないまま推移すればPersonalis買収の前提が揺らぐ。</li>
+      <li><b>Personalis買収のクロージングと統合コスト。</b>2026年第4四半期後半または2027年初頭の見込み。現在のガイダンスには影響が含まれていないため、クロージング後は数字の前提が変わる。のれんの増加額と、統合に伴う一時費用の規模を確認する。</li>
+      <li><b>NRRとTCVの次回開示。</b>2025年のNRRは約126%、TCVは11億ドル超。この2つがレイヤー2企業の収益の質を測る中核指標であり、水準が維持されるかが事業基盤の厚みを判定する材料になる。</li>
+      <li><b>遺伝性疾患セグメントの成長率。</b>+5%は腫瘍領域の+29%と比べて明確に鈍い。買収した事業が本体の成長に追いついてくるか、それとものれん減損の議論に向かうか。全社ガイダンス25%成長の達成可否にも関わる。</li>
+    </ol>
+  </div>
+
+  <!-- 免責 -->
+  <div class="disclaimer">
+    <h3>免責事項</h3>
+    <ul>
+      <li>本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資に関する最終的な判断は、ご自身の責任において行ってください。</li>
+      <li>本記事に記載された数値・事実は、2026年8月中旬時点で公開されている企業のIR資料、決算リリース、決算説明会、および報道等に基づいています。株価等の市場データは日々変動します。</li>
+      <li>「編集部試算」「編集部計算」と明記した数値は、公開情報に基づく推計であり、企業が公表した値ではありません。</li>
+      <li>調整後EBITDA、Non-GAAP営業損失等は非GAAP指標であり、企業ごとに算出方法が異なります。GAAPの純損益に代わるものではありません。</li>
+      <li>TCV（総契約価値）は、すべての契約オプションの行使と早期解約がないことを前提とした潜在総額であり、将来の売上を保証するものではありません。NRR（Net Revenue Retention）はInsights製品に限定した指標です。</li>
+      <li>Personalis買収は本記事執筆時点で未完了であり、クロージングの時期・条件は変更される可能性があります。</li>
+      <li>本記事の内容には誤りが含まれる可能性があります。投資判断にあたっては、必ず一次情報（企業のIR資料、SEC提出書類等）をご確認ください。</li>
+    </ul>
+  </div>
+
+  <footer class="site">
+    Market Supporter AI ／ marketsupporter-ai.com<br>
+    AI×製薬×バイオ シリーズ 個別企業編 ⑤（2026年8月16日公開）／ レイヤー2 第1回
+  </footer>
+
+</div>
+</body>
+</html>
