@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Illumina（NASDAQ:ILMN）徹底分析｜シリーズ初の本格的な黒字企業 - Market Supporter AI</title>
+<meta name="description" content="ゲノム解析の基盤企業Illumina（ILMN）を7章構成で分析。2026年Q2決算実績、営業利益率21.1%、中国UELの現状、消耗品モデルの構造、シリーズ初となるPER評価を解説します。">
+<style>
+:root{
+  --accent:#6d28d9;
+  --accent-dark:#4c1d95;
+  --accent-mid:#7c3aed;
+  --accent-light:#f5f3ff;
+  --accent-border:#ddd6fe;
+  --ink:#221b30;
+  --ink-sub:#4f4661;
+  --line:#e8e4f0;
+  --bg:#ffffff;
+  --bg-soft:#faf8fd;
+  --warn:#b45309;
+  --warn-bg:#fffbeb;
+  --pos:#15803d;
+  --neg:#b91c1c;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);background:var(--bg);line-height:1.85;font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px 80px;}
+
+header.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 58%,#8b5cf6 100%);
+  color:#fff;padding:52px 20px 46px;
+}
+.hero-inner{max-width:860px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;font-size:12px;letter-spacing:.14em;
+  background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);
+  padding:5px 13px;border-radius:999px;margin-bottom:18px;
+}
+h1{font-size:29px;line-height:1.45;margin:0 0 16px;font-weight:700;letter-spacing:.01em;}
+.hero-sub{font-size:15.5px;opacity:.94;margin:0 0 22px;line-height:1.8;}
+.meta{font-size:13px;opacity:.86;border-top:1px solid rgba(255,255,255,.25);padding-top:14px;}
+.tags{margin-top:12px;}
+.tag{display:inline-block;font-size:11.5px;background:rgba(255,255,255,.14);padding:4px 10px;border-radius:4px;margin:0 6px 6px 0;}
+
+.toc{background:var(--accent-light);border:1px solid var(--accent-border);border-radius:10px;padding:22px 24px;margin:36px 0 44px;}
+.toc h2{font-size:15px;margin:0 0 12px;color:var(--accent-dark);letter-spacing:.06em;}
+.toc ol{margin:0;padding-left:1.3em;}
+.toc li{margin:7px 0;font-size:14.5px;}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--accent-mid);}
+.toc a:hover{color:var(--accent);}
+
+section{margin:0 0 52px;scroll-margin-top:20px;}
+h2.chapter{font-size:21px;margin:0 0 20px;padding:0 0 12px 0;border-bottom:3px solid var(--accent);line-height:1.5;font-weight:700;}
+h2.chapter .num{display:inline-block;color:var(--accent);font-size:19px;margin-right:8px;}
+h3{font-size:17px;margin:32px 0 12px;padding-left:12px;border-left:4px solid var(--accent-mid);line-height:1.6;}
+p{margin:0 0 16px;}
+ul,ol{margin:0 0 18px;padding-left:1.4em;}
+li{margin:7px 0;}
+strong{color:var(--accent-dark);font-weight:700;}
+
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0 24px;}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:480px;}
+th,td{border:1px solid var(--line);padding:11px 12px;text-align:left;vertical-align:top;}
+th{background:var(--accent-light);color:var(--accent-dark);font-weight:700;white-space:nowrap;}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+tbody tr:nth-child(even){background:var(--bg-soft);}
+.tbl-note{font-size:12.5px;color:var(--ink-sub);margin:-14px 0 24px;}
+
+.callout{background:var(--bg-soft);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:18px 20px;margin:24px 0;font-size:15px;}
+.callout .label{display:block;font-size:12px;letter-spacing:.1em;color:var(--accent);font-weight:700;margin-bottom:8px;}
+.warn{background:var(--warn-bg);border-left:4px solid var(--warn);}
+.warn .label{color:var(--warn);}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:24px 0 28px;}
+.kpi{background:var(--bg-soft);border:1px solid var(--line);border-radius:9px;padding:15px 16px;}
+.kpi .k-label{font-size:12px;color:var(--ink-sub);margin-bottom:6px;line-height:1.5;}
+.kpi .k-value{font-size:21px;font-weight:700;color:var(--accent-dark);line-height:1.3;font-variant-numeric:tabular-nums;}
+.kpi .k-sub{font-size:11.5px;color:var(--ink-sub);margin-top:5px;line-height:1.5;}
+
+.pos{color:var(--pos);font-weight:700;}
+.neg{color:var(--neg);font-weight:700;}
+
+.crosslink{border:1px solid var(--accent-border);border-radius:10px;padding:18px 20px;margin:30px 0;background:#fff;}
+.crosslink h4{margin:0 0 10px;font-size:14px;color:var(--accent-dark);letter-spacing:.05em;}
+.crosslink ul{margin:0;padding-left:1.2em;font-size:14px;}
+.crosslink a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-border);}
+
+.watch{background:linear-gradient(150deg,var(--accent-dark) 0%,#2e1065 100%);color:#fff;border-radius:14px;padding:36px 28px;margin:56px 0 40px;}
+.watch h2{font-size:20px;margin:0 0 8px;letter-spacing:.08em;color:#fff;border:none;padding:0;}
+.watch .w-sub{font-size:13.5px;opacity:.82;margin:0 0 24px;}
+.watch ol{padding-left:0;list-style:none;margin:0;counter-reset:w;}
+.watch li{counter-increment:w;position:relative;padding-left:44px;margin:0 0 20px;font-size:14.8px;line-height:1.8;}
+.watch li::before{
+  content:counter(w,decimal-leading-zero);
+  position:absolute;left:0;top:2px;font-size:13px;font-weight:700;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
+  width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+}
+.watch li b{color:#ddd6fe;}
+
+.disclaimer{background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:22px 24px;font-size:13px;color:var(--ink-sub);line-height:1.85;}
+.disclaimer h3{font-size:14px;margin:0 0 10px;padding:0;border:none;color:var(--ink);}
+.disclaimer ul{padding-left:1.3em;margin:0;}
+
+footer.site{text-align:center;font-size:12.5px;color:var(--ink-sub);margin-top:44px;padding-top:22px;border-top:1px solid var(--line);}
+
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  header.hero{padding:38px 18px 34px;}
+  h1{font-size:22px;line-height:1.5;}
+  .hero-sub{font-size:14.5px;}
+  .wrap{padding:0 16px 60px;}
+  h2.chapter{font-size:18.5px;}
+  h3{font-size:16px;}
+  .watch{padding:28px 20px;border-radius:10px;}
+  .watch li{padding-left:38px;font-size:14.2px;}
+  .watch li::before{width:26px;height:26px;font-size:12px;}
+  .kpi .k-value{font-size:19px;}
+  table{font-size:13.2px;}
+  th,td{padding:9px 10px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">AI × 製薬 × バイオ シリーズ ／ 個別企業編 ⑥ ／ レイヤー2 第2回</span>
+    <h1>Illumina（NASDAQ:ILMN）徹底分析<br>― シリーズ初の「本物の黒字企業」を、どう評価するか</h1>
+    <p class="hero-sub">
+      これまで5社を分析し、黒字はSchrödingerとTempusの2社だけ。
+      しかもいずれも非現金の株式評価益によるものでした。
+      Illuminaは違います。四半期営業利益2億4,500万ドル、営業利益率21.1%、フリーCF 1億6,200万ドル。
+      本業で稼いでいます。ではPERで評価すればよいのか。2026年7月30日発表のQ2実績から検証します。
+    </p>
+    <div class="meta">
+      公開日：2026年8月17日 ／ 分析基準日：2026年8月中旬 ／ Market Supporter AI 編集部
+      <div class="tags">
+        <span class="tag">#ILMN</span>
+        <span class="tag">#ゲノム解析</span>
+        <span class="tag">#米国株</span>
+        <span class="tag">#レイヤー2</span>
+        <span class="tag">#NGS</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="toc">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#ch1">市場規模 ― 装置ではなく「装置に流す消耗品」で測る</a></li>
+      <li><a href="#ch2">政策・規制環境 ― 中国UELという、他社にはないリスク</a></li>
+      <li><a href="#ch3">コスト・収益構造 ― 粗利率66.4%と、GAAP/Non-GAAPの逆転</a></li>
+      <li><a href="#ch4">事業セグメント動向 ― NovaSeq X移行とBioInsightという新事業</a></li>
+      <li><a href="#ch5">株式バリュエーション ― 4指標を卒業し、PERで測る</a></li>
+      <li><a href="#ch6">リスク要因 ― 成熟企業ゆえのリスク</a></li>
+      <li><a href="#ch7">まとめ ― レイヤー2の中の断層</a></li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <span class="label">この記事の位置づけ</span>
+    「AI×製薬×バイオ」3部作の4レイヤー分類における<strong>レイヤー2（データ・診断インフラ）</strong>の第2回です。
+    前回のTempus AIは高成長だが営業赤字の企業でした。
+    Illuminaは<strong>本シリーズで初めて、本業で継続的に利益を出している企業</strong>です。
+    赤字先行企業向けに設計した4指標が、ここでついに役目を終えます。
+  </div>
+
+  <!-- ① -->
+  <section id="ch1">
+    <h2 class="chapter"><span class="num">①</span>市場規模 ― 装置ではなく「装置に流す消耗品」で測る</h2>
+
+    <p>
+      Illuminaは1998年設立、米サンディエゴ拠点。
+      DNAシーケンシング（塩基配列解読）とアレイ技術における世界的リーダーです。
+      3部作の4レイヤー分類でいえば、レイヤー2の中でも<strong>最も上流</strong>に位置します。
+    </p>
+    <p>
+      前回のTempusが「データを集めて売る」企業だとすれば、
+      Illuminaは<strong>「そのデータを生成する装置と試薬を売る」</strong>企業です。
+      Tempusも、Recursionも、Absciも、彼らの実験室にはIlluminaの装置が置かれています。
+      <strong>レイヤー2〜3の企業群にとって、Illuminaは供給者にあたります。</strong>
+    </p>
+
+    <h3>収益構造 ― 装置より消耗品</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>Q2 2026</th><th>Q2 2025</th><th>増減</th></tr></thead>
+        <tbody>
+          <tr><td>製品売上（装置・消耗品）</td><td class="num">9億8,200万ドル</td><td class="num">9億1,200万ドル</td><td class="num pos">+7.7%</td></tr>
+          <tr><td>サービス・その他売上</td><td class="num">1億7,700万ドル</td><td class="num">1億4,700万ドル</td><td class="num pos">+20.4%</td></tr>
+          <tr><td><strong>売上高合計</strong></td><td class="num"><strong>11億5,900万ドル</strong></td><td class="num">10億5,900万ドル</td><td class="num pos">+9.5%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：Illumina 2026年第2四半期決算リリース（2026年7月30日）。</p>
+    <p>
+      同社の売上の<strong>9割超がシーケンシング装置・消耗品・サービス</strong>から生じています。
+      このうち投資家が注視すべきは装置ではなく<strong>消耗品</strong>です。
+    </p>
+
+    <div class="callout">
+      <span class="label">ビジネスモデルの核心</span>
+      シーケンサーは一度設置されると数年間使われ続けます。
+      そのたびに試薬・フローセル・ライブラリ調製キットといった<strong>消耗品が消費されます</strong>。
+      つまり装置の設置は、<strong>将来の消耗品収益を予約する行為</strong>にあたります。
+      <div style="margin-top:12px;">
+        これは前回のTempusのNRR 126%とは異なる形の反復収益です。
+        Tempusは契約更新に依存しますが、Illuminaは<strong>物理的に設置された装置の稼働</strong>に依存します。
+        顧客が装置を捨てない限り、消耗品の需要は続きます。
+      </div>
+    </div>
+
+    <h3>市場の実態を示す指標 ― NovaSeq X</h3>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="k-label">Q2のNovaSeq X<br>設置台数</div>
+        <div class="k-value">95台超</div>
+        <div class="k-sub">需要は引き続き強いと会社説明</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">NovaSeq X上の<br>売上比率</div>
+        <div class="k-value">59%</div>
+        <div class="k-sub">移行はまだ途上</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">2026年末の<br>臨床検体の移行目標</div>
+        <div class="k-value">80〜85%</div>
+        <div class="k-sub">会社見込み</div>
+      </div>
+    </div>
+    <p>
+      NovaSeq Xは同社の最新鋭ハイスループット機です。
+      <strong>売上の59%しかまだこのプラットフォーム上にない</strong>という事実は、
+      2つの意味を持ちます。移行が完了すれば効率と単価の改善余地が残っている一方、
+      移行期間中は旧機種と新機種の収益が入り混じり、成長率が読みにくくなります。
+    </p>
+
+    <h3>市場の伸び方 ― 臨床が牽引し、研究は減速</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>領域</th><th>状況（Q2 2026）</th></tr></thead>
+        <tbody>
+          <tr><td>臨床消耗品（ROW、中国除く）</td><td class="num pos">+15%</td></tr>
+          <tr><td>臨床消耗品（米国・カナダ）</td><td class="num pos">+20%超</td></tr>
+          <tr><td>研究・応用消耗品（ROW）</td><td class="num neg">▲7%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      <strong>臨床は伸び、研究は縮んでいます。</strong>
+      これは業界全体の構造変化を示しています。
+      学術研究の予算環境が厳しい一方、
+      がんゲノム検査や出生前検査といった臨床応用が拡大している。
+      同社が「臨床顧客との深い関係と大きな設置ベース」を強調するのは、
+      この構図を踏まえた説明です。
+    </p>
+    <p>
+      なお中規模スループット機のセグメントについて、
+      会社側は<strong>マクロ環境の影響を受けやすく、低調に推移している</strong>と説明しています。
+    </p>
+  </section>
+
+  <!-- ② -->
+  <section id="ch2">
+    <h2 class="chapter"><span class="num">②</span>政策・規制環境 ― 中国UELという、他社にはないリスク</h2>
+
+    <p>
+      本シリーズで扱ってきた5社の規制論点は、すべてFDAに関するものでした。
+      Illuminaは違います。<strong>最大の規制リスクは中国にあります。</strong>
+    </p>
+
+    <h3>時系列で追う中国問題</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>時期</th><th>出来事</th></tr></thead>
+        <tbody>
+          <tr><td>2025年2月4日</td><td>中国当局がIlluminaを<strong>「信頼できない企業リスト（Unreliable Entities List、UEL）」</strong>に追加</td></tr>
+          <tr><td>2025年3月4日</td><td>シーケンシング装置の中国への輸出が<strong>禁止される</strong></td></tr>
+          <tr><td>2025年11月</td><td>中国商務省（MOFCOM）が<strong>輸出禁止の解除を表明</strong></td></tr>
+          <tr><td>2026年1月</td><td>CEOがJPモルガン・ヘルスケア会議で、中国当局と協議を継続中と説明</td></tr>
+          <tr><td>2026年8月時点</td><td><strong>UELには依然として掲載されたまま。</strong>装置購入には承認が必要</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：Illumina社の各四半期決算リリース、SEC提出書類（Form 10-Q）、および報道等。</p>
+
+    <div class="callout warn">
+      <span class="label">現状の正確な理解</span>
+      輸出禁止は解除されましたが、<strong>UELからの削除はされていません</strong>。
+      同社は決算リリースの脚注で、ROW（rest-of-world）の定義について
+      <strong>「中国のUEL掲載により、中華圏を除外している」</strong>と明記しています。
+      <div style="margin-top:12px;">
+        つまり同社が強調する「ROW有機成長率8.1%」という数字は、
+        <strong>中国を除いた上での数字</strong>です。
+        中国を含めた有機成長率は6.5%であり、
+        <strong>中国が全体の成長率を1.6ポイント押し下げている</strong>ことになります。
+      </div>
+    </div>
+
+    <p>
+      UELの規定上、掲載企業には罰金、中国での物品販売の制限・禁止、
+      輸出入活動の制限、投資の制限、関係者の入国拒否や就労許可の取消など、
+      幅広い措置が科されうるとされています。
+      同社はSEC提出書類で、掲載期間や当局が最終的に取る措置を<strong>現時点で予測できない</strong>と述べています。
+    </p>
+    <p>
+      参考として、同社の中華圏（中国・台湾・香港）の売上は<strong>2024年に3億800万ドル</strong>でした。
+      仮に全額を失った場合、通期売上ガイダンス46億ドル台の約7%に相当します。
+    </p>
+
+    <h3>米国の関税と学術研究予算</h3>
+    <p>
+      中国以外にも2つの外部要因があります。
+    </p>
+    <ul>
+      <li><strong>関税</strong>：同社はSEC提出書類で、米国政府とその貿易相手国が課すまたは課しうる関税、関連する訴訟や行政措置（潜在的な還付・救済プログラムを含む）に関する不確実性をリスク要因として挙げています</li>
+      <li><strong>学術研究環境</strong>：CEOは2026年を通じて米国の学術研究環境が「低調」に推移するとの見方を示しています。研究・応用消耗品が▲7%という数字はこれを反映しています</li>
+    </ul>
+    <p>
+      加えてQ2では、<strong>メモリ（半導体）と輸送費の上昇が想定を上回り、
+      Q2の業績に吸収された</strong>と説明されています。
+      装置メーカーであるがゆえに、半導体価格の変動が直接コストに響く構造です。
+    </p>
+  </section>
+
+  <!-- ③ -->
+  <section id="ch3">
+    <h2 class="chapter"><span class="num">③</span>コスト・収益構造 ― 粗利率66.4%と、GAAP/Non-GAAPの逆転</h2>
+
+    <h3>2026年第2四半期の実績（2026年7月30日発表）</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>項目（百万ドル）</th><th>2026年Q2</th><th>2025年Q2</th><th>2026年上半期</th><th>2025年上半期</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>製品売上</td><td class="num">982</td><td class="num">912</td><td class="num">1,899</td><td class="num">1,793</td></tr>
+          <tr><td>サービス・その他売上</td><td class="num">177</td><td class="num">147</td><td class="num">352</td><td class="num">307</td></tr>
+          <tr><td><strong>売上高合計</strong></td><td class="num"><strong>1,159</strong></td><td class="num">1,059</td><td class="num"><strong>2,251</strong></td><td class="num">2,100</td></tr>
+          <tr><td>売上原価合計</td><td class="num">389</td><td class="num">364</td><td class="num">760</td><td class="num">722</td></tr>
+          <tr><td><strong>売上総利益</strong></td><td class="num"><strong>770</strong></td><td class="num">695</td><td class="num">1,491</td><td class="num">1,378</td></tr>
+          <tr><td>研究開発費</td><td class="num">252</td><td class="num">247</td><td class="num">492</td><td class="num">499</td></tr>
+          <tr><td>販売費・一般管理費</td><td class="num">273</td><td class="num">234</td><td class="num">545</td><td class="num">501</td></tr>
+          <tr><td><strong>営業利益</strong></td><td class="num pos"><strong>245</strong></td><td class="num">214</td><td class="num pos"><strong>454</strong></td><td class="num">378</td></tr>
+          <tr><td>その他収益（費用）純額</td><td class="num">15</td><td class="num">92</td><td class="num neg">▲37</td><td class="num">110</td></tr>
+          <tr><td>法人税等</td><td class="num">53</td><td class="num">71</td><td class="num">77</td><td class="num">122</td></tr>
+          <tr><td><strong>当期純利益</strong></td><td class="num pos"><strong>207</strong></td><td class="num">235</td><td class="num pos"><strong>340</strong></td><td class="num">366</td></tr>
+          <tr><td>希薄化後EPS（GAAP）</td><td class="num">1.35ドル</td><td class="num">1.49ドル</td><td class="num">2.22ドル</td><td class="num">2.31ドル</td></tr>
+          <tr><td>希薄化後EPS（Non-GAAP）</td><td class="num pos">1.31ドル</td><td class="num">1.19ドル</td><td class="num pos">2.46ドル</td><td class="num">2.16ドル</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：Illumina 2026年第2四半期決算リリース（2026年7月30日）。</p>
+
+    <div class="callout">
+      <span class="label">ここまでの5社との決定的な違い</span>
+      <strong>営業利益が2億4,500万ドルの黒字</strong>です。しかも前年同期の2億1,400万ドルから14.5%増加。
+      <div style="margin-top:12px;">
+        Schrödinger（Q2営業損失▲4,155万ドル）、Tempus（同▲7,591万ドル）は
+        いずれも営業赤字のまま非現金益で純利益を出していました。
+        <strong>Illuminaは本業で稼いだ利益がそのまま純利益になっています。</strong>
+        法人税を5,300万ドル納めている点も、実態のある利益であることを裏付けます。
+      </div>
+    </div>
+
+    <h3>GAAP EPSが減り、Non-GAAP EPSが増えるという現象</h3>
+    <p>
+      注意深く見るべき点があります。
+      GAAP EPSは1.49ドル→1.35ドルへ<strong>減少</strong>し、
+      Non-GAAP EPSは1.19ドル→1.31ドルへ<strong>増加</strong>しています。方向が逆です。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>調整項目（1株当たり）</th><th>2026年Q2</th><th>2025年Q2</th></tr></thead>
+        <tbody>
+          <tr><td>GAAP希薄化後EPS</td><td class="num">1.35ドル</td><td class="num">1.49ドル</td></tr>
+          <tr><td>買収関連費用</td><td class="num">+0.07</td><td class="num">+0.03</td></tr>
+          <tr><td>変革イニシアチブ（ERP更新等）</td><td class="num">+0.03</td><td class="num">+0.06</td></tr>
+          <tr><td><strong>戦略投資の（利益）損失</strong></td><td class="num">▲0.15</td><td class="num neg">▲0.65</td></tr>
+          <tr><td>無形資産減損</td><td class="num">—</td><td class="num">+0.15</td></tr>
+          <tr><td>法人税等</td><td class="num">+0.01</td><td class="num">+0.11</td></tr>
+          <tr><td><strong>Non-GAAP希薄化後EPS</strong></td><td class="num">1.31ドル</td><td class="num">1.19ドル</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      正体は<strong>戦略投資の評価損益</strong>です。
+      2025年Q2には1株あたり0.65ドル分の投資利益が含まれており、
+      これがGAAP EPSを押し上げていました。2026年Q2は0.15ドル分にとどまります。
+    </p>
+    <p>
+      <strong>つまりIlluminaも、GAAP利益に非現金の投資損益が混入する企業です。</strong>
+      SchrödingerやTempusと同じ現象が、規模は小さいながら起きています。
+      ただし決定的な違いは、<strong>投資損益を除いても営業利益が黒字</strong>だという点です。
+      Non-GAAP EPSが前年同期比+10%というのが、本業の実力に近い数字と言えます。
+    </p>
+
+    <h3>粗利率とコスト構造</h3>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="k-label">GAAP粗利率</div>
+        <div class="k-value">66.4%</div>
+        <div class="k-sub">前年同期65.6%</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">Non-GAAP粗利率</div>
+        <div class="k-value">68.2%</div>
+        <div class="k-sub">前年同期69.4%（<span class="neg">低下</span>）</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">GAAP営業利益率</div>
+        <div class="k-value">21.1%</div>
+        <div class="k-sub">前年同期20.2%</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">Non-GAAP営業利益率</div>
+        <div class="k-value">22.5%</div>
+        <div class="k-sub">前年同期23.8%（<span class="neg">低下</span>）</div>
+      </div>
+    </div>
+    <p>
+      ここでも<strong>GAAPは改善、Non-GAAPは悪化</strong>という逆転が起きています。
+      前年同期に無形資産減損（GAAP粗利率を2.2ポイント押し下げ）があったため、
+      GAAPベースでは改善して見えるという構図です。
+    </p>
+    <p>
+      実質を示すNon-GAAP粗利率は69.4%→68.2%へ、1.2ポイント低下しています。
+      要因はメモリ・輸送費の上昇、そしてSomaLogic買収に伴う在庫の公正価値ステップアップ償却です。
+    </p>
+    <p>
+      費用面では、<strong>研究開発費が2億4,700万→2億5,200万ドルとほぼ横ばい</strong>（上半期では減少）である一方、
+      <strong>販売費・一般管理費は2億3,400万→2億7,300万ドルへ16.7%増加</strong>しています。
+      SomaLogic統合に伴う費用が含まれていると考えられます。
+    </p>
+
+    <h3>キャッシュフロー ― 減少している</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目（百万ドル）</th><th>2026年Q2</th><th>2025年Q2</th><th>2026年上半期</th><th>2025年上半期</th></tr></thead>
+        <tbody>
+          <tr><td>営業キャッシュフロー</td><td class="num">201</td><td class="num">234</td><td class="num">490</td><td class="num">474</td></tr>
+          <tr><td>設備投資</td><td class="num">▲39</td><td class="num">▲30</td><td class="num">▲78</td><td class="num">▲62</td></tr>
+          <tr><td><strong>フリーキャッシュフロー</strong></td><td class="num pos"><strong>162</strong></td><td class="num">204</td><td class="num pos">412</td><td class="num">412</td></tr>
+          <tr><td>投資キャッシュフロー</td><td class="num">▲121</td><td class="num">▲49</td><td class="num neg">▲488</td><td class="num">▲112</td></tr>
+          <tr><td>財務キャッシュフロー</td><td class="num">▲129</td><td class="num">▲371</td><td class="num">▲380</td><td class="num">▲566</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Q2のFCFは1億6,200万ドルで、前年同期の2億400万ドルから減少しています。
+      会社側は営業CFがトレンドを下回った理由として、
+      <strong>納税のタイミングと、在庫確保による在庫水準の上昇</strong>を挙げています。
+      実際、在庫は5億6,400万ドル→6億2,900万ドルへ増加しています。
+    </p>
+    <p>
+      上半期の投資CFが▲4億8,800万ドル（前年同期▲1億1,200万ドル）と大きく膨らんでいるのは、
+      <strong>SomaLogic買収</strong>によるものです。
+      のれんは11億1,300万→12億8,400万ドル、無形資産は2億1,000万→4億1,000万ドルへ増加しました。
+    </p>
+    <p>
+      財務CFの▲3億8,000万ドルは自社株買いと配当を含むと考えられ、
+      実際に希薄化後株式数は<strong>1億5,700万株→1億5,300万株へ2.5%減少</strong>しています。
+    </p>
+  </section>
+
+  <!-- ④ -->
+  <section id="ch4">
+    <h2 class="chapter"><span class="num">④</span>事業セグメント動向 ― NovaSeq X移行とBioInsightという新事業</h2>
+
+    <h3>① 中核事業 ― シーケンシング</h3>
+    <p>
+      売上の9割超を占める本業です。Q2の状況を整理します。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>Q2 2026の状況</th></tr></thead>
+        <tbody>
+          <tr><td>NovaSeq X設置台数</td><td>95台超。需要は引き続き強い</td></tr>
+          <tr><td>NovaSeq X上の売上比率</td><td>59%（移行途上）</td></tr>
+          <tr><td>臨床検体の移行目標</td><td>2026年末までに80〜85%</td></tr>
+          <tr><td>今後の見通し</td><td>2026年下期は装置設置が<strong>鈍化する見込み</strong>（前年比較が厳しくなるため）</td></tr>
+          <tr><td>Q3ガイダンスの含意</td><td>ROW有機成長率が<strong>約4.5%へ低下</strong>（Q2の8.1%から）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout warn">
+      <span class="label">Q3の減速は織り込み済み</span>
+      Q2の8.1%成長からQ3の約4.5%へという減速は、会社側が明示的に説明しているものです。
+      理由は<strong>装置比較が厳しくなること</strong>と<strong>季節性</strong>。
+      通期ガイダンスを引き上げながら、四半期ベースでは減速を示す。
+      <strong>この二重のメッセージをどう読むかが、投資判断の分かれ目になります。</strong>
+    </div>
+
+    <h3>② 買収したプロテオミクス事業 ― SomaLogic</h3>
+    <p>
+      2026年に完了した買収です。Standard BioTools Inc.からSomaLogic社および一部資産を取得しました。
+      会社は<strong>「マルチオミクスのポートフォリオを拡張し、
+      NGS対応のスケーラブルなプロテオミクスにおける地位を強化する」</strong>と説明しています。
+    </p>
+    <p>
+      ゲノム（DNA）に加えてプロテオーム（タンパク質）を扱うことで、
+      顧客に提供できるデータの種類を増やす狙いです。
+      ただし決算リリースのリスク要因には、
+      <strong>SomaLogicの統合能力、プロテオミクス市場でのパートナー・顧客関係の管理、
+      プロテオミクス市場の成長率</strong>が明示的に挙げられています。
+      統合はまだ進行中です。
+    </p>
+
+    <h3>③ 新事業 ― BioInsightとBillion Cell Atlas</h3>
+    <p>
+      本シリーズの読者にとって最も注目すべきなのが、この動きです。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td>事業名</td><td><strong>BioInsight</strong>（新事業）</td></tr>
+          <tr><td>初の製品</td><td><strong>Billion Cell Atlas</strong>（10億細胞アトラス）</td></tr>
+          <tr><td>目的</td><td>AIを活用した創薬の支援</td></tr>
+          <tr><td>当初の製薬パートナー</td><td>AstraZeneca、Merck、Eli Lilly</td></tr>
+          <tr><td>その後の展開</td><td>アライアンスに3社が追加参加。<strong>AIネイティブ創薬企業Formation Bioを含む</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      これは<strong>Illuminaがレイヤー2の内部で、装置販売からデータ販売へ手を伸ばしている</strong>動きです。
+      前回分析したTempusのデータライセンス事業と、直接的に競合しうる領域に踏み込んでいます。
+    </p>
+    <p>
+      Illuminaの強みは、<strong>データの生成源そのものを持っている</strong>ことです。
+      世界中のシーケンサーから生まれるデータの元締めであり、
+      理論的にはこれ以上ないポジションにあります。
+    </p>
+    <p>
+      一方でTempusは、臨床記録という<strong>Illuminaが持たない文脈情報</strong>を組み合わせています。
+      分子データだけでは、その患者がどんな治療を受けてどうなったかが分かりません。
+      <strong>両社の競争は、「分子データの供給源」対「臨床文脈との統合」という構図</strong>になります。
+    </p>
+
+    <div class="callout">
+      <span class="label">シリーズ横断の視点</span>
+      Billion Cell Atlasのパートナーに<strong>AstraZenecaが入っている</strong>点に注目してください。
+      AstraZenecaは前回のTempusにとっても最大級の顧客であり、
+      Tempusは同社向けに腫瘍領域の基盤モデル初版を納入したばかりです。
+      <strong>大手製薬は複数のデータ供給元を並行して使っています。</strong>
+      これはレイヤー2企業にとって、独占的な地位を築きにくいことを意味します。
+    </div>
+
+    <h3>④ GRAILとの関係</h3>
+    <p>
+      Illuminaは2021年にがん早期発見企業GRAILを71億ドルで再買収しましたが、
+      欧州委員会の反対を受け、<strong>2024年6月にスピンオフ</strong>しました。
+      GRAILはNasdaqに「GRAL」として独立上場し、Illuminaは少数株式（14.5%）を保有しています。
+    </p>
+    <p>
+      2026年時点でもリスク要因には
+      <strong>「GRAIL買収に関連して当社に対する追加訴訟が生じるリスク」</strong>が残されています。
+      また買収関連費用の内訳には、SomaLogicと並んでGRAIL関連の費用が引き続き計上されています。
+      <strong>スピンオフから2年が経過しても、GRAILは完全には過去のものになっていません。</strong>
+    </p>
+  </section>
+
+  <!-- ⑤ -->
+  <section id="ch5">
+    <h2 class="chapter"><span class="num">⑤</span>株式バリュエーション ― 4指標を卒業し、PERで測る</h2>
+
+    <p>
+      3部作で提示した4指標は、赤字先行企業向けの道具でした。
+      Illuminaに当てはめると、<strong>ほぼすべてが不要になります</strong>。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>4指標</th><th>Illuminaへの適用</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>キャッシュランウェイ</td>
+            <td><strong>不要。</strong>FCFが四半期1.6億ドル黒字。資金枯渇の概念が存在しない</td>
+          </tr>
+          <tr>
+            <td>反復収益比率</td>
+            <td><strong>形を変えて有効。</strong>設置済み装置に対する消耗品需要が実質的な反復収益</td>
+          </tr>
+          <tr>
+            <td>一時金÷公表総額（実現率）</td>
+            <td><strong>不要。</strong>マイルストーン型の契約構造を持たない</td>
+          </tr>
+          <tr>
+            <td>増資の価格と引受先</td>
+            <td><strong>逆転。</strong>増資ではなく自社株買いで株式数が2.5%減少</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <span class="label">シリーズの転換点</span>
+      本シリーズで初めて、<strong>4指標がほとんど役に立たない企業</strong>に到達しました。
+      これは4指標が間違っていたということではなく、
+      <strong>Illuminaが4指標を必要とする段階を卒業した企業</strong>だということです。
+      ここからは通常のバリュエーション指標を使います。
+    </div>
+
+    <h3>通常のバリュエーション指標で見る</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>数値</th></tr></thead>
+        <tbody>
+          <tr><td>時価総額</td><td class="num">約292.5億ドル（2026年8月6日時点）</td></tr>
+          <tr><td>2026年通期売上ガイダンス</td><td class="num">46億〜46億4,000万ドル（従来45.2億〜46.2億ドル）</td></tr>
+          <tr><td>2026年通期Non-GAAP EPSガイダンス</td><td class="num">5.30〜5.40ドル（従来5.15〜5.30ドル）</td></tr>
+          <tr><td>2026年通期Non-GAAP営業利益率ガイダンス</td><td class="num">23.4〜23.6%（据え置き）</td></tr>
+          <tr><td>ROW有機成長率ガイダンス</td><td class="num">5%超（従来2〜4%）</td></tr>
+          <tr><td><strong>PSR（編集部試算）</strong></td><td class="num"><strong>約6.3倍</strong>（292.5億ドル ÷ 46.2億ドル）</td></tr>
+          <tr><td>現金・短期投資</td><td class="num">11億7,000万ドル</td></tr>
+          <tr><td>有利子負債（流動＋固定）</td><td class="num">19億9,100万ドル</td></tr>
+          <tr><td>株主資本</td><td class="num">28億3,800万ドル</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">時価総額は2026年8月6日時点の集計値、PSRは通期ガイダンス中間値をもとにした編集部試算です。市場データは日々変動します。</p>
+
+    <p>
+      Non-GAAP EPSガイダンス中間値5.35ドルに対し、
+      アナリストの目標株価は<strong>平均195.83ドル</strong>とされています。
+      これを機械的に割ると<strong>予想PER約36.6倍</strong>（編集部試算）となります。
+    </p>
+
+    <h3>アナリストの見方が大きく割れている</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>証券会社</th><th>目標株価</th><th>レーティング</th></tr></thead>
+        <tbody>
+          <tr><td>Leerink</td><td class="num">210ドル（175ドルから引き上げ）</td><td>Outperform。業界マルチプルの上昇を理由に挙げる</td></tr>
+          <tr><td>Freedom Broker</td><td class="num">185ドル（155ドルから引き上げ）</td><td><strong>Buy→Hold へ格下げ</strong></td></tr>
+          <tr><td>Barclays</td><td class="num">160ドル（145ドルから引き上げ）</td><td><strong>Underweight を維持。</strong>NovaSeq X設置の鈍化を指摘</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      興味深いのは、<strong>3社とも目標株価を引き上げながら、
+      レーティングは強気・中立・弱気に分かれている</strong>ことです。
+      Barclaysは目標株価を引き上げつつUnderweightを維持しています。
+    </p>
+    <p>
+      この分裂は、Q2決算の二面性をそのまま反映しています。
+      <strong>実績は良いが、Q3の減速が明示されている。</strong>
+      株価が過去1年で約99%上昇したという事実も、
+      評価の分かれ方に影響していると考えられます。
+    </p>
+
+    <h3>Tempusとの比較 ― 同じレイヤー2でも別物</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>Illumina（ILMN）</th><th>Tempus AI（TEM）</th></tr></thead>
+        <tbody>
+          <tr><td>四半期売上</td><td class="num">11億5,900万ドル</td><td class="num">3億8,249万ドル</td></tr>
+          <tr><td>売上成長率</td><td class="num">+9.5%</td><td class="num pos">+22%</td></tr>
+          <tr><td><strong>営業損益</strong></td><td class="num pos"><strong>+2億4,500万ドル</strong></td><td class="num neg"><strong>▲7,591万ドル</strong></td></tr>
+          <tr><td>営業利益率</td><td class="num">21.1%</td><td class="num neg">▲19.8%（編集部計算）</td></tr>
+          <tr><td>フリーCF</td><td class="num pos">+1億6,200万ドル</td><td class="num neg">上半期営業CF ▲8,080万ドル</td></tr>
+          <tr><td>総負債／株主資本</td><td class="num">0.68倍（編集部計算）</td><td class="num neg">4.3倍</td></tr>
+          <tr><td>株式数の変化</td><td class="num pos">▲2.5%（自社株買い）</td><td class="num">+3.8%</td></tr>
+          <tr><td>評価軸</td><td>PER・PSR</td><td>NRR・TCV</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      同じレイヤー2でも、両社はまったく異なる段階にあります。
+      Illuminaは<strong>成熟した高収益企業</strong>で成長率は1桁。
+      Tempusは<strong>高成長だが赤字</strong>の企業です。
+      投資家が引き受けるリスクの種類も、期待するリターンの形も違います。
+    </p>
+  </section>
+
+  <!-- ⑥ -->
+  <section id="ch6">
+    <h2 class="chapter"><span class="num">⑥</span>リスク要因 ― 成熟企業ゆえのリスク</h2>
+
+    <h3>1. 中国UEL問題の未解決</h3>
+    <p>
+      輸出禁止は解除されましたが、UEL掲載は継続中で装置購入には承認が必要です。
+      同社自身が<strong>掲載期間も最終的な措置も予測できない</strong>と述べています。
+      中華圏の売上は2024年で3億800万ドル。
+      通期ガイダンスの約7%に相当する規模です。
+    </p>
+
+    <h3>2. Q3の成長率鈍化が明示されている</h3>
+    <p>
+      Q2の8.1%からQ3の約4.5%へ。
+      装置設置も下期は鈍化する見込みとされています。
+      <strong>通期ガイダンスの引き上げは上半期の実績によるものであり、
+      下期のモメンタムを示すものではありません。</strong>
+    </p>
+
+    <h3>3. 研究市場の縮小</h3>
+    <p>
+      研究・応用消耗品はROWで▲7%。
+      CEOは米国の学術研究環境が2026年を通じて低調に推移するとの見方を示しています。
+      臨床が伸びているため全体では成長していますが、
+      <strong>顧客基盤の一方の柱が縮んでいる</strong>状態です。
+    </p>
+
+    <h3>4. 技術的な破壊のリスク</h3>
+    <p>
+      同社の地位は<strong>装置の設置ベースに支えられています</strong>。
+      裏を返せば、より安価・高速な競合技術が登場して顧客が乗り換えれば、
+      消耗品収益の基盤ごと失われます。
+      NovaSeq X移行が59%にとどまっていることは、
+      移行余地であると同時に、<strong>顧客が旧機種を使い続けている</strong>状態でもあります。
+    </p>
+
+    <h3>5. SomaLogic統合とのれん</h3>
+    <p>
+      のれんは12億8,400万ドル、無形資産は4億1,000万ドルへ増加しました。
+      合計16億9,400万ドルで、総資産66億5,000万ドルの約25%（編集部計算）。
+      決算リリースのリスク要因に統合能力とプロテオミクス市場の成長率が明記されており、
+      <strong>統合が想定通り進まなければ減損リスクが生じます。</strong>
+    </p>
+
+    <h3>6. コスト上昇圧力</h3>
+    <p>
+      メモリと輸送費の上昇が想定を上回り、Q2に吸収されたと説明されています。
+      装置メーカーであるため半導体価格の変動が直接コストに響きます。
+      Non-GAAP粗利率が69.4%→68.2%へ低下したのは、この影響を含みます。
+    </p>
+
+    <h3>7. GRAIL関連訴訟の残存</h3>
+    <p>
+      スピンオフから2年経過してもなお、
+      <strong>GRAIL買収に関連する追加訴訟のリスク</strong>が公式に列挙されています。
+      買収関連費用にもGRAIL関連分が計上され続けています。
+    </p>
+
+    <h3>8. バリュエーション水準</h3>
+    <p>
+      株価は過去1年で約99%上昇しました。
+      Barclaysが目標株価を引き上げながらUnderweightを維持しているのは、
+      <strong>業績の改善が既に株価に織り込まれている</strong>という見方によるものです。
+      成長率が1桁台にとどまるなか、予想PER36倍台をどう評価するかは判断が分かれます。
+    </p>
+  </section>
+
+  <!-- ⑦ -->
+  <section id="ch7">
+    <h2 class="chapter"><span class="num">⑦</span>まとめ ― レイヤー2の中の断層</h2>
+
+    <p>
+      本シリーズ6社目にして、初めて<strong>本業で継続的に利益を出す企業</strong>に到達しました。
+      6社を並べると、レイヤー分類だけでは捉えきれない断層が見えてきます。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>企業</th><th>レイヤー</th><th>四半期営業損益</th><th>成長率</th><th>主な評価軸</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Illumina（ILMN）</strong></td>
+            <td>2</td>
+            <td class="num pos"><strong>+2億4,500万ドル</strong></td>
+            <td class="num">+9.5%</td>
+            <td>PER・PSR</td>
+          </tr>
+          <tr>
+            <td>Tempus AI（TEM）</td>
+            <td>2</td>
+            <td class="num neg">▲7,591万ドル</td>
+            <td class="num pos">+22%</td>
+            <td>NRR・TCV</td>
+          </tr>
+          <tr>
+            <td>Schrödinger（SDGR）</td>
+            <td>2.5</td>
+            <td class="num neg">▲4,155万ドル</td>
+            <td class="num">+8%</td>
+            <td>ACV・反復収益比率</td>
+          </tr>
+          <tr>
+            <td>Recursion（RXRX）</td>
+            <td>3</td>
+            <td class="num neg">大幅赤字</td>
+            <td class="num neg">▲60%</td>
+            <td>実現率2.5%</td>
+          </tr>
+          <tr>
+            <td>Relay（RLAY）</td>
+            <td>3</td>
+            <td class="num neg">▲9,082万ドル</td>
+            <td class="num">―</td>
+            <td>実現率3.7%</td>
+          </tr>
+          <tr>
+            <td>Absci（ABSI）</td>
+            <td>3</td>
+            <td class="num neg">▲3,416万ドル</td>
+            <td class="num neg">▲46%</td>
+            <td>増資条件</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>見えてきた3つのこと</h3>
+    <p>
+      <strong>第一に、レイヤー2の内部にも大きな断層があります。</strong>
+      IlluminaとTempusは同じレイヤーに分類されますが、
+      片方は営業利益率21%の成熟企業、もう片方は営業赤字の高成長企業です。
+      3部作では「収益の確実性はレイヤー1〜2に集中する」と述べましたが、
+      <strong>正確には「レイヤー2の中でも、事業が成熟した企業に集中する」</strong>と修正すべきです。
+    </p>
+    <p>
+      <strong>第二に、成長率と収益性はトレードオフの関係にあります。</strong>
+      成長率が最も高いTempus（+22%）は営業赤字。
+      最も収益性が高いIllumina（21.1%）は成長率+9.5%。
+      <strong>どちらを選ぶかは、投資家がどのリスクを引き受けたいかの問題です。</strong>
+    </p>
+    <p>
+      <strong>第三に、レイヤー間の競争が始まっています。</strong>
+      IlluminaがBioInsightでデータ販売に乗り出し、Tempusのライセンス事業と競合しうる領域に入りました。
+      AstraZenecaが両社のパートナーになっている事実は、
+      <strong>大手製薬が複数のデータ供給元を並行して使う</strong>ことを示しています。
+      レイヤー2企業が独占的な地位を築くのは容易ではありません。
+    </p>
+
+    <h3>Illuminaについての現時点の評価</h3>
+    <p>
+      本記事の立場は、強気でも弱気でもありません。
+      営業利益率21.1%、FCF四半期1.6億ドル、自社株買いによる株式数減少という数字は、
+      本シリーズのどの企業も持たない財務的な健全性を示しています。
+      臨床市場の伸び（米国・カナダで+20%超）も明確なポジティブ材料です。
+    </p>
+    <p>
+      同時に、<strong>Q3の成長率は約4.5%へ減速することが会社側から明示され、
+      中国UEL問題は未解決のまま、研究市場は縮小しており、
+      株価は過去1年で約99%上昇しています</strong>。
+    </p>
+    <p>
+      <strong>Q3の実績が会社見込みどおり減速するのか、それとも上振れするのかが、
+      最初の判定材料になります。</strong>
+      投資判断を下すのであれば、
+      「Q3は約4.5%成長へ減速見込み」「中国UEL継続中」「研究消耗品▲7%」という
+      3つの事実を織り込んだうえで行う必要があります。
+    </p>
+
+    <div class="crosslink">
+      <h4>関連レポート</h4>
+      <ul>
+        <li><a href="/reports/ai-biotech-industry-map.html">前編：産業地図 ― AI×バイオを4レイヤーで整理する</a></li>
+        <li><a href="/reports/ai-biotech-validation.html">中編：技術検証編 ― AI創薬は本当に効いているのか</a></li>
+        <li><a href="/reports/ai-biotech-valuation.html">後編：投資判断編 ― 赤字先行企業を4指標で評価する</a></li>
+        <li><a href="/reports/recursion-rxrx.html">個別企業編①：Recursion（RXRX）― 実現率2.5%問題</a></li>
+        <li><a href="/reports/schrodinger-sdgr.html">個別企業編②：Schrödinger（SDGR）― 反復収益を持つ例外的なレイヤー3企業</a></li>
+        <li><a href="/reports/relay-rlay.html">個別企業編③：Relay Therapeutics（RLAY）― 増資で買った第III相</a></li>
+        <li><a href="/reports/absci-absi.html">個別企業編④：Absci（ABSI）― Eli Lillyが権利を取らなかった理由</a></li>
+        <li><a href="/reports/tempus-tem.html">個別企業編⑤：Tempus AI（TEM）― 黒字転換の中身とレイヤー2の評価軸</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHAT TO WATCH -->
+  <div class="watch">
+    <h2>WHAT TO WATCH</h2>
+    <p class="w-sub">Illumina（ILMN）― 今後の注目点</p>
+    <ol>
+      <li><b>Q3のROW有機成長率が約4.5%に着地するか。</b>会社側が明示的に示した減速見込み。ここを上回れば下期の懸念は薄れ、下回れば通期ガイダンスの達成が危うくなる。装置設置台数の推移と併せて確認する。</li>
+      <li><b>中国UELからの削除。</b>輸出禁止は2025年11月に解除されたが、UEL掲載は継続中で装置購入には承認が必要。削除されれば中華圏（2024年で売上3億800万ドル）の回復余地が生まれる。会社自身が時期を予測できないとしている項目。</li>
+      <li><b>NovaSeq Xへの移行率。</b>現在は売上の59%。2026年末に臨床検体の80〜85%という目標が達成されるか。移行完了は効率改善につながる一方、移行が滞れば旧機種の顧客が競合技術へ流れるリスクも意味する。</li>
+      <li><b>Non-GAAP粗利率の底打ち。</b>69.4%→68.2%へ低下。メモリ・輸送費の上昇とSomaLogicの在庫ステップアップ償却が要因。コスト圧力が一巡して粗利率が反転するタイミングを見る。</li>
+      <li><b>BioInsightとBillion Cell Atlasの収益化。</b>AstraZeneca、Merck、Eli Lillyが当初パートナー。現時点で売上への寄与は開示されていない。Tempusのデータライセンス事業と競合しうる領域であり、どちらがどれだけ大手製薬の予算を取るかが中期の焦点になる。</li>
+      <li><b>研究・応用市場の底打ち。</b>ROWで▲7%。米国の学術研究予算環境が改善に向かうか。臨床の伸びが続く限り全体は成長するが、研究市場の回復は成長率を一段押し上げる要因になる。</li>
+    </ol>
+  </div>
+
+  <!-- 免責 -->
+  <div class="disclaimer">
+    <h3>免責事項</h3>
+    <ul>
+      <li>本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資に関する最終的な判断は、ご自身の責任において行ってください。</li>
+      <li>本記事に記載された数値・事実は、2026年8月中旬時点で公開されている企業のIR資料、決算リリース、決算説明会、SEC提出書類、および報道等に基づいています。株価・時価総額等の市場データは日々変動します。</li>
+      <li>「編集部試算」「編集部計算」と明記した数値は、公開情報に基づく推計であり、企業が公表した値ではありません。PER・PSRはガイダンス値および特定時点の時価総額をもとにした機械的な試算です。</li>
+      <li>Non-GAAP粗利率、Non-GAAP営業利益率、Non-GAAP EPS、フリーキャッシュフロー等は非GAAP指標であり、企業ごとに算出方法が異なります。GAAP指標に代わるものではありません。</li>
+      <li>アナリストの目標株価・レーティングは各証券会社の見解であり、将来の株価を保証するものではありません。</li>
+      <li>中国のUEL（信頼できない企業リスト）掲載に関する状況は変動する可能性があり、企業側も掲載期間や最終的な措置を予測できないとしています。</li>
+      <li>本記事の内容には誤りが含まれる可能性があります。投資判断にあたっては、必ず一次情報（企業のIR資料、SEC提出書類等）をご確認ください。</li>
+    </ul>
+  </div>
+
+  <footer class="site">
+    Market Supporter AI ／ marketsupporter-ai.com<br>
+    AI×製薬×バイオ シリーズ 個別企業編 ⑥（2026年8月17日公開）／ レイヤー2 第2回
+  </footer>
+
+</div>
+</body>
+</html>
