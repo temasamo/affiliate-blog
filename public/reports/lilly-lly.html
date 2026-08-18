@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eli Lilly（NYSE:LLY）徹底分析｜買い手側から見たAI創薬 - Market Supporter AI</title>
+<meta name="description" content="時価総額1兆ドル超のEli Lilly（LLY）を7章構成で分析。2026年Q2決算実績、売上48%増、Ajax買収、TuneLab、LillyPod、そして本シリーズで初めて「買い手側」から見たAI創薬の景色を解説します。">
+<style>
+:root{
+  --accent:#15803d;
+  --accent-dark:#14532d;
+  --accent-mid:#16a34a;
+  --accent-light:#f0fdf4;
+  --accent-border:#bbf7d0;
+  --ink:#16231a;
+  --ink-sub:#47554b;
+  --line:#e2ece5;
+  --bg:#ffffff;
+  --bg-soft:#f7fbf8;
+  --warn:#b45309;
+  --warn-bg:#fffbeb;
+  --pos:#15803d;
+  --neg:#b91c1c;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);background:var(--bg);line-height:1.85;font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px 80px;}
+
+header.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 58%,#22c55e 100%);
+  color:#fff;padding:52px 20px 46px;
+}
+.hero-inner{max-width:860px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;font-size:12px;letter-spacing:.14em;
+  background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);
+  padding:5px 13px;border-radius:999px;margin-bottom:18px;
+}
+h1{font-size:29px;line-height:1.45;margin:0 0 16px;font-weight:700;letter-spacing:.01em;}
+.hero-sub{font-size:15.5px;opacity:.94;margin:0 0 22px;line-height:1.8;}
+.meta{font-size:13px;opacity:.86;border-top:1px solid rgba(255,255,255,.25);padding-top:14px;}
+.tags{margin-top:12px;}
+.tag{display:inline-block;font-size:11.5px;background:rgba(255,255,255,.14);padding:4px 10px;border-radius:4px;margin:0 6px 6px 0;}
+
+.toc{background:var(--accent-light);border:1px solid var(--accent-border);border-radius:10px;padding:22px 24px;margin:36px 0 44px;}
+.toc h2{font-size:15px;margin:0 0 12px;color:var(--accent-dark);letter-spacing:.06em;}
+.toc ol{margin:0;padding-left:1.3em;}
+.toc li{margin:7px 0;font-size:14.5px;}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--accent-mid);}
+.toc a:hover{color:var(--accent);}
+
+section{margin:0 0 52px;scroll-margin-top:20px;}
+h2.chapter{font-size:21px;margin:0 0 20px;padding:0 0 12px 0;border-bottom:3px solid var(--accent);line-height:1.5;font-weight:700;}
+h2.chapter .num{display:inline-block;color:var(--accent);font-size:19px;margin-right:8px;}
+h3{font-size:17px;margin:32px 0 12px;padding-left:12px;border-left:4px solid var(--accent-mid);line-height:1.6;}
+p{margin:0 0 16px;}
+ul,ol{margin:0 0 18px;padding-left:1.4em;}
+li{margin:7px 0;}
+strong{color:var(--accent-dark);font-weight:700;}
+
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0 24px;}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:480px;}
+th,td{border:1px solid var(--line);padding:11px 12px;text-align:left;vertical-align:top;}
+th{background:var(--accent-light);color:var(--accent-dark);font-weight:700;white-space:nowrap;}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+tbody tr:nth-child(even){background:var(--bg-soft);}
+.tbl-note{font-size:12.5px;color:var(--ink-sub);margin:-14px 0 24px;}
+
+.callout{background:var(--bg-soft);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:18px 20px;margin:24px 0;font-size:15px;}
+.callout .label{display:block;font-size:12px;letter-spacing:.1em;color:var(--accent);font-weight:700;margin-bottom:8px;}
+.warn{background:var(--warn-bg);border-left:4px solid var(--warn);}
+.warn .label{color:var(--warn);}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:24px 0 28px;}
+.kpi{background:var(--bg-soft);border:1px solid var(--line);border-radius:9px;padding:15px 16px;}
+.kpi .k-label{font-size:12px;color:var(--ink-sub);margin-bottom:6px;line-height:1.5;}
+.kpi .k-value{font-size:21px;font-weight:700;color:var(--accent-dark);line-height:1.3;font-variant-numeric:tabular-nums;}
+.kpi .k-sub{font-size:11.5px;color:var(--ink-sub);margin-top:5px;line-height:1.5;}
+
+.pos{color:var(--pos);font-weight:700;}
+.neg{color:var(--neg);font-weight:700;}
+
+.crosslink{border:1px solid var(--accent-border);border-radius:10px;padding:18px 20px;margin:30px 0;background:#fff;}
+.crosslink h4{margin:0 0 10px;font-size:14px;color:var(--accent-dark);letter-spacing:.05em;}
+.crosslink ul{margin:0;padding-left:1.2em;font-size:14px;}
+.crosslink a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-border);}
+
+.watch{background:linear-gradient(150deg,var(--accent-dark) 0%,#052e16 100%);color:#fff;border-radius:14px;padding:36px 28px;margin:56px 0 40px;}
+.watch h2{font-size:20px;margin:0 0 8px;letter-spacing:.08em;color:#fff;border:none;padding:0;}
+.watch .w-sub{font-size:13.5px;opacity:.82;margin:0 0 24px;}
+.watch ol{padding-left:0;list-style:none;margin:0;counter-reset:w;}
+.watch li{counter-increment:w;position:relative;padding-left:44px;margin:0 0 20px;font-size:14.8px;line-height:1.8;}
+.watch li::before{
+  content:counter(w,decimal-leading-zero);
+  position:absolute;left:0;top:2px;font-size:13px;font-weight:700;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
+  width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+}
+.watch li b{color:#bbf7d0;}
+
+.disclaimer{background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:22px 24px;font-size:13px;color:var(--ink-sub);line-height:1.85;}
+.disclaimer h3{font-size:14px;margin:0 0 10px;padding:0;border:none;color:var(--ink);}
+.disclaimer ul{padding-left:1.3em;margin:0;}
+
+footer.site{text-align:center;font-size:12.5px;color:var(--ink-sub);margin-top:44px;padding-top:22px;border-top:1px solid var(--line);}
+
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  header.hero{padding:38px 18px 34px;}
+  h1{font-size:22px;line-height:1.5;}
+  .hero-sub{font-size:14.5px;}
+  .wrap{padding:0 16px 60px;}
+  h2.chapter{font-size:18.5px;}
+  h3{font-size:16px;}
+  .watch{padding:28px 20px;border-radius:10px;}
+  .watch li{padding-left:38px;font-size:14.2px;}
+  .watch li::before{width:26px;height:26px;font-size:12px;}
+  .kpi .k-value{font-size:19px;}
+  table{font-size:13.2px;}
+  th,td{padding:9px 10px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">AI × 製薬 × バイオ シリーズ ／ 個別企業編 ⑧ ／ レイヤー4 第1回</span>
+    <h1>Eli Lilly（NYSE:LLY）徹底分析<br>― 買い手側から見た、AI創薬という市場</h1>
+    <p class="hero-sub">
+      第2回で扱ったSchrödingerの黒字転換。その主因だった株式評価益は、Ajax Therapeutics買収によるものでした。
+      第4回のAbsciに4,000万ドルを出資したのも同じ企業です。
+      これまで7社を「売り手側」から見てきましたが、ここで初めて<strong>買い手側</strong>に立ちます。
+      2026年8月5日発表のQ2決算実績から検証します。
+    </p>
+    <div class="meta">
+      公開日：2026年8月19日 ／ 分析基準日：2026年8月中旬 ／ Market Supporter AI 編集部
+      <div class="tags">
+        <span class="tag">#LLY</span>
+        <span class="tag">#大手製薬</span>
+        <span class="tag">#米国株</span>
+        <span class="tag">#レイヤー4</span>
+        <span class="tag">#GLP-1</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="toc">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#ch1">市場規模 ― 肥満症という、製薬史上まれな市場</a></li>
+      <li><a href="#ch2">政策・規制環境 ― 薬価という最大の変数</a></li>
+      <li><a href="#ch3">コスト・収益構造 ― 粗利率86%と、IPR&amp;D費用28億ドル</a></li>
+      <li><a href="#ch4">事業セグメント動向 ― AI投資の実態と、TuneLabという戦略</a></li>
+      <li><a href="#ch5">株式バリュエーション ― 時価総額1兆ドルをどう測るか</a></li>
+      <li><a href="#ch6">リスク要因 ― 単一薬効群への依存と、成功の代償</a></li>
+      <li><a href="#ch7">まとめ ― 買い手側から見ると、レイヤー3の景色が変わる</a></li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <span class="label">この記事の位置づけ</span>
+    「AI×製薬×バイオ」3部作の4レイヤー分類における<strong>レイヤー4（AIを導入する大手製薬）</strong>の第1回です。
+    レイヤー3の4社、レイヤー2の3社を分析してきましたが、
+    <strong>それらの企業にとっての「顧客」「提携先」「買収者」がこの層</strong>にあたります。
+    本記事は、これまでとは逆方向から同じ産業を見ることになります。
+  </div>
+
+  <!-- ① -->
+  <section id="ch1">
+    <h2 class="chapter"><span class="num">①</span>市場規模 ― 肥満症という、製薬史上まれな市場</h2>
+
+    <p>
+      Eli Lillyは1876年創業、米インディアナ州インディアナポリス拠点。2026年に創業150年を迎えました。
+      2025年11月、<strong>ヘルスケア企業として初めて時価総額1兆ドルを突破</strong>しています。
+    </p>
+    <p>
+      これまで扱った7社と比べると、規模の桁が違います。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>企業</th><th>2026年Q2 売上高</th><th>レイヤー</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Eli Lilly</strong></td><td class="num"><strong>229億7,400万ドル</strong></td><td>4</td></tr>
+          <tr><td>IQVIA</td><td class="num">43億6,800万ドル</td><td>2</td></tr>
+          <tr><td>Illumina</td><td class="num">11億5,900万ドル</td><td>2</td></tr>
+          <tr><td>Tempus AI</td><td class="num">3億8,249万ドル</td><td>2</td></tr>
+          <tr><td>Schrödinger</td><td class="num">5,889万ドル</td><td>2.5</td></tr>
+          <tr><td>Absci</td><td class="num">32万ドル</td><td>3</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Lillyの<strong>1四半期の売上は、Absciの約7万倍</strong>です。
+      同じ産業を扱っていても、企業としての性質はまったく異なります。
+    </p>
+
+    <h3>成長の源泉 ― インクレチン</h3>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="k-label">Mounjaro（2型糖尿病）</div>
+        <div class="k-value">99億4,300万ドル</div>
+        <div class="k-sub">前年同期比 <span class="pos">+91%</span></div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">Zepbound（肥満症）</div>
+        <div class="k-value">49億2,800万ドル</div>
+        <div class="k-sub">前年同期比 <span class="pos">+46%</span></div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">主要製品合計</div>
+        <div class="k-value">157億ドル</div>
+        <div class="k-sub">四半期で約68億ドル増加</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">Foundayo（経口GLP-1）</div>
+        <div class="k-value">9,800万ドル</div>
+        <div class="k-sub">2026年4月米国承認、初計上</div>
+      </div>
+    </div>
+    <p>
+      Q2の売上増加48%の内訳は、<strong>数量が60%増加し、実現価格が13%低下</strong>したというものです。
+      つまり<strong>値下げしながら数量で押し切っている</strong>構図です。
+    </p>
+    <p>
+      地域別に見ると、米国が33%増（数量+37%、価格▲3%）、
+      <strong>米国外が80%増（数量+113%、価格▲36%）</strong>。
+      米国外の価格下落は、Mounjaroが中国の国家医療保険薬品目録（NRDL）に収載されたことが主因です。
+    </p>
+
+    <div class="callout warn">
+      <span class="label">この構造の意味</span>
+      米国外の数量113%増に対し価格36%減という組み合わせは、
+      <strong>市場浸透と引き換えに単価を大幅に譲っている</strong>ことを示します。
+      新興国・保険収載を通じた拡大は数量を生みますが、
+      収益性は米国市場ほど高くありません。
+      <strong>今後の成長率を見る際は、売上高だけでなく数量と価格の内訳を分けて見る必要があります。</strong>
+    </div>
+
+    <h3>次の市場 ― retatrutide</h3>
+    <p>
+      Q2で最も重要なパイプライン進捗が、三重作動薬<strong>retatrutide</strong>です。
+      追加の第3相試験3本で良好な結果が得られ、
+      <strong>肥満症・閉塞性睡眠時無呼吸・変形性膝関節症疼痛の3適応について、
+      グローバル申請を支える臨床データパッケージが完成</strong>したとされています。
+      米FDAへの生物学的製剤承認申請は2027年第1四半期を予定しています。
+    </p>
+    <p>
+      肥満症市場が特異なのは、<strong>対象患者が数億人規模でありながら、
+      有効な薬理学的治療が長らく存在しなかった</strong>点です。
+      腫瘍領域のように患者を細かく層別化する必要がなく、
+      1剤で巨大な市場を取れる構造になっています。
+      レイヤー3企業が狙う精密医療とは、市場の性質が正反対です。
+    </p>
+  </section>
+
+  <!-- ② -->
+  <section id="ch2">
+    <h2 class="chapter"><span class="num">②</span>政策・規制環境 ― 薬価という最大の変数</h2>
+
+    <p>
+      これまで7社の規制論点を整理してきました。Lillyはまた別の位置にあります。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>レイヤー</th><th>企業</th><th>規制の意味</th></tr></thead>
+        <tbody>
+          <tr><td>3</td><td>Recursion、Relay、Absci</td><td>FDA承認＝ゼロがイチになる</td></tr>
+          <tr><td>2</td><td>Tempus AI</td><td>FDA承認＝既存売上の単価が上がる</td></tr>
+          <tr><td>2</td><td>Illumina</td><td>中国UEL＝地域市場へのアクセス制限</td></tr>
+          <tr><td>2</td><td>IQVIA</td><td>規制の複雑さ自体が需要を生む</td></tr>
+          <tr><td><strong>4</strong></td><td><strong>Eli Lilly</strong></td><td><strong>薬価政策＝既存の巨額収益が直接削られる</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>実現価格13%低下という数字</h3>
+    <p>
+      Q2の実現価格は全社で13%低下しました。
+      内訳を見ると、米国は▲3%（リベート・割引の見積調整を除けば約▲9%）、
+      米国外は▲36%です。
+    </p>
+    <p>
+      注目すべきは、Lillyのリスク要因に
+      <strong>「薬価、償還、患者アクセスに影響する政府および民間主体の行動による継続的な価格圧力」</strong>
+      および<strong>「米国政府との薬価・アクセスに関する自主的合意の実施」</strong>
+      が明記されていることです。
+    </p>
+    <p>
+      後者は、大手製薬各社が米国政府と結んだ薬価に関する取り決めを指すと考えられます。
+      <strong>成功して売上が大きくなるほど、政治的な価格圧力の対象になる</strong>という構造です。
+      これはレイヤー2〜3の企業には存在しないリスクです。
+    </p>
+
+    <h3>Q2の主な規制進捗</h3>
+    <ul>
+      <li><strong>Ebglyss</strong>（アトピー性皮膚炎）：中等症〜重症に対する8週間に1回の維持投与がFDA承認</li>
+      <li><strong>Jaypirca</strong>（慢性リンパ性白血病）：全治療ラインの成人に対する単剤療法として欧州委員会が承認</li>
+      <li><strong>Foundayo</strong>（orforglipron）：2型糖尿病について米国で申請</li>
+      <li><strong>olomorasib</strong>：KRAS G12C変異進行膵臓がんでFDAのブレークスルーセラピー指定</li>
+    </ul>
+
+    <div class="callout">
+      <span class="label">承認の頻度が示すもの</span>
+      Q2だけで複数の承認・申請・指定が並んでいます。
+      レイヤー3企業が1剤の第2相データに企業価値のすべてを賭けているのに対し、
+      <strong>Lillyにとって個別の承認は日常業務に近い</strong>ものです。
+      この頻度の差が、株価のボラティリティの差に直結しています。
+    </div>
+  </section>
+
+  <!-- ③ -->
+  <section id="ch3">
+    <h2 class="chapter"><span class="num">③</span>コスト・収益構造 ― 粗利率86%と、IPR&amp;D費用28億ドル</h2>
+
+    <h3>2026年第2四半期の実績（2026年8月5日発表）</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>項目（百万ドル）</th><th>2026年Q2</th><th>2025年Q2</th><th>増減</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>売上高</strong></td><td class="num"><strong>22,974</strong></td><td class="num">15,558</td><td class="num pos">+48%</td></tr>
+          <tr><td>売上原価</td><td class="num">3,268</td><td class="num">2,448</td><td class="num">+33%</td></tr>
+          <tr><td>研究開発費</td><td class="num">3,819</td><td class="num">3,336</td><td class="num">+14%</td></tr>
+          <tr><td>マーケティング・販売・管理費</td><td class="num">3,430</td><td class="num">2,753</td><td class="num">+25%</td></tr>
+          <tr><td><strong>取得IPR&amp;D費用</strong></td><td class="num neg"><strong>2,776</strong></td><td class="num">154</td><td class="num">NM</td></tr>
+          <tr><td>資産減損・リストラ等特別費用</td><td class="num neg">703</td><td class="num">—</td><td class="num">NM</td></tr>
+          <tr><td><strong>営業利益</strong></td><td class="num pos"><strong>8,978</strong></td><td class="num">6,867</td><td class="num pos">+31%</td></tr>
+          <tr><td>税引前利益</td><td class="num">9,247</td><td class="num">6,777</td><td class="num">+36%</td></tr>
+          <tr><td>法人税等</td><td class="num">2,152</td><td class="num">1,116</td><td class="num">+93%</td></tr>
+          <tr><td><strong>当期純利益</strong></td><td class="num pos"><strong>7,095</strong></td><td class="num">5,661</td><td class="num pos">+25%</td></tr>
+          <tr><td>希薄化後EPS（報告ベース）</td><td class="num">7.94ドル</td><td class="num">6.29ドル</td><td class="num pos">+26%</td></tr>
+          <tr><td>希薄化後EPS（Non-GAAP）</td><td class="num">8.38ドル</td><td class="num">6.31ドル</td><td class="num pos">+33%</td></tr>
+          <tr><td>1株当たり配当</td><td class="num">1.73ドル</td><td class="num">1.50ドル</td><td class="num pos">+15%</td></tr>
+          <tr><td>希薄化後加重平均株式数（千株）</td><td class="num">893,671</td><td class="num">899,793</td><td class="num pos">▲0.7%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：Eli Lilly 2026年第2四半期決算リリース（2026年8月5日）。</p>
+
+    <h3>粗利率86%という水準</h3>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="k-label">GAAP粗利率</div>
+        <div class="k-value">85.8%</div>
+        <div class="k-sub">前年同期84.3%（+1.5pt）</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">Non-GAAP粗利率</div>
+        <div class="k-value">86.3%</div>
+        <div class="k-sub">前年同期85.0%（+1.3pt）</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">R&amp;D費／売上高</div>
+        <div class="k-value">17%</div>
+        <div class="k-sub">38億1,900万ドル</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">営業利益率</div>
+        <div class="k-value">39.1%</div>
+        <div class="k-sub">編集部計算</div>
+      </div>
+    </div>
+    <p>
+      粗利率86%は、Illuminaの66%、Schrödingerの71%を大きく上回ります。
+      価格が13%下がってなお粗利率が改善しているのは、
+      <strong>生産コストの改善と製品ミックスの好転</strong>によるものと説明されています。
+    </p>
+    <p>
+      注目すべきは<strong>研究開発費が売上の17%</strong>にとどまっている点です。
+      金額では38億ドルと巨額ですが、比率で見れば、
+      レイヤー3企業（Relayは売上の200倍以上をR&amp;Dに投じている）とは対極にあります。
+      <strong>売上の規模が大きいため、R&amp;Dを増やしても比率は下がる</strong>という構造です。
+    </p>
+
+    <h3>取得IPR&amp;D費用28億ドルの正体</h3>
+    <p>
+      Q2で最も特異な項目が、<strong>取得IPR&amp;D費用27億7,600万ドル</strong>です。
+      前年同期の1億5,400万ドルから18倍に膨らみました。
+      これはEPSに<strong>3.03ドル</strong>の押し下げ効果をもたらしています。
+    </p>
+    <p>
+      主因は<strong>Orna TherapeuticsとAjax Therapeuticsの買収</strong>です。
+    </p>
+
+    <div class="callout">
+      <span class="label">シリーズ横断の接続点 ― Ajax Therapeutics</span>
+      本シリーズの第2回で、Schrödinger（SDGR）の2026年Q2純利益598万ドルは
+      <strong>Ajax Therapeutics買収完了に伴う非現金の株式評価益4,587万ドル</strong>によるものだと指摘しました。
+      <div style="margin-top:12px;">
+        <strong>その買い手が、Lillyです。</strong>
+        Schrödingerは共同創業企業への株式保有を通じて価値を受け取るモデルを持っており、
+        Ajaxはその1社でした。Lillyが買収したことで、Schrödingerの保有株式が現金化・評価替えされた。
+      </div>
+      <div style="margin-top:12px;">
+        Lillyの側から見れば、これは<strong>27億7,600万ドルのIPR&amp;D費用の一部</strong>にすぎません。
+        Schrödingerにとっては黒字転換をもたらす出来事が、
+        Lillyにとっては四半期の特別項目の一部です。
+        <strong>同じ取引が、レイヤーによってまったく違う意味を持つ</strong>ことを示す好例です。
+      </div>
+    </div>
+
+    <p>
+      加えて資産減損・リストラ等特別費用703万ドル（前年同期ゼロ）も計上されており、
+      これはKelonia TherapeuticsとCentessa Pharmaceuticals買収に伴う
+      従業員株式報酬の権利確定加速および統合費用が主因とされています。
+    </p>
+    <p>
+      実効税率も<strong>16.5%→23.3%へ上昇</strong>しました。
+      取得IPR&amp;D費用が損金算入できないことが主因です。
+      <strong>買収を積極化すると税率が上がる</strong>という関係になります。
+    </p>
+  </section>
+
+  <!-- ④ -->
+  <section id="ch4">
+    <h2 class="chapter"><span class="num">④</span>事業セグメント動向 ― AI投資の実態と、TuneLabという戦略</h2>
+
+    <p>
+      Lillyは会計上、<strong>「ヒト用医薬品」という単一セグメント</strong>で報告しています。
+      したがってセグメント分析は、製品別・地域別、そして本シリーズの文脈では
+      <strong>「AIへの取り組み」</strong>という切り口で見るのが有効です。
+    </p>
+
+    <h3>① LillyPod ― 製薬企業として世界最大級のAIインフラ</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td>名称</td><td><strong>LillyPod</strong></td></tr>
+          <tr><td>稼働開始</td><td>2026年2月、インディアナポリスで開所</td></tr>
+          <tr><td>構成</td><td>NVIDIA DGX SuperPOD。<strong>Blackwell Ultra GPU 1,016基</strong></td></tr>
+          <tr><td>性能</td><td>9,000ペタフロップス超のAI性能</td></tr>
+          <tr><td>構築期間</td><td>4か月</td></tr>
+          <tr><td>位置づけ</td><td>製薬企業が自社で所有・運用するものとして最も強力とされる</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      同社の研究開発情報担当バイスプレジデントは、
+      <strong>従来の創薬が湿式実験の物理的な制約を受けており、
+      生産性の高いチームでも標的あたり年間およそ2,000の分子アイデアしか検証できなかった</strong>と説明しています。
+      スーパーコンピュータはこの制約を取り払うものだ、という主張です。
+    </p>
+
+    <div class="callout warn">
+      <span class="label">レイヤー1との関係</span>
+      LillyPodはNVIDIA製です。3部作でレイヤー1（計算基盤）に位置づけたNVIDIAが、
+      レイヤー4のLillyに直接供給している構図になります。
+      <div style="margin-top:12px;">
+        第1回のRecursionもNVIDIA DGX H100でBioHive-2を構築していました。
+        <strong>レイヤー1は、レイヤー3にもレイヤー4にも同じように売っています。</strong>
+        AI創薬というテーマにおいて、<strong>誰が勝っても収益を得られる位置にいるのがレイヤー1</strong>である、
+        という3部作の指摘は、この事実によって裏付けられます。
+      </div>
+    </div>
+
+    <h3>② TuneLab ― 自社モデルを外部に開放する戦略</h3>
+    <p>
+      本シリーズの文脈で最も注目すべきなのが、この取り組みです。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td>名称</td><td><strong>Lilly TuneLab</strong></td></tr>
+          <tr><td>開始</td><td>2025年9月</td></tr>
+          <tr><td>内容</td><td>Lillyが長年の自社研究で訓練した創薬AIモデルを、バイオテク企業が利用できる連合学習（federated learning）プラットフォーム</td></tr>
+          <tr><td>基盤技術</td><td>NVIDIA FLARE。データを直接共有せずにモデルを活用できる仕組み</td></tr>
+          <tr><td>参加条件</td><td>モデル利用の見返りに、自社の研究データを提供してモデル訓練に貢献する</td></tr>
+          <tr><td>データの価値</td><td>10億ドル相当とされる</td></tr>
+          <tr><td>参加企業数</td><td>開始数か月で<strong>70社超</strong>。2026年末までに<strong>150社</strong>が目標</td></tr>
+          <tr><td>2026年の拡張</td><td>Benchling、Revvityとの連携。5月にはCollaborative Drug Discoveryと提携し、CDD Vaultに統合</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <span class="label">この戦略が意味すること</span>
+      TuneLabは、<strong>Lillyがレイヤー3の領域に進出している</strong>と読むこともできます。
+      RecursionやSchrödingerが提供しようとしている「創薬プラットフォーム」を、
+      Lillyが自社データで構築し、<strong>無償で</strong>バイオテク企業に開放しているからです。
+      <div style="margin-top:12px;">
+        ただし目的は課金ではありません。参加企業がデータを持ち寄ることで
+        <strong>Lillyのモデルが改善される</strong>という設計です。
+        NVIDIAのヘルスケア担当バイスプレジデントは、
+        スタートアップにとって、資金を消費して数年かけてたどり着く地点を
+        最初から提供できる意義に言及しています。
+      </div>
+      <div style="margin-top:12px;">
+        <strong>レイヤー3企業にとって、これは競合の出現であると同時に、
+        自社の存在意義を問い直す事象でもあります。</strong>
+        なぜ大手製薬は、外部のAI創薬企業に高い対価を払う必要があるのか。
+        自社でモデルを作り、無償で配って改善させる方が合理的ではないか――という問いです。
+      </div>
+    </div>
+
+    <h3>③ NVIDIAとの共同イノベーションAIラボ</h3>
+    <p>
+      サンフランシスコ・ベイエリアに設置される新しい取り組みです。
+      Lillyの生物学・科学・医学の専門家と、NVIDIAのAIモデル構築者・エンジニアが同じ場所で働き、
+      NVIDIA BioNeMoを基盤プラットフォームとして
+      大規模データの生成とAIモデルの構築を行うとされています。
+      次世代のNVIDIAアーキテクチャ（Vera Rubin等）への投資も想定されています。
+    </p>
+
+    <h3>④ 買収による外部技術の取り込み</h3>
+    <p>
+      Q2および四半期末以降の買収活動は、極めて活発です。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>時期</th><th>対象企業・内容</th></tr></thead>
+        <tbody>
+          <tr><td>Q2 2026（完了）</td><td>Orna Therapeutics、<strong>Ajax Therapeutics</strong>、Centessa Pharmaceuticals、Kelonia Therapeutics</td></tr>
+          <tr><td>四半期末以降（完了）</td><td>感染症ポートフォリオ構築のための3社買収</td></tr>
+          <tr><td>四半期末以降（合意）</td><td>AtaiBeckley（治療抵抗性うつ病・メンタルヘルス）</td></tr>
+          <tr><td>2026年6月出資</td><td><strong>Absci（ABSI）に4,000万ドルの戦略的持分投資</strong>（プログラム権利の取得なし）</td></tr>
+          <tr><td>設備投資</td><td>インディアナ州製造拠点に追加45億ドルを投じることを表明</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      第4回のAbsci記事で、Lillyが4,000万ドルを出資しながら
+      <strong>プログラム権利を一切取得しなかった</strong>点を論点にしました。
+      Lillyの側から見ると、この4,000万ドルは
+      <strong>Q2のIPR&amp;D費用27億7,600万ドルの約1.4%</strong>にすぎません。
+      本気で欲しい資産は買収し、様子を見たい資産には少額出資する。
+      <strong>その使い分けが、規模の差から浮かび上がります。</strong>
+    </p>
+  </section>
+
+  <!-- ⑤ -->
+  <section id="ch5">
+    <h2 class="chapter"><span class="num">⑤</span>株式バリュエーション ― 時価総額1兆ドルをどう測るか</h2>
+
+    <p>
+      3部作の4指標は、Illumina以降まったく不要になりました。Lillyでも同様です。
+      <strong>キャッシュランウェイも実現率も、この企業には概念として存在しません。</strong>
+      通常のバリュエーション指標で見ます。
+    </p>
+
+    <h3>2026年通期ガイダンス（引き上げ後）</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>更新後</th><th>従来</th></tr></thead>
+        <tbody>
+          <tr><td>売上高</td><td class="num">850億〜870億ドル</td><td class="num">820億〜850億ドル</td></tr>
+          <tr><td>パフォーマンスマージン</td><td class="num">49.0%〜50.5%</td><td class="num">47.0%〜48.5%</td></tr>
+          <tr><td>税率</td><td class="num">18%〜19%</td><td class="num">変更なし</td></tr>
+          <tr><td>1株当たり利益（Non-GAAP）</td><td class="num">35.50〜36.50ドル</td><td class="num">35.50〜37.00ドル</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">パフォーマンスマージンは、粗利益から研究開発費とマーケティング・販売・管理費を差し引き、売上高で除したもの（会社定義）。EPSガイダンスは2026年6月30日以降に発生する取得IPR&amp;Dを含みません。約8億9,400万株、為替はユーロ1.14、円153、人民元7.1を前提としています。</p>
+
+    <div class="callout warn">
+      <span class="label">EPSガイダンスの読み方に注意</span>
+      売上ガイダンスは下限を30億ドル、上限を20億ドル引き上げました。
+      パフォーマンスマージンも上下限とも2ポイント引き上げています。
+      <div style="margin-top:12px;">
+        にもかかわらず<strong>EPSガイダンスの上限は37.00ドルから36.50ドルへ引き下げられています</strong>。
+        会社は<strong>「基礎的な事業成長により中間値で2.78ドル引き上げたが、
+        Q2の取得IPR&amp;D費用3.03ドルによって相殺された」</strong>と説明しています。
+      </div>
+      <div style="margin-top:12px;">
+        つまり<strong>本業は上振れ、買収費用が押し下げ</strong>という構図です。
+        EPSガイダンスの数字だけを見て「利益見通しが下がった」と読むのは誤りです。
+      </div>
+    </div>
+
+    <h3>バリュエーション水準</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>数値</th></tr></thead>
+        <tbody>
+          <tr><td>時価総額</td><td class="num">約1.08〜1.09兆ドル（2026年8月10〜12日時点）</td></tr>
+          <tr><td>株価</td><td class="num">約1,215ドル（2026年8月12日時点）</td></tr>
+          <tr><td>52週高値／安値</td><td class="num">1,249.45ドル ／ 623.78ドル</td></tr>
+          <tr><td>過去1年の時価総額増加率</td><td class="num pos">約+83.6%</td></tr>
+          <tr><td>Non-GAAP EPSガイダンス中間値</td><td class="num">36.00ドル</td></tr>
+          <tr><td><strong>予想PER（編集部試算）</strong></td><td class="num"><strong>約33.8倍</strong></td></tr>
+          <tr><td>PSR（編集部試算）</td><td class="num">約12.6倍（1.09兆ドル÷通期86億ドル中間値）</td></tr>
+          <tr><td>Q2の1株当たり配当</td><td class="num">1.73ドル（前年同期比+15%）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">時価総額・株価は2026年8月10〜12日時点の集計値であり、日々変動します。PER・PSRは通期ガイダンス中間値を用いた編集部の機械的な試算です。</p>
+
+    <p>
+      予想PER約33.8倍という水準は、<strong>前回のIQVIAやIlluminaより高い</strong>ものです。
+      ただし成長率がまったく異なります。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>企業</th><th>Q2売上成長率</th><th>営業利益率</th><th>予想PER（試算）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Eli Lilly</strong></td><td class="num pos"><strong>+48%</strong></td><td class="num pos"><strong>39.1%</strong></td><td class="num">約33.8倍</td></tr>
+          <tr><td>Illumina</td><td class="num">+9.5%</td><td class="num">21.1%</td><td class="num">約36.6倍</td></tr>
+          <tr><td>IQVIA</td><td class="num">+8.7%</td><td class="num">11.6%</td><td class="num">―</td></tr>
+          <tr><td>Tempus AI</td><td class="num">+22%</td><td class="num neg">▲19.8%</td><td class="num">算出不可</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      <strong>成長率48%・営業利益率39%でPER約34倍</strong>という組み合わせは、
+      少なくとも数字の上では割高とは言い切れません。
+      問題は<strong>この成長率がどこまで続くか</strong>です。
+      売上850億〜870億ドルという規模から、さらに48%成長を続けることは
+      算術的にきわめて困難です。
+    </p>
+
+    <h3>希薄化ではなく、株式数の減少</h3>
+    <p>
+      希薄化後加重平均株式数は<strong>8億9,979万株→8億9,367万株へ0.7%減少</strong>しました。
+      配当も1株1.73ドル（+15%）と増配が続いています。
+    </p>
+    <p>
+      レイヤー3企業（Recursion +52%、Absci +23%、Relay +18%）と比べると、
+      <strong>資本の使い方が正反対</strong>です。
+      レイヤー3は株式を発行して現金を得る側、Lillyは現金で株式と企業を買う側にいます。
+    </p>
+  </section>
+
+  <!-- ⑥ -->
+  <section id="ch6">
+    <h2 class="chapter"><span class="num">⑥</span>リスク要因 ― 単一薬効群への依存と、成功の代償</h2>
+
+    <h3>1. インクレチン系への高い依存</h3>
+    <p>
+      Q2の売上229億7,400万ドルのうち、
+      MounjaroとZepboundの合計が<strong>148億7,100万ドル（約65%）</strong>を占めます（編集部計算）。
+      同社もリスク要因に
+      <strong>「総収益の相当割合を比較的少数の製品または製品クラスに依存していること、
+      およびサプライチェーンの統合」</strong>を明記しています。
+    </p>
+    <p>
+      競合の動向、安全性シグナル、特許、製造上の問題のいずれかが
+      このクラスに生じれば、影響は全社に及びます。
+    </p>
+
+    <h3>2. 薬価政策</h3>
+    <p>
+      実現価格は既に13%低下しています。
+      <strong>米国政府との薬価・アクセスに関する自主的合意の実施</strong>がリスク要因に挙げられており、
+      成功して売上が拡大するほど政治的な価格圧力の対象になる構造です。
+    </p>
+
+    <h3>3. 買収の統合リスクと減損</h3>
+    <p>
+      Q2だけで4社を買収し、四半期末以降にさらに3社の買収を完了、1社と合意しています。
+      取得IPR&amp;D費用は27億7,600万ドル。
+      これらの資産が期待どおりの成果を生まなければ、
+      <strong>費用は回収されません</strong>。
+      同社もリスク要因に「買収および事業開発取引の影響と不確実な結果、および関連コスト」を挙げています。
+    </p>
+
+    <h3>4. AI利用そのもののリスク</h3>
+    <p>
+      注目すべきは、Lillyのリスク要因に
+      <strong>「事業の様々な側面における人工知能その他の新興技術の利用、
+      および第三者とのそうした技術の利用または共有に関する提携。
+      これらは競争、規制、訴訟、サイバーセキュリティその他のリスクを増大させうる」</strong>
+      という文言が含まれていることです。
+    </p>
+    <p>
+      これはTuneLabのような取り組みを念頭に置いたものと読めます。
+      <strong>自社データで訓練したモデルを外部と共有することには、
+      競争上・法務上のリスクが伴う</strong>と会社自身が認識しているということです。
+    </p>
+
+    <h3>5. 特許期限と後発品</h3>
+    <p>
+      GLP-1関連の特許は当面有効ですが、
+      同社は「特定製品の知的財産保護の満了、
+      およびジェネリック・バイオシミラー製品との競争」をリスクとして挙げています。
+      巨額の収益を生む製品ほど、特許満了時の落差も大きくなります。
+    </p>
+
+    <h3>6. 製造・供給の制約</h3>
+    <p>
+      インディアナ州に追加45億ドルを投じるのは、需要に供給が追いついていないことの裏返しでもあります。
+      同社は「需要の予測困難性と変動性、労働力不足、第三者のパフォーマンス、品質、
+      サイバー攻撃、規制当局の措置に起因する製造上の困難、混乱、不足」をリスクに挙げています。
+    </p>
+
+    <h3>7. バリュエーションとボラティリティ</h3>
+    <p>
+      52週レンジは623.78ドル〜1,249.45ドルで、<strong>安値から高値まで2倍</strong>の開きがあります。
+      同社自身、リスク要因に
+      <strong>「当社普通株式の取引価格および時価総額の著しい急落またはボラティリティ」</strong>
+      を明記しています。時価総額1兆ドル規模でも、値動きは小さくありません。
+    </p>
+
+    <h3>8. 不正流通・模倣品</h3>
+    <p>
+      GLP-1製品は需要が極めて強いため、
+      <strong>模倣品、不正表示品、粗悪品、違法に調剤された製品の拡散</strong>がリスク要因に挙げられています。
+      実際、同社は無許可販売に対する法的措置を継続しています。
+    </p>
+  </section>
+
+  <!-- ⑦ -->
+  <section id="ch7">
+    <h2 class="chapter"><span class="num">⑦</span>まとめ ― 買い手側から見ると、レイヤー3の景色が変わる</h2>
+
+    <p>
+      本シリーズで初めて、<strong>レイヤー3企業の「顧客・出資者・買収者」の立場</strong>から
+      同じ産業を見ました。見え方が大きく変わります。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>出来事</th><th>レイヤー3側から見ると</th><th>Lilly側から見ると</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Ajax Therapeutics買収</td>
+            <td><strong>Schrödingerの黒字転換をもたらした</strong>株式評価益4,587万ドル</td>
+            <td>IPR&amp;D費用27億7,600万ドルの一部</td>
+          </tr>
+          <tr>
+            <td>Absciへの4,000万ドル出資</td>
+            <td><strong>「大手製薬が事業を理解して出資した」という強いシグナル</strong></td>
+            <td>Q2のIPR&amp;D費用の約1.4%。権利は取得せず</td>
+          </tr>
+          <tr>
+            <td>AIプラットフォーム構築</td>
+            <td>RecursionのBioHive-2、SchrödingerのBunsen</td>
+            <td>LillyPod（GPU 1,016基）＋TuneLab（無償開放、70社超参加）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>TuneLabが提起する問い</h3>
+    <p>
+      本記事で最も重要な発見は、TuneLabの存在です。
+    </p>
+    <p>
+      レイヤー3企業の投資仮説は、
+      <strong>「大手製薬が自前では作れないAI創薬能力を提供し、対価を得る」</strong>というものでした。
+      しかしLillyは、10億ドル相当とされる自社データで訓練したモデルを構築し、
+      <strong>それを無償でバイオテク企業に開放しています</strong>。
+      見返りは金銭ではなく、参加企業のデータです。
+    </p>
+    <p>
+      これは<strong>レイヤー3企業のビジネスモデルに対する構造的な問い</strong>です。
+      大手製薬が自社でモデルを作れるなら、なぜ外部に高い対価を払うのか。
+      第1回で見たRecursionの実現率2.5%、
+      第3回で見たRelayの実現率3.7%という数字は、
+      <strong>この問いに対する市場の暫定的な答え</strong>とも読めます。
+    </p>
+    <p>
+      もっとも、TuneLabへの参加企業が70社を超え、150社を目指しているという事実は、
+      <strong>レイヤー3企業がLillyのモデルを使う側に回りうる</strong>ことも意味します。
+      競合関係は単純ではありません。
+    </p>
+
+    <h3>Eli Lillyについての現時点の評価</h3>
+    <p>
+      本記事の立場は、強気でも弱気でもありません。
+      売上+48%、営業利益率39.1%、粗利率86.3%、増配15%、株式数0.7%減という数字は、
+      本シリーズのどの企業も持たない事業の強さを示しています。
+      retatrutideの臨床データパッケージ完成も、次の成長エンジンの準備が整ったことを意味します。
+    </p>
+    <p>
+      同時に、<strong>売上の約65%がインクレチン系2製品に依存し、
+      実現価格は13%低下しており、
+      Q2だけで取得IPR&amp;D費用27億7,600万ドルを計上し、
+      株価は52週安値から2倍の水準にあります</strong>。
+    </p>
+    <p>
+      <strong>売上850億〜870億ドルという規模から、成長率がどこまで維持されるかが判定材料になります。</strong>
+      投資判断を下すのであれば、
+      「実現価格は13%低下中」「売上の約65%が単一薬効群」「IPR&amp;D費用がEPSを3.03ドル押し下げ」という
+      3つの事実を織り込んだうえで行う必要があります。
+    </p>
+
+    <div class="crosslink">
+      <h4>関連レポート</h4>
+      <ul>
+        <li><a href="/reports/ai-biotech-industry-map.html">前編：産業地図 ― AI×バイオを4レイヤーで整理する</a></li>
+        <li><a href="/reports/ai-biotech-validation.html">中編：技術検証編 ― AI創薬は本当に効いているのか</a></li>
+        <li><a href="/reports/ai-biotech-valuation.html">後編：投資判断編 ― 赤字先行企業を4指標で評価する</a></li>
+        <li><a href="/reports/recursion-rxrx.html">個別企業編①：Recursion（RXRX）― 実現率2.5%問題</a></li>
+        <li><a href="/reports/schrodinger-sdgr.html">個別企業編②：Schrödinger（SDGR）― Ajax買収で黒字転換した企業</a></li>
+        <li><a href="/reports/relay-rlay.html">個別企業編③：Relay Therapeutics（RLAY）― 増資で買った第III相</a></li>
+        <li><a href="/reports/absci-absi.html">個別企業編④：Absci（ABSI）― Eli Lillyが権利を取らなかった理由</a></li>
+        <li><a href="/reports/tempus-tem.html">個別企業編⑤：Tempus AI（TEM）― 黒字転換の中身とレイヤー2の評価軸</a></li>
+        <li><a href="/reports/illumina-ilmn.html">個別企業編⑥：Illumina（ILMN）― シリーズ初の本物の黒字企業</a></li>
+        <li><a href="/reports/iqvia-iqv.html">個別企業編⑦：IQVIA（IQV）― 受注残342億ドルという可視性</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHAT TO WATCH -->
+  <div class="watch">
+    <h2>WHAT TO WATCH</h2>
+    <p class="w-sub">Eli Lilly（LLY）― 今後の注目点</p>
+    <ol>
+      <li><b>2027年第1四半期：retatrutideの米国BLA提出。</b>肥満症・閉塞性睡眠時無呼吸・変形性膝関節症疼痛の3適応で臨床データパッケージが完成済み。次の成長エンジンであり、提出時期が予定通りか、そして審査がどう進むかが中期の最大の材料。</li>
+      <li><b>実現価格の低下ペース。</b>Q2は全社で▲13%（米国▲3%、米国外▲36%）。数量+60%がこれを打ち返している構図。価格下落が加速し数量の伸びが鈍れば、成長率は急速に低下する。四半期ごとに数量と価格を分けて確認する。</li>
+      <li><b>TuneLabの参加企業数が150社に届くか。</b>2026年末までの目標。参加が増えるほどLillyのモデルは改善し、外部AI創薬企業への依存度は下がる。レイヤー3企業の事業環境を左右する指標でもある。</li>
+      <li><b>取得IPR&amp;D費用の水準。</b>Q2は27億7,600万ドル（EPS押し下げ3.03ドル）。四半期末以降も3社の買収完了とAtaiBeckleyの買収合意がある。買収ペースが続けば実効税率も高止まりする（Q2は16.5%→23.3%）。</li>
+      <li><b>Foundayo（orforglipron）の立ち上がり。</b>Q2に9,800万ドルを初計上。経口GLP-1は注射剤より製造・流通の制約が小さく、市場を大きく広げうる。四半期ごとの売上推移が、経口剤市場の実力を測る最初のデータになる。</li>
+      <li><b>薬価に関する政府との合意の実施状況。</b>リスク要因に明記されている項目。成功して売上が拡大するほど政治的圧力の対象になる構造であり、合意内容の具体化が収益にどう反映されるかを追う。</li>
+    </ol>
+  </div>
+
+  <!-- 免責 -->
+  <div class="disclaimer">
+    <h3>免責事項</h3>
+    <ul>
+      <li>本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資に関する最終的な判断は、ご自身の責任において行ってください。</li>
+      <li>本記事に記載された数値・事実は、2026年8月中旬時点で公開されている企業のIR資料、決算リリース、決算説明会、SEC提出書類、および報道等に基づいています。株価・時価総額等の市場データは日々変動します。</li>
+      <li>「編集部試算」「編集部計算」と明記した数値は、公開情報に基づく推計であり、企業が公表した値ではありません。PER・PSRはガイダンス中間値と特定時点の時価総額を用いた機械的な試算です。</li>
+      <li>Non-GAAP粗利率、Non-GAAP EPS、パフォーマンスマージン等は非GAAP指標であり、企業ごとに算出方法が異なります。GAAP指標に代わるものではありません。企業のEPSガイダンスは2026年6月30日以降に発生する取得IPR&amp;Dを含まない前提で示されています。</li>
+      <li>臨床試験の結果および規制当局への申請は、将来の承認を保証するものではありません。</li>
+      <li>本記事は特定の医薬品の使用を推奨するものではなく、医学的助言を提供するものでもありません。治療に関する判断は必ず医療専門家にご相談ください。</li>
+      <li>本記事の内容には誤りが含まれる可能性があります。投資判断にあたっては、必ず一次情報（企業のIR資料、SEC提出書類等）をご確認ください。</li>
+    </ul>
+  </div>
+
+  <footer class="site">
+    Market Supporter AI ／ marketsupporter-ai.com<br>
+    AI×製薬×バイオ シリーズ 個別企業編 ⑧（2026年8月19日公開）／ レイヤー4 第1回
+  </footer>
+
+</div>
+</body>
+</html>
