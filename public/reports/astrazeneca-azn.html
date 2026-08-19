@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AstraZeneca（NASDAQ:AZN）徹底分析｜Tempusに2億ドルを払った側 - Market Supporter AI</title>
+<meta name="description" content="AstraZeneca（AZN）を7章構成で分析。2026年Q2決算実績、Tempus AIへの2億ドル契約、第III相成功確率を予測するAIエージェント、Lillyとの戦略対比、2030年売上800億ドル目標を解説します。">
+<style>
+:root{
+  --accent:#1e3a8a;
+  --accent-dark:#172554;
+  --accent-mid:#2563eb;
+  --accent-light:#eff6ff;
+  --accent-border:#bfdbfe;
+  --ink:#151b2b;
+  --ink-sub:#465064;
+  --line:#e2e8f4;
+  --bg:#ffffff;
+  --bg-soft:#f7f9fd;
+  --warn:#b45309;
+  --warn-bg:#fffbeb;
+  --pos:#15803d;
+  --neg:#b91c1c;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);background:var(--bg);line-height:1.85;font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px 80px;}
+
+header.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 58%,#3b82f6 100%);
+  color:#fff;padding:52px 20px 46px;
+}
+.hero-inner{max-width:860px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;font-size:12px;letter-spacing:.14em;
+  background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);
+  padding:5px 13px;border-radius:999px;margin-bottom:18px;
+}
+h1{font-size:29px;line-height:1.45;margin:0 0 16px;font-weight:700;letter-spacing:.01em;}
+.hero-sub{font-size:15.5px;opacity:.94;margin:0 0 22px;line-height:1.8;}
+.meta{font-size:13px;opacity:.86;border-top:1px solid rgba(255,255,255,.25);padding-top:14px;}
+.tags{margin-top:12px;}
+.tag{display:inline-block;font-size:11.5px;background:rgba(255,255,255,.14);padding:4px 10px;border-radius:4px;margin:0 6px 6px 0;}
+
+.toc{background:var(--accent-light);border:1px solid var(--accent-border);border-radius:10px;padding:22px 24px;margin:36px 0 44px;}
+.toc h2{font-size:15px;margin:0 0 12px;color:var(--accent-dark);letter-spacing:.06em;}
+.toc ol{margin:0;padding-left:1.3em;}
+.toc li{margin:7px 0;font-size:14.5px;}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--accent-mid);}
+.toc a:hover{color:var(--accent);}
+
+section{margin:0 0 52px;scroll-margin-top:20px;}
+h2.chapter{font-size:21px;margin:0 0 20px;padding:0 0 12px 0;border-bottom:3px solid var(--accent);line-height:1.5;font-weight:700;}
+h2.chapter .num{display:inline-block;color:var(--accent);font-size:19px;margin-right:8px;}
+h3{font-size:17px;margin:32px 0 12px;padding-left:12px;border-left:4px solid var(--accent-mid);line-height:1.6;}
+p{margin:0 0 16px;}
+ul,ol{margin:0 0 18px;padding-left:1.4em;}
+li{margin:7px 0;}
+strong{color:var(--accent-dark);font-weight:700;}
+
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0 24px;}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:480px;}
+th,td{border:1px solid var(--line);padding:11px 12px;text-align:left;vertical-align:top;}
+th{background:var(--accent-light);color:var(--accent-dark);font-weight:700;white-space:nowrap;}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+tbody tr:nth-child(even){background:var(--bg-soft);}
+.tbl-note{font-size:12.5px;color:var(--ink-sub);margin:-14px 0 24px;}
+
+.callout{background:var(--bg-soft);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:18px 20px;margin:24px 0;font-size:15px;}
+.callout .label{display:block;font-size:12px;letter-spacing:.1em;color:var(--accent);font-weight:700;margin-bottom:8px;}
+.warn{background:var(--warn-bg);border-left:4px solid var(--warn);}
+.warn .label{color:var(--warn);}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:24px 0 28px;}
+.kpi{background:var(--bg-soft);border:1px solid var(--line);border-radius:9px;padding:15px 16px;}
+.kpi .k-label{font-size:12px;color:var(--ink-sub);margin-bottom:6px;line-height:1.5;}
+.kpi .k-value{font-size:21px;font-weight:700;color:var(--accent-dark);line-height:1.3;font-variant-numeric:tabular-nums;}
+.kpi .k-sub{font-size:11.5px;color:var(--ink-sub);margin-top:5px;line-height:1.5;}
+
+.pos{color:var(--pos);font-weight:700;}
+.neg{color:var(--neg);font-weight:700;}
+
+.crosslink{border:1px solid var(--accent-border);border-radius:10px;padding:18px 20px;margin:30px 0;background:#fff;}
+.crosslink h4{margin:0 0 10px;font-size:14px;color:var(--accent-dark);letter-spacing:.05em;}
+.crosslink ul{margin:0;padding-left:1.2em;font-size:14px;}
+.crosslink a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-border);}
+
+.watch{background:linear-gradient(150deg,var(--accent-dark) 0%,#0b1129 100%);color:#fff;border-radius:14px;padding:36px 28px;margin:56px 0 40px;}
+.watch h2{font-size:20px;margin:0 0 8px;letter-spacing:.08em;color:#fff;border:none;padding:0;}
+.watch .w-sub{font-size:13.5px;opacity:.82;margin:0 0 24px;}
+.watch ol{padding-left:0;list-style:none;margin:0;counter-reset:w;}
+.watch li{counter-increment:w;position:relative;padding-left:44px;margin:0 0 20px;font-size:14.8px;line-height:1.8;}
+.watch li::before{
+  content:counter(w,decimal-leading-zero);
+  position:absolute;left:0;top:2px;font-size:13px;font-weight:700;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
+  width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+}
+.watch li b{color:#bfdbfe;}
+
+.disclaimer{background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:22px 24px;font-size:13px;color:var(--ink-sub);line-height:1.85;}
+.disclaimer h3{font-size:14px;margin:0 0 10px;padding:0;border:none;color:var(--ink);}
+.disclaimer ul{padding-left:1.3em;margin:0;}
+
+footer.site{text-align:center;font-size:12.5px;color:var(--ink-sub);margin-top:44px;padding-top:22px;border-top:1px solid var(--line);}
+
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  header.hero{padding:38px 18px 34px;}
+  h1{font-size:22px;line-height:1.5;}
+  .hero-sub{font-size:14.5px;}
+  .wrap{padding:0 16px 60px;}
+  h2.chapter{font-size:18.5px;}
+  h3{font-size:16px;}
+  .watch{padding:28px 20px;border-radius:10px;}
+  .watch li{padding-left:38px;font-size:14.2px;}
+  .watch li::before{width:26px;height:26px;font-size:12px;}
+  .kpi .k-value{font-size:19px;}
+  table{font-size:13.2px;}
+  th,td{padding:9px 10px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">AI × 製薬 × バイオ シリーズ ／ 個別企業編 ⑨ ／ レイヤー4 第2回</span>
+    <h1>AstraZeneca（NASDAQ:AZN）徹底分析<br>― Tempusに2億ドルを払った側から見る、AIの価値</h1>
+    <p class="hero-sub">
+      前回のLillyは、自社でスーパーコンピュータを建て、モデルを無償開放しました。
+      AstraZenecaは正反対です。<strong>データを持つ企業に対価を払い、外部と組む。</strong>
+      第5回で扱ったTempus AIへの2億ドル契約が、その象徴です。
+      2026年7月27日発表のQ2決算実績から、この戦略の違いを検証します。
+    </p>
+    <div class="meta">
+      公開日：2026年8月20日 ／ 分析基準日：2026年8月中旬 ／ Market Supporter AI 編集部
+      <div class="tags">
+        <span class="tag">#AZN</span>
+        <span class="tag">#大手製薬</span>
+        <span class="tag">#米国株</span>
+        <span class="tag">#レイヤー4</span>
+        <span class="tag">#オンコロジー</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="toc">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#ch1">市場規模 ― 2030年に800億ドルという目標</a></li>
+      <li><a href="#ch2">政策・規制環境 ― 中国と、30件の承認</a></li>
+      <li><a href="#ch3">コスト・収益構造 ― ReportedとCoreの乖離が語ること</a></li>
+      <li><a href="#ch4">事業セグメント動向 ― 買う側のAI戦略</a></li>
+      <li><a href="#ch5">株式バリュエーション ― Lillyとの対比で読む</a></li>
+      <li><a href="#ch6">リスク要因 ― 第III相の失敗と、合併観測</a></li>
+      <li><a href="#ch7">まとめ ― レイヤー4に2つの流儀がある</a></li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <span class="label">この記事の位置づけ</span>
+    「AI×製薬×バイオ」3部作の4レイヤー分類における<strong>レイヤー4（AIを導入する大手製薬）</strong>の第2回です。
+    前回のEli Lillyは、LillyPod（GPU 1,016基）を自社で建て、TuneLabで自社モデルを無償開放する
+    <strong>「内製・囲い込み型」</strong>でした。
+    AstraZenecaは<strong>「外部調達・提携型」</strong>という対照的な戦略を取っています。
+    レイヤー4の内部にも異なる流儀があることが、本記事で明らかになります。
+  </div>
+
+  <!-- ① -->
+  <section id="ch1">
+    <h2 class="chapter"><span class="num">①</span>市場規模 ― 2030年に800億ドルという目標</h2>
+
+    <p>
+      AstraZenecaは1913年創業（現社名は1999年から）、英ケンブリッジ拠点。
+      オンコロジー、循環器・腎・代謝（CVRM）、呼吸器・免疫（R&amp;I）、
+      ワクチン・免疫療法（V&amp;I）、希少疾患という5つの疾患領域で事業を展開しています。
+    </p>
+    <p>
+      同社が掲げる最大の目標は、<strong>2030年に総収益800億ドル</strong>です。
+      2026年H1の総収益が306億7,200万ドルですから、年換算で約613億ドル。
+      <strong>4年で約30%の成長</strong>が必要になる計算です（編集部試算）。
+    </p>
+
+    <h3>2026年上半期・第2四半期の実績</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>指標（百万ドル）</th><th>H1 2026</th><th>実質増減</th><th>CER増減</th><th>Q2 2026</th><th>実質増減</th><th>CER増減</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>製品売上</td><td class="num">28,896</td><td class="num">+8%</td><td class="num">+5%</td><td class="num">14,510</td><td class="num">+5%</td><td class="num">+4%</td></tr>
+          <tr><td>アライアンス収益</td><td class="num">1,699</td><td class="num pos">+31%</td><td class="num pos">+29%</td><td class="num">874</td><td class="num pos">+34%</td><td class="num pos">+33%</td></tr>
+          <tr><td>製品収益</td><td class="num">30,595</td><td class="num">+9%</td><td class="num">+6%</td><td class="num">15,384</td><td class="num">+6%</td><td class="num">+5%</td></tr>
+          <tr><td>コラボレーション収益</td><td class="num">77</td><td class="num">▲6%</td><td class="num">▲9%</td><td class="num">—</td><td class="num">―</td><td class="num">―</td></tr>
+          <tr><td><strong>総収益</strong></td><td class="num"><strong>30,672</strong></td><td class="num">+9%</td><td class="num">+6%</td><td class="num"><strong>15,384</strong></td><td class="num">+6%</td><td class="num">+5%</td></tr>
+          <tr><td>Reported EPS（ドル）</td><td class="num">3.60</td><td class="num">+4%</td><td class="num">+3%</td><td class="num">1.61</td><td class="num">+2%</td><td class="num neg">▲2%</td></tr>
+          <tr><td><strong>Core EPS（ドル）</strong></td><td class="num"><strong>5.21</strong></td><td class="num pos">+12%</td><td class="num pos">+11%</td><td class="num pos"><strong>2.63</strong></td><td class="num pos">+21%</td><td class="num pos">+18%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：AstraZeneca H1・Q2 2026決算発表（2026年7月27日）。CERは為替中立ベース。</p>
+
+    <div class="callout warn">
+      <span class="label">前回のLillyと並べると</span>
+      Lillyの2026年Q2は売上+48%でした。AstraZenecaは+6%（CER +5%）。
+      <strong>同じレイヤー4でも、成長率が8倍違います。</strong>
+      <div style="margin-top:12px;">
+        この差はGLP-1という単一の巨大市場を持つか否かによるものです。
+        AstraZenecaはオンコロジーと希少疾患の2桁成長で、
+        Farxigaの米国独占期間終了と中国の量産調達（VBP）による逆風を打ち返しているという構図です。
+      </div>
+    </div>
+
+    <h3>成長の内訳 ― オンコロジーと希少疾患</h3>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="k-label">がん領域の売上（Q2）</div>
+        <div class="k-value">+15%</div>
+        <div class="k-sub">成長の主エンジン</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">希少疾患（Q2）</div>
+        <div class="k-value">+8%</div>
+        <div class="k-sub">Alexion買収由来</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">中国（Q2）</div>
+        <div class="k-value neg">▲13%</div>
+        <div class="k-sub">第2の市場。後発品競争と政策変更</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">アライアンス収益（Q2）</div>
+        <div class="k-value">+34%</div>
+        <div class="k-sub">提携製品からの収益</div>
+      </div>
+    </div>
+    <p>
+      経営陣は、<strong>FarxigaとBrilintaを除いた基礎的な売上は11%成長した</strong>と説明しています。
+      つまり特許切れ製品の減少を除けば、事業の成長率は2桁だということです。
+    </p>
+    <p>
+      注目すべきは<strong>アライアンス収益が+34%</strong>と高い伸びを示している点です。
+      これは提携先と共同で販売する製品からの収益で、
+      <strong>AstraZenecaが外部との協業を通じて成長している</strong>ことを数字で示しています。
+      第④章で見るAI戦略とも通じる特徴です。
+    </p>
+
+    <h3>次の成長エンジン ― 肥満症への参入</h3>
+    <p>
+      Q2の重要な動きとして、経口GLP-1候補<strong>elecoglipron</strong>について
+      <strong>6本の第III相試験を開始</strong>しました。肥満症と2型糖尿病が対象です。
+    </p>
+    <p>
+      これは前回のLilly、そしてNovo Nordiskが支配する市場への挑戦にあたります。
+      Lillyが既にMounjaro 99億ドル、Zepbound 49億ドルを四半期で計上していることを考えると、
+      <strong>AstraZenecaは大きく出遅れた位置から参入する</strong>ことになります。
+    </p>
+    <p>
+      もう一つ、呼吸器領域の<strong>tozorakimab</strong>について、
+      ピーク時売上予想を従来の30億ドルから<strong>50億ドル超へ引き上げ</strong>ました。
+    </p>
+  </section>
+
+  <!-- ② -->
+  <section id="ch2">
+    <h2 class="chapter"><span class="num">②</span>政策・規制環境 ― 中国と、30件の承認</h2>
+
+    <p>
+      AstraZenecaの規制環境は、Lillyとも、これまでの7社とも異なる特徴を持ちます。
+      <strong>中国が第2の市場</strong>であるという点です。
+    </p>
+
+    <h3>中国 ▲13%という数字</h3>
+    <p>
+      Q2の中国売上は<strong>13%減少</strong>しました。
+      要因は後発品との競争と政策変更、具体的には<strong>量産調達（VBP、volume-based procurement）</strong>です。
+      これは中国政府が医薬品を大量一括購入する代わりに大幅な値下げを求める制度で、
+      対象になった製品の単価は大きく下がります。
+    </p>
+    <div class="callout">
+      <span class="label">シリーズ内での比較</span>
+      中国リスクは本シリーズで2社目です。
+      第6回のIlluminaは<strong>UEL（信頼できない企業リスト）掲載</strong>による市場アクセス制限でした。
+      AstraZenecaは<strong>VBPによる価格圧力</strong>です。
+      <div style="margin-top:12px;">
+        同じ「中国リスク」でも性質が違います。
+        Illuminaは売れない、AstraZenecaは<strong>安くしか売れない</strong>。
+        前回のLillyもMounjaroの中国NRDL収載により米国外価格が36%下落しており、
+        <strong>中国市場は「数量は取れるが単価を大きく譲る」市場</strong>として3社に共通して現れています。
+      </div>
+    </div>
+
+    <h3>30件の承認と、6本の第III相読み出し</h3>
+    <p>
+      2025年Q4決算以降、主要地域で<strong>30件の承認</strong>を取得しました。
+      Q2までの主な承認は以下です。
+    </p>
+    <ul>
+      <li><strong>Baxfendy</strong>（高血圧）：米国で承認。同社初の first-in-class 高血圧治療薬</li>
+      <li><strong>Datroway</strong>：一次治療トリプルネガティブ乳がんで米国承認</li>
+      <li><strong>Enhertu</strong>：複数のHER2陽性腫瘍適応で米国・EU承認</li>
+      <li><strong>Etcamah</strong>（camizestrant）：ESR1変異HR陽性・HER2陰性進行乳がんでEU・日本承認</li>
+      <li><strong>Truqap</strong>：PTEN欠損転移性ホルモン感受性前立腺がんで米国承認</li>
+      <li><strong>Calquence</strong>：一次治療慢性リンパ性白血病（固定期間）で日本承認</li>
+      <li><strong>Fasenra</strong>：好酸球増多症候群で米国・EU・日本・中国承認</li>
+    </ul>
+
+    <div class="callout warn">
+      <span class="label">失敗した第III相も明示されている</span>
+      Q2までに6本の第III相・登録試験が読み出され、結果は<strong>まちまち</strong>でした。
+      <div class="table-scroll" style="margin-top:12px;">
+        <table>
+          <thead><tr><th>薬剤</th><th>試験・適応</th><th>結果</th></tr></thead>
+          <tbody>
+            <tr><td>Imfinzi</td><td>VOLGA ― シスプラチン不適格の筋層浸潤性膀胱がん</td><td class="pos">主要評価項目達成</td></tr>
+            <tr><td>Imfinzi</td><td>NILE ― 一次治療膀胱がん</td><td class="pos">主要評価項目達成</td></tr>
+            <tr><td>Imfinzi</td><td>EMERALD-2 ― 術後補助療法 肝細胞がん</td><td class="neg">未達成</td></tr>
+            <tr><td>Wainua</td><td>CARDIO-TTRansform ― ATTR心筋症</td><td class="neg">未達成</td></tr>
+            <tr><td>Ultomiris</td><td>TMA-313 ― 成人HSCT関連血栓性微小血管症</td><td class="neg">未達成</td></tr>
+            <tr><td>Ultomiris</td><td>ALXN1210-MG-319 ― 小児全身型重症筋無力症</td><td class="pos">主要評価項目達成</td></tr>
+          </tbody>
+        </table>
+      </div>
+      CEOのPascal Soriot氏はCARDIO-TTRansformの結果について
+      <strong>失望していると明言</strong>したうえで、パイプラインへの自信を示し、
+      <strong>今後18か月で20件超の高価値な読み出しがある</strong>と述べています。
+    </div>
+
+    <p>
+      3部作で確認したとおり、<strong>2026年時点でAI創薬由来のFDA承認薬はゼロ</strong>です。
+      AstraZenecaの30件の承認も、AIが直接生み出したものではありません。
+      ただし第④章で見るとおり、
+      <strong>同社はAIを「どの試験を進めるか」の判断に使おうとしています</strong>。
+      6本中3本が未達だったという事実は、その必要性を裏付けるものでもあります。
+    </p>
+  </section>
+
+  <!-- ③ -->
+  <section id="ch3">
+    <h2 class="chapter"><span class="num">③</span>コスト・収益構造 ― ReportedとCoreの乖離が語ること</h2>
+
+    <h3>2026年第2四半期の実績（2026年7月27日発表）</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>指標</th><th>Reported（百万ドル）</th><th>Reported増減（実質／CER）</th><th>Core（百万ドル）</th><th>Core増減（実質／CER）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>製品収益</td><td class="num">15,384</td><td class="num">+6% / +5%</td><td class="num">15,384</td><td class="num">+6% / +5%</td></tr>
+          <tr><td>総収益</td><td class="num">15,384</td><td class="num">+6% / +5%</td><td class="num">15,384</td><td class="num">+6% / +5%</td></tr>
+          <tr><td>売上総利益率</td><td class="num">84%</td><td class="num">+1pp</td><td class="num">84%</td><td class="num">+1pp / +1pp</td></tr>
+          <tr><td>研究開発費</td><td class="num">4,053</td><td class="num neg">+14% / +13%</td><td class="num">3,662</td><td class="num">+6% / +5%</td></tr>
+          <tr><td>販売費・一般管理費</td><td class="num">5,651</td><td class="num neg">+16% / +14%</td><td class="num">4,050</td><td class="num">+7% / +4%</td></tr>
+          <tr><td><strong>営業利益</strong></td><td class="num neg"><strong>3,164</strong></td><td class="num neg"><strong>▲10% / ▲13%</strong></td><td class="num pos"><strong>5,158</strong></td><td class="num pos"><strong>+12% / +10%</strong></td></tr>
+          <tr><td>営業利益率</td><td class="num neg">21%</td><td class="num neg">▲4pp</td><td class="num pos">34%</td><td class="num pos">+2pp</td></tr>
+          <tr><td>税率</td><td class="num">10%</td><td class="num">▲11pp</td><td class="num">15%</td><td class="num">▲6pp</td></tr>
+          <tr><td><strong>EPS（ドル）</strong></td><td class="num"><strong>1.61</strong></td><td class="num">+2% / <span class="neg">▲2%</span></td><td class="num pos"><strong>2.63</strong></td><td class="num pos">+21% / +18%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：AstraZeneca H1・Q2 2026決算発表（2026年7月27日）。CoreとReportedの差は主に無形資産の償却、減損、法的和解、リストラ費用によるもの。</p>
+
+    <div class="callout warn">
+      <span class="label">この決算で最も重要な数字の食い違い</span>
+      <strong>Reported営業利益は10%減少し、Core営業利益は12%増加</strong>しています。
+      営業利益率もReported 21%（▲4pt）に対しCore 34%（+2pt）と、方向が正反対です。
+      <div style="margin-top:12px;">
+        Reportedベースの減益要因は、
+        <strong>新製品の上市と後期パイプラインの拡大に伴うR&amp;DおよびSG&amp;Aへの投資</strong>と説明されています。
+        実際、Reported R&amp;D費は+14%、SG&amp;A費は+16%と大きく伸びていますが、
+        Coreベースではそれぞれ+6%、+7%にとどまります。
+      </div>
+      <div style="margin-top:12px;">
+        差額はおよそ<strong>R&amp;Dで3億9,100万ドル、SG&amp;Aで16億100万ドル</strong>（編集部計算）。
+        無形資産の償却、減損、法的和解、リストラ費用が含まれます。
+        <strong>Core EPSだけを見ると+21%の好決算、
+        Reported EPSだけを見るとCERで▲2%の減益</strong>という、
+        評価が真逆になる決算でした。
+      </div>
+    </div>
+
+    <h3>本シリーズで繰り返し現れる構図</h3>
+    <p>
+      GAAP／Non-GAAP、Reported／Coreの乖離は、本シリーズで何度も出てきました。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>企業</th><th>乖離の内容</th><th>正体</th></tr></thead>
+        <tbody>
+          <tr><td>Schrödinger（第2回）</td><td>営業損失▲4,155万ドルなのに純利益598万ドル</td><td>Ajax買収に伴う株式評価益（非現金）</td></tr>
+          <tr><td>Tempus AI（第5回）</td><td>営業損失▲7,591万ドルなのに純利益564万ドル</td><td>株式の未実現評価益9,850万ドル（非現金）</td></tr>
+          <tr><td>Illumina（第6回）</td><td>GAAP EPS減・Non-GAAP EPS増</td><td>戦略投資の評価損益</td></tr>
+          <tr><td>Eli Lilly（第8回）</td><td>EPSガイダンス上限を引き下げ</td><td>取得IPR&amp;D費用3.03ドル</td></tr>
+          <tr><td><strong>AstraZeneca（本記事）</strong></td><td><strong>Reported営業利益▲10%・Core営業利益+12%</strong></td><td><strong>無形資産償却、減損、法的和解、リストラ費用</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      <strong>本シリーズを通じて最も重要な教訓の一つは、
+      「見出しの利益数字を、その中身を確認せずに読まない」ということです。</strong>
+      AstraZenecaのケースでは、Coreベースの調整が
+      買収由来の償却という<strong>継続的に発生する項目</strong>を含む点に注意が必要です。
+    </p>
+
+    <h3>R&amp;D投資の水準</h3>
+    <p>
+      H1のCore R&amp;D費用は6%増加し、<strong>売上の23%</strong>に相当します。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>企業</th><th>R&amp;D費／売上高</th></tr></thead>
+        <tbody>
+          <tr><td><strong>AstraZeneca</strong></td><td class="num"><strong>23%</strong>（H1 Core）</td></tr>
+          <tr><td>Eli Lilly</td><td class="num">17%（Q2）</td></tr>
+          <tr><td>Illumina</td><td class="num">約21.7%（Q2、編集部計算）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      LillyよりR&amp;D比率が高いのは、
+      <strong>売上規模が小さいうえに、後期パイプラインが厚い</strong>ためです。
+      「今後18か月で20件超の高価値な読み出し」という表現は、
+      この投資水準の裏付けでもあります。
+    </p>
+
+    <h3>配当と株主還元</h3>
+    <p>
+      中間配当は3セント引き上げられ、<strong>1株1.06ドル</strong>（79.5ペンス、10.32スウェーデンクローナ）となりました。
+      Lillyが1株1.73ドル（+15%）だったのと比べると増配ペースは緩やかですが、
+      <strong>成長率の差を考えれば整合的</strong>です。
+    </p>
+  </section>
+
+  <!-- ④ -->
+  <section id="ch4">
+    <h2 class="chapter"><span class="num">④</span>事業セグメント動向 ― 買う側のAI戦略</h2>
+
+    <p>
+      本記事の中心はここです。
+      前回のLillyと比較すると、<strong>AI戦略の思想がまったく異なります</strong>。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>観点</th><th>Eli Lilly（第8回）</th><th>AstraZeneca（本記事）</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>計算基盤</td>
+            <td><strong>LillyPod を自社所有</strong>（NVIDIA GPU 1,016基、9,000ペタフロップス超）</td>
+            <td>自社スーパーコンピュータの保有は公表されていない</td>
+          </tr>
+          <tr>
+            <td>モデル</td>
+            <td><strong>自社データで訓練し、TuneLabで無償開放</strong></td>
+            <td><strong>外部と共同開発し、対価を払う</strong></td>
+          </tr>
+          <tr>
+            <td>データ</td>
+            <td>10億ドル相当とされる自社データ</td>
+            <td>BIKG（生物学的知見ナレッジグラフ）、ゲノム研究センター</td>
+          </tr>
+          <tr>
+            <td>外部との関係</td>
+            <td>買収（Ajax、Orna等）＋少額出資（Absci）</td>
+            <td><strong>ライセンス契約・共同開発（Tempus、Pathos、BenevolentAI等）</strong></td>
+          </tr>
+          <tr>
+            <td>思想</td>
+            <td>内製・囲い込み型</td>
+            <td>外部調達・提携型</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Tempus AI・Pathos AIとの2億ドル契約</h3>
+    <p>
+      本シリーズ第5回で扱ったTempus AIとの関係が、この戦略の象徴です。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td>参加者</td><td>AstraZeneca、Tempus AI、Pathos AI</td></tr>
+          <tr><td>内容</td><td>複数年にわたる戦略的協業。オンコロジーのマルチモーダル基盤モデルを構築</td></tr>
+          <tr><td>目的</td><td>生物学的・臨床的知見の収集、新規創薬標的の発見、治療薬の開発</td></tr>
+          <tr><td><strong>Tempusへの支払い</strong></td><td><strong>データライセンス料およびモデル開発費として2億ドル</strong></td></tr>
+          <tr><td>成果物の扱い</td><td>完成したモデルは<strong>3者すべてで共有</strong>し、各社が個別に活用</td></tr>
+          <tr><td>関係の経緯</td><td>2021年に初協業、2023年にTempusのNextプラットフォーム導入で拡大</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <span class="label">第5回との接続 ― 2億ドルの意味</span>
+      第5回のTempus AI記事で、同社のTCV（総契約価値）が11億ドル超、
+      NRR（既存顧客の収益維持率）が約126%であることを指摘しました。
+      <strong>そのTCVの一部を構成しているのが、このAstraZenecaとの2億ドル契約です。</strong>
+      <div style="margin-top:12px;">
+        Tempus側から見れば、これは事業基盤の厚みを示す数字。
+        AstraZeneca側から見れば、<strong>Q2の研究開発費40億5,300万ドルの数%</strong>にすぎません。
+        前回のLilly記事で見た「同じ取引がレイヤーによって違う意味を持つ」という構図が、
+        ここでも繰り返されています。
+      </div>
+      <div style="margin-top:12px;">
+        さらに第6回で、IlluminaのBillion Cell AtlasにもAstraZenecaがパートナーとして参加していることを指摘しました。
+        <strong>AstraZenecaは、Tempus・Illuminaという競合関係にあるレイヤー2企業の
+        両方と同時に組んでいます。</strong>
+        大手製薬にとって、データ供給元を複数持つことは合理的な選択です。
+      </div>
+    </div>
+
+    <h3>第III相の成功確率を予測するAIエージェント</h3>
+    <p>
+      CEOのPascal Soriot氏が2026年6月に語った内容が、この戦略の狙いを最も明確に示しています。
+    </p>
+    <p>
+      同氏によれば、AstraZenecaは<strong>臨床データと実験室データを統合し、
+      第III相試験の成功確率を予測するエージェント</strong>を開発したとされています。
+      その意義について、<strong>1本の試験に3億〜5億ドルを投じている以上、
+      成功確率が上がれば生産性の改善は極めて大きい</strong>と説明しています。
+    </p>
+
+    <div class="callout warn">
+      <span class="label">この発言が示す、AI活用の現実的な位置づけ</span>
+      注目すべきは、<strong>「新しい薬を見つける」ではなく「どの試験を進めるか判断する」</strong>
+      ことにAIの価値を置いている点です。
+      <div style="margin-top:12px;">
+        3部作で確認したとおり、AI創薬由来のFDA承認薬は2026年時点でゼロです。
+        レイヤー3企業が「AIが新薬を生む」という仮説に賭けているのに対し、
+        AstraZenecaは<strong>「AIが失敗する試験を事前に見分ける」</strong>という、
+        より地味だが検証しやすい用途に投資しています。
+      </div>
+      <div style="margin-top:12px;">
+        第②章で見たとおり、Q2までに読み出された6本の第III相のうち3本が主要評価項目未達でした。
+        <strong>1本あたり3億〜5億ドルとすれば、失敗した3本で最大15億ドル規模。</strong>
+        この文脈で見ると、Tempusへの2億ドルは「高い買い物」とは言えません。
+      </div>
+    </div>
+
+    <h3>その他のAI関連の取り組み</h3>
+    <ul>
+      <li><strong>BIKG（Biological Insights Knowledge Graph）</strong>：自社の生物学的知見ナレッジグラフ。遺伝子・タンパク質・疾患・化合物とその関係性を構造化したデータ基盤</li>
+      <li><strong>BenevolentAIとの協業</strong>：慢性腎臓病（CKD）と特発性肺線維症（IPF）を対象に、AIとナレッジグラフで新規標的を探索。AstraZenecaのゲノム・化学・臨床データとBenevolentの標的同定プラットフォームを組み合わせる形</li>
+      <li><strong>Pathos AI</strong>：Tempusとの3者協業に参加</li>
+      <li><strong>Nucs AI</strong>：治療用放射性コンジュゲートのAI駆動応答予測を開発する協業</li>
+      <li><strong>CSPC Pharmaceutical Group</strong>：新規経口候補の探索・開発に関する協業</li>
+      <li><strong>CMC開発期間の半減</strong>：Soriot氏は、AI導入が化学・製造・品質管理（CMC）の開発期間を半減させる戦略の一環だと説明</li>
+    </ul>
+
+    <h3>外部からの資産導入 ― Dizalとの契約</h3>
+    <p>
+      Q2に発表された事業開発として、中国のDizalからZegfrovyの権利を取得する契約があります。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>金額</th></tr></thead>
+        <tbody>
+          <tr><td>一時金</td><td class="num">6億ドル</td></tr>
+          <tr><td>開発・規制・売上マイルストーン（最大）</td><td class="num">9億ドル</td></tr>
+          <tr><td>ロイヤルティ</td><td>Zegfrovyのグローバル売上に対する段階的ロイヤルティ</td></tr>
+          <tr><td>クロージング見込み</td><td>2026年下半期（通常のクロージング条件および規制当局の承認が前提）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      この契約構造は、本シリーズで見てきたレイヤー3企業の提携と<strong>同じ形</strong>です。
+      一時金6億ドル＋マイルストーン最大9億ドル＝公表総額15億ドル。
+      <strong>実現率という観点では、一時金6億ドル÷15億ドル＝40%</strong>が
+      契約時点で確定していることになります（編集部試算）。
+    </p>
+    <p>
+      第1回のRecursion（実現率約2.5%）、第3回のRelay（約3.7%）と比べると、
+      <strong>Dizalは圧倒的に有利な条件で契約している</strong>ことが分かります。
+      これは資産の成熟度の差によるものです。
+      <strong>臨床で実証された資産は一時金の比率が高く、
+      探索段階のプラットフォーム提携は一時金の比率が低い。</strong>
+      レイヤー3企業の実現率の低さは、この構造から説明できます。
+    </p>
+  </section>
+
+  <!-- ⑤ -->
+  <section id="ch5">
+    <h2 class="chapter"><span class="num">⑤</span>株式バリュエーション ― Lillyとの対比で読む</h2>
+
+    <h3>2026年通期ガイダンス（再確認）</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>ガイダンス</th></tr></thead>
+        <tbody>
+          <tr><td>総収益成長率（CER）</td><td class="num">中〜高一桁%</td></tr>
+          <tr><td>Core EPS成長率（CER）</td><td class="num">低二桁%</td></tr>
+          <tr><td>Coreベースの税率</td><td class="num">18〜22%</td></tr>
+          <tr><td>為替の影響</td><td>2026年6月の平均レートが年末まで続けば、総収益に低一桁%のプラス影響（変更なし）。Core EPS成長率はCERとおおむね同様（変更なし）</td></tr>
+          <tr><td>2030年の目標</td><td class="num">総収益<strong>800億ドル</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      ガイダンスは<strong>据え置き（reconfirm）</strong>です。
+      前回のLillyが売上・マージンともに引き上げたのとは対照的ですが、
+      Q2のCore EPSが+21%と大きく伸びていることを考えると、
+      <strong>据え置きは保守的な姿勢とも読めます</strong>。
+    </p>
+    <p>
+      なお同社は<strong>Reportedベースのガイダンスを提供できない</strong>と明記しています。
+      理由は、買収関連負債の公正価値調整や無形資産の減損など、
+      重要な要素を信頼性をもって予測できないためです。
+      <strong>Reportedベースで評価しようとしても、会社自身が見通しを示せない</strong>という構造です。
+    </p>
+
+    <h3>バリュエーション水準</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>数値</th></tr></thead>
+        <tbody>
+          <tr><td>時価総額（ADR、NASDAQ）</td><td class="num">約2,630億ドル（2026年8月1日時点）</td></tr>
+          <tr><td>H1 2026 Core EPS</td><td class="num">5.21ドル（+12%）</td></tr>
+          <tr><td>Q2 2026 Core EPS</td><td class="num">2.63ドル（+21%）</td></tr>
+          <tr><td>中間配当</td><td class="num">1株1.06ドル（3セント増）</td></tr>
+          <tr><td>アナリストの見方</td><td>Jefferiesは目標株価16,500ペンス（ロンドン上場ベース）でBuyを維持。UBSはBuy。Deutsche BankはSell。見方は分かれる</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">時価総額はADR（NASDAQ上場）ベースの2026年8月1日時点の集計値です。同社はロンドン、ストックホルム、NASDAQに上場しており、算出元により数値が異なります。市場データは日々変動します。</p>
+
+    <h3>Lillyとの対比</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>AstraZeneca</th><th>Eli Lilly</th></tr></thead>
+        <tbody>
+          <tr><td>Q2 総収益</td><td class="num">153億8,400万ドル</td><td class="num">229億7,400万ドル</td></tr>
+          <tr><td>売上成長率</td><td class="num">+6%（CER +5%）</td><td class="num pos">+48%</td></tr>
+          <tr><td>粗利率</td><td class="num">84%</td><td class="num pos">86.3%（Non-GAAP）</td></tr>
+          <tr><td>営業利益率</td><td class="num">Reported 21% / <strong>Core 34%</strong></td><td class="num pos">39.1%</td></tr>
+          <tr><td>R&amp;D費／売上高</td><td class="num">23%（H1 Core）</td><td class="num">17%</td></tr>
+          <tr><td>時価総額</td><td class="num">約2,630億ドル</td><td class="num">約1.08〜1.09兆ドル</td></tr>
+          <tr><td>AI戦略</td><td>外部調達・提携型</td><td>内製・囲い込み型</td></tr>
+          <tr><td>肥満症</td><td>elecoglipron 第III相6本開始</td><td>Mounjaro＋Zepbound で四半期148億ドル</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      時価総額はLillyの約4分の1、成長率は8分の1。
+      <strong>両社は「大手製薬」という同じ括りにありながら、
+      市場からの評価はまったく異なります。</strong>
+    </p>
+    <p>
+      ただしAstraZenecaには、Lillyにない特徴もあります。
+      <strong>疾患領域が5つに分散しており、単一薬効群への依存度が低い</strong>ことです。
+      Lillyは売上の約65%がインクレチン系2製品に集中していました。
+      分散は成長率を抑える一方、<strong>1つの領域で問題が生じたときの耐性を高めます</strong>。
+    </p>
+  </section>
+
+  <!-- ⑥ -->
+  <section id="ch6">
+    <h2 class="chapter"><span class="num">⑥</span>リスク要因 ― 第III相の失敗と、合併観測</h2>
+
+    <h3>1. 第III相の失敗リスクが現実化している</h3>
+    <p>
+      Q2までに読み出された6本のうち<strong>3本が主要評価項目未達</strong>でした。
+      CARDIO-TTRansform（Wainua、ATTR心筋症）、
+      EMERALD-2（Imfinzi、術後補助療法肝細胞がん）、
+      TMA-313（Ultomiris、成人HSCT関連血栓性微小血管症）。
+    </p>
+    <p>
+      CEOが「失望している」と明言するほどの結果です。
+      <strong>今後18か月で20件超の読み出しが控えている</strong>ということは、
+      成功と失敗の両方が今後も続くということでもあります。
+    </p>
+
+    <h3>2. 中国市場の圧力</h3>
+    <p>
+      Q2の中国売上は▲13%。VBP（量産調達）と後発品競争が要因です。
+      中国は同社にとって<strong>第2の市場</strong>であり、影響は小さくありません。
+      政策変更のタイミングと対象製品は同社の制御外にあります。
+    </p>
+
+    <h3>3. 特許切れの継続</h3>
+    <p>
+      Farxigaの米国独占期間終了が既に業績を圧迫しています。
+      経営陣が「FarxigaとBrilintaを除けば基礎的成長は11%」と説明していることは、
+      裏を返せば<strong>この2製品が成長率を5ポイント押し下げている</strong>ことを意味します。
+    </p>
+
+    <h3>4. ReportedとCoreの乖離が続く構造</h3>
+    <p>
+      Reported営業利益は▲10%、Core営業利益は+12%。
+      この差を生む無形資産の償却は、
+      <strong>Alexion買収などに由来する継続的な費用</strong>です。
+      同社がReportedベースのガイダンスを提供できないと明記していることは、
+      <strong>投資家がReportedベースで将来を見通す手段が限られている</strong>ことを示します。
+    </p>
+
+    <h3>5. 肥満症市場への出遅れ</h3>
+    <p>
+      elecoglipronの第III相を6本開始したのはQ2です。
+      一方Lillyは既にMounjaroとZepboundで四半期148億ドルを計上し、
+      次世代のretatrutideも2027年Q1に申請予定。
+      Novo Nordiskも同市場を支配しています。
+      <strong>AstraZenecaが参入する頃には、市場の主要な位置は既に埋まっている可能性があります。</strong>
+    </p>
+
+    <h3>6. 合併観測による不確実性</h3>
+    <p>
+      2026年8月初旬、<strong>AstraZenecaとBristol Myers Squibbが
+      4,000億ドル規模の統合について初期段階の協議を行った</strong>と複数のメディアが報じました。
+      その後、投資家の反発により協議は頓挫したとも報じられ、
+      この報道を受けて株価は6%上昇しています。
+    </p>
+    <div class="callout warn">
+      <span class="label">この件の扱いについて</span>
+      本記事執筆時点で、この合併観測は<strong>報道ベースの情報</strong>であり、
+      両社から正式な発表がなされたものではありません。
+      TD Cowenは「戦略的な合理性が見当たらない」との見方を示しています。
+      <strong>報道の真偽および今後の展開は不確定であり、
+      本記事はこの件について何ら判断を示すものではありません。</strong>
+      ただし、こうした観測が出ること自体が株価の変動要因となる点は、
+      投資判断において考慮すべき事実です。
+    </div>
+
+    <h3>7. 地政学・物流コスト</h3>
+    <p>
+      CFOのAradhana Sarin氏は、<strong>イランでの紛争が物流・流通費用を押し上げた</strong>と述べています。
+      100か国以上で事業を展開する企業として、
+      地政学リスクが直接コストに反映される構造です。
+    </p>
+
+    <h3>8. AI投資の成果が測りにくい</h3>
+    <p>
+      Tempusへの2億ドル、BenevolentAI、Pathos、Nucs AIとの協業。
+      いずれも<strong>成果が財務数値に直接現れる形になっていません</strong>。
+      「第III相の成功確率が上がった」ことを外部から検証する手段は、
+      実際の成功率の推移を長期間追跡する以外にありません。
+      <strong>投資の妥当性は、少なくとも数年単位で判定を待つ必要があります。</strong>
+    </p>
+  </section>
+
+  <!-- ⑦ -->
+  <section id="ch7">
+    <h2 class="chapter"><span class="num">⑦</span>まとめ ― レイヤー4に2つの流儀がある</h2>
+
+    <p>
+      レイヤー4の2社を分析し、<strong>大手製薬のAI戦略に2つの異なる流儀がある</strong>ことが明確になりました。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th></th><th>Eli Lilly ― 内製・囲い込み型</th><th>AstraZeneca ― 外部調達・提携型</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>計算基盤</td>
+            <td>LillyPodを自社所有（GPU 1,016基）</td>
+            <td>自社保有は公表されていない</td>
+          </tr>
+          <tr>
+            <td>モデル</td>
+            <td>自社データで訓練、TuneLabで無償開放し外部データを集める</td>
+            <td>Tempus・Pathosと共同開発、2億ドルを支払い、成果を3者で共有</td>
+          </tr>
+          <tr>
+            <td>AIの用途</td>
+            <td>創薬プロセス全体の加速</td>
+            <td><strong>第III相の成功確率予測</strong>（試験の取捨選択）</td>
+          </tr>
+          <tr>
+            <td>外部企業との関係</td>
+            <td>買収（Ajax、Orna等）または少額出資（Absci）</td>
+            <td>ライセンス契約・共同開発（Tempus、BenevolentAI等）</td>
+          </tr>
+          <tr>
+            <td>レイヤー3企業への意味</td>
+            <td>競合（自社でモデルを作り無償配布）</td>
+            <td><strong>顧客</strong>（対価を払う相手）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>レイヤー3企業にとって、どちらが望ましいか</h3>
+    <p>
+      これが、レイヤー4を2社見て初めて立てられる問いです。
+    </p>
+    <p>
+      <strong>AstraZeneca型が広がれば、レイヤー2〜3企業には収益機会が生まれます。</strong>
+      Tempusが2億ドルを受け取ったように、データとモデルに対価が支払われる。
+      第5回で見たTempusのNRR 126%は、この構造の産物です。
+    </p>
+    <p>
+      <strong>Lilly型が広がれば、レイヤー3企業の存在意義は問われます。</strong>
+      大手製薬が自社データで自らモデルを作り、それを無償で配って改善させるなら、
+      外部のAI創薬企業に高い対価を払う理由が薄れます。
+    </p>
+    <p>
+      現時点では両方の流儀が並存しており、
+      <strong>どちらが主流になるかを判定できる段階にはありません</strong>。
+      ただし投資家として押さえておくべきは、
+      <strong>レイヤー3企業への投資は、
+      「大手製薬がAstraZeneca型を選び続ける」という前提の上に成り立っている</strong>という点です。
+    </p>
+
+    <h3>AstraZenecaについての現時点の評価</h3>
+    <p>
+      本記事の立場は、強気でも弱気でもありません。
+      Core EPS +21%、Core営業利益率34%（+2pt）、がん領域+15%、
+      30件の承認という数字は、事業の実力を示しています。
+      「今後18か月で20件超の高価値な読み出し」というパイプラインの厚みも、
+      同社の強みです。
+    </p>
+    <p>
+      同時に、<strong>Reported営業利益は10%減少しており、
+      Q2までの第III相6本中3本が主要評価項目未達、
+      中国は▲13%、
+      2030年に800億ドルという目標には4年で約30%の成長が必要</strong>です。
+    </p>
+    <p>
+      <strong>今後18か月の20件超の読み出しが、どの程度成功するかが判定材料になります。</strong>
+      そしてその成功率こそが、
+      <strong>Tempusへの2億ドルを含むAI投資が機能しているかを測る、
+      最も直接的な指標になります。</strong>
+      投資判断を下すのであれば、
+      「Reported営業利益は▲10%」「第III相6本中3本が未達」「中国▲13%」という
+      3つの事実を織り込んだうえで行う必要があります。
+    </p>
+
+    <div class="crosslink">
+      <h4>関連レポート</h4>
+      <ul>
+        <li><a href="/reports/ai-biotech-industry-map.html">前編：産業地図 ― AI×バイオを4レイヤーで整理する</a></li>
+        <li><a href="/reports/ai-biotech-validation.html">中編：技術検証編 ― AI創薬は本当に効いているのか</a></li>
+        <li><a href="/reports/ai-biotech-valuation.html">後編：投資判断編 ― 赤字先行企業を4指標で評価する</a></li>
+        <li><a href="/reports/recursion-rxrx.html">個別企業編①：Recursion（RXRX）― 実現率2.5%問題</a></li>
+        <li><a href="/reports/schrodinger-sdgr.html">個別企業編②：Schrödinger（SDGR）― Ajax買収で黒字転換した企業</a></li>
+        <li><a href="/reports/relay-rlay.html">個別企業編③：Relay Therapeutics（RLAY）― 増資で買った第III相</a></li>
+        <li><a href="/reports/absci-absi.html">個別企業編④：Absci（ABSI）― Eli Lillyが権利を取らなかった理由</a></li>
+        <li><a href="/reports/tempus-tem.html">個別企業編⑤：Tempus AI（TEM）― AstraZenecaから2億ドルを受け取った側</a></li>
+        <li><a href="/reports/illumina-ilmn.html">個別企業編⑥：Illumina（ILMN）― シリーズ初の本物の黒字企業</a></li>
+        <li><a href="/reports/iqvia-iqv.html">個別企業編⑦：IQVIA（IQV）― 受注残342億ドルという可視性</a></li>
+        <li><a href="/reports/lilly-lly.html">個別企業編⑧：Eli Lilly（LLY）― 買い手側から見たAI創薬</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHAT TO WATCH -->
+  <div class="watch">
+    <h2>WHAT TO WATCH</h2>
+    <p class="w-sub">AstraZeneca（AZN）― 今後の注目点</p>
+    <ol>
+      <li><b>今後18か月の20件超の読み出し、その成功率。</b>Q2までは6本中3本が主要評価項目未達だった。成功率が上がれば、Tempusへの2億ドルを含むAI投資が機能している間接的な証拠になる。逆に失敗が続けば、AIによる成功確率予測という投資仮説そのものが問われる。</li>
+      <li><b>2030年800億ドル目標への進捗。</b>H1の年換算は約613億ドル。4年で約30%の成長が必要（編集部試算）。四半期ごとの成長率がこの軌道に乗っているかを確認する。中〜高一桁%の成長では届かない計算になる。</li>
+      <li><b>elecoglipronの第III相データ。</b>肥満症・2型糖尿病で6本を開始。LillyのMounjaro＋Zepbound（四半期148億ドル）とNovo Nordiskが支配する市場への挑戦であり、差別化できる特性が示せるかが焦点。</li>
+      <li><b>中国売上の底打ち。</b>Q2は▲13%。VBPの対象拡大が続くか、それとも新製品の投入で数量が回復するか。第2の市場であり、全社成長率への影響は大きい。</li>
+      <li><b>ReportedとCoreの乖離幅。</b>Q2はReported営業利益▲10%、Core +12%。無形資産の償却が継続的に発生する構造であり、乖離が縮小に向かうかどうかで、買収由来の費用が一巡したかが判断できる。</li>
+      <li><b>AI提携の新規契約と、その条件。</b>Tempusへの2億ドル、Dizalへの一時金6億ドル＋マイルストーン最大9億ドル。今後の契約で一時金の比率がどう設定されるかを見ると、AstraZenecaが相手先の資産をどの程度評価しているかが読み取れる。</li>
+    </ol>
+  </div>
+
+  <!-- 免責 -->
+  <div class="disclaimer">
+    <h3>免責事項</h3>
+    <ul>
+      <li>本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資に関する最終的な判断は、ご自身の責任において行ってください。</li>
+      <li>本記事に記載された数値・事実は、2026年8月中旬時点で公開されている企業のIR資料、決算発表、決算説明会、および報道等に基づいています。株価・時価総額等の市場データは日々変動します。</li>
+      <li>「編集部試算」「編集部計算」と明記した数値は、公開情報に基づく推計であり、企業が公表した値ではありません。</li>
+      <li>Core財務指標（Core EPS、Core営業利益等）およびCER（為替中立）ベースの指標は、GAAPに基づかない指標です。ReportedとCoreの差は主に無形資産の償却、減損、法的和解、リストラ費用によるもので、GAAP指標に代わるものではありません。同社はReportedベースのガイダンスを提供していません。</li>
+      <li>本記事で言及した合併に関する観測は報道ベースの情報であり、企業からの正式発表ではありません。本記事はこの件について何ら判断を示すものではなく、今後の展開は不確定です。</li>
+      <li>臨床試験の結果および規制当局への申請は、将来の承認を保証するものではありません。ピーク時売上予想は企業の見積もりであり、実現を保証するものではありません。</li>
+      <li>本記事は特定の医薬品の使用を推奨するものではなく、医学的助言を提供するものでもありません。治療に関する判断は必ず医療専門家にご相談ください。</li>
+      <li>本記事の内容には誤りが含まれる可能性があります。投資判断にあたっては、必ず一次情報（企業のIR資料、規制当局への提出書類等）をご確認ください。</li>
+    </ul>
+  </div>
+
+  <footer class="site">
+    Market Supporter AI ／ marketsupporter-ai.com<br>
+    AI×製薬×バイオ シリーズ 個別企業編 ⑨（2026年8月20日公開）／ レイヤー4 第2回
+  </footer>
+
+</div>
+</body>
+</html>
