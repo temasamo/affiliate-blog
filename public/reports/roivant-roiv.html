@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roivant Sciences（NASDAQ:ROIV）徹底分析｜訴訟で22.5億ドルを勝ち取った創薬企業 - Market Supporter AI</title>
+<meta name="description" content="Roivant Sciences（ROIV）を7章構成で分析。2026年度Q1決算実績、現金39億ドル、Moderna訴訟和解22.5億ドル、Vant構造、brepocitinibの上市準備、4指標が機能しない理由を解説します。">
+<style>
+:root{
+  --accent:#b45309;
+  --accent-dark:#7c2d12;
+  --accent-mid:#c2410c;
+  --accent-light:#fff7ed;
+  --accent-border:#fed7aa;
+  --ink:#241a14;
+  --ink-sub:#57483f;
+  --line:#eee4dc;
+  --bg:#ffffff;
+  --bg-soft:#fbf8f5;
+  --warn:#9f1239;
+  --warn-bg:#fff1f2;
+  --pos:#15803d;
+  --neg:#b91c1c;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);background:var(--bg);line-height:1.85;font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px 80px;}
+
+header.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 58%,#ea580c 100%);
+  color:#fff;padding:52px 20px 46px;
+}
+.hero-inner{max-width:860px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;font-size:12px;letter-spacing:.14em;
+  background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);
+  padding:5px 13px;border-radius:999px;margin-bottom:18px;
+}
+h1{font-size:29px;line-height:1.45;margin:0 0 16px;font-weight:700;letter-spacing:.01em;}
+.hero-sub{font-size:15.5px;opacity:.94;margin:0 0 22px;line-height:1.8;}
+.meta{font-size:13px;opacity:.86;border-top:1px solid rgba(255,255,255,.25);padding-top:14px;}
+.tags{margin-top:12px;}
+.tag{display:inline-block;font-size:11.5px;background:rgba(255,255,255,.14);padding:4px 10px;border-radius:4px;margin:0 6px 6px 0;}
+
+.toc{background:var(--accent-light);border:1px solid var(--accent-border);border-radius:10px;padding:22px 24px;margin:36px 0 44px;}
+.toc h2{font-size:15px;margin:0 0 12px;color:var(--accent-dark);letter-spacing:.06em;}
+.toc ol{margin:0;padding-left:1.3em;}
+.toc li{margin:7px 0;font-size:14.5px;}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--accent-mid);}
+.toc a:hover{color:var(--accent);}
+
+section{margin:0 0 52px;scroll-margin-top:20px;}
+h2.chapter{font-size:21px;margin:0 0 20px;padding:0 0 12px 0;border-bottom:3px solid var(--accent);line-height:1.5;font-weight:700;}
+h2.chapter .num{display:inline-block;color:var(--accent);font-size:19px;margin-right:8px;}
+h3{font-size:17px;margin:32px 0 12px;padding-left:12px;border-left:4px solid var(--accent-mid);line-height:1.6;}
+p{margin:0 0 16px;}
+ul,ol{margin:0 0 18px;padding-left:1.4em;}
+li{margin:7px 0;}
+strong{color:var(--accent-dark);font-weight:700;}
+
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0 24px;}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:480px;}
+th,td{border:1px solid var(--line);padding:11px 12px;text-align:left;vertical-align:top;}
+th{background:var(--accent-light);color:var(--accent-dark);font-weight:700;white-space:nowrap;}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+tbody tr:nth-child(even){background:var(--bg-soft);}
+.tbl-note{font-size:12.5px;color:var(--ink-sub);margin:-14px 0 24px;}
+
+.callout{background:var(--bg-soft);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:18px 20px;margin:24px 0;font-size:15px;}
+.callout .label{display:block;font-size:12px;letter-spacing:.1em;color:var(--accent);font-weight:700;margin-bottom:8px;}
+.warn{background:var(--warn-bg);border-left:4px solid var(--warn);}
+.warn .label{color:var(--warn);}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:24px 0 28px;}
+.kpi{background:var(--bg-soft);border:1px solid var(--line);border-radius:9px;padding:15px 16px;}
+.kpi .k-label{font-size:12px;color:var(--ink-sub);margin-bottom:6px;line-height:1.5;}
+.kpi .k-value{font-size:21px;font-weight:700;color:var(--accent-dark);line-height:1.3;font-variant-numeric:tabular-nums;}
+.kpi .k-sub{font-size:11.5px;color:var(--ink-sub);margin-top:5px;line-height:1.5;}
+
+.pos{color:var(--pos);font-weight:700;}
+.neg{color:var(--neg);font-weight:700;}
+
+.crosslink{border:1px solid var(--accent-border);border-radius:10px;padding:18px 20px;margin:30px 0;background:#fff;}
+.crosslink h4{margin:0 0 10px;font-size:14px;color:var(--accent-dark);letter-spacing:.05em;}
+.crosslink ul{margin:0;padding-left:1.2em;font-size:14px;}
+.crosslink a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-border);}
+
+.watch{background:linear-gradient(150deg,var(--accent-dark) 0%,#431407 100%);color:#fff;border-radius:14px;padding:36px 28px;margin:56px 0 40px;}
+.watch h2{font-size:20px;margin:0 0 8px;letter-spacing:.08em;color:#fff;border:none;padding:0;}
+.watch .w-sub{font-size:13.5px;opacity:.82;margin:0 0 24px;}
+.watch ol{padding-left:0;list-style:none;margin:0;counter-reset:w;}
+.watch li{counter-increment:w;position:relative;padding-left:44px;margin:0 0 20px;font-size:14.8px;line-height:1.8;}
+.watch li::before{
+  content:counter(w,decimal-leading-zero);
+  position:absolute;left:0;top:2px;font-size:13px;font-weight:700;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
+  width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+}
+.watch li b{color:#fed7aa;}
+
+.disclaimer{background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:22px 24px;font-size:13px;color:var(--ink-sub);line-height:1.85;}
+.disclaimer h3{font-size:14px;margin:0 0 10px;padding:0;border:none;color:var(--ink);}
+.disclaimer ul{padding-left:1.3em;margin:0;}
+
+footer.site{text-align:center;font-size:12.5px;color:var(--ink-sub);margin-top:44px;padding-top:22px;border-top:1px solid var(--line);}
+
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  header.hero{padding:38px 18px 34px;}
+  h1{font-size:22px;line-height:1.5;}
+  .hero-sub{font-size:14.5px;}
+  .wrap{padding:0 16px 60px;}
+  h2.chapter{font-size:18.5px;}
+  h3{font-size:16px;}
+  .watch{padding:28px 20px;border-radius:10px;}
+  .watch li{padding-left:38px;font-size:14.2px;}
+  .watch li::before{width:26px;height:26px;font-size:12px;}
+  .kpi .k-value{font-size:19px;}
+  table{font-size:13.2px;}
+  th,td{padding:9px 10px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">AI × 製薬 × バイオ シリーズ ／ 個別企業編 ⑩ ／ 中小型株編 第1回</span>
+    <h1>Roivant Sciences（NASDAQ:ROIV）徹底分析<br>― 訴訟で22.5億ドルを勝ち取った、創薬の持株会社</h1>
+    <p class="hero-sub">
+      四半期売上144万ドル、営業損失▲3億6,599万ドル。数字だけ見ればレイヤー3の小型株です。
+      ところが現金・有価証券は<strong>39億ドル</strong>。時価総額は230億ドルを超えます。
+      源泉は創薬ではなく、Modernaとの特許訴訟和解でした。
+      2026年8月6日発表のFY2027 Q1実績から検証します。
+    </p>
+    <div class="meta">
+      公開日：2026年8月21日 ／ 分析基準日：2026年8月中旬 ／ Market Supporter AI 編集部
+      <div class="tags">
+        <span class="tag">#ROIV</span>
+        <span class="tag">#中小型株</span>
+        <span class="tag">#米国株</span>
+        <span class="tag">#自己免疫疾患</span>
+        <span class="tag">#特許訴訟</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="toc">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#ch1">市場規模 ― 患者数4万人という市場をどう見るか</a></li>
+      <li><a href="#ch2">政策・規制環境 ― PDUFAと、もう一つの「規制」</a></li>
+      <li><a href="#ch3">コスト・収益構造 ― 株式報酬が費用の23%</a></li>
+      <li><a href="#ch4">事業セグメント動向 ― Vant構造という設計思想</a></li>
+      <li><a href="#ch5">株式バリュエーション ― 4指標が機能しない理由</a></li>
+      <li><a href="#ch6">リスク要因 ― 訴訟依存と、持株会社ディスカウント</a></li>
+      <li><a href="#ch7">まとめ ― 中小型株編で問うべきこと</a></li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <span class="label">この記事の位置づけ</span>
+    「AI×製薬×バイオ」シリーズ、<strong>中小型株編</strong>の第1回です。
+    ここまでレイヤー3（4社）、レイヤー2（3社）、レイヤー4（2社）を分析してきました。
+    中小型株編では、<strong>4レイヤー分類に必ずしも収まらない企業</strong>を扱います。
+    Roivantはその典型で、創薬企業でありながら収益源が訴訟という、極めて特異な構造を持ちます。
+  </div>
+
+  <!-- ① -->
+  <section id="ch1">
+    <h2 class="chapter"><span class="num">①</span>市場規模 ― 患者数4万人という市場をどう見るか</h2>
+
+    <p>
+      Roivantは2014年設立、スイス・バーゼル、ロンドン、ニューヨークに拠点を持つバイオ医薬品企業です。
+      特徴は<strong>「Vant」と呼ぶ子会社群</strong>を通じて医薬品を開発・商業化する構造にあります（第④章で詳述）。
+    </p>
+    <p>
+      同社が狙う市場は、これまで扱った企業とは性質が異なります。
+      <strong>患者数が数万人規模の、承認薬が存在しない自己免疫疾患</strong>です。
+    </p>
+
+    <h3>主力資産 brepocitinib が狙う4つの適応</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>適応</th><th>市場の特徴</th><th>開発段階（2026年8月時点）</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>皮膚筋炎（DM）</strong></td>
+            <td>数十年にわたり標的治療薬が存在しない領域</td>
+            <td><strong>FDA審査中。PDUFA目標日は2026年第3四半期</strong>。2026年9月末までの米国上市を計画</td>
+          </tr>
+          <tr>
+            <td>非感染性ぶどう膜炎（NIU）</td>
+            <td>―</td>
+            <td>第3相。トップラインデータは2026年下半期</td>
+          </tr>
+          <tr>
+            <td><strong>皮膚サルコイドーシス（CS）</strong></td>
+            <td>米国で<strong>成人約4万人</strong>。黒人系米国人に不均衡に多い。<strong>FDA承認薬は存在しない</strong></td>
+            <td>第3相（BEACON+）の最初の患者が登録済み。データは2028年</td>
+          </tr>
+          <tr>
+            <td>毛孔性扁平苔癬（LPP）</td>
+            <td>―</td>
+            <td>第2b/3相 Part 1の登録が進行中</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：Roivant FY2027 Q1決算リリース（2026年8月6日）、およびPriovant社の発表（2026年3月3日）。</p>
+
+    <h3>皮膚サルコイドーシスの数字が示すこと</h3>
+    <p>
+      同社はCSについて、次のように説明しています。
+      米国で成人約4万人が罹患する炎症性肉芽腫性皮膚疾患であり、
+      <strong>治療が不十分な場合、骨・軟骨・毛包の永久的な瘢痕化と破壊を急速に引き起こしうる</strong>。
+      それにもかかわらず<strong>FDA承認薬は存在しない</strong>。
+    </p>
+    <p>
+      第2相（BEACON）では、brepocitinib 45mg群の<strong>77%</strong>が
+      主要評価項目（CSAMI-Aスコアの50%以上の改善）を達成したのに対し、
+      <strong>プラセボ群は0%</strong>でした。この結果を受けてFDAのブレークスルーセラピー指定を取得しています。
+    </p>
+
+    <div class="callout warn">
+      <span class="label">「4万人」という市場規模の読み方</span>
+      本シリーズで扱ってきた市場規模の数字と比べてみてください。
+      <div class="table-scroll" style="margin-top:12px;">
+        <table>
+          <thead><tr><th>企業</th><th>対象患者数</th></tr></thead>
+          <tbody>
+            <tr><td>Eli Lilly（第8回）</td><td>肥満症 ― 数億人規模</td></tr>
+            <tr><td>Absci（第4回）</td><td>パターン脱毛症＋子宮内膜症 ― 米国で計約31万人</td></tr>
+            <tr><td>Recursion（第1回）</td><td>家族性大腸腺腫症 ― 米欧で5万人超</td></tr>
+            <tr><td><strong>Roivant（本記事）</strong></td><td><strong>皮膚サルコイドーシス ― 米国で約4万人</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <strong>患者数が少ないことは、必ずしも不利ではありません。</strong>
+      承認薬がゼロの希少疾患は、承認されれば価格決定力が高く、
+      競合の参入も限られます。第1回のRecursionのFAPと同じ構図です。
+      <div style="margin-top:12px;">
+        ただし<strong>1剤あたりの売上上限は明確に存在します</strong>。
+        数億人市場のGLP-1のような規模にはなりません。
+        Roivantが複数の適応を並行して開発しているのは、この制約への対応でもあります。
+      </div>
+    </div>
+
+    <h3>もう一つの資産 ― IMVT-1402</h3>
+    <p>
+      子会社Immunovantが開発する<strong>IMVT-1402</strong>は、
+      FcRnを標的とする完全ヒトモノクローナル抗体です。
+      IgG介在性の自己免疫疾患を幅広く対象としています。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>適応</th><th>試験の位置づけ</th><th>データ予定</th></tr></thead>
+        <tbody>
+          <tr><td>皮膚エリテマトーデス（CLE）</td><td>概念実証試験</td><td>2026年下半期</td></tr>
+          <tr><td>難治性関節リウマチ（D2T RA）</td><td>登録可能性のあるプログラム</td><td>2026年下半期にアップデート</td></tr>
+          <tr><td>バセドウ病（GD）</td><td>登録可能性のある試験</td><td>2027年</td></tr>
+          <tr><td>重症筋無力症（MG）</td><td>登録可能性のある試験</td><td>2027年</td></tr>
+          <tr><td>慢性炎症性脱髄性多発神経炎（CIDP）</td><td>登録可能性のある試験</td><td>2028年</td></tr>
+          <tr><td>シェーグレン病（SjD）</td><td>登録可能性のある試験</td><td>2028年</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      brepocitinibが希少疾患を狙うのに対し、
+      <strong>IMVT-1402は関節リウマチのような大きな市場も対象に含みます</strong>。
+      2つの資産で市場規模の性質が異なる点は、事業構造を理解するうえで重要です。
+    </p>
+  </section>
+
+  <!-- ② -->
+  <section id="ch2">
+    <h2 class="chapter"><span class="num">②</span>政策・規制環境 ― PDUFAと、もう一つの「規制」</h2>
+
+    <p>
+      Roivantの規制環境には、本シリーズで初めて登場する要素があります。
+      <strong>特許制度</strong>です。
+    </p>
+
+    <h3>通常の規制イベント ― brepocitinibのPDUFA</h3>
+    <p>
+      2026年3月、FDAはbrepocitinibの皮膚筋炎に対する新薬承認申請（NDA）を受理し、
+      <strong>優先審査（Priority Review）</strong>を付与しました。
+      PDUFA目標日は<strong>2026年第3四半期</strong>で、承認されれば
+      <strong>皮膚筋炎に対して承認される初の標的治療薬</strong>となります。
+    </p>
+    <p>
+      根拠となったのは第3相VALOR試験です。
+      症例数241例、90施設で実施され、
+      <strong>皮膚筋炎における史上初の52週プラセボ対照試験で陽性結果</strong>を示しました。
+      同社はこれを、これまでで最大かつ最長の皮膚筋炎介入試験と説明しています。
+    </p>
+    <p>
+      Q1決算リリースでは、<strong>商業化準備が順調に進んでおり、
+      2026年9月末までの上市に向けて予定通り</strong>とされています。
+    </p>
+
+    <div class="callout warn">
+      <span class="label">重要な留保</span>
+      本記事執筆時点（2026年8月中旬）で、<strong>brepocitinibはまだFDAの審査中</strong>です。
+      優先審査の付与は承認を保証するものではありません。
+      「9月末までの上市」は<strong>承認を前提とした会社の計画</strong>であり、
+      承認されなかった場合、または承認が遅れた場合には実現しません。
+    </div>
+
+    <h3>もう一つの「規制」― 特許訴訟</h3>
+    <p>
+      本シリーズで初めて、<strong>収益の主要な源泉が訴訟である企業</strong>を扱います。
+    </p>
+    <p>
+      Roivantの子会社<strong>Genevant Sciences</strong>は、
+      脂質ナノ粒子（LNP）技術に関する特許を保有しています。
+      これはmRNAワクチンの送達に不可欠な技術です。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>相手方</th><th>状況（2026年8月時点）</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Moderna</strong></td>
+            <td>
+              <strong>総額22億5,000万ドルのグローバル和解</strong>（2026年3月成立）。
+              2026年7月にGenevantとArbutusが<strong>9億5,000万ドルの初回支払い</strong>を受領。
+              残る<strong>13億ドルはModernaの合衆国法典第28編1498条に基づく控訴の結果次第</strong>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Pfizer / BioNTech</strong></td>
+            <td>
+              米国訴訟はディスカバリー段階が進行中。
+              2026年7月に<strong>3件の国際訴訟を提起</strong>（カナダ1件、統一特許裁判所2件）。
+              フランス・ドイツ・イタリア・オランダを含む欧州20か国＋カナダの<strong>計21法域</strong>を対象
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <span class="label">この構造をどう理解するか</span>
+      Genevantは、Roivantの完全子会社ではありません。
+      和解金はGenevantと<strong>Arbutus Biopharma</strong>で分配されます。
+      Roivantが受け取るのはGenevantを通じた持分相当分です。
+      <div style="margin-top:12px;">
+        重要なのは、<strong>この収益が創薬の成果ではない</strong>という点です。
+        Roivantが2015年にArbutusからLNP技術をライセンスして設立したGenevantが、
+        COVID-19ワクチンの世界的普及によって偶発的に巨額の価値を持つに至った、という経緯です。
+      </div>
+      <div style="margin-top:12px;">
+        投資家として押さえるべきは、
+        <strong>この現金は再現性のない一回限りの収入である</strong>ということです。
+        パイプラインの成功とは無関係に得られた資金であり、
+        逆に言えば<strong>今後の訴訟がすべて敗訴しても、既に受領した分は失われません</strong>。
+      </div>
+    </div>
+
+    <p>
+      なお、残る13億ドルは<strong>合衆国法典第28編1498条</strong>に関する控訴の結果に依存します。
+      これは米国政府のために製造・使用された特許発明について、
+      権利者の救済を政府に対する請求に限定する規定です。
+      Modernaはこの規定の適用を主張して控訴しており、
+      <strong>その結果次第で13億ドルが発生するかしないかが決まります</strong>。
+    </p>
+  </section>
+
+  <!-- ③ -->
+  <section id="ch3">
+    <h2 class="chapter"><span class="num">③</span>コスト・収益構造 ― 株式報酬が費用の23%</h2>
+
+    <h3>2027年度第1四半期の実績（2026年8月6日発表）</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>項目（千ドル）</th><th>2026年6月期</th><th>2025年6月期</th><th>増減</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>売上高</td><td class="num">1,442</td><td class="num">2,170</td><td class="num neg">▲34%</td></tr>
+          <tr><td>売上原価</td><td class="num">284</td><td class="num">154</td><td class="num">―</td></tr>
+          <tr><td>研究開発費</td><td class="num">202,016</td><td class="num">152,919</td><td class="num">+32%</td></tr>
+          <tr><td>（うち株式報酬）</td><td class="num">8,721</td><td class="num">11,099</td><td class="num">―</td></tr>
+          <tr><td>一般管理費</td><td class="num">165,527</td><td class="num">134,019</td><td class="num">+24%</td></tr>
+          <tr><td>（うち株式報酬）</td><td class="num">74,621</td><td class="num">71,079</td><td class="num">―</td></tr>
+          <tr><td><strong>営業費用合計</strong></td><td class="num"><strong>367,827</strong></td><td class="num">287,092</td><td class="num">+28%</td></tr>
+          <tr><td>訴訟和解益</td><td class="num">392</td><td class="num">—</td><td class="num">―</td></tr>
+          <tr><td><strong>営業損失</strong></td><td class="num neg"><strong>▲365,993</strong></td><td class="num">▲284,922</td><td class="num neg">拡大</td></tr>
+          <tr><td>投資の公正価値変動</td><td class="num">▲36,637</td><td class="num">19,125</td><td class="num">―</td></tr>
+          <tr><td>受取利息</td><td class="num pos">▲36,922（収益）</td><td class="num">▲48,322（収益）</td><td class="num">減少</td></tr>
+          <tr><td><strong>純損失</strong></td><td class="num neg"><strong>▲290,606</strong></td><td class="num">▲273,911</td><td class="num neg">拡大</td></tr>
+          <tr><td>（うち非支配持分帰属）</td><td class="num">▲100,769</td><td class="num">▲50,556</td><td class="num">―</td></tr>
+          <tr><td><strong>Roivant帰属純損失</strong></td><td class="num neg"><strong>▲189,837</strong></td><td class="num">▲223,355</td><td class="num pos">縮小</td></tr>
+          <tr><td>1株当たり純損失</td><td class="num">▲0.26ドル</td><td class="num">▲0.33ドル</td><td class="num pos">改善</td></tr>
+          <tr><td>加重平均株式数</td><td class="num">720,776,739</td><td class="num">680,286,922</td><td class="num">+6.0%</td></tr>
+          <tr><td>Non-GAAP純損失</td><td class="num">▲243,693</td><td class="num">▲170,124</td><td class="num neg">拡大</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：Roivant Sciences FY2027 Q1決算リリース（2026年8月6日、SEC Form 8-K Exhibit 99.1）。受取利息は決算書上、費用のマイナス項目として表示されています。</p>
+
+    <div class="callout warn">
+      <span class="label">この決算で最も特異な数字</span>
+      <strong>一般管理費1億6,553万ドルのうち、7,462万ドル（約45%）が株式報酬</strong>です。
+      研究開発費の株式報酬872万ドルと合わせると<strong>8,334万ドル</strong>。
+      営業費用合計3億6,783万ドルの<strong>約23%</strong>にあたります（編集部計算）。
+      <div style="margin-top:12px;">
+        本シリーズで扱った企業と比べても、この比率は際立っています。
+        Non-GAAP一般管理費が9,065万ドルまで下がるのは、この調整によるものです。
+        <strong>株式報酬は現金支出を伴いませんが、株式数の増加という形で既存株主の持分を薄めます。</strong>
+        実際、加重平均株式数は1年で6.0%増加しています。
+      </div>
+    </div>
+
+    <h3>費用増加の中身 ― 一時的な要因が含まれる</h3>
+    <p>
+      研究開発費が4,910万ドル増加した主因は、プログラム別費用の4,940万ドル増加です。
+      内訳は<strong>抗FcRnフランチャイズ（Immunovant）で4,480万ドル、
+      mosliciguatで470万ドル</strong>。開発の進捗を反映したものです。
+    </p>
+    <p>
+      一般管理費が3,150万ドル増加した要因には、注意が必要です。
+      人件費関連の2,610万ドル増加のうち、
+      <strong>1,880万ドルは2026年3月のModerna和解に関連する従業員賞与</strong>、
+      630万ドルは株式報酬に伴う雇用者側給与税です。
+    </p>
+    <p>
+      研究開発費側でも、410万ドルの従業員賞与が同じ和解に関連しています。
+      <strong>つまり費用増加の一部は、訴訟和解という一時的な出来事に紐づくもの</strong>であり、
+      来期以降も同水準で続くとは限りません。
+    </p>
+
+    <h3>受取利息が減少している</h3>
+    <p>
+      受取利息は4,832万ドルから<strong>3,692万ドルへ24%減少</strong>しました。
+      現金・有価証券を39億ドル保有しているにもかかわらず減少しているのは、
+      金利環境の変化と、自社株買いによる現金の流出が影響していると考えられます。
+    </p>
+    <p>
+      それでも四半期3,692万ドルの利息収入は、
+      営業費用3億6,783万ドルの<strong>約10%</strong>を埋めている計算になります（編集部計算）。
+      第3回のRelay（受取利息が営業費用の約8%）と似た構造です。
+    </p>
+  </section>
+
+  <!-- ④ -->
+  <section id="ch4">
+    <h2 class="chapter"><span class="num">④</span>事業セグメント動向 ― Vant構造という設計思想</h2>
+
+    <p>
+      Roivantを理解するうえで最も重要なのが、<strong>「Vant」構造</strong>です。
+    </p>
+    <p>
+      同社は、医薬品や技術を開発・商業化するために
+      <strong>機動的な子会社（Vant）を設立する</strong>という方式を採っています。
+      各Vantは独立した経営陣を持ち、一部は別途上場しています。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Vant</th><th>担当資産</th><th>状況</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Priovant Therapeutics</strong></td>
+            <td>brepocitinib（JAK1/TYK2阻害）</td>
+            <td>皮膚筋炎でFDA審査中。2026年9月末上市計画。CSで第3相開始</td>
+          </tr>
+          <tr>
+            <td><strong>Immunovant</strong>（Nasdaq: IMVT、別途上場）</td>
+            <td>IMVT-1402（抗FcRn抗体）</td>
+            <td>6適応で開発中。CLEデータが2026年下半期</td>
+          </tr>
+          <tr>
+            <td><strong>Pulmovant</strong></td>
+            <td>mosliciguat（吸入sGC活性化剤）</td>
+            <td>PH-ILDの第2相。データは2026年下半期</td>
+          </tr>
+          <tr>
+            <td><strong>Genevant Sciences</strong></td>
+            <td>脂質ナノ粒子（LNP）技術</td>
+            <td>Moderna和解22.5億ドル。Pfizer/BioNTech訴訟が21法域で進行</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <span class="label">Vant構造の利点と、その代償</span>
+      <strong>利点：</strong>各資産に専任の経営陣を置き、個別に資金調達できます。
+      Immunovantのように別途上場すれば、親会社の希薄化なしに資金を得られます。
+      失敗した資産を切り離すことも容易です。
+      <div style="margin-top:12px;">
+        <strong>代償：</strong>Q1決算に、その影響が明確に現れています。
+        純損失2億9,061万ドルのうち、<strong>1億77万ドルが非支配持分に帰属</strong>します。
+        つまりRoivant株主に帰属する損失は1億8,984万ドルです。
+      </div>
+      <div style="margin-top:12px;">
+        これは<strong>損失の一部を外部株主が負担している</strong>ことを意味しますが、
+        同時に<strong>成功した場合の利益も外部株主と分け合う</strong>ということです。
+        非支配持分帰属の損失は前年同期の5,056万ドルからほぼ倍増しており、
+        Immunovantの開発費増加を外部株主が負担する構造が強まっています。
+      </div>
+    </div>
+
+    <h3>Q1の主な進捗</h3>
+    <ul>
+      <li><strong>Priovant</strong>：CS第3相（BEACON+）の最初の患者が登録。約70施設で約140例を予定し、brepocitinib 45mg群とプラセボ群に3:2で無作為化。主要評価項目は16週時点でCSAMI-Aスコアが50%以上改善した患者の割合</li>
+      <li><strong>Immunovant</strong>：IMVT-1402の全適応で開発スケジュールが計画通り</li>
+      <li><strong>Pulmovant</strong>：mosliciguatのPH-ILD第2相が計画通り</li>
+      <li><strong>Genevant</strong>：Modernaから9億5,000万ドルを受領、Pfizer/BioNTechへの国際訴訟を提起</li>
+      <li><strong>Roivant本体</strong>：四半期中に<strong>730万株を約2億870万ドルで自社株買い</strong></li>
+    </ul>
+
+    <p>
+      CEOのMatt Gline氏は、この四半期を
+      <strong>「極めて多忙だった過去12か月と、さらに多忙になる今後1年の間の、比較的静かな時期」</strong>
+      と表現しています。そのうえで、
+      NIU・PH-ILD・CLEのトップライン読み出しを年内に控えており、
+      <strong>これらのいくつかで成功すれば、会社の姿は根本的に変わる</strong>と述べています。
+    </p>
+
+    <div class="callout warn">
+      <span class="label">AI×バイオの文脈での位置づけ</span>
+      本シリーズの読者として押さえておきたいのは、
+      <strong>RoivantはAI創薬企業ではない</strong>という点です。
+      <div style="margin-top:12px;">
+        brepocitinibはPfizer由来の化合物であり、
+        IMVT-1402も従来型の抗体医薬です。
+        レイヤー3の4社（Recursion、Schrödinger、Relay、Absci）のような
+        計算基盤やAIプラットフォームを事業の中核に据えてはいません。
+      </div>
+      <div style="margin-top:12px;">
+        <strong>Roivantが本シリーズに含まれる理由は、
+        「AIを使わない中小型バイオが、どう評価されるか」という比較対象になるから</strong>です。
+        第1回のRecursionは実現率2.5%、第3回のRelayは第III相を増資で買っていました。
+        AIを掲げない企業が、同じ土俵でどう見えるか。
+        中小型株編を通じて、この対比を確認していきます。
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑤ -->
+  <section id="ch5">
+    <h2 class="chapter"><span class="num">⑤</span>株式バリュエーション ― 4指標が機能しない理由</h2>
+
+    <p>
+      3部作の4指標を当てはめると、<strong>Roivantでは半分が機能しません</strong>。
+      理由を一つずつ確認します。
+    </p>
+
+    <h3>指標1：キャッシュランウェイ ― 機能するが、意味が違う</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目（千ドル）</th><th>2026年6月30日</th><th>2026年3月31日</th></tr></thead>
+        <tbody>
+          <tr><td>現金・現金同等物</td><td class="num">1,248,456</td><td class="num">1,419,232</td></tr>
+          <tr><td>有価証券</td><td class="num">2,593,626</td><td class="num">2,872,601</td></tr>
+          <tr><td><strong>連結ベースの現金等合計（会社公表）</strong></td><td class="num"><strong>約39億ドル</strong></td><td class="num">―</td></tr>
+          <tr><td>訴訟和解未収金</td><td class="num">771,627</td><td class="num">770,235</td></tr>
+          <tr><td>総資産</td><td class="num">5,306,493</td><td class="num">5,708,687</td></tr>
+          <tr><td>総負債</td><td class="num">384,624</td><td class="num">416,275</td></tr>
+          <tr><td>株主資本合計</td><td class="num">4,921,869</td><td class="num">5,292,412</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      会社は<strong>「収益化までのキャッシュランウェイを支える」</strong>と説明しています。
+      注目すべきは、この39億ドルが<strong>7月に受領したModernaからの支払いを含まない</strong>点です。
+      9億5,000万ドルの初回支払いは翌四半期に計上されます。
+    </p>
+    <p>
+      四半期の純損失2億9,061万ドルを年換算すると約11.6億ドル。
+      39億ドルで割ると<strong>3年以上のランウェイ</strong>があり、
+      Moderna入金分を加えればさらに延びます。
+    </p>
+    <p>
+      <strong>ただし、この潤沢さの源泉は創薬ではありません。</strong>
+      第3回のRelayが「ランウェイを増資で買った」のに対し、
+      <strong>Roivantは訴訟で買った</strong>ということです。
+      指標としては機能しますが、その意味は大きく異なります。
+    </p>
+
+    <h3>指標2：反復収益比率 ― 実質的に測定不能</h3>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="k-label">Q1 売上高</div>
+        <div class="k-value">144万ドル</div>
+        <div class="k-sub">前年同期217万ドル（▲34%）</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">Q1 営業費用</div>
+        <div class="k-value">3億6,783万ドル</div>
+        <div class="k-sub">前年同期2億8,709万ドル</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">売上／営業費用</div>
+        <div class="k-value">約0.4%</div>
+        <div class="k-sub">編集部計算</div>
+      </div>
+    </div>
+    <p>
+      <strong>約0.4%。</strong>第3回のRelayとまったく同じ水準です。
+      反復収益はゼロであり、収益そのものがほぼ存在しません。
+    </p>
+    <p>
+      ただしRelayとの決定的な違いがあります。
+      <strong>Roivantには2026年9月末に上市予定の製品がある</strong>という点です。
+      承認されれば、来期以降は製品売上が立ちはじめます。
+      <strong>この指標が意味を持つのは、上市後の四半期からです。</strong>
+    </p>
+
+    <h3>指標3：一時金÷公表総額（実現率）― 訴訟に置き換えて考える</h3>
+    <p>
+      Roivantには、レイヤー3企業のような「公表マイルストーン総額」がありません。
+      代わりに、<strong>訴訟和解の構造が同じ形をしています</strong>。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>金額</th><th>性質</th></tr></thead>
+        <tbody>
+          <tr><td>Moderna和解の公表総額</td><td class="num">22億5,000万ドル</td><td>グローバル特許侵害和解</td></tr>
+          <tr><td><strong>2026年7月に受領済み</strong></td><td class="num"><strong>9億5,000万ドル</strong></td><td>GenevantとArbutusが受領</td></tr>
+          <tr><td>条件付きの残額</td><td class="num">13億ドル</td><td><strong>Modernaの1498条控訴の結果次第</strong></td></tr>
+          <tr><td><strong>実現率（編集部試算）</strong></td><td class="num"><strong>約42%</strong></td><td>9.5億ドル ÷ 22.5億ドル</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">受領額はGenevantとArbutusの合計であり、Roivantが単独で受け取る金額ではありません。</p>
+    <p>
+      <strong>約42%。</strong>本シリーズで見てきた実現率と並べると、位置づけが明確になります。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>企業・案件</th><th>実現率</th><th>残額の条件</th></tr></thead>
+        <tbody>
+          <tr><td>AstraZeneca ← Dizal（第9回）</td><td class="num">約40%</td><td>開発・規制・売上マイルストーン</td></tr>
+          <tr><td><strong>Roivant ← Moderna（本記事）</strong></td><td class="num"><strong>約42%</strong></td><td><strong>控訴の結果</strong></td></tr>
+          <tr><td>Relay → Elevar（第3回）</td><td class="num">約3.7%</td><td>臨床開発の成否</td></tr>
+          <tr><td>Recursion ← 提携各社（第1回）</td><td class="num">約2.5%</td><td>臨床開発の成否</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      <strong>実現率が高い案件には共通点があります。
+      残額の条件が「臨床開発の成否」ではないことです。</strong>
+      Dizalは既に臨床実証された資産、Modernaは既に発生した侵害に対する和解。
+      いずれも<strong>不確実性が相対的に小さい</strong>。
+      レイヤー3企業の実現率が2〜4%にとどまるのは、
+      残額が10年単位の臨床開発の成否に依存しているからです。
+    </p>
+
+    <h3>指標4：増資の価格と引受先 ― 完全に逆転</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td>Q1の資本取引</td><td><strong>730万株を約2億870万ドルで自社株買い</strong></td></tr>
+          <tr><td>1株当たり平均取得価格（編集部試算）</td><td class="num">約28.6ドル</td></tr>
+          <tr><td>加重平均株式数</td><td class="num">720,776,739株（前年同期比+6.0%）</td></tr>
+          <tr><td>公募増資</td><td>実施なし</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      <strong>増資ではなく、自社株買いです。</strong>
+      レイヤー3企業（Recursion +52%、Absci +23%、Relay +18%）とは正反対の資本政策です。
+    </p>
+    <p>
+      ただし加重平均株式数は6.0%増えています。
+      自社株買いを実施しながら株式数が増えているのは、
+      <strong>株式報酬による発行が自社株買いを上回っている</strong>ためと考えられます。
+      第③章で見たとおり、株式報酬は営業費用の約23%を占めています。
+    </p>
+
+    <h3>バリュエーション水準</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>数値</th></tr></thead>
+        <tbody>
+          <tr><td>株価</td><td class="num">32.87ドル（2026年7月30日時点）／34.60ドル（8月6日終値）</td></tr>
+          <tr><td>時価総額</td><td class="num">約236億ドル（7月30日時点）／約250億ドル（8月6日時点）</td></tr>
+          <tr><td>52週レンジ</td><td class="num">10.90ドル 〜 37.00ドル</td></tr>
+          <tr><td>▲ 現金・有価証券</td><td class="num">▲約39億ドル</td></tr>
+          <tr><td>▲ 訴訟和解未収金</td><td class="num">▲約7.7億ドル</td></tr>
+          <tr><td><strong>実質的な事業価値（編集部試算）</strong></td><td class="num"><strong>約190〜200億ドル</strong></td></tr>
+          <tr><td>アナリスト目標株価の推移</td><td>21.00ドル → 31.50ドルへ引き上げ。Citigroupは35→42ドル（2026年5月）、TD Cowenも引き上げ</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">株価・時価総額は記載日付時点の値であり、日々変動します。実質事業価値は編集部が現金等と和解未収金を差し引いて算出した推計です。Moderna入金分（7月受領の9.5億ドル）の反映タイミングにより数値は変動します。</p>
+
+    <div class="callout warn">
+      <span class="label">この190〜200億ドルをどう見るか</span>
+      52週安値10.90ドルから高値37.00ドルまで<strong>3.4倍</strong>の値動きがありました。
+      現金と和解未収金を除いた事業価値約190〜200億ドルは、
+      <strong>brepocitinibの上市成功と、IMVT-1402の6適応、
+      そして残る13億ドルの訴訟に対して市場が付けている値段</strong>です。
+      <div style="margin-top:12px;">
+        本シリーズで見てきたレイヤー3企業のEV（Relay約28.7億ドル、Absci約14〜15億ドル、
+        Recursion約12億ドル、Schrödinger約8.7億ドル）と比べると、
+        <strong>Roivantの事業価値は桁が一つ大きい</strong>ことが分かります。
+      </div>
+      <div style="margin-top:12px;">
+        差を生んでいるのは<strong>上市直前の資産を持っていること</strong>です。
+        第3回で「レイヤー3内部ではEVの順位を決めるのは臨床の進捗だった」と述べましたが、
+        その仮説はここでも成立しています。
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑥ -->
+  <section id="ch6">
+    <h2 class="chapter"><span class="num">⑥</span>リスク要因 ― 訴訟依存と、持株会社ディスカウント</h2>
+
+    <h3>1. brepocitinibはまだ承認されていない</h3>
+    <p>
+      PDUFA目標日は2026年第3四半期で、本記事執筆時点で審査中です。
+      <strong>優先審査は承認を保証しません。</strong>
+      9月末までの上市計画は承認を前提としたものであり、
+      承認されない場合、または遅延した場合には、
+      商業化準備に投じた費用が当面回収されないことになります。
+    </p>
+
+    <h3>2. 13億ドルは控訴の結果次第</h3>
+    <p>
+      Moderna和解の残額13億ドルは、
+      <strong>合衆国法典第28編1498条に関する控訴がGenevantとArbutusに有利に解決すること</strong>が条件です。
+      これは法的判断であり、企業側の努力で結果を左右できるものではありません。
+      <strong>発生しない可能性を前提に置く必要があります。</strong>
+    </p>
+
+    <h3>3. Pfizer/BioNTech訴訟の不確実性</h3>
+    <p>
+      米国訴訟はディスカバリー段階、国際訴訟は提起されたばかりです。
+      21法域という規模は大きいものの、
+      <strong>各法域で特許の有効性と侵害の有無が個別に判断されます</strong>。
+      Modernaと同様の和解に至る保証はありません。
+    </p>
+
+    <h3>4. 株式報酬による継続的な希薄化</h3>
+    <p>
+      営業費用の約23%が株式報酬です。
+      自社株買いを2億870万ドル実施してもなお、
+      加重平均株式数は前年同期比6.0%増加しました。
+      <strong>Vant構造では各子会社でも株式報酬が発生するため、
+      この負担は構造的なもの</strong>と考えられます。
+    </p>
+
+    <h3>5. 非支配持分による利益の分散</h3>
+    <p>
+      Q1の純損失2億9,061万ドルのうち1億77万ドルが非支配持分帰属でした。
+      損失を分担してもらえる一方、
+      <strong>Immunovantが成功した場合の利益も外部株主と分け合います</strong>。
+      Roivant株主が受け取る経済的価値は、
+      各Vantの持分比率によって希薄化されます。
+    </p>
+
+    <h3>6. 持株会社ディスカウント</h3>
+    <p>
+      複数の子会社を束ねる構造は、
+      <strong>各資産の価値を単純合計した金額より低く評価されやすい</strong>とされます。
+      経営の複雑性、本社費用、資本配分の非効率が理由です。
+      実際、Q1の一般管理費1億6,553万ドルは研究開発費2億216万ドルに近い水準であり、
+      <strong>間接費の重さが数字に表れています</strong>。
+    </p>
+
+    <h3>7. 単一化合物への集中</h3>
+    <p>
+      brepocitinibは4つの適応（DM、NIU、CS、LPP）すべてで開発されています。
+      <strong>化合物レベルで安全性の問題が生じれば、4適応が同時に影響を受けます</strong>。
+      JAK阻害剤クラスには、心血管イベントや悪性腫瘍のリスクに関する
+      規制当局の注意喚起が過去に出された経緯があります。
+    </p>
+
+    <h3>8. 収益源の非再現性</h3>
+    <p>
+      本記事で繰り返し述べたとおり、
+      <strong>Roivantの現金39億ドルの大部分は創薬活動が生んだものではありません</strong>。
+      LNP特許という、2015年のライセンス取得時には想定されていなかった資産が、
+      パンデミックによって偶発的に巨額の価値を持つに至ったものです。
+      <strong>この幸運は再現されません。</strong>
+      今後の企業価値は、パイプラインの成否のみで決まります。
+    </p>
+  </section>
+
+  <!-- ⑦ -->
+  <section id="ch7">
+    <h2 class="chapter"><span class="num">⑦</span>まとめ ― 中小型株編で問うべきこと</h2>
+
+    <p>
+      中小型株編の第1回として、Roivantは示唆に富む題材でした。
+      <strong>AIを掲げない中小型バイオが、どう評価されるか</strong>という比較軸が得られたからです。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>比較項目</th><th>Roivant（本記事）</th><th>レイヤー3の4社</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>売上／営業費用</td>
+            <td class="num">約0.4%</td>
+            <td>0.4〜80%（Schrödinger除けば1%未満）</td>
+          </tr>
+          <tr>
+            <td>現金の調達源</td>
+            <td><strong>特許訴訟の和解</strong></td>
+            <td>公募増資・ATM</td>
+          </tr>
+          <tr>
+            <td>株式数の変化</td>
+            <td>+6.0%（自社株買いを実施しつつ）</td>
+            <td>+18〜52%</td>
+          </tr>
+          <tr>
+            <td>実現率</td>
+            <td class="num">約42%（訴訟和解）</td>
+            <td class="num">2.5〜3.7%（提携契約）</td>
+          </tr>
+          <tr>
+            <td>臨床の最先端</td>
+            <td><strong>FDA審査中（上市直前）</strong></td>
+            <td>第1/2a相〜第III相</td>
+          </tr>
+          <tr>
+            <td>実質事業価値（試算）</td>
+            <td class="num"><strong>約190〜200億ドル</strong></td>
+            <td class="num">8.7〜28.7億ドル</td>
+          </tr>
+          <tr>
+            <td>AI活用</td>
+            <td>事業の中核ではない</td>
+            <td>事業の中核</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>ここから見えること</h3>
+    <p>
+      <strong>第一に、AIを掲げているかどうかは、企業価値の決定要因ではありません。</strong>
+      RoivantはAI創薬企業ではありませんが、実質事業価値はレイヤー3の4社すべてを上回ります。
+      決めているのは<strong>資産がどこまで進んだか</strong>です。
+    </p>
+    <p>
+      <strong>第二に、実現率の高低は交渉力ではなく「条件の性質」で決まります。</strong>
+      Roivantの約42%、AstraZeneca-Dizalの約40%に対し、
+      レイヤー3企業は2.5〜3.7%。
+      差を生んでいるのは、<strong>残額が臨床開発の成否に依存するかどうか</strong>でした。
+    </p>
+    <p>
+      <strong>第三に、資本政策は企業の立ち位置を最も正直に映します。</strong>
+      増資を繰り返す企業と、自社株買いを行う企業。
+      Roivantは後者に立っていますが、
+      それは創薬の成功ではなく訴訟の結果によるものです。
+    </p>
+
+    <h3>Roivantについての現時点の評価</h3>
+    <p>
+      本記事の立場は、強気でも弱気でもありません。
+      現金39億ドル（Moderna入金分を除く）、収益化までのランウェイ確保、
+      brepocitinibの上市直前、IMVT-1402の6適応、
+      年内に3件のトップライン読み出し。
+      これらは中小型バイオとして例外的に厚い布陣です。
+    </p>
+    <p>
+      同時に、<strong>brepocitinibはまだ承認されておらず、
+      13億ドルは控訴の結果次第、
+      営業費用の約23%が株式報酬、
+      現金の源泉は再現性のない訴訟</strong>です。
+    </p>
+    <p>
+      <strong>2026年9月末のbrepocitinib上市が実現するか、
+      そして年内のNIU・PH-ILD・CLEの3読み出しがどうなるかが、判定材料になります。</strong>
+      CEO自身が「これらのいくつかで成功すれば会社の姿は根本的に変わる」と述べているとおり、
+      <strong>今後数か月が同社にとって決定的な期間</strong>です。
+      投資判断を下すのであれば、
+      「承認は未確定」「13億ドルは条件付き」「営業費用の23%が株式報酬」という
+      3つの事実を織り込んだうえで行う必要があります。
+    </p>
+
+    <div class="crosslink">
+      <h4>関連レポート</h4>
+      <ul>
+        <li><a href="/reports/ai-biotech-industry-map.html">前編：産業地図 ― AI×バイオを4レイヤーで整理する</a></li>
+        <li><a href="/reports/ai-biotech-validation.html">中編：技術検証編 ― AI創薬は本当に効いているのか</a></li>
+        <li><a href="/reports/ai-biotech-valuation.html">後編：投資判断編 ― 赤字先行企業を4指標で評価する</a></li>
+        <li><a href="/reports/recursion-rxrx.html">個別企業編①：Recursion（RXRX）― 実現率2.5%問題</a></li>
+        <li><a href="/reports/schrodinger-sdgr.html">個別企業編②：Schrödinger（SDGR）― Ajax買収で黒字転換した企業</a></li>
+        <li><a href="/reports/relay-rlay.html">個別企業編③：Relay Therapeutics（RLAY）― 増資で買った第III相</a></li>
+        <li><a href="/reports/absci-absi.html">個別企業編④：Absci（ABSI）― Eli Lillyが権利を取らなかった理由</a></li>
+        <li><a href="/reports/tempus-tem.html">個別企業編⑤：Tempus AI（TEM）― AstraZenecaから2億ドルを受け取った側</a></li>
+        <li><a href="/reports/illumina-ilmn.html">個別企業編⑥：Illumina（ILMN）― シリーズ初の本物の黒字企業</a></li>
+        <li><a href="/reports/iqvia-iqv.html">個別企業編⑦：IQVIA（IQV）― 受注残342億ドルという可視性</a></li>
+        <li><a href="/reports/lilly-lly.html">個別企業編⑧：Eli Lilly（LLY）― 買い手側から見たAI創薬</a></li>
+        <li><a href="/reports/astrazeneca-azn.html">個別企業編⑨：AstraZeneca（AZN）― Tempusに2億ドルを払った側</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHAT TO WATCH -->
+  <div class="watch">
+    <h2>WHAT TO WATCH</h2>
+    <p class="w-sub">Roivant Sciences（ROIV）― 今後の注目点</p>
+    <ol>
+      <li><b>2026年第3四半期：brepocitinibのFDA判断。</b>PDUFA目標日が設定されており、承認されれば皮膚筋炎に対する初の標的治療薬となる。会社は9月末までの米国上市を計画しているが、これは承認を前提とした計画である。本記事執筆時点では審査中。</li>
+      <li><b>2026年下半期：3件のトップライン読み出し。</b>brepocitinibの非感染性ぶどう膜炎（第3相）、mosliciguatのPH-ILD（第2相）、IMVT-1402の皮膚エリテマトーデス（概念実証）。CEOが「いくつか成功すれば会社の姿は根本的に変わる」と述べた材料であり、逆に全滅すれば前提が崩れる。</li>
+      <li><b>上市後の四半期売上。</b>現在の売上／営業費用は約0.4%。承認・上市されれば製品売上が立ちはじめ、反復収益比率という指標が初めて意味を持つようになる。立ち上がりのペースが、希少疾患市場の実力を測る最初のデータになる。</li>
+      <li><b>Moderna 1498条控訴の結果。</b>残る13億ドルの発生条件。法的判断であり企業側で結果を左右できない。発生すれば現金は52億ドル規模になるが、しない可能性も前提に置く必要がある。</li>
+      <li><b>Pfizer/BioNTech訴訟の進展。</b>米国はディスカバリー段階、21法域で国際訴訟が進行中。Modernaと同様の和解に至るかは各法域の判断次第。訴訟費用の増加が費用面に現れるかも併せて確認する。</li>
+      <li><b>株式報酬と自社株買いの綱引き。</b>Q1は730万株を約2億870万ドルで取得したが、加重平均株式数は6.0%増加した。営業費用の約23%を占める株式報酬が続く限り、自社株買いは希薄化の相殺にとどまる可能性がある。</li>
+    </ol>
+  </div>
+
+  <!-- 免責 -->
+  <div class="disclaimer">
+    <h3>免責事項</h3>
+    <ul>
+      <li>本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資に関する最終的な判断は、ご自身の責任において行ってください。</li>
+      <li>本記事に記載された数値・事実は、2026年8月中旬時点で公開されている企業のIR資料、決算リリース、SEC提出書類、および報道等に基づいています。株価・時価総額等の市場データは日々変動します。</li>
+      <li>「編集部試算」「編集部計算」と明記した数値は、公開情報に基づく推計であり、企業が公表した値ではありません。</li>
+      <li>Non-GAAP純損失、Non-GAAP研究開発費等は非GAAP指標であり、企業ごとに算出方法が異なります。GAAP指標に代わるものではありません。</li>
+      <li>本記事で言及したbrepocitinibは、執筆時点でFDAの審査中であり、承認されていません。優先審査の付与は承認を保証するものではなく、上市時期に関する記述は企業の計画です。臨床試験の結果は将来の承認を保証するものではありません。</li>
+      <li>訴訟に関する記述は公表された情報に基づくものであり、係属中の訴訟の結果を予測または示唆するものではありません。条件付きの支払いは発生しない可能性があります。</li>
+      <li>本記事は特定の医薬品の使用を推奨するものではなく、医学的助言を提供するものでもありません。治療に関する判断は必ず医療専門家にご相談ください。</li>
+      <li>本記事の内容には誤りが含まれる可能性があります。投資判断にあたっては、必ず一次情報（企業のIR資料、SEC提出書類等）をご確認ください。</li>
+    </ul>
+  </div>
+
+  <footer class="site">
+    Market Supporter AI ／ marketsupporter-ai.com<br>
+    AI×製薬×バイオ シリーズ 個別企業編 ⑩（2026年8月21日公開）／ 中小型株編 第1回
+  </footer>
+
+</div>
+</body>
+</html>
