@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prime Medicine（NASDAQ:PRME）徹底分析｜ランウェイとマイルストーンが同じ年に重なる - Market Supporter AI</title>
+<meta name="description" content="遺伝子編集企業Prime Medicine（PRME）を7章構成で分析。2026年Q2決算実績、現金1億880万ドル、ランウェイ「2027年まで」、主要マイルストーンも2027年。株価純資産倍率0.29倍という水準を解説します。">
+<style>
+:root{
+  --accent:#7e22ce;
+  --accent-dark:#581c87;
+  --accent-mid:#9333ea;
+  --accent-light:#faf5ff;
+  --accent-border:#e9d5ff;
+  --ink:#241a2b;
+  --ink-sub:#4f4459;
+  --line:#ece4f2;
+  --bg:#ffffff;
+  --bg-soft:#fbf8fd;
+  --warn:#b45309;
+  --warn-bg:#fffbeb;
+  --pos:#15803d;
+  --neg:#b91c1c;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);background:var(--bg);line-height:1.85;font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px 80px;}
+
+header.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 58%,#a855f7 100%);
+  color:#fff;padding:52px 20px 46px;
+}
+.hero-inner{max-width:860px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;font-size:12px;letter-spacing:.14em;
+  background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);
+  padding:5px 13px;border-radius:999px;margin-bottom:18px;
+}
+h1{font-size:29px;line-height:1.45;margin:0 0 16px;font-weight:700;letter-spacing:.01em;}
+.hero-sub{font-size:15.5px;opacity:.94;margin:0 0 22px;line-height:1.8;}
+.meta{font-size:13px;opacity:.86;border-top:1px solid rgba(255,255,255,.25);padding-top:14px;}
+.tags{margin-top:12px;}
+.tag{display:inline-block;font-size:11.5px;background:rgba(255,255,255,.14);padding:4px 10px;border-radius:4px;margin:0 6px 6px 0;}
+
+.toc{background:var(--accent-light);border:1px solid var(--accent-border);border-radius:10px;padding:22px 24px;margin:36px 0 44px;}
+.toc h2{font-size:15px;margin:0 0 12px;color:var(--accent-dark);letter-spacing:.06em;}
+.toc ol{margin:0;padding-left:1.3em;}
+.toc li{margin:7px 0;font-size:14.5px;}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--accent-mid);}
+.toc a:hover{color:var(--accent);}
+
+section{margin:0 0 52px;scroll-margin-top:20px;}
+h2.chapter{font-size:21px;margin:0 0 20px;padding:0 0 12px 0;border-bottom:3px solid var(--accent);line-height:1.5;font-weight:700;}
+h2.chapter .num{display:inline-block;color:var(--accent);font-size:19px;margin-right:8px;}
+h3{font-size:17px;margin:32px 0 12px;padding-left:12px;border-left:4px solid var(--accent-mid);line-height:1.6;}
+p{margin:0 0 16px;}
+ul,ol{margin:0 0 18px;padding-left:1.4em;}
+li{margin:7px 0;}
+strong{color:var(--accent-dark);font-weight:700;}
+
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0 24px;}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:480px;}
+th,td{border:1px solid var(--line);padding:11px 12px;text-align:left;vertical-align:top;}
+th{background:var(--accent-light);color:var(--accent-dark);font-weight:700;white-space:nowrap;}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+tbody tr:nth-child(even){background:var(--bg-soft);}
+.tbl-note{font-size:12.5px;color:var(--ink-sub);margin:-14px 0 24px;}
+
+.callout{background:var(--bg-soft);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:18px 20px;margin:24px 0;font-size:15px;}
+.callout .label{display:block;font-size:12px;letter-spacing:.1em;color:var(--accent);font-weight:700;margin-bottom:8px;}
+.warn{background:var(--warn-bg);border-left:4px solid var(--warn);}
+.warn .label{color:var(--warn);}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:24px 0 28px;}
+.kpi{background:var(--bg-soft);border:1px solid var(--line);border-radius:9px;padding:15px 16px;}
+.kpi .k-label{font-size:12px;color:var(--ink-sub);margin-bottom:6px;line-height:1.5;}
+.kpi .k-value{font-size:21px;font-weight:700;color:var(--accent-dark);line-height:1.3;font-variant-numeric:tabular-nums;}
+.kpi .k-sub{font-size:11.5px;color:var(--ink-sub);margin-top:5px;line-height:1.5;}
+
+.pos{color:var(--pos);font-weight:700;}
+.neg{color:var(--neg);font-weight:700;}
+
+.crosslink{border:1px solid var(--accent-border);border-radius:10px;padding:18px 20px;margin:30px 0;background:#fff;}
+.crosslink h4{margin:0 0 10px;font-size:14px;color:var(--accent-dark);letter-spacing:.05em;}
+.crosslink ul{margin:0;padding-left:1.2em;font-size:14px;}
+.crosslink a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-border);}
+
+.watch{background:linear-gradient(150deg,var(--accent-dark) 0%,#3b0764 100%);color:#fff;border-radius:14px;padding:36px 28px;margin:56px 0 40px;}
+.watch h2{font-size:20px;margin:0 0 8px;letter-spacing:.08em;color:#fff;border:none;padding:0;}
+.watch .w-sub{font-size:13.5px;opacity:.82;margin:0 0 24px;}
+.watch ol{padding-left:0;list-style:none;margin:0;counter-reset:w;}
+.watch li{counter-increment:w;position:relative;padding-left:44px;margin:0 0 20px;font-size:14.8px;line-height:1.8;}
+.watch li::before{
+  content:counter(w,decimal-leading-zero);
+  position:absolute;left:0;top:2px;font-size:13px;font-weight:700;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
+  width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+}
+.watch li b{color:#e9d5ff;}
+
+.disclaimer{background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:22px 24px;font-size:13px;color:var(--ink-sub);line-height:1.85;}
+.disclaimer h3{font-size:14px;margin:0 0 10px;padding:0;border:none;color:var(--ink);}
+.disclaimer ul{padding-left:1.3em;margin:0;}
+
+footer.site{text-align:center;font-size:12.5px;color:var(--ink-sub);margin-top:44px;padding-top:22px;border-top:1px solid var(--line);}
+
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  header.hero{padding:38px 18px 34px;}
+  h1{font-size:22px;line-height:1.5;}
+  .hero-sub{font-size:14.5px;}
+  .wrap{padding:0 16px 60px;}
+  h2.chapter{font-size:18.5px;}
+  h3{font-size:16px;}
+  .watch{padding:28px 20px;border-radius:10px;}
+  .watch li{padding-left:38px;font-size:14.2px;}
+  .watch li::before{width:26px;height:26px;font-size:12px;}
+  .kpi .k-value{font-size:19px;}
+  table{font-size:13.2px;}
+  th,td{padding:9px 10px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">AI × 製薬 × バイオ シリーズ ／ 個別企業編 ⑪ ／ 中小型株編 第2回</span>
+    <h1>Prime Medicine（NASDAQ:PRME）徹底分析<br>― ランウェイと主要マイルストーンが、同じ年に重なる</h1>
+    <p class="hero-sub">
+      会社が公表するキャッシュランウェイは「2027年まで」。
+      そして3つの主要マイルストーンも、すべて<strong>2027年</strong>です。
+      半年で現金は43%減少し、株主資本は67%減りました。
+      一方で株価純資産倍率は0.29倍。2026年8月6日発表のQ2実績から検証します。
+    </p>
+    <div class="meta">
+      公開日：2026年8月22日 ／ 分析基準日：2026年8月中旬 ／ Market Supporter AI 編集部
+      <div class="tags">
+        <span class="tag">#PRME</span>
+        <span class="tag">#中小型株</span>
+        <span class="tag">#米国株</span>
+        <span class="tag">#遺伝子編集</span>
+        <span class="tag">#プライム編集</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="toc">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#ch1">市場規模 ― 肝臓の2大遺伝性疾患に絞った理由</a></li>
+      <li><a href="#ch2">政策・規制環境 ― 4つの指定と、NEJM掲載という実績</a></li>
+      <li><a href="#ch3">コスト・収益構造 ― 費用18.5%削減の中身</a></li>
+      <li><a href="#ch4">事業セグメント動向 ― 3つのプログラムと仲裁勝訴</a></li>
+      <li><a href="#ch5">株式バリュエーション ― PBR 0.29倍をどう読むか</a></li>
+      <li><a href="#ch6">リスク要因 ― ランウェイとマイルストーンの衝突</a></li>
+      <li><a href="#ch7">まとめ ― 中小型株編で見えてきた分岐</a></li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <span class="label">この記事の位置づけ</span>
+    「AI×製薬×バイオ」シリーズ、<strong>中小型株編</strong>の第2回です。
+    前回のRoivantは訴訟で39億ドルの現金を持つ企業でした。
+    Prime Medicineは対照的に、<strong>現金1億880万ドル、ランウェイ2027年まで</strong>という
+    典型的な資金制約下の遺伝子編集企業です。
+    3部作の4指標が、中小型株でこそ最も鋭く機能する場面になります。
+  </div>
+
+  <!-- ① -->
+  <section id="ch1">
+    <h2 class="chapter"><span class="num">①</span>市場規模 ― 肝臓の2大遺伝性疾患に絞った理由</h2>
+
+    <p>
+      Prime Medicineは米マサチューセッツ州ケンブリッジ拠点の遺伝子編集企業です。
+      独自の<strong>プライム編集（Prime Editing）</strong>技術を用い、
+      <strong>一度の投与で治癒しうる遺伝子治療</strong>の開発を掲げています。
+    </p>
+    <p>
+      同社の説明によれば、プライム編集は<strong>遺伝子内の正しい位置に正しい編集のみを行い、
+      意図しないDNA改変を最小化する</strong>よう設計されており、
+      ほぼすべての種類の遺伝子変異を修復でき、多様な組織・臓器・細胞型で機能しうるとされています。
+    </p>
+
+    <h3>戦略の転換 ― 「絞り込み」の結果</h3>
+    <p>
+      注目すべきは、CEOのAllan Reine氏が
+      <strong>「昨年打ち出した集中戦略を実行し続けている」</strong>と述べている点です。
+      同社は2025年5月に人員削減を実施しており、
+      現在のパイプラインは<strong>肝臓・肺・免疫腫瘍</strong>の3領域に絞られています。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>プログラム</th><th>疾患</th><th>市場の特徴</th><th>段階</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>PM577a</strong></td>
+            <td>ウィルソン病（WD）</td>
+            <td>同社が「肝臓を起源とする2大遺伝性疾患」の一つと位置づける。標的とする<strong>ATP7B遺伝子のH1069Q変異は、米国におけるWDの最も一般的な単一原因</strong></td>
+            <td><strong>グローバル第1/2相へ</strong>（米国IND・NZ CTA取得済み）</td>
+          </tr>
+          <tr>
+            <td><strong>PM647</strong></td>
+            <td>α1-アンチトリプシン欠乏症（AATD）</td>
+            <td>もう一つの「肝臓を起源とする2大遺伝性疾患」。標的とする<strong>SERPINA1遺伝子のE342K（PiZ）変異は、AATDで最も多い病因変異</strong></td>
+            <td>2026年第3四半期にIND/CTA提出予定</td>
+          </tr>
+          <tr>
+            <td><strong>PM359</strong></td>
+            <td>慢性肉芽腫症（CGD）</td>
+            <td>希少疾患。<strong>プライム編集がヒトで疾患を是正できることを既に示した</strong>領域</td>
+            <td>第1/2相。<strong>2027年上期にBLA提出計画</strong></td>
+          </tr>
+          <tr>
+            <td>CFプログラム</td>
+            <td>嚢胞性線維症（CF）</td>
+            <td>Cystic Fibrosis Foundationの支援</td>
+            <td>in vivo プログラム</td>
+          </tr>
+          <tr>
+            <td>CAR-T</td>
+            <td>血液・免疫・腫瘍</td>
+            <td><strong>Bristol Myers Squibbとの提携</strong></td>
+            <td>プライム編集CAR-T製品</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：Prime Medicine 2026年第2四半期決算リリース（2026年8月6日）。</p>
+
+    <div class="callout warn">
+      <span class="label">市場規模の数字が公表されていない</span>
+      本シリーズで扱ってきた企業の多くは、対象患者数や市場規模の見積もりを公表していました。
+      <strong>Prime Medicineの決算リリースには、こうした数字が一切ありません。</strong>
+      <div style="margin-top:12px;">
+        代わりに同社が強調しているのは<strong>「最も一般的な変異を標的にしている」</strong>という質的な情報です。
+        WDではH1069Q変異が米国で最も多い原因、AATDではE342K（PiZ）変異が最も多い病因変異。
+      </div>
+      <div style="margin-top:12px;">
+        これは<strong>プライム編集という技術の性質</strong>によるものと考えられます。
+        特定の変異を狙って修復する技術であるため、
+        「疾患の患者数」ではなく「その変異を持つ患者数」が実際の対象になります。
+        投資家として押さえるべきは、<strong>市場規模の推計が困難であり、
+        会社側も数字を示していない</strong>という事実そのものです。
+      </div>
+    </div>
+
+    <h3>技術の将来性についての同社の主張</h3>
+    <p>
+      同社は、プライム編集の汎用的な編集能力が
+      <strong>数千の潜在的適応にわたる機会を開きうる</strong>と説明しています。
+      現在のパイプラインを超えて、追加の遺伝性疾患、免疫疾患、がん、感染症、
+      さらには一般的な疾患の遺伝的リスク因子まで対象を広げる意向を示しています。
+    </p>
+    <p>
+      ただしこれは<strong>長期的な構想</strong>であり、
+      現在の企業価値を支えているのは前述の3プログラムです。
+    </p>
+  </section>
+
+  <!-- ② -->
+  <section id="ch2">
+    <h2 class="chapter"><span class="num">②</span>政策・規制環境 ― 4つの指定と、NEJM掲載という実績</h2>
+
+    <p>
+      Prime Medicineの規制面は、Q2に大きく前進しました。
+      本シリーズで扱った中小型バイオのなかでも、<strong>規制上の進捗は最も具体的</strong>です。
+    </p>
+
+    <h3>PM359 ― 4つのFDA指定を取得済み</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>指定</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>RMAT指定</strong>（再生医療先端治療）</td>
+            <td>2026年6月に付与。<strong>FDAの集中的な指導と迅速審査</strong>、代替・中間評価項目に関する協議、将来のBLAのローリング審査・優先審査の適格性を提供</td>
+          </tr>
+          <tr><td>ファストトラック指定</td><td>取得済み</td></tr>
+          <tr><td>希少疾病用医薬品指定</td><td>取得済み</td></tr>
+          <tr><td>希少小児疾患指定</td><td>取得済み</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      RMAT指定の根拠となったのは第1/2相の臨床データで、
+      <strong>その一部は既に『New England Journal of Medicine』に掲載</strong>されています。
+    </p>
+
+    <div class="callout">
+      <span class="label">3部作の前提との関係</span>
+      3部作で「2026年時点でAI創薬由来のFDA承認薬はゼロ」と確認しました。
+      Prime MedicineはAI創薬企業ではありませんが、
+      <strong>遺伝子編集という新規モダリティにおいて、
+      ヒトでの概念実証をNEJM級の場で示している</strong>点は重要です。
+      <div style="margin-top:12px;">
+        CEOは<strong>「CGDでは、プライム編集がヒトで疾患を是正できることを既に示した」</strong>と述べています。
+        技術そのものの妥当性については、レイヤー3のAI創薬企業より
+        <strong>一歩先の検証段階にある</strong>と言えます。
+      </div>
+    </div>
+
+    <h3>PM577a ― 2か国で臨床入りの許可</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>時期</th><th>規制上の進展</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>2026年6月</td>
+            <td>ニュージーランド医薬品・医療機器安全庁（Medsafe）がCTAをクリア。
+            <strong>同社にとって in vivo プライム編集治療として初の臨床認可</strong></td>
+          </tr>
+          <tr>
+            <td>2026年7月</td>
+            <td>FDAがINDをクリア。米国の患者が参加可能に</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      この2件により<strong>グローバル第1/2相プログラムが成立</strong>しました。
+      非盲検のヒト初回投与試験で、成人および青年のWD患者を対象に
+      PM577aの漸増用量における安全性、忍容性、生物学的活性、有効性を評価します。
+      当初は標準治療で臨床的に安定している成人から登録を開始します。
+    </p>
+
+    <h3>PM647 ― 仲裁で権利を確保</h3>
+    <p>
+      2026年7月、同社は<strong>Beam Therapeuticsとの仲裁で有利な拘束力ある解決</strong>を得たと発表しました。
+      2019年の共同研究・ライセンス契約に関する争いです。
+    </p>
+    <p>
+      仲裁廷は、<strong>PM647が契約に定義された Prime Medicine の「Field」の範囲内にあり、
+      同社は契約に違反しておらず、金銭的損害賠償の義務も負わない</strong>と宣言しました。
+    </p>
+    <p>
+      前回のRoivantでは訴訟が<strong>収益源</strong>でしたが、
+      Prime Medicineの場合は<strong>事業継続の前提条件</strong>でした。
+      敗訴していればPM647の開発が困難になっていた可能性があります。
+      <strong>同じ「法的手続き」でも、企業にとっての意味はまったく異なります。</strong>
+    </p>
+  </section>
+
+  <!-- ③ -->
+  <section id="ch3">
+    <h2 class="chapter"><span class="num">③</span>コスト・収益構造 ― 費用18.5%削減の中身</h2>
+
+    <h3>2026年第2四半期の実績（2026年8月6日発表）</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>項目（千ドル）</th><th>2026年Q2</th><th>2025年Q2</th><th>増減</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>共同研究収益（関連当事者）</td><td class="num">1,154</td><td class="num">1,115</td><td class="num pos">+3.5%</td></tr>
+          <tr><td>研究開発費</td><td class="num">33,397</td><td class="num">41,375</td><td class="num pos">▲19.3%</td></tr>
+          <tr><td>一般管理費</td><td class="num">11,042</td><td class="num">13,117</td><td class="num pos">▲15.8%</td></tr>
+          <tr><td><strong>営業費用合計</strong></td><td class="num"><strong>44,439</strong></td><td class="num">54,492</td><td class="num pos">▲18.5%</td></tr>
+          <tr><td><strong>営業損失</strong></td><td class="num neg"><strong>▲43,285</strong></td><td class="num">▲53,377</td><td class="num pos">改善</td></tr>
+          <tr><td>受取利息</td><td class="num">788</td><td class="num">743</td><td class="num">―</td></tr>
+          <tr><td>投資の増価（償却）</td><td class="num">333</td><td class="num">530</td><td class="num">―</td></tr>
+          <tr><td>その他収益合計（純額）</td><td class="num">1,176</td><td class="num">786</td><td class="num">―</td></tr>
+          <tr><td><strong>純損失</strong></td><td class="num neg"><strong>▲42,109</strong></td><td class="num">▲52,591</td><td class="num pos">▲19.9%</td></tr>
+          <tr><td>1株当たり純損失</td><td class="num">▲0.24ドル</td><td class="num">▲0.41ドル</td><td class="num pos">改善</td></tr>
+          <tr><td>加重平均株式数</td><td class="num">177,224,892</td><td class="num">129,185,918</td><td class="num neg">+37.2%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：Prime Medicine 2026年第2四半期決算リリース（2026年8月6日）。</p>
+
+    <div class="callout warn">
+      <span class="label">EPS改善の正体は「株式数」ではない</span>
+      1株当たり純損失は▲0.41ドルから▲0.24ドルへ改善しました。
+      ただし<strong>加重平均株式数は37.2%増加</strong>しています。
+      <div style="margin-top:12px;">
+        通常、株式数が増えればEPSは悪化します。
+        それでも改善したのは、<strong>純損失そのものが19.9%減った</strong>からです。
+        つまり<strong>費用削減の効果が希薄化の影響を上回った</strong>ということです。
+      </div>
+      <div style="margin-top:12px;">
+        ただしこれは<strong>成長ではなく縮小による改善</strong>である点に注意が必要です。
+        R&amp;D費の減少要因は、2025年5月に発表した人員削減による人件費の減少と、
+        動物飼育施設（vivarium）の内製化による施設費の節減でした。
+      </div>
+    </div>
+
+    <h3>費用削減の内訳</h3>
+    <ul>
+      <li><strong>研究開発費 ▲798万ドル</strong>：2025年5月の人員削減に伴うR&amp;D人件費の減少、および動物飼育施設の内製化による施設費節減</li>
+      <li><strong>一般管理費 ▲208万ドル</strong>：2025年Q2に計上された一時的な退職金の反動、株式報酬費用の減少、企業法務費用の低下</li>
+    </ul>
+    <p>
+      <strong>3項目すべてが「前年に多かったものが減った」という性質</strong>です。
+      人員削減、退職金の反動、法務費用の低下。
+      いずれも<strong>今後さらに削減余地があるとは言いにくい</strong>項目です。
+    </p>
+
+    <h3>収益は実質的に存在しない</h3>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="k-label">Q2 共同研究収益</div>
+        <div class="k-value">115万ドル</div>
+        <div class="k-sub">全額が<strong>関連当事者</strong>との取引</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">Q2 営業費用</div>
+        <div class="k-value">4,444万ドル</div>
+        <div class="k-sub">前年同期5,449万ドル</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">収益／営業費用</div>
+        <div class="k-value">約2.6%</div>
+        <div class="k-sub">編集部計算</div>
+      </div>
+    </div>
+    <p>
+      収益115万ドルは<strong>全額が「関連当事者」からの共同研究収益</strong>です。
+      Bristol Myers Squibbとの提携によるものと考えられます。
+    </p>
+    <p>
+      収益÷営業費用は約2.6%。本シリーズの他社と並べると位置づけが明確になります。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>企業</th><th>収益／営業費用</th></tr></thead>
+        <tbody>
+          <tr><td>Relay（第3回）</td><td class="num">約0.4%</td></tr>
+          <tr><td>Roivant（第10回）</td><td class="num">約0.4%</td></tr>
+          <tr><td>Absci（第4回）</td><td class="num">約0.9%</td></tr>
+          <tr><td><strong>Prime Medicine（本記事）</strong></td><td class="num"><strong>約2.6%</strong></td></tr>
+          <tr><td>Recursion（第1回）</td><td class="num">約8%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      2.6%は他の中小型バイオよりやや高いものの、
+      <strong>事業を支える水準からは程遠い</strong>ことに変わりありません。
+    </p>
+  </section>
+
+  <!-- ④ -->
+  <section id="ch4">
+    <h2 class="chapter"><span class="num">④</span>事業セグメント動向 ― 3つのプログラムと仲裁勝訴</h2>
+
+    <p>
+      同社は会計上のセグメント分割を行っていません。
+      実質的には<strong>3つの主要プログラム</strong>が事業のすべてです。
+    </p>
+
+    <h3>① PM577a（ウィルソン病）― 初の in vivo プライム編集治療</h3>
+    <p>
+      ウィルソン病は、ATP7B遺伝子の変異により銅の代謝が障害される遺伝性疾患です。
+      PM577aは<strong>H1069Q変異を修正</strong>することを目指しています。
+      同社によれば、この変異は<strong>米国におけるWDの最も一般的な単一原因</strong>です。
+    </p>
+    <p>
+      前臨床データでは、動物モデルにおいて標的の修正と銅恒常性の回復が示されたとされています。
+    </p>
+    <p>
+      Q2の進展は前章のとおり、ニュージーランドと米国の2か国で臨床認可を取得したことです。
+      <strong>研究開始活動（study startup activities）が進行中</strong>で、
+      グローバル第1/2相の開始は2026年下半期、
+      <strong>初期臨床データは2027年</strong>が見込まれています。
+    </p>
+
+    <h3>② PM647（AATD）― モジュラー戦略の実践</h3>
+    <p>
+      α1-アンチトリプシン欠乏症は、SERPINA1遺伝子の変異により
+      正常なα1-アンチトリプシンタンパク質が産生されない疾患です。
+      PM647は<strong>E342K（PiZ）変異</strong>を修正します。
+    </p>
+    <p>
+      同社が報告した前臨床データによれば、
+      <strong>完全ヒト化マウスモデルにおいて高い編集効率を達成し、
+      臨床的に意味のある用量で、修正されたタンパク質アイソフォーム（M-AAT）を
+      健常なヒトの範囲まで回復させた</strong>とされています。
+    </p>
+
+    <div class="callout">
+      <span class="label">モジュラー戦略という設計思想</span>
+      注目すべきは、<strong>PM647がPM577aと同じ「universal liver LNP（汎用肝臓向け脂質ナノ粒子）」
+      送達アプローチに基づいて構築されている</strong>点です。
+      <div style="margin-top:12px;">
+        同社は、PM577aでの経験をPM647の臨床開発に活かし、
+        <strong>モジュラー・アプローチによる効率と学習の恩恵を受ける</strong>と説明しています。
+      </div>
+      <div style="margin-top:12px;">
+        これは資金制約下の企業として合理的な設計です。
+        送達技術を共通化すれば、開発コストと時間を圧縮できます。
+        <strong>ただし裏返せば、送達技術に問題が生じた場合、
+        2つのプログラムが同時に影響を受ける</strong>ということでもあります。
+      </div>
+    </div>
+
+    <h3>③ PM359（CGD）― ヒトでの概念実証済み</h3>
+    <p>
+      慢性肉芽腫症を対象とするPM359は、
+      <strong>第1/2相で最初の2名の患者から良好な概念実証データ</strong>を得ています。
+      その一部は『New England Journal of Medicine』に掲載されました。
+    </p>
+    <p>
+      2026年6月のRMAT指定取得を受け、
+      同社はFDAとの規制対話を継続し、<strong>2027年上期のBLA提出</strong>を計画しています。
+    </p>
+
+    <div class="callout warn">
+      <span class="label">「2名の患者」という規模</span>
+      良好な概念実証データが得られたのは<strong>最初の2名の患者</strong>です。
+      NEJM掲載という実績は技術の妥当性を示す強力な証拠ですが、
+      <strong>BLA（生物学的製剤承認申請）に必要な症例数としては明らかに少ない</strong>水準です。
+      <div style="margin-top:12px;">
+        RMAT指定が提供する「代替・中間評価項目に関する協議」や
+        「ローリング審査・優先審査の適格性」は、
+        まさにこうした希少疾患の少数症例での承認を可能にするための制度です。
+        <strong>2027年上期のBLA提出が実現するかは、
+        FDAとの対話がどう決着するかに完全に依存します。</strong>
+      </div>
+    </div>
+
+    <h3>④ 提携プログラム</h3>
+    <ul>
+      <li><strong>嚢胞性線維症（CF）</strong>：Cystic Fibrosis Foundationの支援を受けた in vivo プログラム</li>
+      <li><strong>CAR-T</strong>：Bristol Myers Squibbとの提携によるプライム編集CAR-T製品（血液・免疫・腫瘍領域）</li>
+    </ul>
+    <p>
+      Q2の共同研究収益115万ドルは、これらの提携から生じているものと考えられます。
+      <strong>金額としては事業を支える規模ではありません。</strong>
+    </p>
+  </section>
+
+  <!-- ⑤ -->
+  <section id="ch5">
+    <h2 class="chapter"><span class="num">⑤</span>株式バリュエーション ― PBR 0.29倍をどう読むか</h2>
+
+    <p>
+      3部作の4指標を当てはめます。
+      Prime Medicineは<strong>4指標がすべて機能する</strong>、典型的な赤字先行企業です。
+    </p>
+
+    <h3>指標1：キャッシュランウェイ ― 最重要指標</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目（千ドル）</th><th>2026年6月30日</th><th>2025年12月31日</th><th>増減</th></tr></thead>
+        <tbody>
+          <tr><td>現金・現金同等物・投資</td><td class="num">95,071</td><td class="num">177,680</td><td class="num neg">▲46.5%</td></tr>
+          <tr><td><strong>現金・投資・制限付現金</strong></td><td class="num"><strong>108,800</strong></td><td class="num">191,400</td><td class="num neg"><strong>▲43.2%</strong></td></tr>
+          <tr><td>総資産</td><td class="num">249,040</td><td class="num">342,733</td><td class="num neg">▲27.3%</td></tr>
+          <tr><td>総負債</td><td class="num">209,231</td><td class="num">221,865</td><td class="num">▲5.7%</td></tr>
+          <tr><td><strong>株主資本</strong></td><td class="num neg"><strong>39,809</strong></td><td class="num">120,868</td><td class="num neg"><strong>▲67.1%</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout warn">
+      <span class="label">この記事で最も重要な数字</span>
+      <strong>半年で現金等が43.2%減少し、株主資本は67.1%減少しました。</strong>
+      <div style="margin-top:12px;">
+        さらに注目すべきは、<strong>総負債2億923万ドルが株主資本3,981万ドルの5.3倍</strong>である点です（編集部計算）。
+        本シリーズで扱った中小型バイオのなかで、この比率は際立っています。
+      </div>
+      <div style="margin-top:12px;">
+        会社が公表するランウェイは<strong>「2027年まで（into 2027）」</strong>。
+        Q2の純損失4,211万ドルを年換算すると約1.68億ドルで、
+        現金等1億880万ドルを割ると<strong>0.65年分</strong>という計算になります（編集部試算）。
+        費用削減が続く前提でも、<strong>2027年中には追加資金が必要になる</strong>公算が高い水準です。
+      </div>
+    </div>
+
+    <h3>指標2：反復収益比率 ― 実質ゼロ</h3>
+    <p>
+      収益115万ドルは全額が関連当事者との共同研究収益であり、反復性はありません。
+      収益÷営業費用は約2.6%。
+      <strong>製品売上が立つのは、最短でもPM359のBLAが承認された後</strong>であり、
+      現時点では2027年上期の提出計画すら未確定です。
+    </p>
+
+    <h3>指標3：一時金÷公表総額（実現率）― 算出不能</h3>
+    <p>
+      Prime Medicineは、提携契約について
+      <strong>「総額○億ドルのマイルストーンポテンシャル」という形での開示を行っていません</strong>。
+      Bristol Myers Squibbとの提携も、Cystic Fibrosis Foundationの支援も、
+      金額の内訳は公表されていません。
+    </p>
+    <p>
+      第4回のAbsciと同様、<strong>分母が存在しないため実現率は算出できません</strong>。
+      ただしAbsciが「提携型から自社開発型へ移行した結果」だったのに対し、
+      Prime Medicineは<strong>そもそも大型提携を持っていない</strong>という違いがあります。
+    </p>
+
+    <h3>指標4：増資の価格と引受先 ― 37%の希薄化</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>数値</th></tr></thead>
+        <tbody>
+          <tr><td>加重平均株式数（2026年Q2）</td><td class="num">177,224,892株</td></tr>
+          <tr><td>同（2025年Q2）</td><td class="num">129,185,918株</td></tr>
+          <tr><td><strong>前年同期比</strong></td><td class="num neg"><strong>+37.2%</strong></td></tr>
+          <tr><td>発行済株式数</td><td class="num">約1億8,062万株</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      1年で株式数が37.2%増加しています。
+      本シリーズの他社と並べると、<strong>Recursionの+52%に次ぐ高い希薄化率</strong>です。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>企業</th><th>株式数の変化</th></tr></thead>
+        <tbody>
+          <tr><td>Recursion（第1回）</td><td class="num neg">1年 約+52%</td></tr>
+          <tr><td><strong>Prime Medicine（本記事）</strong></td><td class="num neg"><strong>1年 +37.2%</strong></td></tr>
+          <tr><td>Absci（第4回）</td><td class="num">1年 約+23%</td></tr>
+          <tr><td>Relay（第3回）</td><td class="num">1年 約+18%</td></tr>
+          <tr><td>Roivant（第10回）</td><td class="num">1年 +6.0%（自社株買い実施）</td></tr>
+          <tr><td>Illumina（第6回）</td><td class="num pos">▲2.5%（自社株買い）</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>バリュエーション水準 ― PBR 0.29倍</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>数値</th></tr></thead>
+        <tbody>
+          <tr><td>株価</td><td class="num">3.21ドル（2026年8月10日時点）</td></tr>
+          <tr><td>52週レンジ</td><td class="num">2.67ドル 〜 6.94ドル</td></tr>
+          <tr><td>時価総額</td><td class="num">約5億7,400万ドル（2026年8月10日時点）</td></tr>
+          <tr><td>エンタープライズバリュー</td><td class="num">約6億3,000万ドル</td></tr>
+          <tr><td><strong>株価純資産倍率（PBR）</strong></td><td class="num"><strong>0.29倍</strong></td></tr>
+          <tr><td>ベータ（5年月次）</td><td class="num">2.31</td></tr>
+          <tr><td>アナリスト平均目標株価</td><td class="num">7.03ドル（レンジ 4.25〜11.00ドル）</td></tr>
+          <tr><td>直近の個別評価</td><td>HC Wainwright：Buy維持・目標8ドル（8月10日）。TD Cowenは仲裁決着が重石を取り除いたと指摘</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">株価・時価総額は2026年8月10日時点の集計値であり、日々変動します。PBRは同時点のもの。アナリストの目標株価は各証券会社の見解であり、将来の株価を保証するものではありません。</p>
+
+    <div class="callout warn">
+      <span class="label">PBR 0.29倍の意味と、その落とし穴</span>
+      株価純資産倍率0.29倍は、<strong>市場が同社の純資産の3割程度しか評価していない</strong>ことを意味します。
+      表面的には「解散価値を大きく下回る」割安な水準に見えます。
+      <div style="margin-top:12px;">
+        ただし<strong>バイオテック企業のPBRは、そのまま解釈できません</strong>。
+        <ul style="margin-bottom:0;margin-top:8px;">
+          <li>株主資本3,981万ドルは<strong>半年で67%減少</strong>しており、今後も減り続ける見込み</li>
+          <li>総資産2億4,904万ドルの多くは研究設備であり、<strong>売却価値は簿価を大きく下回る可能性</strong></li>
+          <li>総負債2億923万ドルが株主資本の5.3倍。純資産の毀損ペースが速い</li>
+        </ul>
+      </div>
+      <div style="margin-top:12px;">
+        <strong>PBR 0.29倍は「割安」ではなく、
+        「市場が資金枯渇と追加希薄化を織り込んでいる」と読むほうが実態に近い</strong>と考えられます。
+        エンタープライズバリューが時価総額を上回っている（約6.3億ドル vs 約5.7億ドル）ことも、
+        負債の重さを反映しています。
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑥ -->
+  <section id="ch6">
+    <h2 class="chapter"><span class="num">⑥</span>リスク要因 ― ランウェイとマイルストーンの衝突</h2>
+
+    <h3>1. ランウェイと主要マイルストーンが同じ年に重なる</h3>
+    <p>
+      これが本記事で最も強調すべきリスクです。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>時期</th></tr></thead>
+        <tbody>
+          <tr><td><strong>会社公表のキャッシュランウェイ</strong></td><td class="num neg"><strong>2027年まで</strong></td></tr>
+          <tr><td>PM577aの初期臨床データ</td><td class="num">2027年</td></tr>
+          <tr><td>PM647の初期臨床データ</td><td class="num">2027年</td></tr>
+          <tr><td>PM359のBLA提出計画</td><td class="num">2027年上期</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      <strong>資金が尽きる時期と、価値を生む可能性のあるイベントが、同じ年に集中しています。</strong>
+      データが良好であれば有利な条件で資金調達できますが、
+      <strong>データが出る前に資金が必要になれば、不利な条件での調達を強いられます</strong>。
+      1年で37.2%という既存の希薄化率を踏まえると、影響は小さくありません。
+    </p>
+
+    <h3>2. 財務構造の脆弱性</h3>
+    <p>
+      総負債2億923万ドルが株主資本3,981万ドルの<strong>5.3倍</strong>。
+      半年で現金等が43.2%、株主資本が67.1%減少しました。
+      <strong>この減少ペースが続けば、株主資本は1年以内に消失する計算</strong>になります（編集部試算）。
+    </p>
+
+    <h3>3. 費用削減余地の限界</h3>
+    <p>
+      Q2の費用削減18.5%は、
+      2025年5月の人員削減、退職金の反動、法務費用の低下によるものでした。
+      <strong>いずれも一度きりの効果</strong>であり、
+      今後さらに大幅な削減を行えば、
+      3つのプログラムの進行そのものが遅延するリスクがあります。
+    </p>
+
+    <h3>4. BLA提出の不確実性</h3>
+    <p>
+      PM359のBLA提出は<strong>2027年上期の「計画」</strong>であり、確定ではありません。
+      根拠となる概念実証データは<strong>最初の2名の患者</strong>から得られたものです。
+      RMAT指定により迅速審査の道が開けているものの、
+      <strong>FDAが承認に十分と判断する症例数・エンドポイントについては、
+      規制対話の結果を待つ必要があります</strong>。
+    </p>
+
+    <h3>5. 送達技術への集中</h3>
+    <p>
+      PM577aとPM647は<strong>同じ universal liver LNP 送達アプローチ</strong>を用いています。
+      効率的である反面、<strong>送達技術に安全性や有効性の問題が生じれば、
+      2つの主力プログラムが同時に影響を受けます</strong>。
+    </p>
+
+    <h3>6. 臨床データがまだ存在しない（in vivo プログラム）</h3>
+    <p>
+      PM577aとPM647について報告されているのは<strong>前臨床データのみ</strong>です。
+      PM577aは臨床認可を得たばかりで、
+      <strong>ヒトでの安全性・有効性データは2027年まで出ません</strong>。
+      動物モデルでの良好な結果が、ヒトで再現される保証はありません。
+    </p>
+
+    <h3>7. 遺伝子編集技術の競争環境</h3>
+    <p>
+      遺伝子編集領域には、CRISPR系を含む複数の技術と多数の企業が存在します。
+      Beam Therapeuticsとの仲裁は同社に有利に決着しましたが、
+      <strong>この分野では知的財産をめぐる争いが繰り返し発生しています</strong>。
+      同社もリスク要因に、プライム編集技術をカバーする知的財産権の保護範囲を挙げています。
+    </p>
+
+    <h3>8. 株価のボラティリティ</h3>
+    <p>
+      52週レンジは2.67ドル〜6.94ドルで、<strong>安値から高値まで2.6倍</strong>。
+      ベータは2.31と市場平均の2倍以上の変動性を示しています。
+      <strong>ニュース1本で株価が大きく動く水準</strong>であり、
+      ファンダメンタルズの変化と株価の変化が対応しない場面が頻繁に生じます。
+    </p>
+  </section>
+
+  <!-- ⑦ -->
+  <section id="ch7">
+    <h2 class="chapter"><span class="num">⑦</span>まとめ ― 中小型株編で見えてきた分岐</h2>
+
+    <p>
+      中小型株編の2社目にして、<strong>同じ「中小型バイオ」でも財務基盤に決定的な差がある</strong>ことが明確になりました。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>4指標</th><th>Prime Medicine（本記事）</th><th>Roivant（第10回）</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>キャッシュランウェイ</td>
+            <td class="neg"><strong>1億880万ドル／2027年まで</strong>（半年で43.2%減）</td>
+            <td>約39億ドル／収益化まで</td>
+          </tr>
+          <tr>
+            <td>反復収益比率</td>
+            <td>約2.6%（関連当事者のみ）</td>
+            <td>約0.4%</td>
+          </tr>
+          <tr>
+            <td>実現率</td>
+            <td>算出不能（公表総額なし）</td>
+            <td>約42%（訴訟和解）</td>
+          </tr>
+          <tr>
+            <td>株式数の変化</td>
+            <td class="neg"><strong>1年 +37.2%</strong></td>
+            <td>1年 +6.0%（自社株買い実施）</td>
+          </tr>
+          <tr>
+            <td>株主資本／総負債</td>
+            <td class="neg"><strong>3,981万ドル／2億923万ドル</strong></td>
+            <td>49億2,187万ドル／3億8,462万ドル</td>
+          </tr>
+          <tr>
+            <td>臨床の最先端</td>
+            <td>第1/2相（BLA提出計画は2027年上期）</td>
+            <td>FDA審査中（上市直前）</td>
+          </tr>
+          <tr>
+            <td>時価総額</td>
+            <td class="num">約5億7,400万ドル</td>
+            <td class="num">約250億ドル</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>技術は先を行き、財務は後を追う</h3>
+    <p>
+      重要なのは、<strong>Prime Medicineの技術的な進捗が劣っているわけではない</strong>という点です。
+    </p>
+    <ul>
+      <li>プライム編集がヒトで疾患を是正できることを既に示し、NEJMに掲載</li>
+      <li>PM359はRMAT・ファストトラック・希少疾病用医薬品・希少小児疾患の4指定を取得</li>
+      <li>PM577aは2か国で臨床認可を取得し、in vivo プライム編集として初の臨床入り</li>
+      <li>Beam Therapeuticsとの仲裁に勝訴し、PM647の権利を確保</li>
+    </ul>
+    <p>
+      3部作で確認した「2026年時点でAI創薬由来のFDA承認薬はゼロ」という状況と比べれば、
+      <strong>遺伝子編集はヒトでの概念実証という点で一歩先を行っています</strong>。
+    </p>
+    <p>
+      それでも株価純資産倍率は0.29倍、時価総額は約5億7,400万ドルにとどまります。
+      <strong>市場が評価しているのは技術の先進性ではなく、
+      「その技術を商業化まで持っていく資金があるか」</strong>だということです。
+    </p>
+
+    <h3>Prime Medicineについての現時点の評価</h3>
+    <p>
+      本記事の立場は、強気でも弱気でもありません。
+      ヒトでの概念実証、4つのFDA指定、2か国での臨床認可、仲裁勝訴。
+      これらは技術と規制の両面で実質的な前進です。
+      費用を18.5%削減しながらプログラムを前に進めた点も評価できます。
+    </p>
+    <p>
+      同時に、<strong>半年で現金等が43.2%減少し、
+      株主資本は67.1%減少、
+      総負債は株主資本の5.3倍、
+      1年で株式数が37.2%増加</strong>しています。
+      そして<strong>会社が示すランウェイ「2027年まで」と、
+      3つの主要マイルストーンの時期が、完全に重なっています</strong>。
+    </p>
+    <p>
+      <strong>2027年のデータが出る前に資金調達が必要になるか、
+      それともデータを見てから調達できるか。この順序が、既存株主にとって決定的です。</strong>
+      投資判断を下すのであれば、
+      「ランウェイは2027年まで」「半年で株主資本67%減」「1年で株式数+37.2%」という
+      3つの事実を織り込んだうえで行う必要があります。
+    </p>
+
+    <div class="crosslink">
+      <h4>関連レポート</h4>
+      <ul>
+        <li><a href="/reports/ai-biotech-industry-map.html">前編：産業地図 ― AI×バイオを4レイヤーで整理する</a></li>
+        <li><a href="/reports/ai-biotech-validation.html">中編：技術検証編 ― AI創薬は本当に効いているのか</a></li>
+        <li><a href="/reports/ai-biotech-valuation.html">後編：投資判断編 ― 赤字先行企業を4指標で評価する</a></li>
+        <li><a href="/reports/recursion-rxrx.html">個別企業編①：Recursion（RXRX）― 実現率2.5%問題</a></li>
+        <li><a href="/reports/schrodinger-sdgr.html">個別企業編②：Schrödinger（SDGR）― Ajax買収で黒字転換した企業</a></li>
+        <li><a href="/reports/relay-rlay.html">個別企業編③：Relay Therapeutics（RLAY）― 増資で買った第III相</a></li>
+        <li><a href="/reports/absci-absi.html">個別企業編④：Absci（ABSI）― Eli Lillyが権利を取らなかった理由</a></li>
+        <li><a href="/reports/tempus-tem.html">個別企業編⑤：Tempus AI（TEM）― AstraZenecaから2億ドルを受け取った側</a></li>
+        <li><a href="/reports/illumina-ilmn.html">個別企業編⑥：Illumina（ILMN）― シリーズ初の本物の黒字企業</a></li>
+        <li><a href="/reports/iqvia-iqv.html">個別企業編⑦：IQVIA（IQV）― 受注残342億ドルという可視性</a></li>
+        <li><a href="/reports/lilly-lly.html">個別企業編⑧：Eli Lilly（LLY）― 買い手側から見たAI創薬</a></li>
+        <li><a href="/reports/astrazeneca-azn.html">個別企業編⑨：AstraZeneca（AZN）― Tempusに2億ドルを払った側</a></li>
+        <li><a href="/reports/roivant-roiv.html">個別企業編⑩：Roivant Sciences（ROIV）― 訴訟で22.5億ドルを勝ち取った創薬企業</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHAT TO WATCH -->
+  <div class="watch">
+    <h2>WHAT TO WATCH</h2>
+    <p class="w-sub">Prime Medicine（PRME）― 今後の注目点</p>
+    <ol>
+      <li><b>資金調達のタイミングと条件。</b>ランウェイは2027年まで、主要データも2027年。データが出る前に調達すれば不利な条件になりうる。1年で37.2%という既存の希薄化率を踏まえ、発行価格と引受先（戦略投資家が入るか）を確認する。本記事で最も重要な監視項目。</li>
+      <li><b>2026年下半期：PM577aのグローバル第1/2相の開始。</b>研究開始活動が進行中とされている。予定通り開始されるか、そして登録ペースがどうか。開始が遅れれば2027年のデータ読み出しもずれ、ランウェイとの衝突が深刻になる。</li>
+      <li><b>2026年第3四半期：PM647のIND/CTA提出。</b>会社が明示した期限。PM577aと同じ universal liver LNP を用いるため、提出がスムーズに進むかどうかがモジュラー戦略の実効性を測る最初の試金石になる。</li>
+      <li><b>PM359のBLA提出に向けたFDAとの規制対話。</b>2027年上期の提出計画。概念実証データは最初の2名の患者から。RMAT指定を活かして、どの症例数・どのエンドポイントで承認申請が可能になるかが焦点。</li>
+      <li><b>四半期ごとの現金減少ペース。</b>半年で43.2%減という速度が続くか、費用削減の効果でさらに緩やかになるか。Q2の営業費用4,444万ドルが次四半期にどう推移するかを追う。</li>
+      <li><b>2027年：PM577aとPM647の初期臨床データ。</b>前臨床では良好な結果が報告されているが、ヒトでの安全性・有効性は未知。in vivo プライム編集として初のヒトデータであり、技術全体の評価を左右する。</li>
+    </ol>
+  </div>
+
+  <!-- 免責 -->
+  <div class="disclaimer">
+    <h3>免責事項</h3>
+    <ul>
+      <li>本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資に関する最終的な判断は、ご自身の責任において行ってください。</li>
+      <li>本記事に記載された数値・事実は、2026年8月中旬時点で公開されている企業のIR資料、決算リリース、SEC提出書類、および報道等に基づいています。株価・時価総額等の市場データは日々変動します。</li>
+      <li>「編集部試算」「編集部計算」と明記した数値は、公開情報に基づく推計であり、企業が公表した値ではありません。</li>
+      <li>キャッシュランウェイは企業の現行事業計画に基づく見通しであり、実際の資金消費ペースや事業環境の変化により変動する可能性があります。</li>
+      <li>前臨床試験および初期段階の臨床データは、後期試験や実際の臨床使用における結果を予測するものではありません。臨床試験の結果は将来の承認を保証するものではなく、開発は中止される可能性があります。</li>
+      <li>RMAT、ファストトラック、希少疾病用医薬品等の各種指定は、審査プロセス上の便宜を提供するものであり、承認を保証するものではありません。BLA提出時期に関する記述は企業の計画です。</li>
+      <li>アナリストの目標株価・レーティングは各証券会社の見解であり、将来の株価を保証するものではありません。</li>
+      <li>本記事は特定の医薬品の使用を推奨するものではなく、医学的助言を提供するものでもありません。治療に関する判断は必ず医療専門家にご相談ください。</li>
+      <li>本記事の内容には誤りが含まれる可能性があります。投資判断にあたっては、必ず一次情報（企業のIR資料、SEC提出書類等）をご確認ください。</li>
+    </ul>
+  </div>
+
+  <footer class="site">
+    Market Supporter AI ／ marketsupporter-ai.com<br>
+    AI×製薬×バイオ シリーズ 個別企業編 ⑪（2026年8月22日公開）／ 中小型株編 第2回
+  </footer>
+
+</div>
+</body>
+</html>
