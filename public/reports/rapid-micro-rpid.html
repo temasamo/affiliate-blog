@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rapid Micro Biosystems（NASDAQ:RPID）徹底分析｜反復収益63%、それでも現金は2,010万ドル - Market Supporter AI</title>
+<meta name="description" content="微生物検査自動化のRapid Micro Biosystems（RPID）を7章構成で分析。2026年Q2決算実績、反復収益63%、粗利率15%、現金2,010万ドル、金利11%のタームローン、Illuminaと同じ設置ベース型モデルを解説します。">
+<style>
+:root{
+  --accent:#be185d;
+  --accent-dark:#831843;
+  --accent-mid:#db2777;
+  --accent-light:#fdf2f8;
+  --accent-border:#fbcfe8;
+  --ink:#26161d;
+  --ink-sub:#544048;
+  --line:#f0e2e9;
+  --bg:#ffffff;
+  --bg-soft:#fdf9fb;
+  --warn:#b45309;
+  --warn-bg:#fffbeb;
+  --pos:#15803d;
+  --neg:#b91c1c;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);background:var(--bg);line-height:1.85;font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px 80px;}
+
+header.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 58%,#ec4899 100%);
+  color:#fff;padding:52px 20px 46px;
+}
+.hero-inner{max-width:860px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;font-size:12px;letter-spacing:.14em;
+  background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);
+  padding:5px 13px;border-radius:999px;margin-bottom:18px;
+}
+h1{font-size:29px;line-height:1.45;margin:0 0 16px;font-weight:700;letter-spacing:.01em;}
+.hero-sub{font-size:15.5px;opacity:.94;margin:0 0 22px;line-height:1.8;}
+.meta{font-size:13px;opacity:.86;border-top:1px solid rgba(255,255,255,.25);padding-top:14px;}
+.tags{margin-top:12px;}
+.tag{display:inline-block;font-size:11.5px;background:rgba(255,255,255,.14);padding:4px 10px;border-radius:4px;margin:0 6px 6px 0;}
+
+.toc{background:var(--accent-light);border:1px solid var(--accent-border);border-radius:10px;padding:22px 24px;margin:36px 0 44px;}
+.toc h2{font-size:15px;margin:0 0 12px;color:var(--accent-dark);letter-spacing:.06em;}
+.toc ol{margin:0;padding-left:1.3em;}
+.toc li{margin:7px 0;font-size:14.5px;}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--accent-mid);}
+.toc a:hover{color:var(--accent);}
+
+section{margin:0 0 52px;scroll-margin-top:20px;}
+h2.chapter{font-size:21px;margin:0 0 20px;padding:0 0 12px 0;border-bottom:3px solid var(--accent);line-height:1.5;font-weight:700;}
+h2.chapter .num{display:inline-block;color:var(--accent);font-size:19px;margin-right:8px;}
+h3{font-size:17px;margin:32px 0 12px;padding-left:12px;border-left:4px solid var(--accent-mid);line-height:1.6;}
+p{margin:0 0 16px;}
+ul,ol{margin:0 0 18px;padding-left:1.4em;}
+li{margin:7px 0;}
+strong{color:var(--accent-dark);font-weight:700;}
+
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0 24px;}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:480px;}
+th,td{border:1px solid var(--line);padding:11px 12px;text-align:left;vertical-align:top;}
+th{background:var(--accent-light);color:var(--accent-dark);font-weight:700;white-space:nowrap;}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+tbody tr:nth-child(even){background:var(--bg-soft);}
+.tbl-note{font-size:12.5px;color:var(--ink-sub);margin:-14px 0 24px;}
+
+.callout{background:var(--bg-soft);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:18px 20px;margin:24px 0;font-size:15px;}
+.callout .label{display:block;font-size:12px;letter-spacing:.1em;color:var(--accent);font-weight:700;margin-bottom:8px;}
+.warn{background:var(--warn-bg);border-left:4px solid var(--warn);}
+.warn .label{color:var(--warn);}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:24px 0 28px;}
+.kpi{background:var(--bg-soft);border:1px solid var(--line);border-radius:9px;padding:15px 16px;}
+.kpi .k-label{font-size:12px;color:var(--ink-sub);margin-bottom:6px;line-height:1.5;}
+.kpi .k-value{font-size:21px;font-weight:700;color:var(--accent-dark);line-height:1.3;font-variant-numeric:tabular-nums;}
+.kpi .k-sub{font-size:11.5px;color:var(--ink-sub);margin-top:5px;line-height:1.5;}
+
+.pos{color:var(--pos);font-weight:700;}
+.neg{color:var(--neg);font-weight:700;}
+
+.crosslink{border:1px solid var(--accent-border);border-radius:10px;padding:18px 20px;margin:30px 0;background:#fff;}
+.crosslink h4{margin:0 0 10px;font-size:14px;color:var(--accent-dark);letter-spacing:.05em;}
+.crosslink ul{margin:0;padding-left:1.2em;font-size:14px;}
+.crosslink a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-border);}
+
+.watch{background:linear-gradient(150deg,var(--accent-dark) 0%,#500724 100%);color:#fff;border-radius:14px;padding:36px 28px;margin:56px 0 40px;}
+.watch h2{font-size:20px;margin:0 0 8px;letter-spacing:.08em;color:#fff;border:none;padding:0;}
+.watch .w-sub{font-size:13.5px;opacity:.82;margin:0 0 24px;}
+.watch ol{padding-left:0;list-style:none;margin:0;counter-reset:w;}
+.watch li{counter-increment:w;position:relative;padding-left:44px;margin:0 0 20px;font-size:14.8px;line-height:1.8;}
+.watch li::before{
+  content:counter(w,decimal-leading-zero);
+  position:absolute;left:0;top:2px;font-size:13px;font-weight:700;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
+  width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+}
+.watch li b{color:#fbcfe8;}
+
+.disclaimer{background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:22px 24px;font-size:13px;color:var(--ink-sub);line-height:1.85;}
+.disclaimer h3{font-size:14px;margin:0 0 10px;padding:0;border:none;color:var(--ink);}
+.disclaimer ul{padding-left:1.3em;margin:0;}
+
+footer.site{text-align:center;font-size:12.5px;color:var(--ink-sub);margin-top:44px;padding-top:22px;border-top:1px solid var(--line);}
+
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  header.hero{padding:38px 18px 34px;}
+  h1{font-size:22px;line-height:1.5;}
+  .hero-sub{font-size:14.5px;}
+  .wrap{padding:0 16px 60px;}
+  h2.chapter{font-size:18.5px;}
+  h3{font-size:16px;}
+  .watch{padding:28px 20px;border-radius:10px;}
+  .watch li{padding-left:38px;font-size:14.2px;}
+  .watch li::before{width:26px;height:26px;font-size:12px;}
+  .kpi .k-value{font-size:19px;}
+  table{font-size:13.2px;}
+  th,td{padding:9px 10px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">AI × 製薬 × バイオ シリーズ ／ 個別企業編 ⑭ ／ 中小型株編 第5回</span>
+    <h1>Rapid Micro Biosystems（NASDAQ:RPID）徹底分析<br>― 反復収益63%、それでも現金は2,010万ドル</h1>
+    <p class="hero-sub">
+      中小型株編の4社は、すべて創薬企業でした。RPIDは違います。
+      <strong>製品が売れており、反復収益が総売上の63%を占め、粗利率は15%まで改善</strong>。
+      顧客は製薬企業で、上位20社の75%に導入済みです。
+      ただし現金は2,010万ドル、金利11%のタームローンが2,000万ドル。
+      2026年8月7日発表のQ2実績から検証します。
+    </p>
+    <div class="meta">
+      公開日：2026年8月25日 ／ 分析基準日：2026年8月中旬 ／ Market Supporter AI 編集部
+      <div class="tags">
+        <span class="tag">#RPID</span>
+        <span class="tag">#中小型株</span>
+        <span class="tag">#米国株</span>
+        <span class="tag">#製造装置</span>
+        <span class="tag">#微生物検査</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="toc">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#ch1">市場規模 ― 「まだ人が目で見ている」領域</a></li>
+      <li><a href="#ch2">政策・規制環境 ― 規制が導入障壁であり、参入障壁でもある</a></li>
+      <li><a href="#ch3">コスト・収益構造 ― 粗利率15%という「過去最高」</a></li>
+      <li><a href="#ch4">事業セグメント動向 ― 200台目と、MilliporeSigmaの遅延</a></li>
+      <li><a href="#ch5">株式バリュエーション ― 4指標がレイヤー2的に機能する</a></li>
+      <li><a href="#ch6">リスク要因 ― 現金2,010万ドルと金利11%</a></li>
+      <li><a href="#ch7">まとめ ― 中小型株編で唯一、レイヤー2に属する企業</a></li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <span class="label">この記事の位置づけ</span>
+    「AI×製薬×バイオ」シリーズ、<strong>中小型株編</strong>の第5回です。
+    これまでの4社（Roivant、Prime Medicine、Sana、Allogene）はすべて創薬企業で、
+    <strong>臨床データが評価のすべて</strong>でした。
+    RPIDは<strong>製薬企業に装置と消耗品を売る企業</strong>であり、
+    構造としては第6回のIllumina（レイヤー2）に近い。
+    <strong>中小型株編で唯一、レイヤー2的な事業モデルを持つ企業</strong>です。
+  </div>
+
+  <!-- ① -->
+  <section id="ch1">
+    <h2 class="chapter"><span class="num">①</span>市場規模 ― 「まだ人が目で見ている」領域</h2>
+
+    <p>
+      Rapid Micro Biosystemsは2006年設立、米マサチューセッツ州レキシントン拠点。
+      主力製品は<strong>Growth Direct®システム</strong>で、
+      製薬製造における<strong>微生物品質管理（MQC）検査の自動化</strong>を行います。
+      米国マサチューセッツ州ローウェルに製造拠点を持ち、従業員数は約170人です。
+    </p>
+
+    <h3>この市場が存在する理由</h3>
+    <p>
+      バイオ医薬品、ワクチン、細胞・遺伝子治療、無菌注射剤などの製造では、
+      微生物汚染がないことを確認してから出荷します。
+      問題は、その検査方法です。
+    </p>
+    <div class="callout">
+      <span class="label">同社が「時代遅れ」と呼ぶ既存手法</span>
+      従来のMQC検査は、培地上で微生物を培養し、
+      <strong>人間の目でコロニーを数える</strong>という方法です。
+      同社はこれを<strong>「antiquated（時代遅れの）、手作業のワークフロー」</strong>と表現しています。
+      <div style="margin-top:12px;">
+        Growth Directは、高感度カメラと<strong>生きた細胞の自然な自家蛍光</strong>を利用して
+        微生物の増殖を検出・定量します。会社の説明によれば、
+        人間の目に頼る従来法より<strong>速く、正確に</strong>判定できるとされています。
+      </div>
+      <div style="margin-top:12px;">
+        製薬製造では、検査結果が出るまで製品を出荷できません。
+        <strong>検査が速くなれば、在庫と製造リードタイムが縮む。</strong>
+        これが顧客にとっての経済的な価値です。
+      </div>
+    </div>
+
+    <h3>市場規模を「導入率」で測る</h3>
+    <p>
+      同社は市場規模の金額を公表していません。
+      代わりに<strong>導入の進捗</strong>で市場の広がりを示しています。
+    </p>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="k-label">累計システム設置台数</div>
+        <div class="k-value">約200台</div>
+        <div class="k-sub">2026年Q2に<strong>200台目</strong>を達成</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">累計顧客数</div>
+        <div class="k-value">約50社</div>
+        <div class="k-sub">1社あたり平均4台の計算</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">上位20製薬企業<br>への導入率</div>
+        <div class="k-value">75%</div>
+        <div class="k-sub">細胞・遺伝子治療の主要企業も含む</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">累計バリデーション<br>完了台数</div>
+        <div class="k-value">169台</div>
+        <div class="k-sub">設置≠稼働。この差が重要</div>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <span class="label">「設置」と「バリデーション」は別物</span>
+      設置約200台に対し、バリデーション完了は169台です。
+      <strong>この31台の差が、RPIDのビジネスを理解する鍵</strong>です。
+      <div style="margin-top:12px;">
+        製薬製造で使う機器は、規制上<strong>バリデーション（妥当性確認）</strong>を経なければ
+        実際の製品出荷判定に使えません。
+        つまり<strong>設置されただけの装置は、まだ消耗品を消費していない</strong>のです。
+      </div>
+      <div style="margin-top:12px;">
+        本シリーズ第6回のIlluminaで、
+        <strong>「装置の設置は、将来の消耗品収益を予約する行為」</strong>と述べました。
+        RPIDでは、その予約が実際の収益に変わるタイミングが<strong>バリデーション完了時</strong>です。
+        Q2に9件のバリデーションを完了（前年同期は2件）した点は、
+        設置台数（4台、前年同期も4台）より重要な指標です。
+      </div>
+    </div>
+
+    <p>
+      なお同社は<strong>2026年第3四半期に1,000万個目の消耗品を出荷する見込み</strong>としています。
+      装置が実際に日常業務で使われていることを示す数字です。
+    </p>
+
+    <h3>今後の需要ドライバー</h3>
+    <p>
+      決算説明会で経営陣は、業界の追い風として3点を挙げています。
+    </p>
+    <ul>
+      <li><strong>自動化需要の増加</strong></li>
+      <li><strong>米国へのリショアリング</strong>（製造の国内回帰）</li>
+      <li><strong>バイオ製造能力の拡張</strong></li>
+    </ul>
+    <p>
+      ただし経営陣は、これらが意味のある成長寄与になるのは
+      <strong>2027年中頃から後半以降</strong>との見方を示しています。
+      <strong>2026年の業績にはまだ効いていない</strong>ということです。
+    </p>
+  </section>
+
+  <!-- ② -->
+  <section id="ch2">
+    <h2 class="chapter"><span class="num">②</span>政策・規制環境 ― 規制が導入障壁であり、参入障壁でもある</h2>
+
+    <p>
+      本シリーズで扱ってきた企業の規制論点は、大きく分けて
+      「承認を得られるか」（レイヤー3・中小型株編）と
+      「償還価格が上がるか」（レイヤー2の診断企業）でした。
+    </p>
+    <p>
+      RPIDはどちらとも異なります。
+      <strong>同社自身が規制当局の審査を受けるわけではありません。</strong>
+      規制の対象は、顧客である製薬企業の製造プロセスです。
+    </p>
+
+    <h3>バリデーションという二面性</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th></th><th>不利に働く面</th><th>有利に働く面</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>バリデーション</td>
+            <td>設置してから稼働まで時間がかかる。収益認識が遅れる</td>
+            <td><strong>一度検証されると、他社製品への切り替えコストが極めて高い</strong></td>
+          </tr>
+          <tr>
+            <td>データインテグリティ規制</td>
+            <td>ソフトウェア要件が厳しく、開発負担が大きい</td>
+            <td><strong>手作業より自動化のほうが規制順守に適する</strong>という追い風</td>
+          </tr>
+          <tr>
+            <td>製造プロセス変更</td>
+            <td>顧客が慎重になり、導入決定が遅い</td>
+            <td><strong>新規参入者も同じ障壁に直面する</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <span class="label">この構造をどう読むか</span>
+      製薬製造の規制環境は、<strong>導入を遅らせる要因であると同時に、
+      いったん導入されれば強固な参入障壁になります。</strong>
+      <div style="margin-top:12px;">
+        第6回のIlluminaで見た「設置済み装置が消耗品需要を生む」構造に加え、
+        RPIDの場合は<strong>規制上のバリデーションが乗り換えを困難にする</strong>という
+        追加の粘着性があります。
+      </div>
+      <div style="margin-top:12px;">
+        同社が<strong>上位20製薬企業の75%に導入済み</strong>である点は、
+        この観点で評価すべき数字です。
+        ただし裏を返せば、<strong>大手の残り25%と、その先の中堅企業をどう取るか</strong>が
+        今後の成長課題になります。
+      </div>
+    </div>
+
+    <h3>顧客側の規制動向が需要を作る</h3>
+    <p>
+      同社が強調するGrowth Directの価値の一つに、
+      <strong>データインテグリティ規制への準拠</strong>があります。
+      手作業の記録より、自動化されたシステムのほうが
+      改ざん防止・追跡可能性の要件を満たしやすいという理屈です。
+    </p>
+    <p>
+      加えて、細胞・遺伝子治療（CAR-T等）では
+      <strong>製品の有効期間が極めて短く、迅速な出荷判定が不可欠</strong>です。
+      前回のAllogeneや第12回のSanaが扱う細胞治療の商業化が進めば、
+      <strong>その製造現場でRPIDのような迅速検査の需要が生まれます</strong>。
+      <strong>本シリーズの企業群が、互いの市場を作り合っている</strong>構図がここにもあります。
+    </p>
+  </section>
+
+  <!-- ③ -->
+  <section id="ch3">
+    <h2 class="chapter"><span class="num">③</span>コスト・収益構造 ― 粗利率15%という「過去最高」</h2>
+
+    <h3>2026年第2四半期の実績（2026年8月7日発表）</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>項目（千ドル）</th><th>2026年Q2</th><th>2025年Q2</th><th>増減</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>製品売上</td><td class="num">約5,300</td><td class="num">―</td><td class="num pos">+10.1%</td></tr>
+          <tr><td>サービス売上</td><td class="num">約2,800</td><td class="num">―</td><td class="num">―</td></tr>
+          <tr><td><strong>総売上</strong></td><td class="num"><strong>8,054</strong></td><td class="num">7,262</td><td class="num pos">+10.9%</td></tr>
+          <tr><td>売上原価合計</td><td class="num">約6,800</td><td class="num">―</td><td class="num pos">▲2.1%</td></tr>
+          <tr><td><strong>売上総利益</strong></td><td class="num"><strong>1,212</strong></td><td class="num">約276</td><td class="num pos">大幅増</td></tr>
+          <tr><td><strong>粗利率</strong></td><td class="num pos"><strong>15.0%</strong></td><td class="num">3.8%</td><td class="num pos">+11.2pt</td></tr>
+          <tr><td>営業損失</td><td class="num neg">▲12,322</td><td class="num">―</td><td class="num">―</td></tr>
+          <tr><td><strong>純損失</strong></td><td class="num neg"><strong>▲12,923</strong></td><td class="num">▲11,858</td><td class="num neg">拡大</td></tr>
+          <tr><td>1株当たり純損失</td><td class="num">▲0.27ドル</td><td class="num">▲0.27ドル</td><td class="num">横ばい</td></tr>
+          <tr><td>調整後EBITDA損失</td><td class="num neg">▲10,327</td><td class="num">―</td><td class="num">―</td></tr>
+          <tr><td>上半期 純損失</td><td class="num neg">▲27,198</td><td class="num">▲23,121</td><td class="num neg">拡大</td></tr>
+          <tr><td>加重平均株式数</td><td class="num">48,346,663</td><td class="num">44,648,602</td><td class="num neg">+8.3%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：Rapid Micro Biosystems 2026年第2四半期決算リリース（2026年8月7日、SEC Form 8-K Exhibit 99.1）およびForm 10-Q。製品・サービス別売上と売上原価は報道値を含みます。</p>
+
+    <h3>収益構造 ― 中小型株編で初めて意味を持つ数字</h3>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="k-label">反復収益</div>
+        <div class="k-value">500万ドル</div>
+        <div class="k-sub">前年同期比 <span class="pos">+14.3%</span></div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">反復収益比率</div>
+        <div class="k-value">63%</div>
+        <div class="k-sub">総売上に占める割合</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">消耗品売上</div>
+        <div class="k-value">+20%超</div>
+        <div class="k-sub">単位・売上とも四半期records</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <span class="label">中小型株編4社との決定的な違い</span>
+      <div class="table-scroll" style="margin-top:10px;">
+        <table>
+          <thead><tr><th>企業</th><th>四半期収益</th><th>収益の性質</th></tr></thead>
+          <tbody>
+            <tr><td>Sana（第12回）</td><td class="num neg">なし</td><td>―</td></tr>
+            <tr><td>Prime Medicine（第11回）</td><td class="num">115万ドル</td><td>全額が関連当事者</td></tr>
+            <tr><td>Roivant（第10回）</td><td class="num">144万ドル</td><td>提携由来</td></tr>
+            <tr><td>Allogene（第13回）</td><td class="num">460万ドル</td><td>契約終了に伴う会計処理</td></tr>
+            <tr><td><strong>RPID（本記事）</strong></td><td class="num pos"><strong>805万ドル</strong></td><td class="pos"><strong>製品・サービスの実売上。反復収益63%</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <strong>中小型株編で初めて、3部作の「反復収益比率」が本来の意味で機能する企業</strong>です。
+      前4社では「ゼロ」「算出不能」「関連当事者のみ」のいずれかでした。
+    </div>
+
+    <h3>粗利率15%をどう評価するか</h3>
+    <p>
+      同社は粗利率15.0%を<strong>「第2四半期として過去最高」</strong>と表現しています。
+      前年同期の3.8%から11.2ポイントの改善であり、確かに大きな前進です。
+    </p>
+    <p>
+      要因は、売上が10.9%増える一方で<strong>売上原価が2.1%減少</strong>したこと。
+      経営陣は製造効率化とサービス生産性の改善を挙げています。
+    </p>
+
+    <div class="callout warn">
+      <span class="label">ただし15%という絶対水準</span>
+      本シリーズで見てきた粗利率と並べると、位置づけが明確になります。
+      <div class="table-scroll" style="margin-top:10px;">
+        <table>
+          <thead><tr><th>企業</th><th>粗利率</th></tr></thead>
+          <tbody>
+            <tr><td>Eli Lilly（第8回）</td><td class="num">86.3%</td></tr>
+            <tr><td>AstraZeneca（第9回）</td><td class="num">84%</td></tr>
+            <tr><td>Schrödinger（第2回）</td><td class="num">71%</td></tr>
+            <tr><td>Illumina（第6回）</td><td class="num">66.4%</td></tr>
+            <tr><td>Tempus AI（第5回）</td><td class="num">64.4%</td></tr>
+            <tr><td><strong>RPID（本記事）</strong></td><td class="num neg"><strong>15.0%</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <strong>同社の長期目標は粗利率50%です。</strong>
+      現在の15%との差は35ポイント。
+      2026年通期ガイダンスは約20%、下半期はmid-20%台、
+      Q4はmid-to-high 20%台とされています。
+      <div style="margin-top:12px;">
+        <strong>改善の方向は明確ですが、目標までの距離も明確です。</strong>
+        装置ビジネスで50%の粗利率を達成するには、
+        量産効果と製品ミックスの改善（消耗品比率の上昇）が不可欠になります。
+      </div>
+    </div>
+
+    <h3>損失は拡大している</h3>
+    <p>
+      粗利率が改善したにもかかわらず、
+      <strong>純損失は1,185.8万ドルから1,292.3万ドルへ拡大</strong>しました。
+      上半期でも2,312.1万ドルから2,719.8万ドルへ増えています。
+    </p>
+    <p>
+      決算説明会では、調整後EBITDA損失1,033万ドルについて
+      <strong>粗利率の改善が非経常的な本社費用によって相殺された</strong>と説明されています。
+    </p>
+    <p>
+      同社は<strong>効率化プログラム</strong>を実行中で、
+      2026年に約100万ドル、<strong>2027年以降は年間約300万ドル</strong>の
+      費用・現金使用の削減を見込んでいます。
+    </p>
+  </section>
+
+  <!-- ④ -->
+  <section id="ch4">
+    <h2 class="chapter"><span class="num">④</span>事業セグメント動向 ― 200台目と、MilliporeSigmaの遅延</h2>
+
+    <p>
+      同社は製品売上とサービス売上の2区分で報告しています。
+      実質的には<strong>Growth Directプラットフォーム単一の事業</strong>です。
+    </p>
+
+    <h3>Q2の実績指標</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>指標</th><th>2026年Q2</th><th>2025年Q2</th></tr></thead>
+        <tbody>
+          <tr><td>システム設置台数</td><td class="num">4台</td><td class="num">4台</td></tr>
+          <tr><td><strong>バリデーション完了</strong></td><td class="num pos"><strong>9件</strong></td><td class="num">2件</td></tr>
+          <tr><td>累計設置台数</td><td class="num">約200台（<strong>200台目を達成</strong>）</td><td class="num">―</td></tr>
+          <tr><td>累計バリデーション</td><td class="num">169台</td><td class="num">―</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      設置台数は前年同期と同じ4台ですが、
+      <strong>バリデーション完了が2件から9件へ4.5倍</strong>に増えています。
+      前章で述べたとおり、バリデーション完了が消耗品収益の起点であるため、
+      <strong>これは今後の反復収益にとってポジティブな数字</strong>です。
+    </p>
+    <p>
+      通期ガイダンスでは、システム設置30〜38台を据え置く一方、
+      <strong>バリデーションのガイダンスを「少なくとも27台」へ引き上げ</strong>ました。
+      設置より稼働を重視する姿勢が見て取れます。
+    </p>
+
+    <h3>MilliporeSigma（Merck）との提携</h3>
+    <p>
+      2026年の重要な戦略的動きが、
+      <strong>MilliporeSigma（独Merck傘下）とのグローバル共同独占販売契約</strong>です。
+      産業用品質管理分野へのリーチ拡大と、供給面での協業を目的としています。
+    </p>
+    <p>
+      経営陣は、MilliporeSigmaの営業組織が2026年上半期のシステム設置に寄与し始めており、
+      下半期にはより大きく貢献する見込みだと述べています。
+      また<strong>2026年10月に欧州でGrowth Direct Dayを開催</strong>する予定です。
+    </p>
+
+    <div class="callout warn">
+      <span class="label">ただし履行の遅延が明言されている</span>
+      決算説明会で、CEOのRobert Spignesi氏は
+      MilliporeSigmaについて<strong>「彼らは暦年内に義務を完全には履行しないだろう」</strong>と述べ、
+      契約条件のタイミングに起因する<strong>履行の遅延</strong>に言及しました。
+      <div style="margin-top:12px;">
+        提携の存在自体はポジティブですが、
+        <strong>期待された貢献が2026年中には完全には実現しない</strong>ということです。
+        経営陣は同時に、貢献が下半期に増加し2027年まで続くとしていますが、
+        <strong>時期が後ろにずれている</strong>点は記録しておくべきです。
+      </div>
+    </div>
+
+    <h3>顧客側の変化 ― 単体装置から統合ワークフローへ</h3>
+    <p>
+      経営陣は、顧客行動に<strong>戦略的な変化</strong>が見られると説明しています。
+      Growth Directを単体の検査装置としてではなく、
+      <strong>より広範な自動化・デジタル・データ活用のワークフローに統合する</strong>
+      動きが出ているというものです。
+    </p>
+    <p>
+      決算説明会では、LIMS（実験室情報管理システム）との連携や
+      OEE（設備総合効率）といった製造業の指標が言及されています。
+    </p>
+    <p>
+      この変化が本当なら、
+      <strong>顧客が複数台をまとめて導入する「マルチシステム・エンタープライズ展開」</strong>
+      へと商談の性質が変わります。
+      実際、2025年第4四半期にAmgenから記録的な複数台受注、
+      2026年第1四半期にSamsung Biologicsから意味のある複数台受注を獲得しています。
+    </p>
+  </section>
+
+  <!-- ⑤ -->
+  <section id="ch5">
+    <h2 class="chapter"><span class="num">⑤</span>株式バリュエーション ― 4指標がレイヤー2的に機能する</h2>
+
+    <p>
+      3部作の4指標を当てはめます。
+      RPIDは<strong>中小型株編で唯一、レイヤー2的な使い方ができる</strong>企業です。
+    </p>
+
+    <h3>指標1：キャッシュランウェイ ― 中小型株編で最も逼迫</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目（千ドル）</th><th>2026年6月30日</th><th>2025年12月31日</th><th>増減</th></tr></thead>
+        <tbody>
+          <tr><td>現金・現金同等物</td><td class="num">14,687</td><td class="num">20,030</td><td class="num neg">▲26.7%</td></tr>
+          <tr><td>短期投資</td><td class="num">5,079</td><td class="num">18,266</td><td class="num neg">▲72.2%</td></tr>
+          <tr><td><strong>現金＋短期投資</strong></td><td class="num neg"><strong>約19,766</strong></td><td class="num">38,296</td><td class="num neg"><strong>▲48.4%</strong></td></tr>
+          <tr><td>売掛金</td><td class="num">5,515</td><td class="num">3,134</td><td class="num">+76.0%</td></tr>
+          <tr><td>棚卸資産（純額）</td><td class="num">18,918</td><td class="num">17,593</td><td class="num">+7.5%</td></tr>
+          <tr><td>流動資産合計</td><td class="num">46,262</td><td class="num">61,168</td><td class="num neg">▲24.4%</td></tr>
+          <tr><td>有形固定資産（純額）</td><td class="num">8,161</td><td class="num">8,972</td><td class="num">▲9.0%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">出典：Rapid Micro Biosystems Form 8-K Exhibit 99.1（2026年8月7日）の要約連結貸借対照表。会社は現金・現金同等物・短期投資の合計を約2,010万ドルと公表しています。</p>
+
+    <div class="callout warn">
+      <span class="label">半年で現金が約半減</span>
+      現金＋短期投資は、2025年末の3,830万ドルから
+      <strong>約2,010万ドルへ、半年で約48%減少</strong>しました。
+      上半期の営業キャッシュフローは<strong>▲2,776万ドル</strong>です。
+      <div style="margin-top:12px;">
+        中小型株編の5社で比較すると、この水準は際立っています。
+        <div class="table-scroll" style="margin-top:10px;">
+          <table>
+            <thead><tr><th>企業</th><th>現金等</th><th>会社公表ランウェイ</th></tr></thead>
+            <tbody>
+              <tr><td>Allogene（第13回）</td><td class="num">4億2,360万ドル</td><td>2029年Q1まで</td></tr>
+              <tr><td>Sana（第12回）</td><td class="num">1億6,049万ドル</td><td>2027年半ばまで</td></tr>
+              <tr><td>Prime Medicine（第11回）</td><td class="num">1億880万ドル</td><td>2027年まで</td></tr>
+              <tr><td><strong>RPID（本記事）</strong></td><td class="num neg"><strong>約2,010万ドル</strong></td><td><strong>少なくとも12か月</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div style="margin-top:12px;">
+        Form 10-Qによれば、同社は<strong>既存の現金・投資と見込まれる借入枠により
+        少なくとも12か月間は事業資金を賄える</strong>としていますが、
+        これは<strong>売上成長、粗利率改善、コスト管理が想定通り進むことを前提</strong>としています。
+      </div>
+    </div>
+
+    <p>
+      なお決算説明会では、上半期の現金使用について
+      <strong>2つの一時的な運転資本の逆風</strong>があったと説明されています。
+      2025年後半に設置した16台分の現金を、
+      通常なら翌年第1四半期に回収するところ<strong>2025年第4四半期に全額回収した</strong>ため、
+      2026年上半期の回収が少なくなったという趣旨です。
+    </p>
+
+    <h3>指標2：反復収益比率 ― 本領を発揮する</h3>
+    <p>
+      前章までで見たとおり、<strong>反復収益500万ドル、総売上の63%</strong>。
+      消耗品売上は20%超の成長で、単位・売上とも四半期records。
+    </p>
+    <p>
+      本シリーズのレイヤー2企業と比べてみます。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>企業</th><th>反復収益の形</th><th>水準</th></tr></thead>
+        <tbody>
+          <tr><td>Tempus AI（第5回）</td><td>契約更新型</td><td>NRR 約126%</td></tr>
+          <tr><td>Illumina（第6回）</td><td>設置ベース型</td><td>設置済み装置の消耗品需要</td></tr>
+          <tr><td>IQVIA（第7回）</td><td>受注残型</td><td>受注残342億ドル</td></tr>
+          <tr><td><strong>RPID（本記事）</strong></td><td class="pos"><strong>設置ベース型</strong></td><td class="pos"><strong>反復収益比率63%</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      <strong>RPIDはIlluminaと同じ「設置ベース型」</strong>です。
+      規模は桁違いに小さいものの、構造は同じ。
+      <strong>装置を設置し、バリデーションを経て、消耗品が継続的に消費される。</strong>
+    </p>
+
+    <h3>指標3：一時金÷公表総額（実現率）― 適用対象外</h3>
+    <p>
+      RPIDはライセンス型の提携を持たないため、この指標は適用できません。
+      MilliporeSigmaとの契約も販売提携であり、
+      マイルストーン構造の開示はありません。
+    </p>
+
+    <h3>指標4：増資の価格と引受先 ― 株式と負債の両方</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>2026年5月の株式発行</strong></td><td>3,652,607株（Class A）、純額約890万ドル。うち引受増資880万ドル、役員・取締役向け10万ドル</td></tr>
+          <tr><td>加重平均株式数（Q2）</td><td class="num">48,346,663株（前年同期比 <strong>+8.3%</strong>）</td></tr>
+          <tr><td><strong>Trinity Capitalとのタームローン</strong></td><td><strong>4,500万ドルの枠のうち2,000万ドルを実行</strong></td></tr>
+          <tr><td><strong>金利</strong></td><td class="num neg"><strong>11.0%</strong>（2026年6月30日時点）</td></tr>
+          <tr><td>追加トランシェ</td><td>1,000万ドル。<strong>特定のマイルストーン達成が条件</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout warn">
+      <span class="label">現金2,010万ドル、負債2,000万ドル</span>
+      <strong>現金＋短期投資が約2,010万ドル、タームローン残高が2,000万ドル。
+      ほぼ同額です。</strong>
+      <div style="margin-top:12px;">
+        ネットキャッシュはほぼゼロという計算になります（編集部試算）。
+        しかも金利は11.0%。
+        年間の支払利息は単純計算で約220万ドルで、
+        <strong>Q2の売上総利益121万ドルの約1.8倍</strong>にあたります（編集部計算）。
+      </div>
+      <div style="margin-top:12px;">
+        追加の1,000万ドルトランシェは<strong>マイルストーン達成が条件</strong>であり、
+        自動的に利用できるものではありません。
+        <strong>資金調達手段が株式と高金利負債の両方に依存している</strong>状態です。
+      </div>
+    </div>
+
+    <h3>バリュエーション水準</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>項目</th><th>数値</th></tr></thead>
+        <tbody>
+          <tr><td>株価</td><td class="num">2ドル台前半（2026年7〜8月の水準）</td></tr>
+          <tr><td>52週レンジ</td><td class="num">約1.86ドル 〜 約4.94ドル</td></tr>
+          <tr><td>時価総額</td><td class="num">約1億ドル前後</td></tr>
+          <tr><td>2026年通期売上ガイダンス</td><td class="num">3,700万〜4,100万ドル</td></tr>
+          <tr><td><strong>PSR（編集部試算）</strong></td><td class="num"><strong>約2.6倍</strong>（1億ドル ÷ 3,900万ドル）</td></tr>
+          <tr><td>IPO価格（2021年7月）</td><td class="num">―（IPO時の時価総額は約7億9,907万ドル）</td></tr>
+          <tr><td>アナリスト目標株価</td><td class="num">6.67〜8.00ドル（カバレッジは限定的）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">株価・時価総額は2026年7〜8月に報じられた水準に基づく編集部の推計です。5月の株式発行による株式数増加の反映時期がデータソースにより異なります。市場データは日々変動します。アナリストの目標株価は各社の見解であり、将来の株価を保証するものではありません。</p>
+
+    <p>
+      <strong>PSR約2.6倍</strong>という水準は、
+      本シリーズのレイヤー2企業（Illuminaが約6.3倍）より低く、
+      <strong>成長率と粗利率の差を反映している</strong>と考えられます。
+    </p>
+    <p>
+      なおIPO時（2021年7月）の時価総額は約7億9,907万ドルでした。
+      現在の約1億ドルは、そこから<strong>約87%の減少</strong>です。
+    </p>
+  </section>
+
+  <!-- ⑥ -->
+  <section id="ch6">
+    <h2 class="chapter"><span class="num">⑥</span>リスク要因 ― 現金2,010万ドルと金利11%</h2>
+
+    <h3>1. 現金水準の逼迫</h3>
+    <p>
+      現金＋短期投資は約2,010万ドルで、半年で約48%減少しました。
+      上半期の営業CFは▲2,776万ドル。
+      <strong>本シリーズの中小型株編5社で最も少ない現金水準</strong>です。
+      会社は少なくとも12か月の資金を賄えるとしていますが、
+      それは売上成長・粗利率改善・コスト管理が想定通り進む前提です。
+    </p>
+
+    <h3>2. 金利11%の負債</h3>
+    <p>
+      Trinity Capitalからのタームローン2,000万ドルは<strong>金利11.0%</strong>。
+      現金残高とほぼ同額の負債を、高い金利で抱えています。
+      追加1,000万ドルのトランシェは<strong>マイルストーン達成が条件</strong>であり、
+      条件を満たせなければ利用できません。
+    </p>
+
+    <h3>3. 粗利率50%までの距離</h3>
+    <p>
+      現在15.0%、通期ガイダンス約20%、長期目標50%。
+      <strong>35ポイントの改善が必要</strong>です。
+      装置ビジネスでこの水準を達成するには、
+      量産効果と消耗品比率の大幅な上昇が不可欠であり、
+      売上規模の拡大が前提になります。
+    </p>
+
+    <h3>4. 成長率が2桁前半にとどまる</h3>
+    <p>
+      Q2の売上成長率は10.9%。通期ガイダンス（3,700万〜4,100万ドル）の中間値は
+      2025年実績3,360万ドルに対し約16%増です。
+      <strong>長期目標である「年平均20%超の成長」には届いていません。</strong>
+      経営陣が期待する米国リショアリング等の追い風は
+      2027年中頃以降とされており、当面は自力での成長が必要です。
+    </p>
+
+    <h3>5. MilliporeSigma提携の履行遅延</h3>
+    <p>
+      CEOが<strong>「暦年内に義務を完全には履行しないだろう」</strong>と明言しています。
+      提携が想定通りの貢献をしない場合、
+      <strong>2026年後半の設置台数ガイダンス達成が難しくなる</strong>可能性があります。
+    </p>
+
+    <h3>6. 収益認識の時間差</h3>
+    <p>
+      設置約200台に対しバリデーション完了169台。
+      <strong>設置から稼働までの時間差が、収益認識を遅らせます</strong>。
+      顧客側の都合でバリデーションが遅れれば、消耗品収益の立ち上がりもずれます。
+    </p>
+
+    <h3>7. 顧客集中と需要の変動</h3>
+    <p>
+      累計顧客は約50社。上位20製薬企業の75%に導入済みという事実は強みですが、
+      <strong>1社あたりの受注規模が大きいため、個別の受注タイミングで四半期業績が振れます</strong>。
+      実際、Amgenの複数台受注（2025年Q4）やSamsung Biologicsの受注（2026年Q1）が
+      業績を大きく左右しています。
+    </p>
+
+    <h3>8. 継続的な希薄化</h3>
+    <p>
+      2026年5月に3,652,607株を発行し、加重平均株式数は前年同期比8.3%増加しました。
+      株価が2ドル台前半という水準にあることを考えると、
+      <strong>追加調達が必要になった場合の既存株主への影響は小さくありません</strong>。
+      IPO時からの時価総額の減少率は約87%です。
+    </p>
+  </section>
+
+  <!-- ⑦ -->
+  <section id="ch7">
+    <h2 class="chapter"><span class="num">⑦</span>まとめ ― 中小型株編で唯一、レイヤー2に属する企業</h2>
+
+    <p>
+      中小型株編を5社分析し、RPIDが<strong>明確に異質</strong>であることが見えました。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th></th><th>創薬企業4社（第10〜13回）</th><th>RPID（本記事）</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>顧客</td>
+            <td>最終的には患者（未上市）</td>
+            <td class="pos"><strong>製薬企業（既に取引中）</strong></td>
+          </tr>
+          <tr>
+            <td>収益</td>
+            <td>なし〜460万ドル（多くが非事業由来）</td>
+            <td class="pos"><strong>805万ドル（実売上、反復63%）</strong></td>
+          </tr>
+          <tr>
+            <td>評価を決めるもの</td>
+            <td>臨床データ</td>
+            <td class="pos"><strong>粗利率とバリデーション件数</strong></td>
+          </tr>
+          <tr>
+            <td>4指標の機能</td>
+            <td>ランウェイと実現率が中心</td>
+            <td class="pos"><strong>反復収益比率が中心</strong></td>
+          </tr>
+          <tr>
+            <td>本シリーズでの類型</td>
+            <td>レイヤー3的</td>
+            <td class="pos"><strong>レイヤー2的（設置ベース型）</strong></td>
+          </tr>
+          <tr>
+            <td>現金水準</td>
+            <td>1.1億〜4.2億ドル</td>
+            <td class="neg"><strong>約2,010万ドル</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>皮肉な逆転</h3>
+    <p>
+      <strong>ここに本記事最大の発見があります。</strong>
+    </p>
+    <p>
+      RPIDは中小型株編で唯一、<strong>製品が実際に売れており、
+      反復収益が63%を占め、粗利率が改善している</strong>企業です。
+      事業としての実体は、他の4社より明らかに前に進んでいます。
+    </p>
+    <p>
+      それでいて、<strong>現金水準は5社で最も低い約2,010万ドル</strong>。
+      しかも金利11%の負債が同額あります。
+    </p>
+    <p>
+      理由は単純です。<strong>装置ビジネスは在庫と売掛金を必要とする</strong>からです。
+      棚卸資産1,891.8万ドル、売掛金551.5万ドル。
+      合わせて2,443万ドルが、現金ではなく運転資本として拘束されています。
+      <strong>創薬企業には存在しない資金需要</strong>です。
+    </p>
+    <p>
+      第13回のAllogeneで「資金があることは評価の必要条件ではあっても十分条件ではない」と述べました。
+      RPIDはその裏返しで、<strong>事業が動いていることが、
+      財務的な余裕を意味するとは限らない</strong>という例です。
+    </p>
+
+    <h3>RPIDについての現時点の評価</h3>
+    <p>
+      本記事の立場は、強気でも弱気でもありません。
+      200台目のシステム設置、上位20製薬企業の75%への導入、
+      バリデーション完了が2件から9件へ、消耗品売上20%超成長、
+      粗利率3.8%→15.0%という改善。
+      <strong>Illuminaと同じ「設置ベース型」の反復収益モデルが、
+      小規模ながら実際に機能している</strong>ことは確認できます。
+    </p>
+    <p>
+      同時に、<strong>現金は約2,010万ドルで半年に48%減少し、
+      金利11%の負債が同額あり、
+      粗利率は目標50%に対して15%、
+      成長率は10.9%と長期目標の20%超に届いていません</strong>。
+      MilliporeSigma提携の履行遅延も明言されています。
+    </p>
+    <p>
+      <strong>2026年第4四半期に粗利率がmid-to-high 20%台へ到達するかが、
+      最初の判定材料になります。</strong>
+      これが達成できれば、2028年末のキャッシュフロー黒字化という目標に現実味が出ます。
+      逆に粗利率の改善が停滞すれば、
+      現金水準から見て追加調達が必要になる可能性が高まります。
+      投資判断を下すのであれば、
+      「現金は約2,010万ドル」「金利11%の負債が同額」「粗利率は目標の3割弱」という
+      3つの事実を織り込んだうえで行う必要があります。
+    </p>
+
+    <div class="crosslink">
+      <h4>関連レポート</h4>
+      <ul>
+        <li><a href="/reports/ai-biotech-industry-map.html">前編：産業地図 ― AI×バイオを4レイヤーで整理する</a></li>
+        <li><a href="/reports/ai-biotech-validation.html">中編：技術検証編 ― AI創薬は本当に効いているのか</a></li>
+        <li><a href="/reports/ai-biotech-valuation.html">後編：投資判断編 ― 赤字先行企業を4指標で評価する</a></li>
+        <li><a href="/reports/recursion-rxrx.html">個別企業編①：Recursion（RXRX）― 実現率2.5%問題</a></li>
+        <li><a href="/reports/schrodinger-sdgr.html">個別企業編②：Schrödinger（SDGR）― Ajax買収で黒字転換した企業</a></li>
+        <li><a href="/reports/relay-rlay.html">個別企業編③：Relay Therapeutics（RLAY）― 増資で買った第III相</a></li>
+        <li><a href="/reports/absci-absi.html">個別企業編④：Absci（ABSI）― Eli Lillyが権利を取らなかった理由</a></li>
+        <li><a href="/reports/tempus-tem.html">個別企業編⑤：Tempus AI（TEM）― AstraZenecaから2億ドルを受け取った側</a></li>
+        <li><a href="/reports/illumina-ilmn.html">個別企業編⑥：Illumina（ILMN）― シリーズ初の本物の黒字企業</a></li>
+        <li><a href="/reports/iqvia-iqv.html">個別企業編⑦：IQVIA（IQV）― 受注残342億ドルという可視性</a></li>
+        <li><a href="/reports/lilly-lly.html">個別企業編⑧：Eli Lilly（LLY）― 買い手側から見たAI創薬</a></li>
+        <li><a href="/reports/astrazeneca-azn.html">個別企業編⑨：AstraZeneca（AZN）― Tempusに2億ドルを払った側</a></li>
+        <li><a href="/reports/roivant-roiv.html">個別企業編⑩：Roivant Sciences（ROIV）― 訴訟で22.5億ドルを勝ち取った創薬企業</a></li>
+        <li><a href="/reports/prime-medicine-prme.html">個別企業編⑪：Prime Medicine（PRME）― ランウェイとマイルストーンが同じ年に重なる</a></li>
+        <li><a href="/reports/sana-sana.html">個別企業編⑫：Sana Biotechnology（SANA）― n=1の概念実証と6〜9か月で出る答え</a></li>
+        <li><a href="/reports/allogene-allo.html">個別企業編⑬：Allogene Therapeutics（ALLO）― ランウェイ2029年、それでも事業価値は約2億ドル</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHAT TO WATCH -->
+  <div class="watch">
+    <h2>WHAT TO WATCH</h2>
+    <p class="w-sub">Rapid Micro Biosystems（RPID）― 今後の注目点</p>
+    <ol>
+      <li><b>2026年第4四半期：粗利率がmid-to-high 20%台に到達するか。</b>Q2は15.0%、通期ガイダンスは約20%、下半期はmid-20%台の見込み。長期目標50%への道筋が信じられるかどうかが、この四半期で問われる。本記事で最も重要な監視項目。</li>
+      <li><b>四半期ごとの現金残高。</b>現金＋短期投資は約2,010万ドルで半年に48%減少。上半期の営業CFは▲2,776万ドル。運転資本の一時的な逆風が解消されて減少ペースが緩むか、それとも追加調達が必要になるかを追う。</li>
+      <li><b>バリデーション完了件数。</b>Q2は9件（前年同期2件）、通期ガイダンスは「少なくとも27台」へ引き上げ済み。設置台数より、消耗品収益の起点となるこの数字を重視したい。累計169台がどこまで伸びるか。</li>
+      <li><b>MilliporeSigma提携の実際の貢献。</b>CEOが暦年内の完全な履行はないと明言している。下半期に設置台数への寄与が実際に増えるか、2027年へどう繰り越されるか。10月の欧州Growth Direct Dayも商談パイプラインの試金石になる。</li>
+      <li><b>Trinity Capitalの追加1,000万ドルトランシェ。</b>マイルストーン達成が条件。実行できれば当面の資金繰りに余裕が生まれるが、金利11%という条件は変わらない。条件を満たせるかどうかが、株式による追加調達の要否を左右する。</li>
+      <li><b>通期売上ガイダンス3,700万〜4,100万ドルの達成。</b>上半期の実績から下半期に必要な水準が決まる。システム設置30〜38台という前提が維持されるか、MilliporeSigmaの遅延がどう影響するかを併せて確認する。</li>
+    </ol>
+  </div>
+
+  <!-- 免責 -->
+  <div class="disclaimer">
+    <h3>免責事項</h3>
+    <ul>
+      <li>本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資に関する最終的な判断は、ご自身の責任において行ってください。</li>
+      <li>本記事に記載された数値・事実は、2026年8月中旬時点で公開されている企業のIR資料、決算リリース、決算説明会、SEC提出書類（Form 8-K、Form 10-Q）、および報道等に基づいています。株価・時価総額等の市場データは日々変動します。</li>
+      <li>「編集部試算」「編集部計算」「編集部推計」と明記した数値は、公開情報に基づく推計であり、企業が公表した値ではありません。時価総額およびPSRは、株式数の反映時期がデータソースにより異なるため幅を持たせて記載しています。</li>
+      <li>製品別・サービス別の売上および売上原価の一部は報道値に基づいており、企業の公式開示と細部が異なる可能性があります。</li>
+      <li>企業は既存の現金・投資および見込まれる借入枠により少なくとも12か月間の事業資金を賄えるとしていますが、これは売上成長、粗利率の改善、コスト管理が想定通り進むことを前提としたものです。追加の借入トランシェは特定のマイルストーン達成が条件であり、利用できるとは限りません。</li>
+      <li>通期ガイダンスおよび長期目標（粗利率50%、2028年末までのキャッシュフロー黒字化、年平均20%超の成長）は企業の見通しであり、達成を保証するものではありません。</li>
+      <li>アナリストの目標株価・レーティングは各証券会社の見解であり、将来の株価を保証するものではありません。同社のアナリストカバレッジは限定的です。</li>
+      <li>本記事の内容には誤りが含まれる可能性があります。投資判断にあたっては、必ず一次情報（企業のIR資料、SEC提出書類等）をご確認ください。</li>
+    </ul>
+  </div>
+
+  <footer class="site">
+    Market Supporter AI ／ marketsupporter-ai.com<br>
+    AI×製薬×バイオ シリーズ 個別企業編 ⑭（2026年8月25日公開）／ 中小型株編 第5回
+  </footer>
+
+</div>
+</body>
+</html>
