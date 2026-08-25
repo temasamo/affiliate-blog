@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accuray（ARAY）徹底分析｜AI×製薬×バイオテック 米国株シリーズ | Market Supporter AI</title>
+    <style>
+    :root {
+        --accent: #52616B;
+        --accent-dark: #3A4750;
+        --accent-light: #E7EBEC;
+        --accent-pale: #F4F6F6;
+        --warn: #B45309;
+        --warn-bg: #FEF3E2;
+        --text: #1F2937;
+        --text-sub: #4B5563;
+        --bg: #FFFFFF;
+        --border: #E2E5E7;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.8;
+        font-size: 16px;
+    }
+
+    .wrap {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    header.hero {
+        background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+        color: #fff;
+        padding: 56px 20px 44px;
+    }
+
+    header.hero .wrap {
+        max-width: 880px;
+    }
+
+    .hero-tag {
+        display: inline-block;
+        font-size: 13px;
+        letter-spacing: 0.05em;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 4px 12px;
+        border-radius: 999px;
+        margin-bottom: 16px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+        line-height: 1.5;
+        margin: 0 0 12px;
+    }
+
+    .hero .sub {
+        font-size: 15px;
+        opacity: 0.9;
+        margin: 0 0 20px;
+    }
+
+    .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 13px;
+    }
+
+    .hero-meta span {
+        background: rgba(255, 255, 255, 0.12);
+        padding: 4px 10px;
+        border-radius: 6px;
+    }
+
+    nav.toc {
+        background: var(--accent-pale);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 20px 24px;
+        margin: 32px 0;
+    }
+
+    nav.toc h2 {
+        font-size: 15px;
+        margin: 0 0 12px;
+        color: var(--accent-dark);
+    }
+
+    nav.toc ol {
+        margin: 0;
+        padding-left: 20px;
+        columns: 2;
+        font-size: 14px;
+    }
+
+    nav.toc li {
+        margin-bottom: 6px;
+    }
+
+    nav.toc a {
+        color: var(--text);
+        text-decoration: none;
+    }
+
+    nav.toc a:hover {
+        color: var(--accent);
+    }
+
+    main section {
+        margin: 44px 0;
+    }
+
+    main h2 {
+        font-size: 21px;
+        color: var(--accent-dark);
+        border-left: 5px solid var(--accent);
+        padding-left: 12px;
+        margin-bottom: 20px;
+    }
+
+    main h3 {
+        font-size: 17px;
+        margin: 24px 0 10px;
+        color: var(--accent-dark);
+    }
+
+    p {
+        margin: 0 0 14px;
+        color: var(--text);
+    }
+
+    .kpi-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin: 20px 0;
+    }
+
+    .kpi-card {
+        background: var(--accent-pale);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 14px 16px;
+    }
+
+    .kpi-card .label {
+        font-size: 12px;
+        color: var(--text-sub);
+        margin-bottom: 4px;
+    }
+
+    .kpi-card .value {
+        font-size: 19px;
+        font-weight: 700;
+        color: var(--accent-dark);
+    }
+
+    .kpi-card .delta {
+        font-size: 12px;
+        margin-top: 4px;
+        color: var(--text-sub);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 18px 0;
+        font-size: 14px;
+    }
+
+    th, td {
+        border: 1px solid var(--border);
+        padding: 9px 10px;
+        text-align: left;
+    }
+
+    th {
+        background: var(--accent-light);
+        color: var(--accent-dark);
+        font-weight: 700;
+    }
+
+    td.num, th.num {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .callout {
+        border-radius: 10px;
+        padding: 16px 18px;
+        margin: 18px 0;
+        font-size: 14.5px;
+        border: 1px solid var(--border);
+        background: var(--accent-pale);
+    }
+
+    .callout.warn {
+        background: var(--warn-bg);
+        border-color: #F3D9B1;
+    }
+
+    .callout .callout-title {
+        font-weight: 700;
+        margin-bottom: 6px;
+        color: var(--accent-dark);
+    }
+
+    .callout.warn .callout-title {
+        color: var(--warn);
+    }
+
+    .watch {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 14px;
+        padding: 30px 26px;
+        margin: 44px 0;
+    }
+
+    .watch h2 {
+        color: #fff;
+        border-left: 5px solid #fff;
+        margin-bottom: 20px;
+    }
+
+    .watch ol {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 14px;
+    }
+
+    .watch li {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        font-size: 14.5px;
+    }
+
+    .watch .num {
+        flex: 0 0 auto;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .disclaimer {
+        background: var(--accent-pale);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 20px 22px;
+        font-size: 12.5px;
+        color: var(--text-sub);
+        margin: 40px 0;
+        line-height: 1.9;
+    }
+
+    .disclaimer h3 {
+        font-size: 14px;
+        margin: 0 0 8px;
+        color: var(--text);
+    }
+
+    .crosslinks {
+        margin: 36px 0;
+        padding: 22px;
+        background: var(--accent-pale);
+        border-radius: 10px;
+        border: 1px solid var(--border);
+    }
+
+    .crosslinks h3 {
+        font-size: 15px;
+        margin: 0 0 12px;
+        color: var(--accent-dark);
+    }
+
+    .crosslinks ul {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 13.5px;
+        columns: 2;
+    }
+
+    .crosslinks li {
+        margin-bottom: 6px;
+    }
+
+    .crosslinks a {
+        color: var(--accent-dark);
+        text-decoration: none;
+    }
+
+    .crosslinks a:hover {
+        text-decoration: underline;
+    }
+
+    footer {
+        text-align: center;
+        padding: 32px 20px 50px;
+        font-size: 12.5px;
+        color: var(--text-sub);
+    }
+
+    @media (max-width: 640px) {
+        .hero h1 {
+            font-size: 22px;
+        }
+
+        nav.toc ol {
+            columns: 1;
+        }
+
+        .kpi-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .crosslinks ul {
+            columns: 1;
+        }
+
+        main h2 {
+            font-size: 19px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="wrap">
+            <span class="hero-tag">AI×製薬×バイオテック 米国株シリーズ｜中小型株編 最終回</span>
+            <h1>
+                Accuray（NASDAQ: ARAY）徹底分析
+                <br>
+                放射線治療機器メーカーの再建計画と株式希薄化リスク
+            </h1>
+            <p class="sub">FY2026通期決算（2026年8月19日発表）とTCW Asset Managementとの資本再編案を、実数ベースで検証する。</p>
+            <div class="hero-meta">
+                <span>公開日：2026年8月26日</span>
+                <span>ティッカー：NASDAQ: ARAY</span>
+                <span>決算基準日：2026年6月30日（FY2026 Q4・通期）</span>
+                <span>情報提供のみ・投資推奨なし</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrap">
+
+        <nav class="toc">
+            <h2>目次</h2>
+            <ol>
+                <li>
+                    <a href="#s1">1. 市場規模</a>
+                </li>
+                <li>
+                    <a href="#s2">2. 政策・規制環境</a>
+                </li>
+                <li>
+                    <a href="#s3">3. コスト・収益構造</a>
+                </li>
+                <li>
+                    <a href="#s4">4. 事業セグメント動向</a>
+                </li>
+                <li>
+                    <a href="#s5">5. 株式バリュエーション</a>
+                </li>
+                <li>
+                    <a href="#s6">6. リスク要因</a>
+                </li>
+                <li>
+                    <a href="#s7">7. まとめ</a>
+                </li>
+                <li>
+                    <a href="#watch">WHAT TO WATCH</a>
+                </li>
+            </ol>
+        </nav>
+
+        <main>
+
+            <section id="s1">
+                <h2>1. 市場規模</h2>
+                <p>
+                    Accurayが属する放射線治療機器（radiotherapy devices）市場は、複数の調査会社の推計にばらつきがあるものの、おおむね年率6〜7%台の成長を見込む中規模の医療機器セグメントである。MarketsandMarketsは2026年時点の市場規模を約79.8億ドルとし、2031年に106.8億ドル（CAGR 6.0%）へ拡大すると
+                    予測している
+                    。
+                    市場成長の背景には世界的ながん罹患率の上昇、医療投資の拡大、精密腫瘍治療への需要の高まりがあるとされる
+                    。地域別では
+                    アジア太平洋地域が最も高い成長率を記録する見通しで、中国・インド・日本・韓国・オーストラリアにおけるがん罹患率の上昇、高齢化、腫瘍治療インフラの拡大が背景として挙げられている
+                    。
+                </p>
+
+                <p>
+                    市場の主要プレイヤーとして
+                    Siemens Healthineers（Varian事業）、Elekta、Accuray、IBA Worldwide、ViewRay Technologiesなどが挙げられており
+                    、Accurayは市場全体の中では非支配的なニッチプレイヤーという位置づけになる。業界の技術トレンドとしては
+                    陽子線治療、適応放射線治療、定位放射線手術、MRIガイド下放射線治療、AIを活用した治療計画などの高度技術の急速な普及が治療精度の向上と周辺健常組織への被曝低減に寄与しているとされる
+                    。Accurayが強みとするCyberKnife（ロボティック定位放射線手術）とRadixact（ヘリカル照射プラットフォーム）は、この高度技術トレンドの一角に位置する。
+                </p>
+
+                <div class="callout">
+                    <div class="callout-title">編集部注記</div>
+
+                    市場規模推計は調査会社により60億〜90億ドル台までばらつきがある（対象範囲の定義差による）。本稿ではMarketsandMarkets（2026年7月時点、最新）の数値を採用したが、絶対値よりも「年率6%前後の緩やかな成長市場」という方向性を参照する位置づけとする。
+                </div>
+            </section>
+
+            <section id="s2">
+                <h2>2. 政策・規制環境</h2>
+                <h3>中国における地政学・関税リスク</h3>
+                <p>
+                    FY2026の業績を読む上で最大の外部要因は中国事業の落ち込みである。会社側の説明によれば、
+                    地政学的緊張と関税を巡る不確実性が業績に大きな影響を及ぼし、製品売上高の減少額全体のうち約5,800万ドルが中国要因によるものとされている
+                    。中国は放射線治療機器市場の中でも成長率が高いと見込まれる地域である一方、Accurayにとっては足元で最大の下押し要因となっている点に留意が必要である。
+                </p>
+
+                <h3>Nasdaq上場基準</h3>
+                <p>
+                    株価が最低入札価格基準（1.00ドル）を下回る状態が続いたことを受け、
+                    Accurayは2026年8月6日付でNasdaq Capital Marketへ上場区分を移行したと報じられている
+                    。さらに、TCWとの資本再編合意にはリバース・スプリット（株式併合）の実施が条件として組み込まれており、
+                    併合比率は未確定だが、Nasdaqの最低入札価格基準を満たすことおよびTCWとの取引に付された条件を満たすことを目的としているとされる
+                    。上場維持そのものが交渉の一部になっている点は、通常の優良企業の資金調達とは性格が異なる。
+                </p>
+
+                <h3>財務制限条項（コベナンツ）の一時的猶予</h3>
+                <p>
+                    TCWとの取引には2027年12月31日までの財務制限条項の猶予（コベナンツ・ホリデー）が含まれている
+                    。これは規制当局の措置ではなく貸し手との私的合意だが、実質的に「今のバランスシートのままでは既存の財務制限条項に抵触しかねない」状況にあったことを示唆する内容であり、政策・規制環境の章で留保付きで触れておく。
+                </p>
+            </section>
+
+            <section id="s3">
+                <h2>3. コスト・収益構造</h2>
+                <h3>FY2026通期・Q4実績</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th class="num">FY2026 Q4</th>
+                            <th class="num">FY2025 Q4</th>
+                            <th class="num">FY2026通期</th>
+                            <th class="num">FY2025通期</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>総売上高</td>
+                            <td class="num">$100.9M</td>
+                            <td class="num">$127.5M</td>
+                            <td class="num">$401.9M</td>
+                            <td class="num">$458.5M</td>
+                        </tr>
+                        <tr>
+                            <td>製品売上高</td>
+                            <td class="num">$40.8M（▲42%）</td>
+                            <td class="num">$70.7M</td>
+                            <td class="num">$172.7M（▲27%）</td>
+                            <td class="num">$237.6M</td>
+                        </tr>
+                        <tr>
+                            <td>サービス売上高</td>
+                            <td class="num">$60.1M（+6%）</td>
+                            <td class="num">$56.8M</td>
+                            <td class="num">$229.2M（+4%）</td>
+                            <td class="num">$220.9M</td>
+                        </tr>
+                        <tr>
+                            <td>売上総利益率</td>
+                            <td class="num">34.8%</td>
+                            <td class="num">30.6%</td>
+                            <td class="num">27.7%</td>
+                            <td class="num">32.1%</td>
+                        </tr>
+                        <tr>
+                            <td>営業費用</td>
+                            <td class="num">$29.6M</td>
+                            <td class="num">$34.7M</td>
+                            <td class="num">$137.9M</td>
+                            <td class="num">$139.1M</td>
+                        </tr>
+                        <tr>
+                            <td>うちリストラ費用</td>
+                            <td class="num">$0.7M</td>
+                            <td class="num">$0M</td>
+                            <td class="num">$16.2M</td>
+                            <td class="num">$0M</td>
+                        </tr>
+                        <tr>
+                            <td>純損益（GAAP）</td>
+                            <td class="num">▲$1.9M</td>
+                            <td class="num">+$1.1M</td>
+                            <td class="num">▲$49.2M</td>
+                            <td class="num">▲$1.6M</td>
+                        </tr>
+                        <tr>
+                            <td>調整後EBITDA</td>
+                            <td class="num">$12.9M</td>
+                            <td class="num">$9.4M</td>
+                            <td class="num">$10.6M</td>
+                            <td class="num">$28.3M</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size:12.5px;color:var(--text-sub);">出所：Accuray Q4/FY2026決算資料（2026年8月19日、SEC提出Form 8-K・Exhibit 99.1）。数値は千ドル単位の原資料を編集部が丸めて表記。</p>
+
+                <p>
+                    製品売上高が42%減少する一方でサービス売上高は6%増加しており、FY2026通期でみればサービス比率は総売上高の約57%（229.2M÷401.9M）に達する。
+                    サービス売上高の伸びは価格改定策と設置ベースの拡大によってもたらされ、サービス粗利益率も四半期を追うごとに改善している
+                    という会社側の説明があり、製品販売の落ち込みをサービス収益がある程度緩和する構図が続いている。
+                </p>
+
+                <h3>粗利益率の一時的押し上げ要因</h3>
+                <div class="callout">
+                    <div class="callout-title">編集部注記：Q4粗利益率には一時的要因が含まれる</div>
+                    Q4の粗利益率にはIEEPA関税の無効化に伴う580万ドルの一時的な便益が含まれており、これは1,150万ドルの陳腐化在庫の評価損（一部相殺）で部分的に相殺されている
+                    。したがってQ4の34.8%という粗利益率は、通期の27.7%と比べて一時的な押し上げ要因を含んだ数値であり、次四半期以降も同水準が続くと機械的に外挿すべきではない。
+                </div>
+
+                <h3>TCW資本再編の仕組み</h3>
+                <p>2026年7月29日、Accurayは主要貸し手かつ筆頭株主であるTCW Asset Managementとの間で、包括的な財務再編について合意したと発表した。取引の骨子は次の通り。</p>
+                <ul>
+                    <li>
+                        TCWは4,000万ドルの既存タームローン元本を、同額の清算優先権を持つ転換優先株式と交換する
+                    </li>
+                    <li>
+                        転換価格は1株0.50ドルで、合意締結前日終値に対して約105.4%のプレミアムに相当し、年8%の配当が付与される
+                    </li>
+                    <li>
+                        TCWは合意締結時に1,500万ドルの現金を追加の転換優先株式として投資する
+                    </li>
+                    <li>
+                        これに加えて、最大500万ドルの追加ディレイドドロー・タームローンへのアクセスも合意されている
+                    </li>
+                    <li>
+                        既存の約2,760万株分のワラントは決済時に取り消され、新たに1株0.01ドルの行使価格を持つ約1,530万株分のワラントが発行される
+                    </li>
+                </ul>
+
+                <div class="callout warn">
+                    <div class="callout-title">未確定事項：株主承認待ち</div>
+                    この再編案は2026年10月6日開催予定の臨時株主総会での承認を条件としており、承認が得られない場合は優先株式の発行および4,000万ドルの債務エクスチェンジは実行されず、1,500万ドルの手数料と現金投資が担保付き債務に転換され、既存の2,760万株のワラントは存続することになる
+                    。本稿執筆時点（2026年8月26日）でこの株主総会は未実施であり、再編は「合意済みだが未完了」の状態にある。編集部試算・編集部推計を要する項目が多く含まれるため、確定情報として扱わないよう留意されたい。
+                </div>
+            </section>
+
+            <section id="s4">
+                <h2>4. 事業セグメント動向</h2>
+                <h3>受注動向：ブック・トゥ・ビル比率の悪化</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th class="num">FY2026 Q4</th>
+                            <th class="num">FY2025 Q4</th>
+                            <th class="num">FY2026通期</th>
+                            <th class="num">FY2025通期</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>総受注額</td>
+                            <td class="num">$37.7M</td>
+                            <td class="num">$84.7M</td>
+                            <td class="num">$191.9M</td>
+                            <td class="num">$288.0M</td>
+                        </tr>
+                        <tr>
+                            <td>ブック・トゥ・ビル比率</td>
+                            <td class="num">0.9倍</td>
+                            <td class="num">1.2倍</td>
+                            <td class="num">1.1倍</td>
+                            <td class="num">1.2倍</td>
+                        </tr>
+                        <tr>
+                            <td>受注残高（期末）</td>
+                            <td class="num">$312.5M</td>
+                            <td class="num">$427.0M（前年比▲27%）</td>
+                            <td class="num">-</td>
+                            <td class="num">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    CFOのAli Pervaiz氏はQ4の製品総受注額が約3,800万ドル、ブック・トゥ・ビル比率0.9倍だったと説明し
+                    、
+                    通期では総受注額1億9,200万ドル・トレーリング12カ月ブック・トゥ・ビル比率1.1倍、期末受注残高は約3億1,300万ドルだったとしている
+                    。
+                    会社側は健全とする1.2倍の目標水準に届かなかったことを認めつつ、商業改革施策がほぼ完了したことでFY2027の受注動向改善につながるとの見方を示している
+                    。ただしこれは経営陣の見通しであり、実績としての受注改善はまだ確認されていない。
+                </p>
+
+                <h3>戦略パートナーシップ：非拘束的LOIが中心</h3>
+                <p>
+                    Accurayは主要貸し手・筆頭株主であるTCWとの財務再編と同時に、Samsung HME AmericaのNeuroLogica事業部門とは体積イメージング技術について、RaySearch Laboratoriesとは統合オンライン適応放射線治療能力について、それぞれ非拘束的な基本合意書（LOI）を締結したと発表している
+                    。
+                    会社は「パートナー中心型」モデルへの転換を進めており、自社での資本投下を抑えつつイメージングやAI領域の技術革新を加速させる狙いがあるとしている
+                    。これらはいずれも法的拘束力のあるLOIではなく、正式契約への移行時期・条件は未定である点に留保が必要である。
+                </p>
+
+                <p>
+                    一方、
+                    ウィスコンシン大学医学部・公衆衛生学部との間では10年間の戦略的協業として、適応放射線治療研究を推進する枠組みが2026年5月に発表されている
+                    。こちらは拘束力のある提携であり、非拘束的LOIとは性格が異なる点を区別しておきたい。
+                </p>
+
+                <h3>臨床面での訴求：ESTRO 2026</h3>
+                <p>
+                    CEOのSteve LaNeve氏は、ESTRO 2026（欧州放射線腫瘍学会）における顧客エンゲージメントについて、ブースの活況と満席の臨床シンポジウムを含め非常に活発だったと説明した
+                    。
+                    前立腺・乳腺・腎臓・肺など複数の疾患領域における精密短期照射療法の役割拡大を裏付ける臨床データが世界的リーダーから発表され、European市場でのStellarシステムのデビューも好意的な反応を得た
+                    という。ただしこれは学会での「見込み客の増加」であり、受注や売上への転嫁時期は不明である。
+                </p>
+
+                <h3>変革計画（トランスフォーメーション・プラン）の進捗</h3>
+                <p>
+                    2025年12月に発表された変革計画の第1フェーズは、年間換算で約2,500万ドルの営業利益改善を見込み、全世界の従業員の約15%に影響する組織再編を含んでいた
+                    。
+                    FY2026を通じて実現したコスト・マージン改善効果は2,000万ドルを超え、当初目標の1,200万ドルを大幅に上回った
+                    という。
+                    FY2027に向けては追加で1,500万ドルの年間換算コスト・マージン改善を見込んでいるとされる
+                    が、これも経営陣の目標値であり実績ではない。
+                </p>
+            </section>
+
+            <section id="s5">
+                <h2>5. 株式バリュエーション</h2>
+
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="label">株価（2026/8/19終値）</div>
+                        <div class="value">$0.295</div>
+                        <div class="delta">52週レンジ：$0.22〜$2.10</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="label">時価総額（2026/8/19時点）</div>
+                        <div class="value">約$36M</div>
+                        <div class="delta">編集部試算・出典日により幅あり</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="label">PSR（対FY26売上高）</div>
+                        <div class="value">約0.09倍</div>
+                        <div class="delta">編集部計算</div>
+                    </div>
+                </div>
+
+                <p>
+                    決算発表日である2026年8月19日の終値は0.295ドルで、52週レンジ（0.22〜2.10ドル）の下限付近であり、時価総額は3,640万ドルに縮小したと報じられている
+                    。データソース間で反映される発行済株式数の時点が異なるため（119.4M株ベースで約3,800万ドルとする集計もある）、本稿では2026年8月18〜19日時点の複数ソースを踏まえ「概ね3,600万〜3,800万ドル」という幅で扱う。
+                    時価総額3億ドル以下という区分でCNNはマイクロキャップ（超小型株）に分類している
+                    。
+                </p>
+
+                <p>FY2026通期売上高401.9百万ドルに対し時価総額約3,600万〜3,800万ドルという水準は、PSR（株価売上高倍率）にして0.09〜0.10倍程度となる（編集部計算）。これは同社の株式市場での評価が、売上高そのものよりも財務健全性・希薄化リスクに強く規定されていることを示唆する。GAAP純損益は通期で▲4,920万ドルの赤字であり、PER（株価収益率）は意味を持たない。</p>
+
+                <h3>希薄化構造：転換優先株式・ワラント・リバース・スプリットの三重奏</h3>
+                <p>
+                    本銘柄のバリュエーションを評価する上で最大の論点は希薄化である。
+                    TCWとの取引が承認されれば、優先株式転換に備えて最大1億1,000万株の普通株式を確保するため、授権株式数を2億株から4億株へ倍増する提案がなされている
+                    。
+                    FY2026 Q2時点での負債資本比率（Debt To Equity）は348.10%に達していた
+                    と報告されており、財務レバレッジの高さが希薄化を伴う資本再編に至った背景として位置づけられる。
+                </p>
+
+                <div class="callout warn">
+                    <div class="callout-title">留保：まだ判定できる段階にない</div>
+
+                    リバース・スプリットの比率は本稿執筆時点で未確定であり、転換優先株式の転換価格（0.50ドル）は現在の株価（0.295ドル前後）を大きく上回るため、直ちに大規模な希薄化が生じるわけではない。ただし株価が0.50ドルに接近・上回った場合の転換インセンティブ、および授権株式数倍増による将来の発行余地の拡大は、株式価値の評価において無視できない要因である。本シリーズの基本姿勢に沿い、現時点では強気・弱気いずれにも寄せず「再編の帰趨（10月6日株主総会）を見極める必要がある」とするにとどめる。
+                </div>
+
+                <h3>4指標フレームワークとの関係</h3>
+                <p>本シリーズが損失段階企業に適用してきた4指標（キャッシュランウェイ・反復収益比率・実現率・希薄化パターン）のうち、Accurayは臨床開発型バイオテックではなく既存売上を持つ医療機器企業であるため、このフレームワークは部分的にのみ当てはまる。反復収益比率（サービス売上高比率、約57%）は高水準で機能する一方、「一時金÷公表総額」という実現率の概念はバイオテックのマイルストーン収入向けの指標であり、Accurayの受注ベースのビジネスモデルには直接適用できない。他方、キャッシュランウェイと希薄化パターン（発行価格・引受先属性）は、TCWという単一の貸し手兼筆頭株主が再建の主導権を握る現在の局面において、むしろバイオテックの中小型株編以上に重要な評価軸となっている。</p>
+            </section>
+
+            <section id="s6">
+                <h2>6. リスク要因</h2>
+
+                <h3>中国依存とマクロ不確実性</h3>
+                <p>
+                    FY2026の製品売上高減少のうち約5,800万ドルが中国要因によるものとされ
+                    、
+                    会社は地政学的な動向、国際貿易政策、関税の影響、中国および中東の情勢、より広範なマクロ経済要因を巡る継続的な不確実性を理由に、FY2027の正式な売上高・調整後EBITDAガイダンスを提供しないとしている
+                    。ガイダンス非開示そのものが、経営陣の先行き不透明感の強さを物語っている。
+                </p>
+
+                <h3>財務レバレッジと希薄化リスク</h3>
+                <p>
+                    総負債（長期債務146.4百万ドル＋短期債務1.5百万ドル、2026年6月30日時点、貸借対照表ベース）に対し株主資本は41.7百万ドルにとどまる。
+                    一部の分析では総負債を1億8,240万ドルとする集計もあり
+                    、算出方法によって数値に幅がある点に留意されたい（編集部注記）。累積赤字は5億6,847万ドルに達しており、TCWとの再編が成立しなければ1,500万ドルの手数料・現金投資が担保付き債務化し、既存ワラント（約2,760万株）が存続する仕組みとなっている。再編が成立する場合も、転換優先株式・新規ワラント・リバース・スプリットの組み合わせにより既存株主の持分が長期的に希薄化する可能性がある。
+                </p>
+
+                <h3>受注動向の悪化継続リスク</h3>
+                <p>Q4のブック・トゥ・ビル比率0.9倍は、健全とされる1.2倍の目標を大きく下回っており、通期でも1.1倍と前年の1.2倍から低下している。受注残高も前年同期比27%減少しており、この傾向がFY2027に持ち越された場合、サービス収益による下支えだけでは製品売上高の減少を補いきれない可能性がある。</p>
+
+                <h3>Nasdaq上場維持リスク</h3>
+                <p>
+                    株価が最低入札価格基準を下回ったことによりNasdaq Capital Marketへの上場区分移行が生じており
+                    、リバース・スプリットの実施はNasdaq基準の充足とTCW取引の完了条件の双方に関わる。株主承認が得られない、またはリバース・スプリット後も株価が基準を維持できない場合、上場維持そのものが再びリスクとなり得る。
+                </p>
+
+                <div class="callout warn">
+                    <div class="callout-title">留保事項のまとめ</div>
+
+                    本稿で扱った将来情報（FY2027見通し、パートナーシップの正式契約化、TCW取引の成立、リバース・スプリット比率）はいずれも未確定・未実現であり、現時点の事実として提示しているものではない。特にTCW再編は2026年10月6日の株主総会での承認が前提条件であり、否決された場合の代替シナリオも会社側資料に明記されている。
+                </div>
+            </section>
+
+            <section id="s7">
+                <h2>7. まとめ</h2>
+                <p>Accurayは「AI×製薬×バイオテック 米国株」シリーズの中小型株編において、他5社（Sana Biotech、Allogene、Rapid Micro等）とは性格を異にする銘柄である。臨床開発段階のバイオテックではなく、既に4億ドル超の年間売上高を持つ既存の医療機器メーカーでありながら、財務レバレッジの高さと中国事業の急減速により、時価総額が3,000万〜4,000万ドル台まで圧縮されたマイクロキャップとなっている。</p>
+
+                <p>FY2026通期の実績は、サービス収益の底堅さ（+4%、粗利益率改善）と製品収益の急減速（▲27%、うち中国要因約5,800万ドル）という明確なコントラストを描いている。会社側が主導する変革計画は当初目標を上回るコスト削減を達成しており、この点は評価できる材料である。一方で、TCWとの資本再編は株主承認前の段階にあり、リバース・スプリットの具体的比率も未確定であるため、本稿執筆時点でバリュエーションの帰趨を判定することはできない。「まだ判定できる段階にない」というシリーズ全体の基本姿勢が、本銘柄にも当てはまる。</p>
+
+                <p>次の焦点は2026年10月6日の臨時株主総会である。再編案が承認されるか否かによって、以降のキャッシュランウェイ・希薄化パターン・Nasdaq上場維持の見通しが大きく変わり得る。</p>
+            </section>
+
+        </main>
+
+        <div class="watch" id="watch">
+            <h2>WHAT TO WATCH</h2>
+            <ol>
+                <li>
+                    <div class="num">1</div>
+                    <div>
+                        <strong>10月6日 臨時株主総会</strong>
+                        <br>
+                        TCWとの55百万ドル優先株式再編（40百万ドル債務転換＋15百万ドル新規現金）の承認可否。否決時は代替シナリオ（担保付き債務化・既存ワラント存続）が発動。
+                    </div>
+                </li>
+                <li>
+                    <div class="num">2</div>
+                    <div>
+                        <strong>リバース・スプリットの実施比率</strong>
+                        <br>
+                        株主承認後に確定予定。Nasdaq最低入札価格基準の充足可否に直結。
+                    </div>
+                </li>
+                <li>
+                    <div class="num">3</div>
+                    <div>
+                        <strong>FY2027 Q1決算（正式ガイダンスなしでの初四半期）</strong>
+                        <br>
+                        中国事業の減速が底打ちするか、受注動向（ブック・トゥ・ビル比率）が回復するかを確認する最初の機会。
+                    </div>
+                </li>
+                <li>
+                    <div class="num">4</div>
+                    <div>
+                        <strong>中国製品売上高の推移</strong>
+                        <br>
+                        FY2026通期で約5,800万ドルの減少要因となった中国事業が、関税・地政学リスクの一巡とともに底打ちするかを注視。
+                    </div>
+                </li>
+                <li>
+                    <div class="num">5</div>
+                    <div>
+                        <strong>Samsung HME America・RaySearch Laboratoriesとの提携正式化</strong>
+                        <br>
+                        非拘束的LOIが法的拘束力のある契約に発展するか、およびその収益貢献時期。
+                    </div>
+                </li>
+                <li>
+                    <div class="num">6</div>
+                    <div>
+                        <strong>サービス粗利益率の改善持続性</strong>
+                        <br>
+                        Q4の粗利益率34.8%には一時的要因（IEEPA関税還付580万ドル等）が含まれる。一時的要因を除いた実力ベースの粗利益率がFY2027でどう推移するか。
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="crosslinks">
+            <h3>関連レポート</h3>
+            <ul>
+                <li>
+                    <a href="/reports/ai-biotech-industry-map.html">3部作・前編：AI×製薬×バイオ 業界マップ</a>
+                </li>
+                <li>
+                    <a href="/reports/ai-biotech-validation.html">3部作・中編：技術検証編</a>
+                </li>
+                <li>
+                    <a href="/reports/ai-biotech-valuation.html">3部作・後編：投資判断の視点編</a>
+                </li>
+                <li>
+                    <a href="/reports/recursion-rxrx.html">Recursion（RXRX）</a>
+                </li>
+                <li>
+                    <a href="/reports/schrodinger-sdgr.html">Schrödinger（SDGR）</a>
+                </li>
+                <li>
+                    <a href="/reports/relay-rlay.html">Relay（RLAY）</a>
+                </li>
+                <li>
+                    <a href="/reports/absci-absi.html">Absci（ABSI）</a>
+                </li>
+                <li>
+                    <a href="/reports/tempus-tem.html">Tempus AI（TEM）</a>
+                </li>
+                <li>
+                    <a href="/reports/illumina-ilmn.html">Illumina（ILMN）</a>
+                </li>
+                <li>
+                    <a href="/reports/iqvia-iqv.html">IQVIA（IQV）</a>
+                </li>
+                <li>
+                    <a href="/reports/lilly-lly.html">Eli Lilly（LLY）</a>
+                </li>
+                <li>
+                    <a href="/reports/astrazeneca-azn.html">AstraZeneca（AZN）</a>
+                </li>
+                <li>
+                    <a href="/reports/roivant-roiv.html">Roivant（ROIV）</a>
+                </li>
+                <li>
+                    <a href="/reports/prime-medicine-prme.html">Prime Medicine（PRME）</a>
+                </li>
+                <li>
+                    <a href="/reports/sana-sana.html">Sana Biotech（SANA）</a>
+                </li>
+                <li>
+                    <a href="/reports/allogene-allo.html">Allogene（ALLO）</a>
+                </li>
+                <li>
+                    <a href="/reports/rapid-micro-rpid.html">Rapid Micro（RPID）</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="disclaimer">
+            <h3>免責事項</h3>
+            <p>本レポートは情報提供のみを目的としており、特定の金融商品の売買を推奨するものではありません。記載内容には編集部による試算・計算・推計が含まれており、実際の数値と異なる場合があります。株価・時価総額等の市場データは出典日時点のものであり、閲覧時点の実勢と異なる可能性があります。将来の業績・提携・資本再編・規制対応等に関する記述は、現時点で確認された公表情報に基づく見通しであり、その実現を保証するものではありません。投資判断はご自身の責任において行ってください。本レポートの内容に基づいて生じたいかなる損害についても、Market Supporter AIは責任を負いません。</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Market Supporter AI｜個人投資家向け金融分析情報サイト</p>
+        <p>© 2026 Market Supporter AI. 情報提供のみ・投資推奨なし。</p>
+    </footer>
+
+</body>
+</html>
