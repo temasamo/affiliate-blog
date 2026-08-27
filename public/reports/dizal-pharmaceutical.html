@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dizal Pharmaceutical（迪哲医薬・688192）徹底分析｜AI×製薬×バイオテック 米国株シリーズ | Market Supporter AI</title>
+    <meta name="description" content="Dizal PharmaceuticalのAstraZeneca向けsunvozertinibライセンス契約と2026年上半期決算を、実数ベースで検証する。情報提供のみ・投資推奨なし。">
+    <style>
+    :root {
+        --accent: #1F5FBF;
+        --accent-dark: #163F80;
+        --accent-light: #DCE6F7;
+        --accent-pale: #F0F4FC;
+        --warn: #B45309;
+        --warn-bg: #FEF3E2;
+        --text: #1F2937;
+        --text-sub: #4B5563;
+        --bg: #FFFFFF;
+        --border: #D6E0F0;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.8;
+        font-size: 16px;
+    }
+
+    .wrap {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    header.hero {
+        background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+        color: #fff;
+        padding: 56px 20px 44px;
+    }
+
+    header.hero .wrap {
+        max-width: 880px;
+    }
+
+    .hero-tag {
+        display: inline-block;
+        font-size: 13px;
+        letter-spacing: 0.05em;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 4px 12px;
+        border-radius: 999px;
+        margin-bottom: 16px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+        line-height: 1.5;
+        margin: 0 0 12px;
+    }
+
+    .hero .sub {
+        font-size: 15px;
+        opacity: 0.9;
+        margin: 0 0 20px;
+    }
+
+    .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 13px;
+    }
+
+    .hero-meta span {
+        background: rgba(255, 255, 255, 0.12);
+        padding: 4px 10px;
+        border-radius: 6px;
+    }
+
+    nav.toc {
+        background: var(--accent-pale);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 20px 24px;
+        margin: 32px 0;
+    }
+
+    nav.toc h2 {
+        font-size: 15px;
+        margin: 0 0 12px;
+        color: var(--accent-dark);
+    }
+
+    nav.toc ol {
+        margin: 0;
+        padding-left: 20px;
+        columns: 2;
+        font-size: 14px;
+    }
+
+    nav.toc li {
+        margin-bottom: 6px;
+    }
+
+    nav.toc a {
+        color: var(--text);
+        text-decoration: none;
+    }
+
+    nav.toc a:hover {
+        color: var(--accent);
+    }
+
+    main section {
+        margin: 44px 0;
+    }
+
+    main h2 {
+        font-size: 21px;
+        color: var(--accent-dark);
+        border-left: 5px solid var(--accent);
+        padding-left: 12px;
+        margin-bottom: 20px;
+    }
+
+    main h3 {
+        font-size: 17px;
+        margin: 24px 0 10px;
+        color: var(--accent-dark);
+    }
+
+    p {
+        margin: 0 0 14px;
+        color: var(--text);
+    }
+
+    .kpi-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin: 20px 0;
+    }
+
+    .kpi-card {
+        background: var(--accent-pale);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 14px 16px;
+    }
+
+    .kpi-card .label {
+        font-size: 12px;
+        color: var(--text-sub);
+        margin-bottom: 4px;
+    }
+
+    .kpi-card .value {
+        font-size: 19px;
+        font-weight: 700;
+        color: var(--accent-dark);
+    }
+
+    .kpi-card .delta {
+        font-size: 12px;
+        margin-top: 4px;
+        color: var(--text-sub);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 18px 0;
+        font-size: 14px;
+    }
+
+    th, td {
+        border: 1px solid var(--border);
+        padding: 9px 10px;
+        text-align: left;
+    }
+
+    th {
+        background: var(--accent-light);
+        color: var(--accent-dark);
+        font-weight: 700;
+    }
+
+    td.num, th.num {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .callout {
+        border-radius: 10px;
+        padding: 16px 18px;
+        margin: 18px 0;
+        font-size: 14.5px;
+        border: 1px solid var(--border);
+        background: var(--accent-pale);
+    }
+
+    .callout.warn {
+        background: var(--warn-bg);
+        border-color: #F3D9B1;
+    }
+
+    .callout .callout-title {
+        font-weight: 700;
+        margin-bottom: 6px;
+        color: var(--accent-dark);
+    }
+
+    .callout.warn .callout-title {
+        color: var(--warn);
+    }
+
+    .watch {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 14px;
+        padding: 30px 26px;
+        margin: 44px 0;
+    }
+
+    .watch h2 {
+        color: #fff;
+        border-left: 5px solid #fff;
+        margin-bottom: 20px;
+    }
+
+    .watch ol {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 14px;
+    }
+
+    .watch li {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        font-size: 14.5px;
+    }
+
+    .watch .num {
+        flex: 0 0 auto;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.18);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .disclaimer {
+        background: var(--accent-pale);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 20px 22px;
+        font-size: 12.5px;
+        color: var(--text-sub);
+        margin: 40px 0;
+        line-height: 1.9;
+    }
+
+    .disclaimer h3 {
+        font-size: 14px;
+        margin: 0 0 8px;
+        color: var(--text);
+    }
+
+    .crosslinks {
+        margin: 36px 0;
+        padding: 22px;
+        background: var(--accent-pale);
+        border-radius: 10px;
+        border: 1px solid var(--border);
+    }
+
+    .crosslinks h3 {
+        font-size: 15px;
+        margin: 0 0 12px;
+        color: var(--accent-dark);
+    }
+
+    .crosslinks ul {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 13.5px;
+        columns: 2;
+    }
+
+    .crosslinks li {
+        margin-bottom: 6px;
+    }
+
+    .crosslinks a {
+        color: var(--accent-dark);
+        text-decoration: none;
+    }
+
+    .crosslinks a:hover {
+        text-decoration: underline;
+    }
+
+    footer {
+        text-align: center;
+        padding: 32px 20px 50px;
+        font-size: 12.5px;
+        color: var(--text-sub);
+    }
+
+    @media (max-width: 640px) {
+        .hero h1 {
+            font-size: 22px;
+        }
+
+        nav.toc ol {
+            columns: 1;
+        }
+
+        .kpi-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .crosslinks ul {
+            columns: 1;
+        }
+
+        main h2 {
+            font-size: 19px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="wrap">
+            <span class="hero-tag">AI×製薬×バイオテック 米国株シリーズ｜個別企業編（関連銘柄・中国上場）</span>
+            <h1>
+                Dizal Pharmaceutical（迪哲医薬・SSE:688192）徹底分析
+                <br>
+                AstraZenecaが8年越しに「回収」した中国発FIC創薬企業
+            </h1>
+            <p class="sub">AstraZeneca向けsunvozertinibライセンス契約と2026年上半期決算を、実数ベースで検証する。</p>
+            <div class="hero-meta">
+                <span>公開日：2026年8月28日</span>
+                <span>ティッカー：上海証券取引所科創板 688192</span>
+                <span>決算基準日：2026年6月30日（2026年上半期）</span>
+                <span>情報提供のみ・投資推奨なし</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrap">
+
+        <nav class="toc">
+            <h2>目次</h2>
+            <ol>
+                <li>
+                    <a href="#s1">1. 市場規模</a>
+                </li>
+                <li>
+                    <a href="#s2">2. 政策・規制環境</a>
+                </li>
+                <li>
+                    <a href="#s3">3. コスト・収益構造</a>
+                </li>
+                <li>
+                    <a href="#s4">4. 事業セグメント動向</a>
+                </li>
+                <li>
+                    <a href="#s5">5. 株式バリュエーション</a>
+                </li>
+                <li>
+                    <a href="#s6">6. リスク要因</a>
+                </li>
+                <li>
+                    <a href="#s7">7. まとめ</a>
+                </li>
+                <li>
+                    <a href="#watch">WHAT TO WATCH</a>
+                </li>
+            </ol>
+        </nav>
+
+        <main>
+
+            <section id="s1">
+                <h2>1. 市場規模</h2>
+                <p>
+                    Dizal Pharmaceuticalの中核資産であるsunvozertinib（中国製品名：舒沃哲、米国製品名：Zegfrovy）は、EGFR exon20挿入変異を持つ非小細胞肺がん（NSCLC）という比較的ニッチな分子標的サブグループを対象とする。AVIC証券（中国の証券会社）の試算では、sunvozertinibの中国国内でのピーク売上高は約30.8億元（約4億5,490万ドル）、世界全体では約129.5億元（約19億ドル）に達する可能性があるとされている。もう一つの柱であるgolidocitinib（中国製品名：戈利昔替尼）は、再発・難治性末梢性T細胞リンパ腫（r/r PTCL）を対象とする世界初の高選択性JAK1阻害剤で、中国国内の新規症例数は年間約2万〜3万例、世界全体のピーク市場規模は5億〜10億ドル程度と見積もられているニッチな適応症である。
+                </p>
+
+                <p>
+                    両製品とも大型がんの主戦場と比べれば小規模な市場だが、sunvozertinibは中国・米国の双方で承認されたEGFR exon20ins標的治療薬としては唯一の存在であり、New England Journal of Medicineへの掲載という形で学術的な裏付けも得ている点が差別化要素である。
+                </p>
+
+                <div class="callout">
+                    <div class="callout-title">編集部注記</div>
+
+                    市場規模推計はAVIC証券という中国国内の証券会社試算に基づくものであり、独立系グローバル調査会社による検証は確認できていない。数値は参考情報として扱い、絶対値の精度よりも「ニッチだが確立したポジションを持つ」という位置づけの把握にとどめる。
+                </div>
+            </section>
+
+            <section id="s2">
+                <h2>2. 政策・規制環境</h2>
+                <h3>sunvozertinibの承認経緯</h3>
+                <p>
+                    sunvozertinibは2023年8月に中国NMPA（国家薬品監督管理局）から2次治療薬として承認され、2025年7月には米国FDAからも2次治療の迅速承認を取得した。中国CDE・米国FDAの双方からブレークスルーセラピー指定を受けている。1次治療への適応拡大については、グローバル第3相WU-KONG28試験のデータが2026年ASCO年次総会でレイトブレーキング演題として発表されると同時にNEJMに掲載され、客観的奏効率（ORR）58.9%（化学療法群31.1%）、無増悪生存期間中央値10.3カ月（化学療法群7.5カ月）という結果が示された。1次治療の承認申請は中国・米国双方で提出済みで、中国では受理の上、優先審査の対象となっている。
+                </p>
+
+                <h3>AstraZenecaとの関連当事者間取引</h3>
+                <p>
+                    AstraZenecaは完全子会社AZABを通じてDizalの23.42%の株式を保有しており、SDIC Innovationと並ぶ筆頭株主である。このため今回のライセンス契約は関連当事者間取引に該当し、株主総会での承認が必要となる。Dizalはそもそも2017年にAstraZenecaがアジア地域の創薬研究部門（iMED Asia）を丸ごとスピンオフし、SDIC Innovationと共同でインキュベーションした企業であり、創業者のZhang Xiaolin博士はAstraZenecaアジアR&amp;Dセンターの元責任者、中核研究人員の3割以上がAstraZeneca出身とされる。今回の契約は、8年前にスピンオフした資産をAstraZenecaが「回収」する取引という性格を持つ。
+                </p>
+
+                <div class="callout warn">
+                    <div class="callout-title">留保：取引はまだ完了していない</div>
+
+                    AstraZeneca側の開示によれば、この取引は2026年下半期の完了を見込んでいるが、通常の完了条件および規制当局の認可を条件としている。Dizal側の公告でも、取引は株主総会での審議に付される必要があるとされている。本稿執筆時点（2026年8月28日）で取引は正式には完了していない点に留意されたい。
+                </div>
+            </section>
+
+            <section id="s3">
+                <h2>3. コスト・収益構造</h2>
+                <h3>2026年上半期実績</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th class="num">2026年上半期</th>
+                            <th class="num">2025年上半期</th>
+                            <th class="num">増減</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>売上高</td>
+                            <td class="num">5.22億元</td>
+                            <td class="num">-</td>
+                            <td class="num">+47.04%</td>
+                        </tr>
+                        <tr>
+                            <td>第2四半期売上高</td>
+                            <td class="num">2.70億元</td>
+                            <td class="num">-</td>
+                            <td class="num">前期比+7.0%</td>
+                        </tr>
+                        <tr>
+                            <td>親会社帰属純損失</td>
+                            <td class="num">▲2.10億元</td>
+                            <td class="num">-</td>
+                            <td class="num">赤字幅▲44.35%改善</td>
+                        </tr>
+                        <tr>
+                            <td>非経常損益調整後純損失</td>
+                            <td class="num">▲2.31億元</td>
+                            <td class="num">-</td>
+                            <td class="num">赤字幅▲44.90%改善</td>
+                        </tr>
+                        <tr>
+                            <td>研究開発費</td>
+                            <td class="num">4.02億元</td>
+                            <td class="num">-</td>
+                            <td class="num">▲1.54%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size:12.5px;color:var(--text-sub);">出所：Dizal Pharmaceutical 2026年上半期業績予告（2026年7月23日発表）。1米ドル＝約7.15元で編集部換算（2026年8月時点の目安）。</p>
+
+                <p>
+                    売上高5.22億元（前年同期比+47.04%）の伸びは、承認済み2製品（sunvozertinib・golidocitinib）の医療保険適用範囲拡大によるものとされる。純損失は依然として計上されているが、赤字幅は前年同期比で44%超縮小しており、研究開発費もわずかに減少している。商業化製品の売上拡大とコスト規律の両方が寄与した形である。
+                </p>
+
+                <h3>AstraZeneca契約の会計処理タイミング</h3>
+                <div class="callout warn">
+                    <div class="callout-title">編集部注記：6億ドルの一時金は2026年第3〜4四半期に計上見込み</div>
+
+                    6億ドル（約43億元）の契約一時金は、2026年第3四半期・第4四半期に一括して収益計上される見込みで、これにより通期での黒字化の可能性が高いとされている。ただし本稿で扱った2026年上半期決算（1〜6月）にはこの一時金は含まれておらず、上記の売上高5.22億元は既存2製品による自律成長分のみである点を明確にしておきたい。
+                </div>
+
+                <h3>手元資金</h3>
+                <p>
+                    2026年3月末時点で、Dizalは現金2.24億元、市場性金融資産17.1億元、合計約19.4億元（約2億8,610万ドル）を保有しており、これには2025年4月に完了した私募増資による17.7億元（約2億6,220万ドル）が含まれる。6億ドルの一時金が入金される前の段階でも資金繰りは逼迫していないとされるが、今回の一時金は複数パイプラインの同時グローバル開発を可能にする規模の資金として位置づけられている。
+                </p>
+            </section>
+
+            <section id="s4">
+                <h2>4. 事業セグメント動向</h2>
+                <h3>AstraZenecaへのsunvozertinibライセンス供与</h3>
+                <p>
+                    2026年7月14日、DizalはAstraZenecaにsunvozertinibのグローバル独占的開発・商業化権を供与すると発表した。契約条件は非返還の6億ドル一時金、最大9億ドルのマイルストーン、および低〜中二桁パーセントのロイヤリティとされる。この契約の締結によりDizalの株価は午後の取引開始からわずか14秒で値幅制限（20%）上限に達し、時価総額は26.2億元（約39億ドル）を超えた。
+                </p>
+
+                <p>
+                    この取引により、中国国内での売上高の72%を占めていたsunvozertinibの中国事業も含め、商業化の主導権はAstraZenecaへ移る。Dizal自前の商業化チームはAstraZeneca向けの受託販売組織になるか、AstraZeneca Chinaへ統合される可能性が指摘されている。この結果、Dizalは実質的に「製品を持つバイオテック」から「研究開発主導のバイオテック」へと回帰することになる。
+                </p>
+
+                <h3>実現率で見るAstraZeneca契約の位置づけ</h3>
+                <p>
+                    本シリーズの4指標フレームワークで用いてきた実現率（一時金÷契約総額）の観点では、6億ドル÷15億ドル＝約40%となる。これはAstraZeneca/Dizal間の他の類似契約（本シリーズAZN記事で扱った実現率約40%の事例）と同水準であり、両社間の契約構造に一定のパターンがあることを示唆する。業界関係者の見立てでは、AstraZenecaは関連当事者であるため誇張されたマイルストーン数字で総額を演出する必要がなく、上乗せ支払いの余地が圧縮されている可能性がある。
+                </p>
+
+                <h3>中国バイオテックのライセンスアウト取引との比較</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>取引</th>
+                            <th class="num">一時金</th>
+                            <th class="num">契約総額</th>
+                            <th>資産の段階</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SystImmune→BMS（2023年12月）</td>
+                            <td class="num">8億ドル</td>
+                            <td class="num">84億ドル</td>
+                            <td>初期臨床・未承認</td>
+                        </tr>
+                        <tr>
+                            <td>Akeso→Summit（2022年12月）</td>
+                            <td class="num">5億ドル</td>
+                            <td class="num">50億ドル超＋ロイヤリティ</td>
+                            <td>第3相・未承認</td>
+                        </tr>
+                        <tr>
+                            <td>Merck→Kelun-Biotech（2022〜2023年）</td>
+                            <td class="num">累計約2.6億ドル</td>
+                            <td class="num">118億ドル超</td>
+                            <td>主に初期臨床</td>
+                        </tr>
+                        <tr>
+                            <td>Dizal→AstraZeneca（2026年7月）</td>
+                            <td class="num">6億ドル</td>
+                            <td class="num">15億ドル</td>
+                            <td>中国・米国で承認済み、NEJM掲載</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    この比較から明らかなように、Dizalの資産は他の事例と比べて最も成熟した段階（承認済み）にありながら、契約総額の倍率（一時金に対する総額の伸び）は最も低い水準にとどまっている。この点は、関連当事者間取引における中国発FIC（ファースト・イン・クラス）分子の評価の実態を示す事例として、業界内で注目されている。
+                </p>
+
+                <h3>後続パイプライン</h3>
+                <p>
+                    最も進んだ開発品はDZD8586（biritinib）で、血液脳関門を透過するLYN/BTK二重標的の非共有結合型阻害剤として世界初の分子とされ、BTK阻害剤抵抗性の再発・難治性CLL/SLLを対象とする。BTK阻害剤既治療患者での単剤ORRは84.2%に達し、FDAファストトラック指定を取得、グローバル第3相試験が開始されている。ただし同試験の中間解析は2029年を見込んでおり、短期的な収益貢献は期待できない。
+                </p>
+
+                <p>
+                    もう一つの中核パイプラインDZD6008は、血液脳関門を完全透過する第4世代の高選択性EGFR TKIで、第3世代薬剤抵抗性後に生じるC797X変異を標的とする。60mg用量群でORR60%、9カ月時点の無増悪生存率64.8%という結果が2026年ASCOで口頭発表されたが、現在も第1/2相段階にあり、世界で承認された第4世代EGFR TKIはまだ存在せず競争環境は激しいとされる。その他、GW5282（EZH1/2二重阻害剤）、DZD1516（HER2 TKI）、DZD2269（A2aR拮抗薬）などは第1/2相以前の段階にあり、3〜5年以内の商業的価値創出は見込みにくい。
+                </p>
+            </section>
+
+            <section id="s5">
+                <h2>5. 株式バリュエーション</h2>
+
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="label">株価（2026/8/14終値）</div>
+                        <div class="value">60.91元</div>
+                        <div class="delta">前週比+8.77%</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="label">時価総額（2026/7/24時点）</div>
+                        <div class="value">約258.6億元</div>
+                        <div class="delta">約36億ドル、編集部換算</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="label">時価総額（2026/8/19時点）</div>
+                        <div class="value">約$4.07B</div>
+                        <div class="delta">PitchBook集計</div>
+                    </div>
+                </div>
+
+                <p>
+                    2026年7月24日終値は55.6元、時価総額は258.63億元とされ、化学製薬セクター内では時価総額順位15/149位、上海・深圳両市場のA株全体では707/5200位に位置づけられている。2026年8月14日終値は60.91元で前週比+8.77%と回復基調にある。7月14日のAstraZeneca契約発表を受け、株価は取引開始からわずか14秒で値幅制限上限（+20%）に到達した。PitchBookの集計では2026年8月19日時点の時価総額は約40.7億ドル、発行済株式数は約4億6,500万株とされている。データソース間で時点・為替レートの反映が異なるため、時価総額は「概ね36億〜41億ドル」という幅で捉えるのが適切である（編集部試算）。
+                </p>
+
+                <div class="callout warn">
+                    <div class="callout-title">留保：一時金は一回限りの利益</div>
+
+                    6億ドルの一時金は一回限りの利益であり、真の企業価値の錨（アンカー）となるのは、2027年以降のDZD8586第3相中間解析データと、AstraZenecaの販売網下でのsunvozertinib1次治療承認後の売上拡大カーブだと業界では指摘されている。株価の短期的な反応を将来の企業価値の確証として単純に外挿すべきではない。
+                </div>
+
+                <h3>4指標フレームワークとの関係</h3>
+                <p>実現率（約40%）は本シリーズの他のAstraZeneca関連契約と同水準で、既に確立されたパターンの一部として位置づけられる。キャッシュランウェイについては、上半期末時点の手元資金約19.4億元は限定的だが、6億ドルの一時金入金後は大幅に改善する見込みである。反復収益比率は、sunvozertinibの中国事業がAstraZenecaへ移管されることで、Dizal自身の連結売上における反復収益の位置づけが今後大きく変化する点が特殊である。希薄化パターンについては、2025年4月の私募増資（17.7億元）が既に実施されており、今回のAstraZeneca契約は株式発行を伴わない現金対価の取引である点は既存株主にとってプラス材料といえる。</p>
+            </section>
+
+            <section id="s6">
+                <h2>6. リスク要因</h2>
+
+                <h3>関連当事者間取引特有の利益相反リスク</h3>
+                <p>AstraZenecaはDizalの筆頭株主（23.42%）であると同時に契約相手方でもあり、価格設定の公正性を巡る潜在的な利益相反構造がある。マイルストーン支払いの発生確率・金額が市場の期待通りに実現するかは不透明であり、少数株主の利益が十分に反映された条件かどうかは、株主総会での審議・承認プロセスを通じて見極める必要がある。</p>
+
+                <h3>2027〜2028年の成長ギャップ</h3>
+                <p>
+                    sunvozertinibの中国事業がAstraZenecaへ移管されることで、2027年以降Dizal自身の反復収益構造は「ロイヤリティ＋マイルストーン」中心へと転換する。次の自社商業化製品であるgolidocitinibは適応症がニッチであるため、この期間の成長を十分に埋め合わせる保証はないとされる。
+                </p>
+
+                <h3>パイプラインの時間軸の長さ</h3>
+                <p>
+                    DZD8586の第3相中間解析は2029年見込み、DZD6008はまだ第1/2相段階であり、いずれも短期的な収益貢献は期待できない。ロイヤリティ収入についても、グローバルピーク売上高18億ドル・ロイヤリティ率13%と仮定した場合の年間ロイヤリティ収入は約2億3,000万ドル程度とされるが、これが顕在化するまでには15〜20年を要するとの試算もある。
+                </p>
+
+                <h3>取引完了の不確実性</h3>
+                <p>AstraZeneca契約は株主総会での承認および通常の完了条件を満たす必要があり、2026年下半期の完了を見込むとされているが、本稿執筆時点で正式には完了していない。承認プロセスの遅延や条件変更の可能性は排除できない。</p>
+            </section>
+
+            <section id="s7">
+                <h2>7. まとめ</h2>
+                <p>Dizal Pharmaceuticalは、AstraZenecaが2017年にアジア創薬部門をスピンオフして育てた企業を、8年後に中核資産のライセンスという形で「回収」するという、他に類を見ない構造の取引の渦中にある。sunvozertinibは中国・米国双方で承認され、NEJM掲載という学術的な裏付けも得た成熟資産でありながら、契約総額の倍率は同種の中国発ライセンスアウト取引の中で最も低い水準にとどまった。この非対称性は、関連当事者間取引という契約構造そのものに起因すると業界では見られている。</p>
+
+                <p>2026年上半期の決算は、売上高47%増・赤字幅44%縮小という堅調な実績を示しており、6億ドルの一時金が入金される第3〜4四半期には通期黒字化の可能性も高いとされる。一方で、sunvozertinibの中国事業がAstraZenecaへ移管されることで、2027年以降は成長ギャップに直面する見通しであり、後続パイプライン（DZD8586・DZD6008）の商業化はいずれも数年先の話である。本シリーズの基本姿勢に沿い、今回の契約とその後の株価反応を将来の企業価値の確証として扱うのではなく、「株主総会での承認・取引完了、そして後続パイプラインの進捗を見極める必要がある段階」と位置づける。</p>
+            </section>
+
+        </main>
+
+        <div class="watch" id="watch">
+            <h2>WHAT TO WATCH</h2>
+            <ol>
+                <li>
+                    <div class="num">1</div>
+                    <div>
+                        <strong>AstraZeneca契約の株主総会承認・取引完了</strong>
+                        <br>
+                        2026年下半期の完了を見込むが、関連当事者間取引のため株主総会での審議結果を確認する必要がある。
+                    </div>
+                </li>
+                <li>
+                    <div class="num">2</div>
+                    <div>
+                        <strong>sunvozertinib1次治療の承認可否（中国・米国）</strong>
+                        <br>
+                        中国では優先審査中、米国でも申請済み。承認時期・ラベルの範囲を確認。
+                    </div>
+                </li>
+                <li>
+                    <div class="num">3</div>
+                    <div>
+                        <strong>6億ドル一時金の会計計上（2026年Q3〜Q4）</strong>
+                        <br>
+                        通期黒字化の実現有無を確認する材料。
+                    </div>
+                </li>
+                <li>
+                    <div class="num">4</div>
+                    <div>
+                        <strong>DZD8586の第3相試験組み入れ進捗</strong>
+                        <br>
+                        中間解析は2029年見込みだが、組み入れペースは今後の資産評価の先行指標となる。
+                    </div>
+                </li>
+                <li>
+                    <div class="num">5</div>
+                    <div>
+                        <strong>DZD6008の追加データ発表</strong>
+                        <br>
+                        第4世代EGFR TKIとしての競争環境における位置づけを継続的に確認。
+                    </div>
+                </li>
+                <li>
+                    <div class="num">6</div>
+                    <div>
+                        <strong>golidocitinibのPD-1併用・NSCLC1次治療探索の進捗</strong>
+                        <br>
+                        ニッチ適応症を超えた成長機会になり得るかを注視。
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="crosslinks">
+            <h3>関連レポート</h3>
+            <ul>
+                <li>
+                    <a href="/reports/ai-biotech-industry-map.html">3部作・前編：AI×製薬×バイオ 業界マップ</a>
+                </li>
+                <li>
+                    <a href="/reports/ai-biotech-validation.html">3部作・中編：技術検証編</a>
+                </li>
+                <li>
+                    <a href="/reports/ai-biotech-valuation.html">3部作・後編：投資判断の視点編</a>
+                </li>
+                <li>
+                    <a href="/reports/astrazeneca-azn.html">AstraZeneca（AZN）：Dizal契約（実現率約40%）を扱った記事</a>
+                </li>
+                <li>
+                    <a href="/reports/roivant-roiv.html">Roivant（ROIV）</a>
+                </li>
+                <li>
+                    <a href="/reports/moderna-mrna.html">Moderna（MRNA）</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="disclaimer">
+            <h3>免責事項</h3>
+            <p>本レポートは情報提供のみを目的としており、特定の金融商品の売買を推奨するものではありません。記載内容には編集部による試算・計算・推計が含まれており、実際の数値と異なる場合があります。株価・時価総額等の市場データは出典日時点のものであり、閲覧時点の実勢と異なる可能性があります。人民元建ての数値の米ドル換算は編集部による目安であり、実際の為替レートと異なる場合があります。将来の業績・臨床試験結果・規制承認・契約完了等に関する記述は、現時点で確認された公表情報に基づく見通しであり、その実現を保証するものではありません。投資判断はご自身の責任において行ってください。本レポートの内容に基づいて生じたいかなる損害についても、Market Supporter AIは責任を負いません。</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Market Supporter AI｜個人投資家向け金融分析情報サイト</p>
+        <p>© 2026 Market Supporter AI. 情報提供のみ・投資推奨なし。</p>
+    </footer>
+
+</body>
+</html>
