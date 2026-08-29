@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>量子コンピューティングは本当に「効いている」のか｜Market Supporter AI</title>
+<meta name="description" content="Google Sycamore、D-Waveの「Beyond-Classical」論争、Quantinuumの無条件分離証明。量子優位性を巡る主張と学術界からの反証を検証します。">
+<style>
+  :root{
+    --ink:#0d1b2a;
+    --ink-soft:#3d4f60;
+    --paper:#f7f9fc;
+    --line:#dde3ec;
+    --accent:#2f5fdb;
+    --accent-deep:#1f3f9e;
+    --accent-wash:#eaf0fd;
+    --amber:#b8791a;
+    --amber-wash:#fdf6e8;
+    --pass:#1f7a4d;
+    --pass-wash:#eaf5ef;
+    --fail:#a83a3a;
+    --fail-wash:#faeded;
+    --hold:#6b6f76;
+    --hold-wash:#f1f2f4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.9;
+    font-size:16px;
+  }
+  .wrap{max-width:860px;margin:0 auto;background:#fff;}
+  header.masthead{
+    background:linear-gradient(135deg,var(--accent-deep) 0%,var(--accent) 100%);
+    color:#fff;
+    padding:44px 32px 36px;
+  }
+  .brand{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    opacity:.85;margin-bottom:18px;
+  }
+  .series-tag{
+    display:inline-block;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    padding:4px 12px;border-radius:3px;
+    font-size:12px;letter-spacing:.08em;margin-bottom:14px;
+  }
+  header.masthead h1{
+    font-size:29px;line-height:1.5;margin:0 0 12px;font-weight:700;
+  }
+  header.masthead .sub{font-size:15px;opacity:.9;margin:0;}
+  .issue{
+    margin-top:22px;padding-top:16px;
+    border-top:1px solid rgba(255,255,255,.28);
+    font-size:13px;opacity:.85;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  main{padding:36px 32px 8px;}
+  .lede{
+    font-size:16.5px;
+    background:var(--accent-wash);
+    border-left:4px solid var(--accent);
+    padding:20px 22px;
+    margin:0 0 36px;
+  }
+  h2{
+    font-size:20px;margin:48px 0 18px;padding-bottom:10px;
+    border-bottom:2px solid var(--accent);
+    display:flex;align-items:baseline;gap:12px;
+  }
+  h2 .num{
+    color:var(--accent);font-size:24px;font-weight:700;
+    font-family:Georgia,serif;
+  }
+  h3{
+    font-size:16.5px;margin:30px 0 10px;color:var(--accent-deep);
+    border-left:3px solid var(--accent);padding-left:11px;
+  }
+  p{margin:0 0 16px;}
+  table{
+    width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:14.5px;
+  }
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:var(--accent-wash);font-weight:700;color:var(--accent-deep);}
+  tbody tr:nth-child(even){background:#fbfcfe;}
+  .case{
+    border:1px solid var(--line);border-left:6px solid var(--hold);
+    background:#fff;padding:16px 18px;margin-bottom:14px;border-radius:2px;
+  }
+  .case.pass{border-left-color:var(--pass);}
+  .case.fail{border-left-color:var(--fail);}
+  .case .lbl{
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:12px;letter-spacing:.1em;font-weight:700;margin-bottom:8px;
+  }
+  .case .lbl .name{color:var(--ink);}
+  .verdict{
+    font-size:11.5px;letter-spacing:.06em;padding:3px 10px;border-radius:999px;
+    background:var(--hold-wash);color:var(--hold);font-weight:700;
+  }
+  .case.pass .verdict{background:var(--pass-wash);color:var(--pass);}
+  .case.fail .verdict{background:var(--fail-wash);color:var(--fail);}
+  .case .ttl{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .case .desc{font-size:14.5px;color:var(--ink-soft);margin:0;}
+  .callout{
+    background:var(--amber-wash);border:1px solid #f0dfbc;
+    padding:16px 18px;margin:22px 0;font-size:14.5px;border-radius:2px;
+  }
+  .callout .ttl{font-weight:700;color:var(--amber);margin-bottom:6px;font-size:14px;}
+  .watch{
+    background:var(--ink);color:#e8eef2;padding:26px 26px 20px;margin:44px 0 0;
+  }
+  .watch h2{
+    color:#fff;border-bottom-color:rgba(255,255,255,.4);margin-top:0;
+  }
+  .watch h2 .num{color:#8fb0f5;}
+  .watch ul{padding-left:20px;margin:0;}
+  .watch li{margin-bottom:12px;font-size:15px;}
+  .watch strong{color:#8fb0f5;}
+  .series-nav{
+    background:var(--accent-wash);padding:20px 22px;margin:34px 0 0;
+    font-size:14.5px;border-radius:2px;
+  }
+  .series-nav .ttl{font-weight:700;color:var(--accent-deep);margin-bottom:10px;}
+  .series-nav ol{margin:0;padding-left:20px;}
+  .series-nav li{margin-bottom:6px;}
+  footer{
+    padding:26px 32px 40px;font-size:12.5px;color:var(--ink-soft);
+    border-top:1px solid var(--line);margin-top:36px;
+  }
+  .disclaimer{
+    background:var(--paper);border:1px solid var(--line);
+    padding:14px 16px;border-radius:2px;line-height:1.75;
+  }
+  @media(max-width:640px){
+    header.masthead{padding:32px 20px 28px;}
+    header.masthead h1{font-size:23px;}
+    main{padding:26px 20px 8px;}
+    footer{padding:22px 20px 32px;}
+    .watch{padding:22px 20px 16px;}
+    table{font-size:13.5px;}
+    th,td{padding:8px 9px;}
+    .case .lbl{flex-direction:column;align-items:flex-start;gap:6px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">Market Supporter AI</div>
+  <div class="series-tag">当たれば大きいAI関連分野 第1弾｜AI×量子コンピューティング 中編</div>
+  <h1>量子コンピューティングは本当に「効いている」のか<br>―― 「量子優位性」を巡る主張と反証の応酬</h1>
+  <p class="sub">技術的な実証と、株価が織り込む期待の距離を、公表された一次資料から検証する</p>
+  <div class="issue">
+    <span>2026年8月30日号</span>
+    <span>米国株シリーズ／技術検証レポート</span>
+  </div>
+</header>
+
+<main>
+
+<p class="lede">
+前編（産業地図）では、IonQ・Rigetti・D-Wave・Quantum Computing Inc.の4社が「収益より期待」で評価されている構図を確認しました。では、その期待の裏付けとなる技術的な実証はどこまで進んでいるのでしょうか。本稿は3部作の中編として、「量子優位性（quantum advantage）」という言葉を巡る主張と、それに対する学術界からの反証の応酬を、公表された論文・プレスリリース・専門家の見解に基づいて検証します。投資判断の枠組みは後編で扱います。
+</p>
+
+<h2><span class="num">①</span>「量子優位性」とは何か ―― ハードルの高さを正しく理解する</h2>
+
+<p>「量子優位性」（量子コンピュータが、同じ問題を解くのに古典コンピュータより明確に優れている状態）という言葉は、この産業のマーケティングで最も多用される表現です。しかし、その証明には大きく分けて3つの水準があります。</p>
+
+<table>
+  <thead>
+    <tr><th>水準</th><th>内容</th><th>証明の強さ</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>ベル不等式の破れ</td><td>量子力学的な現象そのものの実証</td><td>計算上の困難さの証明ではない</td></tr>
+    <tr><td>サンプリングに基づく実証（従来型「量子超越性」）</td><td>特定の出力分布の生成が古典的に困難であることを示す</td><td>複雑性理論上の未証明の仮定に依存する</td></tr>
+    <tr><td>無条件の分離（unconditional separation）</td><td>複雑性理論の仮定に一切依存せず、数学的に証明可能な優位性を示す</td><td>最も強い証明。恒久的に覆らない</td></tr>
+  </tbody>
+</table>
+
+<p>この産業でこれまで「量子優位性を実証した」と報じられた事例の大半は、2番目の「サンプリングに基づく実証」に分類されます。米テキサス大学オースティン校の計算複雑性理論の専門家スコット・アーロンソン氏は、2026年4月時点の分析として、<strong>「NISQ（ノイズあり中規模量子）時代の代表的な量子優位性の実証は、単一の明確な例外を除き、発表から18ヶ月以内にすべて古典的に再現されるか、古典的に扱いやすい構造に依拠していることが示されるか、数学的な証明によって否定されてきた」</strong>という趣旨の見解を示しています。</p>
+
+<div class="callout">
+  <div class="ttl">読み方の指針（編集部見解）</div>
+  「量子優位性を実証した」という報道が出た場合、それが上記どの水準の証明なのかを区別する必要があります。多くの場合、発表直後は華々しく報じられますが、その後半年〜1年半のうちに、大学の研究チームから「古典コンピュータでも再現できた」という反証論文が出るというサイクルが繰り返されてきました。この産業を評価する際は、初報だけでなく、その後の学術的な検証プロセスまで追う必要があります。
+</div>
+
+<h2><span class="num">②</span>ケーススタディ：これまでの主張とその後</h2>
+
+<p>公表された主要な事例を、その後の検証状況とあわせて整理します。</p>
+
+<div class="case fail">
+  <div class="lbl"><span class="name">Google「Sycamore」（2019年）</span><span class="verdict">後に古典再現</span></div>
+  <div class="ttl">量子超越性の最初期の主張</div>
+  <p class="desc">ランダム回路サンプリングにおいて、古典スーパーコンピュータでは1万年かかるとされた計算を200秒で実行したと主張。その後、古典的なアルゴリズム（テンソルネットワーク法等）の改良により、同等の計算がより短時間で再現可能であることが複数の研究チームによって示された。</p>
+</div>
+
+<div class="case fail">
+  <div class="lbl"><span class="name">D-Wave「Beyond-Classical Computation」（2025年3月）</span><span class="verdict">係争中・未決着</span></div>
+  <div class="ttl">磁性材料シミュレーションでの量子優位性主張</div>
+  <p class="desc">Science誌に掲載された論文で、スピングラス（磁性材料）のシミュレーションにおいて、Advantage2量子アニーラーが最先端の古典スーパーコンピュータ（Oak Ridge国立研究所のFrontier）を用いても100万年かかる計算を約20分で実行したと主張。発表直後にFlatiron研究所・スイス連邦工科大学ローザンヌ校（EPFL）の研究チームが、それぞれ独自の古典アルゴリズム（信念伝播法、時間依存変分モンテカルロ法）で同等かそれ以上の精度の結果を再現したとする論文をarXivに投稿。D-Wave側は「対抗する古典手法は問題の一部分しか再現できていない」と反論し、2026年5月にも改めて詳細な技術的反証を公表している。2026年8月時点でも決着していない。</p>
+</div>
+
+<div class="case pass">
+  <div class="lbl"><span class="name">Quantinuum「無条件の情報分離」（2025年9月）</span><span class="verdict">最も強い証明形式</span></div>
+  <div class="ttl">複雑性理論の仮定に依存しない優位性の実証</div>
+  <p class="desc">テキサス大学オースティン校とQuantinuum（Honeywell系、本シリーズの対象4社には含まれない）の共同研究チームが、12量子ビットのトラップイオン型プロセッサ「H1-1」（2量子ビットゲート忠実度99.941%）を用いて、最も省メモリな古典アルゴリズムでも62〜382ビットのメモリを要する計算課題を解いたと報告。この結果は複雑性理論上の未証明の仮定に依存せず、数学的に恒久的な優位性の証明として位置づけられている。アーロンソン氏自身が共著者に名を連ねており、同氏が「単一の明確な例外」と呼ぶ事例に該当するとみられる。</p>
+</div>
+
+<div class="case fail">
+  <div class="lbl"><span class="name">IBM「127量子ビット実験」（2023年）</span><span class="verdict">後に古典再現</span></div>
+  <div class="ttl">大規模イジングモデルの量子シミュレーション</div>
+  <p class="desc">127量子ビットの回路実験を発表したが、その後グラフベースの手法（射影エンタングルド対状態）と平均場理論を組み合わせた古典シミュレーションが、ノートPC上でわずか数秒で同等の結果を再現したとする論文が公表された。同じ手法で、将来のIBMロードマップにある433量子ビット・1,121量子ビット規模の実験も古典的に再現可能であることが示唆されている。</p>
+</div>
+
+<h2><span class="num">③</span>本シリーズ対象4社の技術水準 ―― 「量子優位性」にはまだ届いていない</h2>
+
+<p>前編で扱った4社について、2026年8月時点で公表されている技術指標を整理します。重要な点として、<strong>4社とも「量子優位性を実証した」という強い主張は行っていません。</strong>各社が競っているのは、あくまで量子優位性実現に向けた土台となる指標（量子ビット数、忠実度、アルゴリズム的量子ビット数等）です。</p>
+
+<table>
+  <thead>
+    <tr><th>企業</th><th>公表されている主要な技術指標（2026年半ば時点）</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>IonQ</td><td>独自指標「AQ（アルゴリズム的量子ビット数）」でForte Enterpriseが35AQ、開発中のTempoが64AQ。2027年には256量子ビット・800論理量子ビットを目標に掲げるが、これは目標値であり実現時期ではない</td></tr>
+    <tr><td>Rigetti Computing</td><td>108量子ビットの超伝導プロセッサ「Cepheus」を商用提供。2量子ビットゲート忠実度は約99.1%。1,000量子ビット規模を3〜4年内に目指すロードマップを提示</td></tr>
+    <tr><td>D-Wave Quantum</td><td>アニーリング方式は5,000量子ビット超（Advantage系統）で稼働中だが、これは特殊用途（最適化問題）向け。ゲート方式は2026年内に17物理量子ビットの実証を目標とする、まだ初期段階</td></tr>
+    <tr><td>Quantum Computing Inc.</td><td>フォトニクス方式の製品・半導体ファウンドリ受託製造が事業の中心。量子ビット数や忠実度による他社との直接比較材料は限定的</td></tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <div class="ttl">見落とされやすい論点：量子ビット数だけでは測れない</div>
+  「量子ビット数」は最も分かりやすい指標として報じられがちですが、実際の計算能力を左右するのは、量子ビット数・ゲート忠実度・接続性（どの量子ビット同士が直接相互作用できるか）・コヒーレンス時間（量子状態を保てる時間）の掛け合わせです。D-Waveのアニーリング型5,000量子ビットとRigettiのゲート型108量子ビットを単純比較することはできません。用途（最適化に特化しているか、汎用計算を目指すか）が根本的に異なるためです。
+</div>
+
+<h2><span class="num">④</span>主要プレイヤー動向 ―― 商用アプリケーションの現在地</h2>
+
+<p>技術的な量子優位性とは別に、「量子コンピュータを使うと、実際に役立つ」という商用面での実績も確認しておく必要があります。</p>
+
+<h3>すでに動いている事例</h3>
+<p>D-Waveは通信大手AT&amp;Tとの提携拡大を発表し、ネットワーク最適化業務で約1時間かかっていた処理を15秒未満に短縮した（約240倍の高速化）と報告しています。Rigettiは大学・国立研究所向けにオンプレミス機器を納入し、HPE（ヒューレット・パッカード・エンタープライズ）との共同でハイブリッド型量子・古典スーパーコンピュータの開発を進めています。IonQはヒュンダイとの共同研究で、8量子ビットを用いた画像認識アルゴリズムの実証実験を報告しています。</p>
+
+<h3>これらの実績をどう評価するか</h3>
+<p>ここで注意が必要なのは、これらの多くが<strong>「量子・古典ハイブリッド」の最適化・シミュレーション用途</strong>であり、①〜③で検証したような厳密な意味での「量子優位性」の証明とは別物だという点です。マッキンゼーの2026年量子技術調査では、量子関連企業の世界売上高が2025年に10億ドルを超え、2028年には最大44億ドルに達する可能性があると推計されていますが、これは量子優位性の実証件数ではなく、量子・古典ハイブリッドサービスを含む商業活動全体の売上高です。</p>
+
+<div class="callout">
+  <div class="ttl">見落とされやすい論点：「量子っぽい」と「量子優位性」は別物</div>
+  「量子インスパイアード（quantum-inspired）」を謳うソリューションの中には、量子コンピュータの考え方を参考にしただけの古典アルゴリズムも含まれます。企業のプレスリリースで「量子技術により○○%改善」と書かれていても、その改善が量子ハードウェア由来なのか、古典的な最適化手法の改良によるものなのかを区別する必要があります。
+</div>
+
+<h2><span class="num">⑤</span>誤り訂正・フォールトトレランスの進捗</h2>
+
+<p>長期的な実用化の鍵を握るのが「誤り訂正」です。現在の量子ビットはノイズに弱く、計算が長くなるほど誤りが蓄積します。複数の物理量子ビットを束ねて1つの高品質な「論理量子ビット」を作る技術（量子誤り訂正）が、実用化への必須条件とされています。</p>
+
+<p>Googleは2024年末に、物理量子ビットを増やすほど誤り率が下がる「閾値以下」の誤り訂正を実証したと報告しており、これは業界で重要な一里塚と位置づけられています。IBMも2029年までに大規模なフォールトトレラント量子コンピュータの提供を目指すロードマップを掲げています。ただし、本シリーズの対象4社（IonQ・Rigetti・D-Wave・QCi）は、これら大手・非上場勢と比較すると、誤り訂正の実証において先行しているとは言えない段階です。</p>
+
+<div class="callout">
+  <div class="ttl">産業全体の到達点（編集部見解）</div>
+  2026年半ば時点の量子コンピューティング産業は、「実験装置」から「特化型の計算資源」へ移行する過渡期にあると評価するのが妥当です。フォールトトレラント量子コンピュータ（大規模な誤り訂正済み計算機）の実現は、業界大手のロードマップでも2020年代終盤以降とされており、本シリーズの対象4社がそれ以前に到達する保証はありません。
+</div>
+
+<h2><span class="num">⑥</span>リスク要因</h2>
+
+<h3>1. 「量子優位性」の主張が覆るサイクルが続いている</h3>
+<p>②で見た通り、量子優位性の主張の多くはその後古典的に再現されてきました。今後、IonQ・Rigetti・D-Wave・QCiのいずれかが同様の主張を行った場合も、同じ検証サイクルを経る可能性が高く、初報だけで投資判断を行うことにはリスクがあります。</p>
+
+<h3>2. 指標の乱立による比較困難性</h3>
+<p>量子ビット数、AQ（アルゴリズム的量子ビット数）、量子体積（クアンタムボリューム）など、各社が独自の指標を使用しており、横並び比較が困難です。マーケティング上有利な指標を選択的に開示している可能性にも留意が必要です。</p>
+
+<h3>3. 「量子インスパイアード」表現の曖昧さ</h3>
+<p>プレスリリースの「量子技術による改善」という表現が、実際には量子・古典ハイブリッドや古典的な最適化手法の寄与による部分を含んでいる可能性があります。</p>
+
+<h3>4. 誤り訂正の実用化時期が不透明</h3>
+<p>業界大手のロードマップでも、大規模フォールトトレラント量子コンピュータの実現は2020年代終盤以降とされています。この時間軸がさらに後ろ倒しになるリスクは常に存在します。</p>
+
+<h2><span class="num">⑦</span>まとめ ―― 「まだ判定できる段階にない」</h2>
+
+<p>技術的な検証を通じて見えてきたのは、<strong>「量子優位性」という言葉が指す証明の水準に大きな幅があり、その多くがまだ覆りうる段階にある</strong>という構図です。数学的に恒久的な証明（Quantinuumの事例）と、係争中の実験的主張（D-Waveの事例）は、同じ「量子優位性」という言葉で語られていても、証明としての強度がまったく異なります。</p>
+
+<p>本シリーズの対象4社は、いずれも量子優位性そのものの実証よりも、その土台となる量子ビット数・忠実度・商用契約の拡大に注力している段階です。これは決して否定的な評価ではなく、産業がまだ「実証段階」にあることの自然な帰結です。<strong>AI創薬シリーズと同様、ここでも「まだ判定できる段階にない」という中立的な立ち位置が、現時点で最も実務的な結論になります。</strong></p>
+
+<p>次回の後編では、赤字先行が続くこれら4社をどのような指標で評価すべきか、投資判断の枠組みを検証します。</p>
+
+<div class="watch">
+  <h2><span class="num">◆</span>WHAT TO WATCH</h2>
+  <ul>
+    <li><strong>D-Wave「Beyond-Classical」論争の決着</strong>：Flatiron・EPFL側の反証にD-Waveがどう応答し、学術界のコンセンサスがどちらに傾くか</li>
+    <li><strong>4社からの新たな量子優位性の主張</strong>：発表があった場合、その証明水準（サンプリングベースか、無条件の分離か）を見極める必要がある</li>
+    <li><strong>誤り訂正の実証状況</strong>：D-Waveのゲート方式（2026年内17物理量子ビット目標）、Rigettiの1,000量子ビットロードマップの進捗</li>
+    <li><strong>IonQのAQ（アルゴリズム的量子ビット数）の伸び</strong>：Forte Enterprise35AQからTempo64AQへの移行、さらに256量子ビット目標への道筋</li>
+    <li><strong>商用契約の「量子由来」比率</strong>：AT&amp;T等の事例で、成果のどこまでが真に量子ハードウェア由来か、詳細な技術検証が続くか</li>
+    <li><strong>学術界の独立検証論文</strong>：大学・研究機関からの反証・追試論文の増減。反証が減れば、実証の信頼性が高まっている兆候となる</li>
+  </ul>
+</div>
+
+<div class="series-nav">
+  <div class="ttl">「当たれば大きいAI関連分野」シリーズ構成</div>
+  <ol>
+    <li>第1弾：AI×量子コンピューティング　前編：業界マップ</li>
+    <li><strong>第1弾：AI×量子コンピューティング　中編：技術検証編（本稿）</strong></li>
+    <li>第1弾：AI×量子コンピューティング　後編：投資判断編（次回）</li>
+    <li>第2弾：AI×次世代原子力（SMR・核融合）</li>
+    <li>第3弾：AI×防衛テック（自律兵器・ドローン）</li>
+    <li>第4弾：AI×宇宙経済（衛星通信・宇宙インフラ）</li>
+  </ol>
+  <p style="margin:12px 0 0;font-size:13.5px;">次回は後編（投資判断編）です。赤字先行が続く4社を、従来のバイオテック評価軸（キャッシュランウェイ等）とは異なる、量子コンピューティング特有の指標でどう評価するかを検証します。</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="disclaimer">
+    <strong>【免責事項】</strong><br>
+    本レポートは情報提供を目的としたものであり、特定の有価証券の購入・売却を推奨するものではありません。記載内容は作成時点で公表されている論文・プレスリリース・報道に基づいていますが、その正確性・完全性を保証するものではありません。「量子優位性」に関する学術的な検証・反証は現在進行中の議論であり、本レポートで紹介した評価は2026年8月時点のものです。今後の追加検証により結論が変わる可能性があります。技術指標（量子ビット数・忠実度等）は各社の公表値に基づくものであり、第三者による独立検証を経ていない場合があります。投資に関する最終的な決定は、ご自身の判断と責任において行っていただきますようお願いいたします。
+  </div>
+  <p style="margin-top:18px;">Market Supporter AI ／ 2026年8月30日</p>
+</footer>
+
+</div>
+</body>
+</html>

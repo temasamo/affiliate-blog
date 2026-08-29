@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI×量子コンピューティング 産業地図｜Market Supporter AI</title>
+    <meta name="description" content="IonQ・Rigetti・D-Wave・Quantum Computing Inc.。2026年8月に出そろったQ2決算から、量子コンピューティング産業の「今」を4社横並びで整理します。">
+    <style>
+    :root {
+        --ink: #0d1b2a;
+        --ink-soft: #3d4f60;
+        --paper: #f7f9fc;
+        --line: #dde3ec;
+        --accent: #2f5fdb;
+        --accent-deep: #1f3f9e;
+        --accent-wash: #eaf0fd;
+        --amber: #b8791a;
+        --amber-wash: #fdf6e8;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        line-height: 1.9;
+        font-size: 16px;
+    }
+
+    .wrap {
+        max-width: 860px;
+        margin: 0 auto;
+        background: #fff;
+    }
+
+    header.masthead {
+        background: linear-gradient(135deg, var(--accent-deep) 0%, var(--accent) 100%);
+        color: #fff;
+        padding: 44px 32px 36px;
+    }
+
+    .brand {
+        font-size: 12px;
+        letter-spacing: .22em;
+        text-transform: uppercase;
+        opacity: .85;
+        margin-bottom: 18px;
+    }
+
+    .series-tag {
+        display: inline-block;
+        background: rgba(255, 255, 255, .16);
+        border: 1px solid rgba(255, 255, 255, .35);
+        padding: 4px 12px;
+        border-radius: 3px;
+        font-size: 12px;
+        letter-spacing: .08em;
+        margin-bottom: 14px;
+    }
+
+    header.masthead h1 {
+        font-size: 29px;
+        line-height: 1.5;
+        margin: 0 0 12px;
+        font-weight: 700;
+    }
+
+    header.masthead .sub {
+        font-size: 15px;
+        opacity: .9;
+        margin: 0;
+    }
+
+    .issue {
+        margin-top: 22px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255, 255, 255, .28);
+        font-size: 13px;
+        opacity: .85;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    main {
+        padding: 36px 32px 8px;
+    }
+
+    .lede {
+        font-size: 16.5px;
+        background: var(--accent-wash);
+        border-left: 4px solid var(--accent);
+        padding: 20px 22px;
+        margin: 0 0 36px;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin: 48px 0 18px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--accent);
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+    }
+
+    h2 .num {
+        color: var(--accent);
+        font-size: 24px;
+        font-weight: 700;
+        font-family: Georgia, serif;
+    }
+
+    h3 {
+        font-size: 16.5px;
+        margin: 30px 0 10px;
+        color: var(--accent-deep);
+        border-left: 3px solid var(--accent);
+        padding-left: 11px;
+    }
+
+    p {
+        margin: 0 0 16px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0 24px;
+        font-size: 14.5px;
+    }
+
+    th, td {
+        border: 1px solid var(--line);
+        padding: 10px 12px;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    th {
+        background: var(--accent-wash);
+        font-weight: 700;
+        color: var(--accent-deep);
+    }
+
+    tbody tr:nth-child(even) {
+        background: #fbfcfe;
+    }
+
+    .layer-map {
+        margin: 24px 0 28px;
+    }
+
+    .layer {
+        border: 1px solid var(--line);
+        border-left: 6px solid var(--accent);
+        background: #fff;
+        padding: 16px 18px;
+        margin-bottom: 12px;
+        border-radius: 2px;
+    }
+
+    .layer .lbl {
+        font-size: 12px;
+        letter-spacing: .14em;
+        color: var(--accent);
+        font-weight: 700;
+        margin-bottom: 6px;
+    }
+
+    .layer .ttl {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 6px;
+    }
+
+    .layer .desc {
+        font-size: 14.5px;
+        color: var(--ink-soft);
+        margin: 0 0 8px;
+    }
+
+    .layer .names {
+        font-size: 13.5px;
+        color: var(--ink);
+        background: var(--paper);
+        padding: 8px 11px;
+        border-radius: 2px;
+    }
+
+    .callout {
+        background: var(--amber-wash);
+        border: 1px solid #f0dfbc;
+        padding: 16px 18px;
+        margin: 22px 0;
+        font-size: 14.5px;
+        border-radius: 2px;
+    }
+
+    .callout .ttl {
+        font-weight: 700;
+        color: var(--amber);
+        margin-bottom: 6px;
+        font-size: 14px;
+    }
+
+    .watch {
+        background: var(--ink);
+        color: #e8eef2;
+        padding: 26px 26px 20px;
+        margin: 44px 0 0;
+    }
+
+    .watch h2 {
+        color: #fff;
+        border-bottom-color: rgba(255, 255, 255, .4);
+        margin-top: 0;
+    }
+
+    .watch h2 .num {
+        color: #8fb0f5;
+    }
+
+    .watch ul {
+        padding-left: 20px;
+        margin: 0;
+    }
+
+    .watch li {
+        margin-bottom: 12px;
+        font-size: 15px;
+    }
+
+    .watch strong {
+        color: #8fb0f5;
+    }
+
+    .series-nav {
+        background: var(--accent-wash);
+        padding: 20px 22px;
+        margin: 34px 0 0;
+        font-size: 14.5px;
+        border-radius: 2px;
+    }
+
+    .series-nav .ttl {
+        font-weight: 700;
+        color: var(--accent-deep);
+        margin-bottom: 10px;
+    }
+
+    .series-nav ol {
+        margin: 0;
+        padding-left: 20px;
+    }
+
+    .series-nav li {
+        margin-bottom: 6px;
+    }
+
+    footer {
+        padding: 26px 32px 40px;
+        font-size: 12.5px;
+        color: var(--ink-soft);
+        border-top: 1px solid var(--line);
+        margin-top: 36px;
+    }
+
+    .disclaimer {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        padding: 14px 16px;
+        border-radius: 2px;
+        line-height: 1.75;
+    }
+
+    @media (max-width: 640px) {
+        header.masthead {
+            padding: 32px 20px 28px;
+        }
+
+        header.masthead h1 {
+            font-size: 23px;
+        }
+
+        main {
+            padding: 26px 20px 8px;
+        }
+
+        footer {
+            padding: 22px 20px 32px;
+        }
+
+        .watch {
+            padding: 22px 20px 16px;
+        }
+
+        table {
+            font-size: 13.5px;
+        }
+
+        th, td {
+            padding: 8px 9px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+
+        <header class="masthead">
+            <div class="brand">Market Supporter AI</div>
+            <div class="series-tag">当たれば大きいAI関連分野 第1弾｜AI×量子コンピューティング 前編</div>
+            <h1>
+                量子コンピューティングの産業地図
+                <br>
+                ―― 4社の決算が語る「収益」と「期待」の距離
+            </h1>
+            <p class="sub">IonQ・Rigetti・D-Wave・Quantum Computing Inc.。2026年8月に出そろったQ2決算から、この産業の「今」を整理する</p>
+            <div class="issue">
+                <span>2026年8月29日号</span>
+                <span>米国株シリーズ／産業レポート</span>
+            </div>
+        </header>
+
+        <main>
+
+            <p class="lede">
+            量子コンピューティング関連株は、2026年に入ってから激しい値動きを繰り返しています。1日で1割以上動く日が珍しくなく、材料らしい材料がない日にも「グループ全体で」下落・上昇する場面が続いています。本稿は「当たれば大きい（株価が大化けする可能性のある）AI関連分野」シリーズの第1弾として、量子コンピューティング産業を取り上げます。前編（本稿）では、上場している主要4社――IonQ、Rigetti Computing、D-Wave Quantum、Quantum Computing Inc.――が2026年8月上旬に発表したばかりのQ2決算をもとに、「誰が」「どの技術で」「どれだけ稼いでいるのか」の地図を描きます。技術的な実力の検証は中編、投資判断の枠組みは後編で扱います。
+            </p>
+
+            <h2>
+                <span class="num">①</span>
+                市場規模 ―― 推計が一致しないこと自体が、この産業の性格
+            </h2>
+
+            <p>量子コンピューティング市場の規模推計は、調査機関によって数十倍の開きがあります。AI創薬市場（前シリーズで検証・下限と上限で10倍差）よりも、さらに振れ幅が大きいのが実情です。</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>調査機関</th>
+                        <th>2025〜2026年時点の市場規模</th>
+                        <th>将来予測</th>
+                        <th>CAGR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Market.us</td>
+                        <td>約22億ドル（2025年）</td>
+                        <td>2035年に504億ドル</td>
+                        <td>37.0%</td>
+                    </tr>
+                    <tr>
+                        <td>特定調査会社A（GII取扱）</td>
+                        <td>約36億ドル（2025年）→約51億ドル（2026年）</td>
+                        <td>2030年に163億ドル</td>
+                        <td>40.5%（〜2026年）</td>
+                    </tr>
+                    <tr>
+                        <td>Custom Market Insights</td>
+                        <td>約25億ドル（2026年）</td>
+                        <td>2031年に99億ドル</td>
+                        <td>31.7%</td>
+                    </tr>
+                    <tr>
+                        <td>Fortune Business Insights</td>
+                        <td>約15億ドル（2025年）→約20億ドル（2026年）</td>
+                        <td>2034年に183億ドル</td>
+                        <td>31.6%</td>
+                    </tr>
+                    <tr>
+                        <td>特定調査会社B（GII取扱）</td>
+                        <td>約44億ドル（2025年）→約56億ドル（2026年）</td>
+                        <td>2032年に256億ドル</td>
+                        <td>28.7%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>下限の約22億ドルと上限の約56億ドルでは、同じ「2025〜2026年時点」の数字にもかかわらず2.5倍の開きがあります。これは「ハードウェア（量子コンピュータ本体）のみを数えるか」「クラウド経由のアクセス料まで含めるか」「周辺のコンサルティング・SI（システムインテグレーション）まで含めるか」という集計範囲の違いに起因します。CAGR（年平均成長率）は各社とも30〜40%台とおおむね一致しており、「急成長する」という方向性そのものには調査機関間の対立はありません。</p>
+
+            <div class="callout">
+                <div class="ttl">読み方の指針（編集部見解）</div>
+
+                  「市場規模○○億ドル、CAGR○○%」を根拠にした強気論・弱気論は、この産業ではほぼ機能しません。前提となる集計範囲が発表元ごとに異なるため、同じ「量子コンピューティング市場」という言葉が指す対象がそもそも一致していないからです。個別銘柄の評価では、市場規模の推計ではなく、各社が開示するブッキング（受注）・バックログ（契約残高）・実際の入金額を見るほかありません。
+            </div>
+
+            <h2>
+                <span class="num">②</span>
+                政策・規制環境 ―― 「国家戦略」としての量子技術
+            </h2>
+
+            <p>量子コンピューティングは、AI創薬以上に政府の関与が強い分野です。2026年は米国の量子政策にとって節目の年になっています。</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>時期</th>
+                        <th>動き</th>
+                        <th>投資上の意味</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2026年1月</td>
+                        <td>上下両院で「National Quantum Initiative（NQI）再授権法案」が再提出。2018年法の失効（2023年）から約2年ぶりの動き</td>
+                        <td>財政的裏付けが2034年まで延長される見込み</td>
+                    </tr>
+                    <tr>
+                        <td>2026年4月</td>
+                        <td>上院商務委員会が全会一致で可決（S.3597）。下院科学宇宙技術委員会も可決（H.R.8462）</td>
+                        <td>超党派の支持。「対中国」を明示的な目的に掲げる</td>
+                    </tr>
+                    <tr>
+                        <td>2026年6月</td>
+                        <td>ホワイトハウスが量子技術に関する新たな取り組みを公表。商用化と国内生産能力を重視する方針</td>
+                        <td>研究開発から実用化フェーズへの重心移動を後押し</td>
+                    </tr>
+                    <tr>
+                        <td>2026年8月時点</td>
+                        <td>NQI再授権法案は上下両院の委員会を通過済みだが、本会議での可決・大統領署名は未了</td>
+                        <td>成立時期は不確定。2026年度予算の詳細も未定</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                NQI再授権法案には、量子サプライチェーンの強靭化計画の策定、NIST（米国立標準技術研究所）による新規量子センターの設置、耐量子暗号（PQC）移行の支援などが盛り込まれています。IBM、Google、Microsoft、IonQ、PsiQuantumなど主要企業が軒並み支持を表明していますが、
+                <strong>下院側は2026年度の歳出計画が未確定であることを理由に、具体的な予算規模の審議を保留</strong>
+                している段階です。
+            </p>
+
+            <div class="callout">
+                <div class="ttl">見落とされやすい論点：政府出資という新しい変数</div>
+
+                  Rigettiは2026年5月、米商務省との間で「CHIPS法に基づき最大1億ドルの資金提供を受ける」レター・オブ・インテント（LOI、法的拘束力のない意向表明）を締結しました。このLOIには
+                <strong>「商務省がRigetti株式の一部を取得する可能性がある」</strong>
+                という条件が付されています。同種の政府出資は半導体分野（インテル等）で先例がありますが、量子コンピューティング企業に適用されるのは初めてです。あくまでLOIの段階であり、正式契約への移行時期・条件は未確定です。市場では他の量子企業への政府出資観測も報道ベースで語られていますが、これらは予測市場（Polymarket等）の気配値に基づく思惑であり、公式発表ではない点に留意が必要です。
+            </div>
+
+            <h2>
+                <span class="num">③</span>
+                コスト・収益構造 ―― 4社4様のビジネスモデル
+            </h2>
+
+            <p>「量子コンピューティング企業」とひとくくりにされがちですが、4社の技術方式と収益の立ち方はまったく異なります。</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>企業</th>
+                        <th>量子ビット方式</th>
+                        <th>主な収益源</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>IonQ</td>
+                        <td>トラップイオン方式</td>
+                        <td>クラウド経由アクセス料＋大型契約（政府・宇宙・防衛向け）＋M&amp;A後の半導体製造</td>
+                    </tr>
+                    <tr>
+                        <td>Rigetti Computing</td>
+                        <td>超伝導方式</td>
+                        <td>オンプレミス機器（Novera QPU等）の販売＋政府・研究機関向け受託開発</td>
+                    </tr>
+                    <tr>
+                        <td>D-Wave Quantum</td>
+                        <td>アニーリング方式＋ゲート方式（二刀流）</td>
+                        <td>QCaaS（サブスクリプション型クラウドアクセス）＋システム販売</td>
+                    </tr>
+                    <tr>
+                        <td>Quantum Computing Inc.（QCi）</td>
+                        <td>フォトニクス（光量子）方式</td>
+                        <td>フォトニクス製品・半導体ファウンドリ受託製造（政府サブコントラクトが7〜8割）</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>この違いは収益の「読みやすさ」にも直結します。QCiとRigettiは政府・研究機関向けの一過性のハードウェア販売が中心のため四半期ごとの振れが大きく、D-Waveはサブスクリプション収益（QCaaS）の比率を高めようとしている過渡期にあり、IonQはクラウド経由のRPO（残存履行義務、将来認識予定の契約金額）の積み上がりが最も進んでいます。</p>
+
+            <div class="callout">
+                <div class="ttl">共通する構造的特徴</div>
+
+                  4社に共通するのは、
+                <strong>「技術的実証（デモンストレーション）」と「実収益」の間に大きな距離がある</strong>
+                という点です。量子ビット数や忠実度（フィデリティ）の改善はプレスリリースになりやすい一方、それが実際の売上に転換されるまでには時間がかかります。D-Waveの決算では「ブッキング（受注）は前年同期比59%増だが、売上高はほぼ横ばい」という現象が実際に起きており、受注から売上計上までのタイムラグが大きいことを裏付けています。
+            </div>
+
+            <h2>
+                <span class="num">④</span>
+                主要プレイヤー動向 ―― 2026年8月発表・Q2決算の横並び比較
+            </h2>
+
+            <p>4社はいずれも2026年6月30日期のQ2決算を、2026年8月5日〜10日の間に発表しました。発表からまだ2〜3週間しか経っておらず、直近の実績値として利用できます。</p>
+
+            <div class="layer-map">
+
+                <div class="layer">
+                    <div class="lbl">IONQ ／ トラップイオン方式</div>
+                    <div class="ttl">4社の中で最も売上規模が大きく、成長率も高い</div>
+                    <p class="desc">Q2売上高8,005万ドル（前年同期比287%増）、市場予想を約20%上回る。通期売上ガイダンスを2.6〜2.7億ドルから2.8〜2.9億ドルへ上方修正。RPO（残存履行義務）は4億8,500万ドルへ拡大（前年同期比297%増）。7月31日にSkyWater Technology（半導体ファウンドリ）の18億ドル買収を完了し、垂直統合型の量子チップ製造体制を構築中。買収完了後の手元資金は約20億ドル。GAAP純損失は18億6,770万ドルだが、この大半はワラント負債の時価評価に伴う非現金項目。調整後EBITDA損失は1億2,030万ドル（SkyWater関連費用除くと9,560万ドル）。</p>
+                    <div class="names">
+                        <strong>ティッカー：</strong>
+                        NYSE:IONQ　
+                        <strong>決算発表日：</strong>
+                        2026年8月5日
+                    </div>
+                </div>
+
+                <div class="layer">
+                    <div class="lbl">RIGETTI COMPUTING ／ 超伝導方式</div>
+                    <div class="ttl">最も潤沢な手元資金と、最も慎重な売上規模</div>
+                    <p class="desc">Q2売上高514万ドル（前年同期比185%増、市場予想と一致）。売上総利益率は43%へ改善（前年同期31%）。営業損失2,810万ドル、GAAP純損失5,260万ドル。手元資金・投資は5億4,130万ドルで無借金。108量子ビットの「Cepheus」システムを商用提供中（2量子ビットゲート忠実度約99.1%）。米商務省とのLOI（最大1億ドル、CHIPS法枠）、HPE・ピッツバーグ・スーパーコンピューティングセンターとの提携拡大が進行中。</p>
+                    <div class="names">
+                        <strong>ティッカー：</strong>
+                        NASDAQ:RGTI　
+                        <strong>決算発表日：</strong>
+                        2026年8月6日
+                    </div>
+                </div>
+
+                <div class="layer">
+                    <div class="lbl">D-WAVE QUANTUM ／ アニーリング方式＋ゲート方式</div>
+                    <div class="ttl">受注は急拡大も、売上への転換はこれから</div>
+                    <p class="desc">Q2売上高308万ドル（前年同期比ほぼ横ばい、市場予想を下回る）。一方でQ2ブッキング（受注）は210万ドル（前年同期比59%増）、上半期ブッキングは3,550万ドル（前年同期比1,120%増、フロリダ・アトランティック大学向け2,000万ドル契約が牽引）。RPOは4,070万ドルへ拡大（前年同期比668%増）。GAAP純損失4,800万ドル、調整後EBITDA損失3,710万ドル。手元資金・投資は5億4,620万ドル（Quantum Circuits買収の現金対価により前年から減少）。AT&amp;T・Optum・NTTドコモ等との商用契約が進行中で、Q2売上の62%が商用顧客向け。</p>
+                    <div class="names">
+                        <strong>ティッカー：</strong>
+                        NYSE:QBTS　
+                        <strong>決算発表日：</strong>
+                        2026年8月6日
+                    </div>
+                </div>
+
+                <div class="layer">
+                    <div class="lbl">QUANTUM COMPUTING INC.（QCi） ／ フォトニクス方式</div>
+                    <div class="ttl">4社で唯一、政府サブコントラクトが収益の主軸</div>
+                    <p class="desc">Q2売上高555万ドル（前年同期の6.1万ドルから急拡大、前四半期比50.4%増）。GAAP純損失1,175万ドルは前年同期の3,648万ドルから大幅縮小。契約バックログ約4,250万ドル（12〜18ヶ月分の運転資金に相当）。2026年に入り3件の企業買収（LSI、NuCrypt、NHanced Semiconductors）を完了し、独自のFab 1・Fab 2による半導体ファウンドリ体制を構築。手元資金・投資は約13億2,000万ドルと4社中最大。売上の7〜8割が政府サブコントラクト経由で、資金調達環境の影響を受けにくい一方、政府予算の遅延リスクを抱える。</p>
+                    <div class="names">
+                        <strong>ティッカー：</strong>
+                        NASDAQ:QUBT　
+                        <strong>決算発表日：</strong>
+                        2026年8月10日
+                    </div>
+                </div>
+
+            </div>
+
+            <h3>新規上場組という「第2波」</h3>
+            <p>2026年は、量子コンピューティング企業のIPO・SPAC上場が相次いだ年でもあります。Honeywell傘下から独立したQuantinuumは2026年6月頃に上場し、IPOで17億ドルを調達（Q2売上高800万ドル、前年同期比279%増）。フィンランド発のIQMも同時期に上場を果たしました。XanaduやPasqalもSPAC統合を進行中です。これらの新規上場組は本シリーズの個別記事では扱いませんが、既存4社との競争環境として押さえておく必要があります。</p>
+
+            <h2>
+                <span class="num">⑤</span>
+                株式バリュエーション ―― 「収益より期待」が支配する価格形成
+            </h2>
+
+            <p>4社とも黒字化には程遠く、伝統的なPER（株価収益率）は機能しません。参考指標として使われるのはPSR（株価売上高倍率）ですが、その水準自体が尋常ではありません。</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>企業</th>
+                        <th>参考PSR・関連指標（2026年半ば時点、報道ベース）</th>
+                        <th>特徴</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>IonQ</td>
+                        <td>PSR概算58〜101倍程度（出典により幅あり）</td>
+                        <td>4社の中では売上規模が最大のため、相対的にはPSRが低い</td>
+                    </tr>
+                    <tr>
+                        <td>Rigetti Computing</td>
+                        <td>PSR概算480倍前後</td>
+                        <td>売上規模が小さいため、倍率が極端に高くなりやすい</td>
+                    </tr>
+                    <tr>
+                        <td>D-Wave Quantum</td>
+                        <td>PSR概算480倍超（報道例：482.56倍）</td>
+                        <td>同上。ブッキングとのギャップが大きい</td>
+                    </tr>
+                    <tr>
+                        <td>Quantum Computing Inc.</td>
+                        <td>時価総額・売上規模の比率が変動大（買収による株式希薄化の影響あり）</td>
+                        <td>手元資金は潤沢だが、政府予算依存の収益構造</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>参考として、大手半導体・AIインフラ企業のPSRは一桁〜十数倍台にとどまるのが一般的です。量子4社のPSRがその数十倍という水準にあることは、株価が「現在の売上」ではなく「将来の量子優位性（quantum advantage）実現」という、まだ到達していないマイルストーンを織り込んでいることを意味します。</p>
+
+            <div class="callout">
+                <div class="ttl">ベータ値が示す値動きの大きさ</div>
+
+                  IonQのベータ値は3.0台前半、D-Waveも2倍を超える水準にあるとされています（β=1が市場平均と同じ値動き）。これは「市場全体が1%動くと、理論上その2〜3倍動きうる」ことを意味し、金利動向などマクロ要因への感応度が高いことの裏返しでもあります。実際、2026年8月20日には4社そろって、個別材料のないまま5〜7%下落する場面がありました（米国債利回り上昇が背景と報じられています）。
+            </div>
+
+            <h2>
+                <span class="num">⑥</span>
+                リスク要因
+            </h2>
+
+            <h3>1. 技術的な「量子優位性」は商用スケールで未実証</h3>
+            <p>特定の実験条件下での量子優位性を主張する発表は複数ありますが、実用的な商用スケールでの優位性はまだ実証段階にあります。中編（技術検証編）で詳しく扱いますが、現時点では「まだ判定できる段階にない」というのが実務的な立ち位置です。</p>
+
+            <h3>2. 評価額と実収益の乖離</h3>
+            <p>PSRが数百倍に達する銘柄が複数存在する状況は、業績の下方修正や成長率鈍化が確認された場合に、株価の急落を招きやすい構造です。D-Waveのように「ブッキングは急増したが売上は横ばい」という決算に対して市場が失望売りを見せる場面は、今後も繰り返される可能性があります。</p>
+
+            <h3>3. 資金調達・希薄化リスク</h3>
+            <p>4社とも営業損失が続いており、事業運営には継続的な資金調達が前提となります。手元資金は各社とも数億ドル規模で当面の運転資金は確保されているとみられますが、増資・買収に伴う株式発行は既存株主の希薄化要因になります。D-Waveは2026年上半期だけで発行済株式数が増加しています。</p>
+
+            <h3>4. 政府予算・政策依存度の高さ</h3>
+            <p>QCiは売上の7〜8割が政府サブコントラクト経由であり、Rigettiも商務省LOIという政府資金に一部依存する構造です。NQI再授権法案は委員会を通過しているものの本会議採決は未了であり、2026年度予算の詳細も確定していません。政府出資（エクイティ・ステーク）の思惑も報道・予測市場ベースの域を出ておらず、正式な契約に至るかどうかは不透明です。</p>
+
+            <h3>5. セクター全体の連動性（センチメントリスク）</h3>
+            <p>個別企業の材料がない日でも、4社そろって同方向に大きく動く場面が頻発しています。ファンダメンタルズと株価の連動性が一時的に低下する局面がある点は、AI創薬セクターと共通する特徴です。</p>
+
+            <h2>
+                <span class="num">⑦</span>
+                まとめ ―― 産業地図から見える構図
+            </h2>
+
+            <p>2026年8月時点の量子コンピューティング産業を整理すると、次の構図が浮かび上がります。</p>
+
+            <p>
+                <strong>売上規模ではIonQが頭一つ抜けており、契約残高（RPO）の拡大ペースも最速です。</strong>
+                一方、Rigetti・D-Wave・QCiは、売上そのものよりも「受注（ブッキング）」「契約バックログ」「技術マイルストーン」を先行指標として見る必要がある段階にとどまっています。QCiは政府サブコントラクトという安定した収益基盤を持つ点で他の3社と性格が異なります。
+            </p>
+
+            <p>
+                4社に共通するのは、
+                <strong>株価が「現時点の売上」ではなく「将来の量子優位性実現」という未達成のマイルストーンに対する期待で形成されている</strong>
+                という点です。この期待と実績のギャップが、他のAI関連テーマ株以上に激しい値動きを生む構造的な要因になっています。
+            </p>
+
+            <p>技術的な検証（量子ビット数の伸び・エラー率改善・実用アプリケーションの有無）は中編で、赤字先行企業の評価軸は後編で扱います。</p>
+
+            <div class="watch">
+                <h2>
+                    <span class="num">◆</span>
+                    WHAT TO WATCH
+                </h2>
+                <ul>
+                    <li>
+                        <strong>NQI再授権法案の本会議採決時期</strong>
+                        ：上下両院の委員会は通過済み。年内に本会議で可決・成立するか、2026年度予算の詳細がどう固まるか
+                    </li>
+                    <li>
+                        <strong>Rigetti・商務省LOIの正式契約移行</strong>
+                        ：最大1億ドルの資金提供と、政府による株式取得の条件がどう確定するか
+                    </li>
+                    <li>
+                        <strong>D-Waveのゲート方式ロードマップ</strong>
+                        ：2026年内に17物理量子ビットの実証を掲げている。アニーリング方式に続く「二刀流」が計画通り進むか
+                    </li>
+                    <li>
+                        <strong>IonQのSkyWater統合後の半導体量子ビット生産</strong>
+                        ：2027年上半期の商用システム稼働に向けた進捗
+                    </li>
+                    <li>
+                        <strong>ブッキング（受注）から売上への転換ペース</strong>
+                        ：D-Wave・Rigettiともに「受注は急増、売上は緩やか」な状態が続くか、転換点が見えるか
+                    </li>
+                    <li>
+                        <strong>Quantinuum・IQM等、新規上場組との競争環境</strong>
+                        ：上場企業が増えることで、既存4社の相対的な優位性がどう変化するか
+                    </li>
+                </ul>
+            </div>
+
+            <div class="series-nav">
+                <div class="ttl">「当たれば大きいAI関連分野」シリーズ構成</div>
+                <ol>
+                    <li>
+                        <strong>第1弾：AI×量子コンピューティング</strong>
+                        （前編・本稿は業界マップ。中編・後編を順次公開）
+                    </li>
+                    <li>第2弾：AI×次世代原子力（SMR・核融合）</li>
+                    <li>第3弾：AI×防衛テック（自律兵器・ドローン）</li>
+                    <li>第4弾：AI×宇宙経済（衛星通信・宇宙インフラ）</li>
+                </ol>
+                <p style="margin:12px 0 0;font-size:13.5px;">この後、量子コンピューティング編の中編（技術検証編）・後編（投資判断編）、続いて個別企業記事（IonQ／Rigetti／D-Wave／Quantum Computing Inc.）を順次公開予定です。既存シリーズ「AI×製薬×バイオ」との連携ポイント（AI活用手法の異同）についても、中編以降で適宜言及します。</p>
+            </div>
+
+        </main>
+
+        <footer>
+            <div class="disclaimer">
+                <strong>【免責事項】</strong>
+                <br>
+
+                    本レポートは情報提供を目的としたものであり、特定の有価証券の購入・売却を推奨するものではありません。記載内容は作成時点で信頼できると判断した情報に基づいていますが、その正確性・完全性を保証するものではありません。市場規模の推計値は調査機関により大きく異なるため、単一の数値を根拠とした投資判断は避けてください。株価・時価総額・バリュエーション指標は変動が激しく、出典・算出時点により幅があります。政府による資金提供・出資に関する記述は、レター・オブ・インテント（法的拘束力のない意向表明）や報道・予測市場の気配値に基づく部分を含み、正式契約の成立を保証するものではありません。本シリーズは「当たれば大きい」という投機性の高いテーマを扱うため、ボラティリティ・赤字先行・希薄化リスクについて特にご留意ください。投資に関する最終的な決定は、ご自身の判断と責任において行っていただきますようお願いいたします。
+                  
+            </div>
+            <p style="margin-top:18px;">Market Supporter AI ／ 2026年8月29日</p>
+        </footer>
+
+    </div>
+</body>
+</html>
