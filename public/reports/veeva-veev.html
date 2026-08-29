@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veeva Systems（VEEV）徹底分析｜AI×製薬×バイオテック 米国株シリーズ | Market Supporter AI</title>
+    <meta name="description" content="Veeva SystemsのFY2027第2四半期決算と、決算翌日+15%急騰の背景を実数ベースで検証する。情報提供のみ・投資推奨なし。">
+    <style>
+    :root {
+        --accent: #B8860B;
+        --accent-dark: #7D5B07;
+        --accent-light: #F1E4C4;
+        --accent-pale: #FBF6EA;
+        --warn: #B45309;
+        --warn-bg: #FEF3E2;
+        --text: #1F2937;
+        --text-sub: #4B5563;
+        --bg: #FFFFFF;
+        --border: #EBDFBB;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.8;
+        font-size: 16px;
+    }
+
+    .wrap {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    header.hero {
+        background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+        color: #fff;
+        padding: 56px 20px 44px;
+    }
+
+    header.hero .wrap {
+        max-width: 880px;
+    }
+
+    .hero-tag {
+        display: inline-block;
+        font-size: 13px;
+        letter-spacing: 0.05em;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 4px 12px;
+        border-radius: 999px;
+        margin-bottom: 16px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+        line-height: 1.5;
+        margin: 0 0 12px;
+    }
+
+    .hero .sub {
+        font-size: 15px;
+        opacity: 0.9;
+        margin: 0 0 20px;
+    }
+
+    .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 13px;
+    }
+
+    .hero-meta span {
+        background: rgba(255, 255, 255, 0.12);
+        padding: 4px 10px;
+        border-radius: 6px;
+    }
+
+    nav.toc {
+        background: var(--accent-pale);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 20px 24px;
+        margin: 32px 0;
+    }
+
+    nav.toc h2 {
+        font-size: 15px;
+        margin: 0 0 12px;
+        color: var(--accent-dark);
+    }
+
+    nav.toc ol {
+        margin: 0;
+        padding-left: 20px;
+        columns: 2;
+        font-size: 14px;
+    }
+
+    nav.toc li {
+        margin-bottom: 6px;
+    }
+
+    nav.toc a {
+        color: var(--text);
+        text-decoration: none;
+    }
+
+    nav.toc a:hover {
+        color: var(--accent);
+    }
+
+    main section {
+        margin: 44px 0;
+    }
+
+    main h2 {
+        font-size: 21px;
+        color: var(--accent-dark);
+        border-left: 5px solid var(--accent);
+        padding-left: 12px;
+        margin-bottom: 20px;
+    }
+
+    main h3 {
+        font-size: 17px;
+        margin: 24px 0 10px;
+        color: var(--accent-dark);
+    }
+
+    p {
+        margin: 0 0 14px;
+        color: var(--text);
+    }
+
+    .kpi-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin: 20px 0;
+    }
+
+    .kpi-card {
+        background: var(--accent-pale);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 14px 16px;
+    }
+
+    .kpi-card .label {
+        font-size: 12px;
+        color: var(--text-sub);
+        margin-bottom: 4px;
+    }
+
+    .kpi-card .value {
+        font-size: 19px;
+        font-weight: 700;
+        color: var(--accent-dark);
+    }
+
+    .kpi-card .delta {
+        font-size: 12px;
+        margin-top: 4px;
+        color: var(--text-sub);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 18px 0;
+        font-size: 14px;
+    }
+
+    th, td {
+        border: 1px solid var(--border);
+        padding: 9px 10px;
+        text-align: left;
+    }
+
+    th {
+        background: var(--accent-light);
+        color: var(--accent-dark);
+        font-weight: 700;
+    }
+
+    td.num, th.num {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .callout {
+        border-radius: 10px;
+        padding: 16px 18px;
+        margin: 18px 0;
+        font-size: 14.5px;
+        border: 1px solid var(--border);
+        background: var(--accent-pale);
+    }
+
+    .callout.warn {
+        background: var(--warn-bg);
+        border-color: #F3D9B1;
+    }
+
+    .callout .callout-title {
+        font-weight: 700;
+        margin-bottom: 6px;
+        color: var(--accent-dark);
+    }
+
+    .callout.warn .callout-title {
+        color: var(--warn);
+    }
+
+    .watch {
+        background: var(--accent-dark);
+        color: #fff;
+        border-radius: 14px;
+        padding: 30px 26px;
+        margin: 44px 0;
+    }
+
+    .watch h2 {
+        color: #fff;
+        border-left: 5px solid #fff;
+        margin-bottom: 20px;
+    }
+
+    .watch ol {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 14px;
+    }
+
+    .watch li {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        font-size: 14.5px;
+    }
+
+    .watch .num {
+        flex: 0 0 auto;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.18);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .disclaimer {
+        background: var(--accent-pale);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 20px 22px;
+        font-size: 12.5px;
+        color: var(--text-sub);
+        margin: 40px 0;
+        line-height: 1.9;
+    }
+
+    .disclaimer h3 {
+        font-size: 14px;
+        margin: 0 0 8px;
+        color: var(--text);
+    }
+
+    .crosslinks {
+        margin: 36px 0;
+        padding: 22px;
+        background: var(--accent-pale);
+        border-radius: 10px;
+        border: 1px solid var(--border);
+    }
+
+    .crosslinks h3 {
+        font-size: 15px;
+        margin: 0 0 12px;
+        color: var(--accent-dark);
+    }
+
+    .crosslinks ul {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 13.5px;
+        columns: 2;
+    }
+
+    .crosslinks li {
+        margin-bottom: 6px;
+    }
+
+    .crosslinks a {
+        color: var(--accent-dark);
+        text-decoration: none;
+    }
+
+    .crosslinks a:hover {
+        text-decoration: underline;
+    }
+
+    footer {
+        text-align: center;
+        padding: 32px 20px 50px;
+        font-size: 12.5px;
+        color: var(--text-sub);
+    }
+
+    @media (max-width: 640px) {
+        .hero h1 {
+            font-size: 22px;
+        }
+
+        nav.toc ol {
+            columns: 1;
+        }
+
+        .kpi-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .crosslinks ul {
+            columns: 1;
+        }
+
+        main h2 {
+            font-size: 19px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="wrap">
+            <span class="hero-tag">AI×製薬×バイオテック 米国株シリーズ｜レイヤー2 最終回</span>
+            <h1>
+                Veeva Systems（NYSE: VEEV）徹底分析
+                <br>
+                Vault CRM連戦連勝とAI「エージェント労働」への転換
+            </h1>
+            <p class="sub">FY2027第2四半期決算（2026年8月26日発表）と、決算翌日+15%急騰の背景を実数ベースで検証する。</p>
+            <div class="hero-meta">
+                <span>公開日：2026年8月29日</span>
+                <span>ティッカー：NYSE: VEEV</span>
+                <span>決算基準日：2026年7月31日（FY2027 Q2）</span>
+                <span>情報提供のみ・投資推奨なし</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrap">
+
+        <nav class="toc">
+            <h2>目次</h2>
+            <ol>
+                <li>
+                    <a href="#s1">1. 市場規模</a>
+                </li>
+                <li>
+                    <a href="#s2">2. 政策・規制環境</a>
+                </li>
+                <li>
+                    <a href="#s3">3. コスト・収益構造</a>
+                </li>
+                <li>
+                    <a href="#s4">4. 事業セグメント動向</a>
+                </li>
+                <li>
+                    <a href="#s5">5. 株式バリュエーション</a>
+                </li>
+                <li>
+                    <a href="#s6">6. リスク要因</a>
+                </li>
+                <li>
+                    <a href="#s7">7. まとめ</a>
+                </li>
+                <li>
+                    <a href="#watch">WHAT TO WATCH</a>
+                </li>
+            </ol>
+        </nav>
+
+        <main>
+
+            <section id="s1">
+                <h2>1. 市場規模</h2>
+                <p>
+                    Veeva Systemsは、製薬・バイオテック企業向けに商業活動（CRM）・研究開発（臨床試験管理・電子データ収集等）・品質管理を一気通貫でカバーする業界特化型クラウド企業である。同社は1,500社超の顧客を抱え、世界最大手の製薬企業から新興バイオテックまでを対象とする。本シリーズが扱ってきたIQVIA（IQV、受注残型）・Illumina（ILMN）・Rapid Micro（RPID、いずれも設置ベース型）・Tempus AI（TEM、契約更新型）に続く、レイヤー2（研究開発インフラ）企業の中でも、VeevaはTempus AIと同様の契約更新型ビジネスモデルに分類される。
+                </p>
+
+                <p>同社の事業は大きく2領域に分かれる。商業部門（Veeva Commercial Solutions）はCRM（顧客関係管理）を中心とし、長らく競合Salesforceとのシェア争いが焦点だった。研究開発・品質部門（Veeva R&amp;D and Quality Solutions）は、eTMF・CTMS・QualityDocsといった既存製品から、EDC（電子データ収集）・eCOA・RTSM・Safety・LIMSといった新製品への移行期にある。両部門合計の売上高規模は、本シリーズが扱ってきた個別バイオテック企業と比べて一桁大きい水準にある。</p>
+            </section>
+
+            <section id="s2">
+                <h2>2. 政策・規制環境</h2>
+                <h3>AIエージェントの規制対応</h3>
+                <p>
+                    Veeva Falcon（同社が「エージェント労働」と位置づけるAIプラットフォーム）は臨床・規制・安全性業務を対象とするため、規制当局への提出物や安全性報告に関わる領域でのAI活用が焦点となる。決算説明会でJPMorganのアナリストからFalconの規制対応について問われたCEOのPeter Gassner氏は、エージェント型AIの非決定論的な性質を認めた上で、適切なトレーニングとガードレールが人間の監督の下にあることを証明する必要があるとし、これは自社のエージェントに対しても同様に求められる要件だと説明した。AIエージェントが生成・提出する規制関連文書の品質保証プロセスは、今後の実運用における重要な論点になり得る。
+                </p>
+
+                <h3>地政学・中国事業</h3>
+                <p>
+                    CEOのGassner氏は中国事業について、世界的な複雑な情勢にもかかわらず楽観的な見方を示し、中国は同社にとって良好なビジネスであり、利益を生み、成長しているとコメントした。Veeva China CRMスイートは市場シェアを伸ばしており、PromoMatsなどグローバル製品との連携も進んでいるという。地政学リスクへの直接的な言及は限定的だったが、製薬業界全体が関税・貿易政策の不確実性に直面する中、Veeva自身の事業への影響は現時点で軽微とされている。
+                </p>
+            </section>
+
+            <section id="s3">
+                <h2>3. コスト・収益構造</h2>
+                <h3>FY2027 Q2実績</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th class="num">FY2027 Q2</th>
+                            <th class="num">FY2026 Q2</th>
+                            <th class="num">増減</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>総売上高</td>
+                            <td class="num">$928.0M</td>
+                            <td class="num">$789.1M</td>
+                            <td class="num">+18%</td>
+                        </tr>
+                        <tr>
+                            <td>サブスクリプション売上高</td>
+                            <td class="num">$766.8M</td>
+                            <td class="num">$659.2M</td>
+                            <td class="num">+16%</td>
+                        </tr>
+                        <tr>
+                            <td>　うち商業部門</td>
+                            <td class="num">$347.4M</td>
+                            <td class="num">$307.5M</td>
+                            <td class="num">+13%</td>
+                        </tr>
+                        <tr>
+                            <td>　うちR&amp;D・品質部門</td>
+                            <td class="num">$419.4M</td>
+                            <td class="num">$351.7M</td>
+                            <td class="num">+19%</td>
+                        </tr>
+                        <tr>
+                            <td>プロフェッショナルサービス等</td>
+                            <td class="num">$161.2M</td>
+                            <td class="num">$129.9M</td>
+                            <td class="num">+24%</td>
+                        </tr>
+                        <tr>
+                            <td>GAAP営業利益</td>
+                            <td class="num">$275.0M（29.6%）</td>
+                            <td class="num">$195.9M（24.8%）</td>
+                            <td class="num">+40%</td>
+                        </tr>
+                        <tr>
+                            <td>Non-GAAP営業利益</td>
+                            <td class="num">$415.9M（44.8%）</td>
+                            <td class="num">$352.6M（44.7%）</td>
+                            <td class="num">+18%</td>
+                        </tr>
+                        <tr>
+                            <td>GAAP希薄化後EPS</td>
+                            <td class="num">$1.66</td>
+                            <td class="num">$1.19</td>
+                            <td class="num">-</td>
+                        </tr>
+                        <tr>
+                            <td>Non-GAAP希薄化後EPS</td>
+                            <td class="num">$2.35</td>
+                            <td class="num">$1.99</td>
+                            <td class="num">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size:12.5px;color:var(--text-sub);">出所：Veeva Systems FY2027 Q2決算資料（2026年8月26日発表、SEC提出Form 8-K）。</p>
+
+                <p>Non-GAAP希薄化後EPS 2.35ドルは、市場予想（2.22ドル、Alphastreet集計）を上回る結果となった。GAAP営業利益率が前年同期の24.8%から29.6%へ、Non-GAAP営業利益率も44.7%から44.8%へと、いずれも改善している点が特徴的である。R&amp;D・品質部門のサブスクリプション売上高（+19%）が商業部門（+13%）を上回るペースで成長しており、事業構成の変化が読み取れる。</p>
+
+                <h3>財務基盤</h3>
+                <p>
+                    2026年7月31日時点の現金・現金同等物は18.1億ドル、短期投資は54.3億ドルで、合計約72.4億ドルの流動性を保有している。総資産90.6億ドルに対し総負債は16.3億ドルにとどまり、株主資本は74.3億ドルに達する。FY2027上半期には4億7,300万ドルの自社株買いを実施しており、潤沢なキャッシュポジションを株主還元にも振り向けている。負債水準の低さは、本シリーズで扱ってきた財務的に逼迫した中小型株群とは対照的な特徴である。
+                </p>
+
+                <h3>ガイダンス上方修正</h3>
+                <div class="callout">
+                    <div class="callout-title">FY2027通期ガイダンス（2026年8月26日更新）</div>
+
+                    総売上高：36億8,200万〜36億8,700万ドル／Non-GAAP営業利益：約16億4,000万ドル／Non-GAAP希薄化後EPS：約9.21ドル。第3四半期（10月31日期）については、総売上高9億3,200万〜9億3,500万ドル、Non-GAAP営業利益4億1,700万〜4億2,000万ドル、Non-GAAP希薄化後EPS 2.33〜2.34ドルと見込む。いずれも会社側の見通しであり、確定した実績ではない点に留意されたい。
+                </div>
+            </section>
+
+            <section id="s4">
+                <h2>4. 事業セグメント動向</h2>
+                <h3>Vault CRM：トップ20製薬企業の取り込みが加速</h3>
+                <p>
+                    四半期中にEli Lilly・Biogenが新たにVault CRMを採用し、Regeneronも採用を決定したことで、世界のトップ20バイオファーマのうちVault CRMにコミットした企業数は12社に達した。残り2社の決定も2026年内に見込まれている。180社超の顧客が本稼働しており、トップ20企業のうち1社は同四半期中に全米フィールドチームにAIを全面導入したという。
+                </p>
+
+                <p>
+                    競合Salesforceからの乗り換えについて、CEOのGassner氏は「2年前にSalesforceを選択した大手顧客の一部でプロジェクトが難航している」と直接的にコメントし、Veeva CRMのサポートが2029年に終了することを踏まえ、2027〜2028年にかけて乗り換えが顕在化するとの見方を示した。戦略担当EVPのPaul Shawah氏は、Veevaが今後もCRM市場で70%超のシェアを維持するとの見通しを示している。
+                </p>
+
+                <h3>Veeva Falcon：「エージェント労働」という第4の事業</h3>
+                <p>
+                    Gassner氏はFalconを、クラウドソフトウェア・データ・コンサルティングに続く「第4の事業」と位置づけ、これはVeevaがこれまで手掛けてきた事業とは異なるものだと説明した。早期導入企業5社と契約済みで、初回稼働は年内を見込んでいる。同氏は自社の実行速度がボトルネックになっているとし、需要面では強い関心が寄せられていると述べた。四半期中にCopliを買収し、コンテンツレビューを自動化するVeeva Falcon MLRを立ち上げた。
+                </p>
+
+                <div class="callout warn">
+                    <div class="callout-title">留保：Falconはまだ稼働前</div>
+
+                    Falconの「早期導入企業5社」はいずれも本稼働（go-live）前の段階であり、実際の収益貢献や顧客満足度はまだ確認されていない。Gassner氏自身も「早期導入企業が稼働し成功していれば、誇張ではなくFalconは飛ぶように売れるだろう」と述べており、これは裏を返せば現時点でまだそこに至っていないことを示唆する発言である。価格体系についても、同氏は「機能が急速に改善する中で固定価格をどう設定するか」という課題を認めており、料金モデルは確立途上にある。
+                </div>
+
+                <h3>Aspen：社内発の水平型CRMスタートアップ</h3>
+                <p>
+                    Gassner氏はAspenを「Veeva社内のスタートアップ」と表現し、90日サイクルで運営されているとした。価格体系は1ユーザー月額50ドルというシンプルなもので、Amazon Web Servicesを緩やかに参考にしたモデルだという。同氏はAspenの売上高が現時点の会社計画には一切織り込まれていないと明言しており、実験的な取り組みという位置づけが強い。
+                </p>
+
+                <h3>R&amp;D・品質部門：製品世代交代の途上</h3>
+                <p>
+                    CFOのBrian Van Wagener氏は、同社が旧世代製品（eTMF・CTMS等）から新世代製品（EDC・eCOA・RTSM・Safety・LIMS）への移行期の「ちょうど中間」にあると表現した。EDCはトップ20企業のうち9社に導入されているが、普及には時間を要するとの見方を示した。Safetyは顧客数が100社を突破し、トップ20企業での2件目の受注も獲得した。
+                </p>
+
+                <h3>IQVIA提携：1年を経て「12カ月で最良の出来事」</h3>
+                <p>
+                    Gassner氏はIQVIAとの提携について、2年前と比較して500%良く感じていると述べ、過去12カ月で自社に起きた最良の出来事の一つだと評価した。本シリーズのIQVIA（IQV）記事で扱った受注残高型のビジネスモデルとの補完関係が、実務面でも機能していることを示唆する発言である。
+                </p>
+            </section>
+
+            <section id="s5">
+                <h2>5. 株式バリュエーション</h2>
+
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="label">株価（2026/8/27終値）</div>
+                        <div class="value">$282.13</div>
+                        <div class="delta">決算翌日+15.2%</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="label">時価総額（2026/8/27時点）</div>
+                        <div class="value">約$45.7B</div>
+                        <div class="delta">52週高値$310.50・安値$148.05</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="label">PSR（対FY27通期売上ガイダンス）</div>
+                        <div class="value">約12.4倍</div>
+                        <div class="delta">編集部計算</div>
+                    </div>
+                </div>
+
+                <p>
+                    2026年8月27日終値は282.13ドルで、前日比+15.20%の急騰となった。52週高値は310.50ドル（2025年10月7日）、52週安値は148.05ドル（2026年4月10日）である。同日時点のPER（GAAP・トレーリング）は40.27倍とされる。FY2027通期売上高ガイダンス中央値（約36億8,450万ドル）に対する時価総額約457億ドルの比率で計算すると、PSRは約12.4倍となる（編集部計算）。
+                </p>
+
+                <h3>決算後のアナリスト評価の一斉引き上げ</h3>
+                <p>
+                    決算発表を受け、RBC Capitalは目標株価を275ドルから325ドルへ、Raymond Jamesは275ドルから330ドルへ、Truistは262ドルから305ドルへ、JPMorganは272ドルから299ドルへ、TD Cowenは235ドルから283ドルへ、それぞれ引き上げた。Wells Fargoも「買い」評価を継続している。複数の証券会社が軒並み目標株価を引き上げた点は、Vault CRMの連戦連勝とFalconの手応えの双方が評価された結果と読める。
+                </p>
+
+                <div class="callout warn">
+                    <div class="callout-title">留保：Falcon・Aspenは評価額にまだ十分織り込まれていない可能性</div>
+
+                    現時点の株価評価は、確立された既存事業（Vault CRM・R&amp;D/品質部門）の実績を中心に形成されていると考えられる。FalconやAspenといった新規事業は、稼働実績・料金体系ともに確立途上であり、これらが将来どの程度の追加的な企業価値を生むかは、本稿執筆時点ではまだ判定できる段階にない。
+                </div>
+
+                <h3>本シリーズの評価軸との関係</h3>
+                <p>Veevaは既に営業利益率44%台（Non-GAAPベース）を稼ぎ出す収益化企業であり、本シリーズが損失段階企業に適用してきた4指標フレームワーク（キャッシュランウェイ・反復収益比率・実現率・希薄化パターン）は該当しない。サブスクリプション売上高比率（総売上高の約83%）は、レイヤー2の中でも高水準の反復収益性を示しており、Tempus AI（TEM）の契約更新型モデルと同様の性質を持つ。PSR・PER・営業利益率といった従来型の指標で評価するのが妥当な段階にある。</p>
+            </section>
+
+            <section id="s6">
+                <h2>6. リスク要因</h2>
+
+                <h3>Falcon・Aspenの実行リスク</h3>
+                <p>Falconは早期導入企業5社が本稼働する前の段階であり、実際の顧客満足度・収益貢献はまだ実証されていない。料金体系も確立されておらず、粗利益率への影響について会社側は楽観的な見通しを示しているものの、これは現時点で検証済みの結果ではなく経営陣の見立てにとどまる。Aspenについても、CEOのGassner氏自身が「スタートアップにおいて実行力が常に難しい課題」と認めている。</p>
+
+                <h3>R&amp;D・品質部門の世代交代の不確実性</h3>
+                <p>旧世代製品から新世代製品への移行は、CFOの表現を借りれば「Sカーブがきれいに重ならない」段階にあり、会社側も具体的な転換時期については「年ごとには話さない」として明言を避けている。新製品群（EDC・eCOA・RTSM・Safety・LIMS）の普及ペースが期待通りに進まない場合、この部門の成長率が鈍化するリスクがある。</p>
+
+                <h3>競争環境：Salesforceとの競合、Aspen自体の競合リスク</h3>
+                <p>Salesforceからの乗り換え期待は経営陣のコメントに基づくものであり、実際にどの程度の規模・タイミングで実現するかは不確実である。またAspenが対象とする水平型CRM市場には既存の競合が多数存在し、「Veeva社内のスタートアップ」というポジションゆえに十分なリソース配分がなされるかどうかも今後の検証事項である。</p>
+
+                <h3>人材の異動</h3>
+                <p>
+                    決算説明会では、Tom Schwenger氏の退任についての質問があり、Gassner氏は「これは特定の個人に依存しない製品訴求力の問題であり、事業への影響はない」と説明している。個別の人事異動が事業運営に与える影響は限定的とされるが、継続的な経営体制の安定性は注視すべき点である。
+                </p>
+
+                <h3>バリュエーションの高さ</h3>
+                <p>PER40倍・PSR12倍台という水準は、成熟したSaaS企業としては相応に高い評価であり、今後の成長率鈍化や新規事業（Falcon・Aspen）の期待外れが生じた場合、株価の調整余地は相応にあると考えられる。決算翌日の+15%という値動きの大きさ自体、市場の期待の高さを反映している。</p>
+            </section>
+
+            <section id="s7">
+                <h2>7. まとめ</h2>
+                <p>Veeva Systemsは、本シリーズのレイヤー2（研究開発インフラ）企業群の最終回として、既に高い収益性を確立した成熟企業という立ち位置から検証した。FY2027 Q2決算は売上高・利益率ともに市場予想を上回り、Vault CRMはトップ20バイオファーマの過半数近くを取り込むなど、既存事業の勢いは明確である。決算翌日に株価が15%急騰し、複数の証券会社が目標株価を一斉に引き上げた背景には、この既存事業の強さに加え、Veeva Falconという新しい「エージェント労働」事業への期待が重なっている。</p>
+
+                <p>一方で、Falcon・Aspenという成長期待の中心にある新規事業は、いずれも稼働実績・料金体系ともに確立途上の段階にある。CEO自身の発言からも、現時点ではまだ「需要はあるが実行がボトルネック」という段階であることが読み取れる。本シリーズの基本姿勢に沿い、決算後の株価急騰と目標株価の一斉引き上げを将来の成功の確証として扱うのではなく、「Falcon・Aspenの実際の稼働実績が伴うまで、新規事業の企業価値への寄与はまだ判定できる段階にない」と位置づける。2026年11月5日のInvestor Dayで、これらの事業の詳細な進捗が示される見通しである。</p>
+            </section>
+
+        </main>
+
+        <div class="watch" id="watch">
+            <h2>WHAT TO WATCH</h2>
+            <ol>
+                <li>
+                    <div class="num">1</div>
+                    <div>
+                        <strong>Veeva Falconの初回本稼働（go-live）</strong>
+                        <br>
+                        早期導入企業5社のうち、年内に実際の稼働実績が示されるか。顧客満足度・収益貢献の初期データを確認。
+                    </div>
+                </li>
+                <li>
+                    <div class="num">2</div>
+                    <div>
+                        <strong>Vault CRM残り2社のトップ20獲得</strong>
+                        <br>
+                        2026年内の決定が見込まれる残り2社の動向。
+                    </div>
+                </li>
+                <li>
+                    <div class="num">3</div>
+                    <div>
+                        <strong>2026年11月5日 Investor Day</strong>
+                        <br>
+                        Falcon・Aspen・R&amp;D製品群の詳細なロードマップが示される見通し。
+                    </div>
+                </li>
+                <li>
+                    <div class="num">4</div>
+                    <div>
+                        <strong>Aspenの初期顧客獲得状況</strong>
+                        <br>
+                        「若手テック系スタートアップ」を想定した初期トラクションの有無。
+                    </div>
+                </li>
+                <li>
+                    <div class="num">5</div>
+                    <div>
+                        <strong>FY2027 Q3決算（2026年10月31日期、発表時期未定）</strong>
+                        <br>
+                        通期ガイダンス（売上高36.8億〜36.9億ドル）の達成状況。
+                    </div>
+                </li>
+                <li>
+                    <div class="num">6</div>
+                    <div>
+                        <strong>EDC等新世代R&amp;D製品の追加受注</strong>
+                        <br>
+                        トップ20企業への浸透率（現在9/20）の推移。
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="crosslinks">
+            <h3>関連レポート</h3>
+            <ul>
+                <li>
+                    <a href="/reports/ai-biotech-industry-map.html">3部作・前編：AI×製薬×バイオ 業界マップ</a>
+                </li>
+                <li>
+                    <a href="/reports/ai-biotech-validation.html">3部作・中編：技術検証編</a>
+                </li>
+                <li>
+                    <a href="/reports/ai-biotech-valuation.html">3部作・後編：投資判断の視点編</a>
+                </li>
+                <li>
+                    <a href="/reports/iqvia-iqv.html">IQVIA（IQV）：受注残高型・IQVIA提携先</a>
+                </li>
+                <li>
+                    <a href="/reports/tempus-tem.html">Tempus AI（TEM）：契約更新型の類似企業</a>
+                </li>
+                <li>
+                    <a href="/reports/illumina-ilmn.html">Illumina（ILMN）</a>
+                </li>
+                <li>
+                    <a href="/reports/rapid-micro-rpid.html">Rapid Micro（RPID）</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="disclaimer">
+            <h3>免責事項</h3>
+            <p>本レポートは情報提供のみを目的としており、特定の金融商品の売買を推奨するものではありません。記載内容には編集部による試算・計算・推計が含まれており、実際の数値と異なる場合があります。株価・時価総額等の市場データは出典日時点のものであり、閲覧時点の実勢と異なる可能性があります。将来の業績・新製品の普及・提携等に関する記述は、現時点で確認された公表情報に基づく見通しであり、その実現を保証するものではありません。投資判断はご自身の責任において行ってください。本レポートの内容に基づいて生じたいかなる損害についても、Market Supporter AIは責任を負いません。</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Market Supporter AI｜個人投資家向け金融分析情報サイト</p>
+        <p>© 2026 Market Supporter AI. 情報提供のみ・投資推奨なし。</p>
+    </footer>
+
+</body>
+</html>
