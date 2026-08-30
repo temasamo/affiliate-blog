@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>量子コンピューティング4社をどう評価するか｜Market Supporter AI</title>
+<meta name="description" content="キャッシュランウェイ・商用収益比率・受注転換ペース・技術ロードマップ。IonQ・Rigetti・D-Wave・Quantum Computing Inc.4社を、量子コンピューティング版の投資判断フレームワークで整理します。">
+<style>
+  :root{
+    --ink:#0d1b2a;
+    --ink-soft:#3d4f60;
+    --paper:#f7f9fc;
+    --line:#dde3ec;
+    --accent:#2f5fdb;
+    --accent-deep:#1f3f9e;
+    --accent-wash:#eaf0fd;
+    --amber:#b8791a;
+    --amber-wash:#fdf6e8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.9;
+    font-size:16px;
+  }
+  .wrap{max-width:860px;margin:0 auto;background:#fff;}
+  header.masthead{
+    background:linear-gradient(135deg,var(--accent-deep) 0%,var(--accent) 100%);
+    color:#fff;
+    padding:44px 32px 36px;
+  }
+  .brand{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    opacity:.85;margin-bottom:18px;
+  }
+  .series-tag{
+    display:inline-block;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    padding:4px 12px;border-radius:3px;
+    font-size:12px;letter-spacing:.08em;margin-bottom:14px;
+  }
+  header.masthead h1{
+    font-size:29px;line-height:1.5;margin:0 0 12px;font-weight:700;
+  }
+  header.masthead .sub{font-size:15px;opacity:.9;margin:0;}
+  .issue{
+    margin-top:22px;padding-top:16px;
+    border-top:1px solid rgba(255,255,255,.28);
+    font-size:13px;opacity:.85;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  main{padding:36px 32px 8px;}
+  .lede{
+    font-size:16.5px;
+    background:var(--accent-wash);
+    border-left:4px solid var(--accent);
+    padding:20px 22px;
+    margin:0 0 36px;
+  }
+  h2{
+    font-size:20px;margin:48px 0 18px;padding-bottom:10px;
+    border-bottom:2px solid var(--accent);
+    display:flex;align-items:baseline;gap:12px;
+  }
+  h2 .num{
+    color:var(--accent);font-size:24px;font-weight:700;
+    font-family:Georgia,serif;
+  }
+  h3{
+    font-size:16.5px;margin:30px 0 10px;color:var(--accent-deep);
+    border-left:3px solid var(--accent);padding-left:11px;
+  }
+  p{margin:0 0 16px;}
+  table{
+    width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:14.5px;
+  }
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:var(--accent-wash);font-weight:700;color:var(--accent-deep);}
+  tbody tr:nth-child(even){background:#fbfcfe;}
+  .metric-map{margin:24px 0 28px;}
+  .metric{
+    border:1px solid var(--line);border-left:6px solid var(--accent);
+    background:#fff;padding:16px 18px;margin-bottom:12px;border-radius:2px;
+  }
+  .metric .lbl{
+    font-size:12px;letter-spacing:.14em;color:var(--accent);
+    font-weight:700;margin-bottom:6px;
+  }
+  .metric .ttl{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .metric .desc{font-size:14.5px;color:var(--ink-soft);margin:0 0 8px;}
+  .metric .names{font-size:13.5px;color:var(--ink);background:var(--paper);padding:8px 11px;border-radius:2px;}
+  .callout{
+    background:var(--amber-wash);border:1px solid #f0dfbc;
+    padding:16px 18px;margin:22px 0;font-size:14.5px;border-radius:2px;
+  }
+  .callout .ttl{font-weight:700;color:var(--amber);margin-bottom:6px;font-size:14px;}
+  .watch{
+    background:var(--ink);color:#e8eef2;padding:26px 26px 20px;margin:44px 0 0;
+  }
+  .watch h2{
+    color:#fff;border-bottom-color:rgba(255,255,255,.4);margin-top:0;
+  }
+  .watch h2 .num{color:#8fb0f5;}
+  .watch ul{padding-left:20px;margin:0;}
+  .watch li{margin-bottom:12px;font-size:15px;}
+  .watch strong{color:#8fb0f5;}
+  .series-nav{
+    background:var(--accent-wash);padding:20px 22px;margin:34px 0 0;
+    font-size:14.5px;border-radius:2px;
+  }
+  .series-nav .ttl{font-weight:700;color:var(--accent-deep);margin-bottom:10px;}
+  .series-nav ol{margin:0;padding-left:20px;}
+  .series-nav li{margin-bottom:6px;}
+  footer{
+    padding:26px 32px 40px;font-size:12.5px;color:var(--ink-soft);
+    border-top:1px solid var(--line);margin-top:36px;
+  }
+  .disclaimer{
+    background:var(--paper);border:1px solid var(--line);
+    padding:14px 16px;border-radius:2px;line-height:1.75;
+  }
+  @media(max-width:640px){
+    header.masthead{padding:32px 20px 28px;}
+    header.masthead h1{font-size:23px;}
+    main{padding:26px 20px 8px;}
+    footer{padding:22px 20px 32px;}
+    .watch{padding:22px 20px 16px;}
+    table{font-size:13.5px;}
+    th,td{padding:8px 9px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">Market Supporter AI</div>
+  <div class="series-tag">当たれば大きいAI関連分野 第1弾｜AI×量子コンピューティング 後編</div>
+  <h1>量子コンピューティング4社をどう評価するか<br>―― バイオテック指標が通用しない産業の物差し</h1>
+  <p class="sub">キャッシュランウェイ・商用収益比率・受注転換ペース・技術ロードマップ。4つの軸で赤字先行企業を読み解く</p>
+  <div class="issue">
+    <span>2026年8月31日号</span>
+    <span>米国株シリーズ／投資判断レポート</span>
+  </div>
+</header>
+
+<main>
+
+<p class="lede">
+前編（産業地図）では4社の収益構造の違いを、中編（技術検証編）では「量子優位性」を巡る主張の信頼度を検証しました。3部作の最終回となる本稿では、赤字先行が続くIonQ・Rigetti・D-Wave・Quantum Computing Inc.をどのような指標で評価すべきか、投資判断の枠組みを整理します。姉妹シリーズ「AI×製薬×バイオ」で確立した4指標フレームワーク（キャッシュランウェイ・反復収益比率・マイルストーン実現率・希薄化パターン）は、この産業には直接当てはまりません。臨床試験のような明確な合否判定点がなく、収益もマイルストーン契約ではなく機器販売・クラウド利用料・受注で構成されるためです。本稿では量子コンピューティング版の評価軸を新たに定義します。
+</p>
+
+<h2><span class="num">①</span>量子コンピューティング版・投資判断フレームワーク</h2>
+
+<p>バイオテックの4指標（キャッシュランウェイ／反復収益比率／一時金÷公表総額の実現率／希薄化パターン）のうち、キャッシュランウェイは量子分野でもそのまま有効です。一方、残る3指標は次のように置き換える必要があります。</p>
+
+<table>
+  <thead>
+    <tr><th>バイオテック版</th><th>量子コンピューティング版</th><th>置き換えの理由</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>キャッシュランウェイ</td><td>キャッシュランウェイ（据え置き）</td><td>赤字先行という構造は共通</td></tr>
+    <tr><td>反復収益比率（ACV）</td><td>商用契約比率（商用収益÷総収益）</td><td>量子分野には「反復収益」の概念自体が未成熟。政府・研究機関向けか商用顧客向けかの区分の方が実態を表す</td></tr>
+    <tr><td>一時金÷公表総額（マイルストーン実現率）</td><td>受注（ブッキング）→売上高への転換率</td><td>量子分野の契約は臨床マイルストーンのような段階的成功報酬ではなく、受注から納品・売上計上までの時間差が焦点になる</td></tr>
+    <tr><td>希薄化パターン</td><td>希薄化パターン（据え置き）＋技術ロードマップの信頼性</td><td>希薄化は共通課題。加えて、量子ビット数・エラー率という技術指標の達成実績が、将来の資金調達コストを左右する独自要因になる</td></tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <div class="ttl">読み方の指針（編集部見解）</div>
+  この産業では「今期の売上が前年同期比何%伸びたか」よりも、「その売上の質（政府の一過性発注か、商用顧客の反復利用か）」と「受注から売上計上までのタイムラグ」を見る方が実態を正確に捉えられます。中編で見た通り、D-Waveの決算では受注が前年同期比59%増える一方、売上高はほぼ横ばいという現象が起きました。この種のギャップこそが、量子コンピューティング企業を評価する上での核心的な論点です。
+</div>
+
+<h2><span class="num">②</span>政策・規制環境が投資に与える影響</h2>
+
+<p>前編で確認した通り、National Quantum Initiative再授権法案は上下両院の委員会を通過済みですが、2026年8月時点で本会議採決・成立には至っていません。投資判断の観点では、この法案の帰趨が2つの経路で株価に影響します。</p>
+
+<table>
+  <thead>
+    <tr><th>経路</th><th>投資上の意味</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>直接的な政府調達・研究資金</td><td>NIST新規量子センターの設置、NSFの研究拠点整備等が、各社の政府向け受注に直結する可能性</td></tr>
+    <tr><td>政府出資（エクイティ・ステーク）という新しい変数</td><td>Rigettiの商務省LOI（最大1億ドル、株式取得の可能性あり）が正式契約に至れば、他の量子企業にも同様の枠組みが広がる可能性。ただし現時点では思惑の域を出ない</td></tr>
+  </tbody>
+</table>
+
+<p>政府出資が実現した場合、短期的には資金調達不安の後退という好材料になり得ますが、長期的には政府の意向が経営判断に影響する可能性や、既存株主の希薄化という副作用も伴います。半導体分野での類似の政府出資（インテル等）は、発表直後に株価が上昇した一方、条件の詳細を巡って懸念が示された例もあり、単純な好材料と決めつけることはできません。</p>
+
+<h2><span class="num">③</span>キャッシュランウェイ ―― バイオテックより明らかに潤沢</h2>
+
+<p>2026年8月上旬のQ2決算をもとに、各社のキャッシュランウェイを編集部試算しました。バーンレート（資金の実質的な消費速度）を年率換算し、手元資金で除しています。</p>
+
+<table>
+  <thead>
+    <tr><th>企業</th><th>手元資金・投資</th><th>四半期バーン（編集部が採用した基準）</th><th>編集部試算ランウェイ</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>IonQ</td><td>約20億ドル</td><td>調整後EBITDA損失1億2,030万ドル（SkyWater関連費用込み）</td><td>約4.2年</td></tr>
+    <tr><td>Rigetti Computing</td><td>5億4,130万ドル</td><td>営業損失2,810万ドル</td><td>約4.8年</td></tr>
+    <tr><td>D-Wave Quantum</td><td>5億4,620万ドル</td><td>調整後EBITDA損失3,710万ドル</td><td>約3.7年</td></tr>
+    <tr><td>Quantum Computing Inc.</td><td>約13億2,000万ドル</td><td>純損失1,175万ドル</td><td>約28年（買収一巡後のベース）</td></tr>
+  </tbody>
+</table>
+
+<p>これは、AI創薬シリーズの中小型株編で扱った臨床開発企業（多くが1〜3年程度のランウェイ）と比べて、明らかに潤沢な水準です。2025〜2026年の量子コンピューティング関連株への資金流入を背景に、各社とも大型の増資・買収を経て手元資金を積み増したことが背景にあります。</p>
+
+<div class="callout">
+  <div class="ttl">見落とされやすい論点：潤沢な資金は諸刃の剣</div>
+  ランウェイが長いこと自体は財務的な安全性を示しますが、同時に「その資金を投じてもなお技術的なブレークスルーに到達できるか」という問いを先送りしているだけとも言えます。QCiのように資金を積極的な企業買収（2026年に3件）に投じる場合、統合リスクや、買収先の技術が本当に量子ロードマップに資するのかという実行リスクが新たに生じます。ランウェイの長さは、経営の巧拙を保証するものではありません。
+</div>
+
+<h2><span class="num">④</span>商用収益比率と受注転換ペース</h2>
+
+<p>「量子コンピューティング版4指標」のうち、商用契約比率と受注転換ペースについて、4社の開示内容を整理します。</p>
+
+<div class="metric-map">
+
+  <div class="metric">
+    <div class="lbl">D-WAVE QUANTUM</div>
+    <div class="ttl">商用比率は上昇、ただし受注と売上のギャップが最大</div>
+    <p class="desc">Q2売上高の62.4%が商用顧客向け（前年同期45%から上昇）。一方でQ2ブッキング（受注）は前年同期比59%増、上半期では1,120%増という急拡大に対し、Q2売上高そのものはほぼ横ばい。RPO（残存履行義務）は4,070万ドルで、57%が12ヶ月以内に売上として認識される見込みとされている。受注から売上計上までの時間差が4社中最も顕著。</p>
+  </div>
+
+  <div class="metric">
+    <div class="lbl">IONQ</div>
+    <div class="ttl">RPOの絶対額・伸び率ともに最大</div>
+    <p class="desc">RPOは4億8,500万ドル（前年同期比297%増）。クラウド経由のアクセス（AWS・Azure・Google Cloud）に加え、国防高等研究計画局（DARPA）や国家偵察局（NRO）向け契約など、政府・防衛分野の比率も相応に大きい。商用と政府の内訳を明確に区分した開示は行われていない。</p>
+  </div>
+
+  <div class="metric">
+    <div class="lbl">RIGETTI COMPUTING</div>
+    <div class="ttl">大学・国立研究所向けが中心、商用転換は緒に就いたばかり</div>
+    <p class="desc">Q2売上の大半はオンプレミス機器（Novera QPU等）の大学・国立研究所向け販売。HPEとの提携拡大は商用ハイブリッドコンピューティングへの布石だが、収益化はこれから。米商務省とのLOIも政府資金であり、純粋な商用収益とは性格が異なる。</p>
+  </div>
+
+  <div class="metric">
+    <div class="lbl">QUANTUM COMPUTING INC.</div>
+    <div class="ttl">政府サブコントラクトが収益の主軸</div>
+    <p class="desc">売上の7〜8割が政府サブコントラクト経由。契約バックログ約4,250万ドルは12〜18ヶ月分の運転資金に相当するとされ、受注から売上への転換期間は比較的短いとみられる。ただし政府予算サイクルへの依存度が高く、予算遅延の影響を受けやすい。</p>
+  </div>
+
+</div>
+
+<div class="callout">
+  <div class="ttl">読み方の指針（編集部見解）</div>
+  4社の中で「商用収益への転換」が最も進んでいるのはD-Waveですが、同時に受注と売上のギャップも最大です。逆にQCiは政府依存度が高い分、収益の予見可能性は相対的に高くなります。「商用比率が高い＝優れている」と単純化せず、各社がどの段階にあるかを踏まえて評価する必要があります。
+</div>
+
+<h2><span class="num">⑤</span>株式バリュエーション ―― 期待先行の構造は変わらず</h2>
+
+<p>前編で確認した通り、4社ともPSR（株価売上高倍率）は数十〜数百倍の水準にあり、伝統的な指標は機能しません。後編としては、この期待がどのようなトリガーで修正されうるかを整理します。</p>
+
+<table>
+  <thead>
+    <tr><th>想定トリガー</th><th>株価への影響方向</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>量子優位性の新たな主張（中編参照）</td><td>初報時は好感されやすいが、その後の反証で剥落するリスク</td></tr>
+    <tr><td>受注（ブッキング）の急拡大</td><td>好感されやすいが、売上への転換が伴わない場合は限定的</td></tr>
+    <tr><td>売上・ガイダンスの下方修正</td><td>PSRが極端に高い分、下落幅も大きくなりやすい</td></tr>
+    <tr><td>政府出資・大型契約の正式決定</td><td>資金調達不安の後退として好感されやすいが、条件次第では希薄化懸念も</td></tr>
+    <tr><td>マクロ環境（金利動向）</td><td>ベータ値2〜3倍台のため、金利上昇局面では下押し圧力を受けやすい</td></tr>
+  </tbody>
+</table>
+
+<h2><span class="num">⑥</span>リスク要因</h2>
+
+<h3>1. 技術的な検証サイクルのリスク（中編と連動）</h3>
+<p>量子優位性の主張が後に覆されるサイクルが繰り返されてきた以上、個別企業の技術発表を過度に好感するのは危険です。</p>
+
+<h3>2. 受注と売上のギャップが放置されるリスク</h3>
+<p>ブッキングの伸びが売上に転換されないまま複数四半期が経過した場合、市場の失望売りを招く可能性があります。</p>
+
+<h3>3. 政府依存度の高さと予算サイクル</h3>
+<p>QCi・Rigettiは特に政府予算・契約への依存度が高く、政府機関の予算執行が遅延した場合の影響を受けやすい構造です。</p>
+
+<h3>4. 希薄化リスク</h3>
+<p>D-Waveは2026年上半期だけで発行済株式数が358.7百万株から372.0百万株へ増加しており、買収対価や資金調達に伴う希薄化が既に進行しています。潤沢な手元資金があっても、追加の大型買収・資金調達が今後も希薄化要因になり得ます。</p>
+
+<h3>5. セクター全体の連動性（前編と連動）</h3>
+<p>個別企業の材料と無関係に、セクター全体で同方向に大きく動く場面が頻発しています。</p>
+
+<h2><span class="num">⑦</span>まとめ ―― 「まだ判定できる段階にない」が、判断材料は整理できる</h2>
+
+<p>3部作を通じて確認できたのは、量子コンピューティング産業が「収益より期待」で評価される構造にあり、その期待の技術的な裏付けはまだ検証途上にあるという構図です。ただし、これは「投資判断が不可能」という意味ではありません。<strong>キャッシュランウェイ・商用収益比率・受注転換ペース・技術ロードマップの信頼性という4つの軸を用いれば、各社の相対的な立ち位置は整理できます。</strong></p>
+
+<p>編集部試算では、4社ともバイオテックの臨床開発企業と比べて明らかに潤沢なキャッシュランウェイを確保しています。一方で、受注から売上への転換ペースには企業間で差があり、D-Waveのようにこのギャップが際立つ企業もあります。技術面では、対象4社のいずれも「量子優位性の実証」そのものを主張しておらず、産業全体がまだ土台を築いている段階にあります。</p>
+
+<p><strong>「当たれば大きい」というテーマの性質上、この産業への投資は、技術的なブレークスルーと商業化の両方が同時に進むという前提に賭ける行為である</strong>という点を、あらためて強調しておきます。強気にも弱気にも寄せず、「まだ判定できる段階にない」という基本姿勢のもと、今後の決算・技術発表・政策動向を追い続けることが実務的な対応になります。</p>
+
+<p>次回は第2弾「AI×次世代原子力（SMR・核融合）」に移ります。</p>
+
+<div class="watch">
+  <h2><span class="num">◆</span>WHAT TO WATCH</h2>
+  <ul>
+    <li><strong>2026年Q3決算（11月前後発表見込み）</strong>：受注から売上への転換が進んだか、各社のキャッシュランウェイに変化はないか</li>
+    <li><strong>Rigetti・商務省LOIの正式契約移行</strong>：政府出資の条件が確定すれば、他の量子企業への波及も注目点</li>
+    <li><strong>D-WaveのRPO消化率</strong>：57%が12ヶ月以内に売上計上される見込みとされる契約が、実際にどの程度実現するか</li>
+    <li><strong>新規の量子優位性主張とその検証</strong>：中編で見た反証サイクルが今後も繰り返されるか</li>
+    <li><strong>希薄化の進行度合い</strong>：各社の発行済株式数の推移、増資・ATM（随時株式発行）の有無</li>
+    <li><strong>NQI再授権法案の本会議採決</strong>：成立すれば政府調達・研究資金の流入経路が明確化</li>
+  </ul>
+</div>
+
+<div class="series-nav">
+  <div class="ttl">「当たれば大きいAI関連分野」シリーズ構成</div>
+  <ol>
+    <li>第1弾：AI×量子コンピューティング　前編：業界マップ</li>
+    <li>第1弾：AI×量子コンピューティング　中編：技術検証編</li>
+    <li><strong>第1弾：AI×量子コンピューティング　後編：投資判断編（本稿）</strong></li>
+    <li>第2弾：AI×次世代原子力（SMR・核融合）</li>
+    <li>第3弾：AI×防衛テック（自律兵器・ドローン）</li>
+    <li>第4弾：AI×宇宙経済（衛星通信・宇宙インフラ）</li>
+  </ol>
+  <p style="margin:12px 0 0;font-size:13.5px;">第1弾の3部作はこれで完結です。この後、IonQ・Rigetti・D-Wave・Quantum Computing Incの個別企業記事を順次公開し、その後第2弾（次世代原子力）の3部作に着手予定です。</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="disclaimer">
+    <strong>【免責事項】</strong><br>
+    本レポートは情報提供を目的としたものであり、特定の有価証券の購入・売却を推奨するものではありません。記載内容は作成時点で信頼できると判断した情報に基づいていますが、その正確性・完全性を保証するものではありません。キャッシュランウェイの試算は編集部が四半期の損益データを単純に年率換算した簡易的なものであり、実際の資金繰り・今後の資金調達計画を保証するものではありません。株価・時価総額・バリュエーション指標は変動が激しく、出典・算出時点により幅があります。政府による資金提供・出資に関する記述は、レター・オブ・インテントや報道ベースの内容を含み、正式契約の成立を保証するものではありません。本シリーズは「当たれば大きい」という投機性の高いテーマを扱うため、ボラティリティ・赤字先行・希薄化リスクについて特にご留意ください。投資に関する最終的な決定は、ご自身の判断と責任において行っていただきますようお願いいたします。
+  </div>
+  <p style="margin-top:18px;">Market Supporter AI ／ 2026年8月31日</p>
+</footer>
+
+</div>
+</body>
+</html>
