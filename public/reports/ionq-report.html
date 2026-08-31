@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IonQ（IONQ）決算分析レポート｜Market Supporter AI</title>
+<meta name="description" content="Q2売上高287%増、RPO4.85億ドル。半導体ファウンドリSkyWater Technology買収完了がもたらす期待とコストを検証します。">
+<style>
+  :root{
+    --ink:#0d1b2a;
+    --ink-soft:#3d4f60;
+    --paper:#f7f9fc;
+    --line:#dde3ec;
+    --accent:#2f5fdb;
+    --accent-deep:#1f3f9e;
+    --accent-wash:#eaf0fd;
+    --amber:#b8791a;
+    --amber-wash:#fdf6e8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.9;
+    font-size:16px;
+  }
+  .wrap{max-width:860px;margin:0 auto;background:#fff;}
+  header.masthead{
+    background:linear-gradient(135deg,var(--accent-deep) 0%,var(--accent) 100%);
+    color:#fff;
+    padding:44px 32px 36px;
+  }
+  .brand{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    opacity:.85;margin-bottom:18px;
+  }
+  .series-tag{
+    display:inline-block;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    padding:4px 12px;border-radius:3px;
+    font-size:12px;letter-spacing:.08em;margin-bottom:14px;
+  }
+  header.masthead h1{
+    font-size:29px;line-height:1.5;margin:0 0 12px;font-weight:700;
+  }
+  header.masthead .sub{font-size:15px;opacity:.9;margin:0;}
+  .issue{
+    margin-top:22px;padding-top:16px;
+    border-top:1px solid rgba(255,255,255,.28);
+    font-size:13px;opacity:.85;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  main{padding:36px 32px 8px;}
+  .lede{
+    font-size:16.5px;
+    background:var(--accent-wash);
+    border-left:4px solid var(--accent);
+    padding:20px 22px;
+    margin:0 0 36px;
+  }
+  h2{
+    font-size:20px;margin:48px 0 18px;padding-bottom:10px;
+    border-bottom:2px solid var(--accent);
+    display:flex;align-items:baseline;gap:12px;
+  }
+  h2 .num{
+    color:var(--accent);font-size:24px;font-weight:700;
+    font-family:Georgia,serif;
+  }
+  h3{
+    font-size:16.5px;margin:30px 0 10px;color:var(--accent-deep);
+    border-left:3px solid var(--accent);padding-left:11px;
+  }
+  p{margin:0 0 16px;}
+  table{
+    width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:14.5px;
+  }
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:var(--accent-wash);font-weight:700;color:var(--accent-deep);}
+  tbody tr:nth-child(even){background:#fbfcfe;}
+  .kpi-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+    margin:20px 0 28px;
+  }
+  .kpi-card{
+    border:1px solid var(--line);background:#fff;border-radius:4px;
+    padding:14px 16px;border-top:3px solid var(--accent);
+  }
+  .kpi-card .label{font-size:12px;color:var(--ink-soft);margin-bottom:6px;}
+  .kpi-card .value{font-size:20px;font-weight:700;color:var(--accent-deep);}
+  .kpi-card .delta{font-size:12px;color:var(--ink-soft);margin-top:4px;}
+  .segment{
+    border:1px solid var(--line);border-left:6px solid var(--accent);
+    background:#fff;padding:16px 18px;margin-bottom:12px;border-radius:2px;
+  }
+  .segment .lbl{
+    font-size:12px;letter-spacing:.14em;color:var(--accent);
+    font-weight:700;margin-bottom:6px;
+  }
+  .segment .ttl{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .segment .desc{font-size:14.5px;color:var(--ink-soft);margin:0;}
+  .callout{
+    background:var(--accent-wash);border:1px solid #cfdcf6;
+    padding:16px 18px;margin:22px 0;font-size:14.5px;border-radius:2px;
+  }
+  .callout .callout-title{font-weight:700;color:var(--accent-deep);margin-bottom:6px;font-size:14px;}
+  .callout.warn{background:var(--amber-wash);border-color:#f0dfbc;}
+  .callout.warn .callout-title{color:var(--amber);}
+  .watch{
+    background:var(--ink);color:#e8eef2;padding:26px 26px 20px;margin:44px 0 0;
+  }
+  .watch h2{
+    color:#fff;border-bottom-color:rgba(255,255,255,.4);margin-top:0;
+  }
+  .watch h2 .num{color:#8fb0f5;}
+  .watch ul{padding-left:20px;margin:0;}
+  .watch li{margin-bottom:12px;font-size:15px;}
+  .watch strong{color:#8fb0f5;}
+  .series-nav{
+    background:var(--accent-wash);padding:20px 22px;margin:34px 0 0;
+    font-size:14.5px;border-radius:2px;
+  }
+  .series-nav .ttl{font-weight:700;color:var(--accent-deep);margin-bottom:10px;}
+  .series-nav ol{margin:0;padding-left:20px;}
+  .series-nav li{margin-bottom:6px;}
+  footer{
+    padding:26px 32px 40px;font-size:12.5px;color:var(--ink-soft);
+    border-top:1px solid var(--line);margin-top:36px;
+  }
+  .disclaimer{
+    background:var(--paper);border:1px solid var(--line);
+    padding:14px 16px;border-radius:2px;line-height:1.75;
+  }
+  @media(max-width:640px){
+    header.masthead{padding:32px 20px 28px;}
+    header.masthead h1{font-size:23px;}
+    main{padding:26px 20px 8px;}
+    footer{padding:22px 20px 32px;}
+    .watch{padding:22px 20px 16px;}
+    table{font-size:13.5px;}
+    th,td{padding:8px 9px;}
+    .kpi-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">Market Supporter AI</div>
+  <div class="series-tag">当たれば大きいAI関連分野 第1弾｜AI×量子コンピューティング 個別企業編</div>
+  <h1>IonQ（NYSE: IONQ）決算分析<br>―― SkyWater買収で「垂直統合」に踏み出した売上首位</h1>
+  <p class="sub">Q2売上高287%増、RPO4.85億ドル。半導体ファウンドリ買収がもたらす期待とコスト</p>
+  <div class="issue">
+    <span>2026年9月1日号</span>
+    <span>米国株シリーズ／個別企業レポート</span>
+  </div>
+</header>
+
+<main>
+
+<p class="lede">
+本シリーズ3部作（業界マップ・技術検証編・投資判断編）で確認した通り、IonQは対象4社の中で売上規模・RPO（残存履行義務）の拡大ペースともに首位に立っています。本稿では、2026年8月5日発表のQ2決算と、7月31日に完了した半導体ファウンドリ企業SkyWater Technologyの18億ドル買収を中心に、IonQ個別の状況を検証します。
+</p>
+
+<div class="kpi-grid">
+  <div class="kpi-card"><div class="label">株価（2026/8/27終値）</div><div class="value">$42.42</div><div class="delta">52週レンジ：$25.89〜$84.64</div></div>
+  <div class="kpi-card"><div class="label">時価総額（2026/8/27時点）</div><div class="value">約$17.2B</div><div class="delta">データソースにより幅あり</div></div>
+  <div class="kpi-card"><div class="label">PSR（FY2026ガイダンス中間値ベース）</div><div class="value">約60倍</div><div class="delta">編集部計算</div></div>
+</div>
+
+<h2><span class="num">①</span>市場規模 ―― トラップイオン方式の位置づけ</h2>
+
+<p>前編（産業地図）で確認した通り、量子コンピューティング市場全体の規模推計は調査機関間で2.5倍の開きがあります。IonQが採用するトラップイオン方式は、超伝導方式（Rigetti等）と並ぶ主要アプローチの一つで、量子ビットの忠実度（正確性）の高さを強みとする一方、動作速度では超伝導方式に劣るとされます。IonQは2025年以降、Oxford IonicsやLightsynqの人材・技術を取り込み、光量子干渉を用いたモジュール型アーキテクチャの開発を進めています。</p>
+
+<h2><span class="num">②</span>政策・規制環境</h2>
+
+<p>前編・後編で扱った通り、National Quantum Initiative再授権法案は2026年8月時点で上下両院の委員会を通過済みですが、本会議採決は未了です。IonQ固有の政策動向としては、国防高等研究計画局（DARPA）との契約が2,800万ドル拡張されたことが2026年8月に報じられているほか、Anduril・サンディア国立研究所との覚書（MOU）締結など、防衛・国家安全保障分野での存在感を強めています。DARPAの量子コンピューティング計画「ステージB」への進展も、今後の政府向け収益に影響する可能性があります。</p>
+
+<div class="callout warn">
+  <div class="callout-title">留保：MOU・契約拡張の性質</div>
+  Anduril・サンディア国立研究所とのMOUは覚書段階であり、具体的な収益に直結する確定契約ではありません。DARPA契約の拡張額（2,800万ドル）も、IonQの通期売上ガイダンス（2.8〜2.9億ドル）に対しては一部にとどまります。政府・防衛関連の発表は事業の方向性を示す材料として捉え、確定した収益貢献と混同しないよう注意が必要です。
+</div>
+
+<h2><span class="num">③</span>コスト・収益構造</h2>
+
+<p>IonQの収益源は、AWS・Azure・Google Cloud経由のクラウドアクセス料、大型契約（政府・宇宙・防衛向け）、そして2026年7月のSkyWater買収完了以降は半導体製造事業が加わりました。Q2決算では、国際顧客が売上の約50%、商用顧客が約60%を占めるとされ、政府・研究機関への依存度は他の3社（特にQCi）と比べて相対的に低い構造です。複数製品にまたがる販売（コンピューティング・ネットワーキング・セキュリティの組み合わせ）は前年同期比40%増となり、クロスセルの進展がうかがえます。</p>
+
+<h3>SkyWater買収の位置づけ</h3>
+<p>2026年7月31日に完了した18億ドルのSkyWater Technology買収により、IonQは米国内で唯一、量子コンピュータの設計から半導体製造までを垂直統合できる企業になったと位置づけられています。買収完了後の手元資金・投資は約20億ドルです。この統合の狙いは、外部ファウンドリへの依存を減らし、半導体量子ビットの製造コスト・リードタイムを自社でコントロールすることにあります。ただし、買収に伴うのれん・無形資産の計上や統合コストが、今後複数四半期にわたり損益計算書に影響することが見込まれます。</p>
+
+<h2><span class="num">④</span>事業セグメント動向</h2>
+
+<div class="segment">
+  <div class="lbl">Q2 2026決算のハイライト</div>
+  <div class="ttl">売上高8,005万ドル、市場予想を約20%上回る</div>
+  <p class="desc">売上高は前年同期比287%増の8,005万ドル。調整後EPSは▲0.33ドルで、市場予想の▲0.56ドルより損失幅が縮小した。通期売上ガイダンスは2.6〜2.7億ドルから2.8〜2.9億ドルへ上方修正された。RPO（残存履行義務）は4億8,500万ドルへ拡大し、前年同期比297%増と4社中最大の伸び率を記録した。</p>
+</div>
+
+<div class="segment">
+  <div class="lbl">収益性の内訳</div>
+  <div class="ttl">GAAP純損失は非現金項目が主因</div>
+  <p class="desc">GAAP純損失は18億6,770万ドルと大きいが、この大半はワラント負債の時価評価に伴う非現金項目である。実質的な資金消費を示す調整後EBITDA損失は1億2,030万ドル（SkyWater関連費用を除くと9,560万ドル）。オペレーティングマージンはマイナス408.2%と、依然として大幅な赤字が続いている。</p>
+</div>
+
+<div class="segment">
+  <div class="lbl">宇宙・防衛分野への展開</div>
+  <div class="ttl">子会社Skyloomの光通信端末が拡大</div>
+  <p class="desc">2026年8月、IonQの子会社Skyloomが、York Space Systemsの人工衛星に追加の光通信端末を配備したと発表された。宇宙経済・防衛テック分野への布石であり、本シリーズの今後のテーマ（第3弾・第4弾）とも関連する動きである。また、Infleqtion（非上場、比較対象として言及されることがある新興企業）がNASAから量子重力測定に関する2,000万ドルの助成を獲得したとの報道を受け、IonQ株も連動して上昇する場面があった。</p>
+</div>
+
+<h2><span class="num">⑤</span>株式バリュエーション</h2>
+
+<p>2026年8月27日終値は42.42ドル、時価総額は約172億ドルとされています（Robinhood集計）。データソースにより時価総額の集計時点・株式数の反映が異なるため、他ソースでは8月14日時点で176億ドル（stockanalysis.com）、8月7日時点で166億ドル（同）といった幅があります。本稿では2026年8月下旬の複数ソースを踏まえ「概ね170億〜180億ドル」という範囲で扱います。52週レンジは25.89〜84.64ドルと非常に広く、2026年5月末に72ドル近辺の高値をつけた後、7月末には32ドル近辺まで下落し、8月5日のQ2決算後に反発するなど、値動きの荒さが際立ちます。</p>
+
+<p>通期売上ガイダンス中間値（2.85億ドル）に対する時価総額のPSR（株価売上高倍率）は編集部計算で約60倍となります。前編で確認した4社平均的な水準（数十〜数百倍）の中では相対的に低い方ですが、これは売上規模が4社中最大であることの裏返しであり、絶対的な評価水準として「割安」を意味するものではありません。ベータ値は2.4〜2.7程度とされ、市場平均よりも大きく変動しやすい銘柄です。</p>
+
+<div class="callout warn">
+  <div class="callout-title">留保：アナリスト評価の分かれ方</div>
+  MarketBeatの集計ではコンセンサス評価は「Moderate Buy」（買い5・中立2・売り0）とされる一方、平均目標株価（41.43ドル）は2026年8月27日時点の株価（42.42ドル）を下回っており、アナリストの強気度合いには幅があります。カバレッジするアナリストの数自体も過去90日間で4件と限定的であり、コンセンサスの安定性には留意が必要です。
+</div>
+
+<h2><span class="num">⑥</span>リスク要因</h2>
+
+<h3>1. SkyWater統合の実行リスク</h3>
+<p>半導体ファウンドリの統合は、量子コンピュータ企業にとって前例の少ない試みです。製造の内製化がコスト削減・リードタイム短縮につながるかどうかは、今後の四半期決算で検証する必要があります。</p>
+
+<h3>2. 巨額の損失計上が続く構造</h3>
+<p>調整後EBITDA損失は四半期あたり1億ドルを超える水準にあり、SkyWater買収後の統合コストも重なることから、当面は大幅な赤字が続く見通しです。</p>
+
+<h3>3. 値動きの荒さ</h3>
+<p>52週で25.89〜84.64ドルという3倍以上のレンジを記録しており、ベータ値も市場平均を大きく上回ります。中編で扱った通り、量子優位性を巡る新たな主張が出た場合、その後の反証によって株価が大きく振れるリスクも継続します。</p>
+
+<h3>4. アナリスト評価のばらつき</h3>
+<p>カバレッジするアナリストの数が限定的で、目標株価と実際の株価水準にも乖離があります。</p>
+
+<h3>5. セクター全体の連動性</h3>
+<p>前編・後編で扱った通り、個別材料がなくてもセクター全体（IONQ・RGTI・QBTS・QUBT）が同方向に大きく動く場面が頻発しています。2026年8月18日には、米国債利回りの上昇を背景に4銘柄そろって下落する場面がありました。</p>
+
+<h2><span class="num">⑦</span>まとめ</h2>
+
+<p>IonQは、売上規模・RPOの拡大ペースの両面で、本シリーズ対象4社の中で最も進んだ位置にあります。SkyWater買収による垂直統合という戦略は、他の3社にはない独自の打ち手であり、成功すれば製造面での競争優位につながる可能性があります。一方で、統合の実行リスク、巨額の赤字が続く構造、そして値動きの荒さは、この銘柄が依然として「当たれば大きい」テーマの投機的な性格を色濃く残していることを示しています。<strong>本シリーズの基本姿勢に沿い、IonQの評価についても「まだ判定できる段階にない」という中立的な立ち位置を維持します。</strong></p>
+
+<div class="watch">
+  <h2><span class="num">◆</span>WHAT TO WATCH</h2>
+  <ul>
+    <li><strong>SkyWater統合の進捗</strong>：2027年上半期に予定される半導体量子ビットの商用システム稼働に向けたマイルストーン</li>
+    <li><strong>2026年Q3決算（11月前後発表見込み）</strong>：通期ガイダンス（2.8〜2.9億ドル）に対する進捗確認</li>
+    <li><strong>DARPA「ステージB」への進展</strong>：政府向け契約の拡大につながるか</li>
+    <li><strong>Anduril・サンディア国立研究所とのMOUの具体化</strong>：確定契約への移行があるか</li>
+    <li><strong>Skyloom（宇宙・光通信事業）の受注拡大</strong>：第4弾（AI×宇宙経済）シリーズとの関連でも注目</li>
+    <li><strong>調整後EBITDA損失の推移</strong>：SkyWater関連費用を除いたベースでの赤字縮小ペース</li>
+  </ul>
+</div>
+
+<div class="series-nav">
+  <div class="ttl">「当たれば大きいAI関連分野」シリーズ構成</div>
+  <ol>
+    <li>第1弾：AI×量子コンピューティング　前編：業界マップ</li>
+    <li>第1弾：AI×量子コンピューティング　中編：技術検証編</li>
+    <li>第1弾：AI×量子コンピューティング　後編：投資判断編</li>
+    <li><strong>第1弾：個別企業編①　IonQ（本稿）</strong></li>
+    <li>第1弾：個別企業編②　Rigetti Computing（次回）</li>
+    <li>第1弾：個別企業編③　D-Wave Quantum</li>
+    <li>第1弾：個別企業編④　Quantum Computing Inc.</li>
+  </ol>
+  <p style="margin:12px 0 0;font-size:13.5px;">次回はRigetti Computingです。米商務省とのLOI（最大1億ドル、CHIPS法枠）と、超伝導方式108量子ビット「Cepheus」の状況を検証します。</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="disclaimer">
+    <strong>【免責事項】</strong><br>
+    本レポートは情報提供を目的としたものであり、特定の有価証券の購入・売却を推奨するものではありません。記載内容は作成時点で信頼できると判断した情報に基づいていますが、その正確性・完全性を保証するものではありません。株価・時価総額・バリュエーション指標は変動が激しく、データソース間で株式数の反映時期が異なるため幅を持たせて記載しています。政府機関・防衛関連企業とのMOU・契約拡張に関する記述は、確定した収益貢献を保証するものではありません。本シリーズは「当たれば大きい」という投機性の高いテーマを扱うため、ボラティリティ・赤字先行・希薄化リスクについて特にご留意ください。投資に関する最終的な決定は、ご自身の判断と責任において行っていただきますようお願いいたします。
+  </div>
+  <p style="margin-top:18px;">Market Supporter AI ／ 2026年9月1日</p>
+</footer>
+
+</div>
+</body>
+</html>
