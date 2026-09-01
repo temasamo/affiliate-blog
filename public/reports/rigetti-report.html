@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rigetti Computing（RGTI）決算分析｜Market Supporter AI</title>
+<meta name="description" content="108量子ビット「Cepheus」を商用提供。最大1億ドルの米商務省LOIは株式の希薄化を伴う条件付きで、まだ最終契約前の段階です。">
+<style>
+  :root{
+    --ink:#0d1b2a;
+    --ink-soft:#3d4f60;
+    --paper:#f7f9fc;
+    --line:#dde3ec;
+    --accent:#5e4ae3;
+    --accent-deep:#4331a8;
+    --accent-wash:#efecfc;
+    --amber:#b8791a;
+    --amber-wash:#fdf6e8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.9;
+    font-size:16px;
+  }
+  .wrap{max-width:860px;margin:0 auto;background:#fff;}
+  header.masthead{
+    background:linear-gradient(135deg,var(--accent-deep) 0%,var(--accent) 100%);
+    color:#fff;
+    padding:44px 32px 36px;
+  }
+  .brand{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    opacity:.85;margin-bottom:18px;
+  }
+  .series-tag{
+    display:inline-block;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    padding:4px 12px;border-radius:3px;
+    font-size:12px;letter-spacing:.08em;margin-bottom:14px;
+  }
+  header.masthead h1{
+    font-size:29px;line-height:1.5;margin:0 0 12px;font-weight:700;
+  }
+  header.masthead .sub{font-size:15px;opacity:.9;margin:0;}
+  .issue{
+    margin-top:22px;padding-top:16px;
+    border-top:1px solid rgba(255,255,255,.28);
+    font-size:13px;opacity:.85;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  main{padding:36px 32px 8px;}
+  .lede{
+    font-size:16.5px;
+    background:var(--accent-wash);
+    border-left:4px solid var(--accent);
+    padding:20px 22px;
+    margin:0 0 36px;
+  }
+  h2{
+    font-size:20px;margin:48px 0 18px;padding-bottom:10px;
+    border-bottom:2px solid var(--accent);
+    display:flex;align-items:baseline;gap:12px;
+  }
+  h2 .num{
+    color:var(--accent);font-size:24px;font-weight:700;
+    font-family:Georgia,serif;
+  }
+  h3{
+    font-size:16.5px;margin:30px 0 10px;color:var(--accent-deep);
+    border-left:3px solid var(--accent);padding-left:11px;
+  }
+  p{margin:0 0 16px;}
+  table{
+    width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:14.5px;
+  }
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:var(--accent-wash);font-weight:700;color:var(--accent-deep);}
+  tbody tr:nth-child(even){background:#fbfcfe;}
+  .kpi-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+    margin:20px 0 28px;
+  }
+  .kpi-card{
+    border:1px solid var(--line);background:#fff;border-radius:4px;
+    padding:14px 16px;border-top:3px solid var(--accent);
+  }
+  .kpi-card .label{font-size:12px;color:var(--ink-soft);margin-bottom:6px;}
+  .kpi-card .value{font-size:20px;font-weight:700;color:var(--accent-deep);}
+  .kpi-card .delta{font-size:12px;color:var(--ink-soft);margin-top:4px;}
+  .segment{
+    border:1px solid var(--line);border-left:6px solid var(--accent);
+    background:#fff;padding:16px 18px;margin-bottom:12px;border-radius:2px;
+  }
+  .segment .lbl{
+    font-size:12px;letter-spacing:.14em;color:var(--accent);
+    font-weight:700;margin-bottom:6px;
+  }
+  .segment .ttl{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .segment .desc{font-size:14.5px;color:var(--ink-soft);margin:0;}
+  .callout{
+    background:var(--accent-wash);border:1px solid #d8d1f7;
+    padding:16px 18px;margin:22px 0;font-size:14.5px;border-radius:2px;
+  }
+  .callout .callout-title{font-weight:700;color:var(--accent-deep);margin-bottom:6px;font-size:14px;}
+  .callout.warn{background:var(--amber-wash);border-color:#f0dfbc;}
+  .callout.warn .callout-title{color:var(--amber);}
+  .watch{
+    background:var(--ink);color:#e8eef2;padding:26px 26px 20px;margin:44px 0 0;
+  }
+  .watch h2{
+    color:#fff;border-bottom-color:rgba(255,255,255,.4);margin-top:0;
+  }
+  .watch h2 .num{color:#b3a4f7;}
+  .watch ul{padding-left:20px;margin:0;}
+  .watch li{margin-bottom:12px;font-size:15px;}
+  .watch strong{color:#b3a4f7;}
+  .series-nav{
+    background:var(--accent-wash);padding:20px 22px;margin:34px 0 0;
+    font-size:14.5px;border-radius:2px;
+  }
+  .series-nav .ttl{font-weight:700;color:var(--accent-deep);margin-bottom:10px;}
+  .series-nav ol{margin:0;padding-left:20px;}
+  .series-nav li{margin-bottom:6px;}
+  footer{
+    padding:26px 32px 40px;font-size:12.5px;color:var(--ink-soft);
+    border-top:1px solid var(--line);margin-top:36px;
+  }
+  .disclaimer{
+    background:var(--paper);border:1px solid var(--line);
+    padding:14px 16px;border-radius:2px;line-height:1.75;
+  }
+  @media(max-width:640px){
+    header.masthead{padding:32px 20px 28px;}
+    header.masthead h1{font-size:23px;}
+    main{padding:26px 20px 8px;}
+    footer{padding:22px 20px 32px;}
+    .watch{padding:22px 20px 16px;}
+    table{font-size:13.5px;}
+    th,td{padding:8px 9px;}
+    .kpi-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">Market Supporter AI</div>
+  <div class="series-tag">当たれば大きいAI関連分野 第1弾｜AI×量子コンピューティング 個別企業編</div>
+  <h1>Rigetti Computing（NASDAQ: RGTI）決算分析<br>―― 無借金の潤沢な手元資金と、商務省LOIという賭け</h1>
+  <p class="sub">108量子ビット「Cepheus」を商用提供。最大1億ドルの政府資金は「株式の希薄化」を伴う条件付き</p>
+  <div class="issue">
+    <span>2026年9月2日号</span>
+    <span>米国株シリーズ／個別企業レポート</span>
+  </div>
+</header>
+
+<main>
+
+<p class="lede">
+本シリーズ3部作で確認した通り、Rigetti Computingは対象4社の中で最も潤沢な無借金の手元資金を持つ一方、売上規模は4社中最小です。本稿では、2026年8月6日発表のQ2決算と、米商務省との間で締結された最大1億ドルのLOI（レター・オブ・インテント）の中身を中心に、Rigetti個別の状況を検証します。
+</p>
+
+<div class="kpi-grid">
+  <div class="kpi-card"><div class="label">株価（2026/8/28時点）</div><div class="value">$16.59前後</div><div class="delta">52週レンジ：$12.53〜$58.15</div></div>
+  <div class="kpi-card"><div class="label">時価総額（2026/8/28時点）</div><div class="value">約$5.5B</div><div class="delta">データソースにより幅あり</div></div>
+  <div class="kpi-card"><div class="label">PSR（直近12カ月ベース）</div><div class="value">約407倍</div><div class="delta">2026年8月28日時点の報道集計</div></div>
+</div>
+
+<h2><span class="num">①</span>市場規模 ―― 超伝導方式のポジション</h2>
+
+<p>前編（産業地図）で確認した通り、Rigettiが採用する超伝導方式は、IonQのトラップイオン方式と並ぶ主要アプローチです。動作速度に優れる一方、量子ビットの忠実度（正確性）を高く保つには高度な誤り抑制技術が求められます。Rigettiは自社チップ製造施設「Fab-1」を保有し、量子デバイスの設計から製造までを内製化している点を独自の強みとして位置づけています。</p>
+
+<h2><span class="num">②</span>政策・規制環境 ―― 商務省LOIの実際の条件</h2>
+
+<p>本シリーズで繰り返し取り上げてきた通り、Rigettiは2026年5月、米商務省との間で最大1億ドルの資金提供に関するLOIを締結しました。CHIPS法研究開発局の広域機関告知（Broad Agency Announcement）の枠組みに基づくもので、超伝導量子コンピューティングの研究開発加速を目的としています。8月6日のQ2決算発表でも、この件が経営陣によって改めて重要な戦略的節目として言及されました。</p>
+
+<div class="callout warn">
+  <div class="callout-title">留保：LOIの条件を正確に理解する</div>
+  SEC提出書類（8-K）によれば、このLOIは<strong>商務省が新規発行の普通株式によってRigettiの株式を取得する</strong>という条件を含んでいます。株式の評価額は、指定された3つの日付における最安値の終値を基準に、そこから15%のディスカウントを適用して算定される見込みとされています。これは既存株主にとって希薄化要因となります。さらに重要な点として、<strong>両当事者は現時点で「最終的な取引契約の交渉を行うことに合意した」段階にとどまり</strong>、資金提供と株式発行の実行は、その最終契約の締結が条件となっています。正式契約はまだ成立していません。
+</div>
+
+<p>Rigettiはこれとは別に、英国において量子コンピューティング開発を加速するため、今後数年間で最大1億ドルを投資する計画も進めています。英国国立量子コンピューティングセンターに36量子ビットシステムを既に導入しており、この投資はその既存の英国拠点を拡張する位置づけです。</p>
+
+<h2><span class="num">③</span>コスト・収益構造</h2>
+
+<p>Q2 2026決算によれば、収益は主にオンプレミス機器（Novera QPU）の販売と、政府・研究機関向けのシステム納入から構成されています。売上高514万ドルの牽引役は、既発表のNovera購入注文の認識によるオンプレミス販売でした。売上総利益率は43%へ改善（前年同期31%）した一方、営業費用は3,030万ドルへ拡大（前年同期2,040万ドル）し、研究開発・エンジニアリング人員・製造関連の支出が中心となっています。</p>
+
+<div class="callout">
+  <div class="callout-title">読み方の指針：売上の「波」を理解する</div>
+  経営陣は決算説明会で、Rigettiの収益プロファイルはシステム納入や政府資金プロジェクトのタイミングに左右され続けると説明しています。インドのC-DAC（先端計算開発センター）向け840万ドルの108量子ビットオンプレミスシステム受注は、Q2時点でまだ進行中で、設置・性能受け入れ試験を経て2026年第4四半期に売上計上される見込みとされています。四半期ごとの売上の振れは、この産業の現段階に内在する特徴であり、長期的な資本配分戦略の判断材料としては見ていないと経営陣は述べています。
+</div>
+
+<h2><span class="num">④</span>事業セグメント動向</h2>
+
+<div class="segment">
+  <div class="lbl">Q2 2026決算のハイライト</div>
+  <div class="ttl">売上高514万ドル（前年同期比183%増）</div>
+  <p class="desc">前年同期の180万ドルから183%増加。GAAP純損失は5,260万ドル（前年同期3,970万ドル）で、デリバティブ・ワラント負債およびアーンアウト負債の時価評価が損益に影響した。非GAAP純損失は1,600万ドル（前年同期1,330万ドル）。手元資金・投資は5億4,130万ドルで無借金を維持している。</p>
+</div>
+
+<div class="segment">
+  <div class="lbl">技術ロードマップの進捗</div>
+  <div class="ttl">108量子ビット「Cepheus-1-108Q」を商用展開</div>
+  <p class="desc">12個の9量子ビットチップレットをタイル状に接続する独自のマルチチップ方式で、業界最大級のマルチチップ量子コンピュータと位置づけられている。経営陣は、1,000量子ビット・2量子ビットゲート忠実度約99.9%・ゲート速度50ナノ秒未満という「北極星」的な3年ロードマップを改めて表明した。中編（技術検証編）で確認した通り、これらは量子優位性そのものの実証ではなく、その土台となる技術指標である点に留意が必要である。</p>
+</div>
+
+<div class="segment">
+  <div class="lbl">組織再編とパートナーシップ拡大</div>
+  <div class="ttl">システム納入体制の専任組織を新設</div>
+  <p class="desc">2026年8月19日、顧客向けシステム納入の拡大とプロセッサロードマップの推進を目的とした専任の「Systems Delivery Organization」の新設を発表。株価はこの発表を受けて上昇する場面があった。また、HPE・ピッツバーグ・スーパーコンピューティングセンターとの提携拡大により、NSF（全米科学財団）助成による新設のTangleLabテストベッド向けに9量子ビットのNoveraシステムを納入する予定である。</p>
+</div>
+
+<h2><span class="num">⑤</span>株式バリュエーション</h2>
+
+<p>2026年8月28日前後の株価は16ドル台半ばで推移しており、時価総額は5.5億ドル台後半（複数ソースで5.49億〜5.7億ドルの幅）とされています。52週レンジは12.53〜58.15ドルと非常に広く、2025年10月の高値（58.15ドル）から大きく調整した水準です。直近12カ月ベースのPSR（株価売上高倍率）は、2026年8月28日時点の報道集計で約407倍とされており、対象4社の中でも極めて高い水準です。</p>
+
+<div class="callout warn">
+  <div class="callout-title">留保：8.63億ドルのインサイダー売却という警告シグナル</div>
+  2026年8月末に報じられた分析によれば、IonQ・Rigetti・D-Waveの3社合計で、過去3年間のインサイダー（役員・大株主等）による純売却額は約8.63億ドルに達し、この間のインサイダーによる買い越しはほぼ皆無とされています。同分析は、同時点のPSRがIonQ約69倍、Rigetti約407倍、D-Wave約532倍という水準にあり、いずれも歴史的に持続困難とされる30倍を大きく超えていると指摘しています。Rigettiについて直近報じられた個別の売却事例（COOによる約9,000株、15万ドル規模）は譲渡制限付株式ユニット（RSU）の税金納付目的の非裁量的な売却とされていますが、業界全体でインサイダーの買い増しがほとんど見られない構造は、バリュエーションの持続性を考える上で無視できない材料です。
+</div>
+
+<h2><span class="num">⑥</span>リスク要因</h2>
+
+<h3>1. 商務省LOIが最終契約に至らないリスク</h3>
+<p>②で確認した通り、LOIは最終契約の交渉に合意した段階にとどまり、資金提供・株式発行の実行は今後の交渉次第です。条件が変更される、あるいは交渉が不成立に終わる可能性も排除できません。</p>
+
+<h3>2. 実現した場合の希薄化リスク</h3>
+<p>LOIが想定通り実行された場合、新規発行株式による希薄化が生じます。評価額算定方式（安値基準・15%ディスカウント）は、既存株主にとって有利な条件とは言えません。</p>
+
+<h3>3. 売上の変動性が大きい構造</h3>
+<p>オンプレミス機器の受注・納品タイミングに左右されるため、四半期ごとの売上に大きな波があります。C-DAC向け案件のように、当初想定から売上計上時期がずれ込む可能性もあります。</p>
+
+<h3>4. 極端に高いPSR水準とインサイダー売却</h3>
+<p>直近12カ月ベースのPSRが約407倍という水準は、将来の技術的・商業的成功を強く織り込んだ株価であることを意味します。インサイダーによる買い増しがほぼ見られない状況は、内部関係者がこの評価水準に対して積極的な自信を示していない可能性を示唆します。</p>
+
+<h3>5. セクター全体の連動性</h3>
+<p>前編・後編で扱った通り、個別材料がなくてもセクター全体が同方向に大きく動く場面が頻発しています。</p>
+
+<h2><span class="num">⑦</span>まとめ</h2>
+
+<p>Rigettiは、無借金・5億ドル超という財務的な安全性を武器に、技術ロードマップの着実な実行を進めている段階にあります。108量子ビット「Cepheus」の商用展開、専任のシステム納入組織の新設など、実行面での前進は確認できます。一方で、収益規模は4社中最小にとどまり、商務省LOIも最終契約前の段階です。<strong>「潤沢な資金」と「極端に高いバリュエーション」が同居するこの銘柄についても、本シリーズの基本姿勢に沿い「まだ判定できる段階にない」という中立的な立ち位置を維持します。</strong></p>
+
+<div class="watch">
+  <h2><span class="num">◆</span>WHAT TO WATCH</h2>
+  <ul>
+    <li><strong>商務省LOIの最終契約への移行</strong>：条件が確定するか、交渉が長期化・不成立となるか</li>
+    <li><strong>C-DAC向け108量子ビットシステムの売上計上</strong>：2026年第4四半期に予定通り計上されるか</li>
+    <li><strong>英国における最大1億ドル投資計画の進捗</strong></li>
+    <li><strong>1,000量子ビット・忠実度99.9%ロードマップの中間進捗</strong></li>
+    <li><strong>インサイダー取引動向</strong>：買い増しの兆候が現れるか</li>
+    <li><strong>2026年Q3決算（11月前後発表見込み）</strong></li>
+  </ul>
+</div>
+
+<div class="series-nav">
+  <div class="ttl">「当たれば大きいAI関連分野」シリーズ構成</div>
+  <ol>
+    <li>第1弾：AI×量子コンピューティング　前編：業界マップ</li>
+    <li>第1弾：AI×量子コンピューティング　中編：技術検証編</li>
+    <li>第1弾：AI×量子コンピューティング　後編：投資判断編</li>
+    <li>第1弾：個別企業編①　IonQ</li>
+    <li><strong>第1弾：個別企業編②　Rigetti Computing（本稿）</strong></li>
+    <li>第1弾：個別企業編③　D-Wave Quantum（次回）</li>
+    <li>第1弾：個別企業編④　Quantum Computing Inc.</li>
+  </ol>
+  <p style="margin:12px 0 0;font-size:13.5px;">次回はD-Wave Quantumです。商用収益比率62.4%への上昇と、Science誌「Beyond-Classical」論争のその後の状況を中心に検証します。</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="disclaimer">
+    <strong>【免責事項】</strong><br>
+    本レポートは情報提供を目的としたものであり、特定の有価証券の購入・売却を推奨するものではありません。記載内容は作成時点で信頼できると判断した情報に基づいていますが、その正確性・完全性を保証するものではありません。株価・時価総額・バリュエーション指標は変動が激しく、データソース間で株式数の反映時期が異なるため幅を持たせて記載しています。米商務省とのLOIは最終契約が未締結の段階であり、資金提供・株式発行の実行を保証するものではありません。インサイダー取引に関する記述は公開情報（SEC提出書類等）に基づく報道の整理であり、特定の意図を断定するものではありません。本シリーズは「当たれば大きい」という投機性の高いテーマを扱うため、ボラティリティ・赤字先行・希薄化リスクについて特にご留意ください。投資に関する最終的な決定は、ご自身の判断と責任において行っていただきますようお願いいたします。
+  </div>
+  <p style="margin-top:18px;">Market Supporter AI ／ 2026年9月2日</p>
+</footer>
+
+</div>
+</body>
+</html>
