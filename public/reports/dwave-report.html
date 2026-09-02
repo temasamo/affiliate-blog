@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D-Wave Quantum（QBTS）決算分析｜Market Supporter AI</title>
+<meta name="description" content="上半期ブッキング1,120%増の一方、Q2売上高は横ばい。CFO退任発表で株価は週間16.6%下落しました。「Beyond-Classical」論争の2026年7月以降の続報も検証します。">
+<style>
+  :root{
+    --ink:#0d1b2a;
+    --ink-soft:#3d4f60;
+    --paper:#f7f9fc;
+    --line:#dde3ec;
+    --accent:#8347d9;
+    --accent-deep:#5f2fb0;
+    --accent-wash:#f2ecfb;
+    --amber:#b8791a;
+    --amber-wash:#fdf6e8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.9;
+    font-size:16px;
+  }
+  .wrap{max-width:860px;margin:0 auto;background:#fff;}
+  header.masthead{
+    background:linear-gradient(135deg,var(--accent-deep) 0%,var(--accent) 100%);
+    color:#fff;
+    padding:44px 32px 36px;
+  }
+  .brand{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    opacity:.85;margin-bottom:18px;
+  }
+  .series-tag{
+    display:inline-block;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    padding:4px 12px;border-radius:3px;
+    font-size:12px;letter-spacing:.08em;margin-bottom:14px;
+  }
+  header.masthead h1{
+    font-size:29px;line-height:1.5;margin:0 0 12px;font-weight:700;
+  }
+  header.masthead .sub{font-size:15px;opacity:.9;margin:0;}
+  .issue{
+    margin-top:22px;padding-top:16px;
+    border-top:1px solid rgba(255,255,255,.28);
+    font-size:13px;opacity:.85;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  main{padding:36px 32px 8px;}
+  .lede{
+    font-size:16.5px;
+    background:var(--accent-wash);
+    border-left:4px solid var(--accent);
+    padding:20px 22px;
+    margin:0 0 36px;
+  }
+  h2{
+    font-size:20px;margin:48px 0 18px;padding-bottom:10px;
+    border-bottom:2px solid var(--accent);
+    display:flex;align-items:baseline;gap:12px;
+  }
+  h2 .num{
+    color:var(--accent);font-size:24px;font-weight:700;
+    font-family:Georgia,serif;
+  }
+  h3{
+    font-size:16.5px;margin:30px 0 10px;color:var(--accent-deep);
+    border-left:3px solid var(--accent);padding-left:11px;
+  }
+  p{margin:0 0 16px;}
+  table{
+    width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:14.5px;
+  }
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:var(--accent-wash);font-weight:700;color:var(--accent-deep);}
+  tbody tr:nth-child(even){background:#fbfcfe;}
+  .kpi-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+    margin:20px 0 28px;
+  }
+  .kpi-card{
+    border:1px solid var(--line);background:#fff;border-radius:4px;
+    padding:14px 16px;border-top:3px solid var(--accent);
+  }
+  .kpi-card .label{font-size:12px;color:var(--ink-soft);margin-bottom:6px;}
+  .kpi-card .value{font-size:20px;font-weight:700;color:var(--accent-deep);}
+  .kpi-card .delta{font-size:12px;color:var(--ink-soft);margin-top:4px;}
+  .segment{
+    border:1px solid var(--line);border-left:6px solid var(--accent);
+    background:#fff;padding:16px 18px;margin-bottom:12px;border-radius:2px;
+  }
+  .segment .lbl{
+    font-size:12px;letter-spacing:.14em;color:var(--accent);
+    font-weight:700;margin-bottom:6px;
+  }
+  .segment .ttl{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .segment .desc{font-size:14.5px;color:var(--ink-soft);margin:0;}
+  .callout{
+    background:var(--accent-wash);border:1px solid #e0d3f7;
+    padding:16px 18px;margin:22px 0;font-size:14.5px;border-radius:2px;
+  }
+  .callout .callout-title{font-weight:700;color:var(--accent-deep);margin-bottom:6px;font-size:14px;}
+  .callout.warn{background:var(--amber-wash);border-color:#f0dfbc;}
+  .callout.warn .callout-title{color:var(--amber);}
+  .watch{
+    background:var(--ink);color:#e8eef2;padding:26px 26px 20px;margin:44px 0 0;
+  }
+  .watch h2{
+    color:#fff;border-bottom-color:rgba(255,255,255,.4);margin-top:0;
+  }
+  .watch h2 .num{color:#c9aef4;}
+  .watch ul{padding-left:20px;margin:0;}
+  .watch li{margin-bottom:12px;font-size:15px;}
+  .watch strong{color:#c9aef4;}
+  .series-nav{
+    background:var(--accent-wash);padding:20px 22px;margin:34px 0 0;
+    font-size:14.5px;border-radius:2px;
+  }
+  .series-nav .ttl{font-weight:700;color:var(--accent-deep);margin-bottom:10px;}
+  .series-nav ol{margin:0;padding-left:20px;}
+  .series-nav li{margin-bottom:6px;}
+  footer{
+    padding:26px 32px 40px;font-size:12.5px;color:var(--ink-soft);
+    border-top:1px solid var(--line);margin-top:36px;
+  }
+  .disclaimer{
+    background:var(--paper);border:1px solid var(--line);
+    padding:14px 16px;border-radius:2px;line-height:1.75;
+  }
+  @media(max-width:640px){
+    header.masthead{padding:32px 20px 28px;}
+    header.masthead h1{font-size:23px;}
+    main{padding:26px 20px 8px;}
+    footer{padding:22px 20px 32px;}
+    .watch{padding:22px 20px 16px;}
+    table{font-size:13.5px;}
+    th,td{padding:8px 9px;}
+    .kpi-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">Market Supporter AI</div>
+  <div class="series-tag">当たれば大きいAI関連分野 第1弾｜AI×量子コンピューティング 個別企業編</div>
+  <h1>D-Wave Quantum（NASDAQ: QBTS）決算分析<br>―― 受注急拡大の裏で、CFO突然退任と「量子優位性」論争が続く</h1>
+  <p class="sub">上半期ブッキング1,120%増の一方、Q2売上高は横ばい。CFO退任発表で株価は週間16.6%下落</p>
+  <div class="issue">
+    <span>2026年9月3日号</span>
+    <span>米国株シリーズ／個別企業レポート</span>
+  </div>
+</header>
+
+<main>
+
+<p class="lede">
+本シリーズ3部作で確認した通り、D-Waveは商用収益比率の上昇が最も進む一方、受注と売上のギャップが4社中最大という特徴を持ちます。本稿では、2026年8月6日発表のQ2決算に加え、8月25日に発表されたCFO退任という新たな材料、そして中編で扱った「Beyond-Classical」論争のその後を中心に、D-Wave個別の状況を検証します。
+</p>
+
+<div class="kpi-grid">
+  <div class="kpi-card"><div class="label">株価（2026/8/28終値）</div><div class="value">$17.01前後</div><div class="delta">52週レンジ：$12.75〜$46.75</div></div>
+  <div class="kpi-card"><div class="label">時価総額（2026/8/28時点）</div><div class="value">約$6.3B〜$6.7B</div><div class="delta">データソースにより幅あり</div></div>
+  <div class="kpi-card"><div class="label">PSR（直近報道集計）</div><div class="value">約532倍</div><div class="delta">2026年8月28日時点</div></div>
+</div>
+
+<h2><span class="num">①</span>市場規模 ―― 「二刀流」というポジション</h2>
+
+<p>前編で確認した通り、D-Waveはアニーリング方式とゲート方式の両方を提供する唯一の量子コンピューティング企業と位置づけられています。アニーリング方式は最適化問題に特化し、5,000量子ビット超のAdvantage2システムが商用稼働中です。ゲート方式は開発の初期段階にあり、2026年内に17物理量子ビットの実証を目標としています。</p>
+
+<h2><span class="num">②</span>政策・規制環境</h2>
+
+<p>前編・後編で扱った通り、National Quantum Initiative再授権法案は2026年8月時点で委員会通過済み、本会議採決は未了です。D-Wave固有の動きとしては、フロリダ州ボカラトンに新設予定の施設を含むR&amp;D拠点の拡張が進んでいます。前編で言及した通り、量子企業への政府出資という思惑が報道・予測市場ベースで語られる場面もありますが、D-Wave自身が正式な政府出資の対象になったという確定情報はありません。</p>
+
+<h2><span class="num">③</span>コスト・収益構造</h2>
+
+<p>D-Waveの収益源は、QCaaS（サブスクリプション型クラウドアクセス）とシステム販売の2本柱です。Q2決算では、売上高の62.4%が商用顧客向けとなり、前年同期の45%から上昇しました。特に注目すべきは、QCaaS収益のうち37.3%が「プロダクションアプリケーション」（実運用段階のアプリケーション）由来であるとされている点で、実験段階を超えた商用利用が広がりつつあることを示しています。</p>
+
+<div class="callout warn">
+  <div class="callout-title">留保：受注と売上のギャップ</div>
+  Q2ブッキング（受注）は210万ドルで前年同期比59%増、上半期ブッキングは3,550万ドルで前年同期比1,120%増という急拡大を記録しました。しかしQ2売上高は308万ドルとほぼ横ばいにとどまり、市場予想を下回りました。中編・後編で確認した通り、この受注と売上のギャップは4社の中でD-Waveが最も顕著です。RPO（残存履行義務）は4,070万ドルで、経営陣によれば57%が12カ月以内に売上として認識される見込みとされていますが、これは経営陣の見込みであり確定した数値ではありません。
+</div>
+
+<h2><span class="num">④</span>事業セグメント動向</h2>
+
+<div class="segment">
+  <div class="lbl">Q2 2026決算のハイライト</div>
+  <div class="ttl">売上高308万ドル、市場予想を下回る</div>
+  <p class="desc">売上高は前年同期比ほぼ横ばいの308万ドルで、市場予想を下回った。GAAP純損失は4,800万ドル、調整後EBITDA損失は3,710万ドル。手元資金・投資は5億4,620万ドルで、非上場企業Quantum Circuitsの買収に伴う現金対価により前年から減少した。決算発表を受け株価は約5%下落する場面があった。</p>
+</div>
+
+<div class="segment">
+  <div class="lbl">商用顧客との協業拡大</div>
+  <div class="ttl">AT&amp;T・Optum・NTTドコモ等との実運用進展</div>
+  <p class="desc">通信大手AT&amp;Tとのネットワーク最適化業務では、約1時間かかっていた処理を15秒未満に短縮（約240倍の高速化）したと報告されている。ヘルスケア大手Optum、NTTドコモとの協業も進行中とされる。ただし、これらの成果の一部は「量子・古典ハイブリッド」の最適化アプローチによるものであり、中編で検証した厳密な意味での「量子優位性」の証明とは性格が異なる点に留意が必要である。</p>
+</div>
+
+<div class="segment">
+  <div class="lbl">CFO退任という新たな材料（2026年8月25日発表）</div>
+  <div class="ttl">John Markovich CFOが9月2日付で退任</div>
+  <p class="desc">2022年のD-Wave上場（SPAC統合）と9億ドル超の資金調達を主導してきた長年のCFO、John Markovich氏が5年間の在任を経て退任することが8月25日に発表された。後任には、2023年5月からD-Waveの財務担当上級副社長を務めるGreg Golkov氏が暫定CFOに就任する。会社側は、この退任が会計方針・財務報告・内部統制等に関するいかなる意見の相違にも起因しないと説明している。市場はこの発表を好感せず、発表週（8月24日〜28日）の株価は16.6%下落した。Q2決算がさえない内容だった直後というタイミングも、投資家の懸念を強めた一因とみられる。</p>
+</div>
+
+<h2><span class="num">⑤</span>技術検証：「Beyond-Classical」論争のその後</h2>
+
+<p>中編で扱った通り、D-Waveは2025年3月にScience誌で、磁性材料シミュレーションにおける量子優位性の実証を発表し、2026年5月にFlatiron研究所・EPFLからの反証に対して詳細な技術的反論を公表しました。その後の動きとして、2026年7月には、Flatiron研究所とボストン大学の研究チームが、テンソルネットワーク（1982年開発の信念伝播法を応用した圧縮フレームワーク）を用いた計算手法で、一般的なノートPC上でもD-Waveの結果を再現できたとする研究をScience誌に発表したと報じられています。</p>
+
+<div class="callout warn">
+  <div class="callout-title">留保：論争は依然として決着していない</div>
+  D-Wave側はこの新たな研究に対しても、classical（古典的）手法が再現できているのは結果の一部にとどまり、最も難易度の高い問題設定や高次の物理測定値については古典手法の到達範囲を超えていると反論しています。一方で、複雑性理論の専門家であるスコット・アーロンソン氏は、この一連の反証によってD-Waveの主張を支える重要な証拠が弱まったとの見解を示しています。中編で確認した「量子優位性の主張が発表後に覆されるサイクル」は、D-Waveのケースにおいて2026年8月時点でもなお進行中と評価するのが妥当です。
+</div>
+
+<h2><span class="num">⑥</span>株式バリュエーション</h2>
+
+<p>2026年8月28日の株価は17.01ドル前後で、前日終値（17.90ドル）から約5%下落しました。時価総額はデータソースにより約$6.3B〜$6.7Bの幅があります。52週レンジは12.75〜46.75ドルと極めて広く、ベータ値は4.75という報道もあり、対象4社の中でも特に値動きが荒い銘柄です。2026年8月28日時点の報道集計によるPSR（株価売上高倍率）は約532倍とされ、対象4社の中で最も高い水準にあります。</p>
+
+<div class="callout warn">
+  <div class="callout-title">留保：アナリスト評価とインサイダー売却</div>
+  複数ソースの集計ではアナリストのコンセンサス評価は「Strong Buy」とされ、平均目標株価は35ドル前後（現在株価から100%超の上昇余地を示唆）とされています。一方で、前回のRigetti記事で扱った通り、IonQ・Rigetti・D-Waveの3社合計で過去3年間のインサイダー純売却額は約8.63億ドルに達し、買い増しはほぼ皆無とされています。強気なアナリスト評価と、内部関係者の消極的な姿勢という2つのシグナルが併存している点には注意が必要です。
+</div>
+
+<h2><span class="num">⑦</span>リスク要因</h2>
+
+<h3>1. 受注と売上のギャップが是正されないリスク</h3>
+<p>上半期ブッキングが1,120%増という急拡大にもかかわらず、Q2売上高はほぼ横ばいにとどまりました。この乖離が複数四半期にわたって続いた場合、市場の失望が強まる可能性があります。</p>
+
+<h3>2. 経営陣交代に伴う不確実性</h3>
+<p>長年のCFOの突然の退任は、会社側の説明にかかわらず、投資家心理に影響を与えました。暫定CFOによる財務運営の継続性が今後の焦点になります。</p>
+
+<h3>3. 「Beyond-Classical」論争の帰趨</h3>
+<p>2026年7月の新たな反証を受け、D-Waveの量子優位性に関する主張への学術的な懐疑がさらに強まった可能性があります。この論争が同社の技術的な評価にどう影響するか、今後も注視が必要です。</p>
+
+<h3>4. 極端に高いPSRとボラティリティ</h3>
+<p>PSR約532倍、ベータ値4.75という水準は、対象4社の中でも突出しています。強気なアナリスト評価と、インサイダーの消極的な姿勢という矛盾したシグナルにも留意が必要です。</p>
+
+<h3>5. セクター全体の連動性</h3>
+<p>D-Wave固有の材料（CFO退任等）がセクター全体の他銘柄にも波及する場面が見られ、個別企業のニュースが業界全体のセンチメントに影響することもあります。</p>
+
+<h2><span class="num">⑧</span>まとめ</h2>
+
+<p>D-Waveは、商用収益比率の上昇・ブッキングの急拡大という点で、対象4社の中で最も進んだ商業化の兆候を示しています。AT&amp;T等との実運用事例も、産業全体が「実験装置」から「特化型の計算資源」へ移行しつつあるという中編の評価と整合的です。一方で、受注と売上のギャップ、CFOの突然の退任、そして「Beyond-Classical」論争の継続という3つの不確実性が同時に存在しており、極端に高いPSRとの組み合わせは、この銘柄が依然として投機的な性格を強く残していることを示しています。<strong>本シリーズの基本姿勢に沿い、D-Waveの評価についても「まだ判定できる段階にない」という中立的な立ち位置を維持します。</strong></p>
+
+<div class="watch">
+  <h2><span class="num">◆</span>WHAT TO WATCH</h2>
+  <ul>
+    <li><strong>暫定CFO・Golkov氏体制下での財務運営</strong>：正式CFO選任の有無を含む今後の展開</li>
+    <li><strong>RPOの売上転換率</strong>：57%が12カ月以内に売上計上される見込みとされる契約が実際にどの程度実現するか</li>
+    <li><strong>「Beyond-Classical」論争の続報</strong>：D-Wave側からのさらなる反論、あるいは第三者による追加検証</li>
+    <li><strong>ゲート方式の技術進捗</strong>：2026年内17物理量子ビット実証目標の達成状況</li>
+    <li><strong>商用顧客の拡大</strong>：AT&amp;T・Optum・NTTドコモに続く新規大型契約の有無</li>
+    <li><strong>2026年Q3決算（11月5日発表予定）</strong></li>
+  </ul>
+</div>
+
+<div class="series-nav">
+  <div class="ttl">「当たれば大きいAI関連分野」シリーズ構成</div>
+  <ol>
+    <li>第1弾：AI×量子コンピューティング　前編：業界マップ</li>
+    <li>第1弾：AI×量子コンピューティング　中編：技術検証編</li>
+    <li>第1弾：AI×量子コンピューティング　後編：投資判断編</li>
+    <li>第1弾：個別企業編①　IonQ</li>
+    <li>第1弾：個別企業編②　Rigetti Computing</li>
+    <li><strong>第1弾：個別企業編③　D-Wave Quantum（本稿）</strong></li>
+    <li>第1弾：個別企業編④　Quantum Computing Inc.（次回）</li>
+  </ol>
+  <p style="margin:12px 0 0;font-size:13.5px;">次回はQuantum Computing Inc.です。政府サブコントラクトが収益の7〜8割を占める独自の収益構造と、2026年の3件の企業買収の位置づけを中心に検証します。</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="disclaimer">
+    <strong>【免責事項】</strong><br>
+    本レポートは情報提供を目的としたものであり、特定の有価証券の購入・売却を推奨するものではありません。記載内容は作成時点で信頼できると判断した情報に基づいていますが、その正確性・完全性を保証するものではありません。株価・時価総額・バリュエーション指標は変動が激しく、データソース間で株式数の反映時期が異なるため幅を持たせて記載しています。「Beyond-Classical」論争に関する記述は現在進行中の学術的議論の整理であり、今後の追加検証により評価が変わる可能性があります。RPOの売上転換見込みは経営陣の見通しであり、確定した数値を保証するものではありません。本シリーズは「当たれば大きい」という投機性の高いテーマを扱うため、ボラティリティ・赤字先行・希薄化リスクについて特にご留意ください。投資に関する最終的な決定は、ご自身の判断と責任において行っていただきますようお願いいたします。
+  </div>
+  <p style="margin-top:18px;">Market Supporter AI ／ 2026年9月3日</p>
+</footer>
+
+</div>
+</body>
+</html>
