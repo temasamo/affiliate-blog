@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quantum Computing Inc.（QUBT）決算分析｜Market Supporter AI</title>
+<meta name="description" content="Q2売上高は前年同期比91倍。3件の企業買収で築いた独自のフォトニクス・半導体製造体制と、商務省CHIPS法インセンティブの対象外という位置づけを検証します。">
+<style>
+  :root{
+    --ink:#0d1b2a;
+    --ink-soft:#3d4f60;
+    --paper:#f7f9fc;
+    --line:#dde3ec;
+    --accent:#4a3f9e;
+    --accent-deep:#332b70;
+    --accent-wash:#edecf7;
+    --amber:#b8791a;
+    --amber-wash:#fdf6e8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.9;
+    font-size:16px;
+  }
+  .wrap{max-width:860px;margin:0 auto;background:#fff;}
+  header.masthead{
+    background:linear-gradient(135deg,var(--accent-deep) 0%,var(--accent) 100%);
+    color:#fff;
+    padding:44px 32px 36px;
+  }
+  .brand{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    opacity:.85;margin-bottom:18px;
+  }
+  .series-tag{
+    display:inline-block;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    padding:4px 12px;border-radius:3px;
+    font-size:12px;letter-spacing:.08em;margin-bottom:14px;
+  }
+  header.masthead h1{
+    font-size:29px;line-height:1.5;margin:0 0 12px;font-weight:700;
+  }
+  header.masthead .sub{font-size:15px;opacity:.9;margin:0;}
+  .issue{
+    margin-top:22px;padding-top:16px;
+    border-top:1px solid rgba(255,255,255,.28);
+    font-size:13px;opacity:.85;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  main{padding:36px 32px 8px;}
+  .lede{
+    font-size:16.5px;
+    background:var(--accent-wash);
+    border-left:4px solid var(--accent);
+    padding:20px 22px;
+    margin:0 0 36px;
+  }
+  h2{
+    font-size:20px;margin:48px 0 18px;padding-bottom:10px;
+    border-bottom:2px solid var(--accent);
+    display:flex;align-items:baseline;gap:12px;
+  }
+  h2 .num{
+    color:var(--accent);font-size:24px;font-weight:700;
+    font-family:Georgia,serif;
+  }
+  h3{
+    font-size:16.5px;margin:30px 0 10px;color:var(--accent-deep);
+    border-left:3px solid var(--accent);padding-left:11px;
+  }
+  p{margin:0 0 16px;}
+  table{
+    width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:14.5px;
+  }
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:var(--accent-wash);font-weight:700;color:var(--accent-deep);}
+  tbody tr:nth-child(even){background:#fbfcfe;}
+  .kpi-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+    margin:20px 0 28px;
+  }
+  .kpi-card{
+    border:1px solid var(--line);background:#fff;border-radius:4px;
+    padding:14px 16px;border-top:3px solid var(--accent);
+  }
+  .kpi-card .label{font-size:12px;color:var(--ink-soft);margin-bottom:6px;}
+  .kpi-card .value{font-size:20px;font-weight:700;color:var(--accent-deep);}
+  .kpi-card .delta{font-size:12px;color:var(--ink-soft);margin-top:4px;}
+  .segment{
+    border:1px solid var(--line);border-left:6px solid var(--accent);
+    background:#fff;padding:16px 18px;margin-bottom:12px;border-radius:2px;
+  }
+  .segment .lbl{
+    font-size:12px;letter-spacing:.14em;color:var(--accent);
+    font-weight:700;margin-bottom:6px;
+  }
+  .segment .ttl{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .segment .desc{font-size:14.5px;color:var(--ink-soft);margin:0;}
+  .callout{
+    background:var(--accent-wash);border:1px solid #d9d5ee;
+    padding:16px 18px;margin:22px 0;font-size:14.5px;border-radius:2px;
+  }
+  .callout .callout-title{font-weight:700;color:var(--accent-deep);margin-bottom:6px;font-size:14px;}
+  .callout.warn{background:var(--amber-wash);border-color:#f0dfbc;}
+  .callout.warn .callout-title{color:var(--amber);}
+  .watch{
+    background:var(--ink);color:#e8eef2;padding:26px 26px 20px;margin:44px 0 0;
+  }
+  .watch h2{
+    color:#fff;border-bottom-color:rgba(255,255,255,.4);margin-top:0;
+  }
+  .watch h2 .num{color:#b0a8ea;}
+  .watch ul{padding-left:20px;margin:0;}
+  .watch li{margin-bottom:12px;font-size:15px;}
+  .watch strong{color:#b0a8ea;}
+  .series-nav{
+    background:var(--accent-wash);padding:20px 22px;margin:34px 0 0;
+    font-size:14.5px;border-radius:2px;
+  }
+  .series-nav .ttl{font-weight:700;color:var(--accent-deep);margin-bottom:10px;}
+  .series-nav ol{margin:0;padding-left:20px;}
+  .series-nav li{margin-bottom:6px;}
+  footer{
+    padding:26px 32px 40px;font-size:12.5px;color:var(--ink-soft);
+    border-top:1px solid var(--line);margin-top:36px;
+  }
+  .disclaimer{
+    background:var(--paper);border:1px solid var(--line);
+    padding:14px 16px;border-radius:2px;line-height:1.75;
+  }
+  @media(max-width:640px){
+    header.masthead{padding:32px 20px 28px;}
+    header.masthead h1{font-size:23px;}
+    main{padding:26px 20px 8px;}
+    footer{padding:22px 20px 32px;}
+    .watch{padding:22px 20px 16px;}
+    table{font-size:13.5px;}
+    th,td{padding:8px 9px;}
+    .kpi-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">Market Supporter AI</div>
+  <div class="series-tag">当たれば大きいAI関連分野 第1弾｜AI×量子コンピューティング 個別企業編</div>
+  <h1>Quantum Computing Inc.（NASDAQ: QUBT）決算分析<br>―― 政府サブコントラクト依存というもう一つの量子株</h1>
+  <p class="sub">Q2売上高は前年同期比91倍。3件の買収で築いた独自のフォトニクス・半導体製造体制</p>
+  <div class="issue">
+    <span>2026年9月4日号</span>
+    <span>米国株シリーズ／個別企業レポート</span>
+  </div>
+</header>
+
+<main>
+
+<p class="lede">
+本シリーズ3部作・個別企業編①〜③で確認した通り、対象4社の中でQuantum Computing Inc.（QCi）は唯一、収益の大半を政府サブコントラクトが占めるという独自の構造を持ちます。本稿は本シリーズ「AI×量子コンピューティング」個別企業編の最終回として、2026年8月10日発表のQ2決算と、2026年に相次いだ3件の企業買収を中心にQCi個別の状況を検証します。
+</p>
+
+<div class="kpi-grid">
+  <div class="kpi-card"><div class="label">株価（2026/8/28〜9/1前後）</div><div class="value">$8〜9台</div><div class="delta">52週レンジ：$6.18〜$25.84</div></div>
+  <div class="kpi-card"><div class="label">時価総額（2026年8月末時点）</div><div class="value">約$1.86B</div><div class="delta">データソースにより幅あり</div></div>
+  <div class="kpi-card"><div class="label">PSR（単純年率換算・編集部計算）</div><div class="value">約84倍</div><div class="delta">対象4社の中で最も低い水準</div></div>
+</div>
+
+<h2><span class="num">①</span>市場規模 ―― フォトニクス方式のポジション</h2>
+
+<p>前編で確認した通り、QCiが採用するフォトニクス（光量子）方式は、トラップイオン・超伝導・アニーリングと並ぶ主要アプローチの一つです。室温での動作が可能とされる点を技術的な特徴として掲げています。QCiは、量子最適化アルゴリズムを実装した「エントロピー量子コンピュータ（EQC）」に加え、薄膜ニオブ酸リチウムチップを用いた電気光学変調器等の光デバイス製造事業も展開しており、量子コンピューティング単体だけでなく光半導体製造という収益源を併せ持つ点が他の3社と異なります。</p>
+
+<h2><span class="num">②</span>政策・規制環境 ―― 商務省LOIの「対象外」という位置づけ</h2>
+
+<p>2026年5月、米商務省はCHIPS法に基づき、量子コンピューティング関連9社に総額20.13億ドルの資金提供に関するLOI（レター・オブ・インテント）を締結したと発表しました。対象はAtom Computing、Diraq、D-Wave Quantum、Infleqtion、PsiQuantum、Quantinuum、Rigetti Computingの量子コンピューティング7社と、ファウンドリ2社（IBM、GlobalFoundries）です。政府側はこれと引き換えに各社の非支配的な株式（マイノリティ・エクイティ）を取得する計画とされています。</p>
+
+<div class="callout warn">
+  <div class="callout-title">留保：QCiはこのLOI対象に含まれていない</div>
+  本シリーズで扱う4社のうち、Rigetti・D-Waveはこの9社に含まれていますが、<strong>QCiとIonQはこの商務省LOIの対象には含まれていません。</strong>QCiの資金基盤は、自己資本による調達と政府機関向けサブコントラクトが中心であり、CHIPS法の量子インセンティブ枠組みとは異なる経路で政府との関係を築いている点に留意が必要です。
+</div>
+
+<p>別の動きとして、2026年8月上旬、米議会下院は国防予算における量子技術関連の年間支出を68%増の5億6,700万ドルへ引き上げる法案を検討していると報じられ、量子関連株が軒並み上昇する場面がありました。トランプ政権はこれとは別に、量子産業全体で20億ドル超の直接投資を計画しているとも報じられています。QCiは売上の7〜8割が政府サブコントラクト経由とされ、こうした国防・政府予算の動向に他の3社以上に敏感な構造にあります。</p>
+
+<h2><span class="num">③</span>コスト・収益構造</h2>
+
+<p>QCiの収益は、政府機関向けの受託業務が中心です。前編・後編で確認した通り、売上の7〜8割が政府サブコントラクト経由とされ、対象4社の中で政府依存度が最も高い構造です。この構造は、収益の予見可能性を相対的に高める一方、政府予算サイクルの遅延・変更の影響を受けやすいという裏返しのリスクも伴います。</p>
+
+<h3>2026年の3件の企業買収</h3>
+<p>QCiは2026年に入り、Luminar Semiconductor（LSI、2月）、NuCrypt、NHanced Semiconductorsの3社を買収し、独自の半導体ファウンドリ体制（Fab 1・Fab 2）を構築しました。この一連の買収により、QCiは量子デバイスの設計から製造までを自社で完結させる方向へ舵を切っています。買収に伴う統合コストは今後複数四半期の損益に影響する可能性があります。</p>
+
+<h2><span class="num">④</span>事業セグメント動向</h2>
+
+<div class="segment">
+  <div class="lbl">Q2 2026決算のハイライト</div>
+  <div class="ttl">売上高555万ドル、市場予想を上回るも損失幅は拡大</div>
+  <p class="desc">売上高は前年同期の6.1万ドルから555万ドルへ急拡大し、市場予想を上回った。一方でEPSは▲0.05ドルとなり、市場予想（▲0.03ドル）を下回った。契約バックログは約4,250万ドルで、経営陣によれば12〜18カ月分の運転資金に相当するとされている。決算後、株価は8.5%程度の変動を織り込んだオプション市場の反応があったと報じられている。</p>
+</div>
+
+<div class="segment">
+  <div class="lbl">財務基盤</div>
+  <div class="ttl">手元資金は対象4社中最大の約13億ドル超</div>
+  <p class="desc">手元資金・投資は約13億2,000万ドルとされ、対象4社の中で最大の水準にある。これは2026年に相次いだ株式発行・ワラント行使による調達と、3件の買収を経てなお潤沢な水準を維持していることを示している。後編で編集部試算した通り、単純な四半期損益ベースの年率換算では極めて長いキャッシュランウェイが算出されるが、これは今後の追加買収や設備投資の規模次第で変動しうる点に留意が必要である。</p>
+</div>
+
+<div class="segment">
+  <div class="lbl">経営陣の株式保有動向</div>
+  <div class="ttl">会長による保有株式の一部売却</div>
+  <p class="desc">2026年5月28日、Yuping Huang会長が保有株式を3.12%減少させたと報じられている。後編・Rigetti個別記事で扱った、対象3社（IonQ・Rigetti・D-Wave）合計で過去3年に約8.63億ドルのインサイダー純売却があったという分析にQCiは含まれていないが、経営陣による株式保有調整の動きは、QCiにおいても確認しておくべき材料である。</p>
+</div>
+
+<h2><span class="num">⑤</span>株式バリュエーション</h2>
+
+<p>2026年8月28日から9月1日にかけての株価は8〜9ドル台で推移し、9月1日には前日比8.23%の上昇も見られました。時価総額は約18.6億ドル（TradingView集計）とされています。52週レンジは6.18〜25.84ドルと非常に広く、対象4社の中でも値動きの荒さが際立ちます。売上規模の急拡大を反映し、Q2売上高の単純年率換算に基づく編集部計算のPSRは約84倍となり、対象4社の中では最も低い水準です。ただしこれは黒字化を意味するものではなく、依然として大幅な赤字が続いています。</p>
+
+<div class="callout warn">
+  <div class="callout-title">留保：アナリスト評価の大きな幅と短期筋の関心</div>
+  アナリストの目標株価には大きな幅があります。Ascendiantは2026年8月26日に目標株価を30ドルから32ドルへ引き上げた一方、Cantor Fitzgeraldは10ドルという中立的な目標株価を維持しています。現在の株価（8〜9ドル台）を基準にすると、強気派と中立派の間で3倍以上の評価の開きがあることになります。空売り比率（浮動株に対する割合）は複数の集計で20%台前半とされ、対象4社の中でも投機的な売買が活発な銘柄であることがうかがえます。
+</div>
+
+<h2><span class="num">⑥</span>リスク要因</h2>
+
+<h3>1. 政府予算サイクルへの高い依存度</h3>
+<p>売上の7〜8割が政府サブコントラクト経由という構造は、収益の予見可能性を高める一方、政府予算の遅延・削減があった場合の影響を強く受けます。</p>
+
+<h3>2. 3件の買収統合リスク</h3>
+<p>2026年に相次いだ3件の企業買収は、量子デバイスの垂直統合という戦略を体現するものですが、統合の実行リスクや、当初想定したシナジーが実現するかどうかは今後の決算で検証する必要があります。</p>
+
+<h3>3. 損失幅の拡大</h3>
+<p>Q2のEPSは市場予想を下回り、売上急拡大にもかかわらずコストの伸びがそれを上回るペースで進んでいる可能性があります。</p>
+
+<h3>4. アナリスト評価の乖離と投機的な売買</h3>
+<p>目標株価に3倍以上の開きがあること、空売り比率が対象4社の中でも高水準にあることは、市場参加者の間でこの銘柄の評価が定まっていないことを示しています。</p>
+
+<h3>5. セクター全体の連動性</h3>
+<p>前編・後編で扱った通り、個別材料がなくてもセクター全体が同方向に大きく動く場面が頻発しています。国防予算の動向など、政策関連のニュースには特に敏感に反応する傾向があります。</p>
+
+<h2><span class="num">⑦</span>まとめ</h2>
+
+<p>Quantum Computing Inc.は、政府サブコントラクトを収益の中心に据えるという、対象4社の中で最も独自性の高い事業構造を持っています。3件の企業買収による垂直統合、対象4社中最大の手元資金という財務的な安全性は強みですが、商務省のCHIPS法インセンティブの対象には含まれておらず、Rigetti・D-Waveとは異なる経路で政府との関係を築いている点は投資判断において見落とされがちなポイントです。<strong>本シリーズの基本姿勢に沿い、QCiの評価についても「まだ判定できる段階にない」という中立的な立ち位置を維持します。</strong></p>
+
+<p>本稿をもって、「AI×量子コンピューティング」シリーズの3部作・個別企業編4本が完結しました。次回からは第2弾「AI×次世代原子力（SMR・核融合）」に移ります。</p>
+
+<div class="watch">
+  <h2><span class="num">◆</span>WHAT TO WATCH</h2>
+  <ul>
+    <li><strong>2026年Q3決算（11月18日発表予定）</strong>：バックログの売上転換ペース、損失幅の推移</li>
+    <li><strong>3件の買収統合の進捗</strong>：Fab 1・Fab 2体制の稼働状況</li>
+    <li><strong>下院の国防予算量子関連条項の行方</strong>：68%増額案が最終的にどう決着するか</li>
+    <li><strong>政府サブコントラクトの新規受注</strong></li>
+    <li><strong>経営陣の株式保有動向</strong>：会長を含む役員の売買動向</li>
+    <li><strong>アナリスト評価の収斂</strong>：目標株価の幅が今後どう変化するか</li>
+  </ul>
+</div>
+
+<div class="series-nav">
+  <div class="ttl">「当たれば大きいAI関連分野」シリーズ構成</div>
+  <ol>
+    <li>第1弾：AI×量子コンピューティング　前編：業界マップ</li>
+    <li>第1弾：AI×量子コンピューティング　中編：技術検証編</li>
+    <li>第1弾：AI×量子コンピューティング　後編：投資判断編</li>
+    <li>第1弾：個別企業編①　IonQ</li>
+    <li>第1弾：個別企業編②　Rigetti Computing</li>
+    <li>第1弾：個別企業編③　D-Wave Quantum</li>
+    <li><strong>第1弾：個別企業編④　Quantum Computing Inc.（本稿・第1弾完結）</strong></li>
+  </ol>
+  <p style="margin:12px 0 0;font-size:13.5px;">次回からは第2弾「AI×次世代原子力（SMR・核融合）」の3部作に着手します。候補企業はOklo、NuScale Power、NANO Nuclear Energy、Centrus Energyなどです。</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="disclaimer">
+    <strong>【免責事項】</strong><br>
+    本レポートは情報提供を目的としたものであり、特定の有価証券の購入・売却を推奨するものではありません。記載内容は作成時点で信頼できると判断した情報に基づいていますが、その正確性・完全性を保証するものではありません。株価・時価総額・バリュエーション指標は変動が激しく、データソース間で株式数の反映時期が異なるため幅を持たせて記載しています。国防予算・政府支出に関する記述は法案審議段階の報道に基づくものであり、最終的な成立を保証するものではありません。本シリーズは「当たれば大きい」という投機性の高いテーマを扱うため、ボラティリティ・赤字先行・希薄化リスクについて特にご留意ください。投資に関する最終的な決定は、ご自身の判断と責任において行っていただきますようお願いいたします。
+  </div>
+  <p style="margin-top:18px;">Market Supporter AI ／ 2026年9月4日</p>
+</footer>
+
+</div>
+</body>
+</html>
