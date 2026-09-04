@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI×次世代原子力 産業地図｜Market Supporter AI</title>
+<meta name="description" content="Oklo・NuScale Power・NANO Nuclear Energy・Centrus Energy。GAFAMの原子力契約が牽引する新テーマを整理します。">
+<style>
+  :root{
+    --ink:#0d1b2a;
+    --ink-soft:#3d4f60;
+    --paper:#f7f9fc;
+    --line:#dde3ec;
+    --accent:#4f9d3f;
+    --accent-deep:#2f6b26;
+    --accent-wash:#eaf5e8;
+    --amber:#b8791a;
+    --amber-wash:#fdf6e8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.9;
+    font-size:16px;
+  }
+  .wrap{max-width:860px;margin:0 auto;background:#fff;}
+  header.masthead{
+    background:linear-gradient(135deg,var(--accent-deep) 0%,var(--accent) 100%);
+    color:#fff;
+    padding:44px 32px 36px;
+  }
+  .brand{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    opacity:.85;margin-bottom:18px;
+  }
+  .series-tag{
+    display:inline-block;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    padding:4px 12px;border-radius:3px;
+    font-size:12px;letter-spacing:.08em;margin-bottom:14px;
+  }
+  header.masthead h1{
+    font-size:29px;line-height:1.5;margin:0 0 12px;font-weight:700;
+  }
+  header.masthead .sub{font-size:15px;opacity:.9;margin:0;}
+  .issue{
+    margin-top:22px;padding-top:16px;
+    border-top:1px solid rgba(255,255,255,.28);
+    font-size:13px;opacity:.85;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  main{padding:36px 32px 8px;}
+  .lede{
+    font-size:16.5px;
+    background:var(--accent-wash);
+    border-left:4px solid var(--accent);
+    padding:20px 22px;
+    margin:0 0 36px;
+  }
+  h2{
+    font-size:20px;margin:48px 0 18px;padding-bottom:10px;
+    border-bottom:2px solid var(--accent);
+    display:flex;align-items:baseline;gap:12px;
+  }
+  h2 .num{
+    color:var(--accent);font-size:24px;font-weight:700;
+    font-family:Georgia,serif;
+  }
+  h3{
+    font-size:16.5px;margin:30px 0 10px;color:var(--accent-deep);
+    border-left:3px solid var(--accent);padding-left:11px;
+  }
+  p{margin:0 0 16px;}
+  table{
+    width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:14.5px;
+  }
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:var(--accent-wash);font-weight:700;color:var(--accent-deep);}
+  tbody tr:nth-child(even){background:#fbfcfe;}
+  .layer-map{margin:24px 0 28px;}
+  .layer{
+    border:1px solid var(--line);border-left:6px solid var(--accent);
+    background:#fff;padding:16px 18px;margin-bottom:12px;border-radius:2px;
+  }
+  .layer .lbl{
+    font-size:12px;letter-spacing:.14em;color:var(--accent);
+    font-weight:700;margin-bottom:6px;
+  }
+  .layer .ttl{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .layer .desc{font-size:14.5px;color:var(--ink-soft);margin:0 0 8px;}
+  .layer .names{font-size:13.5px;color:var(--ink);background:var(--paper);padding:8px 11px;border-radius:2px;}
+  .callout{
+    background:var(--amber-wash);border:1px solid #f0dfbc;
+    padding:16px 18px;margin:22px 0;font-size:14.5px;border-radius:2px;
+  }
+  .callout .ttl{font-weight:700;color:var(--amber);margin-bottom:6px;font-size:14px;}
+  .watch{
+    background:var(--ink);color:#e8eef2;padding:26px 26px 20px;margin:44px 0 0;
+  }
+  .watch h2{
+    color:#fff;border-bottom-color:rgba(255,255,255,.4);margin-top:0;
+  }
+  .watch h2 .num{color:#9ed98c;}
+  .watch ul{padding-left:20px;margin:0;}
+  .watch li{margin-bottom:12px;font-size:15px;}
+  .watch strong{color:#9ed98c;}
+  .series-nav{
+    background:var(--accent-wash);padding:20px 22px;margin:34px 0 0;
+    font-size:14.5px;border-radius:2px;
+  }
+  .series-nav .ttl{font-weight:700;color:var(--accent-deep);margin-bottom:10px;}
+  .series-nav ol{margin:0;padding-left:20px;}
+  .series-nav li{margin-bottom:6px;}
+  footer{
+    padding:26px 32px 40px;font-size:12.5px;color:var(--ink-soft);
+    border-top:1px solid var(--line);margin-top:36px;
+  }
+  .disclaimer{
+    background:var(--paper);border:1px solid var(--line);
+    padding:14px 16px;border-radius:2px;line-height:1.75;
+  }
+  @media(max-width:640px){
+    header.masthead{padding:32px 20px 28px;}
+    header.masthead h1{font-size:23px;}
+    main{padding:26px 20px 8px;}
+    footer{padding:22px 20px 32px;}
+    .watch{padding:22px 20px 16px;}
+    table{font-size:13.5px;}
+    th,td{padding:8px 9px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">Market Supporter AI</div>
+  <div class="series-tag">当たれば大きいAI関連分野 第2弾｜AI×次世代原子力 前編</div>
+  <h1>次世代原子力の産業地図<br>―― AIデータセンターの電力需要が生んだ「原子力ルネサンス」</h1>
+  <p class="sub">Oklo・NuScale Power・NANO Nuclear Energy・Centrus Energy。GAFAMの原子力契約が牽引する新テーマを整理する</p>
+  <div class="issue">
+    <span>2026年9月5日号</span>
+    <span>米国株シリーズ／産業レポート</span>
+  </div>
+</header>
+
+<main>
+
+<p class="lede">
+「当たれば大きいAI関連分野」シリーズ第2弾は、次世代原子力（SMR・小型モジュール炉）を取り上げます。第1弾の量子コンピューティングと異なり、この分野の「AI×」という冠は比喩ではありません。Microsoft・Google・Amazon・Metaの4社すべてが、2026年中に少なくとも1件の原子力発電契約を締結し、AIデータセンター向けに合計約9.8GW（13件）もの原子力発電容量を確保しています。前編（本稿）では、上場している主要4社――Oklo、NuScale Power、NANO Nuclear Energy、Centrus Energy――を中心に、この産業の構造を整理します。
+</p>
+
+<h2><span class="num">①</span>市場規模 ―― AIの電力需要が生んだ、需要主導型のテーマ</h2>
+
+<p>SMR（小型モジュール炉）市場の規模推計は、量子コンピューティング以上に振れ幅の大きい分野です。</p>
+
+<table>
+  <thead>
+    <tr><th>調査機関</th><th>2026年時点の市場規模</th><th>将来予測</th><th>CAGR</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>特定調査会社A</td><td>約63.0億ドル</td><td>2032年に70.5億ドル</td><td>2.7%</td></tr>
+    <tr><td>特定調査会社B</td><td>約61.3億ドル</td><td>2034年に87.7億ドル</td><td>4.59%</td></tr>
+    <tr><td>特定調査会社C</td><td>約70.6億ドル</td><td>2040年に187.3億ドル</td><td>7.22%</td></tr>
+    <tr><td>特定調査会社D</td><td>約110.6億ドル（2025年）</td><td>2034年に998.2億ドル</td><td>27.69%</td></tr>
+    <tr><td>IDTechEx</td><td>―（2026年時点データなし）</td><td>2036年に538億ドル、2046年に約3,000億ドル</td><td>非開示</td></tr>
+  </tbody>
+</table>
+
+<p>CAGRだけを見ても2.7%から27.69%までの開きがあり、これは量子コンピューティング市場（30〜40%台でおおむね一致）よりもさらにコンセンサスが取れていないことを意味します。差の背景には、SMR単体の市場規模を見るか、AIデータセンター向け電力購入契約（PPA）の経済価値まで含めて捉えるかという、算定方法の違いがあります。</p>
+
+<div class="callout">
+  <div class="ttl">読み方の指針（編集部見解）</div>
+  この産業では、SMR市場規模の推計そのものよりも、<strong>「AIデータセンターが何ギガワットの原子力発電契約を締結したか」</strong>という実数の方が投資判断の材料として有用です。2026年5月時点で、GAFAM4社合計で13件・約9.8GWの契約が確認されています。ただし、これらの契約の多くは既存の大型炉再稼働（Three Mile Island等）やSMR以外の技術（TerraPower・X-energy・Kairos Powerなど非上場企業）向けであり、本シリーズの対象4社に直接流入する契約はまだ限定的である点に注意が必要です。
+</div>
+
+<h2><span class="num">②</span>政策・規制環境 ―― NRC設計認証という高いハードル</h2>
+
+<p>原子力は、量子コンピューティング以上に規制当局の関与が強い産業です。米原子力規制委員会（NRC）による設計認証（Design Certification）は、商用化への必須プロセスであり、取得までに数年単位の時間を要します。</p>
+
+<table>
+  <thead>
+    <tr><th>企業</th><th>規制上の状況（2026年8月時点）</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>NuScale Power</td><td>対象4社の中で唯一、NRC設計認証を取得済み。規制面では最も先行しているが、これが商業的な優位性に直結していない点は後述</td></tr>
+    <tr><td>Oklo</td><td>NRC設計認証は未取得。ただしDOE（エネルギー省）の「原子炉パイロットプログラム」の枠組みで、Groves同位体試験炉が2026年8月5日に初臨界を達成</td></tr>
+    <tr><td>NANO Nuclear Energy</td><td>マイクロ炉「KRONOS」がNRC審査進行中。商用展開目標は2030年</td></tr>
+    <tr><td>Centrus Energy</td><td>他3社とは性格が異なり、濃縮ウラン燃料（HALEU）の製造事業者として既に商業運転中。20%濃縮HALEUを製造できる唯一のライセンス保有企業</td></tr>
+  </tbody>
+</table>
+
+<p>トランプ政権はDOEの原子炉パイロットプログラムを通じて、民有地での原子炉建設・試験を加速する方針を示しており、Oklo・NANO Nuclear双方がこの枠組みの恩恵を受けています。また、米下院では2026年度国防予算の量子技術関連条項と同様に、原子力関連の予算拡充も議論の対象となっています。</p>
+
+<div class="callout">
+  <div class="ttl">見落とされやすい論点：規制認証と商業的優位性は必ずしも一致しない</div>
+  NuScale PowerはNRC設計認証を取得した唯一の企業ですが、2026年第2四半期の売上高はわずか7.5万ドルにとどまり、前年から大幅に落ち込みました。一方、認証を取得していないOklo（規制はDOEパイロットプログラム経由）は同四半期に120万ドルの売上を計上し、Meta社との12億ワット規模の拘束力ある契約を確保しています。規制上の先行が必ずしも商業的な先行を意味しないという構図は、この産業を評価する上での重要な視点です。
+</div>
+
+<h2><span class="num">③</span>コスト・収益構造 ―― 4社4様のビジネスモデル</h2>
+
+<p>「次世代原子力企業」とひとくくりにされがちですが、4社の技術・収益構造はまったく異なります。</p>
+
+<table>
+  <thead>
+    <tr><th>企業</th><th>技術・事業領域</th><th>主な収益源</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Oklo</td><td>ナトリウム冷却高速炉「Aurora」（マイクロ炉）</td><td>電力販売契約（PPA）＋同位体試験炉によるアイソトープ販売＋Creative Engineers買収による技術内製化</td></tr>
+    <tr><td>NuScale Power</td><td>軽水冷却SMR（NRC認証済み設計）</td><td>ライセンス供与＋エンジニアリングサービス（大口顧客の契約終了により収益が大きく変動）</td></tr>
+    <tr><td>NANO Nuclear Energy</td><td>マイクロ炉「KRONOS」（低圧冷却）・「ZEUS」（固体炉心バッテリー炉）</td><td>研究開発段階が中心。HALEU燃料供給網構築（Quadrant Nuclear Industriesとの覚書）</td></tr>
+    <tr><td>Centrus Energy</td><td>ウラン濃縮・核燃料製造</td><td>燃料供給契約（政府・商用双方）＋濃縮サービス。4社中唯一、安定した既存収益基盤を持つ</td></tr>
+  </tbody>
+</table>
+
+<p>この違いは投資判断における評価軸の置き方にも直結します。Centrusは既に売上・利益を計上している「燃料サプライヤー」であるのに対し、Oklo・NuScale・NANO Nuclearは「プレ商用フェーズの炉メーカー」であり、量子コンピューティングシリーズと同様、赤字先行企業としての評価軸が必要になります。</p>
+
+<h2><span class="num">④</span>主要プレイヤー動向 ―― 2026年Q2決算・8月時点の状況</h2>
+
+<div class="layer-map">
+
+  <div class="layer">
+    <div class="lbl">OKLO ／ ナトリウム冷却高速炉</div>
+    <div class="ttl">4社の中で最も商業化に近い一方、赤字も継続</div>
+    <p class="desc">Q2売上高120万ドルは、同社にとって「意味のある」初の四半期売上とされる。一方でQ2純損失は4,850万ドル。Meta社との12億ワット規模の拘束力ある契約（オハイオ州）、Centrus EnergyとのHALEU供給に関するLOI、14ギガワット相当の顧客パイプラインを持つ。DOEパイロットプログラム下のGroves同位体試験炉が2026年8月5日に初臨界を達成し、同プログラムで民有地における初の到達事例となった。アイダホ国立研究所のAuroraは2027年後半の商業発電開始を目標としている。</p>
+    <div class="names"><strong>ティッカー：</strong>NYSE:OKLO　<strong>Q2決算発表：</strong>2026年8月上旬</div>
+  </div>
+
+  <div class="layer">
+    <div class="lbl">NUSCALE POWER ／ 軽水冷却SMR</div>
+    <div class="ttl">規制面の先行者だが、売上は大幅減少</div>
+    <p class="desc">Q2売上高はわずか7.5万ドルで、一時的な契約の終了に伴い前年から95.8%減少した。発行済株式数は3億6,500万株に達し、さらに7億5,000万ドル規模の新規株式売却プログラムを発表しており、既存株主の希薄化が進行している。対象4社の中で唯一NRC設計認証を取得済みという規制上の優位性を持つが、これが直近の収益には結びついていない。</p>
+    <div class="names"><strong>ティッカー：</strong>NYSE:SMR　<strong>Q2決算発表：</strong>2026年8月上旬</div>
+  </div>
+
+  <div class="layer">
+    <div class="lbl">NANO NUCLEAR ENERGY ／ マイクロ炉（KRONOS・ZEUS）</div>
+    <div class="ttl">4社の中で最も早期の開発段階</div>
+    <p class="desc">マイクロ炉「KRONOS」はNRC審査が進行中で、初回展開目標は2030年。2026年8月にQuadrant Nuclear Industriesとの間でHALEU（高濃縮低濃縮ウラン）供給網構築に関する非拘束の覚書を締結した。米空軍向けのAFWERX SBIRフェーズI採択など、政府関連の研究資金獲得も進めている。手元資金は比較的潤沢とされるが、量子コンピューティングシリーズのRigettiと同様、収益化にはまだ時間を要する段階にある。</p>
+    <div class="names"><strong>ティッカー：</strong>NASDAQ:NNE　<strong>直近四半期決算：</strong>2026年8月12日発表</div>
+  </div>
+
+  <div class="layer">
+    <div class="lbl">CENTRUS ENERGY ／ ウラン濃縮・核燃料製造</div>
+    <div class="ttl">4社の中で唯一、安定的に黒字の売上を計上</div>
+    <p class="desc">Q2売上高1億7,610万ドル（前年同期比14%増）と、他3社とは一線を画す既存の収益基盤を持つ。20%濃縮HALEU（高純度低濃縮ウラン）を製造できる唯一のライセンス保有企業であり、新規濃縮契約の締結・数十億ドル規模の受注残高を維持している。Oklo等の次世代炉メーカーへの燃料供給という「インフラ」的な位置づけにあり、個別の炉メーカーの成否によらず業界全体の拡大から利益を得やすい構造を持つ。</p>
+    <div class="names"><strong>ティッカー：</strong>NYSE American:LEU　<strong>Q2決算発表：</strong>2026年8月上旬</div>
+  </div>
+
+</div>
+
+<h3>非上場企業という「隠れた主役」</h3>
+<p>GAFAMの原子力契約の多くは、本シリーズの対象4社ではなく、非上場企業（TerraPower、X-energy、Kairos Power）や、大型炉の再稼働案件（Three Mile Island、運営元はConstellation Energy）に向けられています。Metaが最大6.6ギガワット相当で契約するTerraPower・Oklo・Vistra・Constellationの組み合わせのうち、上場・純粋な次世代炉プレイヤーとして本シリーズの対象に含まれるのはOkloのみです。この産業の投資対象を検討する際は、上場・非上場の別を常に意識する必要があります。</p>
+
+<h2><span class="num">⑤</span>株式バリュエーション ―― Centrusとその他3社で異なる物差し</h2>
+
+<p>Centrus Energyは既に黒字の売上を持つため、量子コンピューティングシリーズで見た極端なPSR（株価売上高倍率）は当てはまりません。一方、Oklo・NuScale・NANO Nuclearは、量子コンピューティング4社と同様、赤字先行のプレ商用フェーズにあり、評価は「現在の売上」ではなく「将来の商業化」への期待で形成されています。</p>
+
+<table>
+  <thead>
+    <tr><th>企業</th><th>参考株価・時価総額（2026年7〜8月の報道ベース）</th><th>特徴</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Oklo</td><td>株価40〜49ドル台、時価総額約83億ドル（7月時点）</td><td>4社の中で最大の時価総額。Meta契約等を反映した先行評価</td></tr>
+    <tr><td>NuScale Power</td><td>株価9ドル台、時価総額約31億ドル</td><td>2026年に入り株価は年初来で3割超下落</td></tr>
+    <tr><td>NANO Nuclear Energy</td><td>株価18〜30ドル台（変動大）、時価総額約10億〜20億ドル</td><td>アナリスト目標株価が複数回下方修正されている</td></tr>
+    <tr><td>Centrus Energy</td><td>株価170〜180ドル台、時価総額数十億ドル規模</td><td>4社の中で唯一、伝統的なPER・PSRでの評価が可能</td></tr>
+  </tbody>
+</table>
+
+<p>2026年8月には、金利上昇懸念を背景にOklo・NuScale・Centrusがそろって5〜6%下落する場面があり、量子コンピューティングセクターと同様、セクター全体が連動して動く傾向が確認されています。一方、その後の反発局面では、Oklo・NuScale Powerの株価が5%上昇する場面もあり、材料の有無にかかわらず値動きが荒い点も共通しています。</p>
+
+<h2><span class="num">⑥</span>リスク要因</h2>
+
+<h3>1. 商業化までの時間軸の長さ</h3>
+<p>Oklo・NuScale・NANO Nuclearはいずれもプレ商用フェーズにあり、実際の発電・売電による本格的な収益化には数年単位の時間を要する見込みです。Okloの商業発電開始目標は2027年後半、NANO Nuclearは2030年です。</p>
+
+<h3>2. 規制認証と商業化の間のギャップ</h3>
+<p>②で確認した通り、NRC設計認証の取得が必ずしも商業的な成功を意味しません。逆に、認証を取得していない企業が先に大口契約を獲得する場合もあり、規制プロセスの進捗だけで投資判断を行うことは危険です。</p>
+
+<h3>3. 希薄化リスク</h3>
+<p>NuScale Powerは7億5,000万ドル規模の新規株式売却プログラムを発表しており、既存株主の希薄化が進行しています。プレ商用フェーズの企業は、量子コンピューティングシリーズと同様、継続的な資金調達を必要とします。</p>
+
+<h3>4. 「AI×」というテーマの間接性</h3>
+<p>GAFAMの原子力契約の多くは非上場企業や大型炉の再稼働案件に向けられており、本シリーズの対象4社に直接流入する契約は限定的です。「AIデータセンターの電力需要の拡大」というマクロテーマと、個別企業の受注実績を混同しないよう注意が必要です。</p>
+
+<h3>5. セクター全体の連動性</h3>
+<p>金利動向などのマクロ要因により、個別企業の材料と無関係にセクター全体が同方向に動く場面が頻発しています。</p>
+
+<h2><span class="num">⑦</span>まとめ ―― 産業地図から見える構図</h2>
+
+<p>2026年8月時点の次世代原子力産業を整理すると、次の構図が浮かび上がります。<strong>Centrus Energyは既存の燃料供給ビジネスで安定収益を持つ「インフラ」的存在であり、Oklo・NuScale・NANO Nuclearはプレ商用フェーズの炉メーカーとして、量子コンピューティング4社と類似した「期待先行」の評価構造にあります。</strong></p>
+
+<p>この産業を「AI×次世代原子力」と呼ぶことには、量子コンピューティングシリーズよりも直接的な根拠があります。AIデータセンターの電力需要が、実際に原子力投資の起爆剤になっているためです。ただし、その資金の流れの多くは非上場企業や大型炉の再稼働に向かっており、上場・純粋プレイの4社への恩恵は今後の受注動向次第という段階にあります。</p>
+
+<p>技術的な検証（各炉型の安全性・コスト競争力・実証状況）は中編で、投資判断の枠組みは後編で扱います。</p>
+
+<div class="watch">
+  <h2><span class="num">◆</span>WHAT TO WATCH</h2>
+  <ul>
+    <li><strong>Oklo・Auroraの2027年後半商業発電開始目標の進捗</strong></li>
+    <li><strong>NuScale Powerの新規大口顧客獲得の有無</strong>：規制上の優位性が商業契約に結びつくか</li>
+    <li><strong>NANO NuclearのKRONOS・NRC審査の進捗</strong></li>
+    <li><strong>Centrus EnergyのHALEU供給契約の拡大</strong>：Oklo等への燃料供給がどう進むか</li>
+    <li><strong>GAFAMの追加原子力契約</strong>：本シリーズ対象4社への直接的な恩恵があるか</li>
+    <li><strong>金利動向とセクター全体のセンチメント</strong></li>
+  </ul>
+</div>
+
+<div class="series-nav">
+  <div class="ttl">「当たれば大きいAI関連分野」シリーズ構成</div>
+  <ol>
+    <li>第1弾：AI×量子コンピューティング（完結・3部作＋個別企業4本）</li>
+    <li><strong>第2弾：AI×次世代原子力　前編：業界マップ（本稿）</strong></li>
+    <li>第2弾：AI×次世代原子力　中編：技術検証編（次回）</li>
+    <li>第2弾：AI×次世代原子力　後編：投資判断編</li>
+    <li>第3弾：AI×防衛テック（自律兵器・ドローン）</li>
+    <li>第4弾：AI×宇宙経済（衛星通信・宇宙インフラ）</li>
+  </ol>
+  <p style="margin:12px 0 0;font-size:13.5px;">次回は中編（技術検証編）です。各炉型の安全性・コスト競争力・実証状況を検証し、量子コンピューティングシリーズと同様の「まだ判定できる段階にない」という基準で評価します。</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="disclaimer">
+    <strong>【免責事項】</strong><br>
+    本レポートは情報提供を目的としたものであり、特定の有価証券の購入・売却を推奨するものではありません。記載内容は作成時点で信頼できると判断した情報に基づいていますが、その正確性・完全性を保証するものではありません。市場規模の推計値は調査機関により大きく異なるため、単一の数値を根拠とした投資判断は避けてください。株価・時価総額・バリュエーション指標は変動が激しく、出典・算出時点により幅があります。原子炉の商業化目標・規制認証の進捗に関する記述は各社の公表計画に基づくものであり、実現時期を保証するものではありません。本シリーズは「当たれば大きい」という投機性の高いテーマを扱うため、ボラティリティ・赤字先行・希薄化リスクについて特にご留意ください。投資に関する最終的な決定は、ご自身の判断と責任において行っていただきますようお願いいたします。
+  </div>
+  <p style="margin-top:18px;">Market Supporter AI ／ 2026年9月5日</p>
+</footer>
+
+</div>
+</body>
+</html>
