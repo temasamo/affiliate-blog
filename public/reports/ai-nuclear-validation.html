@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>次世代原子力は本当に「安く・早く」作れるのか｜Market Supporter AI</title>
+<meta name="description" content="NuScale最初の商用プロジェクトはなぜ中止されたのか。NuScale・Oklo・NANO Nuclear Energy・Centrus Energy、4社の技術的到達点をケーススタディで検証します。">
+<style>
+  :root{
+    --ink:#0d1b2a;
+    --ink-soft:#3d4f60;
+    --paper:#f7f9fc;
+    --line:#dde3ec;
+    --accent:#4f9d3f;
+    --accent-deep:#2f6b26;
+    --accent-wash:#eaf5e8;
+    --amber:#b8791a;
+    --amber-wash:#fdf6e8;
+    --pass:#1f7a4d;
+    --pass-wash:#eaf5ef;
+    --fail:#a83a3a;
+    --fail-wash:#faeded;
+    --hold:#6b6f76;
+    --hold-wash:#f1f2f4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.9;
+    font-size:16px;
+  }
+  .wrap{max-width:860px;margin:0 auto;background:#fff;}
+  header.masthead{
+    background:linear-gradient(135deg,var(--accent-deep) 0%,var(--accent) 100%);
+    color:#fff;
+    padding:44px 32px 36px;
+  }
+  .brand{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    opacity:.85;margin-bottom:18px;
+  }
+  .series-tag{
+    display:inline-block;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    padding:4px 12px;border-radius:3px;
+    font-size:12px;letter-spacing:.08em;margin-bottom:14px;
+  }
+  header.masthead h1{
+    font-size:29px;line-height:1.5;margin:0 0 12px;font-weight:700;
+  }
+  header.masthead .sub{font-size:15px;opacity:.9;margin:0;}
+  .issue{
+    margin-top:22px;padding-top:16px;
+    border-top:1px solid rgba(255,255,255,.28);
+    font-size:13px;opacity:.85;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  main{padding:36px 32px 8px;}
+  .lede{
+    font-size:16.5px;
+    background:var(--accent-wash);
+    border-left:4px solid var(--accent);
+    padding:20px 22px;
+    margin:0 0 36px;
+  }
+  h2{
+    font-size:20px;margin:48px 0 18px;padding-bottom:10px;
+    border-bottom:2px solid var(--accent);
+    display:flex;align-items:baseline;gap:12px;
+  }
+  h2 .num{
+    color:var(--accent);font-size:24px;font-weight:700;
+    font-family:Georgia,serif;
+  }
+  h3{
+    font-size:16.5px;margin:30px 0 10px;color:var(--accent-deep);
+    border-left:3px solid var(--accent);padding-left:11px;
+  }
+  p{margin:0 0 16px;}
+  table{
+    width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:14.5px;
+  }
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:var(--accent-wash);font-weight:700;color:var(--accent-deep);}
+  tbody tr:nth-child(even){background:#fbfcfe;}
+  .case{
+    border:1px solid var(--line);border-left:6px solid var(--hold);
+    background:#fff;padding:16px 18px;margin-bottom:14px;border-radius:2px;
+  }
+  .case.pass{border-left-color:var(--pass);}
+  .case.fail{border-left-color:var(--fail);}
+  .case .lbl{
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:12px;letter-spacing:.1em;font-weight:700;margin-bottom:8px;
+  }
+  .case .lbl .name{color:var(--ink);}
+  .verdict{
+    font-size:11.5px;letter-spacing:.06em;padding:3px 10px;border-radius:999px;
+    background:var(--hold-wash);color:var(--hold);font-weight:700;
+  }
+  .case.pass .verdict{background:var(--pass-wash);color:var(--pass);}
+  .case.fail .verdict{background:var(--fail-wash);color:var(--fail);}
+  .case .ttl{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .case .desc{font-size:14.5px;color:var(--ink-soft);margin:0;}
+  .callout{
+    background:var(--amber-wash);border:1px solid #f0dfbc;
+    padding:16px 18px;margin:22px 0;font-size:14.5px;border-radius:2px;
+  }
+  .callout .ttl{font-weight:700;color:var(--amber);margin-bottom:6px;font-size:14px;}
+  .watch{
+    background:var(--ink);color:#e8eef2;padding:26px 26px 20px;margin:44px 0 0;
+  }
+  .watch h2{
+    color:#fff;border-bottom-color:rgba(255,255,255,.4);margin-top:0;
+  }
+  .watch h2 .num{color:#9ed98c;}
+  .watch ul{padding-left:20px;margin:0;}
+  .watch li{margin-bottom:12px;font-size:15px;}
+  .watch strong{color:#9ed98c;}
+  .series-nav{
+    background:var(--accent-wash);padding:20px 22px;margin:34px 0 0;
+    font-size:14.5px;border-radius:2px;
+  }
+  .series-nav .ttl{font-weight:700;color:var(--accent-deep);margin-bottom:10px;}
+  .series-nav ol{margin:0;padding-left:20px;}
+  .series-nav li{margin-bottom:6px;}
+  footer{
+    padding:26px 32px 40px;font-size:12.5px;color:var(--ink-soft);
+    border-top:1px solid var(--line);margin-top:36px;
+  }
+  .disclaimer{
+    background:var(--paper);border:1px solid var(--line);
+    padding:14px 16px;border-radius:2px;line-height:1.75;
+  }
+  @media(max-width:640px){
+    header.masthead{padding:32px 20px 28px;}
+    header.masthead h1{font-size:23px;}
+    main{padding:26px 20px 8px;}
+    footer{padding:22px 20px 32px;}
+    .watch{padding:22px 20px 16px;}
+    table{font-size:13.5px;}
+    th,td{padding:8px 9px;}
+    .case .lbl{flex-direction:column;align-items:flex-start;gap:6px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">Market Supporter AI</div>
+  <div class="series-tag">当たれば大きいAI関連分野 第2弾｜AI×次世代原子力 中編</div>
+  <h1>次世代原子力は本当に「安く・早く」作れるのか<br>―― コスト超過の歴史と、まだ実証されていない約束</h1>
+  <p class="sub">NuScale最初の商用プロジェクトはなぜ中止されたのか。4社の技術的到達点を検証する</p>
+  <div class="issue">
+    <span>2026年9月6日号</span>
+    <span>米国株シリーズ／技術検証レポート</span>
+  </div>
+</header>
+
+<main>
+
+<p class="lede">
+前編（産業地図）では、NRC設計認証の取得と商業的優位性が必ずしも一致しないという構図を確認しました。本稿は3部作の中編として、次世代原子炉が謳う「小型・モジュール化によって安く早く作れる」という約束が、実際にどこまで実証されているのかを、公表された事例に基づいて検証します。量子コンピューティングシリーズで「量子優位性」の主張と反証のサイクルを検証したのと同様の視点です。
+</p>
+
+<h2><span class="num">①</span>検証の枠組み ―― 原子力業界に染みついた「コスト超過の歴史」</h2>
+
+<p>次世代原子炉の技術的な検証を行う上で欠かせない前提は、原子力発電プロジェクトが伝統的に、当初見積もりを大幅に超えるコストと期間を要してきたという業界全体の実績です。従来型の大型炉の代表例として、米ジョージア州のボーグル原発3・4号機は、当初約140億ドルとされた建設費が最終的に300億ドルを超え、運転開始も当初計画から7年以上遅延しました。SMR（小型モジュール炉）はこうした課題を「小型化・モジュール化・工場生産」によって克服すると謳われていますが、この約束が実証された商業運転事例は、2026年8月時点で米国にはまだ存在しません。</p>
+
+<div class="callout">
+  <div class="ttl">読み方の指針（編集部見解）</div>
+  量子コンピューティングシリーズでは「量子優位性の主張は発表後に覆されやすい」という検証結果が得られましたが、次世代原子力ではやや性格が異なります。技術的な主張が「覆される」というより、<strong>商業化に至る前の段階でコスト・スケジュールの見積もりが繰り返し上方修正され、プロジェクトが中止に追い込まれる</strong>というパターンが、この産業の一次資料から確認できます。次章のケーススタディで具体的に見ていきます。
+</div>
+
+<h2><span class="num">②</span>ケーススタディ：主張とその後</h2>
+
+<div class="case fail">
+  <div class="lbl"><span class="name">NuScale Power「Carbon Free Power Project」（2014年〜2023年）</span><span class="verdict">中止</span></div>
+  <div class="ttl">「1kWh=6セント」から9年後、コスト2.6倍で計画中止</div>
+  <p class="desc">2014年、NuScaleはユタ州の公営電力連合体UAMPSと共同で、12基のSMRモジュール（合計600MW）を約36億ドルで建設し、2024年に商用運転を開始する計画を発表した。しかし設計変更・出力増強（1基50MWから77MWへ）・規模縮小（6基462MWへ）を経て、2023年時点の見積もりコストは93億ドルまで膨張。当初1kWh=約6セントとされた電力単価は、中止直前には約9〜20セントまで上昇していたと報じられている。2023年11月、UAMPS側の採算性懸念により正式に計画は中止された。NuScale株価はこの発表後に80%超下落したと報じられている。</p>
+</div>
+
+<div class="case hold">
+  <div class="lbl"><span class="name">NuScale Power「RoPower（ルーマニア）」（2022年〜）</span><span class="verdict">建設前・検証途上</span></div>
+  <div class="ttl">米国外での「初のSMR商用プロジェクト」を標榜</div>
+  <p class="desc">2022年、NuScaleはルーマニアの国営電力会社RoPowerと6基のSMR建設に向けた覚書を締結。2026年2月、環境影響評価を終え、NRCの認可審査は予定より3か月前倒しで完了したと報じられている。同年内に最終投資決定（FID）が承認された。ただし、これは建設・運転による実証ではなく、規制・計画段階の前進にとどまる。NuScaleの2026年Q2決算では、同社の売上高がRoPower関連のエンジニアリング業務の一巡により前年の805万ドルから7万5,000ドルへ99%減少しており、初期エンジニアリング収益が一巡した後の商業段階への移行がまだ実証されていないことを示唆している。</p>
+</div>
+
+<div class="case hold">
+  <div class="lbl"><span class="name">Oklo「Auroraの燃料リサイクル技術」</span><span class="verdict">商用スケール未実証</span></div>
+  <div class="ttl">使用済み核燃料の再利用という、まだ実証されていない技術</div>
+  <p class="desc">Oklo Auroraの差別化要因の一つは、使用済み核燃料をリサイクルして新たな燃料として利用する技術である。DOEはAurora燃料製造施設の安全設計戦略・概念的安全設計報告書等を承認し、予備的な安全性分析も提出済みとされるが、これらは規制上のマイルストーンであり、商業スケールでの燃料リサイクルの実証ではない。Okloは2028年の初号機稼働を目標としているが、サプライチェーン・建設・マクロ経済・設計上の複雑性を抱えていると自ら開示している。</p>
+</div>
+
+<div class="case hold">
+  <div class="lbl"><span class="name">NANO Nuclear Energy「KRONOS」マイクロ炉</span><span class="verdict">規制審査中・実機稼働なし</span></div>
+  <div class="ttl">4社の中で最も早期の開発段階</div>
+  <p class="desc">低圧冷却マイクロ炉「KRONOS」はNRC審査が進行中で、初回商用展開の目標は2030年とされている。同社は2026年8月にQuadrant Nuclear IndustriesとHALEU燃料供給網構築に関する非拘束の覚書を締結したが、実機による発電実証はまだ行われていない段階にある。</p>
+</div>
+
+<h2><span class="num">③</span>本シリーズ対象4社の技術水準</h2>
+
+<p>2026年8月時点で、本シリーズ対象4社のいずれも、商業スケールでの発電運転実績を持ちません。各社が競っているのは、その手前の段階にある規制上・技術上のマイルストーンです。</p>
+
+<table>
+  <thead>
+    <tr><th>企業</th><th>公表されている主要な技術・規制指標（2026年8月時点）</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Oklo</td><td>NRC設計認証は未取得。DOEパイロットプログラム下でGroves同位体試験炉が初臨界達成（2026年8月5日、民有地では同プログラム初）。商業発電目標は2028年（Aurora初号機）</td></tr>
+    <tr><td>NuScale Power</td><td>対象4社で唯一NRC設計認証を取得済み（50MW設計、2020年）。ただし最初の商用プロジェクトは2023年に中止。現在はルーマニア・RoPower案件のFID承認段階</td></tr>
+    <tr><td>NANO Nuclear Energy</td><td>マイクロ炉「KRONOS」はNRC審査進行中。商用展開目標は2030年。実機稼働の実績なし</td></tr>
+    <tr><td>Centrus Energy</td><td>他3社と異なり、ウラン濃縮という既に確立された技術で商業運転中。20%濃縮HALEUの製造ライセンスを唯一保有</td></tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <div class="ttl">見落とされやすい論点：NRC認証は「設計」の承認であって「実績」ではない</div>
+  NuScaleの事例が示す通り、NRC設計認証の取得は、その設計が安全基準を満たしていることの承認であり、実際に商業運転で採算が取れることを保証するものではありません。認証取得から3年で最初の商用プロジェクトが中止に追い込まれた事実は、規制上のマイルストーンと商業的な実証の間に大きな距離があることを示しています。
+</div>
+
+<h2><span class="num">④</span>主要プレイヤー動向 ―― 「受注」と「拘束力」の区別</h2>
+
+<p>Okloは2024年12月にデータセンター運営会社Switchとの間で12ギガワット規模の電力購入契約（マスター・パワー・アグリーメント）を締結し、その後複数の非拘束の意向表明（Equinix、Diamondback Energy、Prometheus Hyperscale等）を積み重ね、受注残高は約181億ワット相当に達したと2026年に公表しています。これは事業結合発表時（2023年7月）から約25倍という急拡大です。</p>
+
+<div class="callout">
+  <div class="ttl">留保：契約の「拘束力」の区別が重要</div>
+  Okloが積み上げる受注パイプラインの多くは、非拘束の意向表明（LOI）や覚書（MOU）であり、法的拘束力を持つ確定契約とは性格が異なります。前編で言及したMeta社との12億ワット契約は拘束力があるとされていますが、その他の契約の多くは今後の交渉次第で変動しうる段階にあります。量子コンピューティングシリーズでRigettiの商務省LOIについて確認した「LOIは最終契約ではない」という留保が、ここでも当てはまります。
+</div>
+
+<p>NuScale Power側は、テネシー川流域開発公社（TVA）との間で最大6ギガワット規模の電力購入契約を目指すとしていますが、2026年8月時点で確定契約はまだ締結されていません。同社CEOは年内の契約締結に期待を示していますが、確約された時期ではありません。</p>
+
+<h2><span class="num">⑤</span>コスト競争力の実態</h2>
+
+<p>SMRの経済性を巡る議論では、均等化発電原価（LCOE：発電にかかる総コストを発電量で割った指標）が重要な指標として使われます。NuScaleのUAMPS案件では、当初1メガワット時あたり約58ドルとされていた見積もりが、中止直前には約89ドルまで上昇したと報じられています。比較対象として、風力・太陽光に蓄電池を組み合わせた電源のLCOEは、一般的に1メガワット時あたり60ドルを下回る水準とされ、コスト面での競争力に疑問符が付く結果となりました。</p>
+
+<div class="callout">
+  <div class="ttl">読み方の指針（編集部見解）</div>
+  SMR推進派は「量産効果（工場生産による規模の経済）が働けば将来的にコストは下がる」と主張しますが、これは「初号機（First-of-a-Kind）」のコストが高くなることを前提とした議論であり、量産段階に到達する前にプロジェクトが頓挫すれば、その効果は実証されないまま終わります。NuScaleの事例は、まさにこの「量産効果が発揮される前の中止」という構図を体現しています。
+</div>
+
+<h2><span class="num">⑥</span>リスク要因</h2>
+
+<h3>1. コスト超過の歴史が繰り返される可能性</h3>
+<p>NuScaleのUAMPS案件、従来型大型炉のボーグル原発など、原子力プロジェクトは繰り返しコスト超過に見舞われてきました。本シリーズ対象4社の新規プロジェクトも同様の経路をたどるリスクがあります。</p>
+
+<h3>2. 非拘束契約と確定契約の混同</h3>
+<p>Okloの受注パイプラインの多くが非拘束の意向表明である点は、実際の収益化のタイミングを見誤らせるリスクをはらみます。</p>
+
+<h3>3. 燃料供給網の未成熟</h3>
+<p>OkloのHALEU燃料調達はCentrus EnergyとのLOI段階にとどまり、供給開始は2029年を見込むとされています。燃料供給網が整わなければ、炉の建設が完了しても稼働できないリスクがあります。</p>
+
+<h3>4. 規制認証と商業的実証のギャップ</h3>
+<p>NuScaleの事例が示す通り、NRC認証取得は商業的成功を保証しません。他社が将来認証を取得した場合も、同様の注意が必要です。</p>
+
+<h3>5. 商業運転実績がまだゼロという事実</h3>
+<p>本シリーズ対象4社のいずれも、2026年8月時点で次世代炉による商業発電の実績を持ちません。これは判断材料としての実績データが乏しいことを意味します。</p>
+
+<h2><span class="num">⑦</span>まとめ ―― 「まだ判定できる段階にない」</h2>
+
+<p>技術的な検証を通じて見えてきたのは、<strong>次世代原子力が謳う「小型・モジュール化による低コスト・早期建設」という約束は、2026年8月時点で商業運転による実証を経ていない</strong>という構図です。NuScaleの最初の商用プロジェクトが、規制認証取得からわずか3年で中止に追い込まれた事実は、この産業のリスクを象徴しています。</p>
+
+<p>一方で、この産業には量子コンピューティングにおける「Quantinuumの無条件分離証明」のような、明確に検証済みの「合格」事例はまだ存在しません。すべての事例が「実証途上」あるいは「中止」のいずれかに分類される段階です。AI創薬・量子コンピューティングシリーズと同様、ここでも<strong>「まだ判定できる段階にない」</strong>という中立的な立ち位置が、現時点で最も実務的な結論になります。</p>
+
+<p>次回の後編では、商業運転実績を持たないこれら企業をどのような指標で評価すべきか、投資判断の枠組みを検証します。</p>
+
+<div class="watch">
+  <h2><span class="num">◆</span>WHAT TO WATCH</h2>
+  <ul>
+    <li><strong>NuScale・RoPower案件の建設進捗</strong>：FID承認後、実際の着工・コスト超過の有無</li>
+    <li><strong>NuScale・TVAとの拘束力ある契約締結の有無</strong>：CEOが目指す年内締結が実現するか</li>
+    <li><strong>Oklo・Groves同位体試験炉からAurora初号機への技術移転</strong>：2028年商業発電目標の進捗</li>
+    <li><strong>OkloとCentrusのHALEU供給契約の正式契約化</strong>：LOIから確定契約への移行時期</li>
+    <li><strong>NANO Nuclear・KRONOSのNRC審査進捗</strong></li>
+    <li><strong>非拘束契約から確定契約への転換率</strong>：受注パイプラインのうち実際に契約化する比率</li>
+  </ul>
+</div>
+
+<div class="series-nav">
+  <div class="ttl">「当たれば大きいAI関連分野」シリーズ構成</div>
+  <ol>
+    <li>第1弾：AI×量子コンピューティング（完結）</li>
+    <li>第2弾：AI×次世代原子力　前編：業界マップ</li>
+    <li><strong>第2弾：AI×次世代原子力　中編：技術検証編（本稿）</strong></li>
+    <li>第2弾：AI×次世代原子力　後編：投資判断編（次回）</li>
+    <li>第3弾：AI×防衛テック（自律兵器・ドローン）</li>
+    <li>第4弾：AI×宇宙経済（衛星通信・宇宙インフラ）</li>
+  </ol>
+  <p style="margin:12px 0 0;font-size:13.5px;">次回は後編（投資判断編）です。商業運転実績を持たない企業群を、量子コンピューティングシリーズで確立した評価軸（キャッシュランウェイ・受注転換率等）を応用しつつ、原子力特有の指標（規制マイルストーン・燃料供給確保等）で評価する枠組みを検証します。</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="disclaimer">
+    <strong>【免責事項】</strong><br>
+    本レポートは情報提供を目的としたものであり、特定の有価証券の購入・売却を推奨するものではありません。記載内容は作成時点で公表されている一次資料・報道に基づいていますが、その正確性・完全性を保証するものではありません。原子炉の商業化目標・技術的な実現時期に関する記述は各社の公表計画に基づくものであり、実現時期を保証するものではありません。コスト・LCOEに関する数値は報道・分析機関の推計に基づくものであり、出典・算出時点により幅があります。契約・受注に関する記述は、拘束力の有無を確認できる範囲で区別していますが、詳細な契約条件は非開示の場合があります。投資に関する最終的な決定は、ご自身の判断と責任において行っていただきますようお願いいたします。
+  </div>
+  <p style="margin-top:18px;">Market Supporter AI ／ 2026年9月6日</p>
+</footer>
+
+</div>
+</body>
+</html>
