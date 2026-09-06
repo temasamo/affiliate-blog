@@ -1,3 +1,8 @@
+const {
+  PHASE_DEVELOPMENT_SERVER,
+  PHASE_PRODUCTION_BUILD,
+} = require("next/constants");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -43,4 +48,14 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+// Vercel default Build Command is `npm run build` or `next build`.
+// Generate the public path list from this config so a direct `next build`
+// still runs it. npm `prebuild` would not run when Vercel invokes `next build`.
+// Do not generate during `next start` / PHASE_PRODUCTION_SERVER — that would
+// walk public/ and write JSON on every production process boot.
+module.exports = (phase) => {
+  if (phase === PHASE_PRODUCTION_BUILD || phase === PHASE_DEVELOPMENT_SERVER) {
+    require("./scripts/generate-public-file-list.js").generatePublicFileList();
+  }
+  return nextConfig;
+};

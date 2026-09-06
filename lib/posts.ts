@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { deriveCategory } from "./category";
+import { publicFileExists } from "./public-file-set";
 
 export type PostMeta = {
   slug: string;
@@ -70,7 +71,6 @@ const JSON_DIRS = [
   ],
 ] as const;
 
-const PUBLIC_DIR = path.join(process.cwd(), "public");
 const VALID_MDX = new Set([".md", ".mdx"]);
 
 function normalizeDate(input?: string): string {
@@ -115,9 +115,9 @@ function isFutureDate(d?: string): boolean {
 function resolveThumbnail(input?: string | null): string | null {
   if (!input || typeof input !== "string") return null;
   if (/^https?:\/\//i.test(input)) return input; // 外部URLは通す
-  const rel = input.replace(/^\/+/, "");
-  const abs = path.join(PUBLIC_DIR, rel);
-  return fs.existsSync(abs) ? `/${rel.replace(/\\/g, "/")}` : null;
+  const rel = input.replace(/^\/+/, "").replace(/\\/g, "/");
+  if (!rel) return "/";
+  return publicFileExists(rel) ? `/${rel}` : null;
 }
 
 function listFilesRecursively(dir: string, exts: Set<string>): string[] {

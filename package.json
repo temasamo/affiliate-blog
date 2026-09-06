@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "generate:public-files": "node scripts/generate-public-file-list.js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

@@ -34,3 +34,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts *.backup
+
+# build-time public path list (regenerated on next build / next dev, not next start)
+/data/generated/public-files.json
