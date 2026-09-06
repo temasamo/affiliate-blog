@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>次世代原子力4社をどう評価するか｜Market Supporter AI</title>
+<meta name="description" content="キャッシュランウェイ・契約の拘束力・規制マイルストーン転換率・コスト超過リスク。Oklo・NuScale Power・NANO Nuclear Energy・Centrus Energyを、次世代原子力版の投資判断フレームワークで整理します。">
+<style>
+  :root{
+    --ink:#0d1b2a;
+    --ink-soft:#3d4f60;
+    --paper:#f7f9fc;
+    --line:#dde3ec;
+    --accent:#4f9d3f;
+    --accent-deep:#2f6b26;
+    --accent-wash:#eaf5e8;
+    --amber:#b8791a;
+    --amber-wash:#fdf6e8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.9;
+    font-size:16px;
+  }
+  .wrap{max-width:860px;margin:0 auto;background:#fff;}
+  header.masthead{
+    background:linear-gradient(135deg,var(--accent-deep) 0%,var(--accent) 100%);
+    color:#fff;
+    padding:44px 32px 36px;
+  }
+  .brand{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    opacity:.85;margin-bottom:18px;
+  }
+  .series-tag{
+    display:inline-block;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    padding:4px 12px;border-radius:3px;
+    font-size:12px;letter-spacing:.08em;margin-bottom:14px;
+  }
+  header.masthead h1{
+    font-size:29px;line-height:1.5;margin:0 0 12px;font-weight:700;
+  }
+  header.masthead .sub{font-size:15px;opacity:.9;margin:0;}
+  .issue{
+    margin-top:22px;padding-top:16px;
+    border-top:1px solid rgba(255,255,255,.28);
+    font-size:13px;opacity:.85;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  main{padding:36px 32px 8px;}
+  .lede{
+    font-size:16.5px;
+    background:var(--accent-wash);
+    border-left:4px solid var(--accent);
+    padding:20px 22px;
+    margin:0 0 36px;
+  }
+  h2{
+    font-size:20px;margin:48px 0 18px;padding-bottom:10px;
+    border-bottom:2px solid var(--accent);
+    display:flex;align-items:baseline;gap:12px;
+  }
+  h2 .num{
+    color:var(--accent);font-size:24px;font-weight:700;
+    font-family:Georgia,serif;
+  }
+  h3{
+    font-size:16.5px;margin:30px 0 10px;color:var(--accent-deep);
+    border-left:3px solid var(--accent);padding-left:11px;
+  }
+  p{margin:0 0 16px;}
+  table{
+    width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:14.5px;
+  }
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:var(--accent-wash);font-weight:700;color:var(--accent-deep);}
+  tbody tr:nth-child(even){background:#fbfcfe;}
+  .metric-map{margin:24px 0 28px;}
+  .metric{
+    border:1px solid var(--line);border-left:6px solid var(--accent);
+    background:#fff;padding:16px 18px;margin-bottom:12px;border-radius:2px;
+  }
+  .metric .lbl{
+    font-size:12px;letter-spacing:.14em;color:var(--accent);
+    font-weight:700;margin-bottom:6px;
+  }
+  .metric .ttl{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .metric .desc{font-size:14.5px;color:var(--ink-soft);margin:0;}
+  .callout{
+    background:var(--accent-wash);border:1px solid #d5ead0;
+    padding:16px 18px;margin:22px 0;font-size:14.5px;border-radius:2px;
+  }
+  .callout .callout-title{font-weight:700;color:var(--accent-deep);margin-bottom:6px;font-size:14px;}
+  .callout.warn{background:var(--amber-wash);border-color:#f0dfbc;}
+  .callout.warn .callout-title{color:var(--amber);}
+  .watch{
+    background:var(--ink);color:#e8eef2;padding:26px 26px 20px;margin:44px 0 0;
+  }
+  .watch h2{
+    color:#fff;border-bottom-color:rgba(255,255,255,.4);margin-top:0;
+  }
+  .watch h2 .num{color:#9ed98c;}
+  .watch ul{padding-left:20px;margin:0;}
+  .watch li{margin-bottom:12px;font-size:15px;}
+  .watch strong{color:#9ed98c;}
+  .series-nav{
+    background:var(--accent-wash);padding:20px 22px;margin:34px 0 0;
+    font-size:14.5px;border-radius:2px;
+  }
+  .series-nav .ttl{font-weight:700;color:var(--accent-deep);margin-bottom:10px;}
+  .series-nav ol{margin:0;padding-left:20px;}
+  .series-nav li{margin-bottom:6px;}
+  footer{
+    padding:26px 32px 40px;font-size:12.5px;color:var(--ink-soft);
+    border-top:1px solid var(--line);margin-top:36px;
+  }
+  .disclaimer{
+    background:var(--paper);border:1px solid var(--line);
+    padding:14px 16px;border-radius:2px;line-height:1.75;
+  }
+  @media(max-width:640px){
+    header.masthead{padding:32px 20px 28px;}
+    header.masthead h1{font-size:23px;}
+    main{padding:26px 20px 8px;}
+    footer{padding:22px 20px 32px;}
+    .watch{padding:22px 20px 16px;}
+    table{font-size:13.5px;}
+    th,td{padding:8px 9px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">Market Supporter AI</div>
+  <div class="series-tag">当たれば大きいAI関連分野 第2弾｜AI×次世代原子力 後編</div>
+  <h1>次世代原子力4社をどう評価するか<br>―― 「商業運転ゼロ」の産業で使うべき物差し</h1>
+  <p class="sub">キャッシュランウェイ・契約の拘束力・規制マイルストーン転換率・コスト超過リスク。4つの軸で赤字先行企業を読み解く</p>
+  <div class="issue">
+    <span>2026年9月7日号</span>
+    <span>米国株シリーズ／投資判断レポート</span>
+  </div>
+</header>
+
+<main>
+
+<p class="lede">
+前編（産業地図）では4社の性格の違いを、中編（技術検証編）では「小型・モジュール化による低コスト化」という約束がまだ実証されていないことを確認しました。3部作の最終回となる本稿では、商業運転実績を持たないOklo・NuScale・NANO Nuclear Energyと、既に黒字のCentrus Energyをどのような指標で評価すべきか、投資判断の枠組みを整理します。量子コンピューティングシリーズで確立した4指標フレームワークを応用しつつ、原子力特有の論点（規制マイルストーン、燃料供給、コスト超過の歴史）を組み込みます。
+</p>
+
+<h2><span class="num">①</span>次世代原子力版・投資判断フレームワーク</h2>
+
+<p>量子コンピューティング版4指標（キャッシュランウェイ／商用契約比率／受注転換率／希薄化パターン＋技術ロードマップの信頼性）は、次世代原子力にも大枠で応用できますが、原子力特有の要素を反映して一部を組み替える必要があります。</p>
+
+<table>
+  <thead>
+    <tr><th>量子コンピューティング版</th><th>次世代原子力版</th><th>置き換えの理由</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>キャッシュランウェイ</td><td>キャッシュランウェイ（据え置き）</td><td>赤字先行という構造は共通。ただしCentrusは黒字のため別枠で評価</td></tr>
+    <tr><td>商用契約比率</td><td>契約の拘束力比率（拘束力ある契約÷受注パイプライン全体）</td><td>原子力の「受注」はLOI・MOU等の非拘束段階のものが多く、拘束力の有無が実現性を左右する</td></tr>
+    <tr><td>受注→売上への転換率</td><td>規制マイルストーン→建設着工への転換率</td><td>原子力では受注よりもまず規制認証・許可のプロセスが律速段階になる</td></tr>
+    <tr><td>希薄化パターン＋技術ロードマップの信頼性</td><td>希薄化パターン＋コスト超過履歴</td><td>NuScaleの事例が示す通り、当初見積もりからのコスト超過が繰り返し発生してきた業界特性を反映</td></tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <div class="callout-title">読み方の指針（編集部見解）</div>
+  この産業を評価する際に最も重要なのは、「受注残高」の大きさではなく、<strong>その受注のうちどれだけが法的拘束力を持つか</strong>、そして<strong>規制上のマイルストーンが実際の着工にどれだけ近づいているか</strong>です。中編で確認した通り、Okloの受注パイプライン（約181億ワット相当）の多くは非拘束の意向表明であり、NuScaleの最初の商用プロジェクトはNRC認証取得から3年で中止されました。この産業では、規模の大きさよりも「確度」を重視した評価が必要です。
+</div>
+
+<h2><span class="num">②</span>政策・規制環境が投資に与える影響</h2>
+
+<p>前編・中編で確認した通り、DOEの原子炉パイロットプログラムやNRCの審査プロセスが、各社の進捗を大きく左右します。トランプ政権は民有地での原子炉建設・試験加速を政策的に後押ししており、Oklo・NANO Nuclear双方がこの恩恵を受けています。</p>
+
+<table>
+  <thead>
+    <tr><th>経路</th><th>投資上の意味</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>DOE原子炉パイロットプログラム</td><td>民有地での試験炉建設を加速。Okloはこの枠組みで2026年8月に初臨界を達成</td></tr>
+    <tr><td>NRC設計認証・許可プロセス</td><td>商用化の必須プロセスだが、取得が商業的成功を保証しない（中編参照）</td></tr>
+    <tr><td>AIデータセンター向け電力政策</td><td>需要側の後押しとなるが、供給側（本シリーズ対象4社）への直接的な恩恵は限定的（前編参照）</td></tr>
+  </tbody>
+</table>
+
+<h2><span class="num">③</span>キャッシュランウェイ ―― 量子コンピューティングと同様、潤沢な傾向</h2>
+
+<p>2026年Q2〜Q3決算をもとに、Oklo・NuScaleのキャッシュランウェイを編集部試算しました。四半期の純損失を年率換算し、手元資金で除しています。</p>
+
+<table>
+  <thead>
+    <tr><th>企業</th><th>手元資金・投資</th><th>四半期損失（編集部が採用した基準）</th><th>編集部試算ランウェイ</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Oklo</td><td>約22億ドル（現金＋市場性のある有価証券）</td><td>純損失4,850万ドル</td><td>約11.3年</td></tr>
+    <tr><td>NuScale Power</td><td>約19億ドル</td><td>純損失5,010万ドル</td><td>約9.5年</td></tr>
+    <tr><td>NANO Nuclear Energy</td><td>約5億8,000万ドル</td><td>非開示（前年同期比損失拡大の詳細は限定的開示）</td><td>編集部試算は行わず。手元資金は潤沢な水準にあると評価</td></tr>
+    <tr><td>Centrus Energy</td><td>該当なし（黒字企業）</td><td>該当なし</td><td>PER（株価収益率）による評価が適用可能。2026年6月時点で約62倍（過去3年平均は約24倍）</td></tr>
+  </tbody>
+</table>
+
+<p>Oklo・NuScaleはともに10年前後という極めて長いランウェイを確保しており、これは量子コンピューティングシリーズで確認した傾向と同様です。2025〜2026年のAI関連テーマ株への資金流入を背景に、各社とも大型増資を経て潤沢な手元資金を積み増しました。</p>
+
+<div class="callout warn">
+  <div class="callout-title">留保：ランウェイの長さは、コスト超過リスクへの耐性でもある</div>
+  中編で確認した通り、原子力プロジェクトは当初見積もりからのコスト超過が繰り返し発生してきました。潤沢なキャッシュランウェイは、こうしたコスト超過が発生した場合の耐性という側面も持ちます。逆に言えば、ランウェイが短い企業がコスト超過に直面した場合、プロジェクトの中止リスクはより高まります。
+</div>
+
+<h2><span class="num">④</span>契約の拘束力と規制マイルストーンの転換</h2>
+
+<div class="metric-map">
+
+  <div class="metric">
+    <div class="lbl">OKLO</div>
+    <div class="ttl">受注は急拡大も、大半が非拘束</div>
+    <p class="desc">受注パイプラインは約181億ワット相当（事業結合発表時の約25倍）に達しているが、中編で確認した通り、この多くは非拘束の意向表明（LOI）や覚書（MOU）である。Meta社との12億ワット契約やSwitchとの12ギガワット規模のマスター・パワー・アグリーメントは拘束力があるとされるが、Equinix・Diamondback Energy等との契約は非拘束段階にとどまる。規制面では、DOEパイロットプログラム下でGroves同位体試験炉が初臨界を達成しており、Aurora初号機（商業炉）への技術移転が次の焦点となる。</p>
+  </div>
+
+  <div class="metric">
+    <div class="lbl">NUSCALE POWER</div>
+    <div class="ttl">NRC認証済みだが、最初の商用案件は中止済み</div>
+    <p class="desc">対象4社で唯一NRC設計認証を取得しているが、中編で確認した通り、最初の商用プロジェクト（UAMPS向け）は認証取得から3年で中止された。現在はルーマニア・RoPower案件がFID承認段階にあり、TVAとの最大6ギガワット契約も交渉中とされるが、2026年8月時点でいずれも確定契約には至っていない。規制マイルストーンの達成度は4社中最も進んでいるが、それが商業的な実現に直結していない点は中編の教訓そのものである。</p>
+  </div>
+
+  <div class="metric">
+    <div class="lbl">NANO NUCLEAR ENERGY</div>
+    <div class="ttl">規制プロセスは前進、初回商用化は2030年目標</div>
+    <p class="desc">2026年5月、NRCがKRONOS MMRの建設許可申請（CPA）を正式受理し、環境評価を2027年第1四半期、安全性評価を2027年第3四半期に完了する見込みが示された。これは2027年後半の着工目標と整合的なスケジュールである。商業運転実績はまだなく、複数の非拘束契約・提携（Quadrant Nuclear、戦略的協業先との協議等）を積み上げている段階にある。</p>
+  </div>
+
+  <div class="metric">
+    <div class="lbl">CENTRUS ENERGY</div>
+    <div class="ttl">既に確立された技術での商業運転、評価軸が根本的に異なる</div>
+    <p class="desc">ウラン濃縮という既存技術で商業運転中であり、他3社のような「規制マイルストーン→着工」という評価軸は当てはまらない。むしろ、Oklo等の次世代炉メーカーへのHALEU供給契約が正式契約に移行するかどうかが、成長ドライバーとしての焦点になる。DOEとのHALEU生産契約は2026年6月末まで有効で、最大8年間の延長オプションが付されている。</p>
+  </div>
+
+</div>
+
+<h2><span class="num">⑤</span>株式バリュエーション ―― 期待先行の構造とコスト超過リスクの複合</h2>
+
+<p>前編で確認した通り、Oklo・NuScale・NANO Nuclearは赤字先行のプレ商用フェーズにあり、評価は将来の商業化への期待で形成されています。後編としては、この期待がどのようなトリガーで修正されうるかを整理します。</p>
+
+<table>
+  <thead>
+    <tr><th>想定トリガー</th><th>株価への影響方向</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>規制マイルストーンの達成（NRC認証、初臨界等）</td><td>好感されやすいが、中編で見た通り商業化への直結は保証されない</td></tr>
+    <tr><td>非拘束契約から確定契約への移行</td><td>好感される可能性が高いが、逆に交渉不成立となった場合は失望売りのリスク</td></tr>
+    <tr><td>コスト超過・スケジュール遅延の発覚</td><td>NuScaleの前例が示す通り、株価急落のリスクが高い</td></tr>
+    <tr><td>Centrusとの燃料供給契約の正式化</td><td>Oklo等の炉メーカー側にとって、商業化への信頼性向上材料</td></tr>
+    <tr><td>マクロ環境（金利動向）</td><td>前編で確認した通り、セクター全体が金利動向に連動する傾向</td></tr>
+  </tbody>
+</table>
+
+<h2><span class="num">⑥</span>リスク要因</h2>
+
+<h3>1. コスト超過の歴史が繰り返されるリスク（中編と連動）</h3>
+<p>NuScaleのUAMPS案件のように、当初見積もりから数倍にコストが膨張し、プロジェクトが中止されるリスクは、本シリーズ対象他社にも共通する構造的なリスクです。</p>
+
+<h3>2. 非拘束契約が確定契約に至らないリスク</h3>
+<p>Okloの受注パイプラインの多くが非拘束の意向表明にとどまる以上、これらが実際の収益に転換されない可能性は常に存在します。</p>
+
+<h3>3. 燃料供給網の未成熟</h3>
+<p>Oklo等の次世代炉メーカーは、HALEU燃料の供給をCentrus等に依存しており、供給網が計画通り整備されなければ、炉の建設が完了しても稼働できないリスクがあります。</p>
+
+<h3>4. 希薄化リスク</h3>
+<p>NuScaleは新規株式売却プログラムを通じて資金調達を続けており、既存株主の希薄化が進行しています。プレ商用フェーズの他社も、継続的な資金調達を必要とする可能性があります。</p>
+
+<h3>5. セクター全体の連動性（前編と連動）</h3>
+<p>金利動向などのマクロ要因により、個別企業の材料と無関係にセクター全体が同方向に動く場面が頻発しています。</p>
+
+<h2><span class="num">⑦</span>まとめ ―― 「まだ判定できる段階にない」が、判断材料は整理できる</h2>
+
+<p>3部作を通じて確認できたのは、次世代原子力産業が「収益より期待」で評価される構造にあり、その期待の裏付けとなる商業運転実績はまだ存在しないという構図です。ただし、これは投資判断が不可能という意味ではありません。<strong>キャッシュランウェイ・契約の拘束力比率・規制マイルストーンの転換率・コスト超過履歴という4つの軸を用いれば、各社の相対的な立ち位置は整理できます。</strong></p>
+
+<p>編集部試算では、Oklo・NuScaleともに10年前後という潤沢なキャッシュランウェイを確保しており、これは量子コンピューティング4社と共通する傾向です。一方で、NuScaleの事例が示す通り、規制マイルストーンの達成が商業的な成功に直結しない構造的なリスクが、この産業には色濃く存在します。Centrus Energyは既存技術での黒字企業として、他3社とは根本的に異なる評価軸が必要です。</p>
+
+<p><strong>「当たれば大きい」というテーマの性質上、この産業への投資は、規制上の実証と商業化の両方が同時に進むという前提に賭ける行為である</strong>という点を、あらためて強調しておきます。強気にも弱気にも寄せず、「まだ判定できる段階にない」という基本姿勢のもと、今後の規制進捗・契約動向・コスト管理を追い続けることが実務的な対応になります。</p>
+
+<p>次回は個別企業編に進み、Oklo・NuScale Power・NANO Nuclear Energy・Centrus Energyの各社を詳しく検証します。</p>
+
+<div class="watch">
+  <h2><span class="num">◆</span>WHAT TO WATCH</h2>
+  <ul>
+    <li><strong>2026年Q3決算（各社11月前後発表見込み）</strong>：キャッシュランウェイ・受注動向の更新</li>
+    <li><strong>NuScale・RoPower案件のコスト超過の有無</strong>：中編で確認した歴史が繰り返されないか</li>
+    <li><strong>Oklo受注パイプラインの拘束力ある契約への転換</strong></li>
+    <li><strong>NANO Nuclear・KRONOSの環境評価・安全性評価の進捗（2027年見込み）</strong></li>
+    <li><strong>CentrusとOklo等とのHALEU供給契約の正式契約化</strong></li>
+    <li><strong>DOE原子炉パイロットプログラムの追加成果</strong></li>
+  </ul>
+</div>
+
+<div class="series-nav">
+  <div class="ttl">「当たれば大きいAI関連分野」シリーズ構成</div>
+  <ol>
+    <li>第1弾：AI×量子コンピューティング（完結）</li>
+    <li>第2弾：AI×次世代原子力　前編：業界マップ</li>
+    <li>第2弾：AI×次世代原子力　中編：技術検証編</li>
+    <li><strong>第2弾：AI×次世代原子力　後編：投資判断編（本稿）</strong></li>
+    <li>第3弾：AI×防衛テック（自律兵器・ドローン）</li>
+    <li>第4弾：AI×宇宙経済（衛星通信・宇宙インフラ）</li>
+  </ol>
+  <p style="margin:12px 0 0;font-size:13.5px;">3部作はこれで完結です。この後、Oklo・NuScale Power・NANO Nuclear Energy・Centrus Energyの個別企業記事を順次公開し、その後第3弾（防衛テック）に着手予定です。</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="disclaimer">
+    <strong>【免責事項】</strong><br>
+    本レポートは情報提供を目的としたものであり、特定の有価証券の購入・売却を推奨するものではありません。記載内容は作成時点で信頼できると判断した情報に基づいていますが、その正確性・完全性を保証するものではありません。キャッシュランウェイの試算は編集部が四半期の損益データを単純に年率換算した簡易的なものであり、実際の資金繰り・今後の資金調達計画を保証するものではありません。株価・時価総額・バリュエーション指標は変動が激しく、出典・算出時点により幅があります。契約・受注に関する記述は、拘束力の有無を確認できる範囲で区別していますが、詳細な契約条件は非開示の場合があります。本シリーズは「当たれば大きい」という投機性の高いテーマを扱うため、ボラティリティ・赤字先行・希薄化リスクについて特にご留意ください。投資に関する最終的な決定は、ご自身の判断と責任において行っていただきますようお願いいたします。
+  </div>
+  <p style="margin-top:18px;">Market Supporter AI ／ 2026年9月7日</p>
+</footer>
+
+</div>
+</body>
+</html>
