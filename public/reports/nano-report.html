@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NANO Nuclear Energy（NNE）決算分析｜Market Supporter AI</title>
+<meta name="description" content="KRONOS MMRの建設許可申請受理という前進の一方、アナリストは目標株価を相次いで引き下げています。">
+<style>
+  :root{
+    --ink:#0d1b2a;
+    --ink-soft:#3d4f60;
+    --paper:#f7f9fc;
+    --line:#dde3ec;
+    --accent:#8aa62e;
+    --accent-deep:#5f7620;
+    --accent-wash:#f1f5e6;
+    --amber:#b8791a;
+    --amber-wash:#fdf6e8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.9;
+    font-size:16px;
+  }
+  .wrap{max-width:860px;margin:0 auto;background:#fff;}
+  header.masthead{
+    background:linear-gradient(135deg,var(--accent-deep) 0%,var(--accent) 100%);
+    color:#fff;
+    padding:44px 32px 36px;
+  }
+  .brand{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    opacity:.85;margin-bottom:18px;
+  }
+  .series-tag{
+    display:inline-block;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    padding:4px 12px;border-radius:3px;
+    font-size:12px;letter-spacing:.08em;margin-bottom:14px;
+  }
+  header.masthead h1{
+    font-size:29px;line-height:1.5;margin:0 0 12px;font-weight:700;
+  }
+  header.masthead .sub{font-size:15px;opacity:.9;margin:0;}
+  .issue{
+    margin-top:22px;padding-top:16px;
+    border-top:1px solid rgba(255,255,255,.28);
+    font-size:13px;opacity:.85;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  main{padding:36px 32px 8px;}
+  .lede{
+    font-size:16.5px;
+    background:var(--accent-wash);
+    border-left:4px solid var(--accent);
+    padding:20px 22px;
+    margin:0 0 36px;
+  }
+  h2{
+    font-size:20px;margin:48px 0 18px;padding-bottom:10px;
+    border-bottom:2px solid var(--accent);
+    display:flex;align-items:baseline;gap:12px;
+  }
+  h2 .num{
+    color:var(--accent);font-size:24px;font-weight:700;
+    font-family:Georgia,serif;
+  }
+  h3{
+    font-size:16.5px;margin:30px 0 10px;color:var(--accent-deep);
+    border-left:3px solid var(--accent);padding-left:11px;
+  }
+  p{margin:0 0 16px;}
+  table{
+    width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:14.5px;
+  }
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:var(--accent-wash);font-weight:700;color:var(--accent-deep);}
+  tbody tr:nth-child(even){background:#fbfcfe;}
+  .kpi-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+    margin:20px 0 28px;
+  }
+  .kpi-card{
+    border:1px solid var(--line);background:#fff;border-radius:4px;
+    padding:14px 16px;border-top:3px solid var(--accent);
+  }
+  .kpi-card .label{font-size:12px;color:var(--ink-soft);margin-bottom:6px;}
+  .kpi-card .value{font-size:20px;font-weight:700;color:var(--accent-deep);}
+  .kpi-card .delta{font-size:12px;color:var(--ink-soft);margin-top:4px;}
+  .segment{
+    border:1px solid var(--line);border-left:6px solid var(--accent);
+    background:#fff;padding:16px 18px;margin-bottom:12px;border-radius:2px;
+  }
+  .segment .lbl{
+    font-size:12px;letter-spacing:.14em;color:var(--accent);
+    font-weight:700;margin-bottom:6px;
+  }
+  .segment .ttl{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .segment .desc{font-size:14.5px;color:var(--ink-soft);margin:0;}
+  .callout{
+    background:var(--accent-wash);border:1px solid #e2ead0;
+    padding:16px 18px;margin:22px 0;font-size:14.5px;border-radius:2px;
+  }
+  .callout .callout-title{font-weight:700;color:var(--accent-deep);margin-bottom:6px;font-size:14px;}
+  .callout.warn{background:var(--amber-wash);border-color:#f0dfbc;}
+  .callout.warn .callout-title{color:var(--amber);}
+  .watch{
+    background:var(--ink);color:#e8eef2;padding:26px 26px 20px;margin:44px 0 0;
+  }
+  .watch h2{
+    color:#fff;border-bottom-color:rgba(255,255,255,.4);margin-top:0;
+  }
+  .watch h2 .num{color:#c7dc8c;}
+  .watch ul{padding-left:20px;margin:0;}
+  .watch li{margin-bottom:12px;font-size:15px;}
+  .watch strong{color:#c7dc8c;}
+  .series-nav{
+    background:var(--accent-wash);padding:20px 22px;margin:34px 0 0;
+    font-size:14.5px;border-radius:2px;
+  }
+  .series-nav .ttl{font-weight:700;color:var(--accent-deep);margin-bottom:10px;}
+  .series-nav ol{margin:0;padding-left:20px;}
+  .series-nav li{margin-bottom:6px;}
+  footer{
+    padding:26px 32px 40px;font-size:12.5px;color:var(--ink-soft);
+    border-top:1px solid var(--line);margin-top:36px;
+  }
+  .disclaimer{
+    background:var(--paper);border:1px solid var(--line);
+    padding:14px 16px;border-radius:2px;line-height:1.75;
+  }
+  @media(max-width:640px){
+    header.masthead{padding:32px 20px 28px;}
+    header.masthead h1{font-size:23px;}
+    main{padding:26px 20px 8px;}
+    footer{padding:22px 20px 32px;}
+    .watch{padding:22px 20px 16px;}
+    table{font-size:13.5px;}
+    th,td{padding:8px 9px;}
+    .kpi-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">Market Supporter AI</div>
+  <div class="series-tag">当たれば大きいAI関連分野 第2弾｜AI×次世代原子力 個別企業編</div>
+  <h1>NANO Nuclear Energy（NASDAQ: NNE）決算分析<br>―― マイクロ炉の規制進展と、繰り返される目標株価の下方修正</h1>
+  <p class="sub">KRONOS MMRの建設許可申請受理という前進の一方、アナリストは目標株価を相次いで引き下げ</p>
+  <div class="issue">
+    <span>2026年9月10日号</span>
+    <span>米国株シリーズ／個別企業レポート</span>
+  </div>
+</header>
+
+<main>
+
+<p class="lede">
+本シリーズ後編で確認した通り、NANO Nuclear Energyは対象4社の中で最も早期の開発段階にありますが、規制面では着実な前進を見せています。本稿では、2026年8月12日発表の直近四半期決算（同社は5月末を期末とする独自の会計年度を採用）と、KRONOS MMRのNRC建設許可申請の進捗を中心に、NANO Nuclear個別の状況を検証します。
+</p>
+
+<div class="kpi-grid">
+  <div class="kpi-card"><div class="label">株価（2026年9月3日時点）</div><div class="value">$17.64前後</div><div class="delta">52週レンジ：$14.71〜$60.87</div></div>
+  <div class="kpi-card"><div class="label">時価総額（2026年9月3日時点）</div><div class="value">約$9.48億</div><div class="delta">Robinhood集計</div></div>
+  <div class="kpi-card"><div class="label">年初来（1年）騰落率</div><div class="value">約▲34.1%</div><div class="delta">2026年9月上旬時点</div></div>
+</div>
+
+<h2><span class="num">①</span>市場規模 ―― マイクロ炉というニッチ市場</h2>
+
+<p>前編・中編で確認した通り、NANO Nuclear Energyは複数のマイクロ炉技術を同時並行で開発しています。主力の「KRONOS MMR」は高温ガス冷却型、「LOKI MMR」は遠隔地・特殊用途向けのコンパクト炉、「ZEUS」は固体炉心バッテリー炉、「ODIN」は低圧塩冷却炉です。同社はまた、HALEU（高濃縮低濃縮ウラン）燃料処理施設の開発や、燃料輸送・原子力コンサルティング事業も展開しており、炉メーカーとしてだけでなく燃料サイクル全体への垂直統合を志向している点が特徴です。</p>
+
+<h2><span class="num">②</span>政策・規制環境 ―― NRC建設許可申請の受理という前進</h2>
+
+<p>中編・後編で確認した通り、KRONOS MMRのNRC建設許可申請（CPA）は2026年5月に正式受理され、環境評価を2027年第1四半期、安全性評価を2027年第3四半期に完了する見込みが示されています。これは2027年後半の着工目標と整合的なスケジュールです。</p>
+
+<p>2026年8月には、DOE（エネルギー省）が計画する「原子力ライフサイクル・イノベーション・キャンパス（NLIC）」の立地候補を、ユタ・テネシー・オクラホマ・ルイジアナ・アイダホの5州に絞り込んだと発表されました。NANO Nuclearがこの枠組みでどのような役割を果たすかは今後の焦点です。</p>
+
+<div class="callout">
+  <div class="callout-title">読み方の指針（編集部見解）</div>
+  KRONOS MMRの規制進捗は、NuScale Powerが辿った「認証取得済みでも商業契約はゼロ」という経路とは異なる段階にあります。NANO Nuclearはまだ建設許可申請の審査段階であり、NuScaleのような「認証取得後の商業化失敗」という経験則が直接当てはまるわけではありません。ただし、中編で確認した通り、規制上のマイルストーンの達成が商業的成功を保証しないという教訓は、この産業全体に共通する留意点です。
+</div>
+
+<h2><span class="num">③</span>コスト・収益構造</h2>
+
+<p>NANO Nuclearは現在、プレ収益段階（pre-revenue stage）にあります。同社はSTS（Sub-critical Testing Solutions、燃料輸送・コンサルティング関連の買収先）の統合を進めており、垂直統合戦略の一環として、燃料サイクル関連の周辺事業から先行的な収益基盤を構築しようとしています。</p>
+
+<h2><span class="num">④</span>事業セグメント動向</h2>
+
+<div class="segment">
+  <div class="lbl">直近四半期決算のハイライト（2026年8月12日発表）</div>
+  <div class="ttl">「強い流動性」を強調するも、詳細な損益開示は限定的</div>
+  <p class="desc">同社は5月末を期末とする独自の会計年度を採用しており、2026年8月12日発表の決算は同社の呼称で「2026年度第3四半期」に相当する。決算では、KRONOS MMRがNRCライセンス手続きを順調に進み2030年の初回展開を目標としていること、STS等の戦略的買収に支えられた強い流動性、複数ギガワット規模の商業機会拡大、規律ある資本配分と垂直統合の重視が強調された。決算発表前のオプション市場では、株価が発表後に6.1%程度変動するとの織り込みがあったと報じられている。</p>
+</div>
+
+<div class="segment">
+  <div class="lbl">Quadrant Nuclear IndustriesとのHALEU供給MOU</div>
+  <div class="ttl">非拘束の枠組みで燃料供給網の構築を模索</div>
+  <p class="desc">2026年8月、NANO NuclearとQuadrant Nuclear Industriesは、先進的原子炉展開を支えるHALEU長期供給に関する非拘束の戦略的枠組みで合意したと発表した。米国の核燃料サプライチェーン強化を掲げる内容だが、あくまで協業の枠組みであり、確定した供給契約ではない。</p>
+</div>
+
+<div class="segment">
+  <div class="lbl">Tillmanとの商業フレームワーク締結</div>
+  <div class="ttl">商業パイプラインの拡大に向けた新たな一歩</div>
+  <p class="desc">2026年8月23日、NANO NuclearはTillmanとの間で商業フレームワークの締結を発表した。詳細な契約条件は限定的にしか開示されていないが、複数ギガワット規模の商業機会・顧客との高度な協議が進行中とされる同社の説明と整合する動きである。</p>
+</div>
+
+<h2><span class="num">⑤</span>株式バリュエーション</h2>
+
+<p>2026年9月3日時点の株価は17.64ドル前後、時価総額は約9億4,800万ドルとされています（Robinhood集計）。52週レンジは14.71〜60.87ドルと極めて広く、過去1年間の騰落率は約▲34.1%です。時価総額はデータソースにより幅があり、他の集計では約18.6億〜19.7億ドルという、より高い水準を示すものもあります（算定時点・株式数の反映方法の違いによるものとみられます）。</p>
+
+<div class="callout warn">
+  <div class="callout-title">留保：アナリスト評価は下方修正が続く</div>
+  2026年8月、Texas Capitalは目標株価を43ドルから39ドルへ、Northlandは45ドルから37ドルへ、それぞれ引き下げました（いずれも「買い」評価は維持）。一方でアナリスト各社が示す目標株価には、40ドル前後という強気な水準から、24ドル程度というより保守的な公正価値評価まで、大きな幅があります。「Nano Nuclear Energy Charts Costly Path to KRONOS」と題する2026年8月20日の分析記事は、KRONOS開発が資本集約的なプロセスであることに焦点を当てており、今後の資金調達ニーズにも留意が必要です。
+</div>
+
+<h2><span class="num">⑥</span>リスク要因</h2>
+
+<h3>1. 商業運転実績がまだゼロという事実</h3>
+<p>中編で確認した通り、KRONOS MMRは実機による発電実証をまだ行っていません。初回商用展開の目標は2030年です。</p>
+
+<h3>2. 資本集約的な開発プロセス</h3>
+<p>マイクロ炉開発は多額の資金を要するプロセスであり、今後の資金調達（増資等）による希薄化の可能性があります。</p>
+
+<h3>3. 非拘束の協業枠組みが多い</h3>
+<p>Quadrant Nuclear IndustriesとのMOU、Tillmanとの商業フレームワークは、いずれも詳細な確定契約とは異なる段階の合意です。</p>
+
+<h3>4. アナリスト評価のばらつき</h3>
+<p>目標株価に40ドル前後から24ドル程度まで幅があり、下方修正の流れも続いています。市場参加者の間で評価が定まっていない状況がうかがえます。</p>
+
+<h3>5. セクター全体の連動性</h3>
+<p>前編・後編で確認した通り、個別材料と無関係にセクター全体が同方向に動く場面が頻発しています。</p>
+
+<h2><span class="num">⑦</span>まとめ</h2>
+
+<p>NANO Nuclear Energyは、KRONOS MMRのNRC建設許可申請受理という規制上の前進を見せる一方、アナリストの目標株価は相次いで下方修正されています。Quadrant Nuclear・Tillmanとの協業拡大は商業化への布石ですが、いずれも非拘束段階にとどまります。中編で確認した「規制の前進が商業的成功を保証しない」という教訓は、本稿でも重要な留意点として当てはまります。<strong>本シリーズの基本姿勢に沿い、NANO Nuclearの評価についても「まだ判定できる段階にない」という中立的な立ち位置を維持します。</strong></p>
+
+<div class="watch">
+  <h2><span class="num">◆</span>WHAT TO WATCH</h2>
+  <ul>
+    <li><strong>KRONOS MMRの環境評価（2027年Q1）・安全性評価（2027年Q3）の進捗</strong></li>
+    <li><strong>Quadrant Nuclear・TillmanとのMOU・フレームワークの確定契約への移行</strong></li>
+    <li><strong>DOE「原子力ライフサイクル・イノベーション・キャンパス」候補5州選定の行方</strong></li>
+    <li><strong>次回四半期決算（同社独自の会計年度に基づく発表スケジュール）</strong></li>
+    <li><strong>追加の資金調達・希薄化の有無</strong></li>
+    <li><strong>2026年9月15日開催予定の年次株主総会</strong></li>
+  </ul>
+</div>
+
+<div class="series-nav">
+  <div class="ttl">「当たれば大きいAI関連分野」シリーズ構成</div>
+  <ol>
+    <li>第1弾：AI×量子コンピューティング（完結）</li>
+    <li>第2弾：AI×次世代原子力　前編・中編・後編（完結）</li>
+    <li>第2弾：個別企業編①　Oklo</li>
+    <li>第2弾：個別企業編②　NuScale Power</li>
+    <li><strong>第2弾：個別企業編③　NANO Nuclear Energy（本稿）</strong></li>
+    <li>第2弾：個別企業編④　Centrus Energy</li>
+  </ol>
+  <p style="margin:12px 0 0;font-size:13.5px;">Centrus Energyの個別企業編④も公開しています。4社の中で唯一黒字の燃料インフラ企業として、他3社とは根本的に異なる評価軸で検証しています。</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="disclaimer">
+    <strong>【免責事項】</strong><br>
+    本レポートは情報提供を目的としたものであり、特定の有価証券の購入・売却を推奨するものではありません。記載内容は作成時点で信頼できると判断した情報に基づいていますが、その正確性・完全性を保証するものではありません。株価・時価総額・バリュエーション指標は変動が激しく、データソース間で株式数の反映時期が異なるため幅を持たせて記載しています。NRC審査・規制上のスケジュールに関する記述は各社の公表計画に基づくものであり、実現時期を保証するものではありません。Quadrant Nuclear・Tillmanとの協業に関する記述は非拘束の枠組み合意であり、確定した契約締結を保証するものではありません。本シリーズは「当たれば大きい」という投機性の高いテーマを扱うため、ボラティリティ・赤字先行・希薄化リスクについて特にご留意ください。投資に関する最終的な決定は、ご自身の判断と責任において行っていただきますようお願いいたします。
+  </div>
+  <p style="margin-top:18px;">Market Supporter AI ／ 2026年9月10日</p>
+</footer>
+
+</div>
+</body>
+</html>

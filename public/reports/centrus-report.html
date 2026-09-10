@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centrus Energy（LEU）決算分析｜Market Supporter AI</title>
+<meta name="description" content="Q2 EPSは市場予想を82.5%上回る着地。Oklo・X-energyとのHALEU契約で次世代炉メーカーへの供給網を拡大する一方、PERは過去平均を大きく上回る水準に。">
+<style>
+  :root{
+    --ink:#0d1b2a;
+    --ink-soft:#3d4f60;
+    --paper:#f7f9fc;
+    --line:#dde3ec;
+    --accent:#a68a1f;
+    --accent-deep:#755f13;
+    --accent-wash:#f6f0e0;
+    --amber:#b8791a;
+    --amber-wash:#fdf6e8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.9;
+    font-size:16px;
+  }
+  .wrap{max-width:860px;margin:0 auto;background:#fff;}
+  header.masthead{
+    background:linear-gradient(135deg,var(--accent-deep) 0%,var(--accent) 100%);
+    color:#fff;
+    padding:44px 32px 36px;
+  }
+  .brand{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    opacity:.85;margin-bottom:18px;
+  }
+  .series-tag{
+    display:inline-block;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    padding:4px 12px;border-radius:3px;
+    font-size:12px;letter-spacing:.08em;margin-bottom:14px;
+  }
+  header.masthead h1{
+    font-size:29px;line-height:1.5;margin:0 0 12px;font-weight:700;
+  }
+  header.masthead .sub{font-size:15px;opacity:.9;margin:0;}
+  .issue{
+    margin-top:22px;padding-top:16px;
+    border-top:1px solid rgba(255,255,255,.28);
+    font-size:13px;opacity:.85;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  main{padding:36px 32px 8px;}
+  .lede{
+    font-size:16.5px;
+    background:var(--accent-wash);
+    border-left:4px solid var(--accent);
+    padding:20px 22px;
+    margin:0 0 36px;
+  }
+  h2{
+    font-size:20px;margin:48px 0 18px;padding-bottom:10px;
+    border-bottom:2px solid var(--accent);
+    display:flex;align-items:baseline;gap:12px;
+  }
+  h2 .num{
+    color:var(--accent);font-size:24px;font-weight:700;
+    font-family:Georgia,serif;
+  }
+  h3{
+    font-size:16.5px;margin:30px 0 10px;color:var(--accent-deep);
+    border-left:3px solid var(--accent);padding-left:11px;
+  }
+  p{margin:0 0 16px;}
+  table{
+    width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:14.5px;
+  }
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:var(--accent-wash);font-weight:700;color:var(--accent-deep);}
+  tbody tr:nth-child(even){background:#fbfcfe;}
+  .kpi-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+    margin:20px 0 28px;
+  }
+  .kpi-card{
+    border:1px solid var(--line);background:#fff;border-radius:4px;
+    padding:14px 16px;border-top:3px solid var(--accent);
+  }
+  .kpi-card .label{font-size:12px;color:var(--ink-soft);margin-bottom:6px;}
+  .kpi-card .value{font-size:20px;font-weight:700;color:var(--accent-deep);}
+  .kpi-card .delta{font-size:12px;color:var(--ink-soft);margin-top:4px;}
+  .segment{
+    border:1px solid var(--line);border-left:6px solid var(--accent);
+    background:#fff;padding:16px 18px;margin-bottom:12px;border-radius:2px;
+  }
+  .segment .lbl{
+    font-size:12px;letter-spacing:.14em;color:var(--accent);
+    font-weight:700;margin-bottom:6px;
+  }
+  .segment .ttl{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .segment .desc{font-size:14.5px;color:var(--ink-soft);margin:0;}
+  .callout{
+    background:var(--accent-wash);border:1px solid #ece0bd;
+    padding:16px 18px;margin:22px 0;font-size:14.5px;border-radius:2px;
+  }
+  .callout .callout-title{font-weight:700;color:var(--accent-deep);margin-bottom:6px;font-size:14px;}
+  .callout.warn{background:var(--amber-wash);border-color:#f0dfbc;}
+  .callout.warn .callout-title{color:var(--amber);}
+  .watch{
+    background:var(--ink);color:#e8eef2;padding:26px 26px 20px;margin:44px 0 0;
+  }
+  .watch h2{
+    color:#fff;border-bottom-color:rgba(255,255,255,.4);margin-top:0;
+  }
+  .watch h2 .num{color:#e3cf8c;}
+  .watch ul{padding-left:20px;margin:0;}
+  .watch li{margin-bottom:12px;font-size:15px;}
+  .watch strong{color:#e3cf8c;}
+  .series-nav{
+    background:var(--accent-wash);padding:20px 22px;margin:34px 0 0;
+    font-size:14.5px;border-radius:2px;
+  }
+  .series-nav .ttl{font-weight:700;color:var(--accent-deep);margin-bottom:10px;}
+  .series-nav ol{margin:0;padding-left:20px;}
+  .series-nav li{margin-bottom:6px;}
+  footer{
+    padding:26px 32px 40px;font-size:12.5px;color:var(--ink-soft);
+    border-top:1px solid var(--line);margin-top:36px;
+  }
+  .disclaimer{
+    background:var(--paper);border:1px solid var(--line);
+    padding:14px 16px;border-radius:2px;line-height:1.75;
+  }
+  @media(max-width:640px){
+    header.masthead{padding:32px 20px 28px;}
+    header.masthead h1{font-size:23px;}
+    main{padding:26px 20px 8px;}
+    footer{padding:22px 20px 32px;}
+    .watch{padding:22px 20px 16px;}
+    table{font-size:13.5px;}
+    th,td{padding:8px 9px;}
+    .kpi-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">Market Supporter AI</div>
+  <div class="series-tag">当たれば大きいAI関連分野 第2弾｜AI×次世代原子力 個別企業編</div>
+  <h1>Centrus Energy（NYSE: LEU）決算分析<br>―― 唯一の黒字企業が握る「燃料インフラ」というカード</h1>
+  <p class="sub">Q2 EPSは市場予想を82.5%上回る着地。Oklo・X-energyとのHALEU契約で次世代炉メーカーへの供給網を拡大</p>
+  <div class="issue">
+    <span>2026年9月11日号</span>
+    <span>米国株シリーズ／個別企業レポート</span>
+  </div>
+</header>
+
+<main>
+
+<p class="lede">
+本シリーズの3部作・個別企業編①〜③で確認した通り、Centrus Energyは対象4社の中で唯一、既存技術による黒字の売上基盤を持つ「燃料インフラ」企業です。本稿は本シリーズ「AI×次世代原子力」個別企業編の最終回として、2026年8月6日発表のQ2決算と、Oklo・X-energyとのHALEU（高濃縮低濃縮ウラン）契約拡大を中心に、Centrus個別の状況を検証します。
+</p>
+
+<div class="kpi-grid">
+  <div class="kpi-card"><div class="label">株価（2026年9月上旬時点）</div><div class="value">$171前後</div><div class="delta">データソースにより幅あり</div></div>
+  <div class="kpi-card"><div class="label">時価総額（2026年9月上旬時点）</div><div class="value">約$34億</div><div class="delta">投資情報サイト集計</div></div>
+  <div class="kpi-card"><div class="label">PER（TTM概算・編集部計算）</div><div class="value">約79倍</div><div class="delta">過去5年平均は約15倍</div></div>
+</div>
+
+<h2><span class="num">①</span>市場規模 ―― ウラン濃縮というインフラ事業</h2>
+
+<p>前編・後編で確認した通り、Centrusは他3社（Oklo・NuScale・NANO Nuclear）とは根本的に異なる事業構造を持ちます。低濃縮ウラン（LEU）セグメントでは、SWU（分離作業単位）・天然ウラン六フッ化物・ウラン転換サービス・濃縮ウラン製品を原子力発電事業者に供給し、技術ソリューションセグメントでは公共・民間セクター向けの技術・製造・エンジニアリング・運転サービスを提供しています。20%濃縮HALEUを製造できる唯一の米国内ライセンス保有企業という位置づけは、次世代炉メーカー各社にとって代替の効きにくい供給元であることを意味します。</p>
+
+<h2><span class="num">②</span>政策・規制環境</h2>
+
+<p>前編・後編で確認した通り、DOEとのHALEU生産契約が事業の柱の一つです。2026年8月のQ2決算では、テネシー州東部への投資と雇用創出を伴う計画も発表されており、政府の原子力政策・国内サプライチェーン強化の方針と歩調を合わせた事業展開が続いています。オークリッジ施設での最初の遠心分離機は2026年内に完成する見込みとされています。</p>
+
+<h2><span class="num">③</span>コスト・収益構造</h2>
+
+<p>Centrusの収益構造は、他3社の「規制マイルストーン→着工」という評価軸ではなく、伝統的な受注残高・売上・利益率で捉えるべき段階にあります。2026年8月のQ2決算では、バックログ（受注残高）を2040年までで45億ドルへ引き上げたことが発表されました。さらに重要な点として、30億ドルを超える顧客契約から財務上の停止条件（コンティンジェンシー）を解除したことが明らかにされています。</p>
+
+<div class="callout">
+  <div class="callout-title">読み方の指針（編集部見解）</div>
+  「財務上の停止条件を解除した」という表現は、これまで条件付きだった契約が、より確定的な収益として認識できる段階に移行したことを意味します。前編・後編で繰り返し強調してきた「拘束力の有無」という論点に照らすと、Centrusはこの点で他3社よりも進んだ状態にあると評価できます。ただし、これは既存のLEU事業における契約の話であり、次世代炉向けのHALEU供給契約が同様に拘束力を持つかどうかは、別途確認が必要です。
+</div>
+
+<h2><span class="num">④</span>事業セグメント動向</h2>
+
+<div class="segment">
+  <div class="lbl">Q2 2026決算のハイライト（2026年8月6日発表）</div>
+  <div class="ttl">売上高・EPSともに市場予想を大幅に上回る</div>
+  <p class="desc">売上高は1億7,610万ドルで前年同期比14%増、市場予想（1億4,876万〜1億4,985万ドル）を20.3%上回った。調整後EPSは1.77ドルで、市場予想（0.81ドル）を82.5%上回る結果となった。2026年通期の売上高ガイダンス（4.5億〜5億ドル）は据え置かれ、設備投資ガイダンス（3.5億〜5億ドル）も維持された。パイクトン施設の雇用目標は100人超から175人超へ引き上げられている。</p>
+</div>
+
+<div class="segment">
+  <div class="lbl">Oklo・X-energyとのHALEU供給契約</div>
+  <div class="ttl">次世代炉メーカーへの燃料供給網を拡大</div>
+  <p class="desc">X-energyとの間で、低濃縮ウランおよびHALEUの濃縮サービスに関する確定契約を締結したと発表された。X-energyからの前払い金を含む契約とされ、HALEU濃縮・TRISO燃料製造の商業化を前進させるものと位置づけられている。Oklo等の対象4社の他社とも、同様のHALEU供給関係の構築が進んでいる。ただし、本シリーズの中編・後編で確認した通り、Okloとの関係は現時点でLOI（レター・オブ・インテント）段階にとどまっており、X-energyとの契約とは拘束力の程度が異なる可能性がある点に留意が必要である。</p>
+</div>
+
+<div class="segment">
+  <div class="lbl">パイクトン施設の商業生産目標</div>
+  <div class="ttl">2029年の商業生産開始を維持</div>
+  <p class="desc">オハイオ州パイクトン施設での商業生産開始目標は、引き続き2029年とされている。中編で確認した通り、原子力プロジェクトは伝統的にコスト超過・スケジュール遅延のリスクを抱えており、この目標が計画通り達成されるかどうかは今後の焦点である。</p>
+</div>
+
+<h2><span class="num">⑤</span>株式バリュエーション ―― 唯一のPER評価が可能な銘柄</h2>
+
+<p>2026年9月上旬の株価は171ドル前後、時価総額は約34億ドルとされています。Q2決算後の株価反応は複数のアナリスト目標株価改定を伴いましたが、株価水準自体はデータソースにより幅があります。TTM EPSに基づく編集部計算のPERは約79倍で、過去5年平均（約15倍）・過去3年平均（約24倍）を大きく上回る水準にあります。これは、次世代原子力テーマ全体への期待の高まりが、既存事業の黒字企業であるCentrusの株価にも反映されていることを示唆しています。</p>
+
+<div class="callout warn">
+  <div class="callout-title">留保：アナリスト評価は総じて強気だが、幅もある</div>
+  過去3ヶ月の14人のアナリストのうち、買い推奨9人・中立5人・売り推奨0人と、他3社と比較して明確に強気に傾いています。平均目標株価は243.33ドル（現在株価から約42%の上昇余地）とされ、最高340ドル・最低180ドルという幅の中でも、最低目標株価ですら現在の株価を上回っています。一方でJPMorganは目標株価を236ドルから178ドルへ引き下げており、個別のアナリスト間では評価の変化も見られます。Barclaysは新規カバレッジ開始時に中立（Equalweight）評価とするなど、全てが一様に強気というわけではありません。
+</div>
+
+<h2><span class="num">⑥</span>リスク要因</h2>
+
+<h3>1. 高PERの持続可能性</h3>
+<p>編集部計算のPERは過去平均を大きく上回る水準にあり、業績の伸びが期待に届かない場合、株価の調整余地は他の黒字企業と比べても大きい可能性があります。</p>
+
+<h3>2. パイクトン施設のコスト超過・遅延リスク</h3>
+<p>中編で確認した原子力業界のコスト超過の歴史は、Centrusのパイクトン施設拡張にも当てはまり得るリスクです。</p>
+
+<h3>3. 次世代炉メーカー側の実現リスクへの連動</h3>
+<p>OkloやNANO Nuclear等、対象他3社の商業化が遅れた場合、CentrusのHALEU供給契約の収益化ペースにも影響が及ぶ可能性があります。</p>
+
+<h3>4. 契約の拘束力の違い</h3>
+<p>X-energyとの契約は確定契約とされる一方、Okloとの関係はLOI段階にとどまるなど、顧客ごとに契約の性質が異なる点に注意が必要です。</p>
+
+<h3>5. セクター全体の連動性</h3>
+<p>前編・後編で確認した通り、個別材料と無関係にセクター全体が同方向に動く場面が頻発しており、Centrusも例外ではありません。</p>
+
+<h2><span class="num">⑦</span>まとめ ―― 「AI×次世代原子力」シリーズの完結にあたって</h2>
+
+<p>Centrus Energyは、本シリーズ対象4社の中で唯一、既存技術による黒字の収益基盤を持つ企業です。Q2決算では売上・EPSともに市場予想を大幅に上回り、バックログの拡大と契約条件の解除という、拘束力の観点からも前向きな進展が確認できました。一方で、PERは過去平均を大きく上回る水準にあり、次世代原子力テーマ全体への期待が、既に黒字化している企業の株価にも及んでいる点には注意が必要です。<strong>本シリーズの基本姿勢に沿い、Centrusの評価についても「まだ判定できる段階にない」という中立的な立ち位置を維持します。</strong></p>
+
+<p>本稿をもって、「AI×次世代原子力」シリーズの3部作・個別企業編4本が完結しました。次回からは第3弾「AI×防衛テック（自律兵器・ドローン）」に移ります。</p>
+
+<div class="watch">
+  <h2><span class="num">◆</span>WHAT TO WATCH</h2>
+  <ul>
+    <li><strong>2026年Q3決算（11月11日発表予定）</strong></li>
+    <li><strong>パイクトン施設の建設進捗（2029年商業生産目標）</strong></li>
+    <li><strong>Okloとの関係がLOIから確定契約へ移行するか</strong></li>
+    <li><strong>オークリッジ施設の遠心分離機完成（2026年内見込み）</strong></li>
+    <li><strong>PERの持続可能性：業績成長がバリュエーションに見合うペースで続くか</strong></li>
+    <li><strong>他3社（Oklo・NuScale・NANO Nuclear）の商業化進捗との連動</strong></li>
+  </ul>
+</div>
+
+<div class="series-nav">
+  <div class="ttl">「当たれば大きいAI関連分野」シリーズ構成</div>
+  <ol>
+    <li>第1弾：AI×量子コンピューティング（完結）</li>
+    <li>第2弾：AI×次世代原子力　前編・中編・後編（完結）</li>
+    <li>第2弾：個別企業編①　Oklo</li>
+    <li>第2弾：個別企業編②　NuScale Power</li>
+    <li>第2弾：個別企業編③　NANO Nuclear Energy</li>
+    <li><strong>第2弾：個別企業編④　Centrus Energy（本稿・第2弾完結）</strong></li>
+  </ol>
+  <p style="margin:12px 0 0;font-size:13.5px;">次回からは第3弾「AI×防衛テック（自律兵器・ドローン）」の3部作に着手します。候補企業はPalantir、Kratos Defense、AeroVironmentなどです。</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="disclaimer">
+    <strong>【免責事項】</strong><br>
+    本レポートは情報提供を目的としたものであり、特定の有価証券の購入・売却を推奨するものではありません。記載内容は作成時点で信頼できると判断した情報に基づいていますが、その正確性・完全性を保証するものではありません。株価・時価総額・PER等のバリュエーション指標は変動が激しく、データソース間で算出時点・株式数の反映が異なるため幅を持たせて記載しています。契約・受注に関する記述は、拘束力の有無を確認できる範囲で区別していますが、詳細な契約条件は非開示の場合があります。パイクトン施設の商業生産開始時期を含む将来計画は、経営陣の現時点での見通しであり、実現を保証するものではありません。本シリーズは「当たれば大きい」という投機性の高いテーマを扱うため、ボラティリティについて特にご留意ください。投資に関する最終的な決定は、ご自身の判断と責任において行っていただきますようお願いいたします。
+  </div>
+  <p style="margin-top:18px;">Market Supporter AI ／ 2026年9月11日</p>
+</footer>
+
+</div>
+</body>
+</html>
