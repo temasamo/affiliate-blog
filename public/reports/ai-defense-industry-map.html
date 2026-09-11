@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI×防衛テック 産業地図｜Market Supporter AI</title>
+<meta name="description" content="Palantir・Kratos Defense・AeroVironment・Red Cat Holdings。すでに売上のある企業群という、これまでとは違う投機性を整理します。">
+<style>
+  :root{
+    --ink:#0d1b2a;
+    --ink-soft:#3d4f60;
+    --paper:#f7f9fc;
+    --line:#dde3ec;
+    --accent:#9c3b3b;
+    --accent-deep:#6b2727;
+    --accent-wash:#f6e9e9;
+    --amber:#b8791a;
+    --amber-wash:#fdf6e8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.9;
+    font-size:16px;
+  }
+  .wrap{max-width:860px;margin:0 auto;background:#fff;}
+  header.masthead{
+    background:linear-gradient(135deg,var(--accent-deep) 0%,var(--accent) 100%);
+    color:#fff;
+    padding:44px 32px 36px;
+  }
+  .brand{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    opacity:.85;margin-bottom:18px;
+  }
+  .series-tag{
+    display:inline-block;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    padding:4px 12px;border-radius:3px;
+    font-size:12px;letter-spacing:.08em;margin-bottom:14px;
+  }
+  header.masthead h1{
+    font-size:29px;line-height:1.5;margin:0 0 12px;font-weight:700;
+  }
+  header.masthead .sub{font-size:15px;opacity:.9;margin:0;}
+  .issue{
+    margin-top:22px;padding-top:16px;
+    border-top:1px solid rgba(255,255,255,.28);
+    font-size:13px;opacity:.85;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  main{padding:36px 32px 8px;}
+  .lede{
+    font-size:16.5px;
+    background:var(--accent-wash);
+    border-left:4px solid var(--accent);
+    padding:20px 22px;
+    margin:0 0 36px;
+  }
+  h2{
+    font-size:20px;margin:48px 0 18px;padding-bottom:10px;
+    border-bottom:2px solid var(--accent);
+    display:flex;align-items:baseline;gap:12px;
+  }
+  h2 .num{
+    color:var(--accent);font-size:24px;font-weight:700;
+    font-family:Georgia,serif;
+  }
+  h3{
+    font-size:16.5px;margin:30px 0 10px;color:var(--accent-deep);
+    border-left:3px solid var(--accent);padding-left:11px;
+  }
+  p{margin:0 0 16px;}
+  table{
+    width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:14.5px;
+  }
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:var(--accent-wash);font-weight:700;color:var(--accent-deep);}
+  tbody tr:nth-child(even){background:#fbfcfe;}
+  .layer-map{margin:24px 0 28px;}
+  .layer{
+    border:1px solid var(--line);border-left:6px solid var(--accent);
+    background:#fff;padding:16px 18px;margin-bottom:12px;border-radius:2px;
+  }
+  .layer .lbl{
+    font-size:12px;letter-spacing:.14em;color:var(--accent);
+    font-weight:700;margin-bottom:6px;
+  }
+  .layer .ttl{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .layer .desc{font-size:14.5px;color:var(--ink-soft);margin:0 0 8px;}
+  .layer .names{font-size:13.5px;color:var(--ink);background:var(--paper);padding:8px 11px;border-radius:2px;}
+  .callout{
+    background:var(--amber-wash);border:1px solid #f0dfbc;
+    padding:16px 18px;margin:22px 0;font-size:14.5px;border-radius:2px;
+  }
+  .callout .ttl{font-weight:700;color:var(--amber);margin-bottom:6px;font-size:14px;}
+  .watch{
+    background:var(--ink);color:#e8eef2;padding:26px 26px 20px;margin:44px 0 0;
+  }
+  .watch h2{
+    color:#fff;border-bottom-color:rgba(255,255,255,.4);margin-top:0;
+  }
+  .watch h2 .num{color:#e2a3a3;}
+  .watch ul{padding-left:20px;margin:0;}
+  .watch li{margin-bottom:12px;font-size:15px;}
+  .watch strong{color:#e2a3a3;}
+  .series-nav{
+    background:var(--accent-wash);padding:20px 22px;margin:34px 0 0;
+    font-size:14.5px;border-radius:2px;
+  }
+  .series-nav .ttl{font-weight:700;color:var(--accent-deep);margin-bottom:10px;}
+  .series-nav ol{margin:0;padding-left:20px;}
+  .series-nav li{margin-bottom:6px;}
+  footer{
+    padding:26px 32px 40px;font-size:12.5px;color:var(--ink-soft);
+    border-top:1px solid var(--line);margin-top:36px;
+  }
+  .disclaimer{
+    background:var(--paper);border:1px solid var(--line);
+    padding:14px 16px;border-radius:2px;line-height:1.75;
+  }
+  @media(max-width:640px){
+    header.masthead{padding:32px 20px 28px;}
+    header.masthead h1{font-size:23px;}
+    main{padding:26px 20px 8px;}
+    footer{padding:22px 20px 32px;}
+    .watch{padding:22px 20px 16px;}
+    table{font-size:13.5px;}
+    th,td{padding:8px 9px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">Market Supporter AI</div>
+  <div class="series-tag">当たれば大きいAI関連分野 第3弾｜AI×防衛テック 前編</div>
+  <h1>AI×防衛テックの産業地図<br>―― 「自律化」する戦場で、規模も評価軸も異なる4社</h1>
+  <p class="sub">Palantir・Kratos Defense・AeroVironment・Red Cat Holdings。すでに売上のある企業群という、これまでとは違う投機性</p>
+  <div class="issue">
+    <span>2026年9月12日号</span>
+    <span>米国株シリーズ／産業レポート</span>
+  </div>
+</header>
+
+<main>
+
+<p class="lede">
+「当たれば大きいAI関連分野」シリーズ第3弾は、AI×防衛テック（自律兵器・ドローン）を取り上げます。前編（本稿）では、Palantir Technologies、Kratos Defense &amp; Security Solutions、AeroVironment、そして真に投機的な小型株としてRed Cat Holdingsを加えた4社を中心に、この産業の構造を整理します。量子コンピューティング・次世代原子力の両シリーズと異なり、本シリーズの対象企業はいずれもすでに実質的な売上を計上している点が大きな特徴です。投機性の性格が、これまでの「商業化前」の企業群とは異なります。
+</p>
+
+<h2><span class="num">①</span>市場規模・候補企業の確認 ―― 桁違いの規模差という特殊事情</h2>
+
+<p>着手前の確認作業で、対象候補企業の時価総額に極めて大きな開きがあることが判明しました。Palantirは2026年9月時点で時価総額が4,300億ドルを超え、Kratos Defense（約150億ドル）、AeroVironment（約87億ドル）と比べても一桁以上大きい規模です。量子コンピューティング・次世代原子力シリーズで見た「4社横並び」という構図は、本シリーズでは成立しません。</p>
+
+<div class="callout">
+  <div class="ttl">候補企業の確認結果（編集部見解）</div>
+  当初の候補（Palantir、Kratos Defense、AeroVironment）に加え、真に投機的な小型株としてRed Cat Holdings（時価総額約13億ドル、防衛用小型無人航空システムのメーカー）を追加することを提案します。Palantirはすでに巨大企業であり、「当たれば大きい」という投機的なテーマの典型例とは言えませんが、AI防衛プラットフォームの最も直接的な体現企業であるため対象に残します。ただし、本シリーズにおけるPalantirの位置づけは、次世代原子力シリーズにおけるCentrus Energy（唯一の黒字インフラ企業）に近い「参照点」としての役割になる見込みです。
+</div>
+
+<p>防衛テック市場全体の規模推計としては、無人航空機システム（UAS）市場が2030年代にかけて年率10〜15%台で成長するという見方が一般的ですが、AI・自律化技術を組み込んだ「次世代」防衛システムに限定した市場規模の統一的な推計は確立されていません。この点は、量子コンピューティング・次世代原子力の両シリーズで確認した「市場規模推計のばらつき」以上に、そもそも定義が定まっていないという性格の違いがあります。</p>
+
+<h2><span class="num">②</span>政策・規制環境 ―― 国防予算とドローン国産化政策</h2>
+
+<p>本シリーズの産業は、米国防予算・NDAA（国防権限法）の動向に強く連動します。2026年に入り、トランプ政権は輸入ドローンへの関税を導入し、2027年1月1日から発効する予定と報じられています。これは中国製ドローン部品への依存を減らし、米国内の無人航空機生産を拡大する狙いとされ、Kratos・AeroVironment・Red Cat等の国内メーカーに追い風になるとみられています。</p>
+
+<table>
+  <thead>
+    <tr><th>政策動向</th><th>投資上の意味</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>輸入ドローンへの関税（2027年1月発効予定）</td><td>国内メーカーの競争力強化。中国依存脱却という国家安全保障上の要請と連動</td></tr>
+    <tr><td>ペンタゴンの「ドローン・ドミナンス・プログラム」（総額11億ドル規模）</td><td>Red Cat（Teal Drones）が12社の最終候補に選定。3万機の攻撃用ドローン生産に絡む配分の可能性</td></tr>
+    <tr><td>海兵隊のCCA（有人機随伴無人機）プログラム</td><td>Kratosの「XQ-58Aヴァルキリー」が正式プログラム化。海兵隊向けCCAとして初の量産段階に到達</td></tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <div class="ttl">留保：政策の恩恵は確定した収益とは異なる</div>
+  関税政策・ペンタゴンプログラムはいずれも業界全体への追い風ですが、個別企業への具体的な収益貢献額はまだ不確定な部分が多くあります。Red Catの「12社の最終候補」入りは、確定した受注ではなく選定プロセスの一段階です。政策的な追い風と、確定した契約・売上は区別して評価する必要があります。
+</div>
+
+<h2><span class="num">③</span>コスト・収益構造 ―― 4社4様のビジネスモデル</h2>
+
+<table>
+  <thead>
+    <tr><th>企業</th><th>事業領域</th><th>主な収益源</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Palantir</td><td>AIソフトウェアプラットフォーム（政府・商用）</td><td>政府機関向けソフトウェアライセンス・AI意思決定支援システム（Gotham、AIP等）＋商用部門の急拡大</td></tr>
+    <tr><td>Kratos Defense</td><td>低コスト「消耗品」型無人機・極超音速システム</td><td>XQ-58Aヴァルキリー等の量産契約、極超音速関連（MACH-TBプログラム）、衛星地上系システム</td></tr>
+    <tr><td>AeroVironment</td><td>小型無人航空システム（スイッチブレード等）＋BlueHalo統合後の宇宙・サイバー・指向性エネルギー</td><td>国防総省向け無人機販売、BlueHalo買収による事業領域拡大</td></tr>
+    <tr><td>Red Cat Holdings</td><td>小型偵察・攻撃用ドローン（Black Widow等）</td><td>米陸軍SRR（Short Range Reconnaissance）量産契約、日本・NATO向け輸出</td></tr>
+  </tbody>
+</table>
+
+<p>Palantirはソフトウェア・AIプラットフォーム企業であり、ハードウェアを製造するKratos・AeroVironment・Red Catとは事業の性格が根本的に異なります。Kratosは「安価で消耗可能」なシステムを大量生産する戦略、AeroVironmentは幅広いポートフォリオとBlueHalo統合による多角化、Red Catは小型ドローン専業という位置づけです。</p>
+
+<h2><span class="num">④</span>主要プレイヤー動向 ―― 2026年Q2決算の横並び比較</h2>
+
+<div class="layer-map">
+
+  <div class="layer">
+    <div class="lbl">PALANTIR ／ AIソフトウェアプラットフォーム</div>
+    <div class="ttl">売上93%増、通期ガイダンスを上方修正</div>
+    <p class="desc">Q2 2026売上高は19億4,000万ドルで前年同期比93%増。米国商業部門の売上は7億6,400万ドルで同149%増と特に急拡大した。調整後フリーキャッシュフローは12億2,000万ドル。通期売上高ガイダンスは81.5億〜81.6億ドルへ上方修正された。政府機関向けの契約が受注残高の相当部分を占める。</p>
+    <div class="names"><strong>ティッカー：</strong>NASDAQ:PLTR　<strong>時価総額：</strong>約4,300億ドル超</div>
+  </div>
+
+  <div class="layer">
+    <div class="lbl">KRATOS DEFENSE ／ 消耗品型無人機・極超音速</div>
+    <div class="ttl">売上31%増、通期ガイダンスを上方修正</div>
+    <p class="desc">Q2 2026売上高は4億5,880万ドルで前年同期比31%増、市場予想を12%上回った。通期売上高ガイダンスを17.5億〜18.1億ドルへ引き上げた。極超音速事業は2026年に約4億ドル、2027年には少なくとも7億ドルの売上を見込むとされ、MACH-TBプログラム（潜在的資金枠約70億ドル）が成長ドライバーとされている。株価は年初来37%下落する一方、直近30日間で40%超上昇するなど値動きが荒い。</p>
+    <div class="names"><strong>ティッカー：</strong>NASDAQ:KTOS　<strong>時価総額：</strong>約150億ドル</div>
+  </div>
+
+  <div class="layer">
+    <div class="lbl">AEROVIRONMENT ／ 小型無人機＋BlueHalo統合</div>
+    <div class="ttl">BlueHalo統合により売上141%増も、株価は52週高値から大幅調整</div>
+    <p class="desc">2026年度売上高は約20億ドルでBlueHalo買収の寄与により前年比141%増となった。一方、株価は年初来26.8%下落し、2025年10月の52週高値（409.83ドル）から約54%下落した水準で推移している。買収による事業領域拡大（宇宙・サイバー・指向性エネルギー）と、統合コストや希薄化がどう評価されるかが焦点になっている。</p>
+    <div class="names"><strong>ティッカー：</strong>NASDAQ:AVAV　<strong>時価総額：</strong>約87億ドル</div>
+  </div>
+
+  <div class="layer">
+    <div class="lbl">RED CAT HOLDINGS ／ 小型偵察・攻撃用ドローン専業</div>
+    <div class="ttl">売上172%増も、依然として大幅な赤字</div>
+    <p class="desc">直近四半期の売上高は前年同期比172%増（別四半期では647%増との報告もあり、四半期ごとの振れが大きい）。年間売上高4,070万ドルに対し、純損失は7,210万ドルに達している。経営陣は年間売上高1.5億〜1.8億ドルを目標に掲げる。2026年5月には2億2,500万ドル規模の公募増資を実施しており、希薄化が進行している。米陸軍SRR量産契約、日本向け173機受注、ペンタゴンの「ドローン・ドミナンス・プログラム」12社候補入りなど、受注面での勢いは4社の中で最も投機的な性格を持つ。</p>
+    <div class="names"><strong>ティッカー：</strong>NASDAQ:RCAT　<strong>時価総額：</strong>約13億ドル</div>
+  </div>
+
+</div>
+
+<h2><span class="num">⑤</span>株式バリュエーション ―― 「規模」と「投機性」は反比例</h2>
+
+<p>本シリーズの特徴的な点として、時価総額の大きさと株式の投機的な性格が、ほぼ反比例の関係にあります。Palantirは既に大規模な売上・利益を持ちながら極めて高いPSRで取引されており、これは「AI巨大プラットフォーム」としての期待の高さを反映しています。一方、Red Catは売上規模こそ小さいものの、成長率と赤字幅の両方が大きく、伝統的な意味での「当たれば大きい」投機株の性格を最も強く持っています。KratosとAeroVironmentはその中間に位置し、既に一定の売上基盤を持ちながら、事業拡大（極超音速、BlueHalo統合）の成否によって評価が大きく変わりうる段階にあります。</p>
+
+<div class="callout">
+  <div class="ttl">読み方の指針（編集部見解）</div>
+  量子コンピューティング・次世代原子力の両シリーズでは、対象企業がほぼ同じ「プレ商用フェーズ」にあり、横並びの評価軸が機能しました。防衛テックでは、企業ごとの事業成熟度・規模の差が大きいため、後編で扱う投資判断フレームワークも、企業ごとに異なる物差しを使い分ける必要が生じる見込みです。
+</div>
+
+<h2><span class="num">⑥</span>リスク要因</h2>
+
+<h3>1. 国防予算・政策依存度</h3>
+<p>4社とも国防関連の政策・予算動向に強く依存しており、地政学的な緊張の緩和や国防予算の縮小は、業界全体への逆風になり得ます。</p>
+
+<h3>2. 極端な評価の分散</h3>
+<p>Palantirの高PSRとRed Catの高い赤字幅は、それぞれ異なる形で「期待先行」のリスクを抱えています。</p>
+
+<h3>3. 希薄化リスク</h3>
+<p>Red Catは2026年5月に大型増資を実施しており、成長企業に共通する希薄化リスクが継続しています。</p>
+
+<h3>4. 統合・実行リスク</h3>
+<p>AeroVironmentのBlueHalo統合、Kratosの極超音速事業拡大は、いずれも実行面でのリスクを伴います。</p>
+
+<h3>5. セクター全体の連動性</h3>
+<p>2026年には、地政学的なニュースや金利動向により、防衛関連株全体が同方向に大きく動く場面が複数回確認されています。</p>
+
+<h2><span class="num">⑦</span>まとめ ―― 産業地図から見える構図</h2>
+
+<p>AI×防衛テックの産業地図は、量子コンピューティング・次世代原子力の両シリーズと異なり、<strong>すでに実質的な売上・利益を計上している企業群</strong>という特徴を持ちます。投機性は「商業化するかどうか」ではなく、「急拡大する売上・受注が、現在の株価評価に見合うペースで続くかどうか」という、より伝統的な成長株特有のリスクに近い性格を帯びています。Palantirという桁違いの規模の企業を含む本シリーズでは、後編・個別企業編において、企業ごとに異なる評価軸を使い分ける必要があります。</p>
+
+<p>技術的な検証（自律兵器・AI意思決定支援の実証状況、ドローン戦の実効性）は中編で、投資判断の枠組みは後編で扱います。</p>
+
+<div class="watch">
+  <h2><span class="num">◆</span>WHAT TO WATCH</h2>
+  <ul>
+    <li><strong>輸入ドローン関税の発効（2027年1月1日予定）</strong>：国内メーカーへの恩恵の具体化</li>
+    <li><strong>ペンタゴン「ドローン・ドミナンス・プログラム」の配分決定</strong>：Red Catへの資金配分の有無</li>
+    <li><strong>KratosのXQ-58Aヴァルキリー量産契約の拡大</strong></li>
+    <li><strong>AeroVironment・BlueHalo統合の進捗</strong>：クロスセル効果の実現度</li>
+    <li><strong>PalantirのAI防衛プラットフォームの政府向け受注動向</strong></li>
+    <li><strong>Red Catの希薄化・資金調達動向</strong></li>
+  </ul>
+</div>
+
+<div class="series-nav">
+  <div class="ttl">「当たれば大きいAI関連分野」シリーズ構成</div>
+  <ol>
+    <li>第1弾：AI×量子コンピューティング（完結）</li>
+    <li>第2弾：AI×次世代原子力（完結）</li>
+    <li><strong>第3弾：AI×防衛テック　前編：業界マップ（本稿）</strong></li>
+    <li>第3弾：AI×防衛テック　中編：技術検証編（次回）</li>
+    <li>第3弾：AI×防衛テック　後編：投資判断編</li>
+    <li>第4弾：AI×宇宙経済（衛星通信・宇宙インフラ）</li>
+  </ol>
+  <p style="margin:12px 0 0;font-size:13.5px;">次回は中編（技術検証編）です。自律兵器・AI意思決定支援システムの実証状況、ドローン戦の実効性を検証します。</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="disclaimer">
+    <strong>【免責事項】</strong><br>
+    本レポートは情報提供を目的としたものであり、特定の有価証券の購入・売却を推奨するものではありません。記載内容は作成時点で信頼できると判断した情報に基づいていますが、その正確性・完全性を保証するものではありません。株価・時価総額・バリュエーション指標は変動が激しく、出典・算出時点により幅があります。政策・予算に関する記述は審議・計画段階の情報を含み、最終的な実現を保証するものではありません。本シリーズは「当たれば大きい」という投機性の高いテーマを扱うため、ボラティリティ・赤字先行・希薄化リスクについて特にご留意ください。防衛関連銘柄は地政学的リスクの影響を強く受けるため、国際情勢の変化にも注意が必要です。投資に関する最終的な決定は、ご自身の判断と責任において行っていただきますようお願いいたします。
+  </div>
+  <p style="margin-top:18px;">Market Supporter AI ／ 2026年9月12日</p>
+</footer>
+
+</div>
+</body>
+</html>
