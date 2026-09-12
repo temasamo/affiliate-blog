@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI防衛テックは本当に「戦場で機能している」のか｜Market Supporter AI</title>
+<meta name="description" content="Maven Smart Systemの拡大とその代償、Valkyrieの試験段階、ウクライナ戦線が示す自律化の限界。Palantir・Kratos・AeroVironment・Red Catの技術的主張を検証します。">
+<style>
+  :root{
+    --ink:#0d1b2a;
+    --ink-soft:#3d4f60;
+    --paper:#f7f9fc;
+    --line:#dde3ec;
+    --accent:#9c3b3b;
+    --accent-deep:#6b2727;
+    --accent-wash:#f6e9e9;
+    --amber:#b8791a;
+    --amber-wash:#fdf6e8;
+    --pass:#1f7a4d;
+    --pass-wash:#eaf5ef;
+    --fail:#a83a3a;
+    --fail-wash:#faeded;
+    --hold:#6b6f76;
+    --hold-wash:#f1f2f4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.9;
+    font-size:16px;
+  }
+  .wrap{max-width:860px;margin:0 auto;background:#fff;}
+  header.masthead{
+    background:linear-gradient(135deg,var(--accent-deep) 0%,var(--accent) 100%);
+    color:#fff;
+    padding:44px 32px 36px;
+  }
+  .brand{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    opacity:.85;margin-bottom:18px;
+  }
+  .series-tag{
+    display:inline-block;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    padding:4px 12px;border-radius:3px;
+    font-size:12px;letter-spacing:.08em;margin-bottom:14px;
+  }
+  header.masthead h1{
+    font-size:29px;line-height:1.5;margin:0 0 12px;font-weight:700;
+  }
+  header.masthead .sub{font-size:15px;opacity:.9;margin:0;}
+  .issue{
+    margin-top:22px;padding-top:16px;
+    border-top:1px solid rgba(255,255,255,.28);
+    font-size:13px;opacity:.85;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  main{padding:36px 32px 8px;}
+  .lede{
+    font-size:16.5px;
+    background:var(--accent-wash);
+    border-left:4px solid var(--accent);
+    padding:20px 22px;
+    margin:0 0 36px;
+  }
+  h2{
+    font-size:20px;margin:48px 0 18px;padding-bottom:10px;
+    border-bottom:2px solid var(--accent);
+    display:flex;align-items:baseline;gap:12px;
+  }
+  h2 .num{
+    color:var(--accent);font-size:24px;font-weight:700;
+    font-family:Georgia,serif;
+  }
+  h3{
+    font-size:16.5px;margin:30px 0 10px;color:var(--accent-deep);
+    border-left:3px solid var(--accent);padding-left:11px;
+  }
+  p{margin:0 0 16px;}
+  table{
+    width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:14.5px;
+  }
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:var(--accent-wash);font-weight:700;color:var(--accent-deep);}
+  tbody tr:nth-child(even){background:#fbfcfe;}
+  .case{
+    border:1px solid var(--line);border-left:6px solid var(--hold);
+    background:#fff;padding:16px 18px;margin-bottom:14px;border-radius:2px;
+  }
+  .case.pass{border-left-color:var(--pass);}
+  .case.fail{border-left-color:var(--fail);}
+  .case .lbl{
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:12px;letter-spacing:.1em;font-weight:700;margin-bottom:8px;
+  }
+  .case .lbl .name{color:var(--ink);}
+  .verdict{
+    font-size:11.5px;letter-spacing:.06em;padding:3px 10px;border-radius:999px;
+    background:var(--hold-wash);color:var(--hold);font-weight:700;
+  }
+  .case.pass .verdict{background:var(--pass-wash);color:var(--pass);}
+  .case.fail .verdict{background:var(--fail-wash);color:var(--fail);}
+  .case .ttl{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .case .desc{font-size:14.5px;color:var(--ink-soft);margin:0;}
+  .callout{
+    background:var(--amber-wash);border:1px solid #f0dfbc;
+    padding:16px 18px;margin:22px 0;font-size:14.5px;border-radius:2px;
+  }
+  .callout .ttl{font-weight:700;color:var(--amber);margin-bottom:6px;font-size:14px;}
+  .watch{
+    background:var(--ink);color:#e8eef2;padding:26px 26px 20px;margin:44px 0 0;
+  }
+  .watch h2{
+    color:#fff;border-bottom-color:rgba(255,255,255,.4);margin-top:0;
+  }
+  .watch h2 .num{color:#e2a3a3;}
+  .watch ul{padding-left:20px;margin:0;}
+  .watch li{margin-bottom:12px;font-size:15px;}
+  .watch strong{color:#e2a3a3;}
+  .series-nav{
+    background:var(--accent-wash);padding:20px 22px;margin:34px 0 0;
+    font-size:14.5px;border-radius:2px;
+  }
+  .series-nav .ttl{font-weight:700;color:var(--accent-deep);margin-bottom:10px;}
+  .series-nav ol{margin:0;padding-left:20px;}
+  .series-nav li{margin-bottom:6px;}
+  footer{
+    padding:26px 32px 40px;font-size:12.5px;color:var(--ink-soft);
+    border-top:1px solid var(--line);margin-top:36px;
+  }
+  .disclaimer{
+    background:var(--paper);border:1px solid var(--line);
+    padding:14px 16px;border-radius:2px;line-height:1.75;
+  }
+  @media(max-width:640px){
+    header.masthead{padding:32px 20px 28px;}
+    header.masthead h1{font-size:23px;}
+    main{padding:26px 20px 8px;}
+    footer{padding:22px 20px 32px;}
+    .watch{padding:22px 20px 16px;}
+    table{font-size:13.5px;}
+    th,td{padding:8px 9px;}
+    .case .lbl{flex-direction:column;align-items:flex-start;gap:6px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">Market Supporter AI</div>
+  <div class="series-tag">当たれば大きいAI関連分野 第3弾｜AI×防衛テック 中編</div>
+  <h1>AI防衛テックは本当に「戦場で機能している」のか<br>―― 自律化の進展と、検証が追いつかない速度</h1>
+  <p class="sub">Maven Smart Systemの拡大とその代償、Valkyrieの試験段階、ウクライナ戦線が示す自律化の限界</p>
+  <div class="issue">
+    <span>2026年9月13日号</span>
+    <span>米国株シリーズ／技術検証レポート</span>
+  </div>
+</header>
+
+<main>
+
+<p class="lede">
+前編（産業地図）では、本シリーズの対象企業がいずれもすでに実質的な売上を持つという特徴を確認しました。本稿は3部作の中編として、「AI・自律化技術は実際に戦場で機能しているのか」という問いを、Palantir・Kratos・AeroVironment・Red Catの技術的主張と、ウクライナ戦線を中心とした実戦データの両面から検証します。量子コンピューティング・次世代原子力の両シリーズと同様、主張と実証の間にどれだけの距離があるかを整理します。
+</p>
+
+<h2><span class="num">①</span>検証の枠組み ―― 「自律化」は連続的なグラデーション</h2>
+
+<p>AI防衛技術の検証で最初に押さえるべきは、「自律兵器」が全か無かの二択ではなく、連続的な段階を持つという点です。専門家の分析では、良好な気象条件下でのドローンの「かなり高いレベルの完全自律化」の実現には今後2〜3年、あらゆる不測の事態に対応できる完全な自律化にはさらに10〜15年を要するとの見方が示されています。現時点で戦場に投入されているのは、その中間段階――操作者が目標を指定した後、通信が妨害された場合に限りAIが自律的に目標追尾を引き継ぐ「終末誘導の自律化」――が中心です。</p>
+
+<div class="callout">
+  <div class="ttl">読み方の指針（編集部見解）</div>
+  「AI搭載ドローン」「自律兵器」という言葉が使われる場合、それが（1）操作者の指示に従う遠隔操縦型、（2）終末誘導のみ自律化された半自律型、（3）発進から着弾まで完全に自律化された全自律型、のいずれを指すかによって技術的な成熟度が大きく異なります。本シリーズの対象企業が現時点で実戦投入・実証しているのは、大半が（2）の段階です。
+</div>
+
+<h2><span class="num">②</span>ケーススタディ：主張とその後</h2>
+
+<div class="case">
+  <div class="lbl"><span class="name">Palantir「Maven Smart System」の拡大</span><span class="verdict">運用拡大・検証課題も浮上</span></div>
+  <div class="ttl">「プログラム・オブ・レコード」化と、検証速度を巡る懸念</div>
+  <p class="desc">Maven Smart Systemは2024年6月に4億8,010万ドルの契約で本格導入が始まり、契約上限は13億ドルまで拡大、別途100億ドル規模の陸軍全体契約も締結された。2026年にはDOD（国防総省）が同システムを正式な「プログラム・オブ・レコード」に指定する方針を示し、利用者は2万人・情報源は150以上に達しているとされる。NATOも2026年6月にMaven Smart Systemを完全運用状態と宣言した。一方、2026年2月の対イラン軍事作戦初日に発生したとされる民間人多数の死傷を伴う攻撃について、複数の報道は、AIシステム自体の欠陥ではなく人間が入力した古いデータに起因した可能性を指摘しており、米下院議員120人超がMaven使用の有無について説明を求めた。Palantir英国責任者は、技術の使用に関する説明責任は軍事顧客側にあるとの見解を示している。この一件を受け、フランスの情報機関DGSIはPalantirから自国製プロバイダーへの切り替えを表明した。</p>
+</div>
+
+<div class="case">
+  <div class="lbl"><span class="name">Kratos「XQ-58Aヴァルキリー」の量産化</span><span class="verdict">7年間、なお試験段階</span></div>
+  <div class="ttl">2019年初飛行から量産まで、想定より長い道のり</div>
+  <p class="desc">XQ-58Aヴァルキリーは2019年3月に初飛行して以来、7年以上にわたり試験・改良を重ねている。海兵隊向けCCA（有人機随伴無人機）プログラムとして正式化されたが、初号機の納入目標は2029年とされる。2026年8月4日には、自社出資の研究開発試験飛行において、通常離着陸（CTOL）型の試験機が離陸直後に事故を起こし、飛行試験が一時停止された。人的被害はなかったとされるが、量産段階に近いとされてきた機体でも、試験段階のトラブルが続いている実態を示している。</p>
+</div>
+
+<div class="case">
+  <div class="lbl"><span class="name">ウクライナ戦線：終末誘導AIによる妨害電波耐性</span><span class="verdict">限定的ながら実証済み</span></div>
+  <div class="ttl">「ロックオン後は妨害されない」という技術は機能している</div>
+  <p class="desc">ロシアによる大規模な電子戦（妨害電波）システムの展開を受け、ウクライナ側は無線操縦に依存しないドローンの開発を加速させてきた。操作者が目標を指定した後、AIが視覚情報のみで目標を追尾し続ける「終末誘導の自律化」により、妨害電波の影響を受けない攻撃が実現しているとされる。光ファイバー誘導型ドローン（無線を一切使わない）も、妨害電波に対する有効な対抗手段として普及している。ただし専門家は、発進から着弾までの完全自律的な目標識別・攻撃はまだ実現しておらず、悪天候・視界不良・欺瞞（デコイ）等の状況では信頼性が低下すると指摘している。</p>
+</div>
+
+<h2><span class="num">③</span>本シリーズ対象4社の技術水準</h2>
+
+<table>
+  <thead>
+    <tr><th>企業</th><th>公表されている主要な技術・実証状況（2026年8月〜9月時点）</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Palantir</td><td>Maven Smart Systemが米陸軍・NATOで運用中。ただし検証速度と精度のトレードオフを巡る懸念が浮上し、政治的な逆風も発生</td></tr>
+    <tr><td>Kratos</td><td>XQ-58Aヴァルキリーは7年以上の試験実績を持つが、量産・実戦配備はこれからで、2026年8月にも試験中の事故が発生</td></tr>
+    <tr><td>AeroVironment</td><td>スイッチブレード等の小型無人機は実戦投入実績が豊富。BlueHalo統合後の指向性エネルギー・宇宙関連事業はまだ検証途上</td></tr>
+    <tr><td>Red Cat Holdings</td><td>Black Widowドローンは米陸軍SRR量産契約・日本向け輸出等、実戦・実運用への移行が進む段階。AI搭載の脅威分析キット等は開発中</td></tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <div class="ttl">見落とされやすい論点：「実戦投入」と「AI機能の実証」は別物</div>
+  AeroVironmentのスイッチブレードやRed CatのBlack Widowは、ハードウェアとしての実戦投入実績は豊富ですが、これはAIによる自律的な目標識別・攻撃機能そのものが実証されたことを必ずしも意味しません。多くの実戦運用は、依然として人間の操作者が最終判断を行う遠隔操縦・半自律型の段階にあります。「AI搭載」という表現と「AIが自律的に意思決定している」という表現は、慎重に区別する必要があります。
+</div>
+
+<h2><span class="num">④</span>主要プレイヤー動向 ―― 検証と実戦投入のスピードのギャップ</h2>
+
+<p>ウクライナ紛争は、西側諸国の防衛技術にとって「生きた実験場」として位置づけられており、Brave1（ウクライナ国防省の防衛イノベーション組織）を通じて多数の企業が実戦環境でのテスト機会を得ています。この実戦フィードバックループは、通常であれば数年を要する開発サイクルを大幅に短縮しているとされますが、裏を返せば、通常の検証プロセスを経ないまま実戦投入される技術が増えていることも意味します。</p>
+
+<div class="callout">
+  <div class="ttl">留保：スピードと検証の間のトレードオフ</div>
+  Maven Smart Systemを巡る懸念の核心は、AIが処理速度を大幅に高める一方、その出力を人間が十分に検証する時間が短縮されるという構造的なトレードオフにあります。中編で扱ってきた他分野（量子優位性の主張、原子力プロジェクトのコスト超過）とは異なり、防衛テックにおける「検証の失敗」は、技術的な巧拙の問題であると同時に、人命に関わる極めて重い結果を伴いうる点で性格が異なります。
+</div>
+
+<h2><span class="num">⑤</span>リスク要因</h2>
+
+<h3>1. AI意思決定支援システムの検証・説明責任リスク</h3>
+<p>Maven Smart Systemを巡る事例が示す通り、AIによる高速処理と、人間による十分な検証との間にはトレードオフがあります。同様の懸念が今後も他のシステム・他企業で表面化する可能性があります。</p>
+
+<h3>2. 量産化・実戦配備の遅延リスク</h3>
+<p>XQ-58Aヴァルキリーの事例が示す通り、初飛行から量産・実戦配備までには、当初想定より長い期間を要することが多く、直近でも試験中の事故が発生しています。</p>
+
+<h3>3. 電子戦・対抗技術の進化との「いたちごっこ」</h3>
+<p>ウクライナ戦線が示す通り、ドローン側の自律化技術と、電子戦（妨害）側の対抗技術は継続的な軍拡競争の関係にあり、一方の技術的優位が固定的に続く保証はありません。</p>
+
+<h3>4. 「AI搭載」表現の曖昧さ</h3>
+<p>実戦投入実績とAI機能の実証は区別する必要があり、マーケティング上の表現が実際の自律化レベルを正確に反映していない可能性があります。</p>
+
+<h3>5. 政治的・地政学的な逆風リスク</h3>
+<p>Palantirの事例で見た通り、AI防衛技術を巡る事故・論争は、同盟国内でのシェア喪失（フランスの事例）や、規制強化につながる可能性があります。</p>
+
+<h2><span class="num">⑥</span>まとめ ―― 「まだ判定できる段階にない」</h2>
+
+<p>技術的な検証を通じて見えてきたのは、<strong>AI・自律化技術は戦場で確かに機能を発揮しつつあるが、その適用範囲は「終末誘導」等の限定的な段階にとどまり、完全自律化にはなお時間を要する</strong>という構図です。同時に、AIによる意思決定の高速化が、検証の質とのトレードオフを生んでいるという、防衛テック特有の重い論点も浮かび上がりました。量子コンピューティング・次世代原子力の両シリーズと同様、ここでも<strong>「まだ判定できる段階にない」</strong>という中立的な立ち位置が、現時点で最も実務的な結論です。ただし本分野は、技術的な成否だけでなく、その社会的・倫理的な影響も投資判断において無視できない要素であることを付言します。</p>
+
+<p>次回の後編では、規模も投資性格も大きく異なる4社をどのような指標で評価すべきか、投資判断の枠組みを検証します。</p>
+
+<div class="watch">
+  <h2><span class="num">◆</span>WHAT TO WATCH</h2>
+  <ul>
+    <li><strong>Maven Smart Systemの「プログラム・オブ・レコード」正式指定の行方</strong></li>
+    <li><strong>対イラン作戦を巡る調査の進展</strong>：原因究明と、今後のAI targeting運用への影響</li>
+    <li><strong>同盟国内でのPalantir離れの広がり</strong>：フランス以外への波及の有無</li>
+    <li><strong>XQ-58Aヴァルキリー試験再開と量産スケジュール</strong></li>
+    <li><strong>ウクライナ戦線での完全自律型ドローンの実証状況</strong></li>
+    <li><strong>電子戦対抗技術の進化ペース</strong></li>
+  </ul>
+</div>
+
+<div class="series-nav">
+  <div class="ttl">「当たれば大きいAI関連分野」シリーズ構成</div>
+  <ol>
+    <li>第1弾：AI×量子コンピューティング（完結）</li>
+    <li>第2弾：AI×次世代原子力（完結）</li>
+    <li>第3弾：AI×防衛テック　前編：業界マップ</li>
+    <li><strong>第3弾：AI×防衛テック　中編：技術検証編（本稿）</strong></li>
+    <li>第3弾：AI×防衛テック　後編：投資判断編（完結）</li>
+    <li>第4弾：AI×宇宙経済（衛星通信・宇宙インフラ）</li>
+  </ol>
+  <p style="margin:12px 0 0;font-size:13.5px;">続く後編（投資判断編）では、規模の異なる4社にどのような評価軸を適用すべきか検証します。</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="disclaimer">
+    <strong>【免責事項】</strong><br>
+    本レポートは情報提供を目的としたものであり、特定の有価証券の購入・売却を推奨するものではありません。記載内容は作成時点で公表されている報道・一次資料に基づいていますが、その正確性・完全性を保証するものではありません。軍事作戦・攻撃に関する記述は複数の報道機関による報道を基にしたものであり、原因究明を含む調査は本稿作成時点で継続中とみられ、内容が今後変わる可能性があります。技術的な実証状況・自律化の水準に関する記述は、公表されている情報に基づく整理であり、機密情報を含む実際の性能を反映しているとは限りません。投資に関する最終的な決定は、ご自身の判断と責任において行っていただきますようお願いいたします。
+  </div>
+  <p style="margin-top:18px;">Market Supporter AI ／ 2026年9月13日</p>
+</footer>
+
+</div>
+</body>
+</html>
