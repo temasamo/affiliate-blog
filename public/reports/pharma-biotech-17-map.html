@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>製薬・バイオ米国株17銘柄マップ｜6つの事業モデルで整理する - Market Supporter AI</title>
+<meta name="description" content="製薬・バイオ関連の米国株17銘柄を、事業モデル・開発ステージ・時価総額・財務健全性・カタリストの5軸で分類。創薬型からロイヤルティ型まで6分類の横断一覧表と、4指標フレームワークの適用可否を解説します。">
+<style>
+:root{
+  --ink:#0f172a;
+  --ink-sub:#475569;
+  --ink-mute:#64748b;
+  --line:#e2e8f0;
+  --bg:#ffffff;
+  --bg-soft:#f8fafc;
+  --base:#1e293b;
+  --base-dark:#0f172a;
+  --base-light:#f1f5f9;
+
+  /* 事業モデル6分類のカラーコード */
+  --m1:#4f46e5; /* 創薬型 */
+  --m2:#0891b2; /* プラットフォーム型 */
+  --m3:#059669; /* ツール・装置型 */
+  --m4:#d97706; /* 商業段階の特殊製薬 */
+  --m5:#be185d; /* 持株会社型 */
+  --m6:#7c3aed; /* ロイヤルティ型 */
+
+  --warn:#b45309;
+  --warn-bg:#fffbeb;
+  --pos:#15803d;
+  --neg:#b91c1c;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);background:var(--bg);line-height:1.85;font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px 80px;}
+
+header.hero{
+  background:linear-gradient(135deg,#0f172a 0%,#1e293b 55%,#334155 100%);
+  color:#fff;padding:56px 20px 48px;
+}
+.hero-inner{max-width:960px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;font-size:12px;letter-spacing:.14em;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);
+  padding:5px 13px;border-radius:999px;margin-bottom:18px;
+}
+h1{font-size:30px;line-height:1.45;margin:0 0 16px;font-weight:700;letter-spacing:.01em;}
+.hero-sub{font-size:15.5px;opacity:.93;margin:0 0 22px;line-height:1.8;}
+.meta{font-size:13px;opacity:.84;border-top:1px solid rgba(255,255,255,.22);padding-top:14px;}
+.tags{margin-top:12px;}
+.tag{display:inline-block;font-size:11.5px;background:rgba(255,255,255,.12);padding:4px 10px;border-radius:4px;margin:0 6px 6px 0;}
+
+.toc{background:var(--base-light);border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin:36px 0 44px;}
+.toc h2{font-size:15px;margin:0 0 12px;color:var(--base);letter-spacing:.06em;}
+.toc ol{margin:0;padding-left:1.3em;}
+.toc li{margin:7px 0;font-size:14.5px;}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--ink-mute);}
+.toc a:hover{color:var(--base);}
+
+section{margin:0 0 52px;scroll-margin-top:20px;}
+h2.chapter{font-size:21px;margin:0 0 20px;padding:0 0 12px 0;border-bottom:3px solid var(--base);line-height:1.5;font-weight:700;}
+h2.chapter .num{display:inline-block;color:var(--ink-mute);font-size:19px;margin-right:8px;}
+h3{font-size:17px;margin:32px 0 12px;padding-left:12px;border-left:4px solid var(--ink-mute);line-height:1.6;}
+p{margin:0 0 16px;}
+ul,ol{margin:0 0 18px;padding-left:1.4em;}
+li{margin:7px 0;}
+strong{color:var(--base-dark);font-weight:700;}
+
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0 24px;}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px;}
+th,td{border:1px solid var(--line);padding:10px 11px;text-align:left;vertical-align:top;}
+th{background:var(--base-light);color:var(--base-dark);font-weight:700;white-space:nowrap;font-size:13px;}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+tbody tr:nth-child(even){background:var(--bg-soft);}
+.tbl-note{font-size:12.5px;color:var(--ink-sub);margin:-14px 0 24px;}
+.tk{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;}
+
+/* 分類バッジ */
+.badge{display:inline-block;font-size:11px;font-weight:700;color:#fff;padding:2px 8px;border-radius:4px;white-space:nowrap;letter-spacing:.03em;}
+.b1{background:var(--m1);} .b2{background:var(--m2);} .b3{background:var(--m3);}
+.b4{background:var(--m4);} .b5{background:var(--m5);} .b6{background:var(--m6);}
+
+/* 分類カード */
+.model-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:24px 0 30px;}
+.model{border:1px solid var(--line);border-radius:10px;padding:16px 18px;background:#fff;border-top:4px solid var(--ink-mute);}
+.model.c1{border-top-color:var(--m1);} .model.c2{border-top-color:var(--m2);}
+.model.c3{border-top-color:var(--m3);} .model.c4{border-top-color:var(--m4);}
+.model.c5{border-top-color:var(--m5);} .model.c6{border-top-color:var(--m6);}
+.model h4{margin:0 0 8px;font-size:15px;}
+.model .m-tickers{font-size:13px;font-weight:700;color:var(--base-dark);margin-bottom:8px;font-variant-numeric:tabular-nums;}
+.model p{font-size:13.5px;margin:0;color:var(--ink-sub);line-height:1.75;}
+
+.callout{background:var(--bg-soft);border-left:4px solid var(--base);border-radius:0 8px 8px 0;padding:18px 20px;margin:24px 0;font-size:15px;}
+.callout .label{display:block;font-size:12px;letter-spacing:.1em;color:var(--base);font-weight:700;margin-bottom:8px;}
+.warn{background:var(--warn-bg);border-left:4px solid var(--warn);}
+.warn .label{color:var(--warn);}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0 28px;}
+.kpi{background:var(--bg-soft);border:1px solid var(--line);border-radius:9px;padding:15px 16px;}
+.kpi .k-label{font-size:12px;color:var(--ink-sub);margin-bottom:6px;line-height:1.5;}
+.kpi .k-value{font-size:21px;font-weight:700;color:var(--base-dark);line-height:1.3;font-variant-numeric:tabular-nums;}
+.kpi .k-sub{font-size:11.5px;color:var(--ink-sub);margin-top:5px;line-height:1.5;}
+
+.pos{color:var(--pos);font-weight:700;}
+.neg{color:var(--neg);font-weight:700;}
+.chk{color:var(--warn);font-weight:700;}
+
+.crosslink{border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:30px 0;background:#fff;}
+.crosslink h4{margin:0 0 10px;font-size:14px;color:var(--base-dark);letter-spacing:.05em;}
+.crosslink ul{margin:0;padding-left:1.2em;font-size:14px;}
+.crosslink a{color:var(--m1);text-decoration:none;border-bottom:1px solid var(--line);}
+
+.watch{background:linear-gradient(150deg,#1e293b 0%,#020617 100%);color:#fff;border-radius:14px;padding:36px 28px;margin:56px 0 40px;}
+.watch h2{font-size:20px;margin:0 0 8px;letter-spacing:.08em;color:#fff;border:none;padding:0;}
+.watch .w-sub{font-size:13.5px;opacity:.8;margin:0 0 24px;}
+.watch ol{padding-left:0;list-style:none;margin:0;counter-reset:w;}
+.watch li{counter-increment:w;position:relative;padding-left:44px;margin:0 0 20px;font-size:14.8px;line-height:1.8;}
+.watch li::before{
+  content:counter(w,decimal-leading-zero);
+  position:absolute;left:0;top:2px;font-size:13px;font-weight:700;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+  width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+}
+.watch li b{color:#93c5fd;}
+
+.disclaimer{background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:22px 24px;font-size:13px;color:var(--ink-sub);line-height:1.85;}
+.disclaimer h3{font-size:14px;margin:0 0 10px;padding:0;border:none;color:var(--ink);}
+.disclaimer ul{padding-left:1.3em;margin:0;}
+
+footer.site{text-align:center;font-size:12.5px;color:var(--ink-sub);margin-top:44px;padding-top:22px;border-top:1px solid var(--line);}
+
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  header.hero{padding:38px 18px 34px;}
+  h1{font-size:22px;line-height:1.5;}
+  .hero-sub{font-size:14.5px;}
+  .wrap{padding:0 16px 60px;}
+  h2.chapter{font-size:18.5px;}
+  h3{font-size:16px;}
+  .watch{padding:28px 20px;border-radius:10px;}
+  .watch li{padding-left:38px;font-size:14.2px;}
+  .watch li::before{width:26px;height:26px;font-size:12px;}
+  .kpi .k-value{font-size:19px;}
+  table{font-size:12.8px;}
+  th,td{padding:8px 9px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">製薬・バイオ 米国株 銘柄マップ ／ 第1回</span>
+    <h1>製薬・バイオ米国株17銘柄マップ<br>― 6つの事業モデルで整理する</h1>
+    <p class="hero-sub">
+      「製薬・バイオ株」とひとくくりにされる銘柄群は、実際には事業モデルがまったく異なります。
+      臨床データが価値のすべての企業もあれば、装置を売る企業、ロイヤルティを買う企業もある。
+      <strong>同じ指標で比較しても意味がない</strong>のです。
+      本記事では17銘柄を5つの軸で分類し、横断比較できる一覧表を作りました。
+    </p>
+    <div class="meta">
+      公開日：2026年9月12日 ／ 分析基準日：2026年8〜9月 ／ Market Supporter AI 編集部
+      <div class="tags">
+        <span class="tag">#米国株</span>
+        <span class="tag">#製薬</span>
+        <span class="tag">#バイオテック</span>
+        <span class="tag">#銘柄マップ</span>
+        <span class="tag">#小型株</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="toc">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#ch1">この記事の使い方 ― 「製薬株」という括りが役に立たない理由</a></li>
+      <li><a href="#ch2">分類の5軸</a></li>
+      <li><a href="#ch3">事業モデル別 6分類</a></li>
+      <li><a href="#ch4">全17銘柄 横断一覧表</a></li>
+      <li><a href="#ch5">時価総額 × ステージのマトリクス</a></li>
+      <li><a href="#ch6">4指標フレームワークの適用可否</a></li>
+      <li><a href="#ch7">この一覧をどう更新していくか</a></li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <span class="label">本記事の位置づけ</span>
+    同サイトの「AI×製薬×バイオ」3部作は、<strong>産業構造を4レイヤーで整理</strong>したものでした
+    （レイヤー1＝計算基盤、レイヤー2＝データ・診断インフラ、レイヤー3＝AI創薬、レイヤー4＝大手製薬）。
+    <div style="margin-top:12px;">
+      本記事は産業構造ではなく、<strong>個別銘柄の横断比較</strong>が主題です。
+      「この17社は何が違い、何を見れば判断できるか」を一覧で示します。
+      今後、銘柄を追加しながら更新していく前提の記事です。
+    </div>
+  </div>
+
+  <!-- ① -->
+  <section id="ch1">
+    <h2 class="chapter"><span class="num">①</span>この記事の使い方 ― 「製薬株」という括りが役に立たない理由</h2>
+
+    <p>
+      製薬・バイオ関連の米国株を並べると、次のような企業が同じカテゴリーに入ります。
+    </p>
+
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="k-label">四半期収益がゼロの企業</div>
+        <div class="k-value">複数</div>
+        <div class="k-sub">評価は臨床データのみに依存</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">年間5,000万ドル超を<br>売り上げる企業</div>
+        <div class="k-value">複数</div>
+        <div class="k-sub">PER・PSRが使える</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">時価総額の最小</div>
+        <div class="k-value">約1,600万ドル</div>
+        <div class="k-sub">BFRI（2026年8月7日時点）</div>
+      </div>
+      <div class="kpi">
+        <div class="k-label">時価総額の最大</div>
+        <div class="k-value">数百億ドル規模</div>
+        <div class="k-sub">RPRX。<span class="chk">要確認</span></div>
+      </div>
+    </div>
+
+    <p>
+      <strong>時価総額で1,000倍以上の開きがあり、収益構造も評価軸も違う。</strong>
+      それでも「製薬・バイオ株」という一つの括りで語られます。
+    </p>
+    <p>
+      この記事は、その括りを<strong>使える単位に分解する</strong>ことを目的としています。
+      具体的には、以下の順で読むことを想定しています。
+    </p>
+
+    <ol>
+      <li><strong>第③章</strong>で、自分が見ている銘柄がどの事業モデルに属するかを確認する</li>
+      <li><strong>第④章</strong>の一覧表で、同じモデル内の他社と横並びで比較する</li>
+      <li><strong>第⑥章</strong>で、その銘柄に4指標が使えるかどうかを確認する</li>
+    </ol>
+
+    <div class="callout warn">
+      <span class="label">最初に断っておくこと</span>
+      本記事で扱う17銘柄は、<strong>当サイトが継続的に追跡する対象として選定したもの</strong>であり、
+      推奨銘柄リストではありません。
+      <div style="margin-top:12px;">
+        また、対象にはマイクロキャップ（時価総額1億ドル未満）が多く含まれます。
+        <strong>これらの銘柄は開示情報が限定的で、流動性も低く、株価の変動が極めて大きい</strong>傾向があります。
+        一覧表の数値は入手できた最新のものですが、
+        <strong>取得できなかった項目は「要確認」と明記し、推測で埋めていません。</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- ② -->
+  <section id="ch2">
+    <h2 class="chapter"><span class="num">②</span>分類の5軸</h2>
+
+    <p>
+      17銘柄を以下の5軸で整理します。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>軸</th><th>区分</th><th>何が分かるか</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>1. 事業モデル</strong></td>
+            <td>創薬型／プラットフォーム型／ツール・装置型／商業段階の特殊製薬／持株会社型／ロイヤルティ型</td>
+            <td><strong>どの指標で評価すべきか</strong>が決まる。最も重要な軸</td>
+          </tr>
+          <tr>
+            <td><strong>2. 開発・事業ステージ</strong></td>
+            <td>前臨床／第1相／第2相／第3相・申請中／商業段階</td>
+            <td>価値がどこまで実証されているか</td>
+          </tr>
+          <tr>
+            <td><strong>3. 時価総額規模</strong></td>
+            <td>マイクロ（1億ドル未満）／スモール／ミッド／ラージ</td>
+            <td>流動性、情報開示の厚さ、株価変動の大きさ</td>
+          </tr>
+          <tr>
+            <td><strong>4. 財務の健全性</strong></td>
+            <td>キャッシュランウェイ／希薄化率／負債／上場維持基準</td>
+            <td><strong>次のカタリストまで生き残れるか</strong></td>
+          </tr>
+          <tr>
+            <td><strong>5. 次のカタリスト</strong></td>
+            <td>6か月以内／1年以内／2年以上先／不明確</td>
+            <td>いつ答え合わせがあるか</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <span class="label">軸4と軸5の関係が最も重要</span>
+      当サイトの個別企業分析を通じて繰り返し確認されたのは、
+      <strong>「資金が尽きる時期」と「データが出る時期」の前後関係</strong>が
+      小型バイオの評価を大きく左右するという点です。
+      <div style="margin-top:12px;">
+        データが先に出れば、結果を見てから有利な条件で調達できます。
+        資金が先に尽きれば、データが出る前に不利な条件での調達を強いられる。
+        <strong>同じランウェイの長さでも、カタリストの時期との組み合わせで意味が変わります。</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- ③ -->
+  <section id="ch3">
+    <h2 class="chapter"><span class="num">③</span>事業モデル別 6分類</h2>
+
+    <p>
+      17銘柄を事業モデルで分けると、以下の6グループになります。
+    </p>
+
+    <div class="model-grid">
+      <div class="model c1">
+        <h4><span class="badge b1">① 創薬型</span></h4>
+        <div class="m-tickers">ABOS / ADAG / ALLO / GANX / PRME / SANA</div>
+        <p>自社で医薬品を開発。収益はほぼゼロで、<strong>臨床データが企業価値のすべて</strong>。キャッシュランウェイと希薄化が最重要指標になる。6社と最大グループ。</p>
+      </div>
+      <div class="model c2">
+        <h4><span class="badge b2">② プラットフォーム型</span></h4>
+        <div class="m-tickers">ABSI</div>
+        <p>創薬技術を提供し、提携料とマイルストーンで稼ぐモデル。<strong>自社開発への移行が進むと、創薬型に近づく</strong>。実現率（一時金÷公表総額）が評価軸。</p>
+      </div>
+      <div class="model c3">
+        <h4><span class="badge b3">③ ツール・装置型</span></h4>
+        <div class="m-tickers">ARAY / RPID</div>
+        <p>製薬企業や医療機関に装置・消耗品を売る。<strong>顧客が誰かを見れば、新薬の成否に左右されにくい</strong>ことが分かる。粗利率と反復収益比率が軸。</p>
+      </div>
+      <div class="model c4">
+        <h4><span class="badge b4">④ 商業段階の特殊製薬</span></h4>
+        <div class="m-tickers">ABVC / AYTU / BFRI / DARE / INM</div>
+        <p>既に販売中の製品を持つ。<strong>売上はあるが黒字とは限らない</strong>点に注意。PSRが使える一方、マイクロキャップが多く上場維持基準の確認が必須。</p>
+      </div>
+      <div class="model c5">
+        <h4><span class="badge b5">⑤ 持株会社型</span></h4>
+        <div class="m-tickers">FBIO / ROIV</div>
+        <p>子会社群を通じて複数資産を開発。<strong>損失を外部株主と分担できる一方、成功時の利益も分け合う</strong>。非支配持分の扱いが評価を難しくする。</p>
+      </div>
+      <div class="model c6">
+        <h4><span class="badge b6">⑥ ロイヤルティ型</span></h4>
+        <div class="m-tickers">RPRX</div>
+        <p>他社医薬品のロイヤルティ権を買い取る。<strong>自社で開発しないため臨床リスクを負わない</strong>。キャッシュフローと取得ポートフォリオの質が軸。</p>
+      </div>
+    </div>
+
+    <h3>グループ①：創薬型（6社）</h3>
+    <p>
+      最大のグループです。6社に共通するのは、<strong>四半期収益がほぼ存在しない</strong>点です。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>ティッカー</th><th>企業</th><th>対象領域</th><th>現在地</th></tr></thead>
+        <tbody>
+          <tr><td class="tk">ABOS</td><td>Acumen Pharmaceuticals</td><td>アルツハイマー病（可溶性アミロイドβオリゴマー標的）</td><td>第2相ALTITUDE-AD、<strong>2026年後半にトップライン</strong></td></tr>
+          <tr><td class="tk">ADAG</td><td>Adagene</td><td>がん（マスク型抗CTLA-4抗体 ADG126）</td><td>第1b/2相</td></tr>
+          <tr><td class="tk">ALLO</td><td>Allogene Therapeutics</td><td>他家CAR-T（大細胞型B細胞リンパ腫ほか）</td><td>ピボタル第2相ALPHA3。<strong>EFS中間解析は2027年半ば</strong></td></tr>
+          <tr><td class="tk">GANX</td><td>Gain Therapeutics</td><td>アロステリック創薬（神経変性疾患ほか）</td><td>第1相段階</td></tr>
+          <tr><td class="tk">PRME</td><td>Prime Medicine</td><td>プライム編集（ウィルソン病、AATD、CGD）</td><td>第1/2相。<strong>BLA提出計画は2027年上期</strong></td></tr>
+          <tr><td class="tk">SANA</td><td>Sana Biotechnology</td><td>細胞治療（1型糖尿病、in vivo CAR-T）</td><td>医師主導治験＋IND準備</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      このグループを見るときは、<strong>「次のデータはいつ出るか」と「そこまで資金が持つか」</strong>の2点に尽きます。
+      技術の新規性や市場規模の大きさは、<strong>資金が尽きれば実現しません</strong>。
+    </p>
+
+    <h3>グループ④：商業段階の特殊製薬（5社）</h3>
+    <p>
+      売上のある企業群ですが、<strong>「売上がある」ことと「財務が健全」であることは別</strong>です。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>ティッカー</th><th>企業</th><th>主力製品・領域</th><th>売上の状況</th></tr></thead>
+        <tbody>
+          <tr><td class="tk">ABVC</td><td>ABVC BioPharma</td><td>植物由来の医薬品・医療機器（CNS、眼科、腫瘍）</td><td>ライセンス収入中心</td></tr>
+          <tr><td class="tk">AYTU</td><td>Aytu BioPharma</td><td>ADHD治療薬、EXXUA（抗うつ薬）</td><td><strong>TTM約5,660万ドル</strong>（2026年3月期時点）</td></tr>
+          <tr><td class="tk">BFRI</td><td>Biofrontera</td><td>皮膚科（Ameluz、光線力学療法）</td><td>商業段階</td></tr>
+          <tr><td class="tk">DARE</td><td>Daré Bioscience</td><td>女性ヘルス（避妊、性の健康、更年期）</td><td><strong>Q2 2026で19万ドル</strong>。商業化はこれから</td></tr>
+          <tr><td class="tk">INM</td><td>InMed Pharmaceuticals</td><td>カンナビノイド医薬＋BayMedica（原料供給）</td><td><strong>FY2025で494万ドル</strong>（+7.5%） </td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      特にINMは<strong>ハイブリッド型</strong>です。
+      前臨床段階の医薬品開発（アルツハイマー、加齢黄斑変性）を抱えながら、
+      子会社BayMedicaが希少カンナビノイドの原料供給で年間約500万ドルを売り上げています。
+      <strong>商業収益が研究開発を支える構造</strong>は、小型バイオでは珍しいものです。
+    </p>
+
+    <div class="callout warn">
+      <span class="label">グループ④で必ず確認すべきこと</span>
+      このグループには<strong>NASDAQ上場維持基準に関する履歴を持つ企業</strong>が含まれます。
+      <div style="margin-top:12px;">
+        たとえばABVCは、2022年・2024年に最低株価基準（1株1.00ドル）への不適合通知を受け、
+        猶予期間を経て2023年8月と2025年5月にそれぞれ適合を回復しています。
+        2026年9月上旬時点の株価は<strong>1ドルを下回る水準</strong>で推移しており、
+        <strong>基準への抵触が再び生じうる位置</strong>にあります。
+      </div>
+      <div style="margin-top:12px;">
+        INMも2026年3月27日付でNASDAQから最低株価基準に関する通知を受領したと開示しています。
+        <strong>これは事実として記録すべき事項であり、危険性を煽るものでも、伏せるべきものでもありません。</strong>
+        マイクロキャップを見る際は、<strong>株価そのものが上場維持の変数になる</strong>点を理解しておく必要があります。
+      </div>
+    </div>
+
+    <h3>グループ⑤：持株会社型（2社）</h3>
+    <p>
+      FBIOとROIVは、規模こそ違うものの<strong>同じ設計思想</strong>を持ちます。
+    </p>
+    <ul>
+      <li><strong>ROIV</strong>：「Vant」と呼ぶ子会社群で開発。Immunovantのように別途上場する子会社もある。純損失の一部が非支配持分に帰属する</li>
+      <li><strong>FBIO</strong>：パートナー企業モデル。子会社Journey Medicalは別途上場。資産の売却・導出によるアップフロントとマイルストーン受領も収益源</li>
+    </ul>
+    <p>
+      このモデルの評価が難しいのは、<strong>連結財務諸表が実態を映しにくい</strong>点です。
+      損失の一部を外部株主が負担する一方、成功した子会社の利益も分け合います。
+      <strong>親会社の株主が受け取る経済的価値は、各子会社の持分比率によって希薄化されます。</strong>
+    </p>
+
+    <h3>グループ③と⑥：臨床リスクを負わない2つの型</h3>
+    <p>
+      ARAY・RPID（ツール・装置型）とRPRX（ロイヤルティ型）は、
+      <strong>個別の新薬の成否に直接は左右されない</strong>という共通点があります。
+    </p>
+    <p>
+      ツール・装置型は「製薬企業が研究・製造を続ける限り需要がある」構造、
+      ロイヤルティ型は「既に承認された医薬品の売上に連動する」構造です。
+      <strong>いわゆる「ピッケルとシャベル」の発想</strong>ですが、
+      それぞれ別のリスクを負います。
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>型</th><th>負わないリスク</th><th>負うリスク</th></tr></thead>
+        <tbody>
+          <tr><td>ツール・装置型（ARAY / RPID）</td><td>個別新薬の臨床失敗</td><td><strong>在庫と売掛金による運転資本の拘束</strong>、設備投資サイクル、価格競争</td></tr>
+          <tr><td>ロイヤルティ型（RPRX）</td><td>臨床開発、製造、販売</td><td>取得価格の妥当性、特許満了、対象医薬品の売上減少</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      装置型の運転資本については、当サイトのRPID分析で具体的に確認しています。
+      2026年6月30日時点で<strong>棚卸資産1,891.8万ドルと売掛金551.5万ドル</strong>が
+      現金ではなく運転資本として拘束されていました。
+      <strong>創薬型には存在しない資金需要</strong>です。
+    </p>
+  </section>
+
+  <!-- ④ -->
+  <section id="ch4">
+    <h2 class="chapter"><span class="num">④</span>全17銘柄 横断一覧表</h2>
+
+    <p>
+      5軸すべてを1枚にまとめた表です。<strong>本記事の中心コンテンツ</strong>になります。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>ティッカー</th>
+            <th>企業名</th>
+            <th>モデル</th>
+            <th>ステージ</th>
+            <th>時価総額</th>
+            <th>財務メモ</th>
+            <th>次のカタリスト</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tk">ABOS</td><td>Acumen Pharmaceuticals</td>
+            <td><span class="badge b1">創薬</span></td>
+            <td>第2相</td>
+            <td class="num">約1.22億ドル</td>
+            <td>現金1億2,840万ドル（2026年3月末）。ランウェイ2027年初頭まで。1年で株式数+19.2%</td>
+            <td class="pos"><strong>2026年後半</strong>：ALTITUDE-ADトップライン</td>
+          </tr>
+          <tr>
+            <td class="tk">ABSI</td><td>Absci</td>
+            <td><span class="badge b2">PF</span></td>
+            <td>第1相</td>
+            <td class="num">約14〜15億ドル</td>
+            <td>Eli Lillyが4,000万ドル出資（<strong>プログラム権利の取得なし</strong>）。実現率は算出不能</td>
+            <td>臨床データの読み出し</td>
+          </tr>
+          <tr>
+            <td class="tk">ABVC</td><td>ABVC BioPharma</td>
+            <td><span class="badge b4">特殊製薬</span></td>
+            <td>臨床段階＋ライセンス</td>
+            <td class="num neg">約2,270万ドル</td>
+            <td class="neg"><strong>最低株価基準への抵触履歴あり</strong>（2022年・2024年に通知、いずれも回復）。株価は1ドル前後</td>
+            <td>ライセンス契約の進捗</td>
+          </tr>
+          <tr>
+            <td class="tk">ADAG</td><td>Adagene</td>
+            <td><span class="badge b1">創薬</span></td>
+            <td>第1b/2相</td>
+            <td class="chk">要確認</td>
+            <td class="chk">要確認</td>
+            <td>ADG126の臨床データ</td>
+          </tr>
+          <tr>
+            <td class="tk">ALLO</td><td>Allogene Therapeutics</td>
+            <td><span class="badge b1">創薬</span></td>
+            <td>ピボタル第2相</td>
+            <td class="num">約6億ドル前後</td>
+            <td class="pos">現金4億2,360万ドル、<strong>ランウェイ2029年Q1</strong>。5億ドルのシェルフ登録あり</td>
+            <td class="neg"><strong>2027年半ば</strong>：EFS中間解析（約1年の空白）</td>
+          </tr>
+          <tr>
+            <td class="tk">ARAY</td><td>Accuray</td>
+            <td><span class="badge b3">ツール</span></td>
+            <td>商業段階</td>
+            <td class="chk">要確認</td>
+            <td>FY2026売上4億190万ドル（▲12%）。TCWとの資本再構成が進行中</td>
+            <td>資本再構成の完了と受注動向</td>
+          </tr>
+          <tr>
+            <td class="tk">AYTU</td><td>Aytu BioPharma</td>
+            <td><span class="badge b4">特殊製薬</span></td>
+            <td>商業段階</td>
+            <td class="num neg">約2,470万ドル</td>
+            <td>TTM売上約5,660万ドル。現金2,670万ドル（2026年3月末）。<strong>時価総額 &lt; 売上</strong></td>
+            <td>EXXUAの立ち上がり</td>
+          </tr>
+          <tr>
+            <td class="tk">BFRI</td><td>Biofrontera</td>
+            <td><span class="badge b4">特殊製薬</span></td>
+            <td>商業段階</td>
+            <td class="num neg">約1,626万ドル</td>
+            <td class="neg">17銘柄で<strong>最小</strong>。IPO以来の時価総額は約54%減</td>
+            <td>Ameluzの処方動向</td>
+          </tr>
+          <tr>
+            <td class="tk">DARE</td><td>Daré Bioscience</td>
+            <td><span class="badge b4">特殊製薬</span></td>
+            <td>商業移行期＋第3相</td>
+            <td class="num neg">約2,050万ドル</td>
+            <td class="neg">現金1,260万ドル、<strong>運転資本・株主資本ともにマイナス</strong>（2026年6月末）</td>
+            <td class="pos"><strong>2026年Q3</strong>：DARE to PLAY初収益</td>
+          </tr>
+          <tr>
+            <td class="tk">FBIO</td><td>Fortress Biotech</td>
+            <td><span class="badge b5">持株会社</span></td>
+            <td>商業＋開発</td>
+            <td class="chk">要確認</td>
+            <td>パートナー企業モデル。子会社Journey Medicalは別途上場。資産導出のアップフロント受領あり</td>
+            <td>パートナー企業の個別進捗</td>
+          </tr>
+          <tr>
+            <td class="tk">GANX</td><td>Gain Therapeutics</td>
+            <td><span class="badge b1">創薬</span></td>
+            <td>第1相</td>
+            <td class="chk">要確認（マイクロ）</td>
+            <td class="chk">要確認</td>
+            <td>リード候補の臨床データ</td>
+          </tr>
+          <tr>
+            <td class="tk">INM</td><td>InMed Pharmaceuticals</td>
+            <td><span class="badge b4">特殊製薬</span></td>
+            <td>前臨床＋商業</td>
+            <td class="chk">要確認（マイクロ）</td>
+            <td class="neg">現金1,110万ドル（2025年6月末）。<strong>2026年3月にNASDAQ最低株価基準の通知を受領</strong></td>
+            <td>Alzheimer向けINM-901のIND準備</td>
+          </tr>
+          <tr>
+            <td class="tk">PRME</td><td>Prime Medicine</td>
+            <td><span class="badge b1">創薬</span></td>
+            <td>第1/2相</td>
+            <td class="num">約5.7億ドル</td>
+            <td class="neg">現金1億880万ドル、<strong>ランウェイ2027年まで</strong>。半年で株主資本▲67.1%、株式数+37.2%</td>
+            <td class="neg"><strong>2027年</strong>：主要データ（ランウェイと衝突）</td>
+          </tr>
+          <tr>
+            <td class="tk">ROIV</td><td>Roivant Sciences</td>
+            <td><span class="badge b5">持株会社</span></td>
+            <td>FDA審査中</td>
+            <td class="num pos">約250億ドル</td>
+            <td class="pos">現金約39億ドル（訴訟和解由来）。自社株買いを実施</td>
+            <td class="pos"><strong>2026年内</strong>：brepocitinibのFDA判断ほか</td>
+          </tr>
+          <tr>
+            <td class="tk">RPID</td><td>Rapid Micro Biosystems</td>
+            <td><span class="badge b3">ツール</span></td>
+            <td>商業段階</td>
+            <td class="num">約1億ドル前後</td>
+            <td class="neg">現金約2,010万ドル（半年で▲48%）。<strong>金利11%のタームローン2,000万ドルが同額</strong></td>
+            <td>2026年Q4：粗利率の改善度</td>
+          </tr>
+          <tr>
+            <td class="tk">RPRX</td><td>Royalty Pharma</td>
+            <td><span class="badge b6">ロイヤルティ</span></td>
+            <td>収益企業</td>
+            <td class="chk">要確認（ラージ）</td>
+            <td class="chk">要確認</td>
+            <td>ポートフォリオ受領額の推移</td>
+          </tr>
+          <tr>
+            <td class="tk">SANA</td><td>Sana Biotechnology</td>
+            <td><span class="badge b1">創薬</span></td>
+            <td>医師主導治験＋IND準備</td>
+            <td class="num">約11〜12億ドル</td>
+            <td>現金1億6,049万ドル、ランウェイ2027年半ば。<strong>偶発対価1億5,083万ドル（現金とほぼ同額）</strong></td>
+            <td class="pos"><strong>6〜9か月以内</strong>：SC451・SG293</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">
+      出典：各社のIR資料、決算リリース、SEC提出書類、および報道。数値は2026年8月〜9月に公開・報道された時点のものです。
+      時価総額は株式数の反映時期がデータソースにより異なるため、幅を持たせるか概数で記載しています。
+      「要確認」は本記事執筆時点で信頼できる数値を確認できなかった項目です。市場データは日々変動します。
+      モデル欄の「PF」はプラットフォーム型を指します。
+    </p>
+
+    <div class="callout warn">
+      <span class="label">一覧表から読み取れること</span>
+      <strong>時価総額が売上を下回る銘柄が存在します。</strong>
+      AYTUはTTM売上約5,660万ドルに対し時価総額約2,470万ドル。
+      <div style="margin-top:12px;">
+        これは「割安」を意味するとは限りません。
+        当サイトのPrime Medicine分析でPBR0.29倍を扱った際にも触れたとおり、
+        <strong>市場が将来の資金繰りや希薄化を織り込んでいる可能性</strong>があります。
+        低い評価倍率は、<strong>答えではなく問いの出発点</strong>です。
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑤ -->
+  <section id="ch5">
+    <h2 class="chapter"><span class="num">⑤</span>時価総額 × ステージのマトリクス</h2>
+
+    <p>
+      時価総額と開発ステージの2軸で並べると、銘柄の性格がさらに明確になります。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>　</th><th>前臨床〜第1相</th><th>第2相〜第3相</th><th>商業段階</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ラージ<br>（100億ドル超）</strong></td>
+            <td>―</td>
+            <td class="tk">ROIV</td>
+            <td class="tk">RPRX<span class="chk">※</span></td>
+          </tr>
+          <tr>
+            <td><strong>ミッド〜スモール<br>（1億〜100億ドル）</strong></td>
+            <td class="tk">ABSI / SANA</td>
+            <td class="tk">ABOS / ALLO / PRME</td>
+            <td class="tk">ARAY<span class="chk">※</span> / RPID</td>
+          </tr>
+          <tr>
+            <td><strong>マイクロ<br>（1億ドル未満）</strong></td>
+            <td class="tk">GANX<span class="chk">※</span> / INM<span class="chk">※</span></td>
+            <td class="tk">ADAG<span class="chk">※</span></td>
+            <td class="tk">ABVC / AYTU / BFRI / DARE</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note"><span class="chk">※</span>は時価総額の確認が必要な銘柄。推定に基づく配置です。</p>
+
+    <h3>このマトリクスが示すこと</h3>
+
+    <div class="callout">
+      <span class="label">右下のグループに注意</span>
+      <strong>「マイクロキャップ × 商業段階」</strong>には4社（ABVC、AYTU、BFRI、DARE）が入ります。
+      このセルの銘柄には共通の特徴があります。
+      <div style="margin-top:12px;">
+        <ul style="margin-bottom:0;margin-top:8px;">
+          <li><strong>売上はあるが、規模が小さく赤字</strong>である場合が多い</li>
+          <li><strong>株価が低位で、上場維持基準が現実的な論点</strong>になりうる</li>
+          <li>アナリストカバレッジが薄く、<strong>情報の非対称性が大きい</strong></li>
+          <li>流動性が低く、<strong>売買時のスプレッドや価格変動が大きい</strong></li>
+        </ul>
+      </div>
+      <div style="margin-top:12px;">
+        「商業段階だから安全」という単純な読み方はできません。
+        <strong>商業段階であることと、事業として持続可能であることは別の問題</strong>です。
+      </div>
+    </div>
+
+    <p>
+      一方、<strong>左上が空白</strong>である点も示唆的です。
+      「ラージキャップで前臨床段階」という企業は、この17銘柄には存在しません。
+      これは当然で、<strong>大きな時価総額は、何らかの実証を経て初めて成立する</strong>からです。
+    </p>
+    <p>
+      逆に言えば、<strong>マイクロキャップで前臨床の企業（GANX、INM）は、
+      市場からまだ実証を認められていない段階</strong>にあるということです。
+      評価が低いのは技術が劣るからとは限らず、
+      <strong>実証がこれからだから</strong>という読み方が妥当です。
+    </p>
+  </section>
+
+  <!-- ⑥ -->
+  <section id="ch6">
+    <h2 class="chapter"><span class="num">⑥</span>4指標フレームワークの適用可否</h2>
+
+    <p>
+      当サイトでは、損失段階の企業を評価する際に<strong>4つの指標</strong>を一次的な軸として使っています。
+    </p>
+    <ol>
+      <li><strong>キャッシュランウェイ</strong>：次のカタリストまで資金が持つか</li>
+      <li><strong>反復収益比率</strong>：収益÷営業費用。事業の自立度</li>
+      <li><strong>実現率</strong>：一時金÷公表マイルストーン総額。提携の実質価値</li>
+      <li><strong>希薄化パターン</strong>：発行価格・引受先・株式数の増減</li>
+    </ol>
+    <p>
+      ただし<strong>この4指標は、すべての銘柄に使えるわけではありません。</strong>
+      事業モデルごとに機能する指標が変わります。
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>事業モデル</th><th>①ランウェイ</th><th>②反復収益</th><th>③実現率</th><th>④希薄化</th><th>代替・追加指標</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge b1">創薬型</span></td>
+            <td class="pos">◎ 最重要</td>
+            <td>△ ほぼゼロ</td>
+            <td>○ 提携があれば</td>
+            <td class="pos">◎ 重要</td>
+            <td>症例数、次データの時期</td>
+          </tr>
+          <tr>
+            <td><span class="badge b2">PF型</span></td>
+            <td class="pos">◎</td>
+            <td>○</td>
+            <td class="pos">◎ 中心指標</td>
+            <td class="pos">◎</td>
+            <td>提携先の質、権利の帰属</td>
+          </tr>
+          <tr>
+            <td><span class="badge b3">ツール型</span></td>
+            <td>○</td>
+            <td class="pos">◎ 中心指標</td>
+            <td>× 対象外</td>
+            <td>○</td>
+            <td><strong>粗利率、運転資本、設置台数</strong></td>
+          </tr>
+          <tr>
+            <td><span class="badge b4">特殊製薬</span></td>
+            <td class="pos">◎</td>
+            <td class="pos">◎</td>
+            <td>△</td>
+            <td class="pos">◎</td>
+            <td><strong>PSR、上場維持基準</strong></td>
+          </tr>
+          <tr>
+            <td><span class="badge b5">持株会社</span></td>
+            <td>○</td>
+            <td>△</td>
+            <td>○</td>
+            <td>○</td>
+            <td><strong>非支配持分、子会社の持分比率</strong></td>
+          </tr>
+          <tr>
+            <td><span class="badge b6">ロイヤルティ</span></td>
+            <td>× 不要</td>
+            <td class="pos">◎</td>
+            <td>× 対象外</td>
+            <td>○</td>
+            <td>ポートフォリオ受領額、取得価格</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">◎＝中心的に機能する／○＝補助的に機能する／△＝限定的／×＝適用困難。編集部による整理です。</p>
+
+    <div class="callout">
+      <span class="label">指標を使い分ける実例</span>
+      同じ「現金が少ない」という状態でも、意味がまったく違います。
+      <div class="table-scroll" style="margin-top:12px;">
+        <table>
+          <thead><tr><th>銘柄</th><th>現金の状況</th><th>読み方</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="tk">PRME</td>
+              <td>1億880万ドル、ランウェイ2027年まで</td>
+              <td class="neg"><strong>主要データも2027年</strong>。データ前の調達を強いられる可能性</td>
+            </tr>
+            <tr>
+              <td class="tk">RPID</td>
+              <td>約2,010万ドル、半年で▲48%</td>
+              <td><strong>装置ビジネスゆえ在庫と売掛金で拘束</strong>。創薬型とは資金需要の性質が違う</td>
+            </tr>
+            <tr>
+              <td class="tk">DARE</td>
+              <td>1,260万ドル、株主資本マイナス</td>
+              <td><strong>商業化の初期段階</strong>。初収益の立ち上がりが資金繰りを左右</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <strong>金額の大小ではなく、「何のために必要な資金か」を見る</strong>必要があります。
+    </div>
+  </section>
+
+  <!-- ⑦ -->
+  <section id="ch7">
+    <h2 class="chapter"><span class="num">⑦</span>この一覧をどう更新していくか</h2>
+
+    <p>
+      本記事は<strong>継続的に更新していく前提</strong>で作成しています。
+      今後、以下の方針で銘柄を追加・整理していきます。
+    </p>
+
+    <h3>追加の基準</h3>
+    <ul>
+      <li><strong>6分類のいずれかに明確に位置づけられること</strong>。分類できない銘柄は、新しい分類の追加を検討する</li>
+      <li><strong>四半期ごとの開示が継続していること</strong>。情報が取得できない銘柄は一覧の価値を下げる</li>
+      <li><strong>既存銘柄との比較で何かが分かること</strong>。同じモデル内に比較対象がいると、読者の判断材料が増える</li>
+    </ul>
+
+    <h3>更新のタイミング</h3>
+    <p>
+      各社の四半期決算発表を受けて、<strong>財務メモ欄とカタリスト欄を更新</strong>します。
+      特に以下は変化が速いため、注意して追跡します。
+    </p>
+    <ul>
+      <li>キャッシュランウェイの延長・短縮</li>
+      <li>上場維持基準への適合状況</li>
+      <li>カタリストの時期の前倒し・後ろ倒し</li>
+      <li>時価総額区分の変更（マイクロ⇔スモールの境界越え）</li>
+    </ul>
+
+    <h3>現時点でのまとめ</h3>
+    <p>
+      17銘柄を5軸で分類して見えてきたのは、以下の点です。
+    </p>
+    <p>
+      <strong>第一に、事業モデルが違えば評価指標が違います。</strong>
+      創薬型にPSRを当てても意味がなく、ロイヤルティ型にキャッシュランウェイを当てても意味がない。
+      <strong>まず分類し、それから指標を選ぶ</strong>という順序が必要です。
+    </p>
+    <p>
+      <strong>第二に、「資金が尽きる時期」と「データが出る時期」の前後関係が決定的です。</strong>
+      ALLOはランウェイ2029年Q1に対しデータが2027年半ばで、資金が約2年長い。
+      PRMEは両方が2027年で衝突しています。
+      <strong>同じ「ランウェイが数年ある」でも、意味が正反対になります。</strong>
+    </p>
+    <p>
+      <strong>第三に、マイクロキャップでは上場維持基準が現実的な論点になります。</strong>
+      ABVCとINMは実際に最低株価基準に関する通知を受けた履歴があります。
+      <strong>事業の評価とは別に、株価そのものがリスク要因になる</strong>という構造を理解しておく必要があります。
+    </p>
+    <p>
+      本記事は分類と整理を目的としたものであり、<strong>個別銘柄の判断材料としては不十分</strong>です。
+      今後、各銘柄について個別の詳細分析記事を制作していきます。
+    </p>
+
+    <div class="crosslink">
+      <h4>関連レポート（既公開の個別企業分析）</h4>
+      <ul>
+        <li><a href="/reports/ai-biotech-industry-map.html">AI×製薬×バイオ 3部作・前編：産業地図</a></li>
+        <li><a href="/reports/ai-biotech-validation.html">3部作・中編：技術検証編</a></li>
+        <li><a href="/reports/ai-biotech-valuation.html">3部作・後編：投資判断編</a></li>
+        <li><a href="/reports/absci-absi.html">Absci（ABSI）― Eli Lillyが権利を取らなかった理由</a></li>
+        <li><a href="/reports/roivant-roiv.html">Roivant Sciences（ROIV）― 訴訟で22.5億ドルを勝ち取った創薬企業</a></li>
+        <li><a href="/reports/prime-medicine-prme.html">Prime Medicine（PRME）― ランウェイとマイルストーンが同じ年に重なる</a></li>
+        <li><a href="/reports/sana-sana.html">Sana Biotechnology（SANA）― n=1の概念実証と6〜9か月で出る答え</a></li>
+        <li><a href="/reports/allogene-allo.html">Allogene Therapeutics（ALLO）― ランウェイ2029年、それでも事業価値は約2億ドル</a></li>
+        <li><a href="/reports/rapid-micro-rpid.html">Rapid Micro Biosystems（RPID）― 反復収益63%、それでも現金は2,010万ドル</a></li>
+        <li><a href="/reports/accuray-aray.html">Accuray（ARAY）― 放射線治療装置と資本再構成</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHAT TO WATCH -->
+  <div class="watch">
+    <h2>WHAT TO WATCH</h2>
+    <p class="w-sub">17銘柄マップ ― 今後の注目点</p>
+    <ol>
+      <li><b>2026年後半：ABOSのALTITUDE-ADトップライン。</b>アルツハイマー病第2相の主要データ。同社の現金1億2,840万ドル（2026年3月末）に対しランウェイは2027年初頭までとされており、<b>データが資金より先に出る構図</b>。17銘柄で最も近いカタリストの一つ。</li>
+      <li><b>2026年Q3〜Q4：DAREの初期商業収益。</b>Flora Sync LF5が2026年7月に収益計上を開始し、DARE to PLAYはQ3に初収益の見込み。現金1,260万ドル・株主資本マイナスという状態で、<b>商業化の立ち上がりが資金繰りを直接左右する</b>。</li>
+      <li><b>マイクロキャップ4社の上場維持基準。</b>ABVCとINMは最低株価基準に関する通知の受領履歴がある。株価が1ドル前後で推移する銘柄では、<b>事業の進捗とは別に株価そのものがリスク要因</b>となる。四半期ごとに適合状況を確認したい。</li>
+      <li><b>2027年半ば：ALLOのEFS中間解析。</b>ランウェイ2029年Q1に対しデータが2027年半ばと、<b>17銘柄で最も余裕のある時間配分</b>。ただし約1年間は決定的な材料が出ない期間が続く。</li>
+      <li><b>2027年：PRMEのランウェイとデータの衝突。</b>ランウェイ「2027年まで」と主要マイルストーン（2027年）が重なる。<b>データが出る前に調達が必要になるか、データを見てから調達できるか</b>の順序が既存株主にとって決定的。</li>
+      <li><b>AYTU・BFRIの時価総額と売上の関係。</b>AYTUはTTM売上約5,660万ドルに対し時価総額約2,470万ドル。BFRIは時価総額約1,626万ドルで17銘柄最小。<b>低い評価倍率が事業改善で修正されるのか、それとも市場の織り込みが正しいのか</b>を四半期ごとに検証したい。</li>
+    </ol>
+  </div>
+
+  <!-- 免責 -->
+  <div class="disclaimer">
+    <h3>免責事項</h3>
+    <ul>
+      <li>本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資に関する最終的な判断は、ご自身の責任において行ってください。</li>
+      <li>本記事で取り上げた17銘柄は、当サイトが継続的に追跡する対象として選定したものであり、推奨銘柄リストではありません。掲載は投資対象としての適格性を示すものではありません。</li>
+      <li>本記事に記載された数値・事実は、2026年8月〜9月時点で公開されている企業のIR資料、決算リリース、SEC提出書類、および報道等に基づいています。株価・時価総額等の市場データは日々変動します。時価総額は株式数の反映時期がデータソースにより異なるため、概数または幅をもって記載しています。</li>
+      <li>「要確認」と記載した項目は、本記事執筆時点で信頼できる数値を確認できなかったものです。推測による数値の記載は行っていません。</li>
+      <li>事業モデルの6分類および4指標の適用可否は、編集部による整理であり、一般に確立された分類ではありません。</li>
+      <li>本記事で言及した上場維持基準に関する記述は、各社が開示した事実に基づくものです。将来の適合状況を予測または示唆するものではありません。</li>
+      <li>マイクロキャップ銘柄は一般に流動性が低く、株価の変動が大きく、開示情報が限定的である傾向があります。個別の投資判断にあたっては、必ず最新の一次情報をご確認ください。</li>
+      <li>臨床試験の結果は将来の承認を保証するものではなく、開発は中止される可能性があります。キャッシュランウェイは企業の現行事業計画に基づく見通しであり、実際の資金消費ペースにより変動します。</li>
+      <li>本記事の内容には誤りが含まれる可能性があります。投資判断にあたっては、必ず一次情報（企業のIR資料、SEC提出書類等）をご確認ください。</li>
+    </ul>
+  </div>
+
+  <footer class="site">
+    Market Supporter AI ／ marketsupporter-ai.com<br>
+    製薬・バイオ米国株 銘柄マップ 第1回（2026年9月12日公開）
+  </footer>
+
+</div>
+</body>
+</html>
