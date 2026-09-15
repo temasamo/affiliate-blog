@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kratos Defense（KTOS）決算分析｜Market Supporter AI</title>
+<meta name="description" content="売上30.5%増・バックログ拡大の一方、PERは実績ベースで数百倍という極端な評価。株価下落とアナリストの強気評価が併存する構図を検証します。">
+<style>
+  :root{
+    --ink:#0d1b2a;
+    --ink-soft:#3d4f60;
+    --paper:#f7f9fc;
+    --line:#dde3ec;
+    --accent:#6b5a5a;
+    --accent-deep:#453838;
+    --accent-wash:#f0ecec;
+    --amber:#b8791a;
+    --amber-wash:#fdf6e8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.9;
+    font-size:16px;
+  }
+  .wrap{max-width:860px;margin:0 auto;background:#fff;}
+  header.masthead{
+    background:linear-gradient(135deg,var(--accent-deep) 0%,var(--accent) 100%);
+    color:#fff;
+    padding:44px 32px 36px;
+  }
+  .brand{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    opacity:.85;margin-bottom:18px;
+  }
+  .series-tag{
+    display:inline-block;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    padding:4px 12px;border-radius:3px;
+    font-size:12px;letter-spacing:.08em;margin-bottom:14px;
+  }
+  header.masthead h1{
+    font-size:29px;line-height:1.5;margin:0 0 12px;font-weight:700;
+  }
+  header.masthead .sub{font-size:15px;opacity:.9;margin:0;}
+  .issue{
+    margin-top:22px;padding-top:16px;
+    border-top:1px solid rgba(255,255,255,.28);
+    font-size:13px;opacity:.85;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  main{padding:36px 32px 8px;}
+  .lede{
+    font-size:16.5px;
+    background:var(--accent-wash);
+    border-left:4px solid var(--accent);
+    padding:20px 22px;
+    margin:0 0 36px;
+  }
+  h2{
+    font-size:20px;margin:48px 0 18px;padding-bottom:10px;
+    border-bottom:2px solid var(--accent);
+    display:flex;align-items:baseline;gap:12px;
+  }
+  h2 .num{
+    color:var(--accent);font-size:24px;font-weight:700;
+    font-family:Georgia,serif;
+  }
+  h3{
+    font-size:16.5px;margin:30px 0 10px;color:var(--accent-deep);
+    border-left:3px solid var(--accent);padding-left:11px;
+  }
+  p{margin:0 0 16px;}
+  table{
+    width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:14.5px;
+  }
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:var(--accent-wash);font-weight:700;color:var(--accent-deep);}
+  tbody tr:nth-child(even){background:#fbfcfe;}
+  .kpi-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+    margin:20px 0 28px;
+  }
+  .kpi-card{
+    border:1px solid var(--line);background:#fff;border-radius:4px;
+    padding:14px 16px;border-top:3px solid var(--accent);
+  }
+  .kpi-card .label{font-size:12px;color:var(--ink-soft);margin-bottom:6px;}
+  .kpi-card .value{font-size:20px;font-weight:700;color:var(--accent-deep);}
+  .kpi-card .delta{font-size:12px;color:var(--ink-soft);margin-top:4px;}
+  .segment{
+    border:1px solid var(--line);border-left:6px solid var(--accent);
+    background:#fff;padding:16px 18px;margin-bottom:12px;border-radius:2px;
+  }
+  .segment .lbl{
+    font-size:12px;letter-spacing:.14em;color:var(--accent);
+    font-weight:700;margin-bottom:6px;
+  }
+  .segment .ttl{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .segment .desc{font-size:14.5px;color:var(--ink-soft);margin:0;}
+  .callout{
+    background:var(--accent-wash);border:1px solid #ddd5d5;
+    padding:16px 18px;margin:22px 0;font-size:14.5px;border-radius:2px;
+  }
+  .callout .callout-title{font-weight:700;color:var(--accent-deep);margin-bottom:6px;font-size:14px;}
+  .callout.warn{background:var(--amber-wash);border-color:#f0dfbc;}
+  .callout.warn .callout-title{color:var(--amber);}
+  .watch{
+    background:var(--ink);color:#e8eef2;padding:26px 26px 20px;margin:44px 0 0;
+  }
+  .watch h2{
+    color:#fff;border-bottom-color:rgba(255,255,255,.4);margin-top:0;
+  }
+  .watch h2 .num{color:#cbb9b9;}
+  .watch ul{padding-left:20px;margin:0;}
+  .watch li{margin-bottom:12px;font-size:15px;}
+  .watch strong{color:#cbb9b9;}
+  .series-nav{
+    background:var(--accent-wash);padding:20px 22px;margin:34px 0 0;
+    font-size:14.5px;border-radius:2px;
+  }
+  .series-nav .ttl{font-weight:700;color:var(--accent-deep);margin-bottom:10px;}
+  .series-nav ol{margin:0;padding-left:20px;}
+  .series-nav li{margin-bottom:6px;}
+  footer{
+    padding:26px 32px 40px;font-size:12.5px;color:var(--ink-soft);
+    border-top:1px solid var(--line);margin-top:36px;
+  }
+  .disclaimer{
+    background:var(--paper);border:1px solid var(--line);
+    padding:14px 16px;border-radius:2px;line-height:1.75;
+  }
+  @media(max-width:640px){
+    header.masthead{padding:32px 20px 28px;}
+    header.masthead h1{font-size:23px;}
+    main{padding:26px 20px 8px;}
+    footer{padding:22px 20px 32px;}
+    .watch{padding:22px 20px 16px;}
+    table{font-size:13.5px;}
+    th,td{padding:8px 9px;}
+    .kpi-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">Market Supporter AI</div>
+  <div class="series-tag">当たれば大きいAI関連分野 第3弾｜AI×防衛テック 個別企業編</div>
+  <h1>Kratos Defense（NASDAQ: KTOS）決算分析<br>―― 高値から65%下落した株に、アナリストは114%の上昇余地を見る</h1>
+  <p class="sub">売上30.5%増・バックログ拡大の一方、PERは実績ベースで587倍という極端な評価</p>
+  <div class="issue">
+    <span>2026年9月16日号</span>
+    <span>米国株シリーズ／個別企業レポート</span>
+  </div>
+</header>
+
+<main>
+
+<p class="lede">
+本シリーズ後編で確認した通り、Kratos Defenseは対象4社の中で中間的な規模を持ち、極超音速事業を成長ドライバーとする段階にあります。本稿では、2026年8月上旬発表のQ2決算と、相次ぐ受注発表、そして52週高値から大きく調整した株価水準を中心に、Kratos個別の状況を検証します。
+</p>
+
+<div class="kpi-grid">
+  <div class="kpi-card"><div class="label">株価（2026年9月12日時点）</div><div class="value">$46.77前後</div><div class="delta">52週レンジ：$43.09〜$134.00</div></div>
+  <div class="kpi-card"><div class="label">時価総額（2026年9月12日時点）</div><div class="value">約87.6億ドル</div><div class="delta">Robinhood集計</div></div>
+  <div class="kpi-card"><div class="label">年初来騰落率</div><div class="value">約▲35〜37%</div><div class="delta">2026年9月上旬時点</div></div>
+</div>
+
+<h2><span class="num">①</span>市場規模 ―― 「消耗品」戦略というポジション</h2>
+
+<p>前編で確認した通り、Kratosは「安価で大量生産可能な消耗品型システム」を前提に設計する戦略を採っており、これが同社の差別化要因とされています。事業は6部門に分かれ、Kratos Government Solutions（KGS、マイクロ波電子機器・宇宙・衛星・サイバー・訓練ソリューション）とUnmanned Systems（無人航空・地上・海上プラットフォーム）が主要な収益源です。ロケット・極超音速システム、推進システム（小型ジェットエンジン）も手がけています。</p>
+
+<h2><span class="num">②</span>政策・規制環境 ―― ドローン関税の前倒し実施</h2>
+
+<p>前編では、輸入ドローンへの関税が2027年1月1日発効予定と報じられていることを確認しましたが、その後の報道では、トランプ政権が2026年9月3日付で外国製ドローンに対し最大100%の関税を既に導入したとされています。当初想定より前倒しでの実施となった可能性があり、国内メーカーであるKratosへの追い風は、想定よりも早いタイミングで顕在化する可能性があります。</p>
+
+<div class="callout warn">
+  <div class="callout-title">留保：関税発効時期の情報には変遷がある</div>
+  ドローン関税の発効時期については、報道時点により「2027年1月発効予定」「2026年9月に導入済み」など異なる情報が見られます。本シリーズは各号の作成時点で確認できる最新の報道に基づいて記述していますが、政策の実施時期・適用範囲の詳細は今後も変更される可能性があるため、最新の一次情報でご確認いただくことをお勧めします。
+</div>
+
+<h2><span class="num">③</span>コスト・収益構造</h2>
+
+<p>Kratosは2026年に入り、Nomad Global Communication Solutions（2月11日、モバイル通信能力拡大）とOrbit Technologies（3月2日、Q2に2,140万ドルの売上寄与）を買収し、事業領域を拡大しています。売掛金回収サイクル（DSO：Days Sales Outstanding）は2025年12月末の124日から2026年6月末には114日へ改善しており、キャッシュフロー面での改善も見られます。</p>
+
+<h2><span class="num">④</span>事業セグメント動向</h2>
+
+<div class="segment">
+  <div class="lbl">Q2 2026決算のハイライト</div>
+  <div class="ttl">売上30.5%増、バックログも拡大</div>
+  <p class="desc">2026年6月28日終了の四半期の売上高は4億5,880万ドルで前年同期比30.5%増。KGS部門が3億7,970万ドル、Unmanned Systems部門が7,910万ドルを計上した。バックログ（受注残高）は20億8,400万ドルへ拡大し、うち15億7,200万ドルが資金確保済みの受注とされる。市場予想を上回る決算内容を受け、通期売上高ガイダンスも上方修正された。</p>
+</div>
+
+<div class="segment">
+  <div class="lbl">相次ぐ受注発表</div>
+  <div class="ttl">アジア向け衛星通信ゲートウェイ、Boeing向けエンジン供給など</div>
+  <p class="desc">2026年9月1日、アジアの防衛顧客向けにモバイル衛星通信ゲートウェイを供給する2,000万ドル超の契約を発表。8月31日には、国家安全保障関連の軍用グレードハードウェア生産プログラムで約3,500万ドルの受注を発表した。8月24日には、Boeing社のJDAM-LR（統合直接攻撃弾薬・長距離型）生産プログラム向けに、Spartanエンジンの拡張生産能力を配分すると発表している。Orbit Communication Systemsの子会社は、GAIA 100トライバンドアンテナ（5.5メートル・6.1メートル）について複数の国際顧客から数百万ドル規模の受注を得たとしている。</p>
+</div>
+
+<div class="segment">
+  <div class="lbl">XQ-58Aヴァルキリーの海兵隊向け実証</div>
+  <div class="ttl">CCAとしての統合実証が進む一方、試験中の事故も</div>
+  <p class="desc">米海兵隊向けにミッション装備化されたXQ-58Aヴァルキリー（有人機随伴無人機、CCA）が、環太平洋合同演習「Pacific Dragon 2026」でのARAV-B打ち上げなど、複数の軍事演習で実証を重ねている。一方、中編で確認した通り、2026年8月4日には自社出資の試験飛行で事故が発生し飛行試験が一時停止されており、量産化に向けた課題も残る。</p>
+</div>
+
+<h2><span class="num">⑤</span>株式バリュエーション</h2>
+
+<p>2026年9月12日時点の株価は46.77ドル前後、時価総額は約87億6,000万ドルとされています。52週レンジは43.09〜134.00ドルと極めて広く、高値からの下落率は65%を超えています。年初来の騰落率は約▲35〜37%とされています。実績PERはデータソースにより268倍（Robinhood）〜587倍（Motley Fool、Q2時点）まで幅がありますが、いずれにしても極めて高い水準です。</p>
+
+<div class="callout warn">
+  <div class="callout-title">留保：株価下落とアナリスト強気評価の併存</div>
+  複数の投資情報サイトの集計では、21人のアナリストの平均評価は「Strong Buy」とされ、12ヶ月目標株価は105.62ドルと、現在の株価から114%の上昇余地を示唆しています。株価が52週高値から65%超下落する一方でアナリストが極めて強気な評価を維持しているという状況は、コスト増加圧力・キャッシュ変換サイクルへの懸念など、株価下落の背景にある論点とアナリストの成長期待との間に、大きな解釈の相違があることを示しています。
+</div>
+
+<h2><span class="num">⑥</span>リスク要因</h2>
+
+<h3>1. 極端に高いPERとバリュエーション調整のリスク</h3>
+<p>実績PERが268〜587倍という水準は、成長率の鈍化や利益率の低下があった場合、大幅な株価調整を招くリスクを伴います。</p>
+
+<h3>2. コスト増加圧力</h3>
+<p>報道では、コスト増加がKratosの株価に対する重石になっている可能性が指摘されています。極超音速・無人システム分野での研究開発投資の負担が今後も続く可能性があります。</p>
+
+<h3>3. Valkyrie量産化の実行リスク</h3>
+<p>中編で確認した通り、XQ-58Aヴァルキリーは試験段階でなお事故が発生しており、海兵隊向け納入目標（2029年）に向けた実行リスクが残ります。</p>
+
+<h3>4. 買収統合リスク</h3>
+<p>Nomad・Orbit等、相次ぐ買収の統合が計画通り進むかどうかも、今後の収益性を左右します。</p>
+
+<h3>5. セクター全体の連動性</h3>
+<p>前編・後編で確認した通り、防衛テック株全体が地政学的なニュースや金利動向に連動する場面が頻発しています。</p>
+
+<h2><span class="num">⑦</span>まとめ</h2>
+
+<p>Kratos Defenseは、売上30.5%増・バックログ拡大という着実な事業成長を続けている一方、株価は52週高値から65%超下落し、アナリストの目標株価との間に114%という大きな乖離が生じています。相次ぐ受注発表は事業の勢いを示す材料ですが、実績PERが数百倍という極端な評価水準は、株価の下落がバリュエーション調整の一環である可能性も示唆します。<strong>本シリーズの基本姿勢に沿い、Kratosの評価についても「まだ判定できる段階にない」という中立的な立ち位置を維持します。</strong></p>
+
+<div class="watch">
+  <h2><span class="num">◆</span>WHAT TO WATCH</h2>
+  <ul>
+    <li><strong>2026年Q3決算（11月前後発表見込み）</strong>：コスト増加圧力の推移</li>
+    <li><strong>XQ-58Aヴァルキリー試験再開と量産スケジュール</strong></li>
+    <li><strong>ドローン関税の実施状況と国内メーカーへの恩恵</strong></li>
+    <li><strong>Nomad・Orbit買収の統合進捗</strong></li>
+    <li><strong>MACH-TBプログラムなど極超音速事業の売上貢献</strong></li>
+    <li><strong>アナリスト評価と株価の乖離が今後どう収斂するか</strong></li>
+  </ul>
+</div>
+
+<div class="series-nav">
+  <div class="ttl">「当たれば大きいAI関連分野」シリーズ構成</div>
+  <ol>
+    <li>第1弾：AI×量子コンピューティング（完結）</li>
+    <li>第2弾：AI×次世代原子力（完結）</li>
+    <li>第3弾：AI×防衛テック　前編・中編・後編（完結）</li>
+    <li>第3弾：個別企業編①　Palantir</li>
+    <li><strong>第3弾：個別企業編②　Kratos Defense（本稿）</strong></li>
+    <li>第3弾：個別企業編③　AeroVironment（次回）</li>
+    <li>第3弾：個別企業編④　Red Cat Holdings</li>
+  </ol>
+  <p style="margin:12px 0 0;font-size:13.5px;">次回はAeroVironmentです。BlueHalo統合による事業拡大と、52週高値から大きく調整した株価水準を中心に検証します。</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="disclaimer">
+    <strong>【免責事項】</strong><br>
+    本レポートは情報提供を目的としたものであり、特定の有価証券の購入・売却を推奨するものではありません。記載内容は作成時点で信頼できると判断した情報に基づいていますが、その正確性・完全性を保証するものではありません。株価・時価総額・PER等のバリュエーション指標は変動が激しく、データソース間で算出時点・株式数の反映が異なるため幅を持たせて記載しています。政策・関税の発効時期に関する記述は報道時点により内容が異なる場合があり、最新の一次情報での確認を推奨します。本シリーズは「当たれば大きい」という投機性の高いテーマを扱うため、ボラティリティについて特にご留意ください。投資に関する最終的な決定は、ご自身の判断と責任において行っていただきますようお願いいたします。
+  </div>
+  <p style="margin-top:18px;">Market Supporter AI ／ 2026年9月16日</p>
+</footer>
+
+</div>
+</body>
+</html>
