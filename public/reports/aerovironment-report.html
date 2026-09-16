@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AeroVironment（AVAV）決算分析｜Market Supporter AI</title>
+<meta name="description" content="52週高値から66%下落した後、Q1決算好調とLOCUSTレーザー契約でアナリスト評価は再び上向いています。">
+<style>
+  :root{
+    --ink:#0d1b2a;
+    --ink-soft:#3d4f60;
+    --paper:#f7f9fc;
+    --line:#dde3ec;
+    --accent:#7a4a4a;
+    --accent-deep:#502f2f;
+    --accent-wash:#f2e9e9;
+    --amber:#b8791a;
+    --amber-wash:#fdf6e8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.9;
+    font-size:16px;
+  }
+  .wrap{max-width:860px;margin:0 auto;background:#fff;}
+  header.masthead{
+    background:linear-gradient(135deg,var(--accent-deep) 0%,var(--accent) 100%);
+    color:#fff;
+    padding:44px 32px 36px;
+  }
+  .brand{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    opacity:.85;margin-bottom:18px;
+  }
+  .series-tag{
+    display:inline-block;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    padding:4px 12px;border-radius:3px;
+    font-size:12px;letter-spacing:.08em;margin-bottom:14px;
+  }
+  header.masthead h1{
+    font-size:29px;line-height:1.5;margin:0 0 12px;font-weight:700;
+  }
+  header.masthead .sub{font-size:15px;opacity:.9;margin:0;}
+  .issue{
+    margin-top:22px;padding-top:16px;
+    border-top:1px solid rgba(255,255,255,.28);
+    font-size:13px;opacity:.85;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  main{padding:36px 32px 8px;}
+  .lede{
+    font-size:16.5px;
+    background:var(--accent-wash);
+    border-left:4px solid var(--accent);
+    padding:20px 22px;
+    margin:0 0 36px;
+  }
+  h2{
+    font-size:20px;margin:48px 0 18px;padding-bottom:10px;
+    border-bottom:2px solid var(--accent);
+    display:flex;align-items:baseline;gap:12px;
+  }
+  h2 .num{
+    color:var(--accent);font-size:24px;font-weight:700;
+    font-family:Georgia,serif;
+  }
+  h3{
+    font-size:16.5px;margin:30px 0 10px;color:var(--accent-deep);
+    border-left:3px solid var(--accent);padding-left:11px;
+  }
+  p{margin:0 0 16px;}
+  table{
+    width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:14.5px;
+  }
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:var(--accent-wash);font-weight:700;color:var(--accent-deep);}
+  tbody tr:nth-child(even){background:#fbfcfe;}
+  .kpi-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+    margin:20px 0 28px;
+  }
+  .kpi-card{
+    border:1px solid var(--line);background:#fff;border-radius:4px;
+    padding:14px 16px;border-top:3px solid var(--accent);
+  }
+  .kpi-card .label{font-size:12px;color:var(--ink-soft);margin-bottom:6px;}
+  .kpi-card .value{font-size:20px;font-weight:700;color:var(--accent-deep);}
+  .kpi-card .delta{font-size:12px;color:var(--ink-soft);margin-top:4px;}
+  .segment{
+    border:1px solid var(--line);border-left:6px solid var(--accent);
+    background:#fff;padding:16px 18px;margin-bottom:12px;border-radius:2px;
+  }
+  .segment .lbl{
+    font-size:12px;letter-spacing:.14em;color:var(--accent);
+    font-weight:700;margin-bottom:6px;
+  }
+  .segment .ttl{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .segment .desc{font-size:14.5px;color:var(--ink-soft);margin:0;}
+  .callout{
+    background:var(--accent-wash);border:1px solid #e5d5d5;
+    padding:16px 18px;margin:22px 0;font-size:14.5px;border-radius:2px;
+  }
+  .callout .callout-title{font-weight:700;color:var(--accent-deep);margin-bottom:6px;font-size:14px;}
+  .callout.warn{background:var(--amber-wash);border-color:#f0dfbc;}
+  .callout.warn .callout-title{color:var(--amber);}
+  .watch{
+    background:var(--ink);color:#e8eef2;padding:26px 26px 20px;margin:44px 0 0;
+  }
+  .watch h2{
+    color:#fff;border-bottom-color:rgba(255,255,255,.4);margin-top:0;
+  }
+  .watch h2 .num{color:#d9b8b8;}
+  .watch ul{padding-left:20px;margin:0;}
+  .watch li{margin-bottom:12px;font-size:15px;}
+  .watch strong{color:#d9b8b8;}
+  .series-nav{
+    background:var(--accent-wash);padding:20px 22px;margin:34px 0 0;
+    font-size:14.5px;border-radius:2px;
+  }
+  .series-nav .ttl{font-weight:700;color:var(--accent-deep);margin-bottom:10px;}
+  .series-nav ol{margin:0;padding-left:20px;}
+  .series-nav li{margin-bottom:6px;}
+  footer{
+    padding:26px 32px 40px;font-size:12.5px;color:var(--ink-soft);
+    border-top:1px solid var(--line);margin-top:36px;
+  }
+  .disclaimer{
+    background:var(--paper);border:1px solid var(--line);
+    padding:14px 16px;border-radius:2px;line-height:1.75;
+  }
+  @media(max-width:640px){
+    header.masthead{padding:32px 20px 28px;}
+    header.masthead h1{font-size:23px;}
+    main{padding:26px 20px 8px;}
+    footer{padding:22px 20px 32px;}
+    .watch{padding:22px 20px 16px;}
+    table{font-size:13.5px;}
+    th,td{padding:8px 9px;}
+    .kpi-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">Market Supporter AI</div>
+  <div class="series-tag">当たれば大きいAI関連分野 第3弾｜AI×防衛テック 個別企業編</div>
+  <h1>AeroVironment（NASDAQ: AVAV）決算分析<br>―― SCARプログラム中止と内部統制の重大な不備、その後の回復力</h1>
+  <p class="sub">52週高値から66%下落した後、Q1決算好調とLOCUSTレーザー契約でアナリスト評価は再び上向く</p>
+  <div class="issue">
+    <span>2026年9月17日号</span>
+    <span>米国株シリーズ／個別企業レポート</span>
+  </div>
+</header>
+
+<main>
+
+<p class="lede">
+本シリーズ後編で確認した通り、AeroVironmentはBlueHalo統合による多角化を進める一方、株価は52週高値から大きく調整しています。本稿では、2026年6月に表面化したSCARプログラム中止・内部統制の不備という重大な材料と、2026年9月9日発表のQ1（2027年度）決算による回復の兆しを中心に、AeroVironment個別の状況を検証します。
+</p>
+
+<div class="kpi-grid">
+  <div class="kpi-card"><div class="label">株価（2026年9月11日時点）</div><div class="value">$141.87前後</div><div class="delta">52週レンジ：$135.20〜$417.86</div></div>
+  <div class="kpi-card"><div class="label">時価総額（2026年9月11日時点）</div><div class="value">約72億ドル</div><div class="delta">データソースにより幅あり</div></div>
+  <div class="kpi-card"><div class="label">年初来騰落率</div><div class="value">約▲44.5%</div><div class="delta">2026年9月上旬時点</div></div>
+</div>
+
+<h2><span class="num">①</span>市場規模 ―― BlueHalo統合による多角化戦略</h2>
+
+<p>前編で確認した通り、AeroVironmentは従来の小型無人機（Raven、Switchblade、Wasp、Puma等）に加え、2025年のBlueHalo買収を通じて指向性エネルギー・宇宙通信システムへ事業領域を拡大しました。自律システム・対無人機システム（counter-UAS）・宇宙プラットフォーム・サイバー電子戦能力までを統合的に提供する「次世代防衛テック・プライム契約企業」としての位置づけを掲げています。2026年3月16日には、Empirical SYSTEMS Aerospaceを2億ドル（株式1億6,000万ドル・現金4,000万ドル）で買収し、さらに事業領域を広げました。</p>
+
+<h2><span class="num">②</span>政策・規制環境</h2>
+
+<p>前編・後編で確認した通り、輸入ドローンへの関税は、当初2027年1月発効予定とされていましたが、その後トランプ政権が2026年8月31日〜9月3日にかけて外国製ドローンに最大100%の関税を導入したと報じられています。AeroVironmentのような国内メーカーにとって、この政策は追い風になるとみられています。</p>
+
+<h2><span class="num">③</span>コスト・収益構造 ―― SCARプログラム中止と内部統制の不備</h2>
+
+<p>2026年6月、AeroVironmentはSCARプログラムの中止に伴い8,900万ドルののれん減損を計上したことを開示しました。同時に、内部統制における重大な不備（material weakness）の存在も開示されており、是正措置が進行中とされています。</p>
+
+<div class="callout warn">
+  <div class="callout-title">留保：会計・内部統制問題の重さ</div>
+  この一連の開示を受け、Berger Montague法律事務所は2026年8月26日、AeroVironment取締役会による受託者責任違反の可能性について調査を開始したと発表しました。SCARプログラムの中止・契約タイミングの変動・BlueHaloの相対的に低成長・低利益率の資産を巡る懸念などが重なり、アナリストの目標株価は大幅に引き下げられました（後述）。内部統制の不備は、財務諸表の信頼性に関わる重要な論点であり、是正の進捗を注視する必要があります。
+</div>
+
+<h2><span class="num">④</span>事業セグメント動向</h2>
+
+<div class="segment">
+  <div class="lbl">Q1（2027年度）決算のハイライト（2026年9月9日発表）</div>
+  <div class="ttl">過去最高売上・バックログを記録、株価は10%超上昇</div>
+  <p class="desc">2026年9月9日発表のQ1（2027年度）決算では、売上高が過去最高の4億8,050万ドルを記録し、調整後EPSは0.59ドルで市場予想を上回った。資金確保済みバックログは14億6,000万ドル（一部報道では15億ドル）に達し、対無人機システム（counter-UAS）・ISR（情報収集・警戒監視・偵察）分野での大型契約獲得が牽引した。自律システム部門の成長、国際需要の堅調さも寄与し、2027年度通期ガイダンスは維持された。決算発表を受け、株価は10%超上昇する場面があった。</p>
+</div>
+
+<div class="segment">
+  <div class="lbl">LOCUSTレーザーシステムの新規契約</div>
+  <div class="ttl">4億6,500万ドル規模の指向性エネルギー契約</div>
+  <p class="desc">2026年9月3日、AeroVironmentは「LOCUST」レーザーシステムに関する4億6,500万ドル規模の契約を獲得したと報じられた。この契約は、BlueHalo統合の柱である指向性エネルギー事業の具体的な成果として位置づけられており、複数のアナリストがBuy評価・目標株価を維持する根拠として言及している。</p>
+</div>
+
+<div class="segment">
+  <div class="lbl">経営陣の交代</div>
+  <div class="ttl">新任執行役員が2026年5月に就任</div>
+  <p class="desc">2026年5月1日付でショーン・T・ウッドワード氏が執行副社長に就任した。内部統制の不備の是正が進行する中での経営陣人事であり、ガバナンス体制の立て直しの一環として注目される。</p>
+</div>
+
+<h2><span class="num">⑤</span>株式バリュエーション</h2>
+
+<p>2026年9月11日時点の株価は141.87ドル前後で、52週レンジは135.20〜417.86ドルと非常に広く、52週高値からの下落率は66%に達しています。年初来の騰落率は約▲44.5%とされています。時価総額はデータソースにより72億〜100億ドルの幅があります。株価は2025年10月の417ドルから、2026年6月のSCARプログラム中止・内部統制問題の表面化を経て大きく下落し、その後Q1決算・LOCUST契約を受けてやや持ち直しています。</p>
+
+<div class="callout warn">
+  <div class="callout-title">留保：アナリスト目標株価は大幅に引き下げられたが、なお強気を維持</div>
+  Simply Wall Stの集計では、公正価値の推計はSCARプログラム中止前の約382ドルから約311ドルへ引き下げられました。複数の証券会社も目標株価を数十ドル規模で引き下げており、街の目標株価レンジは概ね235〜350ドルに収れんしているとされます。個別には、BofAが225ドルから185ドルへ引き下げる一方、JPMorganはQ1決算後に200ドルから210ドルへ引き上げるなど、評価の方向性は分かれています。それでも18人のアナリストの評価は依然として「Buy」が中心（強気買い39%・買い50%・中立11%・売り0%）であり、SCAR問題を経てもなお長期的な需要見通しへの信頼は失われていません。
+</div>
+
+<h2><span class="num">⑥</span>リスク要因</h2>
+
+<h3>1. 内部統制の不備を巡る継続的なリスク</h3>
+<p>重大な不備の是正が完了するまでは、財務報告の信頼性に対する懸念が残ります。Berger Montague等による調査の進展にも注意が必要です。</p>
+
+<h3>2. BlueHalo統合の実行リスク</h3>
+<p>後編で確認した通り、BlueHalo由来の資産は相対的に低成長・低利益率とされ、統合によるクロスセル効果の実現度が引き続き焦点です。</p>
+
+<h3>3. 契約タイミングの変動性</h3>
+<p>SCARプログラムの中止が示す通り、個別契約の中止・タイミングの変動は、業績・株価に大きな影響を与え得ます。</p>
+
+<h3>4. 高いボラティリティ</h3>
+<p>52週で417ドルから135ドルまでという値動きの荒さは、他の防衛テック株と比較しても際立っています。</p>
+
+<h3>5. セクター全体の連動性</h3>
+<p>前編・後編で確認した通り、防衛テック株全体が地政学的なニュースや金利動向に連動する場面が頻発しています。</p>
+
+<h2><span class="num">⑦</span>まとめ</h2>
+
+<p>AeroVironmentは、2026年前半にSCARプログラム中止・内部統制の重大な不備という深刻な材料に直面し、株価は52週高値から66%という大きな下落を経験しました。しかし2026年9月のQ1決算では過去最高売上・バックログを記録し、LOCUSTレーザー契約という指向性エネルギー事業の具体的成果も出ており、回復の兆しが見られます。アナリストの目標株価は総じて引き下げられたものの、Buy評価そのものは維持されており、市場の見方は「深刻な問題は経たが、事業の基礎的な需要は損なわれていない」という方向に傾いているようです。<strong>本シリーズの基本姿勢に沿い、AeroVironmentの評価についても「まだ判定できる段階にない」という中立的な立ち位置を維持します。</strong></p>
+
+<div class="watch">
+  <h2><span class="num">◆</span>WHAT TO WATCH</h2>
+  <ul>
+    <li><strong>内部統制の不備の是正状況</strong>：完了時期と、Berger Montague等の調査の進展</li>
+    <li><strong>2026年Q2（2027年度）決算</strong>：Q1の好調が続くか</li>
+    <li><strong>LOCUSTレーザーシステムの追加受注</strong></li>
+    <li><strong>BlueHalo統合によるクロスセル効果の具体化</strong></li>
+    <li><strong>ドローン関税の実施と国内メーカーへの恩恵</strong></li>
+    <li><strong>アナリスト目標株価の収れん状況</strong></li>
+  </ul>
+</div>
+
+<div class="series-nav">
+  <div class="ttl">「当たれば大きいAI関連分野」シリーズ構成</div>
+  <ol>
+    <li>第1弾：AI×量子コンピューティング（完結）</li>
+    <li>第2弾：AI×次世代原子力（完結）</li>
+    <li>第3弾：AI×防衛テック　前編・中編・後編（完結）</li>
+    <li>第3弾：個別企業編①　Palantir</li>
+    <li>第3弾：個別企業編②　Kratos Defense</li>
+    <li><strong>第3弾：個別企業編③　AeroVironment（本稿）</strong></li>
+    <li>第3弾：個別企業編④　Red Cat Holdings（次回）</li>
+  </ol>
+  <p style="margin:12px 0 0;font-size:13.5px;">次回はRed Cat Holdingsです。米陸軍SRR量産契約と、4社の中で唯一のプレ量産フェーズという投機的性格を中心に検証します。</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="disclaimer">
+    <strong>【免責事項】</strong><br>
+    本レポートは情報提供を目的としたものであり、特定の有価証券の購入・売却を推奨するものではありません。記載内容は作成時点で信頼できると判断した情報に基づいていますが、その正確性・完全性を保証するものではありません。株価・時価総額等のバリュエーション指標は変動が激しく、データソース間で算出時点・株式数の反映が異なるため幅を持たせて記載しています。内部統制の不備・法律事務所による調査に関する記述は報道・開示情報に基づくものであり、今後の展開により内容が変わる可能性があります。本シリーズは「当たれば大きい」という投機性の高いテーマを扱うため、ボラティリティについて特にご留意ください。投資に関する最終的な決定は、ご自身の判断と責任において行っていただきますようお願いいたします。
+  </div>
+  <p style="margin:18px 0 0;">Market Supporter AI ／ 2026年9月17日</p>
+</footer>
+
+</div>
+</body>
+</html>
