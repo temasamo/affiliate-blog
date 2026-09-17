@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Red Cat Holdings（RCAT）決算分析｜Market Supporter AI</title>
+<meta name="description" content="4社の中で唯一のプレ量産フェーズ企業。決算未達と大型増資後の現金積み増しをどう読むか検証します。">
+<style>
+  :root{
+    --ink:#0d1b2a;
+    --ink-soft:#3d4f60;
+    --paper:#f7f9fc;
+    --line:#dde3ec;
+    --accent:#b8433a;
+    --accent-deep:#7d2c26;
+    --accent-wash:#faeae8;
+    --amber:#b8791a;
+    --amber-wash:#fdf6e8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.9;
+    font-size:16px;
+  }
+  .wrap{max-width:860px;margin:0 auto;background:#fff;}
+  header.masthead{
+    background:linear-gradient(135deg,var(--accent-deep) 0%,var(--accent) 100%);
+    color:#fff;
+    padding:44px 32px 36px;
+  }
+  .brand{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    opacity:.85;margin-bottom:18px;
+  }
+  .series-tag{
+    display:inline-block;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    padding:4px 12px;border-radius:3px;
+    font-size:12px;letter-spacing:.08em;margin-bottom:14px;
+  }
+  header.masthead h1{
+    font-size:29px;line-height:1.5;margin:0 0 12px;font-weight:700;
+  }
+  header.masthead .sub{font-size:15px;opacity:.9;margin:0;}
+  .issue{
+    margin-top:22px;padding-top:16px;
+    border-top:1px solid rgba(255,255,255,.28);
+    font-size:13px;opacity:.85;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  main{padding:36px 32px 8px;}
+  .lede{
+    font-size:16.5px;
+    background:var(--accent-wash);
+    border-left:4px solid var(--accent);
+    padding:20px 22px;
+    margin:0 0 36px;
+  }
+  h2{
+    font-size:20px;margin:48px 0 18px;padding-bottom:10px;
+    border-bottom:2px solid var(--accent);
+    display:flex;align-items:baseline;gap:12px;
+  }
+  h2 .num{
+    color:var(--accent);font-size:24px;font-weight:700;
+    font-family:Georgia,serif;
+  }
+  h3{
+    font-size:16.5px;margin:30px 0 10px;color:var(--accent-deep);
+    border-left:3px solid var(--accent);padding-left:11px;
+  }
+  p{margin:0 0 16px;}
+  table{
+    width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:14.5px;
+  }
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:var(--accent-wash);font-weight:700;color:var(--accent-deep);}
+  tbody tr:nth-child(even){background:#fbfcfe;}
+  .kpi-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+    margin:20px 0 28px;
+  }
+  .kpi-card{
+    border:1px solid var(--line);background:#fff;border-radius:4px;
+    padding:14px 16px;border-top:3px solid var(--accent);
+  }
+  .kpi-card .label{font-size:12px;color:var(--ink-soft);margin-bottom:6px;}
+  .kpi-card .value{font-size:20px;font-weight:700;color:var(--accent-deep);}
+  .kpi-card .delta{font-size:12px;color:var(--ink-soft);margin-top:4px;}
+  .segment{
+    border:1px solid var(--line);border-left:6px solid var(--accent);
+    background:#fff;padding:16px 18px;margin-bottom:12px;border-radius:2px;
+  }
+  .segment .lbl{
+    font-size:12px;letter-spacing:.14em;color:var(--accent);
+    font-weight:700;margin-bottom:6px;
+  }
+  .segment .ttl{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .segment .desc{font-size:14.5px;color:var(--ink-soft);margin:0;}
+  .callout{
+    background:var(--accent-wash);border:1px solid #f2d9d6;
+    padding:16px 18px;margin:22px 0;font-size:14.5px;border-radius:2px;
+  }
+  .callout .callout-title{font-weight:700;color:var(--accent-deep);margin-bottom:6px;font-size:14px;}
+  .callout.warn{background:var(--amber-wash);border-color:#f0dfbc;}
+  .callout.warn .callout-title{color:var(--amber);}
+  .watch{
+    background:var(--ink);color:#e8eef2;padding:26px 26px 20px;margin:44px 0 0;
+  }
+  .watch h2{
+    color:#fff;border-bottom-color:rgba(255,255,255,.4);margin-top:0;
+  }
+  .watch h2 .num{color:#e8aca6;}
+  .watch ul{padding-left:20px;margin:0;}
+  .watch li{margin-bottom:12px;font-size:15px;}
+  .watch strong{color:#e8aca6;}
+  .series-nav{
+    background:var(--accent-wash);padding:20px 22px;margin:34px 0 0;
+    font-size:14.5px;border-radius:2px;
+  }
+  .series-nav .ttl{font-weight:700;color:var(--accent-deep);margin-bottom:10px;}
+  .series-nav ol{margin:0;padding-left:20px;}
+  .series-nav li{margin-bottom:6px;}
+  footer{
+    padding:26px 32px 40px;font-size:12.5px;color:var(--ink-soft);
+    border-top:1px solid var(--line);margin-top:36px;
+  }
+  .disclaimer{
+    background:var(--paper);border:1px solid var(--line);
+    padding:14px 16px;border-radius:2px;line-height:1.75;
+  }
+  @media(max-width:640px){
+    header.masthead{padding:32px 20px 28px;}
+    header.masthead h1{font-size:23px;}
+    main{padding:26px 20px 8px;}
+    footer{padding:22px 20px 32px;}
+    .watch{padding:22px 20px 16px;}
+    table{font-size:13.5px;}
+    th,td{padding:8px 9px;}
+    .kpi-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">Market Supporter AI</div>
+  <div class="series-tag">当たれば大きいAI関連分野 第3弾｜AI×防衛テック 個別企業編</div>
+  <h1>Red Cat Holdings（NASDAQ: RCAT）決算分析<br>―― 売上527%増でも株価下落、手元資金3億ドル超の意味</h1>
+  <p class="sub">4社の中で唯一のプレ量産フェーズ企業。決算未達と大型増資後の現金積み増しをどう読むか</p>
+  <div class="issue">
+    <span>2026年9月18日号</span>
+    <span>米国株シリーズ／個別企業レポート</span>
+  </div>
+</header>
+
+<main>
+
+<p class="lede">
+本シリーズ後編で確認した通り、Red Cat Holdingsは対象4社の中で唯一、赤字先行のプレ量産フェーズという投機的な性格を持つ企業です。本稿は本シリーズ「AI×防衛テック」個別企業編の最終回として、2026年8月6日発表のQ2決算と、大型増資後の潤沢な手元資金、インサイダー売却の動きを中心に、Red Cat個別の状況を検証します。
+</p>
+
+<div class="kpi-grid">
+  <div class="kpi-card"><div class="label">株価（2026年9月11日時点）</div><div class="value">$8.12〜8.25</div><div class="delta">52週レンジ：$5.77〜$18.78</div></div>
+  <div class="kpi-card"><div class="label">時価総額（2026年9月11日時点）</div><div class="value">約10〜12億ドル</div><div class="delta">データソースにより幅あり</div></div>
+  <div class="kpi-card"><div class="label">手元資金（2026年6月30日時点）</div><div class="value">約3億2,560万ドル</div><div class="delta">4社の中で際立って潤沢</div></div>
+</div>
+
+<h2><span class="num">①</span>市場規模 ―― 小型偵察・攻撃用ドローン専業というポジション</h2>
+
+<p>前編で確認した通り、Red Catは主力製品「Black Widow」（短距離偵察向け、選択可能なAI統合ソフトウェアを搭載）、「Teal 2」（戦闘部隊向けBlue UAS）、「Golden Eagle」（国防総省承認済み、偵察・公共安全・点検用途）を展開する小型ドローン専業企業です。子会社Skypersonicは、GPSが利用できない環境での点検作業を可能にする技術を持ちます。4社の中で唯一、量子コンピューティング・次世代原子力シリーズの対象企業に近い、赤字先行のプレ量産フェーズにあります。</p>
+
+<h2><span class="num">②</span>政策・規制環境</h2>
+
+<p>前編・中編で確認した通り、Red CatのTeal Dronesはペンタゴンの「ドローン・ドミナンス・プログラム」において、2026年8月の発表で「ガントレットII」フェーズに進出し、低コスト消耗型ドローンシステムの大規模な調達機会を巡る候補群の中に残ったとされています。輸入ドローンへの関税（トランプ政権が2026年8月末〜9月上旬にかけて最大100%の関税を導入したと報じられている）も、国内メーカーであるRed Catへの追い風になるとみられています。</p>
+
+<h2><span class="num">③</span>コスト・収益構造 ―― 大型増資による手元資金の劇的な積み増し</h2>
+
+<p>Red Catは2026年上半期、普通株式の公募増資により2億5,875万ドルを調達しました。この結果、手元資金は2025年末の1億6,790万ドルから、2026年6月末には3億2,560万ドルへと大きく積み増されています。一方、上半期の営業活動によるキャッシュ・アウトフローは7,870万ドルに達しており、事業運営には引き続き相応の資金消費が伴っています。</p>
+
+<div class="callout">
+  <div class="callout-title">読み方の指針（編集部見解）</div>
+  3億ドルを超える手元資金は、量子コンピューティング・次世代原子力シリーズで見た同規模企業と比較しても際立って潤沢な水準です。ただし、これは主に大型増資による調達であり、既存株主の希薄化を伴っています。後編で整理した「財務健全性・希薄化リスク」の評価軸に照らすと、Red Catは「資金は潤沢だが、その資金源は希薄化を伴う増資である」という両面を持つ典型例と言えます。
+</div>
+
+<h2><span class="num">④</span>事業セグメント動向</h2>
+
+<div class="segment">
+  <div class="lbl">Q2 2026決算のハイライト（2026年8月6日発表）</div>
+  <div class="ttl">売上527%増も、市場予想には届かず</div>
+  <p class="desc">2026年6月30日終了の四半期売上高は2,020万ドルで前年同期比527%増となったが、市場予想（2,278万〜2,280万ドル）を約9〜11%下回った。売上総利益率は16.1%へ改善（前年同期11.6%、前四半期12.7%から順調に上昇）。一方、純損失は3,530万ドルで、市場予想（1株あたり損失0.20〜0.21ドル）を上回る0.26ドルの損失となった。上半期累計では売上高3,570万ドル（前年同期比636%増）、純損失6,180万ドルを計上している。決算発表後、株価は時間外取引で5.4%下落した。通期売上高ガイダンス（1.5億〜1.8億ドル）は据え置かれている。</p>
+</div>
+
+<div class="segment">
+  <div class="lbl">Teal Dronesのドローン・ドミナンス・プログラム進展</div>
+  <div class="ttl">「ガントレットII」フェーズへ前進</div>
+  <p class="desc">Teal Dronesが、低コストで消耗可能なドローンシステムの大規模調達を目指すペンタゴンのプログラムにおいて、次フェーズの「ガントレットII」に進出したと発表された。最終的な調達配分が決定したわけではないが、選定プロセスにおける重要な前進と位置づけられている。</p>
+</div>
+
+<div class="segment">
+  <div class="lbl">Black Widowの受注・提携拡大</div>
+  <div class="ttl">米空軍からの追加発注、C3Aとの統合提携</div>
+  <p class="desc">2026年7月30日、米空軍からBlack Widowシステムについて249万ドルの追加発注を受けたと発表された。7月23日には、C3Aとの間でBlack WidowをOBERON対応の火力ネットワークに統合する取り組みを進めると発表している。Quaze買収も完了しており、事業領域の拡大が続いている。</p>
+</div>
+
+<div class="segment">
+  <div class="lbl">インサイダー売却の動き</div>
+  <div class="ttl">創業者による株式売却意向の表明</div>
+  <p class="desc">2026年7月15日、創業者でCEOのジェフリー・トンプソン氏が、今後90日以内に45万株を売却する意向を示す「売却意向届出書」を提出したと報じられた。8月31日には「主要なインサイダーの動きがRed Cat Holdingsを揺るがした」とする報道もあり、取締役ニコラス・レイランド・リウザ・ジュニア氏による売却も伝えられている。株価のボラティリティが高い局面でのインサイダー売却は、投資家の間で注視されている。</p>
+</div>
+
+<h2><span class="num">⑤</span>株式バリュエーション</h2>
+
+<p>2026年9月11日時点の株価は8.12〜8.25ドルで推移し、52週レンジは5.77〜18.78ドルと非常に広く、直近の水準は52週安値に近い位置にあります。時価総額はデータソースにより10億〜12億ドルの幅で報じられています。ある分析では、フォワードEV/売上高倍率が6.7倍とされ、「大幅な収益成長と契約の着実な転換」を織り込んだ評価と位置づけられています。</p>
+
+<div class="callout warn">
+  <div class="callout-title">留保：分析初期段階でのアナリスト評価は分かれる</div>
+  2026年8月28日にEvercore ISIが「Outperform」で新規カバレッジを開始した一方、9月1日にはPiper Sandlerが「Neutral」で新規カバレッジを開始しており、証券会社間で評価が分かれています。ある集計では総合評価「Buy」・平均目標株価18.43ドル（現在株価から約124%の上昇余地）とされていますが、Kratos・AeroVironmentの事例で見た通り、この種の大幅な乖離は本シリーズの対象企業に共通する特徴でもあります。空売り比率の高さ、インサイダーの純売却、増資枠（シェルフ登録）が残存している点も、リスクとして指摘されています。
+</div>
+
+<h2><span class="num">⑥</span>リスク要因</h2>
+
+<h3>1. 決算の未達が続く傾向</h3>
+<p>過去4四半期にわたり市場予想を下回る結果が続いており、平均で56%のマイナスサプライズが生じているとの分析もあります。急拡大する事業の予測可能性の低さを示しています。</p>
+
+<h3>2. 赤字幅が売上を上回る構造</h3>
+<p>上半期の純損失（6,180万ドル）は売上高（3,570万ドル）を上回っており、黒字化にはなお時間を要する見通しです。</p>
+
+<h3>3. 継続的な希薄化リスク</h3>
+<p>大型増資による資金調達が既に実施されており、シェルフ登録（増資枠）が残存している場合、さらなる希薄化が生じる可能性があります。</p>
+
+<h3>4. インサイダー売却のタイミング</h3>
+<p>創業者・取締役による株式売却の動きは、株価が変動しやすい局面での経営陣の姿勢として注視する必要があります。</p>
+
+<h3>5. セクター全体の連動性</h3>
+<p>前編・後編で確認した通り、防衛テック株全体が地政学的なニュースや政策動向に連動する場面が頻発しています。</p>
+
+<h2><span class="num">⑦</span>まとめ ―― 「AI×防衛テック」シリーズの完結にあたって</h2>
+
+<p>Red Cat Holdingsは、売上527%増という急成長を遂げる一方、決算は市場予想を下回り続け、赤字幅も拡大しています。大型増資により3億ドルを超える手元資金を確保した点は財務的な安全性を高めていますが、これは希薄化を伴う調達である点も忘れてはなりません。本シリーズ対象4社の中で唯一、これまでの量子コンピューティング・次世代原子力シリーズに近い、赤字先行のプレ量産フェーズの投機的性格を持つ企業として位置づけられます。<strong>本シリーズの基本姿勢に沿い、Red Catの評価についても「まだ判定できる段階にない」という中立的な立ち位置を維持します。</strong></p>
+
+<p>本稿をもって、「AI×防衛テック」シリーズの3部作・個別企業編4本が完結しました。次回からは第4弾「AI×宇宙経済（衛星通信・宇宙インフラ）」に移ります。</p>
+
+<div class="watch">
+  <h2><span class="num">◆</span>WHAT TO WATCH</h2>
+  <ul>
+    <li><strong>2026年Q3決算</strong>：決算未達の傾向が続くか、通期ガイダンス（1.5億〜1.8億ドル）達成の確度</li>
+    <li><strong>ペンタゴン「ドローン・ドミナンス・プログラム」の最終配分決定</strong></li>
+    <li><strong>インサイダー売却の推移</strong>：創業者・取締役の売却がどこまで進むか</li>
+    <li><strong>追加の資金調達・希薄化の有無</strong></li>
+    <li><strong>ドローン関税実施による受注への影響</strong></li>
+    <li><strong>アナリスト評価の収れん状況</strong>：Evercore・Piper Sandlerの評価差がどう解消されるか</li>
+  </ul>
+</div>
+
+<div class="series-nav">
+  <div class="ttl">「当たれば大きいAI関連分野」シリーズ構成</div>
+  <ol>
+    <li>第1弾：AI×量子コンピューティング（完結）</li>
+    <li>第2弾：AI×次世代原子力（完結）</li>
+    <li>第3弾：AI×防衛テック　前編・中編・後編（完結）</li>
+    <li>第3弾：個別企業編①　Palantir</li>
+    <li>第3弾：個別企業編②　Kratos Defense</li>
+    <li>第3弾：個別企業編③　AeroVironment</li>
+    <li><strong>第3弾：個別企業編④　Red Cat Holdings（本稿・第3弾完結）</strong></li>
+  </ol>
+  <p style="margin:12px 0 0;font-size:13.5px;">次回からは第4弾「AI×宇宙経済（衛星通信・宇宙インフラ）」に着手予定です。</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="disclaimer">
+    <strong>【免責事項】</strong><br>
+    本レポートは情報提供を目的としたものであり、特定の有価証券の購入・売却を推奨するものではありません。記載内容は作成時点で信頼できると判断した情報に基づいていますが、その正確性・完全性を保証するものではありません。株価・時価総額等のバリュエーション指標は変動が激しく、データソース間で算出時点・株式数の反映が異なるため幅を持たせて記載しています。インサイダーの株式売却に関する記述は公開情報（届出書等）に基づく報道の整理であり、特定の意図を断定するものではありません。政策・関税の発効時期に関する記述は報道時点により内容が異なる場合があります。本シリーズは「当たれば大きい」という投機性の高いテーマを扱うため、ボラティリティ・赤字先行・希薄化リスクについて特にご留意ください。投資に関する最終的な決定は、ご自身の判断と責任において行っていただきますようお願いいたします。
+  </div>
+  <p style="margin-top:18px;">Market Supporter AI ／ 2026年9月18日</p>
+</footer>
+
+</div>
+</body>
+</html>
