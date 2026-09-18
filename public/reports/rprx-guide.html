@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royalty Pharma（RPRX）とはどんな会社？ ― 他社の薬の「使用料」で稼ぐ会社｜Market Supporter AI</title>
+<meta name="description" content="製薬・バイオ入門シリーズ第1回。自ら薬を開発せず、他社の薬のロイヤルティ（使用料）を買い取って収益を得るRoyalty Pharmaの仕組みを、専門知識ゼロの人向けに解説します。">
+<style>
+  :root {
+    --accent: #7c3aed;
+    --accent-light: #ede9fe;
+    --text-main: #1f2937;
+    --text-sub: #4b5563;
+    --bg-page: #ffffff;
+    --bg-card: #faf9ff;
+    --border-soft: #e5e0fb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+    background: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.9;
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; }
+  .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-size: 26px;
+    line-height: 1.5;
+    margin: 0 0 8px;
+    color: var(--text-main);
+  }
+  h1 .sub {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--accent);
+    margin-top: 8px;
+  }
+  .intro {
+    background: var(--bg-card);
+    border-left: 4px solid var(--accent);
+    padding: 20px 22px;
+    border-radius: 8px;
+    margin: 24px 0 40px;
+    font-size: 16.5px;
+    color: var(--text-sub);
+  }
+  h2 {
+    font-size: 21px;
+    margin: 52px 0 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-soft);
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  h2 .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+  p { margin: 0 0 16px; color: var(--text-main); }
+  .pair-wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 8px 0 24px;
+  }
+  @media (min-width: 640px) {
+    .pair-wrap { grid-template-columns: 1fr 1fr; }
+  }
+  .pair-box {
+    border-radius: 10px;
+    padding: 18px 20px;
+    font-size: 16px;
+  }
+  .pair-box.unique {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+  }
+  .pair-box.caution {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+  }
+  .pair-title {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .pair-box.unique .pair-title { color: #15803d; }
+  .pair-box.caution .pair-title { color: #b91c1c; }
+
+  table.kpi {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 28px;
+    font-size: 15px;
+  }
+  table.kpi th, table.kpi td {
+    text-align: left;
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--border-soft);
+    vertical-align: top;
+  }
+  table.kpi th {
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+  }
+  table.kpi td.note {
+    color: var(--text-sub);
+    font-size: 13.5px;
+  }
+
+  .term {
+    border-bottom: 1px dotted var(--accent);
+    cursor: help;
+    position: relative;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .term .tip {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 130%;
+    background: #1f2937;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 10px 12px;
+    border-radius: 8px;
+    width: 240px;
+    line-height: 1.6;
+    z-index: 10;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  }
+  .term:hover .tip, .term:focus .tip, .term:active .tip { display: block; }
+
+  .glossary {
+    background: var(--bg-card);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin: 16px 0;
+  }
+  .glossary dt { font-weight: 700; color: var(--accent); margin-top: 12px; }
+  .glossary dt:first-child { margin-top: 0; }
+  .glossary dd { margin: 4px 0 0; color: var(--text-sub); font-size: 15px; }
+
+  .crosslink {
+    display: block;
+    padding: 16px 18px;
+    background: var(--accent-light);
+    border-radius: 10px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    margin: 10px 0;
+  }
+  .crosslink:hover { opacity: 0.85; }
+
+  .disclaimer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-soft);
+    font-size: 13.5px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .rate-note {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin: 0 0 40px;
+    font-size: 15.5px;
+    color: var(--text-sub);
+  }
+  .rate-note .rate-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: #b45309;
+    margin-bottom: 8px;
+  }
+  .footnote { font-size: 13px; color: #9ca3af; margin-top: -8px; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="badge">入門編 ロイヤルティ型｜製薬・バイオ全17回シリーズ 第1回</span>
+  <h1>Royalty Pharma（RPRX）とはどんな会社？
+    <span class="sub">― 他社の薬の「使用料」で稼ぐ会社</span>
+  </h1>
+  <p class="footnote">株価・データ基準日：2026年9月13日（編集部確認時点）</p>
+
+  <div class="intro">
+    Royalty Pharmaは、自分で薬を開発せず、すでに承認された薬や開発中の薬に対する
+    <span class="term">ロイヤルティ<span class="tip">他社の製品や技術が売れるたびに受け取る使用料</span></span>（使用料）を買い取ることで収益を得る、ユニークな立ち位置の会社です。
+    ヒット曲の作詞家が曲の再生のたびに使用料を受け取るように、他社の薬が売れるたびにお金が入ってくる仕組みを持っています。
+    2026年には年間30億ドルを超える受取額が見込まれる、この分野で世界最大級のプレーヤーです。
+  </div>
+
+  <h2><span class="num">1</span>この会社は何をしている？</h2>
+  <p>
+    Royalty Pharmaは、製薬会社やバイオベンチャー、大学の研究機関などに資金を提供する代わりに、
+    その薬が将来売れたときの売上の一部（<span class="term">ロイヤルティ<span class="tip">他社の製品や技術が売れるたびに受け取る使用料</span></span>）を受け取る権利を買い取ります。
+    たとえるなら、ヒット曲の作詞家が、曲がラジオやサブスクで流れるたびに使用料を受け取るのと似た仕組みです。
+    自社で薬を開発する研究リスクは負わず、すでに有望性が見えている薬や、
+    <span class="term">FDA<span class="tip">アメリカで薬を承認するかどうかを審査する政府機関</span></span>の
+    <span class="term">承認<span class="tip">審査に合格し、薬として販売してよいと国に認められること</span></span>に近づいている薬に投資することで、
+    安定した収益を狙う立ち位置です。
+  </p>
+
+  <h2><span class="num">2</span>どのタイプの会社？</h2>
+  <p>
+    本シリーズが定める6つの事業モデルのうち「ロイヤルティ型」に分類されます。研究開発そのものは行わず、
+    他社の薬の将来収益に対する権利を買い取って保有し、その薬が売れるたびに入ってくるロイヤルティ収入で稼ぐモデルです。
+    保有するロイヤルティ資産は数十件におよび、特定の1つの薬に収益を依存しない、分散された構造になっている点が特徴です。
+  </p>
+
+  <h2><span class="num">3</span>ここがユニーク／<span class="num" style="background:#ef4444;">4</span>気をつける点</h2>
+  <div class="pair-wrap">
+    <div class="pair-box unique">
+      <div class="pair-title">③ ここがユニーク</div>
+      <p style="margin:0;">
+        最大の特徴は、数十件のロイヤルティ資産に分散投資している点です。1つの薬の特許切れや販売不振があっても、
+        全体の収益への影響を抑えられる構造になっています。2026年第2四半期には総受取額が前年同期比14％増加し、
+        四半期として25期連続で二桁成長を記録しました。承認済みの薬だけでなく、開発段階の
+        <span class="term">パイプライン<span class="tip">その会社が今、開発を進めている薬の一覧</span></span>にも投資しており、
+        将来の成長余地も確保する狙いがあります。
+      </p>
+    </div>
+    <div class="pair-box caution">
+      <div class="pair-title">④ 気をつける点</div>
+      <p style="margin:0;">
+        一方で、保有するロイヤルティの多くは特許期間に期限があり、特許切れ（後発品の参入）が近づくと、
+        その資産からの収益は将来的に減少していきます。個々の薬の売上がFDAの規制変更や競合品の登場によって
+        予測を下回るリスクも避けられません。実際に2026年には、保有していたTazverikという薬が自主的に販売中止となり、
+        その資産価値の一部を減損（価値の見直しによる損失計上）する場面もありました。投資先企業の経営状況や
+        訴訟リスクにも間接的にさらされます。
+      </p>
+    </div>
+  </div>
+
+  <div class="rate-note">
+    <div class="rate-title">補足：米国の金利動向について</div>
+    <p style="margin:0;">
+      FRB（米連邦準備制度理事会）は2026年9月16日、
+      <span class="term">政策金利<span class="tip">中央銀行が景気や物価をコントロールするために定める、短期の基準金利</span></span>
+      を0.25％引き上げ、3.75〜4.00％としました。2023年以来はじめての利上げで、物価上昇（インフレ）の高止まりが理由とされています。
+      Royalty Pharmaは総額92億ドルの有利子負債（平均残存期間は約12年）を抱え、新しいロイヤルティ資産の買収資金の一部も借り入れで賄っています。
+      政策金利が上がると、新規の借入コストが増えるほか、将来受け取るロイヤルティ収入を現在の価値に置き換える際の
+      <span class="term">割引率<span class="tip">将来受け取るお金を「今の価値」に置き換えて計算するときに使う金利。高いほど将来のお金の現在価値は小さくなる</span></span>
+      も上がりやすくなるため、理論上は資産評価の逆風になり得ます。ただし、すでに保有している資産から入ってくる収益額そのものが金利で変わるわけではなく、
+      影響は主に新規投資のコストと株式市場での評価倍率に及ぶものです。
+    </p>
+  </div>
+
+  <h2><span class="num">5</span>数字で見るこの会社</h2>
+  <table class="kpi">
+    <tr><th>指標</th><th>数値</th><th>これは何を意味するか</th></tr>
+    <tr>
+      <td><span class="term">時価総額<span class="tip">株価×発行済み株式数で計算する、会社の市場での大きさ</span></span></td>
+      <td>約337億ドル</td>
+      <td class="note">2026年9月13日時点、株価58.61ドルから算出</td>
+    </tr>
+    <tr>
+      <td>2026年Q2 ロイヤルティ受取額</td>
+      <td>7.68億ドル（前年同期比+14％）</td>
+      <td class="note">保有する薬が売れたことで実際に入ってきたお金</td>
+    </tr>
+    <tr>
+      <td>2026年Q2 ポートフォリオ受取額</td>
+      <td>7.73億ドル（前年同期比+6％）</td>
+      <td class="note">ロイヤルティに一時的な受取を加えた広めの集計</td>
+    </tr>
+    <tr>
+      <td>2026年通期ガイダンス</td>
+      <td>ポートフォリオ受取額 34億〜35億ドル</td>
+      <td class="note">会社側が示す通期の見通し。2026年に入り2回上方修正済み（未確定の見通しである点に留意）</td>
+    </tr>
+    <tr>
+      <td>開発段階の<span class="term">パイプライン<span class="tip">その会社が今、開発を進めている薬の一覧</span></span></td>
+      <td>19件</td>
+      <td class="note">まだ承認されていない薬への投資件数。承認は保証されていない</td>
+    </tr>
+    <tr>
+      <td><span class="term">反復収益<span class="tip">一度きりでなく、繰り返し発生する収益</span></span>の性質</td>
+      <td>ポートフォリオ収益の大半</td>
+      <td class="note">薬が売れ続ける限り、繰り返し入ってくる収益であることを示す</td>
+    </tr>
+  </table>
+  <p class="footnote">数値は2026年8月5日発表の第2四半期決算資料および2026年9月13日時点の株価情報に基づく（編集部確認）。</p>
+
+  <h2><span class="num">6</span>次に何が起きる？</h2>
+  <p>
+    次回の決算発表は、これまでの発表パターンから2026年11月上旬ごろと見込まれます（編集部試算・公式発表前のため確定ではありません）。
+    注目点は、通期ガイダンスに対する進捗、新規ロイヤルティ契約の追加、そして19件のパイプラインのうち
+    <span class="term">承認<span class="tip">審査に合格し、薬として販売してよいと国に認められること</span></span>に近づく薬が出てくるかどうかです。
+  </p>
+
+  <h2><span class="num">7</span>この記事のまとめ</h2>
+  <p>
+    Royalty Pharmaは、自らリスクの高い新薬開発を行わず、他社の薬の将来収益に対する権利を買い取ることで、
+    分散された収益源を築いている会社です。安定した成長を続けてきた一方、個々のロイヤルティ資産には
+    特許切れや規制リスクが伴います。当サイトが継続的に追跡する対象の一つであり、特定の投資行動を推奨するものではありません。
+    本シリーズでは今後、より開発段階のリスクが大きい会社も取り上げていきます。
+  </p>
+
+  <h2>用語集</h2>
+  <div class="glossary">
+    <dl>
+      <dt>ロイヤルティ</dt><dd>他社の製品や技術が売れるたびに受け取る使用料</dd>
+      <dt>時価総額</dt><dd>株価×発行済み株式数で計算する、会社の市場での大きさ</dd>
+      <dt>反復収益</dt><dd>一度きりでなく、繰り返し発生する収益</dd>
+      <dt>パイプライン</dt><dd>その会社が今、開発を進めている薬の一覧</dd>
+      <dt>FDA</dt><dd>アメリカで薬を承認するかどうかを審査する政府機関</dd>
+      <dt>承認</dt><dd>審査に合格し、薬として販売してよいと国に認められること</dd>
+      <dt>政策金利</dt><dd>中央銀行が景気や物価をコントロールするために定める、短期の基準金利</dd>
+      <dt>割引率</dt><dd>将来受け取るお金を「今の価値」に置き換えて計算するときに使う金利。高いほど将来のお金の現在価値は小さくなる</dd>
+    </dl>
+  </div>
+
+  <h2>もっと詳しく知りたい方へ</h2>
+  <a class="crosslink" href="/reports/pharma-biotech-17-map.html">→ 製薬・バイオ17銘柄マップ記事を読む（全体像はこちら）</a>
+  <p style="font-size:14px; color:var(--text-sub);">
+    RPRXの詳細分析記事は現時点で未公開です。公開され次第、本記事からリンクします。
+  </p>
+
+  <div class="disclaimer">
+    <p>
+      ※この記事は、投資判断を勧めるものではありません。取り上げた銘柄は、当サイトが学習・情報提供の目的で継続的に追跡している対象であり、「おすすめの銘柄」ではありません。
+    </p>
+    <p>
+      ※記事内の数値は、公表されている決算資料や株価情報をもとに編集部が確認・整理したものです。将来の業績や株価を保証するものではありません。「編集部試算」と記載した数値は、公表情報をもとに編集部が独自に計算したものです。
+    </p>
+    <p>
+      ※薬の効果や安全性、承認の見通しについては、臨床試験の結果や規制当局の審査状況によって変わる可能性があります。まだ承認されていない薬について、承認を保証する記述はしていません。
+    </p>
+    <p>
+      投資の最終判断は、必ずご自身で行ってください。
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
