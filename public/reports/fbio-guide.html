@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fortress Biotech（FBIO）とはどんな会社？ ― 「パートナー企業」を次々に立ち上げて育てる小型の持株会社｜製薬・バイオ入門シリーズ第10回</title>
+<meta name="description" content="Fortress Biotech（FBIO）は、薬の候補ごとにパートナー企業を立ち上げて育てる小型の持株会社です。前回のRoivantと比べながら、規模の違いで何が変わるのかを初心者向けに解説します。">
+<style>
+  :root {
+    --accent: #be185d;
+    --accent-light: #fce7f3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+    line-height: 1.85;
+    color: #1f2937;
+    background: #fafafa;
+    margin: 0;
+    padding: 0;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #fff;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-size: 26px;
+    line-height: 1.5;
+    margin: 0 0 8px;
+    color: #111827;
+  }
+  .sub {
+    font-size: 15px;
+    color: #6b7280;
+    margin-bottom: 24px;
+  }
+  .intro {
+    background: #f9fafb;
+    border-left: 4px solid var(--accent);
+    padding: 16px 18px;
+    border-radius: 6px;
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+  h2 {
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 40px 0 16px;
+    color: #111827;
+  }
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  p { font-size: 15.5px; margin: 12px 0; }
+  .catalyst {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin: 16px 0;
+    font-size: 14.5px;
+  }
+  .catalyst .ttl {
+    font-weight: 700;
+    color: #1d4ed8;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .pair-wrap {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 16px 0;
+  }
+  .pair-box {
+    flex: 1;
+    min-width: 260px;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 14.5px;
+  }
+  .pair-box.unique {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+  }
+  .pair-box.caution {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+  }
+  .pair-box .ttl {
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .pair-box.unique .ttl { color: #15803d; }
+  .pair-box.caution .ttl { color: #b91c1c; }
+  table.kpi {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14.5px;
+    margin: 16px 0;
+  }
+  table.kpi th, table.kpi td {
+    border: 1px solid #e5e7eb;
+    padding: 10px 12px;
+    text-align: left;
+  }
+  table.kpi th {
+    background: #f9fafb;
+    width: 40%;
+  }
+  table.kpi td.note {
+    font-size: 12.5px;
+    color: #6b7280;
+  }
+  .term {
+    border-bottom: 1px dotted #9ca3af;
+    cursor: help;
+    position: relative;
+  }
+  .term .tip {
+    display: none;
+    position: absolute;
+    bottom: 130%;
+    left: 0;
+    background: #111827;
+    color: #fff;
+    font-size: 12.5px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    width: 240px;
+    z-index: 10;
+    line-height: 1.5;
+  }
+  .term:hover .tip, .term:focus .tip, .term:active .tip {
+    display: block;
+  }
+  .glossary {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 14.5px;
+  }
+  .glossary dt {
+    font-weight: 700;
+    margin-top: 10px;
+    color: #111827;
+  }
+  .glossary dd {
+    margin: 4px 0 0;
+    color: #4b5563;
+  }
+  .crosslink {
+    display: block;
+    background: var(--accent-light);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 10px 0;
+    text-decoration: none;
+    color: var(--accent);
+    font-size: 14.5px;
+    font-weight: 600;
+  }
+  .disclaimer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 12.5px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footnote {
+    font-size: 12.5px;
+    color: #9ca3af;
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="badge">入門編 持株会社型｜製薬・バイオ全17回シリーズ 第10回</span>
+  <h1>Fortress Biotech（FBIO）とはどんな会社？ ― 「パートナー企業」を次々に立ち上げて育てる小型の持株会社</h1>
+  <div class="sub">株価・データ基準日：2026年9月25日前後（編集部確認時点）</div>
+
+  <div class="intro">
+    Fortress Biotech（FBIO）は、薬の候補ごとに「パートナー企業」と呼ぶ子会社・関連会社を立ち上げ、その株式や売上に応じた<span class="term">ロイヤルティ<span class="tip">自社が権利を持つ薬が売れたとき、売上の一定割合を受け取れる権利や収入のこと</span></span>で収益を得ようとする「持株会社型」の企業です。前回（第9回）のRoivant Sciencesと同じタイプですが、時価総額は約7,600万ドルとRoivantの300分の1ほどの小型企業です。同じ仕組みでも規模が違うと何が変わるのかを、比べながら見ていきます。
+  </div>
+
+  <h2><span class="num">①</span>この会社は何をしている？</h2>
+  <p>
+    Fortressは、大学や研究機関、ほかの製薬会社から薬の候補を取得し、それぞれを専門に開発するパートナー企業を設立して開発を進めます。傘下には、皮膚科の薬を販売するJourney Medical（自らも上場）のほか、Mustang Bio、Avenue Therapeutics、Cyprium Therapeutics、Urica Therapeuticsなどがあります。開発が進んだ会社は、大手への売却や提携を通じて、Fortressに株式の売却益・ロイヤルティ・一時金などをもたらします。現在の売上の大部分は、Journey Medicalが販売する酒さ（顔の赤みが続く皮膚疾患）治療薬「Emrosi」などの製品売上です。
+  </p>
+
+  <h2><span class="num">②</span>どのタイプの会社？</h2>
+  <p>
+    6つの事業モデルのうち「持株会社型」にあたり、前回のRoivantと同じ仲間です。違いは規模と中身です。Roivantは約39億ドルの手元資金を持ち、自社グループで承認薬の発売まで手がける段階に入りました。一方Fortressは、上場子会社Journey Medicalの製品売上に加え、過去に育てた薬の「権利の売却」や「ロイヤルティ」を少しずつ積み上げる、より小さな規模での運営です。
+  </p>
+
+  <div class="catalyst">
+    <span class="ttl">2026年に入ってからの主な動き</span>
+    子会社Cyprium Therapeuticsが開発したメンケス病（銅の代謝に関わるまれな遺伝性疾患）の治療薬「ZYCUBO」がFDA承認を取得し、承認に伴って得た<span class="term">優先審査バウチャー<span class="tip">まれな小児疾患などの薬が承認されたときにFDAから与えられる権利。別の薬の審査を早められるため、他社に売却して現金化できる</span></span>を2026年第1四半期に2億500万ドルで売却しました。また7月には、子会社Uricaが権利を譲った痛風治療薬候補dotinuradの開発会社Crystalysが1億3,000万ドルの資金調達を実施し、Uricaは将来の売上に対して3％のロイヤルティを受け取る権利を持っています（dotinuradは米国ではまだ承認されていません）。
+  </div>
+
+  <h2><span class="num">③④</span>ここがユニーク／気をつける点</h2>
+  <div class="pair-wrap">
+    <div class="pair-box unique">
+      <span class="ttl">ここがユニーク</span>
+      「薬を作って売る」だけでなく、承認に伴う優先審査バウチャーの売却、他社に譲った薬のロイヤルティ、子会社株式の価値向上など、複数の方法で資金を回収する仕組みを持っています。2026年はバウチャー売却により、連結の手元資金が2025年末の7,940万ドルから6月末には1億9,660万ドルへと大きく増えました。2026年第2四半期の売上は1,870万ドル（前年同期比+14％）で、Journey MedicalのEmrosiは保険でカバーされる対象者が1億5,000万人超まで広がるなど販売基盤が拡大しています。
+    </div>
+    <div class="pair-box caution">
+      <span class="ttl">気をつける点</span>
+      2026年第2四半期は250万ドルの純損失となり、前年同期の1,340万ドルの純利益から赤字に転じました。前年同期の利益には一時的な収入が含まれており、こうした一時金に頼る収益は毎期安定して続くとは限りません。ロイヤルティ収入も現時点ではUNLOXCYT（10万ドル）、ZYCUBO（20万ドル）とまだ小さな規模です。AstraZenecaが開発するanselamimabは一部の患者グループで良好な結果が出たものの、試験全体の主要評価項目は達成できず、承認されていません。時価総額約7,600万ドルの小型株のため、株価の変動も大きくなりやすい点に注意が必要です。
+    </div>
+  </div>
+
+  <h2><span class="num">⑤</span>数字で見るこの会社</h2>
+  <table class="kpi">
+    <tr><th>時価総額</th><td>約7,600万ドル（2026年9月25日時点）<div class="footnote">※株価×発行済み株式数による編集部試算</div></td></tr>
+    <tr><th>株価</th><td>2.28ドル（2026年9月25日時点）</td></tr>
+    <tr><th>2026年Q2売上高</th><td>1,870万ドル（前年同期比+14％）</td></tr>
+    <tr><th>うちJourney Medical製品売上</th><td>1,780万ドル（前年同期1,500万ドル）</td></tr>
+    <tr><th>Q2純損益</th><td>250万ドルの純損失（前年同期は1,340万ドルの純利益）</td></tr>
+    <tr><th>連結手元資金</th><td>1億9,660万ドル（2026年6月30日時点。うちFortress本体と非上場子会社分は1億5,380万ドル）</td></tr>
+    <tr><th>発行済み株式数</th><td>約3,331万株（2026年6月30日時点）</td></tr>
+    <tr><td class="note" colspan="2">数値は2026年8月13日発表の2026年第2四半期決算資料、および2026年9月25日前後の時点の株価情報に基づく（編集部確認）</td></tr>
+  </table>
+
+  <h2><span class="num">⑥</span>次に何が起きる？</h2>
+  <p>
+    パートナー企業の中では、サイトメガロウイルス（CMV）向けワクチン候補Triplexの試験データが2026年末までに出る可能性があるとされています。また、anselamimabについては欧州・日本での承認申請が計画されています。次回の四半期決算発表は、これまでのパターンから2026年11月中旬頃と見込まれます（編集部試算・公式発表前）。いずれも承認や成功が約束されたものではありません。
+  </p>
+
+  <h2><span class="num">⑦</span>まとめ</h2>
+  <p>
+    Fortress Biotechは、薬の候補ごとにパートナー企業を立ち上げ、製品売上・ロイヤルティ・権利の売却など複数の方法で収益を得ようとする小型の持株会社です。前回のRoivantと同じ仕組みでも、規模が小さいぶん一時的な収入の有無で損益が大きく振れやすいという違いがあります。2026年は優先審査バウチャーの売却で手元資金が厚くなった一方、四半期では赤字に戻りました。当サイトが継続的に追跡する対象の一つであり、特定の投資行動を推奨するものではありません。
+  </p>
+
+  <h2>用語集</h2>
+  <div class="glossary">
+    <dl>
+      <dt>持株会社</dt>
+      <dd>複数の子会社の株式を保有し、それぞれの経営や事業運営を統括する親会社のこと</dd>
+      <dt>パートナー企業</dt>
+      <dd>Fortressが設立し、株式を保有して開発を任せている子会社や関連会社のこと</dd>
+      <dt>ロイヤルティ</dt>
+      <dd>自社が権利を持つ薬が売れたとき、売上の一定割合を受け取れる権利や収入のこと</dd>
+      <dt>優先審査バウチャー</dt>
+      <dd>まれな小児疾患などの薬が承認されたときにFDAから与えられる権利。別の薬の審査を早められるため、他社に売却して現金化できる</dd>
+      <dt>時価総額</dt>
+      <dd>株価×発行済み株式数で計算する、会社の市場での大きさ</dd>
+    </dl>
+  </div>
+
+  <a class="crosslink" href="/reports/pharma-biotech-17-map.html">製薬・バイオ17銘柄マップはこちら</a>
+  <a class="crosslink" href="/reports/roiv-guide.html">同じ持株会社型：Roivant Sciences入門記事（第9回）はこちら</a>
+
+  <div class="disclaimer">
+    この記事は投資判断を勧めるものではありません。取り上げた銘柄は当サイトが情報提供目的で継続的に追跡している対象であり、「おすすめの銘柄」ではありません。記事内の数値は公表されている決算資料・株価情報をもとに編集部が確認したもので、将来の業績や株価を保証するものではありません。dotinurad、anselamimab、Triplexなど開発中の薬の候補は、まだ承認されていません。小型株は株価の変動が大きくなりやすい傾向があります。投資の最終判断は必ずご自身で行ってください。
+  </div>
+
+</div>
+</body>
+</html>
