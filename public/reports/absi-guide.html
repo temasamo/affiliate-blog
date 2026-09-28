@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Absci（ABSI）とはどんな会社？ ― AIで抗体医薬を設計するプラットフォーム型企業と「実現率」｜製薬・バイオ入門シリーズ第11回</title>
+<meta name="description" content="Absci（ABSI）は、AIで抗体医薬を設計するプラットフォーム型企業です。技術への期待と実際の成果の差を見る「実現率」という考え方とあわせて、初心者向けに解説します。">
+<style>
+  :root {
+    --accent: #0891b2;
+    --accent-light: #ecfeff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+    line-height: 1.85;
+    color: #1f2937;
+    background: #fafafa;
+    margin: 0;
+    padding: 0;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #fff;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-size: 26px;
+    line-height: 1.5;
+    margin: 0 0 8px;
+    color: #111827;
+  }
+  .sub {
+    font-size: 15px;
+    color: #6b7280;
+    margin-bottom: 24px;
+  }
+  .intro {
+    background: #f9fafb;
+    border-left: 4px solid var(--accent);
+    padding: 16px 18px;
+    border-radius: 6px;
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+  h2 {
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 40px 0 16px;
+    color: #111827;
+  }
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  p { font-size: 15.5px; margin: 12px 0; }
+  .catalyst {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin: 16px 0;
+    font-size: 14.5px;
+  }
+  .catalyst .ttl {
+    font-weight: 700;
+    color: #1d4ed8;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .pair-wrap {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 16px 0;
+  }
+  .pair-box {
+    flex: 1;
+    min-width: 260px;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 14.5px;
+  }
+  .pair-box.unique {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+  }
+  .pair-box.caution {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+  }
+  .pair-box .ttl {
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .pair-box.unique .ttl { color: #15803d; }
+  .pair-box.caution .ttl { color: #b91c1c; }
+  table.kpi {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14.5px;
+    margin: 16px 0;
+  }
+  table.kpi th, table.kpi td {
+    border: 1px solid #e5e7eb;
+    padding: 10px 12px;
+    text-align: left;
+  }
+  table.kpi th {
+    background: #f9fafb;
+    width: 40%;
+  }
+  table.kpi td.note {
+    font-size: 12.5px;
+    color: #6b7280;
+  }
+  .term {
+    border-bottom: 1px dotted #9ca3af;
+    cursor: help;
+    position: relative;
+  }
+  .term .tip {
+    display: none;
+    position: absolute;
+    bottom: 130%;
+    left: 0;
+    background: #111827;
+    color: #fff;
+    font-size: 12.5px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    width: 240px;
+    z-index: 10;
+    line-height: 1.5;
+  }
+  .term:hover .tip, .term:focus .tip, .term:active .tip {
+    display: block;
+  }
+  .glossary {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 14.5px;
+  }
+  .glossary dt {
+    font-weight: 700;
+    margin-top: 10px;
+    color: #111827;
+  }
+  .glossary dd {
+    margin: 4px 0 0;
+    color: #4b5563;
+  }
+  .crosslink {
+    display: block;
+    background: var(--accent-light);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 10px 0;
+    text-decoration: none;
+    color: var(--accent);
+    font-size: 14.5px;
+    font-weight: 600;
+  }
+  .disclaimer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 12.5px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footnote {
+    font-size: 12.5px;
+    color: #9ca3af;
+    margin-top: 6px;
+  }
+  .concept { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 16px 18px; margin: 16px 0 24px; font-size: 15px; color: #1e40af; }
+  .concept .ttl { font-weight: 700; display: block; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="badge">入門編 プラットフォーム型｜製薬・バイオ全17回シリーズ 第11回</span>
+  <h1>Absci（ABSI）とはどんな会社？ ― AIで抗体医薬を設計する「プラットフォーム型」企業と「実現率」という考え方</h1>
+  <div class="sub">株価・データ基準日：2026年9月24日前後（編集部確認時点）</div>
+
+  <div class="intro">
+    Absci（ABSI）は、AI（人工知能）を使って<span class="term">抗体医薬<span class="tip">体の免疫の仕組みを応用し、病気の原因となる特定のたんぱく質などにピンポイントで結合するように作られた薬</span></span>を設計する会社です。1つの薬ではなく「薬を生み出す技術基盤（プラットフォーム）」そのものが強みという「プラットフォーム型」にあたります。今回は、このタイプを見るうえで大切な「実現率」という考え方を紹介します。
+  </div>
+
+  <div class="concept">
+    <span class="ttl">今回の新しい考え方：「実現率」とは？</span>
+    プラットフォーム型の会社は「この技術を使えば良い薬をたくさん生み出せる」という期待で評価されがちです。しかし実際に大切なのは、その技術から生まれた薬の候補のうち、どれだけが臨床試験で成果を上げ、最終的に承認や売上につながったかです。当シリーズではこの割合を「実現率」と呼びます。技術の「期待」と、実際の「結果」の間にどれだけの差があるかを見るための物差しです（正式な会計用語ではなく、当サイトで用いる考え方です）。
+  </div>
+
+  <h2><span class="num">①</span>この会社は何をしている？</h2>
+  <p>
+    Absciは、AIによる設計と、実験室での大量のデータ取得を組み合わせて、新しい抗体医薬の候補を作り出しています。AIが設計した候補を実験で確かめ、その結果を再びAIに学ばせるサイクルを回すことで、従来より速く、効率的に薬の候補を見つけることを目指しています。現在の主力は、男性型・女性型の脱毛症（薄毛）や子宮内膜症を対象に開発中の抗体「ABS-201」です。
+  </p>
+
+  <h2><span class="num">②</span>どのタイプの会社？</h2>
+  <p>
+    6つの事業モデルのうち「プラットフォーム型」にあたります。第12回以降で紹介する「創薬型」が特定の薬の成否に会社の命運がかかっているのに対し、プラットフォーム型は「技術そのもの」から複数の候補を生み出せる点が強みです。ただし、技術がどれほど優れていても、実際に承認された薬や大きな売上が生まれるまでは、その価値は「期待」にとどまります。ここで「実現率」の視点が役に立ちます。
+  </p>
+
+  <h2><span class="num">③④</span>ここがユニーク／気をつける点</h2>
+  <div class="pair-wrap">
+    <div class="pair-box unique">
+      <span class="ttl">ここがユニーク</span>
+      2026年6月に約1億ドルの資金調達を行い、そのうち4,000万ドルは大手製薬会社Eli Lillyによる出資でした。6月末時点の現金・有価証券は合計2億110万ドルで、会社は2028年後半まで事業を続けられる資金があるとしています。ABS-201の第1相試験（脱毛症）の途中経過では、安全性・忍容性（副作用に耐えられるかどうか）に大きな問題は見られず、薬が体内にとどまる期間が長いため、6か月で2〜3回の注射で済む可能性が示されました。9月24日には、子宮内膜症を対象とした約150人規模の第2相試験の概要も発表されています。
+    </div>
+    <div class="pair-box caution">
+      <span class="ttl">気をつける点</span>
+      「実現率」の視点で見ると、成果はまだこれからです。以前の主力候補ABS-101（炎症性腸疾患向け）は、第1相試験で薬が体内にとどまる期間が競合薬に及ばず、2025年11月に自社での開発継続を見送りました。2026年第2四半期の売上高は30万ドルにとどまる一方、純損失は3,320万ドルでした。ABS-201はまだ第1相試験の段階で、効果を示すデータは出ておらず、承認されていません。子宮内膜症の第2相試験も、8月時点では2026年第4四半期開始予定とされていましたが、9月の発表では2027年半ば開始予定とされています。
+    </div>
+  </div>
+
+  <h2><span class="num">⑤</span>数字で見るこの会社</h2>
+  <table class="kpi">
+    <tr><th>時価総額</th><td>約16億9,000万ドル（2026年9月24日時点）</td></tr>
+    <tr><th>株価</th><td>9.87ドル（2026年9月24日時点）</td></tr>
+    <tr><th>2026年Q2売上高</th><td>30万ドル（前年同期60万ドル）</td></tr>
+    <tr><th>Q2研究開発費</th><td>2,260万ドル（前年同期2,050万ドル）</td></tr>
+    <tr><th>Q2純損失</th><td>3,320万ドル（前年同期3,060万ドル）</td></tr>
+    <tr><th>現金・有価証券</th><td>2億110万ドル（2026年6月30日時点）</td></tr>
+    <tr><th>資金の持続見通し</th><td>2028年後半まで（会社見通し）</td></tr>
+    <tr><td class="note" colspan="2">数値は2026年8月11日発表の2026年第2四半期決算資料、2026年9月24日の開示、および同日前後の株価情報に基づく（編集部確認）</td></tr>
+  </table>
+
+  <h2><span class="num">⑥</span>次に何が起きる？</h2>
+  <p>
+    会社は、ABS-201の脱毛症を対象とした第1/2a相試験で、薬の効果を初めて確かめる「概念実証」の途中データを2026年後半に、全体のデータを2027年初めに示す予定としています。これはAbsciのAI設計技術から生まれた薬が「効果」を示せるかどうかを見る最初の大きな節目であり、まさに「実現率」が試される場面です。結果が良いものになるとは限りません。
+  </p>
+
+  <h2><span class="num">⑦</span>まとめ</h2>
+  <p>
+    Absciは、AIで抗体医薬を設計する技術そのものを強みとする「プラットフォーム型」の会社です。Eli Lillyの出資や2028年後半までの資金見通しなど支えとなる材料がある一方、技術から生まれた薬が実際に効果を示し、承認や売上につながった実績はまだありません。技術への「期待」と実際の「結果」の差を測る「実現率」の視点は、今後のプラットフォーム型企業を見るときにも役立ちます。当サイトが継続的に追跡する対象の一つであり、特定の投資行動を推奨するものではありません。
+  </p>
+
+  <h2>用語集</h2>
+  <div class="glossary">
+    <dl>
+      <dt>抗体医薬</dt>
+      <dd>体の免疫の仕組みを応用し、病気の原因となる特定のたんぱく質などにピンポイントで結合するように作られた薬</dd>
+      <dt>プラットフォーム</dt>
+      <dd>1つの薬ではなく、複数の薬の候補を生み出すための技術基盤のこと</dd>
+      <dt>実現率</dt>
+      <dd>技術から生まれた薬の候補のうち、臨床試験での成果や承認・売上に実際につながった割合（当サイトで用いる考え方）</dd>
+      <dt>第1相試験</dt>
+      <dd>人で初めて行う臨床試験。主に安全性や、薬が体内でどう動くかを確かめる</dd>
+      <dt>時価総額</dt>
+      <dd>株価×発行済み株式数で計算する、会社の市場での大きさ</dd>
+    </dl>
+  </div>
+
+  <a class="crosslink" href="/reports/pharma-biotech-17-map.html">製薬・バイオ17銘柄マップはこちら</a>
+  <a class="crosslink" href="/reports/absci-absi.html">Absci詳細分析記事はこちら</a>
+  <a class="crosslink" href="/reports/ai-biotech-industry-map.html">AI創薬の業界マップはこちら</a>
+
+  <div class="disclaimer">
+    この記事は投資判断を勧めるものではありません。取り上げた銘柄は当サイトが情報提供目的で継続的に追跡している対象であり、「おすすめの銘柄」ではありません。記事内の数値は公表されている決算資料・株価情報をもとに編集部が確認したもので、将来の業績や株価を保証するものではありません。ABS-201はまだ臨床試験の段階にあり、承認されていません。「実現率」は正式な会計用語ではなく、当サイトで用いる考え方です。投資の最終判断は必ずご自身で行ってください。
+  </div>
+
+</div>
+</body>
+</html>
