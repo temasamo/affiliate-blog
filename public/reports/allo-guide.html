@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allogene Therapeutics（ALLO）とはどんな会社？ ― 「お金が先に尽きるか、データが先に出るか」を見る他家CAR-T開発企業｜製薬・バイオ入門シリーズ第13回</title>
+<meta name="description" content="Allogene Therapeutics（ALLO）は、ドナーの細胞から作り置きできる他家CAR-Tを開発する創薬型企業です。キャッシュランウェイと試験データの時期の前後関係という見方を、初心者向けに解説します。">
+<style>
+  :root {
+    --accent: #4f46e5;
+    --accent-light: #eef2ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+    line-height: 1.85;
+    color: #1f2937;
+    background: #fafafa;
+    margin: 0;
+    padding: 0;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #fff;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-size: 26px;
+    line-height: 1.5;
+    margin: 0 0 8px;
+    color: #111827;
+  }
+  .sub {
+    font-size: 15px;
+    color: #6b7280;
+    margin-bottom: 24px;
+  }
+  .intro {
+    background: #f9fafb;
+    border-left: 4px solid var(--accent);
+    padding: 16px 18px;
+    border-radius: 6px;
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+  h2 {
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 40px 0 16px;
+    color: #111827;
+  }
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  p { font-size: 15.5px; margin: 12px 0; }
+  .catalyst {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin: 16px 0;
+    font-size: 14.5px;
+  }
+  .catalyst .ttl {
+    font-weight: 700;
+    color: #1d4ed8;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .pair-wrap {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 16px 0;
+  }
+  .pair-box {
+    flex: 1;
+    min-width: 260px;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 14.5px;
+  }
+  .pair-box.unique {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+  }
+  .pair-box.caution {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+  }
+  .pair-box .ttl {
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .pair-box.unique .ttl { color: #15803d; }
+  .pair-box.caution .ttl { color: #b91c1c; }
+  table.kpi {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14.5px;
+    margin: 16px 0;
+  }
+  table.kpi th, table.kpi td {
+    border: 1px solid #e5e7eb;
+    padding: 10px 12px;
+    text-align: left;
+  }
+  table.kpi th {
+    background: #f9fafb;
+    width: 40%;
+  }
+  table.kpi td.note {
+    font-size: 12.5px;
+    color: #6b7280;
+  }
+  .term {
+    border-bottom: 1px dotted #9ca3af;
+    cursor: help;
+    position: relative;
+  }
+  .term .tip {
+    display: none;
+    position: absolute;
+    bottom: 130%;
+    left: 0;
+    background: #111827;
+    color: #fff;
+    font-size: 12.5px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    width: 240px;
+    z-index: 10;
+    line-height: 1.5;
+  }
+  .term:hover .tip, .term:focus .tip, .term:active .tip {
+    display: block;
+  }
+  .glossary {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 14.5px;
+  }
+  .glossary dt {
+    font-weight: 700;
+    margin-top: 10px;
+    color: #111827;
+  }
+  .glossary dd {
+    margin: 4px 0 0;
+    color: #4b5563;
+  }
+  .crosslink {
+    display: block;
+    background: var(--accent-light);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 10px 0;
+    text-decoration: none;
+    color: var(--accent);
+    font-size: 14.5px;
+    font-weight: 600;
+  }
+  .disclaimer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 12.5px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footnote {
+    font-size: 12.5px;
+    color: #9ca3af;
+    margin-top: 6px;
+  }
+  .concept { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 16px 18px; margin: 16px 0 24px; font-size: 15px; color: #1e40af; }
+  .concept .ttl { font-weight: 700; display: block; margin-bottom: 6px; }
+  .timeline { list-style: none; padding: 0; margin: 12px 0 4px; border-left: 3px solid var(--accent); }
+  .timeline li { position: relative; padding: 4px 0 10px 18px; font-size: 14.5px; color: #1f2937; }
+  .timeline li::before { content: ""; position: absolute; left: -8px; top: 10px; width: 13px; height: 13px; border-radius: 50%; background: #fff; border: 3px solid var(--accent); }
+  .timeline li.cash::before { background: var(--accent); }
+  .timeline .when { font-weight: 700; color: var(--accent); margin-right: 6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="badge">入門編 創薬型｜製薬・バイオ全17回シリーズ 第13回</span>
+  <h1>Allogene Therapeutics（ALLO）とはどんな会社？ ― 「お金が先に尽きるか、データが先に出るか」を見る他家CAR-T開発企業</h1>
+  <div class="sub">株価・データ基準日：2026年9月25日（編集部確認時点）</div>
+
+  <div class="intro">
+    Allogene Therapeutics（ALLO）は、健康な人（ドナー）の免疫細胞を使ってがんを攻撃する「他家（たか）<span class="term">CAR-T<span class="tip">患者の免疫細胞（T細胞）に、がん細胞を見つけて攻撃する目印（CAR）を組み込んで体に戻す治療法</span></span>」を開発する「創薬型」の会社です。前回のAcumenでは、結果発表と資金が続く期間が近いことに触れました。今回はこの点を一歩進めて、「<span class="term">キャッシュランウェイ<span class="tip">手元のお金があと何年もつかを示す期間。開発中の会社にとって最重要の指標</span></span>」と「重要なデータが出る時期」の前後関係という見方を紹介します。
+  </div>
+
+  <div class="concept">
+    <span class="ttl">今回の見方：「資金の滑走路」と「データの離陸地点」の順番</span>
+    キャッシュランウェイは、よく飛行機の滑走路にたとえられます。滑走路（手元資金）の途中に、離陸地点（会社の価値を大きく動かす試験データ）があれば、会社は資金が尽きる前に成果を示せる可能性があります。反対に、滑走路が離陸地点より短ければ、データが出る前に追加の資金調達（新しい株の発行など）が必要になりやすく、既存の株主の持ち分が薄まる<span class="term">希薄化<span class="tip">新株を発行することで、1株あたりの価値や持ち分の比率が下がること</span></span>につながることがあります。Allogeneの主な予定を並べると次のとおりです。
+    <ul class="timeline">
+      <li><span class="when">2026年第4四半期</span>自己免疫疾患向けALLO-329の第1相試験データ（会社予定）</li>
+      <li><span class="when">2027年半ば</span>主力cema-celのALPHA3試験で、がんの再発などを見る「無イベント生存期間」の解析（会社予定）</li>
+      <li><span class="when">2027年末</span>ALPHA3試験の患者登録完了の目標（会社予定）</li>
+      <li class="cash"><span class="when">2029年まで</span>手元資金がもつ見通し（会社見通し）</li>
+    </ul>
+    Allogeneは、主な「離陸地点」が資金の滑走路の内側に収まっている形です。前回のAcumenは、結果発表（2026年末）と資金の見通し（2027年初め）がかなり近い形でした。ただし、会社の見通しは前提が変われば短くなることもあり、また良い結果が出た場合でも、その後の開発や販売の準備には追加の資金が必要になるのが一般的です。
+  </div>
+
+  <h2><span class="num">①</span>この会社は何をしている？</h2>
+  <p>
+    これまでのCAR-T治療の多くは、患者本人の免疫細胞を取り出して加工し、体に戻す「自家（じか）」方式で、準備に数週間かかることが課題でした。Allogeneは、健康なドナーの細胞からあらかじめ作り置きしておける「他家」方式を開発しており、必要なときにすぐ使える「既製品」のようなCAR-Tを目指しています。主力の「cema-cel」は、大細胞型B細胞リンパ腫（血液がんの一種）の最初の治療を終えた後、目に見えないほど小さながんが残っている患者に使い、再発を防ぐことを狙っています。
+  </p>
+
+  <h2><span class="num">②</span>どのタイプの会社？</h2>
+  <p>
+    6つの事業モデルのうち「創薬型」にあたります。製品の売上はなく、開発中の薬の試験結果が会社の価値を大きく左右します。前回のAcumenと同じタイプですが、Acumenが単一の薬に集中しているのに対し、Allogeneは血液がん（cema-cel）、自己免疫疾患（ALLO-329）、固形がん（ALLO-316）と複数の候補を持っています。
+  </p>
+
+  <h2><span class="num">③④</span>ここがユニーク／気をつける点</h2>
+  <div class="pair-wrap">
+    <div class="pair-box unique">
+      <span class="ttl">ここがユニーク</span>
+      主力のcema-celを使うALPHA3試験の中間解析では、治療後45日時点で、体内に残るごく少量のがん（<span class="term">MRD<span class="tip">微小残存病変。通常の検査では見つからないほど少量だけ体内に残っているがん細胞のこと</span></span>）が検出されなくなった患者の割合が、cema-cel群で58.3％（12人中7人）、経過観察のみの群で16.7％（12人中2人）でした。治療に関連する重い副作用は報告されていません。2026年7月には、FDAから開発を後押しする指定（RMAT指定・ファストトラック指定）を受けました。手元資金は4億2,360万ドルで、会社は2029年まで事業を続けられる見通しとしています。
+    </div>
+    <div class="pair-box caution">
+      <span class="ttl">気をつける点</span>
+      cema-celを含め、Allogeneの候補はまだ承認されていません。MRDの結果は各群12人という少人数での中間的なデータで、再発を本当に防げるかどうかを示す「無イベント生存期間」の解析は2027年半ばの予定です。四半期ごとの純損失は4,270万ドルで、2026年通期の営業費用は約2億2,500万ドル（会計基準ベース）と見込まれています。株価は1.64ドルと低く、52週レンジも1.04〜4.46ドルと値動きが大きい状態です。また経営陣も交代期にあり、新CEOが就任したほか、CFO（最高財務責任者）が2026年11月に退任予定です。
+    </div>
+  </div>
+
+  <h2><span class="num">⑤</span>数字で見るこの会社</h2>
+  <table class="kpi">
+    <tr><th>時価総額</th><td>約5億6,700万ドル（2026年9月25日時点）</td></tr>
+    <tr><th>株価</th><td>1.64ドル（52週レンジ：1.04〜4.46ドル）</td></tr>
+    <tr><th>2026年Q2研究開発費</th><td>3,070万ドル</td></tr>
+    <tr><th>Q2純損失</th><td>4,270万ドル</td></tr>
+    <tr><th>現金・投資</th><td>4億2,360万ドル（2026年6月30日時点）</td></tr>
+    <tr><th>2026年通期の営業費用見通し</th><td>約2億2,500万ドル（会計基準ベース。株式報酬など現金の出ない費用を除くと約1億6,500万ドル）</td></tr>
+    <tr><th>キャッシュランウェイ</th><td>2029年まで（会社見通し）<div class="footnote">※現金の出ない費用を除いた年間費用ペースで割ると約2.5年分（編集部試算）</div></td></tr>
+    <tr><td class="note" colspan="2">数値は2026年8月12日発表の2026年第2四半期決算資料、および2026年9月25日時点の株価情報に基づく（編集部確認）</td></tr>
+  </table>
+
+  <h2><span class="num">⑥</span>次に何が起きる？</h2>
+  <p>
+    直近では、2026年第4四半期に予定される自己免疫疾患向けALLO-329の第1相試験データが最初の節目です。その後、2027年半ばに主力cema-celのALPHA3試験で「無イベント生存期間」の解析が予定されています。いずれも会社の予定であり、時期が変わる可能性や、期待した結果にならない可能性があります。上の年表のように、データの時期と資金の見通しの関係が変わっていないかを、決算のたびに確かめることが大切です。
+  </p>
+
+  <h2><span class="num">⑦</span>まとめ</h2>
+  <p>
+    Allogene Therapeuticsは、ドナーの細胞から作り置きできる「他家CAR-T」を開発する創薬型の会社です。主力cema-celの中間データには前向きな兆しがある一方、まだ少人数のデータで承認もされていません。手元資金は2029年までもつ見通しで、主な試験データの時期がその内側に収まっている点は、前回のAcumenとの大きな違いです。「お金が先に尽きるか、データが先に出るか」という順番は、創薬型の会社を見るうえでの基本的な視点です。当サイトが継続的に追跡する対象の一つであり、特定の投資行動を推奨するものではありません。
+  </p>
+
+  <h2>用語集</h2>
+  <div class="glossary">
+    <dl>
+      <dt>CAR-T</dt>
+      <dd>免疫細胞（T細胞）に、がん細胞を見つけて攻撃する目印（CAR）を組み込んで体に戻す治療法</dd>
+      <dt>自家／他家</dt>
+      <dd>自家は患者本人の細胞を使う方式、他家は健康なドナーの細胞を使う方式。他家は作り置きができる</dd>
+      <dt>MRD（微小残存病変）</dt>
+      <dd>通常の検査では見つからないほど少量だけ体内に残っているがん細胞のこと</dd>
+      <dt>キャッシュランウェイ</dt>
+      <dd>手元のお金があと何年もつかを示す期間。飛行機の滑走路にたとえられる</dd>
+      <dt>希薄化</dt>
+      <dd>新株を発行することで、1株あたりの価値や持ち分の比率が下がること</dd>
+      <dt>時価総額</dt>
+      <dd>株価×発行済み株式数で計算する、会社の市場での大きさ</dd>
+    </dl>
+  </div>
+
+  <a class="crosslink" href="/reports/pharma-biotech-17-map.html">製薬・バイオ17銘柄マップはこちら</a>
+  <a class="crosslink" href="/reports/allogene-allo.html">Allogene Therapeutics詳細分析記事はこちら</a>
+  <a class="crosslink" href="/reports/abos-guide.html">前回：Acumen Pharmaceuticals入門記事（第12回）はこちら</a>
+
+  <div class="disclaimer">
+    この記事は投資判断を勧めるものではありません。取り上げた銘柄は当サイトが情報提供目的で継続的に追跡している対象であり、「おすすめの銘柄」ではありません。記事内の数値は公表されている決算資料・株価情報をもとに編集部が確認したもので、将来の業績や株価を保証するものではありません。cema-cel、ALLO-329、ALLO-316はいずれもまだ臨床試験の段階にあり、承認されていません。資金の見通しやデータの時期は会社の予定であり、変わる可能性があります。投資の最終判断は必ずご自身で行ってください。
+  </div>
+
+</div>
+</body>
+</html>
