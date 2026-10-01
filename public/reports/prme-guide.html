@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prime Medicine（PRME）とはどんな会社？ ― 資金の見通しとデータの時期が「重なる」遺伝子編集企業｜製薬・バイオ入門シリーズ第14回</title>
+<meta name="description" content="Prime Medicine（PRME）は、プライム編集という遺伝子編集技術で遺伝性の病気の治療を目指す創薬型企業です。資金の見通しと重要なデータの時期が重なる「衝突」の意味を、初心者向けに解説します。">
+<style>
+  :root {
+    --accent: #4f46e5;
+    --accent-light: #eef2ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+    line-height: 1.85;
+    color: #1f2937;
+    background: #fafafa;
+    margin: 0;
+    padding: 0;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #fff;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-size: 26px;
+    line-height: 1.5;
+    margin: 0 0 8px;
+    color: #111827;
+  }
+  .sub {
+    font-size: 15px;
+    color: #6b7280;
+    margin-bottom: 24px;
+  }
+  .intro {
+    background: #f9fafb;
+    border-left: 4px solid var(--accent);
+    padding: 16px 18px;
+    border-radius: 6px;
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+  h2 {
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 40px 0 16px;
+    color: #111827;
+  }
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  p { font-size: 15.5px; margin: 12px 0; }
+  .catalyst {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin: 16px 0;
+    font-size: 14.5px;
+  }
+  .catalyst .ttl {
+    font-weight: 700;
+    color: #1d4ed8;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .pair-wrap {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 16px 0;
+  }
+  .pair-box {
+    flex: 1;
+    min-width: 260px;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 14.5px;
+  }
+  .pair-box.unique {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+  }
+  .pair-box.caution {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+  }
+  .pair-box .ttl {
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .pair-box.unique .ttl { color: #15803d; }
+  .pair-box.caution .ttl { color: #b91c1c; }
+  table.kpi {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14.5px;
+    margin: 16px 0;
+  }
+  table.kpi th, table.kpi td {
+    border: 1px solid #e5e7eb;
+    padding: 10px 12px;
+    text-align: left;
+  }
+  table.kpi th {
+    background: #f9fafb;
+    width: 40%;
+  }
+  table.kpi td.note {
+    font-size: 12.5px;
+    color: #6b7280;
+  }
+  .term {
+    border-bottom: 1px dotted #9ca3af;
+    cursor: help;
+    position: relative;
+  }
+  .term .tip {
+    display: none;
+    position: absolute;
+    bottom: 130%;
+    left: 0;
+    background: #111827;
+    color: #fff;
+    font-size: 12.5px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    width: 240px;
+    z-index: 10;
+    line-height: 1.5;
+  }
+  .term:hover .tip, .term:focus .tip, .term:active .tip {
+    display: block;
+  }
+  .glossary {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 14.5px;
+  }
+  .glossary dt {
+    font-weight: 700;
+    margin-top: 10px;
+    color: #111827;
+  }
+  .glossary dd {
+    margin: 4px 0 0;
+    color: #4b5563;
+  }
+  .crosslink {
+    display: block;
+    background: var(--accent-light);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 10px 0;
+    text-decoration: none;
+    color: var(--accent);
+    font-size: 14.5px;
+    font-weight: 600;
+  }
+  .disclaimer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 12.5px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footnote {
+    font-size: 12.5px;
+    color: #9ca3af;
+    margin-top: 6px;
+  }
+  .concept { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 16px 18px; margin: 16px 0 24px; font-size: 15px; color: #1e40af; }
+  .concept .ttl { font-weight: 700; display: block; margin-bottom: 6px; }
+  .timeline { list-style: none; padding: 0; margin: 12px 0 4px; border-left: 3px solid var(--accent); }
+  .timeline li { position: relative; padding: 4px 0 10px 18px; font-size: 14.5px; color: #1f2937; }
+  .timeline li::before { content: ""; position: absolute; left: -8px; top: 10px; width: 13px; height: 13px; border-radius: 50%; background: #fff; border: 3px solid var(--accent); }
+  .timeline li.cash::before { background: var(--accent); }
+  .timeline .when { font-weight: 700; color: var(--accent); margin-right: 6px; }
+  .timeline li.warn::before { background: #dc2626; border-color: #dc2626; }
+  .timeline li.warn .when { color: #dc2626; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="badge">入門編 創薬型｜製薬・バイオ全17回シリーズ 第14回</span>
+  <h1>Prime Medicine（PRME）とはどんな会社？ ― 資金の見通しとデータの時期が「重なる」遺伝子編集企業</h1>
+  <div class="sub">株価・データ基準日：2026年9月28日（編集部確認時点）</div>
+
+  <div class="intro">
+    Prime Medicine（PRME）は、「プライム編集」という新しい<span class="term">遺伝子編集<span class="tip">病気の原因となっている遺伝子（DNA）の誤りを、直接書き換えて治そうとする技術</span></span>技術で、遺伝性の病気の治療を目指す「創薬型」の会社です。前回のAllogeneでは、重要なデータの時期が資金の見通しの「内側」に収まっている例を見ました。今回のPrime Medicineは、資金の見通しと重要なデータの時期がほぼ同じ頃に「重なる」例です。この「衝突」が何を意味するのかを見ていきます。
+  </div>
+
+  <div class="concept">
+    <span class="ttl">今回の見方：滑走路の終わりと離陸地点が「重なる」とき</span>
+    前回は、キャッシュランウェイ（手元のお金があと何年もつか）を滑走路、重要な試験データを離陸地点にたとえました。Prime Medicineの予定を並べると、次のようになります。
+    <ul class="timeline">
+      <li><span class="when">2026年9月</span>α1アンチトリプシン欠乏症向けPM647の治験開始がFDAに認められる</li>
+      <li><span class="when">2027年前半</span>慢性肉芽腫症向けPM359の承認申請を目指す（会社予定）</li>
+      <li><span class="when">2027年</span>ウィルソン病向けPM577a、PM647の最初の臨床データ（会社予定）</li>
+      <li class="warn"><span class="when">2027年まで</span>手元資金がもつ見通し（会社見通し「2027年まで」。直近の支出ペースでは2027年初め頃までの計算＝編集部試算）</li>
+    </ul>
+    滑走路の終わりと離陸地点がほぼ同じ場所にある状態です。このような場合、会社はデータが出る前に追加の資金調達（新しい株の発行など）を行う必要に迫られやすくなります。株価が低い時期に株を発行すると、同じ金額を集めるためにより多くの株が必要になり、既存株主の持ち分が薄まる<span class="term">希薄化<span class="tip">新株を発行することで、1株あたりの価値や持ち分の比率が下がること</span></span>が大きくなりやすい点に注意が必要です。どのような資金調達をいつ行うかは会社の判断であり、現時点で決まっているわけではありません。
+  </div>
+
+  <h2><span class="num">①</span>この会社は何をしている？</h2>
+  <p>
+    プライム編集は、ワープロの「検索と置換」のように、DNAの中の誤った部分を探し出して正しい配列に書き換えることを目指す技術です。従来の遺伝子編集ではDNAの二本の鎖を両方切断する方法が多かったのに対し、プライム編集は切断を抑えながら、より幅広い種類の誤りを直せる可能性があるとされています。Prime Medicineは、免疫の病気である慢性肉芽腫症（PM359）、銅が体にたまるウィルソン病（PM577a）、肺や肝臓に影響するα1アンチトリプシン欠乏症（PM647）などを対象に開発を進めているほか、大手製薬会社Bristol Myers Squibbと、プライム編集を使ったCAR-T治療の共同開発も行っています。
+  </p>
+
+  <h2><span class="num">②</span>どのタイプの会社？</h2>
+  <p>
+    6つの事業モデルのうち「創薬型」にあたります。第11回のAbsciのように、1つの技術から複数の候補を生み出す面もありますが、提携収入はごくわずかで、会社の価値は開発中の候補の試験結果に大きく左右されるため、本シリーズでは創薬型に分類しています。
+  </p>
+
+  <h2><span class="num">③④</span>ここがユニーク／気をつける点</h2>
+  <div class="pair-wrap">
+    <div class="pair-box unique">
+      <span class="ttl">ここがユニーク</span>
+      プライム編集という、幅広い遺伝子の誤りを直せる可能性がある技術を持つ点が最大の特徴です。2026年は開発の歩みが進み、ウィルソン病向けPM577aは6月にニュージーランド、7月に米国で臨床試験の開始が認められ、会社はこれを体内で直接遺伝子を編集するプライム編集治療として初めての臨床試験の許可としています。9月24日にはPM647も米国で治験開始が認められました。PM359はFDAから開発を後押しする複数の指定を受け、2027年前半の承認申請を目指しています。費用削減も進み、四半期の純損失は前年同期の5,260万ドルから4,210万ドルに縮小しました。
+    </div>
+    <div class="pair-box caution">
+      <span class="ttl">気をつける点</span>
+      どの候補もまだ承認されておらず、PM577aとPM647は人での試験がこれから始まる段階です。PM359の承認申請の計画も、ごく少数の患者のデータに基づくものです。手元資金は2025年末の1億9,140万ドルから、2026年6月末には1億880万ドルへと半年で約8,300万ドル減りました。会社は資金が「2027年まで」もつとしていますが、重要なデータの時期とほぼ重なっています。株価は2.875ドルで、52週高値の6.94ドルから大きく下落しており、この水準での資金調達は希薄化の影響が大きくなりやすい状況です。
+    </div>
+  </div>
+
+  <h2><span class="num">⑤</span>数字で見るこの会社</h2>
+  <table class="kpi">
+    <tr><th>時価総額</th><td>約5億1,100万ドル（2026年9月28日時点）</td></tr>
+    <tr><th>株価</th><td>2.875ドル（52週レンジ：2.67〜6.94ドル）</td></tr>
+    <tr><th>2026年Q2提携収入</th><td>約115万ドル</td></tr>
+    <tr><th>Q2研究開発費</th><td>3,340万ドル（前年同期4,140万ドル）</td></tr>
+    <tr><th>Q2純損失</th><td>4,210万ドル（前年同期5,260万ドル）</td></tr>
+    <tr><th>現金・投資</th><td>1億880万ドル（2026年6月30日時点。2025年末は1億9,140万ドル）</td></tr>
+    <tr><th><span class="term">キャッシュランウェイ<span class="tip">手元のお金があと何年もつかを示す期間。開発中の会社にとって最重要の指標</span></span></th><td>2027年まで（会社見通し）<div class="footnote">※直近の四半期純損失ペースで割ると約2.5四半期分（編集部試算）</div></td></tr>
+    <tr><td class="note" colspan="2">数値は2026年8月6日発表の2026年第2四半期決算資料、9月24日の開示、および2026年9月28日時点の株価情報に基づく（編集部確認）</td></tr>
+  </table>
+
+  <h2><span class="num">⑥</span>次に何が起きる？</h2>
+  <p>
+    注目点は2つあります。1つは、PM577aとPM647の臨床試験で最初の患者への投与が始まり、2027年に最初のデータが出るかどうか。もう1つは、その前に会社がどのような資金確保策（新株の発行、提携、権利の売却など）をとるかです。次回の四半期決算発表は、これまでのパターンから2026年11月上旬頃と見込まれます（編集部試算・公式発表前）。決算のたびに、資金の見通しとデータの時期の関係を確かめることが大切です。
+  </p>
+
+  <h2><span class="num">⑦</span>まとめ</h2>
+  <p>
+    Prime Medicineは、プライム編集という新しい遺伝子編集技術で遺伝性の病気の治療を目指す創薬型の会社です。2026年は複数の候補で臨床試験の許可が進んだ一方、手元資金の見通しと重要なデータの時期がほぼ重なっています。前回のAllogene（データが資金の見通しの内側）と比べると、同じ創薬型でも資金とデータの「順番」によって、注意すべき点が変わることがわかります。当サイトが継続的に追跡する対象の一つであり、特定の投資行動を推奨するものではありません。
+  </p>
+
+  <div class="glossary">
+    <dt>遺伝子編集</dt>
+    <dd>病気の原因となっている遺伝子（DNA）の誤りを、直接書き換えて治そうとする技術</dd>
+    <dt>プライム編集</dt>
+    <dd>DNAの二本の鎖を両方切断せずに、誤った部分を正しい配列に書き換えることを目指す遺伝子編集技術</dd>
+    <dt>承認申請</dt>
+    <dd>臨床試験の結果をまとめ、薬として販売する許可をFDAなどに求める手続き</dd>
+    <dt>キャッシュランウェイ</dt>
+    <dd>手元のお金があと何年もつかを示す期間。飛行機の滑走路にたとえられる</dd>
+    <dt>希薄化</dt>
+    <dd>新株を発行することで、1株あたりの価値や持ち分の比率が下がること</dd>
+    <dt>時価総額</dt>
+    <dd>株価×発行済み株式数で計算する、会社の市場での大きさ</dd>
+  </div>
+
+  <a class="crosslink" href="/reports/pharma-biotech-17-map.html">製薬・バイオ17銘柄マップはこちら</a>
+  <a class="crosslink" href="/reports/prime-medicine-prme.html">Prime Medicine詳細分析記事はこちら</a>
+  <a class="crosslink" href="/reports/allo-guide.html">前回：Allogene Therapeutics入門記事（第13回）はこちら</a>
+
+  <div class="disclaimer">
+    この記事は投資判断を勧めるものではありません。取り上げた銘柄は当サイトが情報提供目的で継続的に追跡している対象であり、「おすすめの銘柄」ではありません。記事内の数値は公表されている決算資料・株価情報をもとに編集部が確認したもので、将来の業績や株価を保証するものではありません。PM359、PM577a、PM647はいずれもまだ承認されていません。資金の見通しやデータの時期は会社の予定であり、変わる可能性があります。今後の資金調達の有無や方法は現時点で決まっているものではありません。投資の最終判断は必ずご自身で行ってください。
+  </div>
+
+</div>
+</body>
+</html>
