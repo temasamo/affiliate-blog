@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>製薬・バイオ入門シリーズ第2弾 12銘柄マップ｜6つの事業モデルで読む新しい12社</title>
+    <meta name="description" content="製薬・バイオ入門シリーズ第2弾では、6つの事業モデルごとに新しく2社ずつ、合計12社を取り上げます。黒字企業や中型株も加え、同じモデルでも規模や段階で何が変わるかを比べながら読めるマップです。">
+    <style>
+    :root {
+        --ink: #1f2937;
+        --muted: #6b7280;
+        --line: #e5e7eb;
+        --bg: #fafafa;
+        --card: #fff;
+        --royalty: #7c3aed;
+        --tools: #059669;
+        --spec: #d97706;
+        --hold: #be185d;
+        --plat: #0891b2;
+        --disc: #4f46e5;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+        line-height: 1.8;
+        color: var(--ink);
+        background: var(--bg);
+        margin: 0;
+    }
+
+    .wrap {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 32px 16px 80px;
+        background: #fff;
+    }
+
+    .badge {
+        display: inline-block;
+        background: #f3f4f6;
+        color: #374151;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 4px 12px;
+        border-radius: 999px;
+        margin-bottom: 14px;
+    }
+
+    h1 {
+        font-size: 26px;
+        line-height: 1.5;
+        margin: 0 0 8px;
+        color: #111827;
+    }
+
+    .sub {
+        font-size: 14px;
+        color: var(--muted);
+        margin-bottom: 22px;
+    }
+
+    .intro {
+        background: #f9fafb;
+        border-left: 4px solid #374151;
+        padding: 16px 18px;
+        border-radius: 6px;
+        font-size: 15px;
+        margin-bottom: 28px;
+    }
+
+    h2 {
+        font-size: 19px;
+        margin: 40px 0 14px;
+        color: #111827;
+    }
+
+    p {
+        font-size: 15.5px;
+        margin: 10px 0;
+    }
+
+    .flow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 8px 0 4px;
+        font-size: 13px;
+    }
+
+    .flow span {
+        padding: 6px 10px;
+        border-radius: 6px;
+        color: #fff;
+        font-weight: 700;
+    }
+
+    .flow .arrow {
+        background: none;
+        color: var(--muted);
+        padding: 6px 0;
+        font-weight: 400;
+    }
+
+    .flowcap {
+        font-size: 12.5px;
+        color: var(--muted);
+        margin-bottom: 8px;
+    }
+
+    .cat {
+        border: 1px solid var(--line);
+        border-top: 5px solid var(--c);
+        border-radius: 10px;
+        padding: 16px 18px 14px;
+        margin: 18px 0;
+        background: var(--card);
+    }
+
+    .cat-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .cat h3 {
+        margin: 0;
+        font-size: 18px;
+        color: var(--c);
+    }
+
+    .cat .def {
+        font-size: 14px;
+        color: #4b5563;
+        margin: 4px 0 12px;
+    }
+
+    .cos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    @media (max-width: 640px) {
+        .cos {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .co {
+        border-radius: 8px;
+        padding: 12px 14px;
+        background: color-mix(in srgb, var(--c) 7%, #fff);
+        border: 1px solid color-mix(in srgb, var(--c) 25%, #fff);
+    }
+
+    .co .tk {
+        font-weight: 800;
+        color: var(--c);
+        font-size: 15px;
+    }
+
+    .co .nm {
+        font-weight: 700;
+        font-size: 14.5px;
+        color: #111827;
+    }
+
+    .co .ds {
+        font-size: 13.5px;
+        color: #374151;
+        margin: 6px 0 8px;
+        line-height: 1.7;
+    }
+
+    .co .meta {
+        font-size: 12.5px;
+        color: var(--muted);
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .co a {
+        color: var(--c);
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .prev {
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 12px;
+    }
+
+    .prev a {
+        display: inline-block;
+        margin: 2px 4px 2px 0;
+        padding: 2px 9px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        color: #374151;
+        text-decoration: none;
+        font-size: 12.5px;
+    }
+
+    .look {
+        font-size: 13.5px;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px dashed var(--line);
+    }
+
+    .look b {
+        color: var(--c);
+    }
+
+    table.sched {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        margin: 10px 0;
+    }
+
+    table.sched th, table.sched td {
+        border: 1px solid var(--line);
+        padding: 8px 10px;
+        text-align: left;
+    }
+
+    table.sched th {
+        background: #f9fafb;
+    }
+
+    .dot {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 6px;
+        vertical-align: middle;
+    }
+
+    .note {
+        font-size: 12.5px;
+        color: var(--muted);
+    }
+
+    .crosslink {
+        display: block;
+        background: #f3f4f6;
+        border-radius: 8px;
+        padding: 14px 16px;
+        margin: 10px 0;
+        text-decoration: none;
+        color: #111827;
+        font-size: 14.5px;
+        font-weight: 600;
+    }
+
+    .disclaimer {
+        margin-top: 48px;
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+        font-size: 12.5px;
+        color: #9ca3af;
+        line-height: 1.8;
+    }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+
+        <span class="badge">製薬・バイオ入門シリーズ 第2弾｜銘柄マップ</span>
+        <h1>製薬・バイオ入門シリーズ第2弾 12銘柄マップ ― 6つの事業モデルで読む、新しい12社</h1>
+        <div class="sub">公開日：2026年10月6日／各社の状況は2026年10月上旬時点の編集部確認</div>
+
+        <div class="intro">
+            第1弾では、製薬・バイオ関連の17社を「6つの事業モデル」に分けて紹介しました。第2弾では、同じ6分類ごとに新しく2社ずつ、合計12社を取り上げます。第1弾は赤字の小型株が中心でしたが、第2弾では黒字の会社や中型株も加え、「同じ事業モデルでも、規模や段階が違うと何が変わるのか」を比べながら読めるようにしました。各記事は2026年10月7日から1日1本ずつ公開します。
+          </div>
+
+        <h2>6つの事業モデルと、第2弾で読む順番</h2>
+        <p>第1弾と同じく、「売上がある会社」から始めて「臨床試験のデータが企業価値のすべて」という会社へと進む順番です。</p>
+        <div class="flow">
+            <span style="background:var(--royalty)">ロイヤルティ型</span>
+            <span class="arrow">→</span>
+            <span style="background:var(--tools)">ツール・装置型</span>
+            <span class="arrow">→</span>
+            <span style="background:var(--spec)">商業段階の特殊製薬</span>
+            <span class="arrow">→</span>
+            <span style="background:var(--hold)">持株会社型</span>
+            <span class="arrow">→</span>
+            <span style="background:var(--plat)">プラットフォーム型</span>
+            <span class="arrow">→</span>
+            <span style="background:var(--disc)">創薬型</span>
+        </div>
+        <div class="flowcap">左ほど収益が安定しやすく、右ほど試験結果しだいで価値が大きく動きやすい傾向があります（あくまで一般的な傾向です）。</div>
+
+        <!-- ロイヤルティ型 -->
+        <div class="cat" style="--c:var(--royalty)">
+            <div class="cat-head">
+                <h3>ロイヤルティ型</h3>
+            </div>
+            <div class="def">他社の薬が売れるたびに、売上の一定割合（ロイヤルティ）を受け取る権利で稼ぐモデル。自ら臨床試験を行うリスクは小さめです。</div>
+            <div class="cos">
+                <div class="co">
+                    <div class="tk">LGND</div>
+                    <div class="nm">Ligand Pharmaceuticals</div>
+                    <div class="ds">多数の薬のロイヤルティ権を集める「ロイヤルティの束ね役」。2026年7月に同業のXOMA Royaltyを買収し、保有する権利の数を大きく増やしました。</div>
+                    <div class="meta">
+                        <span>第1回｜10月7日公開予定</span>
+                        <a href="/reports/lgnd-guide.html">記事へ →</a>
+                    </div>
+                </div>
+                <div class="co">
+                    <div class="tk">INVA</div>
+                    <div class="nm">Innoviva</div>
+                    <div class="ds">GSKの呼吸器薬からのロイヤルティに加え、集中治療・感染症の薬を自ら販売する事業も育てている「ロイヤルティ＋自社販売」の複合型です。</div>
+                    <div class="meta">
+                        <span>第2回｜10月8日公開予定</span>
+                        <a href="/reports/inva-guide.html">記事へ →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="look">
+                <b>この分類で見るポイント：</b>
+                ロイヤルティを「集める」会社と、ロイヤルティから「自社販売へ広げる」会社の違い
+            </div>
+            <div class="prev">
+                第1弾で紹介：
+                <a href="/reports/rprx-guide.html">RPRX（Royalty Pharma）</a>
+            </div>
+        </div>
+
+        <!-- ツール・装置型 -->
+        <div class="cat" style="--c:var(--tools)">
+            <div class="cat-head">
+                <h3>ツール・装置型</h3>
+            </div>
+            <div class="def">製薬会社や医療機関に、装置や消耗品を販売するモデル。薬の試験結果に直接左右されにくい一方、顧客の設備投資の動向に影響を受けます。</div>
+            <div class="cos">
+                <div class="co">
+                    <div class="tk">RGEN</div>
+                    <div class="nm">Repligen</div>
+                    <div class="ds">抗体医薬などを工場で作る工程で使うフィルターや装置を販売。製薬会社の生産が増えるほど消耗品が売れる構造で、2026年は業績見通しを引き上げました。</div>
+                    <div class="meta">
+                        <span>第3回｜10月9日公開予定</span>
+                        <a href="/reports/rgen-guide.html">記事へ →</a>
+                    </div>
+                </div>
+                <div class="co">
+                    <div class="tk">BFLY</div>
+                    <div class="nm">Butterfly Network</div>
+                    <div class="ds">半導体チップを使った手のひらサイズの超音波診断装置を開発・販売。2026年第2四半期は過去最高の売上を記録しましたが、まだ赤字の成長段階です。</div>
+                    <div class="meta">
+                        <span>第4回｜10月10日公開予定</span>
+                        <a href="/reports/bfly-guide.html">記事へ →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="look">
+                <b>この分類で見るポイント：</b>
+                黒字の中型企業と赤字の成長企業で、同じ「装置＋消耗品」モデルがどう違って見えるか
+            </div>
+            <div class="prev">
+                第1弾で紹介：
+                <a href="/reports/aray-guide.html">ARAY（Accuray）</a>
+                <a href="/reports/rpid-guide.html">RPID（Rapid Micro Biosystems）</a>
+            </div>
+        </div>
+
+        <!-- 商業段階の特殊製薬 -->
+        <div class="cat" style="--c:var(--spec)">
+            <div class="cat-head">
+                <h3>商業段階の特殊製薬</h3>
+            </div>
+            <div class="def">すでに販売中の薬を持ち、売上がある会社。ただし、売上があっても黒字とは限りません。</div>
+            <div class="cos">
+                <div class="co">
+                    <div class="tk">COLL</div>
+                    <div class="nm">Collegium Pharmaceutical</div>
+                    <div class="ds">痛みの治療薬に加え、ADHD（注意欠如・多動症）の治療薬の買収で事業を広げてきた会社。他社から薬を買い取って売上を伸ばす戦略が特徴です。</div>
+                    <div class="meta">
+                        <span>第5回｜10月11日公開予定</span>
+                        <a href="/reports/coll-guide.html">記事へ →</a>
+                    </div>
+                </div>
+                <div class="co">
+                    <div class="tk">HROW</div>
+                    <div class="nm">Harrow</div>
+                    <div class="ds">眼科（目の病気）に特化した製薬会社。売上は伸びている一方、2026年第2四半期は赤字となり、成長と利益の両立が課題です。</div>
+                    <div class="meta">
+                        <span>第6回｜10月12日公開予定</span>
+                        <a href="/reports/hrow-guide.html">記事へ →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="look">
+                <b>この分類で見るポイント：</b>
+                「買収で広げる」戦略と「1つの専門分野に集中する」戦略の違い
+            </div>
+            <div class="prev">
+                第1弾で紹介：
+                <a href="/reports/aytu-guide.html">AYTU</a>
+                <a href="/reports/bfri-guide.html">BFRI</a>
+                <a href="/reports/dare-guide.html">DARE</a>
+                <a href="/reports/abvc-guide.html">ABVC</a>
+                <a href="/reports/inm-guide.html">INM</a>
+            </div>
+        </div>
+
+        <!-- 持株会社型 -->
+        <div class="cat" style="--c:var(--hold)">
+            <div class="cat-head">
+                <h3>持株会社型</h3>
+            </div>
+            <div class="def">複数の子会社・関連会社を通じて、いくつもの薬の候補を同時に開発するモデル。</div>
+            <div class="cos">
+                <div class="co">
+                    <div class="tk">BBIO</div>
+                    <div class="nm">BridgeBio Pharma</div>
+                    <div class="ds">遺伝性の病気ごとに子会社を作る形で始まり、いまは心臓病の薬「Attruby」を自ら販売する会社へと姿を変えつつあります。持株会社型の「その後」を見る例です。</div>
+                    <div class="meta">
+                        <span>第7回｜10月13日公開予定</span>
+                        <a href="/reports/bbio-guide.html">記事へ →</a>
+                    </div>
+                </div>
+                <div class="co">
+                    <div class="tk">PRTC</div>
+                    <div class="nm">PureTech Health</div>
+                    <div class="ds">新しい会社を次々に立ち上げて育て、上場や資金調達で価値を引き出すモデル。ロンドンと米ナスダックの両方に上場しています。</div>
+                    <div class="meta">
+                        <span>第8回｜10月14日公開予定</span>
+                        <a href="/reports/prtc-guide.html">記事へ →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="look">
+                <b>この分類で見るポイント：</b>
+                子会社モデルから「自社販売の会社」へ変わる道と、「会社を生み続ける」道
+            </div>
+            <div class="prev">
+                第1弾で紹介：
+                <a href="/reports/roiv-guide.html">ROIV（Roivant）</a>
+                <a href="/reports/fbio-guide.html">FBIO（Fortress）</a>
+            </div>
+        </div>
+
+        <!-- プラットフォーム型 -->
+        <div class="cat" style="--c:var(--plat)">
+            <div class="cat-head">
+                <h3>プラットフォーム型</h3>
+            </div>
+            <div class="def">薬を生み出すための技術基盤を持ち、技術の提供料や提携先からの一時金（マイルストーン）で稼ぐモデル。</div>
+            <div class="cos">
+                <div class="co">
+                    <div class="tk">SDGR</div>
+                    <div class="nm">Schrödinger</div>
+                    <div class="ds">物理学の計算で薬の分子を設計するソフトウェアを製薬会社に販売しつつ、自社や提携先での創薬にも取り組む「ソフト販売＋創薬」の2本立てです。</div>
+                    <div class="meta">
+                        <span>第9回｜10月15日公開予定</span>
+                        <a href="/reports/sdgr-guide.html">記事へ →</a>
+                    </div>
+                </div>
+                <div class="co">
+                    <div class="tk">RXRX</div>
+                    <div class="nm">Recursion Pharmaceuticals</div>
+                    <div class="ds">自動化された実験設備とAIを組み合わせて創薬を目指す会社。Roche（Genentech）などとの提携から一時金を得ていますが、赤字は大きく続いています。</div>
+                    <div class="meta">
+                        <span>第10回｜10月16日公開予定</span>
+                        <a href="/reports/rxrx-guide.html">記事へ →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="look">
+                <b>この分類で見るポイント：</b>
+                第1弾で学んだ「実現率」――技術への期待が、どれだけ実際の成果につながっているか
+            </div>
+            <div class="prev">
+                第1弾で紹介：
+                <a href="/reports/absi-guide.html">ABSI（Absci）</a>
+            </div>
+        </div>
+
+        <!-- 創薬型 -->
+        <div class="cat" style="--c:var(--disc)">
+            <div class="cat-head">
+                <h3>創薬型</h3>
+            </div>
+            <div class="def">自社で薬を開発するモデル。製品の売上はほぼなく、臨床試験のデータが企業価値を大きく左右します。</div>
+            <div class="cos">
+                <div class="co">
+                    <div class="tk">VKTX</div>
+                    <div class="nm">Viking Therapeutics</div>
+                    <div class="ds">肥満症の治療薬候補を開発。注射薬は大規模な第3相試験の段階にあり、大手製薬会社が先行する市場でどう戦うかが注目されています。</div>
+                    <div class="meta">
+                        <span>第11回｜10月17日公開予定</span>
+                        <a href="/reports/vktx-guide.html">記事へ →</a>
+                    </div>
+                </div>
+                <div class="co">
+                    <div class="tk">NTLA</div>
+                    <div class="nm">Intellia Therapeutics</div>
+                    <div class="ds">体の中で直接遺伝子を編集する治療法を開発。遺伝性血管性浮腫の候補が第3相試験で良好な結果を示し、承認申請に向けて準備を進めています。</div>
+                    <div class="meta">
+                        <span>第12回｜10月18日公開予定</span>
+                        <a href="/reports/ntla-guide.html">記事へ →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="look">
+                <b>この分類で見るポイント：</b>
+                第1弾の初期段階の会社と比べた、第3相・承認申請が近い会社の見方
+            </div>
+            <div class="prev">
+                第1弾で紹介：
+                <a href="/reports/abos-guide.html">ABOS</a>
+                <a href="/reports/allo-guide.html">ALLO</a>
+                <a href="/reports/prme-guide.html">PRME</a>
+                <a href="/reports/sana-guide.html">SANA</a>
+                <a href="/reports/adag-guide.html">ADAG</a>
+                <a href="/reports/ganx-guide.html">GANX</a>
+            </div>
+        </div>
+
+        <h2>公開スケジュール</h2>
+        <table class="sched">
+            <tr>
+                <th>公開日</th>
+                <th>回</th>
+                <th>銘柄</th>
+                <th>事業モデル</th>
+            </tr>
+            <tr>
+                <td>10月7日</td>
+                <td>第1回</td>
+                <td>Ligand（LGND）</td>
+                <td>
+                    <span class="dot" style="background:var(--royalty)"></span>
+                    ロイヤルティ型
+                </td>
+            </tr>
+            <tr>
+                <td>10月8日</td>
+                <td>第2回</td>
+                <td>Innoviva（INVA）</td>
+                <td>
+                    <span class="dot" style="background:var(--royalty)"></span>
+                    ロイヤルティ型
+                </td>
+            </tr>
+            <tr>
+                <td>10月9日</td>
+                <td>第3回</td>
+                <td>Repligen（RGEN）</td>
+                <td>
+                    <span class="dot" style="background:var(--tools)"></span>
+                    ツール・装置型
+                </td>
+            </tr>
+            <tr>
+                <td>10月10日</td>
+                <td>第4回</td>
+                <td>Butterfly Network（BFLY）</td>
+                <td>
+                    <span class="dot" style="background:var(--tools)"></span>
+                    ツール・装置型
+                </td>
+            </tr>
+            <tr>
+                <td>10月11日</td>
+                <td>第5回</td>
+                <td>Collegium（COLL）</td>
+                <td>
+                    <span class="dot" style="background:var(--spec)"></span>
+                    商業段階の特殊製薬
+                </td>
+            </tr>
+            <tr>
+                <td>10月12日</td>
+                <td>第6回</td>
+                <td>Harrow（HROW）</td>
+                <td>
+                    <span class="dot" style="background:var(--spec)"></span>
+                    商業段階の特殊製薬
+                </td>
+            </tr>
+            <tr>
+                <td>10月13日</td>
+                <td>第7回</td>
+                <td>BridgeBio（BBIO）</td>
+                <td>
+                    <span class="dot" style="background:var(--hold)"></span>
+                    持株会社型
+                </td>
+            </tr>
+            <tr>
+                <td>10月14日</td>
+                <td>第8回</td>
+                <td>PureTech Health（PRTC）</td>
+                <td>
+                    <span class="dot" style="background:var(--hold)"></span>
+                    持株会社型
+                </td>
+            </tr>
+            <tr>
+                <td>10月15日</td>
+                <td>第9回</td>
+                <td>Schrödinger（SDGR）</td>
+                <td>
+                    <span class="dot" style="background:var(--plat)"></span>
+                    プラットフォーム型
+                </td>
+            </tr>
+            <tr>
+                <td>10月16日</td>
+                <td>第10回</td>
+                <td>Recursion（RXRX）</td>
+                <td>
+                    <span class="dot" style="background:var(--plat)"></span>
+                    プラットフォーム型
+                </td>
+            </tr>
+            <tr>
+                <td>10月17日</td>
+                <td>第11回</td>
+                <td>Viking Therapeutics（VKTX）</td>
+                <td>
+                    <span class="dot" style="background:var(--disc)"></span>
+                    創薬型
+                </td>
+            </tr>
+            <tr>
+                <td>10月18日</td>
+                <td>第12回</td>
+                <td>Intellia Therapeutics（NTLA）</td>
+                <td>
+                    <span class="dot" style="background:var(--disc)"></span>
+                    創薬型
+                </td>
+            </tr>
+        </table>
+        <p class="note">公開予定日は目安です。各社の状況（買収・事業内容の変化など）によって、銘柄や日程を変更する場合があります。</p>
+
+        <a class="crosslink" href="/reports/pharma-biotech-17-map.html">第1弾：製薬・バイオ17銘柄マップはこちら</a>
+
+        <div class="disclaimer">
+            この記事は投資判断を勧めるものではありません。取り上げた銘柄は当サイトが情報提供目的で継続的に追跡する対象であり、「おすすめの銘柄」ではありません。各社の紹介は2026年10月上旬時点で編集部が公開情報をもとに確認したもので、将来の業績や株価を保証するものではありません。開発中の薬の候補は、承認されていないものを含みます。投資の最終判断は必ずご自身で行ってください。
+          </div>
+
+    </div>
+</body>
+</html>
