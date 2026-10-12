@@ -533,7 +533,15 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
         slug: 'meigetsuso-part2'
       });
     }
-    
+    // HTML形式で公開している旅行記事を追加
+travelPosts.push({
+  slug: "others/2026-10-12-onigiri-culture-global",
+  title: "「おにぎり」が世界で“ONIGIRI”になっている話",
+  description: "日本のおにぎり文化が世界へ。三島の喫茶店「茶房 廣」の焼きおにぎりと、その作り方を紹介します。",
+  date: "2026-10-12",
+  category: "旅行",
+  subcategory: "その他",
+});
     travelPosts.sort((a: any, b: any) => (a.date < b.date ? 1 : -1));
     console.log('Travel posts:', travelPosts);
   } catch (e) {
