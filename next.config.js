@@ -46,7 +46,6 @@ const nextConfig = {
       { source: '/travel/onsen/gifu/index', destination: '/travel/onsen/gifu', permanent: true },
     ];
   },
-};
 
 async rewrites() {
   return [
@@ -56,6 +55,7 @@ async rewrites() {
     },
   ];
 },
+};
 // Vercel default Build Command is `npm run build` or `next build`.
 // Generate the public path list from this config so a direct `next build`
 // still runs it. npm `prebuild` would not run when Vercel invokes `next build`.
