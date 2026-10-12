@@ -48,6 +48,14 @@ const nextConfig = {
   },
 };
 
+async rewrites() {
+  return [
+    {
+      source: '/travel/others/2026-10-12-onigiri-culture-global',
+      destination: '/reports/onigiri-culture-global.html',
+    },
+  ];
+},
 // Vercel default Build Command is `npm run build` or `next build`.
 // Generate the public path list from this config so a direct `next build`
 // still runs it. npm `prebuild` would not run when Vercel invokes `next build`.
