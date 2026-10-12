@@ -84,6 +84,33 @@ export default function OthersIndex({ posts }: { posts: any[] }) {
             </p>
           </div>
 
+          {/* 特別記事：おにぎり文化 */}
+<div className="mb-8">
+  <Link
+    href="/travel/others/2026-10-12-onigiri-culture-global"
+    className="group block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100"
+  >
+    <div className="p-6">
+      <div className="text-sm text-orange-600 font-semibold mb-2">
+        🍙 特別記事
+      </div>
+
+      <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors mb-2">
+        「おにぎり」が世界で“ONIGIRI”になっている話
+      </h3>
+
+      <p className="text-gray-600 text-sm mb-3">
+        日本の食文化「おにぎり」が世界で注目される理由。
+        焼きおにぎりや海外での広がりを紹介します。
+      </p>
+
+      <div className="text-xs text-gray-500">
+        2026-10-12
+      </div>
+    </div>
+  </Link>
+</div>
+
           {otherPosts.length === 0 ? (
             <div className="bg-gray-50 rounded-xl p-8 text-center">
               <p className="text-gray-500">記事はありません。</p>
