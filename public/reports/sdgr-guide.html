@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schrödinger（SDGR）とはどんな会社？ ― 計算で薬を設計するソフトを売りながら、創薬でも稼ぐ「2本立て」のプラットフォーム企業｜製薬・バイオ入門シリーズ第2弾 第9回</title>
+<style>
+  :root {
+    --accent: #0891b2;
+    --accent-light: #ecfeff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+    line-height: 1.85;
+    color: #1f2937;
+    background: #fafafa;
+    margin: 0;
+    padding: 0;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #fff;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-size: 26px;
+    line-height: 1.5;
+    margin: 0 0 8px;
+    color: #111827;
+  }
+  .sub {
+    font-size: 15px;
+    color: #6b7280;
+    margin-bottom: 24px;
+  }
+  .intro {
+    background: #f9fafb;
+    border-left: 4px solid var(--accent);
+    padding: 16px 18px;
+    border-radius: 6px;
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+  h2 {
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 40px 0 16px;
+    color: #111827;
+  }
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  p { font-size: 15.5px; margin: 12px 0; }
+  .catalyst {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin: 16px 0;
+    font-size: 14.5px;
+  }
+  .catalyst .ttl {
+    font-weight: 700;
+    color: #1d4ed8;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .pair-wrap {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 16px 0;
+  }
+  .pair-box {
+    flex: 1;
+    min-width: 260px;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 14.5px;
+  }
+  .pair-box.unique {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+  }
+  .pair-box.caution {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+  }
+  .pair-box .ttl {
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .pair-box.unique .ttl { color: #15803d; }
+  .pair-box.caution .ttl { color: #b91c1c; }
+  table.kpi {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14.5px;
+    margin: 16px 0;
+  }
+  table.kpi th, table.kpi td {
+    border: 1px solid #e5e7eb;
+    padding: 10px 12px;
+    text-align: left;
+  }
+  table.kpi th {
+    background: #f9fafb;
+    width: 40%;
+  }
+  table.kpi td.note {
+    font-size: 12.5px;
+    color: #6b7280;
+  }
+  .term {
+    border-bottom: 1px dotted #9ca3af;
+    cursor: help;
+    position: relative;
+  }
+  .term .tip {
+    display: none;
+    position: absolute;
+    bottom: 130%;
+    left: 0;
+    background: #111827;
+    color: #fff;
+    font-size: 12.5px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    width: 240px;
+    z-index: 10;
+    line-height: 1.5;
+  }
+  .term:hover .tip, .term:focus .tip, .term:active .tip {
+    display: block;
+  }
+  .glossary {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 14.5px;
+  }
+  .glossary dt {
+    font-weight: 700;
+    margin-top: 10px;
+    color: #111827;
+  }
+  .glossary dd {
+    margin: 4px 0 0;
+    color: #4b5563;
+  }
+  .crosslink {
+    display: block;
+    background: var(--accent-light);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 10px 0;
+    text-decoration: none;
+    color: var(--accent);
+    font-size: 14.5px;
+    font-weight: 600;
+  }
+  .disclaimer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 12.5px;
+    color: #9ca3af;
+    line-height: 1.8;
+  }
+  .footnote {
+    font-size: 12.5px;
+    color: #9ca3af;
+    margin-top: 6px;
+  }
+  .concept { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 16px 18px; margin: 16px 0 24px; font-size: 15px; color: #1e40af; }
+  .concept .ttl { font-weight: 700; display: block; margin-bottom: 6px; }
+  .timeline { list-style: none; padding: 0; margin: 12px 0 4px; border-left: 3px solid var(--accent); }
+  .timeline li { position: relative; padding: 4px 0 10px 18px; font-size: 14.5px; color: #1f2937; }
+  .timeline li::before { content: ""; position: absolute; left: -8px; top: 10px; width: 13px; height: 13px; border-radius: 50%; background: #fff; border: 3px solid var(--accent); }
+  .timeline li.cash::before { background: var(--accent); }
+  .timeline .when { font-weight: 700; color: var(--accent); margin-right: 6px; }
+  .stack { display: flex; height: 30px; border-radius: 6px; overflow: hidden; margin: 12px 0 6px; font-size: 12px; font-weight: 700; color: #fff; }
+  .stack span { display: flex; align-items: center; justify-content: center; white-space: nowrap; overflow: hidden; }
+  .legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: 13px; color: #1f2937; margin-bottom: 8px; }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="badge">入門編 プラットフォーム型｜製薬・バイオ入門シリーズ第2弾 全12回 第9回</span>
+  <h1>Schrödinger（SDGR）とはどんな会社？ ― 計算で薬を設計するソフトを売りながら、創薬でも稼ぐ「2本立て」のプラットフォーム企業</h1>
+  <div class="sub">株価・データ基準日：2026年10月13日（編集部確認時点）</div>
+
+  <div class="intro">
+    Schrödinger（SDGR）は、物理学の計算とAIを組み合わせて、コンピューターの中で薬の分子を設計するソフトウェアを開発している会社です。このソフトを世界中の製薬会社に販売する一方、自らも提携先と組んで薬の候補を生み出し、その成果から一時金などを受け取っています。第1弾のAbsci（ABSI）と同じ「プラットフォーム型」で、Absciの回で紹介した「実現率」――技術が実際の成果につながっているか――を、より歴史の長い会社で確かめてみます。
+  </div>
+
+  <div class="concept">
+    <span class="ttl">今回の見方：「売上」と「契約の勢い」がずれるとき</span>
+    Schrödingerのソフト売上は、2026年第2四半期に前年同期比10％減りました。一方で、1年間に見込める契約額を示す<span class="term">ACV<span class="tip">年間契約額。顧客と結んだ契約から、1年間に受け取れる金額の合計。ソフトウェア会社の「契約の勢い」を見る指標</span></span>は27％増えています。
+    <div style="font-size:13px;color:#1f2937;margin-top:10px">ソフト売上（会計上）：前年3,600万ドル → 今年3,250万ドル（−10％）</div>
+    <div class="stack"><span style="width:100%;background:#9ca3af">前年 3,600万</span></div>
+    <div class="stack"><span style="width:90.3%;background:#0891b2">今年 3,250万</span></div>
+    <div style="font-size:13px;color:#1f2937">ACV（年間契約額）：前年約2,330万ドル → 今年2,960万ドル（+27％）</div>
+    <div class="stack"><span style="width:64.7%;background:#9ca3af">前年 約2,330万</span></div>
+    <div class="stack"><span style="width:82.2%;background:#0891b2">今年 2,960万</span></div>
+    ずれの主な理由は、売り方の変化です。これまではソフトを顧客のパソコンに入れて使う契約が多く、契約時にまとめて売上を計上できました。最近はインターネット経由で使う形（ホスト型）の契約が増えており、こちらは契約期間に分けて少しずつ売上を計上します。そのため、契約が増えても、目先の売上はかえって減って見えることがあります（前年ACVは伸び率から逆算した編集部試算）。
+  </div>
+
+  <h2><span class="num">①</span>この会社は何をしている？</h2>
+  <p>
+    薬の開発では、病気の原因となるたんぱく質にぴったり結合する分子を見つけることが出発点になります。Schrödingerのソフトは、分子同士がどう結合するかを物理学の計算で予測し、実験の前にコンピューター上で膨大な候補を絞り込めるようにします。このソフトを製薬会社に販売するのが1つ目の柱です。2つ目の柱は「創薬」で、自社や提携先と組んで薬の候補を生み出し、提携先の開発が進んだときの一時金（<span class="term">マイルストーン<span class="tip">提携先の薬が、開発の節目に達したときに受け取る一時金</span></span>）や、将来のロイヤルティを受け取ります。2026年には、大手製薬会社Bristol Myers SquibbとAIを使った新しいソフト「Bunsen」の導入契約を結んでいます。
+  </p>
+
+  <h2><span class="num">②</span>どのタイプの会社？</h2>
+  <p>
+    6つの事業モデルのうち「プラットフォーム型」にあたります。第1弾のAbsciは、自社の主力候補の開発に重心を置いていました。Schrödingerはソフトウェアの販売という、薬の成否に直接左右されにくい収入源を持っている点が大きな違いです。創薬の成果が出ればそれも収入になる「2本立て」の構造は、プラットフォーム型の中でも比較的バランスのとれた形といえます。
+  </p>
+
+  <h2><span class="num">③④</span>ここがユニーク／気をつける点</h2>
+  <div class="pair-wrap">
+    <div class="pair-box unique">
+      <span class="ttl">ここがユニーク</span>
+      ソフトの契約の勢いを示すACVは前年同期比27％増の2,960万ドルで、ソフトの粗利率も71％と高水準です。創薬の収入は、提携先Ajax Therapeuticsからの1,000万ドルの一時金を含めて2,300万ドルに増え、会社は通期の創薬収入見通しを6,500万〜7,500万ドルへ引き上げました。Ajaxは大手製薬会社Eli Lillyに買収されており、Schrödingerの技術から生まれた会社が実際に価値を生んだ例といえます。営業費用も前年同期比6％減と抑えられ、手元資金は4億1,880万ドルあります。
+    </div>
+    <div class="pair-box caution">
+      <span class="ttl">気をつける点</span>
+      会計上のソフト売上は前年同期比10％減で、本業の営業損益は4,150万ドルの赤字でした。第2四半期の最終損益は600万ドルの黒字ですが、これはAjaxのLillyへの売却に伴う利益など、一時的な要因（その他の収益4,890万ドル）によるものです。本業のもうけの目安である調整後EBITDAは3,100万ドルの赤字が続いています。創薬の収入は一時金に左右されやすく、四半期ごとに大きく変わります。また、製薬会社がAIを使った自前のツールを強化すれば、競争が厳しくなる可能性もあります。
+    </div>
+  </div>
+
+  <h2><span class="num">⑤</span>数字で見るこの会社</h2>
+  <table class="kpi">
+    <tr><th>時価総額</th><td>約19億4,000万ドル（2026年10月中旬時点）</td></tr>
+    <tr><th>株価</th><td>25.89ドル（2026年10月13日、52週レンジ：10.95〜33.78ドル）</td></tr>
+    <tr><th>2026年Q2売上</th><td>5,890万ドル（前年同期比+8％）</td></tr>
+    <tr><th>うちソフト／創薬</th><td>3,250万ドル（−10％）／2,300万ドル（前年同期1,390万ドル）</td></tr>
+    <tr><th>ACV（年間契約額）</th><td>2,960万ドル（前年同期比+27％）</td></tr>
+    <tr><th>Q2営業損益／最終損益</th><td>4,150万ドルの赤字／600万ドルの黒字（一時的な利益を含む）</td></tr>
+    <tr><th>手元資金</th><td>4億1,880万ドル（2026年6月30日時点、現金・有価証券など）</td></tr>
+    <tr><th>2026年通期見通し</th><td>ACV 2億1,800万〜2億2,800万ドル（10〜15％増）、創薬収入6,500万〜7,500万ドル（引き上げ後）</td></tr>
+    <tr><td class="note" colspan="2">数値は2026年8月5日発表の2026年第2四半期決算資料、および2026年10月中旬の株価情報に基づく（編集部確認）</td></tr>
+  </table>
+
+  <h2><span class="num">⑥</span>次に何が起きる？</h2>
+  <p>
+    次回の第3四半期決算は2026年11月4日に発表される予定です。会社は第3四半期のACV（提携関連分を除く）を4,100万〜4,500万ドルと見込んでおり、契約の勢いが続いているかが最初の注目点です。あわせて、ホスト型への移行が進むなかで会計上のソフト売上がいつ伸びに転じるか、創薬の提携から新たな一時金が生まれるかも確かめたいポイントです。いずれも会社の見通しであり、変わる可能性があります。
+  </p>
+
+  <h2><span class="num">⑦</span>まとめ</h2>
+  <p>
+    Schrödingerは、計算で薬を設計するソフトを販売しつつ、創薬の提携からも収入を得る「2本立て」のプラットフォーム企業です。契約の勢いを示すACVは伸びている一方、売り方の変化で会計上のソフト売上は減って見え、本業はまだ赤字です。提携先Ajaxの買収のように技術が実際の価値につながった例もあり、第1弾で紹介した「実現率」の視点で見ると、Absciより一歩先の段階にある会社といえます。当サイトが継続的に追跡する対象の一つであり、特定の投資行動を推奨するものではありません。
+  </p>
+
+  <div class="glossary">
+    <dt>ACV（年間契約額）</dt>
+    <dd>顧客と結んだ契約から、1年間に受け取れる金額の合計。ソフトウェア会社の契約の勢いを見る指標</dd>
+    <dt>ホスト型</dt>
+    <dd>ソフトを顧客のパソコンに入れず、インターネット経由で使ってもらう提供方法。売上は契約期間に分けて計上される</dd>
+    <dt>マイルストーン</dt>
+    <dd>提携先の薬が、開発の節目に達したときに受け取る一時金</dd>
+    <dt>調整後EBITDA</dt>
+    <dd>利息・税金・減価償却費などを差し引く前の利益に会社独自の調整を加えたもの。本業のもうけの目安</dd>
+    <dt>実現率</dt>
+    <dd>技術から生まれた薬の候補のうち、成果や承認・売上に実際につながった割合（当サイトで用いる考え方）</dd>
+    <dt>時価総額</dt>
+    <dd>株価×発行済み株式数で計算する、会社の市場での大きさ</dd>
+  </div>
+
+  <a class="crosslink" href="/reports/pharma-biotech-vol2-map.html">第2弾 12銘柄マップはこちら</a>
+  <a class="crosslink" href="/reports/absi-guide.html">同じプラットフォーム型：Absci入門記事（第1弾 第11回）はこちら</a>
+  <a class="crosslink" href="/reports/ai-biotech-industry-map.html">AI創薬の業界マップはこちら</a>
+
+  <div class="disclaimer">
+    この記事は投資判断を勧めるものではありません。取り上げた銘柄は当サイトが情報提供目的で継続的に追跡している対象であり、「おすすめの銘柄」ではありません。記事内の数値は公表されている決算資料・株価情報をもとに編集部が確認したもので、将来の業績や株価を保証するものではありません。第2四半期の最終黒字には一時的な利益が含まれています。調整後EBITDAは会社が独自に計算した指標です。投資の最終判断は必ずご自身で行ってください。
+  </div>
+
+</div>
+</body>
+</html>
