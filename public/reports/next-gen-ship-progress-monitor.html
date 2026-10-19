@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>次世代船舶 進捗モニタリング｜2026年7月〜10月</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c2230;--sub:#4a5366;--muted:#8a93a6;--line:#d9dee8;
+  --paper:#f6f7fa;--card:#ffffff;
+  --accent:#2b4c7e;--accent-soft:#e6ecf5;--accent-dark:#1d3557;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Noto Sans JP",sans-serif;font-size:16px;line-height:1.9}
+.container{max-width:860px;margin:0 auto;padding:0 16px}
+a{color:var(--accent)}
+.masthead{background:var(--accent-dark);color:#fff;padding:12px 0;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em}
+.masthead .container{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.masthead a.home-link{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.45);padding:4px 10px;border-radius:2px;font-family:"Noto Sans JP",sans-serif;font-size:12px;letter-spacing:0}
+.masthead a.home-link:hover{background:rgba(255,255,255,.12)}
+.breadcrumb{background:var(--card);border-bottom:1px solid var(--line);font-size:12px;color:var(--muted);padding:8px 0}
+.breadcrumb a{color:var(--sub);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.hero{background:var(--card);border-bottom:4px solid var(--accent);padding:44px 0 40px}
+.hero .series{display:inline-block;background:var(--accent-soft);color:var(--accent-dark);font-size:12px;font-weight:700;padding:4px 10px;border-radius:2px;margin-bottom:16px}
+.hero h1{font-family:"Noto Serif JP",serif;font-size:clamp(24px,4.4vw,34px);line-height:1.5;margin-bottom:16px}
+.hero .lead{color:var(--sub);font-size:15px}
+.hero .meta{margin-top:20px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted)}
+.toc{background:var(--card);border:1px solid var(--line);margin:32px auto;padding:24px}
+.toc h2{font-size:14px;color:var(--accent);letter-spacing:.1em;margin-bottom:8px}
+.toc ol{padding-left:1.4em;font-size:15px}
+.chapter{padding:24px 0}
+.chapter .inner{background:var(--card);border:1px solid var(--line);padding:32px 28px}
+.chapter-header{border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:20px}
+.chapter-num{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--accent);letter-spacing:.12em}
+.chapter h2{font-family:"Noto Serif JP",serif;font-size:22px;line-height:1.5}
+.chapter h3{font-size:17px;margin:24px 0 8px;padding-left:10px;border-left:3px solid var(--accent)}
+.chapter p{margin-bottom:12px}
+.chapter ul,.chapter ol{padding-left:1.4em;margin-bottom:12px}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:16px 0}
+.stat-cell{background:var(--accent-soft);padding:16px;border-top:3px solid var(--accent)}
+.stat-cell .num{font-family:"IBM Plex Mono",monospace;font-size:22px;font-weight:500;color:var(--accent-dark);line-height:1.3}
+.stat-cell .label{font-size:13px;color:var(--sub);margin-top:4px;line-height:1.6}
+.data-box{background:var(--paper);border:1px solid var(--line);padding:16px 18px;margin:16px 0;font-size:15px}
+.data-box .title{font-weight:700;color:var(--accent-dark);margin-bottom:6px}
+.note-box{border-left:4px solid var(--muted);background:#fafbfc;padding:12px 16px;margin:16px 0;font-size:14px;color:var(--sub)}
+.table-wrap{overflow-x:auto;margin:16px 0}
+.summary-table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+.summary-table th{background:var(--accent-dark);color:#fff;text-align:left;padding:8px 10px;font-weight:500}
+.summary-table td{border-bottom:1px solid var(--line);padding:8px 10px;vertical-align:top}
+.summary-table td.num{text-align:right;font-family:"IBM Plex Mono",monospace;white-space:nowrap}
+.summary-table tr.total td{font-weight:700;background:var(--accent-soft)}
+.source-wrap{margin-top:20px;display:flex;flex-wrap:wrap;gap:6px}
+.source-tag{display:inline-block;font-size:11px;color:var(--sub);background:var(--paper);border:1px solid var(--line);padding:2px 8px;line-height:1.6}
+.next-box{display:flex;gap:16px;background:var(--accent-soft);padding:20px;margin:16px 0}
+.next-box .arrow{font-size:22px}
+.next-box h3{border:none;padding:0;margin:0 0 6px}
+.home-cta{text-align:center;margin:40px auto 0}
+.home-cta a{display:inline-block;background:var(--accent-dark);color:#fff;text-decoration:none;padding:14px 28px;font-weight:700;font-size:15px;border-radius:2px}
+.home-cta a:hover{background:var(--accent)}
+.home-cta .sub{display:block;margin-top:8px;font-size:12px;color:var(--muted)}
+.disclaimer{background:var(--accent-dark);color:rgba(255,255,255,.75);padding:32px 0;margin-top:40px;font-size:13px;line-height:1.9}
+.disclaimer h3{color:#fff;font-size:14px;margin-bottom:8px}
+.disclaimer a{color:rgba(255,255,255,.75);font-size:12px}
+.float-home{border:1px solid rgba(255,255,255,.7);position:fixed;right:16px;bottom:16px;z-index:50;background:var(--accent-dark);color:#fff;text-decoration:none;font-size:12px;font-weight:700;line-height:1.3;text-align:center;padding:10px 12px;border-radius:2px;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.float-home:hover{background:var(--accent)}
+@media (max-width:600px){.chapter .inner{padding:24px 16px}.float-home{right:12px;bottom:12px;padding:8px 10px}}
+</style>
+</head>
+<body>
+
+<div class="masthead"><div class="container"><span>MARKET SUPPORTER AI ｜ 進捗モニタリング編 No.02</span><a class="home-link" href="https://www.marketsupporter-ai.com">← トップページへ</a></div></div>
+<nav class="breadcrumb" aria-label="パンくずリスト"><div class="container"><a href="https://www.marketsupporter-ai.com">ホーム</a> ＞ <a href="https://www.marketsupporter-ai.com/articles/general-knowledge/knowledge">一般教養</a> ＞ 次世代船舶 進捗モニタリング</div></nav>
+
+<header class="hero">
+  <div class="container">
+    <span class="series">日本成長戦略 進捗モニタリング編 No.02｜造船分野</span>
+    <h1>次世代船舶、決定後の進捗（2026年7月〜10月）<br>造船業再生基金の認定8件と2つのクラスター計画</h1>
+    <p class="lead">官民投資ロードマップの62品目のうち、7月の決定後に最も具体的な動きが出ている品目の一つが「次世代船舶」です。造船業再生基金による供給確保計画の認定、瀬戸内・九州の戦略産業クラスター計画、2027年度の概算要求、ロードマップのPDCAまでを、一次資料の事実と数値で整理します。</p>
+    <p class="meta">作成：2026-10-20 ｜ データ基準時点：2026年10月</p>
+  </div>
+</header>
+
+<div class="container">
+  <nav class="toc">
+    <h2>CONTENTS</h2>
+    <ol>
+      <li>ロードマップ上の位置づけと目標</li>
+      <li>造船業再生基金：供給確保計画の認定8件</li>
+      <li>戦略産業クラスター計画：瀬戸内・九州</li>
+      <li>地域産業クラスター計画（都道府県）</li>
+      <li>2027年度概算要求</li>
+      <li>官民投資ロードマップのPDCA</li>
+      <li>数値の整理と今後の確認ポイント</li>
+    </ol>
+  </nav>
+</div>
+
+<!-- CH1 -->
+<section class="chapter" id="ch1"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 01</span><h2>ロードマップ上の位置づけと目標</h2></div>
+  <p>次世代船舶は、戦略17分野のうち造船分野の「主要な製品・技術等」です。2026年3月の素案で先行して検討が進められ、7月21日に日本成長戦略本部で官民投資ロードマップとして決定されました。</p>
+  <div class="stat-grid">
+    <div class="stat-cell"><div class="num">1.0兆円</div><div class="label">官民投資額（想定）2034年度まで</div></div>
+    <div class="stat-cell"><div class="num">9.7兆円</div><div class="label">経済波及効果（想定）2034年度まで</div></div>
+    <div class="stat-cell"><div class="num">1,800万総トン</div><div class="label">2035年の国内建造目標（2024年比倍増・市場規模約5兆円）（政策目標として示されている値）</div></div>
+  </div>
+  <h3>現状認識（素案）</h3>
+  <ul>
+    <li>国内の建造量は2019年の1,600万総トンから2024年の900万総トンへ減少し、国内船主の1年間の造船需要を下回る状況とされています。</li>
+    <li>ゼロエミッション船等の建造需要は、2035年に建造需要の6割程度に達すると見込まれています。</li>
+    <li>船価の約7割を材料費（鋼材・舶用機器等）が占め、受注から竣工までの期間は近年3〜4年とされています。</li>
+  </ul>
+  <h3>素案で示された投資の内訳</h3>
+  <p>2035年までに官民で1兆円規模の投資を想定し、内訳は「非価格競争力向上のためのグリーン投資」（官民2,800億円規模）と「次世代船舶の建造を含む造船能力の抜本的向上」（官民7,300億円規模）とされています。</p>
+  <div class="note-box">官民投資額は、主要企業へのヒアリング結果の積み上げと市場・投資の伸び率などによる推計で、予算編成やPDCAを通じて精査・改定される予定とされています。次世代船舶の対象期間は2034年度までで、他品目の2040年度までの金額とは単純比較できません。</div>
+  <div class="source-wrap">
+    <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+    <span class="source-tag">経済財政諮問会議 第8回 資料1「戦略17分野の『主要な製品・技術等』における官民投資額」（2026年6月24日）</span>
+    <span class="source-tag">同 第11回 資料4「官民投資ロードマップ 参考資料」（2026年7月21日）</span>
+  </div>
+</div></div></section>
+
+<!-- CH2 -->
+<section class="chapter" id="ch2"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 02</span><h2>造船業再生基金：供給確保計画の認定8件</h2></div>
+  <p>政府は経済安全保障推進法に基づく特定重要物資である船舶の部品に「船体」を追加し、造船業再生基金を造成しました。国土交通省は2026年9月4日に供給確保計画を初めて3件認定し、9月11日に5件を追加で認定しました。</p>
+  <div class="stat-grid">
+    <div class="stat-cell"><div class="num">8件</div><div class="label">認定された供給確保計画（9月4日3件・9月11日5件）</div></div>
+    <div class="stat-cell"><div class="num">約3,110億円</div><div class="label">最大助成額の合計（令和8〜16年度）</div></div>
+    <div class="stat-cell"><div class="num">9,000億円規模</div><div class="label">8件合計の官民投資の規模</div></div>
+  </div>
+  <div class="table-wrap">
+  <table class="summary-table">
+    <thead><tr><th>認定日</th><th>事業者</th><th>最大助成額</th></tr></thead>
+    <tbody>
+      <tr><td>9月4日</td><td>今治造船、多度津造船、スチールハブ</td><td class="num">約1,138億円</td></tr>
+      <tr><td>9月4日</td><td>ジャパン マリンユナイテッド、JMUアムテック、有明スチールセンター</td><td class="num">約494億円</td></tr>
+      <tr><td>9月4日</td><td>名村造船所、函館どつく</td><td class="num">約499億円</td></tr>
+      <tr><td>9月11日</td><td>三菱造船</td><td class="num">約400億円</td></tr>
+      <tr><td>9月11日</td><td>新来島グループ（新来島どっく、新来島豊橋造船、新来島高知重工、新来島サノヤス造船）</td><td class="num">約320億円</td></tr>
+      <tr><td>9月11日</td><td>川崎重工業</td><td class="num">約156億円</td></tr>
+      <tr><td>9月11日</td><td>大島造船所</td><td class="num">約61億円</td></tr>
+      <tr><td>9月11日</td><td>内海造船</td><td class="num">約43億円</td></tr>
+      <tr class="total"><td colspan="2">合計（8件）</td><td class="num">約3,110億円</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>支援の対象は、省力化・自動化設備の整備、ドック拡張、クレーン導入などの大規模投資です。国土交通省は、造船業再生ロードマップ（2025年12月26日公表）と日本成長戦略で掲げた建造量倍増の実現に向け、計画を順次認定するとしています。</p>
+  <div class="note-box">最大助成額は、令和8〜16年度の期間における上限額です。実際の助成額は事業の進捗に応じて決まります。基金の総額と、船体を特定重要物資に追加した日付は、認定の発表資料には記載されていません。</div>
+  <div class="source-wrap">
+    <span class="source-tag">国土交通省 報道発表「造船業再生基金に係る供給確保計画を初認定」（2026年9月4日）</span>
+    <span class="source-tag">国土交通省 報道発表「造船業再生基金に係る供給確保計画の認定」（2026年9月11日）</span>
+    <span class="source-tag">国土交通省海事局「海事レポート2026」（2026年9月）</span>
+  </div>
+</div></div></section>
+
+<!-- CH3 -->
+<section class="chapter" id="ch3"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 03</span><h2>戦略産業クラスター計画：瀬戸内・九州</h2></div>
+  <p>地域未来戦略（2026年7月21日閣議決定）に基づく戦略産業クラスター計画のうち、次世代船舶は瀬戸内地域と九州地域の2件が公表されています。</p>
+  <div class="table-wrap">
+  <table class="summary-table">
+    <thead><tr><th>項目</th><th>瀬戸内地域</th><th>九州地域</th></tr></thead>
+    <tbody>
+      <tr><td>範囲に入る県</td><td>岡山県、広島県、山口県、徳島県、香川県、愛媛県、高知県</td><td>福岡県、佐賀県、長崎県、熊本県、大分県</td></tr>
+      <tr><td>地域の現状</td><td>許可造船所約103社（全国の約4割）、新造船建造量約486万総トン（全国の約5割）</td><td>新造船建造量約320万総トン（全国の約3割）</td></tr>
+      <tr><td>拠点企業・投資の例</td><td>川崎重工業（坂出）液化水素運搬船の建造・実証と生産体制整備／今治造船（多度津・西条）新燃料タンク生産設備・大型艤装プラットフォーム／尾道造船（尾道）艤装プラットフォーム・パイプ工場新設</td><td>ジャパンマリンユナイテッド（熊本県長洲町）艤装プラットフォーム増強／大島造船所（長崎県西海市）燃料タンク生産能力増強ほか／名村造船所（佐賀県伊万里市）燃料用タンク生産設備・ゴライアスクレーン新設ほか</td></tr>
+      <tr><td>官民設備投資（KGI）</td><td>2034年度までに約5,000億円</td><td>2034年度までに約3,000億円</td></tr>
+      <tr><td>うち2030年度累積（KPI）</td><td>約2,800億円</td><td>約1,700億円</td></tr>
+      <tr><td>付加価値増加額（KGI）</td><td>2034年度までに約3兆5,000億円</td><td>2034年度までに約2兆1,000億円</td></tr>
+      <tr><td>造船人材の育成（KGI）</td><td>2034年度までに累計約3,400人</td><td>2034年度までに累計約3,300人</td></tr>
+      <tr><td>インフラ整備の例</td><td>高松港 複合一貫輸送ターミナルの岸壁整備など</td><td>港湾・道路・橋梁の大型化・耐震化、航路の浚渫、工場間を結ぶ高規格道路</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note-box">KGI・KPIの数値は、各クラスター計画で目標として示されている値です。</p>
+  <div class="source-wrap">
+    <span class="source-tag">内閣官房「次世代船舶 戦略産業クラスター計画（瀬戸内地域）」概要資料</span>
+    <span class="source-tag">内閣官房「次世代船舶 戦略産業クラスター計画（九州地域）」概要資料</span>
+    <span class="source-tag">内閣官房「地域未来戦略に関する3類型の計画」</span>
+  </div>
+</div></div></section>
+
+<!-- CH4 -->
+<section class="chapter" id="ch4"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 04</span><h2>地域産業クラスター計画（都道府県）</h2></div>
+  <p>都道府県が主導する地域産業クラスター計画でも、造船・海洋関連の計画が公表されています（内閣官房の公表ページ、2026年10月20日確認）。</p>
+  <div class="table-wrap">
+  <table class="summary-table">
+    <thead><tr><th>策定主体</th><th>計画名・産業領域</th></tr></thead>
+    <tbody>
+      <tr><td>香川県</td><td>造船・建機等鋼構造物関連分野（次世代造船及びクレーン等を核とする鋼構造物産業領域）</td></tr>
+      <tr><td>愛媛県</td><td>海洋関連産業分野（次世代船舶、船用機器、洋上風力関連部材、電装・制御、保守管理等）</td></tr>
+      <tr><td>長崎県</td><td>海洋関連分野（造船・防衛産業、エネルギー分野を核とする海洋関連産業領域）</td></tr>
+      <tr><td>大分県</td><td>造船・船舶産業分野（船舶関連産業）</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="source-wrap">
+    <span class="source-tag">内閣官房「地域未来戦略に関する3類型の計画」B.地域産業クラスター計画一覧</span>
+  </div>
+</div></div></section>
+
+<!-- CH5 -->
+<section class="chapter" id="ch5"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 05</span><h2>2027年度概算要求</h2></div>
+  <p>内閣府がまとめた「令和9年度海洋関連予算概算要求の概要」には、造船・船舶に関する次の事業が掲載されています。</p>
+  <div class="table-wrap">
+  <table class="summary-table">
+    <thead><tr><th>事業名</th><th>府省</th><th>2027年度要求額</th><th>2026年度当初</th></tr></thead>
+    <tbody>
+      <tr><td>我が国造船業の再生</td><td>国土交通省</td><td class="num">2.2億円＋事項要求</td><td class="num">新規</td></tr>
+      <tr><td>ゼロエミッション船等の建造促進事業</td><td>環境省</td><td class="num">248.1億円</td><td class="num">149.1億円</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note-box">「事項要求」は金額を示さずに要求し、予算編成過程で額を検討するものです。概算要求は要求段階の金額で、予算額は年末の政府予算案の決定に向けて精査されます。</div>
+  <div class="source-wrap">
+    <span class="source-tag">内閣府総合海洋政策推進事務局「令和9年度海洋関連予算概算要求の概要」</span>
+  </div>
+</div></div></section>
+
+<!-- CH6 -->
+<section class="chapter" id="ch6"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 06</span><h2>官民投資ロードマップのPDCA</h2></div>
+  <p>2026年10月16日の第5回戦略分野分科会で、「官民投資ロードマップ」で掲げた主な施策の取組状況が報告されました。報告対象はフィジカルAI、次世代船舶、ゲームの3品目で、次世代船舶はその一つです（資料4、非公開）。</p>
+  <p>同分科会で示されたPDCAの進め方は、次のとおりです。</p>
+  <ul>
+    <li>予算事業・税制措置・制度改革等の取組状況を2027年1月頃に整理する。</li>
+    <li>その後、各分野のWG等で施策の見直しの要否を検証する。</li>
+    <li>結果を2027年春の官民投資ロードマップの改訂等に反映する。</li>
+  </ul>
+  <div class="source-wrap">
+    <span class="source-tag">内閣官房 第5回戦略分野分科会 議事次第・資料2（2026年10月16日）</span>
+  </div>
+</div></div></section>
+
+<!-- CH7 -->
+<section class="chapter" id="ch7"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 07</span><h2>数値の整理と今後の確認ポイント</h2></div>
+  <div class="table-wrap">
+  <table class="summary-table">
+    <thead><tr><th>指標</th><th>数値</th><th>出典・時点</th></tr></thead>
+    <tbody>
+      <tr><td>官民投資額（想定）</td><td>2034年度までで1.0兆円</td><td>官民投資ロードマップ（2026年7月）</td></tr>
+      <tr><td>経済波及効果（想定）</td><td>9.7兆円（2034年度まで）</td><td>同上</td></tr>
+      <tr><td>建造量目標</td><td>1,800万総トン（2035年）（政策目標として示されている値）</td><td>素案（2026年3月）</td></tr>
+      <tr><td>建造量の現状</td><td>900万総トン（2024年）</td><td>素案（2026年3月）</td></tr>
+      <tr><td>供給確保計画の認定</td><td>8件・最大助成額約3,110億円</td><td>国土交通省（2026年9月4日・11日）</td></tr>
+      <tr><td>8件の官民投資規模</td><td>9,000億円規模</td><td>国土交通省（2026年9月11日）</td></tr>
+      <tr><td>クラスター計画の官民設備投資（KGI）</td><td>瀬戸内約5,000億円・九州約3,000億円（2034年度まで）</td><td>内閣官房 戦略産業クラスター計画</td></tr>
+      <tr><td>環境省 ゼロエミッション船等建造促進</td><td>248.1億円（2027年度要求）</td><td>内閣府 海洋関連予算概算要求の概要</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3>今後の確認ポイント</h3>
+  <ul>
+    <li>造船業再生基金による供給確保計画の追加認定（国土交通省は順次認定するとしています）</li>
+    <li>年末の2027年度政府予算案での「我が国造船業の再生」事項要求の扱い</li>
+    <li>年末に策定される日本成長戦略実行計画での次世代船舶の位置づけ（3類型のどれに入るか、5か年の投資事業計画）</li>
+    <li>2027年1月頃の取組状況の整理と、2027年春のロードマップ改訂</li>
+  </ul>
+  <div class="next-box">
+    <div class="arrow">📌</div>
+    <div>
+      <h3>進捗モニタリング編について</h3>
+      <p>No.01（総論）では、日本成長戦略全体の予算・実行計画・特別会計・地域未来戦略の進捗を整理しています。次回以降も、PDCAの報告対象となった品目から順に整理する予定です。</p>
+    </div>
+  </div>
+</div></div></section>
+
+<div class="container home-cta">
+  <a href="https://www.marketsupporter-ai.com">Market Supporter AI トップページへ戻る</a>
+  <span class="sub">ほかの戦略17分野・官民投資ロードマップの記事はトップページからご覧いただけます</span>
+</div>
+
+<div class="disclaimer">
+  <div class="container">
+    <h3>免責事項</h3>
+    <p>本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。掲載データは各記載出典（政府・省庁の公表資料）に基づきますが、数値の正確性・完全性を保証するものではありません。投資判断は自己責任において行ってください。本レポートの内容は作成時点の情報に基づいており、予算編成・政策変更等により実態が変化する可能性があります。企業名は政府の公表資料に記載された事実として掲載したもので、個別企業に関する投資推奨は一切含みません。データ基準時点は2026年10月です。</p>
+    <p style="margin-top:12px;">
+      <a href="https://www.marketsupporter-ai.com">← Market Supporter AI トップへ戻る</a>　｜　<a href="https://www.marketsupporter-ai.com/articles/general-knowledge/knowledge">一般教養の記事一覧へ</a>
+    </p>
+  </div>
+</div>
+
+<a class="float-home" href="https://www.marketsupporter-ai.com" aria-label="Market Supporter AI トップページへ">HOME<br>トップへ</a>
+
+</body>
+</html>
