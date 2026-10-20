@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フィジカルAI 進捗モニタリング｜2026年7月〜10月</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c2230;--sub:#4a5366;--muted:#8a93a6;--line:#d9dee8;
+  --paper:#f6f7fa;--card:#ffffff;
+  --accent:#2b4c7e;--accent-soft:#e6ecf5;--accent-dark:#1d3557;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Noto Sans JP",sans-serif;font-size:16px;line-height:1.9}
+.container{max-width:860px;margin:0 auto;padding:0 16px}
+a{color:var(--accent)}
+.masthead{background:var(--accent-dark);color:#fff;padding:12px 0;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em}
+.masthead .container{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.masthead a.home-link{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.45);padding:4px 10px;border-radius:2px;font-family:"Noto Sans JP",sans-serif;font-size:12px;letter-spacing:0}
+.masthead a.home-link:hover{background:rgba(255,255,255,.12)}
+.breadcrumb{background:var(--card);border-bottom:1px solid var(--line);font-size:12px;color:var(--muted);padding:8px 0}
+.breadcrumb a{color:var(--sub);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.hero{background:var(--card);border-bottom:4px solid var(--accent);padding:44px 0 40px}
+.hero .series{display:inline-block;background:var(--accent-soft);color:var(--accent-dark);font-size:12px;font-weight:700;padding:4px 10px;border-radius:2px;margin-bottom:16px}
+.hero h1{font-family:"Noto Serif JP",serif;font-size:clamp(24px,4.4vw,34px);line-height:1.5;margin-bottom:16px}
+.hero .lead{color:var(--sub);font-size:15px}
+.hero .meta{margin-top:20px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted)}
+.toc{background:var(--card);border:1px solid var(--line);margin:32px auto;padding:24px}
+.toc h2{font-size:14px;color:var(--accent);letter-spacing:.1em;margin-bottom:8px}
+.toc ol{padding-left:1.4em;font-size:15px}
+.chapter{padding:24px 0}
+.chapter .inner{background:var(--card);border:1px solid var(--line);padding:32px 28px}
+.chapter-header{border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:20px}
+.chapter-num{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--accent);letter-spacing:.12em}
+.chapter h2{font-family:"Noto Serif JP",serif;font-size:22px;line-height:1.5}
+.chapter h3{font-size:17px;margin:24px 0 8px;padding-left:10px;border-left:3px solid var(--accent)}
+.chapter p{margin-bottom:12px}
+.chapter ul,.chapter ol{padding-left:1.4em;margin-bottom:12px}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:16px 0}
+.stat-cell{background:var(--accent-soft);padding:16px;border-top:3px solid var(--accent)}
+.stat-cell .num{font-family:"IBM Plex Mono",monospace;font-size:22px;font-weight:500;color:var(--accent-dark);line-height:1.3}
+.stat-cell .label{font-size:13px;color:var(--sub);margin-top:4px;line-height:1.6}
+.data-box{background:var(--paper);border:1px solid var(--line);padding:16px 18px;margin:16px 0;font-size:15px}
+.data-box .title{font-weight:700;color:var(--accent-dark);margin-bottom:6px}
+.note-box{border-left:4px solid var(--muted);background:#fafbfc;padding:12px 16px;margin:16px 0;font-size:14px;color:var(--sub)}
+.table-wrap{overflow-x:auto;margin:16px 0}
+.summary-table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+.summary-table th{background:var(--accent-dark);color:#fff;text-align:left;padding:8px 10px;font-weight:500}
+.summary-table td{border-bottom:1px solid var(--line);padding:8px 10px;vertical-align:top}
+.summary-table td.num{text-align:right;font-family:"IBM Plex Mono",monospace;white-space:nowrap}
+.summary-table tr.total td{font-weight:700;background:var(--accent-soft)}
+.source-wrap{margin-top:20px;display:flex;flex-wrap:wrap;gap:6px}
+.source-tag{display:inline-block;font-size:11px;color:var(--sub);background:var(--paper);border:1px solid var(--line);padding:2px 8px;line-height:1.6}
+.next-box{display:flex;gap:16px;background:var(--accent-soft);padding:20px;margin:16px 0}
+.next-box .arrow{font-size:22px}
+.next-box h3{border:none;padding:0;margin:0 0 6px}
+.home-cta{text-align:center;margin:40px auto 0}
+.home-cta a{display:inline-block;background:var(--accent-dark);color:#fff;text-decoration:none;padding:14px 28px;font-weight:700;font-size:15px;border-radius:2px}
+.home-cta a:hover{background:var(--accent)}
+.home-cta .sub{display:block;margin-top:8px;font-size:12px;color:var(--muted)}
+.disclaimer{background:var(--accent-dark);color:rgba(255,255,255,.75);padding:32px 0;margin-top:40px;font-size:13px;line-height:1.9}
+.disclaimer h3{color:#fff;font-size:14px;margin-bottom:8px}
+.disclaimer a{color:rgba(255,255,255,.75);font-size:12px}
+.float-home{border:1px solid rgba(255,255,255,.7);position:fixed;right:16px;bottom:16px;z-index:50;background:var(--accent-dark);color:#fff;text-decoration:none;font-size:12px;font-weight:700;line-height:1.3;text-align:center;padding:10px 12px;border-radius:2px;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.float-home:hover{background:var(--accent)}
+@media (max-width:600px){.chapter .inner{padding:24px 16px}.float-home{right:12px;bottom:12px;padding:8px 10px}}
+</style>
+</head>
+<body>
+
+<div class="masthead"><div class="container"><span>MARKET SUPPORTER AI ｜ 進捗モニタリング編 No.03</span><a class="home-link" href="https://www.marketsupporter-ai.com">← トップページへ</a></div></div>
+<nav class="breadcrumb" aria-label="パンくずリスト"><div class="container"><a href="https://www.marketsupporter-ai.com">ホーム</a> ＞ <a href="https://www.marketsupporter-ai.com/articles/general-knowledge/knowledge">一般教養</a> ＞ フィジカルAI 進捗モニタリング</div></nav>
+
+<header class="hero">
+  <div class="container">
+    <span class="series">日本成長戦略 進捗モニタリング編 No.03｜AI・半導体分野</span>
+    <h1>フィジカルAI、決定後の進捗（2026年7月〜10月）<br>概算要求・AX指示・国産ロボット試作機・地域計画</h1>
+    <p class="lead">官民投資ロードマップで2040年度までに官民10.5兆円の投資が想定されている「フィジカルAI（特にAIロボット）」。7月の決定後に示されたAI基本計画の改定、総理のAX指示、2027年度概算要求、国産汎用ロボットの試作機公開、地域のクラスター計画、ロードマップのPDCAまでを、一次資料の事実と数値で整理します。</p>
+    <p class="meta">作成：2026-10-21 ｜ データ基準時点：2026年10月</p>
+  </div>
+</header>
+
+<div class="container">
+  <nav class="toc">
+    <h2>CONTENTS</h2>
+    <ol>
+      <li>ロードマップ上の位置づけと目標</li>
+      <li>7月以降の政府方針：AI基本計画の改定とAX指示</li>
+      <li>2027年度概算要求</li>
+      <li>研究開発・実証の進捗</li>
+      <li>地域のクラスター計画</li>
+      <li>官民投資ロードマップのPDCA</li>
+      <li>数値の整理と今後の確認ポイント</li>
+    </ol>
+  </nav>
+</div>
+
+<!-- CH1 -->
+<section class="chapter" id="ch1"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 01</span><h2>ロードマップ上の位置づけと目標</h2></div>
+  <p>フィジカルAI（特にAIロボット）は、戦略17分野のうちAI・半導体分野の「主要な製品・技術等」です。2026年3月の素案で先行して検討が進められ、7月21日に日本成長戦略本部で官民投資ロードマップとして決定されました。</p>
+  <div class="stat-grid">
+    <div class="stat-cell"><div class="num">10.5兆円</div><div class="label">官民投資額（想定）2040年度まで</div></div>
+    <div class="stat-cell"><div class="num">144.4兆円</div><div class="label">経済波及効果（想定）2040年度まで</div></div>
+    <div class="stat-cell"><div class="num">20兆円</div><div class="label">2040年に獲得を目指すAIロボット市場（世界シェア3割超）（政策目標として示されている値）</div></div>
+  </div>
+  <h3>現状認識（素案）</h3>
+  <ul>
+    <li>AIロボット市場は2030年頃を境に急拡大し、2040年に約60兆円規模へ成長すると見込まれています。</li>
+    <li>日本は産業用ロボット市場（約0.8兆円）で世界シェア約7割を持つ一方、サービスロボット市場（約2.8兆円）での世界シェアは1割強にとどまるとされています。</li>
+    <li>素案は、AIモデルに加え、コンピューティング（ロジック半導体等）、制御系（マイコン等）、駆動系（アクチュエータ）、知覚系（各種センサー）を統合した「フィジカル・インテリジェント・システム」の競争力確立を目標に掲げています。</li>
+  </ul>
+  <div class="note-box">経済波及効果は産業連関分析による一次・二次波及効果の合算で、「主要な製品・技術等」の間で重複があるため、品目ごとの数字は合算できないとされています。官民投資額は予算編成やPDCAを通じて精査・改定される予定です。</div>
+  <div class="source-wrap">
+    <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+    <span class="source-tag">内閣官房「戦略17分野における『主要な製品・技術等』の官民投資ロードマップ 参考資料」（2026年7月）</span>
+  </div>
+</div></div></section>
+
+<!-- CH2 -->
+<section class="chapter" id="ch2"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 02</span><h2>7月以降の政府方針：AI基本計画の改定とAX指示</h2></div>
+  <h3>人工知能基本計画（第Ⅱ期）の閣議決定（7月14日）</h3>
+  <p>2026年7月10日に第5回人工知能戦略本部が開催され、7月14日に「人工知能基本計画（第Ⅱ期）」が閣議決定されました。9月18日には、2027年度概算要求におけるAI関連予算が公表されています。</p>
+  <h3>総理によるAX指示（10月1日）</h3>
+  <p>10月1日の第8回日本成長戦略会議で、総理は「高性能AIの社会実装は、我が国の成長戦略実現に不可欠」と述べ、関係大臣に年末までに次の3点をまとめるよう指示しました。</p>
+  <ol>
+    <li>信頼できるAIで社会全体を駆動するAXの具体像</li>
+    <li>AXに対応した規制・制度改革を進めるための原則</li>
+    <li>社会実装を加速するためのアクションプラン</li>
+  </ol>
+  <p>同会議の「当面の検討課題（案）」には、投資環境整備として「AI戦略・AI社会実装に向けた対応」と、データセンターや半導体工場等の拡大に伴う「電力インフラへの対応」が挙げられています。</p>
+  <div class="source-wrap">
+    <span class="source-tag">内閣府「AI戦略」ページ（人工知能基本計画（第Ⅱ期）2026年7月14日閣議決定ほか）</span>
+    <span class="source-tag">首相官邸「日本成長戦略会議」総理発言（2026年10月1日）</span>
+    <span class="source-tag">内閣官房 第8回日本成長戦略会議 資料2「当面の検討課題（案）」</span>
+  </div>
+</div></div></section>
+
+<!-- CH3 -->
+<section class="chapter" id="ch3"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 03</span><h2>2027年度概算要求</h2></div>
+  <p>経済産業省の2027年度概算要求には、フィジカルAI・AIロボットに関する次の事業が「強く豊かな日本」投資枠で計上されています。</p>
+  <div class="table-wrap">
+  <table class="summary-table">
+    <thead><tr><th>事業名</th><th>2027年度要求額</th><th>区分</th></tr></thead>
+    <tbody>
+      <tr><td>AIロボット・フィジカルAI向けマルチモーダル基盤モデル開発事業</td><td class="num">8,964億円</td><td>投資枠</td></tr>
+      <tr><td>AIロボティクス戦略事業</td><td class="num">3,209億円</td><td>投資枠</td></tr>
+      <tr><td>AIロボティクスの中核拠点事業</td><td class="num">1,333億円</td><td>投資枠</td></tr>
+      <tr><td>廃炉フィジカルAI関連研究開発事業</td><td class="num">470億円</td><td>投資枠</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note-box">概算要求は要求段階の金額で、予算額は年末の政府予算案の決定に向けて精査されます。複数年度にわたる事業では、要求額が単年度の執行額と一致しない場合があります。</div>
+  <div class="source-wrap">
+    <span class="source-tag">経済産業省「令和9年度 経済産業省関係 概算要求等概要」（2026年8月31日）</span>
+  </div>
+</div></div></section>
+
+<!-- CH4 -->
+<section class="chapter" id="ch4"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 04</span><h2>研究開発・実証の進捗</h2></div>
+  <h3>マルチモーダル基盤モデル開発事業（NEDO）</h3>
+  <p>NEDOの「AIロボット・フィジカルAIを見据えたマルチモーダル基盤モデル開発事業」は、2026年3月24日〜4月22日に公募が行われ、15件の申請を審査した上で、6月30日に実施予定先が決定されました。事業期間は2026〜2030年度で、2027年度以降は毎年度ステージゲート審査で継続の可否を判断するとされています。</p>
+  <h3>国産汎用ロボット開発コンペティション（9月16日 試作機公開）</h3>
+  <p>2026年9月16日の「フィジカルAI Summit」で、「国産汎用ロボット開発コンペティション」の開発成果が初めて公開されました。一般社団法人AI・ロボット協会（AIRoA）がNEDOの委託事業の一環として実施しているもので、7社が実用レベルの双腕モバイルマニピュレータの試作機を開発しています。</p>
+  <div class="data-box">
+    <div class="title">コンペティションの流れ（NEDO公表資料より）</div>
+    <ul>
+      <li>公募で採択された企業が、約6か月間で試作機を開発する。</li>
+      <li>評価基準を満たした企業は、改良機の開発、さらに量産体制の構築へ進む。</li>
+      <li>完成したロボットは、将来的にロボット基盤モデル開発のためのデータ収集用ロボットとして活用される予定。</li>
+    </ul>
+  </div>
+  <div class="source-wrap">
+    <span class="source-tag">NEDO「AIロボット・フィジカルAIを見据えたマルチモーダル基盤モデル開発事業」公募・採択ページ</span>
+    <span class="source-tag">NEDO「フィジカルAI Summitにて『国産汎用ロボット開発コンペティション』の開発成果を初公開します」</span>
+  </div>
+</div></div></section>
+
+<!-- CH5 -->
+<section class="chapter" id="ch5"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 05</span><h2>地域のクラスター計画</h2></div>
+  <p>地域未来戦略（2026年7月21日閣議決定）に基づく計画のうち、フィジカルAI・ロボットを扱う都道府県の地域産業クラスター計画（B計画）は次のとおりです（内閣官房の公表ページ、2026年10月21日確認）。フィジカルAIを名称に含む戦略産業クラスター計画（A計画）はありません。</p>
+  <div class="table-wrap">
+  <table class="summary-table">
+    <thead><tr><th>策定主体</th><th>計画名・産業領域</th></tr></thead>
+    <tbody>
+      <tr><td>福岡県・北九州市</td><td>フィジカルAI分野における地域産業クラスター計画（社会実装型フィジカルAI産業領域）</td></tr>
+      <tr><td>山梨県</td><td>成長産業横断型全県ファウンドリー化計画（医療機器・航空宇宙防衛分野・フィジカルAIを中核とする高精度ものづくり産業群）</td></tr>
+      <tr><td>大阪府</td><td>ロボット分野における地域産業クラスター計画（府内企業ネットワークを核とするロボット産業領域）</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="data-box">
+    <div class="title">福岡県・北九州市 フィジカルAI分野の目標（KGI）</div>
+    <ul>
+      <li>官民設備投資額：2035年度までの累計で6,000億円（2035年度単年で600億円）</li>
+      <li>付加価値増加額：2035年度に2022年度比734億円増</li>
+      <li>産業人材育成数：10年累計で20,000名（2035年度）</li>
+    </ul>
+    <p>主な取組として、実証フィールドの提供や実装の伴走支援を行う「フィジカルAIサンドボックス」、実装型SIerの育成などを行う「フィジカルAI社会実装LABO」が挙げられ、国家戦略特区制度で規制改革案を提案中とされています。</p>
+  </div>
+  <p class="note-box">KGIの数値は、計画で目標として示されている値です。</p>
+  <div class="source-wrap">
+    <span class="source-tag">内閣官房「地域未来戦略に関する3類型の計画」B.地域産業クラスター計画一覧</span>
+    <span class="source-tag">福岡県・北九州市「フィジカルAI分野における地域産業クラスター計画」概要資料</span>
+  </div>
+</div></div></section>
+
+<!-- CH6 -->
+<section class="chapter" id="ch6"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 06</span><h2>官民投資ロードマップのPDCA</h2></div>
+  <p>2026年10月16日の第5回戦略分野分科会で、「官民投資ロードマップ」で掲げた主な施策の取組状況が報告されました。報告対象はフィジカルAI、次世代船舶、ゲームの3品目で、フィジカルAIの資料（資料3）は非公開です。</p>
+  <p>同分科会で示されたPDCAの進め方は、次のとおりです。</p>
+  <ul>
+    <li>予算事業・税制措置・制度改革等の取組状況を2027年1月頃に整理する。</li>
+    <li>その後、各分野のWG等で施策の見直しの要否を検証する。</li>
+    <li>結果を2027年春の官民投資ロードマップの改訂等に反映する。</li>
+  </ul>
+  <div class="source-wrap">
+    <span class="source-tag">内閣官房 第5回戦略分野分科会 議事次第・資料2（2026年10月16日）</span>
+  </div>
+</div></div></section>
+
+<!-- CH7 -->
+<section class="chapter" id="ch7"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 07</span><h2>数値の整理と今後の確認ポイント</h2></div>
+  <div class="table-wrap">
+  <table class="summary-table">
+    <thead><tr><th>指標</th><th>数値</th><th>出典・時点</th></tr></thead>
+    <tbody>
+      <tr><td>官民投資額（想定）</td><td>10.5兆円（2040年度まで）</td><td>官民投資ロードマップ参考資料（2026年7月）</td></tr>
+      <tr><td>経済波及効果（想定）</td><td>144.4兆円（2040年度まで）</td><td>同上</td></tr>
+      <tr><td>市場獲得目標</td><td>2040年に20兆円・世界シェア3割超（政策目標として示されている値）</td><td>素案（2026年3月）</td></tr>
+      <tr><td>AIロボット市場の見通し</td><td>2040年に約60兆円規模</td><td>素案（2026年3月）</td></tr>
+      <tr><td>経産省 基盤モデル開発事業</td><td>8,964億円（2027年度要求・投資枠）</td><td>経済産業省（2026年8月）</td></tr>
+      <tr><td>経産省 AIロボティクス戦略事業</td><td>3,209億円（同上）</td><td>同上</td></tr>
+      <tr><td>経産省 AIロボティクスの中核拠点事業</td><td>1,333億円（同上）</td><td>同上</td></tr>
+      <tr><td>国産汎用ロボット開発コンペ</td><td>7社が試作機を開発・9月16日に公開</td><td>NEDO（2026年9月）</td></tr>
+      <tr><td>北九州 B計画 官民設備投資（KGI）</td><td>2035年度まで累計6,000億円</td><td>福岡県・北九州市 計画概要</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3>今後の確認ポイント</h3>
+  <ul>
+    <li>年末に取りまとめられるAXの具体像・規制改革の原則・アクションプラン</li>
+    <li>年末の2027年度政府予算案での各事業の予算額</li>
+    <li>年末に策定される日本成長戦略実行計画での位置づけ（3類型のどれに入るか、5か年の投資事業計画）</li>
+    <li>国産汎用ロボット開発コンペの評価結果と、改良機・量産段階への移行</li>
+    <li>2027年1月頃の取組状況の整理と、2027年春のロードマップ改訂</li>
+  </ul>
+  <div class="next-box">
+    <div class="arrow">📌</div>
+    <div>
+      <h3>関連記事</h3>
+      <p>フィジカルAIの企業動向とサプライチェーンは、官民投資ロードマップシリーズ Layer 2-B'「フィジカルAI」編で整理しています。進捗モニタリング編 No.01（総論）、No.02（次世代船舶）もあわせてご覧ください。</p>
+    </div>
+  </div>
+</div></div></section>
+
+<div class="container home-cta">
+  <a href="https://www.marketsupporter-ai.com">Market Supporter AI トップページへ戻る</a>
+  <span class="sub">ほかの戦略17分野・官民投資ロードマップの記事はトップページからご覧いただけます</span>
+</div>
+
+<div class="disclaimer">
+  <div class="container">
+    <h3>免責事項</h3>
+    <p>本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。掲載データは各記載出典（政府・省庁・NEDOの公表資料）に基づきますが、数値の正確性・完全性を保証するものではありません。投資判断は自己責任において行ってください。本レポートの内容は作成時点の情報に基づいており、予算編成・政策変更等により実態が変化する可能性があります。概算要求額は要求段階の金額であり、予算額として確定したものではありません。個別企業に関する投資推奨は一切含みません。データ基準時点は2026年10月です。</p>
+    <p style="margin-top:12px;">
+      <a href="https://www.marketsupporter-ai.com">← Market Supporter AI トップへ戻る</a>　｜　<a href="https://www.marketsupporter-ai.com/articles/general-knowledge/knowledge">一般教養の記事一覧へ</a>
+    </p>
+  </div>
+</div>
+
+<a class="float-home" href="https://www.marketsupporter-ai.com" aria-label="Market Supporter AI トップページへ">HOME<br>トップへ</a>
+
+</body>
+</html>
