@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>港湾荷役機械 進捗モニタリング｜2026年7月〜10月</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c2230;--sub:#4a5366;--muted:#8a93a6;--line:#d9dee8;
+  --paper:#f6f7fa;--card:#ffffff;
+  --accent:#2b4c7e;--accent-soft:#e6ecf5;--accent-dark:#1d3557;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Noto Sans JP",sans-serif;font-size:16px;line-height:1.9}
+.container{max-width:860px;margin:0 auto;padding:0 16px}
+a{color:var(--accent)}
+.masthead{background:var(--accent-dark);color:#fff;padding:12px 0;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em}
+.masthead .container{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.masthead a.home-link{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.45);padding:4px 10px;border-radius:2px;font-family:"Noto Sans JP",sans-serif;font-size:12px;letter-spacing:0}
+.masthead a.home-link:hover{background:rgba(255,255,255,.12)}
+.breadcrumb{background:var(--card);border-bottom:1px solid var(--line);font-size:12px;color:var(--muted);padding:8px 0}
+.breadcrumb a{color:var(--sub);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.hero{background:var(--card);border-bottom:4px solid var(--accent);padding:44px 0 40px}
+.hero .series{display:inline-block;background:var(--accent-soft);color:var(--accent-dark);font-size:12px;font-weight:700;padding:4px 10px;border-radius:2px;margin-bottom:16px}
+.hero h1{font-family:"Noto Serif JP",serif;font-size:clamp(24px,4.4vw,34px);line-height:1.5;margin-bottom:16px}
+.hero .lead{color:var(--sub);font-size:15px}
+.hero .meta{margin-top:20px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted)}
+.toc{background:var(--card);border:1px solid var(--line);margin:32px auto;padding:24px}
+.toc h2{font-size:14px;color:var(--accent);letter-spacing:.1em;margin-bottom:8px}
+.toc ol{padding-left:1.4em;font-size:15px}
+.chapter{padding:24px 0}
+.chapter .inner{background:var(--card);border:1px solid var(--line);padding:32px 28px}
+.chapter-header{border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:20px}
+.chapter-num{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--accent);letter-spacing:.12em}
+.chapter h2{font-family:"Noto Serif JP",serif;font-size:22px;line-height:1.5}
+.chapter h3{font-size:17px;margin:24px 0 8px;padding-left:10px;border-left:3px solid var(--accent)}
+.chapter p{margin-bottom:12px}
+.chapter ul,.chapter ol{padding-left:1.4em;margin-bottom:12px}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:16px 0}
+.stat-cell{background:var(--accent-soft);padding:16px;border-top:3px solid var(--accent)}
+.stat-cell .num{font-family:"IBM Plex Mono",monospace;font-size:22px;font-weight:500;color:var(--accent-dark);line-height:1.3}
+.stat-cell .label{font-size:13px;color:var(--sub);margin-top:4px;line-height:1.6}
+.data-box{background:var(--paper);border:1px solid var(--line);padding:16px 18px;margin:16px 0;font-size:15px}
+.data-box .title{font-weight:700;color:var(--accent-dark);margin-bottom:6px}
+.note-box{border-left:4px solid var(--muted);background:#fafbfc;padding:12px 16px;margin:16px 0;font-size:14px;color:var(--sub)}
+.table-wrap{overflow-x:auto;margin:16px 0}
+.summary-table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+.summary-table th{background:var(--accent-dark);color:#fff;text-align:left;padding:8px 10px;font-weight:500}
+.summary-table td{border-bottom:1px solid var(--line);padding:8px 10px;vertical-align:top}
+.summary-table td.num{text-align:right;font-family:"IBM Plex Mono",monospace;white-space:nowrap}
+.summary-table tr.total td{font-weight:700;background:var(--accent-soft)}
+.source-wrap{margin-top:20px;display:flex;flex-wrap:wrap;gap:6px}
+.source-tag{display:inline-block;font-size:11px;color:var(--sub);background:var(--paper);border:1px solid var(--line);padding:2px 8px;line-height:1.6}
+.next-box{display:flex;gap:16px;background:var(--accent-soft);padding:20px;margin:16px 0}
+.next-box .arrow{font-size:22px}
+.next-box h3{border:none;padding:0;margin:0 0 6px}
+.home-cta{text-align:center;margin:40px auto 0}
+.home-cta a{display:inline-block;background:var(--accent-dark);color:#fff;text-decoration:none;padding:14px 28px;font-weight:700;font-size:15px;border-radius:2px}
+.home-cta a:hover{background:var(--accent)}
+.home-cta .sub{display:block;margin-top:8px;font-size:12px;color:var(--muted)}
+.disclaimer{background:var(--accent-dark);color:rgba(255,255,255,.75);padding:32px 0;margin-top:40px;font-size:13px;line-height:1.9}
+.disclaimer h3{color:#fff;font-size:14px;margin-bottom:8px}
+.disclaimer a{color:rgba(255,255,255,.75);font-size:12px}
+.float-home{border:1px solid rgba(255,255,255,.7);position:fixed;right:16px;bottom:16px;z-index:50;background:var(--accent-dark);color:#fff;text-decoration:none;font-size:12px;font-weight:700;line-height:1.3;text-align:center;padding:10px 12px;border-radius:2px;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.float-home:hover{background:var(--accent)}
+@media (max-width:600px){.chapter .inner{padding:24px 16px}.float-home{right:12px;bottom:12px;padding:8px 10px}}
+</style>
+</head>
+<body>
+
+<div class="masthead"><div class="container"><span>MARKET SUPPORTER AI ｜ 進捗モニタリング編 No.06</span><a class="home-link" href="https://www.marketsupporter-ai.com">← トップページへ</a></div></div>
+<nav class="breadcrumb" aria-label="パンくずリスト"><div class="container"><a href="https://www.marketsupporter-ai.com">ホーム</a> ＞ <a href="https://www.marketsupporter-ai.com/articles/general-knowledge/knowledge">一般教養</a> ＞ 港湾荷役機械 進捗モニタリング</div></nav>
+
+<header class="hero">
+  <div class="container">
+    <span class="series">日本成長戦略 進捗モニタリング編 No.06｜港湾ロジスティクス分野</span>
+    <h1>港湾荷役機械、決定後の進捗（2026年7月〜10月）<br>国産クレーンの生産強化に新規117億円、自動化ガイドライン</h1>
+    <p class="lead">官民投資ロードマップの「港湾荷役機械」は、国産のガントリークレーン等の生産機能強化と、国内港湾での自動化・遠隔操作化を柱とする品目です。7月の決定後に示された国土交通省港湾局の2027年度概算要求、自動化・遠隔化荷役機械の導入ガイドライン、関連する補助事業の採択までを、一次資料の事実と数値で整理します。</p>
+    <p class="meta">作成：2026-10-24 ｜ データ基準時点：2026年10月</p>
+  </div>
+</header>
+
+<div class="container">
+  <nav class="toc">
+    <h2>CONTENTS</h2>
+    <ol>
+      <li>ロードマップ上の位置づけと目標</li>
+      <li>2027年度概算要求（国土交通省港湾局）</li>
+      <li>自動化・遠隔化荷役機械の導入ガイドライン</li>
+      <li>関連する補助事業・計画</li>
+      <li>数値の整理と今後の確認ポイント</li>
+    </ol>
+  </nav>
+</div>
+
+<!-- CH1 -->
+<section class="chapter" id="ch1"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 01</span><h2>ロードマップ上の位置づけと目標</h2></div>
+  <p>港湾荷役機械は、戦略17分野のうち港湾ロジスティクス分野の「主要な製品・技術等」です。2026年3月の素案で先行して検討が進められ、7月21日に日本成長戦略本部で官民投資ロードマップとして決定されました。</p>
+  <div class="stat-grid">
+    <div class="stat-cell"><div class="num">0.4兆円</div><div class="label">官民投資額（想定）2040年度まで</div></div>
+    <div class="stat-cell"><div class="num">1.0兆円</div><div class="label">経済波及効果（想定）2040年度まで</div></div>
+    <div class="stat-cell"><div class="num">3割程度</div><div class="label">2040年頃を目途に狙う米国市場のシェア（政策目標として示されている値）</div></div>
+  </div>
+  <h3>現状認識（素案）</h3>
+  <ul>
+    <li>2024年の世界の設置基数に占める日本企業のシェアは、STSクレーン（ガントリークレーン）で約1割、ヤードクレーン（RTG）で約1割強とされ、その大部分は特定の1社による供給とされています。</li>
+    <li>国内外の需要が日本企業の生産能力を上回り、製造に通常の約1.5倍程度の期間を要し、受注控えなどの機会損失も生じているとされています。</li>
+    <li>日本製のSTSクレーンは軽量でエネルギー効率が高く、故障率が低いことに加え、耐震・免震性能に強みがあるとされています。</li>
+    <li>米国では海外製STSクレーンへの依存度が極めて高く、サイバーリスクへの懸念から国内製造基盤の復活に向けた政策が進められているとされています。</li>
+  </ul>
+  <h3>素案で示された目標</h3>
+  <ul>
+    <li>国内市場を維持しつつ、米国やアジア太平洋地域を視野に国外市場の拡大（約200〜300億円/年）を目指す。</li>
+    <li>国内の港湾で自動化・遠隔操作化等の荷役機械の導入を進め、労働環境の改善と生産性の向上を図る。</li>
+    <li>ISOで検討されている自動化コンテナターミナルの国際標準化に、同盟国・同志国と連携して対応する。</li>
+  </ul>
+  <div class="note-box">港湾ロジスティクス分野の他の品目の官民投資額（想定）は、サイバーポート（港湾物流DX）0.2兆円、次世代型倉庫0.6兆円です（いずれも2040年度まで）。経済波及効果は品目間で重複があるため合算できないとされています。</div>
+  <div class="source-wrap">
+    <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+    <span class="source-tag">内閣官房「戦略17分野における『主要な製品・技術等』の官民投資ロードマップ 参考資料」（2026年7月）</span>
+  </div>
+</div></div></section>
+
+<!-- CH2 -->
+<section class="chapter" id="ch2"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 02</span><h2>2027年度概算要求（国土交通省港湾局）</h2></div>
+  <p>国土交通省港湾局の2027年度概算要求では、港湾ロジスティクス関係の3事業が「強く豊かな日本」投資枠（日本成長戦略）で計上されています。このうち「港湾荷役機械の生産機能の強化」は新規事業です。</p>
+  <div class="table-wrap">
+  <table class="summary-table">
+    <thead><tr><th>事業名</th><th>2027年度要求額</th><th>内容</th></tr></thead>
+    <tbody>
+      <tr><td>港湾荷役機械の生産機能の強化（新規）</td><td class="num">116.95億円</td><td>国産港湾荷役機械の生産力強化</td></tr>
+      <tr><td>港湾ロジスティクスの強化に資する港湾整備</td><td class="num">630億円</td><td>自動化・遠隔操作化等荷役機械の導入支援、大水深コンテナターミナル整備等</td></tr>
+      <tr><td>サイバーポートを中心としたデータプラットフォームによる港湾手続のデジタル標準化の推進</td><td class="num">7億円</td><td>港湾物流のデジタル化</td></tr>
+      <tr class="total"><td>港湾ロジスティクス関係 小計</td><td class="num">753.95億円</td><td>いずれも投資枠</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>あわせて、制度面では「港湾ロジスティクス拠点ターミナル形成支援」（自動・遠隔操作荷役機械等の統合導入の支援）と「コンテナターミナルにおける自律走行車両の導入支援」の拡充が示されています。港湾局関係の要求総額は2,659.31億円（国費）で、前年度比1.48倍です。</p>
+  <div class="note-box">概算要求は要求段階の金額で、予算額は年末の政府予算案の決定に向けて精査されます。</div>
+  <div class="source-wrap">
+    <span class="source-tag">国土交通省港湾局「令和9年度 港湾局関係予算概算要求概要」（2026年8月）</span>
+  </div>
+</div></div></section>
+
+<!-- CH3 -->
+<section class="chapter" id="ch3"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 03</span><h2>自動化・遠隔化荷役機械の導入ガイドライン</h2></div>
+  <p>国土交通省港湾局と一般社団法人日本港運協会は、2026年9月30日に「自動化・遠隔化荷役機械の円滑な導入のためのガイドライン」を取りまとめました。</p>
+  <ul>
+    <li><strong>背景：</strong>港湾労働者の不足により、安定的な港湾荷役の継続が懸念されていること。日本成長戦略の「港湾ロジスティクス」分野でも導入を進める方針であること。</li>
+    <li><strong>目的：</strong>港湾ターミナルで自動化・遠隔化荷役機械を導入する際、関係者の理解・協力の下で導入が円滑に進むようにすること。</li>
+    <li><strong>想定する利用者：</strong>国、港湾運営会社、港湾管理者、港湾運送事業者等。</li>
+    <li><strong>基本的な考え方：</strong>各港湾現場の実情に応じて、関係する港湾運送事業者の理解と協力を得ながら導入を進めることが重要とされています。</li>
+  </ul>
+  <p>素案の政策パッケージでは、自動化・遠隔操作化等荷役機械の安全確保のためのモデル運用規程の整備や、導入補助、無利子資金の貸付制度などが挙げられていました。</p>
+  <div class="source-wrap">
+    <span class="source-tag">国土交通省 報道発表「自動化･遠隔化荷役機械の円滑な導入のためのガイドラインをとりまとめました」（2026年9月30日）</span>
+  </div>
+</div></div></section>
+
+<!-- CH4 -->
+<section class="chapter" id="ch4"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 04</span><h2>関連する補助事業・計画</h2></div>
+  <h3>コンテナターミナルのゲート高度化（9月29日採択）</h3>
+  <p>荷役機械そのものではありませんが、コンテナターミナルの効率化に関連して、国土交通省は2026年度の新規採択として3件のゲート高度化事業を採択しました。</p>
+  <div class="table-wrap">
+  <table class="summary-table">
+    <thead><tr><th>港</th><th>事業者</th><th>内容</th><th>事業期間（予定）</th></tr></thead>
+    <tbody>
+      <tr><td>苫小牧港</td><td>苫小牧国際コンテナターミナル</td><td>OCRカメラ導入によるコンテナ番号の読み取り効率化</td><td>2026年度</td></tr>
+      <tr><td>東京港（Y3ターミナル）</td><td>萬海航運（ワンハイラインズ）</td><td>OCRカメラ導入によるコンテナ外装チェックの効率化</td><td>2026〜2028年度</td></tr>
+      <tr><td>横浜港（本牧D4ターミナル）</td><td>萬海航運（ワンハイラインズ）</td><td>OCRカメラ導入によるコンテナ外装チェックの効率化</td><td>2026〜2027年度</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3>港湾手続のデジタル標準化</h3>
+  <p>国土交通省は8月6日、港湾手続のデジタル標準化を推進する「貿易DX協会」の設立を発表しました。サイバーポートでは、9月1日に横浜港で危険品関連書類のデジタル化を開始し、9月18日には外貿コンテナ取扱貨物量の週次公表（コンテナ貨物流動週報）を始めています。</p>
+  <h3>地域産業クラスター計画</h3>
+  <p>香川県は「造船・建機等鋼構造物関連分野における地域産業クラスター計画」（次世代造船及びクレーン等を核とする鋼構造物産業領域）を策定しています。</p>
+  <div class="source-wrap">
+    <span class="source-tag">国土交通省 報道発表「コンテナターミナルのゲートの高度化に対する補助事業を採択」（2026年9月29日）</span>
+    <span class="source-tag">国土交通省 港湾関係報道発表資料（2026年8〜9月）</span>
+    <span class="source-tag">内閣官房「地域未来戦略に関する3類型の計画」</span>
+  </div>
+</div></div></section>
+
+<!-- CH5 -->
+<section class="chapter" id="ch5"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 05</span><h2>数値の整理と今後の確認ポイント</h2></div>
+  <div class="table-wrap">
+  <table class="summary-table">
+    <thead><tr><th>指標</th><th>数値</th><th>出典・時点</th></tr></thead>
+    <tbody>
+      <tr><td>官民投資額（想定）</td><td>0.4兆円（2040年度まで）</td><td>官民投資ロードマップ参考資料（2026年7月）</td></tr>
+      <tr><td>経済波及効果（想定）</td><td>1.0兆円（2040年度まで）</td><td>同上</td></tr>
+      <tr><td>日本企業の世界シェア（設置基数）</td><td>STSクレーン約1割、RTG約1割強（2024年）</td><td>素案（2026年3月）</td></tr>
+      <tr><td>国外市場の拡大目標</td><td>約200〜300億円/年、2040年頃に米国市場の3割程度（政策目標として示されている値）</td><td>素案（2026年3月）</td></tr>
+      <tr><td>港湾荷役機械の生産機能の強化</td><td>116.95億円（2027年度要求・新規・投資枠）</td><td>国土交通省港湾局（2026年8月）</td></tr>
+      <tr><td>港湾ロジスティクス関係 小計</td><td>753.95億円（同上）</td><td>同上</td></tr>
+      <tr><td>自動化・遠隔化荷役機械ガイドライン</td><td>2026年9月30日取りまとめ</td><td>国土交通省・日本港運協会</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3>今後の確認ポイント</h3>
+  <ul>
+    <li>年末の2027年度政府予算案での「港湾荷役機械の生産機能の強化」（新規）の予算額</li>
+    <li>年末に策定される日本成長戦略実行計画での位置づけ（3類型のどれに入るか、5か年の投資事業計画）</li>
+    <li>自動化・遠隔操作化等荷役機械の導入支援の具体的な採択状況</li>
+    <li>2027年1月頃の取組状況の整理と、2027年春のロードマップ改訂</li>
+  </ul>
+  <div class="next-box">
+    <div class="arrow">📌</div>
+    <div>
+      <h3>進捗モニタリング編について</h3>
+      <p>No.01（総論）では日本成長戦略全体の予算・実行計画・特別会計・地域未来戦略の進捗を、No.02〜No.05では次世代船舶・フィジカルAI・ゲーム・半導体の進捗を整理しています。</p>
+    </div>
+  </div>
+</div></div></section>
+
+<div class="container home-cta">
+  <a href="https://www.marketsupporter-ai.com">Market Supporter AI トップページへ戻る</a>
+  <span class="sub">ほかの戦略17分野・官民投資ロードマップの記事はトップページからご覧いただけます</span>
+</div>
+
+<div class="disclaimer">
+  <div class="container">
+    <h3>免責事項</h3>
+    <p>本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。掲載データは各記載出典（政府・省庁の公表資料）に基づきますが、数値の正確性・完全性を保証するものではありません。投資判断は自己責任において行ってください。本レポートの内容は作成時点の情報に基づいており、予算編成・政策変更等により実態が変化する可能性があります。概算要求額は要求段階の金額であり、予算額として確定したものではありません。企業名は政府の公表資料に記載された事実として掲載したもので、個別企業に関する投資推奨は一切含みません。データ基準時点は2026年10月です。</p>
+    <p style="margin-top:12px;">
+      <a href="https://www.marketsupporter-ai.com">← Market Supporter AI トップへ戻る</a>　｜　<a href="https://www.marketsupporter-ai.com/articles/general-knowledge/knowledge">一般教養の記事一覧へ</a>
+    </p>
+  </div>
+</div>
+
+<a class="float-home" href="https://www.marketsupporter-ai.com" aria-label="Market Supporter AI トップページへ">HOME<br>トップへ</a>
+
+</body>
+</html>
