@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>防災技術 進捗モニタリング｜2026年7月〜10月</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c2230;--sub:#4a5366;--muted:#8a93a6;--line:#d9dee8;
+  --paper:#f6f7fa;--card:#ffffff;
+  --accent:#2b4c7e;--accent-soft:#e6ecf5;--accent-dark:#1d3557;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Noto Sans JP",sans-serif;font-size:16px;line-height:1.9}
+.container{max-width:860px;margin:0 auto;padding:0 16px}
+a{color:var(--accent)}
+.masthead{background:var(--accent-dark);color:#fff;padding:12px 0;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em}
+.masthead .container{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.masthead a.home-link{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.45);padding:4px 10px;border-radius:2px;font-family:"Noto Sans JP",sans-serif;font-size:12px;letter-spacing:0}
+.masthead a.home-link:hover{background:rgba(255,255,255,.12)}
+.breadcrumb{background:var(--card);border-bottom:1px solid var(--line);font-size:12px;color:var(--muted);padding:8px 0}
+.breadcrumb a{color:var(--sub);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.hero{background:var(--card);border-bottom:4px solid var(--accent);padding:44px 0 40px}
+.hero .series{display:inline-block;background:var(--accent-soft);color:var(--accent-dark);font-size:12px;font-weight:700;padding:4px 10px;border-radius:2px;margin-bottom:16px}
+.hero h1{font-family:"Noto Serif JP",serif;font-size:clamp(24px,4.4vw,34px);line-height:1.5;margin-bottom:16px}
+.hero .lead{color:var(--sub);font-size:15px}
+.hero .meta{margin-top:20px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted)}
+.toc{background:var(--card);border:1px solid var(--line);margin:32px auto;padding:24px}
+.toc h2{font-size:14px;color:var(--accent);letter-spacing:.1em;margin-bottom:8px}
+.toc ol{padding-left:1.4em;font-size:15px}
+.chapter{padding:24px 0}
+.chapter .inner{background:var(--card);border:1px solid var(--line);padding:32px 28px}
+.chapter-header{border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:20px}
+.chapter-num{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--accent);letter-spacing:.12em}
+.chapter h2{font-family:"Noto Serif JP",serif;font-size:22px;line-height:1.5}
+.chapter h3{font-size:17px;margin:24px 0 8px;padding-left:10px;border-left:3px solid var(--accent)}
+.chapter p{margin-bottom:12px}
+.chapter ul,.chapter ol{padding-left:1.4em;margin-bottom:12px}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:16px 0}
+.stat-cell{background:var(--accent-soft);padding:16px;border-top:3px solid var(--accent)}
+.stat-cell .num{font-family:"IBM Plex Mono",monospace;font-size:22px;font-weight:500;color:var(--accent-dark);line-height:1.3}
+.stat-cell .label{font-size:13px;color:var(--sub);margin-top:4px;line-height:1.6}
+.data-box{background:var(--paper);border:1px solid var(--line);padding:16px 18px;margin:16px 0;font-size:15px}
+.data-box .title{font-weight:700;color:var(--accent-dark);margin-bottom:6px}
+.note-box{border-left:4px solid var(--muted);background:#fafbfc;padding:12px 16px;margin:16px 0;font-size:14px;color:var(--sub)}
+.table-wrap{overflow-x:auto;margin:16px 0}
+.summary-table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+.summary-table th{background:var(--accent-dark);color:#fff;text-align:left;padding:8px 10px;font-weight:500}
+.summary-table td{border-bottom:1px solid var(--line);padding:8px 10px;vertical-align:top}
+.summary-table td.num{text-align:right;font-family:"IBM Plex Mono",monospace;white-space:nowrap}
+.summary-table tr.total td{font-weight:700;background:var(--accent-soft)}
+.source-wrap{margin-top:20px;display:flex;flex-wrap:wrap;gap:6px}
+.source-tag{display:inline-block;font-size:11px;color:var(--sub);background:var(--paper);border:1px solid var(--line);padding:2px 8px;line-height:1.6}
+.next-box{display:flex;gap:16px;background:var(--accent-soft);padding:20px;margin:16px 0}
+.next-box .arrow{font-size:22px}
+.next-box h3{border:none;padding:0;margin:0 0 6px}
+.home-cta{text-align:center;margin:40px auto 0}
+.home-cta a{display:inline-block;background:var(--accent-dark);color:#fff;text-decoration:none;padding:14px 28px;font-weight:700;font-size:15px;border-radius:2px}
+.home-cta a:hover{background:var(--accent)}
+.home-cta .sub{display:block;margin-top:8px;font-size:12px;color:var(--muted)}
+.disclaimer{background:var(--accent-dark);color:rgba(255,255,255,.75);padding:32px 0;margin-top:40px;font-size:13px;line-height:1.9}
+.disclaimer h3{color:#fff;font-size:14px;margin-bottom:8px}
+.disclaimer a{color:rgba(255,255,255,.75);font-size:12px}
+.float-home{border:1px solid rgba(255,255,255,.7);position:fixed;right:16px;bottom:16px;z-index:50;background:var(--accent-dark);color:#fff;text-decoration:none;font-size:12px;font-weight:700;line-height:1.3;text-align:center;padding:10px 12px;border-radius:2px;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.float-home:hover{background:var(--accent)}
+@media (max-width:600px){.chapter .inner{padding:24px 16px}.float-home{right:12px;bottom:12px;padding:8px 10px}}
+</style>
+</head>
+<body>
+
+<div class="masthead"><div class="container"><span>MARKET SUPPORTER AI ｜ 進捗モニタリング編 No.07</span><a class="home-link" href="https://www.marketsupporter-ai.com">← トップページへ</a></div></div>
+<nav class="breadcrumb" aria-label="パンくずリスト"><div class="container"><a href="https://www.marketsupporter-ai.com">ホーム</a> ＞ <a href="https://www.marketsupporter-ai.com/articles/general-knowledge/knowledge">一般教養</a> ＞ 防災技術 進捗モニタリング</div></nav>
+
+<header class="hero">
+  <div class="container">
+    <span class="series">日本成長戦略 進捗モニタリング編 No.07｜防災・国土強靱化分野</span>
+    <h1>防災技術、決定後の進捗（2026年7月〜10月）<br>防災庁設置法の公布と、新「推進費」に225億円の要求</h1>
+    <p class="lead">官民投資ロードマップで2030年度までに官民2.6兆円の投資が想定されている「防災技術」。7月の決定後に公布された防災庁設置法と関連政令、防災庁関係の2027年度概算要求で創設が求められた「防災技術・産業成長投資総合推進費（仮称）」、地域の計画までを、一次資料の事実と数値で整理します。</p>
+    <p class="meta">作成：2026-10-25 ｜ データ基準時点：2026年10月</p>
+  </div>
+</header>
+
+<div class="container">
+  <nav class="toc">
+    <h2>CONTENTS</h2>
+    <ol>
+      <li>ロードマップ上の位置づけと目標</li>
+      <li>防災庁設置法の公布と関連政令</li>
+      <li>2027年度概算要求（防災庁関係）</li>
+      <li>防災技術・産業成長投資総合推進費（仮称）の仕組み</li>
+      <li>地域の計画</li>
+      <li>数値の整理と今後の確認ポイント</li>
+    </ol>
+  </nav>
+</div>
+
+<!-- CH1 -->
+<section class="chapter" id="ch1"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 01</span><h2>ロードマップ上の位置づけと目標</h2></div>
+  <p>防災技術は、戦略17分野のうち防災・国土強靱化分野の唯一の「主要な製品・技術等」です。2026年3月の素案で先行して検討が進められ、7月21日に日本成長戦略本部で官民投資ロードマップとして決定されました。</p>
+  <div class="stat-grid">
+    <div class="stat-cell"><div class="num">2.6兆円</div><div class="label">官民投資額（想定）2030年度まで</div></div>
+    <div class="stat-cell"><div class="num">14.5兆円</div><div class="label">経済波及効果（想定）</div></div>
+    <div class="stat-cell"><div class="num">約1兆円→約2兆円</div><div class="label">日本企業の防災分野の海外売上総額（2024年→2030年）（政策目標として示されている値）</div></div>
+  </div>
+  <div class="note-box">官民投資額2.6兆円とは別に、第1次国土強靱化実施中期計画に基づき、2030年度までに官民あわせて概ね20兆円強程度の内数の投資が想定されているとされています（2.6兆円に加算するものではありません）。経済波及効果は品目間で重複があるため合算できないとされています。</div>
+  <h3>現状認識（素案）</h3>
+  <ul>
+    <li>切迫する巨大地震、激甚化・頻発化する気象災害、高度経済成長期に整備されたインフラの老朽化への事前投資が急務とされています。</li>
+    <li>人口減少の中で防災・国土強靱化の担い手が将来的に不足するため、デジタル等の新技術による生産性向上が必要とされています。</li>
+    <li>世界の災害対応関連資金（保険・財政）の96％が発災後の緊急対応・復旧に投入されており、事前投資への資金シフトが不可欠とされています。</li>
+    <li>素案は、民間予測として、国内の防災情報システム・サービス市場が2025年度の2,153億円から2031年度に2,459億円、世界の自然災害管理システム市場が2024年の9.6兆円から2030年に約19.4兆円（150円/米ドル換算）に拡大するとの見通しを紹介しています。</li>
+  </ul>
+  <h3>日本の強みとされる防災技術の例</h3>
+  <p>自動施工・遠隔施工、インフラ老朽化対策技術、災害リスク関連技術（気象予測など）、防災資機材関連技術。海外でも導入が見込まれる技術として、地震・水害等の観測・早期警戒システム、衛星・AI等を活用した被災状況の把握、インフラの点検技術などが挙げられています。</p>
+  <div class="source-wrap">
+    <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+    <span class="source-tag">内閣官房「戦略17分野における『主要な製品・技術等』の官民投資ロードマップ 参考資料」（2026年7月）</span>
+  </div>
+</div></div></section>
+
+<!-- CH2 -->
+<section class="chapter" id="ch2"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 02</span><h2>防災庁設置法の公布と関連政令</h2></div>
+  <p>素案は、防災技術の好循環を生み出すため「防災庁設置に伴う環境整備と併せて、多角的に政策を講じ、防災産業を発展させていく」としていました。7月以降、防災庁の設置に向けた法令の整備が進みました。</p>
+  <div class="table-wrap">
+  <table class="summary-table">
+    <thead><tr><th>日付</th><th>内容</th></tr></thead>
+    <tbody>
+      <tr><td>7月17日</td><td>防災庁設置法（令和8年法律第61号）、防災庁設置法の施行に伴う関係法律の整備等に関する法律（同第62号）を公布</td></tr>
+      <tr><td>9月25日</td><td>防災庁設置法の施行期日を定める政令、防災庁組織令、関係政令の整備に関する政令を閣議決定</td></tr>
+      <tr><td>9月30日</td><td>上記3政令（政令第303号・第304号・第305号）を公布</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note-box">防災庁の発足日は「防災庁設置法の施行期日を定める政令」で定められています。本レポートでは、政令本文を確認できていないため、具体的な日付は記載していません。</div>
+  <div class="source-wrap">
+    <span class="source-tag">内閣官房 防災庁設置準備室ページ</span>
+    <span class="source-tag">首相官邸「閣議の概要」（2026年9月25日）</span>
+  </div>
+</div></div></section>
+
+<!-- CH3 -->
+<section class="chapter" id="ch3"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 03</span><h2>2027年度概算要求（防災庁関係）</h2></div>
+  <div class="stat-grid">
+    <div class="stat-cell"><div class="num">651.84億円</div><div class="label">防災庁関係の概算要求額（うち投資枠401.74億円）</div></div>
+    <div class="stat-cell"><div class="num">225.5億円</div><div class="label">防災技術の研究開発・実装、防災産業の発展（うち投資枠225億円）</div></div>
+    <div class="stat-cell"><div class="num">0.49億円</div><div class="label">同 前年度（2026年度）の額</div></div>
+  </div>
+  <div class="table-wrap">
+  <table class="summary-table">
+    <thead><tr><th>事業</th><th>2027年度要求額</th><th>うち投資枠</th></tr></thead>
+    <tbody>
+      <tr><td>防災技術の研究開発・実装、防災産業の発展（「防災技術・産業成長投資総合推進費（仮称）」の創設を含む）</td><td class="num">225.50億円</td><td class="num">225.00億円</td></tr>
+      <tr><td>人工衛星、航空機、ドローン等を活用した被災状況把握システム構築の推進（鳥の目プロジェクト）</td><td class="num">1.50億円</td><td class="num">―</td></tr>
+      <tr><td>防災情報システムの高度化及び被災者支援業務におけるDXの推進</td><td class="num">21.82億円</td><td class="num">9.10億円</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>このほか、「第1次国土強靱化実施中期計画」関連の経費は事項要求として、予算編成過程で検討するとされています。</p>
+  <div class="note-box">概算要求は要求段階の金額で、予算額は年末の政府予算案の決定に向けて精査されます。</div>
+  <div class="source-wrap">
+    <span class="source-tag">内閣官房防災庁設置準備室「令和9年度 防災庁関係 予算概算要求・税制改正要望等概要」（2026年8月）</span>
+  </div>
+</div></div></section>
+
+<!-- CH4 -->
+<section class="chapter" id="ch4"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 04</span><h2>防災技術・産業成長投資総合推進費（仮称）の仕組み</h2></div>
+  <p>概算要求資料は、防災技術について「技術開発から商品化、実装・需要創出、更なる技術開発につながる好循環を創出」し、防災産業の振興と官民一体の海外展開を図るとしています。新たに創設を求める推進費の流れは次のとおりです。</p>
+  <ol>
+    <li>分野ごとの検討グループが研究課題を設定し、公募要領を作成する。</li>
+    <li>民間から技術・製品を公募し、審査・評価を行う。研究開発を支援する「開発支援型」と、製品を認証する「認証型」に分ける。</li>
+    <li>認証された技術・製品をカタログ化する。</li>
+    <li>現場での試行導入、販路拡大の伴走支援、公共調達の活用により需要を創出する。</li>
+  </ol>
+  <p>あわせて、日本企業の海外展開を支援し、海外での日本の防災技術の導入を目指すとしています。素案の政策パッケージでは、「製品のカタログ化、登録・認証制度・規格化」「補助や公共調達による需要創出」が挙げられていました。</p>
+  <div class="source-wrap">
+    <span class="source-tag">内閣官房防災庁設置準備室「令和9年度 防災庁関係 予算概算要求・税制改正要望等概要」（2026年8月）</span>
+    <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+  </div>
+</div></div></section>
+
+<!-- CH5 -->
+<section class="chapter" id="ch5"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 05</span><h2>地域の計画</h2></div>
+  <p>地域未来戦略（2026年7月21日閣議決定）に基づく地域産業クラスター計画では、高知県が「防災関連産業分野における地域産業クラスター計画」（防災関連認定製品を核とした防災産業領域）を策定しています（内閣官房の公表ページ）。防災技術を名称に含む戦略産業クラスター計画（A計画）はありません。</p>
+  <div class="source-wrap">
+    <span class="source-tag">内閣官房「地域未来戦略に関する3類型の計画」B.地域産業クラスター計画一覧</span>
+  </div>
+</div></div></section>
+
+<!-- CH6 -->
+<section class="chapter" id="ch6"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 06</span><h2>数値の整理と今後の確認ポイント</h2></div>
+  <div class="table-wrap">
+  <table class="summary-table">
+    <thead><tr><th>指標</th><th>数値</th><th>出典・時点</th></tr></thead>
+    <tbody>
+      <tr><td>官民投資額（想定）</td><td>2.6兆円（2030年度まで）</td><td>官民投資ロードマップ参考資料（2026年7月）</td></tr>
+      <tr><td>経済波及効果（想定）</td><td>14.5兆円</td><td>同上</td></tr>
+      <tr><td>防災分野の海外売上目標</td><td>約1兆円（2024年）→約2兆円（2030年）（政策目標として示されている値）</td><td>素案（2026年3月）</td></tr>
+      <tr><td>防災庁設置法</td><td>2026年7月17日公布（法律第61号）</td><td>内閣官房</td></tr>
+      <tr><td>施行期日・組織令等の政令</td><td>2026年9月30日公布</td><td>内閣官房</td></tr>
+      <tr><td>防災庁関係 概算要求</td><td>651.84億円（うち投資枠401.74億円）</td><td>防災庁設置準備室（2026年8月）</td></tr>
+      <tr><td>防災技術・防災産業（推進費創設を含む）</td><td>225.5億円（前年度0.49億円）</td><td>同上</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3>今後の確認ポイント</h3>
+  <ul>
+    <li>防災庁の発足と、防災技術・防災産業を担う体制</li>
+    <li>年末の2027年度政府予算案での推進費（仮称）の予算額と、国土強靱化関連の事項要求の扱い</li>
+    <li>推進費の検討グループの設置、研究課題の設定、公募の開始時期</li>
+    <li>年末に策定される日本成長戦略実行計画での位置づけ（3類型のどれに入るか、5か年の投資事業計画）</li>
+    <li>2027年1月頃の取組状況の整理と、2027年春のロードマップ改訂</li>
+  </ul>
+  <div class="next-box">
+    <div class="arrow">📌</div>
+    <div>
+      <h3>進捗モニタリング編について</h3>
+      <p>No.01（総論）では日本成長戦略全体の進捗を、No.02〜No.06では次世代船舶・フィジカルAI・ゲーム・半導体・港湾荷役機械の進捗を整理しています。</p>
+    </div>
+  </div>
+</div></div></section>
+
+<div class="container home-cta">
+  <a href="https://www.marketsupporter-ai.com">Market Supporter AI トップページへ戻る</a>
+  <span class="sub">ほかの戦略17分野・官民投資ロードマップの記事はトップページからご覧いただけます</span>
+</div>
+
+<div class="disclaimer">
+  <div class="container">
+    <h3>免責事項</h3>
+    <p>本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。掲載データは各記載出典（政府・省庁の公表資料）に基づきますが、数値の正確性・完全性を保証するものではありません。素案で紹介された市場規模は民間予測です。投資判断は自己責任において行ってください。本レポートの内容は作成時点の情報に基づいており、予算編成・政策変更等により実態が変化する可能性があります。概算要求額は要求段階の金額であり、予算額として確定したものではありません。個別企業に関する投資推奨は一切含みません。データ基準時点は2026年10月です。</p>
+    <p style="margin-top:12px;">
+      <a href="https://www.marketsupporter-ai.com">← Market Supporter AI トップへ戻る</a>　｜　<a href="https://www.marketsupporter-ai.com/articles/general-knowledge/knowledge">一般教養の記事一覧へ</a>
+    </p>
+  </div>
+</div>
+
+<a class="float-home" href="https://www.marketsupporter-ai.com" aria-label="Market Supporter AI トップページへ">HOME<br>トップへ</a>
+
+</body>
+</html>
