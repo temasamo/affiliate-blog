@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ロケット・射場 進捗モニタリング｜2026年7月〜10月</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c2230;--sub:#4a5366;--muted:#8a93a6;--line:#d9dee8;
+  --paper:#f6f7fa;--card:#ffffff;
+  --accent:#2b4c7e;--accent-soft:#e6ecf5;--accent-dark:#1d3557;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Noto Sans JP",sans-serif;font-size:16px;line-height:1.9}
+.container{max-width:860px;margin:0 auto;padding:0 16px}
+a{color:var(--accent)}
+.masthead{background:var(--accent-dark);color:#fff;padding:12px 0;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em}
+.masthead .container{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.masthead a.home-link{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.45);padding:4px 10px;border-radius:2px;font-family:"Noto Sans JP",sans-serif;font-size:12px;letter-spacing:0}
+.masthead a.home-link:hover{background:rgba(255,255,255,.12)}
+.breadcrumb{background:var(--card);border-bottom:1px solid var(--line);font-size:12px;color:var(--muted);padding:8px 0}
+.breadcrumb a{color:var(--sub);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.hero{background:var(--card);border-bottom:4px solid var(--accent);padding:44px 0 40px}
+.hero .series{display:inline-block;background:var(--accent-soft);color:var(--accent-dark);font-size:12px;font-weight:700;padding:4px 10px;border-radius:2px;margin-bottom:16px}
+.hero h1{font-family:"Noto Serif JP",serif;font-size:clamp(24px,4.4vw,34px);line-height:1.5;margin-bottom:16px}
+.hero .lead{color:var(--sub);font-size:15px}
+.hero .meta{margin-top:20px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted)}
+.toc{background:var(--card);border:1px solid var(--line);margin:32px auto;padding:24px}
+.toc h2{font-size:14px;color:var(--accent);letter-spacing:.1em;margin-bottom:8px}
+.toc ol{padding-left:1.4em;font-size:15px}
+.chapter{padding:24px 0}
+.chapter .inner{background:var(--card);border:1px solid var(--line);padding:32px 28px}
+.chapter-header{border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:20px}
+.chapter-num{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--accent);letter-spacing:.12em}
+.chapter h2{font-family:"Noto Serif JP",serif;font-size:22px;line-height:1.5}
+.chapter h3{font-size:17px;margin:24px 0 8px;padding-left:10px;border-left:3px solid var(--accent)}
+.chapter p{margin-bottom:12px}
+.chapter ul,.chapter ol{padding-left:1.4em;margin-bottom:12px}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:16px 0}
+.stat-cell{background:var(--accent-soft);padding:16px;border-top:3px solid var(--accent)}
+.stat-cell .num{font-family:"IBM Plex Mono",monospace;font-size:22px;font-weight:500;color:var(--accent-dark);line-height:1.3}
+.stat-cell .label{font-size:13px;color:var(--sub);margin-top:4px;line-height:1.6}
+.data-box{background:var(--paper);border:1px solid var(--line);padding:16px 18px;margin:16px 0;font-size:15px}
+.data-box .title{font-weight:700;color:var(--accent-dark);margin-bottom:6px}
+.note-box{border-left:4px solid var(--muted);background:#fafbfc;padding:12px 16px;margin:16px 0;font-size:14px;color:var(--sub)}
+.table-wrap{overflow-x:auto;margin:16px 0}
+.summary-table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+.summary-table th{background:var(--accent-dark);color:#fff;text-align:left;padding:8px 10px;font-weight:500}
+.summary-table td{border-bottom:1px solid var(--line);padding:8px 10px;vertical-align:top}
+.summary-table td.num{text-align:right;font-family:"IBM Plex Mono",monospace;white-space:nowrap}
+.summary-table.wide{min-width:680px}
+.summary-table.wide td:first-child{white-space:nowrap}
+.summary-table.wide td.num{text-align:left}
+.summary-table tr.total td{font-weight:700;background:var(--accent-soft)}
+.source-wrap{margin-top:20px;display:flex;flex-wrap:wrap;gap:6px}
+.source-tag{display:inline-block;font-size:11px;color:var(--sub);background:var(--paper);border:1px solid var(--line);padding:2px 8px;line-height:1.6}
+.next-box{display:flex;gap:16px;background:var(--accent-soft);padding:20px;margin:16px 0}
+.next-box .arrow{font-size:22px}
+.next-box h3{border:none;padding:0;margin:0 0 6px}
+.home-cta{text-align:center;margin:40px auto 0}
+.home-cta a{display:inline-block;background:var(--accent-dark);color:#fff;text-decoration:none;padding:14px 28px;font-weight:700;font-size:15px;border-radius:2px}
+.home-cta a:hover{background:var(--accent)}
+.home-cta .sub{display:block;margin-top:8px;font-size:12px;color:var(--muted)}
+.disclaimer{background:var(--accent-dark);color:rgba(255,255,255,.75);padding:32px 0;margin-top:40px;font-size:13px;line-height:1.9}
+.disclaimer h3{color:#fff;font-size:14px;margin-bottom:8px}
+.disclaimer a{color:rgba(255,255,255,.75);font-size:12px}
+.float-home{border:1px solid rgba(255,255,255,.7);position:fixed;right:16px;bottom:16px;z-index:50;background:var(--accent-dark);color:#fff;text-decoration:none;font-size:12px;font-weight:700;line-height:1.3;text-align:center;padding:10px 12px;border-radius:2px;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.float-home:hover{background:var(--accent)}
+@media (max-width:600px){.chapter .inner{padding:24px 16px}.float-home{right:12px;bottom:12px;padding:8px 10px}}
+</style>
+</head>
+<body>
+
+<div class="masthead"><div class="container"><span>MARKET SUPPORTER AI ｜ 進捗モニタリング編 No.10</span><a class="home-link" href="https://www.marketsupporter-ai.com">← トップページへ</a></div></div>
+<nav class="breadcrumb" aria-label="パンくずリスト"><div class="container"><a href="https://www.marketsupporter-ai.com">ホーム</a> ＞ <a href="https://www.marketsupporter-ai.com/articles/general-knowledge/knowledge">一般教養</a> ＞ ロケット・射場 進捗モニタリング</div></nav>
+
+<header class="hero">
+  <div class="container">
+    <span class="series">日本成長戦略 進捗モニタリング編 No.10｜航空・宇宙分野</span>
+    <h1>ロケット・射場、決定後の進捗（2026年7月〜10月）<br>北海道・和歌山のクラスター計画と、打上げ役務の「まとめ調達」</h1>
+    <p class="lead">官民投資ロードマップで2040年度までに官民2.3兆円の投資が想定されている「ロケット・射場」。7月の決定後に公表された北海道（大樹町）と近畿（和歌山県）の戦略産業クラスター計画、2027年度の宇宙関係予算の概算要求、H3ロケットの打上げまでを、一次資料の事実と数値で整理します。</p>
+    <p class="meta">作成：2026-10-28 ｜ データ基準時点：2026年10月</p>
+  </div>
+</header>
+
+<div class="container">
+  <nav class="toc">
+    <h2>CONTENTS</h2>
+    <ol>
+      <li>ロードマップ上の位置づけと目標</li>
+      <li>戦略産業クラスター計画：北海道・近畿</li>
+      <li>北海道スペースポート（HOSPO）の整備計画</li>
+      <li>2027年度概算要求（宇宙関係予算）</li>
+      <li>打上げの動き</li>
+      <li>数値の整理と今後の確認ポイント</li>
+    </ol>
+  </nav>
+</div>
+
+<!-- CH1 -->
+<section class="chapter" id="ch1"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 01</span><h2>ロードマップ上の位置づけと目標</h2></div>
+  <p>ロケット・射場は、戦略17分野のうち航空・宇宙分野の「主要な製品・技術等」です。2026年3月の素案で先行して検討が進められ、7月21日に日本成長戦略本部で官民投資ロードマップとして決定されました。</p>
+  <div class="stat-grid">
+    <div class="stat-cell"><div class="num">2.3兆円</div><div class="label">官民投資額（想定）2040年度まで</div></div>
+    <div class="stat-cell"><div class="num">5.5兆円</div><div class="label">経済波及効果（想定）2040年度まで</div></div>
+    <div class="stat-cell"><div class="num">年1,500〜3,000億円</div><div class="label">2040年に獲得を目指す打上げサービス需要（素案）（政策目標として示されている値）</div></div>
+  </div>
+  <h3>現状認識（素案）</h3>
+  <ul>
+    <li>2025年の軌道投入ロケットの打上げ成功数は、米国（SpaceX含む）192回、中国91回に対し、日本は3回とされています。</li>
+    <li>国内衛星の国内打上げ比率は50％（2015〜2024年累計）で、国内衛星の多く（政府衛星を除く）は海外から打ち上げられているとされています。</li>
+    <li>宇宙分野の世界市場は2030年代に約150兆円と予測されているとしています。</li>
+  </ul>
+  <h3>素案で示された目標</h3>
+  <ul>
+    <li>国内衛星の国内打上げ需要は2030年頃に少なくとも年30回以上と想定し、国内打上げ比率を60〜80％以上に引き上げる。</li>
+    <li>まず官民で年10機程度の打上げを確実にし、2030年頃までに製造能力向上・射場等のインフラ整備を進める。中長期的には基幹ロケットで年10〜22機、新規参入ロケットで年20〜30機の高頻度打上げを目指す。</li>
+  </ul>
+  <div class="note-box">素案の目標値には【P】（暫定値）の表記がついているものがあります。経済波及効果は品目間で重複があるため合算できないとされています。航空・宇宙分野の他の品目の官民投資額（想定、2040年度まで）は、人工衛星・サービス6.4兆円、月面探査・低軌道技術5.6兆円、民間航空機3.5兆円などです。</div>
+  <div class="source-wrap">
+    <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+    <span class="source-tag">内閣官房「戦略17分野における『主要な製品・技術等』の官民投資ロードマップ 参考資料」（2026年7月）</span>
+  </div>
+</div></div></section>
+
+<!-- CH2 -->
+<section class="chapter" id="ch2"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 02</span><h2>戦略産業クラスター計画：北海道・近畿</h2></div>
+  <p>地域未来戦略（2026年7月21日閣議決定）に基づき、2026年7月31日の関係副大臣等会議で報告された戦略産業クラスター計画13件のうち、2件がロケット・射場の計画です。</p>
+  <div class="table-wrap">
+  <table class="summary-table wide">
+    <thead><tr><th>項目</th><th>北海道地域</th><th>近畿地域</th></tr></thead>
+    <tbody>
+      <tr><td>拠点</td><td>北海道スペースポート（大樹町）</td><td>スペースポート紀伊（和歌山県串本町・那智勝浦町）</td></tr>
+      <tr><td>中核案件</td><td>インターステラテクノロジズ、SPACE COTAN（いずれも大樹町、投資額は非公表）</td><td>スペースワン（SBIRフェーズ3の支援を受けロケットの開発・実証）</td></tr>
+      <tr><td>官民設備投資（KGI）</td><td class="num">3,142億円<br>（2026〜2040年度）</td><td class="num">累計約505億円<br>（2040年度まで）</td></tr>
+      <tr><td>うち2030年時点（KPI）</td><td class="num">1,075億円（累積）</td><td class="num">206億円（累積）</td></tr>
+      <tr><td>付加価値増加額（KGI）</td><td class="num">5,876億円<br>（2026〜2040年度）</td><td class="num">約945億円<br>（2040年度まで）</td></tr>
+      <tr><td>人材育成（KGI）</td><td class="num">2,400人<br>（2026〜2040年度）</td><td class="num">累計2,280人以上<br>（2040年度まで）</td></tr>
+      <tr><td>インフラ整備の例</td><td>大樹広尾道路などのアクセス道路</td><td>高規格道路の整備（総事業費約1,991億円）</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>近畿地域の計画は、1回の打上げあたりの県内経済波及効果を約12億円（宿泊・飲食・小売などを含む）と試算しています。</p>
+  <div class="note-box">KGI・KPIの数値は各計画で目標として示されている値です。計画ごとに対象範囲や期間の定義が異なるため、単純に合算・比較はできません。</div>
+  <div class="source-wrap">
+    <span class="source-tag">内閣官房 地域未来戦略本部事務局・経済産業省「戦略産業クラスター計画の概要」（2026年7月31日 関係副大臣等会議 第5回 資料2）</span>
+    <span class="source-tag">内閣官房「ロケット・射場 戦略産業クラスター計画（北海道地域・近畿地域）」概要資料・計画本文</span>
+  </div>
+</div></div></section>
+
+<!-- CH3 -->
+<section class="chapter" id="ch3"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 03</span><h2>北海道スペースポート（HOSPO）の整備計画</h2></div>
+  <p>北海道地域の計画本文には、大樹町の北海道スペースポート（HOSPO）の整備計画が示されています。</p>
+  <ul>
+    <li><strong>LC1（小型衛星打上げ用射場）：</strong>用地造成、電気・水道・通信、機体組立建屋、煙道などを整備。総事業費は約43億円程度、事業期間は2027年3月まで（予定）。2026年度の部分的な運用開始を目指すとしています。</li>
+    <li><strong>既存施設：</strong>LC0（インターステラテクノロジズが運用）、LP12（サブオービタルロケット等の実験用）、1,300mの滑走路。</li>
+    <li><strong>課題：</strong>LC1の打上げ能力は数回程度で、複数事業者の需要には対応しきれないとされ、複数事業者に対応できる射場の整備や既存射場の拡張が今後の計画に挙げられています。</li>
+  </ul>
+  <div class="source-wrap">
+    <span class="source-tag">内閣官房「ロケット・射場 戦略産業クラスター計画（北海道地域）」計画本文</span>
+  </div>
+</div></div></section>
+
+<!-- CH4 -->
+<section class="chapter" id="ch4"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 04</span><h2>2027年度概算要求（宇宙関係予算）</h2></div>
+  <div class="stat-grid">
+    <div class="stat-cell"><div class="num">1兆791億円</div><div class="label">2027年度 宇宙関係予算の概算要求（＋事項要求）</div></div>
+    <div class="stat-cell"><div class="num">＋3％</div><div class="label">2026年度当初＋2025年度補正等（1兆446億円）との比較</div></div>
+    <div class="stat-cell"><div class="num">5,357億円</div><div class="label">うち「強く豊かな日本」投資枠</div></div>
+  </div>
+  <div class="table-wrap">
+  <table class="summary-table">
+    <thead><tr><th>府省</th><th>事業</th><th>2027年度要求額</th></tr></thead>
+    <tbody>
+      <tr><td>内閣府</td><td>成長戦略【ロケット・射場】を踏まえた打上げ役務のまとめ調達（新規）</td><td class="num">10.0億円</td></tr>
+      <tr><td>経済産業省</td><td>経済安全保障に資する宇宙産業の基盤強化（射場整備、ロケット及び人工衛星の試験施設整備）</td><td class="num">683億円（投資枠）<br>※国庫債務負担行為を含めると762億円</td></tr>
+      <tr><td>経済産業省</td><td>宇宙戦略基金事業</td><td class="num">329億円（投資枠）</td></tr>
+      <tr><td>文部科学省</td><td>基幹ロケットの開発・高度化、打上げ高頻度化</td><td class="num">―</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>素案は、新規の投資内容として「設備投資に係る予見性向上等に資するアンカーテナンシー構築（打上げサービスの計画的調達等）」を挙げていました。</p>
+  <div class="note-box">文部科学省の基幹ロケット関連の要求額は、内閣府の取りまとめ資料から事業との対応を読み取れなかったため記載していません。概算要求は要求段階の金額で、予算額は年末の政府予算案の決定に向けて精査されます。</div>
+  <div class="source-wrap">
+    <span class="source-tag">内閣府宇宙開発戦略推進事務局「令和9年度 宇宙関係予算 概算要求」資料1-1</span>
+    <span class="source-tag">経済産業省「令和9年度 経済産業省関係 概算要求等概要」（2026年8月31日）</span>
+  </div>
+</div></div></section>
+
+<!-- CH5 -->
+<section class="chapter" id="ch5"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 05</span><h2>打上げの動き</h2></div>
+  <p>2026年8月11日、H3ロケット9号機が準天頂衛星「みちびき」7号機を搭載して打ち上げられ、衛星を静止遷移軌道に投入しました。H3ロケットとしては通算9機目の打上げです。</p>
+  <div class="source-wrap">
+    <span class="source-tag">JAXA 打上げ関連資料（2026年8月）</span>
+    <span class="source-tag">JST サイエンスポータル（2026年8月12日）</span>
+  </div>
+</div></div></section>
+
+<!-- CH6 -->
+<section class="chapter" id="ch6"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 06</span><h2>数値の整理と今後の確認ポイント</h2></div>
+  <div class="table-wrap">
+  <table class="summary-table">
+    <thead><tr><th>指標</th><th>数値</th><th>出典・時点</th></tr></thead>
+    <tbody>
+      <tr><td>官民投資額（想定）</td><td>2.3兆円（2040年度まで）</td><td>官民投資ロードマップ参考資料（2026年7月）</td></tr>
+      <tr><td>経済波及効果（想定）</td><td>5.5兆円（2040年度まで）</td><td>同上</td></tr>
+      <tr><td>2025年の打上げ成功数</td><td>日本3回（米国192回、中国91回）</td><td>素案（2026年3月）</td></tr>
+      <tr><td>国内衛星の国内打上げ比率</td><td>50％（2015〜2024年累計）→60〜80％以上（目標）</td><td>素案（2026年3月）</td></tr>
+      <tr><td>北海道 クラスター計画 官民設備投資（KGI）</td><td>3,142億円（2026〜2040年度）</td><td>戦略産業クラスター計画（2026年7月）</td></tr>
+      <tr><td>近畿 クラスター計画 官民設備投資（KGI）</td><td>累計約505億円（2040年度まで）</td><td>同上</td></tr>
+      <tr><td>宇宙関係予算 概算要求</td><td>1兆791億円＋事項要求（うち投資枠5,357億円）</td><td>内閣府（2026年8月）</td></tr>
+      <tr><td>打上げ役務のまとめ調達（新規）</td><td>10.0億円</td><td>同上</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3>今後の確認ポイント</h3>
+  <ul>
+    <li>年末の2027年度政府予算案での、打上げ役務のまとめ調達（新規）と射場整備関連の予算額</li>
+    <li>北海道スペースポートLC1の運用開始</li>
+    <li>年末に策定される日本成長戦略実行計画での位置づけ（3類型のどれに入るか、5か年の投資事業計画）</li>
+    <li>特別会計（経済安全保障上特に重要な分野を別枠管理）の対象範囲</li>
+    <li>2027年1月頃の取組状況の整理と、2027年春のロードマップ改訂</li>
+  </ul>
+  <div class="next-box">
+    <div class="arrow">📌</div>
+    <div>
+      <h3>進捗モニタリング編について</h3>
+      <p>No.01（総論）では日本成長戦略全体の進捗を、No.02〜No.09では先行品目のうち次世代船舶・フィジカルAI・ゲーム・半導体・港湾荷役機械・防災技術・感染症対応製品・ファーストインクラス製品の進捗を整理しています。</p>
+    </div>
+  </div>
+</div></div></section>
+
+<div class="container home-cta">
+  <a href="https://www.marketsupporter-ai.com">Market Supporter AI トップページへ戻る</a>
+  <span class="sub">ほかの戦略17分野・官民投資ロードマップの記事はトップページからご覧いただけます</span>
+</div>
+
+<div class="disclaimer">
+  <div class="container">
+    <h3>免責事項</h3>
+    <p>本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。掲載データは各記載出典（政府・省庁・公的機関の公表資料）に基づきますが、数値の正確性・完全性を保証するものではありません。投資判断は自己責任において行ってください。本レポートの内容は作成時点の情報に基づいており、予算編成・政策変更等により実態が変化する可能性があります。概算要求額は要求段階の金額であり、予算額として確定したものではありません。企業名は政府の公表資料に記載された事実として掲載したもので、個別企業に関する投資推奨は一切含みません。データ基準時点は2026年10月です。</p>
+    <p style="margin-top:12px;">
+      <a href="https://www.marketsupporter-ai.com">← Market Supporter AI トップへ戻る</a>　｜　<a href="https://www.marketsupporter-ai.com/articles/general-knowledge/knowledge">一般教養の記事一覧へ</a>
+    </p>
+  </div>
+</div>
+
+<a class="float-home" href="https://www.marketsupporter-ai.com" aria-label="Market Supporter AI トップページへ">HOME<br>トップへ</a>
+
+</body>
+</html>
