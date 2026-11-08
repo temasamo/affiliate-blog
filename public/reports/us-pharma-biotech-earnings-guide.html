@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>なぜ米国の製薬・バイオ株は、決算1本で株価が倍にも半分にもなるのか ― 29銘柄決算シリーズ 入口記事 | Market Supporter AI</title>
+<meta name="description" content="売上36%増でも株価は28%下落。米国製薬・バイオ株が決算1本で大きく動く仕組みを、事業モデル別の「見るべき数字」と29銘柄の分類、上場維持・株式併合という論点まで7章で整理します。2026年11月8日時点。">
+<style>
+:root{
+  --accent:#1e3a5f;
+  --accent-dark:#132742;
+  --accent-mid:#2c5282;
+  --accent-light:#eef3f9;
+  --ink:#1a1a1a;
+  --ink-sub:#4a5568;
+  --line:#dfe6ef;
+  --bg:#ffffff;
+  --warn-bg:#fff8ec;
+  --warn-line:#e0a648;
+  --m1:#4f46e5;
+  --m2:#0891b2;
+  --m3:#059669;
+  --m4:#d97706;
+  --m5:#be185d;
+  --m6:#7c3aed;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.9;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 55%,var(--accent-mid) 100%);
+  color:#fff;
+  padding:56px 24px 48px;
+}
+.hero-inner{max-width:860px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;
+  font-size:12px;
+  letter-spacing:.14em;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:999px;
+  padding:5px 14px;
+  margin-bottom:20px;
+}
+.hero h1{
+  font-size:30px;
+  line-height:1.5;
+  margin:0 0 18px;
+  font-weight:700;
+}
+.hero .lede{
+  font-size:15px;
+  line-height:1.85;
+  color:rgba(255,255,255,.88);
+  margin:0 0 22px;
+}
+.meta{
+  font-size:12.5px;
+  color:rgba(255,255,255,.72);
+  border-top:1px solid rgba(255,255,255,.22);
+  padding-top:14px;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 72px;}
+.toc{
+  background:var(--accent-light);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:22px 26px;
+  margin:40px 0;
+}
+.toc h2{
+  font-size:14px;
+  margin:0 0 12px;
+  color:var(--accent);
+  letter-spacing:.06em;
+}
+.toc ol{margin:0;padding-left:1.3em;font-size:14.5px;}
+.toc li{margin:7px 0;}
+.toc a{color:var(--ink-sub);text-decoration:none;border-bottom:1px solid transparent;}
+.toc a:hover{color:var(--accent);border-bottom-color:var(--accent);}
+h2.chapter{
+  font-size:22px;
+  line-height:1.55;
+  margin:56px 0 20px;
+  padding:0 0 12px 0;
+  border-bottom:3px solid var(--accent);
+  font-weight:700;
+}
+h2.chapter .num{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  font-size:13px;
+  border-radius:5px;
+  padding:3px 10px;
+  margin-right:10px;
+  vertical-align:3px;
+}
+h3{
+  font-size:17.5px;
+  margin:34px 0 12px;
+  padding-left:12px;
+  border-left:4px solid var(--accent-mid);
+  line-height:1.6;
+}
+p{margin:0 0 18px;}
+a{color:var(--accent-mid);}
+strong{font-weight:700;}
+.callout{
+  background:var(--accent-light);
+  border-left:4px solid var(--accent);
+  border-radius:0 8px 8px 0;
+  padding:18px 22px;
+  margin:26px 0;
+  font-size:15px;
+}
+.callout.warn{
+  background:var(--warn-bg);
+  border-left-color:var(--warn-line);
+}
+.callout p:last-child{margin-bottom:0;}
+.callout .label{
+  display:block;
+  font-size:12px;
+  letter-spacing:.1em;
+  color:var(--accent);
+  margin-bottom:8px;
+  font-weight:700;
+}
+.callout.warn .label{color:#9a6512;}
+.kpi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:14px;
+  margin:28px 0;
+}
+.kpi{
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:16px 18px;
+  background:#fbfcfe;
+}
+.kpi .k{font-size:12px;color:var(--ink-sub);display:block;margin-bottom:6px;line-height:1.5;}
+.kpi .v{font-size:21px;font-weight:700;color:var(--accent);line-height:1.3;display:block;}
+.kpi .n{font-size:11.5px;color:var(--ink-sub);display:block;margin-top:6px;line-height:1.5;}
+.table-scroll{overflow-x:auto;margin:26px 0;-webkit-overflow-scrolling:touch;}
+table{
+  border-collapse:collapse;
+  width:100%;
+  font-size:14px;
+  min-width:560px;
+}
+th,td{
+  border:1px solid var(--line);
+  padding:10px 12px;
+  text-align:left;
+  vertical-align:top;
+  line-height:1.7;
+}
+th{background:var(--accent);color:#fff;font-weight:600;white-space:nowrap;}
+tbody tr:nth-child(even){background:#f8fafc;}
+td.num{text-align:right;white-space:nowrap;}
+.model-tag{
+  display:inline-block;
+  font-size:11.5px;
+  color:#fff;
+  border-radius:4px;
+  padding:2px 8px;
+  white-space:nowrap;
+  font-weight:600;
+}
+.m1{background:var(--m1);} .m2{background:var(--m2);} .m3{background:var(--m3);}
+.m4{background:var(--m4);} .m5{background:var(--m5);} .m6{background:var(--m6);}
+.tickers{font-size:13.5px;line-height:1.9;}
+.crosslink{
+  border:1px dashed var(--accent-mid);
+  border-radius:9px;
+  padding:16px 20px;
+  margin:28px 0;
+  font-size:14px;
+  background:#fafcff;
+}
+.crosslink .label{
+  display:block;
+  font-size:12px;
+  letter-spacing:.08em;
+  color:var(--accent);
+  font-weight:700;
+  margin-bottom:8px;
+}
+.crosslink ul{margin:0;padding-left:1.2em;}
+.crosslink li{margin:5px 0;}
+.watch{
+  background:var(--accent-dark);
+  color:#fff;
+  border-radius:12px;
+  padding:34px 28px;
+  margin:60px 0 40px;
+}
+.watch h2{
+  font-size:20px;
+  margin:0 0 8px;
+  letter-spacing:.04em;
+}
+.watch .sub{
+  font-size:13.5px;
+  color:rgba(255,255,255,.72);
+  margin:0 0 26px;
+}
+.watch ol{list-style:none;counter-reset:w;margin:0;padding:0;}
+.watch ol li{
+  counter-increment:w;
+  position:relative;
+  padding-left:42px;
+  margin-bottom:20px;
+  font-size:14.5px;
+  line-height:1.85;
+}
+.watch ol li::before{
+  content:counter(w);
+  position:absolute;
+  left:0;top:2px;
+  width:27px;height:27px;
+  border-radius:50%;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.4);
+  color:#fff;
+  font-size:13px;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;
+}
+.watch .wt{display:block;font-weight:700;margin-bottom:3px;}
+.watch table{min-width:480px;font-size:13.5px;}
+.watch th{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.22);}
+.watch td{border-color:rgba(255,255,255,.18);color:rgba(255,255,255,.9);}
+.watch tbody tr:nth-child(even){background:rgba(255,255,255,.04);}
+.watch .note{font-size:12.5px;color:rgba(255,255,255,.68);line-height:1.8;margin-top:18px;}
+.disclaimer{
+  border-top:2px solid var(--line);
+  margin-top:56px;
+  padding-top:24px;
+  font-size:12.5px;
+  color:var(--ink-sub);
+  line-height:1.9;
+}
+.disclaimer h2{font-size:14px;color:var(--ink);margin:0 0 10px;}
+.src{font-size:12.5px;color:var(--ink-sub);margin:-8px 0 22px;}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  .hero{padding:40px 18px 34px;}
+  .hero h1{font-size:23px;}
+  .wrap{padding:0 18px 56px;}
+  h2.chapter{font-size:19px;margin:44px 0 16px;}
+  h3{font-size:16.5px;}
+  .watch{padding:26px 18px;border-radius:10px;}
+  .kpi .v{font-size:19px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">米国製薬・バイオ決算シリーズ ― 入口記事</span>
+    <h1>なぜ米国の製薬・バイオ株は、決算1本で株価が倍にも半分にもなるのか</h1>
+    <p class="lede">売上が前年同期比36%増えた会社の株価が、決算発表の当日に28%下げました。ガイダンスを上下とも引き上げ、社史上最高の粗利率を出した会社の株価も、同じ決算シーズンに下げています。「業績が良ければ株価が上がる」という前提が、この業種では通用しません。本記事は、明日から1日1銘柄ずつ読んでいく29本の個別決算記事に先立って、米国製薬・バイオ株の決算が株価を動かす<strong>仕組み</strong>を整理するものです。</p>
+    <p class="meta">公開：2026年11月8日／数値は2026年11月8日時点の公開情報（決算リリース・SEC提出書類・企業IR）に基づく／情報提供のみを目的とし、投資判断の推奨ではありません</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#ch0">導入：売上36%増で、株価は28%下げた</a></li>
+    <li><a href="#ch1">①米国市場の特徴 ― 世界最大であり、赤字企業が上場できる市場</a></li>
+    <li><a href="#ch2">②赤字企業はなぜ上場し続けられるのか</a></li>
+    <li><a href="#ch3">③決算で株価が動く4つの仕組み</a></li>
+    <li><a href="#ch4">④事業モデル別「決算で見るべき数字」早見表（29銘柄の分類）</a></li>
+    <li><a href="#ch5">⑤見出しの数字にだまされない ― 営業黒字が「費用のマイナス」から生まれる例</a></li>
+    <li><a href="#ch6">⑥上場維持と株式併合 ― 株価表示そのものが変わる論点</a></li>
+    <li><a href="#ch7">⑦まとめ ― 決算を読む順番</a></li>
+    <li><a href="#watch">WHAT TO WATCH：これから1か月の決算カレンダー</a></li>
+  </ol>
+</nav>
+
+<h2 class="chapter" id="ch0"><span class="num">導入</span>売上36%増で、株価は28%下げた</h2>
+
+<p>2026年3月2日、眼科・麻酔領域の医薬品を手がける <strong>Harrow（NASDAQ:HROW）</strong> が2025年第4四半期の決算を発表しました。売上は前年同期比で約36%増。売上の数字だけを見れば、順調な成長企業です。</p>
+
+<p>しかし発表後、株価は<strong>約28%下落</strong>しました。</p>
+
+<div class="kpi-grid">
+  <div class="kpi"><span class="k">HROW 売上（Q4 2025）</span><span class="v">前年比 +36%</span><span class="n">2026年3月2日発表</span></div>
+  <div class="kpi"><span class="k">EPS</span><span class="v">0.17ドル</span><span class="n">市場予想0.40ドルを0.23ドル下回る</span></div>
+  <div class="kpi"><span class="k">2026年SG&amp;Aガイダンス</span><span class="v">1.85〜2.05億ドル</span><span class="n">会社は年後半偏重と説明</span></div>
+  <div class="kpi"><span class="k">発表後の株価</span><span class="v">約▲28%</span><span class="n">2026年3月2日の発表を受けた反応</span></div>
+</div>
+
+<p>理由は3つに分解できます。第一に、1株利益が市場予想を大きく下回ったこと。第二に、2026年の販売管理費ガイダンスが市場の想定より重かったこと。第三に、会社が「利益は年後半に偏る」と説明したこと ― つまり、投資家が待つ期間が延びたことです。</p>
+
+<p>売上は増えていました。それでも下げたのです。<strong>決算は「数字の絶対値」ではなく「事前の想定との差」と「待つ期間の長さ」で評価される</strong> ― これが米国製薬・バイオ株の決算を読むときの出発点になります。</p>
+
+<p>逆方向の例もあります。2026年10月30日、医療用ポータブル超音波の <strong>Butterfly Network（NYSE:BFLY）</strong> は売上3,260万ドルを発表しました。自社ガイダンス上限を約9%上回り、市場予想2,837万ドルも約15%上回り、EPSも予想を上回り、通期ガイダンスは上下とも引き上げ、粗利率は社史上最高でした。</p>
+
+<p>それでも株価は当日<strong>約3.8%下落</strong>しています。説明された理由は、海外事業の弱さが続いており、その改善が第4四半期から2027年に後ろ倒しになったことでした。</p>
+
+<div class="callout">
+  <span class="label">この2例が示していること</span>
+  <p>HROWは「良い売上＋悪い利益＋後ろ倒し」で大きく下げ、BFLYは「全項目で予想超え＋一部の後ろ倒し」で小幅に下げました。どちらも、株価を動かしたのは<strong>決算の数字そのものではなく、数字が修正した「将来の見通し」</strong>です。本記事の残りは、この「見通しの修正」がどこから生まれるのかを分解していきます。</p>
+</div>
+
+<p class="src">出典：Harrow 2025年第4四半期決算（2026年3月2日発表）、Butterfly Network 2026年第3四半期決算（2026年10月30日発表）。株価の変動率は発表に対する当日の反応として報じられた水準です。</p>
+
+<h2 class="chapter" id="ch1"><span class="num">①</span>米国市場の特徴 ― 世界最大であり、赤字企業が上場できる市場</h2>
+
+<h3>世界最大の医薬品市場である</h3>
+
+<p>米国は、医薬品の売上で世界最大の単一市場です。公的保険が価格を一元的に決める国と違い、米国では民間保険会社・薬剤給付管理会社（PBM）・政府プログラムが並立し、価格交渉が分散しています。その結果、同じ薬が他の先進国より高い価格で販売されることが一般的です。</p>
+
+<p>この構造は、2つの意味を持ちます。ひとつは、米国で承認・保険適用された薬は売上規模が大きくなりやすいこと。もうひとつは、<strong>価格が政治の対象になりやすい</strong>ことです。薬価引き下げの議論が出るたびに製薬セクター全体が売られるのは、この市場構造が背景にあります。</p>
+
+<h3>赤字でも上場できる、という制度上の特徴</h3>
+
+<p>米国の取引所は、上場基準として「利益が出ていること」を必須としていません。NASDAQには複数の上場基準があり、たとえば時価総額や株主資本、営業キャッシュフローなど、利益以外の基準を満たすことで上場を維持できる経路が用意されています。</p>
+
+<p>この結果、<strong>売上がゼロ、あるいは売上が営業費用の1%未満しかない企業が、数億ドル規模の時価総額で上場している</strong>という状況が普通に成立します。本シリーズで扱う29銘柄のうち、創薬型に分類される8社の多くがこの状態です。</p>
+
+<div class="callout warn">
+  <span class="label">注意</span>
+  <p>「赤字でも上場できる」は「赤字でも上場し続けられる」とは別の話です。最低株価基準（1ドル）や株主資本基準を満たせなくなると不適合通知が出され、是正できなければ上場廃止に向かいます。この論点は<a href="#ch6">⑥章</a>で扱います。</p>
+</div>
+
+<h2 class="chapter" id="ch2"><span class="num">②</span>赤字企業はなぜ上場し続けられるのか</h2>
+
+<p>売上がほぼない企業が、数年にわたって研究開発に数億ドルを使い続けられるのはなぜか。資金の出口は、おおむね4種類に整理できます。</p>
+
+<h3>(1) 増資 ― 株式を発行して現金を得る</h3>
+
+<p>最も基本的な資金調達です。公募増資（一度にまとまった株数を発行）と、ATM（At-The-Market、市場で小口ずつ売り出す枠）の2通りがあります。</p>
+
+<p>重要なのは、<strong>増資は現金を増やすと同時に、1株当たりの価値を薄める</strong>という点です。本シリーズの過去記事で扱った例では、1年間に発行済株式数が約52%増えた企業（Recursion）、半年で株式数が約37%増えた企業（Prime Medicine）がありました。株価が半分になっても、株式数が2倍になっていれば時価総額は変わっていません。<strong>株価の推移だけを見ていると、この希薄化は見えません。</strong></p>
+
+<h3>(2) 提携の一時金（アップフロント）</h3>
+
+<p>大手製薬会社と提携した際に、契約締結時点で受け取る現金です。返還義務がないことが多く、赤字企業にとっては最も質の良い現金といえます。ただし単発であり、翌期には消えます。</p>
+
+<h3>(3) マイルストーン ― 「最大○億ドル」の正体</h3>
+
+<p>提携のプレスリリースでよく見る「最大20億ドル」「総額最大5億ドル」という数字は、<strong>すべての開発段階・承認・売上目標を達成した場合の上限値</strong>です。実際に受け取れるのは、達成した条件に対応する分だけです。</p>
+
+<p>本シリーズではこれを<strong>実現率（累計受領額 ÷ 公表総額、編集部試算）</strong>という指標で見てきました。過去記事での試算値は次のとおりです。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>企業</th><th>公表総額</th><th>累計受領額</th><th>実現率（編集部試算）</th></tr></thead>
+<tbody>
+<tr><td>Recursion（RXRX）</td><td>200億ドル超</td><td>5億ドル超</td><td class="num">約2.5%</td></tr>
+<tr><td>Relay（RLAY）― Elevar契約</td><td>最大5億ドル</td><td>1,870万ドル</td><td class="num">約3.7%</td></tr>
+<tr><td>AstraZeneca ― Dizal契約</td><td>公表総額</td><td>受領済み分</td><td class="num">約40%</td></tr>
+<tr><td>Roivant（ROIV）― Moderna和解</td><td>22.5億ドル</td><td>9.5億ドル</td><td class="num">約42%</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>実現率の差は、交渉力の差ではなく<strong>条件の種類の差</strong>です。和解金や既に達成済みの開発段階に紐づく支払いは実現率が高く、「将来の承認」「将来の年間売上○億ドル達成」に紐づく支払いは実現率が低くなります。プレスリリースの「最大」という1語が、実質的に数十倍の幅を持っていることになります。</p>
+
+<h3>(4) ロイヤルティ ― 他社が売った薬の売上の一部を受け取る</h3>
+
+<p>自社で薬を売らず、権利から継続的に収入を得るモデルです。本シリーズの29銘柄では、Royalty Pharma（RPRX）、Ligand（LGND）、Innoviva（INVA）の3社がこの型です。研究開発費を自社で負担しないため、他の型とは決算の見方が根本的に異なります（<a href="#ch4">④章</a>）。</p>
+
+<div class="callout">
+  <span class="label">まとめ</span>
+  <p>赤字企業の決算では、<strong>「いくら稼いだか」より「いくら残っているか、何か月分か、その間に株式数がどれだけ増えたか」</strong>が実質的な情報です。本シリーズではこれを<strong>キャッシュランウェイ</strong>（現金÷四半期の現金消費額）と<strong>希薄化パターン</strong>の2指標で追っています。</p>
+</div>
+
+<div class="crosslink">
+  <span class="label">この枠組みの詳細</span>
+  <ul>
+    <li><a href="/articles/general-knowledge/knowledge/2026-08-11-ai-biotech-valuation">後編：投資判断編 ― 赤字先行企業を4指標で評価する</a>（キャッシュランウェイ／反復収益比率／実現率／希薄化パターン）</li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-08-12-recursion-rxrx">個別企業編①：Recursion（RXRX）― 実現率2.5%問題</a></li>
+  </ul>
+</div>
+
+<h2 class="chapter" id="ch3"><span class="num">③</span>決算で株価が動く4つの仕組み</h2>
+
+<h3>(1) 予想との差 ― 絶対値ではなく差分が評価される</h3>
+
+<p>株価は、決算発表の前に「市場予想」を織り込んでいます。アナリスト予想の平均（コンセンサス）が存在する銘柄では、発表される数字とその予想の差が株価を動かします。導入のHROWは、売上が36%増えていても<strong>EPSが予想を0.23ドル下回った</strong>ために下げました。</p>
+
+<p>ただし、本シリーズの29銘柄の多くは時価総額が小さく、アナリストが1〜2人しかいない、あるいは予想が公表されていない銘柄もあります。その場合、株価が反応する基準は「市場予想」ではなく「前四半期からの変化」や「会社自身のガイダンス」になります。</p>
+
+<h3>(2) ガイダンスの修正 ― 決算そのものより重いことがある</h3>
+
+<p>通期の売上・費用見通しを会社が自ら引き上げる／引き下げるのが、ガイダンス修正です。四半期の実績は過去の話ですが、ガイダンスは<strong>会社が現時点で持っている情報に基づく将来の宣言</strong>であり、株価への影響が大きくなりがちです。</p>
+
+<p>本決算シーズンの実例を挙げます。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>企業</th><th>発表日</th><th>ガイダンスの動き</th></tr></thead>
+<tbody>
+<tr><td>Repligen（RGEN）</td><td>2026年10月27日</td><td>通期を8億4,400万〜8億5,200万ドル（+14.5〜15.5%）へ引き上げ。Q3売上2億900万ドル（+11%、オーガニック+12.5%）</td></tr>
+<tr><td>Butterfly Network（BFLY）</td><td>2026年10月30日</td><td>通期ガイダンスを上下とも引き上げ。それでも株価は当日約▲3.8%</td></tr>
+<tr><td>Schrödinger（SDGR）</td><td>2026年11月4日</td><td>通期のACVと創薬収益のガイダンスを引き上げ。ACVは4,470万ドル（+17%）</td></tr>
+<tr><td>Harrow（HROW）</td><td>2026年3月2日</td><td>2026年SG&amp;Aガイダンス1.85〜2.05億ドル、利益は年後半偏重と説明。株価約▲28%</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>BFLYの例が示すのは、<strong>ガイダンス引き上げは株価上昇を保証しない</strong>ということです。引き上げ幅が市場の期待より小さい場合、あるいは引き上げと同時に特定セグメントの後ろ倒しが説明された場合、株価は下げます。</p>
+
+<h3>(3) キャッシュランウェイ ― 「次の増資はいつか」の答え</h3>
+
+<p>創薬型企業の決算で、売上よりも先に見る数字です。現金残高と四半期の現金消費額から、追加調達なしで何年もつかを計算します。会社自身が「2028年初頭まで」「2029年第1四半期まで」といった形で公表することも多くあります。</p>
+
+<p>ここで重要なのは、<strong>ランウェイの終わりと、臨床データが出る時期の関係</strong>です。データが出る前にランウェイが尽きれば、株価が低い状態で増資することになり、希薄化が大きくなります。逆にデータが出てからであれば、条件が改善する可能性があります。</p>
+
+<p>本シリーズの過去記事では、Prime Medicine（PRME）について「ランウェイの想定が2027年、重要なマイルストーンの想定も2027年」という時期の衝突を指摘しました。この種の衝突は、決算資料の2か所（財務セクションと開発計画セクション）を突き合わせないと見えません。</p>
+
+<h3>(4) 臨床データとの時期の重なり</h3>
+
+<p>製薬・バイオ株に固有の要素です。決算発表と、臨床試験の結果発表・規制当局との協議結果・学会発表が近接していると、株価の反応はその両方を織り込みます。</p>
+
+<p>決算リリースの「最近のハイライト」欄や「今後の予定」欄に臨床イベントの予定が書かれることが多く、<strong>決算リリースは財務書類であると同時に、開発スケジュールの開示文書でもある</strong>と考えたほうが実態に近いです。</p>
+
+<div class="callout warn">
+  <span class="label">留保</span>
+  <p>初期段階・単群（対照群なし）の臨床データは、後期の比較試験で再現されない場合があります。本シリーズではこれを繰り返し扱ってきました ― 症例数1件（SANA、NEJM掲載）、2件（PRME）といったデータは、医学的に意義があっても、統計的な有効性の証明とは別物です。未承認薬については、承認を前提とした記述は避けています。</p>
+</div>
+
+<h2 class="chapter" id="ch4"><span class="num">④</span>事業モデル別「決算で見るべき数字」早見表（29銘柄の分類）</h2>
+
+<p>「製薬・バイオ株」という括りは広すぎます。ロイヤルティ型の会社と創薬型の会社では、決算で見るべき数字がほとんど重なりません。本シリーズでは、入門シリーズの<a href="/articles/general-knowledge/knowledge/2026-09-12-pharma-biotech-17-map">銘柄マップ記事</a>で使った6分類を引き継ぎます。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>事業モデル</th><th>決算で最初に見る数字</th><th>次に見る数字</th><th>売上成長率の意味</th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="model-tag m6">ロイヤルティ型</span></td>
+  <td>ポートフォリオ受領額（受け取ったロイヤルティの総額）</td>
+  <td>新規権利の取得額、既存権利の特許満了時期</td>
+  <td>高い。原薬の売上に連動するため、構造的に読める</td>
+</tr>
+<tr>
+  <td><span class="model-tag m3">ツール・装置型</span></td>
+  <td>粗利率、通期ガイダンスの修正</td>
+  <td>反復収益（消耗品・サービス）の比率、受注残</td>
+  <td>高い。ただし装置の一括販売は四半期がブレる</td>
+</tr>
+<tr>
+  <td><span class="model-tag m4">商業段階の特殊製薬</span></td>
+  <td>売上成長率と現金残高の両方</td>
+  <td>SG&amp;Aガイダンス、1製品への依存度</td>
+  <td>高い。ただし成長していても現金が減っていれば別の問題</td>
+</tr>
+<tr>
+  <td><span class="model-tag m1">創薬型</span></td>
+  <td>キャッシュランウェイと発行済株式数</td>
+  <td>臨床イベントの時期、提携一時金の有無</td>
+  <td><strong>低い。</strong>売上は提携金の計上時期で決まり、事業実態を表さない</td>
+</tr>
+<tr>
+  <td><span class="model-tag m2">プラットフォーム型</span></td>
+  <td>反復収益（ソフトウェア・ACV）の比率</td>
+  <td>希薄化パターン、創薬収益の単発依存度</td>
+  <td>中。契約額（ACV）と会計上の売上がずれることがある</td>
+</tr>
+<tr>
+  <td><span class="model-tag m5">持株会社型</span></td>
+  <td>子会社ごとの進捗と連結の現金</td>
+  <td>親会社の株式報酬比率、子会社の売却・上場計画</td>
+  <td>低い。連結売上は構成の変化で大きく動く</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3>29銘柄の分類</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>事業モデル</th><th>社数</th><th>ティッカー</th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="model-tag m6">ロイヤルティ型</span></td>
+  <td class="num">3</td>
+  <td class="tickers">RPRX / LGND / INVA</td>
+</tr>
+<tr>
+  <td><span class="model-tag m3">ツール・装置型</span></td>
+  <td class="num">4</td>
+  <td class="tickers">ARAY / RPID / RGEN / BFLY</td>
+</tr>
+<tr>
+  <td><span class="model-tag m4">商業段階の特殊製薬</span></td>
+  <td class="num">7</td>
+  <td class="tickers">AYTU / BFRI / DARE / ABVC / INM / COLL / HROW</td>
+</tr>
+<tr>
+  <td><span class="model-tag m5">持株会社型</span></td>
+  <td class="num">4</td>
+  <td class="tickers">ROIV / FBIO / BBIO / PRTC</td>
+</tr>
+<tr>
+  <td><span class="model-tag m2">プラットフォーム型</span></td>
+  <td class="num">3</td>
+  <td class="tickers">ABSI / SDGR / RXRX</td>
+</tr>
+<tr>
+  <td><span class="model-tag m1">創薬型</span></td>
+  <td class="num">8</td>
+  <td class="tickers">ABOS / ALLO / PRME / SANA / ADAG / GANX / VKTX / NTLA</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout">
+  <span class="label">この表の使い方</span>
+  <p>創薬型の8社について「売上が前年比で何%伸びたか」を見ても、ほとんど情報がありません。逆にツール・装置型の4社について「キャッシュランウェイ」を計算しても、通常は意味を持ちません。<strong>同じ「決算」という言葉でも、読む場所が型によって違います。</strong>明日から始まる個別記事では、各社の型に対応した数字を先に置く構成にします。</p>
+</div>
+
+<h2 class="chapter" id="ch5"><span class="num">⑤</span>見出しの数字にだまされない ― 営業黒字が「費用のマイナス」から生まれる例</h2>
+
+<p>決算の見出しに「営業黒字転換」と書かれていても、その中身が本業の改善ではないことがあります。本シリーズで扱うなかで最も明快な例が、<strong>Sana Biotechnology（NASDAQ:SANA）の2026年第3四半期</strong>です。</p>
+
+<p>Form 10-Qに記載された数字を並べます。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>2026年Q3</th><th>前年同期</th></tr></thead>
+<tbody>
+<tr><td>研究開発費</td><td class="num">3,393.0万ドル</td><td class="num">3,010.6万ドル</td></tr>
+<tr><td>サクセスペイメント・偶発対価の評価替え</td><td class="num"><strong>▲6,337.9万ドル</strong></td><td class="num">+312.4万ドル</td></tr>
+<tr><td>一般管理費</td><td class="num">1,094.3万ドル</td><td class="num">1,028.5万ドル</td></tr>
+<tr><td><strong>営業費用合計</strong></td><td class="num"><strong>▲1,850.6万ドル</strong></td><td class="num">4,351.5万ドル</td></tr>
+<tr><td><strong>営業損益</strong></td><td class="num"><strong>+1,850.6万ドル</strong></td><td class="num">▲4,351.5万ドル</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>営業費用の合計が<strong>マイナス</strong>になっています。研究開発費は前年より増えており、一般管理費も増えています。それでも合計がマイナスになったのは、「サクセスペイメント・偶発対価」という項目が▲6,337.9万ドル、つまり費用の取り崩し（利益）として計上されたためです。</p>
+
+<p>この項目は、過去の買収やライセンス契約で「将来の株価や開発進捗に応じて追加で支払う」と約束した義務を、会計上の時価で評価し直したものです。株価が下がるなどして支払う見込み額が減れば、その減少分が費用のマイナスとして損益計算書に現れます。<strong>現金は1ドルも入ってきていません。</strong></p>
+
+<div class="callout warn">
+  <span class="label">チェックの手順</span>
+  <p>営業損益や純損益が前年から大きく改善している決算を見たときは、損益計算書の費用項目を上から下まで確認し、<strong>マイナス（カッコ付き）の費用行がないか</strong>を見ます。あれば、その行の金額を除いた「調整前」の営業損益を自分で計算し直します。本シリーズの個別記事では、この種の一過性項目を見出しの数字から分離して提示します。</p>
+</div>
+
+<p>同じ性質の例は他にもあります。Schrödinger（SDGR）の2026年Q2は純利益598万ドルで黒字転換しましたが、営業損失は▲4,155万ドルのままで、黒字化の主因は保有株式の非現金評価益4,587万ドルでした。<strong>「純損益の黒字」と「営業損益の黒字」は別の出来事です。</strong></p>
+
+<p class="src">出典：Sana Biotechnology 2026年第3四半期 Form 10-Q、Schrödinger 2026年第2四半期決算（2026年8月5日発表）。</p>
+
+<h2 class="chapter" id="ch6"><span class="num">⑥</span>上場維持と株式併合 ― 株価表示そのものが変わる論点</h2>
+
+<p>株価が低い小型バイオ株には、業績とは別の軸の論点があります。<strong>上場を維持できるかどうか</strong>です。</p>
+
+<h3>2つの主要な基準</h3>
+
+<p><strong>最低株価基準（1ドル）</strong>：終値が30営業日連続で1ドルを下回ると、取引所から不適合通知が出されます。通常180日の是正期間が与えられ、さらに条件を満たせば追加の180日が与えられます。</p>
+
+<p><strong>株主資本基準</strong>：NASDAQの市場区分ごとに、維持すべき株主資本の水準が定められています。赤字が続いて資本が減ると、この基準に抵触します。</p>
+
+<h3>29銘柄での実例（2026年11月8日時点）</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>企業</th><th>状況</th></tr></thead>
+<tbody>
+<tr>
+  <td>Accuray（ARAY）</td>
+  <td>2026年2月2日に最低株価基準の通知。8月6日にNASDAQ Capital Marketへ移管し、適合期限は2027年2月1日。<strong>2026年11月9日付で1対40の株式併合</strong>を実施。並行してTCWとの資本再構成（4,000万ドルの債務を転換優先株へ、1,500万ドルの出資、授権株式数を2億株から4億株へ）が進行中</td>
+</tr>
+<tr>
+  <td>Daré Bioscience（DARE）</td>
+  <td>2026年7月13日に株主資本250万ドル基準の不適合通知。審問を請求したため、審理中は上場が維持される</td>
+</tr>
+<tr>
+  <td>InMed Pharmaceuticals（INM）</td>
+  <td>2026年3月27日に最低株価基準の通知（当時の株価0.66ドル、時価総額259万ドル）</td>
+</tr>
+<tr>
+  <td>ABVC BioPharma（ABVC）</td>
+  <td>2022年・2024年に通知を受けたが、いずれも基準を回復</td>
+</tr>
+<tr>
+  <td>PureTech Health（PRTC）</td>
+  <td>2026年5月にNASDAQを自主的に上場廃止。米国では店頭市場（OTC、ティッカー <code>PRTCY</code>）で取引</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3>株式併合を読むときの注意</h3>
+
+<p>株式併合（リバーススプリット）は、複数の株式を1株にまとめることで1株当たりの株価表示を引き上げる手続きです。ARAYの1対40併合では、理論上、併合前の株価の40倍が併合後の株価になります。</p>
+
+<p><strong>ここで3つの注意があります。</strong></p>
+
+<p>第一に、併合は企業価値を変えません。時価総額は理論上変わらず、保有株数が40分の1になり、1株の価格が40倍になるだけです。</p>
+
+<p>第二に、株価チャートの見え方が変わります。株価情報サイトの表示が併合を反映する時期は、サイトによってずれることがあります。併合の前後をまたぐ期間の株価を比較するときは、併合調整済みかどうかを確認する必要があります。実際に本シリーズの調査中、ARAYの株価が0.27ドルと表示されている情報源があり、これは併合前の水準として正しい一方、併合後の表示と混在すると約40倍の誤差になります。</p>
+
+<p>第三に、併合は基準を回復させる手段であって、基準に抵触した<strong>原因</strong>を解決するものではありません。併合後に再び株価が下がり、改めて通知を受ける企業もあります。</p>
+
+<div class="callout warn">
+  <span class="label">本シリーズの扱い</span>
+  <p>上場維持に関する手続きは進行中のものが多く、審問結果や是正期間の延長で状況が変わります。個別記事では、各社の状況を執筆時点で再確認し、<strong>日付を明記したうえで</strong>記載します。本章の記載も2026年11月8日時点の公開情報に基づくもので、以後の変更を反映していません。</p>
+</div>
+
+<h2 class="chapter" id="ch7"><span class="num">⑦</span>まとめ ― 決算を読む順番</h2>
+
+<p>ここまでの内容を、実際に決算リリースを開いたときの手順としてまとめます。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>順番</th><th>やること</th><th>理由</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td>その会社の<strong>事業モデル</strong>を確認する（<a href="#ch4">④章</a>の6分類）</td><td>型によって見るべき数字が違う。創薬型の売上成長率を見ても情報がない</td></tr>
+<tr><td class="num">2</td><td>損益計算書の費用項目に<strong>マイナスの行</strong>がないか確認する</td><td>一過性の評価替えで営業損益が黒字化していることがある（<a href="#ch5">⑤章</a>）</td></tr>
+<tr><td class="num">3</td><td><strong>現金残高と四半期の消費額</strong>を見て、何年分あるか計算する</td><td>赤字企業の決算では「いくら残っているか」が実質的な情報（<a href="#ch2">②章</a>）</td></tr>
+<tr><td class="num">4</td><td><strong>発行済株式数</strong>を前年・前期と比べる</td><td>株価が横ばいでも、株式数が増えていれば1株の価値は薄まっている</td></tr>
+<tr><td class="num">5</td><td><strong>ガイダンスの修正</strong>と、後ろ倒しの説明がないか読む</td><td>四半期実績より将来の宣言のほうが株価への影響が大きいことがある（<a href="#ch3">③章</a>）</td></tr>
+<tr><td class="num">6</td><td>「最大○億ドル」という契約金額を見たら、<strong>これまでいくら受領したか</strong>を探す</td><td>実現率は2.5%から42%まで幅がある（<a href="#ch2">②章</a>）</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>この6ステップは、株価が上がるか下がるかを予測するためのものではありません。<strong>決算という文書から、その会社について何が分かって何が分からないかを切り分けるための手順</strong>です。</p>
+
+<p>本シリーズで扱う29銘柄のうち、多くは臨床データや規制手続きの結果を待っている段階にあります。その段階にある企業について、現時点の決算から事業の成否を判定することはできません。できるのは、<strong>判定に必要な材料が揃うのはいつか</strong>を特定することです。明日からの29本では、各社についてその時期を明示します。</p>
+
+<div class="crosslink">
+  <span class="label">関連記事（本シリーズの前提）</span>
+  <ul>
+    <li><a href="/articles/general-knowledge/knowledge/2026-09-12-pharma-biotech-17-map">製薬・バイオ 銘柄マップ ― 17銘柄を6つの事業モデルで分類する</a></li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-08-09-ai-biotech-industry-map">AI×製薬×バイオ 前編：産業地図 ― 4レイヤーで整理する</a></li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-08-10-ai-biotech-validation">AI×製薬×バイオ 中編：技術検証編 ― AI創薬は本当に効いているのか</a></li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-08-11-ai-biotech-valuation">AI×製薬×バイオ 後編：投資判断編 ― 赤字先行企業を4指標で評価する</a></li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-08-12-recursion-rxrx">個別企業編①：Recursion（RXRX）― 実現率2.5%問題</a></li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-08-13-schrodinger-sdgr">個別企業編②：Schrödinger（SDGR）― 反復収益を持つ例外的なプラットフォーム企業</a></li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-08-23-sana-sana">個別企業編：Sana Biotechnology（SANA）― 症例1件の意味</a></li>
+  </ul>
+</div>
+
+<section class="watch" id="watch">
+  <h2>WHAT TO WATCH</h2>
+  <p class="sub">これから1か月の決算カレンダー（2026年11月8日時点／29銘柄）</p>
+
+  <ol>
+    <li>
+      <span class="wt">すでに発表済みの銘柄（2026年10月下旬〜11月上旬）</span>
+      10/27 RGEN（通期ガイダンス引き上げ、BioLife買収を10月に完了）／10/28 VKTX／10/29 LGND／10/30 BFLY（ガイダンス上下とも引き上げ、株価は当日約▲3.8%）／11/4 ARAY（FY2027 Q1）・RPRX・INVA・SDGR（通期ACVと創薬収益のガイダンス引き上げ）／11月5日前後 COLL・PRME・SANA／11月6日前後 RPID・NTLA／10月下旬〜11月上旬 RXRX・BBIO。個別記事では、これらについても発表済みの数字をもとに扱います。
+    </li>
+    <li>
+      <span class="wt">これから発表が予定されている銘柄</span>
+      <div class="table-scroll">
+      <table>
+      <thead><tr><th>予定日</th><th>銘柄</th><th>確度</th></tr></thead>
+      <tbody>
+      <tr><td>11月9日</td><td>ROIV、HROW（引け後、説明会は11月10日）</td><td>会社公表</td></tr>
+      <tr><td>11月10日</td><td>GANX</td><td>会社公表</td></tr>
+      <tr><td>11月11日</td><td>ALLO</td><td>会社公表</td></tr>
+      <tr><td>11月12日</td><td>ABSI（会社公表）、AYTU</td><td>ABSIは会社公表</td></tr>
+      <tr><td>11月13日前後</td><td>FBIO、INM</td><td>推定</td></tr>
+      <tr><td>11月中</td><td>ABOS、BFRI、DARE、ABVC</td><td>推定</td></tr>
+      <tr><td>未確認</td><td>ADAG、PRTC</td><td>―</td></tr>
+      </tbody>
+      </table>
+      </div>
+    </li>
+    <li>
+      <span class="wt">日付の確度について</span>
+      会社が公式に発表日を公表しているものと、過去の発表実績から推定したものを上表で区別しています。<strong>推定の日付は変更される可能性があり、確定情報ではありません。</strong>BBIOとRPIDについては情報源によって日付が異なっていました。ADAGは外国法人であり、開示形式と時期が米国企業と異なる場合があります。PRTCはNASDAQを自主上場廃止しており、店頭市場（OTC）での取引です。
+    </li>
+    <li>
+      <span class="wt">上場維持に関する手続きの進展</span>
+      ARAYは2026年11月9日付の1対40株式併合と、適合期限2027年2月1日。DAREは株主資本基準の審問結果。INMは最低株価基準の是正期間。これらは決算とは別軸で株価に影響します（<a href="#ch6">⑥章</a>）。
+    </li>
+    <li>
+      <span class="wt">ガイダンスと「後ろ倒し」の説明</span>
+      本決算シーズンでは、ガイダンスを引き上げながら特定セグメントの改善時期を後ろ倒しした会社（BFLY）と、売上を伸ばしながら利益の年後半偏重を説明した会社（HROW）の両方がありました。個別記事では、各社の決算説明資料で「時期」についてどう説明されたかを確認します。
+    </li>
+    <li>
+      <span class="wt">一過性項目の有無</span>
+      偶発対価の評価替え（SANA）、保有株式の評価益（SDGR）のような非現金の一過性項目が、各社の損益にどう効いているかを確認します。見出しの黒字・赤字ではなく、それを除いた営業損益を本シリーズでは併記します。
+    </li>
+  </ol>
+
+  <p class="note">※本カレンダーは2026年11月8日時点で確認できた公開情報に基づきます。決算発表日は企業の判断で変更されます。投資判断に用いる場合は、各社のIRページで最新の予定を確認してください。</p>
+</section>
+
+<div class="disclaimer">
+  <h2>免責事項</h2>
+  <p>本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資に関する最終的な判断は、ご自身の責任において行ってください。記載された数値は2026年11月8日時点の公開情報（企業IR資料・決算リリース・SEC提出書類等）に基づいており、株価等の市場データは日々変動します。「編集部試算」「編集部計算」と明記した数値は公開情報に基づく推計です。企業が公表する市場機会・マイルストーン総額等は、すべての条件が達成された場合の上限値であり、実現を保証するものではありません。初期段階・単群の臨床データは、対照群を伴う後期試験で再現されない場合があります。未承認薬について、承認を前提とした記述は行っていません。決算発表予定日のうち企業が公表していないものは過去実績に基づく推定であり、変更される可能性があります。上場維持に関する手続き、株式併合、資本再構成等は進行中のものを含み、以後の状況変化を反映していません。調整後EBITDA等の非GAAP指標は、GAAPの損益指標に代わるものではありません。</p>
+</div>
+
+</div>
+</body>
+</html>
