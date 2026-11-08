@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>データプラットフォーム 進捗モニタリング｜2026年7月〜10月</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c2230;--sub:#4a5366;--muted:#8a93a6;--line:#d9dee8;
+  --paper:#f6f7fa;--card:#ffffff;
+  --accent:#2b4c7e;--accent-soft:#e6ecf5;--accent-dark:#1d3557;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Noto Sans JP",sans-serif;font-size:16px;line-height:1.9}
+.container{max-width:860px;margin:0 auto;padding:0 16px}
+a{color:var(--accent)}
+.masthead{background:var(--accent-dark);color:#fff;padding:12px 0;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em}
+.masthead .container{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.masthead a.home-link{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.45);padding:4px 10px;border-radius:2px;font-family:"Noto Sans JP",sans-serif;font-size:12px;letter-spacing:0}
+.masthead a.home-link:hover{background:rgba(255,255,255,.12)}
+.breadcrumb{background:var(--card);border-bottom:1px solid var(--line);font-size:12px;color:var(--muted);padding:8px 0}
+.breadcrumb a{color:var(--sub);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.hero{background:var(--card);border-bottom:4px solid var(--accent);padding:44px 0 40px}
+.hero .series{display:inline-block;background:var(--accent-soft);color:var(--accent-dark);font-size:12px;font-weight:700;padding:4px 10px;border-radius:2px;margin-bottom:16px}
+.hero h1{font-family:"Noto Serif JP",serif;font-size:clamp(24px,4.4vw,34px);line-height:1.5;margin-bottom:16px}
+.hero .lead{color:var(--sub);font-size:15px}
+.hero .meta{margin-top:20px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted)}
+.toc{background:var(--card);border:1px solid var(--line);margin:32px auto;padding:24px}
+.toc h2{font-size:14px;color:var(--accent);letter-spacing:.1em;margin-bottom:8px}
+.toc ol{padding-left:1.4em;font-size:15px}
+.chapter{padding:24px 0}
+.chapter .inner{background:var(--card);border:1px solid var(--line);padding:32px 28px}
+.chapter-header{border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:20px}
+.chapter-num{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--accent);letter-spacing:.12em}
+.chapter h2{font-family:"Noto Serif JP",serif;font-size:22px;line-height:1.5}
+.chapter h3{font-size:17px;margin:24px 0 8px;padding-left:10px;border-left:3px solid var(--accent)}
+.chapter p{margin-bottom:12px}
+.chapter ul,.chapter ol{padding-left:1.4em;margin-bottom:12px}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:16px 0}
+.stat-cell{background:var(--accent-soft);padding:16px;border-top:3px solid var(--accent)}
+.stat-cell .num{font-family:"IBM Plex Mono",monospace;font-size:22px;font-weight:500;color:var(--accent-dark);line-height:1.3}
+.stat-cell .label{font-size:13px;color:var(--sub);margin-top:4px;line-height:1.6}
+.data-box{background:var(--paper);border:1px solid var(--line);padding:16px 18px;margin:16px 0;font-size:15px}
+.data-box .title{font-weight:700;color:var(--accent-dark);margin-bottom:6px}
+.note-box{border-left:4px solid var(--muted);background:#fafbfc;padding:12px 16px;margin:16px 0;font-size:14px;color:var(--sub)}
+.table-wrap{overflow-x:auto;margin:16px 0}
+.summary-table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+.summary-table th{background:var(--accent-dark);color:#fff;text-align:left;padding:8px 10px;font-weight:500}
+.summary-table td{border-bottom:1px solid var(--line);padding:8px 10px;vertical-align:top}
+.summary-table td.num{text-align:right;font-family:"IBM Plex Mono",monospace;white-space:nowrap}
+.summary-table.wide{min-width:680px}
+.summary-table.wide td:first-child{white-space:nowrap}
+.summary-table.wide td.num{text-align:left}
+.summary-table tr.total td{font-weight:700;background:var(--accent-soft)}
+.source-wrap{margin-top:20px;display:flex;flex-wrap:wrap;gap:6px}
+.source-tag{display:inline-block;font-size:11px;color:var(--sub);background:var(--paper);border:1px solid var(--line);padding:2px 8px;line-height:1.6}
+.next-box{display:flex;gap:16px;background:var(--accent-soft);padding:20px;margin:16px 0}
+.next-box .arrow{font-size:22px}
+.next-box h3{border:none;padding:0;margin:0 0 6px}
+.home-cta{text-align:center;margin:40px auto 0}
+.home-cta a{display:inline-block;background:var(--accent-dark);color:#fff;text-decoration:none;padding:14px 28px;font-weight:700;font-size:15px;border-radius:2px}
+.home-cta a:hover{background:var(--accent)}
+.home-cta .sub{display:block;margin-top:8px;font-size:12px;color:var(--muted)}
+.disclaimer{background:var(--accent-dark);color:rgba(255,255,255,.75);padding:32px 0;margin-top:40px;font-size:13px;line-height:1.9}
+.disclaimer h3{color:#fff;font-size:14px;margin-bottom:8px}
+.disclaimer a{color:rgba(255,255,255,.75);font-size:12px}
+.float-home{border:1px solid rgba(255,255,255,.7);position:fixed;right:16px;bottom:16px;z-index:50;background:var(--accent-dark);color:#fff;text-decoration:none;font-size:12px;font-weight:700;line-height:1.3;text-align:center;padding:10px 12px;border-radius:2px;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.float-home:hover{background:var(--accent)}
+@media (max-width:600px){.chapter .inner{padding:24px 16px}.float-home{right:12px;bottom:12px;padding:8px 10px}}
+</style>
+</head>
+<body>
+
+<div class="masthead"><div class="container"><span>MARKET SUPPORTER AI ｜ 進捗モニタリング編 No.21</span><a class="home-link" href="https://www.marketsupporter-ai.com">← トップページへ</a></div></div>
+<nav class="breadcrumb" aria-label="パンくずリスト"><div class="container"><a href="https://www.marketsupporter-ai.com">ホーム</a> ＞ <a href="https://www.marketsupporter-ai.com/articles/general-knowledge/knowledge">一般教養</a> ＞ データプラットフォーム 進捗モニタリング</div></nav>
+
+<header class="hero">
+  <div class="container">
+    <span class="series">日本成長戦略 進捗モニタリング編 No.21｜デジタル・サイバーセキュリティ分野</span>
+    <h1>データプラットフォーム、決定後の進捗（2026年7月〜10月）<br>新設「データマネジメント試験」のシラバス案を公表、2027年度に新試験制度へ</h1>
+    <p class="lead">官民投資ロードマップで2035年度までに官民0.9兆円の投資が想定されている「データプラットフォーム」。国内市場を2025年の約0.73兆円から2035年に5兆円へ広げる目標に対し、7月の決定後に動いた、IPAによる新試験制度のシラバス案の公表、ウラノス・エコシステムの成果報告までを、一次資料の事実と数値で整理します。</p>
+    <p class="meta">作成：2026-11-08 ｜ データ基準時点：2026年10月</p>
+  </div>
+</header>
+
+<div class="container">
+  <nav class="toc">
+    <h2>CONTENTS</h2>
+    <ol>
+      <li>ロードマップ上の位置づけと目標</li>
+      <li>素案の現状認識・勝ち筋・政策パッケージ</li>
+      <li>7月〜10月の主な動き</li>
+      <li>今後のスケジュールと予算の確認状況</li>
+      <li>数値の整理と今後の確認ポイント</li>
+    </ol>
+  </nav>
+</div>
+
+<!-- CH1 -->
+<section class="chapter" id="ch1"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 01</span><h2>ロードマップ上の位置づけと目標</h2></div>
+  <p>データプラットフォームは、戦略17分野のうちデジタル・サイバーセキュリティ分野の「主要な製品・技術等」です。2026年3月の素案で先行して検討が進められ、7月21日に官民投資ロードマップとして決定されました。</p>
+  <div class="stat-grid">
+    <div class="stat-cell"><div class="num">0.9兆円</div><div class="label">官民投資額（想定）2035年度まで</div></div>
+    <div class="stat-cell"><div class="num">2.2兆円</div><div class="label">経済波及効果（想定）2035年度まで</div></div>
+    <div class="stat-cell"><div class="num">5兆円</div><div class="label">2035年までの国内データプラットフォーム関連市場の規模（政策目標として示されている値）</div></div>
+  </div>
+  <div class="note-box">国内市場は2025年時点で0.73兆円程度（IDC調査）とされています。グローバルのデータプラットフォーム関連市場は、2035年に約50兆円規模へ急成長する見込みとしています。投資額・経済波及効果は、No.20の政府DX基盤と同じく2035年度までの想定です。経済波及効果は品目間で重複があるため合算できないとされています。</div>
+  <h3>達成すべき戦略的な目標（素案）</h3>
+  <p>製造業などの国内データホルダーにとって、産業競争力や経済安全保障に関わるデータを安心して処理できる、データ精製などの国内サービスの提供を確保するとしています。</p>
+  <div class="source-wrap">
+    <span class="source-tag">日本成長戦略会議 第3回「先行して検討を進めている主要な製品技術等の官民投資ロードマップ素案」（2026年3月）</span>
+    <span class="source-tag">内閣官房「戦略17分野における『主要な製品・技術等』の官民投資ロードマップ 参考資料」（2026年7月）</span>
+  </div>
+</div></div></section>
+
+<!-- CH2 -->
+<section class="chapter" id="ch2"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 02</span><h2>素案の現状認識・勝ち筋・政策パッケージ</h2></div>
+  <h3>現状認識</h3>
+  <ul>
+    <li>AI学習・利用やデータ連携が容易な形式にデータを精製する技術（AI-Ready化）や、分散管理されたデータを信頼ある形で柔軟に活用するデータ連携技術（データスペース）の検討が、国際的に進んでいるとしています。</li>
+    <li>インターネット上のテキストデータで性能を高めてきた生成AIで「学習データの枯渇」が問題になる中、全世界で流通するデータの6割を占める企業内データの利活用が産業戦略上の焦点になるとしています。</li>
+    <li>一方、データ精製や組織間のデータ連携は手法論が確立しておらず、取り組みが進んでいる企業は限定的としています。</li>
+  </ul>
+  <h3>課題（ボトルネック）</h3>
+  <ul>
+    <li>データ精製などのサービスの多くは高価な海外製で、安心して使える安価な国内サービスが限られる</li>
+    <li>AI時代に即したデータマネジメントを現場で実践できる人材の不足</li>
+    <li>データ連携のユースケースが未成熟で、事業者が投資に踏み切りにくい。AI-Ready化の技術・サービスは勃興段階で、有望なものの見極めが難しい</li>
+  </ul>
+  <h3>勝ち筋</h3>
+  <p>製造業の現場データ・ノウハウを産業競争力の基盤と位置づけ、データホルダーにとって安心・安全な形でAI-Ready化し、データ連携を通じてスケーラブルに活用するとしています。フィジカルAIを見据え、データ精製技術とデータ連携技術の手法論を確立・横展開するとしています。</p>
+  <h3>政策パッケージ（素案）</h3>
+  <div class="table-wrap">
+  <table class="summary-table wide">
+    <thead><tr><th>区分</th><th>主な施策</th></tr></thead>
+    <tbody>
+      <tr><td>国内投資支援</td><td>AI-Ready化・データスペースの手法論確立や標準化に関する研究開発・実証の支援、安価な国内プラットフォームサービスの育成</td></tr>
+      <tr><td>需要創出・社会実装</td><td>AI-Ready化の標準的手法の各産業への横展開、データ連携のユースケース創出、中小企業・小規模事業者へのデジタル化ツール・AI導入支援</td></tr>
+      <tr><td>立地競争力強化</td><td>データマネジメントスキルを評価する新たな試験、デジタル人材スキルプラットフォーム、DX銘柄の見直しの検討、法人トラスト認証の活用</td></tr>
+      <tr><td>国際連携</td><td>データスペースの国際標準化・相互運用性の確保、フィジカルAIの国際展開と連携した海外展開</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note-box">表は横にスクロールできます。</div>
+</div></div></section>
+
+<!-- CH3 -->
+<section class="chapter" id="ch3"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 03</span><h2>7月〜10月の主な動き</h2></div>
+  <div class="table-wrap">
+  <table class="summary-table wide">
+    <thead><tr><th>時期</th><th>内容</th><th>出典</th></tr></thead>
+    <tbody>
+      <tr><td>2026年7月6日</td><td>NEDOデジタルライフライン整備事業の成果報告会で、「日本のデジタル・エコシステム 現在地とこれから（ウラノス・エコシステム・イニシアティブ）」を報告</td><td>NEDO</td></tr>
+      <tr><td>2026年7月31日</td><td>プロフェッショナルデジタルスキル（マネジメント／システム）試験（仮称）のシラバス案を更新</td><td>IPA</td></tr>
+      <tr><td>2026年8月31日</td><td>ITパスポート試験、データマネジメント試験（仮称）、情報処理安全確保支援士試験のシラバス案を掲載（データマネジメント試験はVer.0.1）</td><td>IPA</td></tr>
+      <tr><td>2026年9月30日</td><td>情報セキュリティマネジメント試験・基本情報技術者試験のシラバス案などを掲載</td><td>IPA</td></tr>
+      <tr><td>2026年10月30日</td><td>プロフェッショナルデジタルスキル（データ・AI）試験（仮称）のシラバス案を掲載</td><td>IPA</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3>データマネジメント試験（仮称）とは</h3>
+  <p>IPAの3月31日の発表によれば、データマネジメント試験（仮称）は主にビジネス部門を想定し、データの整備・管理スキルを評価する試験で、「ITパスポート試験の次のステップの試験」と位置づけられています。あわせて、応用情報技術者試験と高度試験を統合・再編した「プロフェッショナルデジタルスキル試験（仮称）」を新設し、「マネジメント」「データ・AI」「システム」の3領域を設けるとしています。素案が政策パッケージに掲げた「データのAI-Ready化などAI時代のデータマネジメントスキルを評価するための新たな試験」にあたる取り組みです。</p>
+  <div class="note-box">シラバス案は現時点の検討状況に基づくもので、今後変更される可能性があるとされています。</div>
+  <div class="source-wrap">
+    <span class="source-tag">IPA「新試験制度のシラバス案」ページ（更新履歴、2026年10月30日時点）</span>
+    <span class="source-tag">IPA プレス発表「情報処理技術者試験における試験区分体系などの見直し（案）について」（2026年3月31日）</span>
+    <span class="source-tag">NEDO デジタルライフライン整備事業 成果報告会資料（2026年7月）</span>
+  </div>
+</div></div></section>
+
+<!-- CH4 -->
+<section class="chapter" id="ch4"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 04</span><h2>今後のスケジュールと予算の確認状況</h2></div>
+  <h3>新試験制度・デジタル人材スキルプラットフォームの予定</h3>
+  <div class="table-wrap">
+  <table class="summary-table wide">
+    <thead><tr><th>時期（予定）</th><th>内容</th></tr></thead>
+    <tbody>
+      <tr><td>2026年度内</td><td>デジタル人材スキルプラットフォームのサービス構築を目指す</td></tr>
+      <tr><td>2027年度春頃</td><td>新制度でのITパスポート試験、情報セキュリティマネジメント試験、基本情報技術者試験</td></tr>
+      <tr><td>2027年春〜</td><td>デジタル人材スキルプラットフォームの始動</td></tr>
+      <tr><td>2027年度夏頃〜秋頃</td><td>データマネジメント試験（仮称）、プロフェッショナルデジタルスキル試験（仮称）、情報処理安全確保支援士試験</td></tr>
+      <tr><td>2028年</td><td>スキルプラットフォームの登録者数目標100万ID</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note-box">経済産業省の資料（2026年4月13日、Society5.0時代のデジタル人材育成に関する検討会）とIPAの発表に基づきます。いずれも予定で、準備状況により遅れる可能性があるとされています。2026年4月には、データマネジメント類型（データスチュワード、データエンジニア、データアーキテクト）を新設した「デジタルスキル標準 ver.2.0」も公表されています。</div>
+  <h3>2027年度概算要求について</h3>
+  <p>本レポート作成時点で、経済産業省の2027年度概算要求のうちデータプラットフォーム（AI-Ready化、データスペース、ウラノス・エコシステムなど）に対応する事業と金額を、一次資料から特定できませんでした。このため本レポートでは要求額を記載していません。年末の政府予算案の公表時に確認します。</p>
+  <div class="source-wrap">
+    <span class="source-tag">経済産業省「Society5.0時代のデジタル人材育成に関する検討会報告書を踏まえた検討状況について」（2026年4月13日）</span>
+    <span class="source-tag">IPA プレス発表（2026年3月31日）</span>
+  </div>
+</div></div></section>
+
+<!-- CH5 -->
+<section class="chapter" id="ch5"><div class="container"><div class="inner">
+  <div class="chapter-header"><span class="chapter-num">CHAPTER 05</span><h2>数値の整理と今後の確認ポイント</h2></div>
+  <div class="table-wrap">
+  <table class="summary-table wide">
+    <thead><tr><th>指標</th><th>数値</th><th>出典・時点</th></tr></thead>
+    <tbody>
+      <tr><td>官民投資額（想定）</td><td>0.9兆円（2035年度まで）</td><td>官民投資ロードマップ参考資料（2026年7月）</td></tr>
+      <tr><td>経済波及効果（想定）</td><td>2.2兆円（2035年度まで）</td><td>同上</td></tr>
+      <tr><td>国内市場の目標</td><td>2035年までに5兆円（政策目標として示されている値）</td><td>素案（2026年3月）</td></tr>
+      <tr><td>国内市場の現状</td><td>0.73兆円程度（2025年時点、IDC調査）</td><td>同上</td></tr>
+      <tr><td>グローバル市場の見込み</td><td>2035年に約50兆円規模</td><td>同上</td></tr>
+      <tr><td>企業内データの割合</td><td>全世界で流通するデータの6割</td><td>同上</td></tr>
+      <tr><td>データマネジメント試験（仮称）</td><td>シラバス案Ver.0.1を8月31日に掲載、2027年度夏頃〜秋頃に実施予定</td><td>IPA</td></tr>
+      <tr><td>スキルプラットフォーム</td><td>2028年に登録者数100万IDが目標</td><td>経済産業省（2026年4月）</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3>今後の確認ポイント</h3>
+  <ul>
+    <li>年末の2027年度政府予算案での、データ精製・データ連携に関する事業の有無と金額</li>
+    <li>データマネジメント試験（仮称）の正式な名称・実施時期の確定</li>
+    <li>DX銘柄の見直し（企業のDX・AXの可視化・評価）の具体化</li>
+    <li>年末に策定される日本成長戦略実行計画での位置づけと、2027年春のロードマップ改訂</li>
+  </ul>
+  <div class="next-box">
+    <div class="arrow">📌</div>
+    <div>
+      <h3>関連記事</h3>
+      <p>進捗モニタリング編 No.20（政府・自治体のDX基盤）、No.03（フィジカルAI）もあわせてご覧ください。進捗モニタリング編 No.01（総論）では日本成長戦略全体の進捗をまとめています。</p>
+    </div>
+  </div>
+</div></div></section>
+
+<div class="container home-cta">
+  <a href="https://www.marketsupporter-ai.com">Market Supporter AI トップページへ戻る</a>
+  <span class="sub">ほかの戦略17分野・官民投資ロードマップの記事はトップページからご覧いただけます</span>
+</div>
+
+<div class="disclaimer">
+  <div class="container">
+    <h3>免責事項</h3>
+    <p>本レポートは就職・転職および投資判断の参考情報として作成されたものであり、特定の投資・転職行動を推奨するものではありません。掲載データは各記載出典（政府・省庁・独立行政法人の公表資料）に基づきますが、数値の正確性・完全性を保証するものではありません。投資判断は自己責任において行ってください。本レポートの内容は作成時点の情報に基づいており、予算編成・政策変更等により実態が変化する可能性があります。データ基準時点は2026年10月です。</p>
+    <p style="margin-top:12px;">
+      <a href="https://www.marketsupporter-ai.com">← Market Supporter AI トップへ戻る</a>　｜　<a href="https://www.marketsupporter-ai.com/articles/general-knowledge/knowledge">一般教養の記事一覧へ</a>
+    </p>
+  </div>
+</div>
+
+<a class="float-home" href="https://www.marketsupporter-ai.com" aria-label="Market Supporter AI トップページへ">HOME<br>トップへ</a>
+
+</body>
+</html>
