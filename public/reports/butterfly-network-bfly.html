@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Butterfly Network（BFLY）― 全項目で予想超え、それでも株価は2日で約13%下げた | Market Supporter AI</title>
+<meta name="description" content="売上+52%、粗利率73.0%で社史上最高、通期ガイダンス引き上げ。それでも株価は2日間で約13%下落。増収分の90%はEmbedded売上、粗利率の改善幅の大半は前年の棚卸資産評価損の裏返し。2026年Q3決算を6つの数字で分解します。">
+<style>
+:root{
+  --accent:#059669;
+  --accent-dark:#065f46;
+  --accent-mid:#10b981;
+  --accent-light:#ecfdf5;
+  --ink:#1a1a1a;
+  --ink-sub:#4a5568;
+  --line:#dcece5;
+  --bg:#ffffff;
+  --warn-bg:#fff8ec;
+  --warn-line:#e0a648;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.9;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 60%,var(--accent-mid) 100%);
+  color:#fff;
+  padding:56px 24px 48px;
+}
+.hero-inner{max-width:860px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;
+  font-size:12px;
+  letter-spacing:.14em;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.32);
+  border-radius:999px;
+  padding:5px 14px;
+  margin-bottom:20px;
+}
+.hero h1{font-size:30px;line-height:1.5;margin:0 0 18px;font-weight:700;}
+.hero .lede{font-size:15px;line-height:1.85;color:rgba(255,255,255,.9);margin:0 0 22px;}
+.meta{font-size:12.5px;color:rgba(255,255,255,.74);border-top:1px solid rgba(255,255,255,.24);padding-top:14px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 72px;}
+.toc{background:var(--accent-light);border:1px solid var(--line);border-radius:10px;padding:22px 26px;margin:40px 0;}
+.toc h2{font-size:14px;margin:0 0 12px;color:var(--accent-dark);letter-spacing:.06em;}
+.toc ol{margin:0;padding-left:1.3em;font-size:14.5px;}
+.toc li{margin:7px 0;}
+.toc a{color:var(--ink-sub);text-decoration:none;border-bottom:1px solid transparent;}
+.toc a:hover{color:var(--accent-dark);border-bottom-color:var(--accent);}
+h2.chapter{font-size:22px;line-height:1.55;margin:56px 0 20px;padding:0 0 12px 0;border-bottom:3px solid var(--accent);font-weight:700;}
+h2.chapter .num{display:inline-block;background:var(--accent);color:#fff;font-size:13px;border-radius:5px;padding:3px 10px;margin-right:10px;vertical-align:3px;}
+h3{font-size:17.5px;margin:34px 0 12px;padding-left:12px;border-left:4px solid var(--accent-mid);line-height:1.6;}
+p{margin:0 0 18px;}
+a{color:var(--accent-dark);}
+.callout{background:var(--accent-light);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:18px 22px;margin:26px 0;font-size:15px;}
+.callout.warn{background:var(--warn-bg);border-left-color:var(--warn-line);}
+.callout p:last-child{margin-bottom:0;}
+.callout .label{display:block;font-size:12px;letter-spacing:.1em;color:var(--accent-dark);margin-bottom:8px;font-weight:700;}
+.callout.warn .label{color:#9a6512;}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:28px 0;}
+.kpi{border:1px solid var(--line);border-radius:9px;padding:16px 18px;background:#fbfefc;}
+.kpi .k{font-size:12px;color:var(--ink-sub);display:block;margin-bottom:6px;line-height:1.5;}
+.kpi .v{font-size:21px;font-weight:700;color:var(--accent-dark);line-height:1.3;display:block;}
+.kpi .n{font-size:11.5px;color:var(--ink-sub);display:block;margin-top:6px;line-height:1.5;}
+.table-scroll{overflow-x:auto;margin:26px 0;-webkit-overflow-scrolling:touch;}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px;}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;line-height:1.7;}
+th{background:var(--accent);color:#fff;font-weight:600;white-space:nowrap;}
+tbody tr:nth-child(even){background:#f7fbf9;}
+td.num{text-align:right;white-space:nowrap;}
+.model-tag{display:inline-block;font-size:11.5px;color:#fff;background:var(--accent);border-radius:4px;padding:2px 8px;white-space:nowrap;font-weight:600;}
+.crosslink{border:1px dashed var(--accent-mid);border-radius:9px;padding:16px 20px;margin:28px 0;font-size:14px;background:#fafefb;}
+.crosslink .label{display:block;font-size:12px;letter-spacing:.08em;color:var(--accent-dark);font-weight:700;margin-bottom:8px;}
+.crosslink ul{margin:0;padding-left:1.2em;}
+.crosslink li{margin:5px 0;}
+.watch{background:var(--accent-dark);color:#fff;border-radius:12px;padding:34px 28px;margin:60px 0 40px;}
+.watch h2{font-size:20px;margin:0 0 8px;letter-spacing:.04em;}
+.watch .sub{font-size:13.5px;color:rgba(255,255,255,.74);margin:0 0 26px;}
+.watch ol{list-style:none;counter-reset:w;margin:0;padding:0;}
+.watch ol li{counter-increment:w;position:relative;padding-left:42px;margin-bottom:20px;font-size:14.5px;line-height:1.85;}
+.watch ol li::before{content:counter(w);position:absolute;left:0;top:2px;width:27px;height:27px;border-radius:50%;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.42);color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;font-weight:700;}
+.watch .wt{display:block;font-weight:700;margin-bottom:3px;}
+.watch .note{font-size:12.5px;color:rgba(255,255,255,.7);line-height:1.8;margin-top:18px;}
+.disclaimer{border-top:2px solid var(--line);margin-top:56px;padding-top:24px;font-size:12.5px;color:var(--ink-sub);line-height:1.9;}
+.disclaimer h2{font-size:14px;color:var(--ink);margin:0 0 10px;}
+.src{font-size:12.5px;color:var(--ink-sub);margin:-8px 0 22px;}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  .hero{padding:40px 18px 34px;}
+  .hero h1{font-size:23px;}
+  .wrap{padding:0 18px 56px;}
+  h2.chapter{font-size:19px;margin:44px 0 16px;}
+  h3{font-size:16.5px;}
+  .watch{padding:26px 18px;border-radius:10px;}
+  .kpi .v{font-size:19px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">米国製薬・バイオ決算シリーズ ①／29 ― ツール・装置型</span>
+    <h1>Butterfly Network（BFLY）― 全項目で予想超え、それでも株価は2日で約13%下げた</h1>
+    <p class="lede">売上は前年同期比+52%。GAAP粗利率73.0%で社史上最高。EPSも市場予想を上回り、通期ガイダンスは上下とも引き上げ。普通に読めば、申し分のない決算です。それでも株価は発表日に3.84%下げ、翌日にさらに約9.8%下げました。本記事は、この決算を6つの数字に分解し、「過去最高」という見出しの内側に何があったのかを確認します。</p>
+    <p class="meta">公開：2026年11月9日／対象：2026年第3四半期決算（2026年10月29日発表）／出典：決算リリース（Form 8-K 添付）・決算説明会・前年同期リリース／情報提供のみを目的とし、投資判断の推奨ではありません</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#ch1">①決算の全体像 ― 「過去最高」と「株価下落」が同時に起きた</a></li>
+    <li><a href="#ch2">②売上の分解 ― 増収分の90%はどこから来たのか</a></li>
+    <li><a href="#ch3">③粗利率73.0%をどう読むか ― 前年の棚卸資産評価損という裏側</a></li>
+    <li><a href="#ch4">④Q4ガイダンス ― +52%から+3%へ</a></li>
+    <li><a href="#ch5">⑤キャッシュと希薄化 ― ツール・装置型としての財務</a></li>
+    <li><a href="#ch6">⑥バリュエーションと株価の反応</a></li>
+    <li><a href="#ch7">⑦リスク要因とまとめ ― 何が分かって、何が分からないか</a></li>
+    <li><a href="#watch">WHAT TO WATCH</a></li>
+  </ol>
+</nav>
+
+<h2 class="chapter" id="ch1"><span class="num">①</span>決算の全体像 ― 「過去最高」と「株価下落」が同時に起きた</h2>
+
+<p><strong>Butterfly Network（NYSE:BFLY）</strong> は、半導体チップ上に超音波センサーを集積した手のひらサイズの超音波プローブを開発・販売する企業です。本シリーズの<a href="/articles/general-knowledge/knowledge/2026-11-08-us-pharma-biotech-earnings-guide">入口記事</a>の6分類では <span class="model-tag">ツール・装置型</span> にあたります。この型で最初に見る数字は、<strong>粗利率と通期ガイダンスの修正</strong>です。</p>
+
+<p>2026年10月29日、市場が開く前に発表された第3四半期決算は、表面的にはこうでした。</p>
+
+<div class="kpi-grid">
+  <div class="kpi"><span class="k">売上高</span><span class="v">3,259.8万ドル</span><span class="n">前年同期比 +52%（前年2,148.9万ドル）</span></div>
+  <div class="kpi"><span class="k">GAAP粗利率</span><span class="v">73.0%</span><span class="n">前年同期 ▲17.5%。会社は「社史上最高」と表現</span></div>
+  <div class="kpi"><span class="k">調整後EPS</span><span class="v">▲0.01ドル</span><span class="n">市場予想▲0.04ドルを上回る</span></div>
+  <div class="kpi"><span class="k">調整後EBITDA</span><span class="v">▲118.7万ドル</span><span class="n">前年同期▲807.9万ドルから85%改善</span></div>
+  <div class="kpi"><span class="k">通期売上ガイダンス</span><span class="v">1.23〜1.26億ドル</span><span class="n">Q2時点の1.19〜1.23億ドルから引き上げ</span></div>
+  <div class="kpi"><span class="k">発表後の株価</span><span class="v">2日で約▲13%</span><span class="n">10/28終値7.81ドル→10/30場中6.775ドル</span></div>
+</div>
+
+<p>売上は市場予想2,836万ドルに対して3,259.8万ドル。自社の従来ガイダンス上限も上回りました。EPSも予想超え。通期ガイダンスは売上も調整後EBITDAも引き上げ。</p>
+
+<p>それでも株価は、発表日の10月29日に前日終値7.81ドルから7.51ドルへ<strong>3.84%下落</strong>（場中には7.05ドルまでギャップダウン）、翌10月30日にはさらに約9.8%下げ、場中で6.775ドル、安値6.63ドルをつけました。2日間の下落率は約13%です（編集部計算）。</p>
+
+<div class="callout">
+  <span class="label">この記事の立場</span>
+  <p>株価が下げたことをもって決算が悪かったと述べるものではありません。確認したいのは、<strong>公表された数字のうちどれが事業の継続的な改善を示し、どれが比較対象や計上時期によって生じたものか</strong>です。以下の②〜④がその分解にあたります。</p>
+</div>
+
+<h2 class="chapter" id="ch2"><span class="num">②</span>売上の分解 ― 増収分の90%はどこから来たのか</h2>
+
+<p>売上の内訳は、リリースで2区分に分けて開示されています。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>区分</th><th>2026年Q3</th><th>2025年Q3</th><th>増減（編集部計算）</th></tr></thead>
+<tbody>
+<tr><td>製品（プローブ等）</td><td class="num">1,562.7万ドル</td><td class="num">1,455.6万ドル</td><td class="num">+107.1万ドル（+7.4%）</td></tr>
+<tr><td>ソフトウェア・その他サービス</td><td class="num">1,697.1万ドル</td><td class="num">693.3万ドル</td><td class="num">+1,003.8万ドル（+144.8%）</td></tr>
+<tr><td><strong>合計</strong></td><td class="num"><strong>3,259.8万ドル</strong></td><td class="num"><strong>2,148.9万ドル</strong></td><td class="num"><strong>+1,110.9万ドル（+51.7%）</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<p>増収額1,110.9万ドルのうち、<strong>1,003.8万ドル（約90.4%）がソフトウェア・その他サービスの増加</strong>です（編集部計算）。本体であるプローブ販売の伸びは+7.4%にとどまります。</p>
+
+<h3>Embedded売上 1,110万ドルという単一要因</h3>
+
+<p>決算説明会で、この増加の中身が説明されました。「Butterfly Embedded」と呼ぶ事業 ― 自社の超音波チップと技術を他社の機器に組み込ませるライセンス事業 ― の第3四半期売上が<strong>1,110万ドル</strong>で、前年同期比1,000%超の増加だったとされています。</p>
+
+<p>売上合計3,259.8万ドルに対し、Embeddedは<strong>約34.1%</strong>（編集部計算）。会社は従来、この事業を「四半期7〜8百万ドル」の枠組みで説明しており、今回はそれを上回ったと述べています。</p>
+
+<p>Embeddedの収益構成について、会社は複数の種類が混在すると説明しています ― 開発着手時の一時金（NRE）、年間ライセンス料、機器の販売、受託開発（SOW）、チップの販売。現時点では多くの提携先が開発・ライセンス・チップに対して支払っている段階で、製品が市場に出れば商用ライセンスが続く場合がある、という説明でした。</p>
+
+<div class="callout warn">
+  <span class="label">反復収益比率をどう計算するか</span>
+  <p>本シリーズの4指標のひとつ「反復収益比率」を素直に当てはめると、ソフトウェア・その他サービス1,697.1万ドル ÷ 売上3,259.8万ドル = <strong>52.1%</strong>（編集部計算）になります。しかしこの区分にはEmbeddedの一時金（NRE）や受託開発が含まれており、定義上の反復収益としては過大です。</p>
+  <p>逆にEmbeddedを全額除くと、(1,697.1万 − 1,110万) ÷ 3,259.8万 = <strong>約18.0%</strong>（編集部計算）。Embedded内の年間ライセンス料やチップ継続購入は反復性があるため、実際の反復収益比率は<strong>18%から52%の間</strong>にあります。会社はEmbeddedの内訳を開示していないため、現時点でこれ以上は絞り込めません。</p>
+</div>
+
+<p>比較のため、同じツール・装置型で本シリーズが先に扱った Rapid Micro Biosystems（RPID）の反復収益比率は約63%でした。装置を売り切る企業と、消耗品・サービスで継続収益を得る企業の違いが、この指標に表れます。</p>
+
+<h3>提携先の集中</h3>
+
+<p>説明会では、Embeddedの伸びの主因としてMidjourney、および新規契約先のMerge Labs、Bridge Neurotechが挙げられました。会社はMidjourney単独の金額を開示していません。また、Forest Neurotech（Arbor Neuroscienceへ改称）の創業者がMerge LabsとBridge Neurotechを設立したとされ、3社目のブレイン・コンピュータ・インターフェース（BCI）提携先は非公表のままです。</p>
+
+<p>つまりEmbedded売上は、<strong>少数の提携先、かつ相互に関連する創業者グループに集中している</strong>可能性があります。これは成長の源泉であると同時に、集中リスクでもあります。</p>
+
+<h3>国際売上は▲5%</h3>
+
+<p>地域別では、米国売上2,750万ドル（+71%）に対し、<strong>国際売上は510万ドルで前年同期比▲5%</strong>。リリースは「グローバルヘルス提携先へのプローブ販売の減少が主因」と説明しています。</p>
+
+<p>説明会では、国際事業の販売体制を見直しているとし、これまで個人の臨床医を対象とする販売代理店に依存してきたため、今後は施設・法人顧客を開拓する方針だと述べられました。改善時期は第4四半期から2027年にかけてとされています。</p>
+
+<p class="src">出典：Butterfly Network 2026年第3四半期決算リリース（2026年10月29日、Form 8-K 添付資料）、同決算説明会（2026年10月29日）、2025年第3四半期決算リリース（2025年10月31日）。</p>
+
+<h2 class="chapter" id="ch3"><span class="num">③</span>粗利率73.0%をどう読むか ― 前年の棚卸資産評価損という裏側</h2>
+
+<p>GAAP粗利率が前年同期の▲17.5%から73.0%へ、<strong>90.5ポイント</strong>改善しています。この数字だけを見れば、収益構造が劇的に変わったように見えます。</p>
+
+<p>前年同期のリリースを確認すると、▲17.5%の理由が書かれています。</p>
+
+<div class="callout warn">
+  <span class="label">前年同期（2025年Q3）の記載</span>
+  <p>粗損失▲375.7万ドルの主因は、<strong>当四半期に認識した1,740万ドルの過剰・陳腐化在庫の評価損</strong>である。棚卸資産・ベンダー前渡金の評価損・償却の合計は1,748.6万ドル。</p>
+</div>
+
+<p>つまり前年同期のGAAP粗利率▲17.5%は、1,740万ドルの一過性の評価損を含んだ数字でした。会社はこの評価損を除いた「調整後粗利率」も開示しており、その比較はこうなります。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>指標</th><th>2026年Q3</th><th>2025年Q3</th><th>差</th></tr></thead>
+<tbody>
+<tr><td>GAAP粗利率</td><td class="num">73.0%</td><td class="num">▲17.5%</td><td class="num">+90.5pt</td></tr>
+<tr><td><strong>調整後粗利率</strong></td><td class="num"><strong>73.0%</strong></td><td class="num"><strong>63.9%</strong></td><td class="num"><strong>+9.1pt</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<p>一過性項目を除いた実質的な改善幅は<strong>9.1ポイント</strong>です。90.5ポイントではありません。</p>
+
+<h3>その9.1ポイントにも2つの要因がある</h3>
+
+<p>説明会では、粗利率の改善要因として2つが挙げられました。ひとつは<strong>利益率の高いEmbedded売上の構成比上昇</strong>。もうひとつは<strong>IEEPA（国際緊急経済権限法）に基づく関税の還付</strong>です。</p>
+
+<p>関税還付の金額は開示されていません。したがって、9.1ポイントのうちどれだけが構成比の変化によるもので、どれだけが還付によるものかは<strong>現時点では分離できません</strong>。還付が一過性であれば、その分は次四半期には繰り返されません。</p>
+
+<div class="callout">
+  <span class="label">入口記事の⑤章との対応</span>
+  <p><a href="/articles/general-knowledge/knowledge/2026-11-08-us-pharma-biotech-earnings-guide">入口記事</a>では、SANAの偶発対価の評価替えを例に「見出しの数字にだまされない」手順を示しました。BFLYの場合、見出しの数字を動かしているのは<strong>当期の一過性利益ではなく、前年同期の一過性損失</strong>です。方向が逆でも、必要な作業は同じ ― 比較対象の年に異常項目がないかを確認することです。</p>
+</div>
+
+<h3>GAAP営業損失と調整後EBITDAの差</h3>
+
+<p>もう一点、指標の定義に関する確認です。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>指標</th><th>2026年Q3</th><th>2025年Q3</th></tr></thead>
+<tbody>
+<tr><td>営業費用</td><td class="num">3,738.1万ドル（+19%）</td><td class="num">3,140万ドル前後</td></tr>
+<tr><td><strong>GAAP営業損失</strong></td><td class="num"><strong>▲1,357.9万ドル</strong></td><td class="num">▲3,510万ドル前後</td></tr>
+<tr><td>GAAP純損失</td><td class="num">▲1,280.7万ドル</td><td class="num">▲3,400万ドル前後</td></tr>
+<tr><td>GAAP EPS</td><td class="num">▲0.05ドル</td><td class="num">▲0.13ドル</td></tr>
+<tr><td><strong>調整後EBITDA</strong></td><td class="num"><strong>▲118.7万ドル</strong></td><td class="num">▲807.9万ドル</td></tr>
+<tr><td><strong>差額（編集部計算）</strong></td><td class="num"><strong>約1,239.2万ドル</strong></td><td class="num">約2,702万ドル</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>調整後EBITDAの赤字は118.7万ドルで、ほぼ損益分岐点に見えます。一方、GAAPの営業損失は1,357.9万ドル。差額の約1,239.2万ドル（編集部計算）は、株式報酬費用・減価償却費などの非現金項目です。</p>
+
+<p><strong>調整後EBITDAはGAAPの損益指標に代わるものではありません。</strong>株式報酬は現金支出を伴わない一方、株式数の増加を通じて既存株主の持分を薄めます。「ほぼ黒字」と「営業損失1,357.9万ドル」は、同じ四半期の別の側面です。</p>
+
+<h2 class="chapter" id="ch4"><span class="num">④</span>Q4ガイダンス ― +52%から+3%へ</h2>
+
+<p>ツール・装置型で最初に見るもう一方の数字、ガイダンスです。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>対象</th><th>Q2時点（2026年7月30日）</th><th>Q3時点（2026年10月29日）</th></tr></thead>
+<tbody>
+<tr><td>通期売上</td><td>1.19〜1.23億ドル（+22〜26%）</td><td><strong>1.23〜1.26億ドル（+26〜29%）</strong></td></tr>
+<tr><td>通期調整後EBITDA</td><td>▲1,900万〜▲2,300万ドル</td><td><strong>▲1,200万〜▲1,500万ドル</strong></td></tr>
+<tr><td>Q4売上</td><td>―</td><td>3,100万〜3,400万ドル（中間値で前年比約+3%）</td></tr>
+<tr><td>Q4調整後EBITDA</td><td>―</td><td>▲300万〜▲600万ドル</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>通期ガイダンスは売上を4百万ドル前後、調整後EBITDAを7百万ドル前後それぞれ改善方向に修正しています。引き上げたことは事実です。</p>
+
+<p>しかし同時に開示されたQ4のガイダンスは、<strong>中間値3,250万ドルで前年同期比約+3%成長</strong>です。第3四半期の+52%から、次の四半期は+3%。この落差が、決算当日の株価反応を説明する最も大きな要素と考えられます。</p>
+
+<h3>なぜ+3%になるのか</h3>
+
+<p>説明会での説明は2点でした。第一に、<strong>Embedded売上は四半期ごとに均等に認識されない</strong>こと。第二に、<strong>前年同期（2025年Q4）のEmbedded売上が730万ドルあり、Midjourney契約の年次更新がQ4に当たる</strong>こと。つまり前年Q4は比較対象として高く、その分だけ成長率が低く出ます。</p>
+
+<p>会社はQ4ガイダンスについて「慎重に（prudent）」設定したと述べています。</p>
+
+<div class="callout warn">
+  <span class="label">ここで分かることと分からないこと</span>
+  <p>分かること：Q3の+52%は、前年同期のEmbedded売上がほぼゼロに近かったことの裏返しでもある。Q4は前年に730万ドルがあるため、同じ水準のEmbeddedでも成長率は大きく下がる。</p>
+  <p>分からないこと：Embeddedの四半期あたり実勢がいくらなのか。会社は「従来の7〜8百万ドルの枠組みを上回る水準が2027年も続く」と述べましたが、2027年のガイダンスは出していません。四半期単位で計上時期がずれる収益を、年間の実勢として確定するには、少なくとも数四半期の実績が必要です。</p>
+</div>
+
+<p>もうひとつ、四半期の推移を並べると見える点があります。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>2026年Q2</th><th>2026年Q3</th><th>前期比（編集部計算）</th></tr></thead>
+<tbody>
+<tr><td>売上高</td><td class="num">3,261.2万ドル</td><td class="num">3,259.8万ドル</td><td class="num">▲0.04%</td></tr>
+<tr><td>製品</td><td class="num">1,572.0万ドル</td><td class="num">1,562.7万ドル</td><td class="num">▲0.6%</td></tr>
+<tr><td>ソフトウェア・その他</td><td class="num">1,689.2万ドル</td><td class="num">1,697.1万ドル</td><td class="num">+0.5%</td></tr>
+<tr><td>調整後粗利率</td><td class="num">71.4%</td><td class="num">73.0%</td><td class="num">+1.6pt</td></tr>
+<tr><td>調整後EBITDA</td><td class="num">▲137.8万ドル</td><td class="num">▲118.7万ドル</td><td class="num">+19.1万ドル</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>前年同期比では+52%ですが、<strong>前四半期比ではほぼ横ばい（▲0.04%）</strong>です（編集部計算）。製品もソフトウェアも、Q2とQ3でほとんど変わっていません。「過去最高の四半期」という表現と、「前期と同じ水準」という事実は両立します。</p>
+
+<h2 class="chapter" id="ch5"><span class="num">⑤</span>キャッシュと希薄化 ― ツール・装置型としての財務</h2>
+
+<h3>現金の推移</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>時点</th><th>現金・現金同等物</th><th>期間中の増減（編集部計算）</th></tr></thead>
+<tbody>
+<tr><td>2025年12月31日</td><td class="num">1億5,050万ドル</td><td class="num">―</td></tr>
+<tr><td>2026年6月30日</td><td class="num">1億2,465.9万ドル</td><td class="num">上半期 ▲2,584.1万ドル</td></tr>
+<tr><td>2026年9月30日</td><td class="num">1億2,230.1万ドル</td><td class="num">Q3 ▲235.8万ドル</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>第3四半期の現金減少は235.8万ドルにとどまりました（編集部計算）。上半期の2,584.1万ドルから大きく縮小しています。会社の通期調整後EBITDAガイダンス（▲1,200万〜▲1,500万ドル）とQ4ガイダンス（▲300万〜▲600万ドル）を前提にすれば、現金1億2,230.1万ドルに対する当面の資金繰り上の圧迫は小さいと読めます。</p>
+
+<p>ただしGAAPの営業損失は四半期1,357.9万ドルであり、調整後EBITDAだけで資金需要を判断すると実態を見誤ります。また、本シリーズの創薬型企業で使う「キャッシュランウェイ」という指標は、売上がほぼない企業の残存期間を測るためのものです。売上が年1.2億ドル規模で粗利率73%のBFLYに同じ計算を当てるのは、<strong>この型では通常意味を持ちません</strong>（入口記事④章の早見表）。</p>
+
+<h3>希薄化</h3>
+
+<div class="kpi-grid">
+  <div class="kpi"><span class="k">加重平均株式数（Q3 2026）</span><span class="v">2億6,649.8万株</span><span class="n">基本・希薄化後ともに同数</span></div>
+  <div class="kpi"><span class="k">Class A（9/30時点）</span><span class="v">2億4,590.5万株</span><span class="n">―</span></div>
+  <div class="kpi"><span class="k">Class B（9/30時点）</span><span class="v">2,142.7万株</span><span class="n">合計 2億6,733.2万株</span></div>
+  <div class="kpi"><span class="k">前年同期比の増加（編集部試算）</span><span class="v">約+2%</span><span class="n">純損失3,400万ドル÷EPS0.13ドルから逆算した約2億6,150万株との比較</span></div>
+</div>
+
+<p>株式数の増加は年間で約2%程度と試算されます（編集部試算。前年同期の株式数は純損失とEPSからの逆算値であり、会社公表値ではありません）。本シリーズで扱った創薬型企業 ― 1年で約52%増加したRecursion、半年で約37%増加したPrime Medicine ― とは水準が異なります。</p>
+
+<p>これは当然の結果でもあります。売上が営業費用の大部分をカバーできている企業は、研究開発費を増資で賄う必要がないためです。<strong>希薄化パターンという指標は、事業モデルの違いをそのまま映します。</strong></p>
+
+<h2 class="chapter" id="ch6"><span class="num">⑥</span>バリュエーションと株価の反応</h2>
+
+<h3>株価の動き（日付付き）</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>日付</th><th>株価</th><th>備考</th></tr></thead>
+<tbody>
+<tr><td>2026年10月28日</td><td class="num">7.81ドル（終値）</td><td>決算発表前日</td></tr>
+<tr><td>2026年10月29日</td><td class="num">7.51ドル（終値）</td><td>決算発表日。前日比▲3.84%。場中7.05ドルまでギャップダウン後に戻す</td></tr>
+<tr><td>2026年10月30日</td><td class="num">6.775ドル（場中）</td><td>前日比約▲9.8%。安値6.63ドル</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>参考として、2026年10月30日時点の50日移動平均は8.12ドル、200日移動平均は6.03ドル。52週レンジは1.90〜10.21ドルと報じられています。</p>
+
+<p>つまり<strong>決算前の株価は、1年前の水準から数倍に上昇した後の位置にありました</strong>。予想を上回る決算でも株価が下げる局面は、事前に織り込まれた期待の水準が高いときに起きやすくなります。入口記事③章の「予想との差」とは、アナリスト予想との差だけでなく、こうした株価の位置も含めた期待水準との差です。</p>
+
+<h3>売上倍率（編集部試算）</h3>
+
+<p>2026年10月30日時点の時価総額は約17.1億ドルと報じられています。通期売上ガイダンスの中間値1億2,450万ドルで割ると、<strong>約13.7倍</strong>（編集部試算）。発表前日の時価総額約20.6億ドル（10月29日時点の報道値）で計算すれば約16.6倍です。</p>
+
+<div class="callout warn">
+  <span class="label">この倍率の読み方についての留保</span>
+  <p>売上倍率は、同業他社や過去の自社水準と比べて初めて意味を持つ相対指標です。また粗利率73%の企業と30%の企業では同じ倍率の意味が異なります。本記事は水準の妥当性について判断を示しません。時価総額の数値は報道された値であり、日付とともに記載しています。株価・時価総額は日々変動します。</p>
+</div>
+
+<h3>会社が示している長期目標</h3>
+
+<p>説明会で、会社は「2030年に売上を少なくとも5億5,000万ドルにする」と述べました。2026年通期ガイダンスの中間値1億2,450万ドルからは<strong>約4.4倍</strong>（編集部試算）にあたります。</p>
+
+<p>また、2027年初頭にP5.1チップを搭載した次世代製品を投入し、2028年には「80億ドル規模のカート型超音波市場に参入する準備をしている」と述べています。Apolloチップは従来チップの20倍の処理能力を持つとされ、ウェアラブル形態の製品がEmbedded共同開発先の一部に限定供給される計画です。</p>
+
+<p>これらは<strong>いずれも会社が公表した目標・計画であり、実現を保証するものではありません</strong>。2027年のガイダンスは現時点で出ていません。</p>
+
+<h2 class="chapter" id="ch7"><span class="num">⑦</span>リスク要因とまとめ ― 何が分かって、何が分からないか</h2>
+
+<h3>リスク要因</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td>Embeddedの集中</td><td>Q3売上の約34%。主因はMidjourneyと、相互に関連する創業者グループが設立したMerge Labs・Bridge Neurotech。単独の金額は非開示</td></tr>
+<tr><td>計上時期の偏り</td><td>会社自身が「四半期ごとに均等に認識されない」と説明。年次ライセンス更新がQ4に集中する構造</td></tr>
+<tr><td>一時金の比率が不明</td><td>Embeddedに含まれるNRE・受託開発の比率が非開示のため、反復収益比率は18〜52%の幅でしか推定できない</td></tr>
+<tr><td>国際事業</td><td>▲5%。販売体制の見直し中で、改善時期はQ4から2027年とされている</td></tr>
+<tr><td>関税還付の寄与が不明</td><td>粗利率73.0%にIEEPA関税還付が寄与。金額非開示のため、継続的な利益率水準が確定できない</td></tr>
+<tr><td>本体事業の伸び</td><td>製品売上は+7.4%、iQ3の台数+8%／iQ+の台数▲9%／平均販売価格+1%。プローブ本体の成長は緩やか</td></tr>
+<tr><td>新製品の収益化時期</td><td>Mendaera製品は2026年10月1日に発売されたが、会社は「意味のある売上になるまで1〜2年」と説明。次世代機は2027年初頭、カート型市場参入は2028年</td></tr>
+<tr><td>期待水準</td><td>52週レンジ1.90〜10.21ドル。決算前株価は1年前から数倍の水準にあり、予想超えでも下落する局面が起きた</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>まとめ ― 6つの数字</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>#</th><th>数字</th><th>意味</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td>増収分の<strong>90.4%</strong>がソフトウェア・その他サービス（編集部計算）</td><td>+52%成長の主因は本体のプローブ販売ではない</td></tr>
+<tr><td class="num">2</td><td>Embedded売上は売上の<strong>約34.1%</strong>（編集部計算）</td><td>少数の提携先への集中と、計上時期の偏りを同時に抱える</td></tr>
+<tr><td class="num">3</td><td>粗利率の実質改善は<strong>+9.1pt</strong>（90.5ptではない）</td><td>前年に1,740万ドルの棚卸資産評価損があった</td></tr>
+<tr><td class="num">4</td><td>Q4ガイダンスは<strong>前年比約+3%</strong></td><td>前年Q4にEmbedded 730万ドルがあり、比較対象が高い</td></tr>
+<tr><td class="num">5</td><td>前四半期比は<strong>▲0.04%</strong>（編集部計算）</td><td>Q2とQ3の売上はほぼ同額。「過去最高」と「横ばい」は両立する</td></tr>
+<tr><td class="num">6</td><td>株式数の増加は<strong>約+2%</strong>（編集部試算）</td><td>創薬型（年+52%、半年+37%の例）とは財務構造が異なる</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>この決算から確定できるのは、<strong>調整後の粗利率が9.1ポイント改善し、現金消費が四半期235.8万ドルまで縮小し、株式数の増加が年2%程度に収まっている</strong>ことです。ツール・装置型として見るべき2つの数字 ― 粗利率と通期ガイダンス ― はいずれも改善方向にあります。</p>
+
+<p>確定できないのは、<strong>Embedded売上の実勢水準</strong>です。四半期で1,110万ドル、従来枠組みは7〜8百万ドル、前年Q4は730万ドル。会社は「従来を上回る水準が2027年も続く」と述べていますが、2027年のガイダンスは出ていません。関税還付の金額も非開示です。</p>
+
+<p>Embeddedが売上の3分の1を占め、その実勢が確定していない以上、<strong>現時点でこの事業の継続的な収益力を判定できる段階にはありません</strong>。判定に必要な材料が揃うのは、少なくともQ4決算（2027年2月〜3月想定）で前年Q4の730万ドルという高い比較対象に対して何が出るかを確認した後になります。</p>
+
+<div class="crosslink">
+  <span class="label">本記事の前提となる枠組み</span>
+  <ul>
+    <li><a href="/articles/general-knowledge/knowledge/2026-11-08-us-pharma-biotech-earnings-guide">入口記事：なぜ米国の製薬・バイオ株は、決算1本で株価が倍にも半分にもなるのか</a>（6分類の早見表・29銘柄の分類）</li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-09-12-pharma-biotech-17-map">製薬・バイオ 銘柄マップ ― 17銘柄を6つの事業モデルで分類する</a></li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-08-11-ai-biotech-valuation">AI×製薬×バイオ 後編：赤字先行企業を4指標で評価する</a>（反復収益比率・希薄化パターンの定義）</li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-08-25-rapid-micro-rpid">Rapid Micro Biosystems（RPID）― 反復収益63%、粗利率15.0%</a>（同じツール・装置型）</li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-08-13-schrodinger-sdgr">Schrödinger（SDGR）― 純損益の黒字と営業損益の黒字は別の出来事</a></li>
+  </ul>
+</div>
+
+<section class="watch" id="watch">
+  <h2>WHAT TO WATCH</h2>
+  <p class="sub">Butterfly Network（NYSE:BFLY）― 今後の注目点6項目（2026年11月9日時点）</p>
+
+  <ol>
+    <li>
+      <span class="wt">Q4決算でのEmbedded売上</span>
+      前年同期（2025年Q4）に730万ドルという比較対象があり、Midjourney契約の年次更新もQ4に当たります。この高い比較対象に対して何が出るかが、Embeddedの実勢水準を確定する最初の材料になります。Q4ガイダンス中間値は3,250万ドル（前年比約+3%）。
+    </li>
+    <li>
+      <span class="wt">Embeddedの内訳開示があるか</span>
+      現在は一時金（NRE）・年間ライセンス料・機器販売・受託開発・チップ販売が合算されており、反復収益比率は18〜52%の幅でしか推定できません。内訳またはMidjourney単独の金額が開示されれば、この幅が縮まります。
+    </li>
+    <li>
+      <span class="wt">粗利率の持続性と関税還付の扱い</span>
+      Q3の73.0%にはIEEPA関税還付が寄与しましたが、金額は非開示です。Q4で還付がない場合の粗利率水準が、継続的な利益率を判断する材料になります。参考として、Q2の調整後粗利率は71.4%でした。
+    </li>
+    <li>
+      <span class="wt">国際事業の販売体制の切り替え</span>
+      Q3は▲5%（510万ドル）。会社は個人臨床医向け代理店から施設・法人顧客への転換を進めており、改善時期をQ4から2027年としています。ブラジルでの進展と台湾の新規代理店が挙げられました。
+    </li>
+    <li>
+      <span class="wt">2027年初頭の次世代製品と2027年ガイダンス</span>
+      P5.1チップ搭載・組織ハーモニクス対応の次世代機が2027年初頭予定。2027年の売上ガイダンスは現時点で未提示です。2028年にカート型超音波市場（会社は80億ドル規模と説明）への参入準備を進めるとしています。
+    </li>
+    <li>
+      <span class="wt">Mendaera製品とBCI提携先の進展</span>
+      Mendaeraの手持ち型ロボット穿刺ガイド製品は2026年10月1日に発売済みですが、会社は意味のある売上になるまで1〜2年と説明しています。Merge Labs、Bridge Neurotech、および非公表の3社目のBCI提携先の進捗も、Embeddedの継続性に関わります。
+    </li>
+  </ol>
+
+  <p class="note">※上記は2026年11月9日時点で確認できた公開情報に基づく注目点であり、株価の方向性に関する見通しではありません。会社の目標・計画は実現を保証するものではありません。</p>
+</section>
+
+<div class="disclaimer">
+  <h2>免責事項</h2>
+  <p>本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資に関する最終的な判断は、ご自身の責任において行ってください。記載された数値は2026年11月9日時点の公開情報（企業IR資料・決算リリース・SEC提出書類・決算説明会等）に基づいており、株価等の市場データは日々変動します。株価・時価総額はいずれも日付を明記した時点の値であり、報道値を含みます。「編集部試算」「編集部計算」と明記した数値は公開情報に基づく推計です。前年同期の株式数は純損失とEPSからの逆算値であり、会社公表値ではありません。企業が公表する市場規模・長期目標は一定の前提に基づくものであり、実現を保証するものではありません。調整後EBITDA・調整後粗利率・調整後EPSは非GAAP指標であり、GAAPの損益指標に代わるものではありません。</p>
+</div>
+
+</div>
+</body>
+</html>
