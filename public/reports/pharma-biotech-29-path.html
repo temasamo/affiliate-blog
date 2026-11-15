@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10万円が1日で2.3倍にも、約10分の1にも ― 米国製薬・バイオ29銘柄、2026年の「道のり」｜年初に10万円シリーズ 第1回（総集編）</title>
+<style>
+  :root { --accent: #1e3a5f; --accent-soft: #eef2f7; --ink: #0b0b0b; --ink2: #52514e; --muted: #8a8984; --line: #e5e4df; --surface: #fcfcfb; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--surface); color: var(--ink); font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif; line-height: 1.85; font-size: 16px; }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 32px 20px 64px; }
+  .badge { display: inline-block; background: var(--accent); color: #fff; font-size: 12.5px; font-weight: 700; padding: 4px 12px; border-radius: 999px; letter-spacing: .02em; }
+  h1 { font-size: 27px; line-height: 1.45; margin: 14px 0 8px; }
+  .sub { color: var(--ink2); font-size: 13px; margin-bottom: 22px; }
+  .intro { background: var(--accent-soft); border-left: 4px solid var(--accent); padding: 16px 18px; border-radius: 6px; }
+  .hero { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 22px 0; }
+  .hero > div { border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; background: #fff; }
+  .hero .k { font-size: 12.5px; color: var(--ink2); }
+  .hero .v { font-size: 24px; font-weight: 800; color: var(--ink); line-height: 1.3; }
+  .hero .s { font-size: 12px; color: var(--muted); }
+  h2 { font-size: 21px; margin: 44px 0 12px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); display: flex; align-items: center; gap: 10px; }
+  h2 .num { background: var(--accent); color: #fff; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; flex: none; }
+  h3 { font-size: 17px; margin: 26px 0 8px; }
+  .rules { border: 1px solid var(--line); border-radius: 8px; padding: 6px 18px; background: #fff; }
+  .rules li { margin: 6px 0; }
+  .figure { border: 1px solid var(--line); border-radius: 10px; padding: 16px 14px 10px; background: var(--surface); margin: 18px 0; position: relative; }
+  .figure .ft { font-weight: 700; font-size: 15px; margin: 0 4px 2px; }
+  .figure .fs { color: var(--ink2); font-size: 12.5px; margin: 0 4px 10px; }
+  .figure .src { color: var(--muted); font-size: 11.5px; margin: 6px 4px 0; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12.5px; color: var(--ink2); margin: 0 4px 8px; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend i { display: inline-block; width: 16px; height: 0; border-top: 2px solid; }
+  .legend i.dash { border-top-style: dashed; }
+  .legend i.dot { width: 10px; height: 10px; border-radius: 50%; border: none; }
+  .legend i.bar { width: 18px; height: 0; border-top: 2px solid #b9b8b2; }
+  svg.chart { width: 100%; height: auto; display: block; overflow: visible; }
+  svg .grid { stroke: #ecebe6; stroke-width: 1; }
+  svg .base { stroke: #9a9993; stroke-width: 1.2; stroke-dasharray: 3 3; }
+  svg .sep { stroke: var(--line); stroke-width: 1; }
+  svg .axis { fill: var(--muted); font-size: 11px; }
+  svg .axis-strong { fill: var(--ink2); font-size: 11px; font-weight: 700; }
+  svg .tk { fill: var(--ink2); font-size: 12px; font-weight: 700; }
+  svg .val { fill: var(--ink); font-size: 12px; font-variant-numeric: tabular-nums; }
+  svg .rng { stroke: #b9b8b2; stroke-width: 2; stroke-linecap: round; }
+  svg .rng-end { stroke: #b9b8b2; stroke-width: 2; }
+  svg .dot { fill: #2a78d6; stroke: var(--surface); stroke-width: 2; }
+  svg .dot-ref { fill: #8a8984; stroke: var(--surface); stroke-width: 2; }
+  svg .hit { fill: transparent; }
+  svg g.row:hover .hit, svg g.row:focus .hit { fill: #f1f0ec; }
+  svg g.row:focus { outline: none; }
+  svg .lbl { fill: var(--ink); font-size: 12px; }
+  svg .badge { fill: var(--ink); }
+  svg .badge-t { fill: #fff; font-size: 10.5px; font-weight: 700; }
+  svg .cross { stroke: #9a9993; stroke-width: 1; }
+  .tip { position: absolute; display: none; pointer-events: none; background: #fff; border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 4px 14px rgba(0,0,0,.08); padding: 8px 10px; font-size: 12.5px; min-width: 180px; z-index: 5; }
+  .tip .tt-d { color: var(--ink2); font-weight: 700; margin-bottom: 4px; }
+  .tip .tt-r { display: flex; align-items: center; gap: 6px; }
+  .tip .tt-r b { margin-left: auto; font-variant-numeric: tabular-nums; }
+  .tip .sw { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+  .tbl-wrap { overflow-x: auto; margin: 14px 0; border: 1px solid var(--line); border-radius: 8px; }
+  table.data { border-collapse: collapse; width: 100%; font-size: 13.5px; min-width: 640px; background: #fff; }
+  table.data th { background: #f6f5f1; color: var(--ink2); font-weight: 700; text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  table.data td { padding: 7px 10px; border-bottom: 1px solid #f0efea; vertical-align: top; }
+  table.data td.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  table.data td a { color: var(--accent); font-weight: 700; text-decoration: none; }
+  table.data td .nm { display: block; font-size: 11.5px; color: var(--muted); }
+  table.data tr.ref td { background: #faf9f6; color: var(--ink2); }
+  table.ev { border-collapse: collapse; width: 100%; font-size: 14px; background: #fff; }
+  table.ev th, table.ev td { border: 1px solid var(--line); padding: 9px 10px; text-align: left; vertical-align: top; }
+  table.ev th { background: #f6f5f1; color: var(--ink2); }
+  .pill { display: inline-block; font-size: 12px; font-weight: 700; padding: 1px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+  .num-b { display: inline-flex; width: 20px; height: 20px; border-radius: 50%; background: var(--ink); color: #fff; font-size: 11px; font-weight: 700; align-items: center; justify-content: center; margin-right: 4px; }
+  .point { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; margin: 14px 0; }
+  .point b.h { display: block; margin-bottom: 4px; color: var(--accent); }
+  .paths { display: grid; gap: 10px; margin: 14px 0; }
+  .path { border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 8px; padding: 12px 14px; background: #fff; }
+  .path .ph { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .path .ph span { font-size: 12.5px; color: var(--ink2); }
+  .path p { margin: 4px 0 8px; font-size: 14px; color: var(--ink2); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-size: 12.5px; font-weight: 700; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--accent); text-decoration: none; background: var(--surface); }
+  .watch { background: var(--accent); color: #fff; border-radius: 10px; padding: 18px 20px; margin-top: 40px; }
+  .watch h2 { color: #fff; border-color: rgba(255,255,255,.35); margin-top: 0; }
+  .watch li { margin: 6px 0; }
+  .glossary { margin-top: 36px; border-top: 1px solid var(--line); padding-top: 12px; }
+  .glossary dt { font-weight: 700; margin-top: 10px; }
+  .glossary dd { margin: 2px 0 0; color: var(--ink2); font-size: 14px; }
+  .crosslink { display: block; background: #f3f4f6; border-radius: 8px; padding: 14px 16px; margin: 10px 0; text-decoration: none; color: #111827; font-size: 14.5px; font-weight: 600; }
+  .disclaimer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 12.5px; color: #9ca3af; line-height: 1.8; }
+  @media (max-width: 640px) { h1 { font-size: 22px; } .hero { grid-template-columns: 1fr; } .hero .v { font-size: 21px; } }
+  .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .scroll svg.chart { min-width: 640px; }
+  table.ev { min-width: 680px; }
+  table.ev td:nth-child(5) { min-width: 300px; }
+  .scroll-hint { display: none; font-size: 11.5px; color: var(--muted); margin: 0 4px 6px; }
+  @media (max-width: 640px) { .scroll-hint { display: block; } }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="badge">年初に10万円シリーズ 第1回（総集編）</span>
+  <h1>10万円が1日で2.3倍にも、約10分の1にも ― 米国製薬・バイオ29銘柄、2026年の「道のり」</h1>
+  <div class="sub">公開日：2026年11月15日／株価は2026年11月13日終値までのデータで編集部計算</div>
+
+  <div class="intro">
+    当サイトの「製薬・バイオ入門シリーズ」で取り上げてきた米国の29銘柄。もし2026年の最初の取引日（1月2日）に、それぞれ10万円ずつ買っていたら、11月13日までにどんな道のりをたどったのでしょうか。結果だけを見ると「上がった銘柄と下がった銘柄」ですが、途中の動きを見ると、米国の製薬・バイオ株ならではの値動きの荒さが見えてきます。この記事では、29銘柄の「山と谷」と、大きく動いた日に何があったのかを整理します。
+  </div>
+
+  <div class="hero">
+    <div><div class="k">29銘柄に10万円ずつ（計290万円）</div><div class="v">275.7万円</div><div class="s">11/13時点・−4.9%（編集部計算）</div></div>
+    <div><div class="k">途中の最高額（ABSI）</div><div class="v">33.8万円</div><div class="s">10/29時点。11/13は23.9万円</div></div>
+    <div><div class="k">1日の最大の動き</div><div class="v">+135% / −91%</div><div class="s">INM（5/19）・ABOS（10/30）</div></div>
+  </div>
+
+  <h2><span class="num">1</span>この試算のルール</h2>
+  <ul class="rules">
+    <li><b>買った日</b>：2026年1月2日の終値で、各銘柄を10万円分買ったと仮定します。</li>
+    <li><b>評価した日</b>：2026年11月13日の終値です。途中の最高額・最低額も、日々の終値で計算しています。</li>
+    <li><b>円換算</b>：ドル円レートの変化を含めています（1月2日は1ドル＝156.73円、11月13日は159.88円）。</li>
+    <li><b>含めていないもの</b>：配当、売買手数料、税金は含めていません。配当を出している銘柄（Royalty Pharmaなど）は、配当込みなら評価額がもう少し高くなります。</li>
+    <li><b>株式併合</b>：ARAY（11月に1対40）とINM（11月に1対10）は株式併合をしています。併合前の株価も併合後の基準にそろえて計算しているので、騰落率はそのまま比べられます。</li>
+    <li><b>PureTech（PRTC）</b>：2026年5月にナスダックの上場を自ら廃止したため、年初から取引が続いている米国の店頭市場の株価（PRTCY）で計算しています。</li>
+    <li><b>値動きの荒さ</b>：年率ボラティリティと1日の最大の動きは、ドル建ての株価で計算しています。</li>
+  </ul>
+  <p style="font-size:13px;color:var(--ink2)">株価データ：Yahoo Finance（2026年11月15日取得）。数値はすべて編集部計算です。</p>
+
+  <h2><span class="num">2</span>29銘柄の「山と谷」</h2>
+  <p>
+    11月13日時点で10万円を上回ったのは12銘柄、下回ったのは17銘柄でした。29銘柄の合計は290万円が275.7万円になり、−4.9%です。ただし、下の図の横線（途中の最低額から最高額までの幅）を見ると、最後の数字だけでは分からない道のりの違いが見えます。
+  </p>
+
+  <div class="figure">
+    <div class="ft">図1　29銘柄の「山と谷」（1月2日に10万円投資した場合）</div>
+    <div class="fs">横線＝途中の最低額〜最高額、点＝11月13日時点の評価額。評価額の高い順。行にカーソルを合わせると詳しい数字が出ます。</div>
+    <div class="legend"><span><i class="bar"></i>途中の最低〜最高</span><span><i class="dot" style="background:#2a78d6"></i>11/13時点（29銘柄）</span><span><i class="dot" style="background:#8a8984"></i>11/13時点（比較用）</span></div>
+    <div class="scroll-hint">← 横にスクロールできます →</div>
+    <div class="scroll"><svg viewBox="0 0 760 784" role="img" aria-labelledby="ca-t ca-d" class="chart">
+<title id="ca-t">29銘柄の「山と谷」</title>
+<desc id="ca-d">2026年1月2日に10万円投資した場合の、途中の最低額から最高額までの幅（横線）と、11月13日時点の評価額（点）。</desc>
+<line x1="64.0" y1="38" x2="64.0" y2="750" class="grid"/>
+<text x="64.0" y="768" class="axis" text-anchor="middle">0万</text>
+<line x1="149.7" y1="38" x2="149.7" y2="750" class="grid"/>
+<text x="149.7" y="768" class="axis" text-anchor="middle">5万</text>
+<line x1="235.4" y1="38" x2="235.4" y2="750" class="grid"/>
+<text x="235.4" y="768" class="axis" text-anchor="middle">10万</text>
+<line x1="321.1" y1="38" x2="321.1" y2="750" class="grid"/>
+<text x="321.1" y="768" class="axis" text-anchor="middle">15万</text>
+<line x1="406.9" y1="38" x2="406.9" y2="750" class="grid"/>
+<text x="406.9" y="768" class="axis" text-anchor="middle">20万</text>
+<line x1="492.6" y1="38" x2="492.6" y2="750" class="grid"/>
+<text x="492.6" y="768" class="axis" text-anchor="middle">25万</text>
+<line x1="578.3" y1="38" x2="578.3" y2="750" class="grid"/>
+<text x="578.3" y="768" class="axis" text-anchor="middle">30万</text>
+<line x1="664.0" y1="38" x2="664.0" y2="750" class="grid"/>
+<text x="664.0" y="768" class="axis" text-anchor="middle">35万</text>
+<line x1="235.4" y1="32" x2="235.4" y2="750" class="base"/>
+<text x="239.4" y="28" class="axis-strong">元本10万円</text>
+<text x="754" y="28" class="axis" text-anchor="end">11/13時点</text>
+<g class="row" tabindex="0"><title>ABSI（Absci）：11/13時点 238,767円／途中の最高 337,537円（10/29）／途中の最低 64,665円（03/12）</title>
+<rect x="0" y="46.0" width="760" height="22" class="hit"/>
+<text x="54" y="61.0" class="tk" text-anchor="end">ABSI</text>
+<line x1="174.9" y1="57.0" x2="642.6" y2="57.0" class="rng"/>
+<line x1="174.9" y1="53.0" x2="174.9" y2="61.0" class="rng-end"/>
+<line x1="642.6" y1="53.0" x2="642.6" y2="61.0" class="rng-end"/>
+<circle cx="473.3" cy="57.0" r="5" class="dot"/>
+<text x="754" y="61.0" class="val" text-anchor="end">23.9万円</text>
+</g>
+<g class="row" tabindex="0"><title>ROIV（Roivant Sciences）：11/13時点 183,871円／途中の最高 193,238円（11/11）／途中の最低 96,341円（01/30）</title>
+<rect x="0" y="68.0" width="760" height="22" class="hit"/>
+<text x="54" y="83.0" class="tk" text-anchor="end">ROIV</text>
+<line x1="229.2" y1="79.0" x2="395.3" y2="79.0" class="rng"/>
+<line x1="229.2" y1="75.0" x2="229.2" y2="83.0" class="rng-end"/>
+<line x1="395.3" y1="75.0" x2="395.3" y2="83.0" class="rng-end"/>
+<circle cx="379.2" cy="79.0" r="5" class="dot"/>
+<text x="754" y="83.0" class="val" text-anchor="end">18.4万円</text>
+</g>
+<g class="row" tabindex="0"><title>RPRX（Royalty Pharma）：11/13時点 181,936円／途中の最高 182,429円（11/11）／途中の最低 100,000円（01/02）</title>
+<rect x="0" y="90.0" width="760" height="22" class="hit"/>
+<text x="54" y="105.0" class="tk" text-anchor="end">RPRX</text>
+<line x1="235.4" y1="101.0" x2="376.7" y2="101.0" class="rng"/>
+<line x1="235.4" y1="97.0" x2="235.4" y2="105.0" class="rng-end"/>
+<line x1="376.7" y1="97.0" x2="376.7" y2="105.0" class="rng-end"/>
+<circle cx="375.9" cy="101.0" r="5" class="dot"/>
+<text x="754" y="105.0" class="val" text-anchor="end">18.2万円</text>
+</g>
+<g class="row" tabindex="0"><title>INM（InMed Pharmaceuticals）：11/13時点 169,403円／途中の最高 172,662円（07/23）／途中の最低 55,623円（05/11）</title>
+<rect x="0" y="112.0" width="760" height="22" class="hit"/>
+<text x="54" y="127.0" class="tk" text-anchor="end">INM</text>
+<line x1="159.4" y1="123.0" x2="360.0" y2="123.0" class="rng"/>
+<line x1="159.4" y1="119.0" x2="159.4" y2="127.0" class="rng-end"/>
+<line x1="360.0" y1="119.0" x2="360.0" y2="127.0" class="rng-end"/>
+<circle cx="354.4" cy="123.0" r="5" class="dot"/>
+<text x="754" y="127.0" class="val" text-anchor="end">16.9万円</text>
+</g>
+<g class="row" tabindex="0"><title>SDGR（Schrödinger）：11/13時点 167,533円／途中の最高 187,556円（11/09）／途中の最低 61,450円（02/23）</title>
+<rect x="0" y="134.0" width="760" height="22" class="hit"/>
+<text x="54" y="149.0" class="tk" text-anchor="end">SDGR</text>
+<line x1="169.3" y1="145.0" x2="385.5" y2="145.0" class="rng"/>
+<line x1="169.3" y1="141.0" x2="169.3" y2="149.0" class="rng-end"/>
+<line x1="385.5" y1="141.0" x2="385.5" y2="149.0" class="rng-end"/>
+<circle cx="351.2" cy="145.0" r="5" class="dot"/>
+<text x="754" y="149.0" class="val" text-anchor="end">16.8万円</text>
+</g>
+<g class="row" tabindex="0"><title>LGND（Ligand）：11/13時点 165,685円／途中の最高 175,794円（07/09）／途中の最低 93,439円（02/12）</title>
+<rect x="0" y="156.0" width="760" height="22" class="hit"/>
+<text x="54" y="171.0" class="tk" text-anchor="end">LGND</text>
+<line x1="224.2" y1="167.0" x2="365.4" y2="167.0" class="rng"/>
+<line x1="224.2" y1="163.0" x2="224.2" y2="171.0" class="rng-end"/>
+<line x1="365.4" y1="163.0" x2="365.4" y2="171.0" class="rng-end"/>
+<circle cx="348.0" cy="167.0" r="5" class="dot"/>
+<text x="754" y="171.0" class="val" text-anchor="end">16.6万円</text>
+</g>
+<g class="row" tabindex="0"><title>BFLY（Butterfly Network）：11/13時点 165,386円／途中の最高 266,038円（09/22）／途中の最低 77,203円（02/23）</title>
+<rect x="0" y="178.0" width="760" height="22" class="hit"/>
+<text x="54" y="193.0" class="tk" text-anchor="end">BFLY</text>
+<line x1="196.3" y1="189.0" x2="520.1" y2="189.0" class="rng"/>
+<line x1="196.3" y1="185.0" x2="196.3" y2="193.0" class="rng-end"/>
+<line x1="520.1" y1="185.0" x2="520.1" y2="193.0" class="rng-end"/>
+<circle cx="347.5" cy="189.0" r="5" class="dot"/>
+<text x="754" y="193.0" class="val" text-anchor="end">16.5万円</text>
+</g>
+<g class="row" tabindex="0"><title>PRME（Prime Medicine）：11/13時点 123,390円／途中の最高 153,064円（10/28）／途中の最低 77,612円（05/19）</title>
+<rect x="0" y="200.0" width="760" height="22" class="hit"/>
+<text x="54" y="215.0" class="tk" text-anchor="end">PRME</text>
+<line x1="197.0" y1="211.0" x2="326.4" y2="211.0" class="rng"/>
+<line x1="197.0" y1="207.0" x2="197.0" y2="215.0" class="rng-end"/>
+<line x1="326.4" y1="207.0" x2="326.4" y2="215.0" class="rng-end"/>
+<circle cx="275.5" cy="211.0" r="5" class="dot"/>
+<text x="754" y="215.0" class="val" text-anchor="end">12.3万円</text>
+</g>
+<g class="row" tabindex="0"><title>NTLA（Intellia）：11/13時点 107,433円／途中の最高 200,323円（07/06）／途中の最低 100,000円（01/02）</title>
+<rect x="0" y="222.0" width="760" height="22" class="hit"/>
+<text x="54" y="237.0" class="tk" text-anchor="end">NTLA</text>
+<line x1="235.4" y1="233.0" x2="407.4" y2="233.0" class="rng"/>
+<line x1="235.4" y1="229.0" x2="235.4" y2="237.0" class="rng-end"/>
+<line x1="407.4" y1="229.0" x2="407.4" y2="237.0" class="rng-end"/>
+<circle cx="248.2" cy="233.0" r="5" class="dot"/>
+<text x="754" y="237.0" class="val" text-anchor="end">10.7万円</text>
+</g>
+<g class="row" tabindex="0"><title>RGEN（Repligen）：11/13時点 104,141円／途中の最高 118,896円（09/29）／途中の最低 63,251円（05/15）</title>
+<rect x="0" y="244.0" width="760" height="22" class="hit"/>
+<text x="54" y="259.0" class="tk" text-anchor="end">RGEN</text>
+<line x1="172.4" y1="255.0" x2="267.8" y2="255.0" class="rng"/>
+<line x1="172.4" y1="251.0" x2="172.4" y2="259.0" class="rng-end"/>
+<line x1="267.8" y1="251.0" x2="267.8" y2="259.0" class="rng-end"/>
+<circle cx="242.5" cy="255.0" r="5" class="dot"/>
+<text x="754" y="259.0" class="val" text-anchor="end">10.4万円</text>
+</g>
+<g class="row" tabindex="0"><title>BBIO（BridgeBio）：11/13時点 102,091円／途中の最高 119,397円（07/09）／途中の最低 81,556円（02/05）</title>
+<rect x="0" y="266.0" width="760" height="22" class="hit"/>
+<text x="54" y="281.0" class="tk" text-anchor="end">BBIO</text>
+<line x1="203.8" y1="277.0" x2="268.7" y2="277.0" class="rng"/>
+<line x1="203.8" y1="273.0" x2="203.8" y2="281.0" class="rng-end"/>
+<line x1="268.7" y1="273.0" x2="268.7" y2="281.0" class="rng-end"/>
+<circle cx="239.0" cy="277.0" r="5" class="dot"/>
+<text x="754" y="281.0" class="val" text-anchor="end">10.2万円</text>
+</g>
+<g class="row" tabindex="0"><title>PRTC（PureTech Health）：11/13時点 100,510円／途中の最高 116,837円（01/16）／途中の最低 85,099円（10/05）</title>
+<rect x="0" y="288.0" width="760" height="22" class="hit"/>
+<text x="54" y="303.0" class="tk" text-anchor="end">PRTC</text>
+<line x1="209.9" y1="299.0" x2="264.3" y2="299.0" class="rng"/>
+<line x1="209.9" y1="295.0" x2="209.9" y2="303.0" class="rng-end"/>
+<line x1="264.3" y1="295.0" x2="264.3" y2="303.0" class="rng-end"/>
+<circle cx="236.3" cy="299.0" r="5" class="dot"/>
+<text x="754" y="303.0" class="val" text-anchor="end">10.1万円</text>
+</g>
+<g class="row" tabindex="0"><title>BFRI（Biofrontera）：11/13時点 98,489円／途中の最高 222,934円（08/28）／途中の最低 98,489円（11/13）</title>
+<rect x="0" y="310.0" width="760" height="22" class="hit"/>
+<text x="54" y="325.0" class="tk" text-anchor="end">BFRI</text>
+<line x1="232.8" y1="321.0" x2="446.2" y2="321.0" class="rng"/>
+<line x1="232.8" y1="317.0" x2="232.8" y2="325.0" class="rng-end"/>
+<line x1="446.2" y1="317.0" x2="446.2" y2="325.0" class="rng-end"/>
+<circle cx="232.8" cy="321.0" r="5" class="dot"/>
+<text x="754" y="325.0" class="val" text-anchor="end">9.8万円</text>
+</g>
+<g class="row" tabindex="0"><title>INVA（Innoviva）：11/13時点 97,694円／途中の最高 123,911円（04/17）／途中の最低 95,704円（01/28）</title>
+<rect x="0" y="332.0" width="760" height="22" class="hit"/>
+<text x="54" y="347.0" class="tk" text-anchor="end">INVA</text>
+<line x1="228.1" y1="343.0" x2="276.4" y2="343.0" class="rng"/>
+<line x1="228.1" y1="339.0" x2="228.1" y2="347.0" class="rng-end"/>
+<line x1="276.4" y1="339.0" x2="276.4" y2="347.0" class="rng-end"/>
+<circle cx="231.5" cy="343.0" r="5" class="dot"/>
+<text x="754" y="347.0" class="val" text-anchor="end">9.8万円</text>
+</g>
+<g class="row" tabindex="0"><title>ADAG（Adagene）：11/13時点 94,799円／途中の最高 269,409円（07/01）／途中の最低 83,231円（01/09）</title>
+<rect x="0" y="354.0" width="760" height="22" class="hit"/>
+<text x="54" y="369.0" class="tk" text-anchor="end">ADAG</text>
+<line x1="206.7" y1="365.0" x2="525.8" y2="365.0" class="rng"/>
+<line x1="206.7" y1="361.0" x2="206.7" y2="369.0" class="rng-end"/>
+<line x1="525.8" y1="361.0" x2="525.8" y2="369.0" class="rng-end"/>
+<circle cx="226.5" cy="365.0" r="5" class="dot"/>
+<text x="754" y="369.0" class="val" text-anchor="end">9.5万円</text>
+</g>
+<g class="row" tabindex="0"><title>VKTX（Viking Therapeutics）：11/13時点 84,151円／途中の最高 123,218円（07/07）／途中の最低 68,394円（10/26）</title>
+<rect x="0" y="376.0" width="760" height="22" class="hit"/>
+<text x="54" y="391.0" class="tk" text-anchor="end">VKTX</text>
+<line x1="181.2" y1="387.0" x2="275.2" y2="387.0" class="rng"/>
+<line x1="181.2" y1="383.0" x2="181.2" y2="391.0" class="rng-end"/>
+<line x1="275.2" y1="383.0" x2="275.2" y2="391.0" class="rng-end"/>
+<circle cx="208.3" cy="387.0" r="5" class="dot"/>
+<text x="754" y="391.0" class="val" text-anchor="end">8.4万円</text>
+</g>
+<g class="row" tabindex="0"><title>RXRX（Recursion）：11/13時点 77,355円／途中の最高 119,395円（01/22）／途中の最低 68,855円（05/19）</title>
+<rect x="0" y="398.0" width="760" height="22" class="hit"/>
+<text x="54" y="413.0" class="tk" text-anchor="end">RXRX</text>
+<line x1="182.0" y1="409.0" x2="268.7" y2="409.0" class="rng"/>
+<line x1="182.0" y1="405.0" x2="182.0" y2="413.0" class="rng-end"/>
+<line x1="268.7" y1="405.0" x2="268.7" y2="413.0" class="rng-end"/>
+<circle cx="196.6" cy="409.0" r="5" class="dot"/>
+<text x="754" y="413.0" class="val" text-anchor="end">7.7万円</text>
+</g>
+<g class="row" tabindex="0"><title>AYTU（Aytu BioPharma）：11/13時点 65,549円／途中の最高 104,865円（01/05）／途中の最低 65,265円（11/09）</title>
+<rect x="0" y="420.0" width="760" height="22" class="hit"/>
+<text x="54" y="435.0" class="tk" text-anchor="end">AYTU</text>
+<line x1="175.9" y1="431.0" x2="243.8" y2="431.0" class="rng"/>
+<line x1="175.9" y1="427.0" x2="175.9" y2="435.0" class="rng-end"/>
+<line x1="243.8" y1="427.0" x2="243.8" y2="435.0" class="rng-end"/>
+<circle cx="176.4" cy="431.0" r="5" class="dot"/>
+<text x="754" y="435.0" class="val" text-anchor="end">6.6万円</text>
+</g>
+<g class="row" tabindex="0"><title>ALLO（Allogene）：11/13時点 63,470円／途中の最高 230,258円（04/13）／途中の最低 62,659円（11/12）</title>
+<rect x="0" y="442.0" width="760" height="22" class="hit"/>
+<text x="54" y="457.0" class="tk" text-anchor="end">ALLO</text>
+<line x1="171.4" y1="453.0" x2="458.7" y2="453.0" class="rng"/>
+<line x1="171.4" y1="449.0" x2="171.4" y2="457.0" class="rng-end"/>
+<line x1="458.7" y1="449.0" x2="458.7" y2="457.0" class="rng-end"/>
+<circle cx="172.8" cy="453.0" r="5" class="dot"/>
+<text x="754" y="457.0" class="val" text-anchor="end">6.3万円</text>
+</g>
+<g class="row" tabindex="0"><title>HROW（Harrow）：11/13時点 61,559円／途中の最高 109,978円（01/05）／途中の最低 52,715円（11/05）</title>
+<rect x="0" y="464.0" width="760" height="22" class="hit"/>
+<text x="54" y="479.0" class="tk" text-anchor="end">HROW</text>
+<line x1="154.4" y1="475.0" x2="252.5" y2="475.0" class="rng"/>
+<line x1="154.4" y1="471.0" x2="154.4" y2="479.0" class="rng-end"/>
+<line x1="252.5" y1="471.0" x2="252.5" y2="479.0" class="rng-end"/>
+<circle cx="169.5" cy="475.0" r="5" class="dot"/>
+<text x="754" y="479.0" class="val" text-anchor="end">6.2万円</text>
+</g>
+<g class="row" tabindex="0"><title>COLL（Collegium）：11/13時点 56,727円／途中の最高 107,138円（01/08）／途中の最低 47,520円（09/15）</title>
+<rect x="0" y="486.0" width="760" height="22" class="hit"/>
+<text x="54" y="501.0" class="tk" text-anchor="end">COLL</text>
+<line x1="145.5" y1="497.0" x2="247.7" y2="497.0" class="rng"/>
+<line x1="145.5" y1="493.0" x2="145.5" y2="501.0" class="rng-end"/>
+<line x1="247.7" y1="493.0" x2="247.7" y2="501.0" class="rng-end"/>
+<circle cx="161.2" cy="497.0" r="5" class="dot"/>
+<text x="754" y="501.0" class="val" text-anchor="end">5.7万円</text>
+</g>
+<g class="row" tabindex="0"><title>SANA（Sana Biotechnology）：11/13時点 49,177円／途中の最高 120,645円（01/22）／途中の最低 48,890円（11/12）</title>
+<rect x="0" y="508.0" width="760" height="22" class="hit"/>
+<text x="54" y="523.0" class="tk" text-anchor="end">SANA</text>
+<line x1="147.8" y1="519.0" x2="270.8" y2="519.0" class="rng"/>
+<line x1="147.8" y1="515.0" x2="147.8" y2="523.0" class="rng-end"/>
+<line x1="270.8" y1="515.0" x2="270.8" y2="523.0" class="rng-end"/>
+<circle cx="148.3" cy="519.0" r="5" class="dot"/>
+<text x="754" y="523.0" class="val" text-anchor="end">4.9万円</text>
+</g>
+<g class="row" tabindex="0"><title>FBIO（Fortress Biotech）：11/13時点 47,586円／途中の最高 108,685円（01/08）／途中の最低 46,130円（11/06）</title>
+<rect x="0" y="530.0" width="760" height="22" class="hit"/>
+<text x="54" y="545.0" class="tk" text-anchor="end">FBIO</text>
+<line x1="143.1" y1="541.0" x2="250.3" y2="541.0" class="rng"/>
+<line x1="143.1" y1="537.0" x2="143.1" y2="545.0" class="rng-end"/>
+<line x1="250.3" y1="537.0" x2="250.3" y2="545.0" class="rng-end"/>
+<circle cx="145.6" cy="541.0" r="5" class="dot"/>
+<text x="754" y="545.0" class="val" text-anchor="end">4.8万円</text>
+</g>
+<g class="row" tabindex="0"><title>ABVC（ABVC BioPharma）：11/13時点 42,386円／途中の最高 107,483円（01/05）／途中の最低 32,989円（08/26）</title>
+<rect x="0" y="552.0" width="760" height="22" class="hit"/>
+<text x="54" y="567.0" class="tk" text-anchor="end">ABVC</text>
+<line x1="120.6" y1="563.0" x2="248.3" y2="563.0" class="rng"/>
+<line x1="120.6" y1="559.0" x2="120.6" y2="567.0" class="rng-end"/>
+<line x1="248.3" y1="559.0" x2="248.3" y2="567.0" class="rng-end"/>
+<circle cx="136.7" cy="563.0" r="5" class="dot"/>
+<text x="754" y="567.0" class="val" text-anchor="end">4.2万円</text>
+</g>
+<g class="row" tabindex="0"><title>DARE（Daré Bioscience）：11/13時点 34,368円／途中の最高 168,704円（05/05）／途中の最低 32,332円（11/05）</title>
+<rect x="0" y="574.0" width="760" height="22" class="hit"/>
+<text x="54" y="589.0" class="tk" text-anchor="end">DARE</text>
+<line x1="119.4" y1="585.0" x2="353.2" y2="585.0" class="rng"/>
+<line x1="119.4" y1="581.0" x2="119.4" y2="589.0" class="rng-end"/>
+<line x1="353.2" y1="581.0" x2="353.2" y2="589.0" class="rng-end"/>
+<circle cx="122.9" cy="585.0" r="5" class="dot"/>
+<text x="754" y="589.0" class="val" text-anchor="end">3.4万円</text>
+</g>
+<g class="row" tabindex="0"><title>GANX（Gain Therapeutics）：11/13時点 33,360円／途中の最高 100,000円（01/02）／途中の最低 30,502円（11/05）</title>
+<rect x="0" y="596.0" width="760" height="22" class="hit"/>
+<text x="54" y="611.0" class="tk" text-anchor="end">GANX</text>
+<line x1="116.3" y1="607.0" x2="235.4" y2="607.0" class="rng"/>
+<line x1="116.3" y1="603.0" x2="116.3" y2="611.0" class="rng-end"/>
+<line x1="235.4" y1="603.0" x2="235.4" y2="611.0" class="rng-end"/>
+<circle cx="121.2" cy="607.0" r="5" class="dot"/>
+<text x="754" y="611.0" class="val" text-anchor="end">3.3万円</text>
+</g>
+<g class="row" tabindex="0"><title>RPID（Rapid Micro Biosystems）：11/13時点 21,148円／途中の最高 148,156円（01/21）／途中の最低 19,950円（11/05）</title>
+<rect x="0" y="618.0" width="760" height="22" class="hit"/>
+<text x="54" y="633.0" class="tk" text-anchor="end">RPID</text>
+<line x1="98.2" y1="629.0" x2="318.0" y2="629.0" class="rng"/>
+<line x1="98.2" y1="625.0" x2="98.2" y2="633.0" class="rng-end"/>
+<line x1="318.0" y1="625.0" x2="318.0" y2="633.0" class="rng-end"/>
+<circle cx="100.3" cy="629.0" r="5" class="dot"/>
+<text x="754" y="633.0" class="val" text-anchor="end">2.1万円</text>
+</g>
+<g class="row" tabindex="0"><title>ABOS（Acumen）：11/13時点 10,807円／途中の最高 168,339円（03/16）／途中の最低 10,467円（10/30）</title>
+<rect x="0" y="640.0" width="760" height="22" class="hit"/>
+<text x="54" y="655.0" class="tk" text-anchor="end">ABOS</text>
+<line x1="81.9" y1="651.0" x2="352.6" y2="651.0" class="rng"/>
+<line x1="81.9" y1="647.0" x2="81.9" y2="655.0" class="rng-end"/>
+<line x1="352.6" y1="647.0" x2="352.6" y2="655.0" class="rng-end"/>
+<circle cx="82.5" cy="651.0" r="5" class="dot"/>
+<text x="754" y="655.0" class="val" text-anchor="end">1.1万円</text>
+</g>
+<g class="row" tabindex="0"><title>ARAY（Accuray）：11/13時点 8,400円／途中の最高 104,878円（01/05）／途中の最低 8,400円（11/13）</title>
+<rect x="0" y="662.0" width="760" height="22" class="hit"/>
+<text x="54" y="677.0" class="tk" text-anchor="end">ARAY</text>
+<line x1="78.4" y1="673.0" x2="243.8" y2="673.0" class="rng"/>
+<line x1="78.4" y1="669.0" x2="78.4" y2="677.0" class="rng-end"/>
+<line x1="243.8" y1="669.0" x2="243.8" y2="677.0" class="rng-end"/>
+<circle cx="78.4" cy="673.0" r="5" class="dot"/>
+<text x="754" y="677.0" class="val" text-anchor="end">0.8万円</text>
+</g>
+<line x1="8" y1="696" x2="752" y2="696" class="sep"/>
+<text x="8" y="721" class="axis">比較用</text>
+<g class="row ref" tabindex="0"><title>XBI（バイオ株ETF（XBI））：11/13時点 126,374円／途中の最高 141,367円（08/25）／途中の最低 98,580円（02/13）</title>
+<rect x="0" y="706.0" width="760" height="22" class="hit"/>
+<text x="54" y="721.0" class="tk" text-anchor="end">XBI</text>
+<line x1="233.0" y1="717.0" x2="306.3" y2="717.0" class="rng"/>
+<line x1="233.0" y1="713.0" x2="233.0" y2="721.0" class="rng-end"/>
+<line x1="306.3" y1="713.0" x2="306.3" y2="721.0" class="rng-end"/>
+<circle cx="280.6" cy="717.0" r="5" class="dot-ref"/>
+<text x="754" y="721.0" class="val" text-anchor="end">12.6万円</text>
+</g>
+<g class="row ref" tabindex="0"><title>SPY（S&amp;P500 ETF（SPY））：11/13時点 112,637円／途中の最高 115,821円（08/13）／途中の最低 94,341円（03/30）</title>
+<rect x="0" y="728.0" width="760" height="22" class="hit"/>
+<text x="54" y="743.0" class="tk" text-anchor="end">SPY</text>
+<line x1="225.7" y1="739.0" x2="262.6" y2="739.0" class="rng"/>
+<line x1="225.7" y1="735.0" x2="225.7" y2="743.0" class="rng-end"/>
+<line x1="262.6" y1="735.0" x2="262.6" y2="743.0" class="rng-end"/>
+<circle cx="257.1" cy="739.0" r="5" class="dot-ref"/>
+<text x="754" y="743.0" class="val" text-anchor="end">11.3万円</text>
+</g>
+</svg></div>
+    <div class="src">出所：Yahoo Financeの株価をもとに編集部計算（円換算・配当含まず）</div>
+  </div>
+
+  <div class="point"><b class="h">ポイント1：途中で大きく増えても、最後に残るとは限らない</b>
+    途中で一度でも15万円を超えた銘柄は14ありました。そのうちBFRI・DARE・ABOS・ALLO・ADAGの5銘柄は、11月13日時点で10万円を下回っています。ADAGは7月1日に約26.9万円まで増えましたが、11月13日は約9.5万円でした。
+  </div>
+  <div class="point"><b class="h">ポイント2：大きく減ってから、大きく戻した銘柄もある</b>
+    逆に、途中で7万円を下回ってから11月13日に10万円を上回った銘柄が4つあります（INM・ABSI・SDGR・RGEN）。ABSIは3月12日の約6.5万円から、10月29日には約33.8万円まで増えました。
+  </div>
+
+  <h2><span class="num">3</span>値動きの荒さを、米国株全体と比べる</h2>
+  <p>
+    値動きの荒さを測る代表的な目安が「年率ボラティリティ」です。毎日の値動きのばらつきを1年分に換算した数字で、大きいほど値動きが荒いことを示します。同じ期間で比べると、米国株全体に連動するETF（SPY）は14%、バイオ株全体に連動するETF（XBI）は31%でした。これに対して、29銘柄の真ん中の値（中央値）は76%で、一番荒いINMは168%です。
+  </p>
+  <p>
+    1日の値動きで見ても差ははっきりしています。SPYの1年で最大の下落は1日−4%でしたが、29銘柄のうち18銘柄では、1日で±20%以上動いた日が少なくとも1回ありました。
+  </p>
+  <p>
+    なお、同じ期間にXBIへ10万円投資していた場合は約12.6万円、SPYなら約11.3万円でした（円換算）。29銘柄に10万円ずつ投資した場合の1銘柄あたりの平均（約9.5万円）は、業界全体のETFを下回っています。当サイトの29銘柄は小型株が多く、業界全体の平均的な姿とは違うことに注意が必要です。
+  </p>
+  <p style="font-size:13px;color:var(--ink2)">表は11/13時点の評価額が高い順です。銘柄名から各社の入門記事に移動できます。</p>
+  <div class="tbl-wrap"><table class="data"><thead><tr><th>銘柄</th><th>事業モデル</th><th>11/13時点</th><th>途中の最高</th><th>途中の最低</th><th>年率ボラ</th><th>1日の最大の動き</th></tr></thead><tbody>
+<tr><td><a href="/reports/absi-guide.html">ABSI</a><span class="nm">Absci</span></td><td>プラットフォーム型</td><td class="n">238,767円</td><td class="n">337,537円</td><td class="n">64,665円</td><td class="n">108%</td><td class="n">+36%（6/24）</td></tr>
+<tr><td><a href="/reports/roiv-guide.html">ROIV</a><span class="nm">Roivant Sciences</span></td><td>持株会社型</td><td class="n">183,871円</td><td class="n">193,238円</td><td class="n">96,341円</td><td class="n">50%</td><td class="n">+22%（2/6）</td></tr>
+<tr><td><a href="/reports/rprx-guide.html">RPRX</a><span class="nm">Royalty Pharma</span></td><td>ロイヤルティ型</td><td class="n">181,936円</td><td class="n">182,429円</td><td class="n">100,000円</td><td class="n">23%</td><td class="n">-5%（9/8）</td></tr>
+<tr><td><a href="/reports/inm-guide.html">INM</a><span class="nm">InMed Pharmaceuticals</span></td><td>商業段階</td><td class="n">169,403円</td><td class="n">172,662円</td><td class="n">55,623円</td><td class="n">168%</td><td class="n">+135%（5/19）</td></tr>
+<tr><td><a href="/reports/sdgr-guide.html">SDGR</a><span class="nm">Schrödinger</span></td><td>プラットフォーム型</td><td class="n">167,533円</td><td class="n">187,556円</td><td class="n">61,450円</td><td class="n">70%</td><td class="n">+26%（9/17）</td></tr>
+<tr><td><a href="/reports/lgnd-guide.html">LGND</a><span class="nm">Ligand</span></td><td>ロイヤルティ型</td><td class="n">165,685円</td><td class="n">175,794円</td><td class="n">93,439円</td><td class="n">38%</td><td class="n">-10%（5/7）</td></tr>
+<tr><td><a href="/reports/bfly-guide.html">BFLY</a><span class="nm">Butterfly Network</span></td><td>ツール・装置型</td><td class="n">165,386円</td><td class="n">266,038円</td><td class="n">77,203円</td><td class="n">122%</td><td class="n">+56%（6/18）</td></tr>
+<tr><td><a href="/reports/prme-guide.html">PRME</a><span class="nm">Prime Medicine</span></td><td>創薬型</td><td class="n">123,390円</td><td class="n">153,064円</td><td class="n">77,612円</td><td class="n">95%</td><td class="n">+23%（10/28）</td></tr>
+<tr><td><a href="/reports/ntla-guide.html">NTLA</a><span class="nm">Intellia</span></td><td>創薬型</td><td class="n">107,433円</td><td class="n">200,323円</td><td class="n">100,000円</td><td class="n">78%</td><td class="n">+23%（6/15）</td></tr>
+<tr><td><a href="/reports/rgen-guide.html">RGEN</a><span class="nm">Repligen</span></td><td>ツール・装置型</td><td class="n">104,141円</td><td class="n">118,896円</td><td class="n">63,251円</td><td class="n">48%</td><td class="n">+11%（7/28）</td></tr>
+<tr><td><a href="/reports/bbio-guide.html">BBIO</a><span class="nm">BridgeBio</span></td><td>持株会社型</td><td class="n">102,091円</td><td class="n">119,397円</td><td class="n">81,556円</td><td class="n">46%</td><td class="n">+15%（7/9）</td></tr>
+<tr><td><a href="/reports/prtc-guide.html">PRTC</a><span class="nm">PureTech Health</span></td><td>持株会社型</td><td class="n">100,510円</td><td class="n">116,837円</td><td class="n">85,099円</td><td class="n">40%</td><td class="n">+10%（1/22）</td></tr>
+<tr><td><a href="/reports/bfri-guide.html">BFRI</a><span class="nm">Biofrontera</span></td><td>商業段階</td><td class="n">98,489円</td><td class="n">222,934円</td><td class="n">98,489円</td><td class="n">80%</td><td class="n">-24%（11/13）</td></tr>
+<tr><td><a href="/reports/inva-guide.html">INVA</a><span class="nm">Innoviva</span></td><td>ロイヤルティ型</td><td class="n">97,694円</td><td class="n">123,911円</td><td class="n">95,704円</td><td class="n">26%</td><td class="n">-10%（11/5）</td></tr>
+<tr><td><a href="/reports/adag-guide.html">ADAG</a><span class="nm">Adagene</span></td><td>創薬型</td><td class="n">94,799円</td><td class="n">269,409円</td><td class="n">83,231円</td><td class="n">96%</td><td class="n">+23%（1/23）</td></tr>
+<tr><td><a href="/reports/vktx-guide.html">VKTX</a><span class="nm">Viking Therapeutics</span></td><td>創薬型</td><td class="n">84,151円</td><td class="n">123,218円</td><td class="n">68,394円</td><td class="n">72%</td><td class="n">+36%（9/22）</td></tr>
+<tr><td><a href="/reports/rxrx-guide.html">RXRX</a><span class="nm">Recursion</span></td><td>プラットフォーム型</td><td class="n">77,355円</td><td class="n">119,395円</td><td class="n">68,855円</td><td class="n">76%</td><td class="n">-17%（10/16）</td></tr>
+<tr><td><a href="/reports/aytu-guide.html">AYTU</a><span class="nm">Aytu BioPharma</span></td><td>商業段階</td><td class="n">65,549円</td><td class="n">104,865円</td><td class="n">65,265円</td><td class="n">43%</td><td class="n">-10%（2/4）</td></tr>
+<tr><td><a href="/reports/allo-guide.html">ALLO</a><span class="nm">Allogene</span></td><td>創薬型</td><td class="n">63,470円</td><td class="n">230,258円</td><td class="n">62,659円</td><td class="n">85%</td><td class="n">-25%（4/14）</td></tr>
+<tr><td><a href="/reports/hrow-guide.html">HROW</a><span class="nm">Harrow</span></td><td>商業段階</td><td class="n">61,559円</td><td class="n">109,978円</td><td class="n">52,715円</td><td class="n">63%</td><td class="n">-28%（3/3）</td></tr>
+<tr><td><a href="/reports/coll-guide.html">COLL</a><span class="nm">Collegium</span></td><td>商業段階</td><td class="n">56,727円</td><td class="n">107,138円</td><td class="n">47,520円</td><td class="n">44%</td><td class="n">-19%（8/6）</td></tr>
+<tr><td><a href="/reports/sana-guide.html">SANA</a><span class="nm">Sana Biotechnology</span></td><td>創薬型</td><td class="n">49,177円</td><td class="n">120,645円</td><td class="n">48,890円</td><td class="n">70%</td><td class="n">+13%（8/19）</td></tr>
+<tr><td><a href="/reports/fbio-guide.html">FBIO</a><span class="nm">Fortress Biotech</span></td><td>持株会社型</td><td class="n">47,586円</td><td class="n">108,685円</td><td class="n">46,130円</td><td class="n">63%</td><td class="n">-16%（1/14）</td></tr>
+<tr><td><a href="/reports/abvc-guide.html">ABVC</a><span class="nm">ABVC BioPharma</span></td><td>商業段階</td><td class="n">42,386円</td><td class="n">107,483円</td><td class="n">32,989円</td><td class="n">88%</td><td class="n">+28%（4/6）</td></tr>
+<tr><td><a href="/reports/dare-guide.html">DARE</a><span class="nm">Daré Bioscience</span></td><td>商業段階</td><td class="n">34,368円</td><td class="n">168,704円</td><td class="n">32,332円</td><td class="n">109%</td><td class="n">+52%（4/16）</td></tr>
+<tr><td><a href="/reports/ganx-guide.html">GANX</a><span class="nm">Gain Therapeutics</span></td><td>創薬型</td><td class="n">33,360円</td><td class="n">100,000円</td><td class="n">30,502円</td><td class="n">88%</td><td class="n">+31%（2/24）</td></tr>
+<tr><td><a href="/reports/rpid-guide.html">RPID</a><span class="nm">Rapid Micro Biosystems</span></td><td>ツール・装置型</td><td class="n">21,148円</td><td class="n">148,156円</td><td class="n">19,950円</td><td class="n">82%</td><td class="n">-22%（3/12）</td></tr>
+<tr><td><a href="/reports/abos-guide.html">ABOS</a><span class="nm">Acumen</span></td><td>創薬型</td><td class="n">10,807円</td><td class="n">168,339円</td><td class="n">10,467円</td><td class="n">128%</td><td class="n">-91%（10/30）</td></tr>
+<tr><td><a href="/reports/aray-guide.html">ARAY</a><span class="nm">Accuray</span></td><td>ツール・装置型</td><td class="n">8,400円</td><td class="n">104,878円</td><td class="n">8,400円</td><td class="n">125%</td><td class="n">-40%（5/7）</td></tr>
+<tr class="ref"><td>XBI<span class="nm">バイオ株ETF（XBI）</span></td><td>—</td><td class="n">126,374円</td><td class="n">141,367円</td><td class="n">98,580円</td><td class="n">31%</td><td class="n">+8%（3/31）</td></tr>
+<tr class="ref"><td>SPY<span class="nm">S&P500 ETF（SPY）</span></td><td>—</td><td class="n">112,637円</td><td class="n">115,821円</td><td class="n">94,341円</td><td class="n">14%</td><td class="n">-4%（11/5）</td></tr>
+</tbody></table></div>
+
+  <h2><span class="num">4</span>1日で大きく動いた5銘柄の道のり</h2>
+  <p>
+    値動きの荒さが一番分かりやすいのが、1日で株価が大きく動いた日がある5銘柄です。点線の米国株全体（SPY）と比べると、線の形がまったく違うのが分かります。図の番号は、次の章で説明する「大きく動いた日」です。
+  </p>
+  <div class="figure">
+    <div class="ft">図2　1日で大きく動いた5銘柄の評価額の推移（1月2日に10万円投資した場合）</div>
+    <div class="fs">円換算・日次終値ベース。グラフにカーソルを合わせる（スマホはタップする）と、その日の数字が出ます。</div>
+    <div class="legend"><span><i style="border-color:#2a78d6"></i>INM</span><span><i style="border-color:#eb6834"></i>ABOS</span><span><i style="border-color:#1baf7a"></i>BFLY</span><span><i style="border-color:#eda100"></i>DARE</span><span><i style="border-color:#e87ba4"></i>ARAY</span><span><i class="dash" style="border-color:#8a8984"></i>米国株全体（SPY）</span></div>
+    <div class="scroll-hint">← 横にスクロールできます →</div>
+    <div class="scroll" style="position:relative"><svg viewBox="0 0 760 400" role="img" aria-labelledby="cb-t cb-d" class="chart" id="lineChart">
+<title id="cb-t">1日で大きく動いた5銘柄の評価額の推移</title>
+<desc id="cb-d">INM、ABOS、BFLY、DARE、ARAYと米国株全体（SPY）に1月2日に10万円投資した場合の評価額（円換算、日次）。</desc>
+<line x1="52" y1="364.0" x2="610" y2="364.0" class="grid"/>
+<text x="44" y="368.0" class="axis" text-anchor="end">0万</text>
+<line x1="52" y1="303.3" x2="610" y2="303.3" class="grid"/>
+<text x="44" y="307.3" class="axis" text-anchor="end">5万</text>
+<line x1="52" y1="242.6" x2="610" y2="242.6" class="base"/>
+<text x="44" y="246.6" class="axis" text-anchor="end">10万</text>
+<line x1="52" y1="181.9" x2="610" y2="181.9" class="grid"/>
+<text x="44" y="185.9" class="axis" text-anchor="end">15万</text>
+<line x1="52" y1="121.1" x2="610" y2="121.1" class="grid"/>
+<text x="44" y="125.1" class="axis" text-anchor="end">20万</text>
+<line x1="52" y1="60.4" x2="610" y2="60.4" class="grid"/>
+<text x="44" y="64.4" class="axis" text-anchor="end">25万</text>
+<text x="52.0" y="388" class="axis" text-anchor="middle">1月</text>
+<text x="103.2" y="388" class="axis" text-anchor="middle">2月</text>
+<text x="151.8" y="388" class="axis" text-anchor="middle">3月</text>
+<text x="208.1" y="388" class="axis" text-anchor="middle">4月</text>
+<text x="261.9" y="388" class="axis" text-anchor="middle">5月</text>
+<text x="313.1" y="388" class="axis" text-anchor="middle">6月</text>
+<text x="366.8" y="388" class="axis" text-anchor="middle">7月</text>
+<text x="423.1" y="388" class="axis" text-anchor="middle">8月</text>
+<text x="476.9" y="388" class="axis" text-anchor="middle">9月</text>
+<text x="530.7" y="388" class="axis" text-anchor="middle">10月</text>
+<text x="587.0" y="388" class="axis" text-anchor="middle">11月</text>
+<polyline points="52.0,242.6 54.6,241.6 57.1,241.1 59.7,241.5 62.2,241.5 64.8,240.5 67.4,239.3 69.9,239.7 72.5,239.4 75.0,239.7 77.6,239.7 80.2,242.5 82.7,241.1 85.3,240.1 87.8,240.1 90.4,242.1 93.0,242.3 95.5,243.8 98.1,243.5 100.6,243.8 103.2,241.6 105.8,242.5 108.3,242.8 110.9,243.4 113.4,241.2 116.0,240.3 118.6,241.5 121.1,242.8 123.7,245.6 126.2,245.9 128.8,245.0 131.3,244.8 133.9,243.9 136.5,242.7 139.0,244.5 141.6,243.4 144.1,241.5 146.7,241.8 149.3,242.7 151.8,242.1 154.4,242.7 156.9,241.4 159.5,242.7 162.1,243.9 164.6,242.1 167.2,242.8 169.7,242.7 172.3,243.8 174.9,244.4 177.4,242.9 180.0,242.9 182.5,244.8 185.1,244.4 187.7,247.8 190.2,245.6 192.8,246.6 195.3,245.7 197.9,247.4 200.5,249.1 203.0,249.5 205.6,247.1 208.1,246.1 210.7,245.4 213.3,244.6 215.8,245.4 218.4,242.3 220.9,241.4 223.5,241.4 226.1,240.1 228.6,238.9 231.2,238.0 233.7,237.3 236.3,235.8 238.9,236.4 241.4,236.7 244.0,235.4 246.5,235.7 249.1,234.7 251.7,234.8 254.2,235.3 256.8,234.7 259.3,236.0 261.9,235.7 264.4,236.0 267.0,234.6 269.6,233.7 272.1,233.8 274.7,232.9 277.2,232.1 279.8,232.0 282.4,231.2 284.9,229.6 287.5,231.3 290.0,230.9 292.6,231.6 295.2,230.4 297.7,230.1 300.3,229.6 302.8,228.5 305.4,228.2 308.0,227.8 310.5,227.4 313.1,226.7 315.6,226.2 318.2,227.1 320.8,226.7 323.3,230.2 325.9,229.7 328.4,229.9 331.0,231.9 333.6,230.1 336.1,229.3 338.7,226.8 341.2,227.5 343.8,229.1 346.4,227.4 348.9,227.6 351.5,229.6 354.0,229.5 356.6,229.2 359.2,230.2 361.7,227.9 364.3,226.3 366.8,226.5 369.4,227.6 372.0,225.9 374.5,226.3 377.1,226.5 379.6,225.6 382.2,225.0 384.8,226.1 387.3,225.7 389.9,225.2 392.4,225.8 395.0,227.1 397.6,227.3 400.1,225.6 402.7,225.8 405.2,226.9 407.8,226.7 410.3,226.8 412.9,226.3 415.5,228.9 418.0,229.2 420.6,228.2 423.1,228.6 425.7,226.1 428.3,226.4 430.8,225.9 433.4,225.1 435.9,224.5 438.5,224.8 441.1,224.5 443.6,223.4 446.2,223.6 448.7,224.4 451.3,225.1 453.9,225.9 456.4,226.5 459.0,226.1 461.5,226.2 464.1,225.7 466.7,225.7 469.2,224.7 471.8,225.0 474.3,225.1 476.9,225.6 479.5,226.1 482.0,227.5 484.6,228.0 487.1,230.7 489.7,231.3 492.3,231.3 494.8,230.1 497.4,230.8 499.9,230.7 502.5,230.5 505.1,229.0 507.6,229.1 510.2,225.9 512.7,225.9 515.3,226.2 517.9,225.8 520.4,225.1 523.0,227.4 525.5,227.6 528.1,227.8 530.7,227.1 533.2,226.2 535.8,225.2 538.3,224.1 540.9,224.7 543.4,225.3 546.0,224.5 548.6,224.1 551.1,224.4 553.7,226.2 556.2,225.6 558.8,227.1 561.4,226.2 563.9,225.9 566.5,225.3 569.0,228.4 571.6,229.1 574.2,227.9 576.7,226.5 579.3,225.6 581.8,226.3 584.4,228.7 587.0,229.5 589.5,228.9 592.1,226.2 594.6,232.4 597.2,232.6 599.8,228.9 602.3,229.7 604.9,227.3 607.4,226.9 610.0,227.3" fill="none" stroke="#8a8984" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 4"/>
+<polyline points="52.0,242.6 54.6,236.6 57.1,237.0 59.7,239.8 62.2,236.9 64.8,238.2 67.4,238.6 69.9,240.1 72.5,242.1 75.0,238.4 77.6,242.6 80.2,247.2 82.7,247.2 85.3,244.1 87.8,245.5 90.4,249.5 93.0,247.2 95.5,254.2 98.1,252.4 100.6,250.9 103.2,250.8 105.8,257.8 108.3,256.1 110.9,278.1 113.4,275.4 116.0,280.8 118.6,285.7 121.1,292.2 123.7,288.6 126.2,287.4 128.8,292.6 131.3,290.1 133.9,286.4 136.5,287.6 139.0,285.2 141.6,280.8 144.1,278.8 146.7,281.4 149.3,281.6 151.8,285.4 154.4,288.0 156.9,289.2 159.5,291.0 162.1,293.7 164.6,293.2 167.2,294.9 169.7,297.7 172.3,303.0 174.9,310.3 177.4,302.9 180.0,307.4 182.5,304.6 185.1,301.3 187.7,307.9 190.2,308.9 192.8,309.1 195.3,307.5 197.9,308.8 200.5,305.7 203.0,314.5 205.6,307.7 208.1,307.5 210.7,302.9 213.3,302.9 215.8,309.0 218.4,311.9 220.9,303.0 223.5,307.4 226.1,303.0 228.6,306.1 231.2,300.2 233.7,298.7 236.3,300.1 238.9,297.5 241.4,303.0 244.0,295.6 246.5,298.4 249.1,297.0 251.7,300.1 254.2,301.5 256.8,302.7 259.3,296.7 261.9,296.7 264.4,298.1 267.0,297.9 269.6,295.5 272.1,322.6 274.7,309.7 277.2,315.3 279.8,319.4 282.4,320.9 284.9,323.6 287.5,325.0 290.0,322.0 292.6,322.0 295.2,316.2 297.7,319.1 300.3,319.1 302.8,310.3 305.4,307.3 308.0,303.0 310.5,308.9 313.1,307.3 315.6,305.7 318.2,310.1 320.8,310.1 323.3,314.5 325.9,312.9 328.4,315.8 331.0,315.7 333.6,314.3 336.1,314.3 338.7,317.2 341.2,314.3 343.8,314.2 346.4,312.5 348.9,318.3 351.5,315.4 354.0,315.3 356.6,316.8 359.2,325.6 361.7,325.6 364.3,325.5 366.8,325.5 369.4,327.2 372.0,324.1 374.5,327.0 377.1,327.0 379.6,325.5 382.2,328.5 384.8,324.1 387.3,325.5 389.9,324.2 392.4,324.1 395.0,325.5 397.6,327.0 400.1,326.8 402.7,328.3 405.2,328.2 407.8,328.2 410.3,329.6 412.9,328.2 415.5,329.8 418.0,321.6 420.6,324.5 423.1,325.3 425.7,319.4 428.3,325.3 430.8,323.6 433.4,322.1 435.9,322.0 438.5,321.9 441.1,323.3 443.6,323.3 446.2,323.3 448.7,316.0 451.3,317.5 453.9,322.1 456.4,322.0 459.0,323.4 461.5,324.8 464.1,324.8 466.7,326.2 469.2,326.2 471.8,324.8 474.3,326.1 476.9,327.4 479.5,326.4 482.0,325.8 484.6,325.8 487.1,327.6 489.7,329.0 492.3,330.2 494.8,328.8 497.4,328.8 499.9,331.5 502.5,331.3 505.1,329.9 507.6,331.2 510.2,329.5 512.7,331.0 515.3,330.8 517.9,332.2 520.4,332.2 523.0,321.0 525.5,321.0 528.1,325.3 530.7,325.1 533.2,323.7 535.8,320.8 538.3,326.5 540.9,327.9 543.4,329.4 546.0,330.8 548.6,332.2 551.1,336.6 553.7,338.1 556.2,339.5 558.8,340.9 561.4,343.7 563.9,343.8 566.5,343.8 569.0,345.4 571.6,345.4 574.2,346.9 576.7,345.3 579.3,345.3 581.8,343.8 584.4,343.8 587.0,342.4 589.5,343.8 592.1,342.4 594.6,346.6 597.2,348.2 599.8,350.3 602.3,352.5 604.9,352.5 607.4,352.8 610.0,353.8" fill="none" stroke="#e87ba4" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="52.0,242.6 54.6,239.9 57.1,242.1 59.7,241.4 62.2,235.0 64.8,240.6 67.4,242.1 69.9,242.8 72.5,235.7 75.0,241.2 77.6,242.3 80.2,240.9 82.7,242.1 85.3,240.0 87.8,241.2 90.4,246.8 93.0,243.2 95.5,247.7 98.1,248.4 100.6,253.9 103.2,255.4 105.8,255.3 108.3,254.5 110.9,259.2 113.4,258.7 116.0,257.1 118.6,259.2 121.1,258.5 123.7,260.4 126.2,260.8 128.8,262.1 131.3,263.6 133.9,261.4 136.5,262.2 139.0,262.2 141.6,262.0 144.1,257.5 146.7,260.3 149.3,258.7 151.8,263.8 154.4,266.2 156.9,266.2 159.5,266.1 162.1,268.2 164.6,267.7 167.2,270.5 169.7,269.8 172.3,270.5 174.9,272.9 177.4,270.9 180.0,272.3 182.5,275.6 185.1,281.4 187.7,278.6 190.2,277.3 192.8,278.4 195.3,275.7 197.9,268.4 200.5,265.6 203.0,247.8 205.6,249.4 208.1,244.1 210.7,253.7 213.3,249.1 215.8,252.4 218.4,247.4 220.9,247.1 223.5,248.3 226.1,251.4 228.6,253.6 231.2,251.1 233.7,191.9 236.3,177.4 238.9,182.8 241.4,214.5 244.0,220.1 246.5,229.5 249.1,230.1 251.7,222.2 254.2,225.2 256.8,230.3 259.3,221.8 261.9,218.0 264.4,169.7 267.0,159.1 269.6,167.5 272.1,182.7 274.7,192.7 277.2,206.6 279.8,199.2 282.4,185.9 284.9,184.0 287.5,227.4 290.0,230.8 292.6,221.8 295.2,216.9 297.7,211.7 300.3,214.3 302.8,216.0 305.4,216.2 308.0,219.7 310.5,222.9 313.1,225.1 315.6,228.0 318.2,233.7 320.8,225.5 323.3,244.5 325.9,246.2 328.4,241.6 331.0,236.5 333.6,234.8 336.1,235.5 338.7,238.0 341.2,229.5 343.8,231.3 346.4,225.0 348.9,232.4 351.5,231.0 354.0,230.3 356.6,235.4 359.2,229.7 361.7,228.9 364.3,227.6 366.8,227.8 369.4,229.9 372.0,230.1 374.5,231.8 377.1,232.9 379.6,230.4 382.2,233.7 384.8,229.1 387.3,230.7 389.9,230.7 392.4,238.8 395.0,237.6 397.6,277.5 400.1,283.0 402.7,284.9 405.2,282.0 407.8,280.7 410.3,278.1 412.9,286.9 415.5,288.7 418.0,285.1 420.6,286.4 423.1,283.9 425.7,280.1 428.3,280.1 430.8,280.3 433.4,275.8 435.9,278.0 438.5,272.9 441.1,272.8 443.6,277.2 446.2,305.1 448.7,312.8 451.3,315.3 453.9,312.2 456.4,312.9 459.0,312.3 461.5,313.2 464.1,312.0 466.7,316.5 469.2,317.2 471.8,317.5 474.3,315.7 476.9,314.9 479.5,317.2 482.0,319.9 484.6,319.4 487.1,320.5 489.7,320.3 492.3,320.8 494.8,320.7 497.4,318.8 499.9,318.9 502.5,318.9 505.1,317.6 507.6,315.3 510.2,313.4 512.7,310.8 515.3,313.2 517.9,317.2 520.4,315.1 523.0,317.1 525.5,313.0 528.1,310.6 530.7,310.6 533.2,311.1 535.8,311.1 538.3,311.7 540.9,314.3 543.4,315.6 546.0,315.4 548.6,316.8 551.1,317.0 553.7,318.2 556.2,317.5 558.8,318.5 561.4,319.6 563.9,320.7 566.5,320.8 569.0,323.4 571.6,323.8 574.2,323.9 576.7,322.5 579.3,321.3 581.8,321.3 584.4,320.2 587.0,323.0 589.5,323.2 592.1,322.3 594.6,324.8 597.2,324.1 599.8,321.3 602.3,320.5 604.9,320.3 607.4,323.1 610.0,322.2" fill="none" stroke="#eda100" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="52.0,242.6 54.6,238.4 57.1,232.6 59.7,227.8 62.2,229.6 64.8,233.1 67.4,224.5 69.9,220.3 72.5,201.2 75.0,215.1 77.6,227.6 80.2,229.1 82.7,219.6 85.3,210.2 87.8,216.3 90.4,221.9 93.0,222.4 95.5,228.2 98.1,232.7 100.6,238.7 103.2,241.5 105.8,237.8 108.3,245.9 110.9,259.3 113.4,254.5 116.0,255.8 118.6,254.0 121.1,259.3 123.7,267.5 126.2,268.1 128.8,267.5 131.3,267.2 133.9,266.2 136.5,268.4 139.0,270.3 141.6,269.8 144.1,264.2 146.7,213.3 149.3,242.0 151.8,239.4 154.4,244.4 156.9,232.6 159.5,242.1 162.1,245.2 164.6,240.9 167.2,242.3 169.7,239.2 172.3,244.4 174.9,239.1 177.4,235.0 180.0,223.6 182.5,234.3 185.1,233.0 187.7,234.4 190.2,226.2 192.8,225.2 195.3,226.7 197.9,227.4 200.5,234.7 203.0,237.5 205.6,231.6 208.1,229.9 210.7,228.6 213.3,227.8 215.8,231.2 218.4,228.4 220.9,227.6 223.5,228.9 226.1,223.3 228.6,218.3 231.2,204.6 233.7,190.0 236.3,184.8 238.9,183.8 241.4,184.5 244.0,181.7 246.5,194.0 249.1,188.1 251.7,183.6 254.2,193.9 256.8,201.2 259.3,208.7 261.9,188.9 264.4,206.5 267.0,207.0 269.6,216.8 272.1,226.7 274.7,229.2 277.2,227.5 279.8,228.5 282.4,236.1 284.9,229.8 287.5,238.7 290.0,238.0 292.6,229.3 295.2,219.9 297.7,216.8 300.3,217.2 302.8,214.6 305.4,209.7 308.0,212.3 310.5,214.3 313.1,212.3 315.6,212.6 318.2,218.9 320.8,192.4 323.3,212.9 325.9,205.8 328.4,194.4 331.0,185.3 333.6,176.0 336.1,180.8 338.7,177.6 341.2,176.8 343.8,174.6 346.4,67.5 348.9,121.3 351.5,107.9 354.0,104.3 356.6,95.9 359.2,66.9 361.7,65.9 364.3,81.1 366.8,97.7 369.4,107.8 372.0,88.4 374.5,109.7 377.1,117.5 379.6,94.9 382.2,96.4 384.8,92.1 387.3,104.3 389.9,119.6 392.4,128.8 395.0,141.9 397.6,139.4 400.1,134.0 402.7,141.3 405.2,140.0 407.8,141.3 410.3,124.8 412.9,121.3 415.5,124.4 418.0,93.6 420.6,128.7 423.1,96.5 425.7,76.9 428.3,89.8 430.8,92.4 433.4,75.0 435.9,45.0 438.5,55.7 441.1,52.9 443.6,72.2 446.2,72.8 448.7,67.1 451.3,67.3 453.9,64.2 456.4,63.0 459.0,50.5 461.5,69.8 464.1,66.6 466.7,79.7 469.2,76.9 471.8,86.5 474.3,103.7 476.9,93.2 479.5,114.5 482.0,129.5 484.6,127.3 487.1,125.5 489.7,127.3 492.3,136.8 494.8,130.0 497.4,127.7 499.9,113.7 502.5,130.0 505.1,107.2 507.6,109.8 510.2,99.3 512.7,41.0 515.3,63.2 517.9,55.2 520.4,55.9 523.0,66.5 525.5,68.1 528.1,72.3 530.7,85.7 533.2,72.0 535.8,57.9 538.3,79.5 540.9,93.9 543.4,101.7 546.0,94.6 548.6,84.0 551.1,99.0 553.7,115.9 556.2,107.5 558.8,127.1 561.4,119.3 563.9,125.0 566.5,132.1 569.0,143.9 571.6,145.4 574.2,148.2 576.7,123.8 579.3,109.1 581.8,119.1 584.4,155.6 587.0,164.0 589.5,155.1 592.1,142.4 594.6,165.5 597.2,156.7 599.8,145.9 602.3,151.5 604.9,129.9 607.4,143.9 610.0,163.2" fill="none" stroke="#1baf7a" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="52.0,242.6 54.6,244.8 57.1,246.2 59.7,244.4 62.2,252.2 64.8,255.1 67.4,259.7 69.9,259.2 72.5,254.7 75.0,250.9 77.6,249.0 80.2,251.2 82.7,254.2 85.3,243.1 87.8,243.7 90.4,240.3 93.0,203.0 95.5,199.7 98.1,200.2 100.6,211.2 103.2,209.8 105.8,210.8 108.3,217.6 110.9,228.6 113.4,219.6 116.0,214.4 118.6,216.1 121.1,212.3 123.7,223.5 126.2,216.8 128.8,219.6 131.3,210.6 133.9,202.6 136.5,211.0 139.0,211.2 141.6,200.3 144.1,197.8 146.7,194.5 149.3,176.3 151.8,165.7 154.4,164.4 156.9,163.6 159.5,162.9 162.1,164.0 164.6,173.2 167.2,160.6 169.7,159.6 172.3,162.7 174.9,164.4 177.4,159.6 180.0,175.4 182.5,186.1 185.1,185.0 187.7,202.3 190.2,198.5 192.8,206.6 195.3,204.0 197.9,208.1 200.5,225.6 203.0,229.7 205.6,220.5 208.1,208.8 210.7,198.9 213.3,195.0 215.8,204.0 218.4,207.0 220.9,210.9 223.5,213.3 226.1,210.8 228.6,200.8 231.2,198.4 233.7,199.7 236.3,191.8 238.9,191.0 241.4,197.2 244.0,192.1 246.5,200.4 249.1,206.5 251.7,210.0 254.2,213.4 256.8,220.2 259.3,220.1 261.9,220.7 264.4,214.5 267.0,211.6 269.6,209.8 272.1,215.4 274.7,210.0 277.2,209.1 279.8,214.0 282.4,213.3 284.9,218.8 287.5,225.5 290.0,231.2 292.6,231.6 295.2,220.8 297.7,212.1 300.3,210.9 302.8,216.2 305.4,208.6 308.0,208.8 310.5,205.2 313.1,210.3 315.6,218.7 318.2,223.5 320.8,223.5 323.3,232.1 325.9,230.7 328.4,229.3 331.0,226.1 333.6,218.4 336.1,218.4 338.7,220.2 341.2,223.1 343.8,225.5 346.4,224.2 348.9,215.2 351.5,214.6 354.0,220.7 356.6,226.9 359.2,217.6 361.7,191.9 364.3,197.4 366.8,202.5 369.4,194.4 372.0,198.0 374.5,204.0 377.1,193.8 379.6,195.8 382.2,200.2 384.8,199.6 387.3,206.6 389.9,226.1 392.4,228.9 395.0,223.9 397.6,226.3 400.1,224.5 402.7,225.8 405.2,227.6 407.8,230.2 410.3,225.8 412.9,220.7 415.5,231.9 418.0,230.7 420.6,231.9 423.1,232.3 425.7,228.5 428.3,228.6 430.8,225.5 433.4,215.7 435.9,215.6 438.5,213.1 441.1,210.6 443.6,208.1 446.2,200.7 448.7,201.4 451.3,196.3 453.9,172.8 456.4,169.6 459.0,171.4 461.5,176.3 464.1,174.7 466.7,181.4 469.2,178.8 471.8,185.6 474.3,189.4 476.9,184.5 479.5,175.1 482.0,179.6 484.6,174.1 487.1,178.0 489.7,196.2 492.3,194.5 494.8,191.0 497.4,198.7 499.9,191.9 502.5,207.8 505.1,210.2 507.6,205.3 510.2,207.7 512.7,204.0 515.3,224.1 517.9,227.9 520.4,227.5 523.0,225.2 525.5,228.5 528.1,229.8 530.7,238.6 533.2,240.4 535.8,234.9 538.3,240.7 540.9,236.7 543.4,236.7 546.0,234.3 548.6,241.2 551.1,253.7 553.7,258.2 556.2,262.7 558.8,261.5 561.4,256.4 563.9,241.7 566.5,240.9 569.0,240.4 571.6,245.1 574.2,227.5 576.7,227.4 579.3,219.7 581.8,225.3 584.4,351.2 587.0,349.4 589.5,349.8 592.1,350.9 594.6,351.0 597.2,350.5 599.8,349.7 602.3,350.0 604.9,350.0 607.4,350.6 610.0,350.9" fill="none" stroke="#eb6834" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="52.0,242.6 54.6,239.2 57.1,241.6 59.7,233.9 62.2,228.5 64.8,224.0 67.4,236.0 69.9,238.3 72.5,239.5 75.0,246.7 77.6,243.3 80.2,246.9 82.7,238.2 85.3,246.7 87.8,242.3 90.4,249.1 93.0,249.7 95.5,251.2 98.1,250.7 100.6,247.4 103.2,245.9 105.8,250.0 108.3,256.2 110.9,257.4 113.4,262.0 116.0,262.2 118.6,256.1 121.1,258.2 123.7,269.6 126.2,271.2 128.8,273.7 131.3,273.0 133.9,272.0 136.5,271.7 139.0,273.3 141.6,269.9 144.1,268.0 146.7,268.9 149.3,272.3 151.8,275.1 154.4,281.3 156.9,262.7 159.5,268.4 162.1,263.7 164.6,266.9 167.2,274.5 169.7,276.4 172.3,276.0 174.9,279.1 177.4,268.8 180.0,266.0 182.5,267.2 185.1,273.4 187.7,274.6 190.2,280.2 192.8,288.1 195.3,287.3 197.9,289.0 200.5,291.5 203.0,296.0 205.6,293.2 208.1,290.4 210.7,289.2 213.3,287.3 215.8,289.3 218.4,293.0 220.9,293.1 223.5,285.2 226.1,285.4 228.6,285.4 231.2,285.8 233.7,286.9 236.3,285.8 238.9,284.6 241.4,284.5 244.0,278.3 246.5,279.9 249.1,278.8 251.7,283.2 254.2,286.6 256.8,286.3 259.3,285.8 261.9,286.4 264.4,282.6 267.0,283.2 269.6,285.4 272.1,288.5 274.7,293.4 277.2,296.5 279.8,292.6 282.4,294.8 284.9,292.8 287.5,293.9 290.0,289.2 292.6,187.9 295.2,187.1 297.7,173.7 300.3,174.8 302.8,174.6 305.4,180.8 308.0,178.9 310.5,191.1 313.1,191.7 315.6,195.8 318.2,188.1 320.8,191.3 323.3,189.1 325.9,193.4 328.4,194.2 331.0,196.3 333.6,189.0 336.1,196.8 338.7,196.7 341.2,199.7 343.8,198.5 346.4,197.8 348.9,196.3 351.5,196.3 354.0,190.6 356.6,195.0 359.2,191.6 361.7,188.2 364.3,189.6 366.8,185.3 369.4,189.8 372.0,183.4 374.5,176.4 377.1,178.5 379.6,177.6 382.2,179.8 384.8,187.6 387.3,189.0 389.9,185.7 392.4,185.4 395.0,193.3 397.6,193.2 400.1,190.1 402.7,176.8 405.2,154.3 407.8,170.2 410.3,178.2 412.9,174.7 415.5,175.3 418.0,197.8 420.6,201.2 423.1,204.9 425.7,201.4 428.3,211.4 430.8,207.4 433.4,202.9 435.9,208.8 438.5,203.1 441.1,205.3 443.6,206.3 446.2,201.9 448.7,203.1 451.3,205.0 453.9,189.9 456.4,190.4 459.0,203.6 461.5,206.6 464.1,205.4 466.7,206.5 469.2,206.4 471.8,211.8 474.3,214.8 476.9,217.7 479.5,215.6 482.0,220.8 484.6,215.4 487.1,222.8 489.7,224.8 492.3,224.0 494.8,226.2 497.4,225.2 499.9,226.5 502.5,225.8 505.1,213.9 507.6,217.1 510.2,213.8 512.7,212.6 515.3,212.9 517.9,210.2 520.4,212.5 523.0,216.0 525.5,214.3 528.1,215.7 530.7,216.5 533.2,218.7 535.8,218.7 538.3,218.4 540.9,218.5 543.4,218.5 546.0,215.2 548.6,214.9 551.1,218.3 553.7,220.8 556.2,218.5 558.8,219.6 561.4,214.3 563.9,217.3 566.5,215.2 569.0,220.0 571.6,208.1 574.2,191.5 576.7,190.7 579.3,189.3 581.8,186.6 584.4,189.4 587.0,186.2 589.5,180.5 592.1,172.1 594.6,219.3 597.2,194.5 599.8,188.8 602.3,230.7 604.9,192.7 607.4,161.2 610.0,158.3" fill="none" stroke="#2a78d6" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="233.7" cy="191.9" r="4" fill="#eda100" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="233.7" cy="175.9" r="8" class="badge"/>
+<text x="233.7" y="179.9" class="badge-t" text-anchor="middle">1</text>
+<circle cx="272.1" cy="322.6" r="4" fill="#e87ba4" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="272.1" cy="340.6" r="8" class="badge"/>
+<text x="272.1" y="344.6" class="badge-t" text-anchor="middle">2</text>
+<circle cx="292.6" cy="187.9" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="292.6" cy="171.9" r="8" class="badge"/>
+<text x="292.6" y="175.9" class="badge-t" text-anchor="middle">3</text>
+<circle cx="346.4" cy="67.5" r="4" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="346.4" cy="51.5" r="8" class="badge"/>
+<text x="346.4" y="55.5" class="badge-t" text-anchor="middle">4</text>
+<circle cx="584.4" cy="351.2" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="566.4" cy="347.2" r="8" class="badge"/>
+<text x="566.4" y="351.2" class="badge-t" text-anchor="middle">5</text>
+<line x1="614" y1="158.3" x2="622" y2="158.3" stroke="#2a78d6" stroke-width="2"/>
+<text x="626" y="162.3" class="lbl">INM 16.9万</text>
+<line x1="614" y1="163.2" x2="622" y2="173.3" stroke="#1baf7a" stroke-width="2"/>
+<text x="626" y="177.3" class="lbl">BFLY 16.5万</text>
+<line x1="614" y1="227.3" x2="622" y2="227.3" stroke="#8a8984" stroke-width="2"/>
+<text x="626" y="231.3" class="lbl">SPY 11.3万</text>
+<line x1="614" y1="322.2" x2="622" y2="322.2" stroke="#eda100" stroke-width="2"/>
+<text x="626" y="326.2" class="lbl">DARE 3.4万</text>
+<line x1="614" y1="350.9" x2="622" y2="350.9" stroke="#eb6834" stroke-width="2"/>
+<text x="626" y="354.9" class="lbl">ABOS 1.1万</text>
+<line x1="614" y1="353.8" x2="622" y2="365.9" stroke="#e87ba4" stroke-width="2"/>
+<text x="626" y="369.9" class="lbl">ARAY 0.8万</text>
+<line id="cross" x1="0" y1="24" x2="0" y2="364" class="cross" visibility="hidden"/>
+<rect id="hitarea" x="52" y="24" width="558" height="340" fill="transparent"/>
+</svg>
+    <div class="tip" id="lineTip"></div></div>
+    <div class="src">出所：Yahoo Financeの株価をもとに編集部計算（円換算・配当含まず）</div>
+  </div>
+
+  <h2><span class="num">5</span>大きく動いた理由は、1つではない</h2>
+  <p>
+    製薬・バイオ株が大きく動くのは「臨床試験の結果が出た日」というイメージがあるかもしれません。実際に調べてみると、理由はさまざまでした。
+  </p>
+  <div class="tbl-wrap"><table class="ev">
+    <tr><th>図2</th><th>日付</th><th>銘柄</th><th>1日の動き</th><th>何があったか</th><th>種類</th></tr>
+    <tr><td><span class="num-b">1</span></td><td>4/16</td><td>DARE</td><td>+52%</td><td>はっきりした材料は確認できませんでした。その週は1.7ドル台の狭い値幅から3ドル台まで急に上がっています。</td><td><span class="pill">材料不明</span></td></tr>
+    <tr><td><span class="num-b">2</span></td><td>5/7</td><td>ARAY</td><td>−40%</td><td>前日夕方に発表した決算で売上が前年比7%減。中東情勢による装置の据え付けの遅れを理由に、2026年度の業績見通しを撤回しました。</td><td><span class="pill">決算</span></td></tr>
+    <tr><td><span class="num-b">3</span></td><td>5/19</td><td>INM</td><td>+135%</td><td>偏頭痛薬を開発する非上場企業Mentari Therapeuticsとの、株式交換による合併を発表しました。</td><td><span class="pill">合併</span></td></tr>
+    <tr><td><span class="num-b">4</span></td><td>6/18</td><td>BFLY</td><td>+56%</td><td>画像生成AIのMidjourneyが医療部門と全身用の超音波スキャナーの試作機を発表。その試作機にButterflyの超音波チップが使われていることが注目されました。</td><td><span class="pill">提携先の発表</span></td></tr>
+    <tr><td><span class="num-b">5</span></td><td>10/30</td><td>ABOS</td><td>−91%</td><td>アルツハイマー病の薬の候補sabirnetugの第2相試験（542人が参加）で、主な目標を達成できなかったと発表。開発をやめると表明しました。</td><td><span class="pill">臨床試験</span></td></tr>
+    <tr><td>—</td><td>11/13</td><td>BFRI</td><td>−24%</td><td>第3四半期決算で売上は約30%増えた一方、損失が市場予想より大きく、資金繰りの厳しさが続くことも示されました。</td><td><span class="pill">決算</span></td></tr>
+  </table></div>
+  <p style="font-size:13px;color:var(--ink2)">1日の動きはドル建て終値の前日比（編集部計算）。報道や会社の発表で伝えられた日中の値動きとは数字が異なる場合があります。</p>
+
+  <h3>ここから分かる3つのこと</h3>
+  <div class="point"><b class="h">① 株価が大きく上がった日が、既存の株主に有利な日とは限らない</b>
+    INMの合併では、発表時点の条件で、合併後の会社に占める既存のINM株主の持ち分は約1.51%の見込みと報じられています。もともと株価が大きく下がっていた水準からの急騰であり、上昇率の大きさと既存株主にとっての価値は分けて考える必要があります。
+  </div>
+  <div class="point"><b class="h">② 売上が増えても、株価が下がることがある</b>
+    BFRIは売上が約30%増えた決算の日に、株価が24%下がりました。会社は、増えた分のうち約160万ドルは7月初めの注文によるものと説明しています。また9月末時点で株主資本はマイナスで、ナスダックの基準を下回っていました。決算では売上の数字だけでなく、その中身と資金の状況が見られています。
+  </div>
+  <div class="point"><b class="h">③ はっきりした材料がなくても、小型株は大きく動く</b>
+    DAREの4月16日の急騰は、調べた範囲で決定的な発表が見つかりませんでした。時価総額が小さく取引量も少ない銘柄では、まとまった売買だけで株価が大きく動くことがあります。原因の分からない動きを、後から無理に説明しないことも大切です。
+  </div>
+  <p>
+    もう一つ注目したいのが、BFLYの急騰のきっかけがAI企業の発表だった点です。製薬・バイオ株の値動きには、AIの医療への応用という別の流れも影響し始めています。
+  </p>
+
+  <h2><span class="num">6</span>道のりの「5つの型」と、次回からの予定</h2>
+  <p>
+    29銘柄の道のりは、形で分けると大きく5つの型になります。次回からは1回に1つの型を取り上げ、グラフと「大きく動いた日に何があったか」を詳しく見ていきます。
+  </p>
+  <div class="paths">
+<div class="path"><div class="ph"><b>安定型（大きく崩れなかった）</b><span>11/22（第2回）</span></div><p>途中の下げが最大でも2割台にとどまった5銘柄。ロイヤルティ型と持株会社型だけで構成されています。</p><div class="chips"><a class="chip" href="/reports/rprx-guide.html">RPRX</a><a class="chip" href="/reports/roiv-guide.html">ROIV</a><a class="chip" href="/reports/lgnd-guide.html">LGND</a><a class="chip" href="/reports/inva-guide.html">INVA</a><a class="chip" href="/reports/prtc-guide.html">PRTC</a></div></div>
+<div class="path"><div class="ph"><b>一気に動いた型（1日で大きく動いた）</b><span>11/29（第3回）</span></div><p>合併、臨床試験の失敗、提携先の発表、決算など、1日で株価が大きく動いた日がある5銘柄。</p><div class="chips"><a class="chip" href="/reports/inm-guide.html">INM</a><a class="chip" href="/reports/abos-guide.html">ABOS</a><a class="chip" href="/reports/bfly-guide.html">BFLY</a><a class="chip" href="/reports/dare-guide.html">DARE</a><a class="chip" href="/reports/aray-guide.html">ARAY</a></div></div>
+<div class="path"><div class="ph"><b>往復型（大きく上がって戻った）</b><span>12/6（第4回）</span></div><p>一時は10万円を大きく上回ったものの、11/13時点では元本前後かそれ以下に戻った5銘柄。</p><div class="chips"><a class="chip" href="/reports/adag-guide.html">ADAG</a><a class="chip" href="/reports/allo-guide.html">ALLO</a><a class="chip" href="/reports/bfri-guide.html">BFRI</a><a class="chip" href="/reports/ntla-guide.html">NTLA</a><a class="chip" href="/reports/vktx-guide.html">VKTX</a></div></div>
+<div class="path"><div class="ph"><b>V字型（底から大きく戻した）</b><span>12/13（第5回）</span></div><p>春に6〜8万円台まで下がった後、大きく戻した5銘柄。ABSIは最安値から約5倍になりました。</p><div class="chips"><a class="chip" href="/reports/absi-guide.html">ABSI</a><a class="chip" href="/reports/sdgr-guide.html">SDGR</a><a class="chip" href="/reports/prme-guide.html">PRME</a><a class="chip" href="/reports/rgen-guide.html">RGEN</a><a class="chip" href="/reports/bbio-guide.html">BBIO</a></div></div>
+<div class="path"><div class="ph"><b>じり安型（じわじわ下がった）</b><span>12/20（第6回）</span></div><p>大きな急騰がないまま、年間を通じて少しずつ下がった9銘柄。</p><div class="chips"><a class="chip" href="/reports/rpid-guide.html">RPID</a><a class="chip" href="/reports/ganx-guide.html">GANX</a><a class="chip" href="/reports/sana-guide.html">SANA</a><a class="chip" href="/reports/fbio-guide.html">FBIO</a><a class="chip" href="/reports/hrow-guide.html">HROW</a><a class="chip" href="/reports/aytu-guide.html">AYTU</a><a class="chip" href="/reports/coll-guide.html">COLL</a><a class="chip" href="/reports/abvc-guide.html">ABVC</a><a class="chip" href="/reports/rxrx-guide.html">RXRX</a></div></div>
+</div>
+  <p>
+    型と事業モデルの関係にも特徴があります。「安定型」の5銘柄は、他社の薬の売上から収入を得るロイヤルティ型と、複数の子会社で開発を進める持株会社型だけでした。一方、「一気に動いた型」と「じり安型」には、規模の小さい商業段階の会社や、1つの薬に価値が集中する創薬型が多く入っています。事業モデルの違いについては、<a href="/reports/pharma-biotech-17-map.html">製薬・バイオ17銘柄マップ</a>で詳しく解説しています。
+  </p>
+
+  <h2><span class="num">7</span>この試算の限界と、まとめ</h2>
+  <p><b>この試算には、いくつかの限界があります。</b></p>
+  <ul>
+    <li><b>後から選んだ銘柄を、年初にさかのぼって当てはめています。</b>29銘柄は2026年8〜10月に入門記事で取り上げた銘柄で、1月の時点で選ばれていたわけではありません。</li>
+    <li><b>今も取引が続いている銘柄だけを見ています。</b>途中で上場をやめた会社や買収された会社は含まれていません。</li>
+    <li><b>評価日によって結果は大きく変わります。</b>上昇の多くが1回の急騰によるものだった銘柄もあり、数週間ずれるだけで評価額が大きく変わります。</li>
+  </ul>
+  <p>
+    <b>まとめ</b>：米国の製薬・バイオ株は、同じ業界でも1年で約28倍の差がつくほど結果が分かれました。さらに途中の道のりを見ると、米国株全体とは比べものにならないほど値動きが荒い銘柄が多くあります。大きく動く理由も、臨床試験の結果だけでなく、合併、提携先の発表、決算、そして材料が見当たらない動きまでさまざまでした。数字の大きさに目を奪われるのではなく、「その日に何があったのか」「会社のどんな特徴が値動きの荒さにつながっているのか」をあわせて見ることが、この分野の銘柄を理解する近道です。当サイトが継続的に追跡する対象についての記録であり、特定の投資行動を推奨するものではありません。
+  </p>
+
+  <div class="watch">
+    <h2>WHAT TO WATCH</h2>
+    <ul>
+      <li>次回（11/22）は「安定型」5銘柄。下げが最大でも2割台にとどまった理由を、事業モデルから見ていきます。</li>
+      <li>ABOSは開発中止の後、会社の今後の方針（ほかの会社との統合や事業売却なども含む選択肢）の発表が注目点です。</li>
+      <li>INMはMentariとの合併の手続きの進み具合が注目点です。</li>
+      <li>BFRIは株主資本がナスダックの基準を下回っており、上場維持に向けた対応が注目点です。</li>
+      <li>2027年1月9日（予定）に、12月31日の終値で29銘柄の「2026年の答え合わせ」をお届けします。</li>
+    </ul>
+  </div>
+
+  <div class="glossary">
+    <h3>用語集</h3>
+    <dl>
+      <dt>年率ボラティリティ</dt><dd>毎日の値動きのばらつきを1年分に換算した数字。大きいほど値動きが荒い</dd>
+      <dt>ETF（上場投資信託）</dt><dd>株価指数などに連動するように運用され、株と同じように売買できる投資信託。SPYは米国の大型株500社、XBIは米国のバイオ株全体に連動する</dd>
+      <dt>株式併合</dt><dd>複数の株を1株にまとめること。1対40なら40株が1株になり、1株あたりの株価は40倍になる。会社の価値そのものは変わらない</dd>
+      <dt>第2相試験</dt><dd>人で薬を確かめる臨床試験の段階の一つ。効果の手がかりと適切な量を確かめる</dd>
+      <dt>業績見通し（ガイダンス）</dt><dd>会社が示す売上や利益の予想。撤回は、先の見通しを示せなくなったことを意味する</dd>
+      <dt>株主資本</dt><dd>会社の資産から負債を引いた残り。マイナスは負債が資産を上回っている状態</dd>
+    </dl>
+  </div>
+
+  <a class="crosslink" href="/reports/pharma-biotech-17-map.html">製薬・バイオ17銘柄マップ（第1弾）はこちら</a>
+  <a class="crosslink" href="/reports/pharma-biotech-vol2-map.html">製薬・バイオ12銘柄マップ（第2弾）はこちら</a>
+  <a class="crosslink" href="/reports/inm-guide.html">今回大きく動いた銘柄：InMed（INM）入門記事はこちら</a>
+  <a class="crosslink" href="/reports/abos-guide.html">今回大きく動いた銘柄：Acumen（ABOS）入門記事はこちら</a>
+  <a class="crosslink" href="/reports/bfly-guide.html">今回大きく動いた銘柄：Butterfly Network（BFLY）入門記事はこちら</a>
+
+  <div class="disclaimer">
+    この記事は投資判断を勧めるものではありません。取り上げた銘柄は当サイトが情報提供目的で継続的に追跡している対象であり、「おすすめの銘柄」ではありません。記事内の評価額・騰落率・ボラティリティなどの数値は、Yahoo Financeの株価データ（2026年11月15日取得）をもとに編集部が計算したもので、配当・手数料・税金を含みません。過去の値動きは将来の値動きを示すものではなく、将来の業績や株価を保証するものではありません。試算は2026年8〜10月に取り上げた銘柄を年初にさかのぼって当てはめた仮定の計算であり、実際の運用成績ではありません。大きく動いた日の理由は会社の発表や報道をもとに編集部が整理したもので、ほかの要因が影響している可能性があります。sabirnetugの開発は中止されています。InMedとMentariの合併は会社の発表に基づく予定であり、条件や時期は変わる可能性があります。投資の最終判断は必ずご自身で行ってください。
+  </div>
+
+</div>
+
+<script>(function(){var D=["2026-01-02", "2026-01-05", "2026-01-06", "2026-01-07", "2026-01-08", "2026-01-09", "2026-01-12", "2026-01-13", "2026-01-14", "2026-01-15", "2026-01-16", "2026-01-20", "2026-01-21", "2026-01-22", "2026-01-23", "2026-01-26", "2026-01-27", "2026-01-28", "2026-01-29", "2026-01-30", "2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-21", "2026-09-22", "2026-09-23", "2026-09-24", "2026-09-25", "2026-09-28", "2026-09-29", "2026-09-30", "2026-10-01", "2026-10-02", "2026-10-05", "2026-10-06", "2026-10-07", "2026-10-08", "2026-10-09", "2026-10-12", "2026-10-13", "2026-10-14", "2026-10-15", "2026-10-16", "2026-10-19", "2026-10-20", "2026-10-21", "2026-10-22", "2026-10-23", "2026-10-26", "2026-10-27", "2026-10-28", "2026-10-29", "2026-10-30", "2026-11-02", "2026-11-03", "2026-11-04", "2026-11-05", "2026-11-06", "2026-11-09", "2026-11-10", "2026-11-11", "2026-11-12", "2026-11-13"],S={"INM": [1000, 1028, 1008, 1071, 1116, 1153, 1054, 1035, 1025, 966, 994, 964, 1036, 966, 1002, 946, 941, 929, 933, 960, 973, 939, 888, 878, 840, 838, 889, 871, 777, 764, 744, 749, 758, 760, 747, 775, 791, 783, 755, 732, 681, 834, 787, 826, 800, 737, 721, 725, 699, 784, 807, 797, 746, 736, 690, 625, 632, 618, 597, 560, 583, 606, 616, 632, 615, 585, 584, 649, 647, 647, 644, 635, 644, 654, 655, 706, 693, 702, 665, 637, 640, 644, 639, 670, 665, 647, 622, 581, 556, 588, 570, 586, 577, 616, 1450, 1457, 1567, 1558, 1560, 1509, 1524, 1424, 1419, 1385, 1449, 1422, 1440, 1405, 1398, 1381, 1441, 1377, 1378, 1353, 1363, 1369, 1381, 1381, 1428, 1392, 1420, 1448, 1436, 1472, 1435, 1487, 1545, 1528, 1535, 1517, 1453, 1441, 1468, 1471, 1406, 1407, 1432, 1542, 1727, 1596, 1530, 1559, 1554, 1369, 1341, 1310, 1339, 1257, 1290, 1327, 1278, 1325, 1307, 1299, 1335, 1325, 1309, 1434, 1430, 1321, 1296, 1306, 1297, 1298, 1253, 1229, 1205, 1222, 1179, 1224, 1163, 1146, 1153, 1135, 1143, 1132, 1138, 1236, 1210, 1237, 1247, 1244, 1267, 1248, 1219, 1233, 1221, 1215, 1197, 1197, 1199, 1198, 1198, 1225, 1228, 1200, 1179, 1198, 1189, 1233, 1208, 1225, 1186, 1284, 1421, 1427, 1439, 1461, 1438, 1464, 1511, 1580, 1192, 1396, 1443, 1098, 1411, 1670, 1694], "ABOS": [1000, 982, 970, 985, 921, 897, 859, 863, 900, 931, 947, 929, 904, 996, 991, 1019, 1326, 1353, 1349, 1258, 1270, 1262, 1206, 1115, 1189, 1232, 1218, 1249, 1157, 1212, 1189, 1263, 1329, 1260, 1258, 1348, 1369, 1396, 1546, 1633, 1644, 1650, 1656, 1647, 1571, 1675, 1683, 1658, 1644, 1683, 1553, 1465, 1474, 1332, 1363, 1296, 1318, 1284, 1140, 1106, 1182, 1278, 1360, 1392, 1318, 1293, 1261, 1241, 1262, 1344, 1364, 1353, 1418, 1425, 1374, 1416, 1347, 1297, 1268, 1240, 1184, 1185, 1180, 1231, 1255, 1270, 1224, 1268, 1276, 1235, 1241, 1196, 1141, 1094, 1090, 1179, 1251, 1261, 1217, 1280, 1278, 1308, 1266, 1197, 1157, 1157, 1086, 1098, 1109, 1136, 1199, 1199, 1184, 1160, 1141, 1151, 1225, 1230, 1180, 1129, 1206, 1417, 1372, 1330, 1397, 1367, 1318, 1402, 1385, 1349, 1354, 1296, 1136, 1113, 1154, 1134, 1149, 1138, 1123, 1102, 1138, 1180, 1088, 1098, 1088, 1085, 1116, 1115, 1141, 1221, 1222, 1243, 1263, 1284, 1345, 1339, 1381, 1575, 1601, 1586, 1546, 1559, 1504, 1525, 1469, 1438, 1478, 1556, 1519, 1564, 1532, 1382, 1396, 1425, 1361, 1417, 1286, 1267, 1307, 1287, 1318, 1152, 1121, 1124, 1143, 1116, 1105, 1033, 1018, 1063, 1015, 1048, 1048, 1068, 1011, 908, 871, 834, 844, 886, 1007, 1014, 1018, 979, 1124, 1125, 1188, 1142, 105, 120, 117, 108, 107, 111, 118, 115, 115, 110, 108], "BFLY": [1000, 1034, 1082, 1122, 1107, 1078, 1149, 1183, 1341, 1226, 1123, 1111, 1189, 1267, 1216, 1170, 1166, 1118, 1081, 1032, 1009, 1039, 973, 862, 902, 891, 906, 862, 795, 790, 795, 797, 805, 787, 772, 776, 822, 1241, 1005, 1026, 985, 1082, 1004, 978, 1014, 1002, 1028, 985, 1029, 1062, 1156, 1068, 1079, 1067, 1135, 1143, 1131, 1125, 1065, 1042, 1090, 1104, 1115, 1122, 1094, 1117, 1123, 1113, 1159, 1200, 1313, 1433, 1476, 1484, 1478, 1501, 1400, 1449, 1486, 1401, 1341, 1279, 1442, 1297, 1293, 1212, 1131, 1110, 1124, 1116, 1053, 1105, 1032, 1038, 1109, 1187, 1212, 1209, 1230, 1271, 1249, 1233, 1249, 1247, 1195, 1413, 1244, 1303, 1397, 1472, 1548, 1509, 1535, 1542, 1560, 2442, 1999, 2109, 2139, 2208, 2447, 2455, 2330, 2193, 2110, 2270, 2094, 2030, 2216, 2204, 2239, 2139, 2013, 1937, 1829, 1850, 1894, 1834, 1845, 1834, 1970, 1999, 1973, 2227, 1938, 2203, 2364, 2258, 2237, 2380, 2627, 2539, 2562, 2403, 2398, 2445, 2443, 2469, 2479, 2582, 2423, 2449, 2341, 2364, 2285, 2144, 2230, 2055, 1931, 1949, 1964, 1949, 1871, 1927, 1946, 2061, 1927, 2115, 2093, 2180, 2660, 2477, 2543, 2537, 2450, 2437, 2402, 2292, 2405, 2521, 2343, 2224, 2160, 2219, 2306, 2182, 2043, 2112, 1951, 2015, 1968, 1910, 1813, 1800, 1777, 1978, 2099, 2017, 1716, 1647, 1720, 1825, 1635, 1707, 1796, 1750, 1928, 1813, 1654], "DARE": [1000, 1022, 1004, 1010, 1062, 1016, 1004, 998, 1057, 1011, 1002, 1014, 1004, 1021, 1011, 965, 995, 958, 952, 907, 894, 895, 902, 863, 867, 880, 863, 869, 853, 850, 839, 827, 845, 838, 838, 840, 877, 854, 867, 825, 805, 805, 806, 789, 793, 770, 776, 770, 750, 767, 755, 728, 680, 703, 714, 705, 727, 787, 810, 957, 944, 987, 908, 946, 919, 960, 963, 953, 927, 909, 930, 1417, 1537, 1492, 1231, 1185, 1108, 1103, 1168, 1143, 1101, 1171, 1202, 1600, 1687, 1618, 1493, 1411, 1296, 1357, 1467, 1482, 1125, 1097, 1171, 1211, 1254, 1233, 1219, 1217, 1188, 1162, 1144, 1120, 1073, 1141, 984, 970, 1008, 1050, 1064, 1058, 1038, 1108, 1093, 1145, 1084, 1095, 1101, 1059, 1106, 1113, 1123, 1122, 1104, 1103, 1089, 1080, 1100, 1073, 1111, 1098, 1098, 1031, 1041, 712, 667, 651, 675, 686, 707, 635, 620, 650, 639, 660, 691, 691, 689, 726, 708, 750, 751, 715, 485, 422, 401, 427, 421, 426, 418, 428, 391, 385, 383, 398, 404, 385, 363, 367, 358, 360, 356, 357, 372, 371, 371, 382, 401, 417, 438, 418, 385, 403, 386, 420, 440, 440, 436, 436, 431, 409, 399, 400, 389, 387, 377, 383, 375, 366, 357, 356, 334, 331, 330, 342, 352, 352, 361, 338, 336, 343, 323, 329, 352, 358, 360, 337, 344], "ARAY": [1000, 1049, 1046, 1023, 1047, 1036, 1033, 1020, 1004, 1034, 1000, 962, 962, 987, 976, 943, 962, 904, 919, 931, 932, 875, 889, 707, 730, 685, 645, 591, 621, 631, 588, 609, 639, 629, 649, 685, 702, 680, 679, 647, 626, 616, 601, 579, 583, 569, 546, 502, 442, 503, 466, 489, 516, 462, 454, 452, 465, 455, 480, 408, 464, 465, 503, 503, 453, 429, 502, 466, 502, 477, 525, 538, 526, 548, 502, 563, 540, 552, 526, 515, 505, 554, 554, 543, 544, 564, 341, 447, 401, 367, 355, 333, 321, 346, 346, 394, 370, 370, 442, 467, 502, 454, 467, 480, 444, 444, 408, 421, 397, 398, 409, 409, 385, 409, 410, 424, 376, 400, 401, 389, 316, 316, 317, 317, 303, 329, 305, 305, 317, 292, 329, 317, 328, 329, 317, 305, 306, 294, 295, 295, 283, 295, 282, 349, 325, 319, 367, 319, 333, 345, 346, 347, 335, 335, 335, 395, 383, 345, 346, 334, 323, 323, 311, 311, 323, 312, 301, 310, 315, 315, 300, 288, 278, 290, 290, 268, 269, 281, 270, 284, 272, 273, 262, 262, 354, 354, 319, 320, 332, 356, 309, 297, 285, 273, 262, 226, 213, 202, 190, 167, 166, 166, 153, 153, 141, 154, 154, 166, 166, 178, 166, 178, 143, 130, 113, 95, 95, 92, 84], "SPY": [1000, 1008, 1012, 1009, 1009, 1017, 1027, 1024, 1026, 1024, 1024, 1001, 1012, 1020, 1020, 1004, 1002, 990, 992, 990, 1008, 1001, 998, 993, 1011, 1019, 1009, 998, 975, 973, 980, 982, 989, 999, 984, 993, 1009, 1006, 999, 1004, 999, 1010, 999, 989, 1004, 998, 999, 990, 985, 997, 997, 982, 985, 957, 975, 967, 974, 960, 946, 943, 963, 971, 977, 983, 977, 1002, 1010, 1010, 1020, 1030, 1038, 1043, 1056, 1051, 1048, 1059, 1057, 1065, 1064, 1060, 1065, 1054, 1057, 1054, 1066, 1073, 1072, 1080, 1086, 1087, 1094, 1107, 1093, 1096, 1090, 1100, 1103, 1107, 1116, 1118, 1122, 1125, 1131, 1135, 1127, 1131, 1102, 1106, 1104, 1088, 1103, 1109, 1130, 1124, 1111, 1125, 1123, 1107, 1108, 1110, 1102, 1121, 1134, 1132, 1123, 1137, 1134, 1132, 1140, 1145, 1136, 1139, 1143, 1138, 1127, 1126, 1140, 1138, 1129, 1131, 1130, 1134, 1113, 1110, 1118, 1115, 1136, 1133, 1137, 1144, 1149, 1146, 1149, 1158, 1156, 1150, 1144, 1137, 1132, 1136, 1135, 1139, 1139, 1147, 1145, 1144, 1140, 1136, 1124, 1120, 1098, 1093, 1093, 1103, 1097, 1098, 1099, 1112, 1111, 1137, 1137, 1135, 1138, 1144, 1125, 1123, 1122, 1127, 1135, 1143, 1152, 1147, 1142, 1149, 1152, 1150, 1135, 1140, 1127, 1135, 1137, 1142, 1117, 1111, 1121, 1132, 1140, 1134, 1114, 1108, 1113, 1135, 1084, 1082, 1113, 1106, 1126, 1129, 1126]},C={"INM": "#2a78d6", "ABOS": "#eb6834", "BFLY": "#1baf7a", "DARE": "#eda100", "ARAY": "#e87ba4", "SPY": "#8a8984"},L={"INM": "INM", "ABOS": "ABOS", "BFLY": "BFLY", "DARE": "DARE", "ARAY": "ARAY", "SPY": "SPY"};
+var svg=document.getElementById('lineChart');if(!svg)return;var hit=document.getElementById('hitarea'),cr=document.getElementById('cross'),tip=document.getElementById('lineTip');
+var l=52,r=150,W=760,n=219;
+function show(e){var pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;var p=pt.matrixTransform(svg.getScreenCTM().inverse());
+var i=Math.round((p.x-l)/(W-l-r)*(n-1));if(i<0)i=0;if(i>n-1)i=n-1;var x=l+(W-l-r)*i/(n-1);cr.setAttribute('x1',x);cr.setAttribute('x2',x);cr.setAttribute('visibility','visible');
+var keys=Object.keys(S).sort(function(a,b){return S[b][i]-S[a][i]});var h='<div class="tt-d">'+(+D[i].slice(5,7))+'/'+(+D[i].slice(8))+'</div>';
+keys.forEach(function(k){h+='<div class="tt-r"><span class="sw" style="background:'+C[k]+'"></span>'+L[k]+'<b>'+(S[k][i]/100).toFixed(1)+'万円</b></div>'});
+tip.innerHTML=h;tip.style.display='block';var box=svg.getBoundingClientRect();var tx=e.clientX-box.left+14;if(tx>box.width-190)tx=e.clientX-box.left-200;tip.style.left=tx+'px';tip.style.top=(e.clientY-box.top-10)+'px';}
+function hide(){cr.setAttribute('visibility','hidden');tip.style.display='none';}
+hit.addEventListener('mousemove',show);hit.addEventListener('mouseleave',hide);hit.addEventListener('touchstart',function(e){show(e.touches[0])},{passive:true});hit.addEventListener('touchmove',function(e){show(e.touches[0])},{passive:true});
+})();</script>
+</body>
+</html>
