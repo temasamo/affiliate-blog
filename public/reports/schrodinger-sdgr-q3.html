@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schrödinger（SDGR）― ACVは3か月で+2.9%、株価は+73%。同じ8-Kに決算と「学会抄録の訂正」が並んでいた | Market Supporter AI</title>
+<meta name="description" content="直近4四半期ACVは2億800万→2億1,400万ドル（+2.9%）、株価は17.81ドル→30.85ドル（+73.2%）。保有株式の評価損益はQ2 +4,587万ドルからQ3 ▲1,475.2万ドルへ。同日提出の8-KはASH抄録を訂正し「SGR-1505の併用試験は開始していない」と明記。2026年Q3決算を分解します。">
+<style>
+:root{
+  --accent:#0891b2;
+  --accent-dark:#0e7490;
+  --accent-mid:#22d3ee;
+  --accent-light:#ecfeff;
+  --ink:#1a1a1a;
+  --ink-sub:#4a5568;
+  --line:#d8eef3;
+  --bg:#ffffff;
+  --warn-bg:#fff8ec;
+  --warn-line:#e0a648;
+  --up:#047857;
+  --down:#b91c1c;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.9;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 60%,var(--accent-mid) 100%);
+  color:#fff;
+  padding:56px 24px 48px;
+}
+.hero-inner{max-width:860px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;
+  font-size:12px;
+  letter-spacing:.14em;
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.34);
+  border-radius:999px;
+  padding:5px 14px;
+  margin-bottom:20px;
+}
+.hero h1{font-size:28px;line-height:1.5;margin:0 0 18px;font-weight:700;}
+.hero .lede{font-size:15px;line-height:1.85;color:rgba(255,255,255,.92);margin:0 0 22px;}
+.meta{font-size:12.5px;color:rgba(255,255,255,.76);border-top:1px solid rgba(255,255,255,.26);padding-top:14px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 72px;}
+.toc{background:var(--accent-light);border:1px solid var(--line);border-radius:10px;padding:22px 26px;margin:40px 0;}
+.toc h2{font-size:14px;margin:0 0 12px;color:var(--accent-dark);letter-spacing:.06em;}
+.toc ol{margin:0;padding-left:1.3em;font-size:14.5px;}
+.toc li{margin:7px 0;}
+.toc a{color:var(--ink-sub);text-decoration:none;border-bottom:1px solid transparent;}
+.toc a:hover{color:var(--accent-dark);border-bottom-color:var(--accent);}
+h2.chapter{font-size:22px;line-height:1.55;margin:56px 0 20px;padding:0 0 12px 0;border-bottom:3px solid var(--accent);font-weight:700;}
+h2.chapter .num{display:inline-block;background:var(--accent);color:#fff;font-size:13px;border-radius:5px;padding:3px 10px;margin-right:10px;vertical-align:3px;}
+h3{font-size:17.5px;margin:34px 0 12px;padding-left:12px;border-left:4px solid var(--accent-mid);line-height:1.6;}
+p{margin:0 0 18px;}
+a{color:var(--accent-dark);}
+.callout{background:var(--accent-light);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:18px 22px;margin:26px 0;font-size:15px;}
+.callout.warn{background:var(--warn-bg);border-left-color:var(--warn-line);}
+.callout p:last-child{margin-bottom:0;}
+.callout .label{display:block;font-size:12px;letter-spacing:.1em;color:var(--accent-dark);margin-bottom:8px;font-weight:700;}
+.callout.warn .label{color:#9a6512;}
+.quote{border-left:3px solid var(--ink-sub);padding:4px 0 4px 18px;margin:22px 0;color:var(--ink-sub);font-size:14.5px;}
+.quote p:last-child{margin-bottom:0;}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:28px 0;}
+.kpi{border:1px solid var(--line);border-radius:9px;padding:16px 18px;background:#fbfeff;}
+.kpi .k{font-size:12px;color:var(--ink-sub);display:block;margin-bottom:6px;line-height:1.5;}
+.kpi .v{font-size:21px;font-weight:700;color:var(--accent-dark);line-height:1.3;display:block;}
+.kpi .n{font-size:11.5px;color:var(--ink-sub);display:block;margin-top:6px;line-height:1.5;}
+.table-scroll{overflow-x:auto;margin:26px 0;-webkit-overflow-scrolling:touch;}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px;}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;line-height:1.7;}
+th{background:var(--accent);color:#fff;font-weight:600;white-space:nowrap;}
+tbody tr:nth-child(even){background:#f6fcfd;}
+td.num{text-align:right;white-space:nowrap;}
+td.up{color:var(--up);font-weight:600;}
+td.down{color:var(--down);font-weight:600;}
+.model-tag{display:inline-block;font-size:11.5px;color:#fff;background:var(--accent);border-radius:4px;padding:2px 8px;white-space:nowrap;font-weight:600;}
+.crosslink{border:1px dashed var(--accent-mid);border-radius:9px;padding:16px 20px;margin:28px 0;font-size:14px;background:#fbfeff;}
+.crosslink .label{display:block;font-size:12px;letter-spacing:.08em;color:var(--accent-dark);font-weight:700;margin-bottom:8px;}
+.crosslink ul{margin:0;padding-left:1.2em;}
+.crosslink li{margin:5px 0;}
+.watch{background:var(--accent-dark);color:#fff;border-radius:12px;padding:34px 28px;margin:60px 0 40px;}
+.watch h2{font-size:20px;margin:0 0 8px;letter-spacing:.04em;}
+.watch .sub{font-size:13.5px;color:rgba(255,255,255,.76);margin:0 0 26px;}
+.watch ol{list-style:none;counter-reset:w;margin:0;padding:0;}
+.watch ol li{counter-increment:w;position:relative;padding-left:42px;margin-bottom:20px;font-size:14.5px;line-height:1.85;}
+.watch ol li::before{content:counter(w);position:absolute;left:0;top:2px;width:27px;height:27px;border-radius:50%;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.44);color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;font-weight:700;}
+.watch .wt{display:block;font-weight:700;margin-bottom:3px;}
+.watch .note{font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.8;margin-top:18px;}
+.disclaimer{border-top:2px solid var(--line);margin-top:56px;padding-top:24px;font-size:12.5px;color:var(--ink-sub);line-height:1.9;}
+.disclaimer h2{font-size:14px;color:var(--ink);margin:0 0 10px;}
+.src{font-size:12.5px;color:var(--ink-sub);margin:-8px 0 22px;}
+.flow{margin:28px 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.flow-step{padding:16px 20px;border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.8;}
+.flow-step:last-child{border-bottom:none;background:var(--accent-light);}
+.flow-step .n{display:inline-block;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:12.5px;font-weight:700;text-align:center;line-height:24px;margin-right:10px;vertical-align:1px;}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  .hero{padding:40px 18px 34px;}
+  .hero h1{font-size:21px;}
+  .wrap{padding:0 18px 56px;}
+  h2.chapter{font-size:19px;margin:44px 0 16px;}
+  h3{font-size:16.5px;}
+  .watch{padding:26px 18px;border-radius:10px;}
+  .kpi .v{font-size:19px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">米国製薬・バイオ決算シリーズ ⑦／29 ― プラットフォーム型</span>
+    <h1>Schrödinger（SDGR）― ACVは3か月で+2.9%、株価は+73%。同じ8-Kに決算と「学会抄録の訂正」が並んでいた</h1>
+    <p class="lede">ここからプラットフォーム型に移ります。本シリーズでは8月にSchrödingerを一度扱っており、今回はそこからの3か月の進捗を追います。事業の中心指標である直近4四半期ACVは2億800万ドルから2億1,400万ドルへ+2.9%。同じ期間に株価は17.81ドルから30.85ドルへ+73.2%になりました（いずれも編集部計算）。そして決算と同じ日に提出された8-Kには、決算とは別の項目で、米国血液学会の抄録を訂正する記載が入っていました。</p>
+    <p class="meta">公開：2026年11月15日／対象：2026年第3四半期決算（2026年11月4日発表）／出典：決算リリース（Form 8-K 添付）・同Form 8-K本体・株価情報サイト／情報提供のみを目的とし、投資判断の推奨ではありません</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#ch1">①決算の全体像 ― 8月の記事からの3か月</a></li>
+    <li><a href="#ch2">②ACVと売上のずれ ― プラットフォーム型で最初に見る数字</a></li>
+    <li><a href="#ch3">③保有株式が2四半期で逆方向に振れた</a></li>
+    <li><a href="#ch4">④同じ8-Kに、決算と「抄録の訂正」が並んでいた</a></li>
+    <li><a href="#ch5">⑤費用の削減と、自社開発からの後退</a></li>
+    <li><a href="#ch6">⑥ACVは+2.9%、株価は+73.2%</a></li>
+    <li><a href="#ch7">⑦リスク要因とまとめ</a></li>
+    <li><a href="#watch">WHAT TO WATCH</a></li>
+  </ol>
+</nav>
+
+<h2 class="chapter" id="ch1"><span class="num">①</span>決算の全体像 ― 8月の記事からの3か月</h2>
+
+<p><strong>Schrödinger（NASDAQ:SDGR）</strong> は、物理ベースの計算化学ソフトウェアを製薬企業などに提供し、同時に自社でも創薬を手がける企業です。本シリーズ<a href="/articles/general-knowledge/knowledge/2026-11-08-us-pharma-biotech-earnings-guide">入口記事</a>の6分類では <span class="model-tag">プラットフォーム型</span> にあたり、この型で最初に見る数字は<strong>反復収益（ソフトウェア・ACV）の比率</strong>です。</p>
+
+<p>本シリーズでは<a href="/articles/general-knowledge/knowledge/2026-08-13-schrodinger-sdgr">2026年8月13日の記事</a>で第2四半期決算を扱いました。今回はそこからの進捗として並べます。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>指標</th><th>2026年Q3</th><th>2026年Q2（8月の記事）</th><th>2025年Q3</th></tr></thead>
+<tbody>
+<tr><td>総収益</td><td class="num">6,449.1万ドル（+19%）</td><td class="num">5,889万ドル（+8%）</td><td class="num">5,432.4万ドル</td></tr>
+<tr><td>├ ソフトウェア</td><td class="num">3,815.3万ドル（<strong>+6%</strong>）</td><td class="num">3,254万ドル（<strong>▲10%</strong>）</td><td class="num">3,592.8万ドル</td></tr>
+<tr><td>├ 創薬</td><td class="num">2,418.7万ドル（+85.9%／編集部計算）</td><td class="num">2,299万ドル（+65%）</td><td class="num">1,300.8万ドル</td></tr>
+<tr><td>└ 拠出金</td><td class="num">215.1万ドル（<strong>▲60.1%</strong>／編集部計算）</td><td class="num">336万ドル（▲30%）</td><td class="num">538.8万ドル</td></tr>
+<tr><td>ACV（四半期）</td><td class="num">4,470万ドル（+17%）</td><td class="num">2,960万ドル（+27%）</td><td class="num">―</td></tr>
+<tr><td><strong>ACV（直近4四半期）</strong></td><td class="num"><strong>2億1,400万ドル</strong></td><td class="num">2億800万ドル</td><td class="num">―</td></tr>
+<tr><td>ソフトウェア粗利率</td><td class="num">75%（前年同期から2ポイント減）</td><td class="num">71%</td><td class="num">77%</td></tr>
+<tr><td>営業費用</td><td class="num">6,438.2万ドル（<strong>▲13%</strong>）</td><td class="num">―</td><td class="num">7,398.6万ドル</td></tr>
+<tr><td><strong>GAAP営業損失</strong></td><td class="num"><strong>▲2,612.9万ドル</strong></td><td class="num">▲4,155万ドル</td><td class="num">▲4,594.7万ドル</td></tr>
+<tr><td>保有株式の公正価値変動</td><td class="num down"><strong>▲1,475.2万ドル</strong></td><td class="num up"><strong>+4,587万ドル</strong></td><td class="num">+969.1万ドル</td></tr>
+<tr><td><strong>純損益／EPS</strong></td><td class="num down"><strong>▲3,771.1万ドル／▲0.50ドル</strong></td><td class="num up">+598万ドル／黒字</td><td class="num">▲3,279.5万ドル／▲0.45ドル</td></tr>
+<tr><td>調整後EBITDA</td><td class="num">▲1,682.9万ドル</td><td class="num">▲3,099万ドル</td><td class="num">▲3,363.6万ドル</td></tr>
+<tr><td>現金・現金同等物・有価証券等</td><td class="num">3億7,300万ドル</td><td class="num">4億1,880万ドル</td><td class="num">―</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>営業段階は明確に改善しています。営業損失は前年同期比で43.1%、前四半期比でも縮小（編集部計算）。調整後EBITDAの赤字は前年同期から50.0%縮小しました（編集部計算）。営業費用は13%減で、うち研究開発費は20.3%減です（編集部計算）。</p>
+
+<p>一方で純損益は赤字に戻りました。第2四半期は保有株式の評価益4,587万ドルで黒字でしたが、第3四半期は評価損1,475.2万ドルです（③章）。</p>
+
+<div class="callout warn">
+  <span class="label">市場予想との比較は、情報源によって数字が異なります</span>
+  <p>MarketBeat系の記事は、EPSが市場予想▲0.67ドルに対し実績▲0.50ドルで<strong>0.17ドル上回り</strong>、売上は予想4,773万ドルに対し実績6,449万ドルだったとしています。一方、GuruFocusの記事は見出しで「<strong>予想を下回った</strong>（Missing Estimates）」としています。</p>
+  <p>本記事は<strong>会社が公表した実績値を基準</strong>とし、予想との比較は参考として両方を記載します。コンセンサス予想は集計元によって対象アナリストや算出時点が異なるため、こうした食い違いが生じます。</p>
+</div>
+
+<p class="src">出典：Schrödinger 2026年第3四半期決算リリース（2026年11月4日、Form 8-K 添付資料 Exhibit 99.1）、同Form 8-K本体（2026年11月4日）、2026年第2四半期の数値は本シリーズ8月13日記事（2026年8月5日発表のQ2決算に基づく）。</p>
+
+<h2 class="chapter" id="ch2"><span class="num">②</span>ACVと売上のずれ ― プラットフォーム型で最初に見る数字</h2>
+
+<h3>反復収益比率</h3>
+
+<div class="kpi-grid">
+  <div class="kpi"><span class="k">反復収益比率（編集部計算）</span><span class="v">約59.2%</span><span class="n">ソフトウェア売上3,815.3万ドル ÷ 総収益6,449.1万ドル</span></div>
+  <div class="kpi"><span class="k">ホスト型売上</span><span class="v">1,720万ドル（+49%）</span><span class="n">ソフトウェア売上の45%</span></div>
+  <div class="kpi"><span class="k">ホスト型比率（直近4四半期）</span><span class="v">32%</span><span class="n">四半期単独では45%</span></div>
+  <div class="kpi"><span class="k">オンプレミス売上（編集部計算）</span><span class="v">約2,095万ドル</span><span class="n">ソフトウェア売上からホスト型を差し引いた値</span></div>
+</div>
+
+<p>反復収益比率は約59.2%（編集部計算）。8月の記事では上半期ベースで約58%でしたので、ほぼ同水準です。</p>
+
+<p>この型で本シリーズが追ってきた論点は、<strong>ACV（年間契約額）と会計上の売上がずれる</strong>ことでした。ホスト型（クラウド）ライセンスへ移行すると、契約は取れていても売上の認識が後ろにずれます。8月の記事では「ACV +27%なのにソフトウェア売上は▲10%」という状態でした。</p>
+
+<p>第3四半期は、ソフトウェア売上が+6%に戻っています。ACVは+17%です。</p>
+
+<div class="callout">
+  <span class="label">ACV +17% と「寄与を除くと +24%」</span>
+  <p>会社は、ACVの成長率を2通りで示しています ― 報告ベースで<strong>+17%</strong>、<strong>拠出金（contribution）を除くと +24%</strong>。</p>
+  <p>拠出金は財団等からの資金で、第3四半期は215.1万ドル（前年同期538.8万ドル、▲60.1%／編集部計算）。この減少がACVの成長率を約7ポイント押し下げたことになります。</p>
+  <p>つまり<strong>ソフトウェア事業の契約額だけを見れば+24%で伸びており、報告ベースの+17%は拠出金の減少を含んだ数字</strong>です。前日までのロイヤルティ型3社でも、報告ベースと調整後で成長率が変わる例が続きました（LGNDは報告▲32%が前年の一時収益を除くと+26%）。<strong>成長率は、何を含むかで変わります。</strong></p>
+</div>
+
+<h3>創薬収益の単発依存は測れない</h3>
+
+<p>創薬収益は2,418.7万ドルで前年同期比+85.9%（編集部計算）。会社はこの増加の主因を<strong>Structure Therapeuticsからのマイルストーン支払い</strong>と説明しています。</p>
+
+<p>ただし<strong>そのマイルストーンの金額は開示されていません。</strong>このため、創薬収益のうちどれだけが単発でどれだけが継続的なものかを公開情報から分けることができません。8月の記事でも同じ論点（Ajaxマイルストーン1,000万ドルを含む）を扱いましたが、今回は金額が示されていない点が異なります。</p>
+
+<h3>通期ガイダンスは引き上げ</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>従来</th><th>Q3時点（2026年11月4日）</th></tr></thead>
+<tbody>
+<tr><td><strong>ACV</strong></td><td class="num">2億1,800万〜2億2,800万ドル（+10〜15%）</td><td class="num"><strong>2億2,200万〜2億3,200万ドル（+12〜17%）</strong></td></tr>
+<tr><td><strong>創薬収益</strong></td><td class="num">6,500万〜7,500万ドル</td><td class="num"><strong>7,500万〜8,500万ドル</strong></td></tr>
+<tr><td>営業費用</td><td class="num">―</td><td class="num">2025年を下回る</td></tr>
+<tr><td>ソフトウェア売上成長率／現金</td><td colspan="2">本リリースには記載なし</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>ACVと創薬収益の2項目を引き上げました。ツール・装置型のRGEN・BFLYと同じく、<strong>ガイダンスの引き上げは起きています。</strong></p>
+
+<h2 class="chapter" id="ch3"><span class="num">③</span>保有株式が2四半期で逆方向に振れた</h2>
+
+<p>Schrödingerは、創薬プログラムを他社に渡す代わりに株式を受け取ることがあります。8月の記事では、この「株式保有による現金化モデル」を扱いました。その保有株式の時価が、損益に出ます。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>四半期</th><th>保有株式の公正価値変動</th><th>純損益</th></tr></thead>
+<tbody>
+<tr><td>2026年Q2</td><td class="num up"><strong>+4,587万ドル</strong></td><td class="num up">+598万ドル（黒字転換）</td></tr>
+<tr><td>2026年Q3</td><td class="num down"><strong>▲1,475.2万ドル</strong></td><td class="num down">▲3,771.1万ドル</td></tr>
+<tr><td><strong>振れ幅（編集部計算）</strong></td><td class="num"><strong>約6,062万ドル</strong></td><td class="num">―</td></tr>
+<tr><td>（参考）2025年Q3</td><td class="num up">+969.1万ドル</td><td class="num down">▲3,279.5万ドル</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>第2四半期の黒字転換の主因は、Eli LillyによるAjax Therapeutics買収完了に伴う非現金の株式評価益4,587万ドルでした。第3四半期は逆方向に1,475.2万ドルです。<strong>2四半期で約6,062万ドルの振れ幅</strong>（編集部計算）。</p>
+
+<p>この間、営業損失は4,155万ドルから2,612.9万ドルへ縮小しています。<strong>事業は一方向に改善し、損益は保有株式の時価で上下した</strong>という構図です。</p>
+
+<div class="callout warn">
+  <span class="label">この決算シーズンで4社目</span>
+  <p>保有株式・投資の評価が損益を動かした例が、本シリーズで続いています。</p>
+  <p><strong>RPRX</strong>：投資先（ペラカルセン）の第III相未達で1億5,000万ドルの非現金減損<br>
+  <strong>LGND</strong>：持分法・その他投資の損失3,570万ドル。CFOは「保有株式投資の非現金の時価評価調整」と説明<br>
+  <strong>INVA</strong>：公正価値変動 合計約▲1億3,950万ドル（編集部計算）。営業利益の約3.3倍で、主因は1銘柄<br>
+  <strong>SDGR</strong>：▲1,475.2万ドル。前四半期は+4,587万ドルのプラス</p>
+  <p>規模も原因も違いますが、共通点があります ― <strong>いずれも非現金で、事業の成否とは別の要因で動く</strong>こと。入口記事⑤章の「損益計算書を上から下まで見る」という手順は、この決算シーズンでは毎回必要でした。</p>
+</div>
+
+<h3>新たな株式取得：Tectora Therapeutics</h3>
+
+<p>第3四半期中、SchrödingerはTectora Therapeuticsに<strong>SDGR-4594とSDGR-8139という2つのプログラムを拠出し、その対価として株式を取得</strong>しました。加えてマイルストーンとロイヤルティの受領資格も得ています。</p>
+
+<p>これは8月の記事で扱ったモデルの継続です。自社で臨床開発を進める代わりに、プログラムを他社に渡して株式・マイルストーン・ロイヤルティで回収する。<strong>結果として、損益に占める「保有株式の時価」の比重は下がりにくい構造になります。</strong></p>
+
+<h2 class="chapter" id="ch4"><span class="num">④</span>同じ8-Kに、決算と「抄録の訂正」が並んでいた</h2>
+
+<p>2026年11月4日に提出されたForm 8-Kには、3つの項目が記載されています。</p>
+
+<div class="flow">
+  <div class="flow-step"><span class="n">1</span><strong>Item 2.02（経営成績および財務状態）</strong>：第3四半期決算を発表したプレスリリースをExhibit 99.1として提出</div>
+  <div class="flow-step"><span class="n">2</span><strong>Item 7.01（Regulation FD開示）</strong>：2026年11月4日に公表された米国血液学会（ASH）の抄録の記載を訂正</div>
+  <div class="flow-step"><span class="n">3</span><strong>Item 9.01（財務諸表および添付書類）</strong>：Exhibit 99.1とExhibit 104の一覧</div>
+</div>
+
+<p>Item 7.01の記載は、次のとおりです。</p>
+
+<div class="quote">
+  <p>抄録は「<strong>当社がSGR-1505の併用試験を進行中である</strong>」と記載していた。</p>
+  <p>当社は「<strong>FDAにクリアされたプロトコルの下で、SGR-1505の併用試験を実際には開始していない</strong>」。</p>
+  <p>当社は「<strong>SGR-1505の開発を継続するための戦略的機会を模索している</strong>」。</p>
+  <p>本項目の目的は「抄録に含まれる一部の情報を訂正することのみ」である。</p>
+</div>
+
+<div class="callout warn">
+  <span class="label">ここが重要な理由は2つあります</span>
+  <p><strong>第一に、学会抄録の記載が訂正されることがある。</strong>本シリーズは繰り返し「初期段階・単群の臨床データは、対照群を伴う後期試験で再現されない場合がある」という留保を付けてきました。この件はそれより前の段階の問題です ― <strong>抄録に書かれた試験の進行状況そのものが、事実と異なっていた。</strong>臨床情報を読むときは、データの中身だけでなく「その試験が実際に始まっているか」も確認対象になります。</p>
+  <p><strong>第二に、決算リリースだけを読むと気づかない。</strong>この訂正はItem 7.01にあり、<strong>決算リリース（Exhibit 99.1）には記載がありません。</strong>決算リリースのパイプライン欄には「SGR-1505の第1相更新データをASHの口頭セッションで発表する」とあるだけです。入口記事③章で「決算リリースは開発スケジュールの開示文書でもある」と書きましたが、<strong>開示は決算リリースの外側にもあります。</strong></p>
+</div>
+
+<p>また「SGR-1505の開発を継続するための戦略的機会を模索している」という記載は、<strong>自社単独での開発を続けない可能性</strong>を示します。8月の記事では「残るSGR-1505とSGR-3515も、自社ではなく提携先に渡す方向」と書きましたが、この8-Kはそれを会社の言葉で裏付ける形になっています。</p>
+
+<p>なお、SGR-1505の第1相更新データは<strong>2026年12月12〜15日のASH年次総会（ニューオーリンズ）の口頭セッション</strong>で発表される予定です。</p>
+
+<h2 class="chapter" id="ch5"><span class="num">⑤</span>費用の削減と、自社開発からの後退</h2>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>費用項目</th><th>2026年Q3</th><th>2025年Q3</th><th>増減（編集部計算）</th></tr></thead>
+<tbody>
+<tr><td><strong>研究開発費</strong></td><td class="num"><strong>3,409万ドル</strong></td><td class="num">4,275.7万ドル</td><td class="num up"><strong>▲20.3%</strong></td></tr>
+<tr><td>販売・マーケティング費</td><td class="num">1,004万ドル</td><td class="num">952.4万ドル</td><td class="num down">+5.4%</td></tr>
+<tr><td>一般管理費</td><td class="num">2,025.2万ドル</td><td class="num">2,170.5万ドル</td><td class="num up">▲6.7%</td></tr>
+<tr><td><strong>営業費用 合計</strong></td><td class="num"><strong>6,438.2万ドル</strong></td><td class="num">7,398.6万ドル</td><td class="num up"><strong>▲13.0%</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<p>研究開発費が20.3%減っています（編集部計算）。これが営業損失の縮小の主因です。</p>
+
+<div class="callout">
+  <span class="label">費用削減の中身を確認する</span>
+  <p>本シリーズでは、費用削減が「どの機能から出ているか」を確認してきました。ARAYは研究開発費▲30.4%、INVAは▲62.0%、RGENは事業売却と変革施策。Schrödingerは▲20.3%です（いずれも編集部計算）。</p>
+  <p>Schrödingerの場合、④章の「SGR-1505の開発継続のための戦略的機会を模索」と、③章のTectoraへのプログラム拠出が同じ方向を向いています。<strong>自社で臨床開発を抱える量を減らし、ソフトウェア事業の収益性を上げる</strong>という流れとして読むことができます。</p>
+  <p>この方向が良いか悪いかは、本記事では判断しません。確認できるのは、研究開発費の減少と、パイプラインを他社に渡す動きが同時に起きているという事実です。</p>
+</div>
+
+<h3>現金の推移</h3>
+
+<div class="kpi-grid">
+  <div class="kpi"><span class="k">現金・現金同等物・有価証券等</span><span class="v">3億7,300万ドル</span><span class="n">2026年9月30日時点（6月30日時点4億1,880万ドル）</span></div>
+  <div class="kpi"><span class="k">四半期の減少（編集部計算）</span><span class="v">約4,580万ドル</span><span class="n">8月の記事の時点からの変化</span></div>
+  <div class="kpi"><span class="k">調整後EBITDA（Q3）</span><span class="v">▲1,682.9万ドル</span><span class="n">9か月では▲8,547.1万ドル</span></div>
+  <div class="kpi"><span class="k">株式数（編集部計算）</span><span class="v">約7,502.9万株</span><span class="n">発行済65,864,944株＋Limited 9,164,193株。6月末比 +0.33%</span></div>
+</div>
+
+<p>株式数は6月末の74,779,310株から約7,502.9万株へ、<strong>+0.33%</strong>（編集部計算）。希薄化はごく小さい水準が続いています。本シリーズで見た希薄化パターン（RXRX +約52%、PRME +約37%、ARAY 潜在+92%、RPRX ▲約0.5%、LGND ▲約3.3%）の中では、BFLY（+約2%）に近い位置です。</p>
+
+<h2 class="chapter" id="ch6"><span class="num">⑥</span>ACVは+2.9%、株価は+73.2%</h2>
+
+<p>8月の記事の時点と、直近で確認できた時点を並べます。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>8月の記事の時点</th><th>直近</th><th>変化（編集部計算）</th></tr></thead>
+<tbody>
+<tr><td><strong>ACV（直近4四半期）</strong></td><td class="num">2億800万ドル</td><td class="num">2億1,400万ドル</td><td class="num"><strong>+2.9%</strong></td></tr>
+<tr><td><strong>株価</strong></td><td class="num">17.81ドル（2026年8月6日終値）</td><td class="num">30.85ドル（2026年11月12日終値）</td><td class="num up"><strong>+73.2%</strong></td></tr>
+<tr><td><strong>時価総額</strong></td><td class="num">約13.3億ドル</td><td class="num">約23.2億ドル</td><td class="num up"><strong>+74.4%</strong></td></tr>
+<tr><td><strong>時価総額 ÷ 直近4四半期ACV（編集部試算）</strong></td><td class="num"><strong>約6.4倍</strong></td><td class="num"><strong>約10.8倍</strong></td><td class="num">―</td></tr>
+<tr><td>現金・現金同等物・有価証券等</td><td class="num">4億1,880万ドル</td><td class="num">3億7,300万ドル</td><td class="num down">▲約4,580万ドル</td></tr>
+<tr><td>52週レンジ</td><td class="num">―</td><td class="num">10.95〜34.00ドル</td><td class="num">―</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warn">
+  <span class="label">この3か月で動いたのは、ほぼ倍率です</span>
+  <p>事業の中心指標である直近4四半期ACVは<strong>+2.9%</strong>。時価総額は<strong>+74.4%</strong>。時価総額をACVで割った倍率は約6.4倍から<strong>約10.8倍</strong>へ、ほぼ1.7倍になりました（いずれも編集部計算・編集部試算）。</p>
+  <p>この間に起きたことを数字で挙げれば、ソフトウェア売上が▲10%から+6%に転じ、営業損失が4,155万ドルから2,612.9万ドルへ縮小し、ACVと創薬収益の通期ガイダンスが引き上げられました。一方で純損益は黒字から赤字に戻り、保有株式の評価は+4,587万ドルから▲1,475.2万ドルへ振れています。</p>
+  <p><strong>本記事は、約10.8倍という水準の妥当性について判断を示しません。</strong>売上倍率やACV倍率は、同業他社や過去の自社水準と比べて初めて意味を持つ相対指標です。株価・時価総額は日々変動します。</p>
+</div>
+
+<h3>株価の動きと、その周辺</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>日付</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td>2026年11月4日</td><td>第3四半期決算を発表。同日のForm 8-KでASH抄録を訂正</td></tr>
+<tr><td>2026年11月5日</td><td>株価情報サイトの記事は株価28.52ドル、時価総額約21.1億ドル、50日移動平均25.43ドル、200日移動平均16.95ドル、52週レンジ10.94〜33.78ドル、PER ▲38.54と記載。同日、Zacks Researchが格付を「strong-buy」から「hold」へ引き下げ</td></tr>
+<tr><td>2026年11月10日</td><td>1年来高値をつけたと報じられる（詳細な価格は本記事執筆時点で確認できませんでした）</td></tr>
+<tr><td><strong>2026年11月12日</strong></td><td class="num"><strong>終値30.85ドル。時価総額約23.2億ドル、52週レンジ10.95〜34.00ドル、PER ▲38.81、EPS（TTM）▲0.79ドル</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<p>200日移動平均16.95ドル（11月5日時点）に対し、11月12日の終値30.85ドルは<strong>約82%上</strong>の水準です（編集部計算）。52週レンジは10.95〜34.00ドルで、1年の値幅は約3.1倍（編集部計算）。</p>
+
+<div class="callout">
+  <span class="label">本シリーズの株価反応 ― 6つ目のパターン</span>
+  <p><strong>BFLY</strong>：全項目で予想超え・ガイダンス引き上げ → 2日間で約▲13%<br>
+  <strong>RGEN</strong>：GAAPで1株▲0.68ドルの赤字 → 翌日+4.5%<br>
+  <strong>ARAY</strong>：GAAPで1株+0.07ドルの黒字（債務消滅益） → 併合をまたぐため比較不可<br>
+  <strong>RPRX</strong>：受領額+9%・ガイダンス引き上げ → 下落と報道<br>
+  <strong>LGND</strong>：GAAPで1株▲1.43ドルの赤字 → 約▲0.5%（ほぼ動かず）<br>
+  <strong>INVA</strong>：営業利益+21.9%・EPSは予想を1.55ドル下回る → 11月9日に52週安値<br>
+  <strong>SDGR</strong>：<strong>純損失が前年同期から拡大・GAAP赤字 → 発表後に1年来高値圏へ</strong></p>
+  <p>7社で、見出しの決算と株価の方向が一致したものはほとんどありません。入口記事の導入で示した「決算は数字の絶対値ではなく、事前の想定との差と待つ期間の長さで評価される」という見方が、ここまでの実例で裏づけられています。</p>
+</div>
+
+<h2 class="chapter" id="ch7"><span class="num">⑦</span>リスク要因とまとめ</h2>
+
+<h3>リスク要因</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td>保有株式の時価変動</td><td>Q2 +4,587万ドル、Q3 ▲1,475.2万ドルで振れ幅約6,062万ドル（編集部計算）。Tectoraへのプログラム拠出で株式を追加取得しており、この項目の比重は下がりにくい</td></tr>
+<tr><td>創薬収益の単発依存が測れない</td><td>Q3の創薬収益2,418.7万ドルの主因はStructure Therapeuticsのマイルストーンだが、<strong>金額が非開示</strong>のため単発と継続の切り分けができない</td></tr>
+<tr><td>ソフトウェア粗利率の低下</td><td>75%で前年同期から2ポイント減。会社はホスト型ライセンスへの移行を理由としている</td></tr>
+<tr><td>拠出金の減少</td><td>215.1万ドル（▲60.1%／編集部計算）。報告ベースのACV成長率を約7ポイント押し下げた</td></tr>
+<tr><td>学会抄録の訂正</td><td>ASH抄録が「SGR-1505の併用試験が進行中」と記載していたが、会社は「FDAにクリアされたプロトコルの下で開始していない」と訂正（Form 8-K Item 7.01）</td></tr>
+<tr><td>自社開発からの後退</td><td>会社は「SGR-1505の開発を継続するための戦略的機会を模索している」と記載。研究開発費は▲20.3%（編集部計算）</td></tr>
+<tr><td>現金の減少</td><td>4億1,880万ドル（6月末）から3億7,300万ドル（9月末）へ約4,580万ドル減（編集部計算）。現金のガイダンスは本リリースに記載なし</td></tr>
+<tr><td>ガイダンスの範囲</td><td>ACVと創薬収益は引き上げられたが、<strong>ソフトウェア売上成長率のガイダンスは本リリースに記載なし</strong></td></tr>
+<tr><td>予想との比較が情報源で異なる</td><td>MarketBeat系は予想超え、GuruFocusは予想未達と報じている</td></tr>
+<tr><td>株価の位置</td><td>11月12日終値30.85ドルは200日移動平均16.95ドル（11月5日時点）の約1.8倍。52週レンジ10.95〜34.00ドルの上限近辺</td></tr>
+<tr><td>倍率の変化</td><td>時価総額÷直近4四半期ACVは約6.4倍から約10.8倍へ（編集部試算）。ACVの伸びは+2.9%</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>まとめ ― 6つの数字</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>#</th><th>数字</th><th>意味</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td>ACV（直近4四半期）<strong>+2.9%</strong>／株価<strong>+73.2%</strong>（編集部計算）</td><td>3か月で動いたのは、ほぼ倍率</td></tr>
+<tr><td class="num">2</td><td>保有株式の振れ幅<strong>約6,062万ドル</strong>（編集部計算）</td><td>Q2は黒字の主因、Q3は赤字の一因。営業損失は一方向に縮小</td></tr>
+<tr><td class="num">3</td><td>営業損失<strong>▲2,612.9万ドル</strong>（前年同期比43.1%縮小／編集部計算）</td><td>研究開発費▲20.3%が主因</td></tr>
+<tr><td class="num">4</td><td>ACV <strong>+17%</strong>／拠出金を除くと<strong>+24%</strong></td><td>成長率は、何を含むかで変わる</td></tr>
+<tr><td class="num">5</td><td>反復収益比率<strong>約59.2%</strong>（編集部計算）</td><td>8月の約58%とほぼ同水準。ホスト型は売上の45%</td></tr>
+<tr><td class="num">6</td><td>8-Kの<strong>Item 7.01</strong></td><td>決算リリースには載っていない訂正が、同じ8-Kの別項目にあった</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>この決算から確定できるのは、<strong>ソフトウェア売上が減少から増加に転じ、営業損失と調整後EBITDAの赤字がいずれも縮小し、ACVと創薬収益の通期ガイダンスが引き上げられた</strong>ことです。プラットフォーム型で最初に見る数字（反復収益比率と契約額）は、改善方向にあります。</p>
+
+<p>確定できないのは2つです。ひとつは<strong>創薬収益のうちどれだけが継続的なものか</strong>。Structure Therapeuticsのマイルストーン金額が非開示のため、単発と継続を分けられません。もうひとつは<strong>自社パイプラインの行き先</strong>。会社はSGR-1505について「開発を継続するための戦略的機会を模索している」と記載し、別のプログラム2本はTectoraに拠出しました。</p>
+
+<p>そして今回の決算で最も実務的な教訓は、<strong>開示が決算リリースの外側にもある</strong>ということでした。同じ8-KのItem 7.01に、学会抄録の訂正が入っていました。<strong>現時点で、創薬側の価値を判定できる段階にはありません。</strong>判定に必要な材料が揃うのは、少なくとも12月12〜15日のASHでSGR-1505の更新データが示され、「戦略的機会」の中身が明らかになった後になります。</p>
+
+<div class="crosslink">
+  <span class="label">本記事の前提となる枠組み・前回の記事</span>
+  <ul>
+    <li><a href="/articles/general-knowledge/knowledge/2026-11-08-us-pharma-biotech-earnings-guide">入口記事：なぜ米国の製薬・バイオ株は、決算1本で株価が倍にも半分にもなるのか</a>（③章＝株価が動く4つの仕組み、④章＝6分類の早見表、⑤章＝見出しの数字）</li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-08-13-schrodinger-sdgr">個別企業編②：Schrödinger（SDGR）― 反復収益を持つ例外的なプラットフォーム企業</a>（本記事の比較対象）</li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-11-12-royalty-pharma-rprx">④Royalty Pharma（RPRX）― 失敗した1本が示した「下限は元本＋10%」</a></li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-11-13-ligand-lgnd">⑤Ligand（LGND）― 売上▲32%、ロイヤルティ+51%、GAAP赤字、調整後EPSガイダンス引き上げ</a></li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-11-14-innoviva-inva">⑥Innoviva（INVA）― 営業利益+21.9%、EPSは予想を1.55ドル下回る</a></li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-08-11-ai-biotech-valuation">AI×製薬×バイオ 後編：赤字先行企業を4指標で評価する</a>（反復収益比率・希薄化パターンの定義）</li>
+  </ul>
+</div>
+
+<section class="watch" id="watch">
+  <h2>WHAT TO WATCH</h2>
+  <p class="sub">Schrödinger（NASDAQ:SDGR）― 今後の注目点6項目（2026年11月15日時点）</p>
+
+  <ol>
+    <li>
+      <span class="wt">2026年12月12〜15日のASH年次総会 ― SGR-1505の第1相更新データ</span>
+      口頭セッションで発表される予定です。<strong>同じ日に提出された8-Kで、会社は抄録の「併用試験が進行中」という記載を訂正し、FDAにクリアされたプロトコルの下で併用試験を開始していないとしています。</strong>発表されるデータがどの試験・どのコホートのものかを確認する必要があります。
+    </li>
+    <li>
+      <span class="wt">「戦略的機会」の中身</span>
+      会社はSGR-1505について「開発を継続するための戦略的機会を模索している」と記載しました。提携、ライセンスアウト、Tectoraのような株式交換のいずれになるのか、またSGR-3515についてどうするのかが論点になります。
+    </li>
+    <li>
+      <span class="wt">ソフトウェア売上の成長率とホスト型比率</span>
+      Q3はソフトウェア売上+6%（Q2は▲10%）、ホスト型が売上の45%（直近4四半期では32%）、ホスト型売上は+49%。<strong>ソフトウェア売上成長率の通期ガイダンスは本リリースに記載がありません。</strong>粗利率は75%で前年同期から2ポイント減です。
+    </li>
+    <li>
+      <span class="wt">通期ACVガイダンス2億2,200万〜2億3,200万ドルの達成</span>
+      直近4四半期ACVは2億1,400万ドル。ガイダンスは+12〜17%成長を含意しています。拠出金の減少が報告ベースの成長率を約7ポイント押し下げている点（拠出金を除くACVは+24%）も合わせて見る必要があります。
+    </li>
+    <li>
+      <span class="wt">創薬収益の中身と、提携先の進捗</span>
+      通期ガイダンスは7,500万〜8,500万ドルへ引き上げられました。Q3の増加の主因はStructure Therapeuticsのマイルストーンですが<strong>金額は非開示</strong>です。武田のzasocitinib（TAK-279）はFDAがNDAを優先審査で受理（中等症〜重症の尋常性乾癬）しており、承認された場合の収益への影響が次の材料になります。承認は前提とできません。
+    </li>
+    <li>
+      <span class="wt">現金と保有株式の評価</span>
+      現金等は3億7,300万ドル（9月末、6月末比約▲4,580万ドル／編集部計算）。現金のガイダンスは本リリースに記載がありません。保有株式の公正価値変動はQ2 +4,587万ドル、Q3 ▲1,475.2万ドルと振れており、<strong>次四半期も損益の方向を変え得る項目です。</strong>
+    </li>
+  </ol>
+
+  <p class="note">※上記は2026年11月15日時点で確認できた公開情報に基づく注目点であり、株価の方向性に関する見通しではありません。未承認薬について承認を前提とした記述は行っていません。会社のガイダンスは一定の前提に基づくものであり、実現を保証するものではありません。</p>
+</section>
+
+<div class="disclaimer">
+  <h2>免責事項</h2>
+  <p>本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資に関する最終的な判断は、ご自身の責任において行ってください。記載された数値は2026年11月15日時点の公開情報（企業IR資料・決算リリース・SEC提出書類・株価情報サイト等）に基づいており、株価等の市場データは日々変動します。株価・時価総額・移動平均・PER・EPS（TTM）・52週レンジは株価情報サイト掲載値であり、2026年11月5日時点および2026年11月12日時点のものを日付付きで記載しています。8月の記事の数値は2026年8月5日発表の第2四半期決算および2026年8月6日終値に基づくもので、現時点の数値とは時点が異なります。貸借対照表の数値は2026年9月30日時点で、株価の時点とは一致していません。「編集部試算」「編集部計算」と明記した数値は公開情報に基づく推計です。SEC提出書類からの引用は要旨の日本語訳であり、原文の表現と完全に一致するものではありません。市場予想との比較は情報源によって異なる数値が報じられているため、本文に両方を記載しています。調整後EBITDA・ACV・反復収益比率は非GAAP指標または会社が定義する指標であり、GAAPの売上高・損益指標に代わるものではありません。公正価値で評価される投資の価値は市場の変動により増減し、将来の損益に反映されます。企業が公表するガイダンス・マイルストーンの受領資格は一定の前提に基づく値であり、実現を保証するものではありません。初期段階・単群の臨床データは、対照群を伴う後期試験で再現されない場合があります。未承認薬について、承認を前提とした記述は行っていません。</p>
+</div>
+
+</div>
+</body>
+</html>
