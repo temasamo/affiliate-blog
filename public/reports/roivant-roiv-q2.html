@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roivant（ROIV）― 損益ラインが5本ある決算。「この四半期の損失」はどれか | Market Supporter AI</title>
+<meta name="description" content="営業損失▲2億6,804.9万ドル、連結純損失▲1億3,721.1万ドル、Roivant帰属純損失▲1億9,161.9万ドル、調整後▲1億3,336.5万ドル、EPS▲0.27ドル（うち0.13ドルはGenevant分配）。売上は営業費用の0.4%から11.6%へ。Moderna和解の残り13億ドルは司法判断に依存。2026年9月期決算を分解します。">
+<style>
+:root{
+  --accent:#be185d;
+  --accent-dark:#9d174d;
+  --accent-mid:#ec4899;
+  --accent-light:#fdf2f8;
+  --ink:#1a1a1a;
+  --ink-sub:#4a5568;
+  --line:#f3dce7;
+  --bg:#ffffff;
+  --warn-bg:#fff8ec;
+  --warn-line:#e0a648;
+  --up:#047857;
+  --down:#b91c1c;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.9;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 60%,var(--accent-mid) 100%);
+  color:#fff;
+  padding:56px 24px 48px;
+}
+.hero-inner{max-width:860px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;
+  font-size:12px;
+  letter-spacing:.14em;
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.34);
+  border-radius:999px;
+  padding:5px 14px;
+  margin-bottom:20px;
+}
+.hero h1{font-size:29px;line-height:1.5;margin:0 0 18px;font-weight:700;}
+.hero .lede{font-size:15px;line-height:1.85;color:rgba(255,255,255,.92);margin:0 0 22px;}
+.meta{font-size:12.5px;color:rgba(255,255,255,.76);border-top:1px solid rgba(255,255,255,.26);padding-top:14px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 72px;}
+.toc{background:var(--accent-light);border:1px solid var(--line);border-radius:10px;padding:22px 26px;margin:40px 0;}
+.toc h2{font-size:14px;margin:0 0 12px;color:var(--accent-dark);letter-spacing:.06em;}
+.toc ol{margin:0;padding-left:1.3em;font-size:14.5px;}
+.toc li{margin:7px 0;}
+.toc a{color:var(--ink-sub);text-decoration:none;border-bottom:1px solid transparent;}
+.toc a:hover{color:var(--accent-dark);border-bottom-color:var(--accent);}
+h2.chapter{font-size:22px;line-height:1.55;margin:56px 0 20px;padding:0 0 12px 0;border-bottom:3px solid var(--accent);font-weight:700;}
+h2.chapter .num{display:inline-block;background:var(--accent);color:#fff;font-size:13px;border-radius:5px;padding:3px 10px;margin-right:10px;vertical-align:3px;}
+h3{font-size:17.5px;margin:34px 0 12px;padding-left:12px;border-left:4px solid var(--accent-mid);line-height:1.6;}
+p{margin:0 0 18px;}
+a{color:var(--accent-dark);}
+.callout{background:var(--accent-light);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:18px 22px;margin:26px 0;font-size:15px;}
+.callout.warn{background:var(--warn-bg);border-left-color:var(--warn-line);}
+.callout p:last-child{margin-bottom:0;}
+.callout .label{display:block;font-size:12px;letter-spacing:.1em;color:var(--accent-dark);margin-bottom:8px;font-weight:700;}
+.callout.warn .label{color:#9a6512;}
+.quote{border-left:3px solid var(--ink-sub);padding:4px 0 4px 18px;margin:22px 0;color:var(--ink-sub);font-size:14.5px;}
+.quote p:last-child{margin-bottom:0;}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:28px 0;}
+.kpi{border:1px solid var(--line);border-radius:9px;padding:16px 18px;background:#fffcfd;}
+.kpi .k{font-size:12px;color:var(--ink-sub);display:block;margin-bottom:6px;line-height:1.5;}
+.kpi .v{font-size:21px;font-weight:700;color:var(--accent-dark);line-height:1.3;display:block;}
+.kpi .n{font-size:11.5px;color:var(--ink-sub);display:block;margin-top:6px;line-height:1.5;}
+.table-scroll{overflow-x:auto;margin:26px 0;-webkit-overflow-scrolling:touch;}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px;}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;line-height:1.7;}
+th{background:var(--accent);color:#fff;font-weight:600;white-space:nowrap;}
+tbody tr:nth-child(even){background:#fdf7fa;}
+td.num{text-align:right;white-space:nowrap;}
+td.up{color:var(--up);font-weight:600;}
+td.down{color:var(--down);font-weight:600;}
+.model-tag{display:inline-block;font-size:11.5px;color:#fff;background:var(--accent);border-radius:4px;padding:2px 8px;white-space:nowrap;font-weight:600;}
+.crosslink{border:1px dashed var(--accent-mid);border-radius:9px;padding:16px 20px;margin:28px 0;font-size:14px;background:#fffcfd;}
+.crosslink .label{display:block;font-size:12px;letter-spacing:.08em;color:var(--accent-dark);font-weight:700;margin-bottom:8px;}
+.crosslink ul{margin:0;padding-left:1.2em;}
+.crosslink li{margin:5px 0;}
+.watch{background:var(--accent-dark);color:#fff;border-radius:12px;padding:34px 28px;margin:60px 0 40px;}
+.watch h2{font-size:20px;margin:0 0 8px;letter-spacing:.04em;}
+.watch .sub{font-size:13.5px;color:rgba(255,255,255,.76);margin:0 0 26px;}
+.watch ol{list-style:none;counter-reset:w;margin:0;padding:0;}
+.watch ol li{counter-increment:w;position:relative;padding-left:42px;margin-bottom:20px;font-size:14.5px;line-height:1.85;}
+.watch ol li::before{content:counter(w);position:absolute;left:0;top:2px;width:27px;height:27px;border-radius:50%;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.44);color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;font-weight:700;}
+.watch .wt{display:block;font-weight:700;margin-bottom:3px;}
+.watch .note{font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.8;margin-top:18px;}
+.disclaimer{border-top:2px solid var(--line);margin-top:56px;padding-top:24px;font-size:12.5px;color:var(--ink-sub);line-height:1.9;}
+.disclaimer h2{font-size:14px;color:var(--ink);margin:0 0 10px;}
+.src{font-size:12.5px;color:var(--ink-sub);margin:-8px 0 22px;}
+.flow{margin:28px 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.flow-step{padding:16px 20px;border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.8;}
+.flow-step:last-child{border-bottom:none;background:var(--accent-light);}
+.flow-step .n{display:inline-block;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:12.5px;font-weight:700;text-align:center;line-height:24px;margin-right:10px;vertical-align:1px;}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  .hero{padding:40px 18px 34px;}
+  .hero h1{font-size:21px;}
+  .wrap{padding:0 18px 56px;}
+  h2.chapter{font-size:19px;margin:44px 0 16px;}
+  h3{font-size:16.5px;}
+  .watch{padding:26px 18px;border-radius:10px;}
+  .kpi .v{font-size:19px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">米国製薬・バイオ決算シリーズ ⑩／29 ― 持株会社型</span>
+    <h1>Roivant（ROIV）― 損益ラインが5本ある決算。「この四半期の損失」はどれか</h1>
+    <p class="lede">ここから持株会社型に移ります。Roivantの2026年9月期の決算には、損失を示す数字が5つ並んでいます。営業損失2億6,804.9万ドル、連結純損失1億3,721.1万ドル、Roivantに帰属する純損失1億9,161.9万ドル、調整後の継続事業損失1億3,336.5万ドル、そして1株当たり損失0.27ドル。<strong>連結の純損失より、親会社に帰属する純損失のほうが大きい</strong>という形になっています。子会社を連結しているが完全子会社ではない ― 持株会社型を読むときに最初に確認すべき構造です。</p>
+    <p class="meta">公開：2026年11月18日／対象：2026年9月30日に終了した第2四半期決算（2026年11月9日発表。3月期決算のため2027年3月期の第2四半期）／出典：決算リリース（Form 8-K 添付）・Immunovant決算リリース・株価情報サイト／情報提供のみを目的とし、投資判断の推奨ではありません</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#ch1">①決算の全体像 ― 売上が営業費用の0.4%から11.6%へ</a></li>
+    <li><a href="#ch2">②損益ラインが5本ある ― 「この四半期の損失」はどれか</a></li>
+    <li><a href="#ch3">③LISRAYA 5週間で3,097万ドル ― やってはいけない計算</a></li>
+    <li><a href="#ch4">④Moderna和解の残り13億ドルは、司法判断1本に依存している</a></li>
+    <li><a href="#ch5">⑤Immunovantの「92.5% vs 75.6%」をどう読むか</a></li>
+    <li><a href="#ch6">⑥総資産の約85%が現金 ― 時価総額との関係</a></li>
+    <li><a href="#ch7">⑦リスク要因とまとめ</a></li>
+    <li><a href="#watch">WHAT TO WATCH</a></li>
+  </ol>
+</nav>
+
+<h2 class="chapter" id="ch1"><span class="num">①</span>決算の全体像 ― 売上が営業費用の0.4%から11.6%へ</h2>
+
+<p><strong>Roivant Sciences（NASDAQ:ROIV）</strong> は、医薬品候補を他社から導入し、「Vant」と呼ぶ子会社ごとに開発を進める持株会社です。本シリーズ<a href="/articles/general-knowledge/knowledge/2026-11-08-us-pharma-biotech-earnings-guide">入口記事</a>の6分類では <span class="model-tag">持株会社型</span> にあたり、同じ型にはFortress Biotech（FBIO）、BridgeBio（BBIO）、PureTech Health（PRTC）が入ります。</p>
+
+<p>本シリーズでは<a href="/articles/general-knowledge/knowledge/2026-08-21-roivant-roiv">2026年8月21日の記事</a>で前四半期（2026年6月期）を扱いました。そのときの売上は<strong>144万ドル</strong>で、営業費用の<strong>0.4%</strong>でした。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>指標</th><th>2026年9月期（当四半期）</th><th>2025年9月期</th><th>増減</th></tr></thead>
+<tbody>
+<tr><td><strong>総収益（純額）</strong></td><td class="num"><strong>3,512.1万ドル</strong></td><td class="num">157.1万ドル</td><td class="num up"><strong>約22.4倍</strong>（編集部計算）</td></tr>
+<tr><td>├ <strong>製品売上（LISRAYA）</strong></td><td class="num"><strong>3,096.9万ドル</strong></td><td class="num">なし</td><td class="num">新規</td></tr>
+<tr><td>└ ライセンス・マイルストーン等</td><td class="num">415.2万ドル</td><td class="num">157.1万ドル</td><td class="num up">+164.3%（編集部計算）</td></tr>
+<tr><td>（6か月累計）総収益</td><td class="num">3,656.3万ドル</td><td class="num">―</td><td class="num">うち第1四半期は144万ドル</td></tr>
+<tr><td>売上原価</td><td class="num">334.7万ドル</td><td class="num">11.1万ドル</td><td class="num">―</td></tr>
+<tr><td>研究開発費</td><td class="num">1億4,574.7万ドル</td><td class="num">1億6,456.8万ドル</td><td class="num up">▲11.4%（編集部計算）</td></tr>
+<tr><td>販売・一般管理費</td><td class="num">1億5,407.6万ドル</td><td class="num">1億4,312.5万ドル</td><td class="num down">+7.7%（編集部計算）</td></tr>
+<tr><td>営業費用合計</td><td class="num">3億317万ドル</td><td class="num">3億780.4万ドル</td><td class="num up">▲1.5%（編集部計算）</td></tr>
+<tr><td><strong>営業損失</strong></td><td class="num"><strong>▲2億6,804.9万ドル</strong></td><td class="num">▲3億623.3万ドル</td><td class="num up">12.5%縮小（編集部計算）</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="kpi-grid">
+  <div class="kpi"><span class="k">売上 ÷ 営業費用（編集部計算）</span><span class="v">約11.6%</span><span class="n">3,512.1万ドル ÷ 3億317万ドル</span></div>
+  <div class="kpi"><span class="k">8月の記事（前四半期）</span><span class="v">約0.4%</span><span class="n">売上144万ドル</span></div>
+  <div class="kpi"><span class="k">研究開発費の減少理由（会社説明）</span><span class="v">▲1,880万ドル</span><span class="n">人件費・プログラム費用・株式報酬の減少</span></div>
+  <div class="kpi"><span class="k">販売・一般管理費の増加理由（会社説明）</span><span class="v">+1,100万ドル</span><span class="n">主にLISRAYAの launch 費用</span></div>
+</div>
+
+<p><strong>3か月で、売上が営業費用の0.4%から約11.6%になりました</strong>（編集部計算）。理由は1つです ― 2026年8月に米国で承認された<strong>LISRAYA（brepocitinib）</strong>の販売が始まったことです（③章）。</p>
+
+<div class="callout">
+  <span class="label">本シリーズの「売上 ÷ 営業費用」比較</span>
+  <p><strong>ABSI</strong>（11月17日の記事）：約0.9%<br>
+  <strong>RLAY</strong>（8月14日の記事）：約0.4%<br>
+  <strong>ROIV 前四半期</strong>（8月21日の記事）：約0.4%<br>
+  <strong>ROIV 当四半期</strong>：<strong>約11.6%</strong><br>
+  <strong>SDGR</strong>（11月15日の記事）：約100%</p>
+  <p>赤字先行企業では、この比率が1四半期で大きく動くことがあります。<strong>動かすのは通常、売上側の単発要因か、商業段階への移行です。</strong>Roivantは後者でした。</p>
+</div>
+
+<h3>調整項目はどこに集中しているか</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>GAAP</th><th>調整後（非GAAP）</th><th>差額と比率（編集部計算）</th></tr></thead>
+<tbody>
+<tr><td>研究開発費</td><td class="num">1億4,574.7万ドル</td><td class="num">1億3,743.5万ドル</td><td class="num">831.2万ドル（<strong>5.7%</strong>）</td></tr>
+<tr><td><strong>販売・一般管理費</strong></td><td class="num">1億5,407.6万ドル</td><td class="num">8,248.7万ドル</td><td class="num down"><strong>7,158.9万ドル（46.5%）</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<p>販売・一般管理費の<strong>46.5%</strong>が調整項目です（編集部計算）。研究開発費は5.7%。<strong>調整項目が販売・一般管理費に集中しています。</strong></p>
+
+<p>8月の記事では「一般管理費の45%が株式報酬」と書きました。今回の調整率46.5%はそれとほぼ同水準です。<strong>この企業の販売・一般管理費は、約半分が調整対象の費用（株式報酬等）で構成されているという構造が、2四半期続いています。</strong></p>
+
+<p class="src">出典：Roivant Sciences 2026年9月30日に終了した第2四半期決算リリース（2026年11月9日、Form 8-K 添付資料 Exhibit 99.1）、Immunovant決算リリース（2026年11月9日）。前四半期の数値は本シリーズ8月21日の記事に基づきます。なお本決算の会計年度表記は情報源によって「Q2 2026」「Q2 2027」と異なりますが、会社のリリースは「2026年9月30日に終了した第2四半期」としています。</p>
+
+<h2 class="chapter" id="ch2"><span class="num">②</span>損益ラインが5本ある ― 「この四半期の損失」はどれか</h2>
+
+<p>この決算の損益計算書を営業損失から下に辿ると、こうなります。</p>
+
+<div class="flow">
+  <div class="flow-step"><span class="n">1</span><strong>営業損失：▲2億6,804.9万ドル</strong>（前年同期 ▲3億623.3万ドル）</div>
+  <div class="flow-step"><span class="n">2</span><strong>継続事業からの損失（税引後）：▲1億5,297.4万ドル</strong>（前年同期 ▲1億6,603.9万ドル）</div>
+  <div class="flow-step"><span class="n">3</span>非継続事業からの利益（税引後）：<strong>+1,576.3万ドル</strong></div>
+  <div class="flow-step"><span class="n">4</span><strong>連結純損失：▲1億3,721.1万ドル</strong></div>
+  <div class="flow-step"><span class="n">5</span>非支配持分に帰属する純利益：<strong>+5,440.8万ドル</strong>を差し引いて…</div>
+  <div class="flow-step"><span class="n">6</span><strong>Roivantに帰属する純損失：▲1億9,161.9万ドル</strong>（前年同期 ▲1億1,351.9万ドル、<strong>68.8%拡大</strong>／編集部計算）</div>
+</div>
+
+<div class="callout warn">
+  <span class="label">連結純損失より、親会社帰属の損失のほうが大きい</span>
+  <p>連結純損失は1億3,721.1万ドル。しかしRoivantに帰属する純損失は<strong>1億9,161.9万ドル</strong>です。差の5,440.8万ドルは、<strong>非支配持分に帰属する純利益</strong>です。</p>
+  <p>Roivantは子会社（Immunovantなど）を連結していますが、完全子会社ではありません。連結の損益には子会社の全額が入り、そこから他の株主に帰属する分を差し引いて親会社帰属の損益が出ます。<strong>当四半期は非支配持分側が利益だったため、差し引いた結果、親会社帰属の損失が連結の損失より大きくなりました。</strong></p>
+  <p>入口記事④章の早見表では、持株会社型で最初に見る数字を「子会社ごとの進捗と連結の現金」としました。もう1つ加える必要があります ― <strong>連結の純損益と親会社帰属の純損益を、必ず両方見る。</strong></p>
+</div>
+
+<h3>1株当たり損失0.27ドルの内訳</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>金額・水準</th></tr></thead>
+<tbody>
+<tr><td>1株当たり損失（基本・希薄化後）</td><td class="num">▲0.27ドル（前年同期 ▲0.17ドル）</td></tr>
+<tr><td>うち継続事業</td><td class="num">▲0.29ドル</td></tr>
+<tr><td><strong>うちGenevant株式保有者への分配による影響</strong></td><td class="num"><strong>▲0.13ドル</strong>（金額は9,590万ドル／会社説明）</td></tr>
+<tr><td><strong>Genevant分配を除いた場合（編集部計算）</strong></td><td class="num"><strong>▲0.14ドル</strong></td></tr>
+<tr><td>加重平均株式数（基本・希薄化後）</td><td class="num">722,751,617株</td></tr>
+<tr><td>調整後の継続事業損失（税引後、非GAAP）</td><td class="num">▲1億3,336.5万ドル（前年同期 ▲1億8,777.9万ドル）</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>1株当たり損失0.27ドルのうち、<strong>0.13ドル</strong>はGenevant株式保有者への分配9,590万ドルによるものだと会社が説明しています。これを除くと0.14ドルです（編集部計算）。</p>
+
+<div class="callout">
+  <span class="label">本シリーズここまでで出た「見出しの数字」の形</span>
+  <p><strong>BFLY</strong>：前年同期の一時損失で、粗利率の改善幅が大きく見えた<br>
+  <strong>RGEN</strong>：当期の減損でGAAPが赤字に見えた<br>
+  <strong>ARAY</strong>：当期の益が当期の減損を引き起こした<br>
+  <strong>INVA</strong>：保有株式1銘柄の時価で最終損益が赤字になった<br>
+  <strong>ABSI</strong>：分母の株式数が増え、損失が拡大してもEPSが「改善」した<br>
+  <strong>ROIV</strong>：<strong>損益ラインが5本あり、どれを「損失」と呼ぶかで数字が変わる</strong></p>
+  <p>入口記事⑤章の手順は、回を追うごとに項目が増えています ― 損益計算書を上から下まで見る／比較対象の期にも同じ作業をする／1株当たり指標なら分母も比べる／そして<strong>持株会社なら親会社帰属の行を探す</strong>。</p>
+</div>
+
+<h2 class="chapter" id="ch3"><span class="num">③</span>LISRAYA 5週間で3,097万ドル ― やってはいけない計算</h2>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td>製品名</td><td>LISRAYA（一般名：brepocitinib）</td></tr>
+<tr><td>作用</td><td>JAK1/TYK2阻害剤</td></tr>
+<tr><td>承認適応</td><td>成人の皮膚筋炎（dermatomyositis）</td></tr>
+<tr><td>FDA承認・米国での販売開始</td><td>2026年8月</td></tr>
+<tr><td><strong>最初の5週間の純製品売上</strong></td><td class="num"><strong>3,096.9万ドル</strong></td></tr>
+<tr><td>処方数・患者数</td><td class="num"><strong>非開示</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warn">
+  <span class="label">5週間を年換算してはいけない理由</span>
+  <p>3,096.9万ドルを5週で割って52週をかけると、約3億2,200万ドルになります（編集部試算）。<strong>この数字は本記事では使いません。</strong>理由は4つあります。</p>
+  <p><strong>1. 流通在庫の積み増しが含まれ得る。</strong>新薬の発売直後は、卸・薬局が初期在庫を確保するため、実際の患者への処方を上回る出荷が計上されることがあります。会社はこの内訳を開示していません。</p>
+  <p><strong>2. 保険適用の拡大が途上。</strong>発売直後は保険の適用範囲が限られ、その後拡大する場合も、逆に自己負担の重さで処方が伸び悩む場合もあります。</p>
+  <p><strong>3. 処方数・患者数が非開示。</strong>売上を患者数で割った1人当たり単価が計算できないため、売上の増加が「患者が増えたのか」「単価が高いのか」を分けられません。</p>
+  <p><strong>4. 5週間という期間が短すぎる。</strong>四半期の一部分であり、季節性も学習効果も織り込めません。</p>
+  <p>本シリーズでは、<strong>年換算は四半期実績の単純4倍までとし、それも「編集部試算」と明記してきました。</strong>5週間を10.4倍するのは、その範囲を超えます。</p>
+</div>
+
+<p>確認できるのは、<strong>承認から5週間で3,096.9万ドルの純製品売上が計上された</strong>という事実と、販売・一般管理費が前年同期から1,100万ドル増え、その主因が会社の説明によればLISRAYAの発売準備・販売活動だったという事実です。</p>
+
+<h3>brepocitinibの次の適応 ― 第3相の結果は、これまでの記事と性質が違う</h3>
+
+<p>brepocitinibは、Priovantという子会社で<strong>非感染性ぶどう膜炎（NIU）</strong>の第3相試験も実施されており、その結果が開示されています。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>結果</th></tr></thead>
+<tbody>
+<tr><td>試験</td><td>CLARITY-1 および CLARITY-2（いずれも第3相）</td></tr>
+<tr><td>主要評価項目</td><td class="num"><strong>達成。主要な副次評価項目もすべて達成</strong></td></tr>
+<tr><td>治療失敗までの期間（中央値）</td><td class="num">48週超 vs プラセボ約12週（<strong>両試験でp&lt;0.0001</strong>）</td></tr>
+<tr><td>48週時点のステロイドフリー静止状態（プール解析）</td><td class="num">62% vs プラセボ 20%</td></tr>
+<tr><td>規制申請</td><td class="num">NIUのsNDAを<strong>2027年上半期</strong>に提出予定</td></tr>
+<tr><td>皮膚サルコイドーシス 第3相</td><td class="num">トップラインは2028年（暦年）</td></tr>
+<tr><td>扁平毛包性苔癬 第2b/3相</td><td class="num">進行中</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout">
+  <span class="label">本シリーズで扱ってきた臨床データとの違い</span>
+  <p>本シリーズでは、単群・小規模の初期データに繰り返し留保を付けてきました ― SANAの症例1件、PRMEの2件、RXRXのREC-4881（15例、対照群なし）、ABSIの女性コホート（プラセボ群なし）。</p>
+  <p>CLARITY-1・CLARITY-2は<strong>第3相で、プラセボ対照があり、2試験でそれぞれp&lt;0.0001</strong>です。性質が違います。<strong>ただし承認を前提とした記述は行いません。</strong>sNDAは2027年上半期の提出予定であり、審査結果は出ていません。</p>
+</div>
+
+<h2 class="chapter" id="ch4"><span class="num">④</span>Moderna和解の残り13億ドルは、司法判断1本に依存している</h2>
+
+<p>8月の記事で、本シリーズの実現率という指標をRoivantに当てはめました。もう一度数字を置きます。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>8月の記事</th><th>当四半期</th></tr></thead>
+<tbody>
+<tr><td>和解の公表総額</td><td class="num">22億5,000万ドル</td><td class="num">22億5,000万ドル（変更なし）</td></tr>
+<tr><td>受領済み</td><td class="num">9億5,000万ドル</td><td class="num">9億5,000万ドル（<strong>2026年7月に受領</strong>）</td></tr>
+<tr><td><strong>実現率（編集部試算）</strong></td><td class="num"><strong>約42%</strong></td><td class="num"><strong>約42%</strong>（変更なし）</td></tr>
+<tr><td><strong>残り</strong></td><td class="num">―</td><td class="num"><strong>13億ドル</strong></td></tr>
+<tr><td><strong>残りの条件</strong></td><td class="num">―</td><td class="num"><strong>ModernaのSection 1498控訴の有利な解決</strong></td></tr>
+<tr><td><strong>口頭弁論</strong></td><td class="num">―</td><td class="num"><strong>2026年11月5日に実施</strong></td></tr>
+<tr><td>Pfizer／BioNTech案件</td><td class="num">―</td><td class="num">継続中</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warn">
+  <span class="label">他社のマイルストーンとは条件の種類が違う</span>
+  <p>入口記事②章で、実現率の差は「交渉力の差ではなく<strong>条件の種類の差</strong>」だと書きました。本シリーズで見てきた条件はこうです。</p>
+  <p><strong>RXRX</strong>：開発段階の進捗と、承認後の売上目標（約2年で9件達成、1件平均約1,100万ドル／編集部試算）<br>
+  <strong>RPRX</strong>（払う側）：Cliramitugの最大4億2,500万ドルのうち前払い29.4%（編集部計算）<br>
+  <strong>ROIV</strong>：<strong>残り13億ドルが、1つの訴訟の控訴結果に依存している</strong></p>
+  <p>開発マイルストーンは段階的に達成されますが、<strong>訴訟の結果は段階的ではありません。</strong>受け取るか受け取らないかのどちらかで、中間はありません。口頭弁論が2026年11月5日に実施されたため、判断の時期が近づいています。</p>
+  <p>本記事は訴訟の結果を予測しません。確認できるのは、<strong>和解総額22億5,000万ドルのうち約58%（13億ドル）が、まだ条件を満たしていない</strong>という事実です（編集部計算）。</p>
+</div>
+
+<h2 class="chapter" id="ch5"><span class="num">⑤</span>Immunovantの「92.5% vs 75.6%」をどう読むか</h2>
+
+<p>持株会社型で「子会社ごとの進捗」を見る、という作業の実例です。子会社Immunovant（NASDAQ:IMVT）の抗FcRn抗体IMVT-1402について、治療抵抗性関節リウマチ（D2T RA）のデータが開示されました。</p>
+
+<div class="kpi-grid">
+  <div class="kpi"><span class="k">主要評価項目（28週のACR20）</span><span class="v">92.5%</span><span class="n">600mg群（n=40）</span></div>
+  <div class="kpi"><span class="k">プラセボ群</span><span class="v">75.6%</span><span class="n">n=41。p=0.0139</span></div>
+  <div class="kpi"><span class="k">300mg群</span><span class="v">75.0%</span><span class="n">n=36。p=0.9426 ＝ プラセボと差なし</span></div>
+  <div class="kpi"><span class="k">安全性</span><span class="v">良好と報告</span><span class="n">重篤有害事象なし、Grade 3以上の治療関連有害事象なし、有害事象による中止なし（全群）</span></div>
+</div>
+
+<p>プラセボ群のACR20が<strong>75.6%</strong>。関節リウマチの試験でプラセボ群の応答率がこの水準になるのは通常ではありません。理由は試験デザインにあります。</p>
+
+<h3>無作為化中止デザイン（randomized withdrawal）</h3>
+
+<div class="flow">
+  <div class="flow-step"><span class="n">1</span><strong>Period 1（非盲検導入期）</strong>：170例が IMVT-1402 600mg を16週間投与</div>
+  <div class="flow-step"><span class="n">2</span><strong>選別</strong>：14週と16週の両時点でACR20応答の基準を満たした患者のみが、Period 2へ進む資格を得た</div>
+  <div class="flow-step"><span class="n">3</span><strong>Period 2（無作為化）</strong>：117例を600mg（n=40）、300mg（n=36）、プラセボ（n=41）に無作為割付</div>
+  <div class="flow-step"><span class="n">4</span>したがって<strong>プラセボ群は「すでに600mgに応答していた患者」で構成されている。</strong>評価しているのは導入効果ではなく<strong>応答の維持</strong></div>
+</div>
+
+<p>Immunovantのリリースは、この設計を「非盲検導入期に続く無作為化中止デザイン」と記載し、プラセボ群の患者がPeriod 1でACR20応答基準を満たした後に無作為化されたことを明記しています。<strong>プラセボ群の75.6%が高いこと自体の説明は、リリースには書かれていません。</strong></p>
+
+<h3>見出しの外側にある3つの数字</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>評価項目</th><th>600mg</th><th>プラセボ</th><th>p値</th><th>会社の記載</th></tr></thead>
+<tbody>
+<tr><td><strong>ACR20（主要、28週）</strong></td><td class="num"><strong>92.5%</strong></td><td class="num">75.6%</td><td class="num"><strong>0.0139</strong></td><td>主要評価項目を達成</td></tr>
+<tr><td>CDAI変化（副次、最小二乗平均）</td><td class="num">▲0.3</td><td class="num">+3.1</td><td class="num down"><strong>0.1096</strong></td><td rowspan="2">「数値上はIMVT-1402 600mgがプラセボを上回った」</td></tr>
+<tr><td>SDAI変化（副次）</td><td class="num">+0.1</td><td class="num">+3.5</td><td class="num down"><strong>0.1299</strong></td></tr>
+<tr><td>ACR50（探索的）</td><td class="num">80.0%</td><td class="num">56.1%</td><td class="num">0.0117（名目）</td><td rowspan="2">「本試験はこれらの指標の差を検出する検出力はなかった」</td></tr>
+<tr><td>ACR70（探索的）</td><td class="num">52.5%</td><td class="num">36.6%</td><td class="num">0.1674（名目）</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warn">
+  <span class="label">4層に分けて読む</span>
+  <p><strong>第1層：主要評価項目は達成した。</strong>ACR20で92.5% vs 75.6%、p=0.0139。これは事実です。</p>
+  <p><strong>第2層：プラセボ群は選別された患者である。</strong>無作為化中止デザインのため、プラセボ群は600mgにすでに応答していた患者です。この試験が示すのは応答の維持であり、導入効果ではありません。</p>
+  <p><strong>第3層：主要な副次評価項目は統計的有意差に達していない。</strong>CDAI（p=0.1096）、SDAI（p=0.1299）。会社は「数値上は上回った」という表現を使っています。</p>
+  <p><strong>第4層：探索的評価項目は検出力がない。</strong>ACR50・ACR70について、会社自身が「本試験はこれらの指標の差を検出する検出力はなかった」と記載し、p値を「名目（nominal）」と明示しています。</p>
+  <p>加えて、<strong>2つの用量のうち300mgはプラセボと差がありませんでした</strong>（75.0%、p=0.9426）。FDAとの協議は2026年後半に予定されており、登録試験のパスはそこで決まります。</p>
+</div>
+
+<h3>Immunovantで止まったもの</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>適応</th><th>状況</th></tr></thead>
+<tbody>
+<tr><td>シェーグレン病</td><td>進行中の第2相（登録完了）を超えて進める可能性は低い。会社は領域の動向と最近のデータを理由に挙げている</td></tr>
+<tr><td>皮膚ループス</td><td class="num"><strong>2026年9月に試験を中止</strong>（Roivantのリリースに記載）</td></tr>
+<tr><td>Graves病・重症筋無力症</td><td>トップラインは2027年（暦年）</td></tr>
+<tr><td>CIDP（慢性炎症性脱髄性多発神経炎）</td><td>トップラインは2028年（暦年）</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>D2T RAで主要評価項目を達成した一方で、シェーグレン病は前進しない見込み、皮膚ループスは中止されています。<strong>持株会社型で「子会社ごとの進捗」を見るとは、進んだものと止まったものの両方を数えることです。</strong></p>
+
+<h3>もう1つの子会社：Pulmovant</h3>
+
+<p>吸入sGC活性化剤mosliciguatについて、間質性肺疾患に伴う肺高血圧症（PH-ILD）の第2相PHocus試験の結果が開示されました。16週時点でプラセボ調整後の肺血管抵抗（PVR）減少56.3%（p&lt;0.0001）、6分間歩行距離+35.2m（p=0.0027）、24週で+52.7m（名目p&lt;0.0001）、NT-proBNP▲53.2%（p=0.0002）。咳は12.1%（プラセボ18.2%）。第3相PHrontier試験が開始され、吸入トレプロスチニル併用の第2相PHactor試験も進行中です。</p>
+
+<h2 class="chapter" id="ch6"><span class="num">⑥</span>総資産の約85%が現金 ― 時価総額との関係</h2>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目（2026年9月30日時点）</th><th>金額</th><th>総資産に対する比率（編集部計算）</th></tr></thead>
+<tbody>
+<tr><td>現金・現金同等物</td><td class="num">16億4,226.6万ドル</td><td class="num">33.0%</td></tr>
+<tr><td>市場性証券</td><td class="num">25億6,532万ドル</td><td class="num">51.6%</td></tr>
+<tr><td><strong>合計（編集部計算）</strong></td><td class="num"><strong>約42億757万ドル</strong></td><td class="num"><strong>約84.6%</strong></td></tr>
+<tr><td>総資産</td><td class="num">49億7,582.4万ドル</td><td class="num">100%</td></tr>
+<tr><td><strong>総負債</strong></td><td class="num"><strong>3億8,010.4万ドル</strong></td><td class="num"><strong>7.6%</strong></td></tr>
+<tr><td>株主資本</td><td class="num">45億9,572万ドル</td><td class="num">92.4%</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>総資産の約85%が現金と市場性証券で、総負債は総資産の7.6%です</strong>（いずれも編集部計算）。現金等には2026年7月に受領したModerna和解の9億5,000万ドルが含まれます。</p>
+
+<p>キャッシュランウェイについて、会社は「<strong>黒字化まで（into profitability）</strong>」を支える水準としており、具体的な年次は示していません。</p>
+
+<h3>自社株買い</h3>
+
+<div class="kpi-grid">
+  <div class="kpi"><span class="k">当四半期の取得</span><span class="v">210万株／約7,250万ドル</span><span class="n">平均取得単価 約34.52ドル（編集部計算）</span></div>
+  <div class="kpi"><span class="k">加重平均株式数</span><span class="v">722,751,617株</span><span class="n">―</span></div>
+  <div class="kpi"><span class="k">参考：直近の株価</span><span class="v">38.61ドル</span><span class="n">2026年11月16日終値。平均取得単価を約11.8%上回る（編集部計算）</span></div>
+  <div class="kpi"><span class="k">本シリーズの希薄化パターン</span><span class="v">自社株買い型</span><span class="n">RPRX ▲約0.5%、LGND ▲約3.3%、INVA も自社株買い（いずれも編集部計算・編集部試算）</span></div>
+</div>
+
+<h3>株価と時価総額</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>日付</th><th>株価・指標</th></tr></thead>
+<tbody>
+<tr><td>2026年10月26日</td><td class="num">36.17ドル（場中）。時価総額約261.3億ドル、発行済7億2,232万株、52週レンジ17.89〜42.50ドル</td></tr>
+<tr><td>2026年11月6日</td><td class="num">終値 38.88ドル（決算発表前）</td></tr>
+<tr><td>2026年11月9日</td><td>決算を発表（説明会は米国東部時間 午前8時）</td></tr>
+<tr><td><strong>2026年11月16日</strong></td><td class="num"><strong>終値 38.61ドル（前日比▲2.33%）。</strong>時価総額約286.4億ドル（2026年11月17日時点の第三者データ）、52週レンジ19.96〜42.50ドル</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warn">
+  <span class="label">発表後の株価について</span>
+  <p>Investing.comは2026年11月9日付の記事見出しで「<strong>第2四半期の予想超えと発売の勢いを受けて上昇（rises on q2 2026 beat and launch momentum）</strong>」としています。GuruFocusも1株当たり損失0.27ドルが予想を上回ったとしています。<strong>ただし具体的な変動率は本記事執筆時点で確認できませんでした。</strong></p>
+  <p>確認できる範囲では、決算発表前の11月6日終値が38.88ドル、11月16日終値が38.61ドルで、<strong>約1週間後の水準は発表前とほぼ同じ（▲0.7%／編集部計算）</strong>です。52週レンジは参照時点によって下限が異なる数値で示されており（10月26日時点17.89ドル、11月時点19.96ドル）、これは参照期間の起点が日々移動するためです。</p>
+</div>
+
+<h3>現金と時価総額の関係 ― INVAとの対比</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>ROIV</th><th>INVA（11月14日の記事）</th></tr></thead>
+<tbody>
+<tr><td>現金等</td><td class="num">約42億757万ドル</td><td class="num">5億8,140万ドル</td></tr>
+<tr><td>時価総額</td><td class="num">約286.4億ドル（11月17日時点）</td><td class="num">約13.6億ドル（11月9日時点）</td></tr>
+<tr><td><strong>現金等 ÷ 時価総額（編集部計算）</strong></td><td class="num"><strong>約14.7%</strong></td><td class="num">約42.8%</td></tr>
+<tr><td>時価総額 − 現金等（編集部試算）</td><td class="num">約244.3億ドル</td><td class="num">―</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warn">
+  <span class="label">この試算についての留保</span>
+  <p>時価総額は2026年11月16日〜17日時点、貸借対照表は2026年9月30日時点で、<strong>時点が一致していません。</strong>また時価総額の数値は情報源によって発行済株式数の集計が異なるため、幅があります（10月26日時点の別サイトは約261.3億ドル）。</p>
+  <p>時価総額から現金等を引いた約244.3億ドル（編集部試算）が何に対する評価なのかを、公開情報から挙げるとこうなります ― LISRAYA（5週間で3,096.9万ドル）、brepocitinibのNIU適応（第3相成功、sNDAは2027年上半期予定）、Immunovant（IMVT-1402）、Pulmovant（mosliciguat）、そしてModerna和解の残り13億ドルの条件付き請求権。<strong>本記事は水準の妥当性について判断を示しません。</strong></p>
+</div>
+
+<h2 class="chapter" id="ch7"><span class="num">⑦</span>リスク要因とまとめ</h2>
+
+<h3>リスク要因</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td>損益の読み取りの難しさ</td><td>営業損失▲2億6,804.9万ドル、連結純損失▲1億3,721.1万ドル、Roivant帰属純損失▲1億9,161.9万ドル、調整後▲1億3,336.5万ドルが併存。非支配持分帰属の純利益5,440.8万ドルを差し引くため、親会社帰属の損失が連結より大きい</td></tr>
+<tr><td>Roivant帰属損失の拡大</td><td>前年同期の▲1億1,351.9万ドルから68.8%拡大（編集部計算）。うち1株0.13ドル分はGenevant株式保有者への分配9,590万ドル</td></tr>
+<tr><td>LISRAYAの持続性</td><td>5週間で3,096.9万ドル。処方数・患者数は非開示で、流通在庫の積み増しの有無も開示されていない。年換算できない</td></tr>
+<tr><td>販売費の増加</td><td>販売・一般管理費は+7.7%（編集部計算）で、主因はLISRAYAの発売。商業体制の拡大は今後も費用に影響し得る</td></tr>
+<tr><td>調整項目の偏り</td><td>販売・一般管理費の46.5%が調整項目（編集部計算）。研究開発費は5.7%</td></tr>
+<tr><td>Moderna和解の残額</td><td>13億ドル（公表総額の約58%／編集部計算）がModernaのSection 1498控訴の有利な解決に依存。口頭弁論は2026年11月5日。段階的な達成ではなく、受け取るか受け取らないかのどちらか</td></tr>
+<tr><td>Pfizer／BioNTech案件</td><td>継続中。結果・時期は開示されていない</td></tr>
+<tr><td>Immunovantの試験デザイン</td><td>D2T RAのPeriod 2は無作為化中止デザインで、プラセボ群はPeriod 1で600mgに応答した患者で構成。主要な副次評価項目（CDAI p=0.1096、SDAI p=0.1299）は有意差なし。探索的評価項目は会社自身が検出力なしと記載。300mgはプラセボと差なし（p=0.9426）</td></tr>
+<tr><td>Immunovantの中止・後退</td><td>皮膚ループス試験を2026年9月に中止。シェーグレン病は進行中の第2相を超えて進める可能性は低い</td></tr>
+<tr><td>規制の未確定</td><td>brepocitinibのNIU適応はsNDAを2027年上半期に提出予定で審査結果は出ていない。D2T RAの登録パスは2026年後半のFDA協議で決まる</td></tr>
+<tr><td>ガイダンスがない</td><td>数値による財務ガイダンスは提示されていない。キャッシュランウェイは「黒字化まで」と定性的な表現</td></tr>
+<tr><td>株価の位置</td><td>11月16日終値38.61ドルは52週レンジ19.96〜42.50ドルの上限寄り。発表前の11月6日終値38.88ドルとほぼ同水準（▲0.7%／編集部計算）</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>まとめ ― 6つの数字</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>#</th><th>数字</th><th>意味</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td>連結純損失<strong>▲1億3,721.1万ドル</strong>／親会社帰属<strong>▲1億9,161.9万ドル</strong></td><td>非支配持分帰属の利益5,440.8万ドルを差し引くため、親会社帰属のほうが大きい</td></tr>
+<tr><td class="num">2</td><td>売上 ÷ 営業費用 <strong>0.4% → 約11.6%</strong>（編集部計算）</td><td>3か月で商業段階に移行した</td></tr>
+<tr><td class="num">3</td><td>LISRAYA <strong>5週間で3,096.9万ドル</strong></td><td>処方数・患者数は非開示。年換算してはいけない</td></tr>
+<tr><td class="num">4</td><td>Moderna和解の残り<strong>13億ドル</strong>（総額の約58%／編集部計算）</td><td>条件は訴訟の控訴結果。段階的な達成ではない</td></tr>
+<tr><td class="num">5</td><td>ACR20 <strong>92.5% vs 75.6%</strong></td><td>プラセボ群は600mgにすでに応答していた患者。副次評価項目は有意差なし</td></tr>
+<tr><td class="num">6</td><td>総資産の<strong>約84.6%</strong>が現金等、総負債は<strong>7.6%</strong>（編集部計算）</td><td>持株会社型の資産構成。現金等は時価総額の約14.7%</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>この決算から確定できるのは、<strong>LISRAYAが承認から5週間で3,096.9万ドルの売上を計上し、brepocitinibのNIU適応で第3相2試験が主要評価項目と全ての主要副次評価項目を達成し、Moderna和解の初回9億5,000万ドルを受領し、現金等が約42億757万ドルに達した</strong>ことです（金額は編集部計算を含む）。</p>
+
+<p>確定できないのは3つです。<strong>LISRAYAの実勢水準</strong>（5週間の数字からは年間規模を算出できない）、<strong>Moderna和解の残り13億ドル</strong>（訴訟の控訴結果に依存し、段階的な達成はない）、そして<strong>IMVT-1402のD2T RAの登録パス</strong>（2026年後半のFDA協議で決まる）。</p>
+
+<p>持株会社型の1社目で見えたのは、<strong>この型では「損失」という言葉がどの行を指すかを先に決めなければならない</strong>ということでした。連結と親会社帰属のどちらを見るかで、当四半期は5,440.8万ドルの差が出ます。<strong>現時点で、LISRAYAの立ち上がりとパイプラインの価値を判定できる段階にはありません。</strong>判定に必要な材料が揃うのは、少なくともLISRAYAの最初の通年四半期の実績と、2026年12月9日の投資家デーでの説明、そしてModerna控訴の結果が出た後になります。</p>
+
+<div class="crosslink">
+  <span class="label">本記事の前提となる枠組み・関連記事</span>
+  <ul>
+    <li><a href="/articles/general-knowledge/knowledge/2026-11-08-us-pharma-biotech-earnings-guide">入口記事：なぜ米国の製薬・バイオ株は、決算1本で株価が倍にも半分にもなるのか</a>（②章＝実現率、④章＝6分類の早見表、⑤章＝見出しの数字）</li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-08-21-roivant-roiv">個別企業編：Roivant Sciences（ROIV）― 売上は営業費用の0.4%、Moderna和解の実現率約42%</a>（本記事の比較対象）</li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-11-17-absci-absi-q3">⑨Absci（ABSI）― 純損失は16%拡大、EPSは改善した</a></li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-11-14-innoviva-inva">⑥Innoviva（INVA）― 営業利益+21.9%、EPSは予想を1.55ドル下回る</a></li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-11-12-royalty-pharma-rprx">④Royalty Pharma（RPRX）― 失敗した1本が示した「下限は元本＋10%」</a></li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-09-12-pharma-biotech-17-map">製薬・バイオ 銘柄マップ ― 17銘柄を6つの事業モデルで分類する</a></li>
+  </ul>
+</div>
+
+<section class="watch" id="watch">
+  <h2>WHAT TO WATCH</h2>
+  <p class="sub">Roivant Sciences（NASDAQ:ROIV）― 今後の注目点6項目（2026年11月18日時点）</p>
+
+  <ol>
+    <li>
+      <span class="wt">LISRAYAの最初の通年四半期（2026年12月期）</span>
+      当四半期は承認から5週間分で3,096.9万ドルでした。<strong>処方数・患者数は非開示で、流通在庫の積み増しの有無も開示されていません。</strong>完全な1四半期分の実績が、初めて実勢を推し量る材料になります。販売・一般管理費の動きも合わせて見る必要があります。
+    </li>
+    <li>
+      <span class="wt">ModernaのSection 1498控訴の結果</span>
+      口頭弁論は<strong>2026年11月5日</strong>に実施されました。残り<strong>13億ドル</strong>（和解総額の約58%／編集部計算）が、この有利な解決を条件としています。他社の開発マイルストーンと違い、<strong>段階的な達成はありません。</strong>Pfizer／BioNTech案件も継続中です。
+    </li>
+    <li>
+      <span class="wt">2026年後半のFDA協議（D2T RAの登録パス）</span>
+      IMVT-1402はD2T RAで主要評価項目を達成しましたが、主要な副次評価項目は統計的有意差に達しておらず（CDAI p=0.1096、SDAI p=0.1299）、300mgはプラセボと差がありませんでした（p=0.9426）。<strong>Period 2は無作為化中止デザインで、プラセボ群はPeriod 1で600mgに応答した患者です。</strong>FDAがどの試験デザインを求めるかが論点になります。
+    </li>
+    <li>
+      <span class="wt">2026年12月9日の投資家デー</span>
+      ニューヨークおよびオンラインで開催予定です。数値による財務ガイダンスは現時点で提示されておらず、キャッシュランウェイも「黒字化まで」という定性的な表現にとどまっています。
+    </li>
+    <li>
+      <span class="wt">brepocitinibのNIU適応 ― sNDAの提出（2027年上半期予定）</span>
+      CLARITY-1・CLARITY-2は第3相で主要評価項目と全ての主要副次評価項目を達成し、治療失敗までの期間の中央値が48週超（プラセボ約12週、両試験でp&lt;0.0001）でした。<strong>承認は前提とできません。</strong>皮膚サルコイドーシス第3相のトップラインは2028年（暦年）です。
+    </li>
+    <li>
+      <span class="wt">子会社の進退 ― 進んだものと止まったもの</span>
+      Immunovantでは皮膚ループス試験が2026年9月に中止され、シェーグレン病は進行中の第2相を超えて進める可能性は低いとされました。一方でGraves病・重症筋無力症のトップラインは2027年、CIDPは2028年。Pulmovantは第3相PHrontierを開始しています。<strong>持株会社型では、止まったものも数えます。</strong>
+    </li>
+  </ol>
+
+  <p class="note">※上記は2026年11月18日時点で確認できた公開情報に基づく注目点であり、株価の方向性に関する見通しではありません。未承認薬・未承認の適応について承認を前提とした記述は行っていません。訴訟の結果について予測は行いません。会社の見通しは一定の前提に基づくものであり、実現を保証するものではありません。</p>
+</section>
+
+<div class="disclaimer">
+  <h2>免責事項</h2>
+  <p>本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資に関する最終的な判断は、ご自身の責任において行ってください。記載された数値は2026年11月18日時点の公開情報（企業IR資料・決算リリース・SEC提出書類・株価情報サイト等）に基づいており、株価等の市場データは日々変動します。株価・時価総額・52週レンジ・発行済株式数は株価情報サイト掲載値であり、2026年10月26日時点、2026年11月6日時点および2026年11月16日〜17日時点のものを日付付きで記載しています。時価総額は情報源によって発行済株式数の集計が異なるため幅があります。52週レンジは参照期間の起点が日々移動するため、参照時点によって数値が変わります。貸借対照表の数値は2026年9月30日時点で、株価の時点とは一致していません。本決算の会計年度表記は情報源によって異なりますが、本記事は会社リリースの「2026年9月30日に終了した第2四半期」に従っています。前四半期の数値は本シリーズ2026年8月21日の記事に基づきます。「編集部試算」「編集部計算」と明記した数値は公開情報に基づく推計です。本記事では、5週間の売上実績を年換算した数値を分析に用いていません。SEC提出書類・決算リリースからの引用は要旨の日本語訳であり、原文の表現と完全に一致するものではありません。市場予想との比較については、具体的なコンセンサス予想値および発表後の株価変動率を確認できなかったため、報道の記載内容のみを示しています。調整後の研究開発費・販売管理費・継続事業損失は非GAAP指標であり、GAAPの損益指標に代わるものではありません。企業が公表する和解総額は条件が満たされた場合の金額であり、受領を保証するものではありません。訴訟の結果および時期は不確実です。臨床試験の結果は試験デザインに依存し、本記事に記載したIMVT-1402のD2T RA試験のPeriod 2は会社の記載によれば無作為化中止デザインです。探索的評価項目のp値は会社が名目値と明示しているものです。未承認薬・未承認の適応について、承認を前提とした記述は行っていません。規制申請の結果は規制当局の判断に依存します。</p>
+</div>
+
+</div>
+</body>
+</html>
