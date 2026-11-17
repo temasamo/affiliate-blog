@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Absci（ABSI）― 純損失は16%拡大、EPSは改善した。分母が分子より速く増えたから | Market Supporter AI</title>
+<meta name="description" content="純損失は▲3,330万ドルで16.0%拡大、EPSは▲0.20ドルから▲0.19ドルへ改善。加重平均株式数が19.5%増えたためで、前年同期と同じ株式数ならEPSは▲0.23ドルでした。売上は営業費用の約0.9%。ランウェイ「2028年下期まで」の算術。2026年Q3決算を分解します。">
+<style>
+:root{
+  --accent:#0891b2;
+  --accent-dark:#0e7490;
+  --accent-mid:#22d3ee;
+  --accent-light:#ecfeff;
+  --ink:#1a1a1a;
+  --ink-sub:#4a5568;
+  --line:#d8eef3;
+  --bg:#ffffff;
+  --warn-bg:#fff8ec;
+  --warn-line:#e0a648;
+  --up:#047857;
+  --down:#b91c1c;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.9;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 60%,var(--accent-mid) 100%);
+  color:#fff;
+  padding:56px 24px 48px;
+}
+.hero-inner{max-width:860px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;
+  font-size:12px;
+  letter-spacing:.14em;
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.34);
+  border-radius:999px;
+  padding:5px 14px;
+  margin-bottom:20px;
+}
+.hero h1{font-size:29px;line-height:1.5;margin:0 0 18px;font-weight:700;}
+.hero .lede{font-size:15px;line-height:1.85;color:rgba(255,255,255,.92);margin:0 0 22px;}
+.meta{font-size:12.5px;color:rgba(255,255,255,.76);border-top:1px solid rgba(255,255,255,.26);padding-top:14px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 72px;}
+.toc{background:var(--accent-light);border:1px solid var(--line);border-radius:10px;padding:22px 26px;margin:40px 0;}
+.toc h2{font-size:14px;margin:0 0 12px;color:var(--accent-dark);letter-spacing:.06em;}
+.toc ol{margin:0;padding-left:1.3em;font-size:14.5px;}
+.toc li{margin:7px 0;}
+.toc a{color:var(--ink-sub);text-decoration:none;border-bottom:1px solid transparent;}
+.toc a:hover{color:var(--accent-dark);border-bottom-color:var(--accent);}
+h2.chapter{font-size:22px;line-height:1.55;margin:56px 0 20px;padding:0 0 12px 0;border-bottom:3px solid var(--accent);font-weight:700;}
+h2.chapter .num{display:inline-block;background:var(--accent);color:#fff;font-size:13px;border-radius:5px;padding:3px 10px;margin-right:10px;vertical-align:3px;}
+h3{font-size:17.5px;margin:34px 0 12px;padding-left:12px;border-left:4px solid var(--accent-mid);line-height:1.6;}
+p{margin:0 0 18px;}
+a{color:var(--accent-dark);}
+.callout{background:var(--accent-light);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:18px 22px;margin:26px 0;font-size:15px;}
+.callout.warn{background:var(--warn-bg);border-left-color:var(--warn-line);}
+.callout p:last-child{margin-bottom:0;}
+.callout .label{display:block;font-size:12px;letter-spacing:.1em;color:var(--accent-dark);margin-bottom:8px;font-weight:700;}
+.callout.warn .label{color:#9a6512;}
+.quote{border-left:3px solid var(--ink-sub);padding:4px 0 4px 18px;margin:22px 0;color:var(--ink-sub);font-size:14.5px;}
+.quote p:last-child{margin-bottom:0;}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:28px 0;}
+.kpi{border:1px solid var(--line);border-radius:9px;padding:16px 18px;background:#fbfeff;}
+.kpi .k{font-size:12px;color:var(--ink-sub);display:block;margin-bottom:6px;line-height:1.5;}
+.kpi .v{font-size:21px;font-weight:700;color:var(--accent-dark);line-height:1.3;display:block;}
+.kpi .n{font-size:11.5px;color:var(--ink-sub);display:block;margin-top:6px;line-height:1.5;}
+.table-scroll{overflow-x:auto;margin:26px 0;-webkit-overflow-scrolling:touch;}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px;}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;line-height:1.7;}
+th{background:var(--accent);color:#fff;font-weight:600;white-space:nowrap;}
+tbody tr:nth-child(even){background:#f6fcfd;}
+td.num{text-align:right;white-space:nowrap;}
+td.up{color:var(--up);font-weight:600;}
+td.down{color:var(--down);font-weight:600;}
+.model-tag{display:inline-block;font-size:11.5px;color:#fff;background:var(--accent);border-radius:4px;padding:2px 8px;white-space:nowrap;font-weight:600;}
+.crosslink{border:1px dashed var(--accent-mid);border-radius:9px;padding:16px 20px;margin:28px 0;font-size:14px;background:#fbfeff;}
+.crosslink .label{display:block;font-size:12px;letter-spacing:.08em;color:var(--accent-dark);font-weight:700;margin-bottom:8px;}
+.crosslink ul{margin:0;padding-left:1.2em;}
+.crosslink li{margin:5px 0;}
+.watch{background:var(--accent-dark);color:#fff;border-radius:12px;padding:34px 28px;margin:60px 0 40px;}
+.watch h2{font-size:20px;margin:0 0 8px;letter-spacing:.04em;}
+.watch .sub{font-size:13.5px;color:rgba(255,255,255,.76);margin:0 0 26px;}
+.watch ol{list-style:none;counter-reset:w;margin:0;padding:0;}
+.watch ol li{counter-increment:w;position:relative;padding-left:42px;margin-bottom:20px;font-size:14.5px;line-height:1.85;}
+.watch ol li::before{content:counter(w);position:absolute;left:0;top:2px;width:27px;height:27px;border-radius:50%;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.44);color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;font-weight:700;}
+.watch .wt{display:block;font-weight:700;margin-bottom:3px;}
+.watch .note{font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.8;margin-top:18px;}
+.disclaimer{border-top:2px solid var(--line);margin-top:56px;padding-top:24px;font-size:12.5px;color:var(--ink-sub);line-height:1.9;}
+.disclaimer h2{font-size:14px;color:var(--ink);margin:0 0 10px;}
+.src{font-size:12.5px;color:var(--ink-sub);margin:-8px 0 22px;}
+.flow{margin:28px 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.flow-step{padding:16px 20px;border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.8;}
+.flow-step:last-child{border-bottom:none;background:var(--accent-light);}
+.flow-step .n{display:inline-block;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:12.5px;font-weight:700;text-align:center;line-height:24px;margin-right:10px;vertical-align:1px;}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  .hero{padding:40px 18px 34px;}
+  .hero h1{font-size:21px;}
+  .wrap{padding:0 18px 56px;}
+  h2.chapter{font-size:19px;margin:44px 0 16px;}
+  h3{font-size:16.5px;}
+  .watch{padding:26px 18px;border-radius:10px;}
+  .kpi .v{font-size:19px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">米国製薬・バイオ決算シリーズ ⑨／29 ― プラットフォーム型</span>
+    <h1>Absci（ABSI）― 純損失は16%拡大、EPSは改善した。分母が分子より速く増えたから</h1>
+    <p class="lede">純損失は3,330万ドルで前年同期から16.0%拡大しました。それでも1株当たり損失は0.20ドルから0.19ドルへ改善しています。加重平均株式数が19.5%増えたためです。前年同期と同じ株式数で計算すれば、EPSは0.23ドルの損失でした。しかも同じ構造が前四半期にも起きています。四半期売上30万4,000ドル、営業費用3,529万8,000ドル ― 売上が営業費用の約0.9%しかない企業で、1株当たり指標がどう振る舞うかを確認します。</p>
+    <p class="meta">公開：2026年11月17日／対象：2026年第3四半期決算（2026年11月12日発表）／出典：決算リリース（Form 8-K 添付）・第2四半期決算リリース・決算説明会・株価情報サイト／情報提供のみを目的とし、投資判断の推奨ではありません</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#ch1">①決算の全体像 ― 売上は営業費用の約0.9%</a></li>
+    <li><a href="#ch2">②純損失は16.0%拡大、EPSは改善した</a></li>
+    <li><a href="#ch3">③ランウェイ「2028年下期まで」の算術</a></li>
+    <li><a href="#ch4">④戦略の転換 ― 提携から自社所有＋直販へ</a></li>
+    <li><a href="#ch5">⑤12月のデータは「方向性を示すもの」</a></li>
+    <li><a href="#ch6">⑥ABS-101が2四半期連続で出てこない</a></li>
+    <li><a href="#ch7">⑦リスク要因とまとめ ― プラットフォーム型3社で見えたこと</a></li>
+    <li><a href="#watch">WHAT TO WATCH</a></li>
+  </ol>
+</nav>
+
+<h2 class="chapter" id="ch1"><span class="num">①</span>決算の全体像 ― 売上は営業費用の約0.9%</h2>
+
+<p><strong>Absci（NASDAQ:ABSI）</strong> は、AIを使った抗体の設計・創出プラットフォームを運営し、自社でも医薬品開発を進める企業です。本シリーズ<a href="/articles/general-knowledge/knowledge/2026-11-08-us-pharma-biotech-earnings-guide">入口記事</a>の6分類では <span class="model-tag">プラットフォーム型</span> にあたり、<a href="/articles/general-knowledge/knowledge/2026-11-15-schrodinger-sdgr-q3">Schrödinger（SDGR）</a>、<a href="/articles/general-knowledge/knowledge/2026-11-16-recursion-rxrx-q3">Recursion（RXRX）</a>に続く3社目です。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>指標</th><th>2026年Q3</th><th>2025年Q3</th><th>増減</th></tr></thead>
+<tbody>
+<tr><td><strong>総収益（提携プログラム収益）</strong></td><td class="num"><strong>30万4,000ドル</strong></td><td class="num">37万8,000ドル</td><td class="num down"><strong>▲19.6%</strong>（編集部計算）</td></tr>
+<tr><td>（9か月）総収益</td><td class="num">83万7,000ドル</td><td class="num">215万ドル</td><td class="num down"><strong>▲61.1%</strong>（編集部計算）</td></tr>
+<tr><td><strong>研究開発費</strong></td><td class="num"><strong>2,357.2万ドル</strong></td><td class="num">1,924.9万ドル</td><td class="num down"><strong>+22.5%</strong>（編集部計算）</td></tr>
+<tr><td>販売・一般管理費</td><td class="num">903.8万ドル</td><td class="num">844.1万ドル</td><td class="num down">+7.1%（編集部計算）</td></tr>
+<tr><td>減価償却費・償却費</td><td class="num">268.8万ドル</td><td class="num">284.2万ドル</td><td class="num up">▲5.4%（編集部計算）</td></tr>
+<tr><td><strong>営業費用合計</strong></td><td class="num"><strong>3,529.8万ドル</strong></td><td class="num">3,053.2万ドル</td><td class="num down"><strong>+15.6%</strong>（編集部計算）</td></tr>
+<tr><td>営業損失</td><td class="num">▲3,499.4万ドル</td><td class="num">▲3,015.4万ドル</td><td class="num down">16.1%拡大（編集部計算）</td></tr>
+<tr><td><strong>純損失／EPS</strong></td><td class="num"><strong>▲3,330万ドル／▲0.19ドル</strong></td><td class="num">▲2,870.6万ドル／▲0.20ドル</td><td class="num down"><strong>損失は16.0%拡大</strong>（編集部計算）</td></tr>
+<tr><td>（9か月）純損失／EPS</td><td class="num">▲9,610.9万ドル／▲0.60ドル</td><td class="num">―</td><td class="num">―</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="kpi-grid">
+  <div class="kpi"><span class="k">売上 ÷ 営業費用（編集部計算）</span><span class="v">約0.9%</span><span class="n">30万4,000ドル ÷ 3,529.8万ドル</span></div>
+  <div class="kpi"><span class="k">参考：RLAY（2026年Q2）</span><span class="v">約0.4%</span><span class="n">本シリーズ8月14日の記事</span></div>
+  <div class="kpi"><span class="k">参考：SDGR（2026年Q3）</span><span class="v">約100%</span><span class="n">総収益6,449.1万ドル ÷ 営業費用6,438.2万ドル（編集部計算）</span></div>
+  <div class="kpi"><span class="k">売上の方向と費用の方向</span><span class="v">逆</span><span class="n">売上は9か月で▲61.1%、研究開発費は+22.5%（編集部計算）</span></div>
+</div>
+
+<div class="callout">
+  <span class="label">同じ「プラットフォーム型」の中の幅</span>
+  <p>売上が営業費用をどれだけカバーしているかを見ると、SDGRは約100%、Absciは<strong>約0.9%</strong>です（いずれも編集部計算）。同じ分類に入る2社で、100倍以上の差があります。</p>
+  <p>入口記事④章の早見表では、プラットフォーム型で最初に見る数字を「反復収益（ソフトウェア・ACV）の比率」としました。<strong>Absciには反復収益がほぼありません。</strong>RXRXも同様で、提携マイルストーンの計上タイミングで売上が決まります。Absciの場合はそのマイルストーンも小さく、9か月の総収益は83万7,000ドルです。</p>
+  <p>この型では、<strong>見るべき数字が会社によって変わります。</strong>Absciについては、入口記事が創薬型に対して挙げた指標 ― キャッシュランウェイと発行済株式数 ― を見るほうが実態に近くなります（②③章）。</p>
+</div>
+
+<h3>市場予想との比較についての留保</h3>
+
+<p>複数の報道が、Absciの第3四半期について「<strong>売上が市場予想を下回った</strong>」と記載しています（Investing.com、GuruFocus／いずれも2026年11月12日前後）。</p>
+
+<div class="callout warn">
+  <span class="label">四半期売上30万4,000ドルの企業の「売上予想」</span>
+  <p>入口記事③章では、株価が動く仕組みの第一に「予想との差」を挙げました。ただしAbsciの四半期売上は30万4,000ドルです。<strong>この規模の売上に対する「予想との差」が、事業の評価にどれだけの情報を持つかには留保が必要です。</strong></p>
+  <p>本記事では、具体的なコンセンサス予想値を確認できなかったため、報道が「予想を下回った」としている事実のみを記載します。前日のRXRXでも、売上が予想を42.9%上回った一方で、売上そのものが直近4四半期で約5.5倍ブレていました（編集部計算）。<strong>この型では、売上予想との差よりも先に見るべき数字があります。</strong></p>
+</div>
+
+<p class="src">出典：Absci 2026年第3四半期決算リリース（2026年11月12日、Form 8-K 添付資料）、同第2四半期決算リリース（2026年8月11日）、第3四半期決算説明会（2026年11月12日）。株価は株価情報サイト（fool.com）掲載値。</p>
+
+<h2 class="chapter" id="ch2"><span class="num">②</span>純損失は16.0%拡大、EPSは改善した</h2>
+
+<p>①章の表の最後の行を、もう一度見ます。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>2026年Q3</th><th>2025年Q3</th><th>変化（編集部計算）</th></tr></thead>
+<tbody>
+<tr><td>純損失（分子）</td><td class="num">▲3,330万ドル</td><td class="num">▲2,870.6万ドル</td><td class="num down"><strong>16.0%拡大</strong></td></tr>
+<tr><td>加重平均株式数（分母）</td><td class="num">171,799,223株</td><td class="num">143,769,552株</td><td class="num down"><strong>+19.5%</strong></td></tr>
+<tr><td><strong>1株当たり損失</strong></td><td class="num"><strong>▲0.19ドル</strong></td><td class="num">▲0.20ドル</td><td class="num up"><strong>改善</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>分母が分子より速く増えました。</strong>その結果、損失が16.0%拡大したのに、1株当たり損失は0.20ドルから0.19ドルへ「改善」しています。</p>
+
+<h3>株式数が前年同期と同じだったら</h3>
+
+<div class="kpi-grid">
+  <div class="kpi"><span class="k">報告されたEPS</span><span class="v">▲0.19ドル</span><span class="n">純損失3,330万ドル ÷ 171,799,223株</span></div>
+  <div class="kpi"><span class="k">前年同期の株式数で計算（編集部試算）</span><span class="v">▲0.23ドル</span><span class="n">純損失3,330万ドル ÷ 143,769,552株</span></div>
+  <div class="kpi"><span class="k">差（編集部試算）</span><span class="v">0.04ドル</span><span class="n">報告は前年比で改善、実際は悪化</span></div>
+</div>
+
+<h3>同じ構造が前四半期にも起きている</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>2026年Q2</th><th>2025年Q2</th><th>変化（編集部計算）</th></tr></thead>
+<tbody>
+<tr><td>純損失</td><td class="num">▲3,321万ドル</td><td class="num">▲3,056.9万ドル</td><td class="num down">8.6%拡大</td></tr>
+<tr><td>加重平均株式数</td><td class="num">157,471,712株</td><td class="num">127,592,948株</td><td class="num down"><strong>+23.4%</strong></td></tr>
+<tr><td>1株当たり損失</td><td class="num">▲0.21ドル</td><td class="num">▲0.24ドル</td><td class="num up">改善</td></tr>
+<tr><td><strong>前年同期の株式数で計算（編集部試算）</strong></td><td class="num"><strong>▲0.26ドル</strong></td><td class="num">―</td><td class="num">―</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>第2四半期も、純損失は8.6%拡大し、株式数は23.4%増え、1株当たり損失は0.24ドルから0.21ドルへ「改善」しました（いずれも編集部計算）。前年同期の株式数で計算すれば0.26ドルの損失です（編集部試算）。</p>
+
+<div class="callout warn">
+  <span class="label">赤字企業のEPSは、分母の増加で「改善」する</span>
+  <p>入口記事②章で、希薄化についてこう書きました ― 「<strong>株価が半分になっても、株式数が2倍になっていれば時価総額は変わっていません。株価の推移だけを見ていると、この希薄化は見えません</strong>」。</p>
+  <p>Absciの例は、その裏側です。<strong>赤字企業の1株当たり損失は、損失が増えていても、株式数がそれより速く増えれば小さくなります。</strong>EPSという指標は、黒字企業では「1株がいくら稼いだか」を示しますが、赤字企業では「損失を何株で割ったか」を示すだけです。</p>
+  <p>入口記事⑤章の手順（損益計算書を上から下まで見る）に、もう1行加える必要があります ― <strong>1株当たり指標を見たら、分母の株式数も前年と比べる。</strong>この決算シーズンでは、RPRX（▲約0.5%）、LGND（▲約3.3%）のように株式数が減る会社もあり、RXRX（+21.5%）、ARAY（潜在+92%）、Absci（+19.5%）のように増える会社もありました（いずれも編集部計算・編集部試算）。</p>
+</div>
+
+<h2 class="chapter" id="ch3"><span class="num">③</span>ランウェイ「2028年下期まで」の算術</h2>
+
+<p>決算リリースは、現金・現金同等物・市場性証券が「<strong>2028年下期まで</strong>の事業計画を賄うのに十分」としています。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>時点</th><th>現金・現金同等物・市場性証券</th><th>備考</th></tr></thead>
+<tbody>
+<tr><td>2026年3月31日</td><td class="num">1億2,570万ドル</td><td>―</td></tr>
+<tr><td>2026年6月30日</td><td class="num">2億110万ドル</td><td><strong>2026年6月の公募増資の純手取り9,360万ドルを含む</strong></td></tr>
+<tr><td><strong>2026年9月30日</strong></td><td class="num"><strong>1億7,370万ドル</strong></td><td>現金1,335.9万ドル＋市場性証券1億6,037万ドル</td></tr>
+<tr><td><strong>四半期の減少（編集部計算）</strong></td><td class="num"><strong>約2,740万ドル</strong></td><td>2億110万ドル → 1億7,370万ドル</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>単純に割ってみる</h3>
+
+<p>2026年9月30日から「2028年下期」までは、2026年第4四半期を起点に<strong>7〜9四半期</strong>にあたります。現金1億7,370万ドルを単純に割ると、こうなります。</p>
+
+<div class="kpi-grid">
+  <div class="kpi"><span class="k">7四半期で割ると（編集部試算）</span><span class="v">約2,480万ドル／四半期</span><span class="n">2028年下期の入口まで</span></div>
+  <div class="kpi"><span class="k">9四半期で割ると（編集部試算）</span><span class="v">約1,930万ドル／四半期</span><span class="n">2028年末まで</span></div>
+  <div class="kpi"><span class="k">直近四半期の実際の減少（編集部計算）</span><span class="v">約2,740万ドル</span><span class="n">上の2つをいずれも上回る</span></div>
+  <div class="kpi"><span class="k">必要な削減幅（編集部試算）</span><span class="v">約10〜30%</span><span class="n">直近の消費ペースを前提とした場合</span></div>
+</div>
+
+<div class="callout warn">
+  <span class="label">前提は開示されていない</span>
+  <p>会社は「<strong>現在の予測に基づく</strong>」として2028年下期までとしていますが、決算説明会では<strong>費用削減の計画も、提携収入の前提も示されていません。</strong>実際の費用は増加方向で、研究開発費は+22.5%、販売・一般管理費は+7.1%（いずれも編集部計算）です。</p>
+  <p>本記事の計算は単純な割り算であり、四半期ごとの支出の偏り（ABS-201の臨床試験費用の集中など）を考慮していません。<strong>会社想定が誤っていると述べるものではなく、公開情報から前提を検証できないという指摘です。</strong></p>
+</div>
+
+<div class="callout">
+  <span class="label">プラットフォーム型2社が、同じ年に増資でランウェイを延ばした</span>
+  <p><strong>Absci</strong>：2026年6月の公募増資で純手取り9,360万ドル。現金は3月末1億2,570万ドルから6月末2億110万ドルへ。株式数はQ3で前年同期比+19.5%、Q2で+23.4%（いずれも編集部計算）。<br>
+  <strong>RXRX</strong>：2026年10月16日の公募増資で純手取り約1億8,720万ドル（61,540,000株、1株3.25ドル）。ランウェイを2028年初頭から2029年へ。</p>
+  <p>どちらも、延ばしたのは事業ではありません。入口記事②章で挙げた4種類の資金源のうち、<strong>増資</strong>が使われました。</p>
+</div>
+
+<h2 class="chapter" id="ch4"><span class="num">④</span>戦略の転換 ― 提携から自社所有＋直販へ</h2>
+
+<p>第3四半期の決算説明会で、経営陣は「<strong>アセット中心戦略（asset centric strategy）</strong>」という言葉を使い、<strong>完全自社所有のプログラムに集中し、消費者直販（DTC）での流通の可能性</strong>を挙げました。</p>
+
+<p>加えて、<strong>最高商業責任者（Chief Commercial Officer）としてGerry Muhle氏を採用</strong>したことが述べられています。</p>
+
+<div class="callout warn">
+  <span class="label">説明会で提携・事業開発は議論されなかった</span>
+  <p>本記事で確認した決算説明会の内容では、<strong>提携（partnering）および事業開発（BD）についての議論がありませんでした。</strong>決算リリースは「提携プログラムを継続して進め、他の社内プログラムについては提携の協議中」と記載するにとどまり、具体的な相手先や金額の開示はありません。</p>
+  <p>売上の推移と合わせて読むと、方向は一致しています ― 提携プログラム収益は9か月で<strong>▲61.1%</strong>（編集部計算）。一方で研究開発費は+22.5%（編集部計算）で、その増加理由として会社は<strong>ABS-201の非臨床・臨床の外部費用</strong>を挙げています。</p>
+</div>
+
+<div class="callout">
+  <span class="label">プラットフォーム型3社が、3つの違う方向を向いた</span>
+  <p><strong>SDGR</strong>：自社パイプラインの一部を外に出し（SGR-1505は「戦略的機会を模索」、2プログラムをTectoraに拠出して株式取得）、ソフトウェア事業の収益性を上げる方向。研究開発費▲20.3%（編集部計算）。<br>
+  <strong>RXRX</strong>：REC-617とREC-3565について提携を模索。SanofiとRoche／Genentechの提携が収益の柱で、累計受領額の約67.3%（編集部計算）。<br>
+  <strong>ABSI</strong>：<strong>逆方向。</strong>提携から離れ、完全自社所有のプログラムと消費者直販へ。最高商業責任者を採用。</p>
+  <p>SDGRとRXRXが「自社開発を外に出す」方向、Absciが「外部提携から自社開発・自社販売へ」という方向です。<strong>同じ分類に入る3社が、同じ四半期に異なる方向を示しました。</strong>本記事はどの方向が良いかを判断しません。</p>
+</div>
+
+<h3>対象疾患が戦略と整合している</h3>
+
+<p>ABS-201の最初の適応は<strong>男性型脱毛症（pattern hair loss）</strong>です。これは生命に関わる疾患ではなく、自費診療・美容領域に近い市場です。消費者直販という流通方針と、この適応の選択は整合しています。</p>
+
+<p>2つ目の適応は<strong>子宮内膜症</strong>で、こちらは第2相試験（STORYLINE）が計画されています。</p>
+
+<h2 class="chapter" id="ch5"><span class="num">⑤</span>12月のデータは「方向性を示すもの」</h2>
+
+<p>Absciの当面の最大のイベントは、2026年12月に予定されているABS-201の13週中間データです。その性質について、決算説明会で経営陣が明確に述べています。</p>
+
+<div class="quote">
+  <p>13週の中間概念実証データは「<strong>方向性を示すもの（directional in nature）</strong>」であり、「<strong>試験の実施を変更するように設計されたものでは決してない</strong>（in no way or fashion designed to change the conduct of the trial）」。</p>
+</div>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td>試験</td><td>第1/2a相 HEADLINE（男性型脱毛症）。多回漸増投与が進行中</td></tr>
+<tr><td><strong>主要評価項目</strong></td><td class="num"><strong>安全性・耐容性</strong></td></tr>
+<tr><td>副次評価項目</td><td>PK、PD、免疫原性、標的領域の毛髪数（TAHC）、毛髪幅、色素、患者報告アウトカム</td></tr>
+<tr><td>13週で報告する項目</td><td>TAHC（30µm以上の非軟毛）、毛髪幅、軟毛を含む総毛髪数</td></tr>
+<tr><td>対象コホート</td><td>300mgコホートの全例、600mgコホートの大部分、1.2gコホートの「先行的な一部（sneak peek）」。最高用量コホートの登録は完了</td></tr>
+<tr><td>登録症例数</td><td class="num">全体の症例数は示されていない</td></tr>
+<tr><td><strong>経営陣が示したベンチマーク</strong></td><td>26週でTAHCが<strong>30〜35本/cm²増加</strong>。「高用量の経口ミノキシジルとほぼ同等」の水準を、高性能な製品の目標としている</td></tr>
+<tr><td>完全な26週データ</td><td class="num"><strong>2027年初頭</strong></td></tr>
+<tr><td>女性コホート</td><td>300mgと1,200mgの2群で<strong>非盲検・探索的、プラセボ群なし</strong>。登録が始まっている</td></tr>
+<tr><td>半減期</td><td>推定で少なくとも<strong>65日</strong>（説明会では「約60日」という発言もあり、同じ説明会で2つの数字が述べられています）。6か月に2〜3回の投与間隔を支持</td></tr>
+<tr><td>第3相への迅速化パス</td><td>将来見通しに関する記述では第1/2a相からの迅速化パスに言及。<strong>説明会では具体的な内容は示されず</strong>、「第3相の用量は26週のコホートの結果に基づいて計画する」と述べられた</td></tr>
+<tr><td>子宮内膜症 第2相（STORYLINE）</td><td>二重盲検・プラセボ対照・用量探索。約150例、10か国以上、2〜3用量。開始は<strong>2027年半ば</strong>（説明会の締めくくりでは「来年」という発言もあり、時期の表現が一致していません）。有効性評価項目は月経痛と非月経時の骨盤痛。プロトコル確定と規制当局のクリアランス次第</td></tr>
+<tr><td>ABS-202</td><td>抗PRLR抗体。前臨床段階、免疫・炎症領域（適応は非開示）</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warn">
+  <span class="label">12月のデータで何が分かり、何が分からないか</span>
+  <p><strong>分かること</strong>：13週時点での毛髪数・毛髪幅の変化の方向。安全性・耐容性の追加情報。</p>
+  <p><strong>分からないこと</strong>：有効性の確定的な評価。主要評価項目は安全性・耐容性であり、有効性は副次評価項目です。経営陣が示したベンチマーク（30〜35本/cm²）は<strong>26週時点</strong>のものであり、13週のデータはそれと直接比較できません。1.2gコホートは「先行的な一部」のみです。</p>
+  <p>入口記事③章の「臨床データとの時期の重なり」と、本シリーズが繰り返してきた留保 ― <strong>初期段階・単群の臨床データは、対照群を伴う後期試験で再現されない場合がある</strong> ― がそのまま当てはまります。女性コホートについては、会社自身がプラセボ群なしの探索的試験としています。</p>
+</div>
+
+<h3>第2四半期からの時期の後ろ倒し</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>第2四半期リリース（2026年8月11日）</th><th>第3四半期リリース（2026年11月12日）</th></tr></thead>
+<tbody>
+<tr><td>ABS-201 男性型脱毛症 中間データ</td><td>2026年下期</td><td><strong>2026年12月</strong>（13週中間）</td></tr>
+<tr><td>ABS-201 男性型脱毛症 完全データ</td><td>2027年初頭</td><td>2027年初頭（26週。変更なし）</td></tr>
+<tr><td><strong>ABS-201 子宮内膜症 第2相の開始</strong></td><td class="num">2026年第4四半期</td><td class="num down"><strong>2027年半ば</strong></td></tr>
+<tr><td>子宮内膜症の概念実証データ</td><td>2027年下期（可能性）</td><td class="num">本リリースに記載なし</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>子宮内膜症の第2相試験の開始時期が、<strong>2026年第4四半期から2027年半ばへ後ろ倒し</strong>になっています（編集部による両リリースの比較）。入口記事③章で扱った「後ろ倒しの説明」にあたる変更ですが、理由についての記載は本リリースにありません。</p>
+
+<h2 class="chapter" id="ch6"><span class="num">⑥</span>ABS-101が2四半期連続で出てこない</h2>
+
+<p>本記事で確認した3つの公開資料における、ABS-101への言及状況です。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>資料</th><th>ABS-101への言及</th></tr></thead>
+<tbody>
+<tr><td>2026年第2四半期決算リリース（8月11日）</td><td class="num">言及なし</td></tr>
+<tr><td>2026年第3四半期決算リリース（11月12日）</td><td class="num">言及なし</td></tr>
+<tr><td>2026年第3四半期決算説明会（11月12日）</td><td class="num">言及なし</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warn">
+  <span class="label">本記事で確認できた範囲での記載です</span>
+  <p>ABS-101が中止されたのか、優先度を下げられたのか、提携に出されたのか、あるいは別の資料で開示されているのかを、<strong>本記事で確認した資料からは特定できませんでした。</strong>これは開示が存在しないことを断定するものではありません。</p>
+  <p>確認できるのは、2026年の第2・第3四半期の決算リリースと第3四半期の決算説明会において、パイプラインとして言及されたのが<strong>ABS-201（男性型脱毛症・子宮内膜症）とABS-202（前臨床）の2つ</strong>だったという事実です。</p>
+  <p>本シリーズでは、SDGRについても同じ作業をしました。あちらはForm 8-KのItem 7.01に「SGR-1505の開発を継続するための戦略的機会を模索している」という明示的な記載がありました。<strong>パイプラインの状況は、記載されている場合と、記載が見つからない場合があります。</strong></p>
+</div>
+
+<h2 class="chapter" id="ch7"><span class="num">⑦</span>リスク要因とまとめ ― プラットフォーム型3社で見えたこと</h2>
+
+<h3>株価</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>数値</th></tr></thead>
+<tbody>
+<tr><td>直近の終値</td><td class="num">8.45ドル（2026年11月13日）</td></tr>
+<tr><td>株価情報サイト上の参照値</td><td class="num">8.44ドル（▲7.66%）。<strong>時点の記載がないため、特定の取引日の変動率としては扱いません</strong></td></tr>
+<tr><td>時価総額</td><td class="num">約14.5億ドル</td></tr>
+<tr><td>52週レンジ</td><td class="num">2.24〜12.54ドル</td></tr>
+<tr><td>発行済株式数</td><td class="num">約1億7,161万株</td></tr>
+<tr><td>PER（TTM）／EPS（TTM）</td><td class="num">▲10.64倍／▲0.79ドル</td></tr>
+<tr><td><strong>時価総額 − 現金等（編集部試算）</strong></td><td class="num"><strong>約12.76億ドル</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warn">
+  <span class="label">売上倍率という指標が機能しない</span>
+  <p>時価総額約14.5億ドルに対し、四半期売上は30万4,000ドルです。売上倍率を計算すれば1,000倍を超える数字になりますが、<strong>その数字には意味がありません。</strong></p>
+  <p>代わりに見られるのは、時価総額から現金等1億7,370万ドルを引いた<strong>約12.76億ドル</strong>（編集部試算）が何に対する評価なのかという問いです。公開情報から挙げられるのは、ABS-201（男性型脱毛症・子宮内膜症）、ABS-202（前臨床）、そしてプラットフォームそのものです。52週レンジは2.24〜12.54ドルで、1年の値幅は約5.6倍（編集部計算）。</p>
+  <p>株価は2026年11月13日時点、貸借対照表は2026年9月30日時点で、<strong>時点が一致していません</strong>。本記事は水準の妥当性について判断を示しません。株価・時価総額は日々変動します。</p>
+</div>
+
+<h3>リスク要因</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td>収益基盤</td><td>四半期売上30万4,000ドル、営業費用の約0.9%（編集部計算）。9か月の売上は▲61.1%（編集部計算）。反復収益がほぼない</td></tr>
+<tr><td>希薄化</td><td>加重平均株式数はQ3で+19.5%、Q2で+23.4%（いずれも編集部計算）。1株当たり損失の「改善」は分母の増加による</td></tr>
+<tr><td>ランウェイの前提</td><td>会社想定は2028年下期までだが、直近四半期の現金減少約2,740万ドル（編集部計算）は、単純計算で必要な水準（約1,930万〜2,480万ドル／編集部試算）を上回る。費用削減計画・提携収入の前提はいずれも開示されていない</td></tr>
+<tr><td>費用の増加方向</td><td>研究開発費+22.5%、販売・一般管理費+7.1%（いずれも編集部計算）</td></tr>
+<tr><td>単一資産への集中</td><td>臨床段階の資産はABS-201のみ。ABS-202は前臨床</td></tr>
+<tr><td>12月データの性質</td><td>経営陣自身が「方向性を示すもの」「試験の実施を変更するように設計されたものでは決してない」と説明。主要評価項目は安全性・耐容性</td></tr>
+<tr><td>ベンチマークの時点</td><td>経営陣が示した30〜35本/cm²は26週時点の目標。13週データと直接比較できない</td></tr>
+<tr><td>対照群のない試験</td><td>女性コホート（300mg・1,200mg）は会社自身が非盲検・探索的、プラセボ群なしとしている</td></tr>
+<tr><td>開発時期の後ろ倒し</td><td>子宮内膜症の第2相開始が2026年Q4から2027年半ばへ。理由の記載は本リリースにない</td></tr>
+<tr><td>説明の不一致</td><td>半減期が「少なくとも65日」と「約60日」、子宮内膜症の開始が「2027年半ば」と「来年」。いずれも同じ説明会内</td></tr>
+<tr><td>ABS-101</td><td>2026年Q2・Q3のリリースと第3四半期の決算説明会に言及なし。状況を特定できない</td></tr>
+<tr><td>戦略の転換に伴う費用</td><td>消費者直販を志向し最高商業責任者を採用。商業体制の構築費用は今後の費用水準に影響し得る</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>まとめ ― 6つの数字</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>#</th><th>数字</th><th>意味</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td>純損失<strong>+16.0%</strong>／株式数<strong>+19.5%</strong>（編集部計算）</td><td>分母が分子より速く増え、EPSは▲0.20→▲0.19に「改善」した</td></tr>
+<tr><td class="num">2</td><td>前年同期の株式数なら<strong>▲0.23ドル</strong>（編集部試算）</td><td>赤字企業のEPSは「損失を何株で割ったか」を示すだけ</td></tr>
+<tr><td class="num">3</td><td>売上 ÷ 営業費用 <strong>約0.9%</strong>（編集部計算）</td><td>同じプラットフォーム型のSDGRは約100%。100倍以上の差</td></tr>
+<tr><td class="num">4</td><td>四半期の現金減少<strong>約2,740万ドル</strong>（編集部計算）</td><td>「2028年下期まで」に必要な水準（約1,930万〜2,480万ドル／編集部試算）を上回る</td></tr>
+<tr><td class="num">5</td><td>12月のデータは<strong>「方向性を示すもの」</strong></td><td>経営陣自身の説明。主要評価項目は安全性・耐容性</td></tr>
+<tr><td class="num">6</td><td>子宮内膜症の第2相開始が<strong>Q4 2026 → 2027年半ば</strong></td><td>理由の記載はない</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>この決算から確定できるのは、<strong>研究開発費がABS-201の臨床・非臨床費用を中心に22.5%増え、現金は1億7,370万ドルあり、ABS-201の最高用量コホートの登録が完了し、13週の中間データが12月に出る</strong>ことです（増減率は編集部計算）。開発は進んでいます。</p>
+
+<p>確定できないのは3つです。<strong>ランウェイの前提</strong>（費用削減計画も提携収入の前提も開示されていない）、<strong>ABS-201の有効性</strong>（12月は「方向性」、26週データは2027年初頭）、そして<strong>ABS-101の状況</strong>（確認した資料に言及がない）。</p>
+
+<p>プラットフォーム型3社を並べて見えたのは、<strong>この分類が「見るべき数字」を1つに決められない型だった</strong>ということでした。SDGRは反復収益比率約59.2%でACVを見る会社、RXRXは提携マイルストーンの実現率を見る会社、Absciは売上がほぼないためランウェイと株式数を見る会社です（比率はいずれも編集部計算）。そして3社が、自社開発を外に出す方向・提携を軸にする方向・自社所有と直販へ向かう方向と、<strong>同じ四半期に異なる方向を示しました。現時点で、いずれについても転換の成否を判定できる段階にはありません。</strong>Absciについて判定に必要な材料が揃うのは、少なくとも2027年初頭の26週データが出た後になります。</p>
+
+<div class="crosslink">
+  <span class="label">本記事の前提となる枠組み・関連記事</span>
+  <ul>
+    <li><a href="/articles/general-knowledge/knowledge/2026-11-08-us-pharma-biotech-earnings-guide">入口記事：なぜ米国の製薬・バイオ株は、決算1本で株価が倍にも半分にもなるのか</a>（②章＝希薄化、③章＝キャッシュランウェイと臨床データの時期、④章＝6分類の早見表、⑤章＝見出しの数字）</li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-11-15-schrodinger-sdgr-q3">⑦Schrödinger（SDGR）― ACVは3か月で+2.9%、株価は+73%</a></li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-11-16-recursion-rxrx-q3">⑧Recursion（RXRX）― ランウェイは2029年へ延びた。延ばしたのは事業ではない</a></li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-08-14-relay-rlay">個別企業編③：Relay Therapeutics（RLAY）― 売上は営業費用の0.4%</a></li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-08-11-ai-biotech-valuation">AI×製薬×バイオ 後編：赤字先行企業を4指標で評価する</a>（キャッシュランウェイ・希薄化パターンの定義）</li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-09-12-pharma-biotech-17-map">製薬・バイオ 銘柄マップ ― 17銘柄を6つの事業モデルで分類する</a></li>
+  </ul>
+</div>
+
+<section class="watch" id="watch">
+  <h2>WHAT TO WATCH</h2>
+  <p class="sub">Absci（NASDAQ:ABSI）― 今後の注目点6項目（2026年11月17日時点）</p>
+
+  <ol>
+    <li>
+      <span class="wt">2026年12月：ABS-201の13週中間データ</span>
+      経営陣は「方向性を示すもの」「試験の実施を変更するように設計されたものでは決してない」と説明しています。報告されるのはTAHC（30µm以上の非軟毛）、毛髪幅、軟毛を含む総毛髪数。対象は300mgコホート全例、600mgコホートの大部分、1.2gコホートの先行的な一部です。<strong>主要評価項目は安全性・耐容性であり、有効性は副次評価項目です。</strong>
+    </li>
+    <li>
+      <span class="wt">2027年初頭：ABS-201の26週完全データ</span>
+      経営陣が示したベンチマークは<strong>TAHCが30〜35本/cm²増加</strong>（「高用量の経口ミノキシジルとほぼ同等」）。13週データはこのベンチマークと直接比較できないため、有効性の判定材料はこの26週データになります。第3相の用量も「26週のコホートの結果に基づいて計画する」とされています。
+    </li>
+    <li>
+      <span class="wt">四半期の現金消費額</span>
+      直近四半期の減少は約2,740万ドル（編集部計算）。「2028年下期まで」という会社想定に単純計算で必要な水準は約1,930万〜2,480万ドル／四半期（編集部試算）です。<strong>費用削減計画も提携収入の前提も開示されていないため、第4四半期の実績が最初の検証材料になります。</strong>研究開発費は+22.5%で増加方向です。
+    </li>
+    <li>
+      <span class="wt">株式数と追加の資金調達</span>
+      加重平均株式数はQ3で+19.5%、Q2で+23.4%（いずれも編集部計算）。2026年6月の公募増資で純手取り9,360万ドルを調達しています。<strong>1株当たり指標を見るときは、分母の株式数も前年と比べる必要があります。</strong>
+    </li>
+    <li>
+      <span class="wt">直販戦略の具体化と、それに伴う費用</span>
+      「アセット中心戦略」と消費者直販の方針、最高商業責任者の採用が示されました。<strong>商業体制の構築は費用を伴います。</strong>一方で説明会では提携・事業開発が議論されておらず、提携プログラム収益は9か月で▲61.1%（編集部計算）です。
+    </li>
+    <li>
+      <span class="wt">子宮内膜症 第2相（STORYLINE）とABS-101</span>
+      STORYLINEの開始は2027年半ばへ後ろ倒しされました（第2四半期時点は2026年Q4）。約150例、10か国以上、2〜3用量で、プロトコル確定と規制当局のクリアランス次第です。<strong>ABS-101については、本記事で確認した資料に言及がありません。</strong>今後の開示で状況が示されるかが確認点になります。
+    </li>
+  </ol>
+
+  <p class="note">※上記は2026年11月17日時点で確認できた公開情報に基づく注目点であり、株価の方向性に関する見通しではありません。未承認薬について承認を前提とした記述は行っていません。会社のガイダンス・ランウェイ想定・開発計画は一定の前提に基づくものであり、実現を保証するものではありません。</p>
+</section>
+
+<div class="disclaimer">
+  <h2>免責事項</h2>
+  <p>本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資に関する最終的な判断は、ご自身の責任において行ってください。記載された数値は2026年11月17日時点の公開情報（企業IR資料・決算リリース・SEC提出書類・決算説明会・株価情報サイト等）に基づいており、株価等の市場データは日々変動します。株価・時価総額・52週レンジ・PER・EPS（TTM）・発行済株式数は株価情報サイト掲載値であり、終値は2026年11月13日時点です。同サイト上に時点の記載なく示されていた参照値（8.44ドル、▲7.66%）については、特定の取引日の変動率として扱っていません。貸借対照表の数値は2026年9月30日時点で、株価の時点とは一致していません。「編集部試算」「編集部計算」と明記した数値は公開情報に基づく推計です。ランウェイに関する本記事の割り算は単純計算であり、四半期ごとの支出の偏りを考慮していません。会社想定が誤っていると述べるものではなく、公開情報から前提を検証できないという指摘です。SEC提出書類・決算リリース・決算説明会からの引用は要旨の日本語訳であり、原文の表現と完全に一致するものではありません。本記事が「言及がない」「特定できなかった」と記載した事項は、本記事執筆時点で確認できた資料の範囲での記載であり、開示が存在しないことを断定するものではありません。市場予想との比較については、具体的なコンセンサス予想値を確認できなかったため、報道の記載内容のみを示しています。初期段階・単群の臨床データは、対照群を伴う後期試験で再現されない場合があります。本記事に記載した臨床試験のうち、女性コホートは会社自身が非盲検・探索的でプラセボ群を伴わないとしているものです。未承認薬について、承認を前提とした記述は行っていません。開発計画の実施は規制当局の判断に依存します。</p>
+</div>
+
+</div>
+</body>
+</html>

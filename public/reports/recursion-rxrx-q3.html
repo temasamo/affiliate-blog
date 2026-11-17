@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recursion（RXRX）― ランウェイは2029年へ延びた。延ばしたのは事業ではない | Market Supporter AI</title>
+<meta name="description" content="キャッシュランウェイは2028年初頭から2029年へ。延長の主因は10月16日に完了した61,540,000株・1株3.25ドルの公募増資（純手取り約1億8,720万ドル）で、データ発表の約2週間前でした。実現率は約2.5%から約2.7%へ。R&D▲18.1%は前年の一時費用を除くと+0.9%。2026年Q3決算を分解します。">
+<style>
+:root{
+  --accent:#0891b2;
+  --accent-dark:#0e7490;
+  --accent-mid:#22d3ee;
+  --accent-light:#ecfeff;
+  --ink:#1a1a1a;
+  --ink-sub:#4a5568;
+  --line:#d8eef3;
+  --bg:#ffffff;
+  --warn-bg:#fff8ec;
+  --warn-line:#e0a648;
+  --up:#047857;
+  --down:#b91c1c;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.9;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 60%,var(--accent-mid) 100%);
+  color:#fff;
+  padding:56px 24px 48px;
+}
+.hero-inner{max-width:860px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;
+  font-size:12px;
+  letter-spacing:.14em;
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.34);
+  border-radius:999px;
+  padding:5px 14px;
+  margin-bottom:20px;
+}
+.hero h1{font-size:29px;line-height:1.5;margin:0 0 18px;font-weight:700;}
+.hero .lede{font-size:15px;line-height:1.85;color:rgba(255,255,255,.92);margin:0 0 22px;}
+.meta{font-size:12.5px;color:rgba(255,255,255,.76);border-top:1px solid rgba(255,255,255,.26);padding-top:14px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 72px;}
+.toc{background:var(--accent-light);border:1px solid var(--line);border-radius:10px;padding:22px 26px;margin:40px 0;}
+.toc h2{font-size:14px;margin:0 0 12px;color:var(--accent-dark);letter-spacing:.06em;}
+.toc ol{margin:0;padding-left:1.3em;font-size:14.5px;}
+.toc li{margin:7px 0;}
+.toc a{color:var(--ink-sub);text-decoration:none;border-bottom:1px solid transparent;}
+.toc a:hover{color:var(--accent-dark);border-bottom-color:var(--accent);}
+h2.chapter{font-size:22px;line-height:1.55;margin:56px 0 20px;padding:0 0 12px 0;border-bottom:3px solid var(--accent);font-weight:700;}
+h2.chapter .num{display:inline-block;background:var(--accent);color:#fff;font-size:13px;border-radius:5px;padding:3px 10px;margin-right:10px;vertical-align:3px;}
+h3{font-size:17.5px;margin:34px 0 12px;padding-left:12px;border-left:4px solid var(--accent-mid);line-height:1.6;}
+p{margin:0 0 18px;}
+a{color:var(--accent-dark);}
+.callout{background:var(--accent-light);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:18px 22px;margin:26px 0;font-size:15px;}
+.callout.warn{background:var(--warn-bg);border-left-color:var(--warn-line);}
+.callout p:last-child{margin-bottom:0;}
+.callout .label{display:block;font-size:12px;letter-spacing:.1em;color:var(--accent-dark);margin-bottom:8px;font-weight:700;}
+.callout.warn .label{color:#9a6512;}
+.quote{border-left:3px solid var(--ink-sub);padding:4px 0 4px 18px;margin:22px 0;color:var(--ink-sub);font-size:14.5px;}
+.quote p:last-child{margin-bottom:0;}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:28px 0;}
+.kpi{border:1px solid var(--line);border-radius:9px;padding:16px 18px;background:#fbfeff;}
+.kpi .k{font-size:12px;color:var(--ink-sub);display:block;margin-bottom:6px;line-height:1.5;}
+.kpi .v{font-size:21px;font-weight:700;color:var(--accent-dark);line-height:1.3;display:block;}
+.kpi .n{font-size:11.5px;color:var(--ink-sub);display:block;margin-top:6px;line-height:1.5;}
+.table-scroll{overflow-x:auto;margin:26px 0;-webkit-overflow-scrolling:touch;}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px;}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;line-height:1.7;}
+th{background:var(--accent);color:#fff;font-weight:600;white-space:nowrap;}
+tbody tr:nth-child(even){background:#f6fcfd;}
+td.num{text-align:right;white-space:nowrap;}
+td.up{color:var(--up);font-weight:600;}
+td.down{color:var(--down);font-weight:600;}
+.model-tag{display:inline-block;font-size:11.5px;color:#fff;background:var(--accent);border-radius:4px;padding:2px 8px;white-space:nowrap;font-weight:600;}
+.crosslink{border:1px dashed var(--accent-mid);border-radius:9px;padding:16px 20px;margin:28px 0;font-size:14px;background:#fbfeff;}
+.crosslink .label{display:block;font-size:12px;letter-spacing:.08em;color:var(--accent-dark);font-weight:700;margin-bottom:8px;}
+.crosslink ul{margin:0;padding-left:1.2em;}
+.crosslink li{margin:5px 0;}
+.watch{background:var(--accent-dark);color:#fff;border-radius:12px;padding:34px 28px;margin:60px 0 40px;}
+.watch h2{font-size:20px;margin:0 0 8px;letter-spacing:.04em;}
+.watch .sub{font-size:13.5px;color:rgba(255,255,255,.76);margin:0 0 26px;}
+.watch ol{list-style:none;counter-reset:w;margin:0;padding:0;}
+.watch ol li{counter-increment:w;position:relative;padding-left:42px;margin-bottom:20px;font-size:14.5px;line-height:1.85;}
+.watch ol li::before{content:counter(w);position:absolute;left:0;top:2px;width:27px;height:27px;border-radius:50%;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.44);color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;font-weight:700;}
+.watch .wt{display:block;font-weight:700;margin-bottom:3px;}
+.watch .note{font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.8;margin-top:18px;}
+.disclaimer{border-top:2px solid var(--line);margin-top:56px;padding-top:24px;font-size:12.5px;color:var(--ink-sub);line-height:1.9;}
+.disclaimer h2{font-size:14px;color:var(--ink);margin:0 0 10px;}
+.src{font-size:12.5px;color:var(--ink-sub);margin:-8px 0 22px;}
+.flow{margin:28px 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.flow-step{padding:16px 20px;border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.8;}
+.flow-step:last-child{border-bottom:none;background:var(--accent-light);}
+.flow-step .n{display:inline-block;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:12.5px;font-weight:700;text-align:center;line-height:24px;margin-right:10px;vertical-align:1px;}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  .hero{padding:40px 18px 34px;}
+  .hero h1{font-size:21px;}
+  .wrap{padding:0 18px 56px;}
+  h2.chapter{font-size:19px;margin:44px 0 16px;}
+  h3{font-size:16.5px;}
+  .watch{padding:26px 18px;border-radius:10px;}
+  .kpi .v{font-size:19px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">米国製薬・バイオ決算シリーズ ⑧／29 ― プラットフォーム型</span>
+    <h1>Recursion（RXRX）― ランウェイは2029年へ延びた。延ばしたのは事業ではない</h1>
+    <p class="lede">キャッシュランウェイが2028年初頭から2029年へ延びました。延ばしたのは、10月16日に完了した公募増資です。61,540,000株を1株3.25ドルで発行し、純手取りは約1億8,720万ドル。発行価格は直前の終値3.74ドルに対して約13.1%のディスカウントで、ポリープ量の減少を示す第2相データが発表される約2週間前のことでした。入口記事③章で扱った「ランウェイの終わりと臨床データが出る時期の関係」が、具体例として出てきた決算です。</p>
+    <p class="meta">公開：2026年11月16日／対象：2026年第3四半期決算（2026年11月2日発表、説明会11月3日）／出典：決算リリース（Form 8-K 添付）・Form 424B5・決算説明会・臨床データ発表リリース・株価情報サイト／情報提供のみを目的とし、投資判断の推奨ではありません</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#ch1">①決算の全体像 ― 8月の記事からの3か月</a></li>
+    <li><a href="#ch2">②実現率は約2.5%から約2.7%へ ― 3か月で0.2ポイント</a></li>
+    <li><a href="#ch3">③ランウェイは2029年へ延びた。延ばしたのは事業ではない</a></li>
+    <li><a href="#ch4">④R&amp;D「▲18.1%」は、ほぼ横ばいだった</a></li>
+    <li><a href="#ch5">⑤臨床データ ― 何が出て、何が出ていないか</a></li>
+    <li><a href="#ch6">⑥株価は、増資価格をわずかに上回る水準に戻った</a></li>
+    <li><a href="#ch7">⑦リスク要因とまとめ ― プラットフォーム型2社で見えたこと</a></li>
+    <li><a href="#watch">WHAT TO WATCH</a></li>
+  </ol>
+</nav>
+
+<h2 class="chapter" id="ch1"><span class="num">①</span>決算の全体像 ― 8月の記事からの3か月</h2>
+
+<p><strong>Recursion Pharmaceuticals（NASDAQ:RXRX）</strong> は、細胞画像と機械学習を組み合わせた創薬プラットフォームを運営し、自社でも臨床開発を進める企業です。本シリーズ<a href="/articles/general-knowledge/knowledge/2026-11-08-us-pharma-biotech-earnings-guide">入口記事</a>の6分類では <span class="model-tag">プラットフォーム型</span> にあたり、前日の<a href="/articles/general-knowledge/knowledge/2026-11-15-schrodinger-sdgr-q3">Schrödinger（SDGR）</a>と同じ型です。</p>
+
+<p>本シリーズでは<a href="/articles/general-knowledge/knowledge/2026-08-12-recursion-rxrx">2026年8月12日の記事（個別企業編①）</a>で第2四半期決算を「実現率2.5%問題」として扱いました。今回はそこからの進捗として並べます。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>指標</th><th>2026年Q3</th><th>2025年Q3</th><th>増減</th></tr></thead>
+<tbody>
+<tr><td>総収益</td><td class="num">1,855.2万ドル</td><td class="num">517.5万ドル</td><td class="num up"><strong>+258%</strong></td></tr>
+<tr><td>├ 事業収益</td><td class="num">1,805.5万ドル</td><td class="num">498.3万ドル</td><td class="num up">―</td></tr>
+<tr><td>└ 助成金収益</td><td class="num">49.7万ドル</td><td class="num">19.2万ドル</td><td class="num up">―</td></tr>
+<tr><td><strong>（9か月）総収益</strong></td><td class="num"><strong>3,269.4万ドル</strong></td><td class="num">3,914.3万ドル</td><td class="num down"><strong>▲16.5%</strong>（編集部計算）</td></tr>
+<tr><td>売上原価</td><td class="num">1,004.5万ドル</td><td class="num">1,468.7万ドル</td><td class="num up">▲31.6%（編集部計算）</td></tr>
+<tr><td><strong>研究開発費</strong></td><td class="num"><strong>9,912.2万ドル</strong></td><td class="num">1億2,106.2万ドル</td><td class="num up"><strong>▲18.1%</strong>（編集部計算）</td></tr>
+<tr><td>一般管理費</td><td class="num">3,256.1万ドル</td><td class="num">4,162.8万ドル</td><td class="num up">▲21.8%（編集部計算）</td></tr>
+<tr><td>営業費用合計</td><td class="num">1億4,172.8万ドル</td><td class="num">1億7,737.7万ドル</td><td class="num up">▲20.1%（編集部計算）</td></tr>
+<tr><td>営業損失</td><td class="num">▲1億2,317.6万ドル</td><td class="num">▲1億7,220.2万ドル</td><td class="num up">28.5%縮小（編集部計算）</td></tr>
+<tr><td><strong>純損失／EPS</strong></td><td class="num"><strong>▲1億1,903.6万ドル／▲0.22ドル</strong></td><td class="num">▲1億6,225.3万ドル／▲0.36ドル</td><td class="num up">26.6%縮小（編集部計算）</td></tr>
+<tr><td>（9か月）純損失／EPS</td><td class="num">▲3億6,754.5万ドル／▲0.69ドル</td><td class="num">▲5億3,663.7万ドル／▲1.27ドル</td><td class="num up">31.5%縮小（編集部計算）</td></tr>
+<tr><td>営業活動による現金使用（Q3）</td><td class="num">7,740万ドル</td><td class="num">1億1,740万ドル</td><td class="num up">▲34.1%（編集部計算）</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>損失は縮小しています。純損失は前年同期比26.6%、9か月累計で31.5%の縮小（いずれも編集部計算）。営業活動による現金使用も34.1%減りました（編集部計算）。</p>
+
+<h3>売上は四半期で5倍以上ブレる ― その継続</h3>
+
+<p>8月の記事で、Recursionの売上について「四半期で5倍以上ブレる」と書きました。直近4四半期を並べると、こうなります。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>四半期</th><th>総収益</th></tr></thead>
+<tbody>
+<tr><td>2025年Q4</td><td class="num">3,550万ドル</td></tr>
+<tr><td>2026年Q1</td><td class="num">650万ドル</td></tr>
+<tr><td>2026年Q2</td><td class="num">767万ドル</td></tr>
+<tr><td>2026年Q3</td><td class="num">1,855.2万ドル</td></tr>
+<tr><td><strong>最大 ÷ 最小（編集部計算）</strong></td><td class="num"><strong>約5.5倍</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<p>第3四半期は前年同期比+258%ですが、9か月累計では▲16.5%（編集部計算）。会社は第3四半期の増加の主因をSanofiとし、1,000万ドルのマイルストーンを含むとしています。</p>
+
+<div class="callout">
+  <span class="label">この型で売上成長率を見てもほとんど情報がない</span>
+  <p>入口記事④章の早見表では、プラットフォーム型で最初に見る数字を「反復収益（ソフトウェア・ACV）の比率」としました。Recursionにはソフトウェアの反復収益がほぼありません。<strong>収益は提携マイルストーンの計上タイミングで決まるため、四半期売上は経営実態を表す指標として機能しません。</strong></p>
+  <p>前日のSDGRは反復収益比率が約59.2%（編集部計算）でした。同じプラットフォーム型でも、ここが決定的に違います。Recursionについては、入口記事が創薬型に対して挙げた指標 ― <strong>キャッシュランウェイと発行済株式数</strong> ― を見るほうが実態に近くなります（③章）。</p>
+</div>
+
+<p class="src">出典：Recursion 2026年第3四半期決算リリース（2026年11月2日、Form 8-K 添付資料）、同決算説明会（2026年11月3日）、Form 424B5（2026年10月15日付目論見書補遺）、REC-4881第2相データ発表リリース（2026年11月2日）。2025年Q4〜2026年Q2の売上は本シリーズ8月12日記事に基づきます。</p>
+
+<h2 class="chapter" id="ch2"><span class="num">②</span>実現率は約2.5%から約2.7%へ ― 3か月で0.2ポイント</h2>
+
+<p>8月の記事の中心的な指標でした。もう一度定義を置きます。</p>
+
+<div class="callout">
+  <span class="label">実現率（編集部試算）</span>
+  <p><strong>累計の実受領額 ÷ 公表されたマイルストーン総額。</strong>提携のプレスリリースに出てくる「最大○億ドル」という数字は、すべての条件を達成した場合の上限値です。実際に受け取れたのは、達成した条件に対応する分だけです（入口記事②章）。</p>
+</div>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>8月の記事（Q2時点）</th><th>今回（Q3時点）</th></tr></thead>
+<tbody>
+<tr><td>公表マイルストーン総額</td><td class="num">200億ドル超</td><td class="num">200億ドル超（変更なし）</td></tr>
+<tr><td>累計パートナー受領額</td><td class="num">5億ドル超</td><td class="num"><strong>5億3,500万ドル超</strong>（説明会）</td></tr>
+<tr><td><strong>実現率（編集部試算）</strong></td><td class="num"><strong>約2.5%</strong></td><td class="num"><strong>約2.7%</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<p>3か月で、実現率は<strong>約0.2ポイント</strong>動きました（編集部試算）。</p>
+
+<h3>パートナー別の内訳</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>パートナー</th><th>累計アップフロント＋マイルストーン</th><th>今四半期の動き</th></tr></thead>
+<tbody>
+<tr><td><strong>Sanofi</strong></td><td class="num"><strong>1億4,400万ドル</strong></td><td>最初の開発候補のオプション行使により<strong>1,000万ドル</strong>のマイルストーンが発生。追加で3億ドル超のマイルストーンと、承認時の2桁ロイヤルティの資格</td></tr>
+<tr><td><strong>Roche／Genentech</strong></td><td class="num"><strong>2億1,600万ドル</strong></td><td>Genentechが第3四半期に最初のValidated Target Optionを行使（<strong>金額は非開示</strong>）</td></tr>
+<tr><td><strong>2社合計（編集部計算）</strong></td><td class="num"><strong>3億6,000万ドル</strong></td><td>累計受領額5億3,500万ドル超の<strong>約67.3%</strong>（編集部計算）</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>マイルストーンは達成されている。1件あたりの金額が小さい</h3>
+
+<p>決算説明会で、CEOのNajat Hashim氏は、累計のパートナー現金流入が5億3,500万ドルを超え、<strong>そのうち1億ドル超が約2年間で9件のマイルストーンから</strong>来ていると説明しました。</p>
+
+<div class="kpi-grid">
+  <div class="kpi"><span class="k">約2年間のマイルストーン件数</span><span class="v">9件</span><span class="n">合計1億ドル超</span></div>
+  <div class="kpi"><span class="k">1件あたりの平均（編集部試算）</span><span class="v">約1,100万ドル</span><span class="n">1億ドル ÷ 9件</span></div>
+  <div class="kpi"><span class="k">Sanofi：達成済みの進捗マイルストーン</span><span class="v">6件／5プログラム</span><span class="n">累計1億4,400万ドル</span></div>
+  <div class="kpi"><span class="k">公表総額に対する比率（編集部試算）</span><span class="v">約2.7%</span><span class="n">5億3,500万ドル ÷ 200億ドル超</span></div>
+</div>
+
+<div class="callout warn">
+  <span class="label">実現率2.7%の実態</span>
+  <p>この数字は「マイルストーンが達成されていない」ことを意味しません。<strong>約2年で9件が達成されています。</strong>問題は規模です ― 1件あたり平均約1,100万ドル（編集部試算）に対し、公表総額は200億ドル超。</p>
+  <p>公表総額の大部分は、<strong>承認後の売上目標など、開発の最終段階に紐づく条件</strong>です。開発初期の進捗マイルストーンは達成されても金額が小さく、総額に対する比率はほとんど動きません。</p>
+  <p>本シリーズではこの構造を、支払う側（<a href="/articles/general-knowledge/knowledge/2026-11-12-royalty-pharma-rprx">RPRX</a>のCliramitug：最大4億2,500万ドルのうち前払い約29.4%）と受け取る側の両方から扱ってきました。<strong>「最大」と書かれた数字を見たら、前払い（確定額）と条件付き（未確定額）を分ける。</strong>作業はどちら側でも同じです。</p>
+</div>
+
+<h3>Sanofiの開発候補オプション</h3>
+
+<p>今四半期の1,000万ドルを生んだ出来事です。Sanofiは多プログラム免疫学コラボレーションから<strong>最初の開発候補をオプション行使</strong>しました。</p>
+
+<p>対象は、炎症性疾患向けの経口低分子・デュアルターゲット阻害剤で、会社はfirst-in-classの可能性があるとしています。<strong>Sanofiが開発と商業化を資金負担し主導</strong>し、第1相は2027年の開始が見込まれています。</p>
+
+<h2 class="chapter" id="ch3"><span class="num">③</span>ランウェイは2029年へ延びた。延ばしたのは事業ではない</h2>
+
+<p>8月の記事では、キャッシュランウェイを「2028年初頭まで（会社想定・追加調達なしの前提）」と記載しました。今回の決算リリースは「<strong>2029年まで</strong>」としています。</p>
+
+<h3>何が起きたか</h3>
+
+<div class="flow">
+  <div class="flow-step"><span class="n">1</span><strong>2026年10月14日</strong>：株価の終値は<strong>3.74ドル</strong></div>
+  <div class="flow-step"><span class="n">2</span><strong>2026年10月15日</strong>：目論見書補遺。<strong>61,540,000株を1株3.25ドル</strong>で発行（直前終値に対し<strong>約13.1%のディスカウント</strong>／編集部計算）</div>
+  <div class="flow-step"><span class="n">3</span><strong>2026年10月16日頃</strong>：受渡完了。総額2億50万ドル、引受手数料1,200万ドル、<strong>純手取り約1億8,720万ドル</strong></div>
+  <div class="flow-step"><span class="n">4</span><strong>2026年11月2日</strong>：REC-4881の第2相データをCGA-IGCで発表（⑤章）。同日に第3四半期決算を発表し、<strong>ランウェイを2029年までと記載</strong></div>
+</div>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>金額・水準</th></tr></thead>
+<tbody>
+<tr><td>現金・現金同等物（2026年9月30日）</td><td class="num">5億4,985.3万ドル</td></tr>
+<tr><td>現金・現金同等物・制限付現金</td><td class="num">5億6,150万ドル</td></tr>
+<tr><td><strong>プロフォーマ（10月16日の増資を含む）</strong></td><td class="num"><strong>約7億4,870万ドル</strong></td></tr>
+<tr><td>2026年キャッシュ営業費用ガイダンス</td><td class="num">3億7,500万ドル未満（<strong>据え置き</strong>）</td></tr>
+<tr><td><strong>2027年キャッシュ営業費用ガイダンス</strong></td><td class="num"><strong>3億6,000万ドル未満</strong>（新規開示）</td></tr>
+<tr><td>9か月のキャッシュ営業費用</td><td class="num">2億7,150万ドル（前年同期 3億2,310万ドル）</td></tr>
+<tr><td>キャッシュランウェイ（会社想定）</td><td class="num">2029年まで（追加調達なしの前提）</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>プロフォーマ現金約7億4,870万ドルに対し、2027年のキャッシュ営業費用ガイダンスは3億6,000万ドル未満。<strong>2027年と2028年の2年分で約7億2,000万ドル</strong>（編集部試算）となり、会社想定の「2029年まで」と整合します。</p>
+
+<h3>希薄化 ― 目論見書が自ら開示している数字</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>株式数・金額</th></tr></thead>
+<tbody>
+<tr><td>Q3 2025 加重平均株式数</td><td class="num">446,988,046株</td></tr>
+<tr><td><strong>Q3 2026 加重平均株式数</strong></td><td class="num"><strong>543,000,977株（+21.5%／編集部計算）</strong></td></tr>
+<tr><td>9か月 加重平均株式数</td><td class="num">534,971,854株（前年 422,642,653株、+26.6%／編集部計算）</td></tr>
+<tr><td>発行済（2026年6月30日時点、Class A）</td><td class="num">533,191,318株</td></tr>
+<tr><td>10月の増資</td><td class="num">+61,540,000株</td></tr>
+<tr><td><strong>増資後の発行済（目論見書記載）</strong></td><td class="num"><strong>594,731,318株（+11.5%／編集部計算）</strong></td></tr>
+<tr><td>1株当たり有形純資産（2026年6月30日）</td><td class="num">0.81ドル（総額4億3,060万ドル）</td></tr>
+<tr><td>同（増資後の調整後）</td><td class="num">約1.04ドル（総額約6億1,790万ドル）</td></tr>
+<tr><td><strong>新規投資家に対する希薄化（目論見書記載）</strong></td><td class="num"><strong>約2.21ドル／株</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warn">
+  <span class="label">発行価格3.25ドルのうち約2.21ドルが希薄化</span>
+  <p>目論見書は、新規投資家に対する希薄化を<strong>1株当たり約2.21ドル</strong>と自ら開示しています。発行価格3.25ドルに対して<strong>約68%</strong>（編集部計算）。これは企業が隠している数字ではなく、米国の目論見書で開示が求められている項目です。</p>
+  <p>8月の記事では、株式数の増加を「1年で約52%」と記載しました。今回の加重平均ベースでは<strong>1年で約21.5%</strong>（編集部計算）に鈍化しています。ただし<strong>10月の増資（+11.5%）は9月30日時点の数字に含まれていません。</strong>第4四半期決算で初めて数字に表れます。</p>
+</div>
+
+<div class="callout">
+  <span class="label">入口記事③章の「時期の重なり」が、具体例として出た</span>
+  <p>入口記事③章では、キャッシュランウェイについてこう書きました ― 「<strong>ランウェイの終わりと、臨床データが出る時期の関係</strong>が重要。データが出る前にランウェイが尽きれば、株価が低い状態で増資することになり、希薄化が大きくなる。逆にデータが出てからであれば、条件が改善する可能性がある」。</p>
+  <p>Recursionの場合、増資は<strong>10月16日</strong>、第2相データの発表は<strong>11月2日</strong>。増資が先でした。資金使途として目論見書が挙げている項目の筆頭は「REC-4881のFAPにおける登録試験」です。</p>
+  <p>本記事は、この順序について会社の判断を評価しません。確認できるのは、<strong>増資価格3.25ドルがデータ発表前の株価水準に基づいて決まったという事実</strong>です。データ発表後の株価は⑥章で扱います。</p>
+</div>
+
+<h2 class="chapter" id="ch4"><span class="num">④</span>R&amp;D「▲18.1%」は、ほぼ横ばいだった</h2>
+
+<p>研究開発費が9,912.2万ドルで、前年同期の1億2,106.2万ドルから<strong>18.1%減</strong>（編集部計算）。費用削減が進んだように見えます。</p>
+
+<p>決算リリースには、注記があります。</p>
+
+<div class="quote">
+  <p>前年同期（2025年第3四半期）の研究開発費には、<strong>REC-102に関する2,280万ドルの取得IPR&amp;D費用</strong>が含まれていた。</p>
+</div>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>計算</th><th>2026年Q3</th><th>2025年Q3</th><th>増減（編集部計算）</th></tr></thead>
+<tbody>
+<tr><td>報告ベースの研究開発費</td><td class="num">9,912.2万ドル</td><td class="num">1億2,106.2万ドル</td><td class="num up">▲18.1%</td></tr>
+<tr><td><strong>前年のIPR&amp;D 2,280万ドルを除くと</strong></td><td class="num"><strong>9,912.2万ドル</strong></td><td class="num"><strong>9,826.2万ドル</strong></td><td class="num down"><strong>+0.9%</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<p>一時費用を除くと、研究開発費は<strong>ほぼ横ばい（+0.9%）</strong>です（編集部計算）。</p>
+
+<div class="callout warn">
+  <span class="label">このパターンは、この決算シーズンで3例目</span>
+  <p><strong>BFLY</strong>：前年同期に1,740万ドルの棚卸資産評価損。粗利率の改善幅が90.5ポイントに見えたが、調整後では9.1ポイント<br>
+  <strong>LGND</strong>：前年同期にPelthos関連収益5,310万ドル。売上が▲32%に見えたが、除くと+26%<br>
+  <strong>RXRX</strong>：前年同期にIPR&amp;D費用2,280万ドル。研究開発費が▲18.1%に見えたが、除くと+0.9%</p>
+  <p>入口記事⑤章の手順は「損益計算書を上から下まで見て、符号が通常と逆の行と金額が突出した行を探す。そして<strong>比較対象の期にも同じ作業をする</strong>」でした。後半の作業が答えになった例が、これで3社になりました。</p>
+</div>
+
+<p>一方で、一般管理費は3,256.1万ドルで21.8%減（編集部計算）。9か月のキャッシュ営業費用は2億7,150万ドルで、前年同期の3億2,310万ドルから約16.0%減っています（編集部計算）。<strong>費用全体は減っていますが、研究開発費については一時費用の影響を除く必要があります。</strong></p>
+
+<h2 class="chapter" id="ch5"><span class="num">⑤</span>臨床データ ― 何が出て、何が出ていないか</h2>
+
+<h3>REC-4881（MEK1/2阻害剤、家族性大腸ポリポーシス＝FAP）</h3>
+
+<p>2026年11月2日、CGA-IGC（Collaborative Group of the Americas on Inherited Gastrointestinal Cancer）で第1b/2相TUPELO試験のデータが発表されました。</p>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>結果</th></tr></thead>
+<tbody>
+<tr><td>12週時点で総ポリープ量が減少した患者</td><td class="num"><strong>87%（13例／15例）</strong></td></tr>
+<tr><td>総ポリープ量の減少（中央値）</td><td class="num"><strong>47%</strong></td></tr>
+<tr><td>上部消化管の減少（中央値）</td><td class="num">55%</td></tr>
+<tr><td>下部消化管の減少（中央値）</td><td class="num">50%</td></tr>
+<tr><td>投与中止12週後もベースラインを下回った患者</td><td class="num">85%（11例／13例）</td></tr>
+<tr><td>5mm超のポリープを持つ患者で、その数が減少した例</td><td class="num">8例中6例</td></tr>
+<tr><td>Grade 3の治療関連有害事象</td><td class="num">26例中4例（15%）。Grade 4・5は報告なし</td></tr>
+<tr><td><strong>登録試験の予定</strong></td><td class="num"><strong>2027年下期（FDAとの協議次第）。詳細は年内に示される見込み</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warn">
+  <span class="label">8月の記事の数字との比較について</span>
+  <p>8月の記事では「REC-4881（FAP対象）は25週時点でポリープ量中央値53%減少」と記載しました。今回のデータは<strong>12週時点で中央値47%減少</strong>です。<strong>評価時点が異なるため、53%から47%へ低下したという読み方はできません。</strong></p>
+  <p>今回新たに加わったのは、<strong>投与中止後12週の持続性</strong>（85%がベースライン未満）、<strong>消化管の部位別の内訳</strong>（上部55%・下部50%）、<strong>5mm超のポリープへの作用</strong>（8例中6例）です。</p>
+  <p>一方で、8月の記事に書いた留保はそのまま残ります ― <strong>対照群との比較がない単群データであり、症例数は15例（安全性は26例）。</strong>初期段階・単群の臨床データは、対照群を伴う後期試験で再現されない場合があります。登録試験はまだFDAとの協議を待つ段階です。</p>
+</div>
+
+<h3>REC-1245（RBM39分解誘導剤、DAHLIA第1/2相）</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>結果</th></tr></thead>
+<tbody>
+<tr><td>データカットオフ</td><td>2026年8月21日</td></tr>
+<tr><td>部分奏効（45mg QD以上）</td><td>確定2例＋未確定1例（子宮体がん、肝細胞がん）</td></tr>
+<tr><td>病勢コントロール率（45mg以上）</td><td class="num"><strong>91.7%（11例／12例）</strong></td></tr>
+<tr><td>拡大コホートの用量</td><td>45mg QDを選択</td></tr>
+<tr><td>子宮体がん拡大の予備データ</td><td class="num"><strong>2027年下期</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<p>病勢コントロール率91.7%は、<strong>12例中11例</strong>という分母に基づく数字です。病勢コントロール率は「腫瘍が縮小した患者」ではなく「進行しなかった患者」の比率であり、奏効率とは別の指標です。</p>
+
+<h3>その他のパイプラインと、提携を模索するプログラム</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>プログラム</th><th>状況</th></tr></thead>
+<tbody>
+<tr><td>REC-7735（PI3Kα H1047R）</td><td>第1/2相ZINNIA試験を2026年下期に開始</td></tr>
+<tr><td>REC-4539（LSD1）</td><td>社内の重点プログラムとして継続。新規データの報告なし</td></tr>
+<tr><td>REC-102（ENPP1、低ホスファターゼ症）</td><td>社内の重点プログラムとして継続。2025年に全権利を取得</td></tr>
+<tr><td><strong>REC-617（CDK7）</strong></td><td class="num"><strong>提携を模索する方針</strong></td></tr>
+<tr><td><strong>REC-3565（MALT1）</strong></td><td class="num"><strong>提携を模索する方針</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout">
+  <span class="label">プラットフォーム型2社が、同じ方向を向いている</span>
+  <p>前日の<a href="/articles/general-knowledge/knowledge/2026-11-15-schrodinger-sdgr-q3">SDGR</a>では、Form 8-KのItem 7.01に「SGR-1505の開発を継続するための<strong>戦略的機会を模索している</strong>」という記載があり、さらにSDGR-4594とSDGR-8139をTectora Therapeuticsに拠出して株式を取得していました。</p>
+  <p>Recursionは、REC-617（CDK7）とREC-3565（MALT1）について<strong>提携を模索する方針</strong>を示しています。</p>
+  <p>プラットフォーム型の2社がいずれも、<strong>自社パイプラインの一部を外に出す</strong>方向を同じ四半期に示しました。本記事はこの方向の是非を判断しません。確認できるのは、両社で研究開発費が減少（SDGR ▲20.3%、RXRX は一時費用を除くと+0.9%／いずれも編集部計算）し、同時にパイプラインの一部を外部に移す動きが起きているという事実です。</p>
+</div>
+
+<h3>取締役会</h3>
+
+<p>2026年10月31日付で、<strong>Fred Hassan氏が取締役会会長に就任</strong>しました。Schering-Plough（元会長兼CEO、第III相パイプラインを3つの新規分子実体から8つへ拡大）、Pharmacia（元会長兼CEO）を経て、現在はBridgeBio Pharmaのリード独立取締役、Norstellaのエグゼクティブ・チェア、Warburg Pincusの取締役を務めています。</p>
+
+<p>なお、ここで挙がったBridgeBio Pharma（BBIO）は、本シリーズが扱う29銘柄のうち<strong>持株会社型</strong>に分類している1社です。</p>
+
+<h2 class="chapter" id="ch6"><span class="num">⑥</span>株価は、増資価格をわずかに上回る水準に戻った</h2>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>日付</th><th>株価・内容</th></tr></thead>
+<tbody>
+<tr><td>2026年10月14日</td><td class="num">終値 3.74ドル（増資の直前）</td></tr>
+<tr><td><strong>2026年10月15〜16日</strong></td><td class="num"><strong>増資価格 3.25ドル</strong>（直前終値に対し約13.1%ディスカウント／編集部計算）</td></tr>
+<tr><td>2026年10月26日</td><td class="num">終値 3.80ドル（+2.70%）。時価総額約22.7億ドル、発行済約5億9,781万株</td></tr>
+<tr><td>2026年11月2日</td><td>REC-4881の第2相データを発表。同日に第3四半期決算を発表</td></tr>
+<tr><td><strong>2026年11月3日</strong></td><td class="num">前日終値3.83ドル → 時間外で<strong>3.95ドル（+3.1%）</strong></td></tr>
+<tr><td><strong>2026年11月12日</strong></td><td class="num"><strong>終値 3.33ドル。</strong>時価総額約20.8億ドル、52週レンジ2.77〜5.24ドル、PER（TTM）▲3.73倍、EPS（TTM）▲0.89ドル</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="kpi-grid">
+  <div class="kpi"><span class="k">11月3日時間外 → 11月12日終値（編集部計算）</span><span class="v">約▲15.7%</span><span class="n">3.95ドル → 3.33ドル。時間外の値と終値の比較である点に留意</span></div>
+  <div class="kpi"><span class="k">11月12日終値 vs 増資価格（編集部計算）</span><span class="v">約+2.5%</span><span class="n">3.33ドル ÷ 3.25ドル</span></div>
+  <div class="kpi"><span class="k">市場予想との比較（Q3）</span><span class="v">売上は上回る</span><span class="n">実績1,855万ドル vs 予想1,298万ドル（+42.9%）。EPSは▲0.22ドルで予想どおり</span></div>
+  <div class="kpi"><span class="k">8月の記事の時点</span><span class="v">時価総額約18億ドル</span><span class="n">株価は3ドル台半ば（IPO価格31.30ドル）</span></div>
+</div>
+
+<div class="callout warn">
+  <span class="label">株価と増資価格の位置関係</span>
+  <p>データと決算の発表直後、株価は時間外で3.95ドル（+3.1%）まで上昇しました。その後、11月12日の終値は3.33ドル。<strong>10月の増資価格3.25ドルを約2.5%上回るだけの水準です</strong>（編集部計算）。</p>
+  <p>なお11月3日の値は時間外取引、11月12日の値は終値であり、比較には性質の違いがあります。また株価情報サイトの52週レンジは参照時点によって異なる数値が示されており、10月26日時点では2.77〜6.50ドル、11月12日時点では2.77〜5.24ドルと記載されていました。<strong>52週という参照期間の起点が日々移動するためです。</strong></p>
+  <p>本記事は水準の妥当性について判断を示しません。株価・時価総額は日々変動します。</p>
+</div>
+
+<h3>本シリーズの株価反応 ― 8社目</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>企業</th><th>見出しの決算</th><th>株価の反応</th></tr></thead>
+<tbody>
+<tr><td>BFLY</td><td>全項目で予想超え・ガイダンス引き上げ</td><td class="num down">2日間で約▲13%</td></tr>
+<tr><td>RGEN</td><td>GAAPで1株▲0.68ドルの赤字</td><td class="num up">翌日 +4.5%</td></tr>
+<tr><td>ARAY</td><td>GAAPで1株+0.07ドルの黒字（債務消滅益）</td><td class="num">併合をまたぐため比較不可</td></tr>
+<tr><td>RPRX</td><td>受領額+9%・ガイダンス引き上げ</td><td class="num down">下落と報道</td></tr>
+<tr><td>LGND</td><td>GAAPで1株▲1.43ドルの赤字</td><td class="num">約▲0.5%（ほぼ動かず）</td></tr>
+<tr><td>INVA</td><td>営業利益+21.9%・EPSは予想を1.55ドル下回る</td><td class="num down">11月9日に52週安値</td></tr>
+<tr><td>SDGR</td><td>純損失が前年同期から拡大</td><td class="num up">発表後に1年来高値圏へ</td></tr>
+<tr><td><strong>RXRX</strong></td><td><strong>売上が予想を42.9%上回る・ポジティブな第2相データ</strong></td><td class="num"><strong>直後に+3.1%、その後は増資価格近辺へ</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 class="chapter" id="ch7"><span class="num">⑦</span>リスク要因とまとめ ― プラットフォーム型2社で見えたこと</h2>
+
+<h3>リスク要因</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>項目</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td>希薄化</td><td>Q3の加重平均株式数は+21.5%（編集部計算）。これに10月の増資（+11.5%／編集部計算）は含まれていない。目論見書は新規投資家への希薄化を1株約2.21ドル（発行価格3.25ドルの約68%／編集部計算）と開示</td></tr>
+<tr><td>ランウェイの性質</td><td>2028年初頭から2029年へ延びたが、延長の主因は増資。会社想定は追加調達なしの前提</td></tr>
+<tr><td>実現率</td><td>約2.7%（編集部試算）。約2年で9件のマイルストーンが達成されたが、1件平均約1,100万ドル（編集部試算）に対し公表総額は200億ドル超</td></tr>
+<tr><td>売上の変動</td><td>直近4四半期で最大÷最小が約5.5倍（編集部計算）。Q3は+258%だが9か月累計では▲16.5%（編集部計算）。反復収益がほぼない</td></tr>
+<tr><td>パートナー集中</td><td>SanofiとRoche／Genentechの2社で累計受領額の約67.3%（編集部計算）。GenentechのValidated Target Option行使は金額非開示</td></tr>
+<tr><td>研究開発費の比較</td><td>▲18.1%に見えるが、前年同期のIPR&amp;D 2,280万ドルを除くと+0.9%（いずれも編集部計算）</td></tr>
+<tr><td>臨床データの性質</td><td>REC-4881は対照群のない単群データで症例数15例（安全性26例）。REC-1245の病勢コントロール率91.7%は12例中11例。いずれも後期試験で再現されない場合がある</td></tr>
+<tr><td>登録試験の時期</td><td>REC-4881の登録試験は2027年下期予定で、<strong>FDAとの協議次第</strong>。詳細は年内に示される見込み</td></tr>
+<tr><td>パイプラインの外部化</td><td>REC-617（CDK7）とREC-3565（MALT1）について提携を模索する方針</td></tr>
+<tr><td>株価の位置</td><td>11月12日終値3.33ドルは増資価格3.25ドルを約2.5%上回る水準（編集部計算）。52週レンジは参照時点によって異なる数値が示されている</td></tr>
+<tr><td>Sanofi候補の進捗</td><td>Sanofiがオプション行使した開発候補の第1相は2027年開始見込み。Sanofiが開発・商業化を主導するため、Recursionの関与は限定的になる</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>まとめ ― 6つの数字</h3>
+
+<div class="table-scroll">
+<table>
+<thead><tr><th>#</th><th>数字</th><th>意味</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td>増資価格<strong>3.25ドル</strong>（直前終値3.74ドルの約13.1%下／編集部計算）</td><td>ランウェイを2029年へ延ばしたのは事業ではない</td></tr>
+<tr><td class="num">2</td><td>目論見書が開示する希薄化<strong>約2.21ドル／株</strong></td><td>発行価格の約68%（編集部計算）</td></tr>
+<tr><td class="num">3</td><td>実現率<strong>約2.5%→約2.7%</strong>（編集部試算）</td><td>約2年で9件達成。1件平均約1,100万ドル（編集部試算）</td></tr>
+<tr><td class="num">4</td><td>研究開発費<strong>▲18.1%→+0.9%</strong>（編集部計算）</td><td>前年同期のIPR&amp;D 2,280万ドルを除くとほぼ横ばい。この決算シーズンで3例目</td></tr>
+<tr><td class="num">5</td><td>売上の最大÷最小<strong>約5.5倍</strong>（編集部計算）</td><td>反復収益がほぼないため、四半期売上は実態を表さない</td></tr>
+<tr><td class="num">6</td><td>REC-4881 中央値<strong>47%減（13／15例）</strong></td><td>対照群のない単群データ。登録試験はFDA協議次第で2027年下期</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>この決算から確定できるのは、<strong>純損失が26.6%縮小し、営業活動による現金使用が34.1%減り、Sanofiが最初の開発候補をオプション行使して1,000万ドルのマイルストーンが発生し、REC-4881で投与中止後12週の持続性を含むデータが出た</strong>ことです（増減率は編集部計算）。費用は減り、提携は前進しています。</p>
+
+<p>確定できないのは2つです。ひとつは<strong>公表総額200億ドル超との距離がどう縮まるか</strong>。約2年で9件・1件平均約1,100万ドル（編集部試算）という実績は、総額の大部分が承認後の条件に紐づいていることを示しています。もうひとつは<strong>REC-4881の登録試験が実際に始まるか</strong>。会社は2027年下期と示していますが、FDAとの協議次第であり、詳細は年内に示される見込みです。</p>
+
+<p>プラットフォーム型2社を並べて見えたのは、<strong>両社がいずれも研究開発費を抑えつつ、自社パイプラインの一部を外部に移す方向を同じ四半期に示した</strong>ことでした。SDGRはSGR-1505について「戦略的機会を模索」、RecursionはREC-617とREC-3565について「提携を模索」。<strong>現時点で、この転換が収益にどう表れるかを判定できる段階にはありません。</strong>Recursionについて判定に必要な材料が揃うのは、少なくともREC-4881の登録試験の詳細が示され、第4四半期決算で10月の増資を含む株式数が確定した後になります。</p>
+
+<div class="crosslink">
+  <span class="label">本記事の前提となる枠組み・前回の記事</span>
+  <ul>
+    <li><a href="/articles/general-knowledge/knowledge/2026-11-08-us-pharma-biotech-earnings-guide">入口記事：なぜ米国の製薬・バイオ株は、決算1本で株価が倍にも半分にもなるのか</a>（②章＝実現率と希薄化、③章＝キャッシュランウェイと臨床データの時期、⑤章＝見出しの数字）</li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-08-12-recursion-rxrx">個別企業編①：Recursion Pharmaceuticals（RXRX）― 実現率2.5%問題</a>（本記事の比較対象）</li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-11-15-schrodinger-sdgr-q3">⑦Schrödinger（SDGR）― ACVは3か月で+2.9%、株価は+73%</a></li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-11-12-royalty-pharma-rprx">④Royalty Pharma（RPRX）― 失敗した1本が示した「下限は元本＋10%」</a></li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-08-11-ai-biotech-valuation">AI×製薬×バイオ 後編：赤字先行企業を4指標で評価する</a>（キャッシュランウェイ・実現率・希薄化パターンの定義）</li>
+    <li><a href="/articles/general-knowledge/knowledge/2026-09-12-pharma-biotech-17-map">製薬・バイオ 銘柄マップ ― 17銘柄を6つの事業モデルで分類する</a></li>
+  </ul>
+</div>
+
+<section class="watch" id="watch">
+  <h2>WHAT TO WATCH</h2>
+  <p class="sub">Recursion Pharmaceuticals（NASDAQ:RXRX）― 今後の注目点6項目（2026年11月16日時点）</p>
+
+  <ol>
+    <li>
+      <span class="wt">REC-4881の登録試験の詳細（年内に示される見込み）</span>
+      会社は登録試験を2027年下期に予定し、<strong>FDAとの協議次第</strong>としています。詳細は年内に示される見込みです。試験デザイン（対照群の有無、主要評価項目、症例数）が、現在の単群データ（15例、中央値47%減）からどう設計されるかが確認点になります。
+    </li>
+    <li>
+      <span class="wt">第4四半期決算に表れる株式数</span>
+      10月16日完了の増資（61,540,000株、+11.5%／編集部計算）は9月30日時点の数字に含まれていません。<strong>目論見書記載の増資後の発行済株式数は594,731,318株</strong>です。加重平均株式数と1株当たり損失への影響が、第4四半期決算で確定します。
+    </li>
+    <li>
+      <span class="wt">2027年のキャッシュ営業費用3億6,000万ドル未満の実現</span>
+      新規に開示されたガイダンスです。プロフォーマ現金約7億4,870万ドルに対し、2027年と2028年の2年分で約7億2,000万ドル（編集部試算）となり、会社想定の「2029年まで」と整合します。<strong>この水準を超えれば、ランウェイの前提が変わります。</strong>
+    </li>
+    <li>
+      <span class="wt">マイルストーンの件数と金額</span>
+      約2年で9件、合計1億ドル超（1件平均約1,100万ドル／編集部試算）。Sanofiからは追加で3億ドル超のマイルストーンと承認時の2桁ロイヤルティの資格があり、Sanofiが行使した開発候補の第1相は2027年開始見込みです。<strong>1件あたりの金額が大きくなる段階に進むかが論点です。</strong>
+    </li>
+    <li>
+      <span class="wt">REC-617とREC-3565の提携</span>
+      会社は両プログラムについて提携を模索する方針を示しています。成立した場合、アップフロントの金額と、公表されるマイルストーン総額の構成（前払いと条件付きの比率）が確認点になります。
+    </li>
+    <li>
+      <span class="wt">REC-1245の子宮体がん拡大データ（2027年下期）</span>
+      45mg QDを拡大コホートの用量として選択済み。現時点のデータは45mg以上で病勢コントロール率91.7%（12例中11例）、確定部分奏効2例。<strong>分母が小さい段階のデータであり、拡大コホートでの再現が確認点になります。</strong>
+    </li>
+  </ol>
+
+  <p class="note">※上記は2026年11月16日時点で確認できた公開情報に基づく注目点であり、株価の方向性に関する見通しではありません。未承認薬について承認を前提とした記述は行っていません。会社のガイダンス・ランウェイ想定・マイルストーンの受領資格は一定の前提に基づくものであり、実現を保証するものではありません。</p>
+</section>
+
+<div class="disclaimer">
+  <h2>免責事項</h2>
+  <p>本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資に関する最終的な判断は、ご自身の責任において行ってください。記載された数値は2026年11月16日時点の公開情報（企業IR資料・決算リリース・SEC提出書類・決算説明会・臨床データ発表リリース・株価情報サイト等）に基づいており、株価等の市場データは日々変動します。株価・時価総額・移動平均・PER・EPS（TTM）・52週レンジは株価情報サイト掲載値であり、2026年10月26日時点、2026年11月3日時点および2026年11月12日時点のものを日付付きで記載しています。11月3日の値は時間外取引の価格であり、終値との比較には性質の違いがあります。52週レンジは参照期間の起点が日々移動するため、参照時点によって数値が変わります。貸借対照表の数値は2026年9月30日時点で、株価の時点とは一致していません。8月の記事の数値は2026年8月5日発表の第2四半期決算に基づくもので、現時点の数値とは時点が異なります。「編集部試算」「編集部計算」と明記した数値は公開情報に基づく推計です。SEC提出書類・決算リリース・決算説明会からの引用は要旨の日本語訳であり、原文の表現と完全に一致するものではありません。企業が公表するマイルストーン総額は、すべての条件が達成された場合の上限値であり、実現を保証するものではありません。キャッシュランウェイは会社想定であり、追加調達を行わない前提に基づきます。初期段階・単群の臨床データは、対照群を伴う後期試験で再現されない場合があります。本記事に記載した臨床データはいずれも対照群との比較を伴わない試験の結果であり、症例数が限られています。病勢コントロール率は腫瘍の縮小を示す指標ではなく、進行しなかった患者の比率です。未承認薬について、承認を前提とした記述は行っていません。登録試験の実施は規制当局との協議の結果に依存します。</p>
+</div>
+
+</div>
+</body>
+</html>
