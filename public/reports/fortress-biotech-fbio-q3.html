@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fortress Biotech（FBIO）2026年Q3決算分析｜9か月のEPS+2.94ドル、四半期は▲0.23ドル</title>
+<meta name="description" content="Fortress Biotech（NASDAQ:FBIO）2026年第3四半期決算を一次資料から分析。9か月の1株当たり利益+2.94ドルを作った優先審査バウチャー売却益、持分34.9%の子会社を連結する構造、現金の主体別開示を検証します。">
+<style>
+:root{
+  --accent:#be185d;
+  --accent-dark:#9d174d;
+  --accent-mid:#ec4899;
+  --accent-light:#fdf2f8;
+  --ink:#1a1a1a;
+  --sub:#555;
+  --line:#e5e5e5;
+  --bg:#ffffff;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.9;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:780px;margin:0 auto;padding:0 20px 80px;}
+header.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 55%,var(--accent-mid) 100%);
+  color:#fff;
+  padding:56px 20px 48px;
+}
+header.hero .inner{max-width:780px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.45);
+  border-radius:999px;
+  padding:5px 14px;
+  font-size:12px;
+  letter-spacing:.08em;
+  margin-bottom:18px;
+}
+header.hero h1{
+  font-size:28px;
+  line-height:1.5;
+  margin:0 0 16px;
+  font-weight:700;
+}
+header.hero .lede{
+  font-size:15px;
+  line-height:1.85;
+  margin:0;
+  color:rgba(255,255,255,.93);
+}
+header.hero .meta{
+  margin-top:22px;
+  font-size:13px;
+  color:rgba(255,255,255,.8);
+  border-top:1px solid rgba(255,255,255,.28);
+  padding-top:14px;
+}
+.model-tag{
+  display:inline-block;
+  background:#fff;
+  color:var(--accent-dark);
+  font-size:12px;
+  font-weight:700;
+  border-radius:4px;
+  padding:3px 10px;
+  margin-right:8px;
+}
+.toc{
+  background:var(--accent-light);
+  border:1px solid #fbcfe8;
+  border-radius:10px;
+  padding:22px 24px;
+  margin:36px 0 44px;
+}
+.toc h2{
+  font-size:14px;
+  margin:0 0 12px;
+  color:var(--accent-dark);
+  letter-spacing:.06em;
+}
+.toc ol{margin:0;padding-left:1.3em;font-size:14.5px;}
+.toc li{margin-bottom:7px;}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(190,24,93,.3);}
+.toc a:hover{color:var(--accent);}
+h2.chapter{
+  font-size:21px;
+  line-height:1.55;
+  margin:56px 0 20px;
+  padding-bottom:12px;
+  border-bottom:2px solid var(--accent);
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+h2.chapter .num{
+  flex:0 0 auto;
+  background:var(--accent);
+  color:#fff;
+  font-size:13px;
+  border-radius:5px;
+  padding:3px 9px;
+  margin-top:5px;
+  font-weight:700;
+}
+h3{
+  font-size:17px;
+  margin:34px 0 14px;
+  padding-left:12px;
+  border-left:4px solid var(--accent-mid);
+  line-height:1.6;
+}
+p{margin:0 0 18px;}
+ul,ol{margin:0 0 18px;padding-left:1.4em;}
+li{margin-bottom:8px;}
+.callout{
+  background:var(--accent-light);
+  border-left:4px solid var(--accent);
+  border-radius:0 8px 8px 0;
+  padding:18px 20px;
+  margin:26px 0;
+  font-size:15px;
+}
+.callout.warn{
+  background:#fffbeb;
+  border-left-color:#d97706;
+}
+.callout strong{color:var(--accent-dark);}
+.callout.warn strong{color:#b45309;}
+.quote{
+  border-left:3px solid var(--line);
+  padding:4px 0 4px 18px;
+  margin:24px 0;
+  color:var(--sub);
+  font-size:15px;
+}
+.kpi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:12px;
+  margin:28px 0;
+}
+.kpi{
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:16px 14px;
+  background:#fafafa;
+}
+.kpi .label{font-size:12px;color:var(--sub);display:block;margin-bottom:6px;line-height:1.5;}
+.kpi .value{font-size:21px;font-weight:700;color:var(--accent-dark);display:block;line-height:1.3;}
+.kpi .note{font-size:11.5px;color:var(--sub);display:block;margin-top:5px;line-height:1.5;}
+.table-scroll{overflow-x:auto;margin:26px 0;-webkit-overflow-scrolling:touch;}
+table{
+  border-collapse:collapse;
+  width:100%;
+  min-width:560px;
+  font-size:14px;
+}
+th,td{
+  border:1px solid var(--line);
+  padding:10px 12px;
+  text-align:left;
+  vertical-align:top;
+}
+th{background:var(--accent-light);font-weight:700;color:var(--accent-dark);}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+tr.total td{background:#fafafa;font-weight:700;}
+.tnote{font-size:13px;color:var(--sub);margin:-14px 0 24px;}
+.flow{margin:28px 0;}
+.flow-step{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  margin-bottom:16px;
+}
+.flow-step .circle{
+  flex:0 0 auto;
+  width:30px;height:30px;
+  border-radius:50%;
+  background:var(--accent);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;
+  margin-top:2px;
+}
+.flow-step .body{flex:1 1 auto;font-size:15px;line-height:1.8;}
+.crosslink{
+  background:#f7f7f8;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:14px 18px;
+  margin:24px 0;
+  font-size:14px;
+  color:var(--sub);
+}
+.crosslink strong{color:var(--ink);}
+.crosslink a{color:var(--accent-dark);}
+.watch{
+  background:#1f1020;
+  color:#f3f3f3;
+  border-radius:12px;
+  padding:32px 28px;
+  margin:56px 0 36px;
+}
+.watch h2{
+  font-size:19px;
+  margin:0 0 8px;
+  color:#fff;
+  letter-spacing:.04em;
+}
+.watch .sub{font-size:13px;color:#c4b5c3;margin:0 0 22px;}
+.watch ol{
+  list-style:none;
+  counter-reset:w;
+  margin:0;padding:0;
+}
+.watch li{
+  counter-increment:w;
+  position:relative;
+  padding-left:38px;
+  margin-bottom:18px;
+  font-size:14.5px;
+  line-height:1.8;
+}
+.watch li::before{
+  content:counter(w);
+  position:absolute;left:0;top:2px;
+  width:25px;height:25px;
+  border-radius:50%;
+  background:var(--accent-mid);
+  color:#1f1020;
+  font-weight:700;font-size:13px;
+  display:flex;align-items:center;justify-content:center;
+}
+.watch li strong{color:#fbcfe8;}
+.disclaimer{
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:#fafafa;
+  padding:20px 22px;
+  font-size:13px;
+  color:var(--sub);
+  line-height:1.85;
+  margin:40px 0 28px;
+}
+.disclaimer h3{
+  font-size:14px;
+  margin:0 0 10px;
+  padding:0;
+  border:none;
+  color:var(--ink);
+}
+.src{
+  font-size:13px;
+  color:var(--sub);
+  line-height:1.9;
+}
+.src h3{
+  font-size:14px;
+  margin:36px 0 12px;
+  padding:0;
+  border:none;
+  color:var(--ink);
+}
+.src ul{padding-left:1.2em;margin:0;}
+.src li{margin-bottom:6px;}
+.src a{color:var(--accent-dark);}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  header.hero{padding:40px 18px 36px;}
+  header.hero h1{font-size:22px;}
+  .wrap{padding:0 16px 60px;}
+  h2.chapter{font-size:18.5px;}
+  h3{font-size:16px;}
+  .watch{padding:26px 20px;border-radius:10px;}
+  .kpi .value{font-size:19px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="inner">
+    <span class="eyebrow">米国製薬・バイオ決算シリーズ ⑫</span>
+    <h1>9か月の1株当たり利益は+2.94ドル、第3四半期は▲0.23ドル。同じ年度の中で起きたこと</h1>
+    <p class="lede">Fortress Biotech（NASDAQ:FBIO）2026年第3四半期決算。9か月累計では1億2,951.1万ドルの純利益を計上しましたが、営業損失は▲2,493.7万ドルです。黒字を作ったのは優先審査バウチャーの売却益1億5,887.3万ドル ― 営業損失の約6.37倍にあたる、一回限りの項目でした。さらにこの会社は、連結売上のほぼ全額を、持分34.9%の別の上場会社から得ています。</p>
+    <p class="meta"><span class="model-tag">持株会社型</span>公開日：2026年11月20日／決算発表：2026年11月13日（米国時間・寄り付き前）</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#c1">決算の全体像 ― 四半期は赤字、9か月は1株+2.94ドル</a></li>
+    <li><a href="#c2">9か月の黒字を作ったのは本業ではない</a></li>
+    <li><a href="#c3">2億500万ドルが普通株主に届くまでの3段階</a></li>
+    <li><a href="#c4">連結売上のほぼ全額が、持分34.9%の別会社のもの</a></li>
+    <li><a href="#c5">非支配持分の符号は、期によって反転する</a></li>
+    <li><a href="#c6">現金を「どこにあるか」で開示している唯一の会社</a></li>
+    <li><a href="#c7">研究開発費が9か月で▲75.4%、四半期で+706.7%</a></li>
+    <li><a href="#c8">売上の中身、売掛金、株価</a></li>
+  </ol>
+</nav>
+
+<p>本シリーズは、米国に上場する製薬・バイオ企業29社の決算を1社ずつ、一次資料に当たって読み解く企画です。12社目は<strong>Fortress Biotech（NASDAQ:FBIO）</strong>。<a href="https://marketsupporter-ai.com/reports/roivant-roiv-q2.html">Roivant Sciences</a>、<a href="https://marketsupporter-ai.com/reports/bridgebio-bbio-q3.html">BridgeBio Pharma</a>に続く<strong>持株会社型</strong>の3社目です。</p>
+
+<p>持株会社型の3社を並べて最初に気づくのは、<strong>同じ分類でありながら規模がまったく違う</strong>ことです。Roivantの時価総額は約286億ドル、BridgeBioは約152億ドル。Fortressは<strong>約6,600万ドル</strong>です。1万分の2から3の規模です。</p>
+
+<p>しかし、持株会社型を読むうえで本当に重要な論点は、小さい会社のほうがはっきり現れます。</p>
+
+<h2 class="chapter" id="c1"><span class="num">①</span>決算の全体像 ― 四半期は赤字、9か月は1株+2.94ドル</h2>
+
+<p>まず数字を並べます。四半期と9か月累計を、必ず並べて見てください。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2026年Q3</th><th class="num">2025年Q3</th><th class="num">2026年9か月</th><th class="num">2025年9か月</th></tr>
+</thead>
+<tbody>
+<tr><td>製品売上（純額）</td><td class="num">1,892.5万ドル</td><td class="num">1,702.5万ドル</td><td class="num">5,268.5万ドル</td><td class="num">4,517.3万ドル</td></tr>
+<tr><td>その他収益</td><td class="num">23.4万ドル</td><td class="num">60.6万ドル</td><td class="num">122.9万ドル</td><td class="num">201.0万ドル</td></tr>
+<tr class="total"><td>売上高（純額）</td><td class="num">1,915.9万ドル</td><td class="num">1,763.1万ドル</td><td class="num">5,391.4万ドル</td><td class="num">4,718.3万ドル</td></tr>
+<tr><td>研究開発費</td><td class="num">167.8万ドル</td><td class="num">20.8万ドル</td><td class="num">302.3万ドル</td><td class="num">1,226.8万ドル</td></tr>
+<tr><td>販売・一般管理費</td><td class="num">1,782.1万ドル</td><td class="num">1,741.5万ドル</td><td class="num">5,451.9万ドル</td><td class="num">8,167.0万ドル</td></tr>
+<tr><td>営業費用合計</td><td class="num">2,635.2万ドル</td><td class="num">2,444.2万ドル</td><td class="num">7,885.1万ドル</td><td class="num">1億1,261.5万ドル</td></tr>
+<tr class="total"><td>営業損失</td><td class="num">▲719.3万ドル</td><td class="num">▲681.1万ドル</td><td class="num">▲2,493.7万ドル</td><td class="num">▲6,543.2万ドル</td></tr>
+<tr><td>優先審査バウチャー売却益（純額）</td><td class="num">―</td><td class="num">―</td><td class="num"><strong>+1億5,887.3万ドル</strong></td><td class="num">―</td></tr>
+<tr><td>営業外損益 合計</td><td class="num">▲111.7万ドル</td><td class="num">+1,566.4万ドル</td><td class="num">+1億5,984.3万ドル</td><td class="num">+3,811.0万ドル</td></tr>
+<tr class="total"><td>純損益（連結）</td><td class="num">▲825.4万ドル</td><td class="num">+882.7万ドル</td><td class="num">+1億2,951.1万ドル</td><td class="num">▲2,751.8万ドル</td></tr>
+<tr><td>非支配持分に帰属</td><td class="num">+240.9万ドル</td><td class="num">▲297.7万ドル</td><td class="num">▲2,545.1万ドル</td><td class="num">+3,827.0万ドル</td></tr>
+<tr><td>Fortress帰属 純損益</td><td class="num">▲584.5万ドル</td><td class="num">+585.0万ドル</td><td class="num">+1億406.0万ドル</td><td class="num">+1,075.2万ドル</td></tr>
+<tr><td>優先株配当・子会社みなし配当</td><td class="num">▲200.8万ドル</td><td class="num">▲217.4万ドル</td><td class="num">▲602.4万ドル</td><td class="num">▲643.6万ドル</td></tr>
+<tr class="total"><td>普通株主帰属 純損益</td><td class="num">▲785.3万ドル</td><td class="num">+367.5万ドル</td><td class="num">+9,803.6万ドル</td><td class="num">+431.6万ドル</td></tr>
+<tr><td>1株当たり損益（基本）</td><td class="num">▲0.23ドル</td><td class="num">+0.13ドル</td><td class="num"><strong>+2.94ドル</strong></td><td class="num">+0.16ドル</td></tr>
+<tr><td>1株当たり損益（希薄化後）</td><td class="num">▲0.23ドル</td><td class="num">+0.11ドル</td><td class="num">+2.51ドル</td><td class="num">+0.14ドル</td></tr>
+<tr><td>加重平均株式数（基本）</td><td class="num">33,746,832株</td><td class="num">27,244,474株</td><td class="num">33,394,537株</td><td class="num">27,075,216株</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※決算リリース記載値。表記は千ドル単位の原数値を万ドル単位に換算したものです。</p>
+
+<p>この表には、本シリーズがこれまで扱ってきた論点がほぼすべて入っています。</p>
+
+<ul>
+<li><strong>同じ年度の中で、9か月のEPSは+2.94ドル、第3四半期は▲0.23ドル</strong></li>
+<li><strong>前年同期の第3四半期は純利益+882.7万ドルだったが、営業損失は▲681.1万ドル</strong>。本業は両年とも赤字</li>
+<li><strong>2025年9か月は連結で▲2,751.8万ドルの純損失なのに、Fortress帰属は+1,075.2万ドルの純利益</strong></li>
+<li>損益を示す行は、BridgeBioと同じく<strong>6本</strong></li>
+</ul>
+
+<p>第3四半期の営業損失は▲719.3万ドルで、前年同期の▲681.1万ドルから<strong>5.6%拡大</strong>しました（編集部計算）。本業の損益はほぼ横ばいです。それでも純損益は+882.7万ドルから▲825.4万ドルへ、<strong>1,708.1万ドル振れました</strong>（編集部計算）。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>営業損失がほぼ横ばいなのに、純損益が1,708万ドル振れる。</strong>差はすべて営業外です。2025年第3四半期には「その他収益」1,767.2万ドルがあり、2026年第3四半期にはそれがありません。<strong>本業の数字を見るには、営業損失の行まで戻る必要があります。</strong></p>
+</div>
+
+<h2 class="chapter" id="c2"><span class="num">②</span>9か月の黒字を作ったのは本業ではない</h2>
+
+<p>9か月累計の純利益1億2,951.1万ドルは、どこから来たのでしょうか。</p>
+
+<div class="kpi-grid">
+  <div class="kpi">
+    <span class="label">9か月の営業損失</span>
+    <span class="value">▲2,493.7万ドル</span>
+    <span class="note">前年同期▲6,543.2万ドル</span>
+  </div>
+  <div class="kpi">
+    <span class="label">優先審査バウチャー売却益（純額）</span>
+    <span class="value">+1億5,887.3万ドル</span>
+    <span class="note">2026年3月に売却完了</span>
+  </div>
+  <div class="kpi">
+    <span class="label">売却益 ÷ 営業損失</span>
+    <span class="value">約6.37倍</span>
+    <span class="note">編集部計算</span>
+  </div>
+  <div class="kpi">
+    <span class="label">売却益を除いた普通株主帰属損益</span>
+    <span class="value">約▲6,083.7万ドル</span>
+    <span class="note">編集部試算（単純差引）</span>
+  </div>
+</div>
+
+<p>優先審査バウチャー（PRV：Priority Review Voucher）とは、希少小児疾患などの新薬を承認させた企業にFDAが付与する権利です。これを使うと、別の新薬について審査期間を短縮できます。<strong>譲渡可能なため、売買の対象になります。</strong></p>
+
+<p>Fortressの子会社Cyprium Therapeuticsは、2026年1月12日に承認されたZYCUBO（copper histidinate、旧CUTX-101／小児Menkes病）によりPRVを取得し、2026年3月30日にその売却完了を発表しました。</p>
+
+<p>9か月の普通株主帰属純利益9,803.6万ドルから売却益1億5,887.3万ドルを単純に差し引くと、<strong>約▲6,083.7万ドル</strong>になります（編集部試算。税効果やその他の一回限り項目を調整していない単純差引です）。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>本シリーズ3日連続で、「一回限りの項目が見出しを作る」ケースが出てきました。</strong>ただし現れる場所が毎回違います。</p>
+<p style="margin:12px 0 0;">
+・<a href="https://marketsupporter-ai.com/reports/roivant-roiv-q2.html">Roivant</a>：売上が約22.4倍になったが、その中身は承認から<strong>5週間分</strong>の製品売上<br>
+・<a href="https://marketsupporter-ai.com/reports/bridgebio-bbio-q3.html">BridgeBio</a>：<strong>売上高の中</strong>に一回限りのマイルストーン7,500万ドル（営業損失改善額の約78.5%）<br>
+・Fortress：<strong>営業外損益の中</strong>に資産売却益1億5,887.3万ドル（営業損失の約6.37倍）</p>
+<p style="margin:12px 0 0;">売上高の行、営業損失の行、純損益の行 ― <strong>どの行に一回限りの項目が入っているかで、何が歪むかが変わります。</strong></p>
+</div>
+
+<h2 class="chapter" id="c3"><span class="num">③</span>2億500万ドルが普通株主に届くまでの3段階</h2>
+
+<p>ここが持株会社型を読むうえで、もっとも実務的な論点です。</p>
+
+<p>PRVの売却価格は<strong>総額2億500万ドル</strong>と公表されました。しかし損益計算書に計上された売却益は1億5,887.3万ドル（純額）です。差はどこへ行ったのでしょうか。</p>
+
+<div class="flow">
+  <div class="flow-step">
+    <div class="circle">1</div>
+    <div class="body"><strong>NIH（米国立小児保健発達研究所／NICHD）へ売却代金の20%</strong>。Cypriumには売却代金の20%をNICHDへ支払う義務があります。2億500万ドルの20%は約4,100万ドルです（編集部計算）。</div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">2</div>
+    <div class="body"><strong>非支配持分へ</strong>。Cypriumは完全子会社ではありません。9か月の純利益1億2,951.1万ドルのうち<strong>2,545.1万ドル</strong>が非支配持分に帰属しています。</div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">3</div>
+    <div class="body"><strong>優先株配当・子会社みなし配当へ</strong>。9か月で<strong>602.4万ドル</strong>。FortressにはシリーズA優先株（FBIOP）があり、さらに「子会社のみなし配当のうちFortress持分相当」も同じ行で控除されています。</div>
+  </div>
+</div>
+
+<p>公表総額2億500万ドルに対し、損益計算書に計上された売却益（純額）1億5,887.3万ドルは<strong>約77.5%</strong>です（編集部計算）。NICHDへの20%が主な差と考えられますが、リリースに差額の内訳の記載はないため、取引費用等が含まれる可能性があります。</p>
+
+<p>会社は2026年3月の発表時点で、Cypriumの過半数株主として<strong>「Fortressとして1億ドル超を受け取る見込み」</strong>と説明しました。公表総額2億500万ドルに対し<strong>約48.8%以上</strong>にあたります（編集部計算）。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>入口記事②章で扱った「実現率」の4つ目のパターンです。</strong></p>
+<p style="margin:12px 0 0;">
+・<a href="https://marketsupporter-ai.com/reports/recursion-rxrx-q3.html">Recursion</a>：公表総額200億ドル超に対し累積受領額5億3,500万ドル超＝<strong>約2.7%</strong>。条件は開発進捗と売上目標<br>
+・<a href="https://marketsupporter-ai.com/reports/royalty-pharma-rprx.html">RoyaltyPharma</a>：払う側。最大4億2,500万ドルのうち前払いが<strong>約29.4%</strong><br>
+・<a href="https://marketsupporter-ai.com/reports/roivant-roiv-q2.html">Roivant</a>：和解総額22億5,000万ドルのうち受領済み<strong>約42%</strong>。残りは訴訟の結果に依存<br>
+・<strong>Fortress：条件はすでに満たされ、現金も受領済み。それでも普通株主に届くまでに3段階で目減りする</strong></p>
+<p style="margin:12px 0 0;">実現率の低さは、条件が未達だからとは限りません。<strong>条件を満たした後の分配の階層でも、同じことが起きます。</strong></p>
+</div>
+
+<h3>完済された親会社の債務</h3>
+
+<p>受領した資金の使途の1つは、債務の返済でした。2026年9月、FortressはOaktreeとの信用枠の残元本<strong>1,500万ドル</strong>を全額返済し、すべての担保権が解除され、契約は終了しました。もとは2024年7月に設定された5,000万ドルの枠で、会社は<strong>「親会社レベルの債務はなくなった」</strong>と述べています。</p>
+
+<p>ただし連結貸借対照表には、長期支払手形1,807.7万ドル（2025年末5,241.7万ドル）と「パートナー企業の短期支払手形」750万ドルが残っています。会社の説明と整合させるなら、これらは子会社レベルのものと考えられますが、<strong>リリースに明示的な区分の記載はありません。</strong></p>
+
+<h2 class="chapter" id="c4"><span class="num">④</span>連結売上のほぼ全額が、持分34.9%の別会社のもの</h2>
+
+<p>第3四半期の製品売上1,892.5万ドルについて、リリースは「販売中の皮膚科製品によるもの」と説明しています。この製品群を持っているのは<strong>Journey Medical Corporation（NASDAQ:DERM）</strong>です。</p>
+
+<p>Journey Medicalは<strong>それ自体がNASDAQ上場企業</strong>で、同じ四半期に製品売上1,890万ドルを報告しました。Fortressの連結製品売上1,892.5万ドルと、ほぼ一致します。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>そしてFortressのJourney Medicalに対する持分は34.9%です。</strong></p>
+<p style="margin:12px 0 0;">連結の対象になるかどうかは持分比率ではなく<strong>支配の有無</strong>で判断されます。議決権の多い種類株式などによって支配が認められれば、持分が過半数未満でも全額を連結します。会計上は正しい処理です。</p>
+<p style="margin:12px 0 0;">結果として、<strong>Fortressの連結売上高を見ている読者は、Fortressが34.9%しか保有していない別の上場会社の売上高を、100%分見ていることになります。</strong>残りの65.1%の経済的価値は、非支配持分の側にあります。</p>
+</div>
+
+<p>持株会社型3社で、入口記事④章のチェックリストに追加されてきた項目を並べます。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>追加で確認が必要だったこと</th></tr>
+</thead>
+<tbody>
+<tr><td>Roivant（ROIV）</td><td>連結の純損益と<strong>親会社帰属</strong>の純損益を、必ず両方見る</td></tr>
+<tr><td>BridgeBio（BBIO）</td><td>連結の現金と同時に<strong>連結の負債</strong>を見る（総負債が総資産の約176.5%）</td></tr>
+<tr class="total"><td>Fortress（FBIO）</td><td>連結売上が<strong>どの子会社のもので、持分が何%か</strong>を確認する</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>第三者トランスクリプトに現れた混同</h3>
+
+<p>この構造は、実際に読み間違いを生みます。</p>
+
+<p>本記事の執筆にあたり、Fortressの第3四半期決算説明会として公開されている第三者作成のトランスクリプトを参照しました。そこには<strong>Fortressの連結値と一致しない数字</strong>が複数含まれていました ― 現金2,230万ドル（Fortressの連結値は1億5,220万ドル）、販売・一般管理費1,260万ドル（同1,782.1万ドル）、純損失130万ドル（同825.4万ドル）。</p>
+
+<p>これらはいずれも<strong>Journey Medical側の数字</strong>と整合します。実際、同トランスクリプトでは司会者や発言者が「Journey Medical」と呼んでいる箇所があります。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>本記事のFortressに関する数値は、すべて8-K添付の決算リリース（原典）から取っています。</strong>決算説明会のトランスクリプトは、Journey Medical／Emrosiの運営指標（処方数・処方医数・粗利率など、Journey側の指標として明確なもの）に限って参照しました。</p>
+<p style="margin:12px 0 0;">持株会社型では、<strong>親会社と上場子会社が同じ時期に決算を発表し、同じ製品の話をします。</strong>どちらの数字を見ているかを常に確認する必要があります。</p>
+</div>
+
+<h2 class="chapter" id="c5"><span class="num">⑤</span>非支配持分の符号は、期によって反転する</h2>
+
+<p>持株会社型3社で、非支配持分の行が3通りの振る舞いを見せました。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業・期間</th><th class="num">連結純損益</th><th class="num">非支配持分</th><th class="num">親会社帰属</th><th>方向</th></tr>
+</thead>
+<tbody>
+<tr><td>Roivant（2026年9月期）</td><td class="num">▲1億3,721.1万ドル</td><td class="num">純<strong>利益</strong>+5,440.8万ドル</td><td class="num">▲1億9,161.9万ドル</td><td>損失が<strong>拡大</strong></td></tr>
+<tr><td>BridgeBio（2026年Q3）</td><td class="num">▲6,050万ドル</td><td class="num">純<strong>損失</strong>380万ドル</td><td class="num">▲5,670万ドル</td><td>損失が<strong>縮小</strong></td></tr>
+<tr><td>Fortress（2026年Q3）</td><td class="num">▲825.4万ドル</td><td class="num">純<strong>損失</strong>240.9万ドル</td><td class="num">▲584.5万ドル</td><td>損失が縮小</td></tr>
+<tr><td>Fortress（2026年9か月）</td><td class="num">+1億2,951.1万ドル</td><td class="num">純<strong>利益</strong>2,545.1万ドル</td><td class="num">+1億406.0万ドル</td><td>利益が縮小</td></tr>
+<tr class="total"><td>Fortress（2025年9か月）</td><td class="num">▲2,751.8万ドル</td><td class="num">純<strong>損失</strong>3,827.0万ドル</td><td class="num">+1,075.2万ドル</td><td><strong>赤字が黒字に反転</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<p>最後の行に注目してください。<strong>2025年9か月のFortressは、連結では▲2,751.8万ドルの純損失ですが、Fortressに帰属する純損益は+1,075.2万ドルの純利益です。</strong>子会社の少数株主が3,827.0万ドルの損失を負担したためです。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>連結が赤字でも、親会社帰属が黒字になりうる。その逆もある。</strong>非支配持分の符号は固定ではなく、どの子会社が儲かりどの子会社が損をしたかで四半期ごとに変わります。持株会社型の損益計算書では、<strong>「どの行を見ているか」が、黒字か赤字かを決めます。</strong></p>
+</div>
+
+<h2 class="chapter" id="c6"><span class="num">⑥</span>現金を「どこにあるか」で開示している唯一の会社</h2>
+
+<p>ここはFortressを評価すべき点です。会社は現金残高を、<strong>主体別に分けて開示しています。</strong></p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>主体</th><th class="num">2026年9月30日</th><th class="num">2025年12月31日</th><th class="num">連結に占める比率</th></tr>
+</thead>
+<tbody>
+<tr><td>Fortress および非上場子会社</td><td class="num">1億1,410万ドル</td><td class="num">3,520万ドル</td><td class="num"><strong>約75.0%</strong></td></tr>
+<tr><td>Avenue Therapeutics</td><td class="num">150万ドル</td><td class="num">290万ドル</td><td class="num">約1.0%</td></tr>
+<tr><td>Mustang Bio</td><td class="num">1,430万ドル</td><td class="num">1,730万ドル</td><td class="num">約9.4%</td></tr>
+<tr><td>Journey Medical</td><td class="num">2,230万ドル</td><td class="num">2,410万ドル</td><td class="num">約14.7%</td></tr>
+<tr class="total"><td>連結合計</td><td class="num">1億5,220万ドル</td><td class="num">7,940万ドル</td><td class="num">100%</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※比率は編集部計算。制限付き現金は両時点で120万ドル。</p>
+
+<p>連結現金1億5,220万ドルのうち、Fortressと非上場子会社が持つのは1億1,410万ドル（<strong>約75.0%</strong>）。残りの約25.0%は、上場している子会社（Avenue、Mustang Bio、Journey Medical）の現金です。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>これは持株会社型でもっとも重要な開示です。</strong>上場子会社の現金は、その子会社の株主のものであり、親会社が自由に引き出して別の用途に使えるわけではありません。「連結現金が1億5,220万ドルある」と「親会社が1億5,220万ドルを使える」は、まったく別の話です。</p>
+<p style="margin:12px 0 0;">本シリーズの持株会社型3社のうち、<strong>この内訳を開示しているのはFortressだけです。</strong>RoivantとBridgeBioは連結値を1本で開示しています（他の資料に記載がある可能性はありますが、決算リリースには見当たりませんでした）。時価総額が1万分の2の会社が、もっとも細かく開示しています。</p>
+</div>
+
+<h3>現金と時価総額の関係</h3>
+
+<p>本シリーズでは「現金等 ÷ 時価総額」を比較してきました。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th class="num">現金等</th><th class="num">時価総額</th><th class="num">現金等÷時価総額</th></tr>
+</thead>
+<tbody>
+<tr><td>BridgeBio（BBIO）</td><td class="num">15億3,890万ドル</td><td class="num">約152.5億ドル</td><td class="num">約10.1%</td></tr>
+<tr><td>Roivant（ROIV）</td><td class="num">約42億757万ドル</td><td class="num">約286.4億ドル</td><td class="num">約14.7%</td></tr>
+<tr><td>Innoviva（INVA）</td><td class="num">―</td><td class="num">―</td><td class="num">約42.8%</td></tr>
+<tr class="total"><td>Fortress（FBIO）</td><td class="num">1億5,220万ドル（連結）</td><td class="num">約6,637万ドル</td><td class="num"><strong>約229.3%</strong></td></tr>
+<tr><td>Fortress（親会社＋非上場子会社のみ）</td><td class="num">1億1,410万ドル</td><td class="num">約6,637万ドル</td><td class="num">約171.9%</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※FBIOの時価総額は11月13日の株価1.99ドル×発行済株式数33.35百万株による編集部計算。株価と株式数は株価情報サイト掲載値で、株式数は10月16日時点のものです。各社の現金等は直近四半期末時点で、時価総額の算定時点とは異なります。</p>
+
+<p>Fortressの連結現金は時価総額の約2.29倍です（編集部計算）。ただし⑥章で見たとおり、その約25.0%は上場子会社の現金です。<strong>主体別の内訳が開示されていなければ、この比率をどう読むかを判断できません。</strong>本記事は株価水準について見解を示すものではなく、<strong>開示の有無が判断材料の量を変える</strong>という点を記録するものです。</p>
+
+<h2 class="chapter" id="c7"><span class="num">⑦</span>研究開発費が9か月で▲75.4%、四半期で+706.7%</h2>
+
+<p>費用の動きが、方向も倍率もばらばらです。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>費用</th><th class="num">Q3の前年同期比</th><th class="num">9か月の前年同期比</th></tr>
+</thead>
+<tbody>
+<tr><td>研究開発費</td><td class="num"><strong>+706.7%</strong>（20.8万→167.8万ドル）</td><td class="num"><strong>▲75.4%</strong>（1,226.8万→302.3万ドル）</td></tr>
+<tr><td>販売・一般管理費</td><td class="num">+2.3%（1,741.5万→1,782.1万ドル）</td><td class="num">▲33.2%（8,167.0万→5,451.9万ドル）</td></tr>
+<tr><td>営業費用合計</td><td class="num">+7.8%</td><td class="num">▲30.0%</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※増減率は編集部計算。</p>
+
+<p>同じ費用項目が、四半期では約8倍に増え、9か月では4分の1に減っています。これは費用削減と費用増加が同時に起きたわけではありません。</p>
+
+<p>第3四半期の研究開発費の増加には、FB-607（Cedars-Sinaiから独占ライセンスを受けた過敏性腸症候群・下痢型の候補薬、第2相実施中）のライセンス費用が含まれると説明されています。金額としては小さく、母数が20.8万ドルだったために倍率が大きく見えています。</p>
+
+<p>一方、9か月の大幅減は<strong>連結範囲の変化</strong>が関係します。2025年9か月には「子会社の連結除外による利益」2,712.7万ドルが計上されています。子会社が連結から外れれば、その子会社の研究開発費も連結損益計算書から消えます。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>持株会社型では、前年同期比そのものが成立しないことがあります。</strong>連結範囲が変われば、売上も費用も「同じ会社の集合」を比べていません。2026年9か月の営業費用が前年同期比▲30.0%というのは、経費を3割削ったという話ではなく、<strong>比べている会社の集合が違う</strong>という話です。</p>
+<p style="margin:12px 0 0;">入口記事⑤章では「比較対象の期にも同じ作業をする」という手順を加えました。持株会社型ではもう1つ必要です ― <strong>比較対象の期と、連結している会社が同じかを確認する。</strong></p>
+</div>
+
+<div class="crosslink">
+<strong>これまでの「歪みは比較対象の期にある」3例：</strong><a href="https://marketsupporter-ai.com/reports/butterfly-network-bfly.html">Butterfly Network</a>は前年の棚卸資産評価損1,740万ドル、<a href="https://marketsupporter-ai.com/reports/ligand-lgnd.html">Ligand</a>は前年のPelthos収益5,310万ドル、<a href="https://marketsupporter-ai.com/reports/recursion-rxrx-q3.html">Recursion</a>は前年のIPR&D 2,280万ドル。<strong>Fortressは4例目ですが、原因が金額ではなく「連結の範囲」です。</strong>
+</div>
+
+<h2 class="chapter" id="c8"><span class="num">⑧</span>売上の中身、売掛金、株価</h2>
+
+<h3>Emrosiが伸び、レガシー製品が減っている</h3>
+
+<p>連結製品売上の中身は、Journey Medicalの製品群です。中核はEmrosi（ミノサイクリン徐放錠、尋常性ざ瘡に伴う炎症性病変の治療薬）で、2024年11月にFDA承認、2025年3月末に発売されました。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2026年9か月</th><th class="num">2025年9か月</th><th class="num">増減</th></tr>
+</thead>
+<tbody>
+<tr><td>Emrosi 売上</td><td class="num">2,330万ドル</td><td class="num">970万ドル</td><td class="num"><strong>+約140.2%</strong></td></tr>
+<tr><td>その他（レガシー製品）</td><td class="num">約2,938.5万ドル</td><td class="num">約3,547.3万ドル</td><td class="num"><strong>▲約17.2%</strong></td></tr>
+<tr class="total"><td>製品売上 合計</td><td class="num">5,268.5万ドル</td><td class="num">4,517.3万ドル</td><td class="num">+約16.6%</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※レガシー製品の金額は製品売上合計からEmrosi売上を差し引いた編集部計算値。増減率も編集部計算。</p>
+
+<p>Emrosiの増加額1,360万ドルに対し、レガシー製品は約608.8万ドル減っています（編集部計算）。<strong>増収分の約44.8%が、既存製品の減少で打ち消されています。</strong></p>
+
+<p>Journey側の運営指標として、第3四半期は処方数が約4万件（前四半期約3.6万件、+約8%）、処方医が500人増えて5,000人超、リフィル率が第2四半期から約12%上昇、粗利率が67%から69%へ改善し、2四半期連続でEBITDA黒字と説明されています。足元では自己負担支援プログラムの変更により処方数が一時的に落ち込み、4〜8週間で回復する見込みとのことです。</p>
+
+<h3>売掛金が売上の4倍の速さで増えている</h3>
+
+<div class="kpi-grid">
+  <div class="kpi">
+    <span class="label">売掛金（純額）2026年9月30日</span>
+    <span class="value">4,738.7万ドル</span>
+    <span class="note">2025年末2,978.3万ドル／+約59.1%</span>
+  </div>
+  <div class="kpi">
+    <span class="label">9か月の売上高の伸び</span>
+    <span class="value">+約14.3%</span>
+    <span class="note">編集部計算</span>
+  </div>
+  <div class="kpi">
+    <span class="label">売掛金 ÷ 第3四半期売上高</span>
+    <span class="value">約2.47倍</span>
+    <span class="note">編集部計算</span>
+  </div>
+  <div class="kpi">
+    <span class="label">総資産</span>
+    <span class="value">2億8,021.5万ドル</span>
+    <span class="note">2025年末1億8,554.8万ドル</span>
+  </div>
+</div>
+
+<p>売上高が9か月で+約14.3%伸びるあいだに、売掛金は+約59.1%増えました（いずれも編集部計算）。<strong>約4.1倍の速さです。</strong>9月30日の売掛金4,738.7万ドルは、第3四半期の売上高1,915.9万ドルの約2.47倍にあたります。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>決算リリースと決算説明会のいずれにも、売掛金増加の理由の記載は見当たりませんでした。</strong>医薬品の売掛金は値引きや返品引当の影響を受けるため、単純に回収の遅れを示すとは限りません。本記事は原因を断定するものではなく、<strong>増加の理由が公開情報から確認できない</strong>という点を記録します。</p>
+</div>
+
+<h3>株主資本は約2.85倍、株価は下落している</h3>
+
+<p>株主資本は6,218.3万ドルから1億7,702.1万ドルへ、<strong>約2.85倍</strong>になりました（編集部計算）。PRV売却益によるものです。<a href="https://marketsupporter-ai.com/reports/bridgebio-bbio-q3.html">BridgeBioが債務超過</a>であるのとは逆方向の動きです。</p>
+
+<p>一方、株価は下落しています。</p>
+
+<ul>
+<li>2026年11月13日（決算発表日）の株価：<strong>1.99ドル</strong>。直近3か月で▲29.43%、12か月で▲24.05%</li>
+<li>2026年10月16日・19日の終値：1.87ドル。50日移動平均2.48ドル、200日移動平均2.89ドル（10月16日時点）</li>
+<li>発行済株式数：33.35百万株（前年同期比+25.98%／10月16日時点）</li>
+</ul>
+
+<p>第3四半期は市場予想も下回りました。EPSは▲0.23ドルに対し予想▲0.15ドル（0.08ドルの下振れ）、売上高は1,916万ドルに対し予想2,229万ドル（約14%の下振れ）と報じられています。</p>
+
+<p><strong>発表後の日次終値の連続データは取得できなかったため、本記事では発表前後の変動率を記載していません。</strong></p>
+
+<h3>シリーズ12社の株価反応</h3>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>決算の見え方</th><th class="num">発表後の株価</th></tr>
+</thead>
+<tbody>
+<tr><td>Butterfly Network（BFLY）</td><td>売上+52%、粗利率改善</td><td class="num">翌日▲3.84%、翌々日場中▲9.8%</td></tr>
+<tr><td>Repligen（RGEN）</td><td>GAAP営業損失（減損4,124.2万ドル）</td><td class="num">+4.5%</td></tr>
+<tr><td>Accuray（ARAY）</td><td>純利益黒字（債務消滅益）</td><td class="num">株式併合で比較不可</td></tr>
+<tr><td>RoyaltyPharma（RPRX）</td><td>ガイダンス引き上げ</td><td class="num">下落</td></tr>
+<tr><td>Ligand（LGND）</td><td>ロイヤルティ+51%</td><td class="num">ほぼ変わらず</td></tr>
+<tr><td>Innoviva（INVA）</td><td>営業利益+21.9%、EPSは予想を1.55ドル下回る</td><td class="num">52週安値</td></tr>
+<tr><td>Schrödinger（SDGR）</td><td>純損失拡大</td><td class="num">1年来高値圏</td></tr>
+<tr><td>Recursion（RXRX）</td><td>決算＋第2相データ</td><td class="num">+3.1%→増資価格近辺</td></tr>
+<tr><td>Absci（ABSI）</td><td>純損失16%拡大、EPSは改善</td><td class="num">―</td></tr>
+<tr><td>Roivant（ROIV）</td><td>売上が約22.4倍</td><td class="num">1週間後は発表前と同水準</td></tr>
+<tr><td>BridgeBio（BBIO）</td><td>営業損失が一回限り要因で縮小</td><td class="num">+5.96%</td></tr>
+<tr class="total"><td>Fortress（FBIO）</td><td>9か月EPS+2.94ドル、四半期は予想下振れ</td><td class="num">連続データ取得できず</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="watch">
+  <h2>WHAT TO WATCH</h2>
+  <p class="sub">Fortress Biotech（FBIO）について、今後の開示で確認したい6点</p>
+  <ol>
+    <li><strong>優先審査バウチャー売却益を除いた損益</strong>。9か月の普通株主帰属純利益9,803.6万ドルから売却益1億5,887.3万ドルを単純に差し引くと約▲6,083.7万ドル（編集部試算）。第4四半期にはこの項目がないため、通期の数字で本業の損益が見えます。</li>
+    <li><strong>現金の主体別内訳</strong>。Fortressおよび非上場子会社の1億1,410万ドルが、どの程度のペースで減るか。連結値ではなくこの行を追う必要があります。</li>
+    <li><strong>連結範囲の変化</strong>。2025年には子会社の連結除外益2,712.7万ドルが計上されました。連結範囲が変われば前年同期比が成立しなくなるため、構成会社の異動を確認する必要があります。</li>
+    <li><strong>売掛金</strong>。4,738.7万ドル（第3四半期売上高の約2.47倍／編集部計算）。9か月の売上高の伸びの約4.1倍のペースで増えており、理由の開示は見当たりませんでした。</li>
+    <li><strong>Journey MedicalのEmrosi</strong>。9か月で+約140.2%伸びる一方、レガシー製品は▲約17.2%（編集部計算）。自己負担支援プログラム変更の影響と、2027年1月開始予定とされる大型保険プランの適用が、どう数字に出るか。</li>
+    <li><strong>2027年のガイダンス</strong>。会社は提示を「強く検討している」としつつ、上半期は具体的な数字を控える可能性にも言及しました。持株会社型で親会社ベースのガイダンスが出るかどうかが、開示水準を測る材料になります。</li>
+  </ol>
+</div>
+
+<div class="disclaimer">
+<h3>免責事項</h3>
+<p style="margin:0 0 10px;">本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資判断はご自身の責任で行ってください。</p>
+<p style="margin:0 0 10px;">本記事の数値は2026年11月20日時点で確認できた公開情報に基づきます。株価および時価総額は株価情報サイトの掲載値で、記載した日付時点のものです。株価は日々変動します。発行済株式数は2026年10月16日時点、貸借対照表および現金残高は2026年9月30日時点であり、時価総額の算定時点とは異なります。</p>
+<p style="margin:0 0 10px;">「編集部計算」「編集部試算」と記した数値は、公表値をもとに編集部が算出した推計値です。優先審査バウチャー売却益を除いた損益は税効果やその他の一回限り項目を調整していない単純差引であり、会社が開示した指標ではありません。レガシー製品の売上は製品売上合計からEmrosi売上を差し引いた差額であり、会社が区分開示したものではありません。</p>
+<p style="margin:0 0 10px;">Fortressに関する数値はすべてForm 8-K添付の決算リリースから取得しています。決算説明会のトランスクリプト（第三者作成）には、Fortressの連結値と一致せずJourney Medical側の数字と整合する記載が複数含まれていたため、本記事では同トランスクリプトをJourney Medical／Emrosiの運営指標に限って参照し、該当箇所は要旨の日本語訳としています。連結貸借対照表の支払手形について、会社は親会社レベルの債務がないと述べていますが、リリースに主体別の明示的な区分の記載はありません。</p>
+<p style="margin:0;">FB-607は承認前の候補薬です。dotinuradおよびMB-109を含む開発中のプログラムについて、承認や試験開始を前提とした記述は行っていません。臨床試験の結果は後期試験や実臨床で再現されない場合があります。「記載がない」「確認できなかった」という表現は確認できた資料の範囲における記載であり、開示の不存在を断定するものではありません。</p>
+</div>
+
+<div class="src">
+<h3>主な参照資料</h3>
+<ul>
+<li>Fortress Biotech, Inc. Form 8-K 添付資料99.1「Fortress Biotech Reports Third Quarter 2026 Financial Results and Recent Corporate Highlights」（2026年11月13日）<a href="https://www.sec.gov/Archives/edgar/data/0001429260/000110465926126525/fbio-ex99d1.htm">sec.gov</a></li>
+<li>Fortress Biotech, Inc. Form 8-K 添付資料（優先審査バウチャー売却の完了／2026年3月30日）<a href="https://www.sec.gov/Archives/edgar/data/1429260/000110465926036818/fbio-20260330xex99.htm">sec.gov</a></li>
+<li>Fortress Biotech, Inc. Form 8-K 添付資料（優先審査バウチャー売却契約／2026年2月22日）<a href="https://www.sec.gov/Archives/edgar/data/1429260/000110465926018371/fbio-20260222xex99.htm">sec.gov</a></li>
+<li>Fortress Biotech（FBIO）2026年第3四半期 決算説明会トランスクリプト（第三者作成）<a href="https://www.fool.com/earnings/call-transcripts/2026/11/13/fortress-biotech-fbio-q3-2026-earnings-call-transcript/">fool.com</a></li>
+<li>Journey Medical の持分比率および四半期データ <a href="https://www.panabee.com/news/fortress-earnings-q3-2026">panabee.com</a>／<a href="https://www.panabee.com/news/journey-earnings-q3-2026">panabee.com（Journey）</a></li>
+<li>市場予想との比較 <a href="https://ca.investing.com/news/earnings/fortress-biotech-earnings-missed-by-008-revenue-fell-short-of-estimates-4956823">investing.com</a></li>
+<li>株価・発行済株式数 <a href="https://stockanalysis.com/stocks/fbio/statistics/">stockanalysis.com</a>／<a href="https://finance.yahoo.com/quote/FBIO/history/">finance.yahoo.com</a></li>
+</ul>
+</div>
+
+<div class="crosslink" style="margin-top:36px;">
+<strong>シリーズ記事：</strong><a href="https://marketsupporter-ai.com/reports/us-pharma-biotech-earnings-guide.html">入口記事：なぜ米国の製薬・バイオ株は、決算1本で株価が倍にも半分にもなるのか</a>／<a href="https://marketsupporter-ai.com/reports/bridgebio-bbio-q3.html">⑪BridgeBio Pharma（BBIO）― 改善額の約78.5%は一回限り</a>／<a href="https://marketsupporter-ai.com/reports/roivant-roiv-q2.html">⑩Roivant Sciences（ROIV）― 損益ラインが5本ある決算</a>／<a href="https://marketsupporter-ai.com/reports/royalty-pharma-rprx.html">④RoyaltyPharma（RPRX）― 実現率1.1倍の意味</a>
+</div>
+
+</div>
+</body>
+</html>
