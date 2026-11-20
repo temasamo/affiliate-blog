@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PureTech Health（PRTC）2026年上半期決算分析｜子会社IPOで1億5,873万ドルの利益</title>
+<meta name="description" content="PureTech Health（NASDAQ:PRTC）2026年上半期決算を一次資料から分析。子会社のIPOが生んだ1億5,873.5万ドルの非現金利益、RoyaltyPharmaへ全額支払われるロイヤルティ収益、持分比率と連結の関係、ADSによる時価総額の誤表示を検証します。">
+<style>
+:root{
+  --accent:#be185d;
+  --accent-dark:#9d174d;
+  --accent-mid:#ec4899;
+  --accent-light:#fdf2f8;
+  --ink:#1a1a1a;
+  --sub:#555;
+  --line:#e5e5e5;
+  --bg:#ffffff;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.9;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:780px;margin:0 auto;padding:0 20px 80px;}
+header.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 55%,var(--accent-mid) 100%);
+  color:#fff;
+  padding:56px 20px 48px;
+}
+header.hero .inner{max-width:780px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.45);
+  border-radius:999px;
+  padding:5px 14px;
+  font-size:12px;
+  letter-spacing:.08em;
+  margin-bottom:18px;
+}
+header.hero h1{
+  font-size:28px;
+  line-height:1.5;
+  margin:0 0 16px;
+  font-weight:700;
+}
+header.hero .lede{
+  font-size:15px;
+  line-height:1.85;
+  margin:0;
+  color:rgba(255,255,255,.93);
+}
+header.hero .meta{
+  margin-top:22px;
+  font-size:13px;
+  color:rgba(255,255,255,.8);
+  border-top:1px solid rgba(255,255,255,.28);
+  padding-top:14px;
+}
+.model-tag{
+  display:inline-block;
+  background:#fff;
+  color:var(--accent-dark);
+  font-size:12px;
+  font-weight:700;
+  border-radius:4px;
+  padding:3px 10px;
+  margin-right:8px;
+}
+.toc{
+  background:var(--accent-light);
+  border:1px solid #fbcfe8;
+  border-radius:10px;
+  padding:22px 24px;
+  margin:36px 0 44px;
+}
+.toc h2{
+  font-size:14px;
+  margin:0 0 12px;
+  color:var(--accent-dark);
+  letter-spacing:.06em;
+}
+.toc ol{margin:0;padding-left:1.3em;font-size:14.5px;}
+.toc li{margin-bottom:7px;}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(190,24,93,.3);}
+.toc a:hover{color:var(--accent);}
+h2.chapter{
+  font-size:21px;
+  line-height:1.55;
+  margin:56px 0 20px;
+  padding-bottom:12px;
+  border-bottom:2px solid var(--accent);
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+h2.chapter .num{
+  flex:0 0 auto;
+  background:var(--accent);
+  color:#fff;
+  font-size:13px;
+  border-radius:5px;
+  padding:3px 9px;
+  margin-top:5px;
+  font-weight:700;
+}
+h3{
+  font-size:17px;
+  margin:34px 0 14px;
+  padding-left:12px;
+  border-left:4px solid var(--accent-mid);
+  line-height:1.6;
+}
+p{margin:0 0 18px;}
+ul,ol{margin:0 0 18px;padding-left:1.4em;}
+li{margin-bottom:8px;}
+.callout{
+  background:var(--accent-light);
+  border-left:4px solid var(--accent);
+  border-radius:0 8px 8px 0;
+  padding:18px 20px;
+  margin:26px 0;
+  font-size:15px;
+}
+.callout.warn{
+  background:#fffbeb;
+  border-left-color:#d97706;
+}
+.callout strong{color:var(--accent-dark);}
+.callout.warn strong{color:#b45309;}
+.quote{
+  border-left:3px solid var(--line);
+  padding:4px 0 4px 18px;
+  margin:24px 0;
+  color:var(--sub);
+  font-size:15px;
+}
+.kpi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:12px;
+  margin:28px 0;
+}
+.kpi{
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:16px 14px;
+  background:#fafafa;
+}
+.kpi .label{font-size:12px;color:var(--sub);display:block;margin-bottom:6px;line-height:1.5;}
+.kpi .value{font-size:21px;font-weight:700;color:var(--accent-dark);display:block;line-height:1.3;}
+.kpi .note{font-size:11.5px;color:var(--sub);display:block;margin-top:5px;line-height:1.5;}
+.table-scroll{overflow-x:auto;margin:26px 0;-webkit-overflow-scrolling:touch;}
+table{
+  border-collapse:collapse;
+  width:100%;
+  min-width:560px;
+  font-size:14px;
+}
+th,td{
+  border:1px solid var(--line);
+  padding:10px 12px;
+  text-align:left;
+  vertical-align:top;
+}
+th{background:var(--accent-light);font-weight:700;color:var(--accent-dark);}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+tr.total td{background:#fafafa;font-weight:700;}
+.tnote{font-size:13px;color:var(--sub);margin:-14px 0 24px;}
+.flow{margin:28px 0;}
+.flow-step{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  margin-bottom:16px;
+}
+.flow-step .circle{
+  flex:0 0 auto;
+  width:30px;height:30px;
+  border-radius:50%;
+  background:var(--accent);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;
+  margin-top:2px;
+}
+.flow-step .body{flex:1 1 auto;font-size:15px;line-height:1.8;}
+.crosslink{
+  background:#f7f7f8;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:14px 18px;
+  margin:24px 0;
+  font-size:14px;
+  color:var(--sub);
+}
+.crosslink strong{color:var(--ink);}
+.crosslink a{color:var(--accent-dark);}
+.watch{
+  background:#1f1020;
+  color:#f3f3f3;
+  border-radius:12px;
+  padding:32px 28px;
+  margin:56px 0 36px;
+}
+.watch h2{
+  font-size:19px;
+  margin:0 0 8px;
+  color:#fff;
+  letter-spacing:.04em;
+}
+.watch .sub{font-size:13px;color:#c4b5c3;margin:0 0 22px;}
+.watch ol{
+  list-style:none;
+  counter-reset:w;
+  margin:0;padding:0;
+}
+.watch li{
+  counter-increment:w;
+  position:relative;
+  padding-left:38px;
+  margin-bottom:18px;
+  font-size:14.5px;
+  line-height:1.8;
+}
+.watch li::before{
+  content:counter(w);
+  position:absolute;left:0;top:2px;
+  width:25px;height:25px;
+  border-radius:50%;
+  background:var(--accent-mid);
+  color:#1f1020;
+  font-weight:700;font-size:13px;
+  display:flex;align-items:center;justify-content:center;
+}
+.watch li strong{color:#fbcfe8;}
+.disclaimer{
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:#fafafa;
+  padding:20px 22px;
+  font-size:13px;
+  color:var(--sub);
+  line-height:1.85;
+  margin:40px 0 28px;
+}
+.disclaimer h3{
+  font-size:14px;
+  margin:0 0 10px;
+  padding:0;
+  border:none;
+  color:var(--ink);
+}
+.src{
+  font-size:13px;
+  color:var(--sub);
+  line-height:1.9;
+}
+.src h3{
+  font-size:14px;
+  margin:36px 0 12px;
+  padding:0;
+  border:none;
+  color:var(--ink);
+}
+.src ul{padding-left:1.2em;margin:0;}
+.src li{margin-bottom:6px;}
+.src a{color:var(--accent-dark);}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  header.hero{padding:40px 18px 36px;}
+  header.hero h1{font-size:22px;}
+  .wrap{padding:0 16px 60px;}
+  h2.chapter{font-size:18.5px;}
+  h3{font-size:16px;}
+  .watch{padding:26px 20px;border-radius:10px;}
+  .kpi .value{font-size:19px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="inner">
+    <span class="eyebrow">米国製薬・バイオ決算シリーズ ⑬</span>
+    <h1>子会社がIPOすると、親会社の損益計算書に1億5,873万ドルの利益が立つ。現金は1ドルも動いていない</h1>
+    <p class="lede">PureTech Health（NASDAQ:PRTC）2026年上半期決算。半期の純利益は+6,724.8万ドル、1株当たり+0.28ドルですが、営業損失は▲5,230.1万ドルです。黒字を作ったのは、子会社SeaportのNASDAQ上場にともなう保有株式の評価益と、会計処理の変更にともなう一回限りの利益でした。さらにこの会社のロイヤルティ収益は、全額がRoyaltyPharmaに支払われます ― 本シリーズが11月12日に扱った、あの会社です。</p>
+    <p class="meta"><span class="model-tag">持株会社型</span>公開日：2026年11月21日／半期報告：2026年9月22日発表（2026年6月30日締め）</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#c1">この会社には四半期決算がない</a></li>
+    <li><a href="#c2">半期で純利益+6,724.8万ドル、営業損失▲5,230.1万ドル</a></li>
+    <li><a href="#c3">子会社のIPOが生んだ1億5,873.5万ドル ― 現金は動いていない</a></li>
+    <li><a href="#c4">ロイヤルティ収益は全額RoyaltyPharmaへ ― 取引の両側を記事にしていた</a></li>
+    <li><a href="#c5">持分31.2%は連結せず、持分34.9%は全額連結する</a></li>
+    <li><a href="#c6">主力候補薬を、持分35〜39%の会社に移した</a></li>
+    <li><a href="#c7">ADSの罠 ― 時価総額が10倍で表示される</a></li>
+    <li><a href="#c8">保有資産、時価総額、そして負債</a></li>
+  </ol>
+</nav>
+
+<p>本シリーズは、米国に上場する製薬・バイオ企業29社の決算を1社ずつ、一次資料に当たって読み解く企画です。13社目は<strong>PureTech Health plc（NASDAQ:PRTC）</strong>。<a href="https://marketsupporter-ai.com/reports/roivant-roiv-q2.html">Roivant</a>、<a href="https://marketsupporter-ai.com/reports/bridgebio-bbio-q3.html">BridgeBio</a>、<a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">Fortress Biotech</a>に続く<strong>持株会社型</strong>の4社目です。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>【お詫びと訂正】</strong>前回のFortress Biotechの記事で、次回取り上げる企業を「PharmaTher Holdings（PRTC）」と記載しましたが、<strong>PRTCはPureTech Health plc</strong>です。該当記事は訂正済みです。お詫びいたします。</p>
+</div>
+
+<p>PureTechは<strong>英国籍の企業</strong>で、ロンドン証券取引所とNASDAQに上場しています。会計基準はIFRS（国際財務報告基準）で、米国の証券規則上は「外国民間発行会社（Foreign Private Issuer）」に分類されます。</p>
+
+<p>この1点から、本シリーズで初めて扱う論点が出てきます。</p>
+
+<h2 class="chapter" id="c1"><span class="num">①</span>この会社には四半期決算がない</h2>
+
+<p>外国民間発行会社には、米国企業のような四半期報告（Form 10-Q）の提出義務がありません。PureTechは<strong>年2回</strong>、通期と半期で財務諸表を開示します。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>報告頻度</th><th class="num">直近の財務報告が対象とする期末</th><th class="num">発表日</th><th class="num">期末からの日数</th></tr>
+</thead>
+<tbody>
+<tr><td>Fortress Biotech（FBIO）</td><td>四半期</td><td class="num">2026年9月30日</td><td class="num">2026年11月13日</td><td class="num">約44日</td></tr>
+<tr><td>BridgeBio（BBIO）</td><td>四半期</td><td class="num">2026年9月30日</td><td class="num">2026年10月29日</td><td class="num">約29日</td></tr>
+<tr class="total"><td>PureTech Health（PRTC）</td><td><strong>半期</strong></td><td class="num"><strong>2026年6月30日</strong></td><td class="num">2026年9月22日</td><td class="num"><strong>約84日</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※日数は編集部計算。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>2026年11月の時点で、投資家が見られるPureTechの最新の財務数値は、2026年6月30日時点のものです。</strong>前回の通期報告（2025年12月期）が2026年4月29日に発表されていることから、次の財務報告は2027年春と見込まれます。つまり<strong>9月末と12月末の数字は、半年近く公表されません。</strong></p>
+<p style="margin:12px 0 0;">これは開示が不十分という話ではなく、<strong>制度が違うという話</strong>です。米国上場の外国企業を見るときは、「直近の決算」が何月時点の数字なのかを最初に確認する必要があります。重要な出来事は適時開示（Form 6-K、RNS）で公表されますが、財務諸表は半年に1回です。</p>
+</div>
+
+<h2 class="chapter" id="c2"><span class="num">②</span>半期で純利益+6,724.8万ドル、営業損失▲5,230.1万ドル</h2>
+
+<p>2026年6月30日に終了した6か月間の損益計算書です。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2026年上半期</th><th class="num">2025年上半期</th></tr>
+</thead>
+<tbody>
+<tr><td>ロイヤルティ収益（＝総収益）</td><td class="num">355.7万ドル</td><td class="num">185.1万ドル</td></tr>
+<tr><td>研究開発費</td><td class="num">▲3,387.4万ドル</td><td class="num">▲2,490.0万ドル</td></tr>
+<tr><td>一般管理費</td><td class="num">▲2,198.4万ドル</td><td class="num">▲2,488.3万ドル</td></tr>
+<tr><td>営業費用 合計</td><td class="num">▲5,585.8万ドル</td><td class="num">▲4,978.2万ドル</td></tr>
+<tr class="total"><td>営業損失</td><td class="num">▲5,230.1万ドル</td><td class="num">▲4,793.1万ドル</td></tr>
+<tr><td>公正価値で保有する投資の評価益</td><td class="num"><strong>+1億2,039.7万ドル</strong></td><td class="num">+367.9万ドル</td></tr>
+<tr><td>重要な影響力の喪失による利益（Seaport）</td><td class="num"><strong>+3,833.8万ドル</strong></td><td class="num">―</td></tr>
+<tr><td>その他収益 合計</td><td class="num">+1億5,938.7万ドル</td><td class="num">+99.8万ドル</td></tr>
+<tr><td>金融収益</td><td class="num">+433.9万ドル</td><td class="num">+707.6万ドル</td></tr>
+<tr><td>契約上の金融費用</td><td class="num">▲91.2万ドル</td><td class="num">▲96.0万ドル</td></tr>
+<tr><td>ロイヤルティ売却負債に係る非現金利息</td><td class="num"><strong>▲2,394.4万ドル</strong></td><td class="num">+24.7万ドル</td></tr>
+<tr><td>金融損益 純額</td><td class="num">▲2,051.7万ドル</td><td class="num">+636.3万ドル</td></tr>
+<tr><td>関連会社の純損失（持分法）</td><td class="num">▲1,878.1万ドル</td><td class="num">▲399.6万ドル</td></tr>
+<tr><td>関連会社持分の希薄化による利益</td><td class="num">+502.6万ドル</td><td class="num">+70.8万ドル</td></tr>
+<tr class="total"><td>税引前損益</td><td class="num">+7,281.5万ドル</td><td class="num">▲4,385.9万ドル</td></tr>
+<tr class="total"><td>親会社所有者帰属 純損益</td><td class="num">+6,724.8万ドル</td><td class="num">▲4,460.5万ドル</td></tr>
+<tr><td>1株当たり損益（基本）</td><td class="num"><strong>+0.28ドル</strong></td><td class="num">▲0.19ドル</td></tr>
+<tr><td>1株当たり損益（希薄化後）</td><td class="num">+0.27ドル</td><td class="num">▲0.19ドル</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※半期報告記載値。表記は千ドル単位の原数値を万ドル単位に換算したものです。IFRSベース。</p>
+
+<p>営業損失は前年同期の▲4,793.1万ドルから▲5,230.1万ドルへ、<strong>9.1%拡大</strong>しました（編集部計算）。それでも最終損益は▲4,460.5万ドルから+6,724.8万ドルへ、<strong>1億1,185.3万ドル改善</strong>しています（編集部計算）。</p>
+
+<p>総収益355.7万ドルを営業費用5,585.8万ドルで割ると<strong>約6.4%</strong>です（編集部計算）。本シリーズの比較では、<a href="https://marketsupporter-ai.com/reports/absci-absi-q3.html">Absci</a>が約0.9%、<a href="https://marketsupporter-ai.com/reports/roivant-roiv-q2.html">Roivant</a>が約11.6%、<a href="https://marketsupporter-ai.com/reports/schrodinger-sdgr-q3.html">Schrödinger</a>が約100%でした。</p>
+
+<h2 class="chapter" id="c3"><span class="num">③</span>子会社のIPOが生んだ1億5,873.5万ドル ― 現金は動いていない</h2>
+
+<p>黒字の正体は、損益計算書の「その他収益」の2行です。</p>
+
+<div class="kpi-grid">
+  <div class="kpi">
+    <span class="label">公正価値で保有する投資の評価益</span>
+    <span class="value">+1億2,039.7万ドル</span>
+    <span class="note">前年同期+367.9万ドル</span>
+  </div>
+  <div class="kpi">
+    <span class="label">重要な影響力の喪失による利益</span>
+    <span class="value">+3,833.8万ドル</span>
+    <span class="note">一回限り</span>
+  </div>
+  <div class="kpi">
+    <span class="label">2項目の合計</span>
+    <span class="value">+1億5,873.5万ドル</span>
+    <span class="note">編集部計算</span>
+  </div>
+  <div class="kpi">
+    <span class="label">2項目を除いた税引前損益</span>
+    <span class="value">約▲8,592.0万ドル</span>
+    <span class="note">編集部試算（単純差引）</span>
+  </div>
+</div>
+
+<p>原因は1つです。PureTechが設立した<strong>Seaport Therapeutics</strong>が、2026年5月1日にNASDAQ Global Select Market（ティッカー：SPTX）へ上場しました。IPOは当初条件を引き上げて実施され、総額約2億6,000万ドルを調達しています。</p>
+
+<p>上場によって2つのことが起きました。</p>
+
+<div class="flow">
+  <div class="flow-step">
+    <div class="circle">1</div>
+    <div class="body"><strong>保有株式に市場価格がついた。</strong>非上場企業への投資は評価が難しく、直前の資金調達価格などで測られます。上場すれば市場価格で評価されます。この結果、<strong>1億2,039.7万ドルの評価益</strong>が計上されました。</div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">2</div>
+    <div class="body"><strong>会計処理が変わった。</strong>PureTechのSeaportに対する「重要な影響力」が失われたと判定され、持分法の適用から公正価値評価へ移りました。この切り替えにともない、<strong>3,833.8万ドルの一回限りの利益</strong>が計上されました。</div>
+  </div>
+</div>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>この1億5,873.5万ドルは、PureTechに現金をもたらしていません。</strong>IPOで調達された約2億6,000万ドルは、Seaport自身に入ります。PureTechは株式を売っておらず、保有株式の評価額が上がり、会計処理が変わっただけです。</p>
+<p style="margin:12px 0 0;">実際、現金・現金同等物は2025年12月末の2億5,247.0万ドルから、2026年6月末には<strong>1億2,127.5万ドル</strong>へ減っています（別途、短期投資9,884.9万ドルを保有）。<strong>1億5,873.5万ドルの利益を計上した半期に、現金は減っています。</strong></p>
+</div>
+
+<h3>一回限りの項目が現れた場所 ― 4日連続の整理</h3>
+
+<p>本シリーズでは4日連続で、一回限りの項目が見出しの数字を作るケースを扱いました。<strong>毎回、現れる場所と性質が違います。</strong></p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>場所</th><th>性質</th><th class="num">現金を伴うか</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/roivant-roiv-q2.html">Roivant（ROIV）</a></td><td>売上高の中身</td><td>承認から5週間分の製品売上</td><td class="num">伴う</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/bridgebio-bbio-q3.html">BridgeBio（BBIO）</a></td><td>売上高の行</td><td>一回限りのマイルストーン7,500万ドル</td><td class="num">伴う</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">Fortress（FBIO）</a></td><td>営業外損益</td><td>資産（PRV）の売却益</td><td class="num">伴う</td></tr>
+<tr class="total"><td>PureTech（PRTC）</td><td>営業外損益</td><td><strong>保有株式の評価益と会計処理の変更</strong></td><td class="num"><strong>伴わない</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="crosslink">
+<strong>シリーズを通した見方：</strong>保有株式の時価が損益を動かしたケースは、これまでにも<a href="https://marketsupporter-ai.com/reports/royalty-pharma-rprx.html">RPRX</a>（減損1億5,000万ドル）、<a href="https://marketsupporter-ai.com/reports/ligand-lgnd.html">LGND</a>（▲3,570万ドル）、<a href="https://marketsupporter-ai.com/reports/innoviva-inva.html">INVA</a>（▲1億3,950万ドル）、<a href="https://marketsupporter-ai.com/reports/schrodinger-sdgr-q3.html">SDGR</a>（▲1,475.2万ドル）の4社で出てきました。<strong>PRTCは5社目で、しかもこれまでの4社と違って金額がプラスです。</strong>方向が逆になっても、見方は同じです ― 現金が動いたかどうかを確認する。
+</div>
+
+<h2 class="chapter" id="c4"><span class="num">④</span>ロイヤルティ収益は全額RoyaltyPharmaへ ― 取引の両側を記事にしていた</h2>
+
+<p>PureTechの総収益はロイヤルティ収益355.7万ドルのみです。この中身を見ます。</p>
+
+<p>原資はCobenfy（KarXT）です。PureTechが設立したKaruna Therapeuticsが開発し、2024年にBristol Myers Squibbが買収しました。PureTechは<strong>年間売上20億ドルを超える部分に対する2%のロイヤルティ</strong>と、RoyaltyPharmaおよびBMSとの契約に基づくマイルストーンの権利を持ちます。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>そしてこのロイヤルティ収益は、全額がRoyaltyPharmaに支払われます。</strong>半期報告は、計上されたロイヤルティ収益355.7万ドルについて「ロイヤルティ購入契約に基づきRoyalty Pharmaに支払われる」と記載しています。</p>
+</div>
+
+<p>つまりPureTechは、将来受け取るロイヤルティを前払いでRoyaltyPharmaに売却しており、実際に入ってくるロイヤルティは契約に従ってRoyaltyPharmaへ流れていきます。会計上は収益として計上し、同時に負債を積み上げます。</p>
+
+<div class="kpi-grid">
+  <div class="kpi">
+    <span class="label">ロイヤルティ収益（半期）</span>
+    <span class="value">355.7万ドル</span>
+    <span class="note">全額RoyaltyPharmaへ</span>
+  </div>
+  <div class="kpi">
+    <span class="label">将来ロイヤルティ売却負債</span>
+    <span class="value">2億450万ドル</span>
+    <span class="note">流動1,720万＋非流動1億8,730万ドル</span>
+  </div>
+  <div class="kpi">
+    <span class="label">同負債に係る非現金利息（半期）</span>
+    <span class="value">2,394.4万ドル</span>
+    <span class="note">前年同期は+24.7万ドル</span>
+  </div>
+  <div class="kpi">
+    <span class="label">非現金利息 ÷ ロイヤルティ収益</span>
+    <span class="value">約6.73倍</span>
+    <span class="note">編集部計算</span>
+  </div>
+</div>
+
+<h3>シリーズで、同じ取引の両側を扱っていた</h3>
+
+<p>本シリーズは11月12日に<a href="https://marketsupporter-ai.com/reports/royalty-pharma-rprx.html">RoyaltyPharma（RPRX）</a>を、11月19日に<a href="https://marketsupporter-ai.com/reports/bridgebio-bbio-q3.html">BridgeBio（BBIO）</a>を扱いました。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>立場</th><th>帳簿上の扱い</th><th class="num">主な数字</th></tr>
+</thead>
+<tbody>
+<tr><td>RoyaltyPharma（RPRX）</td><td><strong>買う側</strong></td><td>資産（金融資産）</td><td class="num">ポートフォリオ受領額8億9,000万ドル（四半期）</td></tr>
+<tr><td>BridgeBio（BBIO）</td><td>売った側</td><td>負債（繰延ロイヤルティ債務）</td><td class="num">残高8億8,405.3万ドル、非現金利息が返済額の約1.98倍（9か月）</td></tr>
+<tr class="total"><td>PureTech（PRTC）</td><td>売った側</td><td>負債（将来ロイヤルティ売却負債）</td><td class="num">残高2億450万ドル、非現金利息が収益の<strong>約6.73倍</strong>（半期）</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※比率は編集部計算。BBIOは返済額との比較、PRTCは計上収益との比較であり、分母の定義が異なります。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>PureTechのロイヤルティ収益は、RoyaltyPharmaにとっての受取ロイヤルティです。</strong>本シリーズは9日違いで、同じ取引の資産側と負債側を別々の記事にしていました。</p>
+<p style="margin:12px 0 0;">入口記事④章では、ロイヤルティ型について「反復収益比率」と「実現率」を見る数字としました。<strong>売った側の帳簿では、同じ契約が「収益」と「負債」と「非現金利息」の3か所に現れます。</strong>収益の行だけを見ると、実態を取り違えます。</p>
+</div>
+
+<h2 class="chapter" id="c5"><span class="num">⑤</span>持分31.2%は連結せず、持分34.9%は全額連結する</h2>
+
+<p>PureTechが連結している「Founded Entity（設立企業）」は、<strong>Entrega Inc.の1社だけ</strong>です。Gelesis、Sonde Health、Vedanta、Seaportはいずれも連結から外れています。</p>
+
+<p>一方、Seaportに対する持分は<strong>31.2%</strong>。前回のFortressは、持分<strong>34.9%</strong>のJourney Medicalを全額連結していました。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>対象会社</th><th class="num">持分</th><th>会計処理</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/innoviva-inva.html">Innoviva（INVA）</a></td><td>Armata Pharmaceuticals</td><td class="num"><strong>67.4%</strong></td><td>連結<strong>せず</strong>、公正価値評価</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">Fortress（FBIO）</a></td><td>Journey Medical</td><td class="num">34.9%</td><td><strong>全額連結</strong></td></tr>
+<tr class="total"><td>PureTech（PRTC）</td><td>Seaport Therapeutics</td><td class="num">31.2%</td><td>連結<strong>せず</strong>、公正価値評価</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>持分比率と連結の有無に、相関はありません。</strong>67.4%を持っていても連結しないことがあり、34.9%でも全額連結することがあります。判断基準は持分ではなく<strong>支配の有無</strong>です。議決権の多い種類株式、取締役の指名権、契約上の取り決めなどで決まります。</p>
+<p style="margin:12px 0 0;">読み手にとっての意味は明確です。<strong>「持分○%の子会社がある」という情報だけでは、その会社の数字が連結損益計算書に入っているかどうかは分かりません。</strong>どちらなのかを確認しないと、売上がどこから来ているのかも、損失が誰のものかも分かりません。</p>
+</div>
+
+<p>PureTechの場合、会計処理が3通り同時に走っています。</p>
+
+<ul>
+<li><strong>連結</strong>：Entrega（唯一の支配下Founded Entity）</li>
+<li><strong>持分法</strong>：関連会社。半期の純損失取込みは▲1,878.1万ドル（前年同期▲399.6万ドル）</li>
+<li><strong>公正価値評価</strong>：Seaportなど。残高3億7,490.4万ドル（2025年末2億1,742.6万ドル）</li>
+</ul>
+
+<p>持株会社型4社で、入口記事④章のチェックリストはこうなりました。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>追加で確認が必要だったこと</th></tr>
+</thead>
+<tbody>
+<tr><td>Roivant（ROIV）</td><td>連結の純損益と<strong>親会社帰属</strong>の純損益を、必ず両方見る</td></tr>
+<tr><td>BridgeBio（BBIO）</td><td>連結の現金と同時に<strong>連結の負債</strong>を見る</td></tr>
+<tr><td>Fortress（FBIO）</td><td>連結売上が<strong>どの子会社のもので、持分が何%か</strong>を確認する</td></tr>
+<tr class="total"><td>PureTech（PRTC）</td><td>各保有先が<strong>連結・持分法・公正価値評価のどれか</strong>を確認する。そして<strong>報告頻度</strong>を確認する</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 class="chapter" id="c6"><span class="num">⑥</span>主力候補薬を、持分35〜39%の会社に移した</h2>
+
+<p>2026年上半期の研究開発費は3,387.4万ドルで、前年同期比<strong>+36.0%</strong>です（編集部計算）。会社は増加要因の大半をLYT-100（deupirfenidone）の第3相試験準備（+870万ドル）と説明しています。</p>
+
+<p>そのLYT-100は、<strong>Celea Therapeuticsへ移管されました。</strong></p>
+
+<div class="flow">
+  <div class="flow-step">
+    <div class="circle">1</div>
+    <div class="body"><strong>2026年7月、Celeaが総額1億8,000万ドルの資金調達を完了。</strong>希薄化後ポストマネー評価額は3億250万ドル。投資家にはRA Capital、Leaps by Bayer、米国のヘルスケアファンド、政府系ファンドが含まれます。</div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">2</div>
+    <div class="body"><strong>LYT-100の知的財産がCeleaへ移管された。</strong>対価はCeleaのジュニア優先株4,000万株、最大1億9,000万ドルのマイルストーン、サブライセンス収入の20%、1〜3%のロイヤルティです。</div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">3</div>
+    <div class="body"><strong>PureTechの持分は35.4%（2026年7月1日時点）から、7月の取引後に38.7%へ。</strong>PureTech自身も合計3,000万ドルを投資し（7月1日の第2クロージングで1,750万ドル）、さらに最大7,000万ドルを将来の投資に留保しています。</div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">4</div>
+    <div class="body"><strong>第3相SURPASS-IPFが開始。</strong>最初の患者への投与が行われ、トップライン結果は<strong>2029年下半期</strong>に見込まれています。</div>
+  </div>
+</div>
+
+<p>会社は<strong>「Celeaへの移管後、営業費用は減少する見込み」</strong>としています。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>研究開発費が減る理由は、効率化ではありません。資産を外に出したからです。</strong>前回のFortressでは、連結範囲の変化によって研究開発費が9か月で▲75.4%になりました。PureTechでは、これから同じことが起きます。</p>
+<p style="margin:12px 0 0;">入口記事⑤章の手順に、持株会社型では1行が必要です ― <strong>費用が減ったとき、何をやめたのか、それとも誰かに渡したのかを確認する。</strong>渡した場合、その成果はいずれ持分法損益か公正価値評価か、ロイヤルティ収益として別の行に現れます。</p>
+</div>
+
+<h3>Gallop Oncologyは持分100%</h3>
+
+<p>一方、Gallop Oncologyは持分100%です。LYT-200とHMA（低メチル化剤）の併用による、再発・難治性の高リスク骨髄異形成症候群（R/R HR-MDS）の第1b相データが報告されました。</p>
+
+<ul>
+<li>有効性評価可能例：<strong>11例</strong></li>
+<li>完全奏効（CR）：27.3%／全奏効率（ORR）：45.5%／移植への移行：18%</li>
+<li>用量制限毒性なし、骨髄抑制なし</li>
+<li>FDAとの第1相終了時会議は完了。第2相STRIDE-MDS（約125例）を計画</li>
+<li>2026年9月、R/R HR-MDSを対象にFast Track指定を取得</li>
+<li><strong>外部資本の調達は2027年上半期に見込み</strong></li>
+</ul>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>有効性評価可能例は11例です。</strong>単群・少数例の初期データであり、第2相以降で再現されるとは限りません。本記事は有効性について判断を示すものではありません。LYT-200は承認前の候補薬です。</p>
+</div>
+
+<h2 class="chapter" id="c7"><span class="num">⑦</span>ADSの罠 ― 時価総額が10倍で表示される</h2>
+
+<p>本記事の執筆中に、株価情報サイト間でPureTechの時価総額が<strong>約10倍食い違う</strong>ことに気づきました。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>情報源</th><th class="num">株価</th><th class="num">時価総額の表示</th><th class="num">発行済株式数の表示</th></tr>
+</thead>
+<tbody>
+<tr><td>サイトA（2026年11月20日）</td><td class="num">14.93ドル</td><td class="num"><strong>約36.6億ドル</strong></td><td class="num">245.18百万株</td></tr>
+<tr><td>サイトB（2026年3月20日）</td><td class="num">15.89ドル</td><td class="num">約3億7,470万ドル</td><td class="num">非表示</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>一方、半期報告の数字はこうです。</p>
+
+<ul>
+<li>総資産：<strong>6億3,727.8万ドル</strong></li>
+<li>株主資本合計：<strong>3億7,948.9万ドル</strong></li>
+</ul>
+
+<p>時価総額が36.6億ドルなら、総資産の約5.7倍になります。どちらかが誤っています。</p>
+
+<h3>原因はADS（米国預託証券）</h3>
+
+<p>PureTechはNASDAQに<strong>ADS（American Depositary Share：米国預託証券）</strong>を上場しています。会社の2020年11月13日の発表によれば、<strong>1 ADSは原株（ordinary share）10株に相当</strong>し、預託銀行はCitibank, N.A.です。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>つまりNASDAQの株価14.93ドルは「ADS 1個の価格」であり、「原株1株の価格」は約1.493ドルです。</strong>時価総額を計算するには、原株数245.18百万株に原株1株当たり価格を掛けます。</p>
+<p style="margin:12px 0 0;">245.18百万株 × 1.493ドル ＝ <strong>約3億6,605万ドル</strong>（編集部計算）</p>
+<p style="margin:12px 0 0;">サイトAの36.6億ドルは、<strong>ADS価格に原株数を掛けた結果</strong>と考えられます。ちょうど10倍です。サイトBの約3億7,470万ドル（3月20日・15.89ドル時点）とは、株価と時点の差を考えればおおむね整合します。</p>
+</div>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>米国上場の外国企業では、株価情報サイトの時価総額・PER・1株当たり指標が誤っていることがあります。</strong>ADS比率は1:1のこともあれば、1:10や10:1のこともあります。原株とADSで別々のティッカーが存在する場合もあります（PureTechには別途OTC取引のラインもあります）。</p>
+<p style="margin:12px 0 0;">確認方法は1つです ― <strong>会社自身の開示でADS比率を確認し、時価総額は原株ベースで自分で計算する。</strong>財務諸表の株主資本や総資産と桁が合うかを見れば、誤りはすぐ分かります。</p>
+</div>
+
+<h2 class="chapter" id="c8"><span class="num">⑧</span>保有資産、時価総額、そして負債</h2>
+
+<p>2026年6月30日時点の主な残高です。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2026年6月30日</th><th class="num">2025年12月31日</th></tr>
+</thead>
+<tbody>
+<tr><td>現金・現金同等物</td><td class="num">1億2,127.5万ドル</td><td class="num">2億5,247.0万ドル</td></tr>
+<tr><td>短期投資</td><td class="num">9,884.9万ドル</td><td class="num">―（読み取れた範囲に記載なし）</td></tr>
+<tr class="total"><td>連結の現金・同等物・短期投資 合計</td><td class="num">2億2,012.4万ドル</td><td class="num">―</td></tr>
+<tr><td>うちPureTech単体ベース（非IFRS）</td><td class="num">2億1,999.5万ドル</td><td class="num">―</td></tr>
+<tr><td>公正価値で保有する投資</td><td class="num">3億7,490.4万ドル</td><td class="num">2億1,742.6万ドル</td></tr>
+<tr class="total"><td>総資産</td><td class="num">6億3,727.8万ドル</td><td class="num">―</td></tr>
+<tr><td>総負債</td><td class="num">2億5,778.9万ドル</td><td class="num">―</td></tr>
+<tr class="total"><td>株主資本 合計</td><td class="num">3億7,948.9万ドル</td><td class="num">―</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※半期報告記載値。2025年12月31日の比較数値は、読み取れた範囲に記載があるものだけを掲載しています。</p>
+
+<p>会社は、Seaport持分（31.2%）の市場価値を<strong>2026年9月18日時点で約3億6,000万ドル</strong>と記載しています。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>Seaport持分1銘柄の市場価値（約3億6,000万ドル／2026年9月18日時点）と、PureTech自身の時価総額（約3億6,605万ドル／2026年11月20日時点の編集部計算）は、近い水準にあります。</strong>さらに現金・同等物・短期投資2億2,012.4万ドルがあります。</p>
+<p style="margin:12px 0 0;">ただし<strong>この2つの数字を並べるときは、必ず負債を確認してください。</strong>総負債は2億5,778.9万ドルで、うち将来ロイヤルティ売却負債が2億450万ドルを占めます。保有資産の時価だけを時価総額と比べるのは、負債を無視した比較になります。</p>
+<p style="margin:12px 0 0;">また、時点が異なります（Seaportは9月18日、時価総額は11月20日、貸借対照表は6月30日）。Seaport株の市場価値は日々変動し、売却にはロックアップなどの制約がある可能性もあります。<strong>本記事は株価水準や株式の価値について見解を示すものではありません。</strong></p>
+</div>
+
+<h3>資本配分と現金の見通し</h3>
+
+<ul>
+<li><strong>運営資金の見通し：「少なくとも2028年末まで」。</strong>ただしこれは、将来のマネタイズによる資金流入を除き、Celeaへの留保7,000万ドルを全額投入する前提とされています</li>
+<li>現在の自社株買いプログラムについては、半期報告に記載が見当たりませんでした。2024年の公開買付に係る現金流出は2025年上半期が210万ドル、2026年上半期はゼロです。自己株式は14,509,299株（簿価3,680万ドル）</li>
+<li>会社は<strong>「資本還元が将来の配分でより大きな役割を果たす」</strong>と予想しています</li>
+<li>Gelesis（連結除外済み）については、Chapter 7の管財人との和解により、担保付シニアノート債権に対し1,030万ドルの配当を受けることになりました</li>
+</ul>
+
+<h3>株価</h3>
+
+<ul>
+<li>2026年11月20日のADS価格：<strong>14.93ドル</strong>（前日終値15.91ドル、▲6.17%）</li>
+<li>52週レンジ：13.93〜19.92ドル／1年の変動：▲7.12%</li>
+<li>原株数：245.18百万株 → 時価総額 約3億6,605万ドル（編集部計算）</li>
+</ul>
+
+<p><strong>半期報告の発表日（2026年9月22日）前後の日次終値は取得できなかったため、発表に対する株価の反応は記載していません。</strong></p>
+
+<div class="watch">
+  <h2>WHAT TO WATCH</h2>
+  <p class="sub">PureTech Health（PRTC）について、今後の開示で確認したい6点</p>
+  <ol>
+    <li><strong>次の財務報告の時期と対象期間</strong>。前回の通期報告は2026年4月29日発表でした。四半期報告がないため、2026年9月末・12月末の数字が公表されるまでに時間差があります。<strong>適時開示（Form 6-K、RNS）と財務報告を分けて追う必要があります。</strong></li>
+    <li><strong>公正価値評価益・評価損の方向</strong>。2026年上半期は+1億2,039.7万ドルでしたが、Seaport株の市場価値が下がれば同じ行がマイナスになります。本シリーズではRPRX・LGND・INVA・SDGRの4社でマイナス方向の例を見ました。</li>
+    <li><strong>営業費用がどこまで減るか</strong>。会社はCeleaへのLYT-100移管後に減少を見込んでいます。減少分が「やめた開発」なのか「渡した開発」なのかを、Celeaの持分（38.7%）とマイルストーン条件（最大1億9,000万ドル、ロイヤルティ1〜3%）と合わせて見る必要があります。</li>
+    <li><strong>ロイヤルティ売却負債</strong>。残高2億450万ドルに対し、半期の非現金利息は2,394.4万ドル、ロイヤルティ収益は355.7万ドルでした（非現金利息は収益の約6.73倍／編集部計算）。Cobenfyの年間売上が20億ドルの閾値をどこまで超えるかが、この関係を変えます。</li>
+    <li><strong>Gallopの外部資本調達</strong>。2027年上半期に見込まれています。持分100%の会社に外部資本が入れば、持分が下がり、会計処理が変わる可能性があります（Seaportと同じ経路です）。</li>
+    <li><strong>資本還元の具体化</strong>。会社は「資本還元が将来の配分でより大きな役割を果たす」としていますが、半期報告に現行プログラムの記載は見当たりませんでした。自己株式14,509,299株の扱いも含め、具体的な方針の開示を確認する必要があります。</li>
+  </ol>
+</div>
+
+<div class="disclaimer">
+<h3>免責事項</h3>
+<p style="margin:0 0 10px;">本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資判断はご自身の責任で行ってください。</p>
+<p style="margin:0 0 10px;">本記事の数値は2026年11月21日時点で確認できた公開情報に基づきます。財務数値はPureTech Health plcの2026年上半期報告（2026年6月30日締め、2026年9月22日発表）に基づくIFRSベースの数値であり、本シリーズで扱う米国企業のUS-GAAPベースの数値とは会計基準が異なります。株価および発行済株式数は株価情報サイトの掲載値で、記載した日付時点のものです。株価は日々変動します。貸借対照表は2026年6月30日時点、Seaport持分の市場価値は2026年9月18日時点（会社記載）、時価総額の算定は2026年11月20日時点であり、いずれも時点が異なります。</p>
+<p style="margin:0 0 10px;">「編集部計算」「編集部試算」と記した数値は、公表値をもとに編集部が算出した推計値です。公正価値評価益と重要な影響力の喪失による利益を除いた税引前損益は、税効果やその他の項目を調整していない単純差引であり、会社が開示した指標ではありません。時価総額は原株数に「ADS価格÷10」を掛けた編集部計算値です。ADS比率1:10は会社の2020年11月13日の発表に基づきますが、比率は変更される可能性があります。</p>
+<p style="margin:0 0 10px;">2025年12月31日時点の比較数値は、参照できた資料の範囲で記載があるものだけを掲載しています。短期投資の前期比較、個別Founded Entityの帳簿価額、Cobenfyロイヤルティのうち実際に受領した現金額については、参照できた範囲に記載が見当たらず、本記事では扱っていません。「記載がない」「確認できなかった」という表現は確認できた資料の範囲における記載であり、開示の不存在を断定するものではありません。</p>
+<p style="margin:0;">LYT-100（deupirfenidone）、LYT-200を含む開発中のプログラムはいずれも承認前の候補薬です。本記事は承認や試験成功を前提とした記述を行っていません。Gallopの第1b相データは有効性評価可能例11例の単群データであり、後期試験や実臨床で再現されない場合があります。運営資金の見通しは会社の前提に基づくものであり、前提が変われば結果も変わります。</p>
+</div>
+
+<div class="src">
+<h3>主な参照資料</h3>
+<ul>
+<li>PureTech Health plc「Half-year Report」（2026年6月30日締め／2026年9月22日発表）<a href="https://investors.puretechhealth.com/static-files/81d0311c-6645-4290-acd3-8298d7e667a2">investors.puretechhealth.com</a>／<a href="https://www.investegate.co.uk/announcement/rns/puretech-health--prtc/half-year-report/9783228">investegate.co.uk</a></li>
+<li>PureTech Health plc「PureTech Announces Instructions for Exchanging Listed Ordinary Shares into Nasdaq Listed ADSs」（2020年11月13日／ADS比率1:10）<a href="https://news.puretechhealth.com/news-releases/news-release-details/guidance-exchanging-ordinary-shares-adss/">news.puretechhealth.com</a></li>
+<li>PureTech Health plc Form 20-F（2025年12月期）<a href="https://www.sec.gov/Archives/edgar/data/0001782999/000162828026028200/ptv-20251231.htm">sec.gov</a></li>
+<li>株価・発行済株式数 <a href="https://uk.investing.com/equities/puretech-health">investing.com</a>／<a href="https://simplywall.st/stocks/us/pharmaceuticals-biotech/nasdaq-prtc/puretech-health">simplywall.st</a></li>
+</ul>
+</div>
+
+<div class="crosslink" style="margin-top:36px;">
+<strong>シリーズ記事：</strong><a href="https://marketsupporter-ai.com/reports/us-pharma-biotech-earnings-guide.html">入口記事：なぜ米国の製薬・バイオ株は、決算1本で株価が倍にも半分にもなるのか</a>／<a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">⑫Fortress Biotech（FBIO）― 9か月EPS+2.94ドル、四半期▲0.23ドル</a>／<a href="https://marketsupporter-ai.com/reports/bridgebio-bbio-q3.html">⑪BridgeBio（BBIO）― 改善額の約78.5%は一回限り</a>／<a href="https://marketsupporter-ai.com/reports/royalty-pharma-rprx.html">④RoyaltyPharma（RPRX）― 実現率1.1倍の意味</a>
+</div>
+
+</div>
+</body>
+</html>
