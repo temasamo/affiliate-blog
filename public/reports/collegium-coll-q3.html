@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collegium Pharmaceutical（COLL）2026年Q3決算分析｜同じ四半期に1株当たり利益が4つある</title>
+<meta name="description" content="Collegium Pharmaceutical（NASDAQ:COLL）2026年第3四半期決算を一次資料から分析。GAAP EPS 0.60ドルから調整後1.96ドルまで4つの1株当たり利益、売上の約25.6%に達する無形資産償却、税金の行が作った純利益を検証します。">
+<style>
+:root{
+  --accent:#d97706;
+  --accent-dark:#b45309;
+  --accent-mid:#f59e0b;
+  --accent-light:#fffbeb;
+  --ink:#1a1a1a;
+  --sub:#555;
+  --line:#e5e5e5;
+  --bg:#ffffff;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.9;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:780px;margin:0 auto;padding:0 20px 80px;}
+header.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 55%,var(--accent-mid) 100%);
+  color:#fff;
+  padding:56px 20px 48px;
+}
+header.hero .inner{max-width:780px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;
+  background:rgba(255,255,255,.2);
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:999px;
+  padding:5px 14px;
+  font-size:12px;
+  letter-spacing:.08em;
+  margin-bottom:18px;
+}
+header.hero h1{
+  font-size:28px;
+  line-height:1.5;
+  margin:0 0 16px;
+  font-weight:700;
+}
+header.hero .lede{
+  font-size:15px;
+  line-height:1.85;
+  margin:0;
+  color:rgba(255,255,255,.95);
+}
+header.hero .meta{
+  margin-top:22px;
+  font-size:13px;
+  color:rgba(255,255,255,.85);
+  border-top:1px solid rgba(255,255,255,.3);
+  padding-top:14px;
+}
+.model-tag{
+  display:inline-block;
+  background:#fff;
+  color:var(--accent-dark);
+  font-size:12px;
+  font-weight:700;
+  border-radius:4px;
+  padding:3px 10px;
+  margin-right:8px;
+}
+.toc{
+  background:var(--accent-light);
+  border:1px solid #fde68a;
+  border-radius:10px;
+  padding:22px 24px;
+  margin:36px 0 44px;
+}
+.toc h2{
+  font-size:14px;
+  margin:0 0 12px;
+  color:var(--accent-dark);
+  letter-spacing:.06em;
+}
+.toc ol{margin:0;padding-left:1.3em;font-size:14.5px;}
+.toc li{margin-bottom:7px;}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(217,119,6,.35);}
+.toc a:hover{color:var(--accent-dark);}
+h2.chapter{
+  font-size:21px;
+  line-height:1.55;
+  margin:56px 0 20px;
+  padding-bottom:12px;
+  border-bottom:2px solid var(--accent);
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+h2.chapter .num{
+  flex:0 0 auto;
+  background:var(--accent);
+  color:#fff;
+  font-size:13px;
+  border-radius:5px;
+  padding:3px 9px;
+  margin-top:5px;
+  font-weight:700;
+}
+h3{
+  font-size:17px;
+  margin:34px 0 14px;
+  padding-left:12px;
+  border-left:4px solid var(--accent-mid);
+  line-height:1.6;
+}
+p{margin:0 0 18px;}
+ul,ol{margin:0 0 18px;padding-left:1.4em;}
+li{margin-bottom:8px;}
+.callout{
+  background:var(--accent-light);
+  border-left:4px solid var(--accent);
+  border-radius:0 8px 8px 0;
+  padding:18px 20px;
+  margin:26px 0;
+  font-size:15px;
+}
+.callout.warn{
+  background:#fef2f2;
+  border-left-color:#dc2626;
+}
+.callout strong{color:var(--accent-dark);}
+.callout.warn strong{color:#b91c1c;}
+.quote{
+  border-left:3px solid var(--line);
+  padding:4px 0 4px 18px;
+  margin:24px 0;
+  color:var(--sub);
+  font-size:15px;
+}
+.kpi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:12px;
+  margin:28px 0;
+}
+.kpi{
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:16px 14px;
+  background:#fafafa;
+}
+.kpi .label{font-size:12px;color:var(--sub);display:block;margin-bottom:6px;line-height:1.5;}
+.kpi .value{font-size:21px;font-weight:700;color:var(--accent-dark);display:block;line-height:1.3;}
+.kpi .note{font-size:11.5px;color:var(--sub);display:block;margin-top:5px;line-height:1.5;}
+.table-scroll{overflow-x:auto;margin:26px 0;-webkit-overflow-scrolling:touch;}
+table{
+  border-collapse:collapse;
+  width:100%;
+  min-width:560px;
+  font-size:14px;
+}
+th,td{
+  border:1px solid var(--line);
+  padding:10px 12px;
+  text-align:left;
+  vertical-align:top;
+}
+th{background:var(--accent-light);font-weight:700;color:var(--accent-dark);}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+tr.total td{background:#fafafa;font-weight:700;}
+.tnote{font-size:13px;color:var(--sub);margin:-14px 0 24px;}
+.flow{margin:28px 0;}
+.flow-step{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  margin-bottom:16px;
+}
+.flow-step .circle{
+  flex:0 0 auto;
+  width:30px;height:30px;
+  border-radius:50%;
+  background:var(--accent);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;
+  margin-top:2px;
+}
+.flow-step .body{flex:1 1 auto;font-size:15px;line-height:1.8;}
+.crosslink{
+  background:#f7f7f8;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:14px 18px;
+  margin:24px 0;
+  font-size:14px;
+  color:var(--sub);
+}
+.crosslink strong{color:var(--ink);}
+.crosslink a{color:var(--accent-dark);}
+.watch{
+  background:#211705;
+  color:#f3f3f3;
+  border-radius:12px;
+  padding:32px 28px;
+  margin:56px 0 36px;
+}
+.watch h2{
+  font-size:19px;
+  margin:0 0 8px;
+  color:#fff;
+  letter-spacing:.04em;
+}
+.watch .sub{font-size:13px;color:#cbbd9c;margin:0 0 22px;}
+.watch ol{
+  list-style:none;
+  counter-reset:w;
+  margin:0;padding:0;
+}
+.watch li{
+  counter-increment:w;
+  position:relative;
+  padding-left:38px;
+  margin-bottom:18px;
+  font-size:14.5px;
+  line-height:1.8;
+}
+.watch li::before{
+  content:counter(w);
+  position:absolute;left:0;top:2px;
+  width:25px;height:25px;
+  border-radius:50%;
+  background:var(--accent-mid);
+  color:#211705;
+  font-weight:700;font-size:13px;
+  display:flex;align-items:center;justify-content:center;
+}
+.watch li strong{color:#fde68a;}
+.disclaimer{
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:#fafafa;
+  padding:20px 22px;
+  font-size:13px;
+  color:var(--sub);
+  line-height:1.85;
+  margin:40px 0 28px;
+}
+.disclaimer h3{
+  font-size:14px;
+  margin:0 0 10px;
+  padding:0;
+  border:none;
+  color:var(--ink);
+}
+.src{
+  font-size:13px;
+  color:var(--sub);
+  line-height:1.9;
+}
+.src h3{
+  font-size:14px;
+  margin:36px 0 12px;
+  padding:0;
+  border:none;
+  color:var(--ink);
+}
+.src ul{padding-left:1.2em;margin:0;}
+.src li{margin-bottom:6px;}
+.src a{color:var(--accent-dark);}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  header.hero{padding:40px 18px 36px;}
+  header.hero h1{font-size:22px;}
+  .wrap{padding:0 16px 60px;}
+  h2.chapter{font-size:18.5px;}
+  h3{font-size:16px;}
+  .watch{padding:26px 20px;border-radius:10px;}
+  .kpi .value{font-size:19px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="inner">
+    <span class="eyebrow">米国製薬・バイオ決算シリーズ ⑭</span>
+    <h1>同じ四半期について、1株当たり利益が4つある。0.60ドル、0.69ドル、1.71ドル、1.96ドル</h1>
+    <p class="lede">Collegium Pharmaceutical（NASDAQ:COLL）2026年第3四半期決算。ある報道は「GAAP EPS 0.69ドルは市場予想を下回った」と書き、別の報道は「正規化EPS 1.71ドルは予想を11.8%上回った」と書いています。どちらも同じ四半期の話です。商業段階の特殊製薬という新しいグループに入ると、読むべき数字が入れ替わります。</p>
+    <p class="meta"><span class="model-tag">商業段階の特殊製薬</span>公開日：2026年11月22日／決算発表：2026年11月5日（米国時間・寄り付き前）</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#c1">同じ四半期に、1株当たり利益が4つある</a></li>
+    <li><a href="#c2">差を作っているのは無形資産償却 ― 売上の約25.6%</a></li>
+    <li><a href="#c3">税引前利益は▲81.8%、純利益は▲30.9%。差は税金の行</a></li>
+    <li><a href="#c4">営業利益が▲53.7%になった理由</a></li>
+    <li><a href="#c5">ポートフォリオの入れ替え ― 増加分の約83.0%が打ち消された</a></li>
+    <li><a href="#c6">希薄化後株式数が、四半期と9か月で違う</a></li>
+    <li><a href="#c7">買収の代償 ― 現金▲62.6%、無形資産+4億6,500万ドル</a></li>
+    <li><a href="#c8">株価は+6.29%。前四半期は▲18.55%だった</a></li>
+  </ol>
+</nav>
+
+<p>本シリーズは、米国に上場する製薬・バイオ企業29社の決算を1社ずつ、一次資料に当たって読み解く企画です。14社目から<strong>商業段階の特殊製薬</strong>という新しいグループに入ります。色もアンバー系に変わりました。</p>
+
+<p>ここまでの13社は、赤字先行の企業がほとんどでした。<a href="https://marketsupporter-ai.com/reports/absci-absi-q3.html">Absci</a>は売上が営業費用の約0.9%、<a href="https://marketsupporter-ai.com/reports/puretech-health-prtc-h1.html">PureTech</a>は約6.4%。GAAPベースで安定した営業黒字を出している企業はほとんどありませんでした。</p>
+
+<p>商業段階の特殊製薬は違います。<strong>すでに売れている薬を持ち、営業利益が出ています。</strong>ただしその多くは、自社で発見した薬ではなく<strong>他社から買ってきた薬</strong>です。この1点が、損益計算書の形を決めます。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>Collegium Pharmaceuticalの第3四半期の主要数字</strong></p>
+<p style="margin:10px 0 0;">
+・製品売上（純額）：<strong>2億1,630万ドル</strong>（前年同期2億940万ドル、+3%）<br>
+・営業利益：<strong>2,872.2万ドル</strong>（前年同期6,208.7万ドル、<strong>▲53.7%</strong>／編集部計算）<br>
+・GAAP純利益：<strong>2,175.9万ドル</strong>（前年同期3,150.7万ドル、▲30.9%／編集部計算）<br>
+・調整後EBITDA：1億2,158.9万ドル（前年同期1億3,299.5万ドル）<br>
+・通期ガイダンス：<strong>据え置き</strong></p>
+</div>
+
+<h2 class="chapter" id="c1"><span class="num">①</span>同じ四半期に、1株当たり利益が4つある</h2>
+
+<p>決算発表後、複数のメディアが第3四半期の結果を報じました。見出しが食い違っています。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>指標</th><th class="num">金額</th><th>出どころ</th><th>市場予想との関係</th></tr>
+</thead>
+<tbody>
+<tr><td>GAAP EPS（希薄化後）</td><td class="num">0.60ドル</td><td>決算リリース</td><td>―</td></tr>
+<tr><td>GAAP EPS（基本）</td><td class="num">0.69ドル</td><td>決算リリース</td><td>ある報道は「<strong>予想を下回った</strong>」</td></tr>
+<tr><td>正規化EPS</td><td class="num">1.71ドル</td><td>第三者データ提供会社</td><td>別の報道は「予想1.53ドルを<strong>11.8%上回った</strong>」</td></tr>
+<tr class="total"><td>調整後EPS（非GAAP）</td><td class="num">1.96ドル</td><td>会社自身の開示</td><td>―</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※正規化EPSおよび市場予想は第三者データに基づく報道の記載です。本記事では予想値の原データを確認できていません。</p>
+
+<p>最小の0.60ドルと最大の1.96ドルで、<strong>約3.27倍の差</strong>があります（編集部計算）。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>「市場予想を上回ったか下回ったか」という報道は、どの利益指標を使ったかで逆になります。</strong>Collegiumのように調整項目が大きい企業では、これが日常的に起きます。</p>
+<p style="margin:12px 0 0;">入口記事⑤章では「見出しの数字にだまされない」という手順を扱いました。この四半期は、その<strong>手順が必要であることの実例</strong>です。見出しを読むときは、まず<strong>どの利益のことを言っているのかを確認する</strong>必要があります。</p>
+</div>
+
+<h2 class="chapter" id="c2"><span class="num">②</span>差を作っているのは無形資産償却 ― 売上の約25.6%</h2>
+
+<p>GAAP純利益2,175.9万ドルと調整後純利益7,519.4万ドルの差は、<strong>約3.46倍</strong>です（編集部計算）。何がこの差を作っているのでしょうか。</p>
+
+<div class="kpi-grid">
+  <div class="kpi">
+    <span class="label">無形資産償却（四半期）</span>
+    <span class="value">5,534.6万ドル</span>
+    <span class="note">前年同期5,547.3万ドル</span>
+  </div>
+  <div class="kpi">
+    <span class="label">売上に対する比率</span>
+    <span class="value">約25.6%</span>
+    <span class="note">編集部計算</span>
+  </div>
+  <div class="kpi">
+    <span class="label">GAAP純利益との比較</span>
+    <span class="value">約2.54倍</span>
+    <span class="note">編集部計算</span>
+  </div>
+  <div class="kpi">
+    <span class="label">9か月の無形資産償却</span>
+    <span class="value">1億7,377.2万ドル</span>
+    <span class="note">前年同期1億6,641.9万ドル</span>
+  </div>
+</div>
+
+<p>売上の4分の1以上が、無形資産の償却費として費用計上されています。しかもこれは<strong>現金支出のない費用</strong>です。</p>
+
+<p>理由は事業モデルにあります。Collegiumの主要製品は、いずれも<strong>他社から取得したもの</strong>です。</p>
+
+<ul>
+<li><strong>Jornay PM</strong>（ADHD、夕方服用の長時間作用型メチルフェニデート）― Ironshore Therapeuticsの買収により取得</li>
+<li><strong>Azstarys</strong>（ADHD）― Zevra Therapeuticsから取得。第3四半期がCollegium傘下での初の通期四半期</li>
+<li><strong>Belbuca</strong>（慢性疼痛、ブプレノルフィン口腔フィルム）／<strong>Nucynta franchise</strong>（タペンタドール）― 取得済み資産</li>
+<li><strong>Xtampza ER</strong>（乱用抑制製剤のオキシコドン）― 自社開発</li>
+</ul>
+
+<div class="callout">
+<p style="margin:0;"><strong>薬を買ってくると、支払った代金が無形資産として貸借対照表に載り、その後の数年から十数年にわたって償却費として損益計算書に流れ込みます。</strong>買収時に現金は出ていますが、償却費そのものは現金を伴いません。</p>
+<p style="margin:12px 0 0;">だから会社は調整後指標を強調します。<strong>会社の立場からすれば、現金を生む力を示すには償却費を除いたほうが実態に近い</strong>という主張です。一方で、<strong>買収に使った現金は実際に出ており、その資産がいずれ価値を失うという事実は、償却費が表しているもの</strong>でもあります。</p>
+<p style="margin:12px 0 0;">本記事はどちらが正しいかを判断しません。<strong>両方の数字を並べて見る</strong>ことだけが必要です。</p>
+</div>
+
+<h3>赤字先行企業と、商業段階の企業で読むべき数字が入れ替わる</h3>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>グループ</th><th>GAAPで何が起きるか</th><th>最初に見る数字</th></tr>
+</thead>
+<tbody>
+<tr><td>創薬型・プラットフォーム型（赤字先行）</td><td>売上がほとんどなく、営業費用の大半がR&D</td><td>キャッシュランウェイ、希薄化、実現率</td></tr>
+<tr><td>持株会社型</td><td>連結と親会社帰属がずれ、連結範囲も変わる</td><td>どの行の損益か、連結の範囲、現金の所在</td></tr>
+<tr class="total"><td><strong>商業段階の特殊製薬</strong></td><td><strong>無形資産償却と支払利息でGAAP利益が小さく見える</strong></td><td><strong>GAAPと調整後の両方、負債、製品別の増減</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 class="chapter" id="c3"><span class="num">③</span>税引前利益は▲81.8%、純利益は▲30.9%。差は税金の行</h2>
+
+<p>損益計算書を下まで追うと、もう1つの論点が出てきます。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2026年Q3</th><th class="num">2025年Q3</th><th class="num">増減率</th></tr>
+</thead>
+<tbody>
+<tr><td>営業利益</td><td class="num">2,872.2万ドル</td><td class="num">6,208.7万ドル</td><td class="num">▲53.7%</td></tr>
+<tr><td>支払利息</td><td class="num">▲2,194.3万ドル</td><td class="num">▲2,176.7万ドル</td><td class="num">+0.8%</td></tr>
+<tr><td>受取利息</td><td class="num">+112.7万ドル</td><td class="num">+311.6万ドル</td><td class="num">▲63.8%</td></tr>
+<tr class="total"><td>税引前利益</td><td class="num">790.6万ドル</td><td class="num">4,343.6万ドル</td><td class="num"><strong>▲81.8%</strong></td></tr>
+<tr><td>法人税</td><td class="num"><strong>+1,385.3万ドル</strong>（ベネフィット）</td><td class="num">▲1,192.9万ドル（費用）</td><td class="num">符号が反転</td></tr>
+<tr class="total"><td>GAAP純利益</td><td class="num">2,175.9万ドル</td><td class="num">3,150.7万ドル</td><td class="num"><strong>▲30.9%</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※増減率は編集部計算。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>税引前利益が82%減ったのに、純利益は31%減にとどまっています。</strong>差は法人税の行です。前年同期は1,192.9万ドルの費用でしたが、当四半期は<strong>1,385.3万ドルのベネフィット（利益側への計上）</strong>になりました。</p>
+<p style="margin:12px 0 0;">結果として、<strong>純利益（2,175.9万ドル）が税引前利益（790.6万ドル）を上回っています。</strong>9か月でも税金は809.0万ドルのベネフィットです。</p>
+<p style="margin:12px 0 0;"><strong>決算説明会では、この税金について一切の言及がありませんでした。</strong>CFOはGAAP純利益を2,180万ドル（前年3,150万ドル）と述べただけで、税に関するコメントはありません。原因の記載も、継続性についての説明も、確認できた資料の範囲では見当たりませんでした。</p>
+</div>
+
+<h3>一回限りの項目が現れた場所 ― 5日連続の整理</h3>
+
+<p>本シリーズでは5日連続で、通常でない項目が見出しの数字を作るケースを扱いました。<strong>毎回、損益計算書の違う行に現れています。</strong></p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>公開日</th><th>企業</th><th>現れた行</th><th>内容</th></tr>
+</thead>
+<tbody>
+<tr><td>11月18日</td><td><a href="https://marketsupporter-ai.com/reports/roivant-roiv-q2.html">Roivant（ROIV）</a></td><td>売上高の中身</td><td>承認から5週間分の製品売上</td></tr>
+<tr><td>11月19日</td><td><a href="https://marketsupporter-ai.com/reports/bridgebio-bbio-q3.html">BridgeBio（BBIO）</a></td><td>売上高の行</td><td>一回限りのマイルストーン7,500万ドル</td></tr>
+<tr><td>11月20日</td><td><a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">Fortress（FBIO）</a></td><td>営業外損益</td><td>資産売却益1億5,887.3万ドル</td></tr>
+<tr><td>11月21日</td><td><a href="https://marketsupporter-ai.com/reports/puretech-health-prtc-h1.html">PureTech（PRTC）</a></td><td>営業外損益</td><td>保有株式の評価益（現金を伴わない）</td></tr>
+<tr class="total"><td>11月22日</td><td>Collegium（COLL）</td><td><strong>法人税の行</strong></td><td><strong>1,385.3万ドルのベネフィット</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>損益計算書を上から下まで見る、という手順が5回連続で必要になりました。</strong>売上高の行で止まれば1〜2社を見落とし、営業利益の行で止まれば3〜5社を見落とします。</p>
+
+<h2 class="chapter" id="c4"><span class="num">④</span>営業利益が▲53.7%になった理由</h2>
+
+<p>売上が+3%伸びているのに、営業利益は半分以下になりました。原因は費用です。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2026年Q3</th><th class="num">2025年Q3</th><th class="num">増減率</th></tr>
+</thead>
+<tbody>
+<tr><td>製品売上（純額）</td><td class="num">2億1,630万ドル</td><td class="num">2億940万ドル</td><td class="num">+3%</td></tr>
+<tr><td>売上原価（償却除く）</td><td class="num">3,557.5万ドル</td><td class="num">2,471.7万ドル</td><td class="num">+43.9%</td></tr>
+<tr><td>無形資産償却</td><td class="num">5,534.6万ドル</td><td class="num">5,547.3万ドル</td><td class="num">▲0.2%</td></tr>
+<tr><td>売上総利益</td><td class="num">1億2,541.8万ドル</td><td class="num">1億2,917.1万ドル</td><td class="num">▲2.9%</td></tr>
+<tr><td>販売・一般管理費</td><td class="num">9,959.1万ドル</td><td class="num">6,710.3万ドル</td><td class="num"><strong>+48.4%</strong></td></tr>
+<tr><td>条件付対価の再測定益</td><td class="num">▲289.5万ドル</td><td class="num">▲0.19万ドル</td><td class="num">―</td></tr>
+<tr><td>営業費用 合計</td><td class="num">9,669.6万ドル</td><td class="num">6,708.4万ドル</td><td class="num">+44.1%</td></tr>
+<tr class="total"><td>営業利益</td><td class="num">2,872.2万ドル</td><td class="num">6,208.7万ドル</td><td class="num"><strong>▲53.7%</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※増減率は編集部計算。売上の増減率は会社記載値。</p>
+
+<p>販売・一般管理費が<strong>+48.4%</strong>です（9か月では2億1,716.3万→2億9,253.5万ドルで+34.7%／編集部計算）。原因はADHD領域への営業体制構築です。</p>
+
+<ul>
+<li>ADHD営業人員：<strong>約190人</strong>（Azstarys買収前は180人）</li>
+<li>ターゲットとする医療従事者：<strong>約27,000人</strong>（2025年の体制拡大前は21,000人）</li>
+<li>メディカルアフェアーズ部門も拡大</li>
+</ul>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>会社は調整後営業費用を6,939.0万ドル（+25%）と開示しています。</strong>GAAPの9,669.6万ドル（+44%）との差は2,730.6万ドルです（編集部計算）。</p>
+<p style="margin:12px 0 0;"><strong>決算説明会では、この差の説明がありませんでした。</strong>CFOはGAAP営業費用が44%増、調整後が25%増と両方を述べましたが、何がその間にあるのかには触れていません。</p>
+</div>
+
+<h2 class="chapter" id="c5"><span class="num">⑤</span>ポートフォリオの入れ替え ― 増加分の約83.0%が打ち消された</h2>
+
+<p>製品別に見ると、この会社で起きていることがはっきりします。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>製品</th><th>領域</th><th class="num">2026年Q3売上</th><th class="num">前年同期比</th></tr>
+</thead>
+<tbody>
+<tr><td>Jornay PM</td><td>ADHD</td><td class="num">5,190万ドル</td><td class="num"><strong>+24%</strong></td></tr>
+<tr><td>Azstarys</td><td>ADHD</td><td class="num">2,650万ドル</td><td class="num">Collegium傘下で初の通期四半期</td></tr>
+<tr class="total"><td>ADHD 計</td><td></td><td class="num"><strong>7,840万ドル</strong></td><td class="num">1年前はゼロ（編集部計算）</td></tr>
+<tr><td>Belbuca</td><td>疼痛</td><td class="num">5,770万ドル</td><td class="num">▲1%</td></tr>
+<tr><td>Xtampza ER</td><td>疼痛</td><td class="num">4,580万ドル</td><td class="num">▲9%</td></tr>
+<tr><td>Nucynta franchise</td><td>疼痛</td><td class="num">3,080万ドル</td><td class="num"><strong>▲44%</strong></td></tr>
+<tr class="total"><td>疼痛ポートフォリオ 計</td><td></td><td class="num">1億3,800万ドル</td><td class="num"><strong>▲18%</strong></td></tr>
+<tr class="total"><td>製品売上 合計</td><td></td><td class="num">2億1,630万ドル</td><td class="num"><strong>+3%</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※製品別売上および増減率は会社記載値。Nucynta franchiseにはHikmaによるオーソライズド・ジェネリック販売に係る420万ドルを含みます。</p>
+
+<p>ADHDの2製品で7,840万ドル。製品売上全体の<strong>約36.2%</strong>です（編集部計算）。1年前にはゼロでした。</p>
+
+<p>一方、疼痛ポートフォリオは1億6,830万ドル（前年同期の推計値）から1億3,800万ドルへ、約3,030万ドル減っています。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>増えた分と減った分（編集部試算）</strong></p>
+<p style="margin:10px 0 0;">
+・増加：Jornay PM 約+1,000万ドル ＋ Azstarys 2,650万ドル ＝ <strong>約3,650万ドル</strong><br>
+・減少：疼痛ポートフォリオ <strong>約▲3,030万ドル</strong><br>
+・差引：約+620万ドル（実際の増加は690万ドル。端数処理の差）</p>
+<p style="margin:12px 0 0;"><strong>増加分の約83.0%が、既存製品の減少で打ち消されています。</strong></p>
+</div>
+
+<div class="crosslink">
+<strong>シリーズの比較：</strong><a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">Fortress Biotech</a>でも同じ構造を扱いました。Emrosiが9か月で+約140.2%伸びる一方、レガシー製品が▲約17.2%減り、<strong>増加分の約44.8%が打ち消されていました</strong>（編集部計算）。Collegiumは約83.0%です。<strong>新製品を買ってきても、既存製品の減少が同時に進めば、連結売上はあまり動きません。</strong>製品別の開示がなければ、この構造は見えません。
+</div>
+
+<h3>Nucyntaの▲44%とオーソライズド・ジェネリック</h3>
+
+<p>Nucynta franchiseの3,080万ドルには、<strong>Hikmaがオーソライズド・ジェネリックを販売したことに係る420万ドル</strong>が含まれます。残りの約2,660万ドルが自社ブランド販売分です（編集部計算）。</p>
+
+<p>会社は減少の主因を「ジェネリック競合」と説明しました。ブランド品の数量は直近3〜4か月は横ばい、オーソライズド・ジェネリックの価格も第2四半期から第3四半期にかけて安定していたとのことです。</p>
+
+<p><strong>特許切れを迎えた製品が、自社ブランド販売からオーソライズド・ジェネリックの利益分配へ移っていく過程</strong>が、この数字に現れています。</p>
+
+<h3>伸びている製品でも、売上と処方数の伸びは違う</h3>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>Jornay PMの指標</th><th class="num">数値</th></tr>
+</thead>
+<tbody>
+<tr><td>売上（前年同期比）</td><td class="num">+24%</td></tr>
+<tr><td>処方数（前年同期比）</td><td class="num"><strong>+16%</strong></td></tr>
+<tr><td>処方医数</td><td class="num">約33,000人（+19%）</td></tr>
+<tr><td>ブランド長時間作用型メチルフェニデートのシェア</td><td class="num">約30%（+6.5ポイント）</td></tr>
+<tr><td>小児の処方数／成人の処方数</td><td class="num">+13%／+27%</td></tr>
+<tr><td>新規ブランド処方（9月）</td><td class="num">+22%</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>売上+24%に対し、処方数は+16%です。</strong>差の8ポイントは、1処方当たりの単価（正味価格）の変化によるものと考えられます。<a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">Fortress</a>や<a href="https://marketsupporter-ai.com/reports/roivant-roiv-q2.html">Roivant</a>では処方数そのものが非開示でしたが、<strong>Collegiumは処方数を開示しているため、売上の伸びを数量と単価に分解できます。</strong></p>
+
+<p>Azstarysについては、処方数が前年同期比で約2%増加し、2025年の減少から反転したと説明されました。グロス・トゥ・ネット（総額に対する正味比率）は73.4%（第2四半期74.1%）。CFOはこの改善を<strong>「どちらかというとタイミングの要素で、特定の要因によるものではない」</strong>と述べ、目標値は示していません。</p>
+
+<h2 class="chapter" id="c6"><span class="num">⑥</span>希薄化後株式数が、四半期と9か月で違う</h2>
+
+<p>1株当たり指標の分母に、見過ごしやすい点があります。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>期間</th><th class="num">基本株式数</th><th class="num">希薄化後株式数</th><th class="num">希薄化率</th><th class="num">基本EPS</th><th class="num">希薄化後EPS</th></tr>
+</thead>
+<tbody>
+<tr><td>2026年Q3</td><td class="num">31,731,198株</td><td class="num">39,110,855株</td><td class="num"><strong>+23.3%</strong></td><td class="num">0.69ドル</td><td class="num">0.60ドル</td></tr>
+<tr class="total"><td>2026年9か月</td><td class="num">32,091,846株</td><td class="num">33,134,880株</td><td class="num"><strong>+3.2%</strong></td><td class="num">0.66ドル</td><td class="num">0.64ドル</td></tr>
+<tr><td>2025年Q3</td><td class="num">31,571,410株</td><td class="num">39,439,890株</td><td class="num">+24.9%</td><td class="num">1.00ドル</td><td class="num">0.84ドル</td></tr>
+<tr><td>2025年9か月</td><td class="num">31,724,439株</td><td class="num">39,386,071株</td><td class="num">+24.2%</td><td class="num">1.45ドル</td><td class="num">1.28ドル</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※希薄化率は編集部計算。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>2026年の第3四半期は希薄化率+23.3%、同じ年の9か月累計は+3.2%です。</strong>前年は四半期も9か月も24%前後でそろっていました。</p>
+<p style="margin:12px 0 0;">転換社債の希薄化効果を1株当たり利益の計算に算入するかどうかは、利益水準によって判定が変わります。9か月の利益が小さかったため、算入すると1株当たり利益が大きくなってしまう（希薄化にならない）部分が除かれたと考えられますが、<strong>決算リリースにこの点の説明は見当たりませんでした。</strong>本記事は会計処理の詳細を断定するものではありません。</p>
+<p style="margin:12px 0 0;">実務上の意味は明確です。<strong>同じ会社の同じ年度でも、四半期と累計で分母が3倍以上違うことがあります。</strong>1株当たり指標を比べるときは、分母も確認する必要があります。</p>
+</div>
+
+<div class="crosslink">
+<strong>シリーズの比較：</strong><a href="https://marketsupporter-ai.com/reports/absci-absi-q3.html">Absci</a>では、純損失が16.0%拡大したのに株式数が+19.5%増えたため、1株当たり損失が「改善」しました。入口記事⑤章の手順に「1株当たり指標を見たら、分母の株式数も前年と比べる」を追加しました。<strong>Collegiumは、同じ年度の中で分母が変わるケースです。</strong>比べる相手は前年だけではありません。
+</div>
+
+<h2 class="chapter" id="c7"><span class="num">⑦</span>買収の代償 ― 現金▲62.6%、無形資産+4億6,500万ドル</h2>
+
+<p>製品を買ってくるという事業モデルは、貸借対照表に表れます。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2026年9月30日</th><th class="num">2025年12月31日</th><th class="num">増減</th></tr>
+</thead>
+<tbody>
+<tr><td>現金・現金同等物</td><td class="num">1億4,479.7万ドル</td><td class="num">2億3,125.2万ドル</td><td class="num">▲8,645.5万ドル</td></tr>
+<tr><td>市場性証券</td><td class="num">―</td><td class="num">1億5,542.7万ドル</td><td class="num">▲1億5,542.7万ドル</td></tr>
+<tr class="total"><td>現金・同等物・市場性証券 計</td><td class="num">1億4,479.7万ドル</td><td class="num">3億8,667.9万ドル</td><td class="num"><strong>▲62.6%</strong></td></tr>
+<tr><td>無形資産</td><td class="num">11億3,450万ドル</td><td class="num">6億6,950万ドル</td><td class="num"><strong>+4億6,500万ドル</strong></td></tr>
+<tr><td>ターム・ノート</td><td class="num">8億4,250.7万ドル</td><td class="num">5億7,111.2万ドル</td><td class="num"><strong>+2億7,139.5万ドル</strong></td></tr>
+<tr><td>転換社債</td><td class="num">2億3,899.6万ドル</td><td class="num">2億3,821.3万ドル</td><td class="num">+78.3万ドル</td></tr>
+<tr><td>繰延ロイヤルティ債務</td><td class="num">1億2,061.2万ドル</td><td class="num">1億2,156.3万ドル</td><td class="num">▲95.1万ドル</td></tr>
+<tr class="total"><td>有利子負債 計</td><td class="num">約12億165.1万ドル</td><td class="num">約9億3,088.8万ドル</td><td class="num">+約2億7,076.3万ドル</td></tr>
+<tr><td>株主資本</td><td class="num">2億9,643.7万ドル</td><td class="num">3億167.5万ドル</td><td class="num">▲523.8万ドル</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※有利子負債計および増減率は編集部計算。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>9か月で起きたこと（編集部計算）</strong></p>
+<p style="margin:10px 0 0;">
+・現金・同等物・市場性証券を約2億4,188.2万ドル使った<br>
+・借入を約2億7,076.3万ドル増やした<br>
+・無形資産を4億6,500万ドル増やした<br>
+・株主資本はほぼ横ばい（▲523.8万ドル）</p>
+<p style="margin:12px 0 0;">ネットの債務は<strong>約10億5,685.4万ドル</strong>です（編集部計算）。会社は決算説明会で、ネット債務÷調整後EBITDAを<strong>約2.0倍</strong>と説明しました。</p>
+</div>
+
+<p>そして増えた無形資産4億6,500万ドルは、これから償却費として損益計算書に流れ込みます。第3四半期の償却費5,534.6万ドルを単純に4倍すると、年約2億2,138.4万ドルです（編集部試算）。</p>
+
+<h3>繰延ロイヤルティ債務 ― 3社目の「売った側」だが、残高は減っている</h3>
+
+<p>Collegiumも繰延ロイヤルティ債務1億2,061.2万ドルを計上しています。<strong>ロイヤルティを売った側</strong>としては、本シリーズで3社目です。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th class="num">残高</th><th>残高の方向</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/bridgebio-bbio-q3.html">BridgeBio（BBIO）</a></td><td class="num">8億8,405.3万ドル</td><td>9か月で<strong>増加</strong>（非現金利息が返済額の約1.98倍）</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/puretech-health-prtc-h1.html">PureTech（PRTC）</a></td><td class="num">2億450万ドル</td><td>非現金利息はロイヤルティ収益の約6.73倍</td></tr>
+<tr class="total"><td>Collegium（COLL）</td><td class="num">1億2,061.2万ドル</td><td>9か月で<strong>▲95.1万ドル減少</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※比率は編集部計算。</p>
+
+<p><strong>3社のうち、残高が減っているのはCollegiumだけです。</strong>返済額が利息の計上を上回っているためと考えられます。製品がすでに売れている企業と、これから売れる予定の企業で、同じ契約形態でも帳簿の動きが逆になります。</p>
+
+<h3>自社株買い</h3>
+
+<ul>
+<li>第3四半期に<strong>5,000万ドルの加速自社株買い（ASR）</strong>を発表。最終決済は第4四半期、年内完了を見込む</li>
+<li>2026年7月に取締役会が承認した枠のうち、<strong>約1億ドルが残っている</strong>（会社説明）</li>
+<li>資本配分の優先順位は「債務返済、事業開発、株主還元」。具体的な債務削減目標は示されていません</li>
+</ul>
+
+<h2 class="chapter" id="c8"><span class="num">⑧</span>株価は+6.29%。前四半期は▲18.55%だった</h2>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>日付</th><th>出来事</th><th class="num">株価の変動</th></tr>
+</thead>
+<tbody>
+<tr><td>2026年8月6日</td><td>第2四半期決算</td><td class="num"><strong>▲18.55%</strong></td></tr>
+<tr><td>2026年8月13日</td><td>自社株買いの発表</td><td class="num">+9.53%</td></tr>
+<tr><td>2026年10月1日</td><td>―</td><td class="num">52週安値 21.43ドル</td></tr>
+<tr><td>2026年10月29日</td><td>―</td><td class="num">+3.44%</td></tr>
+<tr class="total"><td>2026年11月5日</td><td><strong>第3四半期決算</strong></td><td class="num"><strong>+6.29%</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※株価情報サイト掲載値。決算発表前の水準は23.67ドルで、8月の決算後から約▲25.3%、10月1日の安値の約10.5%上、200日移動平均の約28.2%下と報じられています。</p>
+
+<p>同じ会社が、2四半期連続で正反対の反応を示しました。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>決算の見え方</th><th class="num">発表後の株価</th></tr>
+</thead>
+<tbody>
+<tr><td>Butterfly Network（BFLY）</td><td>売上+52%、粗利率改善</td><td class="num">翌日▲3.84%、翌々日場中▲9.8%</td></tr>
+<tr><td>Repligen（RGEN）</td><td>GAAP営業損失（減損4,124.2万ドル）</td><td class="num">+4.5%</td></tr>
+<tr><td>Accuray（ARAY）</td><td>純利益黒字（債務消滅益）</td><td class="num">株式併合で比較不可</td></tr>
+<tr><td>RoyaltyPharma（RPRX）</td><td>ガイダンス引き上げ</td><td class="num">下落</td></tr>
+<tr><td>Ligand（LGND）</td><td>ロイヤルティ+51%</td><td class="num">ほぼ変わらず</td></tr>
+<tr><td>Innoviva（INVA）</td><td>営業利益+21.9%、EPSは予想を1.55ドル下回る</td><td class="num">52週安値</td></tr>
+<tr><td>Schrödinger（SDGR）</td><td>純損失拡大</td><td class="num">1年来高値圏</td></tr>
+<tr><td>Recursion（RXRX）</td><td>決算＋第2相データ</td><td class="num">+3.1%→増資価格近辺</td></tr>
+<tr><td>Absci（ABSI）</td><td>純損失16%拡大、EPSは改善</td><td class="num">―</td></tr>
+<tr><td>Roivant（ROIV）</td><td>売上が約22.4倍</td><td class="num">1週間後は発表前と同水準</td></tr>
+<tr><td>BridgeBio（BBIO）</td><td>営業損失が一回限り要因で縮小</td><td class="num">+5.96%</td></tr>
+<tr><td>Fortress（FBIO）</td><td>9か月EPS+2.94ドル、四半期は予想下振れ</td><td class="num">連続データ取得できず</td></tr>
+<tr><td>PureTech（PRTC）</td><td>半期で黒字転換（非現金の評価益）</td><td class="num">連続データ取得できず</td></tr>
+<tr class="total"><td>Collegium（COLL）</td><td>営業利益▲53.7%、ガイダンス据え置き</td><td class="num"><strong>+6.29%</strong>（前四半期は▲18.55%）</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>14社の決算を並べても、<strong>決算の内容と株価の方向に一貫した関係は見当たりません。</strong>入口記事③章で扱ったとおり、結果を左右するのは<em>市場が事前に何を織り込んでいたか</em>です。本記事は株価の方向について見解を示すものではありません。</p>
+
+<h3>通期ガイダンスは据え置き</h3>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>指標</th><th class="num">2026年通期ガイダンス</th><th class="num">9か月実績</th><th class="num">第4四半期の含意（編集部試算）</th></tr>
+</thead>
+<tbody>
+<tr><td>製品売上（純額）</td><td class="num">8億2,500万〜8億5,500万ドル</td><td class="num">6億977万ドル</td><td class="num">2億1,523万〜2億4,523万ドル</td></tr>
+<tr><td>調整後EBITDA</td><td class="num">4億4,500万〜4億7,000万ドル</td><td class="num">3億3,931.9万ドル</td><td class="num">1億568.1万〜1億3,068.1万ドル</td></tr>
+<tr><td>Jornay PM 売上</td><td class="num">1億9,000万〜2億ドル</td><td class="num">非開示（四半期のみ開示）</td><td class="num">算出不可</td></tr>
+<tr><td>Azstarys 売上</td><td class="num">6,500万〜7,500万ドル</td><td class="num">非開示（四半期のみ開示）</td><td class="num">算出不可</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>第3四半期の製品売上は2億1,630万ドル、調整後EBITDAは1億2,158.9万ドルでした。<strong>通期ガイダンスから逆算した第4四半期のレンジは、下限が第3四半期の実績を下回ります</strong>（編集部試算）。</p>
+
+<p>なお会社は、<strong>調整後EBITDAガイダンスについてGAAPへの調整表を提示していません。</strong>2027年のガイダンスは2027年初頭に示す予定とされています。</p>
+
+<div class="watch">
+  <h2>WHAT TO WATCH</h2>
+  <p class="sub">Collegium Pharmaceutical（COLL）について、今後の開示で確認したい6点</p>
+  <ol>
+    <li><strong>Belbucaのジェネリック参入リスク（2027年1月23日）</strong>。会社は和解に基づく日付として2027年1月23日を挙げ、Tevaが発売するにはFDAのANDA承認が必要で、発売の兆候はまだ見られないと述べました。Belbucaは第3四半期売上5,770万ドル＝製品売上の<strong>約26.7%</strong>（編集部計算）を占めます。承認や発売を前提とした判断はできません。</li>
+    <li><strong>法人税の行</strong>。第3四半期は1,385.3万ドル、9か月で809.0万ドルのベネフィットでした。<strong>純利益が税引前利益を上回る状態</strong>が続くのか、第4四半期と通期の開示で確認する必要があります。決算説明会に説明はありませんでした。</li>
+    <li><strong>販売・一般管理費</strong>。GAAPで+48.4%、調整後で+25%（編集部計算および会社記載値）。ADHD営業体制の構築が一巡した後、この伸びが止まるかどうかが営業利益率を決めます。GAAPと調整後の差2,730.6万ドルの中身は説明されていません。</li>
+    <li><strong>疼痛ポートフォリオの減少ペース</strong>。第3四半期は▲18%。Xtampza ERは2027年1月1日から約1,500万人規模の払い手で独占フォーミュラリーの地位に移るとされており、Nucyntaはオーソライズド・ジェネリックへの移行が進んでいます。</li>
+    <li><strong>無形資産償却の水準</strong>。無形資産は9か月で4億6,500万ドル増えました。第3四半期の償却費5,534.6万ドルを単純に4倍すると年約2億2,138.4万ドル（編集部試算）。GAAP利益と調整後利益の差は、今後も大きいままになる可能性があります。</li>
+    <li><strong>資本配分の順位</strong>。ネット債務約10億5,685.4万ドル（編集部計算／会社説明では調整後EBITDAの約2.0倍）に対し、5,000万ドルのASRを実施中で、枠は約1億ドル残っています。会社は債務返済・事業開発・株主還元の3つを挙げるのみで、具体的な目標は示していません。</li>
+  </ol>
+</div>
+
+<div class="disclaimer">
+<h3>免責事項</h3>
+<p style="margin:0 0 10px;">本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資判断はご自身の責任で行ってください。</p>
+<p style="margin:0 0 10px;">本記事の数値は2026年11月22日時点で確認できた公開情報に基づきます。株価は株価情報サイトの掲載値で、記載した日付時点のものです。株価は日々変動します。貸借対照表の数値は2026年9月30日時点です。</p>
+<p style="margin:0 0 10px;">「編集部計算」「編集部試算」と記した数値は、公表値をもとに編集部が算出した推計値です。年換算は四半期実績の単純4倍によるもので、季節性や一回限りの要因を調整していません。第4四半期の含意は、会社が提示した通期ガイダンスと9か月実績から編集部が逆算したものであり、会社が第4四半期のガイダンスとして提示したものではありません。製品別の前年同期の金額および疼痛ポートフォリオの増減額は、会社が記載した増減率から逆算した推計値です。調整後EPS、調整後EBITDA、調整後営業費用、調整後純利益は非GAAP指標であり、会社は調整後EBITDAガイダンスについてGAAPへの調整表を提示していません。</p>
+<p style="margin:0 0 10px;">正規化EPSおよび市場予想は第三者データ提供会社によるもので、本記事では原データを確認していません。「予想を上回った／下回った」という評価は、比較に用いる利益指標によって結論が変わります。決算説明会からの引用は第三者が作成したトランスクリプトに基づく要旨の日本語訳です。なお同トランスクリプトにはJornay PMの四半期売上として5,190万ドルと5,950万ドルの両方が現れており、決算リリースの記載は5,190万ドルです。本記事はリリースの数値を採用しています。</p>
+<p style="margin:0;">Belbucaのジェネリック参入時期、Tevaの承認取得の有無、Xtampza ERのフォーミュラリー地位の効果はいずれも不確実です。本記事は特定の結果を前提とした記述を行っていません。法人税のベネフィット、希薄化後株式数の変動について、会計処理の詳細は確認できた資料の範囲では説明が見当たらず、本記事は原因を断定していません。「記載がない」「説明がなかった」という表現は確認できた資料の範囲における記載であり、開示の不存在を断定するものではありません。</p>
+</div>
+
+<div class="src">
+<h3>主な参照資料</h3>
+<ul>
+<li>Collegium Pharmaceutical, Inc. Form 8-K 添付資料99.1「Collegium Reports Third Quarter 2026 Financial Results; Reaffirms 2026 Guidance」（2026年11月5日）<a href="https://www.sec.gov/Archives/edgar/data/0001267565/000162828026070585/coll-2026x09x30xex99x1.htm">sec.gov</a>／<a href="https://ir.collegiumpharma.com/news-releases/news-release-details/collegium-reports-third-quarter-2026-financial-results-reaffirms">ir.collegiumpharma.com</a></li>
+<li>Collegium（COLL）2026年第3四半期 決算説明会トランスクリプト（第三者作成）<a href="https://www.fool.com/earnings/call-transcripts/2026/11/05/collegium-coll-q3-2026-earnings-call-transcript/">fool.com</a></li>
+<li>市場予想との比較および株価データ <a href="https://finviz.com/news/417153/collegium-beats-on-adhd-strength-but-pain-erosion-and-heavier-spending-keep-earnings-shrinking">finviz.com</a></li>
+<li>GAAP EPSに基づく報道（見出しのみ参照、本文を取得できず）<a href="https://www.gurufocus.com/news/9174590/collegium-pharmaceutical-reports-q3-2026-results-revenue-of-2163-million-and-gaap-eps-of-069-miss-estimates">gurufocus.com</a></li>
+</ul>
+</div>
+
+<div class="crosslink" style="margin-top:36px;">
+<strong>シリーズ記事：</strong><a href="https://marketsupporter-ai.com/reports/us-pharma-biotech-earnings-guide.html">入口記事：なぜ米国の製薬・バイオ株は、決算1本で株価が倍にも半分にもなるのか</a>／<a href="https://marketsupporter-ai.com/reports/puretech-health-prtc-h1.html">⑬PureTech Health（PRTC）― 子会社IPOで1億5,873万ドルの利益</a>／<a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">⑫Fortress Biotech（FBIO）― 9か月EPS+2.94ドル、四半期▲0.23ドル</a>／<a href="https://marketsupporter-ai.com/reports/absci-absi-q3.html">⑨Absci（ABSI）― 純損失は16%拡大、EPSは改善した</a>
+</div>
+
+</div>
+</body>
+</html>
