@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harrow（HROW）2026年Q3決算分析｜調整後EPSがGAAPより小さい決算</title>
+<meta name="description" content="Harrow, Inc.（NASDAQ:HROW）2026年第3四半期決算を一次資料から分析。調整後EPSがGAAPを下回る構造、調整後EBITDAガイダンスの半減、通期の約81.8%が第4四半期に集中する想定、8.625%債3億ドルの重さを検証します。">
+<style>
+:root{
+  --accent:#d97706;
+  --accent-dark:#b45309;
+  --accent-mid:#f59e0b;
+  --accent-light:#fffbeb;
+  --ink:#1a1a1a;
+  --sub:#555;
+  --line:#e5e5e5;
+  --bg:#ffffff;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.9;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:780px;margin:0 auto;padding:0 20px 80px;}
+header.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 55%,var(--accent-mid) 100%);
+  color:#fff;
+  padding:56px 20px 48px;
+}
+header.hero .inner{max-width:780px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;
+  background:rgba(255,255,255,.2);
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:999px;
+  padding:5px 14px;
+  font-size:12px;
+  letter-spacing:.08em;
+  margin-bottom:18px;
+}
+header.hero h1{
+  font-size:28px;
+  line-height:1.5;
+  margin:0 0 16px;
+  font-weight:700;
+}
+header.hero .lede{
+  font-size:15px;
+  line-height:1.85;
+  margin:0;
+  color:rgba(255,255,255,.95);
+}
+header.hero .meta{
+  margin-top:22px;
+  font-size:13px;
+  color:rgba(255,255,255,.85);
+  border-top:1px solid rgba(255,255,255,.3);
+  padding-top:14px;
+}
+.model-tag{
+  display:inline-block;
+  background:#fff;
+  color:var(--accent-dark);
+  font-size:12px;
+  font-weight:700;
+  border-radius:4px;
+  padding:3px 10px;
+  margin-right:8px;
+}
+.toc{
+  background:var(--accent-light);
+  border:1px solid #fde68a;
+  border-radius:10px;
+  padding:22px 24px;
+  margin:36px 0 44px;
+}
+.toc h2{
+  font-size:14px;
+  margin:0 0 12px;
+  color:var(--accent-dark);
+  letter-spacing:.06em;
+}
+.toc ol{margin:0;padding-left:1.3em;font-size:14.5px;}
+.toc li{margin-bottom:7px;}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(217,119,6,.35);}
+.toc a:hover{color:var(--accent-dark);}
+h2.chapter{
+  font-size:21px;
+  line-height:1.55;
+  margin:56px 0 20px;
+  padding-bottom:12px;
+  border-bottom:2px solid var(--accent);
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+h2.chapter .num{
+  flex:0 0 auto;
+  background:var(--accent);
+  color:#fff;
+  font-size:13px;
+  border-radius:5px;
+  padding:3px 9px;
+  margin-top:5px;
+  font-weight:700;
+}
+h3{
+  font-size:17px;
+  margin:34px 0 14px;
+  padding-left:12px;
+  border-left:4px solid var(--accent-mid);
+  line-height:1.6;
+}
+p{margin:0 0 18px;}
+ul,ol{margin:0 0 18px;padding-left:1.4em;}
+li{margin-bottom:8px;}
+.callout{
+  background:var(--accent-light);
+  border-left:4px solid var(--accent);
+  border-radius:0 8px 8px 0;
+  padding:18px 20px;
+  margin:26px 0;
+  font-size:15px;
+}
+.callout.warn{
+  background:#fef2f2;
+  border-left-color:#dc2626;
+}
+.callout strong{color:var(--accent-dark);}
+.callout.warn strong{color:#b91c1c;}
+.quote{
+  border-left:3px solid var(--line);
+  padding:4px 0 4px 18px;
+  margin:24px 0;
+  color:var(--sub);
+  font-size:15px;
+}
+.kpi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:12px;
+  margin:28px 0;
+}
+.kpi{
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:16px 14px;
+  background:#fafafa;
+}
+.kpi .label{font-size:12px;color:var(--sub);display:block;margin-bottom:6px;line-height:1.5;}
+.kpi .value{font-size:21px;font-weight:700;color:var(--accent-dark);display:block;line-height:1.3;}
+.kpi .note{font-size:11.5px;color:var(--sub);display:block;margin-top:5px;line-height:1.5;}
+.table-scroll{overflow-x:auto;margin:26px 0;-webkit-overflow-scrolling:touch;}
+table{
+  border-collapse:collapse;
+  width:100%;
+  min-width:560px;
+  font-size:14px;
+}
+th,td{
+  border:1px solid var(--line);
+  padding:10px 12px;
+  text-align:left;
+  vertical-align:top;
+}
+th{background:var(--accent-light);font-weight:700;color:var(--accent-dark);}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+tr.total td{background:#fafafa;font-weight:700;}
+.tnote{font-size:13px;color:var(--sub);margin:-14px 0 24px;}
+.flow{margin:28px 0;}
+.flow-step{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  margin-bottom:16px;
+}
+.flow-step .circle{
+  flex:0 0 auto;
+  width:30px;height:30px;
+  border-radius:50%;
+  background:var(--accent);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;
+  margin-top:2px;
+}
+.flow-step .body{flex:1 1 auto;font-size:15px;line-height:1.8;}
+.crosslink{
+  background:#f7f7f8;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:14px 18px;
+  margin:24px 0;
+  font-size:14px;
+  color:var(--sub);
+}
+.crosslink strong{color:var(--ink);}
+.crosslink a{color:var(--accent-dark);}
+.watch{
+  background:#211705;
+  color:#f3f3f3;
+  border-radius:12px;
+  padding:32px 28px;
+  margin:56px 0 36px;
+}
+.watch h2{
+  font-size:19px;
+  margin:0 0 8px;
+  color:#fff;
+  letter-spacing:.04em;
+}
+.watch .sub{font-size:13px;color:#cbbd9c;margin:0 0 22px;}
+.watch ol{
+  list-style:none;
+  counter-reset:w;
+  margin:0;padding:0;
+}
+.watch li{
+  counter-increment:w;
+  position:relative;
+  padding-left:38px;
+  margin-bottom:18px;
+  font-size:14.5px;
+  line-height:1.8;
+}
+.watch li::before{
+  content:counter(w);
+  position:absolute;left:0;top:2px;
+  width:25px;height:25px;
+  border-radius:50%;
+  background:var(--accent-mid);
+  color:#211705;
+  font-weight:700;font-size:13px;
+  display:flex;align-items:center;justify-content:center;
+}
+.watch li strong{color:#fde68a;}
+.disclaimer{
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:#fafafa;
+  padding:20px 22px;
+  font-size:13px;
+  color:var(--sub);
+  line-height:1.85;
+  margin:40px 0 28px;
+}
+.disclaimer h3{
+  font-size:14px;
+  margin:0 0 10px;
+  padding:0;
+  border:none;
+  color:var(--ink);
+}
+.src{
+  font-size:13px;
+  color:var(--sub);
+  line-height:1.9;
+}
+.src h3{
+  font-size:14px;
+  margin:36px 0 12px;
+  padding:0;
+  border:none;
+  color:var(--ink);
+}
+.src ul{padding-left:1.2em;margin:0;}
+.src li{margin-bottom:6px;}
+.src a{color:var(--accent-dark);}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  header.hero{padding:40px 18px 36px;}
+  header.hero h1{font-size:22px;}
+  .wrap{padding:0 16px 60px;}
+  h2.chapter{font-size:18.5px;}
+  h3{font-size:16px;}
+  .watch{padding:26px 20px;border-radius:10px;}
+  .kpi .value{font-size:19px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="inner">
+    <span class="eyebrow">米国製薬・バイオ決算シリーズ ⑮</span>
+    <h1>調整後EPSが、GAAPより小さい。前日のCollegiumとは調整の方向が逆だった</h1>
+    <p class="lede">Harrow, Inc.（NASDAQ:HROW）2026年第3四半期決算。GAAP希薄化後EPSは0.25ドル、調整後は0.12ドルです。前日に扱ったCollegiumでは、GAAPの0.60ドルが調整後1.96ドルへ3倍以上に膨らみました。同じグループの2社で、調整が逆方向に働いています。さらにこの決算では、売上ガイダンスを据え置いたまま調整後EBITDAガイダンスが半分以下に引き下げられました。</p>
+    <p class="meta"><span class="model-tag">商業段階の特殊製薬</span>公開日：2026年11月23日／決算発表：2026年11月9日（米国時間・引け後）</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#c1">四半期は黒字、9か月は赤字 ― Fortressと逆向き</a></li>
+    <li><a href="#c2">調整後EPSがGAAPより小さい ― 調整の方向は一定ではない</a></li>
+    <li><a href="#c3">売上ガイダンスは据え置き、調整後EBITDAは半分以下へ</a></li>
+    <li><a href="#c4">通期の調整後EBITDAの約81.8%が、第4四半期に集中する想定</a></li>
+    <li><a href="#c5">売上+38.6%、9か月の営業損益は黒字から赤字へ</a></li>
+    <li><a href="#c6">IHEEZOは売上+62%、数量▲5% ― 説明がない</a></li>
+    <li><a href="#c7">8.625%債3億ドル ― 利息が調整後EBITDAの約2.45倍</a></li>
+    <li><a href="#c8">QUELL試験は主要評価項目に届かなかった／株価</a></li>
+  </ol>
+</nav>
+
+<p>本シリーズは、米国に上場する製薬・バイオ企業29社の決算を1社ずつ、一次資料に当たって読み解く企画です。15社目は<strong>Harrow, Inc.（NASDAQ:HROW）</strong>。<a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">前回のCollegium Pharmaceutical</a>に続く<strong>商業段階の特殊製薬</strong>の2社目です。</p>
+
+<p>Harrowは眼科領域に特化した企業で、Collegiumと同じく<strong>他社から製品を買ってきて育てる</strong>モデルです。IHEEZO、TRIESENCE、TYRVAYAはいずれも取得した製品で、VEVYEはNovaliqからのライセンスです。</p>
+
+<p>同じグループ、同じモデル。しかし決算の形は、ほぼすべての論点で前日と逆でした。</p>
+
+<h2 class="chapter" id="c1"><span class="num">①</span>四半期は黒字、9か月は赤字 ― Fortressと逆向き</h2>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2026年Q3</th><th class="num">2025年Q3</th><th class="num">2026年9か月</th><th class="num">2025年9か月</th></tr>
+</thead>
+<tbody>
+<tr><td>総収益</td><td class="num">9,929.7万ドル</td><td class="num">7,163.8万ドル</td><td class="num">2億1,416.1万ドル</td><td class="num">1億8,321.1万ドル</td></tr>
+<tr><td>売上原価</td><td class="num">2,439.4万ドル</td><td class="num">1,771.2万ドル</td><td class="num">6,185.0万ドル</td><td class="num">4,946.6万ドル</td></tr>
+<tr><td>売上総利益</td><td class="num">7,490.3万ドル</td><td class="num">5,392.6万ドル</td><td class="num">1億5,231.1万ドル</td><td class="num">1億3,374.5万ドル</td></tr>
+<tr><td>粗利率（会社記載）</td><td class="num">75%</td><td class="num">75%</td><td class="num"><strong>71%</strong></td><td class="num">73%</td></tr>
+<tr><td>販売費・一般管理費（合算）</td><td class="num">5,314.5万ドル</td><td class="num">3,585.6万ドル</td><td class="num">1億4,967.3万ドル</td><td class="num">1億960.4万ドル</td></tr>
+<tr><td>研究開発費</td><td class="num">1,028.7万ドル</td><td class="num">332.3万ドル</td><td class="num">2,425.4万ドル</td><td class="num">921.7万ドル</td></tr>
+<tr><td>営業費用 合計</td><td class="num">6,343.2万ドル</td><td class="num">3,917.9万ドル</td><td class="num">1億7,392.7万ドル</td><td class="num">1億1,882.1万ドル</td></tr>
+<tr class="total"><td>営業損益</td><td class="num">1,147.1万ドル</td><td class="num">1,474.7万ドル</td><td class="num"><strong>▲2,161.6万ドル</strong></td><td class="num">+1,492.4万ドル</td></tr>
+<tr><td>支払利息（純額）</td><td class="num">620.8万ドル</td><td class="num">603.8万ドル</td><td class="num">1,796.8万ドル</td><td class="num">1,899.4万ドル</td></tr>
+<tr><td>営業外損益 合計</td><td class="num">▲120.8万ドル</td><td class="num">▲1,372.7万ドル</td><td class="num">▲1,296.8万ドル</td><td class="num">▲2,668.9万ドル</td></tr>
+<tr class="total"><td>純損益</td><td class="num"><strong>+975.7万ドル</strong></td><td class="num">+102.0万ドル</td><td class="num"><strong>▲3,511.5万ドル</strong></td><td class="num">▲1,176.5万ドル</td></tr>
+<tr><td>EPS（基本／希薄化後）</td><td class="num">+0.26／+0.25ドル</td><td class="num">+0.03／+0.03ドル</td><td class="num"><strong>▲0.94ドル</strong></td><td class="num">▲0.32ドル</td></tr>
+<tr><td>調整後EBITDA（非GAAP）</td><td class="num">2,121.7万ドル</td><td class="num">2,279.3万ドル</td><td class="num">732.7万ドル</td><td class="num">3,780.8万ドル</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※決算リリース記載値。表記は百万ドル単位の原数値を万ドル単位に換算したものです。</p>
+
+<p>四半期は純利益+975.7万ドル（EPS+0.26ドル）。9か月は純損失▲3,511.5万ドル（EPS▲0.94ドル）です。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>3日前のFortress Biotechは、これと正反対でした。</strong></p>
+<p style="margin:12px 0 0;">
+・<a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">Fortress（FBIO）</a>：9か月のEPS <strong>+2.94ドル</strong>／第3四半期 <strong>▲0.23ドル</strong><br>
+・Harrow（HROW）：9か月のEPS <strong>▲0.94ドル</strong>／第3四半期 <strong>+0.26ドル</strong></p>
+<p style="margin:12px 0 0;"><strong>2社で、四半期と累計の符号が逆に入れ替わっています。</strong>「直近の決算は黒字でした」という一文は、どちらの会社についても書けますし、「赤字でした」という一文も書けます。どの期間を見るかだけで変わります。</p>
+</div>
+
+<h3>四半期の黒字の約半分は、一回限りの項目</h3>
+
+<p>第3四半期の純利益975.7万ドルには、<strong>500万ドルの訴訟和解益</strong>が含まれます。CFOのAndrew Boll氏は決算説明会で、OSRXとの訴訟和解に係る「一回限りの500万ドルの利益」であり、その他収益に計上したと述べました。</p>
+
+<p>純利益に占める比率は<strong>約51.2%</strong>です（編集部計算）。除くと約475.7万ドルになります。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>本シリーズ6日連続で、一回限りの項目が見出しの数字を作るケースが出てきました。</strong>そして毎回、損益計算書の違う行に現れています。</p>
+<p style="margin:12px 0 0;">
+・11月18日 <a href="https://marketsupporter-ai.com/reports/roivant-roiv-q2.html">Roivant</a>：売上高の中身（承認から5週間分）<br>
+・11月19日 <a href="https://marketsupporter-ai.com/reports/bridgebio-bbio-q3.html">BridgeBio</a>：売上高の行（マイルストーン7,500万ドル）<br>
+・11月20日 <a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">Fortress</a>：営業外損益（資産売却益）<br>
+・11月21日 <a href="https://marketsupporter-ai.com/reports/puretech-health-prtc-h1.html">PureTech</a>：営業外損益（保有株式の評価益、現金を伴わない）<br>
+・11月22日 <a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium</a>：法人税の行（1,385.3万ドルのベネフィット）<br>
+・<strong>11月23日 Harrow：営業外損益（訴訟和解益500万ドル）</strong></p>
+</div>
+
+<h2 class="chapter" id="c2"><span class="num">②</span>調整後EPSがGAAPより小さい ― 調整の方向は一定ではない</h2>
+
+<p>決算発表後の報道では、第3四半期の1株当たり利益がこう比較されました。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>指標</th><th class="num">金額</th><th>市場予想との関係</th></tr>
+</thead>
+<tbody>
+<tr><td>GAAP EPS（基本）</td><td class="num">+0.26ドル</td><td>―</td></tr>
+<tr><td>GAAP EPS（希薄化後）</td><td class="num">+0.25ドル</td><td>―</td></tr>
+<tr class="total"><td>調整後EPS（第三者データ）</td><td class="num"><strong>+0.12ドル</strong></td><td>予想0.13ドルを<strong>7.7%下回った</strong></td></tr>
+<tr><td>総収益</td><td class="num">9,929.7万ドル</td><td>予想9,844万ドルを0.9%上回った</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※調整後EPSおよび市場予想は第三者データに基づく報道の記載です。本記事では予想値の原データを確認していません。会社自身は調整後純利益・調整後EPSを決算リリースに記載していません。</p>
+
+<p>前日のCollegiumと並べます。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th class="num">GAAP EPS（希薄化後）</th><th class="num">調整後EPS</th><th class="num">差</th><th>調整の中身</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium（COLL）</a></td><td class="num">0.60ドル</td><td class="num">1.96ドル</td><td class="num"><strong>+226.7%</strong></td><td><strong>費用</strong>を除く（無形資産償却5,534.6万ドル＝現金を伴わない）</td></tr>
+<tr class="total"><td>Harrow（HROW）</td><td class="num">0.25ドル</td><td class="num">0.12ドル</td><td class="num"><strong>▲52.0%</strong></td><td><strong>利益</strong>を除く（訴訟和解益500万ドル＝現金を伴う）</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※差は編集部計算。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>調整後指標は、必ずGAAPより大きくなるわけではありません。</strong>前日のCollegiumは、現金を伴わない大きな費用（無形資産償却）を除いたため調整後が大きくなりました。Harrowは、現金を伴う一回限りの利益（和解益）を除いたため調整後が小さくなりました。</p>
+<p style="margin:12px 0 0;">入口記事⑤章では「見出しの数字にだまされない」という手順を扱いました。2日連続で同じグループの2社を見た結論は、こうなります ― <strong>「調整後」という言葉は方向を教えてくれません。何を足し引きしたのかを確認する必要があります。</strong></p>
+</div>
+
+<h3>加重平均株式数が開示されていない</h3>
+
+<p>もう1つ、開示水準の差があります。<strong>Harrowの決算リリースには、加重平均株式数の記載がありません。</strong></p>
+
+<p>純損益とEPSから逆算すると、第3四半期は基本で約3,750万株、希薄化後で約3,900万株、9か月は約3,740万株と推計されます（編集部試算。端数処理の影響を受けます）。</p>
+
+<div class="crosslink">
+<strong>シリーズの比較：</strong>前日の<a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium</a>は、加重平均株式数を1株単位まで開示していました（第3四半期：基本31,731,198株、希薄化後39,110,855株）。そしてその記事では、<strong>四半期と9か月で希薄化率が+23.3%と+3.2%に分かれる</strong>という論点を扱いました。<strong>Harrowの場合、同じ分析ができません。</strong>株式数が開示されていないためです。開示水準の差は、読み手ができる分析の範囲を変えます。
+</div>
+
+<h2 class="chapter" id="c3"><span class="num">③</span>売上ガイダンスは据え置き、調整後EBITDAは半分以下へ</h2>
+
+<p>この決算でもっとも大きく動いたのは、通期ガイダンスです。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>指標</th><th class="num">従来</th><th class="num">今回</th><th>方向</th></tr>
+</thead>
+<tbody>
+<tr><td>2026年通期 総収益</td><td class="num">3億5,000万〜3億6,500万ドル</td><td class="num">3億5,000万〜3億6,500万ドル</td><td><strong>据え置き</strong></td></tr>
+<tr class="total"><td>2026年通期 調整後EBITDA</td><td class="num">8,000万〜1億ドル</td><td class="num"><strong>4,000万ドル超</strong></td><td><strong>半分以下へ引き下げ</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>売上の見通しは変えず、利益の見通しだけを半分以下にしました。</strong>売上が計画どおりでも利益が出ないという意味になります。</p>
+</div>
+
+<p>CFOは引き下げの理由として、<strong>上半期の売上未達と、想定を下回る粗利率</strong>を挙げました。実際、9か月の粗利率は73%から71%へ低下しています（四半期では75%で横ばい）。会社は第3四半期のブランド製品の粗利率について、製品ミックスの変化と償却費の増加により前年同期比2.3ポイント低下して79.3%になったと説明しています。</p>
+
+<p>さらに第4四半期の費用増も挙げられました。</p>
+
+<ul>
+<li>G-MELTのNDA（新薬承認申請）申請料と準備費用</li>
+<li>QUELL、第3相TRIESENCE、YOCHILの各プログラムの加速</li>
+<li>TYRVAYAの移管費用と取得会計に伴う費用</li>
+</ul>
+
+<p>研究開発費は第3四半期に1,028.7万ドル（前年同期332.3万ドル、<strong>+209.6%</strong>／編集部計算）。9か月では921.7万→2,425.4万ドルで<strong>+163.1%</strong>です（編集部計算）。CFOは売上の約10%にあたる水準を「予想より少し高い」と述べ、今後も売上比で現水準程度を見込み、加速した費用の一部はSG&Aに移るとしています。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>Collegiumとの対比：</strong>前日のCollegiumは販売・一般管理費が+48.4%、研究開発費は決算リリースで区分開示されていませんでした。Harrowは販売費・一般管理費が<strong>+48.2%</strong>（編集部計算）とほぼ同じ伸びで、加えて<strong>研究開発費が3倍以上</strong>になっています。</p>
+<p style="margin:12px 0 0;">同じ「買ってきた薬を育てる」モデルでも、<strong>一方は販売に、他方は販売と開発の両方に費用を投じています。</strong></p>
+</div>
+
+<h2 class="chapter" id="c4"><span class="num">④</span>通期の調整後EBITDAの約81.8%が、第4四半期に集中する想定</h2>
+
+<p>引き下げ後のガイダンスを、9か月の実績と突き合わせます。</p>
+
+<div class="flow">
+  <div class="flow-step">
+    <div class="circle">1</div>
+    <div class="body">9か月の調整後EBITDAは<strong>732.7万ドル</strong>（前年同期3,780.8万ドル、<strong>▲80.6%</strong>／編集部計算）。</div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">2</div>
+    <div class="body">会社は第4四半期の調整後EBITDAを<strong>3,300万ドル超</strong>と説明しています。</div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">3</div>
+    <div class="body">732.7万ドル＋3,300万ドル＝4,032.7万ドル。通期ガイダンス「4,000万ドル超」と整合します。<strong>通期の約81.8%が第4四半期に発生する想定</strong>です（編集部計算）。</div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">4</div>
+    <div class="body">第3四半期の調整後EBITDAは2,121.7万ドル。第4四半期の3,300万ドル超は、その<strong>約1.56倍</strong>にあたります（編集部計算）。</div>
+  </div>
+</div>
+
+<p>売上についても同じ計算をします。通期ガイダンスから9か月実績2億1,416.1万ドルを差し引くと、第4四半期は<strong>1億3,583.9万〜1億5,083.9万ドル</strong>（編集部試算）。第3四半期の9,929.7万ドルに対し<strong>前四半期比+37%〜+52%</strong>になります。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>売上も利益も、第4四半期に集中する想定です。</strong>そして本記事を公開している2026年11月23日時点で、その第4四半期はまだ進行中です。</p>
+<p style="margin:12px 0 0;">CFOは「レンジではなくフロア（下限）を提示している」と述べ、上振れの余地があるとしました。CEOのMark Baum氏は「第4四半期は当社史上最高の四半期になる」と述べています。<strong>本記事はこの見通しの当否を判断するものではありません。</strong>確認すべきは、通期ガイダンスの達成が第4四半期1四半期の実績に強く依存している、という構造です。</p>
+</div>
+
+<h3>旧ガイダンスの下限に必要だった金額</h3>
+
+<p>CFOはもう1つ、具体的な数字を挙げました。<strong>旧ガイダンスの下限8,000万ドルに達するには、第4四半期だけで約7,300万ドルの調整後EBITDAが必要だった</strong>という説明です。</p>
+
+<p>第3四半期の実績2,121.7万ドルの<strong>約3.44倍</strong>にあたります（編集部計算）。</p>
+
+<div class="crosslink">
+<strong>ガイダンスの読み方：</strong>本シリーズでは<a href="https://marketsupporter-ai.com/reports/bridgebio-bbio-q3.html">BridgeBio</a>で、会社自身の説明会発言から第4四半期の営業損失を逆算し、第3四半期の約11.7〜15.1倍になる計算を示しました。<a href="https://marketsupporter-ai.com/reports/royalty-pharma-rprx.html">RoyaltyPharma</a>はガイダンスを引き上げたのに株価が下落しました。<strong>通期ガイダンスは、残り期間に何を求めているかを逆算してはじめて意味が分かります。</strong>
+</div>
+
+<h2 class="chapter" id="c5"><span class="num">⑤</span>売上+38.6%、9か月の営業損益は黒字から赤字へ</h2>
+
+<p>第3四半期の総収益は9,929.7万ドルで、前年同期比<strong>+38.6%</strong>（編集部計算）。会社は「記録的な四半期」としています。それでも営業利益は1,474.7万→1,147.1万ドルへ<strong>▲22.2%</strong>（編集部計算）。</p>
+
+<p>9か月では、さらに明確です。</p>
+
+<div class="kpi-grid">
+  <div class="kpi">
+    <span class="label">9か月の総収益</span>
+    <span class="value">+16.9%</span>
+    <span class="note">1億8,321.1万→2億1,416.1万ドル</span>
+  </div>
+  <div class="kpi">
+    <span class="label">9か月の売上総利益</span>
+    <span class="value">+13.9%</span>
+    <span class="note">増加額1,856.6万ドル</span>
+  </div>
+  <div class="kpi">
+    <span class="label">9か月の営業費用</span>
+    <span class="value">+46.4%</span>
+    <span class="note">増加額5,510.6万ドル</span>
+  </div>
+  <div class="kpi">
+    <span class="label">費用増 ÷ 粗利増</span>
+    <span class="value">約2.97倍</span>
+    <span class="note">編集部計算</span>
+  </div>
+</div>
+
+<p><strong>粗利が1,856.6万ドル増えるあいだに、営業費用は5,510.6万ドル増えました。</strong>約2.97倍です（編集部計算）。結果として営業損益は+1,492.4万ドルから▲2,161.6万ドルへ転じています。</p>
+
+<h3>製品別 ― ブランド品が伸び、その他が減る</h3>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>製品</th><th class="num">2026年Q3売上</th><th class="num">前年同期比</th><th class="num">前四半期比</th><th class="num">売上構成比</th></tr>
+</thead>
+<tbody>
+<tr><td>VEVYE（ドライアイ）</td><td class="num">3,970万ドル</td><td class="num"><strong>+75%</strong></td><td class="num">+35%</td><td class="num">約40.0%</td></tr>
+<tr><td>IHEEZO（眼表面麻酔）</td><td class="num">2,530万ドル</td><td class="num">+15%</td><td class="num"><strong>+62%</strong></td><td class="num">約25.5%</td></tr>
+<tr><td>TRIESENCE（トリアムシノロン）</td><td class="num">1,070万ドル</td><td class="num">記録的四半期（数量+110%）</td><td class="num">―</td><td class="num">約10.8%</td></tr>
+<tr class="total"><td>ブランド 計</td><td class="num"><strong>8,350万ドル</strong></td><td class="num"><strong>+62%</strong></td><td class="num">―</td><td class="num">約84.1%</td></tr>
+<tr><td>その他（調剤など）</td><td class="num">約1,580万ドル</td><td class="num">約▲21.4%</td><td class="num">―</td><td class="num">約15.9%</td></tr>
+<tr class="total"><td>総収益</td><td class="num">9,929.7万ドル</td><td class="num">+38.6%</td><td class="num">―</td><td class="num">100%</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※製品別売上および増減率は会社記載値。「その他」の金額・増減率および構成比は編集部計算。前年同期の製品別金額は会社記載の増減率から逆算した推計値です。BYOOVIZの売上および9か月の製品別内訳は開示されていません。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>ブランド品の増加約3,200万ドルに対し、その他は約434万ドル減りました（編集部試算）。打ち消し率は約13.4%です。</strong></p>
+<p style="margin:12px 0 0;">本シリーズで同じ構造を3社で見ました。<strong>打ち消し率に大きな差があります。</strong></p>
+<p style="margin:12px 0 0;">
+・<strong>Harrow（HROW）：約13.4%</strong>（ブランド+約3,200万ドル／その他▲約434万ドル）<br>
+・<a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">Fortress（FBIO）</a>：約44.8%（Emrosi+1,360万ドル／レガシー▲約608.8万ドル、9か月）<br>
+・<a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium（COLL）</a>：約83.0%（ADHD+約3,650万ドル／疼痛▲約3,030万ドル）</p>
+<p style="margin:12px 0 0;">いずれも編集部試算です。<strong>同じ「新製品を買ってきて育てる」モデルでも、既存製品がどれだけ速く減るかで連結売上の伸びが決まります。</strong>製品別の開示がなければ、この違いは見えません。</p>
+</div>
+
+<h2 class="chapter" id="c6"><span class="num">⑥</span>IHEEZOは売上+62%、数量▲5% ― 説明がない</h2>
+
+<p>製品別の数字の中に、説明のつかない組み合わせがあります。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>IHEEZOの指標</th><th class="num">前年同期比</th><th class="num">前四半期比</th></tr>
+</thead>
+<tbody>
+<tr><td>売上（2,530万ドル）</td><td class="num">+15%</td><td class="num"><strong>+62%</strong></td></tr>
+<tr class="total"><td>数量（62,210単位）</td><td class="num">+21%</td><td class="num"><strong>▲5%</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>前四半期と比べて、売上が62%増え、数量は5%減っています。</strong>単価が大きく上がったことを意味しますが、<strong>決算リリースと決算説明会のいずれにも、その理由の説明は見当たりませんでした。</strong></p>
+<p style="margin:12px 0 0;">経営陣はグロス・トゥ・ネット（総額に対する正味比率）、価格、引当、平均販売価格のいずれについても説明せず、製品別のガイダンスの提示も控え、IHEEZOは「四半期ごとに変動しうる」と述べました。数量の減少については、第3四半期の手術件数の減少と、第2四半期後半に医療機関が旧来の単回使用製剤を買い増していたことが挙げられています。</p>
+<p style="margin:12px 0 0;">また前年同期比でも、<strong>数量+21%に対し売上+15%</strong>で、方向が逆です。本記事は原因を断定しません。<strong>売上の伸びを数量と単価に分解すると、整合しない四半期があるという事実</strong>を記録します。</p>
+</div>
+
+<div class="crosslink">
+<strong>シリーズの比較：</strong>前日の<a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium</a>では、Jornay PMが売上+24%・処方数+16%で、差8ポイントを単価要因として説明できました。<a href="https://marketsupporter-ai.com/reports/roivant-roiv-q2.html">Roivant</a>と<a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">Fortress</a>では処方数そのものが非開示でした。<strong>Harrowは数量を開示していますが、開示したからこそ乖離が見えます。</strong>
+</div>
+
+<h3>VEVYEは処方数も開示されている</h3>
+
+<p>最大製品のVEVYEについては、処方数が開示されています。</p>
+
+<ul>
+<li>売上3,970万ドル（前年同期比+75%、前四半期比+35%）</li>
+<li><strong>処方数：前四半期比+17%、前年同期比+83%</strong></li>
+<li>2027年1月から、約1,000万人規模の全国プランでの適用が開始される見込み（今年3件目のカバレッジ獲得）</li>
+</ul>
+
+<p>前年同期比では売上+75%に対し処方数+83%で、<strong>処方数の伸びが売上を上回っています</strong>（1処方当たりの単価が下がった方向）。前四半期比では売上+35%、処方数+17%で逆方向です。経営陣は<strong>経済性の改善の背景にある業務ルールの変更について、説明を控えました。</strong></p>
+
+<h2 class="chapter" id="c7"><span class="num">⑦</span>8.625%債3億ドル ― 利息が調整後EBITDAの約2.45倍</h2>
+
+<p>貸借対照表を見ます。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2026年9月30日</th><th class="num">2025年12月31日</th><th class="num">増減</th></tr>
+</thead>
+<tbody>
+<tr><td>現金・現金同等物</td><td class="num">7,530万ドル</td><td class="num">7,290万ドル</td><td class="num">+240万ドル</td></tr>
+<tr><td>支払手形（純額）</td><td class="num">2億9,270万ドル</td><td class="num">2億4,320万ドル</td><td class="num"><strong>+4,950万ドル</strong></td></tr>
+<tr><td>総負債</td><td class="num">4億1,420万ドル</td><td class="num">―</td><td class="num">―</td></tr>
+<tr class="total"><td>株主資本</td><td class="num"><strong>2,880万ドル</strong></td><td class="num">5,210万ドル</td><td class="num"><strong>▲44.7%</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※増減率は編集部計算。</p>
+
+<p>債務の中身は、<strong>元本総額3億ドルの年利8.625%、2030年満期の債券</strong>です。年間の現金利息は約2,600万ドルとされています。</p>
+
+<div class="kpi-grid">
+  <div class="kpi">
+    <span class="label">総負債 ÷ 株主資本</span>
+    <span class="value">約14.4倍</span>
+    <span class="note">編集部計算</span>
+  </div>
+  <div class="kpi">
+    <span class="label">9か月の支払利息 ÷ 9か月の調整後EBITDA</span>
+    <span class="value">約2.45倍</span>
+    <span class="note">1,796.8万ドル÷732.7万ドル／編集部計算</span>
+  </div>
+  <div class="kpi">
+    <span class="label">年間現金利息 ÷ 通期調整後EBITDAガイダンス下限</span>
+    <span class="value">約65.0%</span>
+    <span class="note">2,600万ドル÷4,000万ドル／編集部試算</span>
+  </div>
+  <div class="kpi">
+    <span class="label">ネット債務 ÷ 通期調整後EBITDAガイダンス下限</span>
+    <span class="value">約5.4倍</span>
+    <span class="note">2億1,740万ドル÷4,000万ドル／編集部試算</span>
+  </div>
+</div>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>9か月間に、支払利息が調整後EBITDAの約2.45倍計上されています</strong>（編集部計算）。調整後EBITDAは利息・税・減価償却・償却の前の数字ですから、ここから利息を払うことになります。</p>
+<p style="margin:12px 0 0;">調整後EBITDAガイダンスが8,000万〜1億ドルだった時点では、年間現金利息2,600万ドルはその<strong>約26〜32.5%</strong>でした（編集部試算）。4,000万ドル超に引き下げられた後は<strong>約65.0%</strong>です。<strong>利益見通しの引き下げは、債務の重さの見え方を変えます。</strong></p>
+</div>
+
+<h3>営業キャッシュフローがマイナスに転じている</h3>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>9か月のキャッシュフロー</th><th class="num">2026年</th><th class="num">2025年</th></tr>
+</thead>
+<tbody>
+<tr class="total"><td>営業活動</td><td class="num"><strong>▲2,740万ドル</strong></td><td class="num">+3,550万ドル</td></tr>
+<tr><td>投資活動</td><td class="num">▲1,910万ドル</td><td class="num">▲70万ドル</td></tr>
+<tr><td>財務活動</td><td class="num">+4,890万ドル</td><td class="num">▲770万ドル</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>営業活動で2,740万ドルが流出し、財務活動で4,890万ドルを調達しています。現金残高がほぼ横ばい（+240万ドル）なのは、この組み合わせによるものです。</p>
+
+<div class="crosslink">
+<strong>Collegiumとの対比：</strong>前日のCollegiumはネット債務が約10億5,685.4万ドル（編集部計算）で、会社は調整後EBITDAの<strong>約2.0倍</strong>と説明していました。Harrowはネット債務約2億1,740万ドル（編集部計算）ですが、通期ガイダンス下限に対して<strong>約5.4倍</strong>です（編集部試算）。<strong>債務の絶対額はCollegiumのほうが約4.9倍大きく、利益に対する重さはHarrowのほうが大きい</strong>という関係になります。
+</div>
+
+<h3>TYRVAYA買収は四半期末の翌日に完了</h3>
+
+<p>Harrowは2026年10月1日にTYRVAYA（ドライアイの点鼻スプレー）の買収を完了しました。<strong>第3四半期末（9月30日）の翌日です。</strong>したがって第3四半期の数字には一切含まれていません。</p>
+
+<ul>
+<li>Viatrisから約40名の経験ある営業人員が加わった</li>
+<li>売上の寄与は<strong>第4四半期から</strong>。CFOは来年3,000万ドル超、第4四半期2026が（薬局給付製品であるため）最良の四半期になると見込む</li>
+<li>CEOは、VEVYEのライセンサーであるNovaliqとTYRVAYAの取り決めについて<strong>機密協議中</strong>と述べ、具体的な内容には触れなかった</li>
+</ul>
+
+<p>第4四半期の売上ガイダンス（前四半期比+37%〜+52%）には、このTYRVAYAの初回寄与が含まれます。</p>
+
+<div class="crosslink">
+<strong>シリーズの比較：</strong><a href="https://marketsupporter-ai.com/reports/repligen-rgen.html">Repligen</a>のBioLife買収も四半期末の6日後に完了しており、同じ論点を扱いました。<strong>四半期末の直後に完了した買収は、その四半期の損益計算書には現れず、貸借対照表にも現れません。</strong>決算を読むときは、期末日と重要な取引の完了日を並べる必要があります。
+</div>
+
+<h2 class="chapter" id="c8"><span class="num">⑧</span>QUELL試験は主要評価項目に届かなかった／株価</h2>
+
+<p>決算発表と同時に、臨床試験の結果も公表されました。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>QUELL試験（IHEEZO）</th><th class="num">IHEEZO群</th><th class="num">通常麻酔群</th><th>判定</th></tr>
+</thead>
+<tbody>
+<tr class="total"><td>主要評価項目：麻酔成功率</td><td class="num">55.2%</td><td class="num">59.7%</td><td><strong>非劣性を達成せず</strong></td></tr>
+<tr><td>24時間累積疼痛</td><td class="num">2.9</td><td class="num">3.7</td><td>IHEEZO優位</td></tr>
+<tr><td>眼表面染色</td><td class="num">1.7</td><td class="num">3.2</td><td>IHEEZO優位</td></tr>
+<tr><td>有害事象</td><td class="num">27%</td><td class="num">47%</td><td>IHEEZO優位</td></tr>
+<tr><td>重篤な有害事象</td><td class="num">なし</td><td class="num">なし</td><td>両群ゼロ</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>事前に規定された非劣性マージンは12ポイントでしたが、信頼区間の上限がこれを超えました。最高科学責任者は、試験の設計上の前提と、想定を下回った実際の成功率を踏まえ、主要評価項目は<strong>「結論が出なかった（inconclusive）」</strong>と説明しました。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>追加試験の予定はありません。</strong>会社はこのデータを医学的な情報提供に用い、2027年1月のHawaiian Eye & Retina Conferenceで完全な結果を発表し、査読付き論文として公表することを目指すとしています。</p>
+<p style="margin:12px 0 0;">IHEEZOは第3四半期売上2,530万ドル＝総収益の<strong>約25.5%</strong>（編集部計算）を占める製品です。本記事はこの試験結果が今後の売上にどう影響するかを判断しません。<strong>副次的な評価項目で優位だったことは、主要評価項目を達成したことと同じではありません。</strong></p>
+</div>
+
+<h3>株価</h3>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>日付</th><th>出来事</th><th class="num">株価の変動</th></tr>
+</thead>
+<tbody>
+<tr><td>2026年8月11日</td><td>第2四半期決算後</td><td class="num">▲3.14%</td></tr>
+<tr><td>（日付記載なし）</td><td>決算発表前の水準</td><td class="num">27.47ドル</td></tr>
+<tr><td>2026年11月9日</td><td>引け後に第3四半期決算を発表</td><td class="num">―</td></tr>
+<tr class="total"><td>2026年11月10日</td><td><strong>決算への反応</strong></td><td class="num"><strong>+10.52%</strong></td></tr>
+<tr><td>2026年11月12日</td><td>―</td><td class="num">▲3.64%</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※株価情報サイト掲載値。決算発表前の27.47ドルは、8月の決算後の始値39.00ドルから約▲29.6%、200日移動平均37.81ドルの約27%下と報じられています。</p>
+
+<p><strong>調整後EBITDAガイダンスが半分以下に引き下げられ、主要臨床試験が主要評価項目を達成しなかった決算の翌日に、株価は+10.52%でした。</strong></p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>決算の見え方</th><th class="num">発表後の株価</th></tr>
+</thead>
+<tbody>
+<tr><td>Butterfly Network（BFLY）</td><td>売上+52%、粗利率改善</td><td class="num">翌日▲3.84%、翌々日場中▲9.8%</td></tr>
+<tr><td>Repligen（RGEN）</td><td>GAAP営業損失（減損4,124.2万ドル）</td><td class="num">+4.5%</td></tr>
+<tr><td>Accuray（ARAY）</td><td>純利益黒字（債務消滅益）</td><td class="num">株式併合で比較不可</td></tr>
+<tr><td>RoyaltyPharma（RPRX）</td><td>ガイダンス引き上げ</td><td class="num">下落</td></tr>
+<tr><td>Ligand（LGND）</td><td>ロイヤルティ+51%</td><td class="num">ほぼ変わらず</td></tr>
+<tr><td>Innoviva（INVA）</td><td>営業利益+21.9%、EPSは予想を1.55ドル下回る</td><td class="num">52週安値</td></tr>
+<tr><td>Schrödinger（SDGR）</td><td>純損失拡大</td><td class="num">1年来高値圏</td></tr>
+<tr><td>Recursion（RXRX）</td><td>決算＋第2相データ</td><td class="num">+3.1%→増資価格近辺</td></tr>
+<tr><td>Absci（ABSI）</td><td>純損失16%拡大、EPSは改善</td><td class="num">―</td></tr>
+<tr><td>Roivant（ROIV）</td><td>売上が約22.4倍</td><td class="num">1週間後は発表前と同水準</td></tr>
+<tr><td>BridgeBio（BBIO）</td><td>営業損失が一回限り要因で縮小</td><td class="num">+5.96%</td></tr>
+<tr><td>Fortress（FBIO）</td><td>9か月EPS+2.94ドル、四半期は予想下振れ</td><td class="num">連続データ取得できず</td></tr>
+<tr><td>PureTech（PRTC）</td><td>半期で黒字転換（非現金の評価益）</td><td class="num">連続データ取得できず</td></tr>
+<tr><td>Collegium（COLL）</td><td>営業利益▲53.7%、ガイダンス据え置き</td><td class="num">+6.29%（前四半期は▲18.55%）</td></tr>
+<tr class="total"><td>Harrow（HROW）</td><td><strong>調整後EBITDAガイダンス半減、臨床試験は主要評価項目未達</strong></td><td class="num"><strong>+10.52%</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<p>15社の決算を並べても、<strong>決算の内容と株価の方向に一貫した関係は見当たりません。</strong>入口記事③章で扱ったとおり、結果を左右するのは<em>市場が事前に何を織り込んでいたか</em>です。Harrowの場合、決算発表前の株価は8月の決算後の高値から約29.6%下がった水準にありました。本記事は株価の方向について見解を示すものではありません。</p>
+
+<h3>今後の予定</h3>
+
+<ul>
+<li><strong>2026年内</strong>：G-MELTのNDA提出予定（FDAとの事前面談は完了）</li>
+<li><strong>2026年第4四半期</strong>：CR-01の初期臨床データ（米国外での概念実証試験）、NATACYNの研究者主導試験の初期データ</li>
+<li><strong>2027年1月</strong>：QUELLの完全な結果を学会で発表。VEVYEの全国プラン適用開始</li>
+<li><strong>2027年初頭</strong>：第3相TRIESENCE（白内障術後）の初期データ</li>
+<li><strong>2027年3月</strong>：ニューヨークでインベスターデー（CR-01の中間結果をより詳しく開示）</li>
+<li><strong>2027年</strong>：OPUVIZの米国発売を想定。会社は「少なくとも今後10年間、毎年1つの新製品発売」を掲げる</li>
+</ul>
+
+<div class="watch">
+  <h2>WHAT TO WATCH</h2>
+  <p class="sub">Harrow（HROW）について、今後の開示で確認したい6点</p>
+  <ol>
+    <li><strong>第4四半期の実績</strong>。通期ガイダンスは、第4四半期に売上1億3,583.9万〜1億5,083.9万ドル（前四半期比+37%〜+52%）と調整後EBITDA 3,300万ドル超を求めています（編集部試算および会社説明）。<strong>通期調整後EBITDAの約81.8%が1四半期に集中する想定</strong>です（編集部計算）。</li>
+    <li><strong>IHEEZOの売上と数量の関係</strong>。前四半期比で売上+62%・数量▲5%、前年同期比で売上+15%・数量+21%と、方向が一致していません。理由の説明は確認できた資料の範囲では見当たらず、会社は製品別ガイダンスを提示していません。</li>
+    <li><strong>粗利率</strong>。9か月で73%→71%に低下しました（四半期は75%で横ばい）。会社はブランド製品の粗利率が製品ミックスと償却費により2.3ポイント低下して79.3%になったとしています。調整後EBITDAガイダンス引き下げの理由の1つです。</li>
+    <li><strong>支払利息と債務</strong>。元本3億ドルの8.625%債（2030年満期）で、年間現金利息は約2,600万ドル。通期調整後EBITDAガイダンス下限4,000万ドルに対し<strong>約65.0%</strong>（編集部試算）。9か月の支払利息は調整後EBITDAの<strong>約2.45倍</strong>でした（編集部計算）。</li>
+    <li><strong>営業キャッシュフロー</strong>。9か月で▲2,740万ドル（前年同期+3,550万ドル）。財務活動の+4,890万ドルで現金残高を維持しています。第4四半期に営業CFがプラスへ戻るかを確認する必要があります。</li>
+    <li><strong>TYRVAYAの寄与とNovaliqとの協議</strong>。買収は10月1日完了で第3四半期には含まれません。CFOは来年3,000万ドル超を見込み、CEOはVEVYEのライセンサーであるNovaliqとの<strong>機密協議中</strong>と述べました。協議の内容と結果は開示されていません。</li>
+  </ol>
+</div>
+
+<div class="disclaimer">
+<h3>免責事項</h3>
+<p style="margin:0 0 10px;">本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資判断はご自身の責任で行ってください。</p>
+<p style="margin:0 0 10px;">本記事の数値は2026年11月23日時点で確認できた公開情報に基づきます。株価は株価情報サイトの掲載値で、記載した日付時点のものです。株価は日々変動します。貸借対照表および現金残高は2026年9月30日時点です。決算発表前の株価27.47ドルについては、参照した資料に日付の記載がありませんでした。</p>
+<p style="margin:0 0 10px;">「編集部計算」「編集部試算」と記した数値は、公表値をもとに編集部が算出した推計値です。第4四半期の含意は、会社が提示した通期ガイダンスと9か月実績から編集部が逆算したもので、会社が第4四半期の売上ガイダンスとして提示したものではありません（調整後EBITDAの3,300万ドル超は会社説明です）。製品別の前年同期の金額、「その他」区分の金額、打ち消し率は、会社記載の増減率から逆算した推計値です。加重平均株式数は決算リリースに記載がなく、純損益とEPSからの逆算値であり端数処理の影響を受けます。</p>
+<p style="margin:0 0 10px;">調整後EBITDAは非GAAP指標です。会社は決算リリースに調整後純利益・調整後EPSを記載しておらず、本記事の調整後EPS 0.12ドルおよび市場予想は第三者データ提供会社によるもので、原データは確認していません。「予想を上回った／下回った」という評価は、比較に用いる利益指標によって結論が変わります。決算説明会からの引用は第三者が作成したトランスクリプトに基づく要旨の日本語訳です。</p>
+<p style="margin:0;">G-MELT、CR-01、OPUVIZ、YOCHILを含む開発中のプログラムはいずれも承認前の候補薬であり、NDA提出予定日や発売想定時期は承認を保証するものではありません。本記事は承認や試験成功を前提とした記述を行っていません。QUELL試験は主要評価項目である非劣性を達成しておらず、副次的評価項目の結果は主要評価項目の達成に代わるものではありません。会社のガイダンスおよび第4四半期の見通しは会社の前提に基づくもので、前提が変われば結果も変わります。「記載がない」「説明がなかった」という表現は確認できた資料の範囲における記載であり、開示の不存在を断定するものではありません。</p>
+</div>
+
+<div class="src">
+<h3>主な参照資料</h3>
+<ul>
+<li>Harrow, Inc. Form 8-K 添付資料「Harrow Announces Third Quarter 2026 Financial Results」（2026年11月9日）<a href="https://www.sec.gov/Archives/edgar/data/0001360214/000162828026072195/hrow-20261109xpressrelease.htm">sec.gov</a>／<a href="https://www.harrow.com/news-releases/news-release-details/harrow-announces-third-quarter-2026-financial-results">harrow.com</a></li>
+<li>Harrow（HROW）2026年第3四半期 決算説明会トランスクリプト（第三者作成）<a href="https://www.fool.com/earnings/call-transcripts/2026/11/10/harrow-hrow-q3-2026-earnings-call-transcript/">fool.com</a></li>
+<li>市場予想との比較および株価データ <a href="https://finviz.com/news/420320/harrows-record-quarter-is-overshadowed-by-a-halved-ebitda-outlook-and-a-steep-q4-revenue-hurdle">finviz.com</a></li>
+<li>債務条件およびブランド粗利率 <a href="https://www.panabee.com/news/harrow-earnings-q3-2026">panabee.com</a></li>
+<li>GAAP EPSに基づく報道（見出しのみ参照、本文を取得できず）<a href="https://www.gurufocus.com/news/9186003/harrow-inc-reports-q3-2026-earnings-revenue-of-993-million-and-gaap-eps-of-026-exceed-estimates">gurufocus.com</a></li>
+</ul>
+</div>
+
+<div class="crosslink" style="margin-top:36px;">
+<strong>シリーズ記事：</strong><a href="https://marketsupporter-ai.com/reports/us-pharma-biotech-earnings-guide.html">入口記事：なぜ米国の製薬・バイオ株は、決算1本で株価が倍にも半分にもなるのか</a>／<a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">⑭Collegium（COLL）― 同じ四半期に1株当たり利益が4つある</a>／<a href="https://marketsupporter-ai.com/reports/puretech-health-prtc-h1.html">⑬PureTech Health（PRTC）― 子会社IPOで1億5,873万ドルの利益</a>／<a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">⑫Fortress Biotech（FBIO）― 9か月EPS+2.94ドル、四半期▲0.23ドル</a>
+</div>
+
+</div>
+</body>
+</html>
