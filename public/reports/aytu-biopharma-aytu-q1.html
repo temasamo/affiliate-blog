@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aytu BioPharma（AYTU）2027年度Q1決算分析｜決算と同時に1株2.70ドルの買収合意</title>
+<meta name="description" content="Aytu BioPharma（NASDAQ:AYTU）2027年度第1四半期決算を一次資料から分析。決算と同時に発表された1株2.70ドルの現金買収合意、ADHD売上▲41.2%の理由、ワラントの希薄化が買収のクロージング条件になった構造を検証します。">
+<style>
+:root{
+  --accent:#d97706;
+  --accent-dark:#b45309;
+  --accent-mid:#f59e0b;
+  --accent-light:#fffbeb;
+  --ink:#1a1a1a;
+  --sub:#555;
+  --line:#e5e5e5;
+  --bg:#ffffff;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.9;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:780px;margin:0 auto;padding:0 20px 80px;}
+header.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 55%,var(--accent-mid) 100%);
+  color:#fff;
+  padding:56px 20px 48px;
+}
+header.hero .inner{max-width:780px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;
+  background:rgba(255,255,255,.2);
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:999px;
+  padding:5px 14px;
+  font-size:12px;
+  letter-spacing:.08em;
+  margin-bottom:18px;
+}
+header.hero h1{
+  font-size:28px;
+  line-height:1.5;
+  margin:0 0 16px;
+  font-weight:700;
+}
+header.hero .lede{
+  font-size:15px;
+  line-height:1.85;
+  margin:0;
+  color:rgba(255,255,255,.95);
+}
+header.hero .meta{
+  margin-top:22px;
+  font-size:13px;
+  color:rgba(255,255,255,.85);
+  border-top:1px solid rgba(255,255,255,.3);
+  padding-top:14px;
+}
+.model-tag{
+  display:inline-block;
+  background:#fff;
+  color:var(--accent-dark);
+  font-size:12px;
+  font-weight:700;
+  border-radius:4px;
+  padding:3px 10px;
+  margin-right:8px;
+}
+.toc{
+  background:var(--accent-light);
+  border:1px solid #fde68a;
+  border-radius:10px;
+  padding:22px 24px;
+  margin:36px 0 44px;
+}
+.toc h2{
+  font-size:14px;
+  margin:0 0 12px;
+  color:var(--accent-dark);
+  letter-spacing:.06em;
+}
+.toc ol{margin:0;padding-left:1.3em;font-size:14.5px;}
+.toc li{margin-bottom:7px;}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(217,119,6,.35);}
+.toc a:hover{color:var(--accent-dark);}
+h2.chapter{
+  font-size:21px;
+  line-height:1.55;
+  margin:56px 0 20px;
+  padding-bottom:12px;
+  border-bottom:2px solid var(--accent);
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+h2.chapter .num{
+  flex:0 0 auto;
+  background:var(--accent);
+  color:#fff;
+  font-size:13px;
+  border-radius:5px;
+  padding:3px 9px;
+  margin-top:5px;
+  font-weight:700;
+}
+h3{
+  font-size:17px;
+  margin:34px 0 14px;
+  padding-left:12px;
+  border-left:4px solid var(--accent-mid);
+  line-height:1.6;
+}
+p{margin:0 0 18px;}
+ul,ol{margin:0 0 18px;padding-left:1.4em;}
+li{margin-bottom:8px;}
+.callout{
+  background:var(--accent-light);
+  border-left:4px solid var(--accent);
+  border-radius:0 8px 8px 0;
+  padding:18px 20px;
+  margin:26px 0;
+  font-size:15px;
+}
+.callout.warn{
+  background:#fef2f2;
+  border-left-color:#dc2626;
+}
+.callout strong{color:var(--accent-dark);}
+.callout.warn strong{color:#b91c1c;}
+.quote{
+  border-left:3px solid var(--line);
+  padding:4px 0 4px 18px;
+  margin:24px 0;
+  color:var(--sub);
+  font-size:15px;
+}
+.kpi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:12px;
+  margin:28px 0;
+}
+.kpi{
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:16px 14px;
+  background:#fafafa;
+}
+.kpi .label{font-size:12px;color:var(--sub);display:block;margin-bottom:6px;line-height:1.5;}
+.kpi .value{font-size:21px;font-weight:700;color:var(--accent-dark);display:block;line-height:1.3;}
+.kpi .note{font-size:11.5px;color:var(--sub);display:block;margin-top:5px;line-height:1.5;}
+.table-scroll{overflow-x:auto;margin:26px 0;-webkit-overflow-scrolling:touch;}
+table{
+  border-collapse:collapse;
+  width:100%;
+  min-width:560px;
+  font-size:14px;
+}
+th,td{
+  border:1px solid var(--line);
+  padding:10px 12px;
+  text-align:left;
+  vertical-align:top;
+}
+th{background:var(--accent-light);font-weight:700;color:var(--accent-dark);}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+tr.total td{background:#fafafa;font-weight:700;}
+.tnote{font-size:13px;color:var(--sub);margin:-14px 0 24px;}
+.flow{margin:28px 0;}
+.flow-step{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  margin-bottom:16px;
+}
+.flow-step .circle{
+  flex:0 0 auto;
+  width:30px;height:30px;
+  border-radius:50%;
+  background:var(--accent);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;
+  margin-top:2px;
+}
+.flow-step .body{flex:1 1 auto;font-size:15px;line-height:1.8;}
+.crosslink{
+  background:#f7f7f8;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:14px 18px;
+  margin:24px 0;
+  font-size:14px;
+  color:var(--sub);
+}
+.crosslink strong{color:var(--ink);}
+.crosslink a{color:var(--accent-dark);}
+.watch{
+  background:#211705;
+  color:#f3f3f3;
+  border-radius:12px;
+  padding:32px 28px;
+  margin:56px 0 36px;
+}
+.watch h2{
+  font-size:19px;
+  margin:0 0 8px;
+  color:#fff;
+  letter-spacing:.04em;
+}
+.watch .sub{font-size:13px;color:#cbbd9c;margin:0 0 22px;}
+.watch ol{
+  list-style:none;
+  counter-reset:w;
+  margin:0;padding:0;
+}
+.watch li{
+  counter-increment:w;
+  position:relative;
+  padding-left:38px;
+  margin-bottom:18px;
+  font-size:14.5px;
+  line-height:1.8;
+}
+.watch li::before{
+  content:counter(w);
+  position:absolute;left:0;top:2px;
+  width:25px;height:25px;
+  border-radius:50%;
+  background:var(--accent-mid);
+  color:#211705;
+  font-weight:700;font-size:13px;
+  display:flex;align-items:center;justify-content:center;
+}
+.watch li strong{color:#fde68a;}
+.disclaimer{
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:#fafafa;
+  padding:20px 22px;
+  font-size:13px;
+  color:var(--sub);
+  line-height:1.85;
+  margin:40px 0 28px;
+}
+.disclaimer h3{
+  font-size:14px;
+  margin:0 0 10px;
+  padding:0;
+  border:none;
+  color:var(--ink);
+}
+.src{
+  font-size:13px;
+  color:var(--sub);
+  line-height:1.9;
+}
+.src h3{
+  font-size:14px;
+  margin:36px 0 12px;
+  padding:0;
+  border:none;
+  color:var(--ink);
+}
+.src ul{padding-left:1.2em;margin:0;}
+.src li{margin-bottom:6px;}
+.src a{color:var(--accent-dark);}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  header.hero{padding:40px 18px 36px;}
+  header.hero h1{font-size:22px;}
+  .wrap{padding:0 16px 60px;}
+  h2.chapter{font-size:18.5px;}
+  h3{font-size:16px;}
+  .watch{padding:26px 20px;border-radius:10px;}
+  .kpi .value{font-size:19px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="inner">
+    <span class="eyebrow">米国製薬・バイオ決算シリーズ ⑯</span>
+    <h1>決算と同時に、1株2.70ドルの買収合意が発表された。そしてこの決算には説明会がない</h1>
+    <p class="lede">Aytu BioPharma（NASDAQ:AYTU）2027年度第1四半期決算。同じ日に、英国Rosemont Pharmaceuticalsによる1株2.70ドルの現金買収への合意が公表されました。本シリーズで初めて、決算説明会が開催されない決算です。そして買収のクロージング条件には、この会社がずっと抱えてきたワラント（新株予約権）の問題がそのまま書き込まれていました。</p>
+    <p class="meta"><span class="model-tag">商業段階の特殊製薬</span>公開日：2026年11月24日／決算発表：2026年11月16日（買収合意と同日）</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#c1">決算と同時に、1株2.70ドルの買収合意</a></li>
+    <li><a href="#c2">この決算には説明会がない ― シリーズで初めて</a></li>
+    <li><a href="#c3">ADHDが▲41.2%。減らしたのは会社自身の選択でもある</a></li>
+    <li><a href="#c4">増加分の約85.1%が打ち消された ― 4社の比較</a></li>
+    <li><a href="#c5">粗利の増加25.1万ドルに対し、費用の増加267.6万ドル</a></li>
+    <li><a href="#c6">前年の「純利益」はワラントの評価益だった</a></li>
+    <li><a href="#c7">同じ四半期で、基本EPSは黒字、希薄化後は赤字</a></li>
+    <li><a href="#c8">ワラントの15%条項 ― 希薄化が買収の条件になった</a></li>
+  </ol>
+</nav>
+
+<p>本シリーズは、米国に上場する製薬・バイオ企業29社の決算を1社ずつ、一次資料に当たって読み解く企画です。16社目は<strong>Aytu BioPharma（NASDAQ:AYTU）</strong>。<a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium</a>、<a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">Harrow</a>に続く<strong>商業段階の特殊製薬</strong>の3社目です。</p>
+
+<p>前の2社は四半期売上が1億ドル規模でした。Aytuは<strong>1,484.2万ドル</strong>。約7分の1から15分の1の規模です。</p>
+
+<p>なお同社は<strong>6月30日を期末とする会計年度</strong>を採用しています。したがって2026年9月30日に終了した四半期が「2027年度第1四半期」です。米国株では珍しくない形ですが、<strong>他社と「同じ四半期」を比べるときは暦の期間で確認する必要があります。</strong></p>
+
+<h2 class="chapter" id="c1"><span class="num">①</span>決算と同時に、1株2.70ドルの買収合意</h2>
+
+<p>2026年11月16日、Aytuは決算と同時に、買収への合意を公表しました。一次資料（Form 8-K）に基づいて条件を整理します。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th>内容</th></tr>
+</thead>
+<tbody>
+<tr><td>契約日</td><td>2026年11月16日</td></tr>
+<tr><td>買収者</td><td><strong>Rosemont Pharmaceuticals Holdings, Inc.</strong>（デラウェア州法人）。買付主体はその完全子会社RoseApollo Merger Sub, Inc.</td></tr>
+<tr class="total"><td>買収価格</td><td><strong>1株2.70ドル（現金）</strong>。利息は付さず、源泉徴収の対象</td></tr>
+<tr><td>買収総額</td><td>完全希薄化後ベースで<strong>約5,600万ドル</strong>（トレジャリー・ストック法／会社記載）</td></tr>
+<tr><td>プレミアム</td><td>30日VWAP比<strong>+41.1%</strong>、2026年11月13日終値比<strong>+51.7%</strong></td></tr>
+<tr><td>方式</td><td>公開買付（契約から10営業日以内に開始）＋デラウェア州会社法251(h)条に基づく第二段階合併。<strong>株主総会の決議は不要</strong></td></tr>
+<tr><td>資金調達条件</td><td><strong>なし</strong>（8-Kに「公開買付の成立は資金調達を条件としない」と明記）</td></tr>
+<tr><td>最低応募条件</td><td>発行済株式の<strong>過半数</strong></td></tr>
+<tr class="total"><td>ワラント条件</td><td><strong>原株ベースで、未行使のまま残るワラントが15%以下</strong>であること（⑧章で詳述）</td></tr>
+<tr><td>解約金</td><td><strong>240万ドル</strong>（Aytuが優越提案を受けて解約した場合など）</td></tr>
+<tr><td>最終期限</td><td><strong>2027年2月14日</strong>（契約から90日目）。それまでに成立しない場合、いずれの当事者も解約可能</td></tr>
+<tr><td>クロージング見込み</td><td>2026年12月下旬</td></tr>
+<tr><td>承認</td><td>取締役会および特別委員会が<strong>全員一致</strong>で応募を推奨</td></tr>
+<tr><td>応募支持契約</td><td>一部役員、<strong>全取締役</strong>、および一部株主（Nantahala Capital Management、Stonepine Capital Management関係）が締結。保有ワラントの終了にも合意</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Rosemontは英国リーズに本社を置く、<strong>経口液剤</strong>（固形剤を飲み込むことが難しい患者向けの代替剤形）を開発・製造・供給する製薬会社です。約60年の事業歴があるとされています。CEOのAlok Sonig氏は「Aytuの買収提案は、Rosemontの米国成長戦略における重要な一歩」と述べています。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>買収価格の裏付けの一部は、同社が持つ現金です。</strong>9月30日時点の現金・現金同等物は2,549.4万ドル、総債務は約1,650.9万ドル。差引のネット現金は<strong>約898.5万ドル</strong>です（編集部計算）。</p>
+<p style="margin:12px 0 0;">買収総額約5,600万ドルに対し、ネット現金は<strong>約16.0%</strong>にあたります（編集部試算）。<strong>本記事は買収価格の妥当性について見解を示すものではありません。</strong>買収の対価を見るときに、対象会社の手元現金を確認するという手順を記録します。</p>
+</div>
+
+<h2 class="chapter" id="c2"><span class="num">②</span>この決算には説明会がない ― シリーズで初めて</h2>
+
+<p>決算リリースには、<strong>買収手続きが進行中であるため決算説明会を開催しない</strong>と記載されています。</p>
+
+<p>これは本シリーズにとって、実務的に大きな違いです。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>決算説明会トランスクリプトから得た重要情報</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/bridgebio-bbio-q3.html">BridgeBio（BBIO）</a></td><td>「通年の四半期平均営業損失は9,000万〜1億ドル」というCFO発言。ここから第4四半期を逆算した</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">Fortress（FBIO）</a></td><td>Journey MedicalとFortressの数字の混同が判明。リリースの数値を採用する根拠になった</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium（COLL）</a></td><td>法人税のベネフィットについて「言及がなかった」こと自体が論点になった</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">Harrow（HROW）</a></td><td>「旧ガイダンス下限には第4四半期だけで約7,300万ドルが必要だった」というCFO発言</td></tr>
+<tr class="total"><td>Aytu（AYTU）</td><td><strong>説明会そのものがない</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>本シリーズが追ってきた「開示水準の差」の、もう1つの形です。</strong>これまでは、ある数字を開示するかしないかの差を見てきました。Harrowは加重平均株式数を開示せず、Collegiumは1株単位まで開示していました。Aytuの場合は<strong>質問する場そのものがありません。</strong></p>
+<p style="margin:12px 0 0;">したがって本記事は、決算リリースとForm 8-K（買収契約の記載を含む）だけを根拠としています。<strong>数字の背景について会社の説明がない部分は、説明がないと書きます。</strong></p>
+</div>
+
+<h2 class="chapter" id="c3"><span class="num">③</span>ADHDが▲41.2%。減らしたのは会社自身の選択でもある</h2>
+
+<p>セグメント別の売上を見ます。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>セグメント</th><th class="num">2027年度Q1</th><th class="num">2026年度Q1</th><th class="num">増減</th><th class="num">売上構成比</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>EXXUA</strong>（大うつ病性障害）</td><td class="num">490.0万ドル</td><td class="num">―</td><td class="num">新規</td><td class="num">約33.0%</td></tr>
+<tr><td>ADHDポートフォリオ</td><td class="num">773.7万ドル</td><td class="num">1,315.6万ドル</td><td class="num"><strong>▲41.2%</strong></td><td class="num">約52.1%</td></tr>
+<tr><td>小児ポートフォリオ</td><td class="num">220.5万ドル</td><td class="num">71.5万ドル</td><td class="num"><strong>+208.4%</strong></td><td class="num">約14.9%</td></tr>
+<tr><td>その他（中止・優先度低下）</td><td class="num">―</td><td class="num">1.7万ドル</td><td class="num">▲100%</td><td class="num">―</td></tr>
+<tr class="total"><td>純売上 合計</td><td class="num">1,484.2万ドル</td><td class="num">1,388.8万ドル</td><td class="num"><strong>+6.9%</strong></td><td class="num">100%</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※増減率および構成比は編集部計算。</p>
+
+<p>ADHDポートフォリオの減少について、会社は2つの理由を挙げています。</p>
+
+<div class="flow">
+  <div class="flow-step">
+    <div class="circle">1</div>
+    <div class="body"><strong>プロモーションの重点の低下。</strong>商業リソースをEXXUAへ移したためと説明されています。</div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">2</div>
+    <div class="body"><strong>Adzenys XR-ODTのジェネリック競合。</strong></div>
+  </div>
+</div>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>1つ目は、会社自身の選択です。</strong>ジェネリック競合は外部環境ですが、プロモーションをどこに配分するかは経営判断です。</p>
+<p style="margin:12px 0 0;">そこで数字を並べます。<strong>リソースを移した先のEXXUAの売上は490.0万ドル。リソースを引いたADHDの減少額は541.9万ドル</strong>（編集部計算）。<strong>移した先の売上が、移した元の減少額を下回っています。</strong></p>
+<p style="margin:12px 0 0;">この1四半期だけで判断はできません。EXXUAは立ち上げ段階で、処方数は前四半期比+32.5%の4,400件、2026年9月には月間約1,650件という水準に達しています。ADHDは特許切れの局面にあります。<strong>ただし「新製品に注力している」という説明を読むときは、注力した結果の売上と、注力をやめた側の減少額を、同じ単位で並べる必要があります。</strong></p>
+</div>
+
+<h3>小児ポートフォリオの+208.4%は、数量の成長ではない</h3>
+
+<p>小児ポートフォリオは71.5万→220.5万ドルへ約3.08倍になりました。会社はこの増加の主因を<strong>「払い手ミックスの改善と返品の減少（特にマルチビタミン製品ライン）」</strong>と説明しています。</p>
+
+<p><strong>処方数や出荷数量の増加ではありません。</strong>売上の総額から値引き・返品引当などを差し引いた正味の金額が改善したという説明です。</p>
+
+<div class="crosslink">
+<strong>シリーズの比較：</strong>売上の伸びを数量と単価に分解する作業は、本シリーズで繰り返し出てきました。<a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium</a>のJornay PMは売上+24%・処方数+16%で差を単価要因として説明でき、<a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">Harrow</a>のIHEEZOは前四半期比で売上+62%・数量▲5%と方向が逆で、説明がありませんでした。<strong>Aytuの小児ポートフォリオは、会社自身が「価格・引当要因である」と明示している例です。</strong>
+</div>
+
+<h2 class="chapter" id="c4"><span class="num">④</span>増加分の約85.1%が打ち消された ― 4社の比較</h2>
+
+<p>新製品が伸び、既存製品が減る。このグループで4社目の同じ構造です。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>Aytuの増減（編集部試算）</strong></p>
+<p style="margin:10px 0 0;">
+・増加：EXXUA 490.0万ドル ＋ 小児 148.5万ドル ＝ <strong>638.5万ドル</strong><br>
+・減少：ADHD ▲541.9万ドル ＋ その他 ▲1.7万ドル ＝ <strong>▲543.6万ドル</strong><br>
+・差引：+94.9万ドル（実際の増加は95.4万ドル。端数処理の差）</p>
+<p style="margin:12px 0 0;"><strong>打ち消し率は約85.1%です。</strong></p>
+</div>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>伸びた側</th><th>減った側</th><th class="num">打ち消し率</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">Harrow（HROW）</a></td><td>ブランド +約3,200万ドル</td><td>その他 ▲約434万ドル</td><td class="num">約13.4%</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">Fortress（FBIO）</a></td><td>Emrosi +1,360万ドル</td><td>レガシー ▲約608.8万ドル</td><td class="num">約44.8%</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium（COLL）</a></td><td>ADHD +約3,650万ドル</td><td>疼痛 ▲約3,030万ドル</td><td class="num">約83.0%</td></tr>
+<tr class="total"><td>Aytu（AYTU）</td><td>EXXUA＋小児 +638.5万ドル</td><td>ADHD等 ▲543.6万ドル</td><td class="num"><strong>約85.1%</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※いずれも編集部試算。FBIOは9か月、他は四半期。会社記載の増減率から逆算した推計値を含みます。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>4社で打ち消し率が13%から85%まで分かれました。</strong>同じ「新製品を買ってきて育てる」モデルでも、既存製品がどれだけ速く減るかで、連結売上の伸びはまったく違う数字になります。</p>
+<p style="margin:12px 0 0;">そして<strong>打ち消し率が高いほど、新製品の伸びは連結売上には現れません。</strong>Aytuの場合、EXXUAと小児で638.5万ドル増やしても、合計の伸びは+6.9%にとどまりました。<strong>セグメント別の開示がなければ、この構造は見えません。</strong></p>
+</div>
+
+<h2 class="chapter" id="c5"><span class="num">⑤</span>粗利の増加25.1万ドルに対し、費用の増加267.6万ドル</h2>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2027年度Q1</th><th class="num">2026年度Q1</th><th class="num">増減率</th></tr>
+</thead>
+<tbody>
+<tr><td>純売上</td><td class="num">1,484.2万ドル</td><td class="num">1,388.8万ドル</td><td class="num">+6.9%</td></tr>
+<tr><td>売上原価</td><td class="num">540.5万ドル</td><td class="num">470.2万ドル</td><td class="num">+14.9%</td></tr>
+<tr><td>売上総利益</td><td class="num">943.7万ドル</td><td class="num">918.6万ドル</td><td class="num">+2.7%</td></tr>
+<tr><td>粗利率</td><td class="num"><strong>63.6%</strong></td><td class="num">66.1%</td><td class="num">▲2.5ポイント</td></tr>
+<tr><td>販売・マーケティング費</td><td class="num">662.0万ドル</td><td class="num">532.2万ドル</td><td class="num">+24.4%</td></tr>
+<tr><td>一般管理費</td><td class="num">598.5万ドル</td><td class="num">492.4万ドル</td><td class="num">+21.5%</td></tr>
+<tr><td>無形資産償却</td><td class="num">76.1万ドル</td><td class="num">44.4万ドル</td><td class="num">+71.4%</td></tr>
+<tr><td>営業費用 合計</td><td class="num">1,336.6万ドル</td><td class="num">1,069.0万ドル</td><td class="num"><strong>+25.0%</strong></td></tr>
+<tr class="total"><td>営業損失</td><td class="num"><strong>▲392.9万ドル</strong></td><td class="num">▲150.4万ドル</td><td class="num"><strong>2.61倍に拡大</strong></td></tr>
+<tr><td>調整後EBITDA（非GAAP）</td><td class="num">▲263.9万ドル</td><td class="num">▲58.7万ドル</td><td class="num">4.50倍に拡大</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※増減率は編集部計算。</p>
+
+<div class="kpi-grid">
+  <div class="kpi">
+    <span class="label">売上総利益の増加額</span>
+    <span class="value">25.1万ドル</span>
+    <span class="note">編集部計算</span>
+  </div>
+  <div class="kpi">
+    <span class="label">営業費用の増加額</span>
+    <span class="value">267.6万ドル</span>
+    <span class="note">編集部計算</span>
+  </div>
+  <div class="kpi">
+    <span class="label">費用増 ÷ 粗利増</span>
+    <span class="value">約10.66倍</span>
+    <span class="note">編集部計算</span>
+  </div>
+  <div class="kpi">
+    <span class="label">Harrowの同じ比率（9か月）</span>
+    <span class="value">約2.97倍</span>
+    <span class="note">編集部計算</span>
+  </div>
+</div>
+
+<p>粗利が25.1万ドル増えるあいだに、営業費用は267.6万ドル増えました。<strong>約10.66倍です</strong>（編集部計算）。</p>
+
+<p>粗利率の低下について、会社は<strong>EXXUAに関連するロイヤルティ費用の増加</strong>を理由に挙げています。EXXUAはライセンス導入した製品で、売上に応じてロイヤルティを支払う構造と考えられますが、<strong>ライセンス条件とマイルストーン支払いは決算リリースに記載がありません。</strong></p>
+
+<div class="callout">
+<p style="margin:0;"><strong>新製品が売上の約33.0%を占めるようになった一方で、粗利率は2.5ポイント下がりました。</strong>売上構成が変わると粗利率も変わります。「売上が増えた」という事実だけでは、利益がどう動くかは分かりません。</p>
+</div>
+
+<h2 class="chapter" id="c6"><span class="num">⑥</span>前年の「純利益」はワラントの評価益だった</h2>
+
+<p>損益計算書を営業損失の下まで追います。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2027年度Q1</th><th class="num">2026年度Q1</th></tr>
+</thead>
+<tbody>
+<tr><td>営業損失</td><td class="num">▲392.9万ドル</td><td class="num">▲150.4万ドル</td></tr>
+<tr><td>その他収益（純額）</td><td class="num">+18.0万ドル</td><td class="num">+20.1万ドル</td></tr>
+<tr><td>支払利息</td><td class="num">▲40.8万ドル</td><td class="num">▲51.6万ドル</td></tr>
+<tr class="total"><td>デリバティブ・ワラント負債の評価益</td><td class="num">+27.6万ドル</td><td class="num"><strong>+378.4万ドル</strong></td></tr>
+<tr><td>税引前損益</td><td class="num">▲388.1万ドル</td><td class="num">+196.5万ドル</td></tr>
+<tr><td>法人税</td><td class="num">―</td><td class="num">―</td></tr>
+<tr class="total"><td>純損益</td><td class="num"><strong>▲388.1万ドル</strong></td><td class="num"><strong>+196.5万ドル</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※決算リリース記載値。表記は千ドル単位の原数値を万ドル単位に換算したものです。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>前年同期は、営業損失▲150.4万ドルでありながら純利益+196.5万ドルでした。</strong>デリバティブとして負債計上されているワラントの評価益378.4万ドルが入っているためです。これを除くと、税引前は約▲181.9万ドルになります（編集部試算）。</p>
+<p style="margin:12px 0 0;">当四半期の同じ項目は+27.6万ドルに縮小しました。<strong>評価益が消えたことで、「黒字から赤字へ転落した」という形になっています。</strong>本業の損失は▲150.4万ドルから▲392.9万ドルへ実際に拡大していますが、純損益の変動幅（584.6万ドル）のうち約350.8万ドルはワラントの評価益の差です（編集部計算）。</p>
+</div>
+
+<h3>一回限りの項目が現れた場所 ― 7日連続の整理</h3>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>公開日</th><th>企業</th><th>現れた行</th><th>性質</th></tr>
+</thead>
+<tbody>
+<tr><td>11月18日</td><td><a href="https://marketsupporter-ai.com/reports/roivant-roiv-q2.html">Roivant</a></td><td>売上高の中身</td><td>承認から5週間分</td></tr>
+<tr><td>11月19日</td><td><a href="https://marketsupporter-ai.com/reports/bridgebio-bbio-q3.html">BridgeBio</a></td><td>売上高の行</td><td>一回限りのマイルストーン</td></tr>
+<tr><td>11月20日</td><td><a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">Fortress</a></td><td>営業外損益</td><td>資産売却益（現金を伴う）</td></tr>
+<tr><td>11月21日</td><td><a href="https://marketsupporter-ai.com/reports/puretech-health-prtc-h1.html">PureTech</a></td><td>営業外損益</td><td>保有株式の評価益（現金を伴わない）</td></tr>
+<tr><td>11月22日</td><td><a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium</a></td><td>法人税の行</td><td>ベネフィット</td></tr>
+<tr><td>11月23日</td><td><a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">Harrow</a></td><td>営業外損益</td><td>訴訟和解益（現金を伴う）</td></tr>
+<tr class="total"><td>11月24日</td><td>Aytu</td><td><strong>営業外損益（比較対象の期）</strong></td><td><strong>ワラント評価益（現金を伴わない）</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<p>7社のうち6社は<strong>当期</strong>に項目がありましたが、Aytuは<strong>比較対象の前年同期</strong>にあります。</p>
+
+<div class="crosslink">
+<strong>「歪みは比較対象の期にある」5例目：</strong><a href="https://marketsupporter-ai.com/reports/butterfly-network-bfly.html">Butterfly Network</a>は前年の棚卸資産評価損1,740万ドル、<a href="https://marketsupporter-ai.com/reports/ligand-lgnd.html">Ligand</a>は前年のPelthos収益5,310万ドル、<a href="https://marketsupporter-ai.com/reports/recursion-rxrx-q3.html">Recursion</a>は前年のIPR&D 2,280万ドル、<a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">Fortress</a>は連結範囲の変化。<strong>Aytuは前年のワラント評価益です。</strong>入口記事⑤章の「比較対象の期にも同じ作業をする」という手順が、5回必要になりました。
+</div>
+
+<h2 class="chapter" id="c7"><span class="num">⑦</span>同じ四半期で、基本EPSは黒字、希薄化後は赤字</h2>
+
+<p>1株当たり指標を見ると、前年同期に奇妙なことが起きています。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2027年度Q1</th><th class="num">2026年度Q1</th></tr>
+</thead>
+<tbody>
+<tr><td>純損益</td><td class="num">▲388.1万ドル</td><td class="num">+196.5万ドル</td></tr>
+<tr><td>加重平均株式数（基本）</td><td class="num">19,325,285株</td><td class="num">9,441,073株</td></tr>
+<tr><td>加重平均株式数（希薄化後）</td><td class="num">19,325,285株</td><td class="num">19,476,635株</td></tr>
+<tr><td>希薄化率</td><td class="num">0%（損失のため）</td><td class="num"><strong>+106.3%</strong></td></tr>
+<tr class="total"><td>1株当たり損益（基本）</td><td class="num">▲0.20ドル</td><td class="num"><strong>+0.21ドル</strong></td></tr>
+<tr class="total"><td>1株当たり損益（希薄化後）</td><td class="num">▲0.20ドル</td><td class="num"><strong>▲0.08ドル</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※希薄化率は編集部計算。前年同期の希薄化後1株当たり損益は、負債分類ワラントに係る調整を反映したものと決算リリースに記載されています。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>前年同期は、基本では+0.21ドルの黒字、希薄化後では▲0.08ドルの赤字です。</strong>同じ四半期について、符号が逆になっています。</p>
+<p style="margin:12px 0 0;">理由は、希薄化後の計算ではワラントが株式に変わったものとして扱い、その代わりにワラント負債の評価益（378.4万ドル）を利益から取り除くためです。<strong>評価益は、株式になってしまえば発生しません。</strong>その結果、分子が小さくなり分母が2倍以上になります。</p>
+<p style="margin:12px 0 0;">そして<strong>当四半期の加重平均株式数（基本）19,325,285株は、前年同期の希薄化後19,476,635株とほぼ同じ水準です。</strong>ワラントが実際に行使され、株式になったことを示しています。基本株式数は1年で<strong>+104.7%</strong>（約2.05倍）になりました（編集部計算）。</p>
+</div>
+
+<h3>希薄化のパターン ― シリーズの整理</h3>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>何が起きたか</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/absci-absi-q3.html">Absci（ABSI）</a></td><td>純損失が16.0%拡大したのに株式数が+19.5%増え、<strong>1株当たり損失が「改善」</strong>した</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium（COLL）</a></td><td>同じ年度で<strong>希薄化率が四半期+23.3%、9か月+3.2%</strong>に分かれた</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">Harrow（HROW）</a></td><td>加重平均株式数が<strong>決算リリースに記載されていない</strong></td></tr>
+<tr class="total"><td>Aytu（AYTU）</td><td>同じ四半期で<strong>基本は黒字、希薄化後は赤字</strong>。基本株式数が1年で約2.05倍</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>入口記事⑤章の手順「1株当たり指標を見たら、分母の株式数も前年と比べる」は、分母だけでは足りません。</strong>基本と希薄化後のどちらを見ているかも確認する必要があります。</p>
+
+<h2 class="chapter" id="c8"><span class="num">⑧</span>ワラントの15%条項 ― 希薄化が買収の条件になった</h2>
+
+<p>⑦章で見たワラントの問題は、買収契約にそのまま書き込まれています。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>公開買付の成立条件（Form 8-Kに基づく）</strong></p>
+<p style="margin:12px 0 0;">
+1. <strong>最低応募条件</strong>：有効に応募され撤回されていない株式が、発行済株式の<strong>過半数</strong>に達すること<br>
+2. <strong>ワラント条件</strong>：原株ベースで、<strong>未行使のまま残る会社ワラントが15%以下</strong>であること。ただし「ワラント行使契約」に基づき行使・応募されたもの、または「支持契約」「ワラント終了契約」に基づき終了したものは除く</p>
+</div>
+
+<p>つまり買収者は、<strong>ワラントの85%以上が行使されるか、または消滅することを、クロージングの条件にしています。</strong></p>
+
+<p>契約には、Aytu側の義務も書かれています。</p>
+
+<ul>
+<li>支持契約を結んでいないワラント保有者に対し、<strong>行使するか終了契約に署名するよう、合理的最善努力を尽くす</strong></li>
+<li>支持契約・終了契約の対象となるワラントは、その契約で定められた現金と引き換えに<strong>消却</strong>される</li>
+<li>そうした契約のない未行使ワラントは、<strong>その条項に従って扱われる</strong></li>
+</ul>
+
+<div class="callout">
+<p style="margin:0;"><strong>株式報酬の扱いも定められています。</strong></p>
+<p style="margin:10px 0 0;">
+・<strong>ストックオプション</strong>：未確定分は効力発生直前に権利確定が加速。買収価格と行使価格の差額が現金で支払われる。行使価格が買収価格以上のオプションは<strong>無償で消却</strong>されるが、保有者には最低10日間の行使機会が与えられる<br>
+・<strong>制限付株式</strong>：効力発生直前に制限が解除され、通常株式として扱われる<br>
+・<strong>株式報酬制度およびESPP</strong>：効力発生時に<strong>終了</strong></p>
+</div>
+
+<div class="crosslink">
+<strong>シリーズを通した見方：</strong>本シリーズでは希薄化を「4指標」の1つとして追ってきました。増資型（<a href="https://marketsupporter-ai.com/reports/recursion-rxrx-q3.html">RXRX</a>）、転換優先株型（<a href="https://marketsupporter-ai.com/reports/accuray-aray.html">ARAY</a>の潜在+92%、<a href="https://marketsupporter-ai.com/reports/bridgebio-bbio-q3.html">BBIO</a>の7.00%配当）、自社株買い型、条件付き型（<a href="https://marketsupporter-ai.com/reports/ligand-lgnd.html">LGND</a>のコールスプレッド）。<strong>Aytuは5つ目のパターンです ― 希薄化証券が多すぎて、会社の売却そのものの条件になった。</strong>
+</div>
+
+<h3>株価</h3>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>日付</th><th>出来事</th><th class="num">株価</th></tr>
+</thead>
+<tbody>
+<tr><td>2026年11月13日</td><td>買収合意公表前の終値</td><td class="num">約1.78ドル（編集部計算）</td></tr>
+<tr><td>2026年11月16日</td><td>買収合意と決算を公表</td><td class="num">―</td></tr>
+<tr class="total"><td>2026年11月17日</td><td><strong>反応</strong></td><td class="num"><strong>+46.15%</strong></td></tr>
+<tr><td>買収価格</td><td>―</td><td class="num">2.70ドル</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※11月13日終値は、会社発表のプレミアム51.7%から逆算した編集部計算値です。決算リリースおよびForm 8-Kに金額の記載はありません。+46.15%は株価情報サイトのニュース一覧の記載です。</p>
+
+<p>11月13日終値を約1.78ドルとし、+46.15%を機械的に適用すると約2.60ドルになります。買収価格2.70ドルの約3.7%下です（いずれも編集部試算で、実際の終値は確認していません）。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>買収が発表されても、株価が買収価格まで上がりきらないのは通常のことです。</strong>クロージングできないリスク（最低応募条件やワラント条件が満たされない、最終期限2027年2月14日までに成立しない、など）と、受け取りまでの時間が、差として残ります。</p>
+<p style="margin:12px 0 0;"><strong>本記事は買収の成否や、株価水準について見解を示すものではありません。</strong>買収合意の公表後も、契約に書かれた条件が満たされるまで取引は完了しないという事実を記録します。</p>
+</div>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>決算の見え方</th><th class="num">発表後の株価</th></tr>
+</thead>
+<tbody>
+<tr><td>Butterfly Network（BFLY）</td><td>売上+52%、粗利率改善</td><td class="num">翌日▲3.84%、翌々日場中▲9.8%</td></tr>
+<tr><td>Repligen（RGEN）</td><td>GAAP営業損失（減損4,124.2万ドル）</td><td class="num">+4.5%</td></tr>
+<tr><td>Accuray（ARAY）</td><td>純利益黒字（債務消滅益）</td><td class="num">株式併合で比較不可</td></tr>
+<tr><td>RoyaltyPharma（RPRX）</td><td>ガイダンス引き上げ</td><td class="num">下落</td></tr>
+<tr><td>Ligand（LGND）</td><td>ロイヤルティ+51%</td><td class="num">ほぼ変わらず</td></tr>
+<tr><td>Innoviva（INVA）</td><td>営業利益+21.9%、EPSは予想を1.55ドル下回る</td><td class="num">52週安値</td></tr>
+<tr><td>Schrödinger（SDGR）</td><td>純損失拡大</td><td class="num">1年来高値圏</td></tr>
+<tr><td>Recursion（RXRX）</td><td>決算＋第2相データ</td><td class="num">+3.1%→増資価格近辺</td></tr>
+<tr><td>Absci（ABSI）</td><td>純損失16%拡大、EPSは改善</td><td class="num">―</td></tr>
+<tr><td>Roivant（ROIV）</td><td>売上が約22.4倍</td><td class="num">1週間後は発表前と同水準</td></tr>
+<tr><td>BridgeBio（BBIO）</td><td>営業損失が一回限り要因で縮小</td><td class="num">+5.96%</td></tr>
+<tr><td>Fortress（FBIO）</td><td>9か月EPS+2.94ドル、四半期は予想下振れ</td><td class="num">連続データ取得できず</td></tr>
+<tr><td>PureTech（PRTC）</td><td>半期で黒字転換（非現金の評価益）</td><td class="num">連続データ取得できず</td></tr>
+<tr><td>Collegium（COLL）</td><td>営業利益▲53.7%、ガイダンス据え置き</td><td class="num">+6.29%（前四半期は▲18.55%）</td></tr>
+<tr><td>Harrow（HROW）</td><td>調整後EBITDAガイダンス半減、臨床試験は主要評価項目未達</td><td class="num">+10.52%</td></tr>
+<tr class="total"><td>Aytu（AYTU）</td><td><strong>営業損失2.61倍、黒字から赤字へ。同時に買収合意</strong></td><td class="num"><strong>+46.15%</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<p>16社のうち、Aytuの+46.15%が最大の上昇です。ただし<strong>これは決算への反応ではなく、買収価格への接近です。</strong>決算の内容と株価の方向を結びつけて読むことが、この四半期についてはできません。</p>
+
+<div class="watch">
+  <h2>WHAT TO WATCH</h2>
+  <p class="sub">Aytu BioPharma（AYTU）について、今後の開示で確認したい6点</p>
+  <ol>
+    <li><strong>公開買付の開始と結果</strong>。契約から10営業日以内に開始され、開始から20日目の深夜に期限が到来します（延長されない場合）。買収者はSchedule TO、AytuはSchedule 14D-9をほぼ同時に提出する予定とされています。<strong>応募状況はこれらの書類で開示されます。</strong></li>
+    <li><strong>ワラント条件の充足</strong>。原株ベースで未行使のまま残るワラントが15%以下である必要があります。Aytuは支持契約のない保有者に行使または終了契約への署名を促す義務を負います。<strong>この条件が満たされるかは、現時点では確認できません。</strong></li>
+    <li><strong>最終期限2027年2月14日</strong>。契約から90日目です。それまでに公開買付が成立しない場合、いずれの当事者も解約できます。クロージング見込みは2026年12月下旬とされています。</li>
+    <li><strong>優越提案の有無</strong>。契約には、Aytuが優越提案を受けて解約する場合の240万ドルの解約金が定められています。また、買収提案が公表されて適時に撤回されず、12か月以内に対象取引が締結・完了した場合にも解約金の対象となりえます。</li>
+    <li><strong>EXXUAのロイヤルティ条件</strong>。粗利率が2.5ポイント低下した主因とされていますが、<strong>ライセンス条件とマイルストーン支払いは決算リリースに記載がありません。</strong>EXXUAは売上の約33.0%（編集部計算）を占めるまでになっています。</li>
+    <li><strong>ADHDポートフォリオ</strong>。前年同期比▲41.2%。会社は理由としてプロモーション重点の低下とAdzenys XR-ODTのジェネリック競合を挙げています。<strong>買収が完了すれば、四半期ごとの開示は行われなくなります。</strong></li>
+  </ol>
+</div>
+
+<div class="disclaimer">
+<h3>免責事項</h3>
+<p style="margin:0 0 10px;">本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。公開買付への応募または不応募を勧誘するものでもありません。投資判断はご自身の責任で行ってください。公開買付の条件および手続の詳細は、買収者が提出するSchedule TOおよびAytuが提出するSchedule 14D-9をご確認ください。</p>
+<p style="margin:0 0 10px;">本記事の数値は2026年11月24日時点で確認できた公開情報に基づきます。財務数値は2026年9月30日に終了した四半期（同社の2027年度第1四半期）のものです。同社は6月30日を期末とする会計年度を採用しており、他社との期間比較には注意が必要です。貸借対照表および現金・債務残高は2026年9月30日時点です。</p>
+<p style="margin:0 0 10px;">「編集部計算」「編集部試算」と記した数値は、公表値をもとに編集部が算出した推計値です。2026年11月13日終値約1.78ドルは、会社発表のプレミアム51.7%から逆算した値であり、決算リリースおよびForm 8-Kに金額の記載はありません。11月17日の+46.15%は株価情報サイトのニュース一覧の記載で、終値の実額は確認していません。両者から導いた約2.60ドルおよび買収価格との差約3.7%は、二重の逆算値です。ネット現金および買収総額に対する比率は、会社記載の買収総額約5,600万ドルと貸借対照表の数値から算出したものです。打ち消し率は会社記載のセグメント別金額および増減率から算出した推計値で、他社分は会社記載の増減率からの逆算値を含みます。</p>
+<p style="margin:0 0 10px;">株価情報サイトには、2026年9月30日時点の発行済株式数を10,868,208株とする記載もありましたが、決算リリース記載の加重平均株式数（基本19,325,285株）および報告された1株当たり損益▲0.20ドルと整合しませんでした。本記事は、報告EPSと算術的に整合する決算リリースの加重平均株式数を用いています。この不一致の原因は確認できていません。</p>
+<p style="margin:0 0 10px;">調整後EBITDAは非GAAP指標です。同社は買収手続きが進行中であるため決算説明会を開催しておらず、本記事は決算リリースおよびForm 8-K（添付資料を含む）のみを根拠としています。買収条件については、二次情報源の記載を一次資料であるForm 8-Kと照合し、一致した内容のみを記載しました。照合できなかった事項（特許訴訟の期日、EXXUAに係る将来の支払義務の金額など）は本記事では扱っていません。</p>
+<p style="margin:0;">公開買付および合併の成立時期と成否は不確実であり、契約に定められた条件が満たされない場合には完了しない可能性があります。本記事は買収の成否、買収価格の妥当性、株価水準のいずれについても見解を示していません。「記載がない」「確認できなかった」という表現は確認できた資料の範囲における記載であり、開示の不存在を断定するものではありません。</p>
+</div>
+
+<div class="src">
+<h3>主な参照資料</h3>
+<ul>
+<li>Aytu BioPharma, Inc. Form 8-K 添付資料99.1「Aytu BioPharma Reports Fiscal 2027 First Quarter Operational and Financial Results」<a href="https://www.sec.gov/Archives/edgar/data/0001385818/000143774926037176/ex_1043333.htm">sec.gov</a></li>
+<li>Aytu BioPharma, Inc. Form 8-K 本文（合併契約の記載／2026年11月16日締結）<a href="https://www.sec.gov/Archives/edgar/data/0001385818/000143774926037155/aytu20261113_8k.htm">sec.gov</a></li>
+<li>Aytu BioPharma, Inc. Form 8-K 添付資料（買収合意の公表／Rosemont Pharmaceuticals）<a href="https://www.sec.gov/Archives/edgar/data/0001385818/000143774926037155/ex_1046254.htm">sec.gov</a></li>
+<li>株価の変動率および発行済株式数の記載 <a href="https://finviz.com/news/423537/aytu-biopharma-reports-fiscal-2027-first-quarter-operational-and-financial-results">finviz.com</a>／<a href="https://finviz.com/news/423439/rosemont-pharmaceuticals-to-acquire-aytu-biopharma-in-all-cash-tender-offer">finviz.com（買収）</a></li>
+<li>買収条件の照合に用いた二次情報（AI生成の注記あり。一次資料と一致した内容のみ採用）<a href="https://www.panabee.com/news/aytu-biopharma-agrees-to-2-70-cash-offer-a-51-7-premium">panabee.com</a>／<a href="https://www.panabee.com/news/aytu-biopharma-earnings-q1-2027">panabee.com（決算）</a></li>
+</ul>
+</div>
+
+<div class="crosslink" style="margin-top:36px;">
+<strong>シリーズ記事：</strong><a href="https://marketsupporter-ai.com/reports/us-pharma-biotech-earnings-guide.html">入口記事：なぜ米国の製薬・バイオ株は、決算1本で株価が倍にも半分にもなるのか</a>／<a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">⑮Harrow（HROW）― 調整後EPSがGAAPより小さい</a>／<a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">⑭Collegium（COLL）― 同じ四半期に1株当たり利益が4つある</a>／<a href="https://marketsupporter-ai.com/reports/absci-absi-q3.html">⑨Absci（ABSI）― 純損失は16%拡大、EPSは改善した</a>
+</div>
+
+</div>
+</body>
+</html>
