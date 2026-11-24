@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biofrontera（BFRI）2026年Q3決算分析｜株主資本がゼロを割り、継続企業の前提に疑義</title>
+<meta name="description" content="Biofrontera Inc.（NASDAQ:BFRI）2026年第3四半期決算を一次資料から分析。株主資本がマイナスに転じ継続企業の前提に重要な疑義、粗利率改善の正体である親会社との契約変更、増収額の約77%を占める前倒し発注を検証します。">
+<style>
+:root{
+  --accent:#d97706;
+  --accent-dark:#b45309;
+  --accent-mid:#f59e0b;
+  --accent-light:#fffbeb;
+  --ink:#1a1a1a;
+  --sub:#555;
+  --line:#e5e5e5;
+  --bg:#ffffff;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.9;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:780px;margin:0 auto;padding:0 20px 80px;}
+header.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 55%,var(--accent-mid) 100%);
+  color:#fff;
+  padding:56px 20px 48px;
+}
+header.hero .inner{max-width:780px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;
+  background:rgba(255,255,255,.2);
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:999px;
+  padding:5px 14px;
+  font-size:12px;
+  letter-spacing:.08em;
+  margin-bottom:18px;
+}
+header.hero h1{
+  font-size:28px;
+  line-height:1.5;
+  margin:0 0 16px;
+  font-weight:700;
+}
+header.hero .lede{
+  font-size:15px;
+  line-height:1.85;
+  margin:0;
+  color:rgba(255,255,255,.95);
+}
+header.hero .meta{
+  margin-top:22px;
+  font-size:13px;
+  color:rgba(255,255,255,.85);
+  border-top:1px solid rgba(255,255,255,.3);
+  padding-top:14px;
+}
+.model-tag{
+  display:inline-block;
+  background:#fff;
+  color:var(--accent-dark);
+  font-size:12px;
+  font-weight:700;
+  border-radius:4px;
+  padding:3px 10px;
+  margin-right:8px;
+}
+.toc{
+  background:var(--accent-light);
+  border:1px solid #fde68a;
+  border-radius:10px;
+  padding:22px 24px;
+  margin:36px 0 44px;
+}
+.toc h2{
+  font-size:14px;
+  margin:0 0 12px;
+  color:var(--accent-dark);
+  letter-spacing:.06em;
+}
+.toc ol{margin:0;padding-left:1.3em;font-size:14.5px;}
+.toc li{margin-bottom:7px;}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(217,119,6,.35);}
+.toc a:hover{color:var(--accent-dark);}
+h2.chapter{
+  font-size:21px;
+  line-height:1.55;
+  margin:56px 0 20px;
+  padding-bottom:12px;
+  border-bottom:2px solid var(--accent);
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+h2.chapter .num{
+  flex:0 0 auto;
+  background:var(--accent);
+  color:#fff;
+  font-size:13px;
+  border-radius:5px;
+  padding:3px 9px;
+  margin-top:5px;
+  font-weight:700;
+}
+h3{
+  font-size:17px;
+  margin:34px 0 14px;
+  padding-left:12px;
+  border-left:4px solid var(--accent-mid);
+  line-height:1.6;
+}
+p{margin:0 0 18px;}
+ul,ol{margin:0 0 18px;padding-left:1.4em;}
+li{margin-bottom:8px;}
+.callout{
+  background:var(--accent-light);
+  border-left:4px solid var(--accent);
+  border-radius:0 8px 8px 0;
+  padding:18px 20px;
+  margin:26px 0;
+  font-size:15px;
+}
+.callout.warn{
+  background:#fef2f2;
+  border-left-color:#dc2626;
+}
+.callout strong{color:var(--accent-dark);}
+.callout.warn strong{color:#b91c1c;}
+.quote{
+  border-left:3px solid var(--line);
+  padding:4px 0 4px 18px;
+  margin:24px 0;
+  color:var(--sub);
+  font-size:15px;
+}
+.kpi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:12px;
+  margin:28px 0;
+}
+.kpi{
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:16px 14px;
+  background:#fafafa;
+}
+.kpi .label{font-size:12px;color:var(--sub);display:block;margin-bottom:6px;line-height:1.5;}
+.kpi .value{font-size:21px;font-weight:700;color:var(--accent-dark);display:block;line-height:1.3;}
+.kpi .note{font-size:11.5px;color:var(--sub);display:block;margin-top:5px;line-height:1.5;}
+.table-scroll{overflow-x:auto;margin:26px 0;-webkit-overflow-scrolling:touch;}
+table{
+  border-collapse:collapse;
+  width:100%;
+  min-width:560px;
+  font-size:14px;
+}
+th,td{
+  border:1px solid var(--line);
+  padding:10px 12px;
+  text-align:left;
+  vertical-align:top;
+}
+th{background:var(--accent-light);font-weight:700;color:var(--accent-dark);}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+tr.total td{background:#fafafa;font-weight:700;}
+.tnote{font-size:13px;color:var(--sub);margin:-14px 0 24px;}
+.flow{margin:28px 0;}
+.flow-step{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  margin-bottom:16px;
+}
+.flow-step .circle{
+  flex:0 0 auto;
+  width:30px;height:30px;
+  border-radius:50%;
+  background:var(--accent);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;
+  margin-top:2px;
+}
+.flow-step .body{flex:1 1 auto;font-size:15px;line-height:1.8;}
+.crosslink{
+  background:#f7f7f8;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:14px 18px;
+  margin:24px 0;
+  font-size:14px;
+  color:var(--sub);
+}
+.crosslink strong{color:var(--ink);}
+.crosslink a{color:var(--accent-dark);}
+.watch{
+  background:#211705;
+  color:#f3f3f3;
+  border-radius:12px;
+  padding:32px 28px;
+  margin:56px 0 36px;
+}
+.watch h2{
+  font-size:19px;
+  margin:0 0 8px;
+  color:#fff;
+  letter-spacing:.04em;
+}
+.watch .sub{font-size:13px;color:#cbbd9c;margin:0 0 22px;}
+.watch ol{
+  list-style:none;
+  counter-reset:w;
+  margin:0;padding:0;
+}
+.watch li{
+  counter-increment:w;
+  position:relative;
+  padding-left:38px;
+  margin-bottom:18px;
+  font-size:14.5px;
+  line-height:1.8;
+}
+.watch li::before{
+  content:counter(w);
+  position:absolute;left:0;top:2px;
+  width:25px;height:25px;
+  border-radius:50%;
+  background:var(--accent-mid);
+  color:#211705;
+  font-weight:700;font-size:13px;
+  display:flex;align-items:center;justify-content:center;
+}
+.watch li strong{color:#fde68a;}
+.disclaimer{
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:#fafafa;
+  padding:20px 22px;
+  font-size:13px;
+  color:var(--sub);
+  line-height:1.85;
+  margin:40px 0 28px;
+}
+.disclaimer h3{
+  font-size:14px;
+  margin:0 0 10px;
+  padding:0;
+  border:none;
+  color:var(--ink);
+}
+.src{
+  font-size:13px;
+  color:var(--sub);
+  line-height:1.9;
+}
+.src h3{
+  font-size:14px;
+  margin:36px 0 12px;
+  padding:0;
+  border:none;
+  color:var(--ink);
+}
+.src ul{padding-left:1.2em;margin:0;}
+.src li{margin-bottom:6px;}
+.src a{color:var(--accent-dark);}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  header.hero{padding:40px 18px 36px;}
+  header.hero h1{font-size:22px;}
+  .wrap{padding:0 16px 60px;}
+  h2.chapter{font-size:18.5px;}
+  h3{font-size:16px;}
+  .watch{padding:26px 20px;border-radius:10px;}
+  .kpi .value{font-size:19px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="inner">
+    <span class="eyebrow">米国製薬・バイオ決算シリーズ ⑰</span>
+    <h1>株主資本が1,048万ドルからマイナス24万ドルへ。継続企業の前提に重要な疑義が記載された</h1>
+    <p class="lede">Biofrontera Inc.（NASDAQ:BFRI）2026年第3四半期決算。売上は+29.8%、粗利率は9か月で10.3ポイント改善し、FDAは9月に新しい適応を承認しました。それでもCFOは決算説明会で「継続企業として存続する能力について重要な疑義が存在する」と述べています。本シリーズ17社で初めてのケースです。そして粗利率が改善した理由は、販売の効率化ではありませんでした。</p>
+    <p class="meta"><span class="model-tag">商業段階の特殊製薬</span>公開日：2026年11月25日／決算発表：2026年11月13日</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#c1">株主資本がゼロを割った ― 継続企業の前提に重要な疑義</a></li>
+    <li><a href="#c2">NASDAQの株主資本要件250万ドル ― 上場維持の2例目</a></li>
+    <li><a href="#c3">粗利率+10.3ポイントの正体は、親会社との契約変更</a></li>
+    <li><a href="#c4">増収額208.2万ドルのうち約160万ドルは前倒し発注</a></li>
+    <li><a href="#c5">EPS改善0.20ドルのうち約89%は株式数の増加</a></li>
+    <li><a href="#c6">四半期と9か月で、営業損益の方向が逆</a></li>
+    <li><a href="#c7">費用の内訳はきちんと説明されている ― 開示水準の比較</a></li>
+    <li><a href="#c8">sBCC承認、ITC排除命令、株価</a></li>
+  </ol>
+</nav>
+
+<p>本シリーズは、米国に上場する製薬・バイオ企業29社の決算を1社ずつ、一次資料に当たって読み解く企画です。17社目は<strong>Biofrontera Inc.（NASDAQ:BFRI）</strong>。<a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium</a>、<a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">Harrow</a>、<a href="https://marketsupporter-ai.com/reports/aytu-biopharma-aytu-q1.html">Aytu</a>に続く<strong>商業段階の特殊製薬</strong>の4社目です。</p>
+
+<p>主力製品はAmeluz（アミノレブリン酸塩）で、RhodoLEDランプと組み合わせた光線力学療法（PDT）に用いられます。皮膚科領域に特化し、四半期売上は<strong>907.0万ドル</strong>。これまでの3社の中でも最小です。</p>
+
+<p>もう1つの特徴は、<strong>親会社との関係</strong>です。Biofrontera Inc.は米国の事業会社で、ドイツのBiofrontera AGとの間で「戦略的取引」を2025年10月に完了しました。この取引が、今回の決算の読み方を決めます。</p>
+
+<h2 class="chapter" id="c1"><span class="num">①</span>株主資本がゼロを割った ― 継続企業の前提に重要な疑義</h2>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2026年9月30日</th><th class="num">2025年12月31日</th><th class="num">増減</th></tr>
+</thead>
+<tbody>
+<tr><td>現金・現金同等物</td><td class="num">321.8万ドル</td><td class="num">639.2万ドル</td><td class="num"><strong>▲49.7%</strong></td></tr>
+<tr><td>転換社債（純額）</td><td class="num">474.9万ドル</td><td class="num">―</td><td class="num">2027年11月満期</td></tr>
+<tr><td>総負債</td><td class="num">2,170.9万ドル</td><td class="num">1,808.4万ドル</td><td class="num">+20.0%</td></tr>
+<tr class="total"><td>株主資本（欠損）</td><td class="num"><strong>▲24.3万ドル</strong></td><td class="num">1,048.0万ドル</td><td class="num"><strong>マイナスへ転落</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※増減率は編集部計算。</p>
+
+<p>株主資本が1,048.0万ドルから<strong>▲24.3万ドル</strong>になりました。9か月の純損失1,177.9万ドルを、株式の発行で埋めてきましたが、ちょうどゼロを割った形です。</p>
+
+<p>決算説明会で、CFOのMatthew Leffler氏は次のように述べています。</p>
+
+<div class="quote">
+「<strong>少なくとも今後12か月にわたり、当社が継続企業として存続する能力について重要な疑義が存在する</strong>と、経営陣は結論しました」（決算説明会／第三者作成のトランスクリプトに基づく要旨の日本語訳）
+</div>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>これは本シリーズ17社で初めての「継続企業の前提に関する重要な疑義（going concern）」の開示です。</strong></p>
+<p style="margin:12px 0 0;">会社は4つの緩和策を示しました ― ①売上の成長（sBCC発売を含む）②費用の統制 ③当座借越枠の取得と引き出し ④売却に係る100万ドルのマイルストーン受領（12月見込み、買主側のマイルストーン達成が条件）。必要に応じて株式または負債による資金調達も行う可能性があるとしています。</p>
+<p style="margin:12px 0 0;"><strong>そしてCFOは「これらの計画は重要な疑義を解消していない」と述べました。</strong></p>
+</div>
+
+<h3>現金の水準を数字で置く</h3>
+
+<div class="kpi-grid">
+  <div class="kpi">
+    <span class="label">現金・現金同等物（9/30）</span>
+    <span class="value">321.8万ドル</span>
+    <span class="note">2025年末639.2万ドル</span>
+  </div>
+  <div class="kpi">
+    <span class="label">9か月の営業キャッシュフロー</span>
+    <span class="value">▲約320万ドル</span>
+    <span class="note">前年同期▲約1,100万ドル</span>
+  </div>
+  <div class="kpi">
+    <span class="label">第3四半期の営業損失</span>
+    <span class="value">▲649.7万ドル</span>
+    <span class="note">前年同期▲627.8万ドル</span>
+  </div>
+  <div class="kpi">
+    <span class="label">転換社債（2027年11月満期）</span>
+    <span class="value">474.9万ドル</span>
+    <span class="note">現金残高を上回る</span>
+  </div>
+</div>
+
+<p>9か月の営業キャッシュフローは▲約320万ドルで、前年同期の▲約1,100万ドルから大きく改善しています。これを3四半期で割ると<strong>1四半期あたり約107万ドル</strong>（編集部試算）。現金321.8万ドルを単純に割れば<strong>約3.0四半期分</strong>になります。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>ただしこの単純計算は使えません。</strong>第3四半期は販売費・一般管理費が大きく増えており（⑦章）、第4四半期後半から2027年第1四半期にかけてsBCCの発売費用が発生します。<strong>会社自身が重要な疑義を開示しているのですから、過去のキャッシュ消費ペースを将来にあてはめる計算は意味を持ちません。</strong></p>
+<p style="margin:12px 0 0;">本シリーズでは<a href="https://marketsupporter-ai.com/reports/absci-absi-q3.html">Absci</a>でランウェイの単純計算を示し、「会社想定が誤っていると述べるものではなく、公開情報から前提を検証できないという指摘」と書きました。<strong>Biofronteraの場合は、会社自身が「検証できていない」と述べています。</strong></p>
+</div>
+
+<h2 class="chapter" id="c2"><span class="num">②</span>NASDAQの株主資本要件250万ドル ― 上場維持の2例目</h2>
+
+<p>株主資本がマイナスになったことで、別の問題が生じています。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>NASDAQの継続上場基準には、株主資本250万ドル以上という要件があります。</strong>Biofronteraの株主資本は▲24.3万ドル（CFOは説明会で「▲20万ドル」と述べています）で、この要件を満たしていません。会社は<strong>代替の上場基準も満たしていない</strong>と報告しています。</p>
+<p style="margin:12px 0 0;">会社は<strong>是正計画（compliance plan）を提出する意向</strong>を示しています。本記事の執筆時点で、NASDAQからの通知、期限、計画の内容については確認できていません。</p>
+</div>
+
+<h3>上場維持の問題は、基準が1つではない</h3>
+
+<p>入口記事⑥章では、<a href="https://marketsupporter-ai.com/reports/accuray-aray.html">Accuray（ARAY）</a>の株式併合を扱いました。同じ「上場維持」の問題ですが、<strong>引っかかっている基準が違います。</strong></p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>抵触した基準</th><th>対応</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/accuray-aray.html">Accuray（ARAY）</a></td><td><strong>最低株価</strong>（1株1.00ドル）</td><td>1対40の株式併合を2026年11月9日に実施。適合期限2027年2月1日</td></tr>
+<tr class="total"><td>Biofrontera（BFRI）</td><td><strong>最低株主資本</strong>（250万ドル）</td><td>是正計画の提出を予定。代替基準も満たさず</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout">
+<p style="margin:0;"><strong>株価が1ドルを超えていても、株主資本が基準を割れば上場維持の問題になります。</strong>その逆もあります。入口記事⑥章の手順に1行加える必要があります ― <strong>上場維持を確認するときは、株価基準と株主資本基準の両方を見る。</strong></p>
+</div>
+
+<h2 class="chapter" id="c3"><span class="num">③</span>粗利率+10.3ポイントの正体は、親会社との契約変更</h2>
+
+<p>この決算で最も目を引く改善は、粗利率です。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2026年Q3</th><th class="num">2025年Q3</th><th class="num">2026年9か月</th><th class="num">2025年9か月</th></tr>
+</thead>
+<tbody>
+<tr><td>製品売上（純額）</td><td class="num">907.0万ドル</td><td class="num">698.8万ドル</td><td class="num">3,115.7万ドル</td><td class="num">2,460.5万ドル</td></tr>
+<tr class="total"><td>売上原価（関連当事者）</td><td class="num">216.4万ドル</td><td class="num">192.2万ドル</td><td class="num"><strong>618.0万ドル</strong></td><td class="num"><strong>737.7万ドル</strong></td></tr>
+<tr><td>売上原価（その他）</td><td class="num">15.7万ドル</td><td class="num">12.3万ドル</td><td class="num">66.7万ドル</td><td class="num">57.8万ドル</td></tr>
+<tr><td>売上原価 合計</td><td class="num">232.1万ドル</td><td class="num">204.5万ドル</td><td class="num">684.7万ドル</td><td class="num">795.5万ドル</td></tr>
+<tr><td>売上総利益</td><td class="num">674.9万ドル</td><td class="num">494.3万ドル</td><td class="num">2,431.0万ドル</td><td class="num">1,665.0万ドル</td></tr>
+<tr class="total"><td>粗利率</td><td class="num">74.4%</td><td class="num">70.7%</td><td class="num"><strong>78.0%</strong></td><td class="num"><strong>67.7%</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※決算リリース記載値。表記は千ドル単位の原数値を万ドル単位に換算したものです。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>9か月で売上が+26.6%増えるあいだに、親会社に支払う売上原価は▲16.2%減っています</strong>（編集部計算）。これが粗利率+10.3ポイントの中身です。</p>
+</div>
+
+<p>理由は、2025年10月に完了した<strong>Biofrontera AGとの「戦略的取引」</strong>です。決算リリースは、Ameluzのコスト構造が<strong>従来の移転価格方式から「Ameluzの直接費用＋純売上の12%アーンアウト」へ移行した</strong>と記載しています。</p>
+
+<p>決算説明会では、CEOのHermann Luebbert氏が従来の条件に言及しました。</p>
+
+<div class="quote">
+「今日、我々は米国資産を所有しています」「（従来の）移転価格は<strong>売上の25%から35%</strong>を取っていました」（決算説明会／第三者作成のトランスクリプトに基づく要旨の日本語訳）
+</div>
+
+<div class="callout">
+<p style="margin:0;"><strong>親会社に渡していた売上の25〜35%が、12%＋直接費用になりました。</strong>粗利率の改善は、販売価格の引き上げでも、製造コストの削減でも、販売効率の向上でもありません。<strong>親会社との契約条件が変わったことによるものです。</strong></p>
+<p style="margin:12px 0 0;">これは悪い話ではありません。会社は米国資産を取得し、収益構造を改善しました。<strong>ただし「粗利率が10ポイント改善した」という数字を、事業の効率化として読むと誤ります。</strong>一度起きた契約変更であり、翌年以降は同じ幅の改善は起きません。</p>
+</div>
+
+<h3>四半期と9か月で、改善幅が違う</h3>
+
+<p>粗利率の改善幅は、第3四半期が+3.7ポイント、9か月が+10.3ポイントです。<strong>2.8倍の差があります。</strong></p>
+
+<p>第3四半期について、CFOはランプ・デバイスのコストと<strong>30万ドルのRhodoLED棚卸資産評価減</strong>が圧迫したと説明し、<strong>第4四半期には約80%に戻る見込み</strong>としました。一方、四半期と9か月の改善幅がこれだけ開く理由については、決算リリースに説明が見当たりませんでした。</p>
+
+<div class="crosslink">
+<strong>シリーズの比較：</strong>商業段階の特殊製薬4社で、製品の持ち方がすべて違います。<a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium</a>と<a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">Harrow</a>は<strong>他社から買ってきた</strong>（だから無形資産償却が重い）。<a href="https://marketsupporter-ai.com/reports/aytu-biopharma-aytu-q1.html">Aytu</a>はEXXUAを<strong>ライセンス導入した</strong>（だからロイヤルティが粗利率を下げた）。<strong>Biofronteraは親会社の製品を米国で売り、その条件が変わった。</strong>粗利率の水準と動き方は、この「持ち方」で決まります。
+</div>
+
+<h2 class="chapter" id="c4"><span class="num">④</span>増収額208.2万ドルのうち約160万ドルは前倒し発注</h2>
+
+<p>第3四半期の売上は907.0万ドルで、前年同期比<strong>+29.8%</strong>。増収額は<strong>208.2万ドル</strong>です（編集部計算）。</p>
+
+<p>この増収には、繰り返されない要素が含まれています。</p>
+
+<div class="flow">
+  <div class="flow-step">
+    <div class="circle">1</div>
+    <div class="body"><strong>2026年7月6日</strong>、ITC（米国国際貿易委員会）による限定的排除命令および排除措置命令が、RhodoLED XLランプについて発効しました。</div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">2</div>
+    <div class="body"><strong>6月から7月にかけて、顧客が供給制限を見越して早めに発注しました。</strong>CFOは、第3四半期の売上のうち<strong>約160万ドル</strong>がこの前倒し発注に紐づくと述べています。</div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">3</div>
+    <div class="body">会社はこれを<strong>「総需要ではなくタイミングのシフト」</strong>と位置づけ、在庫は第3四半期末までに概ね消化されたとしています。</div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">4</div>
+    <div class="body"><strong>2026年9月14日</strong>、米国税関が再設計版のRhodoLED XL-Cは排除命令の対象外と裁定。第3四半期からXL-Cの設置を開始しました。</div>
+  </div>
+</div>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>増収額208.2万ドルのうち約160万ドルは、前倒し発注です。約76.8%にあたります</strong>（編集部計算）。第3四半期の売上907.0万ドルに対しては<strong>約17.6%</strong>です。</p>
+<p style="margin:12px 0 0;">会社自身が「タイミングのシフト」と述べているとおり、<strong>この分は第4四半期以降の売上には入りません。</strong>ITC命令は約200顧客、Ameluz数量の約25%に影響したとされ、現在その割合は約10%に下がったと説明されています。</p>
+<p style="margin:12px 0 0;">なお会社は「第4四半期は通常最も強い四半期」とし、2026年を「力強く」終えたいと述べましたが、<strong>第4四半期の具体的な売上ガイダンスは示していません。</strong></p>
+</div>
+
+<div class="crosslink">
+<strong>一回限りの項目が現れた場所 ― 8日連続：</strong><a href="https://marketsupporter-ai.com/reports/roivant-roiv-q2.html">ROIV</a>は売上高の中身、<a href="https://marketsupporter-ai.com/reports/bridgebio-bbio-q3.html">BBIO</a>は売上高の行、<a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">FBIO</a>は営業外の売却益、<a href="https://marketsupporter-ai.com/reports/puretech-health-prtc-h1.html">PRTC</a>は営業外の評価益、<a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">COLL</a>は法人税の行、<a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">HROW</a>は営業外の和解益、<a href="https://marketsupporter-ai.com/reports/aytu-biopharma-aytu-q1.html">AYTU</a>は比較対象の前年同期。<strong>BFRIは売上高の中身で、しかも会社自身が金額を示しています。</strong>8社連続で、現れる行と性質が違います。
+</div>
+
+<h2 class="chapter" id="c5"><span class="num">⑤</span>EPS改善0.20ドルのうち約89%は株式数の増加</h2>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2026年Q3</th><th class="num">2025年Q3</th><th class="num">増減</th></tr>
+</thead>
+<tbody>
+<tr><td>純損失</td><td class="num">▲642.3万ドル</td><td class="num">▲664.9万ドル</td><td class="num"><strong>3.4%縮小</strong></td></tr>
+<tr><td>加重平均株式数（基本・希薄化後）</td><td class="num">15,280,526株</td><td class="num">10,776,739株</td><td class="num"><strong>+41.8%</strong></td></tr>
+<tr class="total"><td>1株当たり損失</td><td class="num">▲0.42ドル</td><td class="num">▲0.62ドル</td><td class="num"><strong>32.3%改善</strong></td></tr>
+<tr><td>前年同期の株式数で計算した場合</td><td class="num">▲0.60ドル（編集部試算）</td><td class="num">―</td><td class="num">―</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※増減率および試算は編集部計算。</p>
+
+<p>1株当たり損失は0.20ドル改善しました。その内訳を分解します。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>改善額0.20ドルの分解（編集部試算）</strong></p>
+<p style="margin:10px 0 0;">
+・<strong>純損失の縮小による分</strong>：226万ドル ÷ 10,776,739株 ＝ 約0.02ドル<br>
+・<strong>株式数の増加による分</strong>：642.3万ドル ÷ 10,776,739株 − 642.3万ドル ÷ 15,280,526株 ＝ 約0.18ドル<br>
+・合計：約0.20ドル</p>
+<p style="margin:12px 0 0;"><strong>改善額のうち約89%は、株式数が増えたことによるものです。</strong></p>
+</div>
+
+<div class="crosslink">
+<strong>シリーズの比較：</strong><a href="https://marketsupporter-ai.com/reports/absci-absi-q3.html">Absci（ABSI）</a>では、純損失が16.0%<em>拡大</em>したのに株式数が+19.5%増え、EPSが「改善」しました。<strong>Biofronteraは純損失が3.4%縮小しており、方向は同じですが、EPSの改善幅32.3%の大半は分母の増加です。</strong>入口記事⑤章の手順「1株当たり指標を見たら、分母の株式数も前年と比べる」が、2例目になりました。
+</div>
+
+<h3>潜在株式は発行済の約2.23倍</h3>
+
+<p>株式数の増加は、さらに先があります。</p>
+
+<ul>
+<li><strong>発行済普通株式：1,160万株 → 1,790万株（+54%）</strong>。主に優先株の転換とRSU（譲渡制限付株式ユニット）の発行によるものと報告されています</li>
+<li><strong>さらに3,990万株の潜在株式</strong>（優先株、転換社債を含む）が、1株当たり損失の計算から除外されています</li>
+</ul>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>発行済1,790万株に対し、計算から除外された潜在株式が3,990万株。約2.23倍です</strong>（編集部計算）。両方を合わせると約5,780万株で、発行済の<strong>約3.23倍</strong>になります。</p>
+<p style="margin:12px 0 0;">損失を計上している期間は、潜在株式を1株当たり損失の計算に含めると損失額が小さく見えてしまうため（希薄化にならないため）除外されます。<strong>つまり「希薄化後」と書かれていても、この3,990万株は反映されていません。</strong></p>
+<p style="margin:12px 0 0;">前日の<a href="https://marketsupporter-ai.com/reports/aytu-biopharma-aytu-q1.html">Aytu</a>は、ワラントが多すぎて買収のクロージング条件になりました。<strong>Biofronteraは潜在株式が発行済の2倍以上あります。</strong>希薄化は、決算リリースの「希薄化後」という行だけを見ていては分かりません。</p>
+</div>
+
+<h2 class="chapter" id="c6"><span class="num">⑥</span>四半期と9か月で、営業損益の方向が逆</h2>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2026年Q3</th><th class="num">2025年Q3</th><th class="num">方向</th><th class="num">2026年9か月</th><th class="num">2025年9か月</th><th class="num">方向</th></tr>
+</thead>
+<tbody>
+<tr><td>売上総利益</td><td class="num">674.9万ドル</td><td class="num">494.3万ドル</td><td class="num">+36.5%</td><td class="num">2,431.0万ドル</td><td class="num">1,665.0万ドル</td><td class="num">+46.0%</td></tr>
+<tr><td>販売費・一般管理費（合算）</td><td class="num">1,249.0万ドル</td><td class="num">1,036.7万ドル</td><td class="num">+20.5%</td><td class="num">3,315.5万ドル</td><td class="num">2,962.5万ドル</td><td class="num">+11.9%</td></tr>
+<tr><td>特許是正費用（ITC）</td><td class="num">30.6万ドル</td><td class="num">―</td><td class="num">新規</td><td class="num">69.8万ドル</td><td class="num">―</td><td class="num">新規</td></tr>
+<tr><td>研究開発費</td><td class="num">45.0万ドル</td><td class="num">85.4万ドル</td><td class="num">▲47.3%</td><td class="num">179.8万ドル</td><td class="num">293.2万ドル</td><td class="num">▲38.7%</td></tr>
+<tr><td>営業費用 合計</td><td class="num">1,556.7万ドル</td><td class="num">1,326.6万ドル</td><td class="num">+17.3%</td><td class="num">4,249.8万ドル</td><td class="num">4,051.2万ドル</td><td class="num">+4.9%</td></tr>
+<tr class="total"><td>営業損失</td><td class="num">▲649.7万ドル</td><td class="num">▲627.8万ドル</td><td class="num"><strong>3.5%悪化</strong></td><td class="num">▲1,134.1万ドル</td><td class="num">▲1,590.7万ドル</td><td class="num"><strong>28.7%改善</strong></td></tr>
+<tr><td>調整後EBITDA（非GAAP）</td><td class="num">▲552.1万ドル</td><td class="num">▲598.7万ドル</td><td class="num">7.8%改善</td><td class="num">▲925.2万ドル</td><td class="num">▲1,550.2万ドル</td><td class="num">40.3%改善</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※増減率は編集部計算。販売費・一般管理費は関連当事者分を含む合算値です。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>営業損失は、9か月では28.7%改善し、第3四半期では3.5%悪化しています。</strong>方向が逆です。</p>
+<p style="margin:12px 0 0;">理由は費用の集中です。販売費・一般管理費は9か月で+11.9%に対し、第3四半期は<strong>+20.5%</strong>（編集部計算）。<strong>第3四半期に費用が集中しています。</strong></p>
+</div>
+
+<div class="crosslink">
+<strong>四半期と累計で方向が逆になるケース ― シリーズの整理：</strong><a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">FBIO</a>は9か月EPS+2.94ドル／四半期▲0.23ドル。<a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">HROW</a>は9か月▲0.94ドル／四半期+0.26ドル。<a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">COLL</a>は希薄化率が四半期+23.3%／9か月+3.2%。<strong>BFRIは営業損益の方向が逆です。</strong>4社で、四半期と累計のどちらを見るかが結論を変えました。
+</div>
+
+<h2 class="chapter" id="c7"><span class="num">⑦</span>費用の内訳はきちんと説明されている ― 開示水準の比較</h2>
+
+<p>本シリーズでは「開示水準の差」を追ってきました。Biofronteraは、小さい会社ですが説明が細かい部類に入ります。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>第3四半期の販売費・一般管理費の増加210万ドルの内訳（CFO説明）</strong></p>
+<p style="margin:10px 0 0;">
+・ITC関連の法務費用の増加：<strong>約90万ドル</strong><br>
+・戦略的取引で引き継いだ製造・規制機能：<strong>約70万ドル</strong><br>
+・コミッションの増加：<strong>約50万ドル</strong><br>
+・関連当事者向け販売費・一般管理費の減少：<strong>▲約30万ドル</strong></p>
+</div>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>費用増加の説明</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium（COLL）</a></td><td>GAAP営業費用+44%、調整後+25%と両方を述べたが、<strong>差2,730.6万ドルの中身は説明なし</strong></td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">Harrow（HROW）</a></td><td>調整後EBITDAガイダンス引き下げの理由を3項目で説明。ただし<strong>IHEEZOの売上+62%／数量▲5%は説明なし</strong></td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/aytu-biopharma-aytu-q1.html">Aytu（AYTU）</a></td><td><strong>決算説明会そのものがない</strong>（買収手続き中）</td></tr>
+<tr class="total"><td>Biofrontera（BFRI）</td><td>SG&A増加210万ドルを<strong>4項目に分解</strong>。前倒し発注の金額（約160万ドル）も明示</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout">
+<p style="margin:0;"><strong>開示の細かさは、会社の規模と関係ありません。</strong>四半期売上907.0万ドルのBiofronteraは、増収の約76.8%が前倒し発注であることを自ら述べ、費用増加を4項目に分解し、継続企業の前提に関する疑義を説明会で明言しました。</p>
+<p style="margin:12px 0 0;">本シリーズでは、<a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">Fortress</a>が時価総額約6,600万ドルで現金の主体別内訳を開示し、時価総額286億ドルのRoivantと152億ドルのBridgeBioが連結値を1本で開示していました。<strong>同じ構図です。</strong></p>
+</div>
+
+<h3>ただし1点、非GAAP指標の過年度修正</h3>
+
+<p>決算リリースには、<strong>2025年9か月の株式報酬費用が0.4百万ドルから0.7百万ドルへ修正された</strong>との記載があります。GAAP財務諸表への影響はないとされています。</p>
+
+<p>株式報酬は調整後EBITDAの調整項目です。つまり<strong>比較対象となる前年の調整後EBITDAの数値が修正されています。</strong>修正の理由については記載が見当たりませんでした。</p>
+
+<h2 class="chapter" id="c8"><span class="num">⑧</span>sBCC承認、ITC排除命令、株価</h2>
+
+<h3>2026年の出来事</h3>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>時期</th><th>出来事</th></tr>
+</thead>
+<tbody>
+<tr><td>2025年10月</td><td>Biofrontera AGとの<strong>戦略的取引が完了</strong>。Ameluzのコスト構造が直接費用＋純売上の12%アーンアウトへ</td></tr>
+<tr><td>2026年7月6日</td><td>ITCの限定的排除命令・排除措置命令がRhodoLED XLランプについて<strong>発効</strong></td></tr>
+<tr><td>2026年6〜7月</td><td>顧客が供給制限を見越して前倒し発注（第3四半期売上の約160万ドル相当）</td></tr>
+<tr class="total"><td>2026年9月9日</td><td><strong>FDAがAmeluz PDTを表在性基底細胞がん（sBCC）に承認。</strong>米国でがん性皮膚腫瘍に承認された初のPDTとされる</td></tr>
+<tr><td>2026年9月14日</td><td>米国税関が<strong>再設計版RhodoLED XL-Cは排除命令の対象外</strong>と裁定。第3四半期からXL-Cの設置を開始</td></tr>
+<tr><td>2026年10月</td><td>日光角化症（AK）のラベルを四肢・頸部・体幹へ拡大する<strong>sNDAを提出</strong></td></tr>
+<tr><td>2026年Q4後半〜2027年Q1</td><td>sBCCの<strong>段階的な発売</strong>。本格発売は2027年第1四半期、発売会議は1月中旬</td></tr>
+<tr><td>2027年8月5日</td><td>AKラベル拡大の<strong>PDUFA日</strong></td></tr>
+<tr><td>2027年Q2末</td><td>ITCランプ是正が概ね完了する見込み</td></tr>
+<tr><td>2027年11月</td><td>転換社債474.9万ドルの満期</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>sBCCの発売は、既存のランプ設置ベースと営業部隊を使う計画です。マーケティング訴求についてはFDAにフィードバックを求めて提出済み。チューブはJコードで通常通り償還され、処置コードは確定中とされています。<strong>価格は開示されていません。</strong></p>
+
+<p>ITCについて、会社は連邦巡回区控訴裁判所に上訴する予定としつつ、<strong>時期と結果については推測を避けました。</strong>ITC是正費用は2026年9月30日までの累計で1.1百万ドル（発生費用0.6百万ドル＋棚卸資産評価減0.5百万ドル）です。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>sBCCの承認は取得済みですが、発売は始まっていません。</strong>AKラベル拡大は審査中で、PDUFA日は2027年8月5日です。ITCの上訴は結果も時期も不確実です。<strong>本記事はこれらの結果を前提とした記述を行っていません。</strong></p>
+</div>
+
+<h3>株価</h3>
+
+<p><strong>2026年11月13日の決算発表前後の日次終値は取得できませんでした。</strong>確認できた範囲の数字を記録します。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>時点</th><th class="num">数値</th></tr>
+</thead>
+<tbody>
+<tr><td>2026年9月9日（sBCC承認日）の株価</td><td class="num">1.55ドル</td></tr>
+<tr><td>同日時点の時価総額</td><td class="num">約2,317万ドル</td></tr>
+<tr><td>同日時点の発行済株式数</td><td class="num">約1,485万株</td></tr>
+<tr><td>52週レンジ</td><td class="num">0.5547〜1.66ドル</td></tr>
+<tr><td>1年の変動</td><td class="num">+81.19%</td></tr>
+<tr><td>2026年8月13日（第2四半期決算日）</td><td class="num">+9.6%（1.37ドル）</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※株価情報サイト掲載値（2026年9月9日時点のスナップショット）。同サイトはデータが必ずしもリアルタイムまたは正確でないとの免責を付しています。</p>
+
+<p>なお発行済株式数は、9月9日時点の約1,485万株から<strong>9月30日時点の約1,790万株</strong>へ増えています。四半期の加重平均は15,280,526株でした。<strong>四半期の後半に株式の発行が進んだことを示しています。</strong></p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>決算の見え方</th><th class="num">発表後の株価</th></tr>
+</thead>
+<tbody>
+<tr><td>Butterfly Network（BFLY）</td><td>売上+52%、粗利率改善</td><td class="num">翌日▲3.84%、翌々日場中▲9.8%</td></tr>
+<tr><td>Repligen（RGEN）</td><td>GAAP営業損失（減損4,124.2万ドル）</td><td class="num">+4.5%</td></tr>
+<tr><td>Accuray（ARAY）</td><td>純利益黒字（債務消滅益）</td><td class="num">株式併合で比較不可</td></tr>
+<tr><td>RoyaltyPharma（RPRX）</td><td>ガイダンス引き上げ</td><td class="num">下落</td></tr>
+<tr><td>Ligand（LGND）</td><td>ロイヤルティ+51%</td><td class="num">ほぼ変わらず</td></tr>
+<tr><td>Innoviva（INVA）</td><td>営業利益+21.9%、EPSは予想を1.55ドル下回る</td><td class="num">52週安値</td></tr>
+<tr><td>Schrödinger（SDGR）</td><td>純損失拡大</td><td class="num">1年来高値圏</td></tr>
+<tr><td>Recursion（RXRX）</td><td>決算＋第2相データ</td><td class="num">+3.1%→増資価格近辺</td></tr>
+<tr><td>Absci（ABSI）</td><td>純損失16%拡大、EPSは改善</td><td class="num">―</td></tr>
+<tr><td>Roivant（ROIV）</td><td>売上が約22.4倍</td><td class="num">1週間後は発表前と同水準</td></tr>
+<tr><td>BridgeBio（BBIO）</td><td>営業損失が一回限り要因で縮小</td><td class="num">+5.96%</td></tr>
+<tr><td>Fortress（FBIO）</td><td>9か月EPS+2.94ドル、四半期は予想下振れ</td><td class="num">連続データ取得できず</td></tr>
+<tr><td>PureTech（PRTC）</td><td>半期で黒字転換（非現金の評価益）</td><td class="num">連続データ取得できず</td></tr>
+<tr><td>Collegium（COLL）</td><td>営業利益▲53.7%、ガイダンス据え置き</td><td class="num">+6.29%（前四半期は▲18.55%）</td></tr>
+<tr><td>Harrow（HROW）</td><td>調整後EBITDAガイダンス半減、臨床試験は主要評価項目未達</td><td class="num">+10.52%</td></tr>
+<tr><td>Aytu（AYTU）</td><td>営業損失2.61倍、同時に買収合意</td><td class="num">+46.15%（買収価格への接近）</td></tr>
+<tr class="total"><td>Biofrontera（BFRI）</td><td><strong>売上+29.8%、粗利率改善。継続企業の前提に重要な疑義</strong></td><td class="num"><strong>連続データ取得できず</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="watch">
+  <h2>WHAT TO WATCH</h2>
+  <p class="sub">Biofrontera Inc.（BFRI）について、今後の開示で確認したい6点</p>
+  <ol>
+    <li><strong>継続企業の前提に関する疑義の解消</strong>。会社が示した4つの緩和策（売上成長、費用統制、当座借越枠の取得・引き出し、100万ドルのマイルストーン受領）の進捗。<strong>CFOは「これらの計画は重要な疑義を解消していない」と述べています。</strong>100万ドルは12月見込みで、買主側のマイルストーン達成が条件です。</li>
+    <li><strong>NASDAQの継続上場基準</strong>。株主資本250万ドルの要件を満たしておらず、代替基準も満たしていないと会社は報告しています。是正計画の提出を予定しているとされますが、通知・期限・内容は確認できていません。</li>
+    <li><strong>第4四半期の売上</strong>。第3四半期の増収額208.2万ドルのうち約160万ドルは前倒し発注で、会社は「タイミングのシフト」としています（編集部計算および会社説明）。<strong>この分は第4四半期以降には入りません。</strong>会社は第4四半期の具体的な売上ガイダンスを示していません。</li>
+    <li><strong>粗利率</strong>。CFOは第4四半期に約80%へ戻る見込みとしました。第3四半期は74.4%（ランプ・デバイス費用と30万ドルのRhodoLED棚卸資産評価減の影響）。<strong>親会社との契約変更による改善は一度限りで、翌年以降は同じ幅の改善は起きません。</strong></li>
+    <li><strong>潜在株式3,990万株</strong>。発行済1,790万株の約2.23倍（編集部計算）で、損失期間のため1株当たり損失の計算から除外されています。優先株の転換とRSUの発行で発行済株式は年初来+54%増えました。<strong>転換社債474.9万ドルは2027年11月満期です。</strong></li>
+    <li><strong>sBCCの発売とAKラベル拡大</strong>。sBCCは2027年第1四半期に本格発売予定（発売会議は1月中旬）で、価格は開示されていません。AKラベル拡大のPDUFA日は2027年8月5日。ITCの上訴は時期・結果ともに不確実で、ランプ是正は2027年第2四半期末までに概ね完了する見込みとされています。</li>
+  </ol>
+</div>
+
+<div class="disclaimer">
+<h3>免責事項</h3>
+<p style="margin:0 0 10px;">本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資判断はご自身の責任で行ってください。</p>
+<p style="margin:0 0 10px;">本記事の数値は2026年11月25日時点で確認できた公開情報に基づきます。財務数値は2026年9月30日に終了した四半期および9か月累計のものです。株価および時価総額は株価情報サイトの掲載値で、2026年9月9日時点のスナップショットです（同サイトはデータが必ずしもリアルタイムまたは正確でないとの免責を付しています）。株価は日々変動します。貸借対照表および現金残高は2026年9月30日時点であり、株価の時点とは異なります。<strong>2026年11月13日の決算発表前後の日次終値は取得できなかったため、発表に対する株価の反応は記載していません。</strong></p>
+<p style="margin:0 0 10px;">「編集部計算」「編集部試算」と記した数値は、公表値をもとに編集部が算出した推計値です。1株当たり損失の改善額の分解、前年同期の株式数で計算した1株当たり損失、キャッシュ消費ペースの四半期換算はいずれも編集部試算であり、会社が開示した指標ではありません。キャッシュ消費ペースの単純計算は、費用の時期的な偏りやsBCC発売費用を考慮していないため、将来の見通しとして用いることはできません。前倒し発注の約160万ドルは決算説明会でのCFO発言に基づきます。</p>
+<p style="margin:0 0 10px;">調整後EBITDAは非GAAP指標です。決算リリースには2025年9か月の株式報酬費用が0.4百万ドルから0.7百万ドルへ修正されたとの記載があり（GAAP財務諸表への影響はないとされています）、調整後EBITDAの前年同期比較にはこの点が含まれます。修正の理由は確認できた資料の範囲では記載が見当たりませんでした。決算説明会からの引用は第三者が作成したトランスクリプトに基づく要旨の日本語訳であり、発言の正確性は会社の提出書類または音声で確認する必要があります。株主資本の金額は決算リリースが▲24.3万ドル、CFOの説明会発言が「▲20万ドル」で、本記事は両方を記載しています。</p>
+<p style="margin:0 0 10px;">継続企業の前提に関する重要な疑義および NASDAQの継続上場基準に関する記述は、会社自身の開示および決算説明会での説明に基づくものです。本記事は、疑義が解消されるか否か、上場が維持されるか否かについて、いずれの見解も示していません。NASDAQからの通知の有無、期限、是正計画の内容は確認できていません。</p>
+<p style="margin:0;">sBCCは承認済みですが発売は開始されておらず、価格は開示されていません。日光角化症のラベル拡大は審査中であり、PDUFA日は承認を保証するものではありません。ITCの上訴の結果と時期は不確実です。本記事はこれらの結果を前提とした記述を行っていません。「記載がない」「確認できなかった」という表現は確認できた資料の範囲における記載であり、開示の不存在を断定するものではありません。</p>
+</div>
+
+<div class="src">
+<h3>主な参照資料</h3>
+<ul>
+<li>Biofrontera Inc. Form 8-K 添付資料99.1（2026年第3四半期および9か月累計の決算リリース／2026年11月13日）<a href="https://www.sec.gov/Archives/edgar/data/1858685/000149315226051546/ex99-1.htm">sec.gov</a></li>
+<li>Biofrontera（BFRI）2026年第3四半期 決算説明会トランスクリプト（第三者作成）<a href="https://www.fool.com/earnings/call-transcripts/2026/11/13/biofrontera-bfri-q3-2026-earnings-call-transcript/">fool.com</a></li>
+<li>継続企業の前提、NASDAQ基準、潜在株式に関する記載 <a href="https://www.panabee.com/news/biofrontera-earnings-q3-2026">panabee.com</a></li>
+<li>株価・時価総額・発行済株式数 <a href="https://www.investing.com/equities/biofrontera">investing.com</a></li>
+</ul>
+</div>
+
+<div class="crosslink" style="margin-top:36px;">
+<strong>シリーズ記事：</strong><a href="https://marketsupporter-ai.com/reports/us-pharma-biotech-earnings-guide.html">入口記事：なぜ米国の製薬・バイオ株は、決算1本で株価が倍にも半分にもなるのか</a>／<a href="https://marketsupporter-ai.com/reports/aytu-biopharma-aytu-q1.html">⑯Aytu BioPharma（AYTU）― 決算と同時に1株2.70ドルの買収合意</a>／<a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">⑮Harrow（HROW）― 調整後EPSがGAAPより小さい</a>／<a href="https://marketsupporter-ai.com/reports/accuray-aray.html">③Accuray（ARAY）― 上場維持と1対40の株式併合</a>
+</div>
+
+</div>
+</body>
+</html>
