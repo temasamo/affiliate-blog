@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daré Bioscience（DARE）2026年Q3決算分析｜四半期売上4.76万ドル、同じ分類の中で約4,500倍の差</title>
+<meta name="description" content="Daré Bioscience（NASDAQ:DARE）2026年第3四半期決算を一次資料から分析。四半期売上4.76万ドル、売上原価が売上を上回る構造、助成金470万ドルがR&Dの行から差し引かれている仕組み、実現率約88.4%を検証します。">
+<style>
+:root{
+  --accent:#d97706;
+  --accent-dark:#b45309;
+  --accent-mid:#f59e0b;
+  --accent-light:#fffbeb;
+  --ink:#1a1a1a;
+  --sub:#555;
+  --line:#e5e5e5;
+  --bg:#ffffff;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.9;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:780px;margin:0 auto;padding:0 20px 80px;}
+header.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 55%,var(--accent-mid) 100%);
+  color:#fff;
+  padding:56px 20px 48px;
+}
+header.hero .inner{max-width:780px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;
+  background:rgba(255,255,255,.2);
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:999px;
+  padding:5px 14px;
+  font-size:12px;
+  letter-spacing:.08em;
+  margin-bottom:18px;
+}
+header.hero h1{
+  font-size:28px;
+  line-height:1.5;
+  margin:0 0 16px;
+  font-weight:700;
+}
+header.hero .lede{
+  font-size:15px;
+  line-height:1.85;
+  margin:0;
+  color:rgba(255,255,255,.95);
+}
+header.hero .meta{
+  margin-top:22px;
+  font-size:13px;
+  color:rgba(255,255,255,.85);
+  border-top:1px solid rgba(255,255,255,.3);
+  padding-top:14px;
+}
+.model-tag{
+  display:inline-block;
+  background:#fff;
+  color:var(--accent-dark);
+  font-size:12px;
+  font-weight:700;
+  border-radius:4px;
+  padding:3px 10px;
+  margin-right:8px;
+}
+.toc{
+  background:var(--accent-light);
+  border:1px solid #fde68a;
+  border-radius:10px;
+  padding:22px 24px;
+  margin:36px 0 44px;
+}
+.toc h2{
+  font-size:14px;
+  margin:0 0 12px;
+  color:var(--accent-dark);
+  letter-spacing:.06em;
+}
+.toc ol{margin:0;padding-left:1.3em;font-size:14.5px;}
+.toc li{margin-bottom:7px;}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(217,119,6,.35);}
+.toc a:hover{color:var(--accent-dark);}
+h2.chapter{
+  font-size:21px;
+  line-height:1.55;
+  margin:56px 0 20px;
+  padding-bottom:12px;
+  border-bottom:2px solid var(--accent);
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+h2.chapter .num{
+  flex:0 0 auto;
+  background:var(--accent);
+  color:#fff;
+  font-size:13px;
+  border-radius:5px;
+  padding:3px 9px;
+  margin-top:5px;
+  font-weight:700;
+}
+h3{
+  font-size:17px;
+  margin:34px 0 14px;
+  padding-left:12px;
+  border-left:4px solid var(--accent-mid);
+  line-height:1.6;
+}
+p{margin:0 0 18px;}
+ul,ol{margin:0 0 18px;padding-left:1.4em;}
+li{margin-bottom:8px;}
+.callout{
+  background:var(--accent-light);
+  border-left:4px solid var(--accent);
+  border-radius:0 8px 8px 0;
+  padding:18px 20px;
+  margin:26px 0;
+  font-size:15px;
+}
+.callout.warn{
+  background:#fef2f2;
+  border-left-color:#dc2626;
+}
+.callout strong{color:var(--accent-dark);}
+.callout.warn strong{color:#b91c1c;}
+.quote{
+  border-left:3px solid var(--line);
+  padding:4px 0 4px 18px;
+  margin:24px 0;
+  color:var(--sub);
+  font-size:15px;
+}
+.kpi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:12px;
+  margin:28px 0;
+}
+.kpi{
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:16px 14px;
+  background:#fafafa;
+}
+.kpi .label{font-size:12px;color:var(--sub);display:block;margin-bottom:6px;line-height:1.5;}
+.kpi .value{font-size:21px;font-weight:700;color:var(--accent-dark);display:block;line-height:1.3;}
+.kpi .note{font-size:11.5px;color:var(--sub);display:block;margin-top:5px;line-height:1.5;}
+.table-scroll{overflow-x:auto;margin:26px 0;-webkit-overflow-scrolling:touch;}
+table{
+  border-collapse:collapse;
+  width:100%;
+  min-width:560px;
+  font-size:14px;
+}
+th,td{
+  border:1px solid var(--line);
+  padding:10px 12px;
+  text-align:left;
+  vertical-align:top;
+}
+th{background:var(--accent-light);font-weight:700;color:var(--accent-dark);}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+tr.total td{background:#fafafa;font-weight:700;}
+.tnote{font-size:13px;color:var(--sub);margin:-14px 0 24px;}
+.flow{margin:28px 0;}
+.flow-step{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  margin-bottom:16px;
+}
+.flow-step .circle{
+  flex:0 0 auto;
+  width:30px;height:30px;
+  border-radius:50%;
+  background:var(--accent);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;
+  margin-top:2px;
+}
+.flow-step .body{flex:1 1 auto;font-size:15px;line-height:1.8;}
+.crosslink{
+  background:#f7f7f8;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:14px 18px;
+  margin:24px 0;
+  font-size:14px;
+  color:var(--sub);
+}
+.crosslink strong{color:var(--ink);}
+.crosslink a{color:var(--accent-dark);}
+.watch{
+  background:#211705;
+  color:#f3f3f3;
+  border-radius:12px;
+  padding:32px 28px;
+  margin:56px 0 36px;
+}
+.watch h2{
+  font-size:19px;
+  margin:0 0 8px;
+  color:#fff;
+  letter-spacing:.04em;
+}
+.watch .sub{font-size:13px;color:#cbbd9c;margin:0 0 22px;}
+.watch ol{
+  list-style:none;
+  counter-reset:w;
+  margin:0;padding:0;
+}
+.watch li{
+  counter-increment:w;
+  position:relative;
+  padding-left:38px;
+  margin-bottom:18px;
+  font-size:14.5px;
+  line-height:1.8;
+}
+.watch li::before{
+  content:counter(w);
+  position:absolute;left:0;top:2px;
+  width:25px;height:25px;
+  border-radius:50%;
+  background:var(--accent-mid);
+  color:#211705;
+  font-weight:700;font-size:13px;
+  display:flex;align-items:center;justify-content:center;
+}
+.watch li strong{color:#fde68a;}
+.disclaimer{
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:#fafafa;
+  padding:20px 22px;
+  font-size:13px;
+  color:var(--sub);
+  line-height:1.85;
+  margin:40px 0 28px;
+}
+.disclaimer h3{
+  font-size:14px;
+  margin:0 0 10px;
+  padding:0;
+  border:none;
+  color:var(--ink);
+}
+.src{
+  font-size:13px;
+  color:var(--sub);
+  line-height:1.9;
+}
+.src h3{
+  font-size:14px;
+  margin:36px 0 12px;
+  padding:0;
+  border:none;
+  color:var(--ink);
+}
+.src ul{padding-left:1.2em;margin:0;}
+.src li{margin-bottom:6px;}
+.src a{color:var(--accent-dark);}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  header.hero{padding:40px 18px 36px;}
+  header.hero h1{font-size:22px;}
+  .wrap{padding:0 16px 60px;}
+  h2.chapter{font-size:18.5px;}
+  h3{font-size:16px;}
+  .watch{padding:26px 20px;border-radius:10px;}
+  .kpi .value{font-size:19px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="inner">
+    <span class="eyebrow">米国製薬・バイオ決算シリーズ ⑱</span>
+    <h1>四半期売上4万7,628ドル。同じ「商業段階の特殊製薬」で、売上が約4,500倍違う</h1>
+    <p class="lede">Daré Bioscience（NASDAQ:DARE）2026年第3四半期決算。4日前に扱ったCollegiumの四半期売上は2億1,630万ドル、Daréは4万7,628ドルです。同じ分類の中で約4,542倍の差があります。さらにこの決算では、売上原価が売上を上回り、損益計算書の研究開発費の行は実際の研究開発規模の約15分の1しか示していませんでした。</p>
+    <p class="meta"><span class="model-tag">商業段階の特殊製薬</span>公開日：2026年11月26日／決算発表：2026年11月16日</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#c1">四半期売上4万7,628ドル ― 分類の限界</a></li>
+    <li><a href="#c2">売上原価が売上を上回る ― 粗利率▲278.9%</a></li>
+    <li><a href="#c3">研究開発費の行は、研究開発の規模を示していない</a></li>
+    <li><a href="#c4">実現率約88.4% ― シリーズ最高。条件の種類が違う</a></li>
+    <li><a href="#c5">現金が9か月で▲53.3%、株主資本234.1万ドル</a></li>
+    <li><a href="#c6">9か月の数字が開示されていない</a></li>
+    <li><a href="#c7">EPS改善0.10ドルのうち約67.7%は株式数の増加 ― 3例目</a></li>
+    <li><a href="#c8">売っているものは承認医薬品ではない／株価</a></li>
+  </ol>
+</nav>
+
+<p>本シリーズは、米国に上場する製薬・バイオ企業29社の決算を1社ずつ、一次資料に当たって読み解く企画です。18社目は<strong>Daré Bioscience（NASDAQ:DARE）</strong>。<a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium</a>、<a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">Harrow</a>、<a href="https://marketsupporter-ai.com/reports/aytu-biopharma-aytu-q1.html">Aytu</a>、<a href="https://marketsupporter-ai.com/reports/biofrontera-bfri-q3.html">Biofrontera</a>に続く<strong>商業段階の特殊製薬</strong>の5社目です。</p>
+
+<p>女性の健康領域に特化した企業で、避妊リングのOvaprene（第3相）、HPVを対象とするDARE-HPV（第2相）などを開発しています。</p>
+
+<h2 class="chapter" id="c1"><span class="num">①</span>四半期売上4万7,628ドル ― 分類の限界</h2>
+
+<p>まず、このグループ5社の四半期売上を並べます。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th class="num">四半期売上</th><th class="num">Daréとの倍率</th><th class="num">売上 ÷ 営業費用</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium（COLL）</a></td><td class="num">2億1,630万ドル</td><td class="num"><strong>約4,542倍</strong></td><td class="num">―（営業黒字）</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">Harrow（HROW）</a></td><td class="num">9,929.7万ドル</td><td class="num">約2,085倍</td><td class="num">―（営業黒字）</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/aytu-biopharma-aytu-q1.html">Aytu（AYTU）</a></td><td class="num">1,484.2万ドル</td><td class="num">約312倍</td><td class="num">約111%</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/biofrontera-bfri-q3.html">Biofrontera（BFRI）</a></td><td class="num">907.0万ドル</td><td class="num">約190倍</td><td class="num">約58%</td></tr>
+<tr class="total"><td>Daré（DARE）</td><td class="num"><strong>4万7,628ドル</strong></td><td class="num">1倍</td><td class="num"><strong>約1.6%</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※倍率および比率は編集部計算。AYTUは2027年度第1四半期（2026年9月30日終了）。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>同じ「商業段階の特殊製薬」という分類の中で、売上が約4,542倍違います</strong>（編集部計算）。</p>
+<p style="margin:12px 0 0;">入口記事④章では、29銘柄を6つの事業モデルに分類しました。この分類は読む順序を決めるのに役立ちますが、<strong>分類が同じであることは、数字が比較できることを意味しません。</strong>Daréの場合、売上は営業費用の<strong>約1.6%</strong>です（編集部計算）。</p>
+</div>
+
+<p>本シリーズで見てきた「売上÷営業費用」の比率を並べると、Daréの位置がわかります。</p>
+
+<ul>
+<li><a href="https://marketsupporter-ai.com/reports/relay-rlay.html">Relay Therapeutics（RLAY）</a>：約0.4%</li>
+<li><a href="https://marketsupporter-ai.com/reports/absci-absi-q3.html">Absci（ABSI）</a>：約0.9%</li>
+<li><strong>Daré（DARE）：約1.6%</strong></li>
+<li><a href="https://marketsupporter-ai.com/reports/puretech-health-prtc-h1.html">PureTech（PRTC）</a>：約6.4%</li>
+<li><a href="https://marketsupporter-ai.com/reports/roivant-roiv-q2.html">Roivant（ROIV）</a>：約11.6%</li>
+<li><a href="https://marketsupporter-ai.com/reports/schrodinger-sdgr-q3.html">Schrödinger（SDGR）</a>：約100%</li>
+</ul>
+
+<p><strong>Daréは創薬型・プラットフォーム型の赤字先行企業に近い水準です。</strong>「商業段階」という分類名から想像する姿とは違います。</p>
+
+<h2 class="chapter" id="c2"><span class="num">②</span>売上原価が売上を上回る ― 粗利率▲278.9%</h2>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2026年Q3</th><th class="num">2025年Q3</th></tr>
+</thead>
+<tbody>
+<tr><td>総収益（研究開発サービスおよびその他）</td><td class="num">4万7,628ドル</td><td class="num">2,262ドル</td></tr>
+<tr class="total"><td>売上原価</td><td class="num"><strong>18万0,479ドル</strong></td><td class="num">―</td></tr>
+<tr class="total"><td>売上総損益（編集部計算）</td><td class="num"><strong>▲13万2,851ドル</strong></td><td class="num">2,262ドル</td></tr>
+<tr><td>粗利率（編集部計算）</td><td class="num"><strong>▲278.9%</strong></td><td class="num">―</td></tr>
+<tr><td>販売費・一般管理費</td><td class="num">264万0,388ドル</td><td class="num">249万9,242ドル</td></tr>
+<tr><td>研究開発費</td><td class="num">31万8,906ドル</td><td class="num">117万5,168ドル</td></tr>
+<tr><td>営業費用 合計</td><td class="num">295万9,294ドル</td><td class="num">367万4,410ドル</td></tr>
+<tr class="total"><td>営業損失</td><td class="num">▲309万2,145ドル</td><td class="num">▲367万2,148ドル</td></tr>
+<tr><td>営業外損益（純額）</td><td class="num">▲6万5,791ドル</td><td class="num">+10万9,382ドル</td></tr>
+<tr class="total"><td>純損失</td><td class="num"><strong>▲315万7,936ドル</strong></td><td class="num">▲356万2,766ドル</td></tr>
+<tr><td>1株当たり損失（基本・希薄化後）</td><td class="num">▲0.18ドル</td><td class="num">▲0.28ドル</td></tr>
+<tr><td>加重平均株式数</td><td class="num">17,421,580株</td><td class="num">12,755,112株</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※決算リリース記載値。Daréは金額をドル単位で開示しているため、本記事もドル単位で表記します。売上原価は営業費用合計に含まれていません。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>売上原価18万0,479ドルが、売上4万7,628ドルを上回っています。</strong>売上総損益は▲13万2,851ドル、粗利率は<strong>▲278.9%</strong>です（いずれも編集部計算）。<strong>売るたびに損が出ている状態です。</strong></p>
+<p style="margin:12px 0 0;">前年同期の売上原価はゼロでした。製品を売っていなかったためです。2026年6月に発売したFlora Sync LF5の立ち上げ期であることが背景と考えられますが、<strong>決算リリースに売上原価の内訳や増加理由の記載は見当たりませんでした。</strong></p>
+</div>
+
+<h3>商業段階の特殊製薬5社の粗利率</h3>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th class="num">粗利率</th><th>備考</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">Harrow（HROW）</a></td><td class="num">75.4%</td><td>会社は第4四半期に約80%へ戻る見込みとする</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/biofrontera-bfri-q3.html">Biofrontera（BFRI）</a></td><td class="num">74.4%</td><td>9か月では78.0%。親会社との契約変更による改善</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/aytu-biopharma-aytu-q1.html">Aytu（AYTU）</a></td><td class="num">63.6%</td><td>EXXUAのロイヤルティ費用で2.5ポイント低下</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium（COLL）</a></td><td class="num">約58.0%</td><td>無形資産償却5,534.6万ドルを含む（編集部計算）</td></tr>
+<tr class="total"><td>Daré（DARE）</td><td class="num"><strong>▲278.9%</strong></td><td>売上原価が売上を上回る（編集部計算）</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 class="chapter" id="c3"><span class="num">③</span>研究開発費の行は、研究開発の規模を示していない</h2>
+
+<p>この決算で最も重要な発見です。</p>
+
+<p>研究開発費は117万5,168ドルから<strong>31万8,906ドル</strong>へ、<strong>▲72.9%</strong>減りました（編集部計算）。数字だけを見れば、研究開発を大幅に縮小したように読めます。</p>
+
+<p>しかし決算リリースには、もう1つの数字が記載されています。</p>
+
+<div class="kpi-grid">
+  <div class="kpi">
+    <span class="label">損益計算書の研究開発費（Q3）</span>
+    <span class="value">31万8,906ドル</span>
+    <span class="note">前年同期117万5,168ドル</span>
+  </div>
+  <div class="kpi">
+    <span class="label">助成金による費用相殺（contra-R&D）</span>
+    <span class="value">約470万ドル</span>
+    <span class="note">前年同期約500万ドル</span>
+  </div>
+  <div class="kpi">
+    <span class="label">相殺額 ÷ 計上額</span>
+    <span class="value">約14.7倍</span>
+    <span class="note">編集部計算</span>
+  </div>
+  <div class="kpi">
+    <span class="label">両方を合わせた金額（編集部試算）</span>
+    <span class="value">約501.9万ドル</span>
+    <span class="note">実際の研究開発活動の規模</span>
+  </div>
+</div>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>助成金による費用の相殺は約470万ドル。損益計算書に計上された研究開発費31万8,906ドルの約14.7倍です</strong>（編集部計算）。</p>
+<p style="margin:12px 0 0;">Daréは研究開発費の多くを、政府機関や財団からの助成金で賄っています。会計上、これらの助成金は<strong>研究開発費から差し引いて（相殺して）表示されます。</strong>そのため損益計算書の研究開発費の行には、助成金で賄われなかった部分だけが現れます。</p>
+<p style="margin:12px 0 0;"><strong>つまり「研究開発費31万8,906ドル」という数字から、この会社の研究開発の規模を読み取ることはできません。</strong>両方を合わせると約501.9万ドル規模です（編集部試算）。</p>
+</div>
+
+<p>CFOは決算説明会で次のように述べています。</p>
+
+<div class="quote">
+「当社の研究開発費は、受領した<strong>非希薄化資金</strong>の影響を反映しています」（決算説明会／第三者作成のトランスクリプトに基づく要旨の日本語訳）
+</div>
+
+<div class="crosslink">
+<strong>シリーズを通した見方：</strong>本シリーズでは「売上÷営業費用」を赤字先行企業の指標として使ってきました。<strong>Daréの場合、分母の営業費用そのものが、助成金で圧縮されています。</strong>助成金470万ドルを戻して計算すると、売上4万7,628ドル÷約766万ドル＝<strong>約0.6%</strong>（編集部試算）。<a href="https://marketsupporter-ai.com/reports/absci-absi-q3.html">Absci</a>の約0.9%より低くなります。<strong>比率を他社と比べるときは、分母の定義がそろっているかを確認する必要があります。</strong>
+</div>
+
+<h3>減ったのは何か</h3>
+
+<p>決算リリースは、研究開発費の減少理由を<strong>シルデナフィルクリーム、DARE-LARC1、Ovaprene</strong>への支出減と説明し、DARE-HPVの費用増が一部を打ち消したとしています。</p>
+
+<p>販売費・一般管理費は249万9,242ドルから264万0,388ドル（<strong>+5.6%</strong>／編集部計算）。会社は、商業化準備費用、株式報酬、人件費の増加と<strong>繰延募集費用の非現金評価減</strong>を挙げ、間接費と専門家報酬の減少が一部を打ち消したと説明しています。</p>
+
+<p><strong>「繰延募集費用の非現金評価減」については、金額も理由も記載が見当たりませんでした。</strong></p>
+
+<h2 class="chapter" id="c4"><span class="num">④</span>実現率約88.4% ― シリーズ最高。条件の種類が違う</h2>
+
+<p>本シリーズでは、入口記事②章で<strong>「実現率」（累計受領額÷公表総額）</strong>を4指標の1つとして追ってきました。Daréの数字は、これまでの最高値です。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th class="num">実現率</th><th>条件の種類</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/recursion-rxrx-q3.html">Recursion（RXRX）</a></td><td class="num">約2.7%</td><td>開発進捗と承認後の売上目標</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/royalty-pharma-rprx.html">RoyaltyPharma（RPRX）</a></td><td class="num">前払い約29.4%</td><td>払う側。開発・承認マイルストーン</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/roivant-roiv-q2.html">Roivant（ROIV）</a></td><td class="num">約42%</td><td>残りは<strong>訴訟の控訴結果</strong>に依存</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">Fortress（FBIO）</a></td><td class="num">約48.8%以上</td><td>条件達成済み。<strong>分配の階層</strong>で目減り</td></tr>
+<tr class="total"><td>Daré（DARE）<br>DARE-LARC1</td><td class="num"><strong>約88.4%</strong></td><td><strong>助成金。開発の進捗に応じて実際に支払われる</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※いずれも編集部計算または編集部試算。DAREは2026年10月に150万ドルを受領し、累計約4,330万ドル（最大4,900万ドルのうち）。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>実現率の高さは、交渉力の差ではありません。条件の種類の差です。</strong>入口記事②章で書いた通りです。</p>
+<p style="margin:12px 0 0;">Daréの助成金は、開発の進捗に応じて実際に支払われます。承認を条件とするマイルストーンや、訴訟の結果に依存する和解金とは性質が違います。<strong>だから実現率が高くなります。</strong></p>
+<p style="margin:12px 0 0;">助成金の総額は<strong>7,500万ドル超</strong>とされています。2026年11月にはゲイツ財団から約90万ドル、2026年8月にはNICHDから約90万ドルの助成が announced されました。DARE-HPVはARPA-HとNIAIDの資金提供を受けています。</p>
+</div>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>ただし、助成金には別の性質もあります。</strong>助成金は特定のプログラムに紐づいており、会社が自由に使える資金ではありません。また助成機関の方針変更や予算の制約を受けます。<strong>実現率が高いことは、資金が十分であることを意味しません。</strong>次章で現金の水準を見ます。</p>
+</div>
+
+<h2 class="chapter" id="c5"><span class="num">⑤</span>現金が9か月で▲53.3%、株主資本234.1万ドル</h2>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2026年9月30日</th><th class="num">2025年12月31日</th><th class="num">増減</th></tr>
+</thead>
+<tbody>
+<tr class="total"><td>現金・現金同等物</td><td class="num"><strong>1,153万1,684ドル</strong></td><td class="num">2,471万1,356ドル</td><td class="num"><strong>▲53.3%</strong></td></tr>
+<tr><td>運転資本</td><td class="num">321万0,505ドル</td><td class="num">337万8,192ドル</td><td class="num">▲5.0%</td></tr>
+<tr><td>総資産</td><td class="num">2,209万8,552ドル</td><td class="num">3,247万4,563ドル</td><td class="num">▲32.0%</td></tr>
+<tr class="total"><td>株主資本</td><td class="num"><strong>234万1,375ドル</strong></td><td class="num">284万2,634ドル</td><td class="num">▲17.6%</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※増減率は編集部計算。債務については決算リリースに記載が見当たりませんでした。</p>
+
+<p>現金は9か月で<strong>1,317万9,672ドル減少</strong>しました（編集部計算）。これを3四半期で割ると1四半期あたり約439万ドル。現金1,153万1,684ドルを単純に割れば<strong>約2.6四半期分</strong>になります（編集部試算）。</p>
+
+<p>なお2026年10月にDARE-LARC1の助成金150万ドルを受領したと説明されています。</p>
+
+<h3>株主資本234万1,375ドルという水準</h3>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>前日の<a href="https://marketsupporter-ai.com/reports/biofrontera-bfri-q3.html">Biofrontera</a>の記事で、NASDAQの継続上場基準に株主資本250万ドル以上という要件があることを扱いました。Daréの株主資本は234万1,375ドルで、この金額を下回ります。</strong></p>
+<p style="margin:12px 0 0;">ただし<strong>NASDAQの継続上場基準は、株主資本・時価総額・純利益のいずれかを満たせばよい構成になっています。</strong>株主資本が250万ドルを下回っていても、他の基準を満たしていれば問題にはなりません。</p>
+<p style="margin:12px 0 0;"><strong>Daréは決算リリースおよび決算説明会のいずれにおいても、上場基準について何も述べていません。</strong>本記事は上場維持について、いかなる判断も示しません。確認できたのは、株主資本が234万1,375ドルであるという事実だけです。</p>
+</div>
+
+<h3>継続企業の前提についての記載</h3>
+
+<p>決算リリースには、<strong>継続企業の前提についての明示的な結論は記載されていません。</strong>将来予想に関する記述のリスク項目に、資本調達能力と「継続企業として存続する能力」に関するリスクが挙げられています。決算説明会でも、この点は議論されていません。</p>
+
+<div class="crosslink">
+<strong>開示水準の差：</strong>前日の<a href="https://marketsupporter-ai.com/reports/biofrontera-bfri-q3.html">Biofrontera</a>では、CFOが決算説明会で<strong>「重要な疑義が存在する」と明言し、4つの緩和策を示したうえで「これらの計画は疑義を解消していない」</strong>と述べました。<strong>Daréはリスク項目への記載に留めています。</strong>どちらが正しいという話ではなく、同じ論点について開示の深さが違います。読み手は、会社が述べていないことを述べられたことと区別する必要があります。
+</div>
+
+<h2 class="chapter" id="c6"><span class="num">⑥</span>9か月の数字が開示されていない</h2>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>Daréの決算リリースには、9か月累計の損益計算書が記載されていません。</strong>開示されているのは第3四半期（3か月）の数字と、貸借対照表の期末残高のみです。</p>
+</div>
+
+<p>本シリーズでは、四半期と累計で結論が逆になるケースを繰り返し扱ってきました。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>四半期と累計で何が逆だったか</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">Fortress（FBIO）</a></td><td>9か月EPS <strong>+2.94ドル</strong>／四半期 <strong>▲0.23ドル</strong></td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">Harrow（HROW）</a></td><td>9か月EPS <strong>▲0.94ドル</strong>／四半期 <strong>+0.26ドル</strong></td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium（COLL）</a></td><td>希薄化率が四半期<strong>+23.3%</strong>／9か月<strong>+3.2%</strong></td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/biofrontera-bfri-q3.html">Biofrontera（BFRI）</a></td><td>営業損失が9か月で<strong>28.7%改善</strong>／四半期で<strong>3.5%悪化</strong></td></tr>
+<tr class="total"><td>Daré（DARE）</td><td><strong>確認できない（9か月の開示がない）</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>四半期だけを見て判断することの危険性を4社で確認したあとで、5社目では四半期しか見ることができません。</strong>10-Qには9か月累計が記載されているはずですが、決算リリースの段階では確認できません。</p>
+
+<h2 class="chapter" id="c7"><span class="num">⑦</span>EPS改善0.10ドルのうち約67.7%は株式数の増加 ― 3例目</h2>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2026年Q3</th><th class="num">2025年Q3</th><th class="num">増減</th></tr>
+</thead>
+<tbody>
+<tr><td>純損失</td><td class="num">▲315万7,936ドル</td><td class="num">▲356万2,766ドル</td><td class="num"><strong>11.4%縮小</strong></td></tr>
+<tr><td>加重平均株式数</td><td class="num">17,421,580株</td><td class="num">12,755,112株</td><td class="num"><strong>+36.6%</strong></td></tr>
+<tr class="total"><td>1株当たり損失</td><td class="num">▲0.18ドル</td><td class="num">▲0.28ドル</td><td class="num"><strong>35.7%改善</strong></td></tr>
+<tr><td>前年同期の株式数で計算した場合</td><td class="num">▲0.25ドル（編集部試算）</td><td class="num">―</td><td class="num">―</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※増減率および試算は編集部計算。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>改善額0.10ドルの分解（編集部試算）</strong></p>
+<p style="margin:10px 0 0;">
+・<strong>純損失の縮小による分</strong>：40万4,830ドル ÷ 12,755,112株 ＝ 約0.03ドル<br>
+・<strong>株式数の増加による分</strong>：315万7,936ドル ÷ 12,755,112株 − 315万7,936ドル ÷ 17,421,580株 ＝ 約0.07ドル<br>
+・合計：約0.10ドル</p>
+<p style="margin:12px 0 0;"><strong>改善額のうち約67.7%は、株式数が増えたことによるものです。</strong></p>
+</div>
+
+<h3>3社の比較</h3>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th class="num">純損益の変化</th><th class="num">株式数の変化</th><th class="num">EPSの変化</th><th class="num">株式数増加の寄与</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/absci-absi-q3.html">Absci（ABSI）</a></td><td class="num">16.0%<strong>拡大</strong></td><td class="num">+19.5%</td><td class="num">▲0.20→▲0.19ドル</td><td class="num">改善の全部</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/biofrontera-bfri-q3.html">Biofrontera（BFRI）</a></td><td class="num">3.4%縮小</td><td class="num">+41.8%</td><td class="num">▲0.62→▲0.42ドル</td><td class="num">約89%</td></tr>
+<tr class="total"><td>Daré（DARE）</td><td class="num">11.4%縮小</td><td class="num">+36.6%</td><td class="num">▲0.28→▲0.18ドル</td><td class="num"><strong>約67.7%</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※いずれも編集部計算または編集部試算。</p>
+
+<p><strong>3社連続で、1株当たり損失の「改善」の大半が分母の増加によるものでした。</strong>入口記事⑤章の手順「1株当たり指標を見たら、分母の株式数も前年と比べる」は、3例目になりました。</p>
+
+<h2 class="chapter" id="c8"><span class="num">⑧</span>売っているものは承認医薬品ではない／株価</h2>
+
+<p>このグループの他の4社と、Daréには決定的な違いがあります。<strong>売っているものの性質です。</strong></p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>売上の中身</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium（COLL）</a></td><td>FDA承認薬（Jornay PM、Belbuca、Xtampza ER、Nucynta、Azstarys）</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">Harrow（HROW）</a></td><td>FDA承認薬・機器（VEVYE、IHEEZO、TRIESENCE、RhodoLEDランプ）</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/aytu-biopharma-aytu-q1.html">Aytu（AYTU）</a></td><td>FDA承認薬（EXXUA、ADHDポートフォリオ、小児ポートフォリオ）</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/biofrontera-bfri-q3.html">Biofrontera（BFRI）</a></td><td>FDA承認薬・機器（Ameluz、RhodoLEDランプ）</td></tr>
+<tr class="total"><td>Daré（DARE）</td><td><strong>研究開発サービス収益＋Flora Sync LF5（2026年6月発売）。DARE to PLAYとDARE to RECLAIMは503B調剤による提供</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>DARE to PLAY（シルデナフィルクリーム）とDARE to RECLAIM（エストラジオール／プロゲステロンリング）は、503B外部委託施設を通じた調剤として提供されます。</strong>FDAが承認した医薬品の販売ではありません。会社はDARE to RECLAIMについて、別途505(b)(2)経路での従来型開発も計画しているとしています。</p>
+<p style="margin:12px 0 0;">そして<strong>商業化はまだ本格的に始まっていません。</strong>会社は、DARE to PLAYの収益が2026年第4四半期に開始する見込みだが<strong>2026年には重要な金額にならない</strong>とし、DARE to RECLAIMの収益は2027年開始を目標としています。</p>
+</div>
+
+<h3>商業面の進捗（会社開示）</h3>
+
+<ul>
+<li><strong>Flora Sync LF5</strong>：2026年6月発売、7月に初回販売。27州から注文。医療機関からの初回リピート注文あり。約25件のレビューで4.9つ星。2027年初めにAmazonでの販売開始を計画</li>
+<li><strong>DARE to PLAY</strong>：48州およびワシントンD.C.で処方。テレヘルスを除く<strong>182人の診療所ベースの処方医</strong>。2026年11月に<strong>28州で調剤開始見込み</strong>、他州は許認可手続き中</li>
+<li><strong>DARE to RECLAIM</strong>：2027年に調剤開始目標</li>
+<li><strong>Flora Renew、Flora Reset</strong>：2027年初めを想定</li>
+</ul>
+
+<h3>パイプライン（会社開示）</h3>
+
+<ul>
+<li><strong>Ovaprene（第3相）</strong>：トップラインデータは<strong>2027年</strong>見込み。DSMB（データ安全性モニタリング委員会）は試験の変更なしでの継続を推奨（既報）。2026年11月にゲイツ財団から約90万ドルを受領</li>
+<li><strong>DARE-HPV（第2相、NCT07601074）</strong>：約100人の女性が登録済み。トップライン結果は<strong>2027年</strong>見込み。ARPA-HとNIAIDが資金提供</li>
+<li><strong>DARE-PTB2</strong>：初期段階。2026年8月にNICHDから約90万ドルの助成</li>
+<li><strong>DARE-LARC1</strong>：前臨床。2026年10月に150万ドルを受領し、累計約4,330万ドル（最大4,900万ドルのうち）</li>
+<li><strong>DARE-IDDS プラットフォーム</strong>：肥満、糖尿病、ホルモン療法、神経疾患（GLP-1応用を含む）での戦略的提携を模索</li>
+</ul>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>Ovaprene、DARE-HPV、DARE-PTB2、DARE-LARC1はいずれも承認前の開発品です。</strong>トップラインデータの時期は会社の見込みであり、結果を保証するものではありません。本記事は承認や試験成功を前提とした記述を行っていません。</p>
+</div>
+
+<h3>株価</h3>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>時点</th><th class="num">株価</th><th class="num">変動</th></tr>
+</thead>
+<tbody>
+<tr><td>決算発表前の終値</td><td class="num">0.6574ドル</td><td class="num">―</td></tr>
+<tr class="total"><td>2026年11月16日の通常取引</td><td class="num"><strong>0.5842ドル</strong></td><td class="num"><strong>▲11.13%</strong></td></tr>
+<tr><td>同日の時間外取引</td><td class="num">0.64ドル</td><td class="num">+9.55%（前日終値比▲2.65%）</td></tr>
+<tr><td>52週レンジ</td><td class="num">0.5841〜3.78ドル</td><td class="num">―</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※株価情報サイト掲載値。変動率は同サイトの記載です。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>11月16日の終値0.5842ドルは、52週安値0.5841ドルのわずか上です。</strong>52週高値3.78ドルからは<strong>約▲84.5%</strong>（編集部計算）。</p>
+<p style="margin:12px 0 0;">1株当たり損失は▲0.18ドルで、市場予想の▲0.16ドルを0.02ドル下回ったと報じられています（第三者データに基づく報道の記載）。</p>
+</div>
+
+<p>加重平均株式数17,421,580株と11月16日終値0.5842ドルから単純計算すると、時価総額は<strong>約1,018万ドル</strong>です（編集部試算）。現金1,153万1,684ドルはこれを上回ります。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>ただしこの比較は慎重に扱う必要があります。</strong>発行済株式数は決算リリースに記載がなく、上記は加重平均株式数を用いた概算です。また現金は9か月で1,317万9,672ドル減少しており（編集部計算）、残高がそのまま維持されるものではありません。<strong>本記事は株価水準について、いかなる見解も示していません。</strong></p>
+</div>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>決算の見え方</th><th class="num">発表後の株価</th></tr>
+</thead>
+<tbody>
+<tr><td>Butterfly Network（BFLY）</td><td>売上+52%、粗利率改善</td><td class="num">翌日▲3.84%、翌々日場中▲9.8%</td></tr>
+<tr><td>Repligen（RGEN）</td><td>GAAP営業損失（減損4,124.2万ドル）</td><td class="num">+4.5%</td></tr>
+<tr><td>Accuray（ARAY）</td><td>純利益黒字（債務消滅益）</td><td class="num">株式併合で比較不可</td></tr>
+<tr><td>RoyaltyPharma（RPRX）</td><td>ガイダンス引き上げ</td><td class="num">下落</td></tr>
+<tr><td>Ligand（LGND）</td><td>ロイヤルティ+51%</td><td class="num">ほぼ変わらず</td></tr>
+<tr><td>Innoviva（INVA）</td><td>営業利益+21.9%、EPSは予想を1.55ドル下回る</td><td class="num">52週安値</td></tr>
+<tr><td>Schrödinger（SDGR）</td><td>純損失拡大</td><td class="num">1年来高値圏</td></tr>
+<tr><td>Recursion（RXRX）</td><td>決算＋第2相データ</td><td class="num">+3.1%→増資価格近辺</td></tr>
+<tr><td>Absci（ABSI）</td><td>純損失16%拡大、EPSは改善</td><td class="num">―</td></tr>
+<tr><td>Roivant（ROIV）</td><td>売上が約22.4倍</td><td class="num">1週間後は発表前と同水準</td></tr>
+<tr><td>BridgeBio（BBIO）</td><td>営業損失が一回限り要因で縮小</td><td class="num">+5.96%</td></tr>
+<tr><td>Fortress（FBIO）</td><td>9か月EPS+2.94ドル、四半期は予想下振れ</td><td class="num">連続データ取得できず</td></tr>
+<tr><td>PureTech（PRTC）</td><td>半期で黒字転換（非現金の評価益）</td><td class="num">連続データ取得できず</td></tr>
+<tr><td>Collegium（COLL）</td><td>営業利益▲53.7%、ガイダンス据え置き</td><td class="num">+6.29%（前四半期は▲18.55%）</td></tr>
+<tr><td>Harrow（HROW）</td><td>調整後EBITDAガイダンス半減、臨床試験は主要評価項目未達</td><td class="num">+10.52%</td></tr>
+<tr><td>Aytu（AYTU）</td><td>営業損失2.61倍、同時に買収合意</td><td class="num">+46.15%（買収価格への接近）</td></tr>
+<tr><td>Biofrontera（BFRI）</td><td>売上+29.8%、継続企業の前提に重要な疑義</td><td class="num">連続データ取得できず</td></tr>
+<tr class="total"><td>Daré（DARE）</td><td><strong>営業損失15.8%改善（助成金相殺によるR&D減）、EPSは予想を0.02ドル下回る</strong></td><td class="num"><strong>▲11.13%</strong>（52週安値のすぐ上）</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="watch">
+  <h2>WHAT TO WATCH</h2>
+  <p class="sub">Daré Bioscience（DARE）について、今後の開示で確認したい6点</p>
+  <ol>
+    <li><strong>現金の水準</strong>。9月30日時点で1,153万1,684ドル、9か月で1,317万9,672ドル減少（編集部計算）。10月に助成金150万ドルを受領しています。<strong>単純な四半期換算では約2.6四半期分</strong>（編集部試算）ですが、商業化費用の増加を考慮していません。</li>
+    <li><strong>株主資本</strong>。234万1,375ドル。NASDAQの継続上場基準は株主資本・時価総額・純利益のいずれかを満たせばよい構成で、<strong>会社は上場基準について何も述べていません。</strong>本記事は上場維持についていかなる判断も示しません。</li>
+    <li><strong>助成金による費用相殺（contra-R&D）</strong>。第3四半期は約470万ドル（前年同期約500万ドル）で、損益計算書のR&D計上額31万8,906ドルの約14.7倍（編集部計算）。<strong>助成金が減れば、計上されるR&Dは増えます。</strong>助成金の総額は7,500万ドル超、DARE-LARC1の実現率は約88.4%（編集部計算）。</li>
+    <li><strong>売上原価と粗利率</strong>。第3四半期は売上原価18万0,479ドルが売上4万7,628ドルを上回り、粗利率▲278.9%（編集部計算）。<strong>増加理由の記載は見当たりませんでした。</strong>DARE to PLAYの調剤が11月に28州で始まる見込みで、収益は2026年には重要な金額にならないとされています。</li>
+    <li><strong>2027年の2つのトップラインデータ</strong>。Ovaprene（第3相）とDARE-HPV（第2相）。いずれも承認前の開発品で、時期は会社の見込みです。</li>
+    <li><strong>9か月累計および通期の数字</strong>。決算リリースには9か月累計の損益計算書が記載されていません。<strong>本シリーズでは四半期と累計で結論が逆になるケースを4社で確認しています。</strong>10-Qおよび通期決算での確認が必要です。</li>
+  </ol>
+</div>
+
+<div class="disclaimer">
+<h3>免責事項</h3>
+<p style="margin:0 0 10px;">本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資判断はご自身の責任で行ってください。</p>
+<p style="margin:0 0 10px;">本記事の数値は2026年11月26日時点で確認できた公開情報に基づきます。財務数値は2026年9月30日に終了した3か月間および同日時点の貸借対照表のものです。<strong>決算リリースには9か月累計の損益計算書が記載されていないため、本記事は四半期の数字のみを扱っています。</strong>株価は株価情報サイトの掲載値で、記載した日付時点のものです。株価は日々変動します。貸借対照表は2026年9月30日時点であり、株価の時点とは異なります。</p>
+<p style="margin:0 0 10px;">「編集部計算」「編集部試算」と記した数値は、公表値をもとに編集部が算出した推計値です。売上総損益と粗利率、1株当たり損失の改善額の分解、前年同期の株式数で計算した1株当たり損失、キャッシュ消費ペースの四半期換算、助成金を戻した「売上÷営業費用」、時価総額はいずれも編集部計算または編集部試算であり、会社が開示した指標ではありません。<strong>時価総額は、発行済株式数の記載がないため加重平均株式数17,421,580株を用いた概算です。</strong>キャッシュ消費ペースの単純計算は、商業化費用の増加や助成金の受領時期を考慮していないため、将来の見通しとして用いることはできません。他社との比較に用いた数値には、各社の決算リリース記載の増減率から逆算した推計値を含みます。</p>
+<p style="margin:0 0 10px;">助成金による費用相殺（contra-R&D）の金額は決算リリースの記載に基づきます。研究開発活動の規模を約501.9万ドルとした計算は、計上額と相殺額を単純に合算した編集部試算であり、会社が開示した指標ではありません。「繰延募集費用の非現金評価減」については、金額および理由の記載が確認できた資料の範囲では見当たりませんでした。決算説明会からの引用は第三者が作成したトランスクリプトに基づく要旨の日本語訳です。市場予想は第三者データ提供会社によるもので、原データは確認していません。</p>
+<p style="margin:0 0 10px;">継続企業の前提について、決算リリースには明示的な結論の記載がなく、将来予想に関する記述のリスク項目に資本調達能力および「継続企業として存続する能力」に関するリスクが挙げられています。<strong>本記事は、継続企業の前提および上場維持について、いかなる見解も示していません。</strong></p>
+<p style="margin:0;">Ovaprene、DARE-HPV、DARE-PTB2、DARE-LARC1はいずれも承認前の開発品です。トップラインデータの時期および結果、承認の可否はいずれも不確実です。DARE to PLAYおよびDARE to RECLAIMは503B外部委託施設を通じた調剤として提供されるもので、FDAが承認した医薬品の販売ではありません。本記事はこれらの結果や収益化を前提とした記述を行っていません。「記載がない」「確認できなかった」という表現は確認できた資料の範囲における記載であり、開示の不存在を断定するものではありません。</p>
+</div>
+
+<div class="src">
+<h3>主な参照資料</h3>
+<ul>
+<li>Daré Bioscience, Inc.「Daré Bioscience Reports Third Quarter 2026 Financial Results and Highlights Commercial Execution and Pipeline Advancement」（2026年11月16日）<a href="https://darebioscience.com/press-release-dare-bioscience-reports-third-quarter-2026-financial-results-and-highlights-commercial-execution-and-pipeline-advancement/">darebioscience.com</a></li>
+<li>Daré Bioscience（DARE）2026年第3四半期 決算説明会トランスクリプト（第三者作成）<a href="https://www.fool.com/earnings/call-transcripts/2026/11/17/dare-bioscience-dare-q3-2026-earnings-call-transcript/">fool.com</a></li>
+<li>株価データおよび市場予想との比較 <a href="https://in.investing.com/news/stock-market-news/earnings-call-transcript-dare-bioscience-q3-2026-misses-eps-shares-swing-93CH-5708203">investing.com</a></li>
+</ul>
+</div>
+
+<div class="crosslink" style="margin-top:36px;">
+<strong>シリーズ記事：</strong><a href="https://marketsupporter-ai.com/reports/us-pharma-biotech-earnings-guide.html">入口記事：なぜ米国の製薬・バイオ株は、決算1本で株価が倍にも半分にもなるのか</a>／<a href="https://marketsupporter-ai.com/reports/biofrontera-bfri-q3.html">⑰Biofrontera（BFRI）― 株主資本がゼロを割り、継続企業の前提に疑義</a>／<a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">⑭Collegium（COLL）― 同じ四半期に1株当たり利益が4つある</a>／<a href="https://marketsupporter-ai.com/reports/recursion-rxrx-q3.html">⑧Recursion（RXRX）― 実現率約2.7%の内訳</a>
+</div>
+
+</div>
+</body>
+</html>
