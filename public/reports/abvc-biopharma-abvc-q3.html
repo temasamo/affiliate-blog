@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABVC BioPharma（ABVC）2026年Q3決算分析｜売上ゼロ、現金1万1,294ドル、前年の売上は取り消された</title>
+<meta name="description" content="ABVC BioPharma（NASDAQ:ABVC）2026年第3四半期決算を一次資料から分析。売上ゼロ、現金1万1,294ドル、前年同期の関連当事者売上79万5,950ドルの取り消し、連結赤字でも親会社帰属が黒字になる構造を検証します。">
+<style>
+:root{
+  --accent:#d97706;
+  --accent-dark:#b45309;
+  --accent-mid:#f59e0b;
+  --accent-light:#fffbeb;
+  --ink:#1a1a1a;
+  --sub:#555;
+  --line:#e5e5e5;
+  --bg:#ffffff;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.9;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:780px;margin:0 auto;padding:0 20px 80px;}
+header.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 55%,var(--accent-mid) 100%);
+  color:#fff;
+  padding:56px 20px 48px;
+}
+header.hero .inner{max-width:780px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;
+  background:rgba(255,255,255,.2);
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:999px;
+  padding:5px 14px;
+  font-size:12px;
+  letter-spacing:.08em;
+  margin-bottom:18px;
+}
+header.hero h1{
+  font-size:28px;
+  line-height:1.5;
+  margin:0 0 16px;
+  font-weight:700;
+}
+header.hero .lede{
+  font-size:15px;
+  line-height:1.85;
+  margin:0;
+  color:rgba(255,255,255,.95);
+}
+header.hero .meta{
+  margin-top:22px;
+  font-size:13px;
+  color:rgba(255,255,255,.85);
+  border-top:1px solid rgba(255,255,255,.3);
+  padding-top:14px;
+}
+.model-tag{
+  display:inline-block;
+  background:#fff;
+  color:var(--accent-dark);
+  font-size:12px;
+  font-weight:700;
+  border-radius:4px;
+  padding:3px 10px;
+  margin-right:8px;
+}
+.toc{
+  background:var(--accent-light);
+  border:1px solid #fde68a;
+  border-radius:10px;
+  padding:22px 24px;
+  margin:36px 0 44px;
+}
+.toc h2{
+  font-size:14px;
+  margin:0 0 12px;
+  color:var(--accent-dark);
+  letter-spacing:.06em;
+}
+.toc ol{margin:0;padding-left:1.3em;font-size:14.5px;}
+.toc li{margin-bottom:7px;}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(217,119,6,.35);}
+.toc a:hover{color:var(--accent-dark);}
+h2.chapter{
+  font-size:21px;
+  line-height:1.55;
+  margin:56px 0 20px;
+  padding-bottom:12px;
+  border-bottom:2px solid var(--accent);
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+h2.chapter .num{
+  flex:0 0 auto;
+  background:var(--accent);
+  color:#fff;
+  font-size:13px;
+  border-radius:5px;
+  padding:3px 9px;
+  margin-top:5px;
+  font-weight:700;
+}
+h3{
+  font-size:17px;
+  margin:34px 0 14px;
+  padding-left:12px;
+  border-left:4px solid var(--accent-mid);
+  line-height:1.6;
+}
+p{margin:0 0 18px;}
+ul,ol{margin:0 0 18px;padding-left:1.4em;}
+li{margin-bottom:8px;}
+.callout{
+  background:var(--accent-light);
+  border-left:4px solid var(--accent);
+  border-radius:0 8px 8px 0;
+  padding:18px 20px;
+  margin:26px 0;
+  font-size:15px;
+}
+.callout.warn{
+  background:#fef2f2;
+  border-left-color:#dc2626;
+}
+.callout strong{color:var(--accent-dark);}
+.callout.warn strong{color:#b91c1c;}
+.quote{
+  border-left:3px solid var(--line);
+  padding:4px 0 4px 18px;
+  margin:24px 0;
+  color:var(--sub);
+  font-size:15px;
+}
+.kpi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:12px;
+  margin:28px 0;
+}
+.kpi{
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:16px 14px;
+  background:#fafafa;
+}
+.kpi .label{font-size:12px;color:var(--sub);display:block;margin-bottom:6px;line-height:1.5;}
+.kpi .value{font-size:21px;font-weight:700;color:var(--accent-dark);display:block;line-height:1.3;}
+.kpi .note{font-size:11.5px;color:var(--sub);display:block;margin-top:5px;line-height:1.5;}
+.table-scroll{overflow-x:auto;margin:26px 0;-webkit-overflow-scrolling:touch;}
+table{
+  border-collapse:collapse;
+  width:100%;
+  min-width:560px;
+  font-size:14px;
+}
+th,td{
+  border:1px solid var(--line);
+  padding:10px 12px;
+  text-align:left;
+  vertical-align:top;
+}
+th{background:var(--accent-light);font-weight:700;color:var(--accent-dark);}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+tr.total td{background:#fafafa;font-weight:700;}
+.tnote{font-size:13px;color:var(--sub);margin:-14px 0 24px;}
+.flow{margin:28px 0;}
+.flow-step{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  margin-bottom:16px;
+}
+.flow-step .circle{
+  flex:0 0 auto;
+  width:30px;height:30px;
+  border-radius:50%;
+  background:var(--accent);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;
+  margin-top:2px;
+}
+.flow-step .body{flex:1 1 auto;font-size:15px;line-height:1.8;}
+.crosslink{
+  background:#f7f7f8;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:14px 18px;
+  margin:24px 0;
+  font-size:14px;
+  color:var(--sub);
+}
+.crosslink strong{color:var(--ink);}
+.crosslink a{color:var(--accent-dark);}
+.watch{
+  background:#211705;
+  color:#f3f3f3;
+  border-radius:12px;
+  padding:32px 28px;
+  margin:56px 0 36px;
+}
+.watch h2{
+  font-size:19px;
+  margin:0 0 8px;
+  color:#fff;
+  letter-spacing:.04em;
+}
+.watch .sub{font-size:13px;color:#cbbd9c;margin:0 0 22px;}
+.watch ol{
+  list-style:none;
+  counter-reset:w;
+  margin:0;padding:0;
+}
+.watch li{
+  counter-increment:w;
+  position:relative;
+  padding-left:38px;
+  margin-bottom:18px;
+  font-size:14.5px;
+  line-height:1.8;
+}
+.watch li::before{
+  content:counter(w);
+  position:absolute;left:0;top:2px;
+  width:25px;height:25px;
+  border-radius:50%;
+  background:var(--accent-mid);
+  color:#211705;
+  font-weight:700;font-size:13px;
+  display:flex;align-items:center;justify-content:center;
+}
+.watch li strong{color:#fde68a;}
+.disclaimer{
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:#fafafa;
+  padding:20px 22px;
+  font-size:13px;
+  color:var(--sub);
+  line-height:1.85;
+  margin:40px 0 28px;
+}
+.disclaimer h3{
+  font-size:14px;
+  margin:0 0 10px;
+  padding:0;
+  border:none;
+  color:var(--ink);
+}
+.src{
+  font-size:13px;
+  color:var(--sub);
+  line-height:1.9;
+}
+.src h3{
+  font-size:14px;
+  margin:36px 0 12px;
+  padding:0;
+  border:none;
+  color:var(--ink);
+}
+.src ul{padding-left:1.2em;margin:0;}
+.src li{margin-bottom:6px;}
+.src a{color:var(--accent-dark);}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  header.hero{padding:40px 18px 36px;}
+  header.hero h1{font-size:22px;}
+  .wrap{padding:0 16px 60px;}
+  h2.chapter{font-size:18.5px;}
+  h3{font-size:16px;}
+  .watch{padding:26px 20px;border-radius:10px;}
+  .kpi .value{font-size:19px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="inner">
+    <span class="eyebrow">米国製薬・バイオ決算シリーズ ⑲</span>
+    <h1>売上ゼロ、現金1万1,294ドル。そして前年同期の売上は取り消されていた</h1>
+    <p class="lede">ABVC BioPharma（NASDAQ:ABVC）2026年第3四半期決算。「商業段階の特殊製薬」に分類した6社目は、売上がまったくありませんでした。さらにこの10-Qには、前年同期に計上した関連当事者からのライセンス収益79万5,950ドルを取り消したという記載があります。理由は、その資金が別の関連当事者からの借入だったと判断されたためです。そして連結では赤字なのに、親会社に帰属する第3四半期の1株当たり損益はプラス0.04ドルでした。</p>
+    <p class="meta"><span class="model-tag">商業段階の特殊製薬</span>公開日：2026年11月27日／Form 10-Q提出：2026年11月（表紙の株式数は11月9日時点）</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#c1">売上ゼロ ― 「商業段階の特殊製薬」の分類が機能しない</a></li>
+    <li><a href="#c2">前年同期の売上は取り消されていた ― シリーズ初の過年度修正</a></li>
+    <li><a href="#c3">連結は赤字、親会社帰属は黒字。四半期EPSは+0.04ドル</a></li>
+    <li><a href="#c4">四半期と9か月でEPSの符号が逆 ― 3社目</a></li>
+    <li><a href="#c5">現金1万1,294ドルと、継続企業の前提に関する重要な疑義</a></li>
+    <li><a href="#c6">元本410万ドルを負って、手元に残るのは約222万ドル</a></li>
+    <li><a href="#c7">営業費用の約68.2%が株式報酬、研究開発費は約2.1%</a></li>
+    <li><a href="#c8">決算リリースも説明会も確認できない／株価</a></li>
+  </ol>
+</nav>
+
+<p>本シリーズは、米国に上場する製薬・バイオ企業29社の決算を1社ずつ、一次資料に当たって読み解く企画です。19社目は<strong>ABVC BioPharma（NASDAQ:ABVC）</strong>。<a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium</a>、<a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">Harrow</a>、<a href="https://marketsupporter-ai.com/reports/aytu-biopharma-aytu-q1.html">Aytu</a>、<a href="https://marketsupporter-ai.com/reports/biofrontera-bfri-q3.html">Biofrontera</a>、<a href="https://marketsupporter-ai.com/reports/dare-bioscience-dare-q3.html">Daré</a>に続く<strong>商業段階の特殊製薬</strong>の6社目です。</p>
+
+<p>台湾・米国を拠点とする企業で、BLEX 404（がん領域）、ABV-1701／Vitargus（眼科の硝子体代替物）などを開発しています。</p>
+
+<h2 class="chapter" id="c1"><span class="num">①</span>売上ゼロ ― 「商業段階の特殊製薬」の分類が機能しない</h2>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th class="num">四半期売上</th><th class="num">売上 ÷ 営業費用</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium（COLL）</a></td><td class="num">2億1,630万ドル</td><td class="num">―（営業黒字）</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">Harrow（HROW）</a></td><td class="num">9,929.7万ドル</td><td class="num">―（営業黒字）</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/aytu-biopharma-aytu-q1.html">Aytu（AYTU）</a></td><td class="num">1,484.2万ドル</td><td class="num">約111%</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/biofrontera-bfri-q3.html">Biofrontera（BFRI）</a></td><td class="num">907.0万ドル</td><td class="num">約58%</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/dare-bioscience-dare-q3.html">Daré（DARE）</a></td><td class="num">4万7,628ドル</td><td class="num">約1.6%</td></tr>
+<tr class="total"><td>ABVC BioPharma（ABVC）</td><td class="num"><strong>0ドル</strong></td><td class="num"><strong>0%</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※比率は編集部計算。AYTUは2027年度第1四半期（2026年9月30日終了）。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>第3四半期の売上はゼロです。9か月累計もゼロ、前年同期もゼロです。</strong>10-Qは「当社は収益を生み出さなかった」と記載しています。</p>
+<p style="margin:12px 0 0;">前日の<a href="https://marketsupporter-ai.com/reports/dare-bioscience-dare-q3.html">Daré</a>で、同じ分類の中で売上が約4,542倍違うことを扱いました。<strong>6社目は、倍率が計算できません。</strong></p>
+</div>
+
+<p>入口記事④章では、29銘柄を6つの事業モデルに分類しました。この分類は読む順序を決めるのに役立ちますが、<strong>ABVCについては機能していません。</strong>売上がない企業は、定義上「商業段階」ではありません。</p>
+
+<div class="crosslink">
+<strong>分類の扱い方：</strong>本シリーズは分類を「読む順序の目次」として使ってきました。<strong>分類が同じであることは、同じ指標が使えることを意味しません。</strong>Daréでは「売上÷営業費用」が約1.6%で赤字先行企業に近い水準でした。ABVCではこの比率そのものが0%になり、指標として情報を持ちません。<strong>分類を疑う材料が出てきたら、分類ではなく数字を見る必要があります。</strong>
+</div>
+
+<h2 class="chapter" id="c2"><span class="num">②</span>前年同期の売上は取り消されていた ― シリーズ初の過年度修正</h2>
+
+<p>この10-Qには、本シリーズで初めて扱う種類の記載があります。<strong>過年度の財務諸表の修正（restatement）</strong>です。</p>
+
+<div class="flow">
+  <div class="flow-step">
+    <div class="circle">1</div>
+    <div class="body"><strong>2025年第3四半期</strong>、ABVCは関連当事者であるOncoX（受領総額59万5,950ドル）とForSeeCon（20万ドル）から<strong>ライセンス収益を計上</strong>しました。</div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">2</div>
+    <div class="body">その後、経営陣は<strong>これらの資金が一部または全部、関連当事者であるBioFirstから借り入れたものだったと判断</strong>しました。</div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">3</div>
+    <div class="body"><strong>76万ドルの収益をBioFirstに対する債権と相殺して取り消し</strong>、OncoXからさらに<strong>3万5,950ドルを認識中止</strong>。取り消しの合計は<strong>79万5,950ドル</strong>です。</div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">4</div>
+    <div class="body">結果として、<strong>2025年9か月の純損失は▲456万4,546ドルから▲536万0,496ドルへ修正</strong>されました（79万5,950ドルの悪化）。</div>
+  </div>
+</div>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>関連当事者から売上を計上していたが、その資金の出どころは別の関連当事者からの借入だった。</strong>10-Qに記載された経緯です。</p>
+<p style="margin:12px 0 0;">本シリーズでは「売上の中身を確認する」という作業を繰り返してきました。<a href="https://marketsupporter-ai.com/reports/bridgebio-bbio-q3.html">BridgeBio</a>は売上高の中に一回限りのマイルストーン7,500万ドル、<a href="https://marketsupporter-ai.com/reports/roivant-roiv-q2.html">Roivant</a>は承認から5週間分の製品売上、<a href="https://marketsupporter-ai.com/reports/biofrontera-bfri-q3.html">Biofrontera</a>は増収額の約76.8%が前倒し発注でした。</p>
+<p style="margin:12px 0 0;"><strong>ABVCの場合、売上そのものが取り消されました。</strong>これは「一回限りの項目が含まれていた」という話とは性質が違います。</p>
+</div>
+
+<p>なお、2025年12月31日時点の76万ドルの相殺処理についても、関連当事者債権と債務を両建てに戻す修正が行われています。10-Qは<strong>この修正は純損益と資本に影響しない</strong>としています。</p>
+
+<h2 class="chapter" id="c3"><span class="num">③</span>連結は赤字、親会社帰属は黒字。四半期EPSは+0.04ドル</h2>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2026年Q3</th><th class="num">2025年Q3</th><th class="num">2026年9か月</th><th class="num">2025年9か月（修正後）</th></tr>
+</thead>
+<tbody>
+<tr><td>売上</td><td class="num">0ドル</td><td class="num">0ドル</td><td class="num">0ドル</td><td class="num">0ドル</td></tr>
+<tr><td>販売費・一般管理費</td><td class="num">37万6,946ドル</td><td class="num">79万8,253ドル</td><td class="num">163万2,722ドル</td><td class="num">210万3,718ドル</td></tr>
+<tr><td>研究開発費</td><td class="num">1万8,040ドル</td><td class="num">2万9,890ドル</td><td class="num">7万3,847ドル</td><td class="num">9万2,027ドル</td></tr>
+<tr><td>株式報酬費用</td><td class="num">84万5,607ドル</td><td class="num">113万6,217ドル</td><td class="num">188万6,022ドル</td><td class="num">275万6,603ドル</td></tr>
+<tr><td>営業費用 合計</td><td class="num">124万0,593ドル</td><td class="num">196万4,360ドル</td><td class="num">359万2,591ドル</td><td class="num">495万2,348ドル</td></tr>
+<tr><td>営業損失</td><td class="num">▲124万0,593ドル</td><td class="num">▲196万4,360ドル</td><td class="num">▲359万2,591ドル</td><td class="num">▲495万2,348ドル</td></tr>
+<tr><td>営業外費用 合計</td><td class="num">▲14万9,539ドル</td><td class="num">▲11万8,586ドル</td><td class="num">▲29万7,959ドル</td><td class="num">▲38万3,994ドル</td></tr>
+<tr class="total"><td>純損失（連結）</td><td class="num">▲139万0,132ドル</td><td class="num">▲208万3,473ドル</td><td class="num">▲389万0,550ドル</td><td class="num">▲536万0,496ドル</td></tr>
+<tr class="total"><td>非支配持分に帰属する純損失</td><td class="num"><strong>▲253万9,432ドル</strong></td><td class="num">▲4万1,010ドル</td><td class="num">▲274万2,674ドル</td><td class="num">▲21万8,936ドル</td></tr>
+<tr class="total"><td>ABVCに帰属する純損益</td><td class="num"><strong>+114万9,300ドル</strong></td><td class="num">▲204万2,463ドル</td><td class="num">▲114万7,876ドル</td><td class="num">▲514万1,560ドル</td></tr>
+<tr class="total"><td>1株当たり損益（基本・希薄化後）</td><td class="num"><strong>+0.04ドル</strong></td><td class="num">▲0.09ドル</td><td class="num"><strong>▲0.04ドル</strong></td><td class="num">▲0.28ドル</td></tr>
+<tr><td>加重平均株式数</td><td class="num">26,656,942株</td><td class="num">23,256,590株</td><td class="num">26,059,207株</td><td class="num">18,567,480株</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※Form 10-Q記載値。2025年9か月の数値は修正後のものです。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>第3四半期の連結純損失は▲139万0,132ドルですが、ABVCに帰属する純損益は+114万9,300ドルの黒字です。</strong>1株当たり損益も<strong>+0.04ドル</strong>です。</p>
+<p style="margin:12px 0 0;">理由は、非支配持分に帰属する純損失が<strong>▲253万9,432ドル</strong>に達したためです。前年同期は▲4万1,010ドルでしたから、<strong>約62倍</strong>です（編集部計算）。</p>
+</div>
+
+<h3>なぜ非支配持分の損失が急増したのか</h3>
+
+<p>10-Qは、子会社AiBtlの<strong>無形資産が2026年9月30日に終了した3か月間に全額減損された</strong>と記載しています。これらのライセンスは当初、合計700万ドルで計上されていました。</p>
+
+<p><strong>減損額そのものは、参照できた範囲では確認できませんでした。</strong>ただし非支配持分に帰属する純損失が同じ四半期に急増していることから、<strong>減損損失の大部分が非支配持分に配分されたと考えられます。</strong>本記事はこの点を断定しません。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>結果として、無形資産を全額減損した四半期に、親会社に帰属する損益は黒字になりました。</strong></p>
+<p style="margin:12px 0 0;">本シリーズでは<a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">Fortress Biotech</a>の2025年9か月で、連結▲2,751.8万ドルの純損失に対しFortress帰属が+1,075.2万ドルの純利益になる例を扱いました。<strong>ABVCは同じ構造が当期の四半期で起きています。</strong>そして「持株会社型」ではなく「商業段階の特殊製薬」に分類した会社で起きました。</p>
+<p style="margin:12px 0 0;">入口記事④章のチェックリストで、持株会社型について「<strong>連結の純損益と親会社帰属の純損益を、必ず両方見る</strong>」という項目を追加しました。<strong>この手順は、持株会社型だけのものではありません。</strong></p>
+</div>
+
+<h3>非支配持分がマイナスになっている</h3>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目（2026年9月30日）</th><th class="num">金額</th></tr>
+</thead>
+<tbody>
+<tr><td>総資産</td><td class="num">2,029万6,072ドル</td></tr>
+<tr><td>総負債</td><td class="num">855万4,428ドル</td></tr>
+<tr><td>ABVC株主資本</td><td class="num">1,305万0,848ドル</td></tr>
+<tr class="total"><td>非支配持分</td><td class="num"><strong>▲130万9,204ドル</strong></td></tr>
+<tr class="total"><td>資本合計</td><td class="num">1,174万1,644ドル</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>非支配持分が▲130万9,204ドルのマイナスです。</strong>子会社の累積損失が、非支配株主の持分を超えた状態を示しています。</p>
+
+<h2 class="chapter" id="c4"><span class="num">④</span>四半期と9か月でEPSの符号が逆 ― 3社目</h2>
+
+<p>③章の表のとおり、ABVCの1株当たり損益は<strong>第3四半期が+0.04ドル、9か月累計が▲0.04ドル</strong>です。符号が逆です。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th class="num">四半期のEPS</th><th class="num">累計のEPS</th><th>符号</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">Fortress（FBIO）</a></td><td class="num">▲0.23ドル</td><td class="num">+2.94ドル（9か月）</td><td>逆</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">Harrow（HROW）</a></td><td class="num">+0.26ドル</td><td class="num">▲0.94ドル（9か月）</td><td>逆</td></tr>
+<tr class="total"><td>ABVC BioPharma（ABVC）</td><td class="num"><strong>+0.04ドル</strong></td><td class="num"><strong>▲0.04ドル</strong>（9か月）</td><td>逆</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>3社で、四半期と累計の1株当たり損益の符号が逆になりました。</strong>「直近の決算は黒字でした」という一文は、どの会社についても書けますし、「赤字でした」という一文も書けます。<strong>どの期間を見るかだけで変わります。</strong></p>
+<p style="margin:12px 0 0;">前日の<a href="https://marketsupporter-ai.com/reports/dare-bioscience-dare-q3.html">Daré</a>では、決算リリースに9か月累計の損益計算書が記載されておらず、この確認ができませんでした。<strong>10-Qには必ず累計が記載されています。</strong></p>
+</div>
+
+<h2 class="chapter" id="c5"><span class="num">⑤</span>現金1万1,294ドルと、継続企業の前提に関する重要な疑義</h2>
+
+<div class="kpi-grid">
+  <div class="kpi">
+    <span class="label">現金・現金同等物（2026年9月30日）</span>
+    <span class="value">1万1,294ドル</span>
+    <span class="note">2025年末68万1,480ドル／▲98.3%</span>
+  </div>
+  <div class="kpi">
+    <span class="label">運転資本の欠損</span>
+    <span class="value">578万8,170ドル</span>
+    <span class="note">10-Q記載値</span>
+  </div>
+  <div class="kpi">
+    <span class="label">9か月の営業キャッシュフロー</span>
+    <span class="value">▲157万7,567ドル</span>
+    <span class="note">10-Q記載値</span>
+  </div>
+  <div class="kpi">
+    <span class="label">時価総額（2026年11月25日）</span>
+    <span class="value">約2,441万ドル</span>
+    <span class="note">株価0.9100ドル</span>
+  </div>
+</div>
+
+<p>現金は68万1,480ドル（2025年末）から<strong>1万1,294ドル</strong>へ、<strong>▲98.3%</strong>減りました（編集部計算）。</p>
+
+<p>9か月の営業キャッシュフロー▲157万7,567ドルを1日あたりに換算すると約5,778ドル。現金1万1,294ドルは<strong>約2日分</strong>にあたります（編集部試算）。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>ただしこの計算は、9月30日という一時点の残高についてのものです。</strong>ABVCは2026年10月30日に転換社債で純額221万6,927ドルを調達しました（⑥章）。<strong>単純な日数計算を将来の見通しとして用いることはできません。</strong></p>
+</div>
+
+<p>10-Qは、純損失、運転資本の欠損、営業キャッシュフローの流出という条件について次のように記載しています。</p>
+
+<div class="quote">
+「これらの状況は、<strong>当社が継続企業として存続できるかどうかについて重要な疑義を生じさせる</strong>」（Form 10-Q／要旨の日本語訳）
+</div>
+
+<p>経営陣は、事業の改善、公募等による資金調達、または関連当事者および株主からの支援を計画しているとしています。</p>
+
+<div class="crosslink">
+<strong>継続企業の前提 ― シリーズの整理：</strong><a href="https://marketsupporter-ai.com/reports/biofrontera-bfri-q3.html">Biofrontera（BFRI）</a>はCFOが決算説明会で明言し、4つの緩和策を示したうえで「これらの計画は疑義を解消していない」と述べました。<a href="https://marketsupporter-ai.com/reports/dare-bioscience-dare-q3.html">Daré（DARE）</a>は決算リリースに明示的な結論がなく、リスク項目への記載に留まりました。<strong>ABVCは10-Qの注記に明記しています。</strong>3社で開示の場所と深さが違います。
+</div>
+
+<h2 class="chapter" id="c6"><span class="num">⑥</span>元本410万ドルを負って、手元に残るのは約222万ドル</h2>
+
+<p>2026年10月30日、ABVCは転換社債を発行しました。条件を整理します。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">金額・条件</th><th class="num">元本に対する比率</th></tr>
+</thead>
+<tbody>
+<tr><td>元本総額</td><td class="num"><strong>410万6,060ドル</strong></td><td class="num">100%</td></tr>
+<tr><td>現金収入</td><td class="num">338万7,500ドル</td><td class="num">約82.5%</td></tr>
+<tr><td>うち当初発行差金（OID）</td><td class="num">71万8,560ドル</td><td class="num"><strong>約17.5%</strong></td></tr>
+<tr class="total"><td>純収入（発行費用およびLindへの返済後）</td><td class="num"><strong>221万6,927ドル</strong></td><td class="num"><strong>約54.0%</strong></td></tr>
+<tr><td>差引（手元に残らない部分）</td><td class="num">188万9,133ドル</td><td class="num"><strong>約46.0%</strong></td></tr>
+<tr><td>満期</td><td class="num">2027年6月30日</td><td class="num">―</td></tr>
+<tr><td>延長条項</td><td class="num">会社の選択で1回3か月延長可。その場合<strong>元本が5%増加</strong></td><td class="num">―</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※金額は10-Qおよび目論見書補遺の記載値。比率は編集部計算。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>元本410万6,060ドルの債務を負って、手元に残るのは221万6,927ドルです。</strong>元本の約54.0%です（編集部計算）。差の約46.0%は、当初発行差金、発行費用、および既存の資金提供者Lindへの返済に充てられました。</p>
+<p style="margin:12px 0 0;">また2026年10月26日に、Lindとの和解により<strong>残存するノートを消滅させ、担保権を解除し、ワラントを50%増やす</strong>取り決めがなされたと報じられています。</p>
+</div>
+
+<h3>希薄化・資金調達のパターン ― シリーズの整理</h3>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>パターン</th><th>企業</th><th>特徴</th></tr>
+</thead>
+<tbody>
+<tr><td>増資型</td><td><a href="https://marketsupporter-ai.com/reports/recursion-rxrx-q3.html">RXRX</a></td><td>約13.1%のディスカウント。株式数+21.5%（加重平均）</td></tr>
+<tr><td>転換優先株型</td><td><a href="https://marketsupporter-ai.com/reports/accuray-aray.html">ARAY</a>／<a href="https://marketsupporter-ai.com/reports/bridgebio-bbio-q3.html">BBIO</a></td><td>ARAYは潜在希薄化約92%。BBIOは配当率7.00%</td></tr>
+<tr><td>自社株買い型</td><td><a href="https://marketsupporter-ai.com/reports/royalty-pharma-rprx.html">RPRX</a>／<a href="https://marketsupporter-ai.com/reports/ligand-lgnd.html">LGND</a>／<a href="https://marketsupporter-ai.com/reports/innoviva-inva.html">INVA</a></td><td>株式数が減少</td></tr>
+<tr><td>条件付き型</td><td><a href="https://marketsupporter-ai.com/reports/ligand-lgnd.html">LGND</a></td><td>コールスプレッドで希薄化の開始価格を引き上げ</td></tr>
+<tr><td>ワラント型</td><td><a href="https://marketsupporter-ai.com/reports/aytu-biopharma-aytu-q1.html">AYTU</a></td><td>希薄化証券が買収のクロージング条件になった</td></tr>
+<tr class="total"><td><strong>当初発行差金付転換社債型</strong></td><td><strong>ABVC</strong></td><td><strong>元本の約46.0%が手元に残らない</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<p>発行済株式数は、2026年10月21日時点で前年同期比<strong>+72.05%</strong>と報じられています。また目論見書補遺では、ワラントの原株として<strong>100万株</strong>が登録されました。</p>
+
+<h2 class="chapter" id="c7"><span class="num">⑦</span>営業費用の約68.2%が株式報酬、研究開発費は約2.1%</h2>
+
+<p>営業費用の中身を見ます。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2026年Q3</th><th class="num">構成比</th><th class="num">2026年9か月</th><th class="num">構成比</th></tr>
+</thead>
+<tbody>
+<tr><td>販売費・一般管理費</td><td class="num">37万6,946ドル</td><td class="num">約30.4%</td><td class="num">163万2,722ドル</td><td class="num">約45.4%</td></tr>
+<tr class="total"><td>株式報酬費用</td><td class="num"><strong>84万5,607ドル</strong></td><td class="num"><strong>約68.2%</strong></td><td class="num"><strong>188万6,022ドル</strong></td><td class="num"><strong>約52.5%</strong></td></tr>
+<tr class="total"><td>研究開発費</td><td class="num"><strong>1万8,040ドル</strong></td><td class="num"><strong>約1.5%</strong></td><td class="num"><strong>7万3,847ドル</strong></td><td class="num"><strong>約2.1%</strong></td></tr>
+<tr><td>営業費用 合計</td><td class="num">124万0,593ドル</td><td class="num">100%</td><td class="num">359万2,591ドル</td><td class="num">100%</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※構成比は編集部計算。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>第3四半期の営業費用のうち約68.2%が株式報酬費用です</strong>（編集部計算）。株式報酬は現金支出を伴いません。</p>
+<p style="margin:12px 0 0;">一方、研究開発費は9か月で<strong>7万3,847ドル</strong>。営業費用の<strong>約2.1%</strong>です。<strong>株式報酬費用188万6,022ドルは、研究開発費の約25.5倍にあたります</strong>（いずれも編集部計算）。</p>
+</div>
+
+<div class="crosslink">
+<strong>研究開発費の読み方 ― 2日連続の論点：</strong>前日の<a href="https://marketsupporter-ai.com/reports/dare-bioscience-dare-q3.html">Daré</a>では、損益計算書のR&D計上額31万8,906ドルに対し助成金による費用相殺が約470万ドル（約14.7倍）あり、<strong>R&Dの行から研究開発の規模が読み取れない</strong>ことを扱いました。<strong>ABVCの場合は逆で、R&Dの行の数字がそのまま小さい</strong>のです。どちらも「R&Dの行を見ただけでは分からない」という同じ結論に至りますが、理由が正反対です。
+</div>
+
+<p>営業費用は9か月で495万2,348ドルから359万2,591ドルへ<strong>▲27.5%</strong>（編集部計算）。減少の内訳は、販売費・一般管理費▲22.4%、株式報酬▲31.6%、研究開発費▲19.8%です（いずれも編集部計算）。</p>
+
+<h2 class="chapter" id="c8"><span class="num">⑧</span>決算リリースも説明会も確認できない／株価</h2>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>2026年第3四半期について、ABVCの決算プレスリリースおよび決算説明会のトランスクリプトは確認できませんでした。</strong>本記事はForm 10-Qおよび目論見書補遺（Form 424B4）のみを根拠としています。</p>
+</div>
+
+<p>本シリーズが追ってきた<strong>「開示水準の差」</strong>の観点から、商業段階の特殊製薬6社を並べます。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>決算リリース</th><th>決算説明会</th><th>特記</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium（COLL）</a></td><td>あり</td><td>あり</td><td>加重平均株式数を1株単位まで開示。費用差2,730.6万ドルの説明はなし</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">Harrow（HROW）</a></td><td>あり</td><td>あり</td><td>加重平均株式数の記載なし。IHEEZOの売上と数量の乖離の説明なし</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/aytu-biopharma-aytu-q1.html">Aytu（AYTU）</a></td><td>あり</td><td><strong>なし</strong></td><td>買収手続き中のため開催せず</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/biofrontera-bfri-q3.html">Biofrontera（BFRI）</a></td><td>あり</td><td>あり</td><td>SG&A増加210万ドルを4項目に分解。継続企業の疑義を明言</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/dare-bioscience-dare-q3.html">Daré（DARE）</a></td><td>あり</td><td>あり</td><td><strong>9か月累計の損益計算書の記載なし</strong></td></tr>
+<tr class="total"><td>ABVC BioPharma（ABVC）</td><td><strong>確認できず</strong></td><td><strong>確認できず</strong></td><td><strong>10-Qのみ</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※「確認できず」は編集部が参照できた資料の範囲における記載であり、開示の不存在を断定するものではありません。</p>
+
+<h3>株価</h3>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>時点</th><th class="num">株価</th><th class="num">時価総額</th><th class="num">発行済株式数</th></tr>
+</thead>
+<tbody>
+<tr><td>2026年10月21日</td><td class="num">1.000ドル</td><td class="num">約2,638万ドル</td><td class="num">約2,592万株（前年同期比<strong>+72.05%</strong>）</td></tr>
+<tr class="total"><td>2026年11月25日</td><td class="num"><strong>0.9100ドル</strong></td><td class="num">約2,441万ドル</td><td class="num">約2,625万株</td></tr>
+<tr><td>52週レンジ</td><td class="num">0.7069〜2.8699ドル</td><td class="num">―</td><td class="num">―</td></tr>
+<tr><td>1年の変動</td><td class="num"><strong>▲64.59%</strong></td><td class="num">―</td><td class="num">―</td></tr>
+<tr><td>50日／200日移動平均（10月21日時点）</td><td class="num">0.97ドル／1.30ドル</td><td class="num">―</td><td class="num">―</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※株価情報サイト掲載値。各サイトはデータが必ずしもリアルタイムまたは正確でないとの免責を付しています。<strong>10-Q提出前後の日次終値は取得できなかったため、提出に対する株価の反応は記載していません。</strong></p>
+
+<p>2026年11月25日時点の時価総額約2,441万ドルに対し、9月30日の現金1万1,294ドルは<strong>約0.05%</strong>（編集部試算）。10月30日に調達した純額221万6,927ドルは<strong>約9.1%</strong>にあたります（編集部試算）。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>本記事は株価水準について、いかなる見解も示していません。</strong>時価総額と現金の比較は、時点が異なる数字（9月30日の残高と11月25日の株価）を並べたものであり、また10月の資金調達と株式数の増加を反映していません。</p>
+</div>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>決算の見え方</th><th class="num">発表後の株価</th></tr>
+</thead>
+<tbody>
+<tr><td>Butterfly Network（BFLY）</td><td>売上+52%、粗利率改善</td><td class="num">翌日▲3.84%、翌々日場中▲9.8%</td></tr>
+<tr><td>Repligen（RGEN）</td><td>GAAP営業損失（減損4,124.2万ドル）</td><td class="num">+4.5%</td></tr>
+<tr><td>Accuray（ARAY）</td><td>純利益黒字（債務消滅益）</td><td class="num">株式併合で比較不可</td></tr>
+<tr><td>RoyaltyPharma（RPRX）</td><td>ガイダンス引き上げ</td><td class="num">下落</td></tr>
+<tr><td>Ligand（LGND）</td><td>ロイヤルティ+51%</td><td class="num">ほぼ変わらず</td></tr>
+<tr><td>Innoviva（INVA）</td><td>営業利益+21.9%、EPSは予想を1.55ドル下回る</td><td class="num">52週安値</td></tr>
+<tr><td>Schrödinger（SDGR）</td><td>純損失拡大</td><td class="num">1年来高値圏</td></tr>
+<tr><td>Recursion（RXRX）</td><td>決算＋第2相データ</td><td class="num">+3.1%→増資価格近辺</td></tr>
+<tr><td>Absci（ABSI）</td><td>純損失16%拡大、EPSは改善</td><td class="num">―</td></tr>
+<tr><td>Roivant（ROIV）</td><td>売上が約22.4倍</td><td class="num">1週間後は発表前と同水準</td></tr>
+<tr><td>BridgeBio（BBIO）</td><td>営業損失が一回限り要因で縮小</td><td class="num">+5.96%</td></tr>
+<tr><td>Fortress（FBIO）</td><td>9か月EPS+2.94ドル、四半期は予想下振れ</td><td class="num">連続データ取得できず</td></tr>
+<tr><td>PureTech（PRTC）</td><td>半期で黒字転換（非現金の評価益）</td><td class="num">連続データ取得できず</td></tr>
+<tr><td>Collegium（COLL）</td><td>営業利益▲53.7%、ガイダンス据え置き</td><td class="num">+6.29%（前四半期は▲18.55%）</td></tr>
+<tr><td>Harrow（HROW）</td><td>調整後EBITDAガイダンス半減、臨床試験は主要評価項目未達</td><td class="num">+10.52%</td></tr>
+<tr><td>Aytu（AYTU）</td><td>営業損失2.61倍、同時に買収合意</td><td class="num">+46.15%（買収価格への接近）</td></tr>
+<tr><td>Biofrontera（BFRI）</td><td>売上+29.8%、継続企業の前提に重要な疑義</td><td class="num">連続データ取得できず</td></tr>
+<tr><td>Daré（DARE）</td><td>営業損失15.8%改善（助成金相殺）、EPSは予想を0.02ドル下回る</td><td class="num">▲11.13%（52週安値のすぐ上）</td></tr>
+<tr class="total"><td>ABVC BioPharma（ABVC）</td><td><strong>売上ゼロ、四半期EPSは+0.04ドル（減損が非支配持分へ）</strong></td><td class="num"><strong>連続データ取得できず</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="watch">
+  <h2>WHAT TO WATCH</h2>
+  <p class="sub">ABVC BioPharma（ABVC）について、今後の開示で確認したい6点</p>
+  <ol>
+    <li><strong>継続企業の前提に関する重要な疑義</strong>。10-Qの注記に明記されています。経営陣は事業改善、資金調達、関連当事者および株主からの支援を計画しているとしています。<strong>10月30日に純額221万6,927ドルを調達済みですが、満期は2027年6月30日です。</strong></li>
+    <li><strong>関連当事者取引</strong>。2025年第3四半期のライセンス収益79万5,950ドルが、資金の出どころが別の関連当事者からの借入だったとの判断により取り消されました。<strong>関連当事者債権は2026年9月30日時点で93万4,111ドル</strong>（10-Q記載）。今後の収益計上と関連当事者取引の内容を確認する必要があります。</li>
+    <li><strong>非支配持分の動き</strong>。第3四半期に非支配持分へ▲253万9,432ドルの純損失が帰属し（前年同期▲4万1,010ドル）、親会社帰属は+114万9,300ドルの黒字になりました。<strong>非支配持分は▲130万9,204ドルのマイナスです。</strong>連結と親会社帰属の両方を追う必要があります。</li>
+    <li><strong>AiBtl無形資産の減損額</strong>。10-Qは第3四半期に全額減損されたとしていますが、<strong>減損額は参照できた範囲では確認できませんでした。</strong>ライセンスは当初合計700万ドルで計上されていました。</li>
+    <li><strong>転換社債の条件</strong>。元本410万6,060ドル、純収入221万6,927ドル（元本の約54.0%／編集部計算）、満期2027年6月30日。会社の選択で3か月延長できますが、その場合<strong>元本が5%増加</strong>します。Lindとの和解ではワラントが50%増やされたと報じられています。</li>
+    <li><strong>開示の形</strong>。第3四半期について決算プレスリリースおよび決算説明会のトランスクリプトは確認できませんでした。<strong>数字の背景についての会社の説明が、10-Qの注記以外に存在するかを確認する必要があります。</strong>また内部統制についての結論は、参照できた範囲では確認できませんでした。</li>
+  </ol>
+</div>
+
+<div class="disclaimer">
+<h3>免責事項</h3>
+<p style="margin:0 0 10px;">本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。投資判断はご自身の責任で行ってください。</p>
+<p style="margin:0 0 10px;">本記事の数値は2026年11月27日時点で確認できた公開情報に基づきます。財務数値は2026年9月30日に終了した3か月間および9か月間、ならびに同日時点の貸借対照表のものです。2025年9か月の数値は修正後のものです。株価および時価総額は株価情報サイトの掲載値で、記載した日付時点のものです（各サイトはデータが必ずしもリアルタイムまたは正確でないとの免責を付しています）。株価は日々変動します。貸借対照表および現金残高は2026年9月30日時点であり、株価の時点とは異なります。<strong>Form 10-Q提出前後の日次終値は取得できなかったため、提出に対する株価の反応は記載していません。</strong></p>
+<p style="margin:0 0 10px;">「編集部計算」「編集部試算」と記した数値は、公表値をもとに編集部が算出した推計値です。構成比、増減率、元本に対する比率、キャッシュの日数換算、時価総額との比較はいずれも編集部計算または編集部試算であり、会社が開示した指標ではありません。<strong>キャッシュの日数換算（約2日分）は2026年9月30日の残高を9か月の営業キャッシュフローで機械的に割ったもので、同年10月30日の資金調達を反映しておらず、将来の見通しとして用いることはできません。</strong>他社との比較に用いた数値には、各社の決算リリース記載の増減率から逆算した推計値を含みます。</p>
+<p style="margin:0 0 10px;"><strong>第3四半期について、決算プレスリリースおよび決算説明会のトランスクリプトは確認できませんでした。本記事はForm 10-Qおよび目論見書補遺（Form 424B4）のみを根拠としています。</strong>Form 10-Qからの引用は要旨の日本語訳です。AiBtl無形資産の減損額、内部統制についての結論、Lindとの和解の支払額は、参照できた範囲では確認できませんでした。減損損失の大部分が非支配持分に配分されたという記述は、非支配持分に帰属する純損失の推移からの推測であり、本記事はこの点を断定していません。Lindとの和解の内容（ワラント50%増を含む）および発行済株式数の前年同期比+72.05%は第三者情報源の記載です。</p>
+<p style="margin:0 0 10px;">過年度修正（restatement）に関する記述は、Form 10-Qの記載に基づくものです。本記事は、修正の原因となった判断や過去の会計処理の適切性について、いかなる評価も示していません。継続企業の前提についても、疑義が解消されるか否かについて、いかなる見解も示していません。</p>
+<p style="margin:0;">BLEX 404、ABV-1701／Vitargusを含む開発中のプログラムはいずれも承認前の候補薬です。本記事は承認や試験成功を前提とした記述を行っていません。「記載がない」「確認できなかった」という表現は確認できた資料の範囲における記載であり、開示の不存在を断定するものではありません。</p>
+</div>
+
+<div class="src">
+<h3>主な参照資料</h3>
+<ul>
+<li>ABVC BioPharma, Inc. Form 10-Q（2026年9月30日に終了した四半期）<a href="https://www.sec.gov/Archives/edgar/data/0001173313/000121390026118078/ea0309513-10q_abvcbio.htm">sec.gov</a></li>
+<li>ABVC BioPharma, Inc. Form 424B4（目論見書補遺／転換社債および継続企業の前提に関する記載）<a href="https://www.stocktitan.net/sec-filings/ABVC/424b4-abvc-biopharma-inc-prospectus-filed-pursuant-to-rule-424-b-4-279afcb5c06f.html">stocktitan.net</a></li>
+<li>Lindとの和解および発行済株式数に関する第三者情報（AI生成の注記あり。一次資料と一致した内容のみ採用）<a href="https://www.panabee.com/news/abvc-biopharma-earnings-q3-2026">panabee.com</a></li>
+<li>株価・時価総額・発行済株式数 <a href="https://ca.investing.com/equities/abvc-biopharma">investing.com</a>／<a href="https://stockanalysis.com/stocks/abvc/statistics/">stockanalysis.com</a></li>
+</ul>
+</div>
+
+<div class="crosslink" style="margin-top:36px;">
+<strong>シリーズ記事：</strong><a href="https://marketsupporter-ai.com/reports/us-pharma-biotech-earnings-guide.html">入口記事：なぜ米国の製薬・バイオ株は、決算1本で株価が倍にも半分にもなるのか</a>／<a href="https://marketsupporter-ai.com/reports/dare-bioscience-dare-q3.html">⑱Daré Bioscience（DARE）― 四半期売上4万7,628ドル</a>／<a href="https://marketsupporter-ai.com/reports/biofrontera-bfri-q3.html">⑰Biofrontera（BFRI）― 株主資本がゼロを割り、継続企業の前提に疑義</a>／<a href="https://marketsupporter-ai.com/reports/fortress-biotech-fbio-q3.html">⑫Fortress Biotech（FBIO）― 連結赤字でも親会社帰属は黒字</a>
+</div>
+
+</div>
+</body>
+</html>
