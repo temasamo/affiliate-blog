@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InMed Pharmaceuticals（INM）2027年度Q1決算分析｜会社が「現金は11月中旬まで」と述べた決算</title>
+<meta name="description" content="InMed Pharmaceuticals（NASDAQ:INM）2027年度第1四半期決算を一次資料から分析。株主資本が1四半期でマイナスに転じ、会社自身が現金は11月中旬までと述べ、商業事業が非継続事業に移りました。商業段階の特殊製薬7社の総括も掲載します。">
+<style>
+:root{
+  --accent:#d97706;
+  --accent-dark:#b45309;
+  --accent-mid:#f59e0b;
+  --accent-light:#fffbeb;
+  --ink:#1a1a1a;
+  --sub:#555;
+  --line:#e5e5e5;
+  --bg:#ffffff;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.9;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:780px;margin:0 auto;padding:0 20px 80px;}
+header.hero{
+  background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 55%,var(--accent-mid) 100%);
+  color:#fff;
+  padding:56px 20px 48px;
+}
+header.hero .inner{max-width:780px;margin:0 auto;}
+.eyebrow{
+  display:inline-block;
+  background:rgba(255,255,255,.2);
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:999px;
+  padding:5px 14px;
+  font-size:12px;
+  letter-spacing:.08em;
+  margin-bottom:18px;
+}
+header.hero h1{
+  font-size:28px;
+  line-height:1.5;
+  margin:0 0 16px;
+  font-weight:700;
+}
+header.hero .lede{
+  font-size:15px;
+  line-height:1.85;
+  margin:0;
+  color:rgba(255,255,255,.95);
+}
+header.hero .meta{
+  margin-top:22px;
+  font-size:13px;
+  color:rgba(255,255,255,.85);
+  border-top:1px solid rgba(255,255,255,.3);
+  padding-top:14px;
+}
+.model-tag{
+  display:inline-block;
+  background:#fff;
+  color:var(--accent-dark);
+  font-size:12px;
+  font-weight:700;
+  border-radius:4px;
+  padding:3px 10px;
+  margin-right:8px;
+}
+.toc{
+  background:var(--accent-light);
+  border:1px solid #fde68a;
+  border-radius:10px;
+  padding:22px 24px;
+  margin:36px 0 44px;
+}
+.toc h2{
+  font-size:14px;
+  margin:0 0 12px;
+  color:var(--accent-dark);
+  letter-spacing:.06em;
+}
+.toc ol{margin:0;padding-left:1.3em;font-size:14.5px;}
+.toc li{margin-bottom:7px;}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(217,119,6,.35);}
+.toc a:hover{color:var(--accent-dark);}
+h2.chapter{
+  font-size:21px;
+  line-height:1.55;
+  margin:56px 0 20px;
+  padding-bottom:12px;
+  border-bottom:2px solid var(--accent);
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+h2.chapter .num{
+  flex:0 0 auto;
+  background:var(--accent);
+  color:#fff;
+  font-size:13px;
+  border-radius:5px;
+  padding:3px 9px;
+  margin-top:5px;
+  font-weight:700;
+}
+h3{
+  font-size:17px;
+  margin:34px 0 14px;
+  padding-left:12px;
+  border-left:4px solid var(--accent-mid);
+  line-height:1.6;
+}
+p{margin:0 0 18px;}
+ul,ol{margin:0 0 18px;padding-left:1.4em;}
+li{margin-bottom:8px;}
+.callout{
+  background:var(--accent-light);
+  border-left:4px solid var(--accent);
+  border-radius:0 8px 8px 0;
+  padding:18px 20px;
+  margin:26px 0;
+  font-size:15px;
+}
+.callout.warn{
+  background:#fef2f2;
+  border-left-color:#dc2626;
+}
+.callout strong{color:var(--accent-dark);}
+.callout.warn strong{color:#b91c1c;}
+.quote{
+  border-left:3px solid var(--line);
+  padding:4px 0 4px 18px;
+  margin:24px 0;
+  color:var(--sub);
+  font-size:15px;
+}
+.kpi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:12px;
+  margin:28px 0;
+}
+.kpi{
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:16px 14px;
+  background:#fafafa;
+}
+.kpi .label{font-size:12px;color:var(--sub);display:block;margin-bottom:6px;line-height:1.5;}
+.kpi .value{font-size:21px;font-weight:700;color:var(--accent-dark);display:block;line-height:1.3;}
+.kpi .note{font-size:11.5px;color:var(--sub);display:block;margin-top:5px;line-height:1.5;}
+.table-scroll{overflow-x:auto;margin:26px 0;-webkit-overflow-scrolling:touch;}
+table{
+  border-collapse:collapse;
+  width:100%;
+  min-width:560px;
+  font-size:14px;
+}
+th,td{
+  border:1px solid var(--line);
+  padding:10px 12px;
+  text-align:left;
+  vertical-align:top;
+}
+th{background:var(--accent-light);font-weight:700;color:var(--accent-dark);}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+tr.total td{background:#fafafa;font-weight:700;}
+.tnote{font-size:13px;color:var(--sub);margin:-14px 0 24px;}
+.flow{margin:28px 0;}
+.flow-step{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  margin-bottom:16px;
+}
+.flow-step .circle{
+  flex:0 0 auto;
+  width:30px;height:30px;
+  border-radius:50%;
+  background:var(--accent);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;
+  margin-top:2px;
+}
+.flow-step .body{flex:1 1 auto;font-size:15px;line-height:1.8;}
+.crosslink{
+  background:#f7f7f8;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:14px 18px;
+  margin:24px 0;
+  font-size:14px;
+  color:var(--sub);
+}
+.crosslink strong{color:var(--ink);}
+.crosslink a{color:var(--accent-dark);}
+.watch{
+  background:#211705;
+  color:#f3f3f3;
+  border-radius:12px;
+  padding:32px 28px;
+  margin:56px 0 36px;
+}
+.watch h2{
+  font-size:19px;
+  margin:0 0 8px;
+  color:#fff;
+  letter-spacing:.04em;
+}
+.watch .sub{font-size:13px;color:#cbbd9c;margin:0 0 22px;}
+.watch ol{
+  list-style:none;
+  counter-reset:w;
+  margin:0;padding:0;
+}
+.watch li{
+  counter-increment:w;
+  position:relative;
+  padding-left:38px;
+  margin-bottom:18px;
+  font-size:14.5px;
+  line-height:1.8;
+}
+.watch li::before{
+  content:counter(w);
+  position:absolute;left:0;top:2px;
+  width:25px;height:25px;
+  border-radius:50%;
+  background:var(--accent-mid);
+  color:#211705;
+  font-weight:700;font-size:13px;
+  display:flex;align-items:center;justify-content:center;
+}
+.watch li strong{color:#fde68a;}
+.disclaimer{
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:#fafafa;
+  padding:20px 22px;
+  font-size:13px;
+  color:var(--sub);
+  line-height:1.85;
+  margin:40px 0 28px;
+}
+.disclaimer h3{
+  font-size:14px;
+  margin:0 0 10px;
+  padding:0;
+  border:none;
+  color:var(--ink);
+}
+.src{
+  font-size:13px;
+  color:var(--sub);
+  line-height:1.9;
+}
+.src h3{
+  font-size:14px;
+  margin:36px 0 12px;
+  padding:0;
+  border:none;
+  color:var(--ink);
+}
+.src ul{padding-left:1.2em;margin:0;}
+.src li{margin-bottom:6px;}
+.src a{color:var(--accent-dark);}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  header.hero{padding:40px 18px 36px;}
+  header.hero h1{font-size:22px;}
+  .wrap{padding:0 16px 60px;}
+  h2.chapter{font-size:18.5px;}
+  h3{font-size:16px;}
+  .watch{padding:26px 20px;border-radius:10px;}
+  .kpi .value{font-size:19px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="inner">
+    <span class="eyebrow">米国製薬・バイオ決算シリーズ ⑳</span>
+    <h1>会社自身が「現金は11月中旬まで」と書いた決算。発表は11月3日だった</h1>
+    <p class="lede">InMed Pharmaceuticals（NASDAQ:INM）2027年度第1四半期決算。株主資本は1四半期でプラス107万5,007ドルからマイナス119万9,396ドルへ転じ、NASDAQからは株主資本要件の不足通知を受けています。商業事業は非継続事業に移り、損益計算書の本体から売上が消えました。そして会社は、約4億9,000万ドルを調達した非公開企業との合併を控えています。商業段階の特殊製薬7社の総括も掲載します。</p>
+    <p class="meta"><span class="model-tag">商業段階の特殊製薬</span>公開日：2026年11月28日／決算発表：2026年11月3日</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#c1">株主資本が1四半期でマイナスへ ― NASDAQ規則5550(b)(1)</a></li>
+    <li><a href="#c2">会社自身が「現金は11月中旬まで」と述べている</a></li>
+    <li><a href="#c3">売上が損益計算書から消えた ― 商業事業が非継続事業へ</a></li>
+    <li><a href="#c4">純損失が35.0%拡大したのに、EPSは改善した</a></li>
+    <li><a href="#c5">営業費用の約89.8%が一般管理費、R&Dは▲64.2%</a></li>
+    <li><a href="#c6">Mentariとの合併 ― 現金109万ドルの会社と、4億9,000万ドルを調達した会社</a></li>
+    <li><a href="#c7">商業段階の特殊製薬7社の総括</a></li>
+    <li><a href="#c8">株価と、確認できなかったこと</a></li>
+  </ol>
+</nav>
+
+<p>本シリーズは、米国に上場する製薬・バイオ企業29社の決算を1社ずつ、一次資料に当たって読み解く企画です。20社目は<strong>InMed Pharmaceuticals（NASDAQ:INM）</strong>。<strong>商業段階の特殊製薬</strong>グループの7社目で、最後の1社です。</p>
+
+<p>カナダ・ブリティッシュコロンビア州の会社で、カンナビノイドを基盤とする医薬品候補（INM-901＝アルツハイマー病、INM-089＝萎縮型加齢性マクラ変性、INM-755＝皮膚科領域）を開発し、子会社BayMedicaを通じて希少カンナビノイドの商業事業を行ってきました。</p>
+
+<p>なお同社は<strong>6月30日を期末とする会計年度</strong>を採用しています。2026年9月30日に終了した四半期が「2027年度第1四半期」です。</p>
+
+<h2 class="chapter" id="c1"><span class="num">①</span>株主資本が1四半期でマイナスへ ― NASDAQ規則5550(b)(1)</h2>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2026年9月30日</th><th class="num">2026年6月30日</th><th class="num">増減</th></tr>
+</thead>
+<tbody>
+<tr><td>現金・現金同等物</td><td class="num">109万4,488ドル</td><td class="num">219万4,413ドル</td><td class="num"><strong>▲50.1%</strong></td></tr>
+<tr><td>総負債</td><td class="num">250万5,258ドル</td><td class="num">195万5,060ドル</td><td class="num">+28.1%</td></tr>
+<tr class="total"><td>株主資本（欠損）</td><td class="num"><strong>▲119万9,396ドル</strong></td><td class="num">+107万5,007ドル</td><td class="num"><strong>227万4,403ドルの減少</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※増減率および減少額は編集部計算。</p>
+
+<p>株主資本が1四半期でプラスからマイナスへ転じました。前日までに扱った<a href="https://marketsupporter-ai.com/reports/biofrontera-bfri-q3.html">Biofrontera</a>（▲24.3万ドル）に続き、<strong>このグループで2社目の債務超過</strong>です。</p>
+
+<h3>NASDAQの株主資本要件 ― 全プロセスが開示された</h3>
+
+<p>本シリーズではこの基準を3社で扱いました。<strong>InMedは、通知から期限までの全プロセスが開示されています。</strong></p>
+
+<div class="flow">
+  <div class="flow-step">
+    <div class="circle">1</div>
+    <div class="body"><strong>2026年9月16日</strong>、NASDAQから通知。根拠は<strong>NASDAQ上場規則5550(b)(1)</strong>で、株主資本250万ドル以上を求めるものです。</div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">2</div>
+    <div class="body">不足の根拠は、2026年6月30日に終了した2026年度のForm 10-Kに記載された<strong>株主資本107万5,007ドル</strong>です。会社は代替基準も満たしていないとしています。</div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">3</div>
+    <div class="body">上場に即時の影響はなく、NASDAQは<strong>45暦日以内の是正計画の提出</strong>を求めました。</div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">4</div>
+    <div class="body"><strong>2026年10月30日に計画を提出。NASDAQはこれを受理し、適合回復の期限を2027年3月15日としました。</strong></div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">5</div>
+    <div class="body">会社は、Mentariとの合併およびクロージング前の資金調達により適合を回復する見込みとしつつ、<strong>「NASDAQが計画を受理する保証も、延長期間内に適合を回復できる保証もない」</strong>と明記しています。</div>
+  </div>
+</div>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>同じ基準に対する開示が、3社で3段階に分かれました。</strong></p>
+<p style="margin:12px 0 0;">
+・<strong>InMed（INM）</strong>：規則番号（5550(b)(1)）、通知日、不足額、45日の猶予、計画の提出日、適合期限（2027年3月15日）、回復の見込みと保証がないことまで<strong>すべて開示</strong><br>
+・<a href="https://marketsupporter-ai.com/reports/biofrontera-bfri-q3.html">Biofrontera（BFRI）</a>：基準を満たしていないこと、代替基準も満たしていないこと、是正計画を提出する意向を開示。<strong>通知日・期限・計画の内容は確認できなかった</strong><br>
+・<a href="https://marketsupporter-ai.com/reports/dare-bioscience-dare-q3.html">Daré（DARE）</a>：株主資本234万1,375ドルで250万ドルを下回るが、<strong>上場基準について何も述べていない</strong>（他の基準を満たしている可能性があり、本シリーズは上場維持についていかなる判断も示していません）</p>
+<p style="margin:12px 0 0;">入口記事⑥章では<a href="https://marketsupporter-ai.com/reports/accuray-aray.html">Accuray（ARAY）</a>の株価基準（1株1.00ドル）と1対40の株式併合を扱いました。<strong>上場維持を確認するときは、どの基準に抵触しているか、そして会社がどこまで開示しているかを見る必要があります。</strong></p>
+</div>
+
+<h2 class="chapter" id="c2"><span class="num">②</span>会社自身が「現金は11月中旬まで」と述べている</h2>
+
+<div class="kpi-grid">
+  <div class="kpi">
+    <span class="label">現金・現金同等物（2026年9月30日）</span>
+    <span class="value">109万4,488ドル</span>
+    <span class="note">2026年6月30日219万4,413ドル</span>
+  </div>
+  <div class="kpi">
+    <span class="label">四半期の営業キャッシュフロー</span>
+    <span class="value">▲114万2,342ドル</span>
+    <span class="note">リリース記載値</span>
+  </div>
+  <div class="kpi">
+    <span class="label">現金 ÷ 四半期の営業CF</span>
+    <span class="value">約0.96四半期分</span>
+    <span class="note">編集部試算</span>
+  </div>
+  <div class="kpi">
+    <span class="label">会社が示した期限</span>
+    <span class="value">11月中旬</span>
+    <span class="note">リリース記載</span>
+  </div>
+</div>
+
+<p>決算リリースは、現金について次のように記載しています。</p>
+
+<div class="quote">
+経営陣は、利用可能な現金が計画されている営業費用と資本的支出を<strong>「11月中旬まで」</strong>賄うと見込んでいる。支出水準と合併の時期によって変わる。（決算リリース／要旨の日本語訳）
+</div>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>決算発表は2026年11月3日です。会社が示した期限は「11月中旬」。発表から約2週間です。</strong></p>
+<p style="margin:12px 0 0;">本シリーズでは現金の水準を4指標の1つとして追ってきました。これまでの扱い方は、キャッシュ消費ペースから編集部が日数を試算するものでした。<a href="https://marketsupporter-ai.com/reports/absci-absi-q3.html">Absci</a>では「公開情報から前提を検証できない」と書き、<a href="https://marketsupporter-ai.com/reports/abvc-biopharma-abvc-q3.html">ABVC</a>では現金1万1,294ドルを9か月の営業キャッシュフローで機械的に割って約2日分という数字を出しました。</p>
+<p style="margin:12px 0 0;"><strong>InMedの場合、試算は不要です。会社が期限を書いています。</strong></p>
+</div>
+
+<h3>継続企業の前提についての記載</h3>
+
+<p><strong>決算リリースに、継続企業の前提についての明示的な結論は記載されていません。</strong>財務諸表はSEC（sec.gov）およびSEDAR+（sedarplus.ca）で入手できるとされており、そこに記載がある可能性はありますが、本記事では確認していません。</p>
+
+<div class="crosslink">
+<strong>継続企業の前提 ― 4社の開示の違い：</strong><a href="https://marketsupporter-ai.com/reports/biofrontera-bfri-q3.html">BFRI</a>はCFOが決算説明会で明言し、4つの緩和策を示したうえで「これらの計画は疑義を解消していない」と述べました。<a href="https://marketsupporter-ai.com/reports/abvc-biopharma-abvc-q3.html">ABVC</a>は10-Qの注記に明記。<a href="https://marketsupporter-ai.com/reports/dare-bioscience-dare-q3.html">DARE</a>はリスク項目への記載に留めました。<strong>INMは決算リリースに明示的な結論がない代わりに、現金が尽きる時期そのものを書いています。</strong>開示の形が4社で違います。
+</div>
+
+<h2 class="chapter" id="c3"><span class="num">③</span>売上が損益計算書から消えた ― 商業事業が非継続事業へ</h2>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>決算リリースには、売上、売上原価、売上総利益、販売費、セグメント別データの記載がありません。</strong></p>
+<p style="margin:12px 0 0;">損益計算書には<strong>「非継続事業からの損失」</strong>という行があり、当四半期は▲33万5,766ドル、前年同期は<strong>+10万3,449ドルの利益</strong>でした。子会社BayMedicaの商業事業が非継続事業に分類されたことを示しています。</p>
+</div>
+
+<p>商業段階の特殊製薬7社の四半期売上を並べます。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th class="num">四半期売上</th><th class="num">売上 ÷ 営業費用</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">Collegium（COLL）</a></td><td class="num">2億1,630万ドル</td><td class="num">―（営業黒字）</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">Harrow（HROW）</a></td><td class="num">9,929.7万ドル</td><td class="num">―（営業黒字）</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/aytu-biopharma-aytu-q1.html">Aytu（AYTU）</a></td><td class="num">1,484.2万ドル</td><td class="num">約111%</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/biofrontera-bfri-q3.html">Biofrontera（BFRI）</a></td><td class="num">907.0万ドル</td><td class="num">約58%</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/dare-bioscience-dare-q3.html">Daré（DARE）</a></td><td class="num">4万7,628ドル</td><td class="num">約1.6%</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/abvc-biopharma-abvc-q3.html">ABVC BioPharma（ABVC）</a></td><td class="num">0ドル</td><td class="num">0%</td></tr>
+<tr class="total"><td>InMed（INM）</td><td class="num"><strong>記載なし（非継続事業へ）</strong></td><td class="num">―</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※比率は編集部計算。AYTUは2027年度第1四半期（2026年9月30日終了）。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>7社で、四半期売上が2億1,630万ドルから「記載なし」まで分かれました。</strong></p>
+<p style="margin:12px 0 0;">入口記事④章の分類は、読む順序を決めるための目次です。<strong>COLLとINMを「同じグループ」として同じ指標で比べることはできません。</strong>⑦章で7社を整理します。</p>
+</div>
+
+<h3>前年同期は、商業事業が損失を小さくしていた</h3>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>1株当たり損益の構成</th><th class="num">2027年度Q1</th><th class="num">2026年度Q1</th></tr>
+</thead>
+<tbody>
+<tr><td>継続事業</td><td class="num">▲0.36ドル</td><td class="num">▲0.46ドル</td></tr>
+<tr class="total"><td>非継続事業</td><td class="num"><strong>▲0.06ドル</strong></td><td class="num"><strong>+0.03ドル</strong></td></tr>
+<tr class="total"><td>合計（基本・希薄化後）</td><td class="num">▲0.42ドル</td><td class="num">▲0.44ドル</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※決算リリース記載値。合計は各構成要素を四捨五入した金額の合計です。</p>
+
+<p><strong>前年同期の非継続事業は+0.03ドルの利益でした。</strong>商業事業が、継続事業の損失▲0.46ドルを一部打ち消していたことになります。当四半期は▲0.06ドルの損失で、損失を拡大させる側に回りました。</p>
+
+<h2 class="chapter" id="c4"><span class="num">④</span>純損失が35.0%拡大したのに、EPSは改善した</h2>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">2027年度Q1</th><th class="num">2026年度Q1</th><th class="num">増減</th></tr>
+</thead>
+<tbody>
+<tr><td>研究開発費</td><td class="num">20万6,015ドル</td><td class="num">57万5,458ドル</td><td class="num"><strong>▲64.2%</strong></td></tr>
+<tr><td>一般管理費</td><td class="num">180万4,625ドル</td><td class="num">123万9,058ドル</td><td class="num"><strong>+45.6%</strong></td></tr>
+<tr><td>償却費・減価償却費</td><td class="num">168ドル</td><td class="num">5万2,603ドル</td><td class="num">▲99.7%</td></tr>
+<tr><td>為替差損益</td><td class="num">▲1,488ドル（益）</td><td class="num">5万6,994ドル（損）</td><td class="num">―</td></tr>
+<tr><td>営業費用 合計</td><td class="num">200万9,320ドル</td><td class="num">192万4,113ドル</td><td class="num">+4.4%</td></tr>
+<tr><td>受取利息・その他収益</td><td class="num">1万4,308ドル</td><td class="num">9万3,765ドル</td><td class="num">▲84.7%</td></tr>
+<tr><td>継続事業からの損失（税前）</td><td class="num">▲199万5,012ドル</td><td class="num">▲183万0,348ドル</td><td class="num">9.0%拡大</td></tr>
+<tr><td>非継続事業からの損益</td><td class="num">▲33万5,766ドル</td><td class="num">+10万3,449ドル</td><td class="num">―</td></tr>
+<tr class="total"><td>純損失</td><td class="num"><strong>▲233万0,778ドル</strong></td><td class="num">▲172万6,899ドル</td><td class="num"><strong>35.0%拡大</strong></td></tr>
+<tr class="total"><td>加重平均株式数</td><td class="num">5,469,448株</td><td class="num">3,954,549株</td><td class="num"><strong>+38.3%</strong></td></tr>
+<tr class="total"><td>1株当たり損失</td><td class="num">▲0.42ドル</td><td class="num">▲0.44ドル</td><td class="num"><strong>4.5%改善</strong></td></tr>
+<tr><td>前年同期の株式数で計算した場合</td><td class="num">▲0.59ドル（編集部試算）</td><td class="num">―</td><td class="num">―</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※増減率および試算は編集部計算。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>純損失は35.0%拡大しましたが、1株当たり損失は▲0.44ドルから▲0.42ドルへ「改善」しています。</strong>株式数が+38.3%増えたためです（いずれも編集部計算）。</p>
+<p style="margin:12px 0 0;">前年同期の株式数で計算すれば<strong>▲0.59ドル</strong>です（編集部試算）。報告された数字は▲0.42ドルです。</p>
+</div>
+
+<h3>4社の整理</h3>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th class="num">純損益の変化</th><th class="num">株式数の変化</th><th class="num">EPSの変化</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/absci-absi-q3.html">Absci（ABSI）</a></td><td class="num">16.0%<strong>拡大</strong></td><td class="num">+19.5%</td><td class="num">▲0.20→▲0.19ドル（改善）</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/biofrontera-bfri-q3.html">Biofrontera（BFRI）</a></td><td class="num">3.4%縮小</td><td class="num">+41.8%</td><td class="num">▲0.62→▲0.42ドル（改善の約89%が分母）</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/dare-bioscience-dare-q3.html">Daré（DARE）</a></td><td class="num">11.4%縮小</td><td class="num">+36.6%</td><td class="num">▲0.28→▲0.18ドル（改善の約67.7%が分母）</td></tr>
+<tr class="total"><td>InMed（INM）</td><td class="num"><strong>35.0%拡大</strong></td><td class="num">+38.3%</td><td class="num">▲0.44→▲0.42ドル（改善）</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※いずれも編集部計算または編集部試算。</p>
+
+<p><strong>4社連続で、1株当たり損失の「改善」が分母の増加によるものでした。</strong>そのうちABSIとINMの2社は、<strong>純損失そのものが拡大しています。</strong>INMの拡大幅35.0%は、ABSIの16.0%より大きいものです。</p>
+
+<p>入口記事⑤章の手順「1株当たり指標を見たら、分母の株式数も前年と比べる」は、4例目になりました。</p>
+
+<h2 class="chapter" id="c5"><span class="num">⑤</span>営業費用の約89.8%が一般管理費、R&Dは▲64.2%</h2>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th class="num">金額</th><th class="num">営業費用に占める比率</th></tr>
+</thead>
+<tbody>
+<tr class="total"><td>一般管理費</td><td class="num">180万4,625ドル</td><td class="num"><strong>約89.8%</strong></td></tr>
+<tr class="total"><td>研究開発費</td><td class="num">20万6,015ドル</td><td class="num"><strong>約10.3%</strong></td></tr>
+<tr><td>償却費・減価償却費</td><td class="num">168ドル</td><td class="num">約0.0%</td></tr>
+<tr><td>為替差益</td><td class="num">▲1,488ドル</td><td class="num">▲0.1%</td></tr>
+<tr><td>営業費用 合計</td><td class="num">200万9,320ドル</td><td class="num">100%</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※比率は編集部計算。</p>
+
+<p>研究開発費の減少について、決算リリースは<strong>「合併手続き中の活動縮小」</strong>を理由としています。一方、一般管理費は+45.6%増えています（編集部計算）。</p>
+
+<div class="callout">
+<p style="margin:0;"><strong>研究開発を止め、一般管理費を増やしている四半期です。</strong>合併を完了させるための費用が、開発費用を上回っています。</p>
+</div>
+
+<div class="crosslink">
+<strong>「R&Dの行だけでは分からない」― 3日連続の論点：</strong><a href="https://marketsupporter-ai.com/reports/dare-bioscience-dare-q3.html">Daré</a>では、R&D計上額31万8,906ドルに対し助成金による費用相殺が約470万ドル（約14.7倍）あり、<strong>実際の研究開発規模が損益計算書に現れていませんでした。</strong><a href="https://marketsupporter-ai.com/reports/abvc-biopharma-abvc-q3.html">ABVC</a>では、株式報酬が営業費用の約68.2%を占め、R&Dは約1.5%でした。<strong>InMedでは、R&Dが約10.3%で、減少理由は「合併手続き中の活動縮小」です。</strong>3社とも理由が違いますが、結論は同じです ― <strong>R&Dの行の数字だけでは、何が起きているか分かりません。</strong>
+</div>
+
+<h2 class="chapter" id="c6"><span class="num">⑥</span>Mentariとの合併 ― 現金109万ドルの会社と、4億9,000万ドルを調達した会社</h2>
+
+<p>決算リリースの中心は、合併に関する記載です。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>項目</th><th>内容</th></tr>
+</thead>
+<tbody>
+<tr><td>相手</td><td><strong>Mentari Therapeutics, Inc.</strong>（非公開のバイオテクノロジー企業、片頭痛予防の治療薬を開発）</td></tr>
+<tr class="total"><td>統合後の名称・上場</td><td><strong>Mentari Therapeutics</strong>として運営し、NASDAQ Capital Marketに<strong>ティッカー「MTRI」</strong>で上場を申請（NASDAQの承認が条件）</td></tr>
+<tr class="total"><td>Mentariの資金調達</td><td>総額約<strong>4億9,000万ドル</strong>（総額ベース）の私募を発表。<strong>2029年までの運営資金</strong>と、2つの主力PACAP標的プログラムの<strong>第2a相読み出し</strong>を賄う見込み</td></tr>
+<tr><td>完了予定</td><td>2026年暦年第4四半期。残存するクロージング条件（必要な株主承認を含む）に従う</td></tr>
+<tr><td>登録手続き</td><td>Form S-4を提出済み。<strong>リリース時点で発効していない</strong></td></tr>
+<tr class="total"><td>CVR（条件付価値権）</td><td>適格なInMed株主は、<strong>レガシー資産の将来の資産化による収益</strong>を分配される可能性。CVR契約に従う</td></tr>
+<tr><td>株主総会</td><td>2026年11月4日 午後12時（米国東部時間）。合併完了に必要な議案と通常の年次議案</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>InMedの現金は109万4,488ドル。Mentariが発表した私募は約4億9,000万ドルです。</strong>約448倍の差があります（編集部計算）。</p>
+<p style="margin:12px 0 0;">統合後の会社は名称もティッカーも変わり、事業は片頭痛予防（PACAP標的）になります。InMedのレガシー資産（INM-901＝アルツハイマー、INM-089＝萎縮型AMD、INM-755＝皮膚科）については、売却・ライセンス・その他の戦略的取引が模索されており、既存株主はCVRを通じて将来の収益を分配される可能性があります。</p>
+<p style="margin:12px 0 0;"><strong>決算リリースは「資産取引やCVRの支払いは保証されない」と明記しています。</strong></p>
+</div>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>交換比率および合併後の持分比率は、参照できた資料では確認できませんでした。</strong>Form S-4はリリース時点で発効していません。<strong>本記事は、InMed株主が合併後にどれだけの持分を得るかについて、何も述べていません。</strong>条件の詳細はS-4および委任状勧誘資料をご確認ください。</p>
+</div>
+
+<h3>会社の「終わり方」が2通り出てきた</h3>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>形</th><th>既存株主が受け取るもの</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/aytu-biopharma-aytu-q1.html">Aytu（AYTU）</a></td><td><strong>現金による買収</strong>（公開買付＋合併）</td><td>1株2.70ドルの現金。上場は終了する</td></tr>
+<tr class="total"><td>InMed（INM）</td><td><strong>合併</strong>（上場は継続、名称とティッカーが変わる）</td><td><strong>統合後の会社の株式＋CVR</strong>。比率は本記事では未確認</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>前者は金額が確定しており、後者は確定していません。<strong>「買収される」と「合併する」は、株主にとって意味が違います。</strong></p>
+
+<h2 class="chapter" id="c7"><span class="num">⑦</span>商業段階の特殊製薬7社の総括</h2>
+
+<p>7社が揃いました。整理します。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th class="num">四半期売上</th><th class="num">営業損益</th><th class="num">株主資本</th><th>この記事の中心的な発見</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">COLL</a></td><td class="num">2億1,630万ドル</td><td class="num">+2,872.2万ドル</td><td class="num">2億9,643.7万ドル</td><td>同じ四半期に1株当たり利益が4つ（0.60／0.69／1.71／1.96ドル）</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/harrow-hrow-q3.html">HROW</a></td><td class="num">9,929.7万ドル</td><td class="num">+1,147.1万ドル</td><td class="num">2,880万ドル</td><td>調整後EPSがGAAPより小さい。通期EBITDAの約81.8%が第4四半期に集中する想定</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/aytu-biopharma-aytu-q1.html">AYTU</a></td><td class="num">1,484.2万ドル</td><td class="num">▲392.9万ドル</td><td class="num">本記事では未確認</td><td>決算と同時に1株2.70ドルの買収合意。ワラントがクロージング条件に</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/biofrontera-bfri-q3.html">BFRI</a></td><td class="num">907.0万ドル</td><td class="num">▲649.7万ドル</td><td class="num">▲24.3万ドル</td><td>粗利率改善の正体は親会社との契約変更（売上の25〜35%→12%）</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/dare-bioscience-dare-q3.html">DARE</a></td><td class="num">4万7,628ドル</td><td class="num">▲309.2万ドル</td><td class="num">234万1,375ドル</td><td>粗利率▲278.9%。助成金相殺470万ドルがR&Dの行に現れない</td></tr>
+<tr><td><a href="https://marketsupporter-ai.com/reports/abvc-biopharma-abvc-q3.html">ABVC</a></td><td class="num">0ドル</td><td class="num">▲124万0,593ドル</td><td class="num">1,305万0,848ドル（ABVC帰属）</td><td>前年の関連当事者売上79万5,950ドルが取り消された。連結赤字で親会社帰属は黒字</td></tr>
+<tr class="total"><td>INM</td><td class="num"><strong>記載なし</strong></td><td class="num">▲200万9,320ドル</td><td class="num"><strong>▲119万9,396ドル</strong></td><td><strong>会社が「現金は11月中旬まで」と記載。合併を控える</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※各社の決算リリースまたは10-Q記載値。AYTUの株主資本は本記事の執筆時点で確認していません。</p>
+
+<h3>グループを通じて見えた4つのこと</h3>
+
+<div class="flow">
+  <div class="flow-step">
+    <div class="circle">1</div>
+    <div class="body"><strong>分類は目次であって、指標ではありません。</strong>四半期売上が2億1,630万ドルの会社と、売上の記載がない会社が同じグループに入っています。「商業段階」という名称から読み取れることは、ほとんどありません。</div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">2</div>
+    <div class="body"><strong>GAAPの利益は、このグループで最も信頼できない数字でした。</strong>COLLは無形資産償却が売上の約25.6%を占め調整後EPSがGAAPの3倍以上、HROWは一回限りの和解益を除いて調整後がGAAPより小さく、ABVCは減損が非支配持分に流れて親会社帰属が黒字になりました。<strong>どの行を見るかで結論が変わります。</strong></div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">3</div>
+    <div class="body"><strong>1株当たり指標の分母を確認する作業は、4社で必要でした。</strong>BFRI、DARE、INMで株式数が+36.6%〜+41.8%増え、ABSIと合わせて4社で「損失が拡大または横ばいなのにEPSが改善」が起きています。</div>
+  </div>
+  <div class="flow-step">
+    <div class="circle">4</div>
+    <div class="body"><strong>開示水準は、会社の規模と関係ありません。</strong>四半期売上907.0万ドルのBFRIはSG&A増加210万ドルを4項目に分解し、2億1,630万ドルのCOLLは2,730.6万ドルの差を説明しませんでした。INMはNASDAQの全プロセスを開示し、DAREは上場基準について何も述べていません。</div>
+  </div>
+</div>
+
+<h2 class="chapter" id="c8"><span class="num">⑧</span>株価と、確認できなかったこと</h2>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>時点</th><th class="num">数値</th></tr>
+</thead>
+<tbody>
+<tr><td>2026年10月15日の終値</td><td class="num">1.330ドル（前日比+1.53%）</td></tr>
+<tr><td>同日時点の時価総額</td><td class="num">約884万ドル</td></tr>
+<tr><td>同日時点の発行済株式数</td><td class="num">約664万株</td></tr>
+<tr><td>52週レンジ</td><td class="num">0.575〜2.330ドル</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tnote">※株価情報サイト掲載値（2026年10月15〜16日時点のスナップショット）。<strong>決算発表日（2026年11月3日）前後の日次終値は取得できなかったため、発表に対する株価の反応は記載していません。</strong></p>
+
+<p>2026年10月15日時点の時価総額約884万ドルは、Mentariが発表した私募の総額約4億9,000万ドルの<strong>約1.8%</strong>にあたります（編集部試算）。</p>
+
+<div class="callout warn">
+<p style="margin:0;"><strong>この比較は参照点として示したものです。</strong>時価総額は2026年10月15日時点、私募の金額は発表された総額ベース、そして<strong>交換比率は確認できていません。</strong>本記事は、合併後の持分比率や株価水準について、いかなる見解も示していません。</p>
+</div>
+
+<h3>本記事で確認できなかったこと</h3>
+
+<ul>
+<li><strong>継続企業の前提についての明示的な結論</strong>（決算リリースに記載がなく、財務諸表は確認していません）</li>
+<li><strong>合併の交換比率および合併後の持分比率</strong>（Form S-4はリリース時点で発効していません）</li>
+<li><strong>売上、売上原価、売上総利益、セグメント別データ</strong>（決算リリースに記載がありません）</li>
+<li><strong>決算発表前後の日次終値</strong></li>
+<li><strong>決算説明会の有無</strong>（トランスクリプトは確認できませんでした）</li>
+</ul>
+
+<p>なお決算リリースの損益計算書には、3か月間の数字に対して<strong>「Net loss per share for the year」</strong>という見出しが付されています。本記事では3か月間の数字として扱っています。</p>
+
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>企業</th><th>決算の見え方</th><th class="num">発表後の株価</th></tr>
+</thead>
+<tbody>
+<tr><td>Butterfly Network（BFLY）</td><td>売上+52%、粗利率改善</td><td class="num">翌日▲3.84%、翌々日場中▲9.8%</td></tr>
+<tr><td>Repligen（RGEN）</td><td>GAAP営業損失（減損4,124.2万ドル）</td><td class="num">+4.5%</td></tr>
+<tr><td>Accuray（ARAY）</td><td>純利益黒字（債務消滅益）</td><td class="num">株式併合で比較不可</td></tr>
+<tr><td>RoyaltyPharma（RPRX）</td><td>ガイダンス引き上げ</td><td class="num">下落</td></tr>
+<tr><td>Ligand（LGND）</td><td>ロイヤルティ+51%</td><td class="num">ほぼ変わらず</td></tr>
+<tr><td>Innoviva（INVA）</td><td>営業利益+21.9%、EPSは予想を1.55ドル下回る</td><td class="num">52週安値</td></tr>
+<tr><td>Schrödinger（SDGR）</td><td>純損失拡大</td><td class="num">1年来高値圏</td></tr>
+<tr><td>Recursion（RXRX）</td><td>決算＋第2相データ</td><td class="num">+3.1%→増資価格近辺</td></tr>
+<tr><td>Absci（ABSI）</td><td>純損失16%拡大、EPSは改善</td><td class="num">―</td></tr>
+<tr><td>Roivant（ROIV）</td><td>売上が約22.4倍</td><td class="num">1週間後は発表前と同水準</td></tr>
+<tr><td>BridgeBio（BBIO）</td><td>営業損失が一回限り要因で縮小</td><td class="num">+5.96%</td></tr>
+<tr><td>Fortress（FBIO）</td><td>9か月EPS+2.94ドル、四半期は予想下振れ</td><td class="num">連続データ取得できず</td></tr>
+<tr><td>PureTech（PRTC）</td><td>半期で黒字転換（非現金の評価益）</td><td class="num">連続データ取得できず</td></tr>
+<tr><td>Collegium（COLL）</td><td>営業利益▲53.7%、ガイダンス据え置き</td><td class="num">+6.29%（前四半期は▲18.55%）</td></tr>
+<tr><td>Harrow（HROW）</td><td>調整後EBITDAガイダンス半減、臨床試験は主要評価項目未達</td><td class="num">+10.52%</td></tr>
+<tr><td>Aytu（AYTU）</td><td>営業損失2.61倍、同時に買収合意</td><td class="num">+46.15%（買収価格への接近）</td></tr>
+<tr><td>Biofrontera（BFRI）</td><td>売上+29.8%、継続企業の前提に重要な疑義</td><td class="num">連続データ取得できず</td></tr>
+<tr><td>Daré（DARE）</td><td>営業損失15.8%改善（助成金相殺）、EPSは予想を0.02ドル下回る</td><td class="num">▲11.13%（52週安値のすぐ上）</td></tr>
+<tr><td>ABVC BioPharma（ABVC）</td><td>売上ゼロ、四半期EPSは+0.04ドル（減損が非支配持分へ）</td><td class="num">連続データ取得できず</td></tr>
+<tr class="total"><td>InMed（INM）</td><td><strong>株主資本がマイナスへ、会社が「現金は11月中旬まで」と記載</strong></td><td class="num"><strong>連続データ取得できず</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="watch">
+  <h2>WHAT TO WATCH</h2>
+  <p class="sub">InMed Pharmaceuticals（INM）について、今後の開示で確認したい6点</p>
+  <ol>
+    <li><strong>Mentariとの合併の完了</strong>。2026年暦年第4四半期の完了が予定されており、2026年11月4日の株主総会で必要な議案が諮られました。<strong>Form S-4はリリース時点で発効していません。</strong>交換比率および合併後の持分比率は、S-4および委任状勧誘資料で確認する必要があります。</li>
+    <li><strong>NASDAQの適合期限2027年3月15日</strong>。規則5550(b)(1)（株主資本250万ドル以上）。会社は合併とクロージング前の資金調達で適合を回復する見込みとしつつ、<strong>「適合を回復できる保証はない」</strong>と明記しています。</li>
+    <li><strong>現金</strong>。2026年9月30日時点で109万4,488ドル。会社は<strong>「11月中旬まで」</strong>と記載しています（支出水準と合併の時期により変動）。四半期の営業キャッシュフローは▲114万2,342ドルでした。</li>
+    <li><strong>レガシー資産の処理</strong>。INM-901（アルツハイマー）、INM-089（萎縮型AMD）、INM-755（皮膚科）について売却・ライセンス等が模索されています。INM-901は当四半期にFDAとのpre-IND会議を完了し次の開発ステップで合意したとされますが、<strong>リリースは「資産取引やCVRの支払いは保証されない」と明記</strong>しています。</li>
+    <li><strong>非継続事業の処理</strong>。当四半期は▲33万5,766ドルの損失（前年同期+10万3,449ドルの利益）。<strong>BayMedicaの商業事業が最終的にどう処理されるか</strong>を確認する必要があります。</li>
+    <li><strong>統合後の会社</strong>。名称はMentari Therapeutics、ティッカーは「MTRI」（NASDAQの承認が条件）。事業は片頭痛予防（PACAP標的）で、約4億9,000万ドルの私募により2029年までの運営資金と2つの主力プログラムの第2a相読み出しを賄う見込みとされています。<strong>これはInMedの事業ではありません。</strong></li>
+  </ol>
+</div>
+
+<div class="disclaimer">
+<h3>免責事項</h3>
+<p style="margin:0 0 10px;">本記事は情報提供を目的としたものであり、特定の金融商品の売買を推奨するものではありません。合併に関する議決権行使の勧誘でもありません。投資判断はご自身の責任で行ってください。合併の条件および手続の詳細は、InMedが提出するForm S-4および委任状勧誘資料をご確認ください。</p>
+<p style="margin:0 0 10px;">本記事の数値は2026年11月28日時点で確認できた公開情報に基づきます。財務数値は2026年9月30日に終了した3か月間（同社の2027年度第1四半期）および同日時点の貸借対照表のものです。同社は6月30日を期末とする会計年度を採用しており、他社との期間比較には注意が必要です。株価および時価総額は株価情報サイトの掲載値で、2026年10月15〜16日時点のスナップショットです。株価は日々変動します。貸借対照表および現金残高は2026年9月30日時点であり、株価の時点とは異なります。<strong>決算発表日（2026年11月3日）前後の日次終値は取得できなかったため、発表に対する株価の反応は記載していません。</strong></p>
+<p style="margin:0 0 10px;">「編集部計算」「編集部試算」と記した数値は、公表値をもとに編集部が算出した推計値です。増減率、構成比、前年同期の株式数で計算した1株当たり損失、現金を四半期の営業キャッシュフローで割った四半期数、時価総額と私募総額の比較はいずれも編集部計算または編集部試算であり、会社が開示した指標ではありません。他社との比較に用いた数値には、各社の決算リリース記載の増減率から逆算した推計値を含みます。⑦章の各社の株主資本は各社の決算リリースまたは10-Qの記載値で、AYTUについては本記事の執筆時点で確認していません。</p>
+<p style="margin:0 0 10px;">決算リリースには、売上、売上原価、売上総利益、販売費、セグメント別データ、および継続企業の前提についての明示的な結論の記載がありません。財務諸表はSEC（sec.gov）およびSEDAR+（sedarplus.ca）で入手できるとされていますが、本記事では確認していません。<strong>合併の交換比率および合併後の持分比率は、参照できた資料では確認できませんでした。</strong>決算説明会のトランスクリプトも確認できませんでした。決算リリースの損益計算書には、3か月間の数字に対して「Net loss per share for the year」という見出しが付されています。決算リリースからの引用は要旨の日本語訳です。</p>
+<p style="margin:0;">合併の完了時期と成否、NASDAQの適合回復、レガシー資産の取引成立、CVRに基づく支払いはいずれも不確実です。決算リリース自体が、資産取引やCVRの支払いは保証されず、NASDAQが計画を受理する保証も延長期間内に適合を回復できる保証もないと明記しています。INM-901、INM-089、INM-755、およびMentariのPACAP標的プログラムはいずれも承認前の開発品です。本記事はこれらの結果を前提とした記述を行っていません。「記載がない」「確認できなかった」という表現は確認できた資料の範囲における記載であり、開示の不存在を断定するものではありません。</p>
+</div>
+
+<div class="src">
+<h3>主な参照資料</h3>
+<ul>
+<li>InMed Pharmaceuticals Inc.「InMed Reports First Quarter Fiscal 2027 Financial Results and Provides Corporate Update」（2026年11月3日）<a href="https://finance.yahoo.com/healthcare/articles/inmed-reports-first-quarter-fiscal-123000089.html">finance.yahoo.com</a>／<a href="https://www.nasdaq.com/press-release/inmed-reports-first-quarter-fiscal-2027-financial-results-and-provides-corporate">nasdaq.com</a></li>
+<li>InMed Pharmaceuticals Inc. Form 8-K（2026年11月3日／Item 7.01でExhibit 99.1を提出）<a href="https://www.sec.gov/Archives/edgar/data/1728328/000106299326005723/form8k.htm">sec.gov</a></li>
+<li>Mentari合併およびNASDAQ適合性に関する要約（AI生成の注記あり。一次資料と一致した内容のみ採用）<a href="https://www.tradingview.com/news/tradingview:221003dc09a6e:0-inmed-pharmaceuticals-reports-q1-fy2027-results-updates-mentari-merger-and-nasdaq-compliance/">tradingview.com</a></li>
+<li>株価・時価総額・発行済株式数 <a href="https://stockanalysis.com/stocks/inm/">stockanalysis.com</a></li>
+</ul>
+</div>
+
+<div class="crosslink" style="margin-top:36px;">
+<strong>シリーズ記事：</strong><a href="https://marketsupporter-ai.com/reports/us-pharma-biotech-earnings-guide.html">入口記事：なぜ米国の製薬・バイオ株は、決算1本で株価が倍にも半分にもなるのか</a>／<a href="https://marketsupporter-ai.com/reports/abvc-biopharma-abvc-q3.html">⑲ABVC BioPharma（ABVC）― 売上ゼロ、前年の売上は取り消された</a>／<a href="https://marketsupporter-ai.com/reports/dare-bioscience-dare-q3.html">⑱Daré Bioscience（DARE）― 四半期売上4万7,628ドル</a>／<a href="https://marketsupporter-ai.com/reports/collegium-coll-q3.html">⑭Collegium（COLL）― 同じ四半期に1株当たり利益が4つある</a>
+</div>
+
+</div>
+</body>
+</html>
